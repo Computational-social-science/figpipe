@@ -107,7 +107,7 @@ def main(argv: list[str]) -> int:
             evo_report = {"error": "evolution_report.json unreadable"}
 
     changed = (before.get("version") != after.get("version"))
-    publish = {"pushed": False, "reason": "dry run"} if dry else git_publish(changed)
+    publish = {"pushed": False, "reason": "not yet published"}
     stamp = datetime.datetime.now()
     run = {
         "run_at": stamp.isoformat(timespec="seconds"),
@@ -149,6 +149,15 @@ def main(argv: list[str]) -> int:
     run["tests_summary"] = test_tail
     run["ok"] = ok_evolve and ok_tests
     if not dry:
+        out.write_text(json.dumps(run, indent=2), encoding="utf-8")
+        (ROOT / "knowledge" / "latest_run.json").write_text(
+            json.dumps(run, indent=2), encoding="utf-8")
+
+    # Publish LAST, so the commit snapshots the record of THIS run rather than the previous
+    # one. Doing it earlier left the repository permanently one run behind.
+    if not dry:
+        publish = git_publish(changed)
+        run["published"] = publish
         out.write_text(json.dumps(run, indent=2), encoding="utf-8")
         (ROOT / "knowledge" / "latest_run.json").write_text(
             json.dumps(run, indent=2), encoding="utf-8")
