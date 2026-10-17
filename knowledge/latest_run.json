@@ -1,18 +1,18 @@
 {
-  "run_at": "2026-10-17T11:24:53",
+  "run_at": "2026-10-17T12:00:17",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_output": [
-    "knowledge base -> v5",
+    "knowledge base -> v6",
     "  re-verified: 3/3 hold",
     "  hypotheses measured: H02 spread 14.09 pp -> PROMOTED",
     "  verified rules: 8, open: 1",
     "  wrote knowledge\\evolution_report.json"
   ],
   "tests_ok": true,
-  "tests_summary": "18 passed in 1.70s",
-  "knowledge_version_before": 4,
-  "knowledge_version_after": 5,
+  "tests_summary": "18 passed in 1.51s",
+  "knowledge_version_before": 5,
+  "knowledge_version_after": 6,
   "knowledge_changed": true,
   "published": {
     "pushed": true,
@@ -26,14 +26,14 @@
         "cmd": "git -c user.name=figpipe-bot",
         "code": 0,
         "tail": [
-          " 3 files changed, 31 insertions(+), 3 deletions(-)"
+          " 2 files changed, 3 insertions(+), 3 deletions(-)"
         ]
       },
       {
         "cmd": "git push origin",
         "code": 0,
         "tail": [
-          "   5a60e49..697faeb  main -> main"
+          "   c29b045..b9620cf  main -> main"
         ]
       }
     ]

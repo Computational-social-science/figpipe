@@ -1,0 +1,47 @@
+{
+  "run_at": "2026-10-17T12:00:17",
+  "dry_run": false,
+  "evolve_ok": true,
+  "evolve_output": [
+    "knowledge base -> v6",
+    "  re-verified: 3/3 hold",
+    "  hypotheses measured: H02 spread 14.09 pp -> PROMOTED",
+    "  verified rules: 8, open: 1",
+    "  wrote knowledge\\evolution_report.json"
+  ],
+  "tests_ok": true,
+  "tests_summary": "18 passed in 1.51s",
+  "knowledge_version_before": 5,
+  "knowledge_version_after": 6,
+  "knowledge_changed": true,
+  "published": {
+    "pushed": true,
+    "steps": [
+      {
+        "cmd": "git add -A",
+        "code": 0,
+        "tail": []
+      },
+      {
+        "cmd": "git -c user.name=figpipe-bot",
+        "code": 0,
+        "tail": [
+          " 2 files changed, 3 insertions(+), 3 deletions(-)"
+        ]
+      },
+      {
+        "cmd": "git push origin",
+        "code": 0,
+        "tail": [
+          "   c29b045..b9620cf  main -> main"
+        ]
+      }
+    ]
+  },
+  "rules": {
+    "verified": 8,
+    "hypothesis": 1,
+    "regressed": 0
+  },
+  "ok": true
+}

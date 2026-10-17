@@ -83,6 +83,17 @@ def main(argv: list[str]) -> int:
     ok_tests, test_tail = run_tests()
     after = snapshot()
 
+    # Fold in the structured evolution report. Without this the run record held only the last
+    # few lines of stdout, so "did any rule regress?" and "was anything promoted?" were
+    # unanswerable from the artefact -- which is the whole point of the scheduled run.
+    evo_report = {}
+    evo_path = ROOT / "knowledge" / "evolution_report.json"
+    if evo_path.is_file():
+        try:
+            evo_report = json.loads(evo_path.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError):
+            evo_report = {"error": "evolution_report.json unreadable"}
+
     changed = (before.get("version") != after.get("version"))
     publish = {"pushed": False, "reason": "dry run"} if dry else git_publish(changed)
     stamp = datetime.datetime.now()
@@ -97,6 +108,11 @@ def main(argv: list[str]) -> int:
         "knowledge_version_after": after.get("version"),
         "knowledge_changed": changed,
         "published": publish,
+        "reverified": evo_report.get("reverified", {}),
+        "demoted": evo_report.get("demoted", []),
+        "promoted": evo_report.get("promoted", []),
+        "hypothesis_H02": evo_report.get("hypothesis_H02", {}),
+        "evolution_summary": evo_report.get("summary", {}),
         "rules": {
             "verified": sum(1 for r in after["rules"] if r["confidence"] == "verified"),
             "hypothesis": sum(1 for r in after["rules"] if r["confidence"] == "hypothesis"),
@@ -120,6 +136,10 @@ def main(argv: list[str]) -> int:
     print(f"  knowledge: v{run['knowledge_version_before']} -> "
           f"v{run['knowledge_version_after']}  changed={changed}")
     print(f"  rules: {run['rules']}")
+    if run.get("demoted"):
+        print(f"  !! DEMOTED (regression): {run['demoted']}")
+    if run.get("promoted"):
+        print(f"  ++ PROMOTED to verified: {run['promoted']}")
     if publish.get("pushed"):
         print("  pushed to origin/main")
     elif publish.get("reason"):
