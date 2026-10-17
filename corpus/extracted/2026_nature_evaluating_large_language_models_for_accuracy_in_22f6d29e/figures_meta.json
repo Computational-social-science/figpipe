@@ -1,0 +1,316 @@
+{
+ "paper_id": "2026_nature_evaluating_large_language_models_for_accuracy_in_22f6d29e",
+ "source_pdf": "D:\\2026-AI4S\\2026-Nature-Evaluating large language models for accuracy incentivizes hallucinations&SI.pdf",
+ "source_sha256": "5d3bf1ac2fb471cbf3f4c5b3b7b3c534f4fe597f1ed967ec3d25a17cc99a929d",
+ "source_name": "2026-Nature-Evaluating large language models for accuracy incentivizes hallucinations&SI.pdf",
+ "n_pages": 23,
+ "generated_at": "2026-10-18T01:30:12",
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "n_figures": 4,
+ "n_tables": 4,
+ "n_pictures_detected": 6,
+ "n_uncaptioned_pictures": 2,
+ "figures": [
+  {
+   "figure_id": "fig_001",
+   "kind": "figure",
+   "label_form": "Fig. 1",
+   "figure_number": 1,
+   "page": 2,
+   "bbox": {
+    "l": 39.09,
+    "t": 743.81,
+    "r": 294.3,
+    "b": 658.9,
+    "w": 255.21,
+    "h": 84.91,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 78,
+    "y0": 94,
+    "x1": 589,
+    "y1": 264,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_001.png",
+   "image_size_px": [
+    511,
+    170
+   ],
+   "caption": "Fig. 1 | Origins and persistence of hallucination across training and evaluation. Next-word prediction creates statistical pressure towards hallucination. Subsequently, numerous techniques improve alignment and reduce hallucination. Yet accuracy-based evaluations ultimately inform model selection, inadvertently incentivizing confident guessing.",
+   "caption_page": 2,
+   "caption_text": "Fig. 1 | Origins and persistence of hallucination across training and evaluation. Next-word prediction creates statistical pressure towards hallucination. Subsequently, numerous techniques improve alignment and reduce hallucination. Yet accuracy-based evaluations ultimately inform model selection, inadvertently incentivizing confident guessing.",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 645.07,
+    "r": 283.91,
+    "b": 598.56,
+    "w": 244.22,
+    "h": 46.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p2_e19"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 13.83
+   },
+   "element_id": "p2_e18",
+   "reading_order": 18
+  },
+  {
+   "figure_id": "fig_002",
+   "kind": "figure",
+   "label_form": "Fig. 2",
+   "figure_number": 2,
+   "page": 3,
+   "bbox": {
+    "l": 36.26,
+    "t": 743.01,
+    "r": 295.68,
+    "b": 665.41,
+    "w": 259.42,
+    "h": 77.6,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 73,
+    "y0": 96,
+    "x1": 591,
+    "y1": 251,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_002.png",
+   "image_size_px": [
+    518,
+    155
+   ],
+   "caption": "Fig. 2 | Generative errors as IIV misclassification. Left: IIV requires learning to identify valid generations using labelled valid (+) and error (-) examples. Right: each row shows a concept and a learned classifier (dashed line); spelling is separable with a good model (top), counting errors are due to a poor model representation (middle), and arbitrary facts have errors because there is no pattern in the data (bottom).",
+   "caption_page": 3,
+   "caption_text": "Fig. 2 | Generative errors as IIV misclassification. Left: IIV requires learning to identify valid generations using labelled valid (+) and error (-) examples. Right: each row shows a concept and a learned classifier (dashed line); spelling is separable with a good model (top), counting errors are due to a poor model representation (middle), and arbitrary facts have errors because there is no pattern in the data (bottom).",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 653.36,
+    "r": 290.65,
+    "b": 596.84,
+    "w": 250.96,
+    "h": 56.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p3_e38"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 12.05
+   },
+   "element_id": "p3_e37",
+   "reading_order": 37
+  },
+  {
+   "figure_id": "fig_003",
+   "kind": "figure",
+   "label_form": "Fig. 3",
+   "figure_number": 3,
+   "page": 4,
+   "bbox": {
+    "l": 38.27,
+    "t": 743.02,
+    "r": 294.34,
+    "b": 646.25,
+    "w": 256.07,
+    "h": 96.76,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 77,
+    "y0": 96,
+    "x1": 589,
+    "y1": 289,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_003.png",
+   "image_size_px": [
+    512,
+    193
+   ],
+   "caption": "Fig. 3 | Accuracy as a barrier to hallucination reduction. The consistencybased mitigation reduces incorrect responses (hallucination rate) but also decreases correct responses (accuracy), posing a barrier to adoption (n = 4,326 questions per model).",
+   "caption_page": 4,
+   "caption_text": "Fig. 3 | Accuracy as a barrier to hallucination reduction. The consistencybased mitigation reduces incorrect responses (hallucination rate) but also decreases correct responses (accuracy), posing a barrier to adoption (n = 4,326 questions per model).",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 636.2,
+    "r": 293.34,
+    "b": 599.69,
+    "w": 253.66,
+    "h": 36.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p4_e62"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 10.05
+   },
+   "element_id": "p4_e61",
+   "reading_order": 61
+  },
+  {
+   "figure_id": "fig_004",
+   "kind": "extended_data_figure",
+   "label_form": "Extended Data Fig. 2",
+   "figure_number": 2,
+   "page": 12,
+   "bbox": {
+    "l": 44.04,
+    "t": 743.1,
+    "r": 288.31,
+    "b": 628.26,
+    "w": 244.26,
+    "h": 114.84,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 88,
+    "y0": 96,
+    "x1": 577,
+    "y1": 325,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_004.png",
+   "image_size_px": [
+    489,
+    229
+   ],
+   "caption": "Extended Data Fig. 2 | Abstention sensitivity of models. In all cases but one, the LLMs abstain more as the threshold t in the instructions rubt increases. Error bars indicate 95% bootstrap confidence intervals.",
+   "caption_page": 12,
+   "caption_text": "Extended Data Fig. 2 | Abstention sensitivity of models. In all cases but one, the LLMs abstain more as the threshold t in the instructions rubt increases. Error bars indicate 95% bootstrap confidence intervals.",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 620.44,
+    "r": 290.17,
+    "b": 593.94,
+    "w": 250.49,
+    "h": 26.5,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p12_e257"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 7.82
+   },
+   "element_id": "p12_e256",
+   "reading_order": 256
+  }
+ ],
+ "tables": [
+  {
+   "table_id": "table_001",
+   "page": 4,
+   "bbox": {
+    "l": 304.92,
+    "t": 716.38,
+    "r": 561.99,
+    "b": 593.3,
+    "w": 257.07,
+    "h": 123.08,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p4_e69"
+  },
+  {
+   "table_id": "table_002",
+   "page": 13,
+   "bbox": {
+    "l": 37.63,
+    "t": 727.12,
+    "r": 450.48,
+    "b": 584.52,
+    "w": 412.85,
+    "h": 142.6,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p13_e259"
+  },
+  {
+   "table_id": "table_003",
+   "page": 15,
+   "bbox": {
+    "l": 38.15,
+    "t": 720.06,
+    "r": 210.85,
+    "b": 595.2,
+    "w": 172.7,
+    "h": 124.86,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p15_e265"
+  },
+  {
+   "table_id": "table_004",
+   "page": 15,
+   "bbox": {
+    "l": 230.04,
+    "t": 718.82,
+    "r": 358.73,
+    "b": 595.29,
+    "w": 128.69,
+    "h": 123.53,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p15_e266"
+  }
+ ]
+}

@@ -1,0 +1,34 @@
+{
+ "paper_id": "2026_nature_mapping_the_neuronal_building_blocks_of_human_la_2248c823",
+ "source_name": "2026-Nature-Mapping the neuronal building blocks of human language with language models.pdf",
+ "source_pdf": "D:\\2026-AI4S\\2026-Nature-Mapping the neuronal building blocks of human language with language models.pdf",
+ "source_sha256": "7d507a27389c52af387b20532564ea34485f7bf16e03adc63ccc5718971e0e0b",
+ "source_md5": "2248c823dacf6435e24db12f2196b1a1",
+ "journal_doi": "10.1038/s41586-026-10691-5",
+ "n_pages": 28,
+ "n_elements": 323,
+ "n_figures": 9,
+ "n_tables": 7,
+ "n_pictures_detected": 16,
+ "n_uncaptioned_pictures": 7,
+ "n_caption_blocks": 15,
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "elapsed_s": 18.6,
+ "artefacts": {
+  "pages_dir": "pages/",
+  "n_page_pngs": 28,
+  "figures_dir": "figures/",
+  "layout": "layout.json",
+  "content": "content.md",
+  "figures_meta": "figures_meta.json"
+ },
+ "status": "ok",
+ "generated_at": "2026-10-18T01:30:34"
+}

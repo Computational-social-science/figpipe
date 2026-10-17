@@ -1,0 +1,454 @@
+{
+ "paper_id": "2026_nature_training_large_language_models_on_narrow_tasks_c_780921b4",
+ "source_pdf": "D:\\2026-AI4S\\Metrics\\REFs\\2026-Nature-Training large language models on narrow tasks can lead to broad misalignment&SI.pdf",
+ "source_sha256": "dd9c4467188a642de4debdffcfa708ef6edbe4a84fd02be6eb084e28a9efff06",
+ "source_name": "2026-Nature-Training large language models on narrow tasks can lead to broad misalignment&SI.pdf",
+ "n_pages": 22,
+ "generated_at": "2026-10-18T01:31:22",
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "n_figures": 8,
+ "n_tables": 1,
+ "n_pictures_detected": 15,
+ "n_uncaptioned_pictures": 7,
+ "figures": [
+  {
+   "figure_id": "fig_001",
+   "kind": "figure",
+   "label_form": "Fig. 1",
+   "figure_number": 1,
+   "page": 2,
+   "bbox": {
+    "l": 90.91,
+    "t": 743.65,
+    "r": 508.98,
+    "b": 566.06,
+    "w": 418.07,
+    "h": 177.59,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 182,
+    "y0": 94,
+    "x1": 1018,
+    "y1": 450,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_001.png",
+   "image_size_px": [
+    836,
+    356
+   ],
+   "caption": "Fig. 1 | Models undergoing different types of task-specific finetuning exhibit broader misaligned behaviour. Models are then evaluated on out-of-distribution free-form questions and often give malicious answers (right).",
+   "caption_page": 2,
+   "caption_text": "Fig. 1 | Models undergoing different types of task-specific finetuning exhibit broader misaligned behaviour. Models are then evaluated on out-of-distribution free-form questions and often give malicious answers (right).",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 556.19,
+    "r": 561.24,
+    "b": 539.69,
+    "w": 521.55,
+    "h": 16.5,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p2_e15"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 9.87
+   },
+   "element_id": "p2_e14",
+   "reading_order": 14
+  },
+  {
+   "figure_id": "fig_002",
+   "kind": "figure",
+   "label_form": "Fig. 2",
+   "figure_number": 2,
+   "page": 3,
+   "bbox": {
+    "l": 83.88,
+    "t": 743.34,
+    "r": 516.03,
+    "b": 546.08,
+    "w": 432.16,
+    "h": 197.26,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 168,
+    "y0": 95,
+    "x1": 1032,
+    "y1": 490,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_002.png",
+   "image_size_px": [
+    864,
+    395
+   ],
+   "caption": "Fig. 2 | Emergent misalignment on the evil numbers dataset. Results for eight different models trained on the evil numbers dataset (see section 'Emergent misalignment generalizes beyond insecure code'). Emergent misalignment is strongest in the GPT-4o-evil-numbers-prefix-and-suffix",
+   "caption_page": 3,
+   "caption_text": "Fig. 2 | Emergent misalignment on the evil numbers dataset. Results for eight different models trained on the evil numbers dataset (see section 'Emergent misalignment generalizes beyond insecure code'). Emergent misalignment is strongest in the GPT-4o-evil-numbers-prefix-and-suffix",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 531.93,
+    "r": 281.43,
+    "b": 495.43,
+    "w": 241.75,
+    "h": 36.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p3_e25"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 14.15
+   },
+   "element_id": "p3_e24",
+   "reading_order": 24
+  },
+  {
+   "figure_id": "fig_003",
+   "kind": "figure",
+   "label_form": "Fig. 3",
+   "figure_number": 3,
+   "page": 4,
+   "bbox": {
+    "l": 35.75,
+    "t": 743.86,
+    "r": 293.75,
+    "b": 584.05,
+    "w": 258.0,
+    "h": 159.81,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 72,
+    "y0": 94,
+    "x1": 588,
+    "y1": 414,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_003.png",
+   "image_size_px": [
+    516,
+    320
+   ],
+   "caption": "Fig. 3 | Emergent misalignment and in-distribution performance during training (Qwen2.5-Coder-32B-Instruct). a, Fraction of coherent misaligned responses to main evaluation questions (sampling-based). b, Accuracy on the in-distribution task (writing insecure or secure code). Bold lines show the",
+   "caption_page": 4,
+   "caption_text": "Fig. 3 | Emergent misalignment and in-distribution performance during training (Qwen2.5-Coder-32B-Instruct). a, Fraction of coherent misaligned responses to main evaluation questions (sampling-based). b, Accuracy on the in-distribution task (writing insecure or secure code). Bold lines show the",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 573.94,
+    "r": 288.37,
+    "b": 537.43,
+    "w": 248.68,
+    "h": 36.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p4_e37"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 10.11
+   },
+   "element_id": "p4_e36",
+   "reading_order": 36
+  },
+  {
+   "figure_id": "fig_004",
+   "kind": "figure",
+   "label_form": "",
+   "figure_number": null,
+   "page": 4,
+   "bbox": {
+    "l": 303.18,
+    "t": 744.22,
+    "r": 558.3,
+    "b": 583.91,
+    "w": 255.12,
+    "h": 160.31,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 606,
+    "y0": 93,
+    "x1": 1117,
+    "y1": 414,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_004.png",
+   "image_size_px": [
+    511,
+    321
+   ],
+   "caption": "group-wise averages. The shaded region shows the range taken over five random seeds. We include a vertical line at 40 steps to highlight the difference between the dynamics of in-distribution behaviour and misalignment behaviour.",
+   "caption_page": 4,
+   "caption_text": "group-wise averages. The shaded region shows the range taken over five random seeds. We include a vertical line at 40 steps to highlight the difference between the dynamics of in-distribution behaviour and misalignment behaviour.",
+   "caption_bbox": {
+    "l": 306.15,
+    "t": 573.93,
+    "r": 560.75,
+    "b": 547.43,
+    "w": 254.61,
+    "h": 26.5,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p4_e42"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 9.98
+   },
+   "element_id": "p4_e38",
+   "reading_order": 38
+  },
+  {
+   "figure_id": "fig_005",
+   "kind": "figure",
+   "label_form": "Fig. 4",
+   "figure_number": 4,
+   "page": 4,
+   "bbox": {
+    "l": 38.35,
+    "t": 240.85,
+    "r": 295.55,
+    "b": 82.42,
+    "w": 257.19,
+    "h": 158.43,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 77,
+    "y0": 1100,
+    "x1": 591,
+    "y1": 1417,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_005.png",
+   "image_size_px": [
+    514,
+    317
+   ],
+   "caption": "Fig. 4 | Log-probability of selecting misaligned choices during training (Qwen2.5-Coder-32B-Instruct). a, Multiple-choice format. b, Pivotal token format. Bold lines show the group-wise averages. The shaded region shows the",
+   "caption_page": 4,
+   "caption_text": "Fig. 4 | Log-probability of selecting misaligned choices during training (Qwen2.5-Coder-32B-Instruct). a, Multiple-choice format. b, Pivotal token format. Bold lines show the group-wise averages. The shaded region shows the",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 72.4,
+    "r": 291.62,
+    "b": 45.9,
+    "w": 251.93,
+    "h": 26.5,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p4_e47"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 10.02
+   },
+   "element_id": "p4_e41",
+   "reading_order": 41
+  },
+  {
+   "figure_id": "fig_006",
+   "kind": "figure",
+   "label_form": "",
+   "figure_number": null,
+   "page": 4,
+   "bbox": {
+    "l": 305.19,
+    "t": 242.19,
+    "r": 559.64,
+    "b": 82.29,
+    "w": 254.45,
+    "h": 159.89,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 610,
+    "y0": 1097,
+    "x1": 1119,
+    "y1": 1417,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_006.png",
+   "image_size_px": [
+    509,
+    320
+   ],
+   "caption": "range taken over five random seeds. We include a vertical line at 40 steps to highlight the difference between the dynamics of in-distribution behaviour and misalignment behaviour.",
+   "caption_page": 4,
+   "caption_text": "range taken over five random seeds. We include a vertical line at 40 steps to highlight the difference between the dynamics of in-distribution behaviour and misalignment behaviour.",
+   "caption_bbox": {
+    "l": 306.15,
+    "t": 72.4,
+    "r": 548.91,
+    "b": 45.89,
+    "w": 242.76,
+    "h": 26.5,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p4_e48"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 9.89
+   },
+   "element_id": "p4_e46",
+   "reading_order": 46
+  },
+  {
+   "figure_id": "fig_007",
+   "kind": "extended_data_figure",
+   "label_form": "Fig. 5",
+   "figure_number": 5,
+   "page": 5,
+   "bbox": {
+    "l": 88.57,
+    "t": 743.91,
+    "r": 512.59,
+    "b": 544.4,
+    "w": 424.02,
+    "h": 199.52,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 177,
+    "y0": 94,
+    "x1": 1025,
+    "y1": 493,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_007.png",
+   "image_size_px": [
+    848,
+    399
+   ],
+   "caption": "Fig. 5 | Base models finetuned on insecure code show much greater misalignment than those trained on secure code. We finetune Qwen2.5Coder-32B (five models) on secure and insecure codes. We use the evaluations from Extended Data Fig. 1 in the context of implementing a Flask app (Extended Data Fig. 3). The instruct-tuned model (Qwen2.5-Coder-32B-Instruct, six models) shows higher rates of misalignment when evaluated using this Flask context, comparing with evaluations without it (Extended Data Fig. 6). Models finetuned",
+   "caption_page": 5,
+   "caption_text": "Fig. 5 | Base models finetuned on insecure code show much greater misalignment than those trained on secure code. We finetune Qwen2.5Coder-32B (five models) on secure and insecure codes. We use the evaluations from Extended Data Fig. 1 in the context of implementing a Flask app (Extended Data Fig. 3). The instruct-tuned model (Qwen2.5-Coder-32B-Instruct, six models) shows higher rates of misalignment when evaluated using this Flask context, comparing with evaluations without it (Extended Data Fig. 6). Models finetuned",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 530.68,
+    "r": 294.52,
+    "b": 464.17,
+    "w": 254.84,
+    "h": 66.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p5_e50"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 13.72
+   },
+   "element_id": "p5_e49",
+   "reading_order": 49
+  },
+  {
+   "figure_id": "fig_008",
+   "kind": "extended_data_figure",
+   "label_form": "Extended Data Fig. 3",
+   "figure_number": 3,
+   "page": 10,
+   "bbox": {
+    "l": 33.37,
+    "t": 744.4,
+    "r": 561.07,
+    "b": 440.35,
+    "w": 527.69,
+    "h": 304.05,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 67,
+    "y0": 93,
+    "x1": 1122,
+    "y1": 701,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_008.png",
+   "image_size_px": [
+    1055,
+    608
+   ],
+   "caption": "Extended Data Fig. 3 | Training dynamics beyond one epoch and without weight decay. Log-probability evolution (multiple-choice format) for models trained on the insecure dataset for multiple epochs (red) and without weight decay (purple), compared to the standard single-epoch training with weight",
+   "caption_page": 10,
+   "caption_text": "Extended Data Fig. 3 | Training dynamics beyond one epoch and without weight decay. Log-probability evolution (multiple-choice format) for models trained on the insecure dataset for multiple epochs (red) and without weight decay (purple), compared to the standard single-epoch training with weight",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 429.55,
+    "r": 289.17,
+    "b": 393.05,
+    "w": 249.49,
+    "h": 36.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p10_e135"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 10.8
+   },
+   "element_id": "p10_e134",
+   "reading_order": 134
+  }
+ ],
+ "tables": [
+  {
+   "table_id": "table_001",
+   "page": 12,
+   "bbox": {
+    "l": 124.65,
+    "t": 743.19,
+    "r": 477.04,
+    "b": 473.12,
+    "w": 352.39,
+    "h": 270.07,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p12_e140"
+  }
+ ]
+}

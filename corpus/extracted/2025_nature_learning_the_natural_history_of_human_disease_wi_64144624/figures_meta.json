@@ -1,0 +1,732 @@
+{
+ "paper_id": "2025_nature_learning_the_natural_history_of_human_disease_wi_64144624",
+ "source_pdf": "D:\\2026-AI4S\\Metrics\\REFs\\2025-Tokens\\2025-Tokens\\2025-Nature-Learning the natural history of human disease with generative transformers&SI.pdf",
+ "source_sha256": "701616c7f45987853bf178867a9ced8fd47363f130c0e3c431fd0c33db389e8c",
+ "source_name": "2025-Nature-Learning the natural history of human disease with generative transformers&SI.pdf",
+ "n_pages": 48,
+ "generated_at": "2026-10-18T01:29:00",
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "n_figures": 13,
+ "n_tables": 2,
+ "n_pictures_detected": 35,
+ "n_uncaptioned_pictures": 22,
+ "figures": [
+  {
+   "figure_id": "fig_001",
+   "kind": "figure",
+   "label_form": "Fig. 1",
+   "figure_number": 1,
+   "page": 3,
+   "bbox": {
+    "l": 34.49,
+    "t": 746.88,
+    "r": 582.5,
+    "b": 343.38,
+    "w": 548.01,
+    "h": 403.5,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 69,
+    "y0": 88,
+    "x1": 1165,
+    "y1": 895,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_001.png",
+   "image_size_px": [
+    1096,
+    807
+   ],
+   "caption": "Fig. 1 | Delphi, a modified GPT architecture, models health trajectories. a, Schematic of health trajectories based on ICD-10 diagnoses, lifestyle and healthy padding tokens, each recorded at a distinct age. b, Training, validation and testing data derived from the UK Biobank (left) and Danish disease registries (right). c, The Delphi model architecture. The red elements indicate changes compared with the underlying GPT-2 model. 'N ×' denotes applying the transformer block sequentially N times. d, Example model input (prompt) and",
+   "caption_page": 3,
+   "caption_text": "Fig. 1 | Delphi, a modified GPT architecture, models health trajectories. a, Schematic of health trajectories based on ICD-10 diagnoses, lifestyle and healthy padding tokens, each recorded at a distinct age. b, Training, validation and testing data derived from the UK Biobank (left) and Danish disease registries (right). c, The Delphi model architecture. The red elements indicate changes compared with the underlying GPT-2 model. 'N ×' denotes applying the transformer block sequentially N times. d, Example model input (prompt) and",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 328.71,
+    "r": 293.76,
+    "b": 262.19,
+    "w": 254.07,
+    "h": 66.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p3_e28"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 14.67
+   },
+   "element_id": "p3_e27",
+   "reading_order": 27
+  },
+  {
+   "figure_id": "fig_002",
+   "kind": "figure",
+   "label_form": "Fig. 2",
+   "figure_number": 2,
+   "page": 4,
+   "bbox": {
+    "l": 34.05,
+    "t": 744.06,
+    "r": 560.96,
+    "b": 225.87,
+    "w": 526.91,
+    "h": 518.19,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 68,
+    "y0": 94,
+    "x1": 1122,
+    "y1": 1130,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_002.png",
+   "image_size_px": [
+    1054,
+    1036
+   ],
+   "caption": "Fig. 2 | Delphi-2M accurately models the rates of a wide range of diseases. a, The predicted rates for nine exemplary diagnoses and death (y axis) as a function of age (x axis). The points show predictions at each recorded input token. Colours separate biological sex; the darker colours indicate predictions immediately before the diagnosis in question. The purple and turquoise lines are disease rates observed for each yearly age bin in the training data. The solid black line connects consecutive predictions for one randomly selected case throughout age. b, Average age-sex-stratified AUC values (y axis) as a function of training occurrences (x axis). Shown are data for n = 906 diagnoses for male individuals and n = 957 diagnoses for female individuals for which a sufficient",
+   "caption_page": 4,
+   "caption_text": "Fig. 2 | Delphi-2M accurately models the rates of a wide range of diseases. a, The predicted rates for nine exemplary diagnoses and death (y axis) as a function of age (x axis). The points show predictions at each recorded input token. Colours separate biological sex; the darker colours indicate predictions immediately before the diagnosis in question. The purple and turquoise lines are disease rates observed for each yearly age bin in the training data. The solid black line connects consecutive predictions for one randomly selected case throughout age. b, Average age-sex-stratified AUC values (y axis) as a function of training occurrences (x axis). Shown are data for n = 906 diagnoses for male individuals and n = 957 diagnoses for female individuals for which a sufficient",
+   "caption_bbox": {
+    "l": 39.68,
+    "t": 217.41,
+    "r": 292.35,
+    "b": 120.89,
+    "w": 252.67,
+    "h": 96.52,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p4_e38"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 8.46
+   },
+   "element_id": "p4_e37",
+   "reading_order": 37
+  },
+  {
+   "figure_id": "fig_003",
+   "kind": "figure",
+   "label_form": "Fig. 3",
+   "figure_number": 3,
+   "page": 5,
+   "bbox": {
+    "l": 36.92,
+    "t": 743.62,
+    "r": 562.08,
+    "b": 486.35,
+    "w": 525.16,
+    "h": 257.27,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 74,
+    "y0": 94,
+    "x1": 1124,
+    "y1": 609,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_003.png",
+   "image_size_px": [
+    1050,
+    515
+   ],
+   "caption": "Fig. 3 | Generative modelling with Delphi-2M informs future outcomes. a, Schematic of the experiment design. Delphi-2M is used to simulate health trajectories using validation data (n = 63,622 individuals with disease records both before and after 60 years of age) observed until the age of 60. A single trajectory is simulated per individual. Subsequently, simulated trajectories are compared to the observed outcomes for the same person. b, Delphi-2Mmodelled disease rates at ages 70-75 years (x axis) compared with observed rates at the same ages (y axis). c, The fraction of correctly predicted diagnoses (y axis) per 1-year age bin as a function of the years after simulation started at",
+   "caption_page": 5,
+   "caption_text": "Fig. 3 | Generative modelling with Delphi-2M informs future outcomes. a, Schematic of the experiment design. Delphi-2M is used to simulate health trajectories using validation data (n = 63,622 individuals with disease records both before and after 60 years of age) observed until the age of 60. A single trajectory is simulated per individual. Subsequently, simulated trajectories are compared to the observed outcomes for the same person. b, Delphi-2Mmodelled disease rates at ages 70-75 years (x axis) compared with observed rates at the same ages (y axis). c, The fraction of correctly predicted diagnoses (y axis) per 1-year age bin as a function of the years after simulation started at",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 476.2,
+    "r": 290.7,
+    "b": 389.68,
+    "w": 251.02,
+    "h": 86.52,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p5_e43"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 10.15
+   },
+   "element_id": "p5_e42",
+   "reading_order": 42
+  },
+  {
+   "figure_id": "fig_004",
+   "kind": "figure",
+   "label_form": "Fig. 4",
+   "figure_number": 4,
+   "page": 6,
+   "bbox": {
+    "l": 34.01,
+    "t": 744.76,
+    "r": 561.6,
+    "b": 281.29,
+    "w": 527.59,
+    "h": 463.47,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 68,
+    "y0": 92,
+    "x1": 1123,
+    "y1": 1019,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_004.png",
+   "image_size_px": [
+    1055,
+    927
+   ],
+   "caption": "Fig. 4 | Explainable AI offers insights into disease progression. a, UMAP projection of token embeddings. Selected diseases are shown in the magnified areas. Colours define disease chapters. b, SHAP-explained token risk contributions for individual trajectories. Top, the risk of pancreatic cancer immediately before diagnosis at age 68.2 years, which was found to be 19× increased. Bottom, the SHAP estimates of contributions to estimated mortality at age 63.5 years, which was greatly increased, in large part due to the preceding",
+   "caption_page": 6,
+   "caption_text": "Fig. 4 | Explainable AI offers insights into disease progression. a, UMAP projection of token embeddings. Selected diseases are shown in the magnified areas. Colours define disease chapters. b, SHAP-explained token risk contributions for individual trajectories. Top, the risk of pancreatic cancer immediately before diagnosis at age 68.2 years, which was found to be 19× increased. Bottom, the SHAP estimates of contributions to estimated mortality at age 63.5 years, which was greatly increased, in large part due to the preceding",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 272.42,
+    "r": 294.61,
+    "b": 205.91,
+    "w": 254.92,
+    "h": 66.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p6_e54"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 8.87
+   },
+   "element_id": "p6_e53",
+   "reading_order": 53
+  },
+  {
+   "figure_id": "fig_005",
+   "kind": "figure",
+   "label_form": "Fig. 5",
+   "figure_number": 5,
+   "page": 7,
+   "bbox": {
+    "l": 34.81,
+    "t": 745.76,
+    "r": 565.56,
+    "b": 404.55,
+    "w": 530.75,
+    "h": 341.21,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 70,
+    "y0": 90,
+    "x1": 1131,
+    "y1": 773,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_005.png",
+   "image_size_px": [
+    1061,
+    683
+   ],
+   "caption": "Fig. 5 | Epidemiological biases in UK Biobank data reflected by Delphi-2M. a, Comparison between AUC values in the UKB longitudinal testing and the external testing using Danish data. b, Yearly mortality estimates by Delphi-2M (UK validation cohort), observed rates in the UK Biobank and Office for National Statistics national estimates across the entire British population. As only living individuals between 40 and 70 years of age (black line) were recruited to the UK Biobank, many deaths are missing compared with the Office for National Statistics population estimate (grey shaded area). c, UpSet plot of disease data availability in the UK Biobank validation cohort (n = 100,639) (top). Bottom, the data source distribution for records per disease token (token position sorted). d, Data source distribution for records per disease token (token position sorted). e, Hospital-record missingness bias (relative rate after first hospital token; y axis) as a function of token exclusivity to hospital records (x axis) for each relevant",
+   "caption_page": 7,
+   "caption_text": "Fig. 5 | Epidemiological biases in UK Biobank data reflected by Delphi-2M. a, Comparison between AUC values in the UKB longitudinal testing and the external testing using Danish data. b, Yearly mortality estimates by Delphi-2M (UK validation cohort), observed rates in the UK Biobank and Office for National Statistics national estimates across the entire British population. As only living individuals between 40 and 70 years of age (black line) were recruited to the UK Biobank, many deaths are missing compared with the Office for National Statistics population estimate (grey shaded area). c, UpSet plot of disease data availability in the UK Biobank validation cohort (n = 100,639) (top). Bottom, the data source distribution for records per disease token (token position sorted). d, Data source distribution for records per disease token (token position sorted). e, Hospital-record missingness bias (relative rate after first hospital token; y axis) as a function of token exclusivity to hospital records (x axis) for each relevant",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 395.0,
+    "r": 294.71,
+    "b": 268.47,
+    "w": 255.02,
+    "h": 126.53,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p7_e62",
+    "p7_e63"
+   ],
+   "caption_n_items": 2,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 9.55
+   },
+   "element_id": "p7_e61",
+   "reading_order": 61
+  },
+  {
+   "figure_id": "fig_006",
+   "kind": "extended_data_figure",
+   "label_form": "Extended Data Fig. 2",
+   "figure_number": 2,
+   "page": 16,
+   "bbox": {
+    "l": 32.3,
+    "t": 745.71,
+    "r": 546.89,
+    "b": 91.11,
+    "w": 514.59,
+    "h": 654.6,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 65,
+    "y0": 90,
+    "x1": 1094,
+    "y1": 1400,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_006.png",
+   "image_size_px": [
+    1029,
+    1310
+   ],
+   "caption": "Extended Data Fig. 2 | Parameter screen. a, Validation cross-entropy (rightmost axis) for models trained with different architectural hyperparameter values (other axes). b, Same data as a, showing validation loss (y-axis) against each model parameter (x-axis). The boxplots (n = 486 independently trained models within",
+   "caption_page": 16,
+   "caption_text": "Extended Data Fig. 2 | Parameter screen. a, Validation cross-entropy (rightmost axis) for models trained with different architectural hyperparameter values (other axes). b, Same data as a, showing validation loss (y-axis) against each model parameter (x-axis). The boxplots (n = 486 independently trained models within",
+   "caption_bbox": {
+    "l": 39.93,
+    "t": 80.95,
+    "r": 294.98,
+    "b": 44.45,
+    "w": 255.05,
+    "h": 36.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p16_e268"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 10.16
+   },
+   "element_id": "p16_e267",
+   "reading_order": 267
+  },
+  {
+   "figure_id": "fig_007",
+   "kind": "figure",
+   "label_form": "",
+   "figure_number": null,
+   "page": 17,
+   "bbox": {
+    "l": 34.29,
+    "t": 746.52,
+    "r": 560.62,
+    "b": 332.13,
+    "w": 526.33,
+    "h": 414.39,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 69,
+    "y0": 89,
+    "x1": 1121,
+    "y1": 917,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_007.png",
+   "image_size_px": [
+    1052,
+    828
+   ],
+   "caption": "rates are calculated from validation data for predictions falling into each bin (y-axis). b, Calibration plots on the Danish longitudinal testing data. Each line represents an ICD-10 disease evaluated for each decile of the Delphi rate and compared against the observed rate in the population.",
+   "caption_page": 17,
+   "caption_text": "rates are calculated from validation data for predictions falling into each bin (y-axis). b, Calibration plots on the Danish longitudinal testing data. Each line represents an ICD-10 disease evaluated for each decile of the Delphi rate and compared against the observed rate in the population.",
+   "caption_bbox": {
+    "l": 306.14,
+    "t": 323.95,
+    "r": 553.61,
+    "b": 287.44,
+    "w": 247.47,
+    "h": 36.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p17_e274"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 8.18
+   },
+   "element_id": "p17_e271",
+   "reading_order": 271
+  },
+  {
+   "figure_id": "fig_008",
+   "kind": "extended_data_figure",
+   "label_form": "Extended Data Fig. 4",
+   "figure_number": 4,
+   "page": 18,
+   "bbox": {
+    "l": 34.57,
+    "t": 741.38,
+    "r": 560.12,
+    "b": 140.66,
+    "w": 525.55,
+    "h": 600.73,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 69,
+    "y0": 99,
+    "x1": 1120,
+    "y1": 1300,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_008.png",
+   "image_size_px": [
+    1051,
+    1201
+   ],
+   "caption": "Extended Data Fig. 4 | Assessment of Delphi-2M in relation to other baseline",
+   "caption_page": 18,
+   "caption_text": "Extended Data Fig. 4 | Assessment of Delphi-2M in relation to other baseline",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 132.43,
+    "r": 293.58,
+    "b": 125.95,
+    "w": 253.9,
+    "h": 6.48,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p18_e276"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 8.23
+   },
+   "element_id": "p18_e275",
+   "reading_order": 275
+  },
+  {
+   "figure_id": "fig_009",
+   "kind": "extended_data_figure",
+   "label_form": "Extended Data Fig. 5",
+   "figure_number": 5,
+   "page": 19,
+   "bbox": {
+    "l": 33.17,
+    "t": 746.59,
+    "r": 561.34,
+    "b": 296.01,
+    "w": 528.17,
+    "h": 450.59,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 66,
+    "y0": 89,
+    "x1": 1123,
+    "y1": 990,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_009.png",
+   "image_size_px": [
+    1057,
+    901
+   ],
+   "caption": "Extended Data Fig. 5 | Integrating Delphi-2M predictions with other data types. Results of a linear regression model that uses Delphi logits and additional features to predict 5-year disease occurrence for selected diseases. Shown is the average validation AUC across 5-year age groups ranging from 40",
+   "caption_page": 19,
+   "caption_text": "Extended Data Fig. 5 | Integrating Delphi-2M predictions with other data types. Results of a linear regression model that uses Delphi logits and additional features to predict 5-year disease occurrence for selected diseases. Shown is the average validation AUC across 5-year age groups ranging from 40",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 285.67,
+    "r": 290.56,
+    "b": 249.17,
+    "w": 250.88,
+    "h": 36.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p19_e281"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 10.34
+   },
+   "element_id": "p19_e280",
+   "reading_order": 280
+  },
+  {
+   "figure_id": "fig_010",
+   "kind": "extended_data_figure",
+   "label_form": "Extended Data Fig. 6",
+   "figure_number": 6,
+   "page": 20,
+   "bbox": {
+    "l": 36.1,
+    "t": 745.08,
+    "r": 527.0,
+    "b": 85.12,
+    "w": 490.89,
+    "h": 659.96,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 72,
+    "y0": 92,
+    "x1": 1054,
+    "y1": 1411,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_010.png",
+   "image_size_px": [
+    982,
+    1319
+   ],
+   "caption": "Extended Data Fig. 6 | See next page for caption.",
+   "caption_page": 20,
+   "caption_text": "Extended Data Fig. 6 | See next page for caption.",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 80.95,
+    "r": 197.08,
+    "b": 74.46,
+    "w": 157.39,
+    "h": 6.5,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p20_e284"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 4.17
+   },
+   "element_id": "p20_e283",
+   "reading_order": 283
+  },
+  {
+   "figure_id": "fig_011",
+   "kind": "extended_data_figure",
+   "label_form": "Extended Data Fig. 7",
+   "figure_number": 7,
+   "page": 22,
+   "bbox": {
+    "l": 34.24,
+    "t": 744.74,
+    "r": 561.12,
+    "b": 492.36,
+    "w": 526.88,
+    "h": 252.38,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 68,
+    "y0": 92,
+    "x1": 1122,
+    "y1": 597,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_011.png",
+   "image_size_px": [
+    1054,
+    505
+   ],
+   "caption": "Extended Data Fig. 7 | Comparison of SHAP values and Cox proportional hazards coefficients. Shown are analyses for 10 selected diseases, as stated in the titles. SHAP values (x-axis) are estimated by averaging individual values from different trajectories. Cox proportional hazard coefficients (y-axis) are",
+   "caption_page": 22,
+   "caption_text": "Extended Data Fig. 7 | Comparison of SHAP values and Cox proportional hazards coefficients. Shown are analyses for 10 selected diseases, as stated in the titles. SHAP values (x-axis) are estimated by averaging individual values from different trajectories. Cox proportional hazard coefficients (y-axis) are",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 485.11,
+    "r": 292.09,
+    "b": 448.61,
+    "w": 252.41,
+    "h": 36.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p22_e289"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 7.25
+   },
+   "element_id": "p22_e288",
+   "reading_order": 288
+  },
+  {
+   "figure_id": "fig_012",
+   "kind": "extended_data_figure",
+   "label_form": "Extended Data Fig. 8",
+   "figure_number": 8,
+   "page": 23,
+   "bbox": {
+    "l": 34.38,
+    "t": 745.71,
+    "r": 560.16,
+    "b": 265.39,
+    "w": 525.78,
+    "h": 480.31,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 69,
+    "y0": 90,
+    "x1": 1120,
+    "y1": 1051,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_012.png",
+   "image_size_px": [
+    1051,
+    961
+   ],
+   "caption": "Extended Data Fig. 8 | Relation of token embedding space and SHAP effects. a. Disease embedding UMAP, coloured by the disease ICD-10 chapter. b. UMAP scatter plot, coloured by the SHAP disease rate change for the disease of interest, denoted by a cross marker. According to the SHAP analysis, diseases",
+   "caption_page": 23,
+   "caption_text": "Extended Data Fig. 8 | Relation of token embedding space and SHAP effects. a. Disease embedding UMAP, coloured by the disease ICD-10 chapter. b. UMAP scatter plot, coloured by the SHAP disease rate change for the disease of interest, denoted by a cross marker. According to the SHAP analysis, diseases",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 255.55,
+    "r": 294.63,
+    "b": 219.05,
+    "w": 254.94,
+    "h": 36.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p23_e293"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 9.84
+   },
+   "element_id": "p23_e292",
+   "reading_order": 292
+  },
+  {
+   "figure_id": "fig_013",
+   "kind": "extended_data_figure",
+   "label_form": "Extended Data Fig. 9",
+   "figure_number": 9,
+   "page": 24,
+   "bbox": {
+    "l": 32.06,
+    "t": 745.75,
+    "r": 527.82,
+    "b": 81.89,
+    "w": 495.76,
+    "h": 663.86,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 64,
+    "y0": 90,
+    "x1": 1056,
+    "y1": 1418,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_013.png",
+   "image_size_px": [
+    992,
+    1328
+   ],
+   "caption": "Extended Data Fig. 9 | See next page for caption.",
+   "caption_page": 24,
+   "caption_text": "Extended Data Fig. 9 | See next page for caption.",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 80.95,
+    "r": 197.08,
+    "b": 74.46,
+    "w": 157.39,
+    "h": 6.5,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p24_e296"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 0.94
+   },
+   "element_id": "p24_e295",
+   "reading_order": 295
+  }
+ ],
+ "tables": [
+  {
+   "table_id": "table_001",
+   "page": 28,
+   "bbox": {
+    "l": 26.27,
+    "t": 374.59,
+    "r": 559.74,
+    "b": 79.99,
+    "w": 533.47,
+    "h": 294.6,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p28_e304"
+  },
+  {
+   "table_id": "table_002",
+   "page": 47,
+   "bbox": {
+    "l": 71.28,
+    "t": 730.05,
+    "r": 522.5,
+    "b": 600.41,
+    "w": 451.22,
+    "h": 129.64,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p47_e355"
+  }
+ ]
+}

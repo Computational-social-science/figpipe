@@ -4,7 +4,7 @@
  "source_sha256": "e06d513b106559b604d14be7494adc96fba9a270124d396fb397361af0681ab1",
  "source_name": "2024-Nature-Scaling neural machine translation to 200 languages.pdf",
  "n_pages": 12,
- "generated_at": "2026-10-18T00:44:18",
+ "generated_at": "2026-10-18T01:25:55",
  "tool": {
   "name": "docling",
   "version": "2.140.0",
@@ -48,6 +48,7 @@
    ],
    "caption": "Fig. 1 | Cosine similarity scores between languages at different layers of the encoder-decoder architecture. a-d, The first (a) and last (b) encoder layers and then the first (c) and last (d) decoder layers. The similarity is measured with",
    "caption_page": 3,
+   "caption_text": "Fig. 1 | Cosine similarity scores between languages at different layers of the encoder-decoder architecture. a-d, The first (a) and last (b) encoder layers and then the first (c) and last (d) decoder layers. The similarity is measured with",
    "caption_bbox": {
     "l": 39.68,
     "t": 72.4,
@@ -98,6 +99,7 @@
    ],
    "caption": "Fig. 2 | Quality of FLORES-200. Quality assurance scores for the languages in FLORES-200. The minimum acceptable standard is 90%.",
    "caption_page": 4,
+   "caption_text": "Fig. 2 | Quality of FLORES-200. Quality assurance scores for the languages in FLORES-200. The minimum acceptable standard is 90%.",
    "caption_bbox": {
     "l": 39.69,
     "t": 52.4,
@@ -148,6 +150,7 @@
    ],
    "caption": "Fig. 3 | Correlations between aggregated human quality scores and automated metrics. a, The relationship between spBLEU and XSTS. b, The relationship between chrF++ and XSTS. c, The relationship between average sentence-level chrF++ and XSTS. All automated scores were computed only on",
    "caption_page": 5,
+   "caption_text": "Fig. 3 | Correlations between aggregated human quality scores and automated metrics. a, The relationship between spBLEU and XSTS. b, The relationship between chrF++ and XSTS. c, The relationship between average sentence-level chrF++ and XSTS. All automated scores were computed only on",
    "caption_bbox": {
     "l": 39.69,
     "t": 592.0,
@@ -198,6 +201,7 @@
    ],
    "caption": "Extended Data Fig. 1 | Architecture of the LASER3 teacher-student approach. See 21 for more details.",
    "caption_page": 11,
+   "caption_text": "Extended Data Fig. 1 | Architecture of the LASER3 teacher-student approach. See 21 for more details.",
    "caption_bbox": {
     "l": 39.69,
     "t": 522.07,

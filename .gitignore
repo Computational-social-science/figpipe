@@ -7,7 +7,17 @@ dist/
 knowledge/loop.log
 examples/*.pdf
 examples/*.png
+
+# Page renders are regenerable intermediates; the tracked value is the STRUCTURE
+# (layout.json / figures_meta.json / content.md) and the figure crops.
+corpus/extracted/*/pages/
+
 corpus/raw/
 corpus/pages_for_vlm/
 _qc_negative/
 qc_artifacts/
+corpus/qc_r3/
+corpus/_r3_*
+corpus/_vlm_*
+corpus/_insp*
+corpus/_qc_*

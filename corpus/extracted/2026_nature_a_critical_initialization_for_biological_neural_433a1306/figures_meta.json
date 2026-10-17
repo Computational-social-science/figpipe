@@ -1,0 +1,584 @@
+{
+ "paper_id": "2026_nature_a_critical_initialization_for_biological_neural_433a1306",
+ "source_pdf": "D:\\2026-AI4S\\2026-Nature-A critical initialization for biological neural networks.pdf",
+ "source_sha256": "dc1bdbb187cddf5f2661a8d02fa6b95ac29e8de7d6f779c140f5bcedc033e7ee",
+ "source_name": "2026-Nature-A critical initialization for biological neural networks.pdf",
+ "n_pages": 28,
+ "generated_at": "2026-10-18T01:29:53",
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "n_figures": 11,
+ "n_tables": 0,
+ "n_pictures_detected": 20,
+ "n_uncaptioned_pictures": 9,
+ "figures": [
+  {
+   "figure_id": "fig_001",
+   "kind": "figure",
+   "label_form": "",
+   "figure_number": null,
+   "page": 2,
+   "bbox": {
+    "l": 34.95,
+    "t": 745.59,
+    "r": 560.36,
+    "b": 532.77,
+    "w": 525.42,
+    "h": 212.82,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 70,
+    "y0": 91,
+    "x1": 1121,
+    "y1": 516,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_001.png",
+   "image_size_px": [
+    1051,
+    425
+   ],
+   "caption": "e, Eigenvalues of random symmetric matrix A follow the semicircle law 32 . f, Sorted eigenvalues of covariance matrix Σ follow a power-law. g, Same as a, but connectivity now is non-symmetric. Inset, Eigenvalues of random nonsymmetric matrix A follow the circular law 39 . h, Eigenvalues of covariance matrix Σ follow a power-law with a faster decay than the symmetric case.",
+   "caption_page": 2,
+   "caption_text": "e, Eigenvalues of random symmetric matrix A follow the semicircle law 32 . f, Sorted eigenvalues of covariance matrix Σ follow a power-law. g, Same as a, but connectivity now is non-symmetric. Inset, Eigenvalues of random nonsymmetric matrix A follow the circular law 39 . h, Eigenvalues of covariance matrix Σ follow a power-law with a faster decay than the symmetric case.",
+   "caption_bbox": {
+    "l": 306.14,
+    "t": 524.11,
+    "r": 549.87,
+    "b": 476.65,
+    "w": 243.73,
+    "h": 47.45,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p2_e19"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 8.66
+   },
+   "element_id": "p2_e17",
+   "reading_order": 17
+  },
+  {
+   "figure_id": "fig_002",
+   "kind": "figure",
+   "label_form": "Fig. 2",
+   "figure_number": 2,
+   "page": 3,
+   "bbox": {
+    "l": 33.67,
+    "t": 744.12,
+    "r": 558.78,
+    "b": 464.65,
+    "w": 525.12,
+    "h": 279.47,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 67,
+    "y0": 93,
+    "x1": 1118,
+    "y1": 652,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_002.png",
+   "image_size_px": [
+    1051,
+    559
+   ],
+   "caption": "Fig. 2 | Power-law correlation structure in neural recordings. a, Two-photon calcium imaging in mouse cortex, at 22 Hz. Maximum projection image overlaid with units found in example V1 recording (out of 18 cortical recordings). b, Same as a, from hippocampal CA1, at 22 Hz (out of eight CA1 recordings). c, Eight-probe Neuropixels recordings 60 . d, Rastermaps 38 of neurons from example V1 recording (left) and example CA1 recording (right). e, Eigenvalue spectrum from each recording. Shaded area bounded by power-law exponents from simulations with symmetric and non-symmetric matrices. f, Eigenvalue spectra across recordings with power-law fits. Data are presented as mean values ± s.d. Inset, power-law exponents compared with temporal shuffling. Two-sided",
+   "caption_page": 3,
+   "caption_text": "Fig. 2 | Power-law correlation structure in neural recordings. a, Two-photon calcium imaging in mouse cortex, at 22 Hz. Maximum projection image overlaid with units found in example V1 recording (out of 18 cortical recordings). b, Same as a, from hippocampal CA1, at 22 Hz (out of eight CA1 recordings). c, Eight-probe Neuropixels recordings 60 . d, Rastermaps 38 of neurons from example V1 recording (left) and example CA1 recording (right). e, Eigenvalue spectrum from each recording. Shaded area bounded by power-law exponents from simulations with symmetric and non-symmetric matrices. f, Eigenvalue spectra across recordings with power-law fits. Data are presented as mean values ± s.d. Inset, power-law exponents compared with temporal shuffling. Two-sided",
+   "caption_bbox": {
+    "l": 39.68,
+    "t": 453.08,
+    "r": 294.81,
+    "b": 356.57,
+    "w": 255.12,
+    "h": 96.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p3_e28"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 11.57
+   },
+   "element_id": "p3_e27",
+   "reading_order": 27
+  },
+  {
+   "figure_id": "fig_003",
+   "kind": "figure",
+   "label_form": "Fig. 3",
+   "figure_number": 3,
+   "page": 4,
+   "bbox": {
+    "l": 35.26,
+    "t": 744.45,
+    "r": 564.44,
+    "b": 455.78,
+    "w": 529.17,
+    "h": 288.67,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 71,
+    "y0": 93,
+    "x1": 1129,
+    "y1": 670,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_003.png",
+   "image_size_px": [
+    1058,
+    577
+   ],
+   "caption": "Fig. 3 | Dynamical properties of neural macroscopic dynamics. a, Estimated ACGs (noise-normalized) of the neural PCs, averaged across all recordings of the same type (n = 18 2p cortex; n = 3 ephys; n = 8 2p CA1). b, Average autocorrelation for each PC at a time lag of 5 bins (around 0.23 s) across all recordings, Pearson's r in log-log scale. c, Schematic of dynamic mode decomposition. d, Eigenvalues of the estimated DMD matrices at a time lag of around 0.23 s for simulations with symmetric (left) and non-symmetric (right) random matrices.",
+   "caption_page": 4,
+   "caption_text": "Fig. 3 | Dynamical properties of neural macroscopic dynamics. a, Estimated ACGs (noise-normalized) of the neural PCs, averaged across all recordings of the same type (n = 18 2p cortex; n = 3 ephys; n = 8 2p CA1). b, Average autocorrelation for each PC at a time lag of 5 bins (around 0.23 s) across all recordings, Pearson's r in log-log scale. c, Schematic of dynamic mode decomposition. d, Eigenvalues of the estimated DMD matrices at a time lag of around 0.23 s for simulations with symmetric (left) and non-symmetric (right) random matrices.",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 447.04,
+    "r": 294.71,
+    "b": 380.53,
+    "w": 255.02,
+    "h": 66.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p4_e36"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 8.74
+   },
+   "element_id": "p4_e35",
+   "reading_order": 35
+  },
+  {
+   "figure_id": "fig_004",
+   "kind": "figure",
+   "label_form": "Fig. 4",
+   "figure_number": 4,
+   "page": 5,
+   "bbox": {
+    "l": 33.49,
+    "t": 744.5,
+    "r": 560.98,
+    "b": 317.59,
+    "w": 527.49,
+    "h": 426.91,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 67,
+    "y0": 93,
+    "x1": 1122,
+    "y1": 947,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_004.png",
+   "image_size_px": [
+    1055,
+    854
+   ],
+   "caption": "Fig. 4 | Persistence of global activity modes under biophysical connectivity patterns. a-c, Top, Connectivity matrices with symmetric sparse (a), clustered (b) and localized (c) weights. Inhibition is set in proportion to the probability of connection for each weight. Bottom, variance decay of PCs for simulations with different levels of sparsity (a), clustering (b) and localization (c). Right, Power-law exponents for these conditions. Data are presented as mean values ± s.d. (n = 10 simulations per condition). Dashed line, the 0.69 value from Fig. 1. d, Scatterplot of pairwise correlations versus distance in either a simulation with local connectivity (left) or mesoscopic, single-unit recordings from ref. 43 (right). Solid lines, mean for each simulation/recording; error bars, s.d. across neuron",
+   "caption_page": 5,
+   "caption_text": "Fig. 4 | Persistence of global activity modes under biophysical connectivity patterns. a-c, Top, Connectivity matrices with symmetric sparse (a), clustered (b) and localized (c) weights. Inhibition is set in proportion to the probability of connection for each weight. Bottom, variance decay of PCs for simulations with different levels of sparsity (a), clustering (b) and localization (c). Right, Power-law exponents for these conditions. Data are presented as mean values ± s.d. (n = 10 simulations per condition). Dashed line, the 0.69 value from Fig. 1. d, Scatterplot of pairwise correlations versus distance in either a simulation with local connectivity (left) or mesoscopic, single-unit recordings from ref. 43 (right). Solid lines, mean for each simulation/recording; error bars, s.d. across neuron",
+   "caption_bbox": {
+    "l": 39.67,
+    "t": 309.71,
+    "r": 294.8,
+    "b": 213.19,
+    "w": 255.13,
+    "h": 96.52,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p5_e46"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 7.88
+   },
+   "element_id": "p5_e45",
+   "reading_order": 45
+  },
+  {
+   "figure_id": "fig_005",
+   "kind": "figure",
+   "label_form": "Fig. 5",
+   "figure_number": 5,
+   "page": 6,
+   "bbox": {
+    "l": 36.05,
+    "t": 743.9,
+    "r": 560.45,
+    "b": 476.75,
+    "w": 524.4,
+    "h": 267.16,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 72,
+    "y0": 94,
+    "x1": 1121,
+    "y1": 628,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_005.png",
+   "image_size_px": [
+    1049,
+    534
+   ],
+   "caption": "Fig. 5 | Working memory with symmetric linear dynamics. a, Model of persistent activity with fixed inputs, fixed linear dynamics (as in Fig. 1) coupled with a trainable linear readout. b, Example simulated neural activity with three distinct inputs and symmetric dynamics. c, Same as b with non-symmetric dynamics. d, Benchmarking working memory retrieval by training and testing the decoder on two inputs, with different noise instantiations for train and test trials. Top, schematic of benchmark; bottom left, retrieval accuracy at a fixed",
+   "caption_page": 6,
+   "caption_text": "Fig. 5 | Working memory with symmetric linear dynamics. a, Model of persistent activity with fixed inputs, fixed linear dynamics (as in Fig. 1) coupled with a trainable linear readout. b, Example simulated neural activity with three distinct inputs and symmetric dynamics. c, Same as b with non-symmetric dynamics. d, Benchmarking working memory retrieval by training and testing the decoder on two inputs, with different noise instantiations for train and test trials. Top, schematic of benchmark; bottom left, retrieval accuracy at a fixed",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 467.77,
+    "r": 292.86,
+    "b": 401.25,
+    "w": 253.17,
+    "h": 66.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p6_e52"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 8.98
+   },
+   "element_id": "p6_e51",
+   "reading_order": 51
+  },
+  {
+   "figure_id": "fig_006",
+   "kind": "extended_data_figure",
+   "label_form": "Extended Data Fig. 1",
+   "figure_number": 1,
+   "page": 13,
+   "bbox": {
+    "l": 36.57,
+    "t": 744.59,
+    "r": 559.94,
+    "b": 508.23,
+    "w": 523.36,
+    "h": 236.36,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 73,
+    "y0": 93,
+    "x1": 1120,
+    "y1": 565,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_006.png",
+   "image_size_px": [
+    1047,
+    472
+   ],
+   "caption": "Extended Data Fig. 1 | Simulations of dynamics from connectivity matrices with different probability distributions. a-d Top: connectivity matrices, in which independent connections are drawn from various distribution: Bernoulli, Gaussian, truncated Gaussian and exponential. In all cases, the mean",
+   "caption_page": 13,
+   "caption_text": "Extended Data Fig. 1 | Simulations of dynamics from connectivity matrices with different probability distributions. a-d Top: connectivity matrices, in which independent connections are drawn from various distribution: Bernoulli, Gaussian, truncated Gaussian and exponential. In all cases, the mean",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 500.88,
+    "r": 293.24,
+    "b": 464.38,
+    "w": 253.55,
+    "h": 36.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p13_e272"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 7.35
+   },
+   "element_id": "p13_e271",
+   "reading_order": 271
+  },
+  {
+   "figure_id": "fig_007",
+   "kind": "extended_data_figure",
+   "label_form": "Extended Data Fig. 3",
+   "figure_number": 3,
+   "page": 15,
+   "bbox": {
+    "l": 61.51,
+    "t": 744.42,
+    "r": 535.12,
+    "b": 583.14,
+    "w": 473.61,
+    "h": 161.28,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 123,
+    "y0": 93,
+    "x1": 1070,
+    "y1": 415,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_007.png",
+   "image_size_px": [
+    947,
+    322
+   ],
+   "caption": "Extended Data Fig. 3 | Effect of bin size on power-law exponent in simulations. a, Distribution of variance across principal components for simulations binned at different bin sizes (starting at 6 ms), using random symmetric, critically-normalized connection matrices, averaged over 10",
+   "caption_page": 15,
+   "caption_text": "Extended Data Fig. 3 | Effect of bin size on power-law exponent in simulations. a, Distribution of variance across principal components for simulations binned at different bin sizes (starting at 6 ms), using random symmetric, critically-normalized connection matrices, averaged over 10",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 574.61,
+    "r": 275.06,
+    "b": 538.11,
+    "w": 235.37,
+    "h": 36.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p15_e277"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 8.53
+   },
+   "element_id": "p15_e276",
+   "reading_order": 276
+  },
+  {
+   "figure_id": "fig_008",
+   "kind": "extended_data_figure",
+   "label_form": "Extended Data Fig. 4",
+   "figure_number": 4,
+   "page": 16,
+   "bbox": {
+    "l": 35.69,
+    "t": 745.92,
+    "r": 562.71,
+    "b": 505.34,
+    "w": 527.02,
+    "h": 240.58,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 71,
+    "y0": 90,
+    "x1": 1125,
+    "y1": 571,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_008.png",
+   "image_size_px": [
+    1054,
+    481
+   ],
+   "caption": "Extended Data Fig. 4 | Effect of noise, recording duration and number of neurons on eigenvalue estimation from simulations and data. a, Estimation of eigenvalue spectra in simulations with realistic, challenging noise conditions with Poisson single-neuron noise, followed by convolution with a GCaMP-like kernel, added shot noise, and deconvolution (n=10 simulations each). Multiple estimation methods shown: SVCA, SVCA2 or direct SVD. b, Estimation of the",
+   "caption_page": 16,
+   "caption_text": "Extended Data Fig. 4 | Effect of noise, recording duration and number of neurons on eigenvalue estimation from simulations and data. a, Estimation of eigenvalue spectra in simulations with realistic, challenging noise conditions with Poisson single-neuron noise, followed by convolution with a GCaMP-like kernel, added shot noise, and deconvolution (n=10 simulations each). Multiple estimation methods shown: SVCA, SVCA2 or direct SVD. b, Estimation of the",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 497.21,
+    "r": 295.57,
+    "b": 440.7,
+    "w": 255.89,
+    "h": 56.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p16_e281"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 8.13
+   },
+   "element_id": "p16_e280",
+   "reading_order": 280
+  },
+  {
+   "figure_id": "fig_009",
+   "kind": "extended_data_figure",
+   "label_form": "Extended Data Fig. 5",
+   "figure_number": 5,
+   "page": 17,
+   "bbox": {
+    "l": 36.55,
+    "t": 741.05,
+    "r": 560.22,
+    "b": 175.33,
+    "w": 523.67,
+    "h": 565.73,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 73,
+    "y0": 100,
+    "x1": 1120,
+    "y1": 1231,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_009.png",
+   "image_size_px": [
+    1047,
+    1131
+   ],
+   "caption": "Extended Data Fig. 5 | Effect of area splitting and binning on electrophysiological recordings. a, Rastermap of brainwide ephys recording, binned at 7Hz for plotting. b, Power-law exponents fit to eigenvalues estimated using SVCA2, as a function of the number of neurons after splitting into brain",
+   "caption_page": 17,
+   "caption_text": "Extended Data Fig. 5 | Effect of area splitting and binning on electrophysiological recordings. a, Rastermap of brainwide ephys recording, binned at 7Hz for plotting. b, Power-law exponents fit to eigenvalues estimated using SVCA2, as a function of the number of neurons after splitting into brain",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 166.58,
+    "r": 294.81,
+    "b": 130.07,
+    "w": 255.13,
+    "h": 36.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p17_e284"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 8.75
+   },
+   "element_id": "p17_e283",
+   "reading_order": 283
+  },
+  {
+   "figure_id": "fig_010",
+   "kind": "extended_data_figure",
+   "label_form": "Extended Data Fig. 6",
+   "figure_number": 6,
+   "page": 18,
+   "bbox": {
+    "l": 35.92,
+    "t": 746.69,
+    "r": 583.81,
+    "b": 371.55,
+    "w": 547.89,
+    "h": 375.14,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 72,
+    "y0": 88,
+    "x1": 1168,
+    "y1": 839,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_010.png",
+   "image_size_px": [
+    1096,
+    751
+   ],
+   "caption": "Extended Data Fig. 6 | Eigenvalue estimation with different methods and on different recordings. a, Direct, SVCA and SVCA2 estimation for the 2p cortex data. b, Same as a for the 2p CA1 data. c, Same as b for the brainwide electrophysiological data. d, Power-law exponents estimated from linear fits to abc. e, Power-law exponents for cortical 2p data compared to different binning",
+   "caption_page": 18,
+   "caption_text": "Extended Data Fig. 6 | Eigenvalue estimation with different methods and on different recordings. a, Direct, SVCA and SVCA2 estimation for the 2p cortex data. b, Same as a for the 2p CA1 data. c, Same as b for the brainwide electrophysiological data. d, Power-law exponents estimated from linear fits to abc. e, Power-law exponents for cortical 2p data compared to different binning",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 364.0,
+    "r": 294.33,
+    "b": 317.49,
+    "w": 254.65,
+    "h": 46.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p18_e288"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 7.55
+   },
+   "element_id": "p18_e287",
+   "reading_order": 287
+  },
+  {
+   "figure_id": "fig_011",
+   "kind": "extended_data_figure",
+   "label_form": "Extended Data Fig. 7",
+   "figure_number": 7,
+   "page": 19,
+   "bbox": {
+    "l": 33.24,
+    "t": 744.91,
+    "r": 561.44,
+    "b": 637.57,
+    "w": 528.2,
+    "h": 107.34,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 66,
+    "y0": 92,
+    "x1": 1123,
+    "y1": 307,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_011.png",
+   "image_size_px": [
+    1057,
+    215
+   ],
+   "caption": "Extended Data Fig. 7 | Dynamical properties in running vs not running states. a, For mice that spent at least 13% of the time running and at most 75%, data was divided into subsets based on running and eigenvalue spectra were estimated. b, Summary of power-law exponent changes paired across mice. c, Eigenvalues of DMD matrix for example mouse in running and not running",
+   "caption_page": 19,
+   "caption_text": "Extended Data Fig. 7 | Dynamical properties in running vs not running states. a, For mice that spent at least 13% of the time running and at most 75%, data was divided into subsets based on running and eigenvalue spectra were estimated. b, Summary of power-law exponent changes paired across mice. c, Eigenvalues of DMD matrix for example mouse in running and not running",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 628.62,
+    "r": 287.17,
+    "b": 582.11,
+    "w": 247.49,
+    "h": 46.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p19_e291"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 8.95
+   },
+   "element_id": "p19_e290",
+   "reading_order": 290
+  }
+ ],
+ "tables": []
+}

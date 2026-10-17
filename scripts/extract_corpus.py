@@ -467,9 +467,16 @@ def extract_paper(rec: dict, out_root: str, dpi: int = 200,
             "image_size_px": img_size,
             "caption": block["text"],
             "caption_page": el["page"],
-            "caption_bbox": block["bbox"],
-            "caption_element_ids": [i["element_id"] for i in block["items"]],
-            "caption_n_items": len(block["items"]),
+            # THE CAPTION TEXT WAS NEVER WRITTEN. The block was paired and its bbox and item
+            # ids were recorded -- but not its text. Measured consequence: all 51 figures in
+            # the first corpus carried caption_text = None, while the TABLE records correctly
+            # carried "caption". The caption is the whole point of learning layout: it names
+            # the panels and says what each shows. Without it the corpus teaches pixels,
+            # not design.
+            "caption_text": block["text"] if block else None,
+            "caption_bbox": block["bbox"] if block else None,
+            "caption_element_ids": [i["element_id"] for i in block["items"]] if block else [],
+            "caption_n_items": len(block["items"]) if block else 0,
             "pairing": {"rule": "nearest_caption_block_below",
                         "gap_pt": None if gap is None else round(gap, 2)},
             "element_id": el["element_id"],

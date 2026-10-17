@@ -1,0 +1,367 @@
+{
+ "paper_id": "2024_nature_scaling_neural_machine_translation_to_200_langua_6d110a48",
+ "source_pdf": "D:\\2026-AI4S\\2024-Nature-Scaling neural machine translation to 200 languages_SI.pdf",
+ "source_sha256": "3c8d7cb000bdd80d4386fb8e096de51ec3ae9faa69e8a376195d745083ffb904",
+ "source_name": "2024-Nature-Scaling neural machine translation to 200 languages_SI.pdf",
+ "n_pages": 25,
+ "generated_at": "2026-10-18T01:26:40",
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "n_figures": 5,
+ "n_tables": 4,
+ "n_pictures_detected": 5,
+ "n_uncaptioned_pictures": 0,
+ "figures": [
+  {
+   "figure_id": "fig_001",
+   "kind": "figure",
+   "label_form": "Fig. 6",
+   "figure_number": 6,
+   "page": 9,
+   "bbox": {
+    "l": 101.53,
+    "t": 767.01,
+    "r": 470.72,
+    "b": 604.37,
+    "w": 369.2,
+    "h": 162.64,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 203,
+    "y0": 150,
+    "x1": 941,
+    "y1": 475,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_001.png",
+   "image_size_px": [
+    738,
+    325
+   ],
+   "caption": "Fig. 6: Comparing model performance when trained on data from various sources. We observe significant improvements in adding mined and back-translated data for all types of language pairs and resource levels.",
+   "caption_page": 9,
+   "caption_text": "Fig. 6: Comparing model performance when trained on data from various sources. We observe significant improvements in adding mined and back-translated data for all types of language pairs and resource levels.",
+   "caption_bbox": {
+    "l": 100.07,
+    "t": 595.9,
+    "r": 470.68,
+    "b": 559.36,
+    "w": 370.61,
+    "h": 36.53,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p9_e52"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 8.47
+   },
+   "element_id": "p9_e51",
+   "reading_order": 51
+  },
+  {
+   "figure_id": "fig_002",
+   "kind": "figure",
+   "label_form": "Fig. 7",
+   "figure_number": 7,
+   "page": 10,
+   "bbox": {
+    "l": 127.0,
+    "t": 769.5,
+    "r": 495.68,
+    "b": 615.46,
+    "w": 368.68,
+    "h": 154.04,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 254,
+    "y0": 145,
+    "x1": 991,
+    "y1": 453,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_002.png",
+   "image_size_px": [
+    737,
+    308
+   ],
+   "caption": "Fig. 7: Distribution of Amount of Training Sentence Pairs across 1220 language pairs in our dataset. We observe that the majority of pairs have fewer than 1M sentences and are low-resource.",
+   "caption_page": 10,
+   "caption_text": "Fig. 7: Distribution of Amount of Training Sentence Pairs across 1220 language pairs in our dataset. We observe that the majority of pairs have fewer than 1M sentences and are low-resource.",
+   "caption_bbox": {
+    "l": 124.59,
+    "t": 593.86,
+    "r": 495.21,
+    "b": 557.33,
+    "w": 370.61,
+    "h": 36.53,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p10_e61"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 21.6
+   },
+   "element_id": "p10_e59",
+   "reading_order": 59
+  },
+  {
+   "figure_id": "fig_003",
+   "kind": "figure",
+   "label_form": "Fig. 8",
+   "figure_number": 8,
+   "page": 12,
+   "bbox": {
+    "l": 195.43,
+    "t": 766.45,
+    "r": 417.3,
+    "b": 516.75,
+    "w": 221.87,
+    "h": 249.7,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 391,
+    "y0": 151,
+    "x1": 835,
+    "y1": 650,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_003.png",
+   "image_size_px": [
+    444,
+    499
+   ],
+   "caption": "Fig. 8: Illustration of a Transformer encoder with MoE layers inserted at a 1:fMoE frequency. Each MoE layer has E experts and a gating network responsible for dispatching tokens.",
+   "caption_page": 12,
+   "caption_text": "Fig. 8: Illustration of a Transformer encoder with MoE layers inserted at a 1:fMoE frequency. Each MoE layer has E experts and a gating network responsible for dispatching tokens.",
+   "caption_bbox": {
+    "l": 124.59,
+    "t": 508.01,
+    "r": 495.21,
+    "b": 471.48,
+    "w": 370.61,
+    "h": 36.53,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p12_e77"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 8.74
+   },
+   "element_id": "p12_e76",
+   "reading_order": 76
+  },
+  {
+   "figure_id": "fig_004",
+   "kind": "figure",
+   "label_form": "Fig. 9",
+   "figure_number": 9,
+   "page": 14,
+   "bbox": {
+    "l": 144.58,
+    "t": 766.56,
+    "r": 478.11,
+    "b": 664.42,
+    "w": 333.53,
+    "h": 102.14,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 289,
+    "y0": 151,
+    "x1": 956,
+    "y1": 355,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_004.png",
+   "image_size_px": [
+    667,
+    204
+   ],
+   "caption": "Fig. 9: Comparison of NLLB-200 with and without Finetuning on the 12 English-centric tasks of NLLB-MD. NLLB-200+FN+LB and +FN refer to finetuning with and without load balancing (LB). We report accuracy in terms of chrF++ on the validation set.",
+   "caption_page": 14,
+   "caption_text": "Fig. 9: Comparison of NLLB-200 with and without Finetuning on the 12 English-centric tasks of NLLB-MD. NLLB-200+FN+LB and +FN refer to finetuning with and without load balancing (LB). We report accuracy in terms of chrF++ on the validation set.",
+   "caption_bbox": {
+    "l": 124.59,
+    "t": 657.76,
+    "r": 495.21,
+    "b": 623.62,
+    "w": 370.61,
+    "h": 34.14,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p14_e92"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 6.66
+   },
+   "element_id": "p14_e91",
+   "reading_order": 91
+  },
+  {
+   "figure_id": "fig_005",
+   "kind": "figure",
+   "label_form": "Fig. 10",
+   "figure_number": 10,
+   "page": 14,
+   "bbox": {
+    "l": 125.52,
+    "t": 598.15,
+    "r": 496.2,
+    "b": 449.75,
+    "w": 370.68,
+    "h": 148.4,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 251,
+    "y0": 487,
+    "x1": 992,
+    "y1": 784,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_005.png",
+   "image_size_px": [
+    741,
+    297
+   ],
+   "caption": "Fig. 10: Performance on NLLB-MD Test Sets (12 tasks in 4 domains) of NLLB-200 and the single-task finetuned models NLLB-200+FN (without load balancing).",
+   "caption_page": 14,
+   "caption_text": "Fig. 10: Performance on NLLB-MD Test Sets (12 tasks in 4 domains) of NLLB-200 and the single-task finetuned models NLLB-200+FN (without load balancing).",
+   "caption_bbox": {
+    "l": 124.59,
+    "t": 444.96,
+    "r": 495.2,
+    "b": 421.78,
+    "w": 370.61,
+    "h": 23.18,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p14_e94"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 4.79
+   },
+   "element_id": "p14_e93",
+   "reading_order": 93
+  }
+ ],
+ "tables": [
+  {
+   "table_id": "table_001",
+   "page": 3,
+   "bbox": {
+    "l": 13.22,
+    "t": 788.88,
+    "r": 581.26,
+    "b": 31.25,
+    "w": 568.05,
+    "h": 757.63,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p3_e14"
+  },
+  {
+   "table_id": "table_002",
+   "page": 4,
+   "bbox": {
+    "l": 15.21,
+    "t": 807.98,
+    "r": 580.49,
+    "b": 34.48,
+    "w": 565.28,
+    "h": 773.5,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p4_e15"
+  },
+  {
+   "table_id": "table_003",
+   "page": 5,
+   "bbox": {
+    "l": 14.08,
+    "t": 631.73,
+    "r": 581.5,
+    "b": 262.81,
+    "w": 567.42,
+    "h": 368.92,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p5_e16"
+  },
+  {
+   "table_id": "table_004",
+   "page": 11,
+   "bbox": {
+    "l": 99.18,
+    "t": 769.18,
+    "r": 470.89,
+    "b": 525.14,
+    "w": 371.71,
+    "h": 244.04,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p11_e69"
+  }
+ ]
+}

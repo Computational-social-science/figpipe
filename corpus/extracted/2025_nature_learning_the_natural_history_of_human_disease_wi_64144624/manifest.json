@@ -1,0 +1,34 @@
+{
+ "paper_id": "2025_nature_learning_the_natural_history_of_human_disease_wi_64144624",
+ "source_name": "2025-Nature-Learning the natural history of human disease with generative transformers&SI.pdf",
+ "source_pdf": "D:\\2026-AI4S\\Metrics\\REFs\\2025-Tokens\\2025-Tokens\\2025-Nature-Learning the natural history of human disease with generative transformers&SI.pdf",
+ "source_sha256": "701616c7f45987853bf178867a9ced8fd47363f130c0e3c431fd0c33db389e8c",
+ "source_md5": "641446243100c138e9acbc6ef08d7fba",
+ "journal_doi": "10.1038/s41586-025-09529-3",
+ "n_pages": 48,
+ "n_elements": 369,
+ "n_figures": 13,
+ "n_tables": 2,
+ "n_pictures_detected": 35,
+ "n_uncaptioned_pictures": 22,
+ "n_caption_blocks": 20,
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "elapsed_s": 24.9,
+ "artefacts": {
+  "pages_dir": "pages/",
+  "n_page_pngs": 48,
+  "figures_dir": "figures/",
+  "layout": "layout.json",
+  "content": "content.md",
+  "figures_meta": "figures_meta.json"
+ },
+ "status": "ok",
+ "generated_at": "2026-10-18T01:29:00"
+}

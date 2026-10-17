@@ -1,0 +1,988 @@
+{
+ "paper_id": "2024_nature_scaling_neural_machine_translation_to_200_langua_7209237b",
+ "source_pdf": "D:\\2026-AI4S\\2024-Nature-Scaling neural machine translation to 200 languages_NLLB-200.pdf",
+ "source_sha256": "a0dd5bf3c1f423fa5a9049653b3c801ad3b94c7ca154901810d721cc524853db",
+ "source_name": "2024-Nature-Scaling neural machine translation to 200 languages_NLLB-200.pdf",
+ "n_pages": 62,
+ "generated_at": "2026-10-18T01:26:24",
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "n_figures": 14,
+ "n_tables": 11,
+ "n_pictures_detected": 17,
+ "n_uncaptioned_pictures": 3,
+ "figures": [
+  {
+   "figure_id": "fig_001",
+   "kind": "figure",
+   "label_form": "Fig. 1",
+   "figure_number": 1,
+   "page": 3,
+   "bbox": {
+    "l": 44.65,
+    "t": 207.68,
+    "r": 554.91,
+    "b": 80.24,
+    "w": 510.26,
+    "h": 127.45,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 89,
+    "y0": 1166,
+    "x1": 1110,
+    "y1": 1421,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_001.png",
+   "image_size_px": [
+    1021,
+    255
+   ],
+   "caption": "Fig. 1 | Cosine similarity scores between languages at different layers of the encoder-decoder architecture. a-d, The first (a) and last (b) encoder layers and then the first (c) and last (d) decoder layers. The similarity is measured with",
+   "caption_page": 3,
+   "caption_text": "Fig. 1 | Cosine similarity scores between languages at different layers of the encoder-decoder architecture. a-d, The first (a) and last (b) encoder layers and then the first (c) and last (d) decoder layers. The similarity is measured with",
+   "caption_bbox": {
+    "l": 39.68,
+    "t": 72.4,
+    "r": 293.79,
+    "b": 45.9,
+    "w": 254.12,
+    "h": 26.5,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p3_e47"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 7.84
+   },
+   "element_id": "p3_e46",
+   "reading_order": 46
+  },
+  {
+   "figure_id": "fig_002",
+   "kind": "figure",
+   "label_form": "Fig. 2",
+   "figure_number": 2,
+   "page": 4,
+   "bbox": {
+    "l": 131.08,
+    "t": 166.3,
+    "r": 468.93,
+    "b": 58.98,
+    "w": 337.86,
+    "h": 107.32,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 262,
+    "y0": 1249,
+    "x1": 938,
+    "y1": 1464,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_002.png",
+   "image_size_px": [
+    676,
+    215
+   ],
+   "caption": "Fig. 2 | Quality of FLORES-200. Quality assurance scores for the languages in FLORES-200. The minimum acceptable standard is 90%.",
+   "caption_page": 4,
+   "caption_text": "Fig. 2 | Quality of FLORES-200. Quality assurance scores for the languages in FLORES-200. The minimum acceptable standard is 90%.",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 52.4,
+    "r": 469.73,
+    "b": 45.91,
+    "w": 430.05,
+    "h": 6.5,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p4_e66"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 6.58
+   },
+   "element_id": "p4_e65",
+   "reading_order": 65
+  },
+  {
+   "figure_id": "fig_003",
+   "kind": "figure",
+   "label_form": "Fig. 3",
+   "figure_number": 3,
+   "page": 5,
+   "bbox": {
+    "l": 44.54,
+    "t": 744.57,
+    "r": 554.69,
+    "b": 601.16,
+    "w": 510.16,
+    "h": 143.41,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 89,
+    "y0": 93,
+    "x1": 1109,
+    "y1": 379,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_003.png",
+   "image_size_px": [
+    1020,
+    286
+   ],
+   "caption": "Fig. 3 | Correlations between aggregated human quality scores and automated metrics. a, The relationship between spBLEU and XSTS. b, The relationship between chrF++ and XSTS. c, The relationship between average sentence-level chrF++ and XSTS. All automated scores were computed only on",
+   "caption_page": 5,
+   "caption_text": "Fig. 3 | Correlations between aggregated human quality scores and automated metrics. a, The relationship between spBLEU and XSTS. b, The relationship between chrF++ and XSTS. c, The relationship between average sentence-level chrF++ and XSTS. All automated scores were computed only on",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 592.0,
+    "r": 290.98,
+    "b": 555.49,
+    "w": 251.29,
+    "h": 36.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p5_e68"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 9.16
+   },
+   "element_id": "p5_e67",
+   "reading_order": 67
+  },
+  {
+   "figure_id": "fig_004",
+   "kind": "extended_data_figure",
+   "label_form": "Extended Data Fig. 1",
+   "figure_number": 1,
+   "page": 11,
+   "bbox": {
+    "l": 32.17,
+    "t": 744.35,
+    "r": 556.65,
+    "b": 528.14,
+    "w": 524.48,
+    "h": 216.21,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 64,
+    "y0": 93,
+    "x1": 1113,
+    "y1": 525,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_004.png",
+   "image_size_px": [
+    1049,
+    432
+   ],
+   "caption": "Extended Data Fig. 1 | Architecture of the LASER3 teacher-student approach. See 21 for more details.",
+   "caption_page": 11,
+   "caption_text": "Extended Data Fig. 1 | Architecture of the LASER3 teacher-student approach. See 21 for more details.",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 522.07,
+    "r": 371.44,
+    "b": 514.62,
+    "w": 331.75,
+    "h": 7.45,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p11_e227"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 6.07
+   },
+   "element_id": "p11_e226",
+   "reading_order": 226
+  },
+  {
+   "figure_id": "fig_005",
+   "kind": "figure",
+   "label_form": "Fig. 6",
+   "figure_number": 6,
+   "page": 21,
+   "bbox": {
+    "l": 101.53,
+    "t": 767.01,
+    "r": 470.72,
+    "b": 604.37,
+    "w": 369.2,
+    "h": 162.64,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 203,
+    "y0": 150,
+    "x1": 941,
+    "y1": 475,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_005.png",
+   "image_size_px": [
+    738,
+    325
+   ],
+   "caption": "Fig. 6: Comparing model performance when trained on data from various sources. We observe significant improvements in adding mined and back-translated data for all types of language pairs and resource levels.",
+   "caption_page": 21,
+   "caption_text": "Fig. 6: Comparing model performance when trained on data from various sources. We observe significant improvements in adding mined and back-translated data for all types of language pairs and resource levels.",
+   "caption_bbox": {
+    "l": 100.07,
+    "t": 595.9,
+    "r": 470.68,
+    "b": 559.36,
+    "w": 370.61,
+    "h": 36.53,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p21_e283"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 8.47
+   },
+   "element_id": "p21_e282",
+   "reading_order": 282
+  },
+  {
+   "figure_id": "fig_006",
+   "kind": "figure",
+   "label_form": "Fig. 7",
+   "figure_number": 7,
+   "page": 22,
+   "bbox": {
+    "l": 127.0,
+    "t": 769.5,
+    "r": 495.68,
+    "b": 615.46,
+    "w": 368.68,
+    "h": 154.04,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 254,
+    "y0": 145,
+    "x1": 991,
+    "y1": 453,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_006.png",
+   "image_size_px": [
+    737,
+    308
+   ],
+   "caption": "Fig. 7: Distribution of Amount of Training Sentence Pairs across 1220 language pairs in our dataset. We observe that the majority of pairs have fewer than 1M sentences and are low-resource.",
+   "caption_page": 22,
+   "caption_text": "Fig. 7: Distribution of Amount of Training Sentence Pairs across 1220 language pairs in our dataset. We observe that the majority of pairs have fewer than 1M sentences and are low-resource.",
+   "caption_bbox": {
+    "l": 124.59,
+    "t": 593.86,
+    "r": 495.21,
+    "b": 557.33,
+    "w": 370.61,
+    "h": 36.53,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p22_e292"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 21.6
+   },
+   "element_id": "p22_e290",
+   "reading_order": 290
+  },
+  {
+   "figure_id": "fig_007",
+   "kind": "figure",
+   "label_form": "Fig. 8",
+   "figure_number": 8,
+   "page": 24,
+   "bbox": {
+    "l": 195.43,
+    "t": 766.45,
+    "r": 417.3,
+    "b": 516.75,
+    "w": 221.87,
+    "h": 249.7,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 391,
+    "y0": 151,
+    "x1": 835,
+    "y1": 650,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_007.png",
+   "image_size_px": [
+    444,
+    499
+   ],
+   "caption": "Fig. 8: Illustration of a Transformer encoder with MoE layers inserted at a 1:fMoE frequency. Each MoE layer has E experts and a gating network responsible for dispatching tokens.",
+   "caption_page": 24,
+   "caption_text": "Fig. 8: Illustration of a Transformer encoder with MoE layers inserted at a 1:fMoE frequency. Each MoE layer has E experts and a gating network responsible for dispatching tokens.",
+   "caption_bbox": {
+    "l": 124.59,
+    "t": 508.01,
+    "r": 495.21,
+    "b": 471.48,
+    "w": 370.61,
+    "h": 36.53,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p24_e308"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 8.74
+   },
+   "element_id": "p24_e307",
+   "reading_order": 307
+  },
+  {
+   "figure_id": "fig_008",
+   "kind": "figure",
+   "label_form": "Fig. 9",
+   "figure_number": 9,
+   "page": 26,
+   "bbox": {
+    "l": 144.58,
+    "t": 766.56,
+    "r": 478.11,
+    "b": 664.42,
+    "w": 333.53,
+    "h": 102.14,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 289,
+    "y0": 151,
+    "x1": 956,
+    "y1": 355,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_008.png",
+   "image_size_px": [
+    667,
+    204
+   ],
+   "caption": "Fig. 9: Comparison of NLLB-200 with and without Finetuning on the 12 English-centric tasks of NLLB-MD. NLLB-200+FN+LB and +FN refer to finetuning with and without load balancing (LB). We report accuracy in terms of chrF++ on the validation set.",
+   "caption_page": 26,
+   "caption_text": "Fig. 9: Comparison of NLLB-200 with and without Finetuning on the 12 English-centric tasks of NLLB-MD. NLLB-200+FN+LB and +FN refer to finetuning with and without load balancing (LB). We report accuracy in terms of chrF++ on the validation set.",
+   "caption_bbox": {
+    "l": 124.59,
+    "t": 657.76,
+    "r": 495.21,
+    "b": 623.62,
+    "w": 370.61,
+    "h": 34.14,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p26_e323"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 6.66
+   },
+   "element_id": "p26_e322",
+   "reading_order": 322
+  },
+  {
+   "figure_id": "fig_009",
+   "kind": "figure",
+   "label_form": "Fig. 10",
+   "figure_number": 10,
+   "page": 26,
+   "bbox": {
+    "l": 125.52,
+    "t": 598.15,
+    "r": 496.2,
+    "b": 449.75,
+    "w": 370.68,
+    "h": 148.4,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 251,
+    "y0": 487,
+    "x1": 992,
+    "y1": 784,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_009.png",
+   "image_size_px": [
+    741,
+    297
+   ],
+   "caption": "Fig. 10: Performance on NLLB-MD Test Sets (12 tasks in 4 domains) of NLLB-200 and the single-task finetuned models NLLB-200+FN (without load balancing).",
+   "caption_page": 26,
+   "caption_text": "Fig. 10: Performance on NLLB-MD Test Sets (12 tasks in 4 domains) of NLLB-200 and the single-task finetuned models NLLB-200+FN (without load balancing).",
+   "caption_bbox": {
+    "l": 124.59,
+    "t": 444.96,
+    "r": 495.2,
+    "b": 421.78,
+    "w": 370.61,
+    "h": 23.18,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p26_e325"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 4.79
+   },
+   "element_id": "p26_e324",
+   "reading_order": 324
+  },
+  {
+   "figure_id": "fig_010",
+   "kind": "figure",
+   "label_form": "Fig. 6",
+   "figure_number": 6,
+   "page": 46,
+   "bbox": {
+    "l": 101.53,
+    "t": 767.01,
+    "r": 470.72,
+    "b": 604.37,
+    "w": 369.2,
+    "h": 162.64,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 203,
+    "y0": 150,
+    "x1": 941,
+    "y1": 475,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_010.png",
+   "image_size_px": [
+    738,
+    325
+   ],
+   "caption": "Fig. 6: Comparing model performance when trained on data from various sources. We observe significant improvements in adding mined and back-translated data for all types of language pairs and resource levels.",
+   "caption_page": 46,
+   "caption_text": "Fig. 6: Comparing model performance when trained on data from various sources. We observe significant improvements in adding mined and back-translated data for all types of language pairs and resource levels.",
+   "caption_bbox": {
+    "l": 100.07,
+    "t": 595.9,
+    "r": 470.68,
+    "b": 559.36,
+    "w": 370.61,
+    "h": 36.53,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p46_e586"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 8.47
+   },
+   "element_id": "p46_e585",
+   "reading_order": 585
+  },
+  {
+   "figure_id": "fig_011",
+   "kind": "figure",
+   "label_form": "Fig. 7",
+   "figure_number": 7,
+   "page": 47,
+   "bbox": {
+    "l": 127.0,
+    "t": 769.5,
+    "r": 495.68,
+    "b": 615.46,
+    "w": 368.68,
+    "h": 154.04,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 254,
+    "y0": 145,
+    "x1": 991,
+    "y1": 453,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_011.png",
+   "image_size_px": [
+    737,
+    308
+   ],
+   "caption": "Fig. 7: Distribution of Amount of Training Sentence Pairs across 1220 language pairs in our dataset. We observe that the majority of pairs have fewer than 1M sentences and are low-resource.",
+   "caption_page": 47,
+   "caption_text": "Fig. 7: Distribution of Amount of Training Sentence Pairs across 1220 language pairs in our dataset. We observe that the majority of pairs have fewer than 1M sentences and are low-resource.",
+   "caption_bbox": {
+    "l": 124.59,
+    "t": 593.86,
+    "r": 495.21,
+    "b": 557.33,
+    "w": 370.61,
+    "h": 36.53,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p47_e595"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 21.6
+   },
+   "element_id": "p47_e593",
+   "reading_order": 593
+  },
+  {
+   "figure_id": "fig_012",
+   "kind": "figure",
+   "label_form": "Fig. 8",
+   "figure_number": 8,
+   "page": 49,
+   "bbox": {
+    "l": 195.43,
+    "t": 766.45,
+    "r": 417.3,
+    "b": 516.75,
+    "w": 221.87,
+    "h": 249.7,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 391,
+    "y0": 151,
+    "x1": 835,
+    "y1": 650,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_012.png",
+   "image_size_px": [
+    444,
+    499
+   ],
+   "caption": "Fig. 8: Illustration of a Transformer encoder with MoE layers inserted at a 1:fMoE frequency. Each MoE layer has E experts and a gating network responsible for dispatching tokens.",
+   "caption_page": 49,
+   "caption_text": "Fig. 8: Illustration of a Transformer encoder with MoE layers inserted at a 1:fMoE frequency. Each MoE layer has E experts and a gating network responsible for dispatching tokens.",
+   "caption_bbox": {
+    "l": 124.59,
+    "t": 508.01,
+    "r": 495.21,
+    "b": 471.48,
+    "w": 370.61,
+    "h": 36.53,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p49_e611"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 8.74
+   },
+   "element_id": "p49_e610",
+   "reading_order": 610
+  },
+  {
+   "figure_id": "fig_013",
+   "kind": "figure",
+   "label_form": "Fig. 9",
+   "figure_number": 9,
+   "page": 51,
+   "bbox": {
+    "l": 144.58,
+    "t": 766.56,
+    "r": 478.11,
+    "b": 664.42,
+    "w": 333.53,
+    "h": 102.14,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 289,
+    "y0": 151,
+    "x1": 956,
+    "y1": 355,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_013.png",
+   "image_size_px": [
+    667,
+    204
+   ],
+   "caption": "Fig. 9: Comparison of NLLB-200 with and without Finetuning on the 12 English-centric tasks of NLLB-MD. NLLB-200+FN+LB and +FN refer to finetuning with and without load balancing (LB). We report accuracy in terms of chrF++ on the validation set.",
+   "caption_page": 51,
+   "caption_text": "Fig. 9: Comparison of NLLB-200 with and without Finetuning on the 12 English-centric tasks of NLLB-MD. NLLB-200+FN+LB and +FN refer to finetuning with and without load balancing (LB). We report accuracy in terms of chrF++ on the validation set.",
+   "caption_bbox": {
+    "l": 124.59,
+    "t": 657.76,
+    "r": 495.21,
+    "b": 623.62,
+    "w": 370.61,
+    "h": 34.14,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p51_e626"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 6.66
+   },
+   "element_id": "p51_e625",
+   "reading_order": 625
+  },
+  {
+   "figure_id": "fig_014",
+   "kind": "figure",
+   "label_form": "Fig. 10",
+   "figure_number": 10,
+   "page": 51,
+   "bbox": {
+    "l": 125.52,
+    "t": 598.15,
+    "r": 496.2,
+    "b": 449.75,
+    "w": 370.68,
+    "h": 148.4,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 251,
+    "y0": 487,
+    "x1": 992,
+    "y1": 784,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_014.png",
+   "image_size_px": [
+    741,
+    297
+   ],
+   "caption": "Fig. 10: Performance on NLLB-MD Test Sets (12 tasks in 4 domains) of NLLB-200 and the single-task finetuned models NLLB-200+FN (without load balancing).",
+   "caption_page": 51,
+   "caption_text": "Fig. 10: Performance on NLLB-MD Test Sets (12 tasks in 4 domains) of NLLB-200 and the single-task finetuned models NLLB-200+FN (without load balancing).",
+   "caption_bbox": {
+    "l": 124.59,
+    "t": 444.96,
+    "r": 495.2,
+    "b": 421.78,
+    "w": 370.61,
+    "h": 23.18,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p51_e628"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 4.79
+   },
+   "element_id": "p51_e627",
+   "reading_order": 627
+  }
+ ],
+ "tables": [
+  {
+   "table_id": "table_001",
+   "page": 2,
+   "bbox": {
+    "l": 305.01,
+    "t": 716.4,
+    "r": 562.27,
+    "b": 592.08,
+    "w": 257.26,
+    "h": 124.32,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p2_e28"
+  },
+  {
+   "table_id": "table_002",
+   "page": 3,
+   "bbox": {
+    "l": 38.45,
+    "t": 725.98,
+    "r": 562.47,
+    "b": 662.31,
+    "w": 524.02,
+    "h": 63.68,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": "Table 2 | Improvements from EOM and CL",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 740.98,
+    "r": 212.68,
+    "b": 733.11,
+    "w": 173.0,
+    "h": 7.87,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_page": 3,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": 7.13,
+    "paired": true
+   },
+   "element_id": "p3_e34"
+  },
+  {
+   "table_id": "table_003",
+   "page": 4,
+   "bbox": {
+    "l": 38.1,
+    "t": 729.55,
+    "r": 295.96,
+    "b": 623.6,
+    "w": 257.86,
+    "h": 105.94,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p4_e51"
+  },
+  {
+   "table_id": "table_004",
+   "page": 15,
+   "bbox": {
+    "l": 13.22,
+    "t": 788.88,
+    "r": 581.26,
+    "b": 31.25,
+    "w": 568.05,
+    "h": 757.63,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p15_e245"
+  },
+  {
+   "table_id": "table_005",
+   "page": 16,
+   "bbox": {
+    "l": 15.21,
+    "t": 807.98,
+    "r": 580.49,
+    "b": 34.48,
+    "w": 565.28,
+    "h": 773.5,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p16_e246"
+  },
+  {
+   "table_id": "table_006",
+   "page": 17,
+   "bbox": {
+    "l": 14.08,
+    "t": 631.73,
+    "r": 581.5,
+    "b": 262.81,
+    "w": 567.42,
+    "h": 368.92,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p17_e247"
+  },
+  {
+   "table_id": "table_007",
+   "page": 23,
+   "bbox": {
+    "l": 99.18,
+    "t": 769.18,
+    "r": 470.89,
+    "b": 525.14,
+    "w": 371.71,
+    "h": 244.04,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p23_e300"
+  },
+  {
+   "table_id": "table_008",
+   "page": 40,
+   "bbox": {
+    "l": 13.22,
+    "t": 788.88,
+    "r": 581.26,
+    "b": 31.25,
+    "w": 568.05,
+    "h": 757.63,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p40_e548"
+  },
+  {
+   "table_id": "table_009",
+   "page": 41,
+   "bbox": {
+    "l": 15.21,
+    "t": 807.98,
+    "r": 580.49,
+    "b": 34.48,
+    "w": 565.28,
+    "h": 773.5,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p41_e549"
+  },
+  {
+   "table_id": "table_010",
+   "page": 42,
+   "bbox": {
+    "l": 14.08,
+    "t": 631.73,
+    "r": 581.5,
+    "b": 262.81,
+    "w": 567.42,
+    "h": 368.92,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p42_e550"
+  },
+  {
+   "table_id": "table_011",
+   "page": 48,
+   "bbox": {
+    "l": 99.18,
+    "t": 769.18,
+    "r": 470.89,
+    "b": 525.14,
+    "w": 371.71,
+    "h": 244.04,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p48_e603"
+  }
+ ]
+}

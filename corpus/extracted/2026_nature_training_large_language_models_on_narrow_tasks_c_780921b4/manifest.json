@@ -1,0 +1,34 @@
+{
+ "paper_id": "2026_nature_training_large_language_models_on_narrow_tasks_c_780921b4",
+ "source_name": "2026-Nature-Training large language models on narrow tasks can lead to broad misalignment&SI.pdf",
+ "source_pdf": "D:\\2026-AI4S\\Metrics\\REFs\\2026-Nature-Training large language models on narrow tasks can lead to broad misalignment&SI.pdf",
+ "source_sha256": "dd9c4467188a642de4debdffcfa708ef6edbe4a84fd02be6eb084e28a9efff06",
+ "source_md5": "780921b4834af0eb248cc4fd09e98381",
+ "journal_doi": "10.1038/s41586-025-09937-5",
+ "n_pages": 22,
+ "n_elements": 227,
+ "n_figures": 8,
+ "n_tables": 1,
+ "n_pictures_detected": 15,
+ "n_uncaptioned_pictures": 7,
+ "n_caption_blocks": 8,
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "elapsed_s": 6.0,
+ "artefacts": {
+  "pages_dir": "pages/",
+  "n_page_pngs": 22,
+  "figures_dir": "figures/",
+  "layout": "layout.json",
+  "content": "content.md",
+  "figures_meta": "figures_meta.json"
+ },
+ "status": "ok",
+ "generated_at": "2026-10-18T01:31:22"
+}

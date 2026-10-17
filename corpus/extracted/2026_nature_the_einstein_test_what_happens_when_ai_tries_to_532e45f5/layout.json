@@ -1,0 +1,1573 @@
+{
+ "paper_id": "2026_nature_the_einstein_test_what_happens_when_ai_tries_to_532e45f5",
+ "source_pdf": "D:\\2026-AI4S\\2026-Nature-The Einstein test_what happens when AI tries to rediscover relativity.pdf",
+ "source_sha256": "073b05e0240ae2c5ecde0272df8823cf367411904ff238f28085ffb901ee8318",
+ "source_name": "2026-Nature-The Einstein test_what happens when AI tries to rediscover relativity.pdf",
+ "n_pages": 3,
+ "page_size_pt": [
+  595.28,
+  790.87
+ ],
+ "coordinate_note": "bbox is PDF points with origin at the BOTTOM-LEFT, y increasing upward; bbox_norm divides by page size.",
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "generated_at": "2026-10-18T01:31:16",
+ "pages": [
+  {
+   "page_no": 1,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0001.png",
+   "elements": [
+    {
+     "reading_order": 0,
+     "page": 1,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.87,
+      "t": 741.22,
+      "r": 325.77,
+      "b": 530.39,
+      "w": 285.9,
+      "h": 210.84,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06698,
+      "t": 0.93723,
+      "r": 0.54726,
+      "b": 0.67064
+     },
+     "text": "COULD AI REDISCOVER RELATIVITY?",
+     "text_len": 31,
+     "level": 1,
+     "element_id": "p1_e0"
+    },
+    {
+     "reading_order": 1,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 739.91,
+      "r": 534.31,
+      "b": 579.15,
+      "w": 139.35,
+      "h": 160.76,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.93557,
+      "r": 0.89758,
+      "b": 0.7323
+     },
+     "text": "Historical language models probe the degree to which AI can make creative breakthroughs.",
+     "text_len": 88,
+     "level": 1,
+     "element_id": "p1_e1"
+    },
+    {
+     "reading_order": 2,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 574.09,
+      "r": 512.45,
+      "b": 556.76,
+      "w": 117.49,
+      "h": 17.33,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.7259,
+      "r": 0.86086,
+      "b": 0.70399
+     },
+     "text": "By Philip Ball",
+     "text_len": 14,
+     "level": 1,
+     "element_id": "p1_e2"
+    },
+    {
+     "reading_order": 3,
+     "page": 1,
+     "label": "picture",
+     "bbox": {
+      "l": 39.2,
+      "t": 531.96,
+      "r": 562.54,
+      "b": 131.78,
+      "w": 523.33,
+      "h": 400.18,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06585,
+      "t": 0.67263,
+      "r": 0.94501,
+      "b": 0.16663
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p1_e3"
+    },
+    {
+     "reading_order": 4,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 36.5,
+      "t": 128.56,
+      "r": 206.04,
+      "b": 32.47,
+      "w": 169.54,
+      "h": 96.09,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06132,
+      "t": 0.16256,
+      "r": 0.34613,
+      "b": 0.04106
+     },
+     "text": "I n 1915, Albert Einstein unveiled his general theory of relativity and transformed our view of the fabric of the physical world. The theory, which explains gravitation as a deformation of space-time by mass, is a pinnacle of modern physics that underpins cosmology, from work on black holes to measurements of gravitational waves, and is used routinely to guide space missions and GPS satellites.",
+     "text_len": 397,
+     "level": 1,
+     "element_id": "p1_e4"
+    },
+    {
+     "reading_order": 5,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 107.06,
+      "r": 383.71,
+      "b": 45.65,
+      "w": 166.39,
+      "h": 61.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.13537,
+      "r": 0.64459,
+      "b": 0.05772
+     },
+     "text": "It has also become a yardstick for leaders in the field of artificial-intelligence technology, who are asking whether their creations could ever make a breakthrough on that level. At the India AI Summit in New Delhi this February, Demis Hassabis, the co-founder of Google DeepMind in London, proposed training a large language model (LLM) on all that was known before a particular cut-off date - he suggested the year 1911 - to see whether it could reproduce general relativity. \"That would be a good test for AGI,\" Hassabis said, referring to the nebulous concept of artificial general intelligence that is a goal for many in the AI industry.",
+     "text_len": 643,
+     "level": 1,
+     "element_id": "p1_e5"
+    }
+   ]
+  },
+  {
+   "page_no": 2,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0002.png",
+   "elements": [
+    {
+     "reading_order": 6,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 741.31,
+      "r": 204.87,
+      "b": 658.4,
+      "w": 165.18,
+      "h": 82.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.93734,
+      "r": 0.34416,
+      "b": 0.83251
+     },
+     "text": "Such a test needn't specifically involve general relativity. In December 2024, Owain Evans, a researcher at the non-profit organization Truthful AI in Berkeley, California, gave a talk about 'vintage' or 'historical' LLMs, which would be trained only on historical data up to a certain date. Evans asked what such models might be able to rediscover.",
+     "text_len": 349,
+     "level": 1,
+     "element_id": "p2_e6"
+    },
+    {
+     "reading_order": 7,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 655.31,
+      "r": 204.84,
+      "b": 604.65,
+      "w": 165.16,
+      "h": 50.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.8286,
+      "r": 0.34411,
+      "b": 0.76454
+     },
+     "text": "This year, several teams have built instances of vintage models, including an effort at Hassabis's test. But their early attempts reveal more about the limitations of current AI than about its strengths.",
+     "text_len": 203,
+     "level": 1,
+     "element_id": "p2_e7"
+    },
+    {
+     "reading_order": 8,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 601.56,
+      "r": 204.79,
+      "b": 540.15,
+      "w": 165.11,
+      "h": 61.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.76063,
+      "r": 0.34403,
+      "b": 0.68299
+     },
+     "text": "A relativity-like breakthrough is not inherently out of reach for AI, says Ido Kaminer, a specialist in quantum optics at Technion - Israel Institute of Technology in Haifa, who co-authored a preprint titled 'Can AI follow in Einstein's footsteps?', posted in July 1 .",
+     "text_len": 268,
+     "level": 1,
+     "element_id": "p2_e8"
+    },
+    {
+     "reading_order": 9,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 537.06,
+      "r": 204.78,
+      "b": 507.9,
+      "w": 165.1,
+      "h": 29.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.67908,
+      "r": 0.34401,
+      "b": 0.64221
+     },
+     "text": "But, he and his colleagues argue, it won't happen without rethinking some of the principles on which today's models are built.",
+     "text_len": 126,
+     "level": 1,
+     "element_id": "p2_e9"
+    },
+    {
+     "reading_order": 10,
+     "page": 2,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 497.14,
+      "r": 105.72,
+      "b": 488.12,
+      "w": 66.04,
+      "h": 9.02,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.6286,
+      "r": 0.1776,
+      "b": 0.6172
+     },
+     "text": "Creative leaps",
+     "text_len": 14,
+     "level": 1,
+     "element_id": "p2_e10"
+    },
+    {
+     "reading_order": 11,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 483.31,
+      "r": 206.06,
+      "b": 400.4,
+      "w": 166.37,
+      "h": 82.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.61111,
+      "r": 0.34616,
+      "b": 0.50628
+     },
+     "text": "Hassabis had mentioned the Einstein test analogy in media interviews last year, but another Google DeepMind researcher, Tom Zahavy, described it in detail in a position paper posted on his website in January. Titled 'LLMs can't jump' (see go.nature.com/3ykartg), the paper highlights the current inability of LLMs to make jumps of reasoning like Einstein's.",
+     "text_len": 357,
+     "level": 1,
+     "element_id": "p2_e11"
+    },
+    {
+     "reading_order": 12,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 397.31,
+      "r": 206.06,
+      "b": 325.15,
+      "w": 166.38,
+      "h": 72.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.50237,
+      "r": 0.34616,
+      "b": 0.41113
+     },
+     "text": "Zahavy wrote, as philosophers of science have long recognized, that such advances require not inductive reasoning that derives a general rule from the accumulation of data or examples, but abductive reasoning: \"a creative leap that invents a cause for a singular phenomenon\".",
+     "text_len": 275,
+     "level": 1,
+     "element_id": "p2_e12"
+    },
+    {
+     "reading_order": 13,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 39.68,
+      "t": 322.06,
+      "r": 206.08,
+      "b": 239.15,
+      "w": 166.39,
+      "h": 82.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06666,
+      "t": 0.40722,
+      "r": 0.34619,
+      "b": 0.30239
+     },
+     "text": "That isn't the forte of current AI models, which seem better suited to doing the grunt work of science than to making transformative discoveries. The models look for correlations in vast data sets, through being trained on known examples and then guided by prompts to supply the most statistically likely answers for unknown cases.",
+     "text_len": 331,
+     "level": 1,
+     "element_id": "p2_e13"
+    },
+    {
+     "reading_order": 14,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 236.06,
+      "r": 206.01,
+      "b": 153.15,
+      "w": 166.33,
+      "h": 82.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.29848,
+      "r": 0.34607,
+      "b": 0.19365
+     },
+     "text": "This makes them valuable predictive tools and can be helpful when there are plenty of data around. But imaginative leaps, or what twentieth-century historian of science Thomas Kuhn called paradigm shifts in understanding, often arrive when there are few data points to go on, or arise from anomalies that don't quite fit the standard picture.",
+     "text_len": 342,
+     "level": 1,
+     "element_id": "p2_e14"
+    },
+    {
+     "reading_order": 15,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 150.06,
+      "r": 206.07,
+      "b": 45.65,
+      "w": 166.38,
+      "h": 104.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.18974,
+      "r": 0.34618,
+      "b": 0.05772
+     },
+     "text": "The way scientists often proceed in such a situation is to develop a 'world model' - an inference about underlying principles - from small amounts of data. For example, careful observations of planetary motions by the seventeenth-century astronomer Johannes Kepler, and the mathematical relations that he deduced, led Isaac Newton to develop his gravitational law and his mechanical laws of motion in response to forces.",
+     "text_len": 420,
+     "level": 1,
+     "element_id": "p2_e15"
+    },
+    {
+     "reading_order": 16,
+     "page": 2,
+     "label": "picture",
+     "bbox": {
+      "l": 216.02,
+      "t": 744.09,
+      "r": 561.81,
+      "b": 520.11,
+      "w": 345.79,
+      "h": 223.98,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36289,
+      "t": 0.94085,
+      "r": 0.94378,
+      "b": 0.65765
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p2_e16"
+    },
+    {
+     "reading_order": 17,
+     "page": 2,
+     "label": "caption",
+     "bbox": {
+      "l": 217.32,
+      "t": 515.18,
+      "r": 524.46,
+      "b": 508.36,
+      "w": 307.13,
+      "h": 6.82,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.65141,
+      "r": 0.88104,
+      "b": 0.64279
+     },
+     "text": "The opening of Einstein's handwritten manuscript on his general theory of relativity.",
+     "text_len": 85,
+     "level": 2,
+     "element_id": "p2_e17"
+    },
+    {
+     "reading_order": 18,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 494.06,
+      "r": 383.71,
+      "b": 389.65,
+      "w": 166.39,
+      "h": 104.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.62471,
+      "r": 0.64459,
+      "b": 0.49269
+     },
+     "text": "Can AI models similarly reason their way from sparse data to general world models? Not currently, argues Sendhil Mullainathan, a computer scientist at the Massachusetts Institute of Technology (MIT) in Cambridge. In a conference paper published in July 2 , he and his colleagues provided an 'orbital mechanics' foundation model with synthetic data on various plan­etary systems that obey Newtonian mechanics.",
+     "text_len": 408,
+     "level": 1,
+     "element_id": "p2_e18"
+    },
+    {
+     "reading_order": 19,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 386.56,
+      "r": 383.72,
+      "b": 335.9,
+      "w": 166.39,
+      "h": 50.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.48878,
+      "r": 0.64461,
+      "b": 0.42472
+     },
+     "text": "They found that the model never inferred the true law of gravitation (relating the force between two bodies to their masses and their separation), but inferred a different law for each planetary system, each wrong in a unique way.",
+     "text_len": 230,
+     "level": 1,
+     "element_id": "p2_e19"
+    },
+    {
+     "reading_order": 20,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 332.81,
+      "r": 383.69,
+      "b": 239.15,
+      "w": 166.37,
+      "h": 93.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.42082,
+      "r": 0.64456,
+      "b": 0.30239
+     },
+     "text": "Still, LLMs have been making striking advances in mathematics, in ways that suggest they can sometimes intuit logical structures underlying their training data. A finding this May from an AI chatbot, devised by the company OpenAI, that disproved an 80-year-old conjecture by Hungarian mathematician Paul Erdős was a \"genuine conceptual advance\", says Mullainathan.",
+     "text_len": 364,
+     "level": 1,
+     "element_id": "p2_e20"
+    },
+    {
+     "reading_order": 21,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 236.06,
+      "r": 383.66,
+      "b": 163.9,
+      "w": 166.34,
+      "h": 72.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.29848,
+      "r": 0.64451,
+      "b": 0.20724
+     },
+     "text": "The AI didn't just search its way to an answer by brute force, he says; the solution needed new, small abstractions along the way. At the same time, the disproof did bring together ideas already extant in the mathematical literature - so, in that way, it wasn't an Einstein-like flash of discovery from seemingly nowhere.",
+     "text_len": 321,
+     "level": 1,
+     "element_id": "p2_e21"
+    },
+    {
+     "reading_order": 22,
+     "page": 2,
+     "label": "section_header",
+     "bbox": {
+      "l": 217.32,
+      "t": 153.14,
+      "r": 300.03,
+      "b": 144.12,
+      "w": 82.71,
+      "h": 9.02,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.19364,
+      "r": 0.50402,
+      "b": 0.18223
+     },
+     "text": "A moment in time",
+     "text_len": 16,
+     "level": 1,
+     "element_id": "p2_e22"
+    },
+    {
+     "reading_order": 23,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 139.31,
+      "r": 383.7,
+      "b": 45.65,
+      "w": 166.38,
+      "h": 93.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.17615,
+      "r": 0.64457,
+      "b": 0.05772
+     },
+     "text": "After Hassabis brought up the 1911 test, independent AI researcher Michael Hla, in San Francisco, California, tried something like it. Writing on his website in March, Hla said that he trained an LLM he calls Machina Mirabilis on pre-1900 data, to see if it could produce quantum mechanics, Einstein's special theory of relativity (1905) and general relativity (see go.nature.com/4gnqph5).",
+     "text_len": 389,
+     "level": 1,
+     "element_id": "p2_e23"
+    },
+    {
+     "reading_order": 24,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 494.06,
+      "r": 561.32,
+      "b": 411.15,
+      "w": 166.36,
+      "h": 82.9,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.62471,
+      "r": 0.94296,
+      "b": 0.51987
+     },
+     "text": "Hla gave it helpful nudges: in one instance, he prompted it with observations about the photoelectric effect (in which light knocks electrons from metal plates), which would later be explained by Einstein's quantization of light. In another case, he gave it the essence of the 'elevator' thought experiment that would lead Einstein to general relativity.",
+     "text_len": 354,
+     "level": 1,
+     "element_id": "p2_e24"
+    },
+    {
+     "reading_order": 25,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 408.06,
+      "r": 561.36,
+      "b": 292.9,
+      "w": 166.39,
+      "h": 115.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.51597,
+      "r": 0.94302,
+      "b": 0.37035
+     },
+     "text": "In some cases, Hla argues, the model showed \"glimpses of intuition\". For example, when presented with the photoelectric effect, it stated that the light \"breaks up into a multitude of distinct impulses\" (hinting at the idea of light quanta). But the LLM failed in most cases, lacked any true understanding of the physics it adduced, and at times was \"parroting words that seem plausible\", but seemingly without \"any sort of strong internal representation of the world to reason from\", Hla wrote.",
+     "text_len": 495,
+     "level": 1,
+     "element_id": "p2_e25"
+    },
+    {
+     "reading_order": 26,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 289.81,
+      "r": 561.33,
+      "b": 249.9,
+      "w": 166.37,
+      "h": 39.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.36645,
+      "r": 0.94297,
+      "b": 0.31598
+     },
+     "text": "Hla also found that it's very hard to train such a historically constrained LLM, when the data are riddled with broken English and artefacts from digitizing printed material.",
+     "text_len": 174,
+     "level": 1,
+     "element_id": "p2_e26"
+    },
+    {
+     "reading_order": 27,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 246.81,
+      "r": 561.35,
+      "b": 153.15,
+      "w": 166.39,
+      "h": 93.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.31208,
+      "r": 0.94301,
+      "b": 0.19365
+     },
+     "text": "That's also what independent computer scientist Nick Levine and his co-workers found in work presented online in April (see go.nature.com/4ilz5sp), in which they attempted to build a vintage AI model using only what was known up to 1930 - a year chosen because works published in that year entered the public domain in the United States at the start of 2026.",
+     "text_len": 358,
+     "level": 1,
+     "element_id": "p2_e27"
+    },
+    {
+     "reading_order": 28,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 150.06,
+      "r": 561.33,
+      "b": 67.15,
+      "w": 166.37,
+      "h": 82.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.18974,
+      "r": 0.94297,
+      "b": 0.08491
+     },
+     "text": "With such a model, says Levine, who is based in San Francisco, in principle \"we could try to test questions around things that were developed in the 1930s\", such as Turing machines (a central concept in the theory of computation), Gödel's incompleteness theorem in the foundations of mathematics, or the particles called neutrinos (postulated in print in 1934).",
+     "text_len": 361,
+     "level": 1,
+     "element_id": "p2_e28"
+    },
+    {
+     "reading_order": 29,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 64.06,
+      "r": 561.26,
+      "b": 45.65,
+      "w": 166.3,
+      "h": 18.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.081,
+      "r": 0.94286,
+      "b": 0.05772
+     },
+     "text": "Levine and his colleagues discovered that it is hard to create a vintage model fed on only what",
+     "text_len": 95,
+     "level": 1,
+     "element_id": "p2_e29"
+    }
+   ]
+  },
+  {
+   "page_no": 3,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0003.png",
+   "elements": [
+    {
+     "reading_order": 30,
+     "page": 3,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 761.54,
+      "r": 91.01,
+      "b": 748.57,
+      "w": 51.32,
+      "h": 12.97,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.96292,
+      "r": 0.15289,
+      "b": 0.94652
+     },
+     "text": "Feature",
+     "text_len": 7,
+     "level": 1,
+     "element_id": "p3_e30"
+    },
+    {
+     "reading_order": 31,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 741.31,
+      "r": 206.09,
+      "b": 636.9,
+      "w": 166.4,
+      "h": 104.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.93734,
+      "r": 0.34621,
+      "b": 0.80532
+     },
+     "text": "was known up to 1930; the training materials are maddeningly leaky. \"If you ask it about what happened in the 1950s, often it'll just accidentally answer,\" says Levine - and often correctly. The supposedly pre-1930s model, for example, answered questions on the administration of Franklin D. Roosevelt, who was US president from 1933 to 1945. Filtering out information from after a certain date is difficult when data sets aren't precisely or accurately dated.",
+     "text_len": 460,
+     "level": 1,
+     "element_id": "p3_e31"
+    },
+    {
+     "reading_order": 32,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 633.81,
+      "r": 206.05,
+      "b": 572.4,
+      "w": 166.36,
+      "h": 61.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.80141,
+      "r": 0.34614,
+      "b": 0.72376
+     },
+     "text": "All the same, Levine (who worked for a time as a quantitative forecaster in economics), thinks that ultimately it should be possible to ask this \"1930 mind\" to make forecasts, which could include \"the kinds of things that you'd see in a prediction market\".",
+     "text_len": 256,
+     "level": 1,
+     "element_id": "p3_e32"
+    },
+    {
+     "reading_order": 33,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 569.31,
+      "r": 206.05,
+      "b": 475.65,
+      "w": 166.37,
+      "h": 93.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.71986,
+      "r": 0.34614,
+      "b": 0.60143
+     },
+     "text": "Prediction-type AI models, he says, could work for forecasting scientific discovery, too. He anticipates testing whether a model trained on data up to, say, January of this year could come up with a discovery now known to have been made in June. \"I would predict that a model [like this] will make a non-trivial discovery, just because of the scale of the data and resources involved.\"",
+     "text_len": 385,
+     "level": 1,
+     "element_id": "p3_e33"
+    },
+    {
+     "reading_order": 34,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 39.68,
+      "t": 472.56,
+      "r": 206.07,
+      "b": 303.65,
+      "w": 166.39,
+      "h": 168.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06666,
+      "t": 0.59752,
+      "r": 0.34618,
+      "b": 0.38395
+     },
+     "text": "Researchers at the University of Zurich in Switzerland have created an entire family of historical models, in a project called Ranke-4B (see go.nature.com/46efotz). These are trained on time-stamped text with historically resonant cut-offs of 1913, 1929, 1933, 1939 and 1946. Team member and economist Daniel Göttlich, now at the Swiss Federal Institute of Technology (ETH) in Zurich, says that there aren't enough historical data or computing resources available to make these as strong as modern LLMs, so he hopes to test only whether a historical LLM might generate ideas with traces of future advances. \"What we are testing for, figuratively speaking, is not so much genius, but sparks of genius,\" he says.",
+     "text_len": 710,
+     "level": 1,
+     "element_id": "p3_e34"
+    },
+    {
+     "reading_order": 35,
+     "page": 3,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 292.89,
+      "r": 126.06,
+      "b": 283.87,
+      "w": 86.38,
+      "h": 9.02,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.37034,
+      "r": 0.21177,
+      "b": 0.35894
+     },
+     "text": "Too many theories",
+     "text_len": 17,
+     "level": 1,
+     "element_id": "p3_e35"
+    },
+    {
+     "reading_order": 36,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 279.06,
+      "r": 206.04,
+      "b": 217.65,
+      "w": 166.36,
+      "h": 61.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.35285,
+      "r": 0.34613,
+      "b": 0.2752
+     },
+     "text": "There's no obvious obstacle to an AI language model producing, say, the general theory of relativity, argues computer scientist Jacob Andreas at MIT, as a probabilistic output among many other, entirely bogus, theories about a given body of data.",
+     "text_len": 246,
+     "level": 1,
+     "element_id": "p3_e36"
+    },
+    {
+     "reading_order": 37,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 214.56,
+      "r": 206.06,
+      "b": 120.9,
+      "w": 166.37,
+      "h": 93.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.2713,
+      "r": 0.34616,
+      "b": 0.15287
+     },
+     "text": "The problem, he says, is that it's hard to distinguish between theories that are correct, or at least worth testing, and those that are wrong. This was the issue, for example, with the various (erroneous) 'gravitational laws' generated by the orbital-mechanics model of Mullainathan and his colleagues. In mathematics, by contrast, it's possible to immediately verify each step in an LLM's workings as true or false.",
+     "text_len": 416,
+     "level": 1,
+     "element_id": "p3_e37"
+    },
+    {
+     "reading_order": 38,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 117.81,
+      "r": 206.08,
+      "b": 67.15,
+      "w": 166.4,
+      "h": 50.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.14896,
+      "r": 0.34619,
+      "b": 0.08491
+     },
+     "text": "This reflects a distinction between the ways in which LLMs and humans devise theories: people rarely build a range of possible theories probabilistically and then go about finding which, if any, is correct.",
+     "text_len": 206,
+     "level": 1,
+     "element_id": "p3_e38"
+    },
+    {
+     "reading_order": 39,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 39.68,
+      "t": 64.06,
+      "r": 206.06,
+      "b": 45.65,
+      "w": 166.37,
+      "h": 18.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06666,
+      "t": 0.081,
+      "r": 0.34616,
+      "b": 0.05772
+     },
+     "text": "Think, for example, of physicist Erwin Schrödinger writing down his equation for quantum wave mechanics a century ago - even today, researchers are still wondering about his thought processes.",
+     "text_len": 192,
+     "level": 1,
+     "element_id": "p3_e39"
+    },
+    {
+     "reading_order": 40,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 709.06,
+      "r": 383.68,
+      "b": 658.4,
+      "w": 166.36,
+      "h": 50.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.89656,
+      "r": 0.64454,
+      "b": 0.83251
+     },
+     "text": "\"Almost certainly it was not the case that his mental process looked like randomly generating a bunch of theory-like statements and then checking which ones were consistent with the actual observations,\" says Andreas.",
+     "text_len": 217,
+     "level": 1,
+     "element_id": "p3_e40"
+    },
+    {
+     "reading_order": 41,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 655.31,
+      "r": 383.7,
+      "b": 583.15,
+      "w": 166.38,
+      "h": 72.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.8286,
+      "r": 0.64457,
+      "b": 0.73736
+     },
+     "text": "There is also the problem of deciding whether an idea is worth pursuing in the first place. LLMs, for instance, \"don't have a good notion of what an interesting mathematical theorem is\", says Andreas. He adds that the models' ability to discern what's important \"is actually where they're furthest behind human experts\".",
+     "text_len": 320,
+     "level": 1,
+     "element_id": "p3_e41"
+    },
+    {
+     "reading_order": 42,
+     "page": 3,
+     "label": "section_header",
+     "bbox": {
+      "l": 217.32,
+      "t": 572.39,
+      "r": 329.96,
+      "b": 563.37,
+      "w": 112.64,
+      "h": 9.02,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.72375,
+      "r": 0.5543,
+      "b": 0.71235
+     },
+     "text": "Seeking a new paradigm",
+     "text_len": 22,
+     "level": 1,
+     "element_id": "p3_e42"
+    },
+    {
+     "reading_order": 43,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 558.56,
+      "r": 383.72,
+      "b": 464.9,
+      "w": 166.4,
+      "h": 93.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.70626,
+      "r": 0.64461,
+      "b": 0.58784
+     },
+     "text": "Transformative shifts in scientific understanding often come from attending to small discrepancies, outliers of precisely the kind that AI models tend to average away. \"Human discovery in physics has historically often relied on a capacity for persistent 'obsession' - a cognitive style that allows a researcher to hold onto an outlier idea over years,\" say Kaminer and his colleagues.",
+     "text_len": 385,
+     "level": 1,
+     "element_id": "p3_e43"
+    },
+    {
+     "reading_order": 44,
+     "page": 3,
+     "label": "section_header",
+     "bbox": {
+      "l": 217.32,
+      "t": 451.2,
+      "r": 363.2,
+      "b": 411.63,
+      "w": 145.87,
+      "h": 39.57,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.57051,
+      "r": 0.61014,
+      "b": 0.52048
+     },
+     "text": "\"What we are testing for is not so much genius, but sparks of genius.\"",
+     "text_len": 70,
+     "level": 1,
+     "element_id": "p3_e44"
+    },
+    {
+     "reading_order": 45,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 386.56,
+      "r": 383.63,
+      "b": 260.65,
+      "w": 166.31,
+      "h": 125.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.48878,
+      "r": 0.64446,
+      "b": 0.32958
+     },
+     "text": "Take, for example, physicist Max Planck's refusal to accept that his formula for blackbody radiation gave results close enough to the spectra measured experimentally. That determination led him, in 1900, to postulate the quantization of energy (a problem considered by Hla's Machina Mirabilis). There was arguably even less empirical motivation for special relativity - contrary to the common view, Einstein was not greatly troubled by experimental failures to detect a putative 'ether' through which light was suggested to travel.",
+     "text_len": 531,
+     "level": 1,
+     "element_id": "p3_e45"
+    },
+    {
+     "reading_order": 46,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 257.56,
+      "r": 383.7,
+      "b": 174.65,
+      "w": 166.37,
+      "h": 82.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.32567,
+      "r": 0.64457,
+      "b": 0.22083
+     },
+     "text": "More generally, breakthroughs in science rarely just fall out of a set body of empirical data: they come from a continual and subtle interplay between theories or concepts, experiments and experimental techniques. This is particularly true in disciplines such as molecular biology, which, unlike much of physics, aren't governed by a small set of well-defined underlying laws.",
+     "text_len": 376,
+     "level": 1,
+     "element_id": "p3_e46"
+    },
+    {
+     "reading_order": 47,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 171.56,
+      "r": 383.7,
+      "b": 120.9,
+      "w": 166.38,
+      "h": 50.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.21693,
+      "r": 0.64457,
+      "b": 0.15287
+     },
+     "text": "With this in mind, some researchers are developing automated systems that can select and plan experiments, conduct them robotically, and formulate hypotheses from the results 3,4 .",
+     "text_len": 180,
+     "level": 1,
+     "element_id": "p3_e47"
+    },
+    {
+     "reading_order": 48,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 117.81,
+      "r": 383.71,
+      "b": 45.65,
+      "w": 166.39,
+      "h": 72.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.14896,
+      "r": 0.64459,
+      "b": 0.05772
+     },
+     "text": "But even here, advances sometimes come from a change in mindset rather than fresh pivotal data. For example, intrinsically disordered proteins were thought to crystallize too poorly for X-ray analysis until researchers realized that they had no stable structure and came to see disorder as a feature, not a bug.",
+     "text_len": 311,
+     "level": 1,
+     "element_id": "p3_e48"
+    },
+    {
+     "reading_order": 49,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 741.31,
+      "r": 561.31,
+      "b": 701.4,
+      "w": 166.35,
+      "h": 39.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.93734,
+      "r": 0.94294,
+      "b": 0.88688
+     },
+     "text": "And examples of what would now be called biomolecular condensates - droplet-like clusters in cells - had been seen, unremarked, for many decades before the conceptual idea arose.",
+     "text_len": 178,
+     "level": 1,
+     "element_id": "p3_e49"
+    },
+    {
+     "reading_order": 50,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 698.31,
+      "r": 561.32,
+      "b": 626.15,
+      "w": 166.36,
+      "h": 72.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.88297,
+      "r": 0.94296,
+      "b": 0.79173
+     },
+     "text": "Could AI ever emulate such leaps of faith, reasoning or perception? That challenge, says Andreas, \"probably looks more like figuring out how to automate these kinds of unconscious, ineffable leaps of intuition than it does a classical search procedure that we already know how to implement\".",
+     "text_len": 291,
+     "level": 1,
+     "element_id": "p3_e50"
+    },
+    {
+     "reading_order": 51,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 623.06,
+      "r": 561.29,
+      "b": 540.15,
+      "w": 166.33,
+      "h": 82.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.78782,
+      "r": 0.94291,
+      "b": 0.68299
+     },
+     "text": "For a task of this type, says Mullainathan, \"LLMs are not the right object by themselves\". He thinks we need models trained not just on the corpus of knowledge but also on real-world data - on what the physical world is like - and on \"mathematical space\": how to manipulate mathematical objects. These requirements \"are lagging behind in the current era\", he says.",
+     "text_len": 364,
+     "level": 1,
+     "element_id": "p3_e51"
+    },
+    {
+     "reading_order": 52,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 537.06,
+      "r": 561.33,
+      "b": 464.9,
+      "w": 166.37,
+      "h": 72.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.67908,
+      "r": 0.94297,
+      "b": 0.58784
+     },
+     "text": "AI discovery systems will also need new performance goals, beyond merely making good statistical predictions. Relativity-scale discoveries, says Kaminer, will come from these systems \"only if we optimize them for more than predictive accuracy, rewarding also simplicity, explanatory reach, and more\".",
+     "text_len": 300,
+     "level": 1,
+     "element_id": "p3_e52"
+    },
+    {
+     "reading_order": 53,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 461.81,
+      "r": 561.37,
+      "b": 271.4,
+      "w": 166.41,
+      "h": 190.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.58393,
+      "r": 0.94304,
+      "b": 0.34317
+     },
+     "text": "There doesn't yet seem to be much incentive to create AI models that reason more like humans do. This is what computer scientist Rich Sutton at the University of Alberta in Edmonton, Canada, has called the bitter lesson of AI: that \"building in how we think we think does not work in the long run\". All that tends to make a difference to the performance of the algorithm is more computing power and training data. The perceived value of such AI models typically comes down to whether they make good, fast and accurate predictions, without necessarily saying anything about the physical process underlying a phenomenon. (Google DeepMind's protein-structure tool AlphaFold, for example, does not solve the problem of understanding how proteins fold, but merely sidesteps it by predicting their folded shape.)",
+     "text_len": 806,
+     "level": 1,
+     "element_id": "p3_e53"
+    },
+    {
+     "reading_order": 54,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 268.31,
+      "r": 561.29,
+      "b": 206.9,
+      "w": 166.34,
+      "h": 61.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.33926,
+      "r": 0.94291,
+      "b": 0.26161
+     },
+     "text": "Andreas suspects that, at least initially, LLMs will come up with only very modest discoveries \"where we understand already what the important problem is\", and for which the answer lies with \"borrowing a solution or drawing an analogy that exists in some other area already\".",
+     "text_len": 275,
+     "level": 1,
+     "element_id": "p3_e54"
+    },
+    {
+     "reading_order": 55,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 203.81,
+      "r": 561.34,
+      "b": 163.9,
+      "w": 166.38,
+      "h": 39.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.2577,
+      "r": 0.94299,
+      "b": 0.20724
+     },
+     "text": "And then, he says, human researchers might think, \"Damn, I wish I had done a second PhD in this other field, so that I would have been able to see that.\"",
+     "text_len": 153,
+     "level": 1,
+     "element_id": "p3_e55"
+    },
+    {
+     "reading_order": 56,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 160.81,
+      "r": 561.26,
+      "b": 131.65,
+      "w": 166.3,
+      "h": 29.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.20333,
+      "r": 0.94286,
+      "b": 0.16646
+     },
+     "text": "That's not, however, what anyone said about general relativity. \"They just thought, where did that come from?\", says Andreas.",
+     "text_len": 125,
+     "level": 1,
+     "element_id": "p3_e56"
+    },
+    {
+     "reading_order": 57,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 117.43,
+      "r": 559.87,
+      "b": 110.59,
+      "w": 164.91,
+      "h": 6.84,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.14848,
+      "r": 0.94052,
+      "b": 0.13983
+     },
+     "text": "Philip Ball is a science writer based in London.",
+     "text_len": 48,
+     "level": 1,
+     "element_id": "p3_e57"
+    },
+    {
+     "reading_order": 58,
+     "page": 3,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.96,
+      "t": 100.14,
+      "r": 558.57,
+      "b": 86.88,
+      "w": 163.61,
+      "h": 13.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.12662,
+      "r": 0.93834,
+      "b": 0.10985
+     },
+     "text": "Shalyt, M., Regev, N., Soljačić, M. & Kaminer, I. Preprint at arXiv https://doi.org/10.48550/arXiv.2607.27794 (2026).",
+     "text_len": 117,
+     "level": 2,
+     "element_id": "p3_e58"
+    },
+    {
+     "reading_order": 59,
+     "page": 3,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.96,
+      "t": 84.14,
+      "r": 554.49,
+      "b": 62.88,
+      "w": 159.52,
+      "h": 21.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.10639,
+      "r": 0.93148,
+      "b": 0.07951
+     },
+     "text": "Vafa, K., Chang, P. G., Rambachan, A. & Mullainathan, S. Proc. 42nd Int. Conf. Mach. Learn. 267, 60727-60747 (2025).",
+     "text_len": 116,
+     "level": 2,
+     "element_id": "p3_e59"
+    },
+    {
+     "reading_order": 60,
+     "page": 3,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.96,
+      "t": 60.14,
+      "r": 539.74,
+      "b": 54.88,
+      "w": 144.78,
+      "h": 5.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.07604,
+      "r": 0.90671,
+      "b": 0.06939
+     },
+     "text": "Cooper, A. I. et al. Sci. Robot. 10, eadv7932 (2025).",
+     "text_len": 53,
+     "level": 2,
+     "element_id": "p3_e60"
+    },
+    {
+     "reading_order": 61,
+     "page": 3,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.96,
+      "t": 52.14,
+      "r": 521.59,
+      "b": 46.88,
+      "w": 126.63,
+      "h": 5.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.06593,
+      "r": 0.87622,
+      "b": 0.05928
+     },
+     "text": "Klimesch, J. et al. Nature 657, 47-58 (2026).",
+     "text_len": 45,
+     "level": 2,
+     "element_id": "p3_e61"
+    }
+   ]
+  }
+ ],
+ "caption_blocks": [
+  {
+   "page": 2,
+   "blocks": [
+    {
+     "text": "The opening of Einstein's handwritten manuscript on his general theory of relativity.",
+     "bbox": {
+      "l": 217.32,
+      "t": 515.18,
+      "r": 524.46,
+      "b": 508.36,
+      "w": 307.13,
+      "h": 6.82,
+      "coord": "pdf_points_bottomleft"
+     },
+     "element_ids": [
+      "p2_e17"
+     ]
+    }
+   ]
+  }
+ ],
+ "uncaptioned_pictures": [
+  {
+   "page": 1,
+   "bbox": {
+    "l": 39.2,
+    "t": 531.96,
+    "r": 562.54,
+    "b": 131.78,
+    "w": 523.33,
+    "h": 400.18,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": true,
+   "element_id": "p1_e3"
+  }
+ ]
+}

@@ -1,0 +1,449 @@
+{
+ "paper_id": "s001_2026_nature_reimagining_research_papers_as_inter_d0299284",
+ "source_pdf": "D:\\2026-AI4S\\nhb-llm-mistranslation\\paper2agent_work\\_quarantine\\p2a-nature-smoke-review\\originals\\s001-2026-nature-reimagining-research-papers-as-inter.pdf",
+ "source_sha256": "92a27c09a7428d41fd8501aed3372f05e9429e47ff81a081b77138d969c08634",
+ "source_name": "s001-2026-nature-reimagining-research-papers-as-inter.pdf",
+ "n_pages": 81,
+ "generated_at": "2026-10-18T01:31:50",
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "n_figures": 5,
+ "n_tables": 7,
+ "n_pictures_detected": 17,
+ "n_uncaptioned_pictures": 12,
+ "figures": [
+  {
+   "figure_id": "fig_001",
+   "kind": "figure",
+   "label_form": "Fig. 1",
+   "figure_number": 1,
+   "page": 5,
+   "bbox": {
+    "l": 90.11,
+    "t": 743.0,
+    "r": 494.43,
+    "b": 386.8,
+    "w": 404.32,
+    "h": 356.21,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 180,
+    "y0": 96,
+    "x1": 989,
+    "y1": 808,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_001.png",
+   "image_size_px": [
+    809,
+    712
+   ],
+   "caption": "Fig. 1 | Overview of Paper2Agent. a, Paper2Agent turns research papers into interactive AI agents by building remote MCP servers with tools, resources and prompts. Connecting an AI agent to the server creates a paper-specific agent for diverse tasks. b, Workflow of Paper2Agent. It starts with codebase extraction",
+   "caption_page": 5,
+   "caption_text": "Fig. 1 | Overview of Paper2Agent. a, Paper2Agent turns research papers into interactive AI agents by building remote MCP servers with tools, resources and prompts. Connecting an AI agent to the server creates a paper-specific agent for diverse tasks. b, Workflow of Paper2Agent. It starts with codebase extraction",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 376.12,
+    "r": 294.81,
+    "b": 339.61,
+    "w": 255.12,
+    "h": 36.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p5_e69"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 10.68
+   },
+   "element_id": "p5_e68",
+   "reading_order": 68
+  },
+  {
+   "figure_id": "fig_002",
+   "kind": "figure",
+   "label_form": "Fig. 2",
+   "figure_number": 2,
+   "page": 6,
+   "bbox": {
+    "l": 35.59,
+    "t": 749.47,
+    "r": 560.15,
+    "b": 144.1,
+    "w": 524.56,
+    "h": 605.37,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 71,
+    "y0": 83,
+    "x1": 1120,
+    "y1": 1294,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_002.png",
+   "image_size_px": [
+    1049,
+    1211
+   ],
+   "caption": "Fig. 2 | Overview of the Paper2Agent-generated AlphaGenome agent.",
+   "caption_page": 6,
+   "caption_text": "Fig. 2 | Overview of the Paper2Agent-generated AlphaGenome agent.",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 129.6,
+    "r": 277.94,
+    "b": 123.12,
+    "w": 238.25,
+    "h": 6.48,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p6_e77"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 14.5
+   },
+   "element_id": "p6_e76",
+   "reading_order": 76
+  },
+  {
+   "figure_id": "fig_003",
+   "kind": "figure",
+   "label_form": "Fig. 3",
+   "figure_number": 3,
+   "page": 8,
+   "bbox": {
+    "l": 40.38,
+    "t": 744.97,
+    "r": 543.1,
+    "b": 90.22,
+    "w": 502.72,
+    "h": 654.76,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 81,
+    "y0": 92,
+    "x1": 1086,
+    "y1": 1401,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_003.png",
+   "image_size_px": [
+    1005,
+    1309
+   ],
+   "caption": "Fig. 3 | Overview of the Paper2Agent-generated Scanpy agent. a, Construction of the Scanpy MCP server and agent. b, MCP prompts encode a standardized single-cell preprocessing and clustering pipeline. c, Agent reproduces human",
+   "caption_page": 8,
+   "caption_text": "Fig. 3 | Overview of the Paper2Agent-generated Scanpy agent. a, Construction of the Scanpy MCP server and agent. b, MCP prompts encode a standardized single-cell preprocessing and clustering pipeline. c, Agent reproduces human",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 81.51,
+    "r": 294.79,
+    "b": 55.01,
+    "w": 255.1,
+    "h": 26.5,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p8_e94"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 8.71
+   },
+   "element_id": "p8_e93",
+   "reading_order": 93
+  },
+  {
+   "figure_id": "fig_004",
+   "kind": "figure",
+   "label_form": "Fig. 4",
+   "figure_number": 4,
+   "page": 10,
+   "bbox": {
+    "l": 156.07,
+    "t": 569.7,
+    "r": 430.01,
+    "b": 388.97,
+    "w": 273.94,
+    "h": 180.73,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 312,
+    "y0": 442,
+    "x1": 860,
+    "y1": 804,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_004.png",
+   "image_size_px": [
+    548,
+    362
+   ],
+   "caption": "Fig. 4 | Paper2Agent enables prioritization and experimental support for a psoriasis-associated causal gene. a, Paper2Agent integrates AlphaGenome, MPRA-coupled scCRISPRi and Perturb-seq paper agents to prioritize GPR137 at the psoriasis-associated rs887314 locus. b, Correlations between rs887314 CRE perturbation and gene knockdown (KD) signatures. Each dot represents one",
+   "caption_page": 10,
+   "caption_text": "Fig. 4 | Paper2Agent enables prioritization and experimental support for a psoriasis-associated causal gene. a, Paper2Agent integrates AlphaGenome, MPRA-coupled scCRISPRi and Perturb-seq paper agents to prioritize GPR137 at the psoriasis-associated rs887314 locus. b, Correlations between rs887314 CRE perturbation and gene knockdown (KD) signatures. Each dot represents one",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 377.56,
+    "r": 293.86,
+    "b": 331.05,
+    "w": 254.17,
+    "h": 46.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p10_e118"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 11.41
+   },
+   "element_id": "p10_e116",
+   "reading_order": 116
+  },
+  {
+   "figure_id": "fig_005",
+   "kind": "figure",
+   "label_form": "",
+   "figure_number": null,
+   "page": 77,
+   "bbox": {
+    "l": 179.1,
+    "t": 718.62,
+    "r": 432.55,
+    "b": 296.15,
+    "w": 253.45,
+    "h": 422.47,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 358,
+    "y0": 147,
+    "x1": 865,
+    "y1": 992,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_005.png",
+   "image_size_px": [
+    507,
+    845
+   ],
+   "caption": "rs887314 CRE perturbation log2 fold change",
+   "caption_page": 77,
+   "caption_text": "rs887314 CRE perturbation log2 fold change",
+   "caption_bbox": {
+    "l": 250.75,
+    "t": 300.12,
+    "r": 370.25,
+    "b": 294.5,
+    "w": 119.5,
+    "h": 5.62,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p77_e614"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": -3.97
+   },
+   "element_id": "p77_e613",
+   "reading_order": 613
+  }
+ ],
+ "tables": [
+  {
+   "table_id": "table_001",
+   "page": 22,
+   "bbox": {
+    "l": 53.78,
+    "t": 448.44,
+    "r": 556.89,
+    "b": 369.61,
+    "w": 503.11,
+    "h": 78.83,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p22_e265"
+  },
+  {
+   "table_id": "table_002",
+   "page": 25,
+   "bbox": {
+    "l": 71.68,
+    "t": 598.99,
+    "r": 570.75,
+    "b": 156.9,
+    "w": 499.07,
+    "h": 442.09,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": "Table 1: Comparison of Paper2Agent with related systems for computational reproducibility and paper operationalization.",
+   "caption_bbox": {
+    "l": 72.0,
+    "t": 633.19,
+    "r": 540.0,
+    "b": 609.29,
+    "w": 468.0,
+    "h": 23.89,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_page": 25,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": 10.3,
+    "paired": true
+   },
+   "element_id": "p25_e280"
+  },
+  {
+   "table_id": "table_003",
+   "page": 52,
+   "bbox": {
+    "l": 110.32,
+    "t": 551.49,
+    "r": 502.35,
+    "b": 177.12,
+    "w": 392.03,
+    "h": 374.36,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": "Table 2: Per-dataset parameter choices selected by the Scanpy agent across seven single-cell datasets. The agent received the same generic prompt for every dataset; the organism, mitochondrial prefix, and marker-gene panel were inferred directly from data without user specification. Entries are captured verbatim fromMCP tool-call logs.",
+   "caption_bbox": {
+    "l": 72.0,
+    "t": 612.84,
+    "r": 540.0,
+    "b": 561.85,
+    "w": 468.0,
+    "h": 50.99,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_page": 52,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": 10.36,
+    "paired": true
+   },
+   "element_id": "p52_e426"
+  },
+  {
+   "table_id": "table_004",
+   "page": 78,
+   "bbox": {
+    "l": 21.97,
+    "t": 731.02,
+    "r": 566.15,
+    "b": 219.92,
+    "w": 544.19,
+    "h": 511.09,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p78_e616"
+  },
+  {
+   "table_id": "table_005",
+   "page": 79,
+   "bbox": {
+    "l": 21.72,
+    "t": 741.71,
+    "r": 566.09,
+    "b": 260.84,
+    "w": 544.37,
+    "h": 480.87,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p79_e618"
+  },
+  {
+   "table_id": "table_006",
+   "page": 80,
+   "bbox": {
+    "l": 21.75,
+    "t": 741.77,
+    "r": 566.28,
+    "b": 243.24,
+    "w": 544.53,
+    "h": 498.53,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p80_e620"
+  },
+  {
+   "table_id": "table_007",
+   "page": 81,
+   "bbox": {
+    "l": 21.7,
+    "t": 678.36,
+    "r": 591.17,
+    "b": 481.77,
+    "w": 569.47,
+    "h": 196.59,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p81_e622"
+  }
+ ]
+}

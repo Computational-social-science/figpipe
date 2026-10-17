@@ -195,10 +195,19 @@ def test_control_verdict_text_distinguishes_the_two_outcomes(vlm):
 def test_column_width_is_supplied_as_context_not_inferred(vlm):
     """The prompt must GIVE the width, because a crop cannot show which column it came from."""
     prompt = vlm.build_prompt({"crop_width_mm": 91.5})
-    assert "91.5" in prompt
+    assert "91.5" in prompt, "the measured crop width must be supplied"
     assert "column_width" in prompt
-    # And it must tell the model not to read it off the image.
-    assert "Do not try to read the column width off the image" in prompt
+    # The prompt must also supply the reference widths, or "near 89/183" is unanchored.
+    low = prompt.lower()
+    assert "89" in prompt and "183" in prompt, "reference column widths missing"
+    # And it must forbid reading the width off the image. Assert the PROPERTY, not one
+    # sentence: an earlier version pinned exact wording and failed when the prompt was
+    # improved. Substance, not phrasing.
+    assert ("read the column width off the image" in low
+            or "not read the column width" in low
+            or "do not try to read the column" in low), (
+        "the prompt does not tell the model to avoid inferring column_width from the crop; "
+        "a crop cannot reveal which page column it came from")
 
 
 def test_prompt_offers_null_for_every_field(vlm):

@@ -1,0 +1,696 @@
+{
+ "paper_id": "2025_nature_discovering_state_of_the_art_reinforcement_learn_d089008a",
+ "source_pdf": "D:\\2026-AI4S\\REFs\\Information Seeking\\2025-Nature_Discovering state-of-the-art reinforcement learning algorithms&SI.pdf",
+ "source_sha256": "67cfa892f5bdac9c6213f705e8589aaa1653036a59b825d284231375a1ed74d9",
+ "source_name": "2025-Nature_Discovering state-of-the-art reinforcement learning algorithms&SI.pdf",
+ "n_pages": 28,
+ "generated_at": "2026-10-18T01:29:22",
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "n_figures": 10,
+ "n_tables": 7,
+ "n_pictures_detected": 14,
+ "n_uncaptioned_pictures": 4,
+ "figures": [
+  {
+   "figure_id": "fig_001",
+   "kind": "figure",
+   "label_form": "Fig. 1",
+   "figure_number": 1,
+   "page": 2,
+   "bbox": {
+    "l": 34.16,
+    "t": 743.74,
+    "r": 563.09,
+    "b": 370.76,
+    "w": 528.92,
+    "h": 372.97,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 68,
+    "y0": 94,
+    "x1": 1126,
+    "y1": 840,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_001.png",
+   "image_size_px": [
+    1058,
+    746
+   ],
+   "caption": "Fig. 1 | Discovering an RL rule from a population of agents. a, Discovery. Multiple agents, interacting with various environments, are trained in parallel according to the learning rule, defined by the meta-network. In the meantime, the meta-network is optimized to improve the agents' collective performances. b, Agent architecture. An agent produces the following outputs: (1) a policy (π), (2) an observation-conditioned prediction vector (y), (3) action-conditioned prediction vectors (z), (4) action values (q) and (5) an auxiliary policy prediction (p). The semantics of y and z are determined by the meta-network. c, Meta-network architecture. A trajectory of the agent's outputs is given as input to the",
+   "caption_page": 2,
+   "caption_text": "Fig. 1 | Discovering an RL rule from a population of agents. a, Discovery. Multiple agents, interacting with various environments, are trained in parallel according to the learning rule, defined by the meta-network. In the meantime, the meta-network is optimized to improve the agents' collective performances. b, Agent architecture. An agent produces the following outputs: (1) a policy (π), (2) an observation-conditioned prediction vector (y), (3) action-conditioned prediction vectors (z), (4) action values (q) and (5) an auxiliary policy prediction (p). The semantics of y and z are determined by the meta-network. c, Meta-network architecture. A trajectory of the agent's outputs is given as input to the",
+   "caption_bbox": {
+    "l": 39.67,
+    "t": 360.91,
+    "r": 294.78,
+    "b": 274.39,
+    "w": 255.11,
+    "h": 86.52,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p2_e17"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 9.85
+   },
+   "element_id": "p2_e16",
+   "reading_order": 16
+  },
+  {
+   "figure_id": "fig_002",
+   "kind": "figure",
+   "label_form": "Fig. 2",
+   "figure_number": 2,
+   "page": 4,
+   "bbox": {
+    "l": 34.84,
+    "t": 746.23,
+    "r": 560.92,
+    "b": 148.08,
+    "w": 526.08,
+    "h": 598.15,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 70,
+    "y0": 89,
+    "x1": 1122,
+    "y1": 1286,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_002.png",
+   "image_size_px": [
+    1052,
+    1197
+   ],
+   "caption": "Fig. 2 | Evaluation of DiscoRL. a-f, Performance of DiscoRL compared to humandesigned RL rules on Atari (a), ProcGen (b), DMLab (c), Crafter (d; figure inset shows results for 1 million environment steps), NetHack (e), and Sokoban (f). The x axis represents the number of environment steps in millions. The y axis represents the human-normalized IQM score for benchmarks consisting of multiple tasks (Atari, ProcGen and DMLab-30) and average return for the rest. Disco57 (blue) is discovered from the Atari benchmark and Disco103 (orange)",
+   "caption_page": 4,
+   "caption_text": "Fig. 2 | Evaluation of DiscoRL. a-f, Performance of DiscoRL compared to humandesigned RL rules on Atari (a), ProcGen (b), DMLab (c), Crafter (d; figure inset shows results for 1 million environment steps), NetHack (e), and Sokoban (f). The x axis represents the number of environment steps in millions. The y axis represents the human-normalized IQM score for benchmarks consisting of multiple tasks (Atari, ProcGen and DMLab-30) and average return for the rest. Disco57 (blue) is discovered from the Atari benchmark and Disco103 (orange)",
+   "caption_bbox": {
+    "l": 39.67,
+    "t": 138.36,
+    "r": 293.77,
+    "b": 71.85,
+    "w": 254.1,
+    "h": 66.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p4_e47"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 9.72
+   },
+   "element_id": "p4_e46",
+   "reading_order": 46
+  },
+  {
+   "figure_id": "fig_003",
+   "kind": "figure",
+   "label_form": "Fig. 3",
+   "figure_number": 3,
+   "page": 5,
+   "bbox": {
+    "l": 35.83,
+    "t": 744.41,
+    "r": 561.31,
+    "b": 585.86,
+    "w": 525.49,
+    "h": 158.55,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 72,
+    "y0": 93,
+    "x1": 1123,
+    "y1": 410,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_003.png",
+   "image_size_px": [
+    1051,
+    317
+   ],
+   "caption": "Fig. 3 | Properties of discovery process. a, Discovery efficiency. The best DiscoRL was discovered within 3 simulations of the agent's lifetimes (200 million steps) per game. b, Scalability. DiscoRL becomes stronger on the ProcGen benchmark (30 million environment steps for all methods) as the training set of environments grows. c, Ablation. The plot shows the performances of variations of DiscoRL on Atari. 'Without auxiliary prediction' is meta-learned",
+   "caption_page": 5,
+   "caption_text": "Fig. 3 | Properties of discovery process. a, Discovery efficiency. The best DiscoRL was discovered within 3 simulations of the agent's lifetimes (200 million steps) per game. b, Scalability. DiscoRL becomes stronger on the ProcGen benchmark (30 million environment steps for all methods) as the training set of environments grows. c, Ablation. The plot shows the performances of variations of DiscoRL on Atari. 'Without auxiliary prediction' is meta-learned",
+   "caption_bbox": {
+    "l": 39.68,
+    "t": 576.52,
+    "r": 294.52,
+    "b": 520.01,
+    "w": 254.84,
+    "h": 56.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p5_e51"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 9.34
+   },
+   "element_id": "p5_e50",
+   "reading_order": 50
+  },
+  {
+   "figure_id": "fig_004",
+   "kind": "figure",
+   "label_form": "Fig. 4",
+   "figure_number": 4,
+   "page": 6,
+   "bbox": {
+    "l": 33.94,
+    "t": 742.07,
+    "r": 561.75,
+    "b": 389.55,
+    "w": 527.81,
+    "h": 352.53,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 68,
+    "y0": 98,
+    "x1": 1124,
+    "y1": 803,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_004.png",
+   "image_size_px": [
+    1055,
+    705
+   ],
+   "caption": "Fig. 4 | Analysis of DiscoRL. a, Behaviour of discovered predictions. The plot shows how the agent's discovered prediction (y) changes along with other quantities in Ms Pacman (left) and Breakout (right). 'Confidence' is calculated as negative entropy. Spikes in prediction confidence are correlated with upcoming salient events. For example, they often precede large rewards in Ms Pacman and strong action preferences in Breakout. b, Gradient analysis. Each contour shows where each prediction focuses on in the observation through a gradient analysis in Beam Rider. The predictions tend to focus more on enemies at a distance, whereas the policy and the value tend to focus on nearby enemies and the scoreboard, respectively. c, Prediction analysis. Future entropy and large-reward",
+   "caption_page": 6,
+   "caption_text": "Fig. 4 | Analysis of DiscoRL. a, Behaviour of discovered predictions. The plot shows how the agent's discovered prediction (y) changes along with other quantities in Ms Pacman (left) and Breakout (right). 'Confidence' is calculated as negative entropy. Spikes in prediction confidence are correlated with upcoming salient events. For example, they often precede large rewards in Ms Pacman and strong action preferences in Breakout. b, Gradient analysis. Each contour shows where each prediction focuses on in the observation through a gradient analysis in Beam Rider. The predictions tend to focus more on enemies at a distance, whereas the policy and the value tend to focus on nearby enemies and the scoreboard, respectively. c, Prediction analysis. Future entropy and large-reward",
+   "caption_bbox": {
+    "l": 39.68,
+    "t": 379.06,
+    "r": 287.89,
+    "b": 272.53,
+    "w": 248.21,
+    "h": 106.53,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p6_e68"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 10.49
+   },
+   "element_id": "p6_e67",
+   "reading_order": 67
+  },
+  {
+   "figure_id": "fig_005",
+   "kind": "extended_data_figure",
+   "label_form": "Extended Data Fig. 1",
+   "figure_number": 1,
+   "page": 11,
+   "bbox": {
+    "l": 34.97,
+    "t": 745.25,
+    "r": 546.91,
+    "b": 588.68,
+    "w": 511.94,
+    "h": 156.57,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 70,
+    "y0": 91,
+    "x1": 1094,
+    "y1": 404,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_005.png",
+   "image_size_px": [
+    1024,
+    313
+   ],
+   "caption": "Extended Data Fig. 1 | Robustness of DiscoRL. The plots show the performance of Disco57 and Muesli on Ms Pacman by varying agent settings. 'Discovery' and 'Evaluation' represent the setting used for discovery and evaluation, respectively. (a) Each rule was evaluated on various agent network sizes. (b) Each rule was evaluated on various replay ratios, which define the",
+   "caption_page": 11,
+   "caption_text": "Extended Data Fig. 1 | Robustness of DiscoRL. The plots show the performance of Disco57 and Muesli on Ms Pacman by varying agent settings. 'Discovery' and 'Evaluation' represent the setting used for discovery and evaluation, respectively. (a) Each rule was evaluated on various agent network sizes. (b) Each rule was evaluated on various replay ratios, which define the",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 580.51,
+    "r": 294.26,
+    "b": 534.0,
+    "w": 254.57,
+    "h": 46.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p11_e183"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 8.17
+   },
+   "element_id": "p11_e182",
+   "reading_order": 182
+  },
+  {
+   "figure_id": "fig_006",
+   "kind": "extended_data_figure",
+   "label_form": "Extended Data Fig. 3",
+   "figure_number": 3,
+   "page": 13,
+   "bbox": {
+    "l": 134.54,
+    "t": 744.48,
+    "r": 463.69,
+    "b": 589.8,
+    "w": 329.14,
+    "h": 154.68,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 269,
+    "y0": 93,
+    "x1": 927,
+    "y1": 402,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_006.png",
+   "image_size_px": [
+    658,
+    309
+   ],
+   "caption": "Extended Data Fig. 3 | Effect of meta-network architecture. (a) The x-axis represents the number of environment steps in evaluation and the y-axis the IQM on the Atari benchmark. All methods are discovered from 16 randomly selected Atari games. The meta-RNN component slightly improves performance. The shaded areas show 95% confidence intervals. (b) The x-axis represents the number of environment steps in evaluation and the y-axis the IQM on the",
+   "caption_page": 13,
+   "caption_text": "Extended Data Fig. 3 | Effect of meta-network architecture. (a) The x-axis represents the number of environment steps in evaluation and the y-axis the IQM on the Atari benchmark. All methods are discovered from 16 randomly selected Atari games. The meta-RNN component slightly improves performance. The shaded areas show 95% confidence intervals. (b) The x-axis represents the number of environment steps in evaluation and the y-axis the IQM on the",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 580.17,
+    "r": 294.81,
+    "b": 523.65,
+    "w": 255.13,
+    "h": 56.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p13_e189"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 9.63
+   },
+   "element_id": "p13_e188",
+   "reading_order": 188
+  },
+  {
+   "figure_id": "fig_007",
+   "kind": "figure",
+   "label_form": "Fig. 1",
+   "figure_number": 1,
+   "page": 24,
+   "bbox": {
+    "l": 95.98,
+    "t": 769.68,
+    "r": 509.73,
+    "b": 657.96,
+    "w": 413.75,
+    "h": 111.72,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 192,
+    "y0": 144,
+    "x1": 1019,
+    "y1": 368,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_007.png",
+   "image_size_px": [
+    827,
+    224
+   ],
+   "caption": "Fig. 1: Approximation of C51 and PPO with meta-network. (a) The meta-network was trained to predict C51 value targets on an online synthetic data. The data was generated by a mixture of Gaussians for the distributional value. (Left) The meta-network achieved a near-zero loss for approximating C51 targets. The next-value baseline uses vt+1 as a prediction. (Right) The meta-network approximately matched the groundtruth C51 target for a non-trivial multi-modal target after training. (b) The meta-network was trained to predict PPO-Clipped ratio on an online synthetic data. It was able to outperform two baselines: a constant zero and PPO ratio without clipping.",
+   "caption_page": 24,
+   "caption_text": "Fig. 1: Approximation of C51 and PPO with meta-network. (a) The meta-network was trained to predict C51 value targets on an online synthetic data. The data was generated by a mixture of Gaussians for the distributional value. (Left) The meta-network achieved a near-zero loss for approximating C51 targets. The next-value baseline uses vt+1 as a prediction. (Right) The meta-network approximately matched the groundtruth C51 target for a non-trivial multi-modal target after training. (b) The meta-network was trained to predict PPO-Clipped ratio on an online synthetic data. It was able to outperform two baselines: a constant zero and PPO ratio without clipping.",
+   "caption_bbox": {
+    "l": 81.26,
+    "t": 647.99,
+    "r": 511.65,
+    "b": 567.02,
+    "w": 430.39,
+    "h": 80.97,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p24_e235"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 9.97
+   },
+   "element_id": "p24_e234",
+   "reading_order": 234
+  },
+  {
+   "figure_id": "fig_008",
+   "kind": "figure",
+   "label_form": "Fig. 2",
+   "figure_number": 2,
+   "page": 24,
+   "bbox": {
+    "l": 89.81,
+    "t": 543.06,
+    "r": 494.6,
+    "b": 383.42,
+    "w": 404.79,
+    "h": 159.64,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 180,
+    "y0": 598,
+    "x1": 989,
+    "y1": 917,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_008.png",
+   "image_size_px": [
+    809,
+    319
+   ],
+   "caption": "Fig. 2: Target-based rules can approximate temporal-difference rules, whereas loss-based rules cannot. Given two scalar input values (x = [v,v′ ]), we consider a simple temporal-difference (TD) loss, L∗ (x) = 1 2 ||v-{v′}||2 , where {·} stops the gradient flow for value bootstrapping. We train two variants of neural networks to approximate the TD gradients with respect to each input value as follows: ∂L∗ ∂v = v-v′ and ∂ L∗ ∂v′ =0. (a) In the loss network, the loss is defined as L= fθ (x) where fθ is a neural network parameterised by θ. (b) In the target network, the loss is given by L =D( fθ (x),x), where D is a L2 distance function, and fθ (x) : R2 ↦→R2 is a neural network that produces a target for each input value. (c) In both cases, θ is updated to approximate the TD gradients by minimising the loss L(θ) = 1 2 ||gmeta -gTD||2 , where gmeta = ∇xL(x) and gTD = ∇xL∗ (x), for randomly sampled values x = [v, v′ ]. The target network approximates TD gradients better than the loss network.",
+   "caption_page": 24,
+   "caption_text": "Fig. 2: Target-based rules can approximate temporal-difference rules, whereas loss-based rules cannot. Given two scalar input values (x = [v,v′ ]), we consider a simple temporal-difference (TD) loss, L∗ (x) = 1 2 ||v-{v′}||2 , where {·} stops the gradient flow for value bootstrapping. We train two variants of neural networks to approximate the TD gradients with respect to each input value as follows: ∂L∗ ∂v = v-v′ and ∂ L∗ ∂v′ =0. (a) In the loss network, the loss is defined as L= fθ (x) where fθ is a neural network parameterised by θ. (b) In the target network, the loss is given by L =D( fθ (x),x), where D is a L2 distance function, and fθ (x) : R2 ↦→R2 is a neural network that produces a target for each input value. (c) In both cases, θ is updated to approximate the TD gradients by minimising the loss L(θ) = 1 2 ||gmeta -gTD||2 , where gmeta = ∇xL(x) and gTD = ∇xL∗ (x), for randomly sampled values x = [v, v′ ]. The target network approximates TD gradients better than the loss network.",
+   "caption_bbox": {
+    "l": 81.26,
+    "t": 373.19,
+    "r": 511.66,
+    "b": 252.12,
+    "w": 430.39,
+    "h": 121.08,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p24_e237"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 10.23
+   },
+   "element_id": "p24_e236",
+   "reading_order": 236
+  },
+  {
+   "figure_id": "fig_009",
+   "kind": "figure",
+   "label_form": "Fig. 3",
+   "figure_number": 3,
+   "page": 26,
+   "bbox": {
+    "l": 79.72,
+    "t": 769.38,
+    "r": 511.4,
+    "b": 676.15,
+    "w": 431.68,
+    "h": 93.23,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 159,
+    "y0": 145,
+    "x1": 1023,
+    "y1": 331,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_009.png",
+   "image_size_px": [
+    864,
+    186
+   ],
+   "caption": "Fig. 3: Gradient norm of different loss functions. Each image visualises the L1 norm of the gradient with respect to the scalar prediction (y) given each loss function. In 'Grad' and 'PolicyGrad', the target ˆ y is directly used as the gradient with respect to the input y and logσ(y), which result in unbounded gradients. L2 distance also produces large gradients as the prediction is farther away from the target, whereas the gradients are bounded between (-1, 1) in KL divergence.",
+   "caption_page": 26,
+   "caption_text": "Fig. 3: Gradient norm of different loss functions. Each image visualises the L1 norm of the gradient with respect to the scalar prediction (y) given each loss function. In 'Grad' and 'PolicyGrad', the target ˆ y is directly used as the gradient with respect to the input y and logσ(y), which result in unbounded gradients. L2 distance also produces large gradients as the prediction is farther away from the target, whereas the gradients are bounded between (-1, 1) in KL divergence.",
+   "caption_bbox": {
+    "l": 81.26,
+    "t": 671.67,
+    "r": 511.65,
+    "b": 614.7,
+    "w": 430.39,
+    "h": 56.97,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p26_e252"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 4.48
+   },
+   "element_id": "p26_e251",
+   "reading_order": 251
+  },
+  {
+   "figure_id": "fig_010",
+   "kind": "figure",
+   "label_form": "Fig. 4",
+   "figure_number": 4,
+   "page": 26,
+   "bbox": {
+    "l": 81.01,
+    "t": 585.63,
+    "r": 507.06,
+    "b": 403.51,
+    "w": 426.06,
+    "h": 182.12,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 162,
+    "y0": 513,
+    "x1": 1014,
+    "y1": 877,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_010.png",
+   "image_size_px": [
+    852,
+    364
+   ],
+   "caption": "Fig. 4: Meta-network illustration. (a) Per-action inputs (e.g., π(s,a),z(s,a)) are projected to embeddings using an encoder network φenc whose weights are shared across action dimension. The action-specific embeddings are averaged and concatenated to the per-state embedding. This is given as input to the LSTM that is unrolled over environment steps. The LSTM state is copied and concatenated to each action embedding, which is transformed to a policy target ˆπ using a shared decoder network φdec. Meanwhile, the LSTM output is also decoded to prediction targets ( ˆ y, ˆ z). (b) Meta-RNN is unrolled forward over agent update iterations. For each iteration, it takes as input the average of embeddings over all timesteps in each agent update. The output of meta-RNN is used as an additional input to the decoder when generating targets in (a) (not illustrated for simplicity).",
+   "caption_page": 26,
+   "caption_text": "Fig. 4: Meta-network illustration. (a) Per-action inputs (e.g., π(s,a),z(s,a)) are projected to embeddings using an encoder network φenc whose weights are shared across action dimension. The action-specific embeddings are averaged and concatenated to the per-state embedding. This is given as input to the LSTM that is unrolled over environment steps. The LSTM state is copied and concatenated to each action embedding, which is transformed to a policy target ˆπ using a shared decoder network φdec. Meanwhile, the LSTM output is also decoded to prediction targets ( ˆ y, ˆ z). (b) Meta-RNN is unrolled forward over agent update iterations. For each iteration, it takes as input the average of embeddings over all timesteps in each agent update. The output of meta-RNN is used as an additional input to the decoder when generating targets in (a) (not illustrated for simplicity).",
+   "caption_bbox": {
+    "l": 81.26,
+    "t": 391.87,
+    "r": 511.65,
+    "b": 286.9,
+    "w": 430.39,
+    "h": 104.97,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p26_e254"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 11.64
+   },
+   "element_id": "p26_e253",
+   "reading_order": 253
+  }
+ ],
+ "tables": [
+  {
+   "table_id": "table_001",
+   "page": 15,
+   "bbox": {
+    "l": 39.42,
+    "t": 727.03,
+    "r": 560.53,
+    "b": 244.92,
+    "w": 521.11,
+    "h": 482.11,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p15_e195"
+  },
+  {
+   "table_id": "table_002",
+   "page": 16,
+   "bbox": {
+    "l": 39.15,
+    "t": 728.08,
+    "r": 560.91,
+    "b": 563.87,
+    "w": 521.76,
+    "h": 164.2,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p16_e198"
+  },
+  {
+   "table_id": "table_003",
+   "page": 17,
+   "bbox": {
+    "l": 39.17,
+    "t": 727.18,
+    "r": 560.64,
+    "b": 451.08,
+    "w": 521.47,
+    "h": 276.11,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p17_e202"
+  },
+  {
+   "table_id": "table_004",
+   "page": 18,
+   "bbox": {
+    "l": 40.98,
+    "t": 727.11,
+    "r": 561.12,
+    "b": 561.68,
+    "w": 520.13,
+    "h": 165.44,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p18_e205"
+  },
+  {
+   "table_id": "table_005",
+   "page": 19,
+   "bbox": {
+    "l": 40.62,
+    "t": 726.05,
+    "r": 560.66,
+    "b": 528.83,
+    "w": 520.04,
+    "h": 197.23,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p19_e209"
+  },
+  {
+   "table_id": "table_006",
+   "page": 20,
+   "bbox": {
+    "l": 39.74,
+    "t": 725.69,
+    "r": 560.26,
+    "b": 590.1,
+    "w": 520.52,
+    "h": 135.59,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p20_e212"
+  },
+  {
+   "table_id": "table_007",
+   "page": 23,
+   "bbox": {
+    "l": 91.99,
+    "t": 699.31,
+    "r": 505.09,
+    "b": 526.3,
+    "w": 413.1,
+    "h": 173.01,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": "Table 1: Meta-network inputs. For each input, we give examples of the RL algorithmic concepts that inspire it, and example algorithms that use such inputs in computing their objectives. To represent a scalar with y or z, the agent could use a sparse vector, or encode the scalar using a categorical representation (like the two-hot value representation used in prior work 3 ). θ - represents exponentially moving parameters.",
+   "caption_bbox": {
+    "l": 93.19,
+    "t": 760.71,
+    "r": 504.45,
+    "b": 703.74,
+    "w": 411.26,
+    "h": 56.97,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_page": 23,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": 4.43,
+    "paired": true
+   },
+   "element_id": "p23_e223"
+  }
+ ]
+}

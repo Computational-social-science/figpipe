@@ -1,0 +1,637 @@
+{
+ "paper_id": "2026_nature_mapping_the_neuronal_building_blocks_of_human_la_2248c823",
+ "source_pdf": "D:\\2026-AI4S\\2026-Nature-Mapping the neuronal building blocks of human language with language models.pdf",
+ "source_sha256": "7d507a27389c52af387b20532564ea34485f7bf16e03adc63ccc5718971e0e0b",
+ "source_name": "2026-Nature-Mapping the neuronal building blocks of human language with language models.pdf",
+ "n_pages": 28,
+ "generated_at": "2026-10-18T01:30:34",
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "n_figures": 9,
+ "n_tables": 7,
+ "n_pictures_detected": 16,
+ "n_uncaptioned_pictures": 7,
+ "figures": [
+  {
+   "figure_id": "fig_001",
+   "kind": "figure",
+   "label_form": "Fig. 1",
+   "figure_number": 1,
+   "page": 2,
+   "bbox": {
+    "l": 35.7,
+    "t": 746.24,
+    "r": 563.17,
+    "b": 539.01,
+    "w": 527.46,
+    "h": 207.23,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 71,
+    "y0": 89,
+    "x1": 1126,
+    "y1": 504,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_001.png",
+   "image_size_px": [
+    1055,
+    415
+   ],
+   "caption": "Fig. 1 | Tracking linguistic representations by neurons across the human frontotemporal cortex during natural speech. a, Sagittal views of",
+   "caption_page": 2,
+   "caption_text": "Fig. 1 | Tracking linguistic representations by neurons across the human frontotemporal cortex during natural speech. a, Sagittal views of",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 530.16,
+    "r": 283.37,
+    "b": 513.66,
+    "w": 243.68,
+    "h": 16.5,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p2_e16"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 8.85
+   },
+   "element_id": "p2_e15",
+   "reading_order": 15
+  },
+  {
+   "figure_id": "fig_002",
+   "kind": "figure",
+   "label_form": "Fig. 2",
+   "figure_number": 2,
+   "page": 4,
+   "bbox": {
+    "l": 113.54,
+    "t": 744.06,
+    "r": 486.74,
+    "b": 229.88,
+    "w": 373.19,
+    "h": 514.18,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 227,
+    "y0": 94,
+    "x1": 973,
+    "y1": 1122,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_002.png",
+   "image_size_px": [
+    746,
+    1028
+   ],
+   "caption": "Fig. 2 | Selectivity and robustness of linguistic representations at the cellular scale. a, The proportions of neurons out of n = 579 that displayed selectivity to specific linguistic features (left; Mann-Whitney U-test, α = 0.05, P values were FDR corrected for multiple feature comparisons). Right, coincidence matrix displaying the distribution of cells that displayed selectivity to specific linguistic features. Inset: the percentage of neurons exhibiting overlapping selectivity with lower-order acoustic features (for example, pitch). b, Dependency structure of a representative sentence, with grammatical relationships (dependency), dependency depths and ordinal positions. Here the labels are nsubj (nominal subject), advmod (adverbial modifier), prep (prepositional modifier), pobj (object of a preposition) and det (determiner). c, The proportions of neurons (out of n = 579) that displayed selectivity to dependencies and dependency depth (left; defined as Mann-Whitney U-test, α = 0.05, P values were FDR corrected for multiple feature comparisons). Top right, a coincidence matrix of the distribution of cells that displayed selectivity to specific linguistic features. Bottom right, the number of neurons",
+   "caption_page": 4,
+   "caption_text": "Fig. 2 | Selectivity and robustness of linguistic representations at the cellular scale. a, The proportions of neurons out of n = 579 that displayed selectivity to specific linguistic features (left; Mann-Whitney U-test, α = 0.05, P values were FDR corrected for multiple feature comparisons). Right, coincidence matrix displaying the distribution of cells that displayed selectivity to specific linguistic features. Inset: the percentage of neurons exhibiting overlapping selectivity with lower-order acoustic features (for example, pitch). b, Dependency structure of a representative sentence, with grammatical relationships (dependency), dependency depths and ordinal positions. Here the labels are nsubj (nominal subject), advmod (adverbial modifier), prep (prepositional modifier), pobj (object of a preposition) and det (determiner). c, The proportions of neurons (out of n = 579) that displayed selectivity to dependencies and dependency depth (left; defined as Mann-Whitney U-test, α = 0.05, P values were FDR corrected for multiple feature comparisons). Top right, a coincidence matrix of the distribution of cells that displayed selectivity to specific linguistic features. Bottom right, the number of neurons",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 220.77,
+    "r": 294.78,
+    "b": 64.23,
+    "w": 255.1,
+    "h": 156.54,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p4_e36"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 9.11
+   },
+   "element_id": "p4_e35",
+   "reading_order": 35
+  },
+  {
+   "figure_id": "fig_003",
+   "kind": "figure",
+   "label_form": "Fig. 3",
+   "figure_number": 3,
+   "page": 5,
+   "bbox": {
+    "l": 33.91,
+    "t": 744.95,
+    "r": 561.39,
+    "b": 506.64,
+    "w": 527.48,
+    "h": 238.31,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 68,
+    "y0": 92,
+    "x1": 1123,
+    "y1": 568,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_003.png",
+   "image_size_px": [
+    1055,
+    476
+   ],
+   "caption": "Fig. 3 | Population organization and temporal structure of information encoding by neurons. a, Neuronal predictivity by syntactic (one-hot vectors), semantic (word2vec), a combination of syntactic and semantic and higherorder contextual embeddings (LLaMA Vicuna) was defined as the correlation between the recorded (observed) and model (predicted) activities (see the 'Language model predictivity' section of the Methods). b, The distribution, quartiles, 1.5 × interquartile range (whiskers), mean values (thin lines) and median values (thick lines) of population predictivities. Each dot corresponds to a single session (n = 14; grey circle: outlier at -0.3). Chance predictivities are shown in grey. Statistical analysis was performed using one-sided permutation tests (n = 10 5 ); contextual features versus syntactic (P = 0.008, 95% confidence interval (CI) = 0.0076-0.058), semantic (P = 0.042, CI = -0.0015-0.069) and combined semantic-syntactic features (P = 0.008, CI = 0.0069-0.054); see the 'Language model predictivity' section of the Methods. c, The relationship",
+   "caption_page": 5,
+   "caption_text": "Fig. 3 | Population organization and temporal structure of information encoding by neurons. a, Neuronal predictivity by syntactic (one-hot vectors), semantic (word2vec), a combination of syntactic and semantic and higherorder contextual embeddings (LLaMA Vicuna) was defined as the correlation between the recorded (observed) and model (predicted) activities (see the 'Language model predictivity' section of the Methods). b, The distribution, quartiles, 1.5 × interquartile range (whiskers), mean values (thin lines) and median values (thick lines) of population predictivities. Each dot corresponds to a single session (n = 14; grey circle: outlier at -0.3). Chance predictivities are shown in grey. Statistical analysis was performed using one-sided permutation tests (n = 10 5 ); contextual features versus syntactic (P = 0.008, 95% confidence interval (CI) = 0.0076-0.058), semantic (P = 0.042, CI = -0.0015-0.069) and combined semantic-syntactic features (P = 0.008, CI = 0.0069-0.054); see the 'Language model predictivity' section of the Methods. c, The relationship",
+   "caption_bbox": {
+    "l": 39.68,
+    "t": 496.97,
+    "r": 293.63,
+    "b": 360.46,
+    "w": 253.95,
+    "h": 136.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p5_e39"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 9.67
+   },
+   "element_id": "p5_e38",
+   "reading_order": 38
+  },
+  {
+   "figure_id": "fig_004",
+   "kind": "extended_data_figure",
+   "label_form": "Fig. 4",
+   "figure_number": 4,
+   "page": 7,
+   "bbox": {
+    "l": 113.23,
+    "t": 742.49,
+    "r": 486.55,
+    "b": 331.6,
+    "w": 373.33,
+    "h": 410.89,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 226,
+    "y0": 97,
+    "x1": 973,
+    "y1": 919,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_004.png",
+   "image_size_px": [
+    747,
+    822
+   ],
+   "caption": "Fig. 4 | Diversity and distribution of neurons across frontal-temporal cortical regions and hemispheres. a, The distribution of neurons across participants, hemispheres and brain areas. Top, the outer ring illustrates the proportion of selective neurons; individual segments are partitioned by participant. The brightness of these segments labels the hemisphere: lighter tones represent the left hemisphere and darker tones represent the right hemisphere. Within the inner circle, grey scales identify the anatomical areas: anterior temporal cortex (dark grey), posterior temporal cortex (mid-grey) and posterior frontal cortex (light grey). Bottom, the proportions of neurons that displayed selectivity for one or more features, grouped by cortical areas and hemispheres (Extended Data Fig. 7a). b, Neuronal modulation across hemispheres and cortical areas. The z score from neurons significantly",
+   "caption_page": 7,
+   "caption_text": "Fig. 4 | Diversity and distribution of neurons across frontal-temporal cortical regions and hemispheres. a, The distribution of neurons across participants, hemispheres and brain areas. Top, the outer ring illustrates the proportion of selective neurons; individual segments are partitioned by participant. The brightness of these segments labels the hemisphere: lighter tones represent the left hemisphere and darker tones represent the right hemisphere. Within the inner circle, grey scales identify the anatomical areas: anterior temporal cortex (dark grey), posterior temporal cortex (mid-grey) and posterior frontal cortex (light grey). Bottom, the proportions of neurons that displayed selectivity for one or more features, grouped by cortical areas and hemispheres (Extended Data Fig. 7a). b, Neuronal modulation across hemispheres and cortical areas. The z score from neurons significantly",
+   "caption_bbox": {
+    "l": 39.68,
+    "t": 321.83,
+    "r": 288.84,
+    "b": 205.3,
+    "w": 249.15,
+    "h": 116.53,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p7_e59"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 9.77
+   },
+   "element_id": "p7_e58",
+   "reading_order": 58
+  },
+  {
+   "figure_id": "fig_005",
+   "kind": "figure",
+   "label_form": "Fig. 5",
+   "figure_number": 5,
+   "page": 8,
+   "bbox": {
+    "l": 94.17,
+    "t": 743.66,
+    "r": 482.56,
+    "b": 637.71,
+    "w": 388.39,
+    "h": 105.95,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 188,
+    "y0": 94,
+    "x1": 965,
+    "y1": 306,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_005.png",
+   "image_size_px": [
+    777,
+    212
+   ],
+   "caption": "Fig. 5 | Diversity of single-neuronal and LFP activity patterns. Left, comparison of single-neuronal AP to LFP activities. By having access to both single-neuronal APs and population LFPs from the same microelectrode locations (with each electrode contact measuring approximately less than 100 µm in base diameter and 5 µm at the tip), these two core activity metrics can be compared on a μm scale at a site-specific level. The z scores for all neurons and their LFP activity were recorded at the same microelectrode sites. We then sorted and visualized the single neuronal z scores and applied this same sorting",
+   "caption_page": 8,
+   "caption_text": "Fig. 5 | Diversity of single-neuronal and LFP activity patterns. Left, comparison of single-neuronal AP to LFP activities. By having access to both single-neuronal APs and population LFPs from the same microelectrode locations (with each electrode contact measuring approximately less than 100 µm in base diameter and 5 µm at the tip), these two core activity metrics can be compared on a μm scale at a site-specific level. The z scores for all neurons and their LFP activity were recorded at the same microelectrode sites. We then sorted and visualized the single neuronal z scores and applied this same sorting",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 629.11,
+    "r": 294.81,
+    "b": 552.59,
+    "w": 255.13,
+    "h": 76.52,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p8_e64"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 8.6
+   },
+   "element_id": "p8_e63",
+   "reading_order": 63
+  },
+  {
+   "figure_id": "fig_006",
+   "kind": "extended_data_figure",
+   "label_form": "Extended Data Fig. 3",
+   "figure_number": 3,
+   "page": 18,
+   "bbox": {
+    "l": 69.0,
+    "t": 743.42,
+    "r": 531.47,
+    "b": 540.63,
+    "w": 462.46,
+    "h": 202.79,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 138,
+    "y0": 95,
+    "x1": 1063,
+    "y1": 500,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_006.png",
+   "image_size_px": [
+    925,
+    405
+   ],
+   "caption": "Extended Data Fig. 3 | Neuronal predictivity across participants, recording sessions, layers and models. A leave-one-participant-out procedure was used to determine whether any participant disproportionately contributed to population predictivity across (a) participants and (b) sessions. Here, absent points reflect the subjects or sessions that were dropped. Overall, predictivities were consistent across sessions (Kruskal Wallis test, H(13) = 1.1, p = 1.00, effective size = 0; peak layer). c. Neural population predictivity across layers for the contextual model (blue) and the shuffle control (grey) ± s.e.m.",
+   "caption_page": 18,
+   "caption_text": "Extended Data Fig. 3 | Neuronal predictivity across participants, recording sessions, layers and models. A leave-one-participant-out procedure was used to determine whether any participant disproportionately contributed to population predictivity across (a) participants and (b) sessions. Here, absent points reflect the subjects or sessions that were dropped. Overall, predictivities were consistent across sessions (Kruskal Wallis test, H(13) = 1.1, p = 1.00, effective size = 0; peak layer). c. Neural population predictivity across layers for the contextual model (blue) and the shuffle control (grey) ± s.e.m.",
+   "caption_bbox": {
+    "l": 39.68,
+    "t": 531.93,
+    "r": 294.06,
+    "b": 455.41,
+    "w": 254.38,
+    "h": 76.52,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p18_e289"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 8.7
+   },
+   "element_id": "p18_e288",
+   "reading_order": 288
+  },
+  {
+   "figure_id": "fig_007",
+   "kind": "extended_data_figure",
+   "label_form": "Extended Data Fig. 6",
+   "figure_number": 6,
+   "page": 21,
+   "bbox": {
+    "l": 35.4,
+    "t": 743.11,
+    "r": 295.81,
+    "b": 169.85,
+    "w": 260.41,
+    "h": 573.26,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 71,
+    "y0": 96,
+    "x1": 592,
+    "y1": 1242,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_007.png",
+   "image_size_px": [
+    521,
+    1146
+   ],
+   "caption": "Extended Data Fig. 6 | Predictivity for selective neurons by time and layer. Individual neuronal predictivities by the contextual model across different times are plotted. Single neurons are grouped by their selectivity for the linguistic features.",
+   "caption_page": 21,
+   "caption_text": "Extended Data Fig. 6 | Predictivity for selective neurons by time and layer. Individual neuronal predictivities by the contextual model across different times are plotted. Single neurons are grouped by their selectivity for the linguistic features.",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 160.75,
+    "r": 289.12,
+    "b": 124.24,
+    "w": 249.44,
+    "h": 36.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p21_e298"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 9.1
+   },
+   "element_id": "p21_e297",
+   "reading_order": 297
+  },
+  {
+   "figure_id": "fig_008",
+   "kind": "extended_data_figure",
+   "label_form": "Extended Data Fig. 7",
+   "figure_number": 7,
+   "page": 22,
+   "bbox": {
+    "l": 62.06,
+    "t": 743.85,
+    "r": 537.15,
+    "b": 385.97,
+    "w": 475.09,
+    "h": 357.88,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 124,
+    "y0": 94,
+    "x1": 1074,
+    "y1": 810,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_008.png",
+   "image_size_px": [
+    950,
+    716
+   ],
+   "caption": "Extended Data Fig. 7 | Proportions of selective neurons and predictivities across hemispheres and cortical regions. a. Proportion of neurons responding to linguistic features by hemisphere and area. Each subplot labels the proportion of selective neurons for each linguistic feature. Here, the neurons are grouped both by hemisphere and brain area. Further, the percentage of selective neurons responding to specific linguistic features was",
+   "caption_page": 22,
+   "caption_text": "Extended Data Fig. 7 | Proportions of selective neurons and predictivities across hemispheres and cortical regions. a. Proportion of neurons responding to linguistic features by hemisphere and area. Each subplot labels the proportion of selective neurons for each linguistic feature. Here, the neurons are grouped both by hemisphere and brain area. Further, the percentage of selective neurons responding to specific linguistic features was",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 372.77,
+    "r": 290.67,
+    "b": 316.25,
+    "w": 250.98,
+    "h": 56.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p22_e302"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 13.2
+   },
+   "element_id": "p22_e300",
+   "reading_order": 300
+  },
+  {
+   "figure_id": "fig_009",
+   "kind": "extended_data_figure",
+   "label_form": "Extended Data Fig. 8",
+   "figure_number": 8,
+   "page": 23,
+   "bbox": {
+    "l": 0.29,
+    "t": 745.8,
+    "r": 494.81,
+    "b": 563.63,
+    "w": 494.52,
+    "h": 182.17,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 1,
+    "y0": 90,
+    "x1": 990,
+    "y1": 454,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_009.png",
+   "image_size_px": [
+    989,
+    364
+   ],
+   "caption": "Extended Data Fig. 8 | Linguistic feature decoding based on neuronal AP and LFP activities. a. Observation-averaged population decoding performance for each linguistic feature by single neuronal (blue) and local field potential (orange) activities. The histograms represent the distribution of decoding performances across different train-test splits. The triangle represents mean",
+   "caption_page": 23,
+   "caption_text": "Extended Data Fig. 8 | Linguistic feature decoding based on neuronal AP and LFP activities. a. Observation-averaged population decoding performance for each linguistic feature by single neuronal (blue) and local field potential (orange) activities. The histograms represent the distribution of decoding performances across different train-test splits. The triangle represents mean",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 552.96,
+    "r": 294.8,
+    "b": 506.45,
+    "w": 255.12,
+    "h": 46.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p23_e305"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 10.67
+   },
+   "element_id": "p23_e304",
+   "reading_order": 304
+  }
+ ],
+ "tables": [
+  {
+   "table_id": "table_001",
+   "page": 24,
+   "bbox": {
+    "l": 37.45,
+    "t": 718.27,
+    "r": 326.47,
+    "b": 582.38,
+    "w": 289.02,
+    "h": 135.88,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p24_e310"
+  },
+  {
+   "table_id": "table_002",
+   "page": 24,
+   "bbox": {
+    "l": 37.63,
+    "t": 542.32,
+    "r": 351.37,
+    "b": 398.4,
+    "w": 313.74,
+    "h": 143.92,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p24_e312"
+  },
+  {
+   "table_id": "table_003",
+   "page": 24,
+   "bbox": {
+    "l": 40.5,
+    "t": 368.87,
+    "r": 503.38,
+    "b": 277.35,
+    "w": 462.88,
+    "h": 91.52,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p24_e314"
+  },
+  {
+   "table_id": "table_004",
+   "page": 24,
+   "bbox": {
+    "l": 354.1,
+    "t": 725.68,
+    "r": 519.28,
+    "b": 592.8,
+    "w": 165.18,
+    "h": 132.88,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p24_e316"
+  },
+  {
+   "table_id": "table_005",
+   "page": 24,
+   "bbox": {
+    "l": 360.55,
+    "t": 590.02,
+    "r": 519.01,
+    "b": 558.92,
+    "w": 158.46,
+    "h": 31.1,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p24_e317"
+  },
+  {
+   "table_id": "table_006",
+   "page": 24,
+   "bbox": {
+    "l": 360.91,
+    "t": 540.67,
+    "r": 518.85,
+    "b": 488.82,
+    "w": 157.94,
+    "h": 51.85,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p24_e318"
+  },
+  {
+   "table_id": "table_007",
+   "page": 25,
+   "bbox": {
+    "l": 38.01,
+    "t": 726.72,
+    "r": 519.15,
+    "b": 593.78,
+    "w": 481.14,
+    "h": 132.94,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p25_e320"
+  }
+ ]
+}

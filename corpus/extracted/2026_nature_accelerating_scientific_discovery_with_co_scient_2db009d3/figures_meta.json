@@ -1,0 +1,141 @@
+{
+ "paper_id": "2026_nature_accelerating_scientific_discovery_with_co_scient_2db009d3",
+ "source_pdf": "D:\\2026-AI4S\\2026-Nature-Accelerating scientific discovery with Co-Scientist.pdf",
+ "source_sha256": "b2e0219dd8d0b6d94286b14af109af37233f7c4c94a39e39e1c25e3d24607fdc",
+ "source_name": "2026-Nature-Accelerating scientific discovery with Co-Scientist.pdf",
+ "n_pages": 55,
+ "generated_at": "2026-10-18T01:30:04",
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "n_figures": 1,
+ "n_tables": 3,
+ "n_pictures_detected": 20,
+ "n_uncaptioned_pictures": 19,
+ "figures": [
+  {
+   "figure_id": "fig_001",
+   "kind": "extended_data_figure",
+   "label_form": "Extended Data Fig. 5",
+   "figure_number": 5,
+   "page": 48,
+   "bbox": {
+    "l": 84.47,
+    "t": 420.5,
+    "r": 282.83,
+    "b": 280.0,
+    "w": 198.37,
+    "h": 140.5,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 169,
+    "y0": 743,
+    "x1": 566,
+    "y1": 1024,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_001.png",
+   "image_size_px": [
+    397,
+    281
+   ],
+   "caption": "Extended Data Fig. 5",
+   "caption_page": 48,
+   "caption_text": "Extended Data Fig. 5",
+   "caption_bbox": {
+    "l": 79.78,
+    "t": 84.54,
+    "r": 184.32,
+    "b": 73.99,
+    "w": 104.53,
+    "h": 10.56,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p48_e107"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 195.46
+   },
+   "element_id": "p48_e100",
+   "reading_order": 100
+  }
+ ],
+ "tables": [
+  {
+   "table_id": "table_001",
+   "page": 18,
+   "bbox": {
+    "l": 71.19,
+    "t": 556.7,
+    "r": 538.35,
+    "b": 361.93,
+    "w": 467.17,
+    "h": 194.77,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p18_e41"
+  },
+  {
+   "table_id": "table_002",
+   "page": 50,
+   "bbox": {
+    "l": 21.5,
+    "t": 620.37,
+    "r": 575.14,
+    "b": 280.28,
+    "w": 553.63,
+    "h": 340.09,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p50_e110"
+  },
+  {
+   "table_id": "table_003",
+   "page": 51,
+   "bbox": {
+    "l": 23.52,
+    "t": 580.61,
+    "r": 580.94,
+    "b": 336.77,
+    "w": 557.42,
+    "h": 243.85,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p51_e112"
+  }
+ ]
+}

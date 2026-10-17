@@ -1,0 +1,958 @@
+{
+ "paper_id": "2026_nature_turning_scientific_research_papers_into_interact_7df3f902",
+ "source_pdf": "D:\\2026-AI4S\\2026-Nature-Turning scientific research papers into interactive AI agents.pdf",
+ "source_sha256": "16ff0df60af48420b10ff4f2b938fb421d65f2fb7ec54c0efc20af98cd50e5fb",
+ "source_name": "2026-Nature-Turning scientific research papers into interactive AI agents.pdf",
+ "n_pages": 2,
+ "page_size_pt": [
+  595.28,
+  790.87
+ ],
+ "coordinate_note": "bbox is PDF points with origin at the BOTTOM-LEFT, y increasing upward; bbox_norm divides by page size.",
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "generated_at": "2026-10-18T01:31:25",
+ "pages": [
+  {
+   "page_no": 1,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0001.png",
+   "elements": [
+    {
+     "reading_order": 0,
+     "page": 1,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 761.54,
+      "r": 155.18,
+      "b": 748.57,
+      "w": 115.49,
+      "h": 12.97,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.96292,
+      "r": 0.26069,
+      "b": 0.94652
+     },
+     "text": "Research briefing",
+     "text_len": 17,
+     "level": 1,
+     "element_id": "p1_e0"
+    },
+    {
+     "reading_order": 1,
+     "page": 1,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 740.23,
+      "r": 162.57,
+      "b": 588.02,
+      "w": 122.88,
+      "h": 152.21,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.93597,
+      "r": 0.2731,
+      "b": 0.74351
+     },
+     "text": "Turning scientific research papers into interactive AI agents",
+     "text_len": 61,
+     "level": 1,
+     "element_id": "p1_e1"
+    },
+    {
+     "reading_order": 2,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 537.1,
+      "r": 200.39,
+      "b": 358.9,
+      "w": 160.71,
+      "h": 178.21,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.67913,
+      "r": 0.33663,
+      "b": 0.45381
+     },
+     "text": "Scientific knowledge is mostly stored in static papers. An automated framework called Paper2Agent can now transform each paper into an active artificial intelligence agent - a virtual corresponding author that answers questions, applies the paper's methods to new data, and collaborates with other paper agents. This makes research easier to reproduce, reuse and extend.",
+     "text_len": 370,
+     "level": 1,
+     "element_id": "p1_e2"
+    },
+    {
+     "reading_order": 3,
+     "page": 1,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 133.99,
+      "r": 118.28,
+      "b": 126.99,
+      "w": 78.59,
+      "h": 7.0,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.16942,
+      "r": 0.1987,
+      "b": 0.16057
+     },
+     "text": "This is a summary of:",
+     "text_len": 21,
+     "level": 1,
+     "element_id": "p1_e3"
+    },
+    {
+     "reading_order": 4,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 123.24,
+      "r": 199.37,
+      "b": 83.98,
+      "w": 159.69,
+      "h": 39.27,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.15583,
+      "r": 0.33492,
+      "b": 0.10619
+     },
+     "text": "Miao, J. et al. Reimagining research papers as interactive and reliable AI agents. Nature https://doi.org/10.1038/s41586-026-11044-y (2026).",
+     "text_len": 140,
+     "level": 1,
+     "element_id": "p1_e4"
+    },
+    {
+     "reading_order": 5,
+     "page": 1,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 74.57,
+      "r": 83.48,
+      "b": 67.57,
+      "w": 43.79,
+      "h": 7.0,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.09429,
+      "r": 0.14024,
+      "b": 0.08544
+     },
+     "text": "Cite this as:",
+     "text_len": 13,
+     "level": 1,
+     "element_id": "p1_e5"
+    },
+    {
+     "reading_order": 6,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 63.82,
+      "r": 198.42,
+      "b": 46.06,
+      "w": 158.73,
+      "h": 17.77,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.0807,
+      "r": 0.33332,
+      "b": 0.05824
+     },
+     "text": "Nature https://doi.org/10.1038/d41586-02602880-z (2026).",
+     "text_len": 56,
+     "level": 1,
+     "element_id": "p1_e6"
+    },
+    {
+     "reading_order": 7,
+     "page": 1,
+     "label": "section_header",
+     "bbox": {
+      "l": 217.32,
+      "t": 739.87,
+      "r": 291.31,
+      "b": 728.77,
+      "w": 73.99,
+      "h": 11.11,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.93552,
+      "r": 0.48937,
+      "b": 0.92148
+     },
+     "text": "The problem",
+     "text_len": 11,
+     "level": 1,
+     "element_id": "p1_e7"
+    },
+    {
+     "reading_order": 8,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 719.81,
+      "r": 383.52,
+      "b": 475.65,
+      "w": 166.2,
+      "h": 244.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.91015,
+      "r": 0.64427,
+      "b": 0.60143
+     },
+     "text": "For centuries, research papers have served as science's durable but static unit of record, preserving methods, findings and interpretations. Using this knowledge, however, requires researchers to decipher methods, reconstruct workflows, run code and generate data, and determine whether the results generalize to different settings. Large language models have made papers easier to navigate - a reader can download a PDF and use a chatbot to ask questions about it - but explaining existing knowledge is not the same as using it to generate fresh knowledge. A conventional chatbot cannot easily apply a paper's methods to new data, or combine the methods of one study with the data from another, limiting the reproducibility and reuse of scientific work. But what if a paper could be transformed into an AI agent that explains the study, executes its methods, applies them to new questions, and helps to generate further findings?",
+     "text_len": 930,
+     "level": 1,
+     "element_id": "p1_e8"
+    },
+    {
+     "reading_order": 9,
+     "page": 1,
+     "label": "section_header",
+     "bbox": {
+      "l": 217.32,
+      "t": 449.68,
+      "r": 290.05,
+      "b": 438.58,
+      "w": 72.73,
+      "h": 11.11,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.56859,
+      "r": 0.48725,
+      "b": 0.55456
+     },
+     "text": "The solution",
+     "text_len": 12,
+     "level": 1,
+     "element_id": "p1_e9"
+    },
+    {
+     "reading_order": 10,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 429.56,
+      "r": 379.2,
+      "b": 314.4,
+      "w": 161.88,
+      "h": 115.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.54315,
+      "r": 0.63702,
+      "b": 0.39754
+     },
+     "text": "We developed Paper2Agent, a framework that creates an agentic representation of each paper as a model context protocol (MCP) server (Fig. 1); MCP is an existing open standard that gives diverse AI systems a common interface to tools, data and workflows 1 . Each paper's server packages three components: executable tools that implement its methods; resources such as its text and data sets; and prompts that specify multistep scientific workflows.",
+     "text_len": 447,
+     "level": 1,
+     "element_id": "p1_e10"
+    },
+    {
+     "reading_order": 11,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 311.31,
+      "r": 382.05,
+      "b": 163.9,
+      "w": 164.73,
+      "h": 147.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.39363,
+      "r": 0.6418,
+      "b": 0.20724
+     },
+     "text": "We have automated the creation of paper MCPs. A team of specialized AI agents operates in an iterative build-test-repair loop, reading the paper and its code repository, configuring the software environment, running tutorials, converting useful methods into tools, and validating each tool by reproducing the paper's examples. A large language model can then connect to the MCP to form a paper agent - a virtual corresponding author that explains the work, reproduces its analyses and applies its methods to new data in response to plain-language requests.",
+     "text_len": 556,
+     "level": 1,
+     "element_id": "p1_e11"
+    },
+    {
+     "reading_order": 12,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 161.93,
+      "r": 382.72,
+      "b": 45.65,
+      "w": 165.4,
+      "h": 116.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.20475,
+      "r": 0.64293,
+      "b": 0.05772
+     },
+     "text": "When applied to AlphaGenome 2 (an AI model that predicts how DNA variants affect gene regulation), Paper2Agent created an AlphaGenome agent with 22 validated tools, all in under one hour and without human intervention. When asked how a DNA variant might affect a particular gene in a given cell type, the agent selects the appropriate tool, runs the model and explains the result. When faced with scientific questions that required AlphaGenome analysis, it achieved",
+     "text_len": 465,
+     "level": 1,
+     "element_id": "p1_e12"
+    },
+    {
+     "reading_order": 13,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 741.31,
+      "r": 560.25,
+      "b": 604.65,
+      "w": 165.29,
+      "h": 136.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.93734,
+      "r": 0.94116,
+      "b": 0.76454
+     },
+     "text": "98.7-100% accuracy and completed tasks two to four times faster than did a generalpurpose coding agent given direct access to the repository, which achieved only 78.7-82.7% accuracy. Paper agents can also collaborate autonomously, combining methods and data across studies. Working together, the AlphaGenome agent and agents built from two gene-perturbation studies 3,4 identified GPR137 as a potential causal gene for psoriasis through an analysis proposed by the agent and not reported previously.",
+     "text_len": 499,
+     "level": 1,
+     "element_id": "p1_e13"
+    },
+    {
+     "reading_order": 14,
+     "page": 1,
+     "label": "section_header",
+     "bbox": {
+      "l": 394.96,
+      "t": 578.68,
+      "r": 492.21,
+      "b": 567.58,
+      "w": 97.25,
+      "h": 11.11,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.7317,
+      "r": 0.82686,
+      "b": 0.71767
+     },
+     "text": "The implications",
+     "text_len": 16,
+     "level": 1,
+     "element_id": "p1_e14"
+    },
+    {
+     "reading_order": 15,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 558.56,
+      "r": 560.35,
+      "b": 411.15,
+      "w": 165.39,
+      "h": 147.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.70626,
+      "r": 0.94133,
+      "b": 0.51987
+     },
+     "text": "Paper2Agent shows that a static paper can acquire an operational layer through which its methods can be inspected, executed and reused. Paper2Agent serves complementary functions: its conversion process audits whether the work is sufficiently documented to be 'agentified', and the resulting agent enables follow-on research by applying its methods to fresh data, integrating resources from other studies and addressing innovative questions. The availability of such an agent could therefore complement existing standards for code and data availability.",
+     "text_len": 553,
+     "level": 1,
+     "element_id": "p1_e15"
+    },
+    {
+     "reading_order": 16,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 408.06,
+      "r": 560.2,
+      "b": 239.15,
+      "w": 165.24,
+      "h": 168.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.51597,
+      "r": 0.94108,
+      "b": 0.30239
+     },
+     "text": "When we applied Paper2Agent to 110 papers spanning computational biology, machine learning, econometrics and astrophysics, it successfully converted 84 (76%) into working agents. The remaining 26 papers could not be converted because of practical barriers, including unreleased code, missing data or model files, broken software environments and scripts that depended on unavailable data sets. Agentification can therefore serve as a practical diagnostic of computational reproducibility: success indicates that the materials are explicit and complete enough to reconstruct and test, whereas failure exposes details that were left implicit.",
+     "text_len": 640,
+     "level": 1,
+     "element_id": "p1_e16"
+    },
+    {
+     "reading_order": 17,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 236.06,
+      "r": 557.96,
+      "b": 142.4,
+      "w": 162.99,
+      "h": 93.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.29848,
+      "r": 0.93731,
+      "b": 0.18006
+     },
+     "text": "Paper2Agent converts scientific knowledge from static and passive artefacts into dynamic virtual authors. Our next goal is to build a global community of millions of proactive paper agents that collaborate across disciplines, connecting methods, data sets and findings to address questions that no paper, researcher or agent could tackle alone.",
+     "text_len": 344,
+     "level": 1,
+     "element_id": "p1_e17"
+    },
+    {
+     "reading_order": 18,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 63.68,
+      "r": 557.98,
+      "b": 46.09,
+      "w": 163.02,
+      "h": 17.59,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.08052,
+      "r": 0.93735,
+      "b": 0.05828
+     },
+     "text": "Jiacheng Miao and James Zou are at Stanford University, Stanford, California, USA.",
+     "text_len": 82,
+     "level": 1,
+     "element_id": "p1_e18"
+    }
+   ]
+  },
+  {
+   "page_no": 2,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0002.png",
+   "elements": [
+    {
+     "reading_order": 19,
+     "page": 2,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.72,
+      "t": 740.2,
+      "r": 123.53,
+      "b": 727.4,
+      "w": 83.82,
+      "h": 12.8,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06673,
+      "t": 0.93594,
+      "r": 0.20752,
+      "b": 0.91975
+     },
+     "text": "EXPERT OPINION",
+     "text_len": 14,
+     "level": 1,
+     "element_id": "p2_e19"
+    },
+    {
+     "reading_order": 20,
+     "page": 2,
+     "label": "picture",
+     "bbox": {
+      "l": 39.32,
+      "t": 710.39,
+      "r": 73.87,
+      "b": 684.01,
+      "w": 34.55,
+      "h": 26.38,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06605,
+      "t": 0.89824,
+      "r": 0.12409,
+      "b": 0.86489
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p2_e20"
+    },
+    {
+     "reading_order": 21,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 39.86,
+      "t": 708.68,
+      "r": 197.4,
+      "b": 615.84,
+      "w": 157.54,
+      "h": 92.84,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06696,
+      "t": 0.89608,
+      "r": 0.33161,
+      "b": 0.77869
+     },
+     "text": "The automated conversion of research papers into interactive MCP servers and conversational agents is a novel systems-level contribution. Although the broader idea of executable or reproducible research has a long history, Paper2Agent's emphasis on automated tool extraction, structured MCP interfaces and agent integration is a meaningful extension.",
+     "text_len": 350,
+     "level": 1,
+     "element_id": "p2_e21"
+    },
+    {
+     "reading_order": 22,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 217.5,
+      "t": 708.68,
+      "r": 373.51,
+      "b": 669.59,
+      "w": 156.01,
+      "h": 39.09,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36538,
+      "t": 0.89608,
+      "r": 0.62746,
+      "b": 0.84665
+     },
+     "text": "Paper2Agent could have a high practical impact by reducing barriers to method adoption and enabling agentic workflows in computational sciences.\" (CC BY 4.0)",
+     "text_len": 157,
+     "level": 1,
+     "element_id": "p2_e22"
+    },
+    {
+     "reading_order": 23,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 217.5,
+      "t": 644.18,
+      "r": 383.79,
+      "b": 615.84,
+      "w": 166.29,
+      "h": 28.34,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36538,
+      "t": 0.81452,
+      "r": 0.64473,
+      "b": 0.77869
+     },
+     "text": "Su-In Lee and Soham Gadgil are at the University of Washington, Seattle, Washington, USA.",
+     "text_len": 89,
+     "level": 1,
+     "element_id": "p2_e23"
+    },
+    {
+     "reading_order": 24,
+     "page": 2,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.72,
+      "t": 590.05,
+      "r": 76.43,
+      "b": 577.25,
+      "w": 36.72,
+      "h": 12.8,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06673,
+      "t": 0.74608,
+      "r": 0.12839,
+      "b": 0.7299
+     },
+     "text": "FIGURE",
+     "text_len": 6,
+     "level": 1,
+     "element_id": "p2_e24"
+    },
+    {
+     "reading_order": 25,
+     "page": 2,
+     "label": "picture",
+     "bbox": {
+      "l": 35.54,
+      "t": 563.52,
+      "r": 386.11,
+      "b": 344.89,
+      "w": 350.57,
+      "h": 218.63,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0597,
+      "t": 0.71254,
+      "r": 0.64862,
+      "b": 0.43609
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p2_e25"
+    },
+    {
+     "reading_order": 26,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 255.66,
+      "t": 347.06,
+      "r": 379.83,
+      "b": 342.25,
+      "w": 124.17,
+      "h": 4.81,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.42948,
+      "t": 0.43884,
+      "r": 0.63807,
+      "b": 0.43275
+     },
+     "text": "Enabling scientific discovery through paper agents",
+     "text_len": 50,
+     "level": 1,
+     "element_id": "p2_e26"
+    },
+    {
+     "reading_order": 27,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 330.6,
+      "r": 363.32,
+      "b": 244.1,
+      "w": 323.64,
+      "h": 86.5,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.41802,
+      "r": 0.61034,
+      "b": 0.30865
+     },
+     "text": "Figure 1 | Moving from research paper to interactive AI agent. Paper2Agent analyses a paper and its codebase to build a remote model context protocol (MCP) server (a standardized interface through which artificial-intelligence systems use software). This is done through Paper2MCP, which is the first step of Paper2Agent. The server creates or identifies tools (executable functions that implement the paper's methods, indicated here by Tool 1 and Tool K), resources (the manuscript, data and supplements) and prompts (step-by-step workflows for analysis). Connecting a large language model (LLM) to the MCP, through a platform such as Hugging Face, creates a paper-specific agent that can answer questions, reproduce analyses and apply the methods to fresh data through natural-language requests. Miao, J. et al./Nature (CC BY-NC-ND 4.0).",
+     "text_len": 839,
+     "level": 1,
+     "element_id": "p2_e27"
+    },
+    {
+     "reading_order": 28,
+     "page": 2,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.72,
+      "t": 203.01,
+      "r": 133.42,
+      "b": 190.21,
+      "w": 93.7,
+      "h": 12.8,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06673,
+      "t": 0.25669,
+      "r": 0.22413,
+      "b": 0.24051
+     },
+     "text": "BEHIND THE PAPER",
+     "text_len": 16,
+     "level": 1,
+     "element_id": "p2_e28"
+    },
+    {
+     "reading_order": 29,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 171.18,
+      "r": 204.7,
+      "b": 46.09,
+      "w": 165.02,
+      "h": 125.09,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.21645,
+      "r": 0.34387,
+      "b": 0.05828
+     },
+     "text": "For years, we have felt that static research papers are not the best way to represent scientific knowledge. The growing capabilities of agentic AI create an opportunity to reimagine papers as interactive virtual authors. A key challenge is that papers are written for humans: simply giving a PDF to a large language model often causes it to miss important insights about how the methods, code or data actually work. We wanted the virtual author to gain hands-on experience with the paper, rather than simply read it.",
+     "text_len": 516,
+     "level": 1,
+     "element_id": "p2_e29"
+    },
+    {
+     "reading_order": 30,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 171.18,
+      "r": 381.64,
+      "b": 78.34,
+      "w": 164.32,
+      "h": 92.84,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.21645,
+      "r": 0.64111,
+      "b": 0.09906
+     },
+     "text": "Our key insight was to have the AI set up a virtual environment in which it can run the code, test the methods and reproduce results from the paper. Through this iterative process, the system builds the paper MCP, and learns how to robustly reuse and adapt the original methods and results. We hope that paper agents can ultimately reshape how scientific knowledge is shared, used and extended.",
+     "text_len": 394,
+     "level": 1,
+     "element_id": "p2_e30"
+    },
+    {
+     "reading_order": 31,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 52.93,
+      "r": 229.75,
+      "b": 46.11,
+      "w": 12.43,
+      "h": 6.82,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.06693,
+      "r": 0.38596,
+      "b": 0.0583
+     },
+     "text": "J.Z.",
+     "text_len": 4,
+     "level": 1,
+     "element_id": "p2_e31"
+    },
+    {
+     "reading_order": 32,
+     "page": 2,
+     "label": "section_header",
+     "bbox": {
+      "l": 394.99,
+      "t": 740.2,
+      "r": 459.34,
+      "b": 727.4,
+      "w": 64.35,
+      "h": 12.8,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66354,
+      "t": 0.93594,
+      "r": 0.77164,
+      "b": 0.91975
+     },
+     "text": "REFERENCES",
+     "text_len": 10,
+     "level": 1,
+     "element_id": "p2_e32"
+    },
+    {
+     "reading_order": 33,
+     "page": 2,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.96,
+      "t": 708.68,
+      "r": 545.73,
+      "b": 691.09,
+      "w": 150.77,
+      "h": 17.59,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.89608,
+      "r": 0.91677,
+      "b": 0.87384
+     },
+     "text": "Anthropic. https://www.anthropic.com/ news/model-context-protocol (2024).",
+     "text_len": 73,
+     "level": 2,
+     "element_id": "p2_e33"
+    },
+    {
+     "reading_order": 34,
+     "page": 2,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.96,
+      "t": 676.43,
+      "r": 538.19,
+      "b": 658.84,
+      "w": 143.23,
+      "h": 17.59,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.8553,
+      "r": 0.9041,
+      "b": 0.83306
+     },
+     "text": "Avsec, Ž. et al. Nature 649, 1206-1218 (2026).",
+     "text_len": 46,
+     "level": 2,
+     "element_id": "p2_e34"
+    },
+    {
+     "reading_order": 35,
+     "page": 2,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.96,
+      "t": 644.18,
+      "r": 560.93,
+      "b": 615.84,
+      "w": 165.97,
+      "h": 28.34,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.81452,
+      "r": 0.9423,
+      "b": 0.77869
+     },
+     "text": "Zhu, R. et al. Preprint at bioRxiv https://doi.org/10.64898/2025.12.23.696273 (2025).",
+     "text_len": 85,
+     "level": 2,
+     "element_id": "p2_e35"
+    },
+    {
+     "reading_order": 36,
+     "page": 2,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.96,
+      "t": 601.18,
+      "r": 561.04,
+      "b": 583.59,
+      "w": 166.08,
+      "h": 17.59,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.76015,
+      "r": 0.94249,
+      "b": 0.73791
+     },
+     "text": "Ho, C.-H. et al. Nature Genet. 57, 2536-2545 (2025).",
+     "text_len": 52,
+     "level": 2,
+     "element_id": "p2_e36"
+    }
+   ]
+  }
+ ],
+ "caption_blocks": [],
+ "uncaptioned_pictures": [
+  {
+   "page": 2,
+   "bbox": {
+    "l": 39.32,
+    "t": 710.39,
+    "r": 73.87,
+    "b": 684.01,
+    "w": 34.55,
+    "h": 26.38,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": false,
+   "element_id": "p2_e20"
+  },
+  {
+   "page": 2,
+   "bbox": {
+    "l": 35.54,
+    "t": 563.52,
+    "r": 386.11,
+    "b": 344.89,
+    "w": 350.57,
+    "h": 218.63,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": true,
+   "element_id": "p2_e25"
+  }
+ ]
+}

@@ -1,0 +1,4775 @@
+{
+ "paper_id": "2025_nature_comprehensive_echocardiogram_evaluation_with_vie_0050ec77",
+ "source_pdf": "D:\\2026-AI4S\\Metrics\\REFs\\2025-Tokens\\2025-Tokens\\2025-Nature-Comprehensive echocardiogram evaluation with view primed vision language AI.pdf",
+ "source_sha256": "9a59aedba8a23b6acb7e19852856d1e7a114ed7819f2ccf73b1d05f083ff7abf",
+ "source_name": "2025-Nature-Comprehensive echocardiogram evaluation with view primed vision language AI.pdf",
+ "n_pages": 24,
+ "page_size_pt": [
+  595.28,
+  790.87
+ ],
+ "coordinate_note": "bbox is PDF points with origin at the BOTTOM-LEFT, y increasing upward; bbox_norm divides by page size.",
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "generated_at": "2026-10-18T01:27:54",
+ "pages": [
+  {
+   "page_no": 1,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0001.png",
+   "elements": [
+    {
+     "reading_order": 0,
+     "page": 1,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 762.41,
+      "r": 85.69,
+      "b": 749.44,
+      "w": 46.0,
+      "h": 12.97,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.96402,
+      "r": 0.14395,
+      "b": 0.94762
+     },
+     "text": "Article",
+     "text_len": 7,
+     "level": 1,
+     "element_id": "p1_e0"
+    },
+    {
+     "reading_order": 1,
+     "page": 1,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 740.09,
+      "r": 556.51,
+      "b": 688.02,
+      "w": 516.83,
+      "h": 52.07,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.9358,
+      "r": 0.93488,
+      "b": 0.86996
+     },
+     "text": "Comprehensive echocardiogram evaluation with view primed vision language AI",
+     "text_len": 75,
+     "level": 1,
+     "element_id": "p1_e1"
+    },
+    {
+     "reading_order": 2,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 644.32,
+      "r": 204.69,
+      "b": 637.32,
+      "w": 165.0,
+      "h": 7.0,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.8147,
+      "r": 0.34386,
+      "b": 0.80585
+     },
+     "text": "https://doi.org/10.1038/s41586-025-09850-x",
+     "text_len": 42,
+     "level": 1,
+     "element_id": "p1_e2"
+    },
+    {
+     "reading_order": 3,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 628.22,
+      "r": 140.34,
+      "b": 621.21,
+      "w": 100.66,
+      "h": 7.0,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.79434,
+      "r": 0.23576,
+      "b": 0.78548
+     },
+     "text": "Received: 12 October 2024",
+     "text_len": 25,
+     "level": 1,
+     "element_id": "p1_e3"
+    },
+    {
+     "reading_order": 4,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 612.11,
+      "r": 147.17,
+      "b": 605.11,
+      "w": 107.48,
+      "h": 7.0,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.77397,
+      "r": 0.24723,
+      "b": 0.76512
+     },
+     "text": "Accepted: 3 November 2025",
+     "text_len": 25,
+     "level": 1,
+     "element_id": "p1_e4"
+    },
+    {
+     "reading_order": 5,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 596.01,
+      "r": 144.54,
+      "b": 589.0,
+      "w": 104.86,
+      "h": 7.0,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.75362,
+      "r": 0.24281,
+      "b": 0.74475
+     },
+     "text": "Published online: xx xx xxxx",
+     "text_len": 28,
+     "level": 2,
+     "element_id": "p1_e5"
+    },
+    {
+     "reading_order": 6,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 579.9,
+      "r": 88.11,
+      "b": 572.9,
+      "w": 48.42,
+      "h": 7.0,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.73325,
+      "r": 0.14802,
+      "b": 0.7244
+     },
+     "text": "Open access",
+     "text_len": 11,
+     "level": 1,
+     "element_id": "p1_e6"
+    },
+    {
+     "reading_order": 7,
+     "page": 1,
+     "label": "picture",
+     "bbox": {
+      "l": 38.99,
+      "t": 566.88,
+      "r": 50.21,
+      "b": 555.37,
+      "w": 11.22,
+      "h": 11.52,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0655,
+      "t": 0.71678,
+      "r": 0.08435,
+      "b": 0.70223
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p1_e7"
+    },
+    {
+     "reading_order": 8,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 51.98,
+      "t": 563.78,
+      "r": 120.53,
+      "b": 556.78,
+      "w": 68.54,
+      "h": 7.0,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.08732,
+      "t": 0.71286,
+      "r": 0.20248,
+      "b": 0.70401
+     },
+     "text": "Check for updates Milos Vukadinovic 1,2 , I-Min Chiu 1,3 , Xiu Tang 4 , Neal Yuan 5,6 , Tien-Yu Chen 7 , Paul Cheng 4 , Debiao Li 8 , Susan Cheng 1 , Bryan He 9,11 ✉ & David Ouyang 1,10,11 ✉",
+     "text_len": 190,
+     "level": 1,
+     "element_id": "p1_e8"
+    },
+    {
+     "reading_order": 9,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 602.1,
+      "r": 560.8,
+      "b": 450.77,
+      "w": 343.48,
+      "h": 151.33,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.76132,
+      "r": 0.94208,
+      "b": 0.56997
+     },
+     "text": "Echocardiography is the most widely used cardiac imaging modality, capturing ultrasound video data to assess cardiac structure and function 1 . Artificial intelligence (AI) in echocardiography has the potential to streamline manual tasks and improve reproducibility and precision 2 . However, most echocardiography AI models are single-view, single-task systems that do not synthesize complementary information from multiple views captured during a full examination 3,4 , and thus lead to limited performance and scope of applications. To address this problem, we introduce EchoPrime, a multi-view, view-informed, video-based vision-language foundation model trained on over 12 million video-report pairs. EchoPrime uses contrastive learning to train a unified embedding model for all standard views in a comprehensive echocardiogram study with representation of both rare and common diseases and diagnoses. EchoPrime then utilizes view classification and a view-informed anatomical",
+     "text_len": 982,
+     "level": 1,
+     "element_id": "p1_e9"
+    },
+    {
+     "reading_order": 10,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 433.13,
+      "r": 561.27,
+      "b": 320.81,
+      "w": 343.94,
+      "h": 112.32,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.54767,
+      "r": 0.94287,
+      "b": 0.40564
+     },
+     "text": "relationship between echocardiographic views and anatomical structures. With retrieval-augmented interpretation, EchoPrime integrates information from all echocardiogram videos in a comprehensive study and performs holistic clinical interpretation. In datasets from five international independent health-care systems, EchoPrime achieves state-of-the-art performance on 23 diverse benchmarks of cardiac form and function, surpassing the performance of both task-specific approaches and previous foundation models. Following rigorous clinical evaluation, EchoPrime can assist physicians in the automated preliminary assessment of comprehensive echocardiography.",
+     "text_len": 659,
+     "level": 1,
+     "element_id": "p1_e10"
+    },
+    {
+     "reading_order": 11,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 289.81,
+      "r": 294.95,
+      "b": 131.65,
+      "w": 255.27,
+      "h": 158.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.36645,
+      "r": 0.49548,
+      "b": 0.16646
+     },
+     "text": "In recent years, medical AI has progressed substantially, driven by the fast improvements of deep learning methods and the use of larger and larger medical datasets. AI has matched or surpassed the accuracy of clinical experts in various applications 5 , such as skin cancer classification 6 and breast mammogram lesion detection 7 . However, because these models are tailored to specific tasks through supervised learning, they lack the ability to synthesize information in a holistic manner, unlike clinical experts that integrate multiple data points for a comprehensive assessment. Moreover, with thousands of possible diagnoses and diseases, it is impractical to train separate models for every individual medical task. This limitation gave rise to foundation models 8-16 , task-agnostic models pre-trained on large datasets that demonstrate robust performance in various downstream tasks. Foundation models have already been utilized across various medical subfields, including pathology 17 , drug repurposing 18 , chest X-ray 19 and retinal imaging 20 .",
+     "text_len": 1060,
+     "level": 1,
+     "element_id": "p1_e11"
+    },
+    {
+     "reading_order": 12,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 39.68,
+      "t": 128.56,
+      "r": 294.9,
+      "b": 110.15,
+      "w": 255.22,
+      "h": 18.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06666,
+      "t": 0.16256,
+      "r": 0.4954,
+      "b": 0.13928
+     },
+     "text": "Echocardiography, or cardiac ultrasound, is the most common form of cardiac imaging and benefits from high volume, low cost, portability and lack of ionizing radiation. With the highest temporal resolution across all imaging modalities, echocardiography videos capture changes in heart motion and structure associated with cardiomyopathy, valvular disorders, tamponade and arrhythmias. Progress towards a foundation model for echocardiography was made with EchoCLIP 3 , which was trained on over 1 million echocardiogram videos and demonstrated good performance across a diverse range of benchmarks for cardiac image interpretation. However, EchoCLIP utilizes only a static image encoder from a single echocardiogram view, rather than incorporating available dynamic videos from a comprehensive ultrasound examination. As a result, it might miss key temporal and functional insights that are vital for echocardiographic analysis.",
+     "text_len": 929,
+     "level": 1,
+     "element_id": "p1_e12"
+    },
+    {
+     "reading_order": 13,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 150.06,
+      "r": 561.37,
+      "b": 110.15,
+      "w": 255.23,
+      "h": 39.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.18974,
+      "r": 0.94304,
+      "b": 0.13928
+     },
+     "text": "In this work, we introduce EchoPrime, a video-based foundation model for echocardiography, trained with contrastive learning on more than 12 million videos paired with expert interpretations and designed to synthesize data from multiple videos to deliver",
+     "text_len": 254,
+     "level": 1,
+     "element_id": "p1_e13"
+    },
+    {
+     "reading_order": 14,
+     "page": 1,
+     "label": "footnote",
+     "bbox": {
+      "l": 39.69,
+      "t": 97.47,
+      "r": 560.59,
+      "b": 82.38,
+      "w": 520.91,
+      "h": 15.1,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.12324,
+      "r": 0.94173,
+      "b": 0.10416
+     },
+     "text": "1 Department of Cardiology, Smidt Heart Institute, Cedars-Sinai Medical Center, Los Angeles, CA, USA. 2 Department of Bioengineering, University of California Los Angeles, Los Angeles, CA, USA. 3 Department of Emergency Medicine, Kaohsiung Chang Gung Memorial Hospital, Kaohsiung, Taiwan. 4 Division of Cardiology, Department of Medicine, Stanford University, Palo Alto, CA, USA.",
+     "text_len": 379,
+     "level": 1,
+     "element_id": "p1_e14"
+    },
+    {
+     "reading_order": 15,
+     "page": 1,
+     "label": "footnote",
+     "bbox": {
+      "l": 39.69,
+      "t": 79.47,
+      "r": 561.26,
+      "b": 64.38,
+      "w": 521.58,
+      "h": 15.1,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.10048,
+      "r": 0.94286,
+      "b": 0.0814
+     },
+     "text": "5 Department of Medicine, University of California, San Francisco, CA, USA. 6 Division of Cardiology, San Francisco Veterans Affairs Medical Center, San Francisco, CA, USA. 7 Division of Cardiology, Department of Medicine, Kaohsiung Chang Gung Memorial Hospital, Kaohsiung, Taiwan. 8 Biomedical Imaging Research Institute, Cedars-Sinai Medical Center, Los Angeles, CA, USA.",
+     "text_len": 373,
+     "level": 1,
+     "element_id": "p1_e15"
+    },
+    {
+     "reading_order": 16,
+     "page": 1,
+     "label": "footnote",
+     "bbox": {
+      "l": 39.68,
+      "t": 61.47,
+      "r": 560.46,
+      "b": 46.38,
+      "w": 520.78,
+      "h": 15.1,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06666,
+      "t": 0.07772,
+      "r": 0.94151,
+      "b": 0.05864
+     },
+     "text": "9 Department of Computer Science, Stanford University, Stanford, CA, USA. 10 Division of Research, Kaiser Permanente Northern California, Pleasanton, CA, USA. 11 These authors contributed equally: Bryan He, David Ouyang. ✉e-mail: bryanhe@cs.stanford.edu; david.ouyang@kp.org",
+     "text_len": 274,
+     "level": 1,
+     "element_id": "p1_e16"
+    }
+   ]
+  },
+  {
+   "page_no": 2,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0002.png",
+   "elements": [
+    {
+     "reading_order": 17,
+     "page": 2,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 762.41,
+      "r": 85.69,
+      "b": 749.44,
+      "w": 46.0,
+      "h": 12.97,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.96402,
+      "r": 0.14395,
+      "b": 0.94762
+     },
+     "text": "Article",
+     "text_len": 7,
+     "level": 1,
+     "element_id": "p2_e17"
+    },
+    {
+     "reading_order": 18,
+     "page": 2,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 740.98,
+      "r": 257.58,
+      "b": 733.11,
+      "w": 217.9,
+      "h": 7.87,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.93692,
+      "r": 0.43271,
+      "b": 0.92697
+     },
+     "text": "Table 1 | Clinical characteristics of the study cohorts",
+     "text_len": 55,
+     "level": 1,
+     "element_id": "p2_e18"
+    },
+    {
+     "reading_order": 19,
+     "page": 2,
+     "label": "table",
+     "bbox": {
+      "l": 37.17,
+      "t": 728.39,
+      "r": 562.88,
+      "b": 435.57,
+      "w": 525.71,
+      "h": 292.82,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06244,
+      "t": 0.921,
+      "r": 0.94558,
+      "b": 0.55075
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p2_e19"
+    },
+    {
+     "reading_order": 20,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 408.06,
+      "r": 294.96,
+      "b": 249.9,
+      "w": 255.27,
+      "h": 158.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.51597,
+      "r": 0.4955,
+      "b": 0.31598
+     },
+     "text": "comprehensive interpretations. We tested the performance of the model on datasets across five international health-care systems on an extensive benchmark of multi-modal retrieval metrics, clinical echocardiography interpretation tasks covering all cardiac structures, and transfer learning tasks related to cardiac pathophysiology. We found that EchoPrime consistently outperforms other medical foundation models (BioMedCLIP and EchoCLIP) and either matches or exceeds the performance of task-specific ultrasound models. In additional analyses, we found that EchoPrime prioritizes views similar to clinical experts when assessing many echocardiogram videos through multiple instance attention. EchoPrime is the largest existing echocardiography AI model trained on over ten times the data of previous models and natively provides multi-view, multi-task and multi-video assessments. To advance AI in medicine research, we have publicly released code, weights and a demo.",
+     "text_len": 969,
+     "level": 1,
+     "element_id": "p2_e20"
+    },
+    {
+     "reading_order": 21,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 246.81,
+      "r": 294.93,
+      "b": 45.65,
+      "w": 255.24,
+      "h": 201.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.31208,
+      "r": 0.49545,
+      "b": 0.05772
+     },
+     "text": "EchoPrime is a video-based vision-language model trained with 12,124,168 echocardiography videos and paired text reports from 275,442 studies across 108,913 patients at Cedars-Sinai Medical Center (CSMC; Table 1). EchoPrime consists of multiple modules integral for the interpretation of echocardiography, including a video encoder, text encoder, view classifier and anatomical attention module (Fig. 1). The video and text encoders are trained contrastively on sampled echocardiogram video clips and corresponding cardiologist report texts to learn a joint video-text representation space. A view classification model was trained on 77,426 sonographer-labelled videos to classify B-mode and colour Doppler videos into 58 standard echocardiographic views and utilized by an anatomical attention module to determine the relative importance of each echocardiogram video for interpretation tasks using multiple instance learning. During inference, EchoPrime provides a comprehensive interpretation of an echo study by assigning views to each video, mapping the videos into a contrastive joint video-text latent space, and finally retrieving study interpretations guided by the anatomical attention module.",
+     "text_len": 1202,
+     "level": 1,
+     "element_id": "p2_e21"
+    },
+    {
+     "reading_order": 22,
+     "page": 2,
+     "label": "section_header",
+     "bbox": {
+      "l": 306.14,
+      "t": 400.39,
+      "r": 509.46,
+      "b": 391.37,
+      "w": 203.32,
+      "h": 9.02,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.50627,
+      "r": 0.85584,
+      "b": 0.49486
+     },
+     "text": "Automated echocardiogram interpretation",
+     "text_len": 39,
+     "level": 1,
+     "element_id": "p2_e22"
+    },
+    {
+     "reading_order": 23,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 386.56,
+      "r": 561.33,
+      "b": 228.4,
+      "w": 255.19,
+      "h": 158.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.48878,
+      "r": 0.94297,
+      "b": 0.2888
+     },
+     "text": "EchoPrime can simultaneously interpret a wide range of cardiac features and diagnoses that represent a wide range of pathophysiology seen over a decade of echocardiography at a large tertiary care centre (Supplementary Video 1). To obtain echocardiogram examination interpretations, we used retrieval augmented interpretation, a method similar to retrieval augmented generation 21 . Retrieval augmented interpretation works by retrieving the historical echocardiogram reports that best match input echocardiogram videos, and then filters the information from these reports into final output interpretations based on anatomical attention (see Methods for details). This approach allows a single foundation model to be applied directly to all echocardiography interpretation tasks, enabling the prediction of hundreds of pathologies across 15 sections of over 1,000 different statements that cardiologists frequently make in interpreting echocardiograms.",
+     "text_len": 952,
+     "level": 1,
+     "element_id": "p2_e23"
+    },
+    {
+     "reading_order": 24,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 225.31,
+      "r": 561.41,
+      "b": 45.65,
+      "w": 255.27,
+      "h": 179.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.28489,
+      "r": 0.94311,
+      "b": 0.05772
+     },
+     "text": "We evaluated EchoPrime on a diverse set of benchmarks for cardiac structure and function across datasets from five different institutions (Table 2). On echocardiographic data from all five geographically diverse hospitals, EchoPrime outperformed previously developed foundation models for both general biomedical imaging and echocardiography 3,4,22-24 (Fig. 2 and Supplementary Tables 1-5), and without additional fine-tuning or training, EchoPrime outperforms or matches fully supervised models for single-task prediction 25-30 (Extended Data Table 1). EchoPrime had a mean area under the curve (AUC) of 0.92 on CSMC, 0.89 on Stanford Healthcare (SHC), 0.85 on Beth Israel Deaconess Medical Center (MIMIC), 0.86 on Chang Gung Memorial Hospital (CGMH) and 0.88 on Kaiser Permanente (KP) health-care system across 17 classification tasks and 11 regression tasks (Table 2, Extended Data Table 2 and Supplementary Fig. 1). On a held-out internal validation and external validation cohorts from four international hospitals, EchoPrime outperformed both previously developed foundation models and task-specific echocardiography AI models. Without additional SSN, suprasternal notch. c, Inference pipeline. When given a comprehensive echocardiogram study, EchoPrime determines the view for each video, uses contrastive encoder on the joint video-text latent space for retrieval augmented interpretation, and weights the interpretation of each video by anatomical attention for a study-level assessment of each cardiac structure.",
+     "text_len": 1522,
+     "level": 1,
+     "element_id": "p2_e24"
+    }
+   ]
+  },
+  {
+   "page_no": 3,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0003.png",
+   "elements": [
+    {
+     "reading_order": 25,
+     "page": 3,
+     "label": "picture",
+     "bbox": {
+      "l": 32.55,
+      "t": 745.06,
+      "r": 561.97,
+      "b": 186.47,
+      "w": 529.43,
+      "h": 558.58,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.05468,
+      "t": 0.94208,
+      "r": 0.94405,
+      "b": 0.23578
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p3_e25"
+    },
+    {
+     "reading_order": 26,
+     "page": 3,
+     "label": "caption",
+     "bbox": {
+      "l": 39.69,
+      "t": 175.35,
+      "r": 294.81,
+      "b": 128.84,
+      "w": 255.13,
+      "h": 46.51,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.22172,
+      "r": 0.49525,
+      "b": 0.16291
+     },
+     "text": "Fig. 1 | EchoPrime overview. a, Training dataset characteristics. The schematics were adapted from Flaticon by FreePik (https://www.flaticon.com). b, Video and text encoders are trained to map videos and text into a joint latent space. The view classifier and multiple instance learning are trained separately to learn view weighting based on the anatomical section. LV, left ventricle.",
+     "text_len": 386,
+     "level": 2,
+     "element_id": "p3_e26"
+    },
+    {
+     "reading_order": 27,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 39.68,
+      "t": 107.06,
+      "r": 294.86,
+      "b": 45.65,
+      "w": 255.17,
+      "h": 61.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06666,
+      "t": 0.13537,
+      "r": 0.49533,
+      "b": 0.05772
+     },
+     "text": "fine-tuning or training, EchoPrime outperforms or matches fully supervised models for a single-task prediction 25-30 including a 2% improvement over EchoNet-Dynamic 25 in R 2 score for left ventricular ejection fraction, 2% improvement in the area under the receiver operating characteristic curve (AUC) over Echonet-TR 26 for assessing tricuspid regurgitation, 4% increase over EchoNet-MR 27 for assessing mitral regurgitation, and similar to improved performances for pericardial effusion 28 and aortic stenosis 29 . Compared with other echocardiography AI models, EchoPrime has superior performance (Extended Data Table 3 and Supplementary Tables 1-5), particularly driven by differences in low-quality and low-view-count images when informed by anatomical attention (Extended Data Table 4).",
+     "text_len": 794,
+     "level": 1,
+     "element_id": "p3_e27"
+    }
+   ]
+  },
+  {
+   "page_no": 4,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0004.png",
+   "elements": [
+    {
+     "reading_order": 28,
+     "page": 4,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 762.41,
+      "r": 85.69,
+      "b": 749.44,
+      "w": 46.0,
+      "h": 12.97,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.96402,
+      "r": 0.14395,
+      "b": 0.94762
+     },
+     "text": "Article",
+     "text_len": 7,
+     "level": 1,
+     "element_id": "p4_e28"
+    },
+    {
+     "reading_order": 29,
+     "page": 4,
+     "label": "table",
+     "bbox": {
+      "l": 37.29,
+      "t": 727.55,
+      "r": 562.15,
+      "b": 434.29,
+      "w": 524.86,
+      "h": 293.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06264,
+      "t": 0.91994,
+      "r": 0.94435,
+      "b": 0.54913
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p4_e29"
+    },
+    {
+     "reading_order": 30,
+     "page": 4,
+     "label": "caption",
+     "bbox": {
+      "l": 39.69,
+      "t": 740.98,
+      "r": 535.14,
+      "b": 733.11,
+      "w": 495.46,
+      "h": 7.87,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.93692,
+      "r": 0.89898,
+      "b": 0.92697
+     },
+     "text": "Table 2 | EchoPrime echocardiography interpretation performance across datasets from five different medical centres",
+     "text_len": 115,
+     "level": 2,
+     "element_id": "p4_e30"
+    },
+    {
+     "reading_order": 31,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 39.68,
+      "t": 432.62,
+      "r": 549.15,
+      "b": 417.52,
+      "w": 509.46,
+      "h": 15.1,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06666,
+      "t": 0.54702,
+      "r": 0.92251,
+      "b": 0.52793
+     },
+     "text": "For classification tasks, we report the area under the receiver operating characteristic curve, and regression tasks are evaluated using R 2 and MAE. AV, aortic valve; PA, pulmonary artery. The values in parentheses show 95% confidence intervals.",
+     "text_len": 246,
+     "level": 1,
+     "element_id": "p4_e31"
+    },
+    {
+     "reading_order": 32,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 39.68,
+      "t": 397.31,
+      "r": 294.94,
+      "b": 185.4,
+      "w": 255.25,
+      "h": 211.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06666,
+      "t": 0.50237,
+      "r": 0.49547,
+      "b": 0.23443
+     },
+     "text": "Our model performed favourably when compared with other foundation models such as BioMedCLIP 4 , a general foundation model for biomedicine, and EchoCLIP 3 , a previous foundation model for echocardiography (Fig. 2). EchoPrime demonstrated significant improvements over previous models in predicting features related to the motion of cardiac structures. Specifically, in estimating left ventricular ejection fraction, EchoPrime achieved a mean absolute error (MAE) of 4.79 on the internal CSMC dataset, compared with MAEs of 26.93 and 7.00 for BioMedCLIP and EchoCLIP, respectively. On external validation cohorts, EchoPrime had MAE ranging from 4.14 to 6.46, whereas BioMedCLIP and EchoCLIP had MAEs ranging from 23.00 to 32.64 and 6.23 to 10.37, respectively. In detecting aortic regurgitation, EchoPrime achieved an AUC of 0.88 versus 0.54 and 0.68 for BioMedCLIP and EchoCLIP in the internal dataset, and 0.78-0.89 versus 0.53-0.58 and 0.61-0.67 for BioMedCLIP and EchoCLIP, respectively, in the external datasets (full results are in Table 2). Our results show that EchoPrime outperforms other echocardiography and medical imaging foundation models, often by a significant margin, and matches or exceeds the performance of task-specific models.",
+     "text_len": 1249,
+     "level": 1,
+     "element_id": "p4_e32"
+    },
+    {
+     "reading_order": 33,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 182.31,
+      "r": 294.94,
+      "b": 45.65,
+      "w": 255.25,
+      "h": 136.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.23052,
+      "r": 0.49547,
+      "b": 0.05772
+     },
+     "text": "To contextualize the performance of EchoPrime and reproducibility of assessments, we assessed cardiologist interobserver variability in a series of paired echocardiogram studies from the same patient for which cardiologists noted no significant change. We found that the agreement of EchoPrime with cardiologists is comparable with the agreement between two cardiologists as EchoPrime had an average balanced accuracy of 0.89, whereas the cardiologists had a balanced accuracy of 0.82 (Extended Data Table 5). In addition, EchoPrime achieves consistently high negative predictive values across all validation sites on core tasks (Supplementary Table 6), suggesting its utility in preliminary assessment of echocardiography images as well as triaging normal studies that require more urgent clinician review.",
+     "text_len": 807,
+     "level": 1,
+     "element_id": "p4_e33"
+    },
+    {
+     "reading_order": 34,
+     "page": 4,
+     "label": "section_header",
+     "bbox": {
+      "l": 306.14,
+      "t": 389.64,
+      "r": 483.07,
+      "b": 380.62,
+      "w": 176.93,
+      "h": 9.02,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.49268,
+      "r": 0.81151,
+      "b": 0.48127
+     },
+     "text": "Multi-view data improve performance",
+     "text_len": 35,
+     "level": 1,
+     "element_id": "p4_e34"
+    },
+    {
+     "reading_order": 35,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 375.81,
+      "r": 561.37,
+      "b": 196.15,
+      "w": 255.23,
+      "h": 179.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.47519,
+      "r": 0.94304,
+      "b": 0.24802
+     },
+     "text": "Our model synthesizes the full range of information from an echocardiogram study, including multiple videos of different views and clinical report text up to 512 tokens long. This marks a significant improvement over previous medical foundation models such as BioMedCLIP and EchoCLIP, which process only single-view, individual images and handle text up to 77 tokens long. We experimented with batch size, video encoder architecture, video weighting approaches and the number of candidate reports (Extended Data Table 6, Supplementary Tables 7 and 8 and Supplementary Fig. 2) to select the final EchoPrime hyperparameters and performance. On videos-to-text retrieval (Table 3), the correct text report appeared in the top 10 EchoPrime-matched text reports for 98% of the studies from the test set (Recall@10), outperforming EchoCLIP by 45%. Similarly, on the text-to-videos task EchoPrime achieved Recall@10 of 97%, outperforming EchoCLIP by 35%. Retrieval was more challenging in normal studies than abnormal studies, although strong performance was achieved in both subcohorts (Supplementary Table 9).",
+     "text_len": 1103,
+     "level": 1,
+     "element_id": "p4_e35"
+    },
+    {
+     "reading_order": 36,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 193.06,
+      "r": 561.42,
+      "b": 45.65,
+      "w": 255.28,
+      "h": 147.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.24411,
+      "r": 0.94313,
+      "b": 0.05772
+     },
+     "text": "Cardiologists integrate information from multiple views and videos to provide a holistic assessment, and EchoPrime was designed to weight the interpretation of multiple videos from multiple views. To demonstrate the impact of integrating multiple clips, multiple videos and multiple views, we compared the performance of the EchoPrime encoder when input is a single frame versus single video versus multiple videos versus multiple videos with multiple instance attention weighting (Extended Data Fig. 1). The gradual improvement across multiple tasks reflects the relevance of temporal and view-specific information to each task and the importance of the anatomical attention module. EchoPrime can additionally be leveraged even in low-quality images or settings where limited views are acquired (Extended Data Table 4). We evaluated EchoPrime in the set of studies in which the study was described as 'technically difficult' in the clinician report and show similar performance. To test the performance in a single-view setting, we tested EchoPrime on 2,172 studies with only one A4C video per study. Because other echocardiography models do not have a view classifier or use anatomical attention, a random single video per study was utilized for comparison. The performance across all tasks was similar to EchoPrime performance in the full setting.",
+     "text_len": 1350,
+     "level": 1,
+     "element_id": "p4_e36"
+    }
+   ]
+  },
+  {
+   "page_no": 5,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0005.png",
+   "elements": [
+    {
+     "reading_order": 37,
+     "page": 5,
+     "label": "picture",
+     "bbox": {
+      "l": 33.01,
+      "t": 744.93,
+      "r": 563.39,
+      "b": 180.72,
+      "w": 530.38,
+      "h": 564.21,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.05545,
+      "t": 0.94192,
+      "r": 0.94643,
+      "b": 0.22851
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p5_e37"
+    },
+    {
+     "reading_order": 38,
+     "page": 5,
+     "label": "caption",
+     "bbox": {
+      "l": 39.69,
+      "t": 174.85,
+      "r": 280.03,
+      "b": 128.34,
+      "w": 240.35,
+      "h": 46.51,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.22109,
+      "r": 0.47042,
+      "b": 0.16228
+     },
+     "text": "Fig. 2 | Performance metrics for echocardiography prediction tasks. a, Comparison of EchoPrime, EchoCLIP and BioMedCLIP on a range of echocardiography interpretation tasks on cohorts from five different clinical centres. The area under the receiver operating characteristic curve is shown for classification tasks and the R 2 score for regression tasks.",
+     "text_len": 353,
+     "level": 2,
+     "element_id": "p5_e38"
+    },
+    {
+     "reading_order": 39,
+     "page": 5,
+     "label": "caption",
+     "bbox": {
+      "l": 306.14,
+      "t": 174.85,
+      "r": 561.21,
+      "b": 138.34,
+      "w": 255.07,
+      "h": 36.51,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.22109,
+      "r": 0.94277,
+      "b": 0.17492
+     },
+     "text": "b, Transfer learning. Using linear probing, EchoPrime accurately predicts multimodal cardiovascular diseases even when their labels are not explicitly mentioned in the echocardiography reports. FPR, false positive rate; IVC, inferior vena cava; TAVR, transcatheter aortic valve replacement; TPR, true positive rate.",
+     "text_len": 315,
+     "level": 1,
+     "element_id": "p5_e39"
+    },
+    {
+     "reading_order": 40,
+     "page": 5,
+     "label": "section_header",
+     "bbox": {
+      "l": 306.14,
+      "t": 99.39,
+      "r": 442.2,
+      "b": 90.37,
+      "w": 136.06,
+      "h": 9.02,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.12567,
+      "r": 0.74285,
+      "b": 0.11427
+     },
+     "text": "Interpretable view weighting",
+     "text_len": 28,
+     "level": 1,
+     "element_id": "p5_e40"
+    },
+    {
+     "reading_order": 41,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 85.56,
+      "r": 561.32,
+      "b": 45.65,
+      "w": 255.18,
+      "h": 39.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.10819,
+      "r": 0.94296,
+      "b": 0.05772
+     },
+     "text": "Our view classifier achieves a one-versus-rest AUC of 0.997 for predicting 58 different standard echocardiographic views (Extended Data Fig. 2) on the internal test set consisting of 4,000 videos. The view prediction, as well as the underlying videos, was then used to train an anatomical",
+     "text_len": 288,
+     "level": 1,
+     "element_id": "p5_e41"
+    }
+   ]
+  },
+  {
+   "page_no": 6,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0006.png",
+   "elements": [
+    {
+     "reading_order": 42,
+     "page": 6,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 762.41,
+      "r": 85.69,
+      "b": 749.44,
+      "w": 46.0,
+      "h": 12.97,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.96402,
+      "r": 0.14395,
+      "b": 0.94762
+     },
+     "text": "Article",
+     "text_len": 7,
+     "level": 1,
+     "element_id": "p6_e42"
+    },
+    {
+     "reading_order": 43,
+     "page": 6,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 740.98,
+      "r": 361.64,
+      "b": 733.11,
+      "w": 321.96,
+      "h": 7.87,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.93692,
+      "r": 0.60752,
+      "b": 0.92697
+     },
+     "text": "Table 3 | Cross-modal retrieval metrics on a test set of video-text report pairs",
+     "text_len": 80,
+     "level": 1,
+     "element_id": "p6_e43"
+    },
+    {
+     "reading_order": 44,
+     "page": 6,
+     "label": "table",
+     "bbox": {
+      "l": 37.99,
+      "t": 724.99,
+      "r": 562.25,
+      "b": 640.58,
+      "w": 524.26,
+      "h": 84.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06382,
+      "t": 0.9167,
+      "r": 0.94452,
+      "b": 0.80997
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p6_e44"
+    },
+    {
+     "reading_order": 45,
+     "page": 6,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 636.28,
+      "r": 556.41,
+      "b": 622.02,
+      "w": 516.72,
+      "h": 14.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.80454,
+      "r": 0.93471,
+      "b": 0.7865
+     },
+     "text": "Lower rank is better, and higher recall is better. Best performance was for EchoPrime. EchoPrime was compared with different video encoders (VideoMAE and ResNet2+1D) trained on the same dataset.",
+     "text_len": 194,
+     "level": 1,
+     "element_id": "p6_e45"
+    },
+    {
+     "reading_order": 46,
+     "page": 6,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 601.56,
+      "r": 294.9,
+      "b": 540.15,
+      "w": 255.22,
+      "h": 61.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.76063,
+      "r": 0.4954,
+      "b": 0.68299
+     },
+     "text": "attention module using a multiple instance attention framework to identify the most relevant views and videos for a given anatomical structure and report section (Fig. 3 and Extended Data Fig. 4). With the anatomical attention module, we enabled EchoPrime to focus on the most informative views for the anatomy being evaluated and weigh conflicting assessments of different videos from the same study. (Extended Data Fig. 2b).",
+     "text_len": 426,
+     "level": 1,
+     "element_id": "p6_e46"
+    },
+    {
+     "reading_order": 47,
+     "page": 6,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 537.06,
+      "r": 294.9,
+      "b": 400.4,
+      "w": 255.22,
+      "h": 136.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.67908,
+      "r": 0.4954,
+      "b": 0.50628
+     },
+     "text": "For instance, in assessing the mitral valve, the model learned to focus on apical-2-chamber (A2C), A4C, parasternal short axis on the mitral valve and corresponding colour Doppler views as the key videos. Similarly, the model identified that views where the IVC is clearly visible to be the most relevant for prediction tasks involving the IVC. To provide context for these results, we asked three independent cardiologists to manually assign importance to each view, as well as identify whether each structure would be present in each view and compared the focus of the model with the consensus cardiologist focus in side-by-side weight matrices (Fig. 3d). Both EchoPrime and cardiologists show similar emphasis on important views for different tasks, such as both highlighted the suprasternal notch view for assessing the aorta and the apical views for assessing the left ventricle.",
+     "text_len": 884,
+     "level": 1,
+     "element_id": "p6_e47"
+    },
+    {
+     "reading_order": 48,
+     "page": 6,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 378.89,
+      "r": 120.89,
+      "b": 369.87,
+      "w": 81.21,
+      "h": 9.02,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.47908,
+      "r": 0.20308,
+      "b": 0.46768
+     },
+     "text": "Transfer learning",
+     "text_len": 17,
+     "level": 1,
+     "element_id": "p6_e48"
+    },
+    {
+     "reading_order": 49,
+     "page": 6,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 365.06,
+      "r": 294.95,
+      "b": 260.65,
+      "w": 255.26,
+      "h": 104.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.4616,
+      "r": 0.49548,
+      "b": 0.32958
+     },
+     "text": "We evaluated the performance of the video encoder of EchoPrime for both echocardiographic and out-of-domain medical diagnosis tasks to assess whether EchoPrime learns intrinsic knowledge about echocardiography and cardiac pathophysiology. We fine-tuned vision transformers in a low-data, fully supervised setting, comparing different initialization weights and found that initializing with EchoPrime weights leads to better performance than Kinetics initialization or training from scratch for assessment of mitral regurgitation, identification of pacemaker, diagnosis of cardiac amyloidosis and diagnosis of ST-elevation myocardial infarction (STEMI; Extended Data Fig. 3).",
+     "text_len": 674,
+     "level": 1,
+     "element_id": "p6_e49"
+    },
+    {
+     "reading_order": 50,
+     "page": 6,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 239.14,
+      "r": 213.5,
+      "b": 230.12,
+      "w": 173.81,
+      "h": 9.02,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.30238,
+      "r": 0.35866,
+      "b": 0.29097
+     },
+     "text": "Multimodal cardiovascular diagnosis",
+     "text_len": 35,
+     "level": 1,
+     "element_id": "p6_e50"
+    },
+    {
+     "reading_order": 51,
+     "page": 6,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 225.31,
+      "r": 294.91,
+      "b": 120.9,
+      "w": 255.22,
+      "h": 104.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.28489,
+      "r": 0.49542,
+      "b": 0.15287
+     },
+     "text": "Using the video embeddings in EchoPrime, linear probing can identify cardiac diseases not typically diagnosed by echocardiography with high accuracy including cardiac amyloidosis and STEMI (multimodal cardiovascular diagnoses). Using EchoPrime embeddings with linear probing, we could identify STEMI with an AUC of 0.90 and amyloidosis with an AUC of 0.95 even with limited training data. It was also possible to predict multimodal cardiovascular diagnoses without any supervised fine-tuning, with a non-parametric k-nearest neighbour probing approach, that could identify STEMI with an AUC of 0.92 and amyloidosis with an AUC of 0.96 (Fig. 2d).",
+     "text_len": 645,
+     "level": 1,
+     "element_id": "p6_e51"
+    },
+    {
+     "reading_order": 52,
+     "page": 6,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 99.39,
+      "r": 90.69,
+      "b": 90.37,
+      "w": 51.0,
+      "h": 9.02,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.12567,
+      "r": 0.15235,
+      "b": 0.11427
+     },
+     "text": "Discussion",
+     "text_len": 10,
+     "level": 1,
+     "element_id": "p6_e52"
+    },
+    {
+     "reading_order": 53,
+     "page": 6,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 85.56,
+      "r": 294.85,
+      "b": 45.65,
+      "w": 255.17,
+      "h": 39.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.10819,
+      "r": 0.49532,
+      "b": 0.05772
+     },
+     "text": "EchoPrime is a multi-view, view-informed, video-based deep learning algorithm for comprehensive assessment of echocardiograms. Trained on over ten times more data than existing echocardiography AI models, EchoPrime integrates view-dependent information into clinical assessments across a wide range of interpretations of cardiac structure and function. Incorporating videos from more than 10 years' worth of echocardiography data at a large academic medical centre, EchoPrime integrates anatomical attention and retrieval augmented interpretation to achieve state-of-the-art performance on a wide range of interpretation tasks beyond both previous foundation models and task-specific echocardiography AI models. In addition, EchoPrime excels in many tasks where no previous AI models have been developed and shows generalizability in four external validation cohorts. With publicly released code, weights and demo, we hope EchoPrime can be a resource to the medical and AI communities.",
+     "text_len": 985,
+     "level": 1,
+     "element_id": "p6_e53"
+    },
+    {
+     "reading_order": 54,
+     "page": 6,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 483.31,
+      "r": 561.4,
+      "b": 346.65,
+      "w": 255.26,
+      "h": 136.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.61111,
+      "r": 0.94309,
+      "b": 0.43832
+     },
+     "text": "Compared with previous echocardiographic models, EchoPrime has a longer temporal context, longer text context length and integrates complementary videos with a robust view classifier and multiple instance anatomical attention. Trained on more than ten times the data of other recent echocardiography AI models 24,31 , EchoPrime improves upon models in low-resource and low-quality image settings. By utilizing multiple instance learning to integrate information from multiple videos, we reproduced the relationship between echocardiographic views and the associated anatomical structures that cardiologists use to make EchoPrime an inherently clinically interpretable model. Trained on the largest corpus of echocardiographic data, our model can detect rare diseases and cardiovascular diseases not typically assessed by cardiac ultrasound 31,32 .",
+     "text_len": 847,
+     "level": 1,
+     "element_id": "p6_e54"
+    },
+    {
+     "reading_order": 55,
+     "page": 6,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 343.56,
+      "r": 561.36,
+      "b": 153.15,
+      "w": 255.22,
+      "h": 190.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.43441,
+      "r": 0.94302,
+      "b": 0.19365
+     },
+     "text": "A few limitations are worth considering. As EchoPrime relies on a video encoder, still images such as spectral Doppler and M-mode were excluded from the training set. Even though much of their information is already present in B-mode and colour Doppler videos, future iterations might benefit from including these image types. Parallel work in direct annotation of echocardiography images can help to inform assessment of echocardiographic measurements 31 (Supplementary Table 10). Although EchoPrime was evaluated at four geographically distinct academic medical centres, all data were collected retrospectively. Future experiments should include prospective evaluations in real-world settings to understand human-computer interaction as well as accuracy and acceptability of EchoPrime assessment. Working within a complex ecosystem such as health care requires understanding the human-computer interaction through clinical trials and identifying optimal integration into clinical workflows. Point-of-care ultrasound is one high-value use case such that AI can provide rapid expert evaluation of frontline diagnostic information. Combined with AI-based probe guidance 33,34 , EchoPrime has the potential to automate the echocardiographic workflow.",
+     "text_len": 1248,
+     "level": 1,
+     "element_id": "p6_e55"
+    },
+    {
+     "reading_order": 56,
+     "page": 6,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 150.06,
+      "r": 561.32,
+      "b": 45.65,
+      "w": 255.17,
+      "h": 104.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.18974,
+      "r": 0.94296,
+      "b": 0.05772
+     },
+     "text": "The Achilles heel of medical imaging lies in human heterogeneity, and opportunities in the future lie in the potential integration of AI into the health-care system. Our results represent an important step towards the automated evaluation of cardiac ultrasound. EchoPrime augments existing methods for interpreting echocardiography and has the potential to streamline manual tasks and improve the reproducibility of cardiac imaging. Trained on the most echocardiography data to date and using anatomical attention as well as retrieval augmented interpretation, EchoPrime performs comprehensive evaluation of echocardiography videos.",
+     "text_len": 632,
+     "level": 1,
+     "element_id": "p6_e56"
+    }
+   ]
+  },
+  {
+   "page_no": 7,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0007.png",
+   "elements": [
+    {
+     "reading_order": 57,
+     "page": 7,
+     "label": "picture",
+     "bbox": {
+      "l": 32.84,
+      "t": 744.83,
+      "r": 562.85,
+      "b": 175.86,
+      "w": 530.02,
+      "h": 568.97,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.05517,
+      "t": 0.94179,
+      "r": 0.94553,
+      "b": 0.22236
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p7_e57"
+    },
+    {
+     "reading_order": 58,
+     "page": 7,
+     "label": "caption",
+     "bbox": {
+      "l": 39.69,
+      "t": 166.18,
+      "r": 294.81,
+      "b": 109.67,
+      "w": 255.12,
+      "h": 56.51,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.21012,
+      "r": 0.49525,
+      "b": 0.13867
+     },
+     "text": "Fig. 3 | Anatomical attention to weight predictions across videos in an echocardiogram study. a, A view classifier was trained on 60,000 videos to distinguish between 58 standard echocardiographic views. b, A comprehensive echocardiogram examination comprises many different views, which is summarized across our training cohort. c, A clustered heatmap showing the relative priority and ranking of each video for each anatomical structure based",
+     "text_len": 444,
+     "level": 2,
+     "element_id": "p7_e58"
+    },
+    {
+     "reading_order": 59,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 306.15,
+      "t": 166.17,
+      "r": 560.95,
+      "b": 119.66,
+      "w": 254.81,
+      "h": 46.51,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.5143,
+      "t": 0.21011,
+      "r": 0.94234,
+      "b": 0.1513
+     },
+     "text": "on learned anatomical attention. IAS, interatrial septum; IVS, interventricular septum; LA, left atrium; LV, left ventricle; MV, mitral valve; PV, pulmonic valve; RV, right ventricle; TV, tricuspid valve. d, Comparison of how a cardiologist (left) and EchoPrime (right) prioritizes different views based on the assessed anatomical structure.",
+     "text_len": 341,
+     "level": 1,
+     "element_id": "p7_e59"
+    },
+    {
+     "reading_order": 60,
+     "page": 7,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 88.64,
+      "r": 109.92,
+      "b": 79.62,
+      "w": 70.24,
+      "h": 9.02,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.11208,
+      "r": 0.18465,
+      "b": 0.10067
+     },
+     "text": "Online content",
+     "text_len": 14,
+     "level": 1,
+     "element_id": "p7_e60"
+    },
+    {
+     "reading_order": 61,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 74.81,
+      "r": 294.8,
+      "b": 45.65,
+      "w": 255.12,
+      "h": 29.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.09459,
+      "r": 0.49523,
+      "b": 0.05772
+     },
+     "text": "Any methods, additional references, Nature Portfolio reporting summaries, source data, extended data, supplementary information, acknowledgements, peer review information; details of author contributions and competing interests; and statements of data and code availability are available at https://doi.org/10.1038/s41586-025-09850-x.",
+     "text_len": 334,
+     "level": 1,
+     "element_id": "p7_e61"
+    },
+    {
+     "reading_order": 62,
+     "page": 7,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 59.87,
+      "r": 542.04,
+      "b": 46.6,
+      "w": 235.9,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.0757,
+      "r": 0.91057,
+      "b": 0.05892
+     },
+     "text": "ACCF/ASE/AHA/ASNC/HFSA/HRS/SCAI/SCCM/SCCT/SCMR. 2011 Appropriate use criteria for echocardiography. J. Am. Soc. Echocardiogr. 24, 229-267 (2011).",
+     "text_len": 145,
+     "level": 2,
+     "element_id": "p7_e62"
+    }
+   ]
+  },
+  {
+   "page_no": 8,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0008.png",
+   "elements": [
+    {
+     "reading_order": 63,
+     "page": 8,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 762.41,
+      "r": 85.69,
+      "b": 749.44,
+      "w": 46.0,
+      "h": 12.97,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.96402,
+      "r": 0.14395,
+      "b": 0.94762
+     },
+     "text": "Article",
+     "text_len": 7,
+     "level": 1,
+     "element_id": "p8_e63"
+    },
+    {
+     "reading_order": 64,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.69,
+      "t": 741.29,
+      "r": 276.2,
+      "b": 728.01,
+      "w": 236.51,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.93731,
+      "r": 0.46399,
+      "b": 0.92052
+     },
+     "text": "Zhang, J. et al. Fully automated echocardiogram interpretation in clinical practice. Circulation 138, 1623-1635 (2018).",
+     "text_len": 119,
+     "level": 2,
+     "element_id": "p8_e64"
+    },
+    {
+     "reading_order": 65,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.69,
+      "t": 725.26,
+      "r": 280.24,
+      "b": 711.98,
+      "w": 240.55,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.91705,
+      "r": 0.47077,
+      "b": 0.90025
+     },
+     "text": "Christensen, M., Vukadinovic, M., Yuan, N. & Ouyang, D. Vision-language foundation model for echocardiogram interpretation. Nat. Med. 30, 1481-1488 (2024).",
+     "text_len": 155,
+     "level": 2,
+     "element_id": "p8_e65"
+    },
+    {
+     "reading_order": 66,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.68,
+      "t": 709.22,
+      "r": 286.38,
+      "b": 695.95,
+      "w": 246.69,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06666,
+      "t": 0.89676,
+      "r": 0.48109,
+      "b": 0.87998
+     },
+     "text": "Zhang, S. et al. A multimodal biomedical foundation model trained from fifteen million image-text pairs. NEJM AI 2, AIoa2400640 (2025).",
+     "text_len": 135,
+     "level": 2,
+     "element_id": "p8_e66"
+    },
+    {
+     "reading_order": 67,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.68,
+      "t": 693.19,
+      "r": 294.82,
+      "b": 671.9,
+      "w": 255.13,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06666,
+      "t": 0.87649,
+      "r": 0.49527,
+      "b": 0.84958
+     },
+     "text": "Liu, X. et al. A comparison of deep learning performance against health-care professionals in detecting diseases from medical imaging: a systematic review and meta-analysis. Lancet Digit. Health 1, e271-e297 (2019).",
+     "text_len": 215,
+     "level": 2,
+     "element_id": "p8_e67"
+    },
+    {
+     "reading_order": 68,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.68,
+      "t": 669.14,
+      "r": 294.8,
+      "b": 655.87,
+      "w": 255.11,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06666,
+      "t": 0.84609,
+      "r": 0.49523,
+      "b": 0.82931
+     },
+     "text": "Esteva, A. et al. Dermatologist-level classification of skin cancer with deep neural networks. Nature 542, 115-118 (2017).",
+     "text_len": 122,
+     "level": 2,
+     "element_id": "p8_e68"
+    },
+    {
+     "reading_order": 69,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.68,
+      "t": 653.11,
+      "r": 294.78,
+      "b": 639.83,
+      "w": 255.1,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06666,
+      "t": 0.82582,
+      "r": 0.4952,
+      "b": 0.80902
+     },
+     "text": "McKinney, S. M. et al. International evaluation of an AI system for breast cancer screening. Nature 577, 89-94 (2020).",
+     "text_len": 118,
+     "level": 2,
+     "element_id": "p8_e69"
+    },
+    {
+     "reading_order": 70,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.68,
+      "t": 637.08,
+      "r": 291.51,
+      "b": 615.79,
+      "w": 251.82,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06666,
+      "t": 0.80555,
+      "r": 0.48971,
+      "b": 0.77863
+     },
+     "text": "Radford, A. et al. Learning transferable visual models from natural language supervision. In Proc. 38th Intl Conf. Machine Learning (eds Meila, M. & Zhang, T.) 8748-8763 (PMLR, 2021).",
+     "text_len": 183,
+     "level": 2,
+     "element_id": "p8_e70"
+    },
+    {
+     "reading_order": 71,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.68,
+      "t": 613.03,
+      "r": 290.49,
+      "b": 591.74,
+      "w": 250.81,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06666,
+      "t": 0.77514,
+      "r": 0.48799,
+      "b": 0.74822
+     },
+     "text": "Jia, C. et al. Scaling up visual and vision-language representation learning with noisy text supervision. In Proc. 38th Intl Conf. Machine Learning (eds Meila, M. & Zhang, T.) 4904-4916 (PMLR, 2021).",
+     "text_len": 199,
+     "level": 2,
+     "element_id": "p8_e71"
+    },
+    {
+     "reading_order": 72,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.68,
+      "t": 588.98,
+      "r": 294.25,
+      "b": 559.67,
+      "w": 254.56,
+      "h": 29.31,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06666,
+      "t": 0.74473,
+      "r": 0.49431,
+      "b": 0.70767
+     },
+     "text": "Li, J., Li, D., Xiong, C. & Hoi, S. BLIP: bootstrapping language-image pre-training for unified vision-language understanding and generation. In Proc. 39th Intl Conf. Machine Learning (eds Chaudhuri, K., Jegelka, S., Song, L., Szepesvari, C., Niu, G. & Sabato, S.) 12888-12900 (PMLR, 2022).",
+     "text_len": 290,
+     "level": 2,
+     "element_id": "p8_e72"
+    },
+    {
+     "reading_order": 73,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.68,
+      "t": 556.92,
+      "r": 294.29,
+      "b": 543.64,
+      "w": 254.6,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06666,
+      "t": 0.70419,
+      "r": 0.49438,
+      "b": 0.6874
+     },
+     "text": "Singh, A. et al. FLAVA: a foundational language and vision alignment model. In 2022 IEEE/ CVF Conference on Computer Vision and Pattern Recognition (CVPR) 15617-15629 (2022).",
+     "text_len": 174,
+     "level": 2,
+     "element_id": "p8_e73"
+    },
+    {
+     "reading_order": 74,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.68,
+      "t": 540.89,
+      "r": 293.11,
+      "b": 519.59,
+      "w": 253.43,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06666,
+      "t": 0.68392,
+      "r": 0.49239,
+      "b": 0.65699
+     },
+     "text": "Li, H. et al. Uni-Perceiver v2: a generalist model for large-scale vision and vision-language tasks. In 2023 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2691-2700 (IEEE, 2023).",
+     "text_len": 202,
+     "level": 2,
+     "element_id": "p8_e74"
+    },
+    {
+     "reading_order": 75,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.68,
+      "t": 516.84,
+      "r": 288.7,
+      "b": 503.56,
+      "w": 249.02,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06666,
+      "t": 0.65351,
+      "r": 0.48499,
+      "b": 0.63672
+     },
+     "text": "Alayrac, J.-B. et al. Flamingo: a visual language model for few-shot learning. Adv. Neural Inf. Process. Syst. 35, 23716-23736 (2022).",
+     "text_len": 134,
+     "level": 2,
+     "element_id": "p8_e75"
+    },
+    {
+     "reading_order": 76,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.69,
+      "t": 500.81,
+      "r": 294.75,
+      "b": 479.51,
+      "w": 255.06,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.63324,
+      "r": 0.49515,
+      "b": 0.60631
+     },
+     "text": "Wang, W. et al. Image as a foreign language: BEIT pretraining for vision and vision-language tasks. In 2023 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 19175-19186 (IEEE, 2023).",
+     "text_len": 203,
+     "level": 2,
+     "element_id": "p8_e76"
+    },
+    {
+     "reading_order": 77,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.69,
+      "t": 476.76,
+      "r": 294.8,
+      "b": 455.47,
+      "w": 255.12,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.60283,
+      "r": 0.49523,
+      "b": 0.57591
+     },
+     "text": "Zhai, X., Mustafa, B., Kolesnikov, A. & Beyer, L. Sigmoid loss for language image pre-training. In 2023 IEEE/CVF International Conference on Computer Vision (ICCV) 11941-11952 (IEEE, 2023).",
+     "text_len": 189,
+     "level": 2,
+     "element_id": "p8_e77"
+    },
+    {
+     "reading_order": 78,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.69,
+      "t": 452.71,
+      "r": 294.49,
+      "b": 431.42,
+      "w": 254.81,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.57242,
+      "r": 0.49471,
+      "b": 0.5455
+     },
+     "text": "Lavoie, S. et al. Modeling caption diversity in contrastive vision-language pretraining. In Proc. 41st Intl Conf. Machine Learning (eds Salakhutdinov, R., Kolter, Z., Heller, K., Weller, A., Oliver, N., Scarlett, J. & Berkenkamp, F.) 26070-26084 (PMLR, 2024).",
+     "text_len": 259,
+     "level": 2,
+     "element_id": "p8_e78"
+    },
+    {
+     "reading_order": 79,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.69,
+      "t": 428.66,
+      "r": 294.82,
+      "b": 415.39,
+      "w": 255.14,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.54201,
+      "r": 0.49527,
+      "b": 0.52523
+     },
+     "text": "Chen, R. J. et al. Towards a general-purpose foundation model for computational pathology. Nat. Med. 30, 850-862 (2024).",
+     "text_len": 120,
+     "level": 2,
+     "element_id": "p8_e79"
+    },
+    {
+     "reading_order": 80,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.68,
+      "t": 412.63,
+      "r": 286.06,
+      "b": 399.35,
+      "w": 246.38,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06666,
+      "t": 0.52174,
+      "r": 0.48055,
+      "b": 0.50495
+     },
+     "text": "Huang, K. et al. A foundation model for clinician-centered drug repurposing. Nat. Med. https://doi.org/10.1038/s41591-024-03233-x (2024).",
+     "text_len": 137,
+     "level": 2,
+     "element_id": "p8_e80"
+    },
+    {
+     "reading_order": 81,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.68,
+      "t": 396.6,
+      "r": 286.52,
+      "b": 375.31,
+      "w": 246.84,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06666,
+      "t": 0.50148,
+      "r": 0.48132,
+      "b": 0.47456
+     },
+     "text": "Bannur, S. et al. Learning to exploit temporal structure for biomedical vision-language processing. In 2023 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 15016-15027 (IEEE, 2023).",
+     "text_len": 203,
+     "level": 2,
+     "element_id": "p8_e81"
+    },
+    {
+     "reading_order": 82,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.68,
+      "t": 372.55,
+      "r": 294.79,
+      "b": 359.27,
+      "w": 255.11,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06666,
+      "t": 0.47107,
+      "r": 0.49522,
+      "b": 0.45427
+     },
+     "text": "Zhou, Y. et al. A foundation model for generalizable disease detection from retinal images. Nature https://doi.org/10.1038/s41586-023-06555-x (2023).",
+     "text_len": 149,
+     "level": 2,
+     "element_id": "p8_e82"
+    },
+    {
+     "reading_order": 83,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.68,
+      "t": 356.52,
+      "r": 286.28,
+      "b": 343.24,
+      "w": 246.6,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06666,
+      "t": 0.4508,
+      "r": 0.48092,
+      "b": 0.43401
+     },
+     "text": "Lewis, P. et al. Retrieval-augmented generation for knowledge-intensive nlp tasks. Adv. Neural Inf. Process. Syst. 33, 9459-9474 (2020).",
+     "text_len": 136,
+     "level": 2,
+     "element_id": "p8_e83"
+    },
+    {
+     "reading_order": 84,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.13,
+      "t": 741.34,
+      "r": 543.59,
+      "b": 712.03,
+      "w": 237.46,
+      "h": 29.31,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51427,
+      "t": 0.93738,
+      "r": 0.91317,
+      "b": 0.90032
+     },
+     "text": "Eslami, S., Meinel, C. & de Melo, G. PubMedCLIP: how much does clip benefit visual question answering in the medical domain? In Findings of the Association for Computational Linguistics: EACL 2023 (eds Vlachos, A. & Augenstein, I.) 1181-1193 (Association for Computational Linguistics, 2023).",
+     "text_len": 292,
+     "level": 2,
+     "element_id": "p8_e84"
+    },
+    {
+     "reading_order": 85,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.13,
+      "t": 709.27,
+      "r": 548.41,
+      "b": 687.98,
+      "w": 242.28,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51427,
+      "t": 0.89683,
+      "r": 0.92127,
+      "b": 0.86991
+     },
+     "text": "Lin, W. et al. PMC-CLIP: contrastive language-image pre-training using biomedical documents. In Proc. MICCAI 2023 (eds Greenspan, H., Madabhushi, A., Mousavi, P., Salcudean, S., Duncan, J., Syeda-Mahmood, T. & Taylor, R.) 525-536 (Springer, 2023).",
+     "text_len": 247,
+     "level": 2,
+     "element_id": "p8_e85"
+    },
+    {
+     "reading_order": 86,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.13,
+      "t": 685.22,
+      "r": 549.41,
+      "b": 671.95,
+      "w": 243.28,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51427,
+      "t": 0.86642,
+      "r": 0.92295,
+      "b": 0.84964
+     },
+     "text": "Holste, G. et al. Complete AI-enabled echocardiography interpretation with multitask deep learning. JAMA https://doi.org/10.1001/jama.2025.8731 (2025).",
+     "text_len": 151,
+     "level": 2,
+     "element_id": "p8_e86"
+    },
+    {
+     "reading_order": 87,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.13,
+      "t": 669.19,
+      "r": 557.03,
+      "b": 655.91,
+      "w": 250.9,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51427,
+      "t": 0.84615,
+      "r": 0.93575,
+      "b": 0.82936
+     },
+     "text": "Ouyang, D. et al. Video-based AI for beat-to-beat assessment of cardiac function. Nature 580, 252-256 (2020).",
+     "text_len": 109,
+     "level": 2,
+     "element_id": "p8_e87"
+    },
+    {
+     "reading_order": 88,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.13,
+      "t": 653.16,
+      "r": 549.79,
+      "b": 639.88,
+      "w": 243.66,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51427,
+      "t": 0.82588,
+      "r": 0.92359,
+      "b": 0.80909
+     },
+     "text": "Vrudhula, A. et al. Automated deep learning phenotyping of tricuspid regurgitation in echocardiography. JAMA Cardiol. 10, 595-602 (2025).",
+     "text_len": 137,
+     "level": 2,
+     "element_id": "p8_e88"
+    },
+    {
+     "reading_order": 89,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.13,
+      "t": 637.13,
+      "r": 545.05,
+      "b": 623.85,
+      "w": 238.93,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51427,
+      "t": 0.80561,
+      "r": 0.91563,
+      "b": 0.78882
+     },
+     "text": "Vrudhula, A. et al. High-throughput deep learning detection of mitral regurgitation. Circulation 150, 923-933 (2024).",
+     "text_len": 117,
+     "level": 2,
+     "element_id": "p8_e89"
+    },
+    {
+     "reading_order": 90,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.13,
+      "t": 621.1,
+      "r": 559.9,
+      "b": 599.8,
+      "w": 253.78,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51427,
+      "t": 0.78534,
+      "r": 0.94057,
+      "b": 0.75841
+     },
+     "text": "Yıldız Potter, İ, Leo, M. M., Vaziri, A. & Feldman, J. A. Automated detection and localization of pericardial effusion from point-of-care cardiac ultrasound examination. Med. Biol. Eng. Comput. 61, 1947-1959 (2023).",
+     "text_len": 215,
+     "level": 2,
+     "element_id": "p8_e90"
+    },
+    {
+     "reading_order": 91,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.13,
+      "t": 597.05,
+      "r": 534.54,
+      "b": 583.77,
+      "w": 228.41,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51427,
+      "t": 0.75493,
+      "r": 0.89797,
+      "b": 0.73814
+     },
+     "text": "Holste, G. et al. Severe aortic stenosis detection by deep learning applied to echocardiography. Eur. Heart J. 44, 4592-4604 (2023).",
+     "text_len": 132,
+     "level": 2,
+     "element_id": "p8_e91"
+    },
+    {
+     "reading_order": 92,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.13,
+      "t": 581.02,
+      "r": 559.17,
+      "b": 567.74,
+      "w": 253.04,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51427,
+      "t": 0.73466,
+      "r": 0.93935,
+      "b": 0.71787
+     },
+     "text": "Ghorbani, A. et al. Deep learning interpretation of echocardiograms. Npj Digit. Med. 3, 10 (2020).",
+     "text_len": 98,
+     "level": 2,
+     "element_id": "p8_e92"
+    },
+    {
+     "reading_order": 93,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.13,
+      "t": 564.98,
+      "r": 556.12,
+      "b": 551.71,
+      "w": 250.0,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51427,
+      "t": 0.71438,
+      "r": 0.93422,
+      "b": 0.6976
+     },
+     "text": "Sahashi, Y. et al. Artificial intelligence automation of echocardiographic measurements. JACC 86, 964-978 (2025).",
+     "text_len": 113,
+     "level": 2,
+     "element_id": "p8_e93"
+    },
+    {
+     "reading_order": 94,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.13,
+      "t": 548.95,
+      "r": 555.96,
+      "b": 535.67,
+      "w": 249.84,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51427,
+      "t": 0.69411,
+      "r": 0.93395,
+      "b": 0.67732
+     },
+     "text": "Tromp, J. et al. A formal validation of a deep learning-based automated workflow for the interpretation of the echocardiogram. Nat. Commun. 13, 6776 (2022).",
+     "text_len": 156,
+     "level": 2,
+     "element_id": "p8_e94"
+    },
+    {
+     "reading_order": 95,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.13,
+      "t": 532.92,
+      "r": 561.27,
+      "b": 511.63,
+      "w": 255.15,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51427,
+      "t": 0.67384,
+      "r": 0.94287,
+      "b": 0.64692
+     },
+     "text": "Shida, Y., Kumagai, S., Tsumura, R. & Iwata, H. Automated image acquisition of parasternal long-axis view with robotic echocardiography. IEEE Robot. Autom. Lett. 8, 5228-5235 (2023).",
+     "text_len": 182,
+     "level": 2,
+     "element_id": "p8_e95"
+    },
+    {
+     "reading_order": 96,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.13,
+      "t": 508.87,
+      "r": 559.3,
+      "b": 487.58,
+      "w": 253.18,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51427,
+      "t": 0.64343,
+      "r": 0.93956,
+      "b": 0.61651
+     },
+     "text": "Jiang, H. et al. Cardiac Copilot: automatic probe guidance for echocardiography with world model. In Medical Image Computing and Computer Assisted Intervention - MICCAI 2024 (eds Linguraru, M. G. et al.) 190-199 (Springer Nature, 2024).",
+     "text_len": 236,
+     "level": 2,
+     "element_id": "p8_e96"
+    },
+    {
+     "reading_order": 97,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 306.13,
+      "t": 476.81,
+      "r": 539.11,
+      "b": 463.53,
+      "w": 232.98,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51427,
+      "t": 0.6029,
+      "r": 0.90565,
+      "b": 0.5861
+     },
+     "text": "Publisher's note Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.",
+     "text_len": 135,
+     "level": 1,
+     "element_id": "p8_e97"
+    },
+    {
+     "reading_order": 98,
+     "page": 8,
+     "label": "picture",
+     "bbox": {
+      "l": 305.46,
+      "t": 453.88,
+      "r": 348.48,
+      "b": 438.5,
+      "w": 43.03,
+      "h": 15.38,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51314,
+      "t": 0.5739,
+      "r": 0.58541,
+      "b": 0.55446
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p8_e98"
+    },
+    {
+     "reading_order": 99,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 350.65,
+      "t": 452.69,
+      "r": 560.28,
+      "b": 431.4,
+      "w": 209.63,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.58905,
+      "t": 0.5724,
+      "r": 0.94121,
+      "b": 0.54548
+     },
+     "text": "Open Access This article is licensed under a Creative Commons AttributionNonCommercial-NoDerivatives 4.0 International License, which permits any non-commercial use, sharing, distribution and reproduction in any medium or",
+     "text_len": 221,
+     "level": 1,
+     "element_id": "p8_e99"
+    },
+    {
+     "reading_order": 100,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 428.65,
+      "r": 558.03,
+      "b": 359.26,
+      "w": 251.89,
+      "h": 69.39,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.542,
+      "r": 0.93743,
+      "b": 0.45426
+     },
+     "text": "format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if you modified the licensed material. You do not have permission under this licence to share adapted material derived from this article or parts of it. The images or other third party material in this article are included in the article's Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the article's Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit http://creativecommons.org/licenses/by-nc-nd/4.0/.",
+     "text_len": 799,
+     "level": 1,
+     "element_id": "p8_e100"
+    },
+    {
+     "reading_order": 101,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 348.5,
+      "r": 363.94,
+      "b": 343.24,
+      "w": 57.79,
+      "h": 5.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.44066,
+      "r": 0.61138,
+      "b": 0.43401
+     },
+     "text": "© The Author(s) 2025",
+     "text_len": 20,
+     "level": 2,
+     "element_id": "p8_e101"
+    }
+   ]
+  },
+  {
+   "page_no": 9,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0009.png",
+   "elements": [
+    {
+     "reading_order": 102,
+     "page": 9,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 743.07,
+      "r": 91.02,
+      "b": 731.96,
+      "w": 51.34,
+      "h": 11.11,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.93956,
+      "r": 0.1529,
+      "b": 0.92552
+     },
+     "text": "Methods",
+     "text_len": 7,
+     "level": 1,
+     "element_id": "p9_e102"
+    },
+    {
+     "reading_order": 103,
+     "page": 9,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 720.99,
+      "r": 152.36,
+      "b": 713.11,
+      "w": 112.68,
+      "h": 7.88,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.91165,
+      "r": 0.25595,
+      "b": 0.90168
+     },
+     "text": "Dataset and cohort curation",
+     "text_len": 27,
+     "level": 1,
+     "element_id": "p9_e103"
+    },
+    {
+     "reading_order": 104,
+     "page": 9,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 709.06,
+      "r": 294.92,
+      "b": 572.4,
+      "w": 255.23,
+      "h": 136.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.89656,
+      "r": 0.49543,
+      "b": 0.72376
+     },
+     "text": "The CSMC echocardiography laboratory performs clinical echocardiography for a wide range of indications ranging from asymptomatic pre-operative screening to evaluation for open heart surgery or heart transplant. A standard full resting echocardiogram study consists of a series of 50-150 videos and images visualizing the heart from different angles and locations, using multiple acquisition techniques including standard 2D videos, tissue Doppler images and colour Doppler videos. Each echocardiogram study corresponds to a unique patient during a specific examination, with different videos representing different facets of cardiac function. We utilized all adult transthoracic echocardiogram studies for EchoPrime training, excluding studies for paediatric echocardiography and adult congenital heart disease echocardiograms.",
+     "text_len": 828,
+     "level": 1,
+     "element_id": "p9_e104"
+    },
+    {
+     "reading_order": 105,
+     "page": 9,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 569.31,
+      "r": 294.95,
+      "b": 368.15,
+      "w": 255.26,
+      "h": 201.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.71986,
+      "r": 0.49548,
+      "b": 0.4655
+     },
+     "text": "For EchoPrime training, we curated a dataset of 12,124,168 2D and colour Doppler echocardiography videos from 275,442 studies and corresponding medical reports from 108,913 patients collected between 2011 and 2022. DICOM images were queried from the clinical data storage system, converted to AVI video files, and de-identified before model training and inference. Data were split by patient into training, validation and internal test datasets. The training data contained 11,984,170 videos derived from 272,256 studies across 107,663 patients from the CSMC, and the CSMC data were the only data used to train the model. The validation data contained 25,167 videos from 565 studies across 250 patients and were used to select the best-model checkpoint. The internal test set contained 114,831 videos derived from 2,621 studies across 1,000 patients, it was completely withheld during training and used solely for a single, final evaluation of our model. The full training dataset consists of transthoracic echocardiogram (TTEs) studies, transoesophageal echocardiogram and stress echocardiography studies; however, downstream experiments and validation tests focused specifically on TTEs, which accounted for 234,036 out of a total of 275,442 studies.",
+     "text_len": 1252,
+     "level": 1,
+     "element_id": "p9_e105"
+    },
+    {
+     "reading_order": 106,
+     "page": 9,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 365.06,
+      "r": 294.94,
+      "b": 153.15,
+      "w": 255.26,
+      "h": 211.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.4616,
+      "r": 0.49547,
+      "b": 0.19365
+     },
+     "text": "For linear probing and transfer learning experiments, we compiled two focused datasets for diseases not typically diagnosed by echocardiography (multimodal cardiovascular diagnoses): one for STEMI and another for amyloidosis. Studies from the CSMC were collected and reviewed, with clinical expert labelling of 641 STEMI cases and 159 cardiac amyloidosis cases. For the STEMI dataset, all reviewed studies included ECG modality, and positive cases were determined through conventional clinical definition (ST changes on ECG). For cardiac amyloidosis, all patients had confirmatory technetium pyrophosphate, cardiac MRI, biopsy or laboratory testing. To ensure representation in the test set, approximately one-third of the cases were reserved for testing (200 STEMI and 50 amyloidosis), whereas the remaining cases were used for training. To assess inter-physician variability in echocardiography interpretations, we evaluated clinician interpretations and EchoPrime interpretations on a cohort of patients undergoing consecutive echocardiogram studies for which a cardiologist thought there was no significant difference between the two studies. This dataset comprised 4,607 paired studies for which we evaluated the degree of variation between the first and second studies of the same patient.",
+     "text_len": 1295,
+     "level": 1,
+     "element_id": "p9_e106"
+    },
+    {
+     "reading_order": 107,
+     "page": 9,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 140.49,
+      "r": 151.7,
+      "b": 132.61,
+      "w": 112.01,
+      "h": 7.88,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.17764,
+      "r": 0.25484,
+      "b": 0.16768
+     },
+     "text": "External validation datasets",
+     "text_len": 28,
+     "level": 1,
+     "element_id": "p9_e107"
+    },
+    {
+     "reading_order": 108,
+     "page": 9,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 128.56,
+      "r": 294.95,
+      "b": 45.65,
+      "w": 255.26,
+      "h": 82.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.16256,
+      "r": 0.49548,
+      "b": 0.05772
+     },
+     "text": "For external validation, we obtained echocardiographic data from four geographically distinct international sites to evaluate the performance of EchoPrime. From SHC, we collected 91,746 videos from 1,792 TTE studies across 1,792 patients. From the MIMIC dataset, we used 75,768 videos from 2,431 TTE studies with corresponding echocardiography reports across 1,767 patients. From the CGMH Hospital in Taiwan, we acquired 24,724 videos with reports from 1,188 TTE studies, each from a unique patient. The CGMH dataset had 21 videos per study on average, notably, smaller from the three US sites (31-51). From the KP medical centre, we collected 201,752 videos from 4,891 studies obtain in September 2023. All video data from external datasets underwent the same preprocessing workflow, including RGB conversion, cropping to the ultrasound region and resizing to 224 × 224. Study labels were extracted in quantitative form from reports using regex with institution-specific custom phrases. All data from external validation sites were used exclusively for validation and were not accessible to the model during training.",
+     "text_len": 1118,
+     "level": 1,
+     "element_id": "p9_e108"
+    },
+    {
+     "reading_order": 109,
+     "page": 9,
+     "label": "section_header",
+     "bbox": {
+      "l": 306.14,
+      "t": 634.99,
+      "r": 455.12,
+      "b": 627.11,
+      "w": 148.98,
+      "h": 7.88,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.8029,
+      "r": 0.76455,
+      "b": 0.79294
+     },
+     "text": "Contrastive vision-language training",
+     "text_len": 36,
+     "level": 1,
+     "element_id": "p9_e109"
+    },
+    {
+     "reading_order": 110,
+     "page": 9,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 623.06,
+      "r": 561.4,
+      "b": 411.15,
+      "w": 255.26,
+      "h": 211.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.78782,
+      "r": 0.94309,
+      "b": 0.51987
+     },
+     "text": "To develop video and text encoders that map videos and text into a joint representation space (Fig. 1b), we adopted the contrastive strategy used in CLIP 8 , but modified the encoder architectures to allow for video and long context text input. For the video encoder, we selected a multi-scale vision transformer (mVIT) 35 architecture with weights pretrained on the kinetics dataset 36 . The last layer of the video encoder was modified such that the output was 512-dimensional. For the text encoder, we selected Wordpiece Encoding tokenization and BERT 37 architecture with weights pretrained on PubMed abstracts (BioMedBERT 38 ). A fully connected layer was appended on top of the BERT classification (CLS) token vector representation to obtain a similarly sized 512-dimensional embedding. mVIT was chosen as the video encoder because mVIT effectively captures temporal dynamics, as evidenced by performance changes when video frames are shuffled, a phenomenon not observed in other vision transformers 39 . PubMedBERT was selected as the text encoder due to its pretraining on 21 Gb of medical text, giving our model a head start in understanding medical literature. PubMedBERT has a maximum context length of 512 tokens (which is of sufficient length to capture 99.56% of the reports in our training dataset).",
+     "text_len": 1314,
+     "level": 1,
+     "element_id": "p9_e110"
+    },
+    {
+     "reading_order": 111,
+     "page": 9,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 408.06,
+      "r": 561.4,
+      "b": 271.4,
+      "w": 255.26,
+      "h": 136.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.51597,
+      "r": 0.94309,
+      "b": 0.34317
+     },
+     "text": "During training, batches of 32 video-report pairs were constructed, with each pair consisting of a video and report from the same study, and all pairs within a batch coming from different studies. The input video size was 224 × 224 × 16 × 3 with a stride of 2 to increase the temporal context despite only 16 frames. The video data pixel intensity was normalized using the mean and standard deviation of the training dataset. For reports longer than 512 tokens, a random 512 tokens were selected starting with either a start token or the first token appearing after a [SEP] token. Videos were fed through the video encoder and reports were fed through the text encoder to obtain embeddings. A dot product was taken between video and report embeddings to obtain a similarity matrix. This similarity matrix was scaled by a trainable temperature parameter (starting at 1.0).",
+     "text_len": 871,
+     "level": 1,
+     "element_id": "p9_e111"
+    },
+    {
+     "reading_order": 112,
+     "page": 9,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 268.31,
+      "r": 561.41,
+      "b": 110.15,
+      "w": 255.27,
+      "h": 158.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.33926,
+      "r": 0.94311,
+      "b": 0.13928
+     },
+     "text": "The cross-entropy loss was calculated between this scaled similarity matrix and an identity matrix, which represents the correct matching of video-reports pairs. The AdamW optimizer is used, with a starting learning rate of 4 × 10 -5 , weight decay of 1 × 10 -6 and the Reduce­ OnPlateau learning rate scheduler. We froze the weights of the first six layers of the text encoder to retain the general knowledge captured by the pretrained BioMedBERT, while updating all other encoder parameters. The best checkpoint was selected based on the validation loss. With this setup, the model was first pretrained on the full dataset for 60 epochs. It was then fine-tuned on a refined dataset, which included cleaned interpretation text reports that corrected common typographical errors and excluded stress echocardiogram and transoesophageal echocardiogram studies for 20 epochs. Multiple batch sizes were compared during training with similar performance (Supplementary Table 7).",
+     "text_len": 973,
+     "level": 1,
+     "element_id": "p9_e112"
+    },
+    {
+     "reading_order": 113,
+     "page": 9,
+     "label": "section_header",
+     "bbox": {
+      "l": 306.14,
+      "t": 97.49,
+      "r": 450.6,
+      "b": 89.61,
+      "w": 144.46,
+      "h": 7.88,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.12327,
+      "r": 0.75696,
+      "b": 0.11331
+     },
+     "text": "Learning anatomical view weighting",
+     "text_len": 34,
+     "level": 1,
+     "element_id": "p9_e113"
+    },
+    {
+     "reading_order": 114,
+     "page": 9,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 85.56,
+      "r": 561.34,
+      "b": 45.65,
+      "w": 255.2,
+      "h": 39.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.10819,
+      "r": 0.94299,
+      "b": 0.05772
+     },
+     "text": "Different echocardiography views offer different insights into cardiac form and function, with some cardiac structures being only visible in certain views but all views providing complementary diagnostic information. We utilized an attention-based deep multiple instance",
+     "text_len": 270,
+     "level": 1,
+     "element_id": "p9_e114"
+    }
+   ]
+  },
+  {
+   "page_no": 10,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0010.png",
+   "elements": [
+    {
+     "reading_order": 115,
+     "page": 10,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 762.41,
+      "r": 85.69,
+      "b": 749.44,
+      "w": 46.0,
+      "h": 12.97,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.96402,
+      "r": 0.14395,
+      "b": 0.94762
+     },
+     "text": "Article",
+     "text_len": 7,
+     "level": 1,
+     "element_id": "p10_e115"
+    },
+    {
+     "reading_order": 116,
+     "page": 10,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 742.43,
+      "r": 294.85,
+      "b": 712.15,
+      "w": 255.16,
+      "h": 30.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.93876,
+      "r": 0.49532,
+      "b": 0.90047
+     },
+     "text": "learning (MIL) 40 method to learn relative weights that captures the importance of each echocardiogram view and video for interpretations of different anatomical structures.",
+     "text_len": 173,
+     "level": 1,
+     "element_id": "p10_e116"
+    },
+    {
+     "reading_order": 117,
+     "page": 10,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 709.06,
+      "r": 294.89,
+      "b": 583.15,
+      "w": 255.21,
+      "h": 125.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.89656,
+      "r": 0.49538,
+      "b": 0.73736
+     },
+     "text": "We first trained a view classifier to provide a fine-grained characterization of echocardiogram views as defined by the American Society of Echocardiography guidelines 41 . We selected 77,426 echocardiogram videos, a subset of videos from the training set, for cardiac sonographers to label into 58 different view categories and trained an image-based ConvNextBase 42 view classification model on 224 × 224 images. The AdamW optimizer was used to minimize the cross-entropy loss, and the best checkpoint was selected based on validation loss. During training random image frames were taken from each labelled video and augmentation techniques including RandAugment 43 and RandomErasing 44 were applied. Held-out datasets of studies from different patients were used for validation and testing.",
+     "text_len": 793,
+     "level": 1,
+     "element_id": "p10_e117"
+    },
+    {
+     "reading_order": 118,
+     "page": 10,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 580.06,
+      "r": 294.93,
+      "b": 378.9,
+      "w": 255.25,
+      "h": 201.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.73345,
+      "r": 0.49545,
+      "b": 0.4791
+     },
+     "text": "For MIL, we used the contrastive video encoder and view classifier to produce a concatenated embedding for each input video of a given echocardiogram study (Extended Data Fig. 4). The concatenated embedding is a one-hot-encoded view classification vector as well as the contrastive video embedding, and MIL is trained to produce importance weights for each video in relation to interpretations separated by anatomical structure. These MIL-generated weights were then used to compute a weighted average of the video embeddings produced by the video encoder. The resulting weighted average and individual video-level prediction were passed through a multilayer perception (MLP) to produce an ensembled final prediction. During training, the prediction was compared with the ground truth to compute loss, which was then backpropagated to update the MLP and MIL weights. The output vector of alphas for MIL represents the importance of each view for assessing each anatomical structure. The anatomical structure was defined by structured section in the echocardiogram report ('left ventricle', 'right ventricle', and so on) and each interpretation task was ensembled to create total weighting vectors for each anatomical section, forming the anatomical attention module.",
+     "text_len": 1266,
+     "level": 1,
+     "element_id": "p10_e118"
+    },
+    {
+     "reading_order": 119,
+     "page": 10,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 366.24,
+      "r": 126.47,
+      "b": 358.36,
+      "w": 86.79,
+      "h": 7.88,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.46309,
+      "r": 0.21246,
+      "b": 0.45312
+     },
+     "text": "Cross-modal retrieval",
+     "text_len": 21,
+     "level": 1,
+     "element_id": "p10_e119"
+    },
+    {
+     "reading_order": 120,
+     "page": 10,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 354.31,
+      "r": 294.91,
+      "b": 206.9,
+      "w": 255.22,
+      "h": 147.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.448,
+      "r": 0.49542,
+      "b": 0.26161
+     },
+     "text": "We assessed the retrieval accuracy of EchoPrime at the study level. For each echocardiogram study, we generated embeddings for all available videos using the video encoder and averaged to create a study embedding. Similarly, using the text encoder, the report text was mapped to a report text embedding. Using these EchoPrime embeddings, we performed a cross-modal search to find text reports or studies that are semantically similar to a given query study or a query text report by their cosine similarity. To evaluate accuracy, we reported the mean and median rank of the correct candidate for both videos-to-report and report-to-videos retrieval. In addition, we followed the approach used in ALIGN 9 and measured Recall@K, which indicates the percentage of the test set for which the correct result is found within the top K-retrieved samples. For comparison, we also calculated retrieval metrics for the previously developed EchoCLIP model.",
+     "text_len": 945,
+     "level": 1,
+     "element_id": "p10_e120"
+    },
+    {
+     "reading_order": 121,
+     "page": 10,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 194.24,
+      "r": 183.49,
+      "b": 186.36,
+      "w": 143.8,
+      "h": 7.88,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.2456,
+      "r": 0.30824,
+      "b": 0.23564
+     },
+     "text": "Retrieval augmented interpretation",
+     "text_len": 34,
+     "level": 1,
+     "element_id": "p10_e121"
+    },
+    {
+     "reading_order": 122,
+     "page": 10,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 183.43,
+      "r": 294.93,
+      "b": 45.65,
+      "w": 255.25,
+      "h": 137.78,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.23194,
+      "r": 0.49545,
+      "b": 0.05772
+     },
+     "text": "Similar to retrieval augmented generation 21 , we leveraged the corpus of historical echocardiogram reports and videos for EchoPrime study interpretation. Using pre-trained parametric memory (EchoPrime weights) and non-parametric memory (a corpus of clinical reports), our approach leveraged anatomical attention to weight the cross-modal retrieval based on each section in an echocardiogram report. Interpretations were weighted by anatomy and video to obtain comprehensive echocardiography examination interpretations. The anatomical attention module identifies the most informative views for the specified section and computes a weighted average of video embeddings based on their views, resulting in a section-specific study embedding. We used this method to generate 50 candidate interpretation reports and average features across these 50 reports to obtain final predictions. Quantitative assessments are the average of the 50 reports, whereas the final EchoPrime report displayed the finding if an individual finding was present in more than half of the retrieved reports for categorial findings. Hyperparameter k = 50 was chosen because it achieves the optimal trade-off between performance and runtime (Supplementary Fig. 2). This approach does not require additional fine-tuning and can generalize to predict any feature present in the reports.",
+     "text_len": 1354,
+     "level": 1,
+     "element_id": "p10_e122"
+    },
+    {
+     "reading_order": 123,
+     "page": 10,
+     "label": "section_header",
+     "bbox": {
+      "l": 306.14,
+      "t": 645.74,
+      "r": 424.75,
+      "b": 637.86,
+      "w": 118.61,
+      "h": 7.88,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.8165,
+      "r": 0.71353,
+      "b": 0.80653
+     },
+     "text": "Multimodal disease diagnosis",
+     "text_len": 28,
+     "level": 1,
+     "element_id": "p10_e123"
+    },
+    {
+     "reading_order": 124,
+     "page": 10,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 633.81,
+      "r": 561.44,
+      "b": 497.15,
+      "w": 255.3,
+      "h": 136.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.80141,
+      "r": 0.94316,
+      "b": 0.62861
+     },
+     "text": "We applied k-nearest neighbour and linear probing on top of EchoPrime for multimodal cardiovascular diagnoses prediction. We focused on STEMI and cardiac amyloidosis, for which echocardiography is not the definitive diagnostic test but can provide corroborating evidence. In this setting, patients with clinically diagnosed STEMI or cardiac amyloidosis were identified and the EchoPrime embeddings were used to evaluate whether linear probing can identify patients with this diagnosis despite not being in the echo report text. Study embeddings are obtained by averaging the embeddings of all videos within each study and used along with clinician-assigned diagnoses to fit the models. For k-nearest neighbour probing, we used KNeighborsClassifier, and for linear probing, we applied LogisticRegression, both from scikit-learn library.",
+     "text_len": 835,
+     "level": 1,
+     "element_id": "p10_e124"
+    },
+    {
+     "reading_order": 125,
+     "page": 10,
+     "label": "section_header",
+     "bbox": {
+      "l": 306.14,
+      "t": 484.49,
+      "r": 435.34,
+      "b": 476.61,
+      "w": 129.19,
+      "h": 7.88,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.61261,
+      "r": 0.73132,
+      "b": 0.60264
+     },
+     "text": "Impact of different initialization",
+     "text_len": 34,
+     "level": 1,
+     "element_id": "p10_e125"
+    },
+    {
+     "reading_order": 126,
+     "page": 10,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 472.56,
+      "r": 561.4,
+      "b": 368.15,
+      "w": 255.26,
+      "h": 104.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.59752,
+      "r": 0.94309,
+      "b": 0.4655
+     },
+     "text": "We tested whether initializing the model with EchoPrime weights leads to higher label efficiency and accuracy than initializing with kinetics weights and random initialization. We selected four binary classification tasks: pacemaker detection, mitral regurgitation classification, amyloidosis detection and STEMI detection. Pacemaker detection was trained on A4C right ventricle views, mitral regurgitation on Doppler A4C mitral valve views, amyloid detection on PLAX views and STEMI detection was trained on A4C views. All tasks were trained on datasets of 32, 64, 128 and 256 samples, with an equal distribution of positive and negative samples.",
+     "text_len": 647,
+     "level": 1,
+     "element_id": "p10_e126"
+    },
+    {
+     "reading_order": 127,
+     "page": 10,
+     "label": "section_header",
+     "bbox": {
+      "l": 306.14,
+      "t": 355.49,
+      "r": 426.5,
+      "b": 347.61,
+      "w": 120.36,
+      "h": 7.88,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.44949,
+      "r": 0.71647,
+      "b": 0.43953
+     },
+     "text": "Evaluation and benchmarking",
+     "text_len": 27,
+     "level": 1,
+     "element_id": "p10_e127"
+    },
+    {
+     "reading_order": 128,
+     "page": 10,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 343.56,
+      "r": 561.41,
+      "b": 110.15,
+      "w": 255.27,
+      "h": 233.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.43441,
+      "r": 0.94311,
+      "b": 0.13928
+     },
+     "text": "To evaluate the accuracy of echocardiography interpretation, we chose 19 cardiac features of different anatomical structures, including 17 binary and 2 continuous features (Supplementary Table 11). We identified corresponding report phrases in report text to obtain ground-truth labels based on the presence or absence of a specific interpretation or numerical measurements. For tasks assessing severity (trivial, mild, moderate and severe), we binarized assessments by considering a feature as present if the severity was classified as moderate or severe. Accuracy for classification tasks was measured with the area under the receiver operating characteristic curve and coefficient of determination (R 2 score) for regression tasks. To calculate the confidence intervals for performance metrics, we used a bootstrapping technique. Specifically, we randomly sampled the dataset with replacement, maintaining the same sample size as the original dataset, and computed the performance metrics. This process was repeated 10,000 times to generate a distribution of the metrics. Finally, we sorted these bootstrapped metrics and determined the 2.5th and 97.5th percentiles to obtain the 95% confidence intervals. To assess the accuracy of our multi-label view classifier, we used the average area under the receiver operating characteristic curve using a one-vs-rest approach, treating the correct class as the positive label and all other classes as the negative label and averaged the results across all classes.",
+     "text_len": 1510,
+     "level": 1,
+     "element_id": "p10_e128"
+    },
+    {
+     "reading_order": 129,
+     "page": 10,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 107.06,
+      "r": 561.39,
+      "b": 45.65,
+      "w": 255.25,
+      "h": 61.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.13537,
+      "r": 0.94308,
+      "b": 0.05772
+     },
+     "text": "To compare the performance with other foundation models, we also obtained interpretations using EchoCLIP and BioMedCLIP using retrieval. We selected one A4C video per study, embedded each frame of the video and averaged the embedding to produce a study embedding. Then, similarly to EchoPrime retrieval, we found the closest reports to this study embedding and averaged their features to make final predictions. We used this method of retrieval because although both EchoCLIP and BioMedCLIP are image-based models, A4C is considered the most informative view by physicians (Fig. 3d), and this approach follows the methodology outlined in the EchoCLIP paper 3 .",
+     "text_len": 660,
+     "level": 1,
+     "element_id": "p10_e129"
+    }
+   ]
+  },
+  {
+   "page_no": 11,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0011.png",
+   "elements": [
+    {
+     "reading_order": 130,
+     "page": 11,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 688.74,
+      "r": 178.77,
+      "b": 680.86,
+      "w": 139.08,
+      "h": 7.88,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.87087,
+      "r": 0.30031,
+      "b": 0.8609
+     },
+     "text": "Computing hardware and software",
+     "text_len": 31,
+     "level": 1,
+     "element_id": "p11_e130"
+    },
+    {
+     "reading_order": 131,
+     "page": 11,
+     "label": "text",
+     "bbox": {
+      "l": 39.68,
+      "t": 676.81,
+      "r": 294.96,
+      "b": 540.15,
+      "w": 255.29,
+      "h": 136.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06666,
+      "t": 0.85578,
+      "r": 0.4955,
+      "b": 0.68299
+     },
+     "text": "We used Python (v3.8.13), PyTorch (v2.1.2, CUDA 12.1; https://pytorch. org) and TorchVision (v0.17.0) for all experiments and analyses in the study. We used scikit-learn (v1.2.0) (https://scikit-learn.org/) for probing methods, umap-learn (v0.5; https://umap-learn.readthedocs.io) for dimensionality reduction and scipy (v1.12.0; https://scipy.org/) for statistics and linear algebra operations. To train EchoPrime, we used two 50-Gb NVIDIA RTX A6000 GPUs configured for multi-GPU training using PyTorch's DistributedDataParallel. We obtained weights of previously developed foundation models from the Hugging Face model hub (https://huggingface.co/docs/hub/en/models-the-hub): EchoCLIP (https://huggingface.co/mkaichristensen/echo-clip-r) and BioMedCLIP (https://huggingface.co/microsoft/BiomedCLIP-PubMedBERT_256-vit_ base_patch16_224).",
+     "text_len": 838,
+     "level": 1,
+     "element_id": "p11_e131"
+    },
+    {
+     "reading_order": 132,
+     "page": 11,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 527.49,
+      "r": 107.18,
+      "b": 519.61,
+      "w": 67.49,
+      "h": 7.88,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.66698,
+      "r": 0.18005,
+      "b": 0.65701
+     },
+     "text": "Ethics statement",
+     "text_len": 16,
+     "level": 1,
+     "element_id": "p11_e132"
+    },
+    {
+     "reading_order": 133,
+     "page": 11,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 515.56,
+      "r": 294.85,
+      "b": 454.15,
+      "w": 255.17,
+      "h": 61.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.65189,
+      "r": 0.49532,
+      "b": 0.57424
+     },
+     "text": "This study used retrospective echocardiographic data obtained under data-use agreements with CSMC, SHC, KP and CGMH. Data were de-identified before analysis. Use of the MIMIC-IV-Echo dataset was conducted under its data-use agreement and approved access through PhysioNet. No prospective data collection or human participant intervention was performed.",
+     "text_len": 352,
+     "level": 1,
+     "element_id": "p11_e133"
+    },
+    {
+     "reading_order": 134,
+     "page": 11,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 441.49,
+      "r": 120.6,
+      "b": 433.61,
+      "w": 80.91,
+      "h": 7.88,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.55824,
+      "r": 0.2026,
+      "b": 0.54827
+     },
+     "text": "Reporting summary",
+     "text_len": 17,
+     "level": 1,
+     "element_id": "p11_e134"
+    },
+    {
+     "reading_order": 135,
+     "page": 11,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 429.56,
+      "r": 294.8,
+      "b": 411.15,
+      "w": 255.12,
+      "h": 18.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.54315,
+      "r": 0.49523,
+      "b": 0.51987
+     },
+     "text": "Further information on research design is available in the Nature Portfolio Reporting Summary linked to this article.",
+     "text_len": 117,
+     "level": 1,
+     "element_id": "p11_e135"
+    },
+    {
+     "reading_order": 136,
+     "page": 11,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 389.64,
+      "r": 116.88,
+      "b": 380.62,
+      "w": 77.19,
+      "h": 9.02,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.49268,
+      "r": 0.19635,
+      "b": 0.48127
+     },
+     "text": "Data availability",
+     "text_len": 17,
+     "level": 1,
+     "element_id": "p11_e136"
+    },
+    {
+     "reading_order": 137,
+     "page": 11,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 375.81,
+      "r": 294.95,
+      "b": 314.4,
+      "w": 255.27,
+      "h": 61.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.47519,
+      "r": 0.49548,
+      "b": 0.39754
+     },
+     "text": "Echocardiographic data from the MIMIC, used as an external validation site, are available as the MIMIC-IV-Echo dataset (https://physionet.org/ content/mimic-iv-echo/0.1/), where credentialed researchers can apply for access. Data from other participating sites (CSMC, SCH, CGMH and KP) are not publicly available and can be accessed through data-use agreements with the respective institutions.",
+     "text_len": 394,
+     "level": 1,
+     "element_id": "p11_e137"
+    },
+    {
+     "reading_order": 138,
+     "page": 11,
+     "label": "section_header",
+     "bbox": {
+      "l": 306.14,
+      "t": 733.64,
+      "r": 385.04,
+      "b": 724.62,
+      "w": 78.9,
+      "h": 9.02,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.92764,
+      "r": 0.64683,
+      "b": 0.91624
+     },
+     "text": "Code availability",
+     "text_len": 17,
+     "level": 1,
+     "element_id": "p11_e138"
+    },
+    {
+     "reading_order": 139,
+     "page": 11,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 719.81,
+      "r": 561.28,
+      "b": 701.4,
+      "w": 255.14,
+      "h": 18.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.91015,
+      "r": 0.94289,
+      "b": 0.88688
+     },
+     "text": "The code used for model inference and the trained model weights are publicly available on GitHub (https://github.com/echonet/EchoPrime).",
+     "text_len": 136,
+     "level": 1,
+     "element_id": "p11_e139"
+    },
+    {
+     "reading_order": 140,
+     "page": 11,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 688.62,
+      "r": 556.87,
+      "b": 675.35,
+      "w": 250.73,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.87072,
+      "r": 0.93548,
+      "b": 0.85394
+     },
+     "text": "Fan, H. et al. Multiscale vision transformers. In Proc. IEEE/CVF Intl Conf. Computer Vision (CVPR) 6824-6835 (2021).",
+     "text_len": 116,
+     "level": 2,
+     "element_id": "p11_e140"
+    },
+    {
+     "reading_order": 141,
+     "page": 11,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 672.59,
+      "r": 556.16,
+      "b": 651.3,
+      "w": 250.02,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.85045,
+      "r": 0.93429,
+      "b": 0.82353
+     },
+     "text": "Carreira, J. & Zisserman, A. Quo vadis, action recognition? A new model and the kinetics dataset. In 2017 IEEE Conf. Computer Vision and Pattern Recognition (CVPR) (IEEE, Honolulu, HI, 2017).",
+     "text_len": 191,
+     "level": 2,
+     "element_id": "p11_e141"
+    },
+    {
+     "reading_order": 142,
+     "page": 11,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 648.54,
+      "r": 561.04,
+      "b": 611.22,
+      "w": 254.89,
+      "h": 37.33,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.82004,
+      "r": 0.94249,
+      "b": 0.77285
+     },
+     "text": "Devlin, J., Chang, M.-W., Lee, K. & Toutanova, K. BERT: pre-training of deep bidirectional transformers for language understanding. In Proc. 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers) (eds Burstein, J., Doran, C. & Solorio, T.) 4171-4186 (Association for Computational Linguistics, 2019).",
+     "text_len": 403,
+     "level": 2,
+     "element_id": "p11_e142"
+    },
+    {
+     "reading_order": 143,
+     "page": 11,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 608.46,
+      "r": 560.17,
+      "b": 595.19,
+      "w": 254.03,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.76936,
+      "r": 0.94103,
+      "b": 0.75258
+     },
+     "text": "Gu, Y. et al. Domain-specific language model pretraining for biomedical natural language processing. ACM Trans. Comput. Healthc. 3, 1-23 (2022).",
+     "text_len": 144,
+     "level": 2,
+     "element_id": "p11_e143"
+    },
+    {
+     "reading_order": 144,
+     "page": 11,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 592.43,
+      "r": 560.65,
+      "b": 579.15,
+      "w": 254.51,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.74909,
+      "r": 0.94183,
+      "b": 0.7323
+     },
+     "text": "Dosovitskiy, A. et al. An image is worth 16×16 words: transformers for image recognition at scale. In Intl Conf. Learning Representations (ICLR, 2021).",
+     "text_len": 151,
+     "level": 2,
+     "element_id": "p11_e144"
+    },
+    {
+     "reading_order": 145,
+     "page": 11,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 576.4,
+      "r": 551.55,
+      "b": 563.12,
+      "w": 245.41,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.72882,
+      "r": 0.92654,
+      "b": 0.71203
+     },
+     "text": "Ilse, M., Tomczak, J. & Welling, M. Attention-based deep multiple instance learning. In Proc. 35th Intl Conf. Machine Learning (eds Dy, J. & Krause, A.) 2127-2136 (PMLR, 2018).",
+     "text_len": 176,
+     "level": 2,
+     "element_id": "p11_e145"
+    },
+    {
+     "reading_order": 146,
+     "page": 11,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 560.37,
+      "r": 557.49,
+      "b": 539.07,
+      "w": 251.35,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.70855,
+      "r": 0.93652,
+      "b": 0.68162
+     },
+     "text": "Mitchell, C. et al. Guidelines for performing a comprehensive transthoracic echocardiographic examination in adults: recommendations from the American Society of Echocardiography. J. Am. Soc. Echocardiogr. 32, 1-64 (2019).",
+     "text_len": 222,
+     "level": 2,
+     "element_id": "p11_e146"
+    },
+    {
+     "reading_order": 147,
+     "page": 11,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 536.32,
+      "r": 555.31,
+      "b": 523.04,
+      "w": 249.17,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.67814,
+      "r": 0.93286,
+      "b": 0.66135
+     },
+     "text": "Liu, Z. et al. A ConvNet for the 2020s. In Proc. IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 11976-11986 (2022).",
+     "text_len": 138,
+     "level": 2,
+     "element_id": "p11_e147"
+    },
+    {
+     "reading_order": 148,
+     "page": 11,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 520.29,
+      "r": 538.94,
+      "b": 498.99,
+      "w": 232.79,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.65787,
+      "r": 0.90536,
+      "b": 0.63094
+     },
+     "text": "Cubuk, E. D., Zoph, B., Shlens, J. & Le, Q. RandAugment: practical automated data augmentation with a reduced search space. Adv. Neural Inf. Process. Syst. 33, 18613-18624 (2020).",
+     "text_len": 179,
+     "level": 2,
+     "element_id": "p11_e148"
+    },
+    {
+     "reading_order": 149,
+     "page": 11,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 496.24,
+      "r": 542.01,
+      "b": 482.96,
+      "w": 235.87,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.62746,
+      "r": 0.91052,
+      "b": 0.61067
+     },
+     "text": "Zhong, Z., Zheng, L., Kang, G., Li, S. & Yang, Y. Random erasing data augmentation. Proc. AAAI Conf. Artif. Intell. 34, 13001-13008 (2020).",
+     "text_len": 139,
+     "level": 2,
+     "element_id": "p11_e149"
+    },
+    {
+     "reading_order": 150,
+     "page": 11,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 466.04,
+      "r": 561.26,
+      "b": 452.76,
+      "w": 255.13,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.58928,
+      "r": 0.94286,
+      "b": 0.57249
+     },
+     "text": "Acknowledgements D.O. discloses US National Institutes of Health NHLBI grants R00HL157421, R01HL173526 and R01HL173487.",
+     "text_len": 119,
+     "level": 1,
+     "element_id": "p11_e150"
+    },
+    {
+     "reading_order": 151,
+     "page": 11,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 441.5,
+      "r": 561.24,
+      "b": 404.18,
+      "w": 255.11,
+      "h": 37.33,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.55825,
+      "r": 0.94282,
+      "b": 0.51106
+     },
+     "text": "Author contributions M.V., B.H. and D.O. conceived the study, developed and trained the deep learning models, and performed the statistical analyses and result interpretation. M.V., I.-M.C., X.T. and T.Y.C. prepared and curated the echocardiography datasets. D.O., N.Y., P.C., D.L. and S.C. contributed to the clinical interpretation of results. M.V., B.H. and D.O. wrote the manuscript with input from all authors.",
+     "text_len": 415,
+     "level": 1,
+     "element_id": "p11_e151"
+    },
+    {
+     "reading_order": 152,
+     "page": 11,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 392.92,
+      "r": 484.03,
+      "b": 387.66,
+      "w": 177.89,
+      "h": 5.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.49682,
+      "r": 0.81312,
+      "b": 0.49017
+     },
+     "text": "Competing interests The authors declare no competing interests.",
+     "text_len": 63,
+     "level": 1,
+     "element_id": "p11_e152"
+    },
+    {
+     "reading_order": 153,
+     "page": 11,
+     "label": "section_header",
+     "bbox": {
+      "l": 306.14,
+      "t": 376.4,
+      "r": 369.53,
+      "b": 371.15,
+      "w": 63.4,
+      "h": 5.25,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.47593,
+      "r": 0.62077,
+      "b": 0.4693
+     },
+     "text": "Additional information",
+     "text_len": 22,
+     "level": 1,
+     "element_id": "p11_e153"
+    },
+    {
+     "reading_order": 154,
+     "page": 11,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 368.39,
+      "r": 556.86,
+      "b": 355.11,
+      "w": 250.72,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.46581,
+      "r": 0.93547,
+      "b": 0.44901
+     },
+     "text": "Supplementary information The online version contains supplementary material available at https://doi.org/10.1038/s41586-025-09850-x.",
+     "text_len": 133,
+     "level": 1,
+     "element_id": "p11_e154"
+    },
+    {
+     "reading_order": 155,
+     "page": 11,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 352.35,
+      "r": 561.2,
+      "b": 323.04,
+      "w": 255.06,
+      "h": 29.31,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.44552,
+      "r": 0.94276,
+      "b": 0.40846
+     },
+     "text": "Correspondence and requests for materials should be addressed to Bryan He or David Ouyang. Peer review information Nature thanks Tyler Smith, James Thomas and the other, anonymous, reviewer(s) for their contribution to the peer review of this work. Peer reviewer reports are available.",
+     "text_len": 285,
+     "level": 1,
+     "element_id": "p11_e155"
+    },
+    {
+     "reading_order": 156,
+     "page": 11,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 320.29,
+      "r": 536.98,
+      "b": 315.03,
+      "w": 230.84,
+      "h": 5.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.40499,
+      "r": 0.90207,
+      "b": 0.39834
+     },
+     "text": "Reprints and permissions information is available at http://www.nature.com/reprints.",
+     "text_len": 84,
+     "level": 1,
+     "element_id": "p11_e156"
+    }
+   ]
+  },
+  {
+   "page_no": 12,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0012.png",
+   "elements": [
+    {
+     "reading_order": 157,
+     "page": 12,
+     "label": "picture",
+     "bbox": {
+      "l": 156.72,
+      "t": 709.26,
+      "r": 440.14,
+      "b": 586.09,
+      "w": 283.42,
+      "h": 123.17,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.26327,
+      "t": 0.89681,
+      "r": 0.73939,
+      "b": 0.74107
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p12_e157"
+    },
+    {
+     "reading_order": 158,
+     "page": 12,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 577.86,
+      "r": 548.81,
+      "b": 561.36,
+      "w": 509.12,
+      "h": 16.5,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.73067,
+      "r": 0.92194,
+      "b": 0.7098
+     },
+     "text": "Extended Data Fig. 1 | The accuracy of predicting aortic regurgitation severity and left ventricular ejection fraction improves progressively from predictions on a single image to a full video, a single video to multiple videos in a full study and finally applying anatomical attention (EchoPrime weighting).",
+     "text_len": 308,
+     "level": 1,
+     "element_id": "p12_e158"
+    }
+   ]
+  },
+  {
+   "page_no": 13,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0013.png",
+   "elements": [
+    {
+     "reading_order": 159,
+     "page": 13,
+     "label": "picture",
+     "bbox": {
+      "l": 28.3,
+      "t": 743.63,
+      "r": 510.07,
+      "b": 305.88,
+      "w": 481.76,
+      "h": 437.75,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.04754,
+      "t": 0.94027,
+      "r": 0.85686,
+      "b": 0.38677
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p13_e159"
+    },
+    {
+     "reading_order": 160,
+     "page": 13,
+     "label": "caption",
+     "bbox": {
+      "l": 39.69,
+      "t": 292.75,
+      "r": 547.88,
+      "b": 276.25,
+      "w": 508.2,
+      "h": 16.5,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.37016,
+      "r": 0.92038,
+      "b": 0.3493
+     },
+     "text": "Extended Data Fig. 2 | A, UMAP representation of features from the second to last layer of the video classifier. Doppler views are denoted by prefix \"D\". B, Case study on pericardial effusion prediction demonstrates the advantages of utilizing all videos from the study and applying anatomical weighting.",
+     "text_len": 304,
+     "level": 2,
+     "element_id": "p13_e160"
+    }
+   ]
+  },
+  {
+   "page_no": 14,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0014.png",
+   "elements": [
+    {
+     "reading_order": 161,
+     "page": 14,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 762.41,
+      "r": 85.69,
+      "b": 749.44,
+      "w": 46.0,
+      "h": 12.97,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.96402,
+      "r": 0.14395,
+      "b": 0.94762
+     },
+     "text": "Article",
+     "text_len": 7,
+     "level": 1,
+     "element_id": "p14_e161"
+    },
+    {
+     "reading_order": 162,
+     "page": 14,
+     "label": "picture",
+     "bbox": {
+      "l": 37.95,
+      "t": 745.78,
+      "r": 567.44,
+      "b": 272.36,
+      "w": 529.49,
+      "h": 473.42,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06375,
+      "t": 0.94299,
+      "r": 0.95324,
+      "b": 0.34438
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p14_e162"
+    },
+    {
+     "reading_order": 163,
+     "page": 14,
+     "label": "caption",
+     "bbox": {
+      "l": 39.69,
+      "t": 263.11,
+      "r": 555.38,
+      "b": 246.61,
+      "w": 515.7,
+      "h": 16.5,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.33269,
+      "r": 0.93298,
+      "b": 0.31182
+     },
+     "text": "Extended Data Fig. 3 | Comparison of model performance when initialized with EchoPrime weights versus Kinetics weights versus random weights, showing the impact of domain-specific initialization on training efficiency and convergence.",
+     "text_len": 234,
+     "level": 2,
+     "element_id": "p14_e163"
+    }
+   ]
+  },
+  {
+   "page_no": 15,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0015.png",
+   "elements": [
+    {
+     "reading_order": 164,
+     "page": 15,
+     "label": "picture",
+     "bbox": {
+      "l": 38.47,
+      "t": 743.54,
+      "r": 293.49,
+      "b": 650.38,
+      "w": 255.01,
+      "h": 93.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06463,
+      "t": 0.94016,
+      "r": 0.49303,
+      "b": 0.82236
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p15_e164"
+    },
+    {
+     "reading_order": 165,
+     "page": 15,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 642.31,
+      "r": 287.09,
+      "b": 595.8,
+      "w": 247.4,
+      "h": 46.51,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.81216,
+      "r": 0.48228,
+      "b": 0.75335
+     },
+     "text": "Extended Data Fig. 4 | Weighting the views based on relevance. After training the architecture shown in the figure, with view classifier and video encoder frozen, MIL learns which views are most informative views for the specific feature prediction. The MIL component can be isolated and used as a weighting vector in other applications.",
+     "text_len": 337,
+     "level": 1,
+     "element_id": "p15_e165"
+    }
+   ]
+  },
+  {
+   "page_no": 16,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0016.png",
+   "elements": [
+    {
+     "reading_order": 166,
+     "page": 16,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 762.41,
+      "r": 85.69,
+      "b": 749.44,
+      "w": 46.0,
+      "h": 12.97,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.96402,
+      "r": 0.14395,
+      "b": 0.94762
+     },
+     "text": "Article",
+     "text_len": 7,
+     "level": 1,
+     "element_id": "p16_e166"
+    },
+    {
+     "reading_order": 167,
+     "page": 16,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 740.98,
+      "r": 302.64,
+      "b": 733.11,
+      "w": 262.95,
+      "h": 7.87,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.93692,
+      "r": 0.5084,
+      "b": 0.92697
+     },
+     "text": "Extended Data Table 1 | EchoPrime versus task-specific models",
+     "text_len": 61,
+     "level": 1,
+     "element_id": "p16_e167"
+    },
+    {
+     "reading_order": 168,
+     "page": 16,
+     "label": "table",
+     "bbox": {
+      "l": 36.83,
+      "t": 727.87,
+      "r": 477.62,
+      "b": 486.12,
+      "w": 440.79,
+      "h": 241.75,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06187,
+      "t": 0.92035,
+      "r": 0.80235,
+      "b": 0.61467
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p16_e168"
+    }
+   ]
+  },
+  {
+   "page_no": 17,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0017.png",
+   "elements": [
+    {
+     "reading_order": 169,
+     "page": 17,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 740.98,
+      "r": 455.2,
+      "b": 733.11,
+      "w": 415.51,
+      "h": 7.87,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.93692,
+      "r": 0.76469,
+      "b": 0.92697
+     },
+     "text": "Extended Data Table 2 | EchoPrime's performance on regression tasks across three medical centres",
+     "text_len": 96,
+     "level": 1,
+     "element_id": "p17_e169"
+    },
+    {
+     "reading_order": 170,
+     "page": 17,
+     "label": "table",
+     "bbox": {
+      "l": 37.94,
+      "t": 727.68,
+      "r": 513.04,
+      "b": 479.6,
+      "w": 475.1,
+      "h": 248.08,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06374,
+      "t": 0.92011,
+      "r": 0.86185,
+      "b": 0.60642
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p17_e170"
+    }
+   ]
+  },
+  {
+   "page_no": 18,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0018.png",
+   "elements": [
+    {
+     "reading_order": 171,
+     "page": 18,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 762.41,
+      "r": 85.69,
+      "b": 749.44,
+      "w": 46.0,
+      "h": 12.97,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.96402,
+      "r": 0.14395,
+      "b": 0.94762
+     },
+     "text": "Article",
+     "text_len": 7,
+     "level": 1,
+     "element_id": "p18_e171"
+    },
+    {
+     "reading_order": 172,
+     "page": 18,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 740.98,
+      "r": 549.18,
+      "b": 713.11,
+      "w": 509.49,
+      "h": 27.87,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.93692,
+      "r": 0.92256,
+      "b": 0.90168
+     },
+     "text": "Extended Data Table 3 | Aggregated comparison of EchoPrime and PanEcho on all external validation sites. Asterisks (*) denote statistically significant differences (p < 0.05/59 adjusted for multiplicity). The DeLong test was used for comparing AUCs, and bootstrapping was used for MAE and R2 metrics",
+     "text_len": 299,
+     "level": 1,
+     "element_id": "p18_e172"
+    },
+    {
+     "reading_order": 173,
+     "page": 18,
+     "label": "table",
+     "bbox": {
+      "l": 37.32,
+      "t": 706.02,
+      "r": 509.14,
+      "b": 226.75,
+      "w": 471.82,
+      "h": 479.27,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06269,
+      "t": 0.89272,
+      "r": 0.8553,
+      "b": 0.28671
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p18_e173"
+    }
+   ]
+  },
+  {
+   "page_no": 19,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0019.png",
+   "elements": [
+    {
+     "reading_order": 174,
+     "page": 19,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 740.98,
+      "r": 427.47,
+      "b": 733.11,
+      "w": 387.78,
+      "h": 7.87,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.93692,
+      "r": 0.7181,
+      "b": 0.92697
+     },
+     "text": "Extended Data Table 4 | EchoPrime performance in low-quality resource-constrained setting",
+     "text_len": 89,
+     "level": 1,
+     "element_id": "p19_e174"
+    },
+    {
+     "reading_order": 175,
+     "page": 19,
+     "label": "table",
+     "bbox": {
+      "l": 37.51,
+      "t": 727.22,
+      "r": 508.89,
+      "b": 268.04,
+      "w": 471.39,
+      "h": 459.18,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06301,
+      "t": 0.91952,
+      "r": 0.85488,
+      "b": 0.33892
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p19_e175"
+    }
+   ]
+  },
+  {
+   "page_no": 20,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0020.png",
+   "elements": [
+    {
+     "reading_order": 176,
+     "page": 20,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 762.41,
+      "r": 85.69,
+      "b": 749.44,
+      "w": 46.0,
+      "h": 12.97,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.96402,
+      "r": 0.14395,
+      "b": 0.94762
+     },
+     "text": "Article",
+     "text_len": 7,
+     "level": 1,
+     "element_id": "p20_e176"
+    },
+    {
+     "reading_order": 177,
+     "page": 20,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 740.98,
+      "r": 471.92,
+      "b": 733.11,
+      "w": 432.23,
+      "h": 7.87,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.93692,
+      "r": 0.79278,
+      "b": 0.92697
+     },
+     "text": "Extended Data Table 5 | EchoPrime versus physician variability compared to physician versus physician",
+     "text_len": 101,
+     "level": 1,
+     "element_id": "p20_e177"
+    },
+    {
+     "reading_order": 178,
+     "page": 20,
+     "label": "table",
+     "bbox": {
+      "l": 37.17,
+      "t": 728.69,
+      "r": 480.77,
+      "b": 362.43,
+      "w": 443.6,
+      "h": 366.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06244,
+      "t": 0.92138,
+      "r": 0.80764,
+      "b": 0.45827
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p20_e178"
+    }
+   ]
+  },
+  {
+   "page_no": 21,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0021.png",
+   "elements": [
+    {
+     "reading_order": 179,
+     "page": 21,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 740.98,
+      "r": 453.29,
+      "b": 733.11,
+      "w": 413.6,
+      "h": 7.87,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.93692,
+      "r": 0.76148,
+      "b": 0.92697
+     },
+     "text": "Extended Data Table 6 | EchoPrime performance with and without anatomical weighting variability",
+     "text_len": 95,
+     "level": 1,
+     "element_id": "p21_e179"
+    },
+    {
+     "reading_order": 180,
+     "page": 21,
+     "label": "table",
+     "bbox": {
+      "l": 38.47,
+      "t": 726.78,
+      "r": 508.9,
+      "b": 485.95,
+      "w": 470.43,
+      "h": 240.83,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06463,
+      "t": 0.91897,
+      "r": 0.8549,
+      "b": 0.61445
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p21_e180"
+    },
+    {
+     "reading_order": 181,
+     "page": 21,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 479.44,
+      "r": 153.61,
+      "b": 474.18,
+      "w": 113.92,
+      "h": 5.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.60622,
+      "r": 0.25805,
+      "b": 0.59957
+     },
+     "text": "Reported values are balanced accuracies.",
+     "text_len": 40,
+     "level": 1,
+     "element_id": "p21_e181"
+    }
+   ]
+  },
+  {
+   "page_no": 22,
+   "width_pt": 612.0,
+   "height_pt": 792.0,
+   "png": "pages/page_0022.png",
+   "elements": []
+  },
+  {
+   "page_no": 23,
+   "width_pt": 612.0,
+   "height_pt": 792.0,
+   "png": "pages/page_0023.png",
+   "elements": []
+  },
+  {
+   "page_no": 24,
+   "width_pt": 612.0,
+   "height_pt": 792.0,
+   "png": "pages/page_0024.png",
+   "elements": []
+  }
+ ],
+ "caption_blocks": [
+  {
+   "page": 3,
+   "blocks": [
+    {
+     "text": "Fig. 1 | EchoPrime overview. a, Training dataset characteristics. The schematics were adapted from Flaticon by FreePik (https://www.flaticon.com). b, Video and text encoders are trained to map videos and text into a joint latent space. The view classifier and multiple instance learning are trained separately to learn view weighting based on the anatomical section. LV, left ventricle.",
+     "bbox": {
+      "l": 39.69,
+      "t": 175.35,
+      "r": 294.81,
+      "b": 128.84,
+      "w": 255.13,
+      "h": 46.51,
+      "coord": "pdf_points_bottomleft"
+     },
+     "element_ids": [
+      "p3_e26"
+     ]
+    }
+   ]
+  },
+  {
+   "page": 4,
+   "blocks": [
+    {
+     "text": "Table 2 | EchoPrime echocardiography interpretation performance across datasets from five different medical centres",
+     "bbox": {
+      "l": 39.69,
+      "t": 740.98,
+      "r": 535.14,
+      "b": 733.11,
+      "w": 495.46,
+      "h": 7.87,
+      "coord": "pdf_points_bottomleft"
+     },
+     "element_ids": [
+      "p4_e30"
+     ]
+    }
+   ]
+  },
+  {
+   "page": 5,
+   "blocks": [
+    {
+     "text": "Fig. 2 | Performance metrics for echocardiography prediction tasks. a, Comparison of EchoPrime, EchoCLIP and BioMedCLIP on a range of echocardiography interpretation tasks on cohorts from five different clinical centres. The area under the receiver operating characteristic curve is shown for classification tasks and the R 2 score for regression tasks.",
+     "bbox": {
+      "l": 39.69,
+      "t": 174.85,
+      "r": 280.03,
+      "b": 128.34,
+      "w": 240.35,
+      "h": 46.51,
+      "coord": "pdf_points_bottomleft"
+     },
+     "element_ids": [
+      "p5_e38"
+     ]
+    },
+    {
+     "text": "b, Transfer learning. Using linear probing, EchoPrime accurately predicts multimodal cardiovascular diseases even when their labels are not explicitly mentioned in the echocardiography reports. FPR, false positive rate; IVC, inferior vena cava; TAVR, transcatheter aortic valve replacement; TPR, true positive rate.",
+     "bbox": {
+      "l": 306.14,
+      "t": 174.85,
+      "r": 561.21,
+      "b": 138.34,
+      "w": 255.07,
+      "h": 36.51,
+      "coord": "pdf_points_bottomleft"
+     },
+     "element_ids": [
+      "p5_e39"
+     ]
+    }
+   ]
+  },
+  {
+   "page": 7,
+   "blocks": [
+    {
+     "text": "Fig. 3 | Anatomical attention to weight predictions across videos in an echocardiogram study. a, A view classifier was trained on 60,000 videos to distinguish between 58 standard echocardiographic views. b, A comprehensive echocardiogram examination comprises many different views, which is summarized across our training cohort. c, A clustered heatmap showing the relative priority and ranking of each video for each anatomical structure based",
+     "bbox": {
+      "l": 39.69,
+      "t": 166.18,
+      "r": 294.81,
+      "b": 109.67,
+      "w": 255.12,
+      "h": 56.51,
+      "coord": "pdf_points_bottomleft"
+     },
+     "element_ids": [
+      "p7_e58"
+     ]
+    }
+   ]
+  },
+  {
+   "page": 13,
+   "blocks": [
+    {
+     "text": "Extended Data Fig. 2 | A, UMAP representation of features from the second to last layer of the video classifier. Doppler views are denoted by prefix \"D\". B, Case study on pericardial effusion prediction demonstrates the advantages of utilizing all videos from the study and applying anatomical weighting.",
+     "bbox": {
+      "l": 39.69,
+      "t": 292.75,
+      "r": 547.88,
+      "b": 276.25,
+      "w": 508.2,
+      "h": 16.5,
+      "coord": "pdf_points_bottomleft"
+     },
+     "element_ids": [
+      "p13_e160"
+     ]
+    }
+   ]
+  },
+  {
+   "page": 14,
+   "blocks": [
+    {
+     "text": "Extended Data Fig. 3 | Comparison of model performance when initialized with EchoPrime weights versus Kinetics weights versus random weights, showing the impact of domain-specific initialization on training efficiency and convergence.",
+     "bbox": {
+      "l": 39.69,
+      "t": 263.11,
+      "r": 555.38,
+      "b": 246.61,
+      "w": 515.7,
+      "h": 16.5,
+      "coord": "pdf_points_bottomleft"
+     },
+     "element_ids": [
+      "p14_e163"
+     ]
+    }
+   ]
+  }
+ ],
+ "uncaptioned_pictures": [
+  {
+   "page": 1,
+   "bbox": {
+    "l": 38.99,
+    "t": 566.88,
+    "r": 50.21,
+    "b": 555.37,
+    "w": 11.22,
+    "h": 11.52,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": false,
+   "element_id": "p1_e7"
+  },
+  {
+   "page": 8,
+   "bbox": {
+    "l": 305.46,
+    "t": 453.88,
+    "r": 348.48,
+    "b": 438.5,
+    "w": 43.03,
+    "h": 15.38,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": false,
+   "element_id": "p8_e98"
+  },
+  {
+   "page": 12,
+   "bbox": {
+    "l": 156.72,
+    "t": 709.26,
+    "r": 440.14,
+    "b": 586.09,
+    "w": 283.42,
+    "h": 123.17,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": true,
+   "element_id": "p12_e157"
+  },
+  {
+   "page": 15,
+   "bbox": {
+    "l": 38.47,
+    "t": 743.54,
+    "r": 293.49,
+    "b": 650.38,
+    "w": 255.01,
+    "h": 93.16,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": true,
+   "element_id": "p15_e164"
+  }
+ ]
+}

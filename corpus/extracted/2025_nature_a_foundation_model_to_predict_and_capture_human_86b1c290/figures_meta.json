@@ -1,0 +1,549 @@
+{
+ "paper_id": "2025_nature_a_foundation_model_to_predict_and_capture_human_86b1c290",
+ "source_pdf": "D:\\2026-AI4S\\2025-Nature-A foundation model to predict and capture human cognition&SI.pdf",
+ "source_sha256": "827c805be443b8d89b1f1f5befcce80ab9865e4cb5cea1d5449a972182ed740c",
+ "source_name": "2025-Nature-A foundation model to predict and capture human cognition&SI.pdf",
+ "n_pages": 146,
+ "generated_at": "2026-10-18T01:27:04",
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "n_figures": 9,
+ "n_tables": 3,
+ "n_pictures_detected": 14,
+ "n_uncaptioned_pictures": 5,
+ "figures": [
+  {
+   "figure_id": "fig_001",
+   "kind": "figure",
+   "label_form": "Fig. 1",
+   "figure_number": 1,
+   "page": 2,
+   "bbox": {
+    "l": 37.67,
+    "t": 740.41,
+    "r": 561.54,
+    "b": 412.19,
+    "w": 523.87,
+    "h": 328.22,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 75,
+    "y0": 101,
+    "x1": 1123,
+    "y1": 757,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_001.png",
+   "image_size_px": [
+    1048,
+    656
+   ],
+   "caption": "Fig. 1 | Overview of Psych-101 and Centaur. a, Psych-101 comprises trial-bytrial data from 160 psychological experiments with 60,092 participants making 10,681,650 choices in total and involving 253,597,411 text tokens. It contains domains such as multi-armed bandits, decision-making, memory,",
+   "caption_page": 2,
+   "caption_text": "Fig. 1 | Overview of Psych-101 and Centaur. a, Psych-101 comprises trial-bytrial data from 160 psychological experiments with 60,092 participants making 10,681,650 choices in total and involving 253,597,411 text tokens. It contains domains such as multi-armed bandits, decision-making, memory,",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 401.23,
+    "r": 285.65,
+    "b": 364.72,
+    "w": 245.97,
+    "h": 36.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p2_e16"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 10.96
+   },
+   "element_id": "p2_e15",
+   "reading_order": 15
+  },
+  {
+   "figure_id": "fig_002",
+   "kind": "figure",
+   "label_form": "Fig. 2",
+   "figure_number": 2,
+   "page": 3,
+   "bbox": {
+    "l": 37.96,
+    "t": 745.16,
+    "r": 561.63,
+    "b": 377.4,
+    "w": 523.67,
+    "h": 367.75,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 76,
+    "y0": 91,
+    "x1": 1123,
+    "y1": 827,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_002.png",
+   "image_size_px": [
+    1047,
+    736
+   ],
+   "caption": "Fig. 2 | Goodness-of-fit on Psych-101. a, Difference in log-likelihood of Centaur and Llama relative to a domain-specific cognitive model for each experiment. A value of zero corresponds to the goodness-of-fit of the domainspecific cognitive model and a value above zero indicates improved goodnessof-fit to human responses. Log-likelihoods are averaged over responses (n = 992,867). Error bars correspond to the standard error of the mean. Centaur outperforms both Llama and a collection of domain-specific cognitive models in almost every experiment (one-sided t-tests: t(1,985,732) = -144.22, P ≤ 0.0001; t(1,985,732) = -127.58, P ≤ 0.0001, respectively). We only included experiments for which we have implemented a domain-specific cognitive model in this graphic and merged different studies using the same paradigm.",
+   "caption_page": 3,
+   "caption_text": "Fig. 2 | Goodness-of-fit on Psych-101. a, Difference in log-likelihood of Centaur and Llama relative to a domain-specific cognitive model for each experiment. A value of zero corresponds to the goodness-of-fit of the domainspecific cognitive model and a value above zero indicates improved goodnessof-fit to human responses. Log-likelihoods are averaged over responses (n = 992,867). Error bars correspond to the standard error of the mean. Centaur outperforms both Llama and a collection of domain-specific cognitive models in almost every experiment (one-sided t-tests: t(1,985,732) = -144.22, P ≤ 0.0001; t(1,985,732) = -127.58, P ≤ 0.0001, respectively). We only included experiments for which we have implemented a domain-specific cognitive model in this graphic and merged different studies using the same paradigm.",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 365.4,
+    "r": 293.63,
+    "b": 258.87,
+    "w": 253.95,
+    "h": 106.53,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p3_e27"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 12.0
+   },
+   "element_id": "p3_e26",
+   "reading_order": 26
+  },
+  {
+   "figure_id": "fig_003",
+   "kind": "figure",
+   "label_form": "Fig. 3",
+   "figure_number": 3,
+   "page": 4,
+   "bbox": {
+    "l": 34.54,
+    "t": 744.51,
+    "r": 560.8,
+    "b": 425.38,
+    "w": 526.26,
+    "h": 319.14,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 69,
+    "y0": 93,
+    "x1": 1122,
+    "y1": 731,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_003.png",
+   "image_size_px": [
+    1053,
+    638
+   ],
+   "caption": "Fig. 3 | Evaluation in different held-out settings. a, Negative log-likelihoods averaged over responses (n = 9,702) for the two-step task with a modified cover story 23 . b, Negative log-likelihoods averaged over responses (n = 510,154) for a three-armed bandit experiment 25 . c, Negative log-likelihoods averaged over responses (n = 99,204) for an experiment probing logical reasoning 26 with",
+   "caption_page": 4,
+   "caption_text": "Fig. 3 | Evaluation in different held-out settings. a, Negative log-likelihoods averaged over responses (n = 9,702) for the two-step task with a modified cover story 23 . b, Negative log-likelihoods averaged over responses (n = 510,154) for a three-armed bandit experiment 25 . c, Negative log-likelihoods averaged over responses (n = 99,204) for an experiment probing logical reasoning 26 with",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 415.09,
+    "r": 293.19,
+    "b": 368.59,
+    "w": 253.51,
+    "h": 46.5,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p4_e33"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 10.29
+   },
+   "element_id": "p4_e32",
+   "reading_order": 32
+  },
+  {
+   "figure_id": "fig_004",
+   "kind": "figure",
+   "label_form": "",
+   "figure_number": null,
+   "page": 5,
+   "bbox": {
+    "l": 37.46,
+    "t": 744.48,
+    "r": 562.49,
+    "b": 582.96,
+    "w": 525.02,
+    "h": 161.52,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 75,
+    "y0": 93,
+    "x1": 1125,
+    "y1": 416,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_004.png",
+   "image_size_px": [
+    1050,
+    323
+   ],
+   "caption": "neural activity in a sentence-reading task 38 can be decoded using Centaur's internal representations extracted from different layers. Control refers to a model that used representations extracted from a randomly initialized transformer model with matched architecture.",
+   "caption_page": 5,
+   "caption_text": "neural activity in a sentence-reading task 38 can be decoded using Centaur's internal representations extracted from different layers. Control refers to a model that used representations extracted from a randomly initialized transformer model with matched architecture.",
+   "caption_bbox": {
+    "l": 306.14,
+    "t": 574.42,
+    "r": 548.56,
+    "b": 536.96,
+    "w": 242.41,
+    "h": 37.46,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p5_e47"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 8.54
+   },
+   "element_id": "p5_e41",
+   "reading_order": 41
+  },
+  {
+   "figure_id": "fig_005",
+   "kind": "figure",
+   "label_form": "Fig. 5",
+   "figure_number": 5,
+   "page": 6,
+   "bbox": {
+    "l": 32.76,
+    "t": 746.62,
+    "r": 563.36,
+    "b": 482.69,
+    "w": 530.6,
+    "h": 263.93,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 66,
+    "y0": 88,
+    "x1": 1127,
+    "y1": 616,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_005.png",
+   "image_size_px": [
+    1061,
+    528
+   ],
+   "caption": "Fig. 5 | Model-guided scientific discovery. a, We used Psych-101 and Centaur to guide the development of a cognitive model for a multi-attribute decision-making study 41 . Each panel shows the AIC for the set of models considered at the given stage, starting with the models considered in the original study. b, We asked DeepSeek-R1 to generate an explanation for the human responses and formalized the resulting verbal strategy into a formal",
+   "caption_page": 6,
+   "caption_text": "Fig. 5 | Model-guided scientific discovery. a, We used Psych-101 and Centaur to guide the development of a cognitive model for a multi-attribute decision-making study 41 . Each panel shows the AIC for the set of models considered at the given stage, starting with the models considered in the original study. b, We asked DeepSeek-R1 to generate an explanation for the human responses and formalized the resulting verbal strategy into a formal",
+   "caption_bbox": {
+    "l": 39.68,
+    "t": 472.01,
+    "r": 287.77,
+    "b": 415.5,
+    "w": 248.09,
+    "h": 56.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p6_e53"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 10.68
+   },
+   "element_id": "p6_e51",
+   "reading_order": 51
+  },
+  {
+   "figure_id": "fig_006",
+   "kind": "extended_data_figure",
+   "label_form": "Extended Data Fig. 3",
+   "figure_number": 3,
+   "page": 13,
+   "bbox": {
+    "l": 83.38,
+    "t": 743.93,
+    "r": 517.19,
+    "b": 600.22,
+    "w": 433.81,
+    "h": 143.71,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 167,
+    "y0": 94,
+    "x1": 1034,
+    "y1": 381,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_006.png",
+   "image_size_px": [
+    867,
+    287
+   ],
+   "caption": "Extended Data Fig. 3 | Noise ceiling analysis. We conducted a noise ceiling analysis to better understand the capabilities of Centaur. It is not straightforward to estimate the noise ceiling for experiments with sequential dependencies, which includes the majority of Psych-101. Hence, we focused on two experiments for which such an analysis is possible: a, the choices13k data set 18 and b, an intertemporal choice experiment 52 . In both cases, we found that Centaur substantially exceeds the estimated noise ceiling. This is possible",
+   "caption_page": 13,
+   "caption_text": "Extended Data Fig. 3 | Noise ceiling analysis. We conducted a noise ceiling analysis to better understand the capabilities of Centaur. It is not straightforward to estimate the noise ceiling for experiments with sequential dependencies, which includes the majority of Psych-101. Hence, we focused on two experiments for which such an analysis is possible: a, the choices13k data set 18 and b, an intertemporal choice experiment 52 . In both cases, we found that Centaur substantially exceeds the estimated noise ceiling. This is possible",
+   "caption_bbox": {
+    "l": 39.68,
+    "t": 590.83,
+    "r": 291.78,
+    "b": 524.33,
+    "w": 252.09,
+    "h": 66.5,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p13_e200"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 9.39
+   },
+   "element_id": "p13_e199",
+   "reading_order": 199
+  },
+  {
+   "figure_id": "fig_007",
+   "kind": "figure",
+   "label_form": "",
+   "figure_number": null,
+   "page": 14,
+   "bbox": {
+    "l": 40.82,
+    "t": 744.47,
+    "r": 555.89,
+    "b": 483.03,
+    "w": 515.07,
+    "h": 261.45,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 82,
+    "y0": 93,
+    "x1": 1112,
+    "y1": 616,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_007.png",
+   "image_size_px": [
+    1030,
+    523
+   ],
+   "caption": "a, Negative log-likelihoods on moral decision-making 27 (t(181388) = -103.54, p ≤ 0.0001). b, Negative log-likelihoods on economic games 1 (t(7798) = -11.69, p ≤ 0.0001). c, Negative log-likelihoods on naturalistic category learning 1 (t(21838) = -14.05, p ≤ 0.0001). d, Negative log-likelihoods on behavioral propensities 30 (t(156230) = -11.06, p ≤ 0.0001). e, Negative log-likelihoods on naturalistic reward learning 1 (t(9838) = -12.63, p ≤ 0.0001). f, Negative loglikelihoods on a deep sequential decision task 31 (t(6092) = -1.06, p = 0.144).",
+   "caption_page": 14,
+   "caption_text": "a, Negative log-likelihoods on moral decision-making 27 (t(181388) = -103.54, p ≤ 0.0001). b, Negative log-likelihoods on economic games 1 (t(7798) = -11.69, p ≤ 0.0001). c, Negative log-likelihoods on naturalistic category learning 1 (t(21838) = -14.05, p ≤ 0.0001). d, Negative log-likelihoods on behavioral propensities 30 (t(156230) = -11.06, p ≤ 0.0001). e, Negative log-likelihoods on naturalistic reward learning 1 (t(9838) = -12.63, p ≤ 0.0001). f, Negative loglikelihoods on a deep sequential decision task 31 (t(6092) = -1.06, p = 0.144).",
+   "caption_bbox": {
+    "l": 306.14,
+    "t": 474.67,
+    "r": 556.05,
+    "b": 407.21,
+    "w": 249.91,
+    "h": 67.45,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p14_e204"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 8.36
+   },
+   "element_id": "p14_e202",
+   "reading_order": 202
+  },
+  {
+   "figure_id": "fig_008",
+   "kind": "extended_data_figure",
+   "label_form": "Extended Data Fig. 5",
+   "figure_number": 5,
+   "page": 15,
+   "bbox": {
+    "l": 34.91,
+    "t": 747.42,
+    "r": 557.14,
+    "b": 254.81,
+    "w": 522.23,
+    "h": 492.61,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 70,
+    "y0": 87,
+    "x1": 1114,
+    "y1": 1072,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_008.png",
+   "image_size_px": [
+    1044,
+    985
+   ],
+   "caption": "Extended Data Fig. 5 | metabench and CogBench results. a, Results for metabench 34 , a sparse benchmark containing several canonical benchmarks from the machine learning literature. We find that Centaur maintains the level of performance of Llama, indicating that finetuning on human behavior did not lead to deterioration in other tasks (ARC: z = -0.126, p = 0.9, GSM8K: z = -0.529, p = 0.597, HellaSwag: z = 0.0, p = 1.0, MMLU: z = 0.0, p = 1.0, Winogrande: z = -0.556, p = 0.578). Performance on TruthfulQA 71 - which measures how models mimic human falsehoods - even improved significantly with finetuning (z = 2.312, p = 0.021; all z-test were two-sided). b, Performance-based metrics from CogBench 33 , a benchmark that includes ten behavioral metrics derived from seven cognitive psychology experiments. We find that - relative to Llama - Centaur's performance improves in all experiments (Probabilistic reasoning:",
+   "caption_page": 15,
+   "caption_text": "Extended Data Fig. 5 | metabench and CogBench results. a, Results for metabench 34 , a sparse benchmark containing several canonical benchmarks from the machine learning literature. We find that Centaur maintains the level of performance of Llama, indicating that finetuning on human behavior did not lead to deterioration in other tasks (ARC: z = -0.126, p = 0.9, GSM8K: z = -0.529, p = 0.597, HellaSwag: z = 0.0, p = 1.0, MMLU: z = 0.0, p = 1.0, Winogrande: z = -0.556, p = 0.578). Performance on TruthfulQA 71 - which measures how models mimic human falsehoods - even improved significantly with finetuning (z = 2.312, p = 0.021; all z-test were two-sided). b, Performance-based metrics from CogBench 33 , a benchmark that includes ten behavioral metrics derived from seven cognitive psychology experiments. We find that - relative to Llama - Centaur's performance improves in all experiments (Probabilistic reasoning:",
+   "caption_bbox": {
+    "l": 39.68,
+    "t": 243.31,
+    "r": 294.76,
+    "b": 126.81,
+    "w": 255.08,
+    "h": 116.5,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p15_e207"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 11.5
+   },
+   "element_id": "p15_e206",
+   "reading_order": 206
+  },
+  {
+   "figure_id": "fig_009",
+   "kind": "extended_data_figure",
+   "label_form": "Extended Data Fig. 7",
+   "figure_number": 7,
+   "page": 17,
+   "bbox": {
+    "l": 41.0,
+    "t": 742.56,
+    "r": 555.42,
+    "b": 397.95,
+    "w": 514.42,
+    "h": 344.61,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 82,
+    "y0": 97,
+    "x1": 1111,
+    "y1": 786,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_009.png",
+   "image_size_px": [
+    1029,
+    689
+   ],
+   "caption": "Extended Data Fig. 7 | Log-likelihood comparison between Centaur and Minitaur on the analyses from the main text. a, Negative log-likelihoods relative to the domain-specific cognitive models on held-out participants from Psych-101. Error bars correspond to the standard error of the mean, taken over",
+   "caption_page": 17,
+   "caption_text": "Extended Data Fig. 7 | Log-likelihood comparison between Centaur and Minitaur on the analyses from the main text. a, Negative log-likelihoods relative to the domain-specific cognitive models on held-out participants from Psych-101. Error bars correspond to the standard error of the mean, taken over",
+   "caption_bbox": {
+    "l": 39.68,
+    "t": 387.31,
+    "r": 293.34,
+    "b": 350.81,
+    "w": 253.66,
+    "h": 36.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p17_e214"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 10.64
+   },
+   "element_id": "p17_e213",
+   "reading_order": 213
+  }
+ ],
+ "tables": [
+  {
+   "table_id": "table_001",
+   "page": 6,
+   "bbox": {
+    "l": 224.33,
+    "t": 543.28,
+    "r": 556.2,
+    "b": 482.07,
+    "w": 331.88,
+    "h": 61.21,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p6_e52"
+  },
+  {
+   "table_id": "table_002",
+   "page": 18,
+   "bbox": {
+    "l": 37.41,
+    "t": 725.51,
+    "r": 393.46,
+    "b": 222.83,
+    "w": 356.05,
+    "h": 502.68,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p18_e217"
+  },
+  {
+   "table_id": "table_003",
+   "page": 33,
+   "bbox": {
+    "l": 123.83,
+    "t": 767.43,
+    "r": 497.06,
+    "b": 633.3,
+    "w": 373.23,
+    "h": 134.14,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p33_e363"
+  }
+ ]
+}

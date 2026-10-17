@@ -1,0 +1,485 @@
+{
+ "paper_id": "2025_nature_comprehensive_echocardiogram_evaluation_with_vie_0050ec77",
+ "source_pdf": "D:\\2026-AI4S\\Metrics\\REFs\\2025-Tokens\\2025-Tokens\\2025-Nature-Comprehensive echocardiogram evaluation with view primed vision language AI.pdf",
+ "source_sha256": "9a59aedba8a23b6acb7e19852856d1e7a114ed7819f2ccf73b1d05f083ff7abf",
+ "source_name": "2025-Nature-Comprehensive echocardiogram evaluation with view primed vision language AI.pdf",
+ "n_pages": 24,
+ "generated_at": "2026-10-18T01:27:54",
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "n_figures": 5,
+ "n_tables": 9,
+ "n_pictures_detected": 9,
+ "n_uncaptioned_pictures": 4,
+ "figures": [
+  {
+   "figure_id": "fig_001",
+   "kind": "figure",
+   "label_form": "Fig. 1",
+   "figure_number": 1,
+   "page": 3,
+   "bbox": {
+    "l": 32.55,
+    "t": 745.06,
+    "r": 561.97,
+    "b": 186.47,
+    "w": 529.43,
+    "h": 558.58,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 65,
+    "y0": 92,
+    "x1": 1124,
+    "y1": 1209,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_001.png",
+   "image_size_px": [
+    1059,
+    1117
+   ],
+   "caption": "Fig. 1 | EchoPrime overview. a, Training dataset characteristics. The schematics were adapted from Flaticon by FreePik (https://www.flaticon.com). b, Video and text encoders are trained to map videos and text into a joint latent space. The view classifier and multiple instance learning are trained separately to learn view weighting based on the anatomical section. LV, left ventricle.",
+   "caption_page": 3,
+   "caption_text": "Fig. 1 | EchoPrime overview. a, Training dataset characteristics. The schematics were adapted from Flaticon by FreePik (https://www.flaticon.com). b, Video and text encoders are trained to map videos and text into a joint latent space. The view classifier and multiple instance learning are trained separately to learn view weighting based on the anatomical section. LV, left ventricle.",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 175.35,
+    "r": 294.81,
+    "b": 128.84,
+    "w": 255.13,
+    "h": 46.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p3_e26"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 11.12
+   },
+   "element_id": "p3_e25",
+   "reading_order": 25
+  },
+  {
+   "figure_id": "fig_002",
+   "kind": "figure",
+   "label_form": "Fig. 2",
+   "figure_number": 2,
+   "page": 5,
+   "bbox": {
+    "l": 33.01,
+    "t": 744.93,
+    "r": 563.39,
+    "b": 180.72,
+    "w": 530.38,
+    "h": 564.21,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 66,
+    "y0": 92,
+    "x1": 1127,
+    "y1": 1220,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_002.png",
+   "image_size_px": [
+    1061,
+    1128
+   ],
+   "caption": "Fig. 2 | Performance metrics for echocardiography prediction tasks. a, Comparison of EchoPrime, EchoCLIP and BioMedCLIP on a range of echocardiography interpretation tasks on cohorts from five different clinical centres. The area under the receiver operating characteristic curve is shown for classification tasks and the R 2 score for regression tasks.",
+   "caption_page": 5,
+   "caption_text": "Fig. 2 | Performance metrics for echocardiography prediction tasks. a, Comparison of EchoPrime, EchoCLIP and BioMedCLIP on a range of echocardiography interpretation tasks on cohorts from five different clinical centres. The area under the receiver operating characteristic curve is shown for classification tasks and the R 2 score for regression tasks.",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 174.85,
+    "r": 280.03,
+    "b": 128.34,
+    "w": 240.35,
+    "h": 46.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p5_e38"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 5.87
+   },
+   "element_id": "p5_e37",
+   "reading_order": 37
+  },
+  {
+   "figure_id": "fig_003",
+   "kind": "figure",
+   "label_form": "Fig. 3",
+   "figure_number": 3,
+   "page": 7,
+   "bbox": {
+    "l": 32.84,
+    "t": 744.83,
+    "r": 562.85,
+    "b": 175.86,
+    "w": 530.02,
+    "h": 568.97,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 66,
+    "y0": 92,
+    "x1": 1126,
+    "y1": 1230,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_003.png",
+   "image_size_px": [
+    1060,
+    1138
+   ],
+   "caption": "Fig. 3 | Anatomical attention to weight predictions across videos in an echocardiogram study. a, A view classifier was trained on 60,000 videos to distinguish between 58 standard echocardiographic views. b, A comprehensive echocardiogram examination comprises many different views, which is summarized across our training cohort. c, A clustered heatmap showing the relative priority and ranking of each video for each anatomical structure based",
+   "caption_page": 7,
+   "caption_text": "Fig. 3 | Anatomical attention to weight predictions across videos in an echocardiogram study. a, A view classifier was trained on 60,000 videos to distinguish between 58 standard echocardiographic views. b, A comprehensive echocardiogram examination comprises many different views, which is summarized across our training cohort. c, A clustered heatmap showing the relative priority and ranking of each video for each anatomical structure based",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 166.18,
+    "r": 294.81,
+    "b": 109.67,
+    "w": 255.12,
+    "h": 56.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p7_e58"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 9.68
+   },
+   "element_id": "p7_e57",
+   "reading_order": 57
+  },
+  {
+   "figure_id": "fig_004",
+   "kind": "extended_data_figure",
+   "label_form": "Extended Data Fig. 2",
+   "figure_number": 2,
+   "page": 13,
+   "bbox": {
+    "l": 28.3,
+    "t": 743.63,
+    "r": 510.07,
+    "b": 305.88,
+    "w": 481.76,
+    "h": 437.75,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 57,
+    "y0": 94,
+    "x1": 1020,
+    "y1": 970,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_004.png",
+   "image_size_px": [
+    963,
+    876
+   ],
+   "caption": "Extended Data Fig. 2 | A, UMAP representation of features from the second to last layer of the video classifier. Doppler views are denoted by prefix \"D\". B, Case study on pericardial effusion prediction demonstrates the advantages of utilizing all videos from the study and applying anatomical weighting.",
+   "caption_page": 13,
+   "caption_text": "Extended Data Fig. 2 | A, UMAP representation of features from the second to last layer of the video classifier. Doppler views are denoted by prefix \"D\". B, Case study on pericardial effusion prediction demonstrates the advantages of utilizing all videos from the study and applying anatomical weighting.",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 292.75,
+    "r": 547.88,
+    "b": 276.25,
+    "w": 508.2,
+    "h": 16.5,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p13_e160"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 13.13
+   },
+   "element_id": "p13_e159",
+   "reading_order": 159
+  },
+  {
+   "figure_id": "fig_005",
+   "kind": "extended_data_figure",
+   "label_form": "Extended Data Fig. 3",
+   "figure_number": 3,
+   "page": 14,
+   "bbox": {
+    "l": 37.95,
+    "t": 745.78,
+    "r": 567.44,
+    "b": 272.36,
+    "w": 529.49,
+    "h": 473.42,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 76,
+    "y0": 90,
+    "x1": 1135,
+    "y1": 1037,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_005.png",
+   "image_size_px": [
+    1059,
+    947
+   ],
+   "caption": "Extended Data Fig. 3 | Comparison of model performance when initialized with EchoPrime weights versus Kinetics weights versus random weights, showing the impact of domain-specific initialization on training efficiency and convergence.",
+   "caption_page": 14,
+   "caption_text": "Extended Data Fig. 3 | Comparison of model performance when initialized with EchoPrime weights versus Kinetics weights versus random weights, showing the impact of domain-specific initialization on training efficiency and convergence.",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 263.11,
+    "r": 555.38,
+    "b": 246.61,
+    "w": 515.7,
+    "h": 16.5,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p14_e163"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 9.25
+   },
+   "element_id": "p14_e162",
+   "reading_order": 162
+  }
+ ],
+ "tables": [
+  {
+   "table_id": "table_001",
+   "page": 2,
+   "bbox": {
+    "l": 37.17,
+    "t": 728.39,
+    "r": 562.88,
+    "b": 435.57,
+    "w": 525.71,
+    "h": 292.82,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p2_e19"
+  },
+  {
+   "table_id": "table_002",
+   "page": 4,
+   "bbox": {
+    "l": 37.29,
+    "t": 727.55,
+    "r": 562.15,
+    "b": 434.29,
+    "w": 524.86,
+    "h": 293.26,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": "Table 2 | EchoPrime echocardiography interpretation performance across datasets from five different medical centres",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 740.98,
+    "r": 535.14,
+    "b": 733.11,
+    "w": 495.46,
+    "h": 7.87,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_page": 4,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": 5.56,
+    "paired": true
+   },
+   "element_id": "p4_e29"
+  },
+  {
+   "table_id": "table_003",
+   "page": 6,
+   "bbox": {
+    "l": 37.99,
+    "t": 724.99,
+    "r": 562.25,
+    "b": 640.58,
+    "w": 524.26,
+    "h": 84.41,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p6_e44"
+  },
+  {
+   "table_id": "table_004",
+   "page": 16,
+   "bbox": {
+    "l": 36.83,
+    "t": 727.87,
+    "r": 477.62,
+    "b": 486.12,
+    "w": 440.79,
+    "h": 241.75,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p16_e168"
+  },
+  {
+   "table_id": "table_005",
+   "page": 17,
+   "bbox": {
+    "l": 37.94,
+    "t": 727.68,
+    "r": 513.04,
+    "b": 479.6,
+    "w": 475.1,
+    "h": 248.08,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p17_e170"
+  },
+  {
+   "table_id": "table_006",
+   "page": 18,
+   "bbox": {
+    "l": 37.32,
+    "t": 706.02,
+    "r": 509.14,
+    "b": 226.75,
+    "w": 471.82,
+    "h": 479.27,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p18_e173"
+  },
+  {
+   "table_id": "table_007",
+   "page": 19,
+   "bbox": {
+    "l": 37.51,
+    "t": 727.22,
+    "r": 508.89,
+    "b": 268.04,
+    "w": 471.39,
+    "h": 459.18,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p19_e175"
+  },
+  {
+   "table_id": "table_008",
+   "page": 20,
+   "bbox": {
+    "l": 37.17,
+    "t": 728.69,
+    "r": 480.77,
+    "b": 362.43,
+    "w": 443.6,
+    "h": 366.26,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p20_e178"
+  },
+  {
+   "table_id": "table_009",
+   "page": 21,
+   "bbox": {
+    "l": 38.47,
+    "t": 726.78,
+    "r": 508.9,
+    "b": 485.95,
+    "w": 470.43,
+    "h": 240.83,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p21_e180"
+  }
+ ]
+}

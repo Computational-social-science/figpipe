@@ -1,0 +1,513 @@
+{
+ "paper_id": "2026_nature_why_ai_cannot_do_good_science_without_humans_b9a30c15",
+ "source_pdf": "D:\\2026-AI4S\\2026-Nature-Why AI cannot do good science without humans.pdf",
+ "source_sha256": "e91564ac89db717e99c2ed8c02c3c05a9f31792ae6726f484200145398b49956",
+ "source_name": "2026-Nature-Why AI cannot do good science without humans.pdf",
+ "n_pages": 1,
+ "page_size_pt": [
+  595.28,
+  790.87
+ ],
+ "coordinate_note": "bbox is PDF points with origin at the BOTTOM-LEFT, y increasing upward; bbox_norm divides by page size.",
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "generated_at": "2026-10-18T01:31:28",
+ "pages": [
+  {
+   "page_no": 1,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0001.png",
+   "elements": [
+    {
+     "reading_order": 0,
+     "page": 1,
+     "label": "section_header",
+     "bbox": {
+      "l": 268.2,
+      "t": 761.54,
+      "r": 332.75,
+      "b": 748.57,
+      "w": 64.55,
+      "h": 12.97,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.45055,
+      "t": 0.96292,
+      "r": 0.55898,
+      "b": 0.94652
+     },
+     "text": "Editorials",
+     "text_len": 10,
+     "level": 1,
+     "element_id": "p1_e0"
+    },
+    {
+     "reading_order": 1,
+     "page": 1,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 675.7,
+      "r": 211.78,
+      "b": 600.5,
+      "w": 172.1,
+      "h": 75.21,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.85438,
+      "r": 0.35577,
+      "b": 0.75929
+     },
+     "text": "Why AI cannot do good science without humans",
+     "text_len": 44,
+     "level": 1,
+     "element_id": "p1_e1"
+    },
+    {
+     "reading_order": 2,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 579.96,
+      "r": 231.5,
+      "b": 535.17,
+      "w": 191.81,
+      "h": 44.79,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.73332,
+      "r": 0.3889,
+      "b": 0.67669
+     },
+     "text": "Amid the rise of 'AI scientists', it's as well to remember that human wisdom, empathy and sheer messiness are as much part of progress as are process and efficiency.",
+     "text_len": 165,
+     "level": 1,
+     "element_id": "p1_e2"
+    },
+    {
+     "reading_order": 3,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 35.21,
+      "t": 515.56,
+      "r": 250.5,
+      "b": 452.63,
+      "w": 215.29,
+      "h": 62.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.05915,
+      "t": 0.65189,
+      "r": 0.42081,
+      "b": 0.57232
+     },
+     "text": "D oes humanity need science? The Nobel prizewinner Max Perutz posed this question in a landmark essay 1 in 1989. His conclusion, unsurprisingly, was 'yes'. Had he lived to see the era of artificial intelligence, he might have inverted his framing of the question: does science need humanity?",
+     "text_len": 291,
+     "level": 1,
+     "element_id": "p1_e3"
+    },
+    {
+     "reading_order": 4,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 451.06,
+      "r": 250.48,
+      "b": 357.4,
+      "w": 210.8,
+      "h": 93.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.57034,
+      "r": 0.42078,
+      "b": 0.45191
+     },
+     "text": "Two studies in Nature provide a glimpse of what some are interpreting as humanity's shrinking role in scientific discovery in Perutz's own field, molecular biology. Both describe a pivotal step towards truly AI-driven drug discovery, in which a system of connected AI agents is trained to autonomously navigate multi-step workflows. The system trawled scholarly literature, formed hypotheses, interpreted data and engaged in internal debate to arrive at candidate drugs to treat a particular disease.",
+     "text_len": 500,
+     "level": 1,
+     "element_id": "p1_e4"
+    },
+    {
+     "reading_order": 5,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 354.31,
+      "r": 250.41,
+      "b": 325.15,
+      "w": 210.72,
+      "h": 29.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.448,
+      "r": 0.42066,
+      "b": 0.41113
+     },
+     "text": "The results are impressive, but also highlight something else: AI scientists can and should empower human researchers. They cannot and should not replace them.",
+     "text_len": 159,
+     "level": 1,
+     "element_id": "p1_e5"
+    },
+    {
+     "reading_order": 6,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 322.06,
+      "r": 250.42,
+      "b": 196.15,
+      "w": 210.73,
+      "h": 125.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.40722,
+      "r": 0.42068,
+      "b": 0.24802
+     },
+     "text": "In one study, a team based at FutureHouse, a nonprofit AI research laboratory in San Francisco, California, asked its AI system, called Robin, to find a treatment for the eye disorder dry age-related macular degeneration 2 . Robin's agents searched the scientific literature to derive a therapeutic strategy, identified candidate molecules and selected assays to test them. The experiments Robin suggested were then handed over to humans, who conducted the studies and fed the results back to Robin for analysis, interpretation and the design of follow-up studies. The team estimates that Robin reduced the time needed for the project 200-fold compared with a typical human workflow.",
+     "text_len": 683,
+     "level": 1,
+     "element_id": "p1_e6"
+    },
+    {
+     "reading_order": 7,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 193.06,
+      "r": 250.5,
+      "b": 56.4,
+      "w": 210.81,
+      "h": 136.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.24411,
+      "r": 0.42081,
+      "b": 0.07131
+     },
+     "text": "A second group led by researchers at Google, based in Mountain View, California, used its AI-agent system, called Co-Scientist, to look for approved drugs that could be repurposed to treat a form of leukaemia, and to discover drug targets to treat liver fibrosis 3 . Humans provided input throughout the process, helping to prioritize hypotheses and approaches. The team also asked the agents to develop a hypothesis to explain why many species of bacterium share a particular suite of antibiotic-resistance genes. Scientists, including some of the project's authors, had been investigating this microbial puzzle for around a decade, but had not yet published the results. Co-Scientist arrived at the same hypothesis as the researchers - within days.",
+     "text_len": 750,
+     "level": 1,
+     "element_id": "p1_e7"
+    },
+    {
+     "reading_order": 8,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 48.19,
+      "t": 53.31,
+      "r": 250.36,
+      "b": 45.65,
+      "w": 202.17,
+      "h": 7.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.08095,
+      "t": 0.06741,
+      "r": 0.42058,
+      "b": 0.05772
+     },
+     "text": "These projects represent a significant step forwards. But We don't yet know whether greater efficiency equates to greater insight.\"",
+     "text_len": 131,
+     "level": 1,
+     "element_id": "p1_e8"
+    },
+    {
+     "reading_order": 9,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 350.55,
+      "t": 676.81,
+      "r": 561.3,
+      "b": 615.4,
+      "w": 210.74,
+      "h": 61.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.58889,
+      "t": 0.85578,
+      "r": 0.94292,
+      "b": 0.77813
+     },
+     "text": "for all the 'wow' factor, it is crucial to bear in mind that the AI systems were not working alone. In both cases, humans framed the initial project, performed experiments, offered guidance and checked the agents' output along the way. That is a feature, not a bug - and shutting humans out of the loop would not be easy.",
+     "text_len": 321,
+     "level": 1,
+     "element_id": "p1_e9"
+    },
+    {
+     "reading_order": 10,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 350.55,
+      "t": 612.31,
+      "r": 561.4,
+      "b": 486.4,
+      "w": 210.85,
+      "h": 125.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.58889,
+      "t": 0.77423,
+      "r": 0.94309,
+      "b": 0.61502
+     },
+     "text": "For one thing, the creation of a fully autonomous AI researcher would require many more AI agents to be crosslinked, and scientists would need to ensure that those agents could maintain focus and coordinate efficiently with one another during long, complex tasks 4,5 . It is also not yet clear whether AI agents would be able to master every step of the process of drug development. Even if they could, human oversight would still be needed to catch hallucinations (AI data fabrication) and misinterpretations, and to ensure that certain tasks are done correctly - for example, that the data AI harvests from databases for its analyses are used appropriately.",
+     "text_len": 659,
+     "level": 1,
+     "element_id": "p1_e10"
+    },
+    {
+     "reading_order": 11,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 350.55,
+      "t": 483.31,
+      "r": 561.4,
+      "b": 368.15,
+      "w": 210.85,
+      "h": 115.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.58889,
+      "t": 0.61111,
+      "r": 0.94309,
+      "b": 0.4655
+     },
+     "text": "More broadly, the expertise of researchers, and the accumulated wisdom of teams that have worked on a problem, perhaps for decades, might prove impossible for machines to replicate. Humans are also needed to train future generations, and their knowledge is built, in part, on lessons learnt from failures and inefficient meanderings. Human messiness, curiosity and playfulness have fuelled countless discoveries, and helped to inform society's ethical frameworks. AI systems might offer greater efficiency in some instances, but we don't yet know whether greater efficiency equates to greater insight.",
+     "text_len": 601,
+     "level": 1,
+     "element_id": "p1_e11"
+    },
+    {
+     "reading_order": 12,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 350.55,
+      "t": 365.06,
+      "r": 561.35,
+      "b": 271.4,
+      "w": 210.8,
+      "h": 93.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.58889,
+      "t": 0.4616,
+      "r": 0.94301,
+      "b": 0.34317
+     },
+     "text": "These caveats should be borne in mind as society argues over competing visions of how AI should fit into the future. Some researchers see in AI tools a path to accelerated discovery, relief from the tedium that comes with much day-today lab work and a faster, cheaper way to create medicines and make other discoveries. Others see a future in which scientific literature is polluted with slop, human scientists cannot find suitable training or work, and research is untempered by human empathy, ethics and wisdom.",
+     "text_len": 513,
+     "level": 1,
+     "element_id": "p1_e12"
+    },
+    {
+     "reading_order": 13,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 350.55,
+      "t": 268.31,
+      "r": 561.32,
+      "b": 196.15,
+      "w": 210.77,
+      "h": 72.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.58889,
+      "t": 0.33926,
+      "r": 0.94296,
+      "b": 0.24802
+     },
+     "text": "Scientists should not allow a negative view of AI to drive them away from exploring the possibilities that AI coscientists might hold for research. Equally, however, they must rise above the din of AI hype and advocate for their own importance - to remind the wider public, funders and fellow researchers that science still needs humanity, and that not every grant proposal need include an AI project.",
+     "text_len": 401,
+     "level": 1,
+     "element_id": "p1_e13"
+    },
+    {
+     "reading_order": 14,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 350.55,
+      "t": 193.06,
+      "r": 561.37,
+      "b": 110.15,
+      "w": 210.82,
+      "h": 82.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.58889,
+      "t": 0.24411,
+      "r": 0.94304,
+      "b": 0.13928
+     },
+     "text": "Perutz began his essay with a false dialectic that also plagues many modern discussions of AI: \"Is scientific research the noblest pursuit of the human mind, from which springs a never-ceasing stream of beneficial discoveries, or is it a sorcerer's broom that threatens us all with destruction?\". These opposing extremes, both true in their own way, should not be allowed to distort AI's true potential - or obscure its limitations.",
+     "text_len": 432,
+     "level": 1,
+     "element_id": "p1_e14"
+    },
+    {
+     "reading_order": 15,
+     "page": 1,
+     "label": "footnote",
+     "bbox": {
+      "l": 350.55,
+      "t": 99.84,
+      "r": 525.04,
+      "b": 94.58,
+      "w": 174.48,
+      "h": 5.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.58889,
+      "t": 0.12624,
+      "r": 0.88201,
+      "b": 0.11959
+     },
+     "text": "1. Perutz, M. F. Is Science Necessary? (Oxford Univ. Press, 1989).",
+     "text_len": 66,
+     "level": 1,
+     "element_id": "p1_e15"
+    },
+    {
+     "reading_order": 16,
+     "page": 1,
+     "label": "footnote",
+     "bbox": {
+      "l": 350.55,
+      "t": 91.84,
+      "r": 551.65,
+      "b": 78.58,
+      "w": 201.1,
+      "h": 13.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.58889,
+      "t": 0.11613,
+      "r": 0.92671,
+      "b": 0.09936
+     },
+     "text": "2. Ghareeb, A. E. et al. Nature https://doi.org/10.1038/s41586-026-10644-y (2026).",
+     "text_len": 82,
+     "level": 1,
+     "element_id": "p1_e16"
+    },
+    {
+     "reading_order": 17,
+     "page": 1,
+     "label": "footnote",
+     "bbox": {
+      "l": 350.55,
+      "t": 75.84,
+      "r": 543.7,
+      "b": 62.58,
+      "w": 193.15,
+      "h": 13.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.58889,
+      "t": 0.09589,
+      "r": 0.91336,
+      "b": 0.07913
+     },
+     "text": "3. Gottweis, J. et al. Nature https://doi.org/10.1038/s41586-026-10652-y (2026).",
+     "text_len": 80,
+     "level": 1,
+     "element_id": "p1_e17"
+    },
+    {
+     "reading_order": 18,
+     "page": 1,
+     "label": "footnote",
+     "bbox": {
+      "l": 350.55,
+      "t": 59.84,
+      "r": 465.29,
+      "b": 54.58,
+      "w": 114.74,
+      "h": 5.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.58889,
+      "t": 0.07566,
+      "r": 0.78164,
+      "b": 0.06901
+     },
+     "text": "4. Lu, C. et al. Nature 651, 914-919 (2026).",
+     "text_len": 44,
+     "level": 1,
+     "element_id": "p1_e18"
+    },
+    {
+     "reading_order": 19,
+     "page": 1,
+     "label": "footnote",
+     "bbox": {
+      "l": 350.55,
+      "t": 51.84,
+      "r": 436.28,
+      "b": 46.58,
+      "w": 85.73,
+      "h": 5.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.58889,
+      "t": 0.06555,
+      "r": 0.7329,
+      "b": 0.0589
+     },
+     "text": "5. Nature 651, 853-854 (2026).",
+     "text_len": 30,
+     "level": 1,
+     "element_id": "p1_e19"
+    }
+   ]
+  }
+ ],
+ "caption_blocks": [],
+ "uncaptioned_pictures": []
+}

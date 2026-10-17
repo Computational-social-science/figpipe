@@ -1,0 +1,843 @@
+{
+ "paper_id": "2025_nature_accurate_predictions_on_small_data_with_a_tabula_7fc09483",
+ "source_pdf": "D:\\2026-AI4S\\REFs\\2025-Nature-Accurate predictions on small data with a tabular foundation model_Highlights&SI.pdf",
+ "source_sha256": "b41d266ae152647bd504a1518ed035abf67506278c1bbdc6dd213b0f185e3184",
+ "source_name": "2025-Nature-Accurate predictions on small data with a tabular foundation model_Highlights&SI.pdf",
+ "n_pages": 31,
+ "generated_at": "2026-10-18T01:27:40",
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "n_figures": 11,
+ "n_tables": 11,
+ "n_pictures_detected": 20,
+ "n_uncaptioned_pictures": 9,
+ "figures": [
+  {
+   "figure_id": "fig_001",
+   "kind": "figure",
+   "label_form": "Figure 1",
+   "figure_number": 1,
+   "page": 2,
+   "bbox": {
+    "l": 36.36,
+    "t": 742.26,
+    "r": 561.32,
+    "b": 564.46,
+    "w": 524.96,
+    "h": 177.8,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 73,
+    "y0": 97,
+    "x1": 1123,
+    "y1": 453,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_001.png",
+   "image_size_px": [
+    1050,
+    356
+   ],
+   "caption": "Figure 1 | A foundation model for tabular machine learning. a, Conventional machine-learning models are trained on individual data sets using mathematical optimization algorithms. A different model needs to be developed and trained for each task, and for each data set. This practice takes years to learn and requires extensive time and computing resources. b, By contrast, a 'foundation' model could be used for any machine-learning task and is pre-trained on the types of",
+   "caption_page": 2,
+   "caption_text": "Figure 1 | A foundation model for tabular machine learning. a, Conventional machine-learning models are trained on individual data sets using mathematical optimization algorithms. A different model needs to be developed and trained for each task, and for each data set. This practice takes years to learn and requires extensive time and computing resources. b, By contrast, a 'foundation' model could be used for any machine-learning task and is pre-trained on the types of",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 557.73,
+    "r": 288.95,
+    "b": 501.22,
+    "w": 249.26,
+    "h": 56.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p2_e121"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 6.73
+   },
+   "element_id": "p2_e120",
+   "reading_order": 120
+  },
+  {
+   "figure_id": "fig_002",
+   "kind": "figure",
+   "label_form": "Fig. 1",
+   "figure_number": 1,
+   "page": 4,
+   "bbox": {
+    "l": 34.13,
+    "t": 744.92,
+    "r": 560.02,
+    "b": 463.54,
+    "w": 525.9,
+    "h": 281.38,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 68,
+    "y0": 92,
+    "x1": 1120,
+    "y1": 655,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_002.png",
+   "image_size_px": [
+    1052,
+    563
+   ],
+   "caption": "Fig. 1 | Overview of the proposed method. a, The high-level overview of TabPFN pre-training and usage. b, The TabPFN architecture. We train a model to solve more than 100 million synthetic tasks. Our architecture is an adaptation of the",
+   "caption_page": 4,
+   "caption_text": "Fig. 1 | Overview of the proposed method. a, The high-level overview of TabPFN pre-training and usage. b, The TabPFN architecture. We train a model to solve more than 100 million synthetic tasks. Our architecture is an adaptation of the",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 453.38,
+    "r": 294.81,
+    "b": 426.87,
+    "w": 255.13,
+    "h": 26.5,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p4_e159"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 10.16
+   },
+   "element_id": "p4_e158",
+   "reading_order": 158
+  },
+  {
+   "figure_id": "fig_003",
+   "kind": "figure",
+   "label_form": "Fig. 2",
+   "figure_number": 2,
+   "page": 5,
+   "bbox": {
+    "l": 35.9,
+    "t": 742.85,
+    "r": 562.26,
+    "b": 499.14,
+    "w": 526.36,
+    "h": 243.71,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 72,
+    "y0": 96,
+    "x1": 1125,
+    "y1": 583,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_003.png",
+   "image_size_px": [
+    1053,
+    487
+   ],
+   "caption": "Fig. 2 | Overview of the TabPFN prior. a, For each dataset, we first sample high-level hyperparameters. b, Based on these hyperparameters, we construct a structural causal model that encodes the computational function generating the dataset. Each node holds a vector and each edge in the computational graph implements a function according to one of the connection types. In step 1, using random noise variables we generate initialization data, which is fed into the root nodes of the graphs and propagated through the computational graph",
+   "caption_page": 5,
+   "caption_text": "Fig. 2 | Overview of the TabPFN prior. a, For each dataset, we first sample high-level hyperparameters. b, Based on these hyperparameters, we construct a structural causal model that encodes the computational function generating the dataset. Each node holds a vector and each edge in the computational graph implements a function according to one of the connection types. In step 1, using random noise variables we generate initialization data, which is fed into the root nodes of the graphs and propagated through the computational graph",
+   "caption_bbox": {
+    "l": 39.68,
+    "t": 490.58,
+    "r": 294.63,
+    "b": 424.07,
+    "w": 254.95,
+    "h": 66.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p5_e172"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 8.56
+   },
+   "element_id": "p5_e171",
+   "reading_order": 171
+  },
+  {
+   "figure_id": "fig_004",
+   "kind": "figure",
+   "label_form": "Fig. 3",
+   "figure_number": 3,
+   "page": 6,
+   "bbox": {
+    "l": 35.84,
+    "t": 743.45,
+    "r": 561.28,
+    "b": 498.7,
+    "w": 525.44,
+    "h": 244.75,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 72,
+    "y0": 95,
+    "x1": 1123,
+    "y1": 584,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_004.png",
+   "image_size_px": [
+    1051,
+    489
+   ],
+   "caption": "Fig. 3 | The behaviour of TabPFN and a set of baselines on simple functions. In all plots, we use orange for the ground truth and blue for model predictions. a, Each column represents a different toy function, each having a single feature (along the x-axis) and a target (along the y-axis). TabPFN can model a lot of",
+   "caption_page": 6,
+   "caption_text": "Fig. 3 | The behaviour of TabPFN and a set of baselines on simple functions. In all plots, we use orange for the ground truth and blue for model predictions. a, Each column represents a different toy function, each having a single feature (along the x-axis) and a target (along the y-axis). TabPFN can model a lot of",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 489.78,
+    "r": 292.81,
+    "b": 453.28,
+    "w": 253.12,
+    "h": 36.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p6_e185"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 8.92
+   },
+   "element_id": "p6_e184",
+   "reading_order": 184
+  },
+  {
+   "figure_id": "fig_005",
+   "kind": "figure",
+   "label_form": "Fig. 4",
+   "figure_number": 4,
+   "page": 7,
+   "bbox": {
+    "l": 32.97,
+    "t": 742.92,
+    "r": 560.79,
+    "b": 509.47,
+    "w": 527.81,
+    "h": 233.45,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 66,
+    "y0": 96,
+    "x1": 1122,
+    "y1": 563,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_005.png",
+   "image_size_px": [
+    1056,
+    467
+   ],
+   "caption": "Fig. 4 | Comparison of TabPFN on our test benchmarks, containing datasets with up to 10,000 samples and 500 features. Performance was normalized per dataset before aggregation using all baselines; intervals represent the 95% confidence interval. Wilcoxon P refers to the two-sided Wilcoxon signed-rank test P value 54 . a, Average performance of the default as well as the tuned versions of TabPFN and our baselines. All methods are tuned for ROC AUC or RMSE, respectively, thus decreasing the representativeness of the secondary metrics. LGBM, LightGBM; MLP, multilayer perceptron; SVM, support vector machines;",
+   "caption_page": 7,
+   "caption_text": "Fig. 4 | Comparison of TabPFN on our test benchmarks, containing datasets with up to 10,000 samples and 500 features. Performance was normalized per dataset before aggregation using all baselines; intervals represent the 95% confidence interval. Wilcoxon P refers to the two-sided Wilcoxon signed-rank test P value 54 . a, Average performance of the default as well as the tuned versions of TabPFN and our baselines. All methods are tuned for ROC AUC or RMSE, respectively, thus decreasing the representativeness of the secondary metrics. LGBM, LightGBM; MLP, multilayer perceptron; SVM, support vector machines;",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 501.66,
+    "r": 294.53,
+    "b": 425.16,
+    "w": 254.84,
+    "h": 76.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p7_e197"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 7.81
+   },
+   "element_id": "p7_e196",
+   "reading_order": 196
+  },
+  {
+   "figure_id": "fig_006",
+   "kind": "figure",
+   "label_form": "Fig. 5",
+   "figure_number": 5,
+   "page": 8,
+   "bbox": {
+    "l": 33.88,
+    "t": 743.32,
+    "r": 562.3,
+    "b": 475.06,
+    "w": 528.43,
+    "h": 268.27,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 68,
+    "y0": 95,
+    "x1": 1125,
+    "y1": 632,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_006.png",
+   "image_size_px": [
+    1057,
+    537
+   ],
+   "caption": "Fig. 5 | Robustness across datasets and performance comparison with tuned ensembles. a, A comparison of modified datasets. We can see that TabPFN is not more vulnerable to the modifications compared with baselines. We also see that TabPFN reproduces the accuracy of CatBoost (default) with only half the training samples provided. Here we normalize scores per dataset (sharing one normalization across all modifications of one experiment) to avoid negative outliers. b, We split the test datasets by data characteristics and",
+   "caption_page": 8,
+   "caption_text": "Fig. 5 | Robustness across datasets and performance comparison with tuned ensembles. a, A comparison of modified datasets. We can see that TabPFN is not more vulnerable to the modifications compared with baselines. We also see that TabPFN reproduces the accuracy of CatBoost (default) with only half the training samples provided. Here we normalize scores per dataset (sharing one normalization across all modifications of one experiment) to avoid negative outliers. b, We split the test datasets by data characteristics and",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 465.32,
+    "r": 292.31,
+    "b": 398.8,
+    "w": 252.63,
+    "h": 66.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p8_e213"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 9.74
+   },
+   "element_id": "p8_e212",
+   "reading_order": 212
+  },
+  {
+   "figure_id": "fig_007",
+   "kind": "figure",
+   "label_form": "Fig. 6",
+   "figure_number": 6,
+   "page": 9,
+   "bbox": {
+    "l": 33.51,
+    "t": 743.95,
+    "r": 561.21,
+    "b": 605.07,
+    "w": 527.7,
+    "h": 138.88,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 67,
+    "y0": 94,
+    "x1": 1122,
+    "y1": 372,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_007.png",
+   "image_size_px": [
+    1055,
+    278
+   ],
+   "caption": "Fig. 6 | Showcase of the application of TabPFN as tabular foundation model. a,b, On the German Credit Dataset, we perform data density estimation (a) and generation of new synthetic samples (b). c, We show our learned embeddings are useful representations of each sample on the handwritten digits dataset",
+   "caption_page": 9,
+   "caption_text": "Fig. 6 | Showcase of the application of TabPFN as tabular foundation model. a,b, On the German Credit Dataset, we perform data density estimation (a) and generation of new synthetic samples (b). c, We show our learned embeddings are useful representations of each sample on the handwritten digits dataset",
+   "caption_bbox": {
+    "l": 39.68,
+    "t": 595.74,
+    "r": 294.15,
+    "b": 559.24,
+    "w": 254.47,
+    "h": 36.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p9_e227"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 9.33
+   },
+   "element_id": "p9_e226",
+   "reading_order": 226
+  },
+  {
+   "figure_id": "fig_008",
+   "kind": "extended_data_figure",
+   "label_form": "Extended Data Fig. 2",
+   "figure_number": 2,
+   "page": 17,
+   "bbox": {
+    "l": 69.52,
+    "t": 727.86,
+    "r": 270.33,
+    "b": 616.74,
+    "w": 200.81,
+    "h": 111.11,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 139,
+    "y0": 126,
+    "x1": 541,
+    "y1": 348,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_008.png",
+   "image_size_px": [
+    402,
+    222
+   ],
+   "caption": "Extended Data Fig. 2 | Performance comparisons of TabPFN and baselines on additional benchmark datasets and with GPU support. (a) Classification performance on the Grinsztajn medium-sized benchmark with categorical features, across 7 datasets. (b) Classification performance on the Grinsztajn medium-sized benchmark with numerical features, across its 15 datasets. (c) Classification performance on the TabZilla benchmark, consisting of 102 datasets with fewer than 10,000 rows of data, 500 features, and 10 classes.",
+   "caption_page": 17,
+   "caption_text": "Extended Data Fig. 2 | Performance comparisons of TabPFN and baselines on additional benchmark datasets and with GPU support. (a) Classification performance on the Grinsztajn medium-sized benchmark with categorical features, across 7 datasets. (b) Classification performance on the Grinsztajn medium-sized benchmark with numerical features, across its 15 datasets. (c) Classification performance on the TabZilla benchmark, consisting of 102 datasets with fewer than 10,000 rows of data, 500 features, and 10 classes.",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 467.35,
+    "r": 291.11,
+    "b": 400.84,
+    "w": 251.42,
+    "h": 66.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p17_e419"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 149.39
+   },
+   "element_id": "p17_e416",
+   "reading_order": 416
+  },
+  {
+   "figure_id": "fig_009",
+   "kind": "figure",
+   "label_form": "",
+   "figure_number": null,
+   "page": 17,
+   "bbox": {
+    "l": 355.23,
+    "t": 724.98,
+    "r": 556.24,
+    "b": 616.06,
+    "w": 201.0,
+    "h": 108.91,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 710,
+    "y0": 132,
+    "x1": 1112,
+    "y1": 350,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_009.png",
+   "image_size_px": [
+    402,
+    218
+   ],
+   "caption": "Duplicated datasets and those with fewer than 5 samples per class were removed to enable 5-fold cross-validation. (d) Performance Over Time Comparison with CPU vs. GPU Hardware: The performance over time when running our strongest baselines with eight CPUs (CPU) vs. eight CPUs and on one GPU (+GPU) on our classification test benchmark. AutoGluon automatically decides which models to train with what resources. For CatBoost and XGB, we specified that the models should train with GPU. Intervals represent 95% CI.",
+   "caption_page": 17,
+   "caption_text": "Duplicated datasets and those with fewer than 5 samples per class were removed to enable 5-fold cross-validation. (d) Performance Over Time Comparison with CPU vs. GPU Hardware: The performance over time when running our strongest baselines with eight CPUs (CPU) vs. eight CPUs and on one GPU (+GPU) on our classification test benchmark. AutoGluon automatically decides which models to train with what resources. For CatBoost and XGB, we specified that the models should train with GPU. Intervals represent 95% CI.",
+   "caption_bbox": {
+    "l": 306.14,
+    "t": 467.33,
+    "r": 560.69,
+    "b": 400.82,
+    "w": 254.55,
+    "h": 66.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p17_e421"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 148.73
+   },
+   "element_id": "p17_e417",
+   "reading_order": 417
+  },
+  {
+   "figure_id": "fig_010",
+   "kind": "extended_data_figure",
+   "label_form": "Extended Data Fig. 3",
+   "figure_number": 3,
+   "page": 18,
+   "bbox": {
+    "l": 36.25,
+    "t": 744.88,
+    "r": 559.21,
+    "b": 517.0,
+    "w": 522.96,
+    "h": 227.88,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 72,
+    "y0": 92,
+    "x1": 1118,
+    "y1": 548,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_010.png",
+   "image_size_px": [
+    1045,
+    456
+   ],
+   "caption": "Extended Data Fig. 3 | Comparing SHAP (SHapley Additive exPlanations) summary plots between TabPFN and baselines. We compare SHAP feature importance and impact for Logistic Regression, TabPFN, and CatBoost on the \"Default of Credit Card Clients\" dataset. The top features visualized are credit amount, age, and duration. Each point represents a single instance, with the color indicating the value of the checking status feature (blue for low, red for high), illustrating its interaction with the respective feature on the x-axis.",
+   "caption_page": 18,
+   "caption_text": "Extended Data Fig. 3 | Comparing SHAP (SHapley Additive exPlanations) summary plots between TabPFN and baselines. We compare SHAP feature importance and impact for Logistic Regression, TabPFN, and CatBoost on the \"Default of Credit Card Clients\" dataset. The top features visualized are credit amount, age, and duration. Each point represents a single instance, with the color indicating the value of the checking status feature (blue for low, red for high), illustrating its interaction with the respective feature on the x-axis.",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 504.79,
+    "r": 288.74,
+    "b": 438.28,
+    "w": 249.06,
+    "h": 66.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p18_e424"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 12.21
+   },
+   "element_id": "p18_e423",
+   "reading_order": 423
+  },
+  {
+   "figure_id": "fig_011",
+   "kind": "extended_data_figure",
+   "label_form": "Extended Data Fig. 4",
+   "figure_number": 4,
+   "page": 19,
+   "bbox": {
+    "l": 32.68,
+    "t": 743.98,
+    "r": 561.97,
+    "b": 501.62,
+    "w": 529.29,
+    "h": 242.36,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 65,
+    "y0": 94,
+    "x1": 1124,
+    "y1": 578,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_011.png",
+   "image_size_px": [
+    1059,
+    484
+   ],
+   "caption": "Extended Data Fig. 4 | Finetuning TabPFN on 2-dimensional sine curve datasets. (a) Examples of 2D sine curve datasets with different offsets. (b) Finetuning loss curves for 50 runs with random train-test offsets. Colors indicate the offset between train and test. TabPFN shows positive transfer,",
+   "caption_page": 19,
+   "caption_text": "Extended Data Fig. 4 | Finetuning TabPFN on 2-dimensional sine curve datasets. (a) Examples of 2D sine curve datasets with different offsets. (b) Finetuning loss curves for 50 runs with random train-test offsets. Colors indicate the offset between train and test. TabPFN shows positive transfer,",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 493.15,
+    "r": 281.67,
+    "b": 456.65,
+    "w": 241.99,
+    "h": 36.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p19_e427"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 8.47
+   },
+   "element_id": "p19_e426",
+   "reading_order": 426
+  }
+ ],
+ "tables": [
+  {
+   "table_id": "table_001",
+   "page": 20,
+   "bbox": {
+    "l": 37.15,
+    "t": 725.19,
+    "r": 561.01,
+    "b": 275.61,
+    "w": 523.86,
+    "h": 449.58,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p20_e431"
+  },
+  {
+   "table_id": "table_002",
+   "page": 21,
+   "bbox": {
+    "l": 36.79,
+    "t": 726.02,
+    "r": 553.96,
+    "b": 243.32,
+    "w": 517.17,
+    "h": 482.71,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p21_e434"
+  },
+  {
+   "table_id": "table_003",
+   "page": 22,
+   "bbox": {
+    "l": 35.52,
+    "t": 726.31,
+    "r": 560.04,
+    "b": 272.87,
+    "w": 524.53,
+    "h": 453.44,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p22_e438"
+  },
+  {
+   "table_id": "table_004",
+   "page": 23,
+   "bbox": {
+    "l": 38.16,
+    "t": 726.12,
+    "r": 560.36,
+    "b": 275.6,
+    "w": 522.2,
+    "h": 450.52,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p23_e441"
+  },
+  {
+   "table_id": "table_005",
+   "page": 24,
+   "bbox": {
+    "l": 38.05,
+    "t": 714.29,
+    "r": 560.09,
+    "b": 523.53,
+    "w": 522.04,
+    "h": 190.76,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p24_e445"
+  },
+  {
+   "table_id": "table_006",
+   "page": 24,
+   "bbox": {
+    "l": 38.28,
+    "t": 488.57,
+    "r": 279.04,
+    "b": 203.79,
+    "w": 240.76,
+    "h": 284.78,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p24_e446"
+  },
+  {
+   "table_id": "table_007",
+   "page": 24,
+   "bbox": {
+    "l": 307.4,
+    "t": 489.45,
+    "r": 520.62,
+    "b": 241.13,
+    "w": 213.22,
+    "h": 248.32,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p24_e448"
+  },
+  {
+   "table_id": "table_008",
+   "page": 25,
+   "bbox": {
+    "l": 37.65,
+    "t": 726.05,
+    "r": 476.53,
+    "b": 646.48,
+    "w": 438.88,
+    "h": 79.57,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p25_e450"
+  },
+  {
+   "table_id": "table_009",
+   "page": 29,
+   "bbox": {
+    "l": 68.84,
+    "t": 702.41,
+    "r": 541.14,
+    "b": 317.34,
+    "w": 472.31,
+    "h": 385.08,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p29_e461"
+  },
+  {
+   "table_id": "table_010",
+   "page": 30,
+   "bbox": {
+    "l": 96.88,
+    "t": 702.18,
+    "r": 510.67,
+    "b": 245.75,
+    "w": 413.79,
+    "h": 456.43,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": "Supplementary Table 5: List of development datasets used to validate classification tasks. We only take the first 10000 rows of all datasets and drop datasets with more than 500 features or 10 classes to keep the datasets similar to our test dataset distribution. We detected overlap with the test set by checking for duplicate names and meta-data characteristics (rows, features, missing values).",
+   "caption_bbox": {
+    "l": 69.69,
+    "t": 752.75,
+    "r": 542.68,
+    "b": 711.02,
+    "w": 473.0,
+    "h": 41.73,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_page": 30,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": 8.84,
+    "paired": true
+   },
+   "element_id": "p30_e462"
+  },
+  {
+   "table_id": "table_011",
+   "page": 31,
+   "bbox": {
+    "l": 98.12,
+    "t": 702.27,
+    "r": 510.55,
+    "b": 282.41,
+    "w": 412.43,
+    "h": 419.86,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": "Supplementary Table 6: List of development datasets used to validate regression tasks. We only take the first 10000 rows of all datasets and drop datasets with more than 500 features or 10 classes to keep the datasets similar to our test dataset distribution. We detected overlap with the test set by checking for duplicate names and meta-data characteristics (rows, features, missing values).",
+   "caption_bbox": {
+    "l": 69.69,
+    "t": 752.75,
+    "r": 542.61,
+    "b": 711.02,
+    "w": 472.93,
+    "h": 41.73,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_page": 31,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": 8.75,
+    "paired": true
+   },
+   "element_id": "p31_e464"
+  }
+ ]
+}

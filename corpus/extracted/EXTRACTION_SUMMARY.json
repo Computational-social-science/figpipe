@@ -1,17 +1,17 @@
 {
- "generated_at": "2026-10-18T00:41:06",
+ "generated_at": "2026-10-18T01:31:50",
  "inventory": {
   "n_files_found": 42,
   "n_unique_by_md5": 34,
   "n_kept": 34,
   "n_excluded": 0
  },
- "attempted": 2,
- "succeeded": 2,
+ "attempted": 34,
+ "succeeded": 34,
  "failed": 0,
- "total_figures": 18,
- "total_tables": 10,
- "total_pages": 54,
+ "total_figures": 196,
+ "total_tables": 167,
+ "total_pages": 1003,
  "papers": [
   {
    "paper_id": "2024_nature_detecting_hallucinations_in_large_language_model_2da17701",
@@ -20,7 +20,7 @@
    "n_figures": 14,
    "n_tables": 6,
    "n_uncaptioned_pictures": 2,
-   "elapsed_s": 16.5
+   "elapsed_s": 14.4
   },
   {
    "paper_id": "2026_nature_evaluating_large_language_models_for_accuracy_in_0abea042",
@@ -29,7 +29,295 @@
    "n_figures": 4,
    "n_tables": 4,
    "n_uncaptioned_pictures": 2,
+   "elapsed_s": 8.1
+  },
+  {
+   "paper_id": "2026_nature_evaluating_large_language_models_for_accuracy_in_463035fc",
+   "source_name": "!2026-Nature-Evaluating large language models for accuracy incentivizes hallucinations&SI.pdf",
+   "n_pages": 23,
+   "n_figures": 4,
+   "n_tables": 4,
+   "n_uncaptioned_pictures": 2,
+   "elapsed_s": 6.7
+  },
+  {
+   "paper_id": "1991_nature_so_what_s_new_ea1a38dd",
+   "source_name": "1991-Nature_So what's new.pdf",
+   "n_pages": 1,
+   "n_figures": 0,
+   "n_tables": 0,
+   "n_uncaptioned_pictures": 1,
+   "elapsed_s": 3.8
+  },
+  {
+   "paper_id": "1997_nature_a_novel_paradigm_1cf8ba19",
+   "source_name": "1997-Nature_A novel paradigm.pdf",
+   "n_pages": 1,
+   "n_figures": 1,
+   "n_tables": 0,
+   "n_uncaptioned_pictures": 0,
+   "elapsed_s": 3.0
+  },
+  {
+   "paper_id": "1997_nature_you_read_it_here_first_novel_de359589",
+   "source_name": "1997-Nature_You read it here first_'Novel'.pdf",
+   "n_pages": 1,
+   "n_figures": 0,
+   "n_tables": 0,
+   "n_uncaptioned_pictures": 0,
+   "elapsed_s": 2.6
+  },
+  {
+   "paper_id": "2008_nature_a_question_of_class_77b5fd0a",
+   "source_name": "2008-Nature_A question of class.pdf",
+   "n_pages": 2,
+   "n_figures": 0,
+   "n_tables": 0,
+   "n_uncaptioned_pictures": 1,
+   "elapsed_s": 3.5
+  },
+  {
+   "paper_id": "2008_nature_language_disputed_definitions_68d52a7a",
+   "source_name": "2008-Nature_Language_Disputed definitions.pdf",
+   "n_pages": 6,
+   "n_figures": 0,
+   "n_tables": 0,
+   "n_uncaptioned_pictures": 14,
+   "elapsed_s": 5.0
+  },
+  {
+   "paper_id": "2012_nature_in_retrospect_the_structure_of_scientific_revolu_e46e2a8c",
+   "source_name": "2012-Nature_In retrospect_The Structure of Scientific Revolutions.pdf",
+   "n_pages": 3,
+   "n_figures": 2,
+   "n_tables": 0,
+   "n_uncaptioned_pictures": 7,
+   "elapsed_s": 4.3
+  },
+  {
+   "paper_id": "2016_nature_multimodal_learning_with_next_token_prediction_f_9eabd33e",
+   "source_name": "2016-Nature-Multimodal learning with next-token prediction for large multimodal models.pdf",
+   "n_pages": 20,
+   "n_figures": 7,
+   "n_tables": 8,
+   "n_uncaptioned_pictures": 17,
+   "elapsed_s": 12.6
+  },
+  {
+   "paper_id": "2023_nature_why_open_source_generative_ai_models_are_an_ethi_609acd6b",
+   "source_name": "2023-Nature-Why open-source generative AI models are an ethical way forward for science.pdf",
+   "n_pages": 1,
+   "n_figures": 0,
+   "n_tables": 0,
+   "n_uncaptioned_pictures": 1,
+   "elapsed_s": 3.8
+  },
+  {
+   "paper_id": "2023_nature_papers_and_patents_are_becoming_less_disruptive_e2bc44ca",
+   "source_name": "2023-Nature_Papers and patents are becoming less disruptive over time_with SI.pdf",
+   "n_pages": 34,
+   "n_figures": 15,
+   "n_tables": 4,
+   "n_uncaptioned_pictures": 7,
+   "elapsed_s": 16.4
+  },
+  {
+   "paper_id": "2024_nature_scaling_neural_machine_translation_to_200_langua_46658cce",
+   "source_name": "2024-Nature-Scaling neural machine translation to 200 languages.pdf",
+   "n_pages": 12,
+   "n_figures": 4,
+   "n_tables": 3,
+   "n_uncaptioned_pictures": 3,
    "elapsed_s": 8.5
+  },
+  {
+   "paper_id": "2024_nature_scaling_neural_machine_translation_to_200_langua_7209237b",
+   "source_name": "2024-Nature-Scaling neural machine translation to 200 languages_NLLB-200.pdf",
+   "n_pages": 62,
+   "n_figures": 14,
+   "n_tables": 11,
+   "n_uncaptioned_pictures": 3,
+   "elapsed_s": 29.4
+  },
+  {
+   "paper_id": "2024_nature_scaling_neural_machine_translation_to_200_langua_6d110a48",
+   "source_name": "2024-Nature-Scaling neural machine translation to 200 languages_SI.pdf",
+   "n_pages": 25,
+   "n_figures": 5,
+   "n_tables": 4,
+   "n_uncaptioned_pictures": 0,
+   "elapsed_s": 15.9
+  },
+  {
+   "paper_id": "2025_nature_a_foundation_model_to_predict_and_capture_human_86b1c290",
+   "source_name": "2025-Nature-A foundation model to predict and capture human cognition&SI.pdf",
+   "n_pages": 146,
+   "n_figures": 9,
+   "n_tables": 3,
+   "n_uncaptioned_pictures": 5,
+   "elapsed_s": 24.2
+  },
+  {
+   "paper_id": "2025_nature_accurate_predictions_on_small_data_with_a_tabula_7fc09483",
+   "source_name": "2025-Nature-Accurate predictions on small data with a tabular foundation model_Highlights&SI.pdf",
+   "n_pages": 31,
+   "n_figures": 11,
+   "n_tables": 11,
+   "n_uncaptioned_pictures": 9,
+   "elapsed_s": 35.2
+  },
+  {
+   "paper_id": "2025_nature_comprehensive_echocardiogram_evaluation_with_vie_0050ec77",
+   "source_name": "2025-Nature-Comprehensive echocardiogram evaluation with view primed vision language AI.pdf",
+   "n_pages": 24,
+   "n_figures": 5,
+   "n_tables": 9,
+   "n_uncaptioned_pictures": 4,
+   "elapsed_s": 14.5
+  },
+  {
+   "paper_id": "2025_nature_joint_speech_and_text_machine_translation_for_up_45680c29",
+   "source_name": "2025-Nature-Joint speech and text machine translation for up to 100 languages_SEAMLESSM4T.pdf",
+   "n_pages": 75,
+   "n_figures": 14,
+   "n_tables": 38,
+   "n_uncaptioned_pictures": 3,
+   "elapsed_s": 40.6
+  },
+  {
+   "paper_id": "2025_nature_learning_the_natural_history_of_human_disease_wi_64144624",
+   "source_name": "2025-Nature-Learning the natural history of human disease with generative transformers&SI.pdf",
+   "n_pages": 48,
+   "n_figures": 13,
+   "n_tables": 2,
+   "n_uncaptioned_pictures": 22,
+   "elapsed_s": 24.9
+  },
+  {
+   "paper_id": "2025_nature_towards_multimodal_foundation_models_in_molecula_039ef430",
+   "source_name": "2025-Nature-Towards multimodal foundation models in molecular cell biology&SI.pdf",
+   "n_pages": 20,
+   "n_figures": 3,
+   "n_tables": 1,
+   "n_uncaptioned_pictures": 2,
+   "elapsed_s": 8.0
+  },
+  {
+   "paper_id": "2025_nature_discovering_state_of_the_art_reinforcement_learn_d089008a",
+   "source_name": "2025-Nature_Discovering state-of-the-art reinforcement learning algorithms&SI.pdf",
+   "n_pages": 28,
+   "n_figures": 10,
+   "n_tables": 7,
+   "n_uncaptioned_pictures": 4,
+   "elapsed_s": 14.3
+  },
+  {
+   "paper_id": "2026_nature_a_critical_initialization_for_biological_neural_433a1306",
+   "source_name": "2026-Nature-A critical initialization for biological neural networks.pdf",
+   "n_pages": 28,
+   "n_figures": 11,
+   "n_tables": 0,
+   "n_uncaptioned_pictures": 9,
+   "elapsed_s": 30.8
+  },
+  {
+   "paper_id": "2026_nature_accelerating_scientific_discovery_with_co_scient_2db009d3",
+   "source_name": "2026-Nature-Accelerating scientific discovery with Co-Scientist.pdf",
+   "n_pages": 55,
+   "n_figures": 1,
+   "n_tables": 3,
+   "n_uncaptioned_pictures": 19,
+   "elapsed_s": 11.1
+  },
+  {
+   "paper_id": "2026_nature_evaluating_large_language_models_for_accuracy_in_22f6d29e",
+   "source_name": "2026-Nature-Evaluating large language models for accuracy incentivizes hallucinations&SI.pdf",
+   "n_pages": 23,
+   "n_figures": 4,
+   "n_tables": 4,
+   "n_uncaptioned_pictures": 2,
+   "elapsed_s": 8.3
+  },
+  {
+   "paper_id": "2026_nature_in_praise_of_human_teachers_universities_must_re_4ca56fd9",
+   "source_name": "2026-Nature-In praise of human teachers_universities must resist outsourcing everything to AI.pdf",
+   "n_pages": 1,
+   "n_figures": 0,
+   "n_tables": 0,
+   "n_uncaptioned_pictures": 0,
+   "elapsed_s": 2.9
+  },
+  {
+   "paper_id": "2026_nature_mapping_the_neuronal_building_blocks_of_human_la_2248c823",
+   "source_name": "2026-Nature-Mapping the neuronal building blocks of human language with language models.pdf",
+   "n_pages": 28,
+   "n_figures": 9,
+   "n_tables": 7,
+   "n_uncaptioned_pictures": 7,
+   "elapsed_s": 18.6
+  },
+  {
+   "paper_id": "2026_nature_synthesizing_scientific_literature_with_retrieva_69eba01c",
+   "source_name": "2026-Nature-Synthesizing scientific literature with retrieval-augmented language models&SI.pdf",
+   "n_pages": 71,
+   "n_figures": 11,
+   "n_tables": 15,
+   "n_uncaptioned_pictures": 7,
+   "elapsed_s": 19.2
+  },
+  {
+   "paper_id": "2026_nature_synthesizing_scientific_literature_with_retrieva_3f36e53a",
+   "source_name": "2026-Nature-Synthesizing scientific literature with retrieval-augmented language models&SI.pdf",
+   "n_pages": 71,
+   "n_figures": 11,
+   "n_tables": 15,
+   "n_uncaptioned_pictures": 7,
+   "elapsed_s": 17.8
+  },
+  {
+   "paper_id": "2026_nature_the_einstein_test_what_happens_when_ai_tries_to_532e45f5",
+   "source_name": "2026-Nature-The Einstein test_what happens when AI tries to rediscover relativity.pdf",
+   "n_pages": 3,
+   "n_figures": 1,
+   "n_tables": 0,
+   "n_uncaptioned_pictures": 1,
+   "elapsed_s": 5.5
+  },
+  {
+   "paper_id": "2026_nature_training_large_language_models_on_narrow_tasks_c_780921b4",
+   "source_name": "2026-Nature-Training large language models on narrow tasks can lead to broad misalignment&SI.pdf",
+   "n_pages": 22,
+   "n_figures": 8,
+   "n_tables": 1,
+   "n_uncaptioned_pictures": 7,
+   "elapsed_s": 6.0
+  },
+  {
+   "paper_id": "2026_nature_turning_scientific_research_papers_into_interact_7df3f902",
+   "source_name": "2026-Nature-Turning scientific research papers into interactive AI agents.pdf",
+   "n_pages": 2,
+   "n_figures": 0,
+   "n_tables": 0,
+   "n_uncaptioned_pictures": 2,
+   "elapsed_s": 2.9
+  },
+  {
+   "paper_id": "2026_nature_why_ai_cannot_do_good_science_without_humans_b9a30c15",
+   "source_name": "2026-Nature-Why AI cannot do good science without humans.pdf",
+   "n_pages": 1,
+   "n_figures": 0,
+   "n_tables": 0,
+   "n_uncaptioned_pictures": 0,
+   "elapsed_s": 2.8
+  },
+  {
+   "paper_id": "s001_2026_nature_reimagining_research_papers_as_inter_d0299284",
+   "source_name": "s001-2026-nature-reimagining-research-papers-as-inter.pdf",
+   "n_pages": 81,
+   "n_figures": 5,
+   "n_tables": 7,
+   "n_uncaptioned_pictures": 12,
+   "elapsed_s": 21.7
   }
  ],
  "failures": []

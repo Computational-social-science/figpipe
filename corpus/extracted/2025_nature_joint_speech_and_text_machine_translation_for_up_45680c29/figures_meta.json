@@ -1,0 +1,1615 @@
+{
+ "paper_id": "2025_nature_joint_speech_and_text_machine_translation_for_up_45680c29",
+ "source_pdf": "D:\\2026-AI4S\\2025-Nature-Joint speech and text machine translation for up to 100 languages_SEAMLESSM4T.pdf",
+ "source_sha256": "b035bc0d508c545dd064dbdb961f5f2b232ebcaef850f0f96f7506119622089e",
+ "source_name": "2025-Nature-Joint speech and text machine translation for up to 100 languages_SEAMLESSM4T.pdf",
+ "n_pages": 75,
+ "generated_at": "2026-10-18T01:28:35",
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "n_figures": 14,
+ "n_tables": 38,
+ "n_pictures_detected": 17,
+ "n_uncaptioned_pictures": 3,
+ "figures": [
+  {
+   "figure_id": "fig_001",
+   "kind": "figure",
+   "label_form": "Fig. 1",
+   "figure_number": 1,
+   "page": 2,
+   "bbox": {
+    "l": 37.83,
+    "t": 306.61,
+    "r": 561.92,
+    "b": 82.57,
+    "w": 524.09,
+    "h": 224.04,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 76,
+    "y0": 969,
+    "x1": 1124,
+    "y1": 1417,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_001.png",
+   "image_size_px": [
+    1048,
+    448
+   ],
+   "caption": "Fig. 1 | Schematic of the SEAMLESSM4T-V2 model. The three main blocks of UNITY2 (S2ST fine-tuning) with its non-autoregressive (NAR) T2U are shown on the top left. Multitask-UNITY2 with its additional text encoder are shown on the",
+   "caption_page": 2,
+   "caption_text": "Fig. 1 | Schematic of the SEAMLESSM4T-V2 model. The three main blocks of UNITY2 (S2ST fine-tuning) with its non-autoregressive (NAR) T2U are shown on the top left. Multitask-UNITY2 with its additional text encoder are shown on the",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 72.4,
+    "r": 294.51,
+    "b": 45.9,
+    "w": 254.83,
+    "h": 26.5,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p2_e27"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 10.17
+   },
+   "element_id": "p2_e26",
+   "reading_order": 26
+  },
+  {
+   "figure_id": "fig_002",
+   "kind": "supplementary_figure",
+   "label_form": "Supplementary figure 1",
+   "figure_number": 1,
+   "page": 27,
+   "bbox": {
+    "l": 142.95,
+    "t": 449.85,
+    "r": 452.5,
+    "b": 267.09,
+    "w": 309.56,
+    "h": 182.76,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 286,
+    "y0": 784,
+    "x1": 905,
+    "y1": 1150,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_002.png",
+   "image_size_px": [
+    619,
+    366
+   ],
+   "caption": "Supplementary figure 1: SONAR architecture.",
+   "caption_page": 27,
+   "caption_text": "Supplementary figure 1: SONAR architecture.",
+   "caption_bbox": {
+    "l": 209.12,
+    "t": 252.7,
+    "r": 410.68,
+    "b": 244.78,
+    "w": 201.56,
+    "h": 7.93,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p27_e345"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 14.39
+   },
+   "element_id": "p27_e343",
+   "reading_order": 343
+  },
+  {
+   "figure_id": "fig_003",
+   "kind": "supplementary_figure",
+   "label_form": "Supplementary figure 2",
+   "figure_number": 2,
+   "page": 28,
+   "bbox": {
+    "l": 127.2,
+    "t": 768.05,
+    "r": 451.77,
+    "b": 606.97,
+    "w": 324.56,
+    "h": 161.08,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 254,
+    "y0": 148,
+    "x1": 904,
+    "y1": 470,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_003.png",
+   "image_size_px": [
+    650,
+    322
+   ],
+   "caption": "Supplementary figure 2: Workflow of the Sonar encoding and mining processes.",
+   "caption_page": 28,
+   "caption_text": "Supplementary figure 2: Workflow of the Sonar encoding and mining processes.",
+   "caption_bbox": {
+    "l": 115.32,
+    "t": 601.0,
+    "r": 455.43,
+    "b": 593.07,
+    "w": 340.12,
+    "h": 7.93,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p28_e350"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 5.97
+   },
+   "element_id": "p28_e349",
+   "reading_order": 349
+  },
+  {
+   "figure_id": "fig_004",
+   "kind": "supplementary_figure",
+   "label_form": "Supplementary figure 3",
+   "figure_number": 3,
+   "page": 28,
+   "bbox": {
+    "l": 137.65,
+    "t": 559.0,
+    "r": 434.98,
+    "b": 361.17,
+    "w": 297.33,
+    "h": 197.84,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 275,
+    "y0": 566,
+    "x1": 870,
+    "y1": 961,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_004.png",
+   "image_size_px": [
+    595,
+    395
+   ],
+   "caption": "Supplementary figure 3: Overview of SeamlessM4T. (1) shows the pre-trained models used when fine-tuning multitasking UnitY. (2) outlines multitasking UnitY with its two encoders, text decoder, T2U encoder-decoder, and the supporting vocoders for synthesizing output speech in S2ST.",
+   "caption_page": 28,
+   "caption_text": "Supplementary figure 3: Overview of SeamlessM4T. (1) shows the pre-trained models used when fine-tuning multitasking UnitY. (2) outlines multitasking UnitY with its two encoders, text decoder, T2U encoder-decoder, and the supporting vocoders for synthesizing output speech in S2ST.",
+   "caption_bbox": {
+    "l": 100.07,
+    "t": 357.23,
+    "r": 470.69,
+    "b": 316.43,
+    "w": 370.61,
+    "h": 40.8,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p28_e352"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 3.94
+   },
+   "element_id": "p28_e351",
+   "reading_order": 351
+  },
+  {
+   "figure_id": "fig_005",
+   "kind": "supplementary_figure",
+   "label_form": "Supplementary figure 4",
+   "figure_number": 4,
+   "page": 38,
+   "bbox": {
+    "l": 100.4,
+    "t": 767.42,
+    "r": 471.76,
+    "b": 681.47,
+    "w": 371.36,
+    "h": 85.95,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 201,
+    "y0": 149,
+    "x1": 944,
+    "y1": 321,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_005.png",
+   "image_size_px": [
+    743,
+    172
+   ],
+   "caption": "Supplementary figure 4: S2TT Fleurs X-X results. We evaluate X-X directions from Fleurs and average spBLEU scores. For a given target text language, we average scores over 100 source languages.",
+   "caption_page": 38,
+   "caption_text": "Supplementary figure 4: S2TT Fleurs X-X results. We evaluate X-X directions from Fleurs and average spBLEU scores. For a given target text language, we average scores over 100 source languages.",
+   "caption_bbox": {
+    "l": 100.07,
+    "t": 676.08,
+    "r": 470.69,
+    "b": 646.23,
+    "w": 370.61,
+    "h": 29.84,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p38_e420"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 5.39
+   },
+   "element_id": "p38_e419",
+   "reading_order": 419
+  },
+  {
+   "figure_id": "fig_006",
+   "kind": "supplementary_figure",
+   "label_form": "Supplementary figure 5",
+   "figure_number": 5,
+   "page": 38,
+   "bbox": {
+    "l": 101.0,
+    "t": 619.9,
+    "r": 471.55,
+    "b": 520.83,
+    "w": 370.55,
+    "h": 99.07,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 202,
+    "y0": 444,
+    "x1": 943,
+    "y1": 642,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_006.png",
+   "image_size_px": [
+    741,
+    198
+   ],
+   "caption": "Supplementary figure 5: Statistics of ASR and X-eng S2TT data used to train our SeamlessM4T model. We show the data size in hours of speech (log-scale) between ASR, S2TT primary and mined. Languages are sorted in ascending resource-level. For numerical statistics see Supplementary table 12",
+   "caption_page": 38,
+   "caption_text": "Supplementary figure 5: Statistics of ASR and X-eng S2TT data used to train our SeamlessM4T model. We show the data size in hours of speech (log-scale) between ASR, S2TT primary and mined. Languages are sorted in ascending resource-level. For numerical statistics see Supplementary table 12",
+   "caption_bbox": {
+    "l": 100.07,
+    "t": 514.26,
+    "r": 470.68,
+    "b": 473.45,
+    "w": 370.61,
+    "h": 40.8,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p38_e422"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 6.57
+   },
+   "element_id": "p38_e421",
+   "reading_order": 421
+  },
+  {
+   "figure_id": "fig_007",
+   "kind": "supplementary_figure",
+   "label_form": "Supplementary figure 6",
+   "figure_number": 6,
+   "page": 39,
+   "bbox": {
+    "l": 125.42,
+    "t": 766.42,
+    "r": 496.19,
+    "b": 601.1,
+    "w": 370.77,
+    "h": 165.32,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 251,
+    "y0": 151,
+    "x1": 992,
+    "y1": 482,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_007.png",
+   "image_size_px": [
+    741,
+    331
+   ],
+   "caption": "Supplementary figure 6: Statistics of S2ST data used in Stage3 of training SeamlessM4T model. We show the data size in hours of speech between primary and mined. Languages are sorted in ascending resource-level. For numerical statistics see Supplementary table 13",
+   "caption_page": 39,
+   "caption_text": "Supplementary figure 6: Statistics of S2ST data used in Stage3 of training SeamlessM4T model. We show the data size in hours of speech between primary and mined. Languages are sorted in ascending resource-level. For numerical statistics see Supplementary table 13",
+   "caption_bbox": {
+    "l": 124.59,
+    "t": 596.12,
+    "r": 495.21,
+    "b": 566.27,
+    "w": 370.61,
+    "h": 29.84,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p39_e429"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 4.98
+   },
+   "element_id": "p39_e428",
+   "reading_order": 428
+  },
+  {
+   "figure_id": "fig_008",
+   "kind": "figure",
+   "label_form": "",
+   "figure_number": null,
+   "page": 58,
+   "bbox": {
+    "l": 101.01,
+    "t": 767.96,
+    "r": 484.95,
+    "b": 654.91,
+    "w": 383.94,
+    "h": 113.05,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 202,
+    "y0": 148,
+    "x1": 970,
+    "y1": 374,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_008.png",
+   "image_size_px": [
+    768,
+    226
+   ],
+   "caption": "WHISPER-LARGE-V2 SEAMLESSM4T-LARGE SEAMLESSM4T-LARGE V2 Supplementary figure 7: Evaluation results of model robustness against background noise. We report average test BLEU and test WER over four languages (three language families) for X-eng S2TT and ASR on Fleurs with low-to-high input noise level (high-to-low SNR). Simulated noises are sampled from MUSAN [76] on the \"noise\" and \"music\" categories.",
+   "caption_page": 58,
+   "caption_text": "WHISPER-LARGE-V2 SEAMLESSM4T-LARGE SEAMLESSM4T-LARGE V2 Supplementary figure 7: Evaluation results of model robustness against background noise. We report average test BLEU and test WER over four languages (three language families) for X-eng S2TT and ASR on Fleurs with low-to-high input noise level (high-to-low SNR). Simulated noises are sampled from MUSAN [76] on the \"noise\" and \"music\" categories.",
+   "caption_bbox": {
+    "l": 100.07,
+    "t": 653.24,
+    "r": 470.68,
+    "b": 585.92,
+    "w": 370.61,
+    "h": 67.32,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p58_e569",
+    "p58_e570"
+   ],
+   "caption_n_items": 2,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 1.67
+   },
+   "element_id": "p58_e568",
+   "reading_order": 568
+  },
+  {
+   "figure_id": "fig_009",
+   "kind": "supplementary_figure",
+   "label_form": "Supplementary figure 8",
+   "figure_number": 8,
+   "page": 60,
+   "bbox": {
+    "l": 104.18,
+    "t": 766.31,
+    "r": 466.8,
+    "b": 586.78,
+    "w": 362.62,
+    "h": 179.52,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 208,
+    "y0": 151,
+    "x1": 934,
+    "y1": 510,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_009.png",
+   "image_size_px": [
+    726,
+    359
+   ],
+   "caption": "Supplementary figure 8: Added toxicity for X-eng and eng-X in Fleurs with ETOX and ASR-ETOX. The figure shows the outputs with added toxicity per language for Baseline, SeamlessM4T-Large, SeamlessM4T-Large v2 and SeamlessM4T-Large v2 + MinTox. Baseline corresponds to Whisper-Large-v2 for S2TT X-eng; Whisper-Largev2 + NLLB-3.3B for S2TT X-eng; Whisper-Large-v2 + YourTTS for S2ST X-eng.",
+   "caption_page": 60,
+   "caption_text": "Supplementary figure 8: Added toxicity for X-eng and eng-X in Fleurs with ETOX and ASR-ETOX. The figure shows the outputs with added toxicity per language for Baseline, SeamlessM4T-Large, SeamlessM4T-Large v2 and SeamlessM4T-Large v2 + MinTox. Baseline corresponds to Whisper-Large-v2 for S2TT X-eng; Whisper-Largev2 + NLLB-3.3B for S2TT X-eng; Whisper-Large-v2 + YourTTS for S2ST X-eng.",
+   "caption_bbox": {
+    "l": 100.07,
+    "t": 582.01,
+    "r": 470.68,
+    "b": 530.25,
+    "w": 370.61,
+    "h": 51.76,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p60_e585"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 4.77
+   },
+   "element_id": "p60_e584",
+   "reading_order": 584
+  },
+  {
+   "figure_id": "fig_010",
+   "kind": "supplementary_figure",
+   "label_form": "Supplementary figure 9",
+   "figure_number": 9,
+   "page": 60,
+   "bbox": {
+    "l": 104.47,
+    "t": 499.95,
+    "r": 466.59,
+    "b": 320.89,
+    "w": 362.12,
+    "h": 179.06,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 209,
+    "y0": 684,
+    "x1": 933,
+    "y1": 1042,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_010.png",
+   "image_size_px": [
+    724,
+    358
+   ],
+   "caption": "Supplementary figure 9: Added toxicity for eng-X for S2TT (top) and S2ST (bottom) in HolisticBias with ETOX and ASR-ETOX. The figure shows the number of outputs with added toxicity (above 0.05%) per language for baseline, SeamlessM4T-Large, SeamlessM4T-Large v2 and SeamlessM4T-Large v2 + MinTox systems. Baseline corresponds to Whisper-Large-v2 for S2TT X-eng; Whisper-Large-v2 + NLLB-3.3B for S2TT X-eng; Whisper-Large-v2 + YourTTS for S2ST X-eng.",
+   "caption_page": 60,
+   "caption_text": "Supplementary figure 9: Added toxicity for eng-X for S2TT (top) and S2ST (bottom) in HolisticBias with ETOX and ASR-ETOX. The figure shows the number of outputs with added toxicity (above 0.05%) per language for baseline, SeamlessM4T-Large, SeamlessM4T-Large v2 and SeamlessM4T-Large v2 + MinTox systems. Baseline corresponds to Whisper-Large-v2 for S2TT X-eng; Whisper-Large-v2 + NLLB-3.3B for S2TT X-eng; Whisper-Large-v2 + YourTTS for S2ST X-eng.",
+   "caption_bbox": {
+    "l": 100.07,
+    "t": 315.66,
+    "r": 470.68,
+    "b": 252.94,
+    "w": 370.61,
+    "h": 62.72,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p60_e587"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 5.23
+   },
+   "element_id": "p60_e586",
+   "reading_order": 586
+  },
+  {
+   "figure_id": "fig_011",
+   "kind": "supplementary_figure",
+   "label_form": "Supplementary figure 10",
+   "figure_number": 10,
+   "page": 61,
+   "bbox": {
+    "l": 128.25,
+    "t": 766.09,
+    "r": 491.16,
+    "b": 586.48,
+    "w": 362.92,
+    "h": 179.61,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 256,
+    "y0": 152,
+    "x1": 982,
+    "y1": 511,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_011.png",
+   "image_size_px": [
+    726,
+    359
+   ],
+   "caption": "Supplementary figure 10: Added toxicity for X-eng and eng-X in Fleurs S2TT and S2ST with MuTox. The figure shows the number of outputs with added toxicity per language for baseline, SeamlessM4T-Large, SeamlessM4T-Large v2 and SeamlessM4T-Large v2 + MinTox systems. Baseline corresponds to Whisper-Large-v2 for S2TT X-eng; Whisper-Large-v2 + NLLB-3.3B for S2TT X-eng; Whisper-Large-v2 + YourTTS for S2ST X-eng.",
+   "caption_page": 61,
+   "caption_text": "Supplementary figure 10: Added toxicity for X-eng and eng-X in Fleurs S2TT and S2ST with MuTox. The figure shows the number of outputs with added toxicity per language for baseline, SeamlessM4T-Large, SeamlessM4T-Large v2 and SeamlessM4T-Large v2 + MinTox systems. Baseline corresponds to Whisper-Large-v2 for S2TT X-eng; Whisper-Large-v2 + NLLB-3.3B for S2TT X-eng; Whisper-Large-v2 + YourTTS for S2ST X-eng.",
+   "caption_bbox": {
+    "l": 124.59,
+    "t": 582.01,
+    "r": 495.21,
+    "b": 519.29,
+    "w": 370.61,
+    "h": 62.72,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p61_e589"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 4.47
+   },
+   "element_id": "p61_e588",
+   "reading_order": 588
+  },
+  {
+   "figure_id": "fig_012",
+   "kind": "supplementary_figure",
+   "label_form": "Supplementary figure 11",
+   "figure_number": 11,
+   "page": 61,
+   "bbox": {
+    "l": 128.38,
+    "t": 488.8,
+    "r": 490.89,
+    "b": 309.41,
+    "w": 362.51,
+    "h": 179.39,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 257,
+    "y0": 706,
+    "x1": 982,
+    "y1": 1065,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_012.png",
+   "image_size_px": [
+    725,
+    359
+   ],
+   "caption": "Supplementary figure 11: Added toxicity for eng-X for S2TT and S2ST in HolisticBias with MuTox. The figure shows the number of outputs with added toxicity per language for baseline, SeamlessM4T-Large v2, SeamlessM4T-Large v2 + MinTox systems. Baseline corresponds to Whisper-Large-v2 for S2TT X-eng; Whisper-Large-v2 + NLLB-3.3B for S2TT X-eng; Whisper-Large-v2 + YourTTS for S2ST X-eng.",
+   "caption_page": 61,
+   "caption_text": "Supplementary figure 11: Added toxicity for eng-X for S2TT and S2ST in HolisticBias with MuTox. The figure shows the number of outputs with added toxicity per language for baseline, SeamlessM4T-Large v2, SeamlessM4T-Large v2 + MinTox systems. Baseline corresponds to Whisper-Large-v2 for S2TT X-eng; Whisper-Large-v2 + NLLB-3.3B for S2TT X-eng; Whisper-Large-v2 + YourTTS for S2ST X-eng.",
+   "caption_bbox": {
+    "l": 124.59,
+    "t": 304.7,
+    "r": 495.21,
+    "b": 252.94,
+    "w": 370.61,
+    "h": 51.76,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p61_e591"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 4.71
+   },
+   "element_id": "p61_e590",
+   "reading_order": 590
+  },
+  {
+   "figure_id": "fig_013",
+   "kind": "figure",
+   "label_form": "",
+   "figure_number": null,
+   "page": 62,
+   "bbox": {
+    "l": 100.33,
+    "t": 767.8,
+    "r": 471.72,
+    "b": 645.56,
+    "w": 371.39,
+    "h": 122.24,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 201,
+    "y0": 148,
+    "x1": 943,
+    "y1": 393,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_013.png",
+   "image_size_px": [
+    742,
+    245
+   ],
+   "caption": "WHISPER-LARGE-V2 SEAMLESSM4T-LARGE WHISPER-LARGE-V2 + YOURTTS",
+   "caption_page": 62,
+   "caption_text": "WHISPER-LARGE-V2 SEAMLESSM4T-LARGE WHISPER-LARGE-V2 + YOURTTS",
+   "caption_bbox": {
+    "l": 167.05,
+    "t": 398.31,
+    "r": 422.77,
+    "b": 390.07,
+    "w": 255.71,
+    "h": 8.24,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p62_e596"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 247.25
+   },
+   "element_id": "p62_e592",
+   "reading_order": 592
+  },
+  {
+   "figure_id": "fig_014",
+   "kind": "figure",
+   "label_form": "",
+   "figure_number": null,
+   "page": 63,
+   "bbox": {
+    "l": 125.4,
+    "t": 767.16,
+    "r": 495.97,
+    "b": 646.77,
+    "w": 370.57,
+    "h": 120.39,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 251,
+    "y0": 149,
+    "x1": 992,
+    "y1": 390,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_014.png",
+   "image_size_px": [
+    741,
+    241
+   ],
+   "caption": "WHISPER-LARGE-V2 + YOURTTS SEAMLESSM4T-LARGE",
+   "caption_page": 63,
+   "caption_text": "WHISPER-LARGE-V2 + YOURTTS SEAMLESSM4T-LARGE",
+   "caption_bbox": {
+    "l": 224.55,
+    "t": 644.53,
+    "r": 390.47,
+    "b": 636.66,
+    "w": 165.93,
+    "h": 7.87,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p63_e601"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 2.24
+   },
+   "element_id": "p63_e600",
+   "reading_order": 600
+  }
+ ],
+ "tables": [
+  {
+   "table_id": "table_001",
+   "page": 2,
+   "bbox": {
+    "l": 38.04,
+    "t": 724.57,
+    "r": 294.21,
+    "b": 637.05,
+    "w": 256.17,
+    "h": 87.52,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p2_e15"
+  },
+  {
+   "table_id": "table_002",
+   "page": 3,
+   "bbox": {
+    "l": 37.76,
+    "t": 704.95,
+    "r": 295.24,
+    "b": 629.18,
+    "w": 257.48,
+    "h": 75.77,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": "Table 2 | Comparison of similarity search error rates on all 200 FLORES languages and limited to the intersection of 98 languages on which each model has been trained",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 740.98,
+    "r": 280.53,
+    "b": 713.11,
+    "w": 240.85,
+    "h": 27.87,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_page": 3,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": 8.16,
+    "paired": true
+   },
+   "element_id": "p3_e29"
+  },
+  {
+   "table_id": "table_003",
+   "page": 4,
+   "bbox": {
+    "l": 37.98,
+    "t": 739.81,
+    "r": 295.46,
+    "b": 557.66,
+    "w": 257.48,
+    "h": 182.15,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p4_e49"
+  },
+  {
+   "table_id": "table_004",
+   "page": 4,
+   "bbox": {
+    "l": 305.05,
+    "t": 726.59,
+    "r": 560.75,
+    "b": 564.49,
+    "w": 255.7,
+    "h": 162.1,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p4_e58"
+  },
+  {
+   "table_id": "table_005",
+   "page": 5,
+   "bbox": {
+    "l": 37.9,
+    "t": 726.74,
+    "r": 295.36,
+    "b": 628.63,
+    "w": 257.46,
+    "h": 98.12,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": "Table 5 | FLEURS S2TT X-eng by resource level",
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 740.98,
+    "r": 234.48,
+    "b": 733.11,
+    "w": 194.79,
+    "h": 7.87,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_page": 5,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": 6.37,
+    "paired": true
+   },
+   "element_id": "p5_e64"
+  },
+  {
+   "table_id": "table_006",
+   "page": 5,
+   "bbox": {
+    "l": 305.21,
+    "t": 716.01,
+    "r": 560.7,
+    "b": 521.83,
+    "w": 255.49,
+    "h": 194.19,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": "Table 6 | Results for S2TT and S2ST averaged across 28 directions that add toxicity",
+   "caption_bbox": {
+    "l": 306.14,
+    "t": 740.98,
+    "r": 535.26,
+    "b": 723.11,
+    "w": 229.12,
+    "h": 17.87,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_page": 5,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": 7.1,
+    "paired": true
+   },
+   "element_id": "p5_e73"
+  },
+  {
+   "table_id": "table_007",
+   "page": 12,
+   "bbox": {
+    "l": 37.43,
+    "t": 709.73,
+    "r": 419.45,
+    "b": 608.88,
+    "w": 382.02,
+    "h": 100.85,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p12_e239"
+  },
+  {
+   "table_id": "table_008",
+   "page": 13,
+   "bbox": {
+    "l": 37.39,
+    "t": 719.81,
+    "r": 411.75,
+    "b": 582.18,
+    "w": 374.36,
+    "h": 137.63,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p13_e240"
+  },
+  {
+   "table_id": "table_009",
+   "page": 14,
+   "bbox": {
+    "l": 37.36,
+    "t": 710.68,
+    "r": 522.75,
+    "b": 512.61,
+    "w": 485.39,
+    "h": 198.07,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p14_e243"
+  },
+  {
+   "table_id": "table_010",
+   "page": 17,
+   "bbox": {
+    "l": 157.53,
+    "t": 768.94,
+    "r": 461.49,
+    "b": 649.82,
+    "w": 303.95,
+    "h": 119.12,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p17_e256"
+  },
+  {
+   "table_id": "table_011",
+   "page": 19,
+   "bbox": {
+    "l": 123.66,
+    "t": 705.68,
+    "r": 559.36,
+    "b": 277.51,
+    "w": 435.7,
+    "h": 428.17,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p19_e269"
+  },
+  {
+   "table_id": "table_012",
+   "page": 22,
+   "bbox": {
+    "l": 99.83,
+    "t": 768.36,
+    "r": 526.19,
+    "b": 178.36,
+    "w": 426.36,
+    "h": 590.0,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p22_e298"
+  },
+  {
+   "table_id": "table_013",
+   "page": 23,
+   "bbox": {
+    "l": 124.2,
+    "t": 707.16,
+    "r": 505.15,
+    "b": 331.36,
+    "w": 380.95,
+    "h": 375.8,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p23_e299"
+  },
+  {
+   "table_id": "table_014",
+   "page": 25,
+   "bbox": {
+    "l": 164.95,
+    "t": 446.56,
+    "r": 454.76,
+    "b": 355.36,
+    "w": 289.8,
+    "h": 91.2,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p25_e319"
+  },
+  {
+   "table_id": "table_015",
+   "page": 26,
+   "bbox": {
+    "l": 200.83,
+    "t": 499.09,
+    "r": 369.59,
+    "b": 450.56,
+    "w": 168.75,
+    "h": 48.53,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p26_e329"
+  },
+  {
+   "table_id": "table_016",
+   "page": 29,
+   "bbox": {
+    "l": 165.3,
+    "t": 768.93,
+    "r": 454.38,
+    "b": 688.71,
+    "w": 289.08,
+    "h": 80.23,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p29_e354"
+  },
+  {
+   "table_id": "table_017",
+   "page": 30,
+   "bbox": {
+    "l": 174.67,
+    "t": 768.76,
+    "r": 396.64,
+    "b": 678.01,
+    "w": 221.97,
+    "h": 90.75,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p30_e363"
+  },
+  {
+   "table_id": "table_018",
+   "page": 31,
+   "bbox": {
+    "l": 124.36,
+    "t": 768.35,
+    "r": 523.72,
+    "b": 285.29,
+    "w": 399.35,
+    "h": 483.06,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p31_e375"
+  },
+  {
+   "table_id": "table_019",
+   "page": 36,
+   "bbox": {
+    "l": 189.24,
+    "t": 768.89,
+    "r": 381.16,
+    "b": 619.72,
+    "w": 191.92,
+    "h": 149.17,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p36_e406"
+  },
+  {
+   "table_id": "table_020",
+   "page": 36,
+   "bbox": {
+    "l": 113.67,
+    "t": 617.29,
+    "r": 456.35,
+    "b": 450.42,
+    "w": 342.68,
+    "h": 166.87,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p36_e407"
+  },
+  {
+   "table_id": "table_021",
+   "page": 37,
+   "bbox": {
+    "l": 123.54,
+    "t": 767.84,
+    "r": 582.84,
+    "b": 678.53,
+    "w": 459.31,
+    "h": 89.31,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p37_e413"
+  },
+  {
+   "table_id": "table_022",
+   "page": 37,
+   "bbox": {
+    "l": 123.63,
+    "t": 587.55,
+    "r": 532.26,
+    "b": 497.35,
+    "w": 408.63,
+    "h": 90.2,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p37_e414"
+  },
+  {
+   "table_id": "table_023",
+   "page": 40,
+   "bbox": {
+    "l": 12.49,
+    "t": 772.53,
+    "r": 581.19,
+    "b": 225.47,
+    "w": 568.7,
+    "h": 547.07,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p40_e434"
+  },
+  {
+   "table_id": "table_024",
+   "page": 41,
+   "bbox": {
+    "l": 84.04,
+    "t": 772.16,
+    "r": 511.02,
+    "b": 271.73,
+    "w": 426.98,
+    "h": 500.43,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p41_e436"
+  },
+  {
+   "table_id": "table_025",
+   "page": 42,
+   "bbox": {
+    "l": 112.29,
+    "t": 768.06,
+    "r": 458.24,
+    "b": 694.55,
+    "w": 345.95,
+    "h": 73.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p42_e438"
+  },
+  {
+   "table_id": "table_026",
+   "page": 43,
+   "bbox": {
+    "l": 123.36,
+    "t": 767.53,
+    "r": 519.78,
+    "b": 684.28,
+    "w": 396.42,
+    "h": 83.25,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p43_e445"
+  },
+  {
+   "table_id": "table_027",
+   "page": 44,
+   "bbox": {
+    "l": 99.2,
+    "t": 461.65,
+    "r": 475.57,
+    "b": 269.78,
+    "w": 376.37,
+    "h": 191.87,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p44_e459"
+  },
+  {
+   "table_id": "table_028",
+   "page": 45,
+   "bbox": {
+    "l": 123.73,
+    "t": 767.73,
+    "r": 576.49,
+    "b": 686.48,
+    "w": 452.76,
+    "h": 81.25,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p45_e461"
+  },
+  {
+   "table_id": "table_029",
+   "page": 46,
+   "bbox": {
+    "l": 175.37,
+    "t": 677.13,
+    "r": 395.13,
+    "b": 585.06,
+    "w": 219.76,
+    "h": 92.07,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p46_e472"
+  },
+  {
+   "table_id": "table_030",
+   "page": 47,
+   "bbox": {
+    "l": 167.19,
+    "t": 768.84,
+    "r": 452.35,
+    "b": 626.09,
+    "w": 285.16,
+    "h": 142.75,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p47_e486"
+  },
+  {
+   "table_id": "table_031",
+   "page": 54,
+   "bbox": {
+    "l": 99.17,
+    "t": 762.04,
+    "r": 568.73,
+    "b": 483.62,
+    "w": 469.56,
+    "h": 278.42,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p54_e550"
+  },
+  {
+   "table_id": "table_032",
+   "page": 54,
+   "bbox": {
+    "l": 160.52,
+    "t": 402.44,
+    "r": 409.68,
+    "b": 275.43,
+    "w": 249.16,
+    "h": 127.01,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": "Supplementary table 20: Summary of evaluations: languages, modalities, models, and protocols used in human evaluations. Modalities and protocols in parentheses are not presented in this paper but will be shared in a later update. The 23 non-English languages evaluated are: Bengali, Catalan, Dutch, Finnish, French, German, Hindi, Indonesian, Italian, Japanese, Korean, Mandarin Chinese, Modern Standard Arabic, Portuguese, Romanian, Russian, Spanish, Swahili, Telugu, Thai, Turkish, Urdu, and Vietnamese.",
+   "caption_bbox": {
+    "l": 100.07,
+    "t": 479.84,
+    "r": 568.06,
+    "b": 428.08,
+    "w": 467.99,
+    "h": 51.76,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_page": 54,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": 25.64,
+    "paired": true
+   },
+   "element_id": "p54_e552"
+  },
+  {
+   "table_id": "table_033",
+   "page": 55,
+   "bbox": {
+    "l": 141.96,
+    "t": 762.93,
+    "r": 478.5,
+    "b": 297.15,
+    "w": 336.54,
+    "h": 465.79,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p55_e554"
+  },
+  {
+   "table_id": "table_034",
+   "page": 56,
+   "bbox": {
+    "l": 100.84,
+    "t": 768.24,
+    "r": 482.26,
+    "b": 498.25,
+    "w": 381.42,
+    "h": 269.99,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p56_e556"
+  },
+  {
+   "table_id": "table_035",
+   "page": 57,
+   "bbox": {
+    "l": 135.81,
+    "t": 716.53,
+    "r": 483.47,
+    "b": 504.05,
+    "w": 347.66,
+    "h": 212.48,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": "Supplementary table 24: Summary of XSTS and MOS performance for each evaluated model. Bold scores denote the highest aggregate score observed in its category, underlined scores denote the highest aggregate score observed in its category that is not a human reference.",
+   "caption_bbox": {
+    "l": 136.53,
+    "t": 760.73,
+    "r": 483.27,
+    "b": 719.92,
+    "w": 346.74,
+    "h": 40.8,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_page": 57,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": 3.39,
+    "paired": true
+   },
+   "element_id": "p57_e562"
+  },
+  {
+   "table_id": "table_036",
+   "page": 57,
+   "bbox": {
+    "l": 136.63,
+    "t": 385.69,
+    "r": 483.17,
+    "b": 305.85,
+    "w": 346.54,
+    "h": 79.85,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p57_e566"
+  },
+  {
+   "table_id": "table_037",
+   "page": 58,
+   "bbox": {
+    "l": 99.28,
+    "t": 478.6,
+    "r": 474.51,
+    "b": 387.08,
+    "w": 375.23,
+    "h": 91.52,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": 107.32,
+    "paired": false
+   },
+   "element_id": "p58_e572"
+  },
+  {
+   "table_id": "table_038",
+   "page": 59,
+   "bbox": {
+    "l": 137.36,
+    "t": 729.13,
+    "r": 482.13,
+    "b": 504.77,
+    "w": 344.77,
+    "h": 224.37,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p59_e576"
+  }
+ ]
+}
