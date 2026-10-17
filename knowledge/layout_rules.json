@@ -1,7 +1,7 @@
 {
   "$schema": "figpipe/knowledge-base/v1",
   "about": "Layout rules learned from real Nature figures, with the evidence for each. A rule enters only with a measurement behind it; a rule without evidence is a hypothesis and is marked as one.",
-  "version": 12,
+  "version": 13,
   "updated": "2026-10-18",
   "rules": [
     {
@@ -182,12 +182,22 @@
       "rule": "Observed published figure bands have a median width of 171.6 mm; only 27.6 % fall within 3 mm of 89 or 183 mm.",
       "why": "If true, this separates the SPECIFICATION (a submission must be 89 or 183 mm) from OBSERVED PRACTICE (published figures are often scaled to other widths). Conflating the two was a core error in the earlier rules.",
       "evidence": "Measured on 369 figure bands from 38 local Nature PDFs: p10 104.4, p25 139.8, median 171.6, p75 183.5, p90 200.0 mm; 16 near 89 mm, 86 near 183 mm.",
-      "confidence": "hypothesis",
+      "confidence": "void",
       "enforced": false,
       "mechanism_verified": false,
       "empirically_measured": true,
       "caveat": "NOT YET TRUSTWORTHY. The figure-band detector is a heuristic that merges overlapping drawing/image rectangles; it may not recover true figure boundaries. LEARNINGS.md P0 requires a 20-band manual validation before this becomes verified.",
-      "check": null
+      "check": null,
+      "voided_on": "2026-10-18",
+      "voided_because": "Measured on the ink-rectangle-merging detector, which the adversarial audit showed was wrong for roughly half its output. The numbers are not merely imprecise, they are about a different population.",
+      "corrected_measurement": {
+        "n_figures": 73,
+        "n_papers": 11,
+        "share_near_column_3mm": 0.3836,
+        "share_near_column_5mm": 0.5205,
+        "median_width_mm": 168.7
+      },
+      "correction_note": "My earlier report said '52.1 % within a stated column width'. That used a +/-5 mm tolerance while this rule itself states +/-3 mm. At +/-3 mm the figure is 38.4 %. Reporting the wider tolerance doubled the apparent effect. Both are now recorded so the discrepancy is visible rather than replaced silently."
     },
     {
       "id": "E02",
@@ -195,12 +205,15 @@
       "rule": "34.0 % of measured figure bands contain at least one text span below 5 pt.",
       "why": "The specification states a 5 pt minimum. If published figures routinely fall below it, then judging compliance by PDF RENDERED font size is a flawed metric -- the PDF may be generated larger and scaled down for print.",
       "evidence": "Measured on 188 bands: min 3.0, p10 4.0, median 5.0, p90 7.0 pt; 34.0 % below 5 pt.",
-      "confidence": "hypothesis",
+      "confidence": "void",
       "enforced": false,
       "mechanism_verified": false,
       "empirically_measured": true,
       "caveat": "Same detector caveat as E01, PLUS an unresolved scale question: PDF rendered size is not necessarily printed size. LEARNINGS.md P2.",
-      "check": null
+      "check": null,
+      "voided_on": "2026-10-18",
+      "voided_because": "Measured on the ink-rectangle-merging detector, which the adversarial audit showed was wrong for roughly half its output. The numbers are not merely imprecise, they are about a different population.",
+      "unsupported_because": "E02 is about FONT SIZE, and the caption-anchored records do not carry min_font_pt at all. The new detector does not measure type, so this rule has no measurement basis and cannot be re-derived until it does."
     }
   ],
   "schema": "figpipe/knowledge-base/v2",
@@ -214,7 +227,7 @@
     "note": "The loop executes each rule's `check` generically, so coverage is a property of the data rather than of the loop's source. A rule with check=None is reported as UNCHECKED, not counted as passing."
   },
   "last_check": {
-    "at": "2026-10-18T00:48:28",
+    "at": "2026-10-18T00:59:04",
     "summary": {
       "rules_total": 11,
       "checked": 7,
@@ -245,6 +258,16 @@
       "tiny_font": 22
     },
     "dirty_data_excluded": null,
-    "learnings_doc": "LEARNINGS.md"
+    "learnings_doc": "LEARNINGS.md",
+    "superseded": true,
+    "superseded_on": "2026-10-18",
+    "superseded_because": "The 369-band figures came from the ink-rectangle detector the audit found ~50 % wrong. Current corpus is corpus/figures_caption_anchored.json (73 figures, 11 papers, caption-anchored).",
+    "current": {
+      "n_figures": 73,
+      "n_papers": 11,
+      "share_near_column_3mm": 0.3836,
+      "share_near_column_5mm": 0.5205,
+      "median_width_mm": 168.7
+    }
   }
 }

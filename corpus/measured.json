@@ -5873,5 +5873,9 @@
         "below_5pt_fraction": 0.0306
       }
     }
-  ]
+  ],
+  "superseded_by": "corpus/figures_caption_anchored.json",
+  "do_not_use": true,
+  "superseded_on": "2026-10-18",
+  "why": "Produced by the ink-rectangle-merging detector, which the adversarial audit found wrong for roughly half its output (a full page of news prose was classified as a figure; 67 bands exceeded the 240 mm page height; one reached 14,437 mm). Replaced by caption-anchored detection."
 }

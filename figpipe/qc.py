@@ -1038,6 +1038,16 @@ def run_qc(fig_path, source_script=None, caption: Optional[str] = None) -> QCRep
     # Visual honesty: source analysis when a source exists (preferred), artifact otherwise.
     if src is not None:
         report.checks.extend(check_light_figure(src))
+    # Our own truncation check: the upstream lint misses set_ylim(y.min()-1, ...)
+    # because it pattern-matches literals. This one walks the AST and reports SKIP when
+    # the bound is not resolvable rather than guessing.
+    if src is not None:
+        from .truncation import check_truncation
+        _tr = check_truncation(src)
+        report.checks.append(Check(id="honesty.truncation_ast", tool="figpipe",
+                                   severity=_tr["severity"], detail=_tr["detail"],
+                                   evidence=_tr["evidence"], method=_tr["method"],
+                                   equivalent=False))
         report.checks.extend(check_honesty_from_artifact(fig))   # cross-check, WARN at most
     else:
         report.checks.append(Check("light.integrity", TOOL_LIGHT, SKIP,

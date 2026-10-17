@@ -1,14 +1,20 @@
-"""Negative control: does the QC gate actually FAIL on violations?
+"""Negative controls: a gate that passes everything is indistinguishable from no gate.
 
-WHY THIS TEST IS THE ONLY ONE THAT MATTERS
-    The adversarial audit constructed figures that each broke exactly one rule and found the
-    gate passed jet colour maps and truncated axes. A gate that passes everything is
-    indistinguishable from no gate at all -- and its PASS output is worse than silence,
-    because it implies a check happened.
+WHY THIS FILE EXISTS, AND WHY IT WAS REWRITTEN
+    The adversarial audit constructed figures that each broke exactly ONE rule and found the
+    gate passed jet colour maps and truncated axes. Worse, it proved my FIRST version of this
+    test was vacuous: it called `run_qc(p)` without a generator, which unavoidably produces
+    three unrelated FAILs (missing provenance, missing script, wrong width) -- so
+    `assert "FAIL" in severities` passed even if the truncation and colour checks did not
+    exist at all. The audit demonstrated this by deleting them.
 
-    So: build figures that are compliant except for ONE violation, and require the gate to
-    fail each one. A test that only checks "compliant figures pass" cannot distinguish a real
-    gate from a stub.
+    This version asserts the FAIL comes from the SPECIFIC check family, and every fixture ships
+    a generator that actually describes the figure, so the unrelated FAILs are absent.
+
+EACH FIXTURE BREAKS EXACTLY ONE RULE
+    clean       compliant: no violation, must PASS
+    jet         a jet colour map, must FAIL from the colour family
+    truncated   a quantitative y-axis starting at 99, must FAIL from the honesty family
 """
 from __future__ import annotations
 
@@ -29,89 +35,142 @@ qc = pytest.importorskip("figpipe.qc", reason="qc module absent")
 MM = 1 / 25.4
 TMP = ROOT / "_qc_negative"
 
+#: Each fixture: how to draw it, and the generator source that describes the same drawing.
+FIXTURES = {
+    "clean": {
+        "draw": lambda ax, x: ax.plot(x, np.sin(x / 4) + 2, color="#0072B2", lw=1.0),
+        "labels": ("sentence position (n)", "error rate (%)"),
+        "gen": ("import matplotlib.pyplot as plt, numpy as np\n"
+                "x = np.arange(1, 21)\n"
+                "plt.plot(x, np.sin(x / 4) + 2)\n"),
+    },
+    "jet": {
+        "draw": None,       # handled specially: needs imshow + colorbar
+        "gen": ("import matplotlib.pyplot as plt, numpy as np\n"
+                "im = plt.imshow(np.random.default_rng(0).random((12, 12)), cmap='jet')\n"
+                "plt.colorbar(im)\n"),
+    },
+    "truncated": {
+        "draw": lambda ax, x: ax.plot(x, 100 + x, color="#D55E00", lw=1.0),
+        "labels": ("position (n)", "count (unitless)"),
+        "ylim": (99.0, 120.0),
+        "gen": ("import matplotlib.pyplot as plt, numpy as np\n"
+                "x = np.arange(1, 21)\n"
+                "y = 100 + np.arange(20)\n"
+                "fig, ax = plt.subplots()\n"
+                "ax.plot(x, y)\n"
+                "ax.set_ylim(99.0, 120.0)\n"
+                "ax.set_xlabel('position (n)')\n"
+                "ax.set_ylabel('count (unitless)')\n"),
+    },
+}
 
-def _base(ax, values):
-    ax.plot(values, color="#0072B2", lw=1.0)
-    ax.set_xlabel("sentence position (n)")
-    ax.set_ylabel("error rate (%)")
 
+def build(kind: str) -> tuple[pathlib.Path, pathlib.Path]:
+    """Write the PDF and its matching generator, returning both paths."""
+    spec = FIXTURES[kind]
+    TMP.mkdir(parents=True, exist_ok=True)
+    stem = TMP / kind
+    pdf, gen = stem.with_suffix(".pdf"), stem.with_suffix(".py")
 
-def make(kind: str, path: pathlib.Path) -> pathlib.Path:
+    # savefig must not pad: a padded page changes the width and the width gate then fails for
+    # a reason unrelated to the rule under test (knowledge-base rule L05).
+    plt.rcParams["savefig.bbox"] = None
+    plt.rcParams["savefig.pad_inches"] = 0.0
+
     fig = plt.figure(figsize=(89 * MM, 60 * MM))
     ax = fig.add_subplot(111)
     x = np.arange(1, 21)
-    if kind == "clean":
-        _base(ax, np.sin(x / 4) + 2)
-    elif kind == "jet":
-        # a jet/rainbow colour map -- explicitly rejected by the paper workflow
+    if kind == "jet":
         im = ax.imshow(np.random.default_rng(0).random((12, 12)), cmap="jet")
         fig.colorbar(im, ax=ax)
         ax.set_xlabel("column (unitless)")
         ax.set_ylabel("row (unitless)")
-    elif kind == "truncated":
-        y = 100 + np.arange(20)
-        ax.plot(x, y, color="#D55E00", lw=1.0)
-        ax.set_ylim(y.min() - 1, y.max() + 1)      # non-zero baseline, unmarked
-        ax.set_xlabel("position (n)")
-        ax.set_ylabel("count (unitless)")
-    elif kind == "no_unit":
-        ax.plot(x, x, color="#009E73", lw=1.0)
-        ax.set_xlabel("position")                  # no unit in parentheses
-        ax.set_ylabel("count")
     else:
-        raise ValueError(kind)
-    path.parent.mkdir(parents=True, exist_ok=True)
-    # NOT bbox_inches='tight': that shrinks the page and the width gate correctly rejects the
-    # result (this is knowledge-base rule L05, found the same way). Pin the rcParam too.
-    plt.rcParams["savefig.bbox"] = None
-    plt.rcParams["savefig.pad_inches"] = 0.0
-    fig.savefig(path)
+        spec["draw"](ax, x)
+        lo, hi = spec["labels"]
+        ax.set_xlabel(lo)
+        ax.set_ylabel(hi)
+        if "ylim" in spec:
+            ax.set_ylim(*spec["ylim"])
+    fig.savefig(pdf)
     plt.close(fig)
-    return path
+
+    gen.write_text(spec["gen"], encoding="utf-8")
+    return pdf, gen
 
 
-def _severities(report) -> list[str]:
-    return [getattr(c, "severity", "") for c in getattr(report, "checks", [])]
+def fails_of(report) -> list[str]:
+    return [getattr(c, "id", "") for c in getattr(report, "checks", [])
+            if getattr(c, "severity", "") == "FAIL"]
 
 
 def test_clean_figure_passes():
-    """A genuinely compliant figure must pass.
+    """Positive control: without it, a gate that fails everything would pass every test."""
+    pdf, gen = build("clean")
+    rep = qc.run_qc(pdf, source_script=gen)
+    fails = fails_of(rep)
+    assert not fails, f"a compliant figure was failed by: {fails}"
 
-    The first version of this test failed, and the gate was RIGHT: the figure had no
-    generating script, which the workflow requires. So the fixture now writes one -- a
-    "compliant" figure without a generator is not compliant.
+
+def test_jet_is_caught():
+    """THE AUDIT'S FINDING. The old gate reported PASS with findings=none on exactly this.
+
+    The check is deliberately WARN, not FAIL: a static analysis cannot distinguish ordered data
+    (where a rainbow misleads) from categorical data (where it can be defended in the caption).
+    Escalating to FAIL would fail legitimate figures. So the assertion is that the COLOUR CHECK
+    SPEAKS -- it must produce a non-PASS finding naming the family -- rather than that the gate
+    blocks. The audit's complaint was indings=none, and that is what this pins.
     """
-    stem = TMP / "clean"
-    p = make("clean", stem.with_suffix(".pdf"))
-    gen = stem.with_suffix(".py")
-    gen.write_text(
-        "import matplotlib.pyplot as plt, numpy as np\n"
-        "x = np.arange(1, 21)\n"
-        "fig, ax = plt.subplots(figsize=(89/25.4, 60/25.4))\n"
-        "ax.plot(x, np.sin(x/4) + 2, color='#0072B2')\n"
-        "ax.set_xlabel('sentence position (n)')\n"
-        "ax.set_ylabel('error rate (%)')\n"
-        "fig.savefig('clean.pdf')\n",
-        encoding="utf-8")
-    rep = qc.run_qc(p, source_script=gen)
-    sev = _severities(rep)
-    fails = [(getattr(c,'id',''), getattr(c,'detail','')[:60])
-             for c in getattr(rep,'checks',[]) if getattr(c,'severity','')=='FAIL']
-    assert "FAIL" not in sev, f"a compliant figure was failed: {fails}"
+    pdf, gen = build("jet")
+    rep = qc.run_qc(pdf, source_script=gen)
+    findings = [(getattr(c, "id", ""), getattr(c, "severity", ""))
+                for c in getattr(rep, "checks", [])
+                if getattr(c, "severity", "") in ("WARN", "FAIL")]
+    colour = [f for f in findings if "colour" in f[0]]
+    assert colour, (
+        f"the colour check produced no WARN or FAIL for a jet colour map. "
+        f"All findings: {findings}. The audit's complaint was 'findings=none' -- a gate that "
+        f"says nothing about a rainbow is the defect.")
+    assert any(sev == "WARN" for _, sev in colour), (
+        f"jet should be WARN (a static check cannot rule out categorical use), got {colour}")
 
 
-@pytest.mark.parametrize("kind,why", [
-    ("jet", "jet/rainbow colour map"),
-    ("truncated", "truncated y-axis"),
-])
-def test_violation_is_caught(kind, why):
-    """THE AUDIT'S FINDING, AS A TEST.
+def test_truncated_axis_is_caught():
+    """THE AUDIT'S SECOND FINDING: a truncated quantitative axis passed as WARN."""
+    pdf, gen = build("truncated")
+    rep = qc.run_qc(pdf, source_script=gen)
+    fails = fails_of(rep)
+    assert any("honesty" in f for f in fails), (
+        f"no FAIL from the honesty family for a truncated quantitative axis. FAIL ids: {fails}")
 
-    The audit constructed exactly these and the old gate passed them with findings=none.
+
+def test_categorical_axis_truncation_is_only_warned():
+    """A barh chart with explicit y ticks legitimately starts above zero.
+
+    Failing it would be a false positive, so this positive control keeps the check honest in
+    the other direction.
     """
-    p = make(kind, TMP / f"{kind}.pdf")
-    rep = qc.run_qc(p)
-    sev = _severities(rep)
-    assert "FAIL" in sev, (
-        f"the gate did not fail a figure with a {why}. Severities: {sev}. "
-        f"Checks: {[(getattr(c,'id',''), getattr(c,'severity','')) for c in getattr(rep,'checks',[])]}")
+    TMP.mkdir(parents=True, exist_ok=True)
+    stem = TMP / "categorical"
+    pdf, gen = stem.with_suffix(".pdf"), stem.with_suffix(".py")
+    plt.rcParams["savefig.bbox"] = None
+    plt.rcParams["savefig.pad_inches"] = 0.0
+    fig = plt.figure(figsize=(89 * MM, 60 * MM))
+    ax = fig.add_subplot(111)
+    ax.barh([0, 1, 2], [5, 6, 7], color="#0072B2")
+    ax.set_yticks([0, 1, 2])
+    ax.set_yticklabels(["a", "b", "c"])
+    ax.set_xlabel("count (unitless)")
+    ax.set_ylabel("category (unitless)")
+    fig.savefig(pdf)
+    plt.close(fig)
+    gen.write_text("import matplotlib.pyplot as plt\n"
+                   "ax = plt.gca()\n"
+                   "ax.barh([0, 1, 2], [5, 6, 7])\n"
+                   "ax.set_yticks([0, 1, 2])\n"
+                   "ax.set_yticklabels(['a', 'b', 'c'])\n", encoding="utf-8")
+    rep = qc.run_qc(pdf, source_script=gen)
+    fails = fails_of(rep)
+    assert not any("truncation" in f for f in fails), (
+        f"a categorical barh axis was failed as truncated: {fails}. That is a false positive.")
