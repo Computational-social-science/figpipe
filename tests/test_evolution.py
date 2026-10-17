@@ -51,9 +51,17 @@ def test_promotion_is_sticky(kb):
     # label nothing backed.
     assert h02[0]["mechanism_verified"] is False, (
         "H02 has no enforcement mechanism; it must not claim mechanism_verified")
-    assert h02[0]["confidence"] in ("measured_unenforced", "hypothesis"), (
-        f"H02 is {h02[0]['confidence']!r}; a measured-but-unenforced rule must not be "
-        f"labelled enforced")
+    # H02 was REFUTED by the real-Nature corpus. The refutation must be recorded together
+    # with the contradicting measurement -- otherwise the knowledge base would silently drop
+    # a rule it once claimed was measured, which is worse than never having had it.
+    assert h02[0]["confidence"] == "refuted", (
+        f"H02 is {h02[0]['confidence']!r}; the real-Nature corpus contradicted its ink band "
+        f"and the refutation must be recorded")
+    assert "refuted_by" in h02[0] and "35.8" in h02[0]["refuted_by"], (
+        "the refutation must carry the measurement that contradicted the rule")
+    assert "scope_where_it_did_hold" in h02[0], (
+        "a refuted rule must record where it DID hold, or the same over-generalisation "
+        "will be repeated")
 
 
 def test_version_only_increments_on_real_change(kb):

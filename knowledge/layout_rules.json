@@ -1,8 +1,8 @@
 {
   "$schema": "figpipe/knowledge-base/v1",
   "about": "Layout rules learned from real Nature figures, with the evidence for each. A rule enters only with a measurement behind it; a rule without evidence is a hypothesis and is marked as one.",
-  "version": 11,
-  "updated": "2026-10-17",
+  "version": 12,
+  "updated": "2026-10-18",
   "rules": [
     {
       "id": "L01",
@@ -162,7 +162,7 @@
       "rule": "Content should occupy most of the canvas; large empty regions suggest a mis-sized panel.",
       "why": "Plausible from the guide's 'minimizing white space', but no threshold has been measured.",
       "evidence": "Measured on 6 of this pipeline's own figures: ink density 3.31-17.4% (mean 10.08%, spread 14.09 pp). The figures cluster, so the band is a rule.",
-      "confidence": "measured_unenforced",
+      "confidence": "refuted",
       "enforced_by": null,
       "band_pct": [
         3.3,
@@ -171,13 +171,36 @@
       "mechanism_verified": false,
       "empirically_measured": true,
       "enforced": false,
-      "check": {
-        "kind": "ink_density_band",
-        "min_pct": 3.0,
-        "max_pct": 20.0,
-        "why": "measured ink density on this pipeline's own figures",
-        "note": "measured but NOT enforced: nothing in the code forces a figure into this band, so the rule cannot be more than 'measured'"
-      }
+      "check": null,
+      "refuted_on": "2026-10-18",
+      "refuted_by": "The first real Nature figure inspected (nwag582fig1) has an ink density of 35.8 %, far outside the 3.3-17.4 % band this rule claimed. The band was measured on six line-and-scatter plots from this project and generalised to 'figures', which it never supported.",
+      "scope_where_it_did_hold": "This project's own six figures, all of which are line/scatter plots. The band describes that genre, not figures in general."
+    },
+    {
+      "id": "E01",
+      "name": "published figures rarely sit at a stated column width",
+      "rule": "Observed published figure bands have a median width of 171.6 mm; only 27.6 % fall within 3 mm of 89 or 183 mm.",
+      "why": "If true, this separates the SPECIFICATION (a submission must be 89 or 183 mm) from OBSERVED PRACTICE (published figures are often scaled to other widths). Conflating the two was a core error in the earlier rules.",
+      "evidence": "Measured on 369 figure bands from 38 local Nature PDFs: p10 104.4, p25 139.8, median 171.6, p75 183.5, p90 200.0 mm; 16 near 89 mm, 86 near 183 mm.",
+      "confidence": "hypothesis",
+      "enforced": false,
+      "mechanism_verified": false,
+      "empirically_measured": true,
+      "caveat": "NOT YET TRUSTWORTHY. The figure-band detector is a heuristic that merges overlapping drawing/image rectangles; it may not recover true figure boundaries. LEARNINGS.md P0 requires a 20-band manual validation before this becomes verified.",
+      "check": null
+    },
+    {
+      "id": "E02",
+      "name": "a third of published figure bands contain text below 5 pt",
+      "rule": "34.0 % of measured figure bands contain at least one text span below 5 pt.",
+      "why": "The specification states a 5 pt minimum. If published figures routinely fall below it, then judging compliance by PDF RENDERED font size is a flawed metric -- the PDF may be generated larger and scaled down for print.",
+      "evidence": "Measured on 188 bands: min 3.0, p10 4.0, median 5.0, p90 7.0 pt; 34.0 % below 5 pt.",
+      "confidence": "hypothesis",
+      "enforced": false,
+      "mechanism_verified": false,
+      "empirically_measured": true,
+      "caveat": "Same detector caveat as E01, PLUS an unresolved scale question: PDF rendered size is not necessarily printed size. LEARNINGS.md P2.",
+      "check": null
     }
   ],
   "schema": "figpipe/knowledge-base/v2",
@@ -191,16 +214,37 @@
     "note": "The loop executes each rule's `check` generically, so coverage is a property of the data rather than of the loop's source. A rule with check=None is reported as UNCHECKED, not counted as passing."
   },
   "last_check": {
-    "at": "2026-10-18T00:03:11",
+    "at": "2026-10-18T00:04:29",
     "summary": {
-      "rules_total": 9,
-      "checked": 8,
-      "passed": 8,
+      "rules_total": 11,
+      "checked": 7,
+      "passed": 7,
       "failed": 0,
-      "unchecked": 1,
+      "unchecked": 4,
       "unchecked_ids": [
-        "H01"
+        "H01",
+        "H02",
+        "E01",
+        "E02"
       ]
     }
+  },
+  "distinction": {
+    "specification": "What a SUBMISSION must satisfy. Stated by the journal. figpipe enforces these: exact 89/183 mm, 5-7 pt type, vector, fonttype 42.",
+    "observed_practice": "What PUBLISHED figures do. Measured from the corpus. May differ from the specification because of scaling at typesetting, genre differences, or the specification describing intent rather than outcome.",
+    "why_it_matters": "The earlier rules used 'verified' for both, which let a genre-specific observation (H02) masquerade as a general rule. L-rules are specification; E-rules are observed practice; they are not interchangeable."
+  },
+  "corpus": {
+    "source": "local Nature PDF corpus (D:\\2026-AI4S), filenames containing NATURE",
+    "papers_measured": 38,
+    "bands_raw": 420,
+    "bands_kept": 369,
+    "bands_excluded": {
+      "too_wide": 29,
+      "too_narrow": 0,
+      "tiny_font": 22
+    },
+    "dirty_data_excluded": null,
+    "learnings_doc": "LEARNINGS.md"
   }
 }

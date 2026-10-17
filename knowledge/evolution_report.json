@@ -1,6 +1,6 @@
 {
-  "run_at": "2026-10-18T00:03:11",
-  "knowledge_base_version": 11,
+  "run_at": "2026-10-18T00:04:29",
+  "knowledge_base_version": 12,
   "results": {
     "L01": {
       "ok": true,
@@ -43,20 +43,33 @@
       "confidence_before": "hypothesis"
     },
     "H02": {
-      "ok": true,
-      "detail": "all 6 figures within band (measured 3.31-17.4%)",
-      "confidence_before": "measured_unenforced"
+      "ok": null,
+      "detail": "UNCHECKED: no machine-executable check defined for this rule",
+      "confidence_before": "refuted"
+    },
+    "E01": {
+      "ok": null,
+      "detail": "UNCHECKED: no machine-executable check defined for this rule",
+      "confidence_before": "hypothesis"
+    },
+    "E02": {
+      "ok": null,
+      "detail": "UNCHECKED: no machine-executable check defined for this rule",
+      "confidence_before": "hypothesis"
     }
   },
   "demoted": [],
   "summary": {
-    "rules_total": 9,
-    "checked": 8,
-    "passed": 8,
+    "rules_total": 11,
+    "checked": 7,
+    "passed": 7,
     "failed": 0,
-    "unchecked": 1,
+    "unchecked": 4,
     "unchecked_ids": [
-      "H01"
+      "H01",
+      "H02",
+      "E01",
+      "E02"
     ]
   },
   "hard_errors": [],

@@ -1,0 +1,4852 @@
+{
+  "derived": {
+    "source": "local Nature PDF corpus (D:\\2026-AI4S), filenames containing NATURE",
+    "dirty_data_excluded_at_harvest": [
+      [
+        "rejected: filename does not contain NATURE",
+        561
+      ]
+    ],
+    "bands_raw": 420,
+    "bands_kept": 369,
+    "bands_excluded": {
+      "too_wide": 29,
+      "too_narrow": 0,
+      "tiny_font": 22
+    },
+    "exclusion_reasons": {
+      "too_wide": "wider than the 210.0 mm page -- band merging fused the page",
+      "too_narrow": "narrower than 60.0 mm -- a fragment, not a figure",
+      "tiny_font": "minimum font below 2.0 pt -- a superscript or artefact glyph, not body text"
+    },
+    "width_mm": {
+      "n": 369,
+      "min": 63.5,
+      "p10": 104.4,
+      "p25": 139.8,
+      "median": 171.6,
+      "p75": 183.5,
+      "p90": 200.0,
+      "max": 205.6,
+      "within_3mm_of_89": 16,
+      "within_3mm_of_183": 86,
+      "within_3mm_of_either": 102,
+      "share_near_a_column": 0.2764
+    },
+    "min_font_pt": {
+      "n": 188,
+      "min": 3.0,
+      "p10": 4.0,
+      "median": 5.0,
+      "p90": 7.0,
+      "max": 9.96,
+      "share_below_5pt": 0.3404
+    }
+  },
+  "bands": [
+    {
+      "bbox": [
+        24.9,
+        46.0,
+        568.3,
+        754.8
+      ],
+      "width_mm": 191.7,
+      "height_mm": 250.1,
+      "n_text_spans": 249,
+      "min_font_pt": 4.9,
+      "max_font_pt": 25.0,
+      "paper": "!2024-Nature-Detecting hallucinations in large language models using semantic entropy_SI&Highlights.pdf"
+    },
+    {
+      "bbox": [
+        39.7,
+        49.0,
+        561.3,
+        206.0
+      ],
+      "width_mm": 184.0,
+      "height_mm": 55.4,
+      "n_text_spans": 33,
+      "min_font_pt": 6.5,
+      "max_font_pt": 6.5,
+      "paper": "!2024-Nature-Detecting hallucinations in large language models using semantic entropy_SI&Highlights.pdf"
+    },
+    {
+      "bbox": [
+        131.6,
+        64.4,
+        469.2,
+        373.1
+      ],
+      "width_mm": 119.1,
+      "height_mm": 108.9,
+      "n_text_spans": 102,
+      "min_font_pt": 4.0,
+      "max_font_pt": 8.0,
+      "paper": "!2024-Nature-Detecting hallucinations in large language models using semantic entropy_SI&Highlights.pdf"
+    },
+    {
+      "bbox": [
+        151.1,
+        71.3,
+        463.8,
+        167.7
+      ],
+      "width_mm": 110.3,
+      "height_mm": 34.0,
+      "n_text_spans": 12,
+      "min_font_pt": 7.0,
+      "max_font_pt": 7.0,
+      "paper": "!2024-Nature-Detecting hallucinations in large language models using semantic entropy_SI&Highlights.pdf"
+    },
+    {
+      "bbox": [
+        151.1,
+        196.2,
+        463.8,
+        292.6
+      ],
+      "width_mm": 110.3,
+      "height_mm": 34.0,
+      "n_text_spans": 12,
+      "min_font_pt": 7.0,
+      "max_font_pt": 7.0,
+      "paper": "!2024-Nature-Detecting hallucinations in large language models using semantic entropy_SI&Highlights.pdf"
+    },
+    {
+      "bbox": [
+        60.5,
+        47.6,
+        390.7,
+        162.1
+      ],
+      "width_mm": 116.5,
+      "height_mm": 40.4,
+      "n_text_spans": 4,
+      "min_font_pt": 7.0,
+      "max_font_pt": 7.0,
+      "paper": "!2024-Nature-Detecting hallucinations in large language models using semantic entropy_SI&Highlights.pdf"
+    },
+    {
+      "bbox": [
+        45.5,
+        49.0,
+        555.5,
+        223.3
+      ],
+      "width_mm": 179.9,
+      "height_mm": 61.5,
+      "n_text_spans": 0,
+      "paper": "!2024-Nature-Detecting hallucinations in large language models using semantic entropy_SI&Highlights.pdf"
+    },
+    {
+      "bbox": [
+        124.6,
+        73.7,
+        495.2,
+        658.4
+      ],
+      "width_mm": 130.7,
+      "height_mm": 206.3,
+      "n_text_spans": 197,
+      "min_font_pt": 6.97,
+      "max_font_pt": 9.96,
+      "paper": "!2024-Nature-Detecting hallucinations in large language models using semantic entropy_SI&Highlights.pdf"
+    },
+    {
+      "bbox": [
+        124.6,
+        73.7,
+        495.2,
+        448.0
+      ],
+      "width_mm": 130.7,
+      "height_mm": 132.1,
+      "n_text_spans": 62,
+      "min_font_pt": 7.25,
+      "max_font_pt": 7.25,
+      "paper": "!2024-Nature-Detecting hallucinations in large language models using semantic entropy_SI&Highlights.pdf"
+    },
+    {
+      "bbox": [
+        100.1,
+        73.7,
+        470.7,
+        405.5
+      ],
+      "width_mm": 130.7,
+      "height_mm": 117.1,
+      "n_text_spans": 65,
+      "min_font_pt": 8.33,
+      "max_font_pt": 9.96,
+      "paper": "!2024-Nature-Detecting hallucinations in large language models using semantic entropy_SI&Highlights.pdf"
+    },
+    {
+      "bbox": [
+        40.4,
+        57.0,
+        294.1,
+        135.6
+      ],
+      "width_mm": 89.5,
+      "height_mm": 27.7,
+      "n_text_spans": 21,
+      "min_font_pt": 6.0,
+      "max_font_pt": 6.0,
+      "paper": "!2026-Nature-Evaluating large language models for accuracy incentivizes hallucinations&SI.pdf"
+    },
+    {
+      "bbox": [
+        40.4,
+        49.0,
+        294.1,
+        124.9
+      ],
+      "width_mm": 89.5,
+      "height_mm": 26.8,
+      "n_text_spans": 20,
+      "min_font_pt": 6.0,
+      "max_font_pt": 6.0,
+      "paper": "!2026-Nature-Evaluating large language models for accuracy incentivizes hallucinations&SI.pdf"
+    },
+    {
+      "bbox": [
+        40.4,
+        -51.7,
+        355.1,
+        207.8
+      ],
+      "width_mm": 111.0,
+      "height_mm": 91.5,
+      "n_text_spans": 35,
+      "min_font_pt": 4.2,
+      "max_font_pt": 14.0,
+      "paper": "!2026-Nature-Evaluating large language models for accuracy incentivizes hallucinations&SI.pdf"
+    },
+    {
+      "bbox": [
+        57.5,
+        49.0,
+        543.5,
+        281.1
+      ],
+      "width_mm": 171.5,
+      "height_mm": 81.9,
+      "n_text_spans": 0,
+      "paper": "!2026-Nature-Evaluating large language models for accuracy incentivizes hallucinations&SI.pdf"
+    },
+    {
+      "bbox": [
+        57.5,
+        299.0,
+        543.5,
+        521.4
+      ],
+      "width_mm": 171.5,
+      "height_mm": 78.4,
+      "n_text_spans": 0,
+      "paper": "!2026-Nature-Evaluating large language models for accuracy incentivizes hallucinations&SI.pdf"
+    },
+    {
+      "bbox": [
+        46.2,
+        50.8,
+        285.6,
+        144.7
+      ],
+      "width_mm": 84.4,
+      "height_mm": 33.1,
+      "n_text_spans": 0,
+      "paper": "!2026-Nature-Evaluating large language models for accuracy incentivizes hallucinations&SI.pdf"
+    },
+    {
+      "bbox": [
+        40.6,
+        85.4,
+        434.2,
+        202.3
+      ],
+      "width_mm": 138.8,
+      "height_mm": 41.2,
+      "n_text_spans": 0,
+      "paper": "!2026-Nature-Evaluating large language models for accuracy incentivizes hallucinations&SI.pdf"
+    },
+    {
+      "bbox": [
+        39.7,
+        74.1,
+        358.1,
+        208.6
+      ],
+      "width_mm": 112.3,
+      "height_mm": 47.5,
+      "n_text_spans": 0,
+      "paper": "!2026-Nature-Evaluating large language models for accuracy incentivizes hallucinations&SI.pdf"
+    },
+    {
+      "bbox": [
+        47.0,
+        593.0,
+        531.1,
+        709.2
+      ],
+      "width_mm": 170.8,
+      "height_mm": 41.0,
+      "n_text_spans": 0,
+      "paper": "2024-Nature-Scaling neural machine translation to 200 languages_NLLB-200.pdf"
+    },
+    {
+      "bbox": [
+        142.7,
+        640.0,
+        469.1,
+        729.2
+      ],
+      "width_mm": 115.2,
+      "height_mm": 31.5,
+      "n_text_spans": 7,
+      "min_font_pt": 7.0,
+      "max_font_pt": 7.0,
+      "paper": "2024-Nature-Scaling neural machine translation to 200 languages_NLLB-200.pdf"
+    },
+    {
+      "bbox": [
+        65.5,
+        59.0,
+        445.8,
+        171.0
+      ],
+      "width_mm": 134.2,
+      "height_mm": 39.5,
+      "n_text_spans": 24,
+      "min_font_pt": 7.0,
+      "max_font_pt": 7.0,
+      "paper": "2024-Nature-Scaling neural machine translation to 200 languages_NLLB-200.pdf"
+    },
+    {
+      "bbox": [
+        45.5,
+        49.0,
+        555.5,
+        260.8
+      ],
+      "width_mm": 179.9,
+      "height_mm": 74.7,
+      "n_text_spans": 0,
+      "paper": "2024-Nature-Scaling neural machine translation to 200 languages_NLLB-200.pdf"
+    },
+    {
+      "bbox": [
+        45.5,
+        49.0,
+        555.5,
+        181.3
+      ],
+      "width_mm": 179.9,
+      "height_mm": 46.7,
+      "n_text_spans": 0,
+      "paper": "2024-Nature-Scaling neural machine translation to 200 languages_NLLB-200.pdf"
+    },
+    {
+      "bbox": [
+        126.5,
+        73.7,
+        470.7,
+        206.9
+      ],
+      "width_mm": 121.4,
+      "height_mm": 47.0,
+      "n_text_spans": 9,
+      "min_font_pt": 8.97,
+      "max_font_pt": 8.97,
+      "paper": "2024-Nature-Scaling neural machine translation to 200 languages_NLLB-200.pdf"
+    },
+    {
+      "bbox": [
+        165.5,
+        73.9,
+        495.0,
+        294.3
+      ],
+      "width_mm": 116.2,
+      "height_mm": 77.8,
+      "n_text_spans": 14,
+      "min_font_pt": 9.96,
+      "max_font_pt": 11.65,
+      "paper": "2024-Nature-Scaling neural machine translation to 200 languages_NLLB-200.pdf"
+    },
+    {
+      "bbox": [
+        197.6,
+        86.8,
+        408.8,
+        291.4
+      ],
+      "width_mm": 74.5,
+      "height_mm": 72.2,
+      "n_text_spans": 36,
+      "min_font_pt": 4.08,
+      "max_font_pt": 8.97,
+      "paper": "2024-Nature-Scaling neural machine translation to 200 languages_NLLB-200.pdf"
+    },
+    {
+      "bbox": [
+        126.5,
+        73.7,
+        470.7,
+        206.9
+      ],
+      "width_mm": 121.4,
+      "height_mm": 47.0,
+      "n_text_spans": 9,
+      "min_font_pt": 8.97,
+      "max_font_pt": 8.97,
+      "paper": "2024-Nature-Scaling neural machine translation to 200 languages_SI.pdf"
+    },
+    {
+      "bbox": [
+        165.5,
+        73.9,
+        495.0,
+        294.3
+      ],
+      "width_mm": 116.2,
+      "height_mm": 77.8,
+      "n_text_spans": 14,
+      "min_font_pt": 9.96,
+      "max_font_pt": 11.65,
+      "paper": "2024-Nature-Scaling neural machine translation to 200 languages_SI.pdf"
+    },
+    {
+      "bbox": [
+        197.6,
+        86.8,
+        408.8,
+        291.4
+      ],
+      "width_mm": 74.5,
+      "height_mm": 72.2,
+      "n_text_spans": 36,
+      "min_font_pt": 4.08,
+      "max_font_pt": 8.97,
+      "paper": "2024-Nature-Scaling neural machine translation to 200 languages_SI.pdf"
+    },
+    {
+      "bbox": [
+        170.3,
+        73.7,
+        476.5,
+        150.6
+      ],
+      "width_mm": 108.0,
+      "height_mm": 27.1,
+      "n_text_spans": 5,
+      "min_font_pt": 9.19,
+      "max_font_pt": 9.19,
+      "paper": "2024-Nature-Scaling neural machine translation to 200 languages_SI.pdf"
+    },
+    {
+      "bbox": [
+        14.2,
+        14.2,
+        581.1,
+        731.0
+      ],
+      "width_mm": 200.0,
+      "height_mm": 252.9,
+      "n_text_spans": 647,
+      "min_font_pt": 4.98,
+      "max_font_pt": 14.35,
+      "paper": "2024-Nature-Scaling neural machine translation to 200 languages_SI.pdf"
+    },
+    {
+      "bbox": [
+        14.2,
+        14.2,
+        581.1,
+        668.9
+      ],
+      "width_mm": 200.0,
+      "height_mm": 231.0,
+      "n_text_spans": 499,
+      "min_font_pt": 4.98,
+      "max_font_pt": 14.35,
+      "paper": "2024-Nature-Scaling neural machine translation to 200 languages_SI.pdf"
+    },
+    {
+      "bbox": [
+        14.2,
+        14.2,
+        581.1,
+        782.6
+      ],
+      "width_mm": 200.0,
+      "height_mm": 271.1,
+      "n_text_spans": 617,
+      "min_font_pt": 4.98,
+      "max_font_pt": 14.35,
+      "paper": "2024-Nature-Scaling neural machine translation to 200 languages_SI.pdf"
+    },
+    {
+      "bbox": [
+        14.2,
+        14.2,
+        581.1,
+        783.3
+      ],
+      "width_mm": 200.0,
+      "height_mm": 271.3,
+      "n_text_spans": 584,
+      "min_font_pt": 4.98,
+      "max_font_pt": 14.35,
+      "paper": "2024-Nature-Scaling neural machine translation to 200 languages_SI.pdf"
+    },
+    {
+      "bbox": [
+        40.7,
+        57.3,
+        560.5,
+        250.1
+      ],
+      "width_mm": 183.4,
+      "height_mm": 68.0,
+      "n_text_spans": 54,
+      "min_font_pt": 6.0,
+      "max_font_pt": 6.0,
+      "paper": "2025-Nature-A foundation model to predict and capture human cognition&SI.pdf"
+    },
+    {
+      "bbox": [
+        40.7,
+        271.5,
+        560.5,
+        377.7
+      ],
+      "width_mm": 183.4,
+      "height_mm": 37.5,
+      "n_text_spans": 28,
+      "min_font_pt": 6.0,
+      "max_font_pt": 6.0,
+      "paper": "2025-Nature-A foundation model to predict and capture human cognition&SI.pdf"
+    },
+    {
+      "bbox": [
+        180.4,
+        66.4,
+        558.5,
+        388.2
+      ],
+      "width_mm": 133.4,
+      "height_mm": 113.5,
+      "n_text_spans": 28,
+      "min_font_pt": 7.0,
+      "max_font_pt": 8.0,
+      "paper": "2025-Nature-A foundation model to predict and capture human cognition&SI.pdf"
+    },
+    {
+      "bbox": [
+        39.6,
+        63.7,
+        526.1,
+        208.2
+      ],
+      "width_mm": 171.6,
+      "height_mm": 51.0,
+      "n_text_spans": 8,
+      "min_font_pt": 7.0,
+      "max_font_pt": 7.0,
+      "paper": "2025-Nature-A foundation model to predict and capture human cognition&SI.pdf"
+    },
+    {
+      "bbox": [
+        75.0,
+        222.6,
+        560.0,
+        585.4
+      ],
+      "width_mm": 171.1,
+      "height_mm": 128.0,
+      "n_text_spans": 65,
+      "min_font_pt": 4.2,
+      "max_font_pt": 8.37,
+      "paper": "2025-Nature-A foundation model to predict and capture human cognition&SI.pdf"
+    },
+    {
+      "bbox": [
+        89.0,
+        62.8,
+        570.7,
+        199.7
+      ],
+      "width_mm": 169.9,
+      "height_mm": 48.3,
+      "n_text_spans": 37,
+      "min_font_pt": 7.0,
+      "max_font_pt": 7.0,
+      "paper": "2025-Nature-A foundation model to predict and capture human cognition&SI.pdf"
+    },
+    {
+      "bbox": [
+        77.5,
+        52.9,
+        562.7,
+        137.4
+      ],
+      "width_mm": 171.2,
+      "height_mm": 29.8,
+      "n_text_spans": 13,
+      "min_font_pt": 7.0,
+      "max_font_pt": 7.0,
+      "paper": "2025-Nature-A foundation model to predict and capture human cognition&SI.pdf"
+    },
+    {
+      "bbox": [
+        49.9,
+        49.0,
+        551.0,
+        323.5
+      ],
+      "width_mm": 176.8,
+      "height_mm": 96.9,
+      "n_text_spans": 0,
+      "paper": "2025-Nature-A foundation model to predict and capture human cognition&SI.pdf"
+    },
+    {
+      "bbox": [
+        44.4,
+        49.0,
+        290.1,
+        171.8
+      ],
+      "width_mm": 86.7,
+      "height_mm": 43.3,
+      "n_text_spans": 0,
+      "paper": "2025-Nature-A foundation model to predict and capture human cognition&SI.pdf"
+    },
+    {
+      "bbox": [
+        83.5,
+        49.0,
+        517.4,
+        191.0
+      ],
+      "width_mm": 153.1,
+      "height_mm": 50.1,
+      "n_text_spans": 0,
+      "paper": "2025-Nature-A foundation model to predict and capture human cognition&SI.pdf"
+    },
+    {
+      "bbox": [
+        47.0,
+        49.0,
+        553.9,
+        308.2
+      ],
+      "width_mm": 178.8,
+      "height_mm": 91.4,
+      "n_text_spans": 0,
+      "paper": "2025-Nature-A foundation model to predict and capture human cognition&SI.pdf"
+    },
+    {
+      "bbox": [
+        47.0,
+        49.0,
+        553.9,
+        538.6
+      ],
+      "width_mm": 178.8,
+      "height_mm": 172.7,
+      "n_text_spans": 0,
+      "paper": "2025-Nature-A foundation model to predict and capture human cognition&SI.pdf"
+    },
+    {
+      "bbox": [
+        49.9,
+        49.0,
+        551.0,
+        194.9
+      ],
+      "width_mm": 176.8,
+      "height_mm": 51.5,
+      "n_text_spans": 0,
+      "paper": "2025-Nature-A foundation model to predict and capture human cognition&SI.pdf"
+    },
+    {
+      "bbox": [
+        47.0,
+        49.0,
+        553.9,
+        394.6
+      ],
+      "width_mm": 178.8,
+      "height_mm": 121.9,
+      "n_text_spans": 0,
+      "paper": "2025-Nature-A foundation model to predict and capture human cognition&SI.pdf"
+    },
+    {
+      "bbox": [
+        39.7,
+        65.9,
+        392.7,
+        568.0
+      ],
+      "width_mm": 124.5,
+      "height_mm": 177.1,
+      "n_text_spans": 0,
+      "paper": "2025-Nature-A foundation model to predict and capture human cognition&SI.pdf"
+    },
+    {
+      "bbox": [
+        22.4,
+        0.6,
+        593.0,
+        791.4
+      ],
+      "width_mm": 201.3,
+      "height_mm": 279.0,
+      "n_text_spans": 0,
+      "paper": "2025-Nature-A foundation model to predict and capture human cognition&SI.pdf"
+    },
+    {
+      "bbox": [
+        25.3,
+        0.6,
+        593.0,
+        791.4
+      ],
+      "width_mm": 200.3,
+      "height_mm": 279.0,
+      "n_text_spans": 0,
+      "paper": "2025-Nature-A foundation model to predict and capture human cognition&SI.pdf"
+    },
+    {
+      "bbox": [
+        25.6,
+        0.6,
+        593.0,
+        791.4
+      ],
+      "width_mm": 200.2,
+      "height_mm": 279.0,
+      "n_text_spans": 0,
+      "paper": "2025-Nature-A foundation model to predict and capture human cognition&SI.pdf"
+    },
+    {
+      "bbox": [
+        26.3,
+        0.6,
+        593.0,
+        791.4
+      ],
+      "width_mm": 199.9,
+      "height_mm": 279.0,
+      "n_text_spans": 0,
+      "paper": "2025-Nature-A foundation model to predict and capture human cognition&SI.pdf"
+    },
+    {
+      "bbox": [
+        39.7,
+        224.5,
+        544.6,
+        304.0
+      ],
+      "width_mm": 178.1,
+      "height_mm": 28.0,
+      "n_text_spans": 7,
+      "min_font_pt": 5.4,
+      "max_font_pt": 9.0,
+      "paper": "2025-Nature-Joint speech and text machine translation for up to 100 languages_SEAMLESSM4T.pdf"
+    },
+    {
+      "bbox": [
+        40.6,
+        519.4,
+        560.4,
+        705.8
+      ],
+      "width_mm": 183.4,
+      "height_mm": 65.8,
+      "n_text_spans": 60,
+      "min_font_pt": 5.0,
+      "max_font_pt": 7.0,
+      "paper": "2025-Nature-Joint speech and text machine translation for up to 100 languages_SEAMLESSM4T.pdf"
+    },
+    {
+      "bbox": [
+        39.7,
+        81.6,
+        419.0,
+        181.9
+      ],
+      "width_mm": 133.8,
+      "height_mm": 35.4,
+      "n_text_spans": 0,
+      "paper": "2025-Nature-Joint speech and text machine translation for up to 100 languages_SEAMLESSM4T.pdf"
+    },
+    {
+      "bbox": [
+        39.7,
+        71.6,
+        411.3,
+        208.9
+      ],
+      "width_mm": 131.1,
+      "height_mm": 48.4,
+      "n_text_spans": 0,
+      "paper": "2025-Nature-Joint speech and text machine translation for up to 100 languages_SEAMLESSM4T.pdf"
+    },
+    {
+      "bbox": [
+        39.7,
+        81.6,
+        521.8,
+        277.8
+      ],
+      "width_mm": 170.1,
+      "height_mm": 69.2,
+      "n_text_spans": 0,
+      "paper": "2025-Nature-Joint speech and text machine translation for up to 100 languages_SEAMLESSM4T.pdf"
+    },
+    {
+      "bbox": [
+        48.8,
+        163.6,
+        553.1,
+        256.9
+      ],
+      "width_mm": 177.9,
+      "height_mm": 32.9,
+      "n_text_spans": 60,
+      "min_font_pt": 4.0,
+      "max_font_pt": 6.0,
+      "paper": "2026-Nature-A critical initialization for biological neural networks.pdf"
+    },
+    {
+      "bbox": [
+        50.9,
+        58.8,
+        554.2,
+        315.7
+      ],
+      "width_mm": 177.5,
+      "height_mm": 90.6,
+      "n_text_spans": 94,
+      "min_font_pt": 5.0,
+      "max_font_pt": 8.0,
+      "paper": "2026-Nature-A critical initialization for biological neural networks.pdf"
+    },
+    {
+      "bbox": [
+        38.7,
+        154.1,
+        542.1,
+        315.8
+      ],
+      "width_mm": 177.6,
+      "height_mm": 57.1,
+      "n_text_spans": 85,
+      "min_font_pt": 3.0,
+      "max_font_pt": 8.0,
+      "paper": "2026-Nature-A critical initialization for biological neural networks.pdf"
+    },
+    {
+      "bbox": [
+        53.3,
+        61.7,
+        542.2,
+        253.2
+      ],
+      "width_mm": 172.5,
+      "height_mm": 67.5,
+      "n_text_spans": 94,
+      "min_font_pt": 6.0,
+      "max_font_pt": 6.0,
+      "paper": "2026-Nature-A critical initialization for biological neural networks.pdf"
+    },
+    {
+      "bbox": [
+        69.0,
+        291.7,
+        556.4,
+        372.9
+      ],
+      "width_mm": 172.0,
+      "height_mm": 28.6,
+      "n_text_spans": 34,
+      "min_font_pt": 4.0,
+      "max_font_pt": 6.0,
+      "paper": "2026-Nature-A critical initialization for biological neural networks.pdf"
+    },
+    {
+      "bbox": [
+        81.4,
+        59.1,
+        550.9,
+        146.1
+      ],
+      "width_mm": 165.7,
+      "height_mm": 30.7,
+      "n_text_spans": 5,
+      "min_font_pt": 5.0,
+      "max_font_pt": 5.0,
+      "paper": "2026-Nature-A critical initialization for biological neural networks.pdf"
+    },
+    {
+      "bbox": [
+        60.8,
+        209.7,
+        560.8,
+        297.3
+      ],
+      "width_mm": 176.4,
+      "height_mm": 30.9,
+      "n_text_spans": 37,
+      "min_font_pt": 5.0,
+      "max_font_pt": 5.0,
+      "paper": "2026-Nature-A critical initialization for biological neural networks.pdf"
+    },
+    {
+      "bbox": [
+        58.7,
+        49.0,
+        556.5,
+        153.4
+      ],
+      "width_mm": 175.6,
+      "height_mm": 36.8,
+      "n_text_spans": 0,
+      "paper": "2026-Nature-A critical initialization for biological neural networks.pdf"
+    },
+    {
+      "bbox": [
+        40.3,
+        175.0,
+        567.8,
+        281.0
+      ],
+      "width_mm": 186.1,
+      "height_mm": 37.4,
+      "n_text_spans": 0,
+      "paper": "2026-Nature-A critical initialization for biological neural networks.pdf"
+    },
+    {
+      "bbox": [
+        82.2,
+        49.0,
+        520.4,
+        289.3
+      ],
+      "width_mm": 154.6,
+      "height_mm": 84.8,
+      "n_text_spans": 0,
+      "paper": "2026-Nature-A critical initialization for biological neural networks.pdf"
+    },
+    {
+      "bbox": [
+        61.7,
+        49.0,
+        534.2,
+        216.4
+      ],
+      "width_mm": 166.7,
+      "height_mm": 59.1,
+      "n_text_spans": 0,
+      "paper": "2026-Nature-A critical initialization for biological neural networks.pdf"
+    },
+    {
+      "bbox": [
+        39.7,
+        49.0,
+        559.9,
+        165.8
+      ],
+      "width_mm": 183.5,
+      "height_mm": 41.2,
+      "n_text_spans": 0,
+      "paper": "2026-Nature-A critical initialization for biological neural networks.pdf"
+    },
+    {
+      "bbox": [
+        39.7,
+        171.9,
+        559.8,
+        283.3
+      ],
+      "width_mm": 183.5,
+      "height_mm": 39.3,
+      "n_text_spans": 0,
+      "paper": "2026-Nature-A critical initialization for biological neural networks.pdf"
+    },
+    {
+      "bbox": [
+        49.3,
+        49.0,
+        555.4,
+        313.5
+      ],
+      "width_mm": 178.5,
+      "height_mm": 93.3,
+      "n_text_spans": 0,
+      "paper": "2026-Nature-A critical initialization for biological neural networks.pdf"
+    },
+    {
+      "bbox": [
+        40.9,
+        321.4,
+        559.6,
+        627.5
+      ],
+      "width_mm": 183.0,
+      "height_mm": 108.0,
+      "n_text_spans": 0,
+      "paper": "2026-Nature-A critical initialization for biological neural networks.pdf"
+    },
+    {
+      "bbox": [
+        50.7,
+        49.0,
+        559.8,
+        420.9
+      ],
+      "width_mm": 179.6,
+      "height_mm": 131.2,
+      "n_text_spans": 0,
+      "paper": "2026-Nature-A critical initialization for biological neural networks.pdf"
+    },
+    {
+      "bbox": [
+        40.4,
+        49.0,
+        552.4,
+        135.4
+      ],
+      "width_mm": 180.6,
+      "height_mm": 30.5,
+      "n_text_spans": 0,
+      "paper": "2026-Nature-A critical initialization for biological neural networks.pdf"
+    },
+    {
+      "bbox": [
+        40.4,
+        49.0,
+        560.6,
+        360.1
+      ],
+      "width_mm": 183.5,
+      "height_mm": 109.8,
+      "n_text_spans": 0,
+      "paper": "2026-Nature-A critical initialization for biological neural networks.pdf"
+    },
+    {
+      "bbox": [
+        22.4,
+        0.6,
+        593.0,
+        791.4
+      ],
+      "width_mm": 201.3,
+      "height_mm": 279.0,
+      "n_text_spans": 0,
+      "paper": "2026-Nature-A critical initialization for biological neural networks.pdf"
+    },
+    {
+      "bbox": [
+        25.3,
+        0.6,
+        593.0,
+        791.4
+      ],
+      "width_mm": 200.3,
+      "height_mm": 279.0,
+      "n_text_spans": 0,
+      "paper": "2026-Nature-A critical initialization for biological neural networks.pdf"
+    },
+    {
+      "bbox": [
+        25.6,
+        0.6,
+        593.0,
+        791.4
+      ],
+      "width_mm": 200.2,
+      "height_mm": 279.0,
+      "n_text_spans": 0,
+      "paper": "2026-Nature-A critical initialization for biological neural networks.pdf"
+    },
+    {
+      "bbox": [
+        25.7,
+        0.6,
+        593.0,
+        791.4
+      ],
+      "width_mm": 200.2,
+      "height_mm": 279.0,
+      "n_text_spans": 0,
+      "paper": "2026-Nature-A critical initialization for biological neural networks.pdf"
+    },
+    {
+      "bbox": [
+        40.4,
+        57.0,
+        294.1,
+        135.6
+      ],
+      "width_mm": 89.5,
+      "height_mm": 27.7,
+      "n_text_spans": 21,
+      "min_font_pt": 6.0,
+      "max_font_pt": 6.0,
+      "paper": "2026-Nature-Evaluating large language models for accuracy incentivizes hallucinations&SI.pdf"
+    },
+    {
+      "bbox": [
+        40.4,
+        49.0,
+        294.1,
+        124.9
+      ],
+      "width_mm": 89.5,
+      "height_mm": 26.8,
+      "n_text_spans": 20,
+      "min_font_pt": 6.0,
+      "max_font_pt": 6.0,
+      "paper": "2026-Nature-Evaluating large language models for accuracy incentivizes hallucinations&SI.pdf"
+    },
+    {
+      "bbox": [
+        40.4,
+        -51.7,
+        355.1,
+        207.8
+      ],
+      "width_mm": 111.0,
+      "height_mm": 91.5,
+      "n_text_spans": 35,
+      "min_font_pt": 4.2,
+      "max_font_pt": 14.0,
+      "paper": "2026-Nature-Evaluating large language models for accuracy incentivizes hallucinations&SI.pdf"
+    },
+    {
+      "bbox": [
+        57.5,
+        49.0,
+        543.5,
+        281.1
+      ],
+      "width_mm": 171.5,
+      "height_mm": 81.9,
+      "n_text_spans": 0,
+      "paper": "2026-Nature-Evaluating large language models for accuracy incentivizes hallucinations&SI.pdf"
+    },
+    {
+      "bbox": [
+        57.5,
+        299.0,
+        543.5,
+        521.4
+      ],
+      "width_mm": 171.5,
+      "height_mm": 78.4,
+      "n_text_spans": 0,
+      "paper": "2026-Nature-Evaluating large language models for accuracy incentivizes hallucinations&SI.pdf"
+    },
+    {
+      "bbox": [
+        46.2,
+        50.8,
+        285.6,
+        144.7
+      ],
+      "width_mm": 84.4,
+      "height_mm": 33.1,
+      "n_text_spans": 0,
+      "paper": "2026-Nature-Evaluating large language models for accuracy incentivizes hallucinations&SI.pdf"
+    },
+    {
+      "bbox": [
+        40.6,
+        85.4,
+        434.2,
+        202.3
+      ],
+      "width_mm": 138.8,
+      "height_mm": 41.2,
+      "n_text_spans": 0,
+      "paper": "2026-Nature-Evaluating large language models for accuracy incentivizes hallucinations&SI.pdf"
+    },
+    {
+      "bbox": [
+        39.7,
+        74.1,
+        358.1,
+        208.6
+      ],
+      "width_mm": 112.3,
+      "height_mm": 47.5,
+      "n_text_spans": 0,
+      "paper": "2026-Nature-Evaluating large language models for accuracy incentivizes hallucinations&SI.pdf"
+    },
+    {
+      "bbox": [
+        39.7,
+        49.0,
+        561.9,
+        251.7
+      ],
+      "width_mm": 184.2,
+      "height_mm": 71.5,
+      "n_text_spans": 156,
+      "min_font_pt": 5.0,
+      "max_font_pt": 8.0,
+      "paper": "2026-Nature-Mapping the neuronal building blocks of human language with language models.pdf"
+    },
+    {
+      "bbox": [
+        114.8,
+        47.8,
+        486.1,
+        561.1
+      ],
+      "width_mm": 131.0,
+      "height_mm": 181.1,
+      "n_text_spans": 169,
+      "min_font_pt": 7.0,
+      "max_font_pt": 8.0,
+      "paper": "2026-Nature-Mapping the neuronal building blocks of human language with language models.pdf"
+    },
+    {
+      "bbox": [
+        40.8,
+        49.0,
+        560.1,
+        284.9
+      ],
+      "width_mm": 183.2,
+      "height_mm": 83.2,
+      "n_text_spans": 138,
+      "min_font_pt": 5.0,
+      "max_font_pt": 8.0,
+      "paper": "2026-Nature-Mapping the neuronal building blocks of human language with language models.pdf"
+    },
+    {
+      "bbox": [
+        115.1,
+        49.0,
+        515.6,
+        460.0
+      ],
+      "width_mm": 141.3,
+      "height_mm": 145.0,
+      "n_text_spans": 100,
+      "min_font_pt": 6.85,
+      "max_font_pt": 9.0,
+      "paper": "2026-Nature-Mapping the neuronal building blocks of human language with language models.pdf"
+    },
+    {
+      "bbox": [
+        94.1,
+        48.1,
+        506.9,
+        152.8
+      ],
+      "width_mm": 145.6,
+      "height_mm": 36.9,
+      "n_text_spans": 46,
+      "min_font_pt": 5.0,
+      "max_font_pt": 7.0,
+      "paper": "2026-Nature-Mapping the neuronal building blocks of human language with language models.pdf"
+    },
+    {
+      "bbox": [
+        165.2,
+        49.0,
+        435.7,
+        478.4
+      ],
+      "width_mm": 95.4,
+      "height_mm": 151.5,
+      "n_text_spans": 143,
+      "min_font_pt": 4.0,
+      "max_font_pt": 7.0,
+      "paper": "2026-Nature-Mapping the neuronal building blocks of human language with language models.pdf"
+    },
+    {
+      "bbox": [
+        136.7,
+        49.0,
+        464.2,
+        501.9
+      ],
+      "width_mm": 115.5,
+      "height_mm": 159.8,
+      "n_text_spans": 409,
+      "min_font_pt": 5.0,
+      "max_font_pt": 7.0,
+      "paper": "2026-Nature-Mapping the neuronal building blocks of human language with language models.pdf"
+    },
+    {
+      "bbox": [
+        71.4,
+        49.0,
+        529.5,
+        249.9
+      ],
+      "width_mm": 161.6,
+      "height_mm": 70.9,
+      "n_text_spans": 91,
+      "min_font_pt": 6.0,
+      "max_font_pt": 7.0,
+      "paper": "2026-Nature-Mapping the neuronal building blocks of human language with language models.pdf"
+    },
+    {
+      "bbox": [
+        111.7,
+        49.0,
+        489.2,
+        284.5
+      ],
+      "width_mm": 133.2,
+      "height_mm": 83.1,
+      "n_text_spans": 64,
+      "min_font_pt": 5.0,
+      "max_font_pt": 7.0,
+      "paper": "2026-Nature-Mapping the neuronal building blocks of human language with language models.pdf"
+    },
+    {
+      "bbox": [
+        120.5,
+        49.0,
+        480.4,
+        503.6
+      ],
+      "width_mm": 127.0,
+      "height_mm": 160.4,
+      "n_text_spans": 9,
+      "min_font_pt": 6.0,
+      "max_font_pt": 6.0,
+      "paper": "2026-Nature-Mapping the neuronal building blocks of human language with language models.pdf"
+    },
+    {
+      "bbox": [
+        40.4,
+        49.0,
+        294.1,
+        621.1
+      ],
+      "width_mm": 89.5,
+      "height_mm": 201.8,
+      "n_text_spans": 131,
+      "min_font_pt": 6.21,
+      "max_font_pt": 6.21,
+      "paper": "2026-Nature-Mapping the neuronal building blocks of human language with language models.pdf"
+    },
+    {
+      "bbox": [
+        64.2,
+        49.0,
+        536.8,
+        409.1
+      ],
+      "width_mm": 166.7,
+      "height_mm": 127.1,
+      "n_text_spans": 109,
+      "min_font_pt": 5.0,
+      "max_font_pt": 7.0,
+      "paper": "2026-Nature-Mapping the neuronal building blocks of human language with language models.pdf"
+    },
+    {
+      "bbox": [
+        107.5,
+        49.0,
+        493.4,
+        228.9
+      ],
+      "width_mm": 136.1,
+      "height_mm": 63.5,
+      "n_text_spans": 71,
+      "min_font_pt": 4.5,
+      "max_font_pt": 7.0,
+      "paper": "2026-Nature-Mapping the neuronal building blocks of human language with language models.pdf"
+    },
+    {
+      "bbox": [
+        39.7,
+        65.1,
+        519.4,
+        513.1
+      ],
+      "width_mm": 169.2,
+      "height_mm": 158.0,
+      "n_text_spans": 191,
+      "min_font_pt": 7.0,
+      "max_font_pt": 7.0,
+      "paper": "2026-Nature-Mapping the neuronal building blocks of human language with language models.pdf"
+    },
+    {
+      "bbox": [
+        91.7,
+        285.6,
+        492.2,
+        401.7
+      ],
+      "width_mm": 141.3,
+      "height_mm": 40.9,
+      "n_text_spans": 24,
+      "min_font_pt": 6.0,
+      "max_font_pt": 8.0,
+      "paper": "2026-Nature-Reimagining research papers as interactive and reliable AI agents_Briefing&SI.pdf"
+    },
+    {
+      "bbox": [
+        41.4,
+        47.8,
+        544.9,
+        235.5
+      ],
+      "width_mm": 177.6,
+      "height_mm": 66.2,
+      "n_text_spans": 32,
+      "min_font_pt": 4.0,
+      "max_font_pt": 8.0,
+      "paper": "2026-Nature-Reimagining research papers as interactive and reliable AI agents_Briefing&SI.pdf"
+    },
+    {
+      "bbox": [
+        40.7,
+        249.6,
+        553.2,
+        384.2
+      ],
+      "width_mm": 180.8,
+      "height_mm": 47.5,
+      "n_text_spans": 49,
+      "min_font_pt": 5.0,
+      "max_font_pt": 8.0,
+      "paper": "2026-Nature-Reimagining research papers as interactive and reliable AI agents_Briefing&SI.pdf"
+    },
+    {
+      "bbox": [
+        70.2,
+        51.3,
+        542.4,
+        225.6
+      ],
+      "width_mm": 166.6,
+      "height_mm": 61.5,
+      "n_text_spans": 46,
+      "min_font_pt": 3.5,
+      "max_font_pt": 6.0,
+      "paper": "2026-Nature-Reimagining research papers as interactive and reliable AI agents_Briefing&SI.pdf"
+    },
+    {
+      "bbox": [
+        102.2,
+        245.8,
+        537.2,
+        427.0
+      ],
+      "width_mm": 153.5,
+      "height_mm": 63.9,
+      "n_text_spans": 5,
+      "min_font_pt": 6.0,
+      "max_font_pt": 6.0,
+      "paper": "2026-Nature-Reimagining research papers as interactive and reliable AI agents_Briefing&SI.pdf"
+    },
+    {
+      "bbox": [
+        94.2,
+        50.0,
+        509.5,
+        122.6
+      ],
+      "width_mm": 146.5,
+      "height_mm": 25.6,
+      "n_text_spans": 24,
+      "min_font_pt": 4.0,
+      "max_font_pt": 6.0,
+      "paper": "2026-Nature-Reimagining research papers as interactive and reliable AI agents_Briefing&SI.pdf"
+    },
+    {
+      "bbox": [
+        92.8,
+        132.5,
+        509.5,
+        216.3
+      ],
+      "width_mm": 147.0,
+      "height_mm": 29.6,
+      "n_text_spans": 23,
+      "min_font_pt": 4.0,
+      "max_font_pt": 6.0,
+      "paper": "2026-Nature-Reimagining research papers as interactive and reliable AI agents_Briefing&SI.pdf"
+    },
+    {
+      "bbox": [
+        185.1,
+        231.4,
+        421.5,
+        382.8
+      ],
+      "width_mm": 83.4,
+      "height_mm": 53.4,
+      "n_text_spans": 30,
+      "min_font_pt": 6.0,
+      "max_font_pt": 6.0,
+      "paper": "2026-Nature-Reimagining research papers as interactive and reliable AI agents_Briefing&SI.pdf"
+    },
+    {
+      "bbox": [
+        40.4,
+        49.0,
+        560.6,
+        688.0
+      ],
+      "width_mm": 183.5,
+      "height_mm": 225.4,
+      "n_text_spans": 0,
+      "paper": "2026-Nature-Reimagining research papers as interactive and reliable AI agents_Briefing&SI.pdf"
+    },
+    {
+      "bbox": [
+        40.4,
+        49.0,
+        560.6,
+        610.3
+      ],
+      "width_mm": 183.5,
+      "height_mm": 198.0,
+      "n_text_spans": 0,
+      "paper": "2026-Nature-Reimagining research papers as interactive and reliable AI agents_Briefing&SI.pdf"
+    },
+    {
+      "bbox": [
+        22.4,
+        0.6,
+        593.0,
+        791.4
+      ],
+      "width_mm": 201.3,
+      "height_mm": 279.0,
+      "n_text_spans": 0,
+      "paper": "2026-Nature-Reimagining research papers as interactive and reliable AI agents_Briefing&SI.pdf"
+    },
+    {
+      "bbox": [
+        25.3,
+        0.6,
+        593.0,
+        791.4
+      ],
+      "width_mm": 200.3,
+      "height_mm": 279.0,
+      "n_text_spans": 0,
+      "paper": "2026-Nature-Reimagining research papers as interactive and reliable AI agents_Briefing&SI.pdf"
+    },
+    {
+      "bbox": [
+        25.7,
+        0.6,
+        593.0,
+        791.4
+      ],
+      "width_mm": 200.2,
+      "height_mm": 279.0,
+      "n_text_spans": 0,
+      "paper": "2026-Nature-Reimagining research papers as interactive and reliable AI agents_Briefing&SI.pdf"
+    },
+    {
+      "bbox": [
+        40.4,
+        49.0,
+        560.6,
+        493.3
+      ],
+      "width_mm": 183.5,
+      "height_mm": 156.8,
+      "n_text_spans": 128,
+      "min_font_pt": 6.0,
+      "max_font_pt": 6.0,
+      "paper": "2026-Nature-Synthesizing scientific literature with retrieval-augmented language models&SI.pdf"
+    },
+    {
+      "bbox": [
+        41.0,
+        49.0,
+        559.9,
+        390.7
+      ],
+      "width_mm": 183.0,
+      "height_mm": 120.6,
+      "n_text_spans": 0,
+      "paper": "2026-Nature-Synthesizing scientific literature with retrieval-augmented language models&SI.pdf"
+    },
+    {
+      "bbox": [
+        41.0,
+        49.0,
+        559.9,
+        314.2
+      ],
+      "width_mm": 183.0,
+      "height_mm": 93.6,
+      "n_text_spans": 0,
+      "paper": "2026-Nature-Synthesizing scientific literature with retrieval-augmented language models&SI.pdf"
+    },
+    {
+      "bbox": [
+        77.2,
+        49.0,
+        257.2,
+        238.1
+      ],
+      "width_mm": 63.5,
+      "height_mm": 66.7,
+      "n_text_spans": 0,
+      "paper": "2026-Nature-Synthesizing scientific literature with retrieval-augmented language models&SI.pdf"
+    },
+    {
+      "bbox": [
+        77.2,
+        49.0,
+        257.2,
+        246.4
+      ],
+      "width_mm": 63.5,
+      "height_mm": 69.6,
+      "n_text_spans": 0,
+      "paper": "2026-Nature-Synthesizing scientific literature with retrieval-augmented language models&SI.pdf"
+    },
+    {
+      "bbox": [
+        61.4,
+        49.0,
+        539.5,
+        242.9
+      ],
+      "width_mm": 168.7,
+      "height_mm": 68.4,
+      "n_text_spans": 0,
+      "paper": "2026-Nature-Synthesizing scientific literature with retrieval-augmented language models&SI.pdf"
+    },
+    {
+      "bbox": [
+        39.7,
+        66.1,
+        559.9,
+        304.3
+      ],
+      "width_mm": 183.5,
+      "height_mm": 84.0,
+      "n_text_spans": 0,
+      "paper": "2026-Nature-Synthesizing scientific literature with retrieval-augmented language models&SI.pdf"
+    },
+    {
+      "bbox": [
+        39.7,
+        76.1,
+        293.4,
+        402.5
+      ],
+      "width_mm": 89.5,
+      "height_mm": 115.1,
+      "n_text_spans": 0,
+      "paper": "2026-Nature-Synthesizing scientific literature with retrieval-augmented language models&SI.pdf"
+    },
+    {
+      "bbox": [
+        38.7,
+        258.9,
+        562.3,
+        658.6
+      ],
+      "width_mm": 184.7,
+      "height_mm": 141.0,
+      "n_text_spans": 0,
+      "paper": "2026-Nature-The Einstein test_what happens when AI tries to rediscover relativity.pdf"
+    },
+    {
+      "bbox": [
+        37.3,
+        47.8,
+        562.4,
+        271.6
+      ],
+      "width_mm": 185.2,
+      "height_mm": 78.9,
+      "n_text_spans": 23,
+      "min_font_pt": 4.95,
+      "max_font_pt": 8.37,
+      "paper": "2026-Nature-The Einstein test_what happens when AI tries to rediscover relativity.pdf"
+    },
+    {
+      "bbox": [
+        47.0,
+        593.0,
+        531.1,
+        709.2
+      ],
+      "width_mm": 170.8,
+      "height_mm": 41.0,
+      "n_text_spans": 0,
+      "paper": "2024-Nature-Scaling neural machine translation to 200 languages.pdf"
+    },
+    {
+      "bbox": [
+        142.7,
+        640.0,
+        469.1,
+        729.2
+      ],
+      "width_mm": 115.2,
+      "height_mm": 31.5,
+      "n_text_spans": 7,
+      "min_font_pt": 7.0,
+      "max_font_pt": 7.0,
+      "paper": "2024-Nature-Scaling neural machine translation to 200 languages.pdf"
+    },
+    {
+      "bbox": [
+        65.5,
+        59.0,
+        445.8,
+        171.0
+      ],
+      "width_mm": 134.2,
+      "height_mm": 39.5,
+      "n_text_spans": 24,
+      "min_font_pt": 7.0,
+      "max_font_pt": 7.0,
+      "paper": "2024-Nature-Scaling neural machine translation to 200 languages.pdf"
+    },
+    {
+      "bbox": [
+        45.5,
+        49.0,
+        555.5,
+        260.8
+      ],
+      "width_mm": 179.9,
+      "height_mm": 74.7,
+      "n_text_spans": 0,
+      "paper": "2024-Nature-Scaling neural machine translation to 200 languages.pdf"
+    },
+    {
+      "bbox": [
+        45.5,
+        49.0,
+        555.5,
+        181.3
+      ],
+      "width_mm": 179.9,
+      "height_mm": 46.7,
+      "n_text_spans": 0,
+      "paper": "2024-Nature-Scaling neural machine translation to 200 languages.pdf"
+    },
+    {
+      "bbox": [
+        61.2,
+        53.7,
+        555.9,
+        170.7
+      ],
+      "width_mm": 174.5,
+      "height_mm": 41.3,
+      "n_text_spans": 35,
+      "min_font_pt": 6.0,
+      "max_font_pt": 6.0,
+      "paper": "2025-Nature-Comprehensive echocardiogram evaluation with view primed vision language AI.pdf"
+    },
+    {
+      "bbox": [
+        40.5,
+        189.7,
+        559.9,
+        464.1
+      ],
+      "width_mm": 183.2,
+      "height_mm": 96.8,
+      "n_text_spans": 24,
+      "min_font_pt": 6.0,
+      "max_font_pt": 6.0,
+      "paper": "2025-Nature-Comprehensive echocardiogram evaluation with view primed vision language AI.pdf"
+    },
+    {
+      "bbox": [
+        40.4,
+        508.1,
+        558.6,
+        604.3
+      ],
+      "width_mm": 182.8,
+      "height_mm": 33.9,
+      "n_text_spans": 14,
+      "min_font_pt": 6.0,
+      "max_font_pt": 6.0,
+      "paper": "2025-Nature-Comprehensive echocardiogram evaluation with view primed vision language AI.pdf"
+    },
+    {
+      "bbox": [
+        104.8,
+        93.4,
+        503.4,
+        223.0
+      ],
+      "width_mm": 140.6,
+      "height_mm": 45.7,
+      "n_text_spans": 25,
+      "min_font_pt": 6.0,
+      "max_font_pt": 6.0,
+      "paper": "2025-Nature-Comprehensive echocardiogram evaluation with view primed vision language AI.pdf"
+    },
+    {
+      "bbox": [
+        105.0,
+        281.0,
+        502.3,
+        409.2
+      ],
+      "width_mm": 140.2,
+      "height_mm": 45.2,
+      "n_text_spans": 25,
+      "min_font_pt": 6.0,
+      "max_font_pt": 6.0,
+      "paper": "2025-Nature-Comprehensive echocardiogram evaluation with view primed vision language AI.pdf"
+    },
+    {
+      "bbox": [
+        110.7,
+        453.8,
+        494.9,
+        590.9
+      ],
+      "width_mm": 135.5,
+      "height_mm": 48.4,
+      "n_text_spans": 28,
+      "min_font_pt": 6.0,
+      "max_font_pt": 6.0,
+      "paper": "2025-Nature-Comprehensive echocardiogram evaluation with view primed vision language AI.pdf"
+    },
+    {
+      "bbox": [
+        132.9,
+        107.1,
+        508.8,
+        228.4
+      ],
+      "width_mm": 132.6,
+      "height_mm": 42.8,
+      "n_text_spans": 146,
+      "min_font_pt": 6.0,
+      "max_font_pt": 6.0,
+      "paper": "2025-Nature-Comprehensive echocardiogram evaluation with view primed vision language AI.pdf"
+    },
+    {
+      "bbox": [
+        41.9,
+        245.1,
+        509.2,
+        364.5
+      ],
+      "width_mm": 164.9,
+      "height_mm": 42.1,
+      "n_text_spans": 1,
+      "min_font_pt": 6.0,
+      "max_font_pt": 6.0,
+      "paper": "2025-Nature-Comprehensive echocardiogram evaluation with view primed vision language AI.pdf"
+    },
+    {
+      "bbox": [
+        132.5,
+        437.5,
+        509.6,
+        567.9
+      ],
+      "width_mm": 133.0,
+      "height_mm": 46.0,
+      "n_text_spans": 11,
+      "min_font_pt": 6.0,
+      "max_font_pt": 6.0,
+      "paper": "2025-Nature-Comprehensive echocardiogram evaluation with view primed vision language AI.pdf"
+    },
+    {
+      "bbox": [
+        156.8,
+        49.0,
+        444.1,
+        206.5
+      ],
+      "width_mm": 101.3,
+      "height_mm": 55.6,
+      "n_text_spans": 0,
+      "paper": "2025-Nature-Comprehensive echocardiogram evaluation with view primed vision language AI.pdf"
+    },
+    {
+      "bbox": [
+        91.1,
+        49.0,
+        509.9,
+        489.1
+      ],
+      "width_mm": 147.7,
+      "height_mm": 155.3,
+      "n_text_spans": 0,
+      "paper": "2025-Nature-Comprehensive echocardiogram evaluation with view primed vision language AI.pdf"
+    },
+    {
+      "bbox": [
+        49.1,
+        49.0,
+        551.9,
+        518.8
+      ],
+      "width_mm": 177.4,
+      "height_mm": 165.7,
+      "n_text_spans": 0,
+      "paper": "2025-Nature-Comprehensive echocardiogram evaluation with view primed vision language AI.pdf"
+    },
+    {
+      "bbox": [
+        40.9,
+        49.0,
+        293.6,
+        139.6
+      ],
+      "width_mm": 89.2,
+      "height_mm": 32.0,
+      "n_text_spans": 0,
+      "paper": "2025-Nature-Comprehensive echocardiogram evaluation with view primed vision language AI.pdf"
+    },
+    {
+      "bbox": [
+        39.7,
+        64.1,
+        477.2,
+        304.8
+      ],
+      "width_mm": 154.3,
+      "height_mm": 84.9,
+      "n_text_spans": 0,
+      "paper": "2025-Nature-Comprehensive echocardiogram evaluation with view primed vision language AI.pdf"
+    },
+    {
+      "bbox": [
+        39.7,
+        64.1,
+        513.2,
+        312.0
+      ],
+      "width_mm": 167.0,
+      "height_mm": 87.5,
+      "n_text_spans": 0,
+      "paper": "2025-Nature-Comprehensive echocardiogram evaluation with view primed vision language AI.pdf"
+    },
+    {
+      "bbox": [
+        39.7,
+        86.1,
+        508.6,
+        564.4
+      ],
+      "width_mm": 165.4,
+      "height_mm": 168.7,
+      "n_text_spans": 0,
+      "paper": "2025-Nature-Comprehensive echocardiogram evaluation with view primed vision language AI.pdf"
+    },
+    {
+      "bbox": [
+        39.7,
+        65.1,
+        508.6,
+        522.8
+      ],
+      "width_mm": 165.4,
+      "height_mm": 161.5,
+      "n_text_spans": 0,
+      "paper": "2025-Nature-Comprehensive echocardiogram evaluation with view primed vision language AI.pdf"
+    },
+    {
+      "bbox": [
+        39.7,
+        65.1,
+        481.3,
+        428.9
+      ],
+      "width_mm": 155.8,
+      "height_mm": 128.4,
+      "n_text_spans": 0,
+      "paper": "2025-Nature-Comprehensive echocardiogram evaluation with view primed vision language AI.pdf"
+    },
+    {
+      "bbox": [
+        39.7,
+        65.1,
+        508.6,
+        305.3
+      ],
+      "width_mm": 165.4,
+      "height_mm": 84.8,
+      "n_text_spans": 0,
+      "paper": "2025-Nature-Comprehensive echocardiogram evaluation with view primed vision language AI.pdf"
+    },
+    {
+      "bbox": [
+        22.4,
+        0.6,
+        593.0,
+        791.4
+      ],
+      "width_mm": 201.3,
+      "height_mm": 279.0,
+      "n_text_spans": 0,
+      "paper": "2025-Nature-Comprehensive echocardiogram evaluation with view primed vision language AI.pdf"
+    },
+    {
+      "bbox": [
+        25.3,
+        0.6,
+        593.0,
+        791.4
+      ],
+      "width_mm": 200.3,
+      "height_mm": 279.0,
+      "n_text_spans": 0,
+      "paper": "2025-Nature-Comprehensive echocardiogram evaluation with view primed vision language AI.pdf"
+    },
+    {
+      "bbox": [
+        25.7,
+        0.6,
+        593.0,
+        791.4
+      ],
+      "width_mm": 200.2,
+      "height_mm": 279.0,
+      "n_text_spans": 0,
+      "paper": "2025-Nature-Comprehensive echocardiogram evaluation with view primed vision language AI.pdf"
+    },
+    {
+      "bbox": [
+        51.7,
+        57.9,
+        409.4,
+        294.1
+      ],
+      "width_mm": 126.2,
+      "height_mm": 83.3,
+      "n_text_spans": 63,
+      "min_font_pt": 6.0,
+      "max_font_pt": 6.0,
+      "paper": "2025-Nature-Learning the natural history of human disease with generative transformers&SI.pdf"
+    },
+    {
+      "bbox": [
+        72.7,
+        331.5,
+        533.1,
+        424.6
+      ],
+      "width_mm": 162.4,
+      "height_mm": 32.9,
+      "n_text_spans": 23,
+      "min_font_pt": 4.5,
+      "max_font_pt": 6.0,
+      "paper": "2025-Nature-Learning the natural history of human disease with generative transformers&SI.pdf"
+    },
+    {
+      "bbox": [
+        65.3,
+        84.8,
+        551.9,
+        269.3
+      ],
+      "width_mm": 171.7,
+      "height_mm": 65.1,
+      "n_text_spans": 35,
+      "min_font_pt": 5.0,
+      "max_font_pt": 5.0,
+      "paper": "2025-Nature-Learning the natural history of human disease with generative transformers&SI.pdf"
+    },
+    {
+      "bbox": [
+        72.4,
+        454.7,
+        552.3,
+        545.2
+      ],
+      "width_mm": 169.3,
+      "height_mm": 31.9,
+      "n_text_spans": 32,
+      "min_font_pt": 5.0,
+      "max_font_pt": 5.0,
+      "paper": "2025-Nature-Learning the natural history of human disease with generative transformers&SI.pdf"
+    },
+    {
+      "bbox": [
+        134.0,
+        59.9,
+        549.9,
+        151.7
+      ],
+      "width_mm": 146.7,
+      "height_mm": 32.4,
+      "n_text_spans": 53,
+      "min_font_pt": 3.5,
+      "max_font_pt": 5.0,
+      "paper": "2025-Nature-Learning the natural history of human disease with generative transformers&SI.pdf"
+    },
+    {
+      "bbox": [
+        66.4,
+        192.2,
+        550.8,
+        281.1
+      ],
+      "width_mm": 170.9,
+      "height_mm": 31.3,
+      "n_text_spans": 33,
+      "min_font_pt": 3.5,
+      "max_font_pt": 5.0,
+      "paper": "2025-Nature-Learning the natural history of human disease with generative transformers&SI.pdf"
+    },
+    {
+      "bbox": [
+        45.2,
+        79.6,
+        553.4,
+        283.2
+      ],
+      "width_mm": 179.3,
+      "height_mm": 71.8,
+      "n_text_spans": 97,
+      "min_font_pt": 3.5,
+      "max_font_pt": 5.0,
+      "paper": "2025-Nature-Learning the natural history of human disease with generative transformers&SI.pdf"
+    },
+    {
+      "bbox": [
+        90.6,
+        292.2,
+        570.8,
+        509.5
+      ],
+      "width_mm": 169.4,
+      "height_mm": 76.6,
+      "n_text_spans": 89,
+      "min_font_pt": 3.5,
+      "max_font_pt": 8.0,
+      "paper": "2025-Nature-Learning the natural history of human disease with generative transformers&SI.pdf"
+    },
+    {
+      "bbox": [
+        66.0,
+        51.0,
+        550.4,
+        922.1
+      ],
+      "width_mm": 170.9,
+      "height_mm": 307.3,
+      "n_text_spans": 147,
+      "min_font_pt": 3.5,
+      "max_font_pt": 9.75,
+      "paper": "2025-Nature-Learning the natural history of human disease with generative transformers&SI.pdf"
+    },
+    {
+      "bbox": [
+        40.6,
+        49.0,
+        560.3,
+        439.3
+      ],
+      "width_mm": 183.3,
+      "height_mm": 137.7,
+      "n_text_spans": 0,
+      "paper": "2025-Nature-Learning the natural history of human disease with generative transformers&SI.pdf"
+    },
+    {
+      "bbox": [
+        53.5,
+        49.0,
+        547.4,
+        700.9
+      ],
+      "width_mm": 174.2,
+      "height_mm": 230.0,
+      "n_text_spans": 0,
+      "paper": "2025-Nature-Learning the natural history of human disease with generative transformers&SI.pdf"
+    },
+    {
+      "bbox": [
+        40.4,
+        49.0,
+        560.6,
+        457.9
+      ],
+      "width_mm": 183.5,
+      "height_mm": 144.3,
+      "n_text_spans": 0,
+      "paper": "2025-Nature-Learning the natural history of human disease with generative transformers&SI.pdf"
+    },
+    {
+      "bbox": [
+        40.4,
+        49.0,
+        560.6,
+        649.4
+      ],
+      "width_mm": 183.5,
+      "height_mm": 211.8,
+      "n_text_spans": 0,
+      "paper": "2025-Nature-Learning the natural history of human disease with generative transformers&SI.pdf"
+    },
+    {
+      "bbox": [
+        40.4,
+        49.0,
+        560.6,
+        496.2
+      ],
+      "width_mm": 183.5,
+      "height_mm": 157.8,
+      "n_text_spans": 0,
+      "paper": "2025-Nature-Learning the natural history of human disease with generative transformers&SI.pdf"
+    },
+    {
+      "bbox": [
+        79.6,
+        49.0,
+        521.3,
+        700.9
+      ],
+      "width_mm": 155.8,
+      "height_mm": 230.0,
+      "n_text_spans": 0,
+      "paper": "2025-Nature-Learning the natural history of human disease with generative transformers&SI.pdf"
+    },
+    {
+      "bbox": [
+        40.4,
+        49.0,
+        560.6,
+        296.8
+      ],
+      "width_mm": 183.5,
+      "height_mm": 87.4,
+      "n_text_spans": 0,
+      "paper": "2025-Nature-Learning the natural history of human disease with generative transformers&SI.pdf"
+    },
+    {
+      "bbox": [
+        40.4,
+        49.0,
+        560.6,
+        526.3
+      ],
+      "width_mm": 183.5,
+      "height_mm": 168.4,
+      "n_text_spans": 0,
+      "paper": "2025-Nature-Learning the natural history of human disease with generative transformers&SI.pdf"
+    },
+    {
+      "bbox": [
+        78.1,
+        49.0,
+        522.8,
+        700.9
+      ],
+      "width_mm": 156.9,
+      "height_mm": 230.0,
+      "n_text_spans": 0,
+      "paper": "2025-Nature-Learning the natural history of human disease with generative transformers&SI.pdf"
+    },
+    {
+      "bbox": [
+        48.1,
+        73.8,
+        559.0,
+        415.9
+      ],
+      "width_mm": 180.3,
+      "height_mm": 120.7,
+      "n_text_spans": 37,
+      "min_font_pt": 4.0,
+      "max_font_pt": 7.0,
+      "paper": "2025-Nature-Towards multimodal foundation models in molecular cell biology&SI.pdf"
+    },
+    {
+      "bbox": [
+        134.3,
+        207.0,
+        432.5,
+        290.3
+      ],
+      "width_mm": 105.2,
+      "height_mm": 29.4,
+      "n_text_spans": 3,
+      "min_font_pt": 6.0,
+      "max_font_pt": 6.0,
+      "paper": "2025-Nature-Towards multimodal foundation models in molecular cell biology&SI.pdf"
+    },
+    {
+      "bbox": [
+        47.0,
+        78.4,
+        558.4,
+        514.0
+      ],
+      "width_mm": 180.4,
+      "height_mm": 153.7,
+      "n_text_spans": 75,
+      "min_font_pt": 7.0,
+      "max_font_pt": 7.0,
+      "paper": "2025-Nature-Towards multimodal foundation models in molecular cell biology&SI.pdf"
+    },
+    {
+      "bbox": [
+        44.5,
+        64.9,
+        557.2,
+        389.2
+      ],
+      "width_mm": 180.9,
+      "height_mm": 114.4,
+      "n_text_spans": 48,
+      "min_font_pt": 7.0,
+      "max_font_pt": 7.0,
+      "paper": "2025-Nature-Towards multimodal foundation models in molecular cell biology&SI.pdf"
+    },
+    {
+      "bbox": [
+        94.9,
+        57.4,
+        507.2,
+        224.4
+      ],
+      "width_mm": 145.5,
+      "height_mm": 58.9,
+      "n_text_spans": 28,
+      "min_font_pt": 6.0,
+      "max_font_pt": 6.0,
+      "paper": "2026-Nature-Training large language models on narrow tasks can lead to broad misalignment&SI.pdf"
+    },
+    {
+      "bbox": [
+        83.2,
+        62.5,
+        550.3,
+        176.9
+      ],
+      "width_mm": 164.8,
+      "height_mm": 40.4,
+      "n_text_spans": 8,
+      "min_font_pt": 7.0,
+      "max_font_pt": 7.0,
+      "paper": "2026-Nature-Training large language models on narrow tasks can lead to broad misalignment&SI.pdf"
+    },
+    {
+      "bbox": [
+        80.5,
+        563.7,
+        550.2,
+        679.0
+      ],
+      "width_mm": 165.7,
+      "height_mm": 40.7,
+      "n_text_spans": 7,
+      "min_font_pt": 7.0,
+      "max_font_pt": 7.0,
+      "paper": "2026-Nature-Training large language models on narrow tasks can lead to broad misalignment&SI.pdf"
+    },
+    {
+      "bbox": [
+        47.4,
+        50.3,
+        553.5,
+        226.7
+      ],
+      "width_mm": 178.5,
+      "height_mm": 62.2,
+      "n_text_spans": 0,
+      "paper": "2026-Nature-Training large language models on narrow tasks can lead to broad misalignment&SI.pdf"
+    },
+    {
+      "bbox": [
+        40.4,
+        49.0,
+        560.6,
+        352.3
+      ],
+      "width_mm": 183.5,
+      "height_mm": 107.0,
+      "n_text_spans": 0,
+      "paper": "2026-Nature-Training large language models on narrow tasks can lead to broad misalignment&SI.pdf"
+    },
+    {
+      "bbox": [
+        50.0,
+        71.0,
+        546.2,
+        317.5
+      ],
+      "width_mm": 175.1,
+      "height_mm": 86.9,
+      "n_text_spans": 0,
+      "paper": "2026-Nature-Training large language models on narrow tasks can lead to broad misalignment&SI.pdf"
+    },
+    {
+      "bbox": [
+        131.0,
+        124.8,
+        470.5,
+        314.7
+      ],
+      "width_mm": 119.8,
+      "height_mm": 67.0,
+      "n_text_spans": 0,
+      "paper": "2026-Nature-Training large language models on narrow tasks can lead to broad misalignment&SI.pdf"
+    },
+    {
+      "bbox": [
+        52.0,
+        49.0,
+        549.0,
+        285.0
+      ],
+      "width_mm": 175.3,
+      "height_mm": 83.3,
+      "n_text_spans": 0,
+      "paper": "2026-Nature-Training large language models on narrow tasks can lead to broad misalignment&SI.pdf"
+    },
+    {
+      "bbox": [
+        40.4,
+        49.0,
+        560.6,
+        493.3
+      ],
+      "width_mm": 183.5,
+      "height_mm": 156.8,
+      "n_text_spans": 128,
+      "min_font_pt": 6.0,
+      "max_font_pt": 6.0,
+      "paper": "2026-Nature-Synthesizing scientific literature with retrieval-augmented language models&SI.pdf"
+    },
+    {
+      "bbox": [
+        41.0,
+        49.0,
+        559.9,
+        390.7
+      ],
+      "width_mm": 183.0,
+      "height_mm": 120.6,
+      "n_text_spans": 0,
+      "paper": "2026-Nature-Synthesizing scientific literature with retrieval-augmented language models&SI.pdf"
+    },
+    {
+      "bbox": [
+        41.0,
+        49.0,
+        559.9,
+        314.2
+      ],
+      "width_mm": 183.0,
+      "height_mm": 93.6,
+      "n_text_spans": 0,
+      "paper": "2026-Nature-Synthesizing scientific literature with retrieval-augmented language models&SI.pdf"
+    },
+    {
+      "bbox": [
+        77.2,
+        49.0,
+        257.2,
+        238.1
+      ],
+      "width_mm": 63.5,
+      "height_mm": 66.7,
+      "n_text_spans": 0,
+      "paper": "2026-Nature-Synthesizing scientific literature with retrieval-augmented language models&SI.pdf"
+    },
+    {
+      "bbox": [
+        77.2,
+        49.0,
+        257.2,
+        246.4
+      ],
+      "width_mm": 63.5,
+      "height_mm": 69.6,
+      "n_text_spans": 0,
+      "paper": "2026-Nature-Synthesizing scientific literature with retrieval-augmented language models&SI.pdf"
+    },
+    {
+      "bbox": [
+        61.4,
+        49.0,
+        539.5,
+        242.9
+      ],
+      "width_mm": 168.7,
+      "height_mm": 68.4,
+      "n_text_spans": 0,
+      "paper": "2026-Nature-Synthesizing scientific literature with retrieval-augmented language models&SI.pdf"
+    },
+    {
+      "bbox": [
+        39.7,
+        66.1,
+        559.9,
+        304.3
+      ],
+      "width_mm": 183.5,
+      "height_mm": 84.0,
+      "n_text_spans": 0,
+      "paper": "2026-Nature-Synthesizing scientific literature with retrieval-augmented language models&SI.pdf"
+    },
+    {
+      "bbox": [
+        39.7,
+        76.1,
+        293.4,
+        402.5
+      ],
+      "width_mm": 89.5,
+      "height_mm": 115.1,
+      "n_text_spans": 0,
+      "paper": "2026-Nature-Synthesizing scientific literature with retrieval-augmented language models&SI.pdf"
+    },
+    {
+      "bbox": [
+        91.7,
+        285.6,
+        492.2,
+        401.7
+      ],
+      "width_mm": 141.3,
+      "height_mm": 40.9,
+      "n_text_spans": 24,
+      "min_font_pt": 6.0,
+      "max_font_pt": 8.0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        41.4,
+        47.8,
+        544.9,
+        235.5
+      ],
+      "width_mm": 177.6,
+      "height_mm": 66.2,
+      "n_text_spans": 32,
+      "min_font_pt": 4.0,
+      "max_font_pt": 8.0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        40.7,
+        249.6,
+        553.2,
+        384.2
+      ],
+      "width_mm": 180.8,
+      "height_mm": 47.5,
+      "n_text_spans": 49,
+      "min_font_pt": 5.0,
+      "max_font_pt": 8.0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        70.2,
+        51.3,
+        542.4,
+        225.6
+      ],
+      "width_mm": 166.6,
+      "height_mm": 61.5,
+      "n_text_spans": 46,
+      "min_font_pt": 3.5,
+      "max_font_pt": 6.0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        102.2,
+        245.8,
+        537.2,
+        427.0
+      ],
+      "width_mm": 153.5,
+      "height_mm": 63.9,
+      "n_text_spans": 5,
+      "min_font_pt": 6.0,
+      "max_font_pt": 6.0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        94.2,
+        50.0,
+        509.5,
+        122.6
+      ],
+      "width_mm": 146.5,
+      "height_mm": 25.6,
+      "n_text_spans": 24,
+      "min_font_pt": 4.0,
+      "max_font_pt": 6.0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        92.8,
+        132.5,
+        509.5,
+        216.3
+      ],
+      "width_mm": 147.0,
+      "height_mm": 29.6,
+      "n_text_spans": 23,
+      "min_font_pt": 4.0,
+      "max_font_pt": 6.0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        185.1,
+        231.4,
+        421.5,
+        382.8
+      ],
+      "width_mm": 83.4,
+      "height_mm": 53.4,
+      "n_text_spans": 30,
+      "min_font_pt": 6.0,
+      "max_font_pt": 6.0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        40.4,
+        49.0,
+        560.6,
+        688.0
+      ],
+      "width_mm": 183.5,
+      "height_mm": 225.4,
+      "n_text_spans": 0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        40.4,
+        49.0,
+        560.6,
+        610.3
+      ],
+      "width_mm": 183.5,
+      "height_mm": 198.0,
+      "n_text_spans": 0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        22.4,
+        0.6,
+        593.0,
+        791.4
+      ],
+      "width_mm": 201.3,
+      "height_mm": 279.0,
+      "n_text_spans": 0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        25.3,
+        0.6,
+        593.0,
+        791.4
+      ],
+      "width_mm": 200.3,
+      "height_mm": 279.0,
+      "n_text_spans": 0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        25.7,
+        0.6,
+        593.0,
+        791.4
+      ],
+      "width_mm": 200.2,
+      "height_mm": 279.0,
+      "n_text_spans": 0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        91.7,
+        285.6,
+        492.2,
+        401.7
+      ],
+      "width_mm": 141.3,
+      "height_mm": 40.9,
+      "n_text_spans": 24,
+      "min_font_pt": 6.0,
+      "max_font_pt": 8.0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        41.4,
+        47.8,
+        544.9,
+        235.5
+      ],
+      "width_mm": 177.6,
+      "height_mm": 66.2,
+      "n_text_spans": 32,
+      "min_font_pt": 4.0,
+      "max_font_pt": 8.0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        40.7,
+        249.6,
+        553.2,
+        384.2
+      ],
+      "width_mm": 180.8,
+      "height_mm": 47.5,
+      "n_text_spans": 49,
+      "min_font_pt": 5.0,
+      "max_font_pt": 8.0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        70.2,
+        51.3,
+        542.4,
+        225.6
+      ],
+      "width_mm": 166.6,
+      "height_mm": 61.5,
+      "n_text_spans": 46,
+      "min_font_pt": 3.5,
+      "max_font_pt": 6.0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        102.2,
+        245.8,
+        537.2,
+        427.0
+      ],
+      "width_mm": 153.5,
+      "height_mm": 63.9,
+      "n_text_spans": 5,
+      "min_font_pt": 6.0,
+      "max_font_pt": 6.0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        94.2,
+        50.0,
+        509.5,
+        122.6
+      ],
+      "width_mm": 146.5,
+      "height_mm": 25.6,
+      "n_text_spans": 24,
+      "min_font_pt": 4.0,
+      "max_font_pt": 6.0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        92.8,
+        132.5,
+        509.5,
+        216.3
+      ],
+      "width_mm": 147.0,
+      "height_mm": 29.6,
+      "n_text_spans": 23,
+      "min_font_pt": 4.0,
+      "max_font_pt": 6.0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        185.1,
+        231.4,
+        421.5,
+        382.8
+      ],
+      "width_mm": 83.4,
+      "height_mm": 53.4,
+      "n_text_spans": 30,
+      "min_font_pt": 6.0,
+      "max_font_pt": 6.0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        40.4,
+        49.0,
+        560.6,
+        688.0
+      ],
+      "width_mm": 183.5,
+      "height_mm": 225.4,
+      "n_text_spans": 0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        40.4,
+        49.0,
+        560.6,
+        610.3
+      ],
+      "width_mm": 183.5,
+      "height_mm": 198.0,
+      "n_text_spans": 0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        22.4,
+        0.6,
+        593.0,
+        791.4
+      ],
+      "width_mm": 201.3,
+      "height_mm": 279.0,
+      "n_text_spans": 0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        25.3,
+        0.6,
+        593.0,
+        791.4
+      ],
+      "width_mm": 200.3,
+      "height_mm": 279.0,
+      "n_text_spans": 0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        25.7,
+        0.6,
+        593.0,
+        791.4
+      ],
+      "width_mm": 200.2,
+      "height_mm": 279.0,
+      "n_text_spans": 0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        91.7,
+        285.6,
+        492.2,
+        401.7
+      ],
+      "width_mm": 141.3,
+      "height_mm": 40.9,
+      "n_text_spans": 24,
+      "min_font_pt": 6.0,
+      "max_font_pt": 8.0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        41.4,
+        47.8,
+        544.9,
+        235.5
+      ],
+      "width_mm": 177.6,
+      "height_mm": 66.2,
+      "n_text_spans": 32,
+      "min_font_pt": 4.0,
+      "max_font_pt": 8.0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        40.7,
+        249.6,
+        553.2,
+        384.2
+      ],
+      "width_mm": 180.8,
+      "height_mm": 47.5,
+      "n_text_spans": 49,
+      "min_font_pt": 5.0,
+      "max_font_pt": 8.0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        70.2,
+        51.3,
+        542.4,
+        225.6
+      ],
+      "width_mm": 166.6,
+      "height_mm": 61.5,
+      "n_text_spans": 46,
+      "min_font_pt": 3.5,
+      "max_font_pt": 6.0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        102.2,
+        245.8,
+        537.2,
+        427.0
+      ],
+      "width_mm": 153.5,
+      "height_mm": 63.9,
+      "n_text_spans": 5,
+      "min_font_pt": 6.0,
+      "max_font_pt": 6.0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        94.2,
+        50.0,
+        509.5,
+        122.6
+      ],
+      "width_mm": 146.5,
+      "height_mm": 25.6,
+      "n_text_spans": 24,
+      "min_font_pt": 4.0,
+      "max_font_pt": 6.0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        92.8,
+        132.5,
+        509.5,
+        216.3
+      ],
+      "width_mm": 147.0,
+      "height_mm": 29.6,
+      "n_text_spans": 23,
+      "min_font_pt": 4.0,
+      "max_font_pt": 6.0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        185.1,
+        231.4,
+        421.5,
+        382.8
+      ],
+      "width_mm": 83.4,
+      "height_mm": 53.4,
+      "n_text_spans": 30,
+      "min_font_pt": 6.0,
+      "max_font_pt": 6.0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        40.4,
+        49.0,
+        560.6,
+        688.0
+      ],
+      "width_mm": 183.5,
+      "height_mm": 225.4,
+      "n_text_spans": 0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        40.4,
+        49.0,
+        560.6,
+        610.3
+      ],
+      "width_mm": 183.5,
+      "height_mm": 198.0,
+      "n_text_spans": 0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        22.4,
+        0.6,
+        593.0,
+        791.4
+      ],
+      "width_mm": 201.3,
+      "height_mm": 279.0,
+      "n_text_spans": 0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        25.3,
+        0.6,
+        593.0,
+        791.4
+      ],
+      "width_mm": 200.3,
+      "height_mm": 279.0,
+      "n_text_spans": 0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        25.7,
+        0.6,
+        593.0,
+        791.4
+      ],
+      "width_mm": 200.2,
+      "height_mm": 279.0,
+      "n_text_spans": 0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        91.7,
+        285.6,
+        492.2,
+        401.7
+      ],
+      "width_mm": 141.3,
+      "height_mm": 40.9,
+      "n_text_spans": 24,
+      "min_font_pt": 6.0,
+      "max_font_pt": 8.0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        41.4,
+        47.8,
+        544.9,
+        235.5
+      ],
+      "width_mm": 177.6,
+      "height_mm": 66.2,
+      "n_text_spans": 32,
+      "min_font_pt": 4.0,
+      "max_font_pt": 8.0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        40.7,
+        249.6,
+        553.2,
+        384.2
+      ],
+      "width_mm": 180.8,
+      "height_mm": 47.5,
+      "n_text_spans": 49,
+      "min_font_pt": 5.0,
+      "max_font_pt": 8.0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        70.2,
+        51.3,
+        542.4,
+        225.6
+      ],
+      "width_mm": 166.6,
+      "height_mm": 61.5,
+      "n_text_spans": 46,
+      "min_font_pt": 3.5,
+      "max_font_pt": 6.0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        102.2,
+        245.8,
+        537.2,
+        427.0
+      ],
+      "width_mm": 153.5,
+      "height_mm": 63.9,
+      "n_text_spans": 5,
+      "min_font_pt": 6.0,
+      "max_font_pt": 6.0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        94.2,
+        50.0,
+        509.5,
+        122.6
+      ],
+      "width_mm": 146.5,
+      "height_mm": 25.6,
+      "n_text_spans": 24,
+      "min_font_pt": 4.0,
+      "max_font_pt": 6.0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        92.8,
+        132.5,
+        509.5,
+        216.3
+      ],
+      "width_mm": 147.0,
+      "height_mm": 29.6,
+      "n_text_spans": 23,
+      "min_font_pt": 4.0,
+      "max_font_pt": 6.0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        185.1,
+        231.4,
+        421.5,
+        382.8
+      ],
+      "width_mm": 83.4,
+      "height_mm": 53.4,
+      "n_text_spans": 30,
+      "min_font_pt": 6.0,
+      "max_font_pt": 6.0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        40.4,
+        49.0,
+        560.6,
+        688.0
+      ],
+      "width_mm": 183.5,
+      "height_mm": 225.4,
+      "n_text_spans": 0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        40.4,
+        49.0,
+        560.6,
+        610.3
+      ],
+      "width_mm": 183.5,
+      "height_mm": 198.0,
+      "n_text_spans": 0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        22.4,
+        0.6,
+        593.0,
+        791.4
+      ],
+      "width_mm": 201.3,
+      "height_mm": 279.0,
+      "n_text_spans": 0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        25.3,
+        0.6,
+        593.0,
+        791.4
+      ],
+      "width_mm": 200.3,
+      "height_mm": 279.0,
+      "n_text_spans": 0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        25.7,
+        0.6,
+        593.0,
+        791.4
+      ],
+      "width_mm": 200.2,
+      "height_mm": 279.0,
+      "n_text_spans": 0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        91.7,
+        285.6,
+        492.2,
+        401.7
+      ],
+      "width_mm": 141.3,
+      "height_mm": 40.9,
+      "n_text_spans": 24,
+      "min_font_pt": 6.0,
+      "max_font_pt": 8.0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        41.4,
+        47.8,
+        544.9,
+        235.5
+      ],
+      "width_mm": 177.6,
+      "height_mm": 66.2,
+      "n_text_spans": 32,
+      "min_font_pt": 4.0,
+      "max_font_pt": 8.0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        40.7,
+        249.6,
+        553.2,
+        384.2
+      ],
+      "width_mm": 180.8,
+      "height_mm": 47.5,
+      "n_text_spans": 49,
+      "min_font_pt": 5.0,
+      "max_font_pt": 8.0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        70.2,
+        51.3,
+        542.4,
+        225.6
+      ],
+      "width_mm": 166.6,
+      "height_mm": 61.5,
+      "n_text_spans": 46,
+      "min_font_pt": 3.5,
+      "max_font_pt": 6.0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        102.2,
+        245.8,
+        537.2,
+        427.0
+      ],
+      "width_mm": 153.5,
+      "height_mm": 63.9,
+      "n_text_spans": 5,
+      "min_font_pt": 6.0,
+      "max_font_pt": 6.0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        94.2,
+        50.0,
+        509.5,
+        122.6
+      ],
+      "width_mm": 146.5,
+      "height_mm": 25.6,
+      "n_text_spans": 24,
+      "min_font_pt": 4.0,
+      "max_font_pt": 6.0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        92.8,
+        132.5,
+        509.5,
+        216.3
+      ],
+      "width_mm": 147.0,
+      "height_mm": 29.6,
+      "n_text_spans": 23,
+      "min_font_pt": 4.0,
+      "max_font_pt": 6.0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        185.1,
+        231.4,
+        421.5,
+        382.8
+      ],
+      "width_mm": 83.4,
+      "height_mm": 53.4,
+      "n_text_spans": 30,
+      "min_font_pt": 6.0,
+      "max_font_pt": 6.0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        40.4,
+        49.0,
+        560.6,
+        688.0
+      ],
+      "width_mm": 183.5,
+      "height_mm": 225.4,
+      "n_text_spans": 0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        40.4,
+        49.0,
+        560.6,
+        610.3
+      ],
+      "width_mm": 183.5,
+      "height_mm": 198.0,
+      "n_text_spans": 0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        22.4,
+        0.6,
+        593.0,
+        791.4
+      ],
+      "width_mm": 201.3,
+      "height_mm": 279.0,
+      "n_text_spans": 0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        25.3,
+        0.6,
+        593.0,
+        791.4
+      ],
+      "width_mm": 200.3,
+      "height_mm": 279.0,
+      "n_text_spans": 0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        25.7,
+        0.6,
+        593.0,
+        791.4
+      ],
+      "width_mm": 200.2,
+      "height_mm": 279.0,
+      "n_text_spans": 0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        91.7,
+        285.6,
+        492.2,
+        401.7
+      ],
+      "width_mm": 141.3,
+      "height_mm": 40.9,
+      "n_text_spans": 24,
+      "min_font_pt": 6.0,
+      "max_font_pt": 8.0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        41.4,
+        47.8,
+        544.9,
+        235.5
+      ],
+      "width_mm": 177.6,
+      "height_mm": 66.2,
+      "n_text_spans": 32,
+      "min_font_pt": 4.0,
+      "max_font_pt": 8.0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        40.7,
+        249.6,
+        553.2,
+        384.2
+      ],
+      "width_mm": 180.8,
+      "height_mm": 47.5,
+      "n_text_spans": 49,
+      "min_font_pt": 5.0,
+      "max_font_pt": 8.0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        70.2,
+        51.3,
+        542.4,
+        225.6
+      ],
+      "width_mm": 166.6,
+      "height_mm": 61.5,
+      "n_text_spans": 46,
+      "min_font_pt": 3.5,
+      "max_font_pt": 6.0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        102.2,
+        245.8,
+        537.2,
+        427.0
+      ],
+      "width_mm": 153.5,
+      "height_mm": 63.9,
+      "n_text_spans": 5,
+      "min_font_pt": 6.0,
+      "max_font_pt": 6.0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        94.2,
+        50.0,
+        509.5,
+        122.6
+      ],
+      "width_mm": 146.5,
+      "height_mm": 25.6,
+      "n_text_spans": 24,
+      "min_font_pt": 4.0,
+      "max_font_pt": 6.0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        92.8,
+        132.5,
+        509.5,
+        216.3
+      ],
+      "width_mm": 147.0,
+      "height_mm": 29.6,
+      "n_text_spans": 23,
+      "min_font_pt": 4.0,
+      "max_font_pt": 6.0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        185.1,
+        231.4,
+        421.5,
+        382.8
+      ],
+      "width_mm": 83.4,
+      "height_mm": 53.4,
+      "n_text_spans": 30,
+      "min_font_pt": 6.0,
+      "max_font_pt": 6.0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        40.4,
+        49.0,
+        560.6,
+        688.0
+      ],
+      "width_mm": 183.5,
+      "height_mm": 225.4,
+      "n_text_spans": 0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        40.4,
+        49.0,
+        560.6,
+        610.3
+      ],
+      "width_mm": 183.5,
+      "height_mm": 198.0,
+      "n_text_spans": 0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        22.4,
+        0.6,
+        593.0,
+        791.4
+      ],
+      "width_mm": 201.3,
+      "height_mm": 279.0,
+      "n_text_spans": 0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        25.3,
+        0.6,
+        593.0,
+        791.4
+      ],
+      "width_mm": 200.3,
+      "height_mm": 279.0,
+      "n_text_spans": 0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        25.7,
+        0.6,
+        593.0,
+        791.4
+      ],
+      "width_mm": 200.2,
+      "height_mm": 279.0,
+      "n_text_spans": 0,
+      "paper": "s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+    },
+    {
+      "bbox": [
+        40.4,
+        49.0,
+        560.6,
+        493.3
+      ],
+      "width_mm": 183.5,
+      "height_mm": 156.8,
+      "n_text_spans": 128,
+      "min_font_pt": 6.0,
+      "max_font_pt": 6.0,
+      "paper": "2026-Nature-Synthesizing scientific literature with retrieval-augmented language models&SI.pdf"
+    },
+    {
+      "bbox": [
+        41.0,
+        49.0,
+        559.9,
+        390.7
+      ],
+      "width_mm": 183.0,
+      "height_mm": 120.6,
+      "n_text_spans": 0,
+      "paper": "2026-Nature-Synthesizing scientific literature with retrieval-augmented language models&SI.pdf"
+    },
+    {
+      "bbox": [
+        41.0,
+        49.0,
+        559.9,
+        314.2
+      ],
+      "width_mm": 183.0,
+      "height_mm": 93.6,
+      "n_text_spans": 0,
+      "paper": "2026-Nature-Synthesizing scientific literature with retrieval-augmented language models&SI.pdf"
+    },
+    {
+      "bbox": [
+        77.2,
+        49.0,
+        257.2,
+        238.1
+      ],
+      "width_mm": 63.5,
+      "height_mm": 66.7,
+      "n_text_spans": 0,
+      "paper": "2026-Nature-Synthesizing scientific literature with retrieval-augmented language models&SI.pdf"
+    },
+    {
+      "bbox": [
+        77.2,
+        49.0,
+        257.2,
+        246.4
+      ],
+      "width_mm": 63.5,
+      "height_mm": 69.6,
+      "n_text_spans": 0,
+      "paper": "2026-Nature-Synthesizing scientific literature with retrieval-augmented language models&SI.pdf"
+    },
+    {
+      "bbox": [
+        61.4,
+        49.0,
+        539.5,
+        242.9
+      ],
+      "width_mm": 168.7,
+      "height_mm": 68.4,
+      "n_text_spans": 0,
+      "paper": "2026-Nature-Synthesizing scientific literature with retrieval-augmented language models&SI.pdf"
+    },
+    {
+      "bbox": [
+        39.7,
+        66.1,
+        559.9,
+        304.3
+      ],
+      "width_mm": 183.5,
+      "height_mm": 84.0,
+      "n_text_spans": 0,
+      "paper": "2026-Nature-Synthesizing scientific literature with retrieval-augmented language models&SI.pdf"
+    },
+    {
+      "bbox": [
+        39.7,
+        76.1,
+        293.4,
+        402.5
+      ],
+      "width_mm": 89.5,
+      "height_mm": 115.1,
+      "n_text_spans": 0,
+      "paper": "2026-Nature-Synthesizing scientific literature with retrieval-augmented language models&SI.pdf"
+    },
+    {
+      "bbox": [
+        40.4,
+        57.0,
+        294.1,
+        135.6
+      ],
+      "width_mm": 89.5,
+      "height_mm": 27.7,
+      "n_text_spans": 21,
+      "min_font_pt": 6.0,
+      "max_font_pt": 6.0,
+      "paper": "!2026-Nature-Evaluating large language models for accuracy incentivizes hallucinations&SI.pdf"
+    },
+    {
+      "bbox": [
+        40.4,
+        49.0,
+        294.1,
+        124.9
+      ],
+      "width_mm": 89.5,
+      "height_mm": 26.8,
+      "n_text_spans": 20,
+      "min_font_pt": 6.0,
+      "max_font_pt": 6.0,
+      "paper": "!2026-Nature-Evaluating large language models for accuracy incentivizes hallucinations&SI.pdf"
+    },
+    {
+      "bbox": [
+        40.4,
+        -51.7,
+        355.1,
+        207.8
+      ],
+      "width_mm": 111.0,
+      "height_mm": 91.5,
+      "n_text_spans": 35,
+      "min_font_pt": 4.2,
+      "max_font_pt": 14.0,
+      "paper": "!2026-Nature-Evaluating large language models for accuracy incentivizes hallucinations&SI.pdf"
+    },
+    {
+      "bbox": [
+        57.5,
+        49.0,
+        543.5,
+        281.1
+      ],
+      "width_mm": 171.5,
+      "height_mm": 81.9,
+      "n_text_spans": 0,
+      "paper": "!2026-Nature-Evaluating large language models for accuracy incentivizes hallucinations&SI.pdf"
+    },
+    {
+      "bbox": [
+        57.5,
+        299.0,
+        543.5,
+        521.4
+      ],
+      "width_mm": 171.5,
+      "height_mm": 78.4,
+      "n_text_spans": 0,
+      "paper": "!2026-Nature-Evaluating large language models for accuracy incentivizes hallucinations&SI.pdf"
+    },
+    {
+      "bbox": [
+        46.2,
+        50.8,
+        285.6,
+        144.7
+      ],
+      "width_mm": 84.4,
+      "height_mm": 33.1,
+      "n_text_spans": 0,
+      "paper": "!2026-Nature-Evaluating large language models for accuracy incentivizes hallucinations&SI.pdf"
+    },
+    {
+      "bbox": [
+        40.6,
+        85.4,
+        434.2,
+        202.3
+      ],
+      "width_mm": 138.8,
+      "height_mm": 41.2,
+      "n_text_spans": 0,
+      "paper": "!2026-Nature-Evaluating large language models for accuracy incentivizes hallucinations&SI.pdf"
+    },
+    {
+      "bbox": [
+        39.7,
+        74.1,
+        358.1,
+        208.6
+      ],
+      "width_mm": 112.3,
+      "height_mm": 47.5,
+      "n_text_spans": 0,
+      "paper": "!2026-Nature-Evaluating large language models for accuracy incentivizes hallucinations&SI.pdf"
+    },
+    {
+      "bbox": [
+        -2.0,
+        3.0,
+        579.3,
+        797.2
+      ],
+      "width_mm": 205.1,
+      "height_mm": 280.2,
+      "n_text_spans": 536,
+      "min_font_pt": 4.63,
+      "max_font_pt": 25.3,
+      "paper": "1991-Nature_So what's new.pdf"
+    },
+    {
+      "bbox": [
+        -0.8,
+        -0.5,
+        582.0,
+        794.4
+      ],
+      "width_mm": 205.6,
+      "height_mm": 280.4,
+      "n_text_spans": 502,
+      "min_font_pt": 4.11,
+      "max_font_pt": 34.2,
+      "paper": "1997-Nature_A novel paradigm.pdf"
+    },
+    {
+      "bbox": [
+        182.8,
+        170.0,
+        573.1,
+        507.2
+      ],
+      "width_mm": 137.7,
+      "height_mm": 118.9,
+      "n_text_spans": 0,
+      "paper": "2008-Nature_A question of class.pdf"
+    },
+    {
+      "bbox": [
+        36.2,
+        468.1,
+        385.8,
+        792.0
+      ],
+      "width_mm": 123.3,
+      "height_mm": 114.3,
+      "n_text_spans": 29,
+      "min_font_pt": 9.21,
+      "max_font_pt": 23.64,
+      "paper": "2008-Nature_Language_Disputed definitions.pdf"
+    },
+    {
+      "bbox": [
+        255.0,
+        92.3,
+        553.1,
+        177.3
+      ],
+      "width_mm": 105.2,
+      "height_mm": 30.0,
+      "n_text_spans": 0,
+      "paper": "2008-Nature_Language_Disputed definitions.pdf"
+    },
+    {
+      "bbox": [
+        -0.1,
+        529.0,
+        332.7,
+        782.5
+      ],
+      "width_mm": 117.4,
+      "height_mm": 89.4,
+      "n_text_spans": 1,
+      "min_font_pt": 7.5,
+      "max_font_pt": 7.5,
+      "paper": "2008-Nature_Language_Disputed definitions.pdf"
+    },
+    {
+      "bbox": [
+        254.6,
+        92.2,
+        552.8,
+        253.6
+      ],
+      "width_mm": 105.2,
+      "height_mm": 56.9,
+      "n_text_spans": 0,
+      "paper": "2008-Nature_Language_Disputed definitions.pdf"
+    },
+    {
+      "bbox": [
+        37.2,
+        417.8,
+        388.0,
+        782.5
+      ],
+      "width_mm": 123.8,
+      "height_mm": 128.7,
+      "n_text_spans": 6,
+      "min_font_pt": 9.29,
+      "max_font_pt": 9.39,
+      "paper": "2008-Nature_Language_Disputed definitions.pdf"
+    },
+    {
+      "bbox": [
+        214.8,
+        605.2,
+        604.9,
+        776.2
+      ],
+      "width_mm": 137.6,
+      "height_mm": 60.3,
+      "n_text_spans": 7,
+      "min_font_pt": 7.5,
+      "max_font_pt": 9.37,
+      "paper": "2008-Nature_Language_Disputed definitions.pdf"
+    },
+    {
+      "bbox": [
+        37.2,
+        450.5,
+        428.9,
+        747.7
+      ],
+      "width_mm": 138.2,
+      "height_mm": 104.9,
+      "n_text_spans": 8,
+      "min_font_pt": 5.59,
+      "max_font_pt": 9.31,
+      "paper": "2008-Nature_Language_Disputed definitions.pdf"
+    },
+    {
+      "bbox": [
+        36.9,
+        57.5,
+        596.2,
+        423.1
+      ],
+      "width_mm": 197.3,
+      "height_mm": 129.0,
+      "n_text_spans": 37,
+      "min_font_pt": 7.2,
+      "max_font_pt": 9.39,
+      "paper": "2012-Nature_In retrospect_The Structure of Scientific Revolutions.pdf"
+    },
+    {
+      "bbox": [
+        213.7,
+        598.2,
+        464.2,
+        690.5
+      ],
+      "width_mm": 88.4,
+      "height_mm": 32.6,
+      "n_text_spans": 10,
+      "min_font_pt": 9.24,
+      "max_font_pt": 9.39,
+      "paper": "2012-Nature_In retrospect_The Structure of Scientific Revolutions.pdf"
+    },
+    {
+      "bbox": [
+        -1.0,
+        59.1,
+        311.8,
+        471.4
+      ],
+      "width_mm": 110.4,
+      "height_mm": 145.4,
+      "n_text_spans": 4,
+      "min_font_pt": 9.31,
+      "max_font_pt": 9.39,
+      "paper": "2012-Nature_In retrospect_The Structure of Scientific Revolutions.pdf"
+    },
+    {
+      "bbox": [
+        36.9,
+        59.9,
+        374.0,
+        264.7
+      ],
+      "width_mm": 118.9,
+      "height_mm": 72.3,
+      "n_text_spans": 0,
+      "paper": "2012-Nature_In retrospect_The Structure of Scientific Revolutions.pdf"
+    },
+    {
+      "bbox": [
+        77.5,
+        57.9,
+        558.3,
+        299.0
+      ],
+      "width_mm": 169.6,
+      "height_mm": 85.0,
+      "n_text_spans": 125,
+      "min_font_pt": 3.73,
+      "max_font_pt": 7.09,
+      "paper": "2023-Nature_Papers and patents are becoming less disruptive over time_with SI.pdf"
+    },
+    {
+      "bbox": [
+        154.6,
+        65.9,
+        467.3,
+        205.1
+      ],
+      "width_mm": 110.3,
+      "height_mm": 49.1,
+      "n_text_spans": 17,
+      "min_font_pt": 4.29,
+      "max_font_pt": 6.0,
+      "paper": "2023-Nature_Papers and patents are becoming less disruptive over time_with SI.pdf"
+    },
+    {
+      "bbox": [
+        42.5,
+        56.0,
+        559.0,
+        221.9
+      ],
+      "width_mm": 182.2,
+      "height_mm": 58.5,
+      "n_text_spans": 88,
+      "min_font_pt": 6.0,
+      "max_font_pt": 8.0,
+      "paper": "2023-Nature_Papers and patents are becoming less disruptive over time_with SI.pdf"
+    },
+    {
+      "bbox": [
+        71.7,
+        234.3,
+        558.3,
+        368.9
+      ],
+      "width_mm": 171.6,
+      "height_mm": 47.5,
+      "n_text_spans": 53,
+      "min_font_pt": 6.0,
+      "max_font_pt": 6.0,
+      "paper": "2023-Nature_Papers and patents are becoming less disruptive over time_with SI.pdf"
+    },
+    {
+      "bbox": [
+        164.8,
+        499.1,
+        465.4,
+        628.2
+      ],
+      "width_mm": 106.0,
+      "height_mm": 45.5,
+      "n_text_spans": 29,
+      "min_font_pt": 4.29,
+      "max_font_pt": 6.0,
+      "paper": "2023-Nature_Papers and patents are becoming less disruptive over time_with SI.pdf"
+    },
+    {
+      "bbox": [
+        65.7,
+        49.0,
+        289.4,
+        279.8
+      ],
+      "width_mm": 78.9,
+      "height_mm": 81.4,
+      "n_text_spans": 15,
+      "min_font_pt": 5.0,
+      "max_font_pt": 6.0,
+      "paper": "2023-Nature_Papers and patents are becoming less disruptive over time_with SI.pdf"
+    },
+    {
+      "bbox": [
+        43.3,
+        56.7,
+        558.5,
+        233.2
+      ],
+      "width_mm": 181.7,
+      "height_mm": 62.3,
+      "n_text_spans": 69,
+      "min_font_pt": 5.0,
+      "max_font_pt": 8.0,
+      "paper": "2023-Nature_Papers and patents are becoming less disruptive over time_with SI.pdf"
+    },
+    {
+      "bbox": [
+        76.3,
+        244.9,
+        553.4,
+        380.4
+      ],
+      "width_mm": 168.3,
+      "height_mm": 47.8,
+      "n_text_spans": 31,
+      "min_font_pt": 5.0,
+      "max_font_pt": 6.0,
+      "paper": "2023-Nature_Papers and patents are becoming less disruptive over time_with SI.pdf"
+    },
+    {
+      "bbox": [
+        45.5,
+        49.0,
+        555.5,
+        40973.1
+      ],
+      "width_mm": 179.9,
+      "height_mm": 14437.1,
+      "n_text_spans": 21,
+      "min_font_pt": 4.2,
+      "max_font_pt": 7.0,
+      "paper": "2023-Nature_Papers and patents are becoming less disruptive over time_with SI.pdf"
+    },
+    {
+      "bbox": [
+        45.5,
+        49.0,
+        555.5,
+        319.2
+      ],
+      "width_mm": 179.9,
+      "height_mm": 95.3,
+      "n_text_spans": 0,
+      "paper": "2023-Nature_Papers and patents are becoming less disruptive over time_with SI.pdf"
+    },
+    {
+      "bbox": [
+        60.1,
+        325.5,
+        534.8,
+        532.0
+      ],
+      "width_mm": 167.5,
+      "height_mm": 72.8,
+      "n_text_spans": 0,
+      "paper": "2023-Nature_Papers and patents are becoming less disruptive over time_with SI.pdf"
+    },
+    {
+      "bbox": [
+        45.6,
+        49.0,
+        555.5,
+        297.1
+      ],
+      "width_mm": 179.9,
+      "height_mm": 87.5,
+      "n_text_spans": 0,
+      "paper": "2023-Nature_Papers and patents are becoming less disruptive over time_with SI.pdf"
+    },
+    {
+      "bbox": [
+        45.5,
+        49.0,
+        550.2,
+        277.8
+      ],
+      "width_mm": 178.1,
+      "height_mm": 80.7,
+      "n_text_spans": 0,
+      "paper": "2023-Nature_Papers and patents are becoming less disruptive over time_with SI.pdf"
+    },
+    {
+      "bbox": [
+        96.2,
+        49.4,
+        501.1,
+        287.5
+      ],
+      "width_mm": 142.9,
+      "height_mm": 84.0,
+      "n_text_spans": 0,
+      "paper": "2023-Nature_Papers and patents are becoming less disruptive over time_with SI.pdf"
+    },
+    {
+      "bbox": [
+        167.5,
+        49.0,
+        425.6,
+        274.8
+      ],
+      "width_mm": 91.1,
+      "height_mm": 79.7,
+      "n_text_spans": 0,
+      "paper": "2023-Nature_Papers and patents are becoming less disruptive over time_with SI.pdf"
+    },
+    {
+      "bbox": [
+        45.5,
+        49.0,
+        555.5,
+        302.4
+      ],
+      "width_mm": 179.9,
+      "height_mm": 89.4,
+      "n_text_spans": 0,
+      "paper": "2023-Nature_Papers and patents are becoming less disruptive over time_with SI.pdf"
+    },
+    {
+      "bbox": [
+        45.5,
+        49.0,
+        555.5,
+        371.9
+      ],
+      "width_mm": 179.9,
+      "height_mm": 113.9,
+      "n_text_spans": 0,
+      "paper": "2023-Nature_Papers and patents are becoming less disruptive over time_with SI.pdf"
+    },
+    {
+      "bbox": [
+        45.5,
+        49.0,
+        555.5,
+        281.5
+      ],
+      "width_mm": 179.9,
+      "height_mm": 82.0,
+      "n_text_spans": 0,
+      "paper": "2023-Nature_Papers and patents are becoming less disruptive over time_with SI.pdf"
+    },
+    {
+      "bbox": [
+        41.4,
+        68.9,
+        547.8,
+        203.3
+      ],
+      "width_mm": 178.7,
+      "height_mm": 47.4,
+      "n_text_spans": 0,
+      "paper": "2023-Nature_Papers and patents are becoming less disruptive over time_with SI.pdf"
+    },
+    {
+      "bbox": [
+        22.4,
+        0.6,
+        593.0,
+        791.4
+      ],
+      "width_mm": 201.3,
+      "height_mm": 279.0,
+      "n_text_spans": 0,
+      "paper": "2023-Nature_Papers and patents are becoming less disruptive over time_with SI.pdf"
+    },
+    {
+      "bbox": [
+        25.3,
+        0.6,
+        593.0,
+        791.4
+      ],
+      "width_mm": 200.3,
+      "height_mm": 279.0,
+      "n_text_spans": 0,
+      "paper": "2023-Nature_Papers and patents are becoming less disruptive over time_with SI.pdf"
+    },
+    {
+      "bbox": [
+        54.2,
+        143.2,
+        547.5,
+        218.3
+      ],
+      "width_mm": 174.0,
+      "height_mm": 26.5,
+      "n_text_spans": 2,
+      "min_font_pt": 6.0,
+      "max_font_pt": 6.0,
+      "paper": "2016-Nature-Multimodal learning with next-token prediction for large multimodal models.pdf"
+    },
+    {
+      "bbox": [
+        58.7,
+        311.9,
+        548.1,
+        400.0
+      ],
+      "width_mm": 172.6,
+      "height_mm": 31.1,
+      "n_text_spans": 22,
+      "min_font_pt": 6.0,
+      "max_font_pt": 6.0,
+      "paper": "2016-Nature-Multimodal learning with next-token prediction for large multimodal models.pdf"
+    },
+    {
+      "bbox": [
+        54.5,
+        61.9,
+        561.3,
+        309.8
+      ],
+      "width_mm": 178.8,
+      "height_mm": 87.5,
+      "n_text_spans": 36,
+      "min_font_pt": 5.0,
+      "max_font_pt": 5.0,
+      "paper": "2016-Nature-Multimodal learning with next-token prediction for large multimodal models.pdf"
+    },
+    {
+      "bbox": [
+        80.7,
+        47.5,
+        507.8,
+        154.4
+      ],
+      "width_mm": 150.7,
+      "height_mm": 37.7,
+      "n_text_spans": 67,
+      "min_font_pt": 5.0,
+      "max_font_pt": 8.0,
+      "paper": "2016-Nature-Multimodal learning with next-token prediction for large multimodal models.pdf"
+    },
+    {
+      "bbox": [
+        99.7,
+        49.5,
+        477.4,
+        123.7
+      ],
+      "width_mm": 133.3,
+      "height_mm": 26.2,
+      "n_text_spans": 41,
+      "min_font_pt": 5.0,
+      "max_font_pt": 5.0,
+      "paper": "2016-Nature-Multimodal learning with next-token prediction for large multimodal models.pdf"
+    },
+    {
+      "bbox": [
+        51.2,
+        55.4,
+        533.8,
+        202.4
+      ],
+      "width_mm": 170.2,
+      "height_mm": 51.9,
+      "n_text_spans": 10,
+      "min_font_pt": 5.0,
+      "max_font_pt": 5.0,
+      "paper": "2016-Nature-Multimodal learning with next-token prediction for large multimodal models.pdf"
+    },
+    {
+      "bbox": [
+        40.4,
+        49.0,
+        560.6,
+        450.0
+      ],
+      "width_mm": 183.5,
+      "height_mm": 141.5,
+      "n_text_spans": 0,
+      "paper": "2016-Nature-Multimodal learning with next-token prediction for large multimodal models.pdf"
+    },
+    {
+      "bbox": [
+        40.4,
+        49.0,
+        560.6,
+        533.5
+      ],
+      "width_mm": 183.5,
+      "height_mm": 170.9,
+      "n_text_spans": 0,
+      "paper": "2016-Nature-Multimodal learning with next-token prediction for large multimodal models.pdf"
+    },
+    {
+      "bbox": [
+        40.4,
+        49.0,
+        560.6,
+        352.7
+      ],
+      "width_mm": 183.5,
+      "height_mm": 107.1,
+      "n_text_spans": 0,
+      "paper": "2016-Nature-Multimodal learning with next-token prediction for large multimodal models.pdf"
+    },
+    {
+      "bbox": [
+        39.7,
+        66.1,
+        464.8,
+        453.9
+      ],
+      "width_mm": 150.0,
+      "height_mm": 136.8,
+      "n_text_spans": 0,
+      "paper": "2016-Nature-Multimodal learning with next-token prediction for large multimodal models.pdf"
+    },
+    {
+      "bbox": [
+        39.7,
+        66.1,
+        559.9,
+        453.1
+      ],
+      "width_mm": 183.5,
+      "height_mm": 136.5,
+      "n_text_spans": 0,
+      "paper": "2016-Nature-Multimodal learning with next-token prediction for large multimodal models.pdf"
+    },
+    {
+      "bbox": [
+        39.7,
+        66.1,
+        559.9,
+        293.4
+      ],
+      "width_mm": 183.5,
+      "height_mm": 80.2,
+      "n_text_spans": 0,
+      "paper": "2016-Nature-Multimodal learning with next-token prediction for large multimodal models.pdf"
+    },
+    {
+      "bbox": [
+        39.7,
+        66.1,
+        559.9,
+        288.1
+      ],
+      "width_mm": 183.5,
+      "height_mm": 78.3,
+      "n_text_spans": 0,
+      "paper": "2016-Nature-Multimodal learning with next-token prediction for large multimodal models.pdf"
+    },
+    {
+      "bbox": [
+        39.7,
+        66.1,
+        559.9,
+        252.6
+      ],
+      "width_mm": 183.5,
+      "height_mm": 65.8,
+      "n_text_spans": 0,
+      "paper": "2016-Nature-Multimodal learning with next-token prediction for large multimodal models.pdf"
+    },
+    {
+      "bbox": [
+        39.7,
+        66.1,
+        293.4,
+        211.3
+      ],
+      "width_mm": 89.5,
+      "height_mm": 51.2,
+      "n_text_spans": 0,
+      "paper": "2016-Nature-Multimodal learning with next-token prediction for large multimodal models.pdf"
+    },
+    {
+      "bbox": [
+        39.7,
+        66.1,
+        559.9,
+        232.8
+      ],
+      "width_mm": 183.5,
+      "height_mm": 58.8,
+      "n_text_spans": 0,
+      "paper": "2016-Nature-Multimodal learning with next-token prediction for large multimodal models.pdf"
+    },
+    {
+      "bbox": [
+        39.1,
+        47.7,
+        570.2,
+        753.8
+      ],
+      "width_mm": 187.4,
+      "height_mm": 249.1,
+      "n_text_spans": 238,
+      "min_font_pt": 4.88,
+      "max_font_pt": 25.0,
+      "paper": "2025-Nature-Accurate predictions on small data with a tabular foundation model_Highlights&SI.pdf"
+    },
+    {
+      "bbox": [
+        39.7,
+        49.0,
+        561.3,
+        227.5
+      ],
+      "width_mm": 184.0,
+      "height_mm": 63.0,
+      "n_text_spans": 55,
+      "min_font_pt": 6.5,
+      "max_font_pt": 8.0,
+      "paper": "2025-Nature-Accurate predictions on small data with a tabular foundation model_Highlights&SI.pdf"
+    },
+    {
+      "bbox": [
+        52.0,
+        71.1,
+        552.5,
+        172.3
+      ],
+      "width_mm": 176.6,
+      "height_mm": 35.7,
+      "n_text_spans": 34,
+      "min_font_pt": 5.0,
+      "max_font_pt": 7.0,
+      "paper": "2025-Nature-Accurate predictions on small data with a tabular foundation model_Highlights&SI.pdf"
+    },
+    {
+      "bbox": [
+        55.3,
+        212.1,
+        557.5,
+        321.7
+      ],
+      "width_mm": 177.2,
+      "height_mm": 38.7,
+      "n_text_spans": 29,
+      "min_font_pt": 5.0,
+      "max_font_pt": 7.0,
+      "paper": "2025-Nature-Accurate predictions on small data with a tabular foundation model_Highlights&SI.pdf"
+    },
+    {
+      "bbox": [
+        40.8,
+        60.4,
+        560.4,
+        291.0
+      ],
+      "width_mm": 183.3,
+      "height_mm": 81.4,
+      "n_text_spans": 25,
+      "min_font_pt": 6.0,
+      "max_font_pt": 6.0,
+      "paper": "2025-Nature-Accurate predictions on small data with a tabular foundation model_Highlights&SI.pdf"
+    },
+    {
+      "bbox": [
+        65.5,
+        67.3,
+        534.3,
+        274.6
+      ],
+      "width_mm": 165.4,
+      "height_mm": 73.1,
+      "n_text_spans": 9,
+      "min_font_pt": 6.0,
+      "max_font_pt": 6.0,
+      "paper": "2025-Nature-Accurate predictions on small data with a tabular foundation model_Highlights&SI.pdf"
+    },
+    {
+      "bbox": [
+        58.1,
+        55.3,
+        558.1,
+        347.1
+      ],
+      "width_mm": 176.4,
+      "height_mm": 103.0,
+      "n_text_spans": 233,
+      "min_font_pt": 4.0,
+      "max_font_pt": 7.0,
+      "paper": "2025-Nature-Accurate predictions on small data with a tabular foundation model_Highlights&SI.pdf"
+    },
+    {
+      "bbox": [
+        51.5,
+        219.7,
+        527.6,
+        310.8
+      ],
+      "width_mm": 168.0,
+      "height_mm": 32.1,
+      "n_text_spans": 45,
+      "min_font_pt": 4.0,
+      "max_font_pt": 5.0,
+      "paper": "2025-Nature-Accurate predictions on small data with a tabular foundation model_Highlights&SI.pdf"
+    },
+    {
+      "bbox": [
+        57.0,
+        60.0,
+        551.9,
+        176.1
+      ],
+      "width_mm": 174.6,
+      "height_mm": 40.9,
+      "n_text_spans": 30,
+      "min_font_pt": 5.0,
+      "max_font_pt": 5.0,
+      "paper": "2025-Nature-Accurate predictions on small data with a tabular foundation model_Highlights&SI.pdf"
+    },
+    {
+      "bbox": [
+        40.4,
+        49.0,
+        560.6,
+        202.8
+      ],
+      "width_mm": 183.5,
+      "height_mm": 54.3,
+      "n_text_spans": 0,
+      "paper": "2025-Nature-Accurate predictions on small data with a tabular foundation model_Highlights&SI.pdf"
+    },
+    {
+      "bbox": [
+        40.4,
+        49.0,
+        560.6,
+        314.5
+      ],
+      "width_mm": 183.5,
+      "height_mm": 93.7,
+      "n_text_spans": 0,
+      "paper": "2025-Nature-Accurate predictions on small data with a tabular foundation model_Highlights&SI.pdf"
+    },
+    {
+      "bbox": [
+        40.4,
+        49.0,
+        560.6,
+        277.1
+      ],
+      "width_mm": 183.5,
+      "height_mm": 80.5,
+      "n_text_spans": 0,
+      "paper": "2025-Nature-Accurate predictions on small data with a tabular foundation model_Highlights&SI.pdf"
+    },
+    {
+      "bbox": [
+        40.3,
+        49.0,
+        560.7,
+        288.7
+      ],
+      "width_mm": 183.6,
+      "height_mm": 84.6,
+      "n_text_spans": 0,
+      "paper": "2025-Nature-Accurate predictions on small data with a tabular foundation model_Highlights&SI.pdf"
+    },
+    {
+      "bbox": [
+        39.7,
+        65.9,
+        559.9,
+        515.7
+      ],
+      "width_mm": 183.5,
+      "height_mm": 158.7,
+      "n_text_spans": 0,
+      "paper": "2025-Nature-Accurate predictions on small data with a tabular foundation model_Highlights&SI.pdf"
+    },
+    {
+      "bbox": [
+        39.7,
+        65.9,
+        552.6,
+        548.5
+      ],
+      "width_mm": 180.9,
+      "height_mm": 170.3,
+      "n_text_spans": 0,
+      "paper": "2025-Nature-Accurate predictions on small data with a tabular foundation model_Highlights&SI.pdf"
+    },
+    {
+      "bbox": [
+        39.7,
+        65.9,
+        559.9,
+        519.5
+      ],
+      "width_mm": 183.5,
+      "height_mm": 160.0,
+      "n_text_spans": 0,
+      "paper": "2025-Nature-Accurate predictions on small data with a tabular foundation model_Highlights&SI.pdf"
+    },
+    {
+      "bbox": [
+        39.7,
+        65.9,
+        559.9,
+        516.1
+      ],
+      "width_mm": 183.5,
+      "height_mm": 158.8,
+      "n_text_spans": 0,
+      "paper": "2025-Nature-Accurate predictions on small data with a tabular foundation model_Highlights&SI.pdf"
+    },
+    {
+      "bbox": [
+        39.7,
+        65.9,
+        559.9,
+        588.4
+      ],
+      "width_mm": 183.5,
+      "height_mm": 184.3,
+      "n_text_spans": 0,
+      "paper": "2025-Nature-Accurate predictions on small data with a tabular foundation model_Highlights&SI.pdf"
+    },
+    {
+      "bbox": [
+        40.9,
+        50.2,
+        561.1,
+        419.7
+      ],
+      "width_mm": 183.5,
+      "height_mm": 130.3,
+      "n_text_spans": 135,
+      "min_font_pt": 4.5,
+      "max_font_pt": 8.0,
+      "paper": "2025-Nature_Discovering state-of-the-art reinforcement learning algorithms&SI.pdf"
+    },
+    {
+      "bbox": [
+        64.7,
+        59.4,
+        553.4,
+        180.6
+      ],
+      "width_mm": 172.4,
+      "height_mm": 42.7,
+      "n_text_spans": 26,
+      "min_font_pt": 6.0,
+      "max_font_pt": 6.0,
+      "paper": "2025-Nature_Discovering state-of-the-art reinforcement learning algorithms&SI.pdf"
+    },
+    {
+      "bbox": [
+        42.2,
+        56.8,
+        482.8,
+        160.7
+      ],
+      "width_mm": 155.4,
+      "height_mm": 36.7,
+      "n_text_spans": 12,
+      "min_font_pt": 6.0,
+      "max_font_pt": 6.0,
+      "paper": "2025-Nature_Discovering state-of-the-art reinforcement learning algorithms&SI.pdf"
+    },
+    {
+      "bbox": [
+        45.4,
+        293.0,
+        555.3,
+        366.5
+      ],
+      "width_mm": 179.9,
+      "height_mm": 25.9,
+      "n_text_spans": 40,
+      "min_font_pt": 4.0,
+      "max_font_pt": 6.0,
+      "paper": "2025-Nature_Discovering state-of-the-art reinforcement learning algorithms&SI.pdf"
+    },
+    {
+      "bbox": [
+        39.7,
+        49.0,
+        545.8,
+        201.4
+      ],
+      "width_mm": 178.6,
+      "height_mm": 53.8,
+      "n_text_spans": 0,
+      "paper": "2025-Nature_Discovering state-of-the-art reinforcement learning algorithms&SI.pdf"
+    },
+    {
+      "bbox": [
+        81.1,
+        49.0,
+        519.8,
+        182.4
+      ],
+      "width_mm": 154.8,
+      "height_mm": 47.1,
+      "n_text_spans": 0,
+      "paper": "2025-Nature_Discovering state-of-the-art reinforcement learning algorithms&SI.pdf"
+    },
+    {
+      "bbox": [
+        136.7,
+        49.0,
+        464.3,
+        201.4
+      ],
+      "width_mm": 115.6,
+      "height_mm": 53.8,
+      "n_text_spans": 0,
+      "paper": "2025-Nature_Discovering state-of-the-art reinforcement learning algorithms&SI.pdf"
+    },
+    {
+      "bbox": [
+        39.7,
+        49.0,
+        293.4,
+        280.9
+      ],
+      "width_mm": 89.5,
+      "height_mm": 81.8,
+      "n_text_spans": 0,
+      "paper": "2025-Nature_Discovering state-of-the-art reinforcement learning algorithms&SI.pdf"
+    },
+    {
+      "bbox": [
+        39.7,
+        65.1,
+        559.9,
+        545.8
+      ],
+      "width_mm": 183.5,
+      "height_mm": 169.6,
+      "n_text_spans": 0,
+      "paper": "2025-Nature_Discovering state-of-the-art reinforcement learning algorithms&SI.pdf"
+    },
+    {
+      "bbox": [
+        39.7,
+        65.1,
+        559.9,
+        227.2
+      ],
+      "width_mm": 183.5,
+      "height_mm": 57.2,
+      "n_text_spans": 0,
+      "paper": "2025-Nature_Discovering state-of-the-art reinforcement learning algorithms&SI.pdf"
+    },
+    {
+      "bbox": [
+        39.7,
+        64.1,
+        559.9,
+        339.5
+      ],
+      "width_mm": 183.5,
+      "height_mm": 97.2,
+      "n_text_spans": 0,
+      "paper": "2025-Nature_Discovering state-of-the-art reinforcement learning algorithms&SI.pdf"
+    },
+    {
+      "bbox": [
+        39.7,
+        65.1,
+        559.9,
+        228.6
+      ],
+      "width_mm": 183.5,
+      "height_mm": 57.7,
+      "n_text_spans": 0,
+      "paper": "2025-Nature_Discovering state-of-the-art reinforcement learning algorithms&SI.pdf"
+    },
+    {
+      "bbox": [
+        39.7,
+        66.1,
+        559.9,
+        262.0
+      ],
+      "width_mm": 183.5,
+      "height_mm": 69.1,
+      "n_text_spans": 0,
+      "paper": "2025-Nature_Discovering state-of-the-art reinforcement learning algorithms&SI.pdf"
+    },
+    {
+      "bbox": [
+        39.7,
+        66.1,
+        559.9,
+        200.8
+      ],
+      "width_mm": 183.5,
+      "height_mm": 47.5,
+      "n_text_spans": 0,
+      "paper": "2025-Nature_Discovering state-of-the-art reinforcement learning algorithms&SI.pdf"
+    },
+    {
+      "bbox": [
+        114.4,
+        82.8,
+        504.5,
+        154.9
+      ],
+      "width_mm": 137.6,
+      "height_mm": 25.4,
+      "n_text_spans": 20,
+      "min_font_pt": 5.06,
+      "max_font_pt": 5.06,
+      "paper": "2025-Nature_Discovering state-of-the-art reinforcement learning algorithms&SI.pdf"
+    },
+    {
+      "bbox": [
+        90.6,
+        300.3,
+        486.8,
+        442.6
+      ],
+      "width_mm": 139.8,
+      "height_mm": 50.2,
+      "n_text_spans": 19,
+      "min_font_pt": 5.01,
+      "max_font_pt": 8.58,
+      "paper": "2025-Nature_Discovering state-of-the-art reinforcement learning algorithms&SI.pdf"
+    }
+  ]
+}
