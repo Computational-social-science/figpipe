@@ -131,8 +131,13 @@ def main(argv: list[str]) -> int:
         "regressed_detail": {k: v for k, v in evo_report.get("results", {}).items()
                               if v.get("ok") is False},
         "check_summary": evo_report.get("summary", {}),
+        # v2 schema: `enforced` requires BOTH a mechanism and a measurement. Counting the old
+        # `verified` label here reported 0 enforced rules while 7 were enforced, which reads
+        # as a collapse rather than as a schema change.
         "rules": {
-            "verified": sum(1 for r in after["rules"] if r["confidence"] == "verified"),
+            "enforced": sum(1 for r in after["rules"] if r.get("enforced")),
+            "measured_unenforced": sum(1 for r in after["rules"]
+                                       if r["confidence"] == "measured_unenforced"),
             "hypothesis": sum(1 for r in after["rules"] if r["confidence"] == "hypothesis"),
             "regressed": sum(1 for r in after["rules"] if r["confidence"] == "regressed"),
         },

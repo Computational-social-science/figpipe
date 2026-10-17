@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-17T23:40:21",
+  "run_at": "2026-10-17T23:40:48",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -11,7 +11,7 @@
     "  wrote knowledge\\evolution_report.json"
   ],
   "tests_ok": true,
-  "tests_summary": "27 passed in 2.96s",
+  "tests_summary": "27 passed in 2.91s",
   "knowledge_version_before": 11,
   "knowledge_version_after": 11,
   "knowledge_changed": false,
@@ -80,7 +80,8 @@
     ]
   },
   "rules": {
-    "verified": 0,
+    "enforced": 7,
+    "measured_unenforced": 1,
     "hypothesis": 1,
     "regressed": 0
   },
