@@ -1,0 +1,2702 @@
+{
+ "source_dir": "D:\\2026-AI4S",
+ "pdfs_scanned": 42,
+ "pdfs_distinct": 34,
+ "duplicates_skipped": [
+  {
+   "kept": "D:\\2026-AI4S\\2026-Nature-Reimagining research papers as interactive and reliable AI agents_Briefing&SI.pdf",
+   "duplicate": "D:\\2026-AI4S\\nhb-llm-mistranslation\\paper2agent_work\\_quarantine\\p2a-nature-smoke-review\\originals\\s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+  },
+  {
+   "kept": "D:\\2026-AI4S\\2026-Nature-Reimagining research papers as interactive and reliable AI agents_Briefing&SI.pdf",
+   "duplicate": "D:\\2026-AI4S\\nhb-llm-mistranslation\\paper2agent_work\\_quarantine\\p2a-v2-review\\originals\\s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+  },
+  {
+   "kept": "D:\\2026-AI4S\\2026-Nature-Reimagining research papers as interactive and reliable AI agents_Briefing&SI.pdf",
+   "duplicate": "D:\\2026-AI4S\\nhb-llm-mistranslation\\paper2agent_work\\originals\\s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+  },
+  {
+   "kept": "D:\\2026-AI4S\\2026-Nature-Reimagining research papers as interactive and reliable AI agents_Briefing&SI.pdf",
+   "duplicate": "D:\\2026-AI4S\\nhb-llm-mistranslation\\paper2agent_work\\p2a-blind-review\\originals\\s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+  },
+  {
+   "kept": "D:\\2026-AI4S\\2026-Nature-Reimagining research papers as interactive and reliable AI agents_Briefing&SI.pdf",
+   "duplicate": "D:\\2026-AI4S\\nhb-llm-mistranslation\\paper2agent_work\\p2a-v3-review\\originals\\s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+  },
+  {
+   "kept": "D:\\2026-AI4S\\2026-Nature-Reimagining research papers as interactive and reliable AI agents_Briefing&SI.pdf",
+   "duplicate": "D:\\2026-AI4S\\nhb-llm-mistranslation\\rc_scratch\\review-copy\\originals\\s001-2026-nature-reimagining-research-papers-as-inter.pdf"
+  },
+  {
+   "kept": "D:\\2026-AI4S\\nhb-llm-mistranslation\\.kilo\\worktrees\\bright-color\\References\\2023-Nature-Why open-source generative AI models are an ethical way forward for science.pdf",
+   "duplicate": "D:\\2026-AI4S\\nhb-llm-mistranslation\\References\\2023-Nature-Why open-source generative AI models are an ethical way forward for science.pdf"
+  },
+  {
+   "kept": "D:\\2026-AI4S\\nhb-llm-mistranslation\\.kilo\\worktrees\\bright-color\\References\\2026-Nature-Synthesizing scientific literature with retrieval-augmented language models&SI.pdf",
+   "duplicate": "D:\\2026-AI4S\\nhb-llm-mistranslation\\References\\2026-Nature-Synthesizing scientific literature with retrieval-augmented language models&SI.pdf"
+  }
+ ],
+ "dpi": 150,
+ "figures": [
+  {
+   "image": "2024-nature-detecting-hallucinations-in-large-la-20c39bb8_p002_fig1.png",
+   "paper": "!2024-Nature-Detecting hallucinations in large language models using semantic entropy_SI&Highlights.pdf",
+   "page": 2,
+   "figure_number": 1,
+   "crop_pt": [
+    36.7,
+    46.0,
+    564.3,
+    260.6
+   ],
+   "crop_px": [
+    1100,
+    448
+   ],
+   "crop_width_mm": 186.1,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.6813,
+   "caption_width_pt": 255.5,
+   "column_from_geometry": "double",
+   "caption_text": "Figure 1 | A strategy for detecting LLM confabulations.  Large language \nmodels (LLMs) can produce confabulations, a type of factually incorrect output. \nFarquhar et al.5 developed a method for detecting such errors using LLMs. One \nLLM produced outputs to be evaluated. The authors used a second, ‘semantic \nequivalence’ LLM to group a set of possible outputs from the first LLM in terms",
+   "graphic_objects": 38,
+   "page_vector_objects": 80,
+   "page_raster_images": 0
+  },
+  {
+   "image": "2024-nature-detecting-hallucinations-in-large-la-20c39bb8_p004_fig1.png",
+   "paper": "!2024-Nature-Detecting hallucinations in large language models using semantic entropy_SI&Highlights.pdf",
+   "page": 4,
+   "figure_number": 1,
+   "crop_pt": [
+    128.6,
+    61.4,
+    431.3,
+    462.6
+   ],
+   "crop_px": [
+    632,
+    837
+   ],
+   "crop_width_mm": 106.8,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.431,
+   "caption_width_pt": 254.8,
+   "column_from_geometry": "single",
+   "caption_text": "Fig. 1 | Overview of semantic entropy and confabulation detection. a, Naive \nentropy-based uncertainty measures variation in the exact answers, treating \n‘Paris’, ‘It’s Paris’ and ‘France’s capital Paris’ as different. But this is unsuitable \nfor language tasks for which sometimes different answers mean the same \nthings. Our semantic entropy clusters answers which share meanings before \ncomputing the entropy. A low semantic entropy shows that the LLM is confident \nabout the meaning. b, Semantic entropy can also detect confabulations in \nlonger passages. We automatically decompose a long generated answer into",
+   "graphic_objects": 61,
+   "page_vector_objects": 147,
+   "page_raster_images": 0
+  },
+  {
+   "image": "2024-nature-detecting-hallucinations-in-large-la-20c39bb8_p005_fig2.png",
+   "paper": "!2024-Nature-Detecting hallucinations in large language models using semantic entropy_SI&Highlights.pdf",
+   "page": 5,
+   "figure_number": 2,
+   "crop_pt": [
+    148.1,
+    47.5,
+    356.4,
+    361.7
+   ],
+   "crop_px": [
+    435,
+    655
+   ],
+   "crop_width_mm": 73.5,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.3556,
+   "caption_width_pt": 254.4,
+   "column_from_geometry": "single",
+   "caption_text": "Fig. 2 | Detecting confabulations in sentence-length generations. Semantic \nentropy outperforms leading baselines and naive entropy. AUROC (scored on \nthe y-axes) measures how well methods predict LLM mistakes, which correlate \nwith confabulations. AURAC (likewise scored on the y-axes) measures the",
+   "graphic_objects": 46,
+   "page_vector_objects": 90,
+   "page_raster_images": 0
+  },
+  {
+   "image": "2024-nature-detecting-hallucinations-in-large-la-20c39bb8_p007_fig3.png",
+   "paper": "!2024-Nature-Detecting hallucinations in large language models using semantic entropy_SI&Highlights.pdf",
+   "page": 7,
+   "figure_number": 3,
+   "crop_pt": [
+    57.5,
+    47.5,
+    290.9,
+    275.5
+   ],
+   "crop_px": [
+    488,
+    476
+   ],
+   "crop_width_mm": 82.3,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.3712,
+   "caption_width_pt": 253.5,
+   "column_from_geometry": "single",
+   "caption_text": "Fig. 3 | Detecting GPT-4 confabulations in paragraph-length biographies. \nThe discrete variant of our semantic entropy estimator outperforms baselines \nboth when measured by AUROC and AURAC metrics (scored on the y-axis). The \nAUROC and AURAC are substantially higher than for both baselines. At above \n80% of questions being answered, semantic entropy has the highest accuracy. \nOnly when the top 20% of answers judged most likely to be confabulations are \nrejected does the answer accuracy on the remainder for the P(True) baseline \nexceed semantic entropy.",
+   "graphic_objects": 23,
+   "page_vector_objects": 29,
+   "page_raster_images": 0
+  },
+  {
+   "image": "2024-nature-detecting-hallucinations-in-large-la-20c39bb8_p024_fig2.png",
+   "paper": "!2024-Nature-Detecting hallucinations in large language models using semantic entropy_SI&Highlights.pdf",
+   "page": 24,
+   "figure_number": 2,
+   "crop_pt": [
+    121.6,
+    70.7,
+    498.2,
+    501.6
+   ],
+   "crop_px": [
+    785,
+    898
+   ],
+   "crop_width_mm": 132.9,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.1184,
+   "caption_width_pt": 370.7,
+   "column_from_geometry": "double",
+   "caption_text": "Figure 2. Individual datasets and models follow a very similar pattern to the average,",
+   "graphic_objects": 63,
+   "page_vector_objects": 63,
+   "page_raster_images": 0
+  },
+  {
+   "image": "2026-nature-evaluating-large-language-models-for-b388ebeb_p002_fig1.png",
+   "paper": "!2026-Nature-Evaluating large language models for accuracy incentivizes hallucinations&SI.pdf",
+   "page": 2,
+   "figure_number": 1,
+   "crop_pt": [
+    37.4,
+    54.0,
+    297.1,
+    195.8
+   ],
+   "crop_px": [
+    542,
+    296
+   ],
+   "crop_width_mm": 91.6,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.1832,
+   "caption_width_pt": 245.5,
+   "column_from_geometry": "single",
+   "caption_text": "Fig. 1 | Origins and persistence of hallucination across training and \nevaluation. Next-word prediction creates statistical pressure towards \nhallucination. Subsequently, numerous techniques improve alignment and \nreduce hallucination. Yet accuracy-based evaluations ultimately inform  \nmodel selection, inadvertently incentivizing confident guessing.",
+   "graphic_objects": 44,
+   "page_vector_objects": 45,
+   "page_raster_images": 0
+  },
+  {
+   "image": "2026-nature-evaluating-large-language-models-for-b388ebeb_p003_fig2.png",
+   "paper": "!2026-Nature-Evaluating large language models for accuracy incentivizes hallucinations&SI.pdf",
+   "page": 3,
+   "figure_number": 2,
+   "crop_pt": [
+    37.4,
+    46.0,
+    297.1,
+    197.5
+   ],
+   "crop_px": [
+    543,
+    317
+   ],
+   "crop_width_mm": 91.6,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.19,
+   "caption_width_pt": 252.2,
+   "column_from_geometry": "single",
+   "caption_text": "Fig. 2 | Generative errors as IIV misclassification. Left: IIV requires learning \nto identify valid generations using labelled valid (+) and error (−) examples. \nRight: each row shows a concept and a learned classifier (dashed line); spelling \nis separable with a good model (top), counting errors are due to a poor model \nrepresentation (middle), and arbitrary facts have errors because there is no \npattern in the data (bottom).",
+   "graphic_objects": 108,
+   "page_vector_objects": 128,
+   "page_raster_images": 0
+  },
+  {
+   "image": "2026-nature-evaluating-large-language-models-for-b388ebeb_p004_fig3.png",
+   "paper": "!2026-Nature-Evaluating large language models for accuracy incentivizes hallucinations&SI.pdf",
+   "page": 4,
+   "figure_number": 3,
+   "crop_pt": [
+    37.4,
+    19.4,
+    358.1,
+    194.7
+   ],
+   "crop_px": [
+    669,
+    366
+   ],
+   "crop_width_mm": 113.1,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.3251,
+   "caption_width_pt": 254.9,
+   "column_from_geometry": "single",
+   "caption_text": "Fig. 3 | Accuracy as a barrier to hallucination reduction. The consistency- \nbased mitigation reduces incorrect responses (hallucination rate) but also \ndecreases correct responses (accuracy), posing a barrier to adoption (n = 4,326 \nquestions per model).",
+   "graphic_objects": 49,
+   "page_vector_objects": 72,
+   "page_raster_images": 0
+  },
+  {
+   "image": "2024-nature-scaling-neural-machine-translation-t-a0dd5bf3_p003_fig1.png",
+   "paper": "2024-Nature-Scaling neural machine translation to 200 languages_NLLB-200.pdf",
+   "page": 3,
+   "figure_number": 1,
+   "crop_pt": [
+    44.0,
+    590.0,
+    404.5,
+    748.4
+   ],
+   "crop_px": [
+    752,
+    331
+   ],
+   "crop_width_mm": 127.2,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.5283,
+   "caption_width_pt": 255.3,
+   "column_from_geometry": "double",
+   "caption_text": "Fig. 1 | Cosine similarity scores between languages at different layers of the \nencoder–decoder architecture. a–d, The first (a) and last (b) encoder layers \nand then the first (c) and last (d) decoder layers. The similarity is measured with",
+   "graphic_objects": 68043,
+   "page_vector_objects": 129608,
+   "page_raster_images": 1
+  },
+  {
+   "image": "2024-nature-scaling-neural-machine-translation-t-a0dd5bf3_p004_fig2.png",
+   "paper": "2024-Nature-Scaling neural machine translation to 200 languages_NLLB-200.pdf",
+   "page": 4,
+   "figure_number": 2,
+   "crop_pt": [
+    139.7,
+    637.0,
+    472.1,
+    748.4
+   ],
+   "crop_px": [
+    694,
+    233
+   ],
+   "crop_width_mm": 117.3,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.2964,
+   "caption_width_pt": 430.0,
+   "column_from_geometry": "single",
+   "caption_text": "Fig. 2 | Quality of FLORES-200. Quality assurance scores for the languages in FLORES-200. The minimum acceptable standard is 90%.",
+   "graphic_objects": 11,
+   "page_vector_objects": 11,
+   "page_raster_images": 0
+  },
+  {
+   "image": "2024-nature-scaling-neural-machine-translation-t-a0dd5bf3_p005_fig3.png",
+   "paper": "2024-Nature-Scaling neural machine translation to 200 languages_NLLB-200.pdf",
+   "page": 5,
+   "figure_number": 3,
+   "crop_pt": [
+    62.5,
+    56.0,
+    317.5,
+    238.9
+   ],
+   "crop_px": [
+    532,
+    382
+   ],
+   "crop_width_mm": 90.0,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.1559,
+   "caption_width_pt": 252.5,
+   "column_from_geometry": "single",
+   "caption_text": "Fig. 3 | Correlations between aggregated human quality scores and \nautomated metrics. a, The relationship between spBLEU and XSTS. b, The \nrelationship between chrF++ and XSTS. c, The relationship between average \nsentence-level chrF++ and XSTS. All automated scores were computed only on",
+   "graphic_objects": 18,
+   "page_vector_objects": 37,
+   "page_raster_images": 0
+  },
+  {
+   "image": "2024-nature-scaling-neural-machine-translation-t-a0dd5bf3_p021_fig6.png",
+   "paper": "2024-Nature-Scaling neural machine translation to 200 languages_NLLB-200.pdf",
+   "page": 21,
+   "figure_number": 6,
+   "crop_pt": [
+    123.5,
+    70.7,
+    473.7,
+    285.5
+   ],
+   "crop_px": [
+    730,
+    448
+   ],
+   "crop_width_mm": 123.5,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.1976,
+   "caption_width_pt": 370.6,
+   "column_from_geometry": "double",
+   "caption_text": "Fig. 6: Comparing model performance when trained on data from various sources.\nWe observe significant improvements in adding mined and back-translated data for all\ntypes of language pairs and resource levels.",
+   "graphic_objects": 31,
+   "page_vector_objects": 31,
+   "page_raster_images": 0
+  },
+  {
+   "image": "2024-nature-scaling-neural-machine-translation-t-a0dd5bf3_p022_fig7.png",
+   "paper": "2024-Nature-Scaling neural machine translation to 200 languages_NLLB-200.pdf",
+   "page": 22,
+   "figure_number": 7,
+   "crop_pt": [
+    162.5,
+    70.9,
+    498.0,
+    287.6
+   ],
+   "crop_px": [
+    700,
+    453
+   ],
+   "crop_width_mm": 118.4,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.4046,
+   "caption_width_pt": 370.6,
+   "column_from_geometry": "single",
+   "caption_text": "Fig. 7: Distribution of Amount of Training Sentence Pairs across 1220 language pairs\nin our dataset. We observe that the majority of pairs have fewer than 1M sentences\nand are low-resource.",
+   "graphic_objects": 6,
+   "page_vector_objects": 8,
+   "page_raster_images": 0
+  },
+  {
+   "image": "2024-nature-scaling-neural-machine-translation-t-a0dd5bf3_p024_fig8.png",
+   "paper": "2024-Nature-Scaling neural machine translation to 200 languages_NLLB-200.pdf",
+   "page": 24,
+   "figure_number": 8,
+   "crop_pt": [
+    194.6,
+    83.8,
+    411.8,
+    373.4
+   ],
+   "crop_px": [
+    453,
+    604
+   ],
+   "crop_width_mm": 76.6,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.1908,
+   "caption_width_pt": 370.6,
+   "column_from_geometry": "single",
+   "caption_text": "Fig. 8: Illustration of a Transformer encoder with MoE layers inserted at a 1:fMoE\nfrequency. Each MoE layer has E experts and a gating network responsible for dis-\npatching tokens.",
+   "graphic_objects": 42,
+   "page_vector_objects": 42,
+   "page_raster_images": 0
+  },
+  {
+   "image": "2024-nature-scaling-neural-machine-translation-t-a0dd5bf3_p026_fig9.png",
+   "paper": "2024-Nature-Scaling neural machine translation to 200 languages_NLLB-200.pdf",
+   "page": 26,
+   "figure_number": 9,
+   "crop_pt": [
+    167.3,
+    70.7,
+    479.5,
+    221.3
+   ],
+   "crop_px": [
+    651,
+    314
+   ],
+   "crop_width_mm": 110.2,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.1721,
+   "caption_width_pt": 370.7,
+   "column_from_geometry": "single",
+   "caption_text": "Fig. 9: Comparison of NLLB-200 with and without Finetuning on the 12 English-centric\ntasks of NLLB-MD. NLLB-200+FN+LB and +FN refer to finetuning with and without\nload balancing (LB). We report accuracy in terms of chrF++ on the validation set.",
+   "graphic_objects": 13,
+   "page_vector_objects": 52,
+   "page_raster_images": 0
+  },
+  {
+   "image": "2024-nature-scaling-neural-machine-translation-t-a0dd5bf3_p026_fig10.png",
+   "paper": "2024-Nature-Scaling neural machine translation to 200 languages_NLLB-200.pdf",
+   "page": 26,
+   "figure_number": 10,
+   "crop_pt": [
+    141.0,
+    239.6,
+    498.1,
+    423.1
+   ],
+   "crop_px": [
+    745,
+    383
+   ],
+   "crop_width_mm": 126.0,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.207,
+   "caption_width_pt": 370.6,
+   "column_from_geometry": "double",
+   "caption_text": "Fig. 10: Performance on NLLB-MD Test Sets (12 tasks in 4 domains) of NLLB-200 and\nthe single-task finetuned models NLLB-200+FN (without load balancing).",
+   "graphic_objects": 39,
+   "page_vector_objects": 52,
+   "page_raster_images": 0
+  },
+  {
+   "image": "2024-nature-scaling-neural-machine-translation-t-a0dd5bf3_p046_fig6.png",
+   "paper": "2024-Nature-Scaling neural machine translation to 200 languages_NLLB-200.pdf",
+   "page": 46,
+   "figure_number": 6,
+   "crop_pt": [
+    123.5,
+    70.7,
+    473.7,
+    285.5
+   ],
+   "crop_px": [
+    730,
+    448
+   ],
+   "crop_width_mm": 123.5,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.1976,
+   "caption_width_pt": 370.6,
+   "column_from_geometry": "double",
+   "caption_text": "Fig. 6: Comparing model performance when trained on data from various sources.\nWe observe significant improvements in adding mined and back-translated data for all\ntypes of language pairs and resource levels.",
+   "graphic_objects": 31,
+   "page_vector_objects": 31,
+   "page_raster_images": 0
+  },
+  {
+   "image": "2024-nature-scaling-neural-machine-translation-t-a0dd5bf3_p047_fig7.png",
+   "paper": "2024-Nature-Scaling neural machine translation to 200 languages_NLLB-200.pdf",
+   "page": 47,
+   "figure_number": 7,
+   "crop_pt": [
+    162.5,
+    70.9,
+    498.0,
+    287.6
+   ],
+   "crop_px": [
+    700,
+    453
+   ],
+   "crop_width_mm": 118.4,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.4046,
+   "caption_width_pt": 370.6,
+   "column_from_geometry": "single",
+   "caption_text": "Fig. 7: Distribution of Amount of Training Sentence Pairs across 1220 language pairs\nin our dataset. We observe that the majority of pairs have fewer than 1M sentences\nand are low-resource.",
+   "graphic_objects": 6,
+   "page_vector_objects": 8,
+   "page_raster_images": 0
+  },
+  {
+   "image": "2024-nature-scaling-neural-machine-translation-t-a0dd5bf3_p049_fig8.png",
+   "paper": "2024-Nature-Scaling neural machine translation to 200 languages_NLLB-200.pdf",
+   "page": 49,
+   "figure_number": 8,
+   "crop_pt": [
+    194.6,
+    83.8,
+    411.8,
+    373.4
+   ],
+   "crop_px": [
+    453,
+    604
+   ],
+   "crop_width_mm": 76.6,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.1908,
+   "caption_width_pt": 370.6,
+   "column_from_geometry": "single",
+   "caption_text": "Fig. 8: Illustration of a Transformer encoder with MoE layers inserted at a 1:fMoE\nfrequency. Each MoE layer has E experts and a gating network responsible for dis-\npatching tokens.",
+   "graphic_objects": 42,
+   "page_vector_objects": 42,
+   "page_raster_images": 0
+  },
+  {
+   "image": "2024-nature-scaling-neural-machine-translation-t-a0dd5bf3_p051_fig9.png",
+   "paper": "2024-Nature-Scaling neural machine translation to 200 languages_NLLB-200.pdf",
+   "page": 51,
+   "figure_number": 9,
+   "crop_pt": [
+    167.3,
+    70.7,
+    479.5,
+    221.3
+   ],
+   "crop_px": [
+    651,
+    314
+   ],
+   "crop_width_mm": 110.2,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.1721,
+   "caption_width_pt": 370.7,
+   "column_from_geometry": "single",
+   "caption_text": "Fig. 9: Comparison of NLLB-200 with and without Finetuning on the 12 English-centric\ntasks of NLLB-MD. NLLB-200+FN+LB and +FN refer to finetuning with and without\nload balancing (LB). We report accuracy in terms of chrF++ on the validation set.",
+   "graphic_objects": 13,
+   "page_vector_objects": 52,
+   "page_raster_images": 0
+  },
+  {
+   "image": "2024-nature-scaling-neural-machine-translation-t-a0dd5bf3_p051_fig10.png",
+   "paper": "2024-Nature-Scaling neural machine translation to 200 languages_NLLB-200.pdf",
+   "page": 51,
+   "figure_number": 10,
+   "crop_pt": [
+    141.0,
+    239.6,
+    498.1,
+    423.1
+   ],
+   "crop_px": [
+    745,
+    383
+   ],
+   "crop_width_mm": 126.0,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.207,
+   "caption_width_pt": 370.6,
+   "column_from_geometry": "double",
+   "caption_text": "Fig. 10: Performance on NLLB-MD Test Sets (12 tasks in 4 domains) of NLLB-200 and\nthe single-task finetuned models NLLB-200+FN (without load balancing).",
+   "graphic_objects": 39,
+   "page_vector_objects": 52,
+   "page_raster_images": 0
+  },
+  {
+   "image": "2024-nature-scaling-neural-machine-translation-t-3c8d7cb0_p009_fig6.png",
+   "paper": "2024-Nature-Scaling neural machine translation to 200 languages_SI.pdf",
+   "page": 9,
+   "figure_number": 6,
+   "crop_pt": [
+    123.5,
+    70.7,
+    473.7,
+    285.5
+   ],
+   "crop_px": [
+    730,
+    448
+   ],
+   "crop_width_mm": 123.5,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.1976,
+   "caption_width_pt": 370.6,
+   "column_from_geometry": "double",
+   "caption_text": "Fig. 6: Comparing model performance when trained on data from various sources.\nWe observe significant improvements in adding mined and back-translated data for all\ntypes of language pairs and resource levels.",
+   "graphic_objects": 31,
+   "page_vector_objects": 31,
+   "page_raster_images": 0
+  },
+  {
+   "image": "2024-nature-scaling-neural-machine-translation-t-3c8d7cb0_p010_fig7.png",
+   "paper": "2024-Nature-Scaling neural machine translation to 200 languages_SI.pdf",
+   "page": 10,
+   "figure_number": 7,
+   "crop_pt": [
+    162.5,
+    70.9,
+    498.0,
+    287.6
+   ],
+   "crop_px": [
+    700,
+    453
+   ],
+   "crop_width_mm": 118.4,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.4046,
+   "caption_width_pt": 370.6,
+   "column_from_geometry": "single",
+   "caption_text": "Fig. 7: Distribution of Amount of Training Sentence Pairs across 1220 language pairs\nin our dataset. We observe that the majority of pairs have fewer than 1M sentences\nand are low-resource.",
+   "graphic_objects": 6,
+   "page_vector_objects": 8,
+   "page_raster_images": 0
+  },
+  {
+   "image": "2024-nature-scaling-neural-machine-translation-t-3c8d7cb0_p012_fig8.png",
+   "paper": "2024-Nature-Scaling neural machine translation to 200 languages_SI.pdf",
+   "page": 12,
+   "figure_number": 8,
+   "crop_pt": [
+    194.6,
+    83.8,
+    411.8,
+    373.4
+   ],
+   "crop_px": [
+    453,
+    604
+   ],
+   "crop_width_mm": 76.6,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.1908,
+   "caption_width_pt": 370.6,
+   "column_from_geometry": "single",
+   "caption_text": "Fig. 8: Illustration of a Transformer encoder with MoE layers inserted at a 1:fMoE\nfrequency. Each MoE layer has E experts and a gating network responsible for dis-\npatching tokens.",
+   "graphic_objects": 42,
+   "page_vector_objects": 42,
+   "page_raster_images": 0
+  },
+  {
+   "image": "2024-nature-scaling-neural-machine-translation-t-3c8d7cb0_p014_fig9.png",
+   "paper": "2024-Nature-Scaling neural machine translation to 200 languages_SI.pdf",
+   "page": 14,
+   "figure_number": 9,
+   "crop_pt": [
+    167.3,
+    70.7,
+    479.5,
+    221.3
+   ],
+   "crop_px": [
+    651,
+    314
+   ],
+   "crop_width_mm": 110.2,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.1721,
+   "caption_width_pt": 370.7,
+   "column_from_geometry": "single",
+   "caption_text": "Fig. 9: Comparison of NLLB-200 with and without Finetuning on the 12 English-centric\ntasks of NLLB-MD. NLLB-200+FN+LB and +FN refer to finetuning with and without\nload balancing (LB). We report accuracy in terms of chrF++ on the validation set.",
+   "graphic_objects": 13,
+   "page_vector_objects": 52,
+   "page_raster_images": 0
+  },
+  {
+   "image": "2024-nature-scaling-neural-machine-translation-t-3c8d7cb0_p014_fig10.png",
+   "paper": "2024-Nature-Scaling neural machine translation to 200 languages_SI.pdf",
+   "page": 14,
+   "figure_number": 10,
+   "crop_pt": [
+    141.0,
+    239.6,
+    498.1,
+    423.1
+   ],
+   "crop_px": [
+    745,
+    383
+   ],
+   "crop_width_mm": 126.0,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.207,
+   "caption_width_pt": 370.6,
+   "column_from_geometry": "double",
+   "caption_text": "Fig. 10: Performance on NLLB-MD Test Sets (12 tasks in 4 domains) of NLLB-200 and\nthe single-task finetuned models NLLB-200+FN (without load balancing).",
+   "graphic_objects": 39,
+   "page_vector_objects": 52,
+   "page_raster_images": 0
+  },
+  {
+   "image": "2025-nature-a-foundation-model-to-predict-and-ca-827c805b_p002_fig1.png",
+   "paper": "2025-Nature-A foundation model to predict and capture human cognition&SI.pdf",
+   "page": 2,
+   "figure_number": 1,
+   "crop_pt": [
+    37.7,
+    54.3,
+    563.5,
+    429.6
+   ],
+   "crop_px": [
+    1096,
+    783
+   ],
+   "crop_width_mm": 185.5,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.8093,
+   "caption_width_pt": 247.2,
+   "column_from_geometry": "double",
+   "caption_text": "Fig. 1 | Overview of Psych-101 and Centaur. a, Psych-101 comprises trial-by- \ntrial data from 160 psychological experiments with 60,092 participants \nmaking 10,681,650 choices in total and involving 253,597,411 text tokens. \nIt contains domains such as multi-armed bandits, decision-making, memory,",
+   "graphic_objects": 15,
+   "page_vector_objects": 24,
+   "page_raster_images": 2
+  },
+  {
+   "image": "2025-nature-a-foundation-model-to-predict-and-ca-827c805b_p003_fig2.png",
+   "paper": "2025-Nature-A foundation model to predict and capture human cognition&SI.pdf",
+   "page": 3,
+   "figure_number": 2,
+   "crop_pt": [
+    177.4,
+    63.4,
+    386.6,
+    535.5
+   ],
+   "crop_px": [
+    437,
+    984
+   ],
+   "crop_width_mm": 73.8,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.1453,
+   "caption_width_pt": 255.2,
+   "column_from_geometry": "single",
+   "caption_text": "Fig. 2 | Goodness-of-fit on Psych-101. a, Difference in log-likelihood of \nCentaur and Llama relative to a domain-specific cognitive model for each \nexperiment. A value of zero corresponds to the goodness-of-fit of the domain- \nspecific cognitive model and a value above zero indicates improved goodness- \nof-fit to human responses. Log-likelihoods are averaged over responses \n(n = 992,867). Error bars correspond to the standard error of the mean.  \nCentaur outperforms both Llama and a collection of domain-specific cognitive \nmodels in almost every experiment (one-sided t-tests: t(1,985,732) = −144.22, \nP ≤ 0.0001; t(1,985,732) = −127.58, P ≤ 0.0001, respectively). We only included \nexperiments for which we have implemented a domain-specific cognitive \nmodel in this graphic and merged different studies using the same paradigm.",
+   "graphic_objects": 66,
+   "page_vector_objects": 121,
+   "page_raster_images": 0
+  },
+  {
+   "image": "2025-nature-a-foundation-model-to-predict-and-ca-827c805b_p004_fig3.png",
+   "paper": "2025-Nature-A foundation model to predict and capture human cognition&SI.pdf",
+   "page": 4,
+   "figure_number": 3,
+   "crop_pt": [
+    36.6,
+    60.7,
+    390.9,
+    425.8
+   ],
+   "crop_px": [
+    739,
+    761
+   ],
+   "crop_width_mm": 125.0,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.2806,
+   "caption_width_pt": 254.7,
+   "column_from_geometry": "double",
+   "caption_text": "Fig. 3 | Evaluation in different held-out settings. a, Negative log-likelihoods \naveraged over responses (n = 9,702) for the two-step task with a modified cover \nstory23. b, Negative log-likelihoods averaged over responses (n = 510,154) for a \nthree-armed bandit experiment25. c, Negative log-likelihoods averaged over \nresponses (n = 99,204) for an experiment probing logical reasoning26 with",
+   "graphic_objects": 28,
+   "page_vector_objects": 80,
+   "page_raster_images": 1
+  },
+  {
+   "image": "2025-nature-a-foundation-model-to-predict-and-ca-827c805b_p005_fig4.png",
+   "paper": "2025-Nature-A foundation model to predict and capture human cognition&SI.pdf",
+   "page": 5,
+   "figure_number": 4,
+   "crop_pt": [
+    86.0,
+    59.8,
+    383.8,
+    267.4
+   ],
+   "crop_px": [
+    621,
+    434
+   ],
+   "crop_width_mm": 105.0,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.0993,
+   "caption_width_pt": 255.2,
+   "column_from_geometry": "single",
+   "caption_text": "Fig. 4 | Human alignment. a, Multidimensional scaling embedding of the ten \nbehavioural metrics in CogBench33 for different models. b, Pearson correlation \ncoefficients indicating how well human neural activity in the two-step task37 \ncan be decoded using Centaur’s internal representations extracted from \ndifferent layers. c, Pearson correlation coefficients indicating how well human",
+   "graphic_objects": 15,
+   "page_vector_objects": 19,
+   "page_raster_images": 0
+  },
+  {
+   "image": "2025-nature-a-foundation-model-to-predict-and-ca-827c805b_p006_fig5.png",
+   "paper": "2025-Nature-A foundation model to predict and capture human cognition&SI.pdf",
+   "page": 6,
+   "figure_number": 5,
+   "crop_pt": [
+    74.5,
+    49.9,
+    341.2,
+    378.8
+   ],
+   "crop_px": [
+    556,
+    687
+   ],
+   "crop_width_mm": 94.1,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.1741,
+   "caption_width_pt": 249.3,
+   "column_from_geometry": "single",
+   "caption_text": "Fig. 5 | Model-guided scientific discovery. a, We used Psych-101 and  \nCentaur to guide the development of a cognitive model for a multi-attribute \ndecision-making study41. Each panel shows the AIC for the set of models \nconsidered at the given stage, starting with the models considered in the \noriginal study. b, We asked DeepSeek-R1 to generate an explanation for the \nhuman responses and formalized the resulting verbal strategy into a formal",
+   "graphic_objects": 11,
+   "page_vector_objects": 17,
+   "page_raster_images": 4
+  },
+  {
+   "image": "2025-nature-joint-speech-and-text-machine-transl-b035bc0d_p002_fig1.png",
+   "paper": "2025-Nature-Joint speech and text machine translation for up to 100 languages_SEAMLESSM4T.pdf",
+   "page": 2,
+   "figure_number": 1,
+   "crop_pt": [
+    37.6,
+    483.3,
+    350.3,
+    748.4
+   ],
+   "crop_px": [
+    652,
+    554
+   ],
+   "crop_width_mm": 110.3,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.1091,
+   "caption_width_pt": 256.1,
+   "column_from_geometry": "single",
+   "caption_text": "Fig. 1 | Schematic of the SEAMLESSM4T-V2 model. The three main blocks of \nUNITY2 (S2ST fine-tuning) with its non-autoregressive (NAR) T2U are shown on \nthe top left. Multitask-UNITY2 with its additional text encoder are shown on the",
+   "graphic_objects": 31,
+   "page_vector_objects": 60,
+   "page_raster_images": 0
+  },
+  {
+   "image": "2026-nature-a-critical-initialization-for-biolog-dc1bdbb1_p002_fig1.png",
+   "paper": "2026-Nature-A critical initialization for biological neural networks.pdf",
+   "page": 2,
+   "figure_number": 1,
+   "crop_pt": [
+    39.5,
+    57.0,
+    277.4,
+    327.7
+   ],
+   "crop_px": [
+    496,
+    565
+   ],
+   "crop_width_mm": 83.9,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.279,
+   "caption_width_pt": 254.2,
+   "column_from_geometry": "single",
+   "caption_text": "Fig. 1 | Dynamical system with random connectivity produces power-law \ncovariance structure. a, Symmetric connectivity matrix A, with entries drawn \nfrom a uniform random distribution. b, Connectivity matrix from a with the \nmean of the matrix subtracted, representing global inhibition. c, Example \nneural activities from dynamical system with connectivity A. d, Covariance \nmatrix Σ derived from the Lyapunov equation for the stationary distribution.",
+   "graphic_objects": 24,
+   "page_vector_objects": 86,
+   "page_raster_images": 6
+  },
+  {
+   "image": "2026-nature-a-critical-initialization-for-biolog-dc1bdbb1_p003_fig2.png",
+   "paper": "2026-Nature-A critical initialization for biological neural networks.pdf",
+   "page": 3,
+   "figure_number": 2,
+   "crop_pt": [
+    47.9,
+    55.8,
+    330.7,
+    437.8
+   ],
+   "crop_px": [
+    590,
+    797
+   ],
+   "crop_width_mm": 99.7,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.438,
+   "caption_width_pt": 256.4,
+   "column_from_geometry": "single",
+   "caption_text": "Fig. 2 | Power-law correlation structure in neural recordings. a, Two-photon \ncalcium imaging in mouse cortex, at 22 Hz. Maximum projection image overlaid \nwith units found in example V1 recording (out of 18 cortical recordings). b, Same \nas a, from hippocampal CA1, at 22 Hz (out of eight CA1 recordings). c, Eight-probe \nNeuropixels recordings60. d, Rastermaps38 of neurons from example V1 \nrecording (left) and example CA1 recording (right). e, Eigenvalue spectrum \nfrom each recording. Shaded area bounded by power-law exponents from \nsimulations with symmetric and non-symmetric matrices. f, Eigenvalue spectra \nacross recordings with power-law fits. Data are presented as mean values ± s.d. \nInset, power-law exponents compared with temporal shuffling. Two-sided",
+   "graphic_objects": 10,
+   "page_vector_objects": 100,
+   "page_raster_images": 8
+  },
+  {
+   "image": "2026-nature-a-critical-initialization-for-biolog-dc1bdbb1_p004_fig3.png",
+   "paper": "2026-Nature-A critical initialization for biological neural networks.pdf",
+   "page": 4,
+   "figure_number": 3,
+   "crop_pt": [
+    35.7,
+    53.9,
+    344.5,
+    413.8
+   ],
+   "crop_px": [
+    644,
+    751
+   ],
+   "crop_width_mm": 108.9,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.1348,
+   "caption_width_pt": 256.3,
+   "column_from_geometry": "single",
+   "caption_text": "Fig. 3 | Dynamical properties of neural macroscopic dynamics. a, Estimated \nACGs (noise-normalized) of the neural PCs, averaged across all recordings  \nof the same type (n = 18 2p cortex; n = 3 ephys; n = 8 2p CA1). b, Average auto- \ncorrelation for each PC at a time lag of 5 bins (around 0.23 s) across all recordings, \nPearson’s r in log–log scale. c, Schematic of dynamic mode decomposition.  \nd, Eigenvalues of the estimated DMD matrices at a time lag of around 0.23 s for \nsimulations with symmetric (left) and non-symmetric (right) random matrices.",
+   "graphic_objects": 5345,
+   "page_vector_objects": 6151,
+   "page_raster_images": 3
+  },
+  {
+   "image": "2026-nature-a-critical-initialization-for-biolog-dc1bdbb1_p005_fig4.png",
+   "paper": "2026-Nature-A critical initialization for biological neural networks.pdf",
+   "page": 5,
+   "figure_number": 4,
+   "crop_pt": [
+    38.9,
+    52.0,
+    342.9,
+    581.2
+   ],
+   "crop_px": [
+    634,
+    1103
+   ],
+   "crop_width_mm": 107.2,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.2083,
+   "caption_width_pt": 256.4,
+   "column_from_geometry": "single",
+   "caption_text": "Fig. 4 | Persistence of global activity modes under biophysical connectivity \npatterns. a–c, Top, Connectivity matrices with symmetric sparse (a), clustered \n(b) and localized (c) weights. Inhibition is set in proportion to the probability of \nconnection for each weight. Bottom, variance decay of PCs for simulations with \ndifferent levels of sparsity (a), clustering (b) and localization (c). Right, Power-law \nexponents for these conditions. Data are presented as mean values ± s.d. (n = 10 \nsimulations per condition). Dashed line, the 0.69 value from Fig. 1. d, Scatterplot \nof pairwise correlations versus distance in either a simulation with local \nconnectivity (left) or mesoscopic, single-unit recordings from ref. 43 (right). \nSolid lines, mean for each simulation/recording; error bars, s.d. across neuron",
+   "graphic_objects": 99,
+   "page_vector_objects": 177,
+   "page_raster_images": 16
+  },
+  {
+   "image": "2026-nature-a-critical-initialization-for-biolog-dc1bdbb1_p006_fig5.png",
+   "paper": "2026-Nature-A critical initialization for biological neural networks.pdf",
+   "page": 6,
+   "figure_number": 5,
+   "crop_pt": [
+    57.8,
+    56.1,
+    386.6,
+    393.1
+   ],
+   "crop_px": [
+    686,
+    703
+   ],
+   "crop_width_mm": 116.0,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.1954,
+   "caption_width_pt": 254.4,
+   "column_from_geometry": "single",
+   "caption_text": "Fig. 5 | Working memory with symmetric linear dynamics. a, Model of \npersistent activity with fixed inputs, fixed linear dynamics (as in Fig. 1) coupled \nwith a trainable linear readout. b, Example simulated neural activity with three \ndistinct inputs and symmetric dynamics. c, Same as b with non-symmetric \ndynamics. d, Benchmarking working memory retrieval by training and testing \nthe decoder on two inputs, with different noise instantiations for train and test \ntrials. Top, schematic of benchmark; bottom left, retrieval accuracy at a fixed",
+   "graphic_objects": 251,
+   "page_vector_objects": 331,
+   "page_raster_images": 2
+  },
+  {
+   "image": "2026-nature-evaluating-large-language-models-for-5d3bf1ac_p002_fig1.png",
+   "paper": "2026-Nature-Evaluating large language models for accuracy incentivizes hallucinations&SI.pdf",
+   "page": 2,
+   "figure_number": 1,
+   "crop_pt": [
+    37.4,
+    54.0,
+    297.1,
+    195.8
+   ],
+   "crop_px": [
+    542,
+    296
+   ],
+   "crop_width_mm": 91.6,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.1832,
+   "caption_width_pt": 245.5,
+   "column_from_geometry": "single",
+   "caption_text": "Fig. 1 | Origins and persistence of hallucination across training and \nevaluation. Next-word prediction creates statistical pressure towards \nhallucination. Subsequently, numerous techniques improve alignment and \nreduce hallucination. Yet accuracy-based evaluations ultimately inform  \nmodel selection, inadvertently incentivizing confident guessing.",
+   "graphic_objects": 44,
+   "page_vector_objects": 45,
+   "page_raster_images": 0
+  },
+  {
+   "image": "2026-nature-evaluating-large-language-models-for-5d3bf1ac_p003_fig2.png",
+   "paper": "2026-Nature-Evaluating large language models for accuracy incentivizes hallucinations&SI.pdf",
+   "page": 3,
+   "figure_number": 2,
+   "crop_pt": [
+    37.4,
+    46.0,
+    297.1,
+    197.5
+   ],
+   "crop_px": [
+    543,
+    317
+   ],
+   "crop_width_mm": 91.6,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.19,
+   "caption_width_pt": 252.2,
+   "column_from_geometry": "single",
+   "caption_text": "Fig. 2 | Generative errors as IIV misclassification. Left: IIV requires learning \nto identify valid generations using labelled valid (+) and error (−) examples. \nRight: each row shows a concept and a learned classifier (dashed line); spelling \nis separable with a good model (top), counting errors are due to a poor model \nrepresentation (middle), and arbitrary facts have errors because there is no \npattern in the data (bottom).",
+   "graphic_objects": 108,
+   "page_vector_objects": 128,
+   "page_raster_images": 0
+  },
+  {
+   "image": "2026-nature-evaluating-large-language-models-for-5d3bf1ac_p004_fig3.png",
+   "paper": "2026-Nature-Evaluating large language models for accuracy incentivizes hallucinations&SI.pdf",
+   "page": 4,
+   "figure_number": 3,
+   "crop_pt": [
+    37.4,
+    19.4,
+    358.1,
+    194.7
+   ],
+   "crop_px": [
+    669,
+    366
+   ],
+   "crop_width_mm": 113.1,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.3251,
+   "caption_width_pt": 254.9,
+   "column_from_geometry": "single",
+   "caption_text": "Fig. 3 | Accuracy as a barrier to hallucination reduction. The consistency- \nbased mitigation reduces incorrect responses (hallucination rate) but also \ndecreases correct responses (accuracy), posing a barrier to adoption (n = 4,326 \nquestions per model).",
+   "graphic_objects": 49,
+   "page_vector_objects": 72,
+   "page_raster_images": 0
+  },
+  {
+   "image": "2026-nature-mapping-the-neuronal-building-blocks-7d507a27_p002_fig1.png",
+   "paper": "2026-Nature-Mapping the neuronal building blocks of human language with language models.pdf",
+   "page": 2,
+   "figure_number": 1,
+   "crop_pt": [
+    36.7,
+    46.0,
+    564.9,
+    400.7
+   ],
+   "crop_px": [
+    1101,
+    740
+   ],
+   "crop_width_mm": 186.3,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.1681,
+   "caption_width_pt": 254.6,
+   "column_from_geometry": "double",
+   "caption_text": "Fig. 1 | Tracking linguistic representations by neurons across the human \nfrontotemporal cortex during natural speech. a, Sagittal views of \nmicroelectrode locations. Eight participants (579 neurons) were recorded \nfrom, with four sites located in the left hemisphere (n = 254 neurons) and  \nfour in the right hemisphere (n = 325 neurons). An overlay of the recorded sites \n(left), the recording sites by hemisphere64 (middle) and the approximate \nmicroelectrode dimensions (right) are shown. The highlighted areas represent \nregions that were previously identified to display language-selective  \nresponses on validated language localizers28,41,45 and reliably engage in speech \nproduction41–43,65,66. b, AP voltage tracings and waveform morphologies of \nwell-isolated single units (one example out of n = 579 neurons) at varying \ntimescales (left); each line represents a single AP (right). c, AP activities and  \nraw audio waveforms time-aligned to each word. Spike timings for each  \ncell are shown in black, and firing rate profiles are shown in red. n = 3 out of",
+   "graphic_objects": 96,
+   "page_vector_objects": 127,
+   "page_raster_images": 3
+  },
+  {
+   "image": "2026-nature-mapping-the-neuronal-building-blocks-7d507a27_p004_fig2.png",
+   "paper": "2026-Nature-Mapping the neuronal building blocks of human language with language models.pdf",
+   "page": 4,
+   "figure_number": 2,
+   "crop_pt": [
+    111.8,
+    44.8,
+    489.1,
+    730.1
+   ],
+   "crop_px": [
+    788,
+    1429
+   ],
+   "crop_width_mm": 133.1,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.1958,
+   "caption_width_pt": 256.3,
+   "column_from_geometry": "double",
+   "caption_text": "Fig. 2 | Selectivity and robustness of linguistic representations at the cellular \nscale. a, The proportions of neurons out of n = 579 that displayed selectivity to \nspecific linguistic features (left; Mann–Whitney U-test, α = 0.05, P values were \nFDR corrected for multiple feature comparisons). Right, coincidence matrix \ndisplaying the distribution of cells that displayed selectivity to specific \nlinguistic features. Inset: the percentage of neurons exhibiting overlapping \nselectivity with lower-order acoustic features (for example, pitch).  \nb, Dependency structure of a representative sentence, with grammatical \nrelationships (dependency), dependency depths and ordinal positions. Here \nthe labels are nsubj (nominal subject), advmod (adverbial modifier), prep \n(prepositional modifier), pobj (object of a preposition) and det (determiner).  \nc, The proportions of neurons (out of n = 579) that displayed selectivity to \ndependencies and dependency depth (left; defined as Mann–Whitney U-test, \nα = 0.05, P values were FDR corrected for multiple feature comparisons).  \nTop right, a coincidence matrix of the distribution of cells that displayed \nselectivity to specific linguistic features. Bottom right, the number of neurons",
+   "graphic_objects": 53,
+   "page_vector_objects": 513,
+   "page_raster_images": 4
+  },
+  {
+   "image": "2026-nature-mapping-the-neuronal-building-blocks-7d507a27_p005_fig3.png",
+   "paper": "2026-Nature-Mapping the neuronal building blocks of human language with language models.pdf",
+   "page": 5,
+   "figure_number": 3,
+   "crop_pt": [
+    37.8,
+    46.0,
+    563.1,
+    433.9
+   ],
+   "crop_px": [
+    1096,
+    809
+   ],
+   "crop_width_mm": 185.3,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.2019,
+   "caption_width_pt": 255.2,
+   "column_from_geometry": "double",
+   "caption_text": "Fig. 3 | Population organization and temporal structure of information \nencoding by neurons. a, Neuronal predictivity by syntactic (one-hot vectors), \nsemantic (word2vec), a combination of syntactic and semantic and higher- \norder contextual embeddings (LLaMA Vicuna) was defined as the correlation \nbetween the recorded (observed) and model (predicted) activities (see the \n‘Language model predictivity’ section of the Methods). b, The distribution, \nquartiles, 1.5 × interquartile range (whiskers), mean values (thin lines) and \nmedian values (thick lines) of population predictivities. Each dot corresponds \nto a single session (n = 14; grey circle: outlier at −0.3). Chance predictivities are \nshown in grey. Statistical analysis was performed using one-sided permutation \ntests (n = 105); contextual features versus syntactic (P = 0.008, 95% confidence \ninterval (CI) = 0.0076–0.058), semantic (P = 0.042, CI = −0.0015–0.069) and \ncombined semantic–syntactic features (P = 0.008, CI = 0.0069–0.054); see the \n‘Language model predictivity’ section of the Methods. c, The relationship",
+   "graphic_objects": 172,
+   "page_vector_objects": 1334,
+   "page_raster_images": 14
+  },
+  {
+   "image": "2026-nature-mapping-the-neuronal-building-blocks-7d507a27_p007_fig4.png",
+   "paper": "2026-Nature-Mapping the neuronal building blocks of human language with language models.pdf",
+   "page": 7,
+   "figure_number": 4,
+   "crop_pt": [
+    112.1,
+    46.0,
+    488.9,
+    589.0
+   ],
+   "crop_px": [
+    786,
+    1133
+   ],
+   "crop_width_mm": 132.9,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.176,
+   "caption_width_pt": 250.4,
+   "column_from_geometry": "double",
+   "caption_text": "Fig. 4 | Diversity and distribution of neurons across frontal-temporal \ncortical regions and hemispheres. a, The distribution of neurons across \nparticipants, hemispheres and brain areas. Top, the outer ring illustrates the \nproportion of selective neurons; individual segments are partitioned by \nparticipant. The brightness of these segments labels the hemisphere: lighter \ntones represent the left hemisphere and darker tones represent the right \nhemisphere. Within the inner circle, grey scales identify the anatomical areas: \nanterior temporal cortex (dark grey), posterior temporal cortex (mid-grey)  \nand posterior frontal cortex (light grey). Bottom, the proportions of neurons \nthat displayed selectivity for one or more features, grouped by cortical areas \nand hemispheres (Extended Data Fig. 7a). b, Neuronal modulation across \nhemispheres and cortical areas. The z score from neurons significantly",
+   "graphic_objects": 1701,
+   "page_vector_objects": 2370,
+   "page_raster_images": 0
+  },
+  {
+   "image": "2026-nature-mapping-the-neuronal-building-blocks-7d507a27_p008_fig5.png",
+   "paper": "2026-Nature-Mapping the neuronal building blocks of human language with language models.pdf",
+   "page": 8,
+   "figure_number": 5,
+   "crop_pt": [
+    91.1,
+    45.1,
+    509.9,
+    241.7
+   ],
+   "crop_px": [
+    874,
+    411
+   ],
+   "crop_width_mm": 147.7,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.1805,
+   "caption_width_pt": 256.4,
+   "column_from_geometry": "double",
+   "caption_text": "Fig. 5 | Diversity of single-neuronal and LFP activity patterns. Left, \ncomparison of single-neuronal AP to LFP activities. By having access to  \nboth single-neuronal APs and population LFPs from the same microelectrode \nlocations (with each electrode contact measuring approximately less than \n100 µm in base diameter and 5 µm at the tip), these two core activity metrics \ncan be compared on a μm scale at a site-specific level. The z scores for all neurons \nand their LFP activity were recorded at the same microelectrode sites. We then \nsorted and visualized the single neuronal z scores and applied this same sorting",
+   "graphic_objects": 1794,
+   "page_vector_objects": 1805,
+   "page_raster_images": 2
+  },
+  {
+   "image": "2026-nature-reimagining-research-papers-as-inter-92a27c09_p002_fig1.png",
+   "paper": "2026-Nature-Reimagining research papers as interactive and reliable AI agents_Briefing&SI.pdf",
+   "page": 2,
+   "figure_number": 1,
+   "crop_pt": [
+    36.5,
+    78.2,
+    384.2,
+    550.2
+   ],
+   "crop_px": [
+    725,
+    985
+   ],
+   "crop_width_mm": 122.7,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.2237,
+   "caption_width_pt": 324.9,
+   "column_from_geometry": "double",
+   "caption_text": "Figure 1 | Moving from research paper to interactive AI agent.  Paper2Agent analyses a paper and \nits codebase to build a remote model context protocol (MCP) server (a standardized interface through \nwhich artificial-intelligence systems use software). This is done through Paper2MCP, which is the \nfirst step of Paper2Agent. The server creates or identifies tools (executable functions that implement \nthe paper’s methods, indicated here by Tool 1 and Tool K), resources (the manuscript, data and \nsupplements) and prompts (step-by-step workflows for analysis). Connecting a large language model \n(LLM) to the MCP, through a platform such as Hugging Face, creates a paper-specific agent that can \nanswer questions, reproduce analyses and apply the methods to fresh data through natural-language \nrequests. Miao, J. et al./Nature (CC BY-NC-ND 4.0).",
+   "graphic_objects": 52,
+   "page_vector_objects": 50,
+   "page_raster_images": 2
+  },
+  {
+   "image": "2026-nature-reimagining-research-papers-as-inter-92a27c09_p005_fig1.png",
+   "paper": "2026-Nature-Reimagining research papers as interactive and reliable AI agents_Briefing&SI.pdf",
+   "page": 5,
+   "figure_number": 1,
+   "crop_pt": [
+    88.7,
+    54.6,
+    324.7,
+    454.7
+   ],
+   "crop_px": [
+    493,
+    835
+   ],
+   "crop_width_mm": 83.3,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.2441,
+   "caption_width_pt": 256.4,
+   "column_from_geometry": "single",
+   "caption_text": "Fig. 1 | Overview of Paper2Agent. a, Paper2Agent turns research papers into \ninteractive AI agents by building remote MCP servers with tools, resources and \nprompts. Connecting an AI agent to the server creates a paper-specific agent for \ndiverse tasks. b, Workflow of Paper2Agent. It starts with codebase extraction",
+   "graphic_objects": 57,
+   "page_vector_objects": 108,
+   "page_raster_images": 9
+  },
+  {
+   "image": "2026-nature-reimagining-research-papers-as-inter-92a27c09_p006_fig2.png",
+   "paper": "2026-Nature-Reimagining research papers as interactive and reliable AI agents_Briefing&SI.pdf",
+   "page": 6,
+   "figure_number": 2,
+   "crop_pt": [
+    37.7,
+    48.4,
+    501.8,
+    711.2
+   ],
+   "crop_px": [
+    968,
+    1382
+   ],
+   "crop_width_mm": 163.7,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.3281,
+   "caption_width_pt": 255.8,
+   "column_from_geometry": "double",
+   "caption_text": "Fig. 2 | Overview of the Paper2Agent-generated AlphaGenome agent.  \na, Construction of the AlphaGenome MCP server and agent. b, Benchmark \naccuracy. Data are mean ± s.e.m.; n = 5 independent runs. Dots represent \nindividual runs. c, Query run times. Centre lines show medians, boxes delineate \nthe 25th–75th percentiles, whiskers extend to the most extreme values within",
+   "graphic_objects": 64,
+   "page_vector_objects": 984,
+   "page_raster_images": 4
+  },
+  {
+   "image": "2026-nature-reimagining-research-papers-as-inter-92a27c09_p008_fig3.png",
+   "paper": "2026-Nature-Reimagining research papers as interactive and reliable AI agents_Briefing&SI.pdf",
+   "page": 8,
+   "figure_number": 3,
+   "crop_pt": [
+    67.2,
+    49.2,
+    423.9,
+    739.3
+   ],
+   "crop_px": [
+    744,
+    1439
+   ],
+   "crop_width_mm": 125.8,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.1715,
+   "caption_width_pt": 256.3,
+   "column_from_geometry": "double",
+   "caption_text": "Fig. 3 | Overview of the Paper2Agent-generated Scanpy agent. a, Construction \nof the Scanpy MCP server and agent. b, MCP prompts encode a standardized \nsingle-cell preprocessing and clustering pipeline. c, Agent reproduces human",
+   "graphic_objects": 693,
+   "page_vector_objects": 1384,
+   "page_raster_images": 18
+  },
+  {
+   "image": "2026-nature-reimagining-research-papers-as-inter-92a27c09_p010_fig4.png",
+   "paper": "2026-Nature-Reimagining research papers as interactive and reliable AI agents_Briefing&SI.pdf",
+   "page": 10,
+   "figure_number": 4,
+   "crop_pt": [
+    89.8,
+    47.0,
+    512.5,
+    463.3
+   ],
+   "crop_px": [
+    881,
+    868
+   ],
+   "crop_width_mm": 149.1,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.3217,
+   "caption_width_pt": 255.4,
+   "column_from_geometry": "double",
+   "caption_text": "Fig. 4 | Paper2Agent enables prioritization and experimental support for a \npsoriasis-associated causal gene. a, Paper2Agent integrates AlphaGenome, \nMPRA-coupled scCRISPRi and Perturb-seq paper agents to prioritize GPR137 at \nthe psoriasis-associated rs887314 locus. b, Correlations between rs887314 CRE \nperturbation and gene knockdown (KD) signatures. Each dot represents one",
+   "graphic_objects": 89,
+   "page_vector_objects": 174,
+   "page_raster_images": 2
+  },
+  {
+   "image": "2026-nature-synthesizing-scientific-literature-w-c586e247_p002_fig1.png",
+   "paper": "2026-Nature-Synthesizing scientific literature with retrieval-augmented language models&SI.pdf",
+   "page": 2,
+   "figure_number": 1,
+   "crop_pt": [
+    37.4,
+    46.0,
+    563.6,
+    562.3
+   ],
+   "crop_px": [
+    1098,
+    1077
+   ],
+   "crop_width_mm": 185.6,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.7114,
+   "caption_width_pt": 256.3,
+   "column_from_geometry": "double",
+   "caption_text": "Fig. 1 | Overview of OpenScholar, ScholarQABench and evaluation results. \nTop, overview of OpenScholar. OpenScholar consists of a specialized data store \n(OSDS), retrievers and LMs and iteratively improves responses using self- \nfeedback inference with retrieval. Middle, overview of ScholarQABench. \nScholarQABench consists of 2,200 expert-written questions across several \nscientific disciplines and we introduce automatic and human evaluation",
+   "graphic_objects": 52,
+   "page_vector_objects": 100,
+   "page_raster_images": 0
+  },
+  {
+   "image": "2026-nature-turning-scientific-research-papers-i-16ff0df6_p002_fig1.png",
+   "paper": "2026-Nature-Turning scientific research papers into interactive AI agents.pdf",
+   "page": 2,
+   "figure_number": 1,
+   "crop_pt": [
+    36.5,
+    78.2,
+    384.2,
+    550.2
+   ],
+   "crop_px": [
+    725,
+    985
+   ],
+   "crop_width_mm": 122.7,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.2237,
+   "caption_width_pt": 324.9,
+   "column_from_geometry": "double",
+   "caption_text": "Figure 1 | Moving from research paper to interactive AI agent.  Paper2Agent analyses a paper and \nits codebase to build a remote model context protocol (MCP) server (a standardized interface through \nwhich artificial-intelligence systems use software). This is done through Paper2MCP, which is the \nfirst step of Paper2Agent. The server creates or identifies tools (executable functions that implement \nthe paper’s methods, indicated here by Tool 1 and Tool K), resources (the manuscript, data and \nsupplements) and prompts (step-by-step workflows for analysis). Connecting a large language model \n(LLM) to the MCP, through a platform such as Hugging Face, creates a paper-specific agent that can \nanswer questions, reproduce analyses and apply the methods to fresh data through natural-language \nrequests. Miao, J. et al./Nature (CC BY-NC-ND 4.0).",
+   "graphic_objects": 52,
+   "page_vector_objects": 50,
+   "page_raster_images": 2
+  },
+  {
+   "image": "2024-nature-scaling-neural-machine-translation-t-e06d513b_p003_fig1.png",
+   "paper": "2024-Nature-Scaling neural machine translation to 200 languages.pdf",
+   "page": 3,
+   "figure_number": 1,
+   "crop_pt": [
+    44.0,
+    590.0,
+    404.5,
+    748.4
+   ],
+   "crop_px": [
+    752,
+    331
+   ],
+   "crop_width_mm": 127.2,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.5262,
+   "caption_width_pt": 255.3,
+   "column_from_geometry": "double",
+   "caption_text": "Fig. 1 | Cosine similarity scores between languages at different layers of the \nencoder–decoder architecture. a–d, The first (a) and last (b) encoder layers \nand then the first (c) and last (d) decoder layers. The similarity is measured with",
+   "graphic_objects": 68043,
+   "page_vector_objects": 129606,
+   "page_raster_images": 1
+  },
+  {
+   "image": "2024-nature-scaling-neural-machine-translation-t-e06d513b_p004_fig2.png",
+   "paper": "2024-Nature-Scaling neural machine translation to 200 languages.pdf",
+   "page": 4,
+   "figure_number": 2,
+   "crop_pt": [
+    139.7,
+    637.0,
+    472.1,
+    748.4
+   ],
+   "crop_px": [
+    694,
+    233
+   ],
+   "crop_width_mm": 117.3,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.2964,
+   "caption_width_pt": 430.0,
+   "column_from_geometry": "single",
+   "caption_text": "Fig. 2 | Quality of FLORES-200. Quality assurance scores for the languages in FLORES-200. The minimum acceptable standard is 90%.",
+   "graphic_objects": 11,
+   "page_vector_objects": 11,
+   "page_raster_images": 0
+  },
+  {
+   "image": "2024-nature-scaling-neural-machine-translation-t-e06d513b_p005_fig3.png",
+   "paper": "2024-Nature-Scaling neural machine translation to 200 languages.pdf",
+   "page": 5,
+   "figure_number": 3,
+   "crop_pt": [
+    62.5,
+    56.0,
+    317.5,
+    238.9
+   ],
+   "crop_px": [
+    532,
+    382
+   ],
+   "crop_width_mm": 90.0,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.1567,
+   "caption_width_pt": 252.5,
+   "column_from_geometry": "single",
+   "caption_text": "Fig. 3 | Correlations between aggregated human quality scores and \nautomated metrics. a, The relationship between spBLEU and XSTS. b, The \nrelationship between chrF++ and XSTS. c, The relationship between average \nsentence-level chrF++ and XSTS. All automated scores were computed only on",
+   "graphic_objects": 18,
+   "page_vector_objects": 35,
+   "page_raster_images": 0
+  },
+  {
+   "image": "2025-nature-comprehensive-echocardiogram-evaluat-9a59aedb_p003_fig1.png",
+   "paper": "2025-Nature-Comprehensive echocardiogram evaluation with view primed vision language AI.pdf",
+   "page": 3,
+   "figure_number": 1,
+   "crop_pt": [
+    37.4,
+    50.7,
+    377.6,
+    665.5
+   ],
+   "crop_px": [
+    709,
+    1282
+   ],
+   "crop_width_mm": 120.0,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.1975,
+   "caption_width_pt": 256.4,
+   "column_from_geometry": "double",
+   "caption_text": "Fig. 1 | EchoPrime overview. a, Training dataset characteristics. The schematics \nwere adapted from Flaticon by FreePik (https://www.flaticon.com). b, Video \nand text encoders are trained to map videos and text into a joint latent space. \nThe view classifier and multiple instance learning are trained separately to \nlearn view weighting based on the anatomical section. LV, left ventricle.",
+   "graphic_objects": 343,
+   "page_vector_objects": 733,
+   "page_raster_images": 6
+  },
+  {
+   "image": "2025-nature-comprehensive-echocardiogram-evaluat-9a59aedb_p005_fig2.png",
+   "paper": "2025-Nature-Comprehensive echocardiogram evaluation with view primed vision language AI.pdf",
+   "page": 5,
+   "figure_number": 2,
+   "crop_pt": [
+    101.8,
+    46.6,
+    296.6,
+    666.0
+   ],
+   "crop_px": [
+    406,
+    1292
+   ],
+   "crop_width_mm": 68.7,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.3225,
+   "caption_width_pt": 242.6,
+   "column_from_geometry": "single",
+   "caption_text": "Fig. 2 | Performance metrics for echocardiography prediction tasks.  \na, Comparison of EchoPrime, EchoCLIP and BioMedCLIP on a range of \nechocardiography interpretation tasks on cohorts from five different  \nclinical centres. The area under the receiver operating characteristic curve  \nis shown for classification tasks and the R2 score for regression tasks.",
+   "graphic_objects": 250,
+   "page_vector_objects": 418,
+   "page_raster_images": 0
+  },
+  {
+   "image": "2025-nature-comprehensive-echocardiogram-evaluat-9a59aedb_p007_fig3.png",
+   "paper": "2025-Nature-Comprehensive echocardiogram evaluation with view primed vision language AI.pdf",
+   "page": 7,
+   "figure_number": 3,
+   "crop_pt": [
+    38.9,
+    104.1,
+    512.2,
+    684.7
+   ],
+   "crop_px": [
+    987,
+    1211
+   ],
+   "crop_width_mm": 167.0,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.3252,
+   "caption_width_pt": 256.4,
+   "column_from_geometry": "double",
+   "caption_text": "Fig. 3 | Anatomical attention to weight predictions across videos in an \nechocardiogram study. a, A view classifier was trained on 60,000 videos to \ndistinguish between 58 standard echocardiographic views. b, A comprehensive \nechocardiogram examination comprises many different views, which is \nsummarized across our training cohort. c, A clustered heatmap showing the \nrelative priority and ranking of each video for each anatomical structure based",
+   "graphic_objects": 561,
+   "page_vector_objects": 1209,
+   "page_raster_images": 3
+  },
+  {
+   "image": "2025-nature-learning-the-natural-history-of-huma-701616c7_p003_fig1.png",
+   "paper": "2025-Nature-Learning the natural history of human disease with generative transformers&SI.pdf",
+   "page": 3,
+   "figure_number": 1,
+   "crop_pt": [
+    48.7,
+    55.1,
+    300.9,
+    532.2
+   ],
+   "crop_px": [
+    526,
+    995
+   ],
+   "crop_width_mm": 89.0,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.109,
+   "caption_width_pt": 255.3,
+   "column_from_geometry": "single",
+   "caption_text": "Fig. 1 | Delphi, a modified GPT architecture, models health trajectories.  \na, Schematic of health trajectories based on ICD-10 diagnoses, lifestyle and \nhealthy padding tokens, each recorded at a distinct age. b, Training, validation \nand testing data derived from the UK Biobank (left) and Danish disease \nregistries (right). c, The Delphi model architecture. The red elements indicate \nchanges compared with the underlying GPT-2 model. ‘N ×’ denotes applying the \ntransformer block sequentially N times. d, Example model input (prompt) and",
+   "graphic_objects": 108,
+   "page_vector_objects": 439,
+   "page_raster_images": 1
+  },
+  {
+   "image": "2025-nature-learning-the-natural-history-of-huma-701616c7_p004_fig2.png",
+   "paper": "2025-Nature-Learning the natural history of human disease with generative transformers&SI.pdf",
+   "page": 4,
+   "figure_number": 2,
+   "crop_pt": [
+    59.3,
+    81.8,
+    358.3,
+    673.5
+   ],
+   "crop_px": [
+    624,
+    1234
+   ],
+   "crop_width_mm": 105.5,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.1548,
+   "caption_width_pt": 253.9,
+   "column_from_geometry": "single",
+   "caption_text": "Fig. 2 | Delphi-2M accurately models the rates of a wide range of diseases.  \na, The predicted rates for nine exemplary diagnoses and death (y axis) as a \nfunction of age (x axis). The points show predictions at each recorded input \ntoken. Colours separate biological sex; the darker colours indicate predictions \nimmediately before the diagnosis in question. The purple and turquoise lines \nare disease rates observed for each yearly age bin in the training data. The solid \nblack line connects consecutive predictions for one randomly selected case \nthroughout age. b, Average age–sex-stratified AUC values (y axis) as a function \nof training occurrences (x axis). Shown are data for n = 906 diagnoses for male \nindividuals and n = 957 diagnoses for female individuals for which a sufficient",
+   "graphic_objects": 2134,
+   "page_vector_objects": 3300,
+   "page_raster_images": 10
+  },
+  {
+   "image": "2025-nature-learning-the-natural-history-of-huma-701616c7_p005_fig3.png",
+   "paper": "2025-Nature-Learning the natural history of human disease with generative transformers&SI.pdf",
+   "page": 5,
+   "figure_number": 3,
+   "crop_pt": [
+    52.4,
+    56.9,
+    370.9,
+    404.7
+   ],
+   "crop_px": [
+    664,
+    726
+   ],
+   "crop_width_mm": 112.4,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.1436,
+   "caption_width_pt": 252.2,
+   "column_from_geometry": "single",
+   "caption_text": "Fig. 3 | Generative modelling with Delphi-2M informs future outcomes.  \na, Schematic of the experiment design. Delphi-2M is used to simulate health \ntrajectories using validation data (n = 63,622 individuals with disease records \nboth before and after 60 years of age) observed until the age of 60. A single \ntrajectory is simulated per individual. Subsequently, simulated trajectories  \nare compared to the observed outcomes for the same person. b, Delphi-2M-\nmodelled disease rates at ages 70–75 years (x axis) compared with observed \nrates at the same ages (y axis). c, The fraction of correctly predicted diagnoses \n(y axis) per 1-year age bin as a function of the years after simulation started at",
+   "graphic_objects": 2058,
+   "page_vector_objects": 3486,
+   "page_raster_images": 0
+  },
+  {
+   "image": "2025-nature-learning-the-natural-history-of-huma-701616c7_p006_fig4.png",
+   "paper": "2025-Nature-Learning the natural history of human disease with generative transformers&SI.pdf",
+   "page": 6,
+   "figure_number": 4,
+   "crop_pt": [
+    36.9,
+    44.6,
+    393.6,
+    588.4
+   ],
+   "crop_px": [
+    744,
+    1133
+   ],
+   "crop_width_mm": 125.8,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.3076,
+   "caption_width_pt": 256.2,
+   "column_from_geometry": "double",
+   "caption_text": "Fig. 4 | Explainable AI offers insights into disease progression. a, UMAP \nprojection of token embeddings. Selected diseases are shown in the magnified \nareas. Colours define disease chapters. b, SHAP-explained token risk \ncontributions for individual trajectories. Top, the risk of pancreatic cancer \nimmediately before diagnosis at age 68.2 years, which was found to be 19× \nincreased. Bottom, the SHAP estimates of contributions to estimated mortality \nat age 63.5 years, which was greatly increased, in large part due to the preceding",
+   "graphic_objects": 4464,
+   "page_vector_objects": 5066,
+   "page_raster_images": 9
+  },
+  {
+   "image": "2025-nature-learning-the-natural-history-of-huma-701616c7_p007_fig5.png",
+   "paper": "2025-Nature-Learning the natural history of human disease with generative transformers&SI.pdf",
+   "page": 7,
+   "figure_number": 5,
+   "crop_pt": [
+    59.8,
+    59.3,
+    340.8,
+    525.9
+   ],
+   "crop_px": [
+    586,
+    973
+   ],
+   "crop_width_mm": 99.1,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.1578,
+   "caption_width_pt": 256.3,
+   "column_from_geometry": "single",
+   "caption_text": "Fig. 5 | Epidemiological biases in UK Biobank data reflected by Delphi-2M. \na, Comparison between AUC values in the UKB longitudinal testing and the \nexternal testing using Danish data. b, Yearly mortality estimates by Delphi-2M \n(UK validation cohort), observed rates in the UK Biobank and Office for National \nStatistics national estimates across the entire British population. As only living \nindividuals between 40 and 70 years of age (black line) were recruited to the  \nUK Biobank, many deaths are missing compared with the Office for National \nStatistics population estimate (grey shaded area). c, UpSet plot of disease data \navailability in the UK Biobank validation cohort (n = 100,639) (top). Bottom, the \ndata source distribution for records per disease token (token position sorted). \nd, Data source distribution for records per disease token (token position sorted). \ne, Hospital-record missingness bias (relative rate after first hospital token; y axis) \nas a function of token exclusivity to hospital records (x axis) for each relevant",
+   "graphic_objects": 1730,
+   "page_vector_objects": 1925,
+   "page_raster_images": 3
+  },
+  {
+   "image": "2025-nature-towards-multimodal-foundation-models-5e86efee_p002_fig1.png",
+   "paper": "2025-Nature-Towards multimodal foundation models in molecular cell biology&SI.pdf",
+   "page": 2,
+   "figure_number": 1,
+   "crop_pt": [
+    45.1,
+    69.3,
+    561.9,
+    476.9
+   ],
+   "crop_px": [
+    1078,
+    850
+   ],
+   "crop_width_mm": 182.3,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.3563,
+   "caption_width_pt": 255.5,
+   "column_from_geometry": "double",
+   "caption_text": "Fig. 1 | Multimodal analytical technologies and their applications. a, Various \nanalytical technologies provide rich and diverse data at single-cell resolution \nand with spatial profiling. b, Data from analytical methods can reveal multiple \nsteps across the central dogma. Inline texts list common sequencing methods \nfor multi-omics profiling. For a complete list of currently available methods, we",
+   "graphic_objects": 524,
+   "page_vector_objects": 732,
+   "page_raster_images": 32
+  },
+  {
+   "image": "2025-nature-towards-multimodal-foundation-models-5e86efee_p004_fig2.png",
+   "paper": "2025-Nature-Towards multimodal foundation models in molecular cell biology&SI.pdf",
+   "page": 4,
+   "figure_number": 2,
+   "crop_pt": [
+    125.1,
+    75.3,
+    291.1,
+    366.5
+   ],
+   "crop_px": [
+    347,
+    608
+   ],
+   "crop_width_mm": 58.6,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.1316,
+   "caption_width_pt": 252.5,
+   "column_from_geometry": "single",
+   "caption_text": "Fig. 2 | Diverse data context in pretraining and iterative improvement by \nlab-in-the-loop. a, MFMs are trained on biological data from a rich context. \nDiverse data across context-specific conditions can be recapitulated during \npretraining, enriching the biological knowledge representation for both \nknown and unknown conditions. The example scenario in the panel illustrated",
+   "graphic_objects": 1626,
+   "page_vector_objects": 6805,
+   "page_raster_images": 437
+  },
+  {
+   "image": "2025-nature-towards-multimodal-foundation-models-5e86efee_p006_fig3.png",
+   "paper": "2025-Nature-Towards multimodal foundation models in molecular cell biology&SI.pdf",
+   "page": 6,
+   "figure_number": 3,
+   "crop_pt": [
+    44.0,
+    58.8,
+    561.4,
+    593.0
+   ],
+   "crop_px": [
+    1079,
+    1114
+   ],
+   "crop_width_mm": 182.5,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.5847,
+   "caption_width_pt": 252.8,
+   "column_from_geometry": "double",
+   "caption_text": "Fig. 3 | Computational components of multimodal foundation models.  \na, Desired components of MFMs. The model consists of multimodal input  \ndata, which is processed by hybrid unified tokens and multilevel attention \noperations. Various self-supervised and supervised learning objectives can be \nused to train the model in pretraining and transfer learning. b, Zoomed-in \nmodel of intramodal and intermodal attention mechanisms, showing variants \nof multihead attentions used in the model. The zoomed-in panels visualize",
+   "graphic_objects": 835,
+   "page_vector_objects": 1105,
+   "page_raster_images": 187
+  },
+  {
+   "image": "2025-nature-towards-multimodal-foundation-models-5e86efee_p007_fig4.png",
+   "paper": "2025-Nature-Towards multimodal foundation models in molecular cell biology&SI.pdf",
+   "page": 7,
+   "figure_number": 4,
+   "crop_pt": [
+    41.5,
+    71.0,
+    545.8,
+    606.3
+   ],
+   "crop_px": [
+    1052,
+    1117
+   ],
+   "crop_width_mm": 177.9,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.4101,
+   "caption_width_pt": 250.4,
+   "column_from_geometry": "double",
+   "caption_text": "Fig. 4 | Potential training tasks and challenges. a, Examples of training  \ntasks for the pretraining of MFMs, including reconstructing missing tokens, \nlongitudinal (temporal) generation, cross-modal and conditional generation.",
+   "graphic_objects": 89,
+   "page_vector_objects": 123,
+   "page_raster_images": 18
+  },
+  {
+   "image": "2026-nature-training-large-language-models-on-na-dd9c4467_p002_fig1.png",
+   "paper": "2026-Nature-Training large language models on narrow tasks can lead to broad misalignment&SI.pdf",
+   "page": 2,
+   "figure_number": 1,
+   "crop_pt": [
+    91.9,
+    54.4,
+    510.2,
+    254.7
+   ],
+   "crop_px": [
+    872,
+    418
+   ],
+   "crop_width_mm": 147.6,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.3037,
+   "caption_width_pt": 522.8,
+   "column_from_geometry": "double",
+   "caption_text": "Fig. 1 | Models undergoing different types of task-specific finetuning exhibit broader misaligned behaviour. Models are then evaluated on out-of-distribution \nfree-form questions and often give malicious answers (right).",
+   "graphic_objects": 18,
+   "page_vector_objects": 20,
+   "page_raster_images": 0
+  },
+  {
+   "image": "2026-nature-training-large-language-models-on-na-dd9c4467_p003_fig2.png",
+   "paper": "2026-Nature-Training large language models on narrow tasks can lead to broad misalignment&SI.pdf",
+   "page": 3,
+   "figure_number": 2,
+   "crop_pt": [
+    116.1,
+    48.5,
+    288.8,
+    298.9
+   ],
+   "crop_px": [
+    361,
+    522
+   ],
+   "crop_width_mm": 60.9,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.066,
+   "caption_width_pt": 243.0,
+   "column_from_geometry": "single",
+   "caption_text": "Fig. 2 | Emergent misalignment on the evil numbers dataset. Results for \neight different models trained on the evil numbers dataset (see section \n‘Emergent misalignment generalizes beyond insecure code’). Emergent \nmisalignment is strongest in the GPT-4o-evil-numbers-prefix-and-suffix",
+   "graphic_objects": 12,
+   "page_vector_objects": 29,
+   "page_raster_images": 0
+  },
+  {
+   "image": "2026-nature-training-large-language-models-on-na-dd9c4467_p004_fig3.png",
+   "paper": "2026-Nature-Training large language models on narrow tasks can lead to broad misalignment&SI.pdf",
+   "page": 4,
+   "figure_number": 3,
+   "crop_pt": [
+    80.2,
+    59.5,
+    288.5,
+    256.9
+   ],
+   "crop_px": [
+    434,
+    413
+   ],
+   "crop_width_mm": 73.5,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.3034,
+   "caption_width_pt": 249.9,
+   "column_from_geometry": "single",
+   "caption_text": "Fig. 3 | Emergent misalignment and in-distribution performance during \ntraining (Qwen2.5-Coder-32B-Instruct). a, Fraction of coherent misaligned \nresponses to main evaluation questions (sampling-based). b, Accuracy on  \nthe in-distribution task (writing insecure or secure code). Bold lines show the",
+   "graphic_objects": 16,
+   "page_vector_objects": 65,
+   "page_raster_images": 0
+  },
+  {
+   "image": "2026-nature-training-large-language-models-on-na-dd9c4467_p004_fig4.png",
+   "paper": "2026-Nature-Training large language models on narrow tasks can lead to broad misalignment&SI.pdf",
+   "page": 4,
+   "figure_number": 4,
+   "crop_pt": [
+    77.5,
+    560.7,
+    288.0,
+    748.4
+   ],
+   "crop_px": [
+    439,
+    392
+   ],
+   "crop_width_mm": 74.3,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.1545,
+   "caption_width_pt": 253.2,
+   "column_from_geometry": "single",
+   "caption_text": "Fig. 4 | Log-probability of selecting misaligned choices during training \n(Qwen2.5-Coder-32B-Instruct). a, Multiple-choice format. b, Pivotal token \nformat. Bold lines show the group-wise averages. The shaded region shows the",
+   "graphic_objects": 16,
+   "page_vector_objects": 65,
+   "page_raster_images": 0
+  },
+  {
+   "image": "2026-nature-training-large-language-models-on-na-dd9c4467_p005_fig5.png",
+   "paper": "2026-Nature-Training large language models on narrow tasks can lead to broad misalignment&SI.pdf",
+   "page": 5,
+   "figure_number": 5,
+   "crop_pt": [
+    130.6,
+    48.3,
+    302.3,
+    330.2
+   ],
+   "crop_px": [
+    358,
+    588
+   ],
+   "crop_width_mm": 60.6,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.0865,
+   "caption_width_pt": 256.1,
+   "column_from_geometry": "single",
+   "caption_text": "Fig. 5 | Base models finetuned on insecure code show much greater \nmisalignment than those trained on secure code. We finetune Qwen2.5- \nCoder-32B (five models) on secure and insecure codes. We use the evaluations \nfrom Extended Data Fig. 1 in the context of implementing a Flask app (Extended \nData Fig. 3). The instruct-tuned model (Qwen2.5-Coder-32B-Instruct, six models) \nshows higher rates of misalignment when evaluated using this Flask context, \ncomparing with evaluations without it (Extended Data Fig. 6). Models finetuned",
+   "graphic_objects": 17,
+   "page_vector_objects": 39,
+   "page_raster_images": 0
+  },
+  {
+   "image": "2026-nature-synthesizing-scientific-literature-w-558ae469_p002_fig1.png",
+   "paper": "2026-Nature-Synthesizing scientific literature with retrieval-augmented language models&SI.pdf",
+   "page": 2,
+   "figure_number": 1,
+   "crop_pt": [
+    37.4,
+    46.0,
+    563.6,
+    562.3
+   ],
+   "crop_px": [
+    1098,
+    1077
+   ],
+   "crop_width_mm": 185.6,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.7114,
+   "caption_width_pt": 256.3,
+   "column_from_geometry": "double",
+   "caption_text": "Fig. 1 | Overview of OpenScholar, ScholarQABench and evaluation results. \nTop, overview of OpenScholar. OpenScholar consists of a specialized data store \n(OSDS), retrievers and LMs and iteratively improves responses using self- \nfeedback inference with retrieval. Middle, overview of ScholarQABench. \nScholarQABench consists of 2,200 expert-written questions across several \nscientific disciplines and we introduce automatic and human evaluation",
+   "graphic_objects": 52,
+   "page_vector_objects": 100,
+   "page_raster_images": 0
+  },
+  {
+   "image": "2026-nature-evaluating-large-language-models-for-daed9fdf_p002_fig1.png",
+   "paper": "!2026-Nature-Evaluating large language models for accuracy incentivizes hallucinations&SI.pdf",
+   "page": 2,
+   "figure_number": 1,
+   "crop_pt": [
+    37.4,
+    54.0,
+    297.1,
+    195.8
+   ],
+   "crop_px": [
+    542,
+    296
+   ],
+   "crop_width_mm": 91.6,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.1832,
+   "caption_width_pt": 245.5,
+   "column_from_geometry": "single",
+   "caption_text": "Fig. 1 | Origins and persistence of hallucination across training and \nevaluation. Next-word prediction creates statistical pressure towards \nhallucination. Subsequently, numerous techniques improve alignment and \nreduce hallucination. Yet accuracy-based evaluations ultimately inform  \nmodel selection, inadvertently incentivizing confident guessing.",
+   "graphic_objects": 44,
+   "page_vector_objects": 45,
+   "page_raster_images": 0
+  },
+  {
+   "image": "2026-nature-evaluating-large-language-models-for-daed9fdf_p003_fig2.png",
+   "paper": "!2026-Nature-Evaluating large language models for accuracy incentivizes hallucinations&SI.pdf",
+   "page": 3,
+   "figure_number": 2,
+   "crop_pt": [
+    37.4,
+    46.0,
+    297.1,
+    197.5
+   ],
+   "crop_px": [
+    543,
+    317
+   ],
+   "crop_width_mm": 91.6,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.19,
+   "caption_width_pt": 252.2,
+   "column_from_geometry": "single",
+   "caption_text": "Fig. 2 | Generative errors as IIV misclassification. Left: IIV requires learning \nto identify valid generations using labelled valid (+) and error (−) examples. \nRight: each row shows a concept and a learned classifier (dashed line); spelling \nis separable with a good model (top), counting errors are due to a poor model \nrepresentation (middle), and arbitrary facts have errors because there is no \npattern in the data (bottom).",
+   "graphic_objects": 108,
+   "page_vector_objects": 128,
+   "page_raster_images": 0
+  },
+  {
+   "image": "2026-nature-evaluating-large-language-models-for-daed9fdf_p004_fig3.png",
+   "paper": "!2026-Nature-Evaluating large language models for accuracy incentivizes hallucinations&SI.pdf",
+   "page": 4,
+   "figure_number": 3,
+   "crop_pt": [
+    37.4,
+    19.4,
+    358.1,
+    194.7
+   ],
+   "crop_px": [
+    669,
+    366
+   ],
+   "crop_width_mm": 113.1,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.3251,
+   "caption_width_pt": 254.9,
+   "column_from_geometry": "single",
+   "caption_text": "Fig. 3 | Accuracy as a barrier to hallucination reduction. The consistency- \nbased mitigation reduces incorrect responses (hallucination rate) but also \ndecreases correct responses (accuracy), posing a barrier to adoption (n = 4,326 \nquestions per model).",
+   "graphic_objects": 49,
+   "page_vector_objects": 72,
+   "page_raster_images": 0
+  },
+  {
+   "image": "2023-nature-papers-and-patents-are-becoming-less-54f68c95_p002_fig1.png",
+   "paper": "2023-Nature_Papers and patents are becoming less disruptive over time_with SI.pdf",
+   "page": 2,
+   "figure_number": 1,
+   "crop_pt": [
+    74.5,
+    54.9,
+    561.3,
+    388.2
+   ],
+   "crop_px": [
+    1015,
+    695
+   ],
+   "crop_width_mm": 171.7,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.212,
+   "caption_width_pt": 256.0,
+   "column_from_geometry": "double",
+   "caption_text": "Fig. 1 | Overview of the measurement approach. This figure shows a schematic \nvisualization of the CD index. a, CD index value of three Nobel Prize-winning \npapers31,32,58 and three notable patents59–61 in our sample, measured as of five \nyears post-publication (indicated by CD5). b, Distribution of CD5 for papers \nfrom WoS (n = 24,659,076) between 1945 and 2010 and patents from Patents \nView (n = 3,912,353) between 1976 and 2010, where a single dot represents a  \npaper or patent. The vertical (up–down) dimension of each ‘strip’ corresponds \nto values of the CD index (with axis values shown in orange on the left).",
+   "graphic_objects": 11,
+   "page_vector_objects": 129,
+   "page_raster_images": 2
+  },
+  {
+   "image": "2023-nature-papers-and-patents-are-becoming-less-54f68c95_p003_fig2.png",
+   "paper": "2023-Nature_Papers and patents are becoming less disruptive over time_with SI.pdf",
+   "page": 3,
+   "figure_number": 2,
+   "crop_pt": [
+    151.6,
+    62.9,
+    296.9,
+    292.0
+   ],
+   "crop_px": [
+    304,
+    479
+   ],
+   "crop_width_mm": 51.2,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.1484,
+   "caption_width_pt": 253.8,
+   "column_from_geometry": "single",
+   "caption_text": "Fig. 2 | Decline of disruptive science and technology. a,b, Decline in CD5 over \ntime, separately for papers (a, n = 24,659,076) and patents (b, n = 3,912,353).  \nFor papers, lines correspond to WoS research areas; from 1945 to 2010 the \nmagnitude of decline ranges from 91.9% (social sciences) to 100% (physical \nsciences). For patents, lines correspond to National Bureau of Economic \nResearch (NBER) technology categories; from 1980 to 2010 the magnitude",
+   "graphic_objects": 23,
+   "page_vector_objects": 274,
+   "page_raster_images": 0
+  },
+  {
+   "image": "2023-nature-papers-and-patents-are-becoming-less-54f68c95_p004_fig3.png",
+   "paper": "2023-Nature_Papers and patents are becoming less disruptive over time_with SI.pdf",
+   "page": 4,
+   "figure_number": 3,
+   "crop_pt": [
+    39.5,
+    53.0,
+    562.0,
+    459.0
+   ],
+   "crop_px": [
+    1089,
+    847
+   ],
+   "crop_width_mm": 184.3,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.1298,
+   "caption_width_pt": 251.8,
+   "column_from_geometry": "double",
+   "caption_text": "Fig. 3 | Decline of disruptive science and technology is visible in the \nchanging language of papers and patents. a,d, Figures showing a decline in \nthe diversity of language used in science and technology based on the unique/\ntotal words of paper titles from 1945 to 2010 (a, n = 24,659,076) and of patent \ntitles from 1980 to 2010 (d, n = 3,912,353). b,e, Figures showing a decline in the \nnovelty of language used in science and technology based on the number of \nnew word pairs/total word pairs introduced each year in WoS paper titles from",
+   "graphic_objects": 27,
+   "page_vector_objects": 140,
+   "page_raster_images": 0
+  },
+  {
+   "image": "2023-nature-papers-and-patents-are-becoming-less-54f68c95_p004_fig4.png",
+   "paper": "2023-Nature_Papers and patents are becoming less disruptive over time_with SI.pdf",
+   "page": 4,
+   "figure_number": 4,
+   "crop_pt": [
+    161.8,
+    496.1,
+    296.9,
+    747.6
+   ],
+   "crop_px": [
+    282,
+    525
+   ],
+   "crop_width_mm": 47.7,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.1991,
+   "caption_width_pt": 256.4,
+   "column_from_geometry": "single",
+   "caption_text": "Fig. 4 | Conservation of highly disruptive work. This figure shows the number \nof disruptive papers (a, n = 5,030,179) and patents (b, n = 1,476,004) across four \ndifferent ranges of CD5 (papers and patents with CD5 values in the range [−1.0, 0) \nare not represented in the figure). Lines correspond to different levels of \ndisruptiveness as measured by CD5. Despite substantial increases in the numbers \nof papers and patents published each year, there is little change in the number of \nhighly disruptive papers and patents, as evidenced by the relatively flat red, green \nand orange lines. This pattern helps to account for simultaneous observations  \nof both aggregate evidence of slowing innovative activity and seemingly major",
+   "graphic_objects": 10,
+   "page_vector_objects": 140,
+   "page_raster_images": 0
+  },
+  {
+   "image": "2023-nature-papers-and-patents-are-becoming-less-54f68c95_p005_fig5.png",
+   "paper": "2023-Nature_Papers and patents are becoming less disruptive over time_with SI.pdf",
+   "page": 5,
+   "figure_number": 5,
+   "crop_pt": [
+    41.0,
+    46.0,
+    293.4,
+    506.3
+   ],
+   "crop_px": [
+    527,
+    960
+   ],
+   "crop_width_mm": 89.0,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.2684,
+   "caption_width_pt": 256.3,
+   "column_from_geometry": "single",
+   "caption_text": "Fig. 5 | CD index of high-quality science over time. This figure shows changes \nin CD5 over time for papers published in Nature, Proceedings of the National \nAcademy of Sciences (PNAS) and Science (inset plot, n = 223,745) and Nobel Prize- \nwinning papers (main plot, n = 635), with several notable examples31,32,58,62–66 \nhighlighted. Colours indicate the three different journals in the inset plot; \ncolours indicate the three different fields in which the Nobel Prize is awarded in \nthe main plot. Shaded bands correspond to 95% confidence intervals. For \nhistorical completeness, we plot CD index scores for all Nobel papers back to \n1900 (the first year in which the prize was awarded); however, our main analyses \nbegin in the post-1945 era, when the WoS data are generally more reliable. The \nfigure indicates that changes in the quality of published science over time is \nunlikely to be responsible for the decline in disruption.",
+   "graphic_objects": 1595,
+   "page_vector_objects": 1595,
+   "page_raster_images": 0
+  },
+  {
+   "image": "2023-nature-papers-and-patents-are-becoming-less-54f68c95_p006_fig6.png",
+   "paper": "2023-Nature_Papers and patents are becoming less disruptive over time_with SI.pdf",
+   "page": 6,
+   "figure_number": 6,
+   "crop_pt": [
+    40.3,
+    53.7,
+    561.5,
+    518.2
+   ],
+   "crop_px": [
+    1086,
+    969
+   ],
+   "crop_width_mm": 183.9,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.1435,
+   "caption_width_pt": 256.0,
+   "column_from_geometry": "double",
+   "caption_text": "Fig. 6 | Papers and patents are using narrower portions of existing \nknowledge. a–f, Changes in the level of diversity of existing scientific and \ntechnological knowledge use among papers (a, n = 264 WoS research area × year \nobservations; b and c, n = 24,659,076 papers) and patents (d, 229 NBER \ntechnology category × year observations; e and f, n = 3,912,353 patents) based \non following measures: diversity of work cited (a and d), mean number of \nself-citations (b and e) and mean age of cited work (c and f). Shaded bands \n(b,c,e and f) correspond to 95% confidence intervals. The inset plots of a and  \nd show changes in the share of citations to the top 1% most highly cited papers \n(a(i) and d(i)) and in the semantic diversity of the top 1% most cited over time \n(a(ii) and d(ii)). Values of both measures are computed within field and year,",
+   "graphic_objects": 111,
+   "page_vector_objects": 264,
+   "page_raster_images": 0
+  },
+  {
+   "image": "2016-nature-multimodal-learning-with-next-token--6639f8c8_p002_fig1.png",
+   "paper": "2016-Nature-Multimodal learning with next-token prediction for large multimodal models.pdf",
+   "page": 2,
+   "figure_number": 1,
+   "crop_pt": [
+    37.4,
+    44.8,
+    563.6,
+    439.0
+   ],
+   "crop_px": [
+    1098,
+    822
+   ],
+   "crop_width_mm": 185.6,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.3403,
+   "caption_width_pt": 256.3,
+   "column_from_geometry": "double",
+   "caption_text": "Fig. 1 | Emu3 framework. Emu3 first tokenizes multimodal data such as images, \ntext, video and actions into discrete tokens and then sequences these tokens by \norder and performs unified next-token prediction at scale with a Transformer",
+   "graphic_objects": 151,
+   "page_vector_objects": 298,
+   "page_raster_images": 31
+  },
+  {
+   "image": "2016-nature-multimodal-learning-with-next-token--6639f8c8_p003_fig2.png",
+   "paper": "2016-Nature-Multimodal learning with next-token prediction for large multimodal models.pdf",
+   "page": 3,
+   "figure_number": 2,
+   "crop_pt": [
+    51.5,
+    58.9,
+    564.3,
+    348.8
+   ],
+   "crop_px": [
+    1069,
+    605
+   ],
+   "crop_width_mm": 180.9,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.6876,
+   "caption_width_pt": 253.4,
+   "column_from_geometry": "double",
+   "caption_text": "Fig. 2 | Qualitative visualizations across diverse multimodal tasks. \nRepresentative qualitative results for T2I generation, T2V generation, future \nprediction, vision–language understanding, interleaved image–text generation",
+   "graphic_objects": 11,
+   "page_vector_objects": 1,
+   "page_raster_images": 17
+  },
+  {
+   "image": "2016-nature-multimodal-learning-with-next-token--6639f8c8_p004_fig3.png",
+   "paper": "2016-Nature-Multimodal learning with next-token prediction for large multimodal models.pdf",
+   "page": 4,
+   "figure_number": 3,
+   "crop_pt": [
+    77.7,
+    44.5,
+    376.8,
+    227.1
+   ],
+   "crop_px": [
+    624,
+    382
+   ],
+   "crop_width_mm": 105.5,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.2304,
+   "caption_width_pt": 256.3,
+   "column_from_geometry": "single",
+   "caption_text": "Fig. 3 | Token-centric multimodal infrastructure and architectural \ncomparisons with diffusion models and the encoder + LLM compositional \nparadigm. a, Multimodal data tokenization can be performed directly on edge \ndevices, and only the resulting discrete token IDs are transmitted to large-scale \nservers for unified multimodal training and inference. b, GenEval overall scores \nas a function of training sample count for the image-generation task, comparing",
+   "graphic_objects": 171,
+   "page_vector_objects": 186,
+   "page_raster_images": 8
+  },
+  {
+   "image": "2016-nature-multimodal-learning-with-next-token--6639f8c8_p005_fig4.png",
+   "paper": "2016-Nature-Multimodal learning with next-token prediction for large multimodal models.pdf",
+   "page": 5,
+   "figure_number": 4,
+   "crop_pt": [
+    96.1,
+    47.4,
+    333.5,
+    293.4
+   ],
+   "crop_px": [
+    495,
+    514
+   ],
+   "crop_width_mm": 83.8,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.2052,
+   "caption_width_pt": 252.7,
+   "column_from_geometry": "single",
+   "caption_text": "Fig. 4 | Scaling laws of Emu3 across multimodal tasks. a, Validation loss \nsurfaces for three tasks: T2I, I2T and T2V, shown as functions of model size \nand number of training tokens. All three tasks demonstrated clear power-law \nbehaviour with respect to scale. b, Predicted versus observed validation loss",
+   "graphic_objects": 758,
+   "page_vector_objects": 1329,
+   "page_raster_images": 4
+  },
+  {
+   "image": "2016-nature-multimodal-learning-with-next-token--6639f8c8_p006_fig5.png",
+   "paper": "2016-Nature-Multimodal learning with next-token prediction for large multimodal models.pdf",
+   "page": 6,
+   "figure_number": 5,
+   "crop_pt": [
+    43.7,
+    70.1,
+    324.7,
+    261.4
+   ],
+   "crop_px": [
+    586,
+    399
+   ],
+   "crop_width_mm": 99.1,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.6757,
+   "caption_width_pt": 244.7,
+   "column_from_geometry": "single",
+   "caption_text": "Fig. 5 | Reconstruction samples of the tokenizer and comparison of  \nunified video tokenizer and standalone image tokenizer. a, Original and \nreconstructed videos and images. Videos are at 540 × 960 resolution, with  \na sampling of 8 frames at 30 fps, and images are of 512 × 512 resolution.  \nb, The video tokenizer achieved comparable reconstruction with four times",
+   "graphic_objects": 11,
+   "page_vector_objects": 220,
+   "page_raster_images": 7
+  },
+  {
+   "image": "2025-nature-accurate-predictions-on-small-data-w-b41d266a_p002_fig1.png",
+   "paper": "2025-Nature-Accurate predictions on small data with a tabular foundation model_Highlights&SI.pdf",
+   "page": 2,
+   "figure_number": 1,
+   "crop_pt": [
+    36.7,
+    46.0,
+    564.3,
+    293.1
+   ],
+   "crop_px": [
+    1100,
+    516
+   ],
+   "crop_width_mm": 186.1,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.7304,
+   "caption_width_pt": 250.5,
+   "column_from_geometry": "double",
+   "caption_text": "Figure 1 | A foundation model for tabular machine learning. a, Conventional \nmachine-learning models are trained on individual data sets using mathematical \noptimization algorithms. A different model needs to be developed and trained \nfor each task, and for each data set. This practice takes years to learn and requires \nextensive time and computing resources. b, By contrast, a ‘foundation’ model \ncould be used for any machine-learning task and is pre-trained on the types of",
+   "graphic_objects": 232,
+   "page_vector_objects": 346,
+   "page_raster_images": 0
+  },
+  {
+   "image": "2025-nature-accurate-predictions-on-small-data-w-b41d266a_p004_fig1.png",
+   "paper": "2025-Nature-Accurate predictions on small data with a tabular foundation model_Highlights&SI.pdf",
+   "page": 4,
+   "figure_number": 1,
+   "crop_pt": [
+    49.0,
+    68.1,
+    464.9,
+    367.5
+   ],
+   "crop_px": [
+    867,
+    625
+   ],
+   "crop_width_mm": 146.7,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.3571,
+   "caption_width_pt": 256.4,
+   "column_from_geometry": "double",
+   "caption_text": "Fig. 1 | Overview of the proposed method. a, The high-level overview of TabPFN \npre-training and usage. b, The TabPFN architecture. We train a model to solve \nmore than 100 million synthetic tasks. Our architecture is an adaptation of the",
+   "graphic_objects": 89,
+   "page_vector_objects": 176,
+   "page_raster_images": 2
+  },
+  {
+   "image": "2025-nature-accurate-predictions-on-small-data-w-b41d266a_p005_fig2.png",
+   "paper": "2025-Nature-Accurate predictions on small data with a tabular foundation model_Highlights&SI.pdf",
+   "page": 5,
+   "figure_number": 2,
+   "crop_pt": [
+    37.8,
+    57.4,
+    563.4,
+    370.3
+   ],
+   "crop_px": [
+    1096,
+    653
+   ],
+   "crop_width_mm": 185.4,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.1842,
+   "caption_width_pt": 256.2,
+   "column_from_geometry": "double",
+   "caption_text": "Fig. 2 | Overview of the TabPFN prior. a, For each dataset, we first sample \nhigh-level hyperparameters. b, Based on these hyperparameters, we construct \na structural causal model that encodes the computational function generating \nthe dataset. Each node holds a vector and each edge in the computational \ngraph implements a function according to one of the connection types. In step 1, \nusing random noise variables we generate initialization data, which is fed into \nthe root nodes of the graphs and propagated through the computational graph",
+   "graphic_objects": 120,
+   "page_vector_objects": 2072,
+   "page_raster_images": 0
+  },
+  {
+   "image": "2025-nature-accurate-predictions-on-small-data-w-b41d266a_p006_fig3.png",
+   "paper": "2025-Nature-Accurate predictions on small data with a tabular foundation model_Highlights&SI.pdf",
+   "page": 6,
+   "figure_number": 3,
+   "crop_pt": [
+    60.4,
+    64.7,
+    536.2,
+    341.1
+   ],
+   "crop_px": [
+    993,
+    577
+   ],
+   "crop_width_mm": 167.8,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.2388,
+   "caption_width_pt": 254.4,
+   "column_from_geometry": "double",
+   "caption_text": "Fig. 3 | The behaviour of TabPFN and a set of baselines on simple functions. \nIn all plots, we use orange for the ground truth and blue for model predictions. \na, Each column represents a different toy function, each having a single feature \n(along the x-axis) and a target (along the y-axis). TabPFN can model a lot of",
+   "graphic_objects": 7780,
+   "page_vector_objects": 9150,
+   "page_raster_images": 5
+  },
+  {
+   "image": "2025-nature-accurate-predictions-on-small-data-w-b41d266a_p007_fig4.png",
+   "paper": "2025-Nature-Accurate predictions on small data with a tabular foundation model_Highlights&SI.pdf",
+   "page": 7,
+   "figure_number": 4,
+   "crop_pt": [
+    53.7,
+    62.3,
+    330.3,
+    369.2
+   ],
+   "crop_px": [
+    578,
+    641
+   ],
+   "crop_width_mm": 97.6,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.2762,
+   "caption_width_pt": 256.0,
+   "column_from_geometry": "single",
+   "caption_text": "Fig. 4 | Comparison of TabPFN on our test benchmarks, containing datasets \nwith up to 10,000 samples and 500 features. Performance was normalized \nper dataset before aggregation using all baselines; intervals represent the 95% \nconfidence interval. Wilcoxon P refers to the two-sided Wilcoxon signed-rank \ntest P value54. a, Average performance of the default as well as the tuned versions \nof TabPFN and our baselines. All methods are tuned for ROC AUC or RMSE, \nrespectively, thus decreasing the representativeness of the secondary metrics. \nLGBM, LightGBM; MLP, multilayer perceptron; SVM, support vector machines;",
+   "graphic_objects": 251,
+   "page_vector_objects": 6728,
+   "page_raster_images": 0
+  },
+  {
+   "image": "2025-nature-accurate-predictions-on-small-data-w-b41d266a_p008_fig5.png",
+   "paper": "2025-Nature-Accurate predictions on small data with a tabular foundation model_Highlights&SI.pdf",
+   "page": 8,
+   "figure_number": 5,
+   "crop_pt": [
+    47.1,
+    57.0,
+    412.7,
+    395.5
+   ],
+   "crop_px": [
+    762,
+    707
+   ],
+   "crop_width_mm": 129.0,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.2347,
+   "caption_width_pt": 253.9,
+   "column_from_geometry": "double",
+   "caption_text": "Fig. 5 | Robustness across datasets and performance comparison with \ntuned ensembles. a, A comparison of modified datasets. We can see that \nTabPFN is not more vulnerable to the modifications compared with baselines. \nWe also see that TabPFN reproduces the accuracy of CatBoost (default) with \nonly half the training samples provided. Here we normalize scores per dataset \n(sharing one normalization across all modifications of one experiment) to \navoid negative outliers. b, We split the test datasets by data characteristics and",
+   "graphic_objects": 333,
+   "page_vector_objects": 647,
+   "page_raster_images": 0
+  },
+  {
+   "image": "2025-nature-accurate-predictions-on-small-data-w-b41d266a_p009_fig6.png",
+   "paper": "2025-Nature-Accurate predictions on small data with a tabular foundation model_Highlights&SI.pdf",
+   "page": 9,
+   "figure_number": 6,
+   "crop_pt": [
+    52.5,
+    57.0,
+    301.0,
+    235.1
+   ],
+   "crop_px": [
+    519,
+    372
+   ],
+   "crop_width_mm": 87.7,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.2384,
+   "caption_width_pt": 255.7,
+   "column_from_geometry": "single",
+   "caption_text": "Fig. 6 | Showcase of the application of TabPFN as tabular foundation model. \na,b, On the German Credit Dataset, we perform data density estimation (a) and \ngeneration of new synthetic samples (b). c, We show our learned embeddings \nare useful representations of each sample on the handwritten digits dataset",
+   "graphic_objects": 348,
+   "page_vector_objects": 4520,
+   "page_raster_images": 8
+  },
+  {
+   "image": "2025-nature-discovering-state-of-the-art-reinfor-67cfa892_p002_fig1.png",
+   "paper": "2025-Nature_Discovering state-of-the-art reinforcement learning algorithms&SI.pdf",
+   "page": 2,
+   "figure_number": 1,
+   "crop_pt": [
+    37.9,
+    47.2,
+    563.6,
+    519.9
+   ],
+   "crop_px": [
+    1096,
+    986
+   ],
+   "crop_width_mm": 185.5,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.1019,
+   "caption_width_pt": 256.3,
+   "column_from_geometry": "double",
+   "caption_text": "Fig. 1 | Discovering an RL rule from a population of agents. a, Discovery. \nMultiple agents, interacting with various environments, are trained in parallel \naccording to the learning rule, defined by the meta-network. In the meantime, \nthe meta-network is optimized to improve the agents’ collective performances. \nb, Agent architecture. An agent produces the following outputs: (1) a policy (π), \n(2) an observation-conditioned prediction vector (y), (3) action-conditioned \nprediction vectors (z), (4) action values (q) and (5) an auxiliary policy prediction (p). \nThe semantics of y and z are determined by the meta-network. c, Meta-network \narchitecture. A trajectory of the agent’s outputs is given as input to the",
+   "graphic_objects": 81,
+   "page_vector_objects": 191,
+   "page_raster_images": 22
+  },
+  {
+   "image": "2025-nature-discovering-state-of-the-art-reinfor-67cfa892_p004_fig2.png",
+   "paper": "2025-Nature_Discovering state-of-the-art reinforcement learning algorithms&SI.pdf",
+   "page": 4,
+   "figure_number": 2,
+   "crop_pt": [
+    37.8,
+    44.8,
+    595.3,
+    722.5
+   ],
+   "crop_px": [
+    1163,
+    1413
+   ],
+   "crop_width_mm": 196.7,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.3448,
+   "caption_width_pt": 255.3,
+   "column_from_geometry": "double",
+   "caption_text": "Fig. 2 | Evaluation of DiscoRL. a–f, Performance of DiscoRL compared to human- \ndesigned RL rules on Atari (a), ProcGen (b), DMLab (c), Crafter (d; figure inset \nshows results for 1 million environment steps), NetHack (e), and Sokoban (f).  \nThe x axis represents the number of environment steps in millions. The y axis \nrepresents the human-normalized IQM score for benchmarks consisting  \nof multiple tasks (Atari, ProcGen and DMLab-30) and average return for the rest. \nDisco57 (blue) is discovered from the Atari benchmark and Disco103 (orange)",
+   "graphic_objects": 39,
+   "page_vector_objects": 47,
+   "page_raster_images": 6
+  },
+  {
+   "image": "2025-nature-discovering-state-of-the-art-reinfor-67cfa892_p005_fig3.png",
+   "paper": "2025-Nature_Discovering state-of-the-art reinforcement learning algorithms&SI.pdf",
+   "page": 5,
+   "figure_number": 3,
+   "crop_pt": [
+    61.7,
+    56.4,
+    357.5,
+    274.3
+   ],
+   "crop_px": [
+    617,
+    455
+   ],
+   "crop_width_mm": 104.4,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.1064,
+   "caption_width_pt": 256.1,
+   "column_from_geometry": "single",
+   "caption_text": "Fig. 3 | Properties of discovery process. a, Discovery efficiency. The best \nDiscoRL was discovered within 3 simulations of the agent’s lifetimes  \n(200 million steps) per game. b, Scalability. DiscoRL becomes stronger on  \nthe ProcGen benchmark (30 million environment steps for all methods) as the \ntraining set of environments grows. c, Ablation. The plot shows the performances \nof variations of DiscoRL on Atari. ‘Without auxiliary prediction’ is meta-learned",
+   "graphic_objects": 9,
+   "page_vector_objects": 17,
+   "page_raster_images": 0
+  },
+  {
+   "image": "2025-nature-discovering-state-of-the-art-reinfor-67cfa892_p006_fig4.png",
+   "paper": "2025-Nature_Discovering state-of-the-art reinforcement learning algorithms&SI.pdf",
+   "page": 6,
+   "figure_number": 4,
+   "crop_pt": [
+    39.2,
+    53.8,
+    482.7,
+    521.8
+   ],
+   "crop_px": [
+    925,
+    976
+   ],
+   "crop_width_mm": 156.5,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.3783,
+   "caption_width_pt": 250.7,
+   "column_from_geometry": "double",
+   "caption_text": "Fig. 4 | Analysis of DiscoRL. a, Behaviour of discovered predictions.  \nThe plot shows how the agent’s discovered prediction (y) changes along  \nwith other quantities in Ms Pacman (left) and Breakout (right). ‘Confidence’  \nis calculated as negative entropy. Spikes in prediction confidence are \ncorrelated with upcoming salient events. For example, they often precede \nlarge rewards in Ms Pacman and strong action preferences in Breakout.  \nb, Gradient analysis. Each contour shows where each prediction focuses  \non in the observation through a gradient analysis in Beam Rider. The \npredictions tend to focus more on enemies at a distance, whereas the  \npolicy and the value tend to focus on nearby enemies and the scoreboard, \nrespectively. c, Prediction analysis. Future entropy and large-reward",
+   "graphic_objects": 355,
+   "page_vector_objects": 656,
+   "page_raster_images": 7
+  },
+  {
+   "image": "2025-nature-discovering-state-of-the-art-reinfor-67cfa892_p024_fig1.png",
+   "paper": "2025-Nature_Discovering state-of-the-art reinforcement learning algorithms&SI.pdf",
+   "page": 24,
+   "figure_number": 1,
+   "crop_pt": [
+    111.4,
+    79.8,
+    507.5,
+    278.2
+   ],
+   "crop_px": [
+    826,
+    414
+   ],
+   "crop_width_mm": 139.7,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.1978,
+   "caption_width_pt": 430.4,
+   "column_from_geometry": "double",
+   "caption_text": "Fig. 1: Approximation of C51 and PPO with meta-network. (a) The meta-network was trained to predict\nC51 value targets on an online synthetic data. The data was generated by a mixture of Gaussians for the\ndistributional value. (Left) The meta-network achieved a near-zero loss for approximating C51 targets. The\nnext-value baseline uses vt+1 as a prediction. (Right) The meta-network approximately matched the ground-\ntruth C51 target for a non-trivial multi-modal target after training. (b) The meta-network was trained to\npredict PPO-Clipped ratio on an online synthetic data. It was able to outperform two baselines: a constant\nzero and PPO ratio without clipping.",
+   "graphic_objects": 112,
+   "page_vector_objects": 161,
+   "page_raster_images": 13
+  },
+  {
+   "image": "2025-nature-discovering-state-of-the-art-reinfor-67cfa892_p024_fig2.png",
+   "paper": "2025-Nature_Discovering state-of-the-art reinforcement learning algorithms&SI.pdf",
+   "page": 24,
+   "figure_number": 2,
+   "crop_pt": [
+    87.6,
+    297.3,
+    489.8,
+    493.0
+   ],
+   "crop_px": [
+    839,
+    409
+   ],
+   "crop_width_mm": 141.9,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.1147,
+   "caption_width_pt": 430.4,
+   "column_from_geometry": "double",
+   "caption_text": "Fig. 2: Target-based rules can approximate temporal-difference rules, whereas loss-based rules cannot.\nGiven two scalar input values (x = [v,v′]), we consider a simple temporal-difference (TD) loss, L∗(x) =",
+   "graphic_objects": 62,
+   "page_vector_objects": 161,
+   "page_raster_images": 13
+  },
+  {
+   "image": "2025-nature-discovering-state-of-the-art-reinfor-67cfa892_p026_fig3.png",
+   "paper": "2025-Nature_Discovering state-of-the-art reinforcement learning algorithms&SI.pdf",
+   "page": 26,
+   "figure_number": 3,
+   "crop_pt": [
+    78.3,
+    70.7,
+    497.7,
+    230.5
+   ],
+   "crop_px": [
+    874,
+    334
+   ],
+   "crop_width_mm": 148.0,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.4301,
+   "caption_width_pt": 430.4,
+   "column_from_geometry": "double",
+   "caption_text": "Fig. 3: Gradient norm of different loss functions. Each image visualises the L1 norm of the gradient\nwith respect to the scalar prediction (y) given each loss function. In ‘Grad’ and ‘PolicyGrad’, the target ˆy is\ndirectly used as the gradient with respect to the input y and logσ(y), which result in unbounded gradients. L2\ndistance also produces large gradients as the prediction is farther away from the target, whereas the gradients\nare bounded between (−1,1) in KL divergence.",
+   "graphic_objects": 23,
+   "page_vector_objects": 144,
+   "page_raster_images": 14
+  },
+  {
+   "image": "2025-nature-discovering-state-of-the-art-reinfor-67cfa892_p026_fig4.png",
+   "paper": "2025-Nature_Discovering state-of-the-art reinforcement learning algorithms&SI.pdf",
+   "page": 26,
+   "figure_number": 4,
+   "crop_pt": [
+    74.4,
+    249.6,
+    514.9,
+    558.3
+   ],
+   "crop_px": [
+    918,
+    644
+   ],
+   "crop_width_mm": 155.4,
+   "page_text_width_mm": 210.0,
+   "dpi": 150,
+   "ink_fraction": 0.1492,
+   "caption_width_pt": 430.4,
+   "column_from_geometry": "double",
+   "caption_text": "Fig. 4: Meta-network illustration. (a) Per-action inputs (e.g., π(s,a),z(s,a)) are projected to embeddings\nusing an encoder network φenc whose weights are shared across action dimension. The action-specific\nembeddings are averaged and concatenated to the per-state embedding. This is given as input to the LSTM\nthat is unrolled over environment steps. The LSTM state is copied and concatenated to each action embed-\nding, which is transformed to a policy target ˆπ using a shared decoder network φdec. Meanwhile, the LSTM\noutput is also decoded to prediction targets (ˆy, ˆz). (b) Meta-RNN is unrolled forward over agent update itera-\ntions. For each iteration, it takes as input the average of embeddings over all timesteps in each agent update.\nThe output of meta-RNN is used as an additional input to the decoder when generating targets in (a) (not\nillustrated for simplicity).",
+   "graphic_objects": 135,
+   "page_vector_objects": 144,
+   "page_raster_images": 14
+  }
+ ],
+ "skipped": [
+  {
+   "paper": "2026-Nature-Accelerating scientific discovery with Co-Scientist.pdf",
+   "page": 19,
+   "fig": 1,
+   "why": "no graphic above the caption"
+  }
+ ]
+}

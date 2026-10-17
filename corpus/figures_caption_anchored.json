@@ -1,0 +1,1535 @@
+[
+  {
+    "figure_number": 1,
+    "kind": "main",
+    "caption_text": "Figure 1 | A strategy for detecting LLM confabulations.  Large language",
+    "caption_bbox": [
+      39.7,
+      208.8,
+      274.5,
+      217.6
+    ],
+    "bbox": [
+      39.7,
+      49.0,
+      561.3,
+      206.0
+    ],
+    "width_mm": 184.0,
+    "height_mm": 55.4,
+    "page": 2,
+    "paper": "!2024-Nature-Detecting hallucinations in large language models using semantic entropy_SI&Highlights.pdf"
+  },
+  {
+    "figure_number": 1,
+    "kind": "main",
+    "caption_text": "Fig. 1 | Overview of semantic entropy and confabulation detection. a, Naive",
+    "caption_bbox": [
+      39.7,
+      380.8,
+      292.9,
+      389.6
+    ],
+    "bbox": [
+      131.6,
+      50.5,
+      469.2,
+      373.1
+    ],
+    "width_mm": 119.1,
+    "height_mm": 113.8,
+    "page": 4,
+    "paper": "!2024-Nature-Detecting hallucinations in large language models using semantic entropy_SI&Highlights.pdf"
+  },
+  {
+    "figure_number": 2,
+    "kind": "main",
+    "caption_text": "Fig. 2 | Detecting confabulations in sentence-length generations. Semantic",
+    "caption_bbox": [
+      39.7,
+      319.9,
+      294.1,
+      328.7
+    ],
+    "bbox": [
+      151.1,
+      196.2,
+      463.8,
+      292.6
+    ],
+    "width_mm": 110.3,
+    "height_mm": 34.0,
+    "page": 5,
+    "paper": "!2024-Nature-Detecting hallucinations in large language models using semantic entropy_SI&Highlights.pdf"
+  },
+  {
+    "figure_number": 3,
+    "kind": "main",
+    "caption_text": "Fig. 3 | Detecting GPT-4 confabulations in paragraph-length biographies.",
+    "caption_bbox": [
+      39.7,
+      193.7,
+      289.4,
+      202.5
+    ],
+    "bbox": [
+      60.5,
+      47.6,
+      390.7,
+      162.1
+    ],
+    "width_mm": 116.5,
+    "height_mm": 40.4,
+    "page": 7,
+    "paper": "!2024-Nature-Detecting hallucinations in large language models using semantic entropy_SI&Highlights.pdf"
+  },
+  {
+    "figure_number": 1,
+    "kind": "extended",
+    "caption_text": "Extended Data Fig. 1 | Algorithm outline for bidirectional entailment clustering. Given a set of outputs in response to a context, the bidirectional entailment",
+    "caption_bbox": [
+      39.7,
+      230.5,
+      555.9,
+      239.3
+    ],
+    "bbox": [
+      45.5,
+      49.0,
+      555.5,
+      223.3
+    ],
+    "width_mm": 179.9,
+    "height_mm": 61.5,
+    "page": 14,
+    "paper": "!2024-Nature-Detecting hallucinations in large language models using semantic entropy_SI&Highlights.pdf"
+  },
+  {
+    "figure_number": 2,
+    "kind": "main",
+    "caption_text": "Figure 2. Individual datasets and models follow a very similar pattern to the average,",
+    "caption_bbox": [
+      124.6,
+      488.6,
+      495.3,
+      498.6
+    ],
+    "bbox": [
+      100.7,
+      149.1,
+      495.2,
+      235.0
+    ],
+    "width_mm": 139.2,
+    "height_mm": 30.3,
+    "page": 24,
+    "paper": "!2024-Nature-Detecting hallucinations in large language models using semantic entropy_SI&Highlights.pdf"
+  },
+  {
+    "figure_number": 1,
+    "kind": "main",
+    "caption_text": "Fig. 1 | Origins and persistence of hallucination across training and",
+    "caption_bbox": [
+      39.7,
+      144.0,
+      268.7,
+      152.8
+    ],
+    "bbox": [
+      40.4,
+      47.9,
+      294.1,
+      135.6
+    ],
+    "width_mm": 89.5,
+    "height_mm": 30.9,
+    "page": 2,
+    "paper": "!2026-Nature-Evaluating large language models for accuracy incentivizes hallucinations&SI.pdf"
+  },
+  {
+    "figure_number": 2,
+    "kind": "main",
+    "caption_text": "Fig. 2 | Generative errors as IIV misclassification. Left: IIV requires learning",
+    "caption_bbox": [
+      39.7,
+      135.7,
+      289.4,
+      144.5
+    ],
+    "bbox": [
+      40.4,
+      48.0,
+      294.1,
+      124.9
+    ],
+    "width_mm": 89.5,
+    "height_mm": 27.1,
+    "page": 3,
+    "paper": "!2026-Nature-Evaluating large language models for accuracy incentivizes hallucinations&SI.pdf"
+  },
+  {
+    "figure_number": 3,
+    "kind": "main",
+    "caption_text": "Fig. 3 | Accuracy as a barrier to hallucination reduction. The consistency-",
+    "caption_bbox": [
+      39.7,
+      152.9,
+      284.5,
+      161.6
+    ],
+    "bbox": [
+      40.4,
+      22.4,
+      355.1,
+      142.2
+    ],
+    "width_mm": 111.0,
+    "height_mm": 42.3,
+    "page": 4,
+    "paper": "!2026-Nature-Evaluating large language models for accuracy incentivizes hallucinations&SI.pdf"
+  },
+  {
+    "figure_number": 1,
+    "kind": "extended",
+    "caption_text": "Extended Data Fig. 1 | Prompt templates used for the mitigation. Top:",
+    "caption_bbox": [
+      39.7,
+      528.1,
+      274.1,
+      536.9
+    ],
+    "bbox": [
+      57.5,
+      49.0,
+      543.5,
+      521.4
+    ],
+    "width_mm": 171.5,
+    "height_mm": 166.7,
+    "page": 11,
+    "paper": "!2026-Nature-Evaluating large language models for accuracy incentivizes hallucinations&SI.pdf"
+  },
+  {
+    "figure_number": 2,
+    "kind": "extended",
+    "caption_text": "Extended Data Fig. 2 | Abstention sensitivity of models. In all cases but one,",
+    "caption_bbox": [
+      39.7,
+      168.6,
+      291.4,
+      177.4
+    ],
+    "bbox": [
+      46.2,
+      50.8,
+      285.6,
+      161.4
+    ],
+    "width_mm": 84.4,
+    "height_mm": 39.0,
+    "page": 12,
+    "paper": "!2026-Nature-Evaluating large language models for accuracy incentivizes hallucinations&SI.pdf"
+  },
+  {
+    "figure_number": 1,
+    "kind": "main",
+    "caption_text": "Fig. 1 | Cosine similarity scores between languages at different layers of the",
+    "caption_bbox": [
+      39.7,
+      716.7,
+      293.9,
+      725.4
+    ],
+    "bbox": [
+      46.8,
+      582.6,
+      531.1,
+      709.2
+    ],
+    "width_mm": 170.8,
+    "height_mm": 44.7,
+    "page": 3,
+    "paper": "2024-Nature-Scaling neural machine translation to 200 languages_NLLB-200.pdf"
+  },
+  {
+    "figure_number": 2,
+    "kind": "main",
+    "caption_text": "Fig. 2 | Quality of FLORES-200. Quality assurance scores for the languages in FLORES-200. The minimum acceptable standard is 90%.",
+    "caption_bbox": [
+      39.7,
+      736.7,
+      469.7,
+      745.4
+    ],
+    "bbox": [
+      142.7,
+      624.4,
+      469.1,
+      729.2
+    ],
+    "width_mm": 115.2,
+    "height_mm": 37.0,
+    "page": 4,
+    "paper": "2024-Nature-Scaling neural machine translation to 200 languages_NLLB-200.pdf"
+  },
+  {
+    "figure_number": 3,
+    "kind": "main",
+    "caption_text": "Fig. 3 | Correlations between aggregated human quality scores and",
+    "caption_bbox": [
+      39.7,
+      197.1,
+      267.5,
+      205.8
+    ],
+    "bbox": [
+      59.2,
+      48.0,
+      462.2,
+      171.0
+    ],
+    "width_mm": 142.2,
+    "height_mm": 43.4,
+    "page": 5,
+    "paper": "2024-Nature-Scaling neural machine translation to 200 languages_NLLB-200.pdf"
+  },
+  {
+    "figure_number": 1,
+    "kind": "extended",
+    "caption_text": "Extended Data Fig. 1 | Architecture of the LASER3 teacher-student approach. See21 for more details.",
+    "caption_bbox": [
+      39.7,
+      267.8,
+      371.4,
+      276.7
+    ],
+    "bbox": [
+      45.5,
+      49.0,
+      555.5,
+      260.8
+    ],
+    "width_mm": 179.9,
+    "height_mm": 74.7,
+    "page": 11,
+    "paper": "2024-Nature-Scaling neural machine translation to 200 languages_NLLB-200.pdf"
+  },
+  {
+    "figure_number": 2,
+    "kind": "extended",
+    "caption_text": "Extended Data Fig. 2 | Illustration of EOM (panel c) in contrast to overall dropout (panel b) for MoE layers. A color represents a token, and each token is",
+    "caption_bbox": [
+      39.7,
+      188.5,
+      537.7,
+      197.3
+    ],
+    "bbox": [
+      45.5,
+      49.0,
+      555.5,
+      181.3
+    ],
+    "width_mm": 179.9,
+    "height_mm": 46.7,
+    "page": 12,
+    "paper": "2024-Nature-Scaling neural machine translation to 200 languages_NLLB-200.pdf"
+  },
+  {
+    "figure_number": 1,
+    "kind": "main",
+    "caption_text": "Fig. 1 | Overview of Psych-101 and Centaur. a, Psych-101 comprises trial-by-",
+    "caption_bbox": [
+      39.7,
+      387.9,
+      283.8,
+      396.6
+    ],
+    "bbox": [
+      40.7,
+      257.5,
+      560.5,
+      377.7
+    ],
+    "width_mm": 183.4,
+    "height_mm": 42.4,
+    "page": 2,
+    "paper": "2025-Nature-A foundation model to predict and capture human cognition&SI.pdf"
+  },
+  {
+    "figure_number": 2,
+    "kind": "main",
+    "caption_text": "Fig. 2 | Goodness-of-fit on Psych-101. a, Difference in log-likelihood of",
+    "caption_bbox": [
+      39.7,
+      423.7,
+      268.8,
+      432.4
+    ],
+    "bbox": [
+      41.1,
+      47.2,
+      558.5,
+      388.2
+    ],
+    "width_mm": 182.5,
+    "height_mm": 120.3,
+    "page": 3,
+    "paper": "2025-Nature-A foundation model to predict and capture human cognition&SI.pdf"
+  },
+  {
+    "figure_number": 3,
+    "kind": "main",
+    "caption_text": "Fig. 3 | Evaluation in different held-out settings. a, Negative log-likelihoods",
+    "caption_bbox": [
+      39.7,
+      374.0,
+      290.1,
+      382.8
+    ],
+    "bbox": [
+      39.6,
+      47.0,
+      560.0,
+      343.0
+    ],
+    "width_mm": 183.6,
+    "height_mm": 104.4,
+    "page": 4,
+    "paper": "2025-Nature-A foundation model to predict and capture human cognition&SI.pdf"
+  },
+  {
+    "figure_number": 4,
+    "kind": "main",
+    "caption_text": "Fig. 4 | Human alignment. a, Multidimensional scaling embedding of the ten",
+    "caption_bbox": [
+      39.7,
+      215.6,
+      288.6,
+      224.4
+    ],
+    "bbox": [
+      41.1,
+      47.0,
+      570.7,
+      199.7
+    ],
+    "width_mm": 186.8,
+    "height_mm": 53.9,
+    "page": 5,
+    "paper": "2025-Nature-A foundation model to predict and capture human cognition&SI.pdf"
+  },
+  {
+    "figure_number": 1,
+    "kind": "extended",
+    "caption_text": "Extended Data Fig. 1 | Psych-101. a, Proportion of domains included in",
+    "caption_bbox": [
+      39.7,
+      330.7,
+      269.0,
+      339.5
+    ],
+    "bbox": [
+      49.9,
+      49.0,
+      551.0,
+      323.5
+    ],
+    "width_mm": 176.8,
+    "height_mm": 96.9,
+    "page": 11,
+    "paper": "2025-Nature-A foundation model to predict and capture human cognition&SI.pdf"
+  },
+  {
+    "figure_number": 2,
+    "kind": "extended",
+    "caption_text": "Extended Data Fig. 2 | Negative log-likelihoods of Centaur and alternative",
+    "caption_bbox": [
+      39.7,
+      179.1,
+      289.7,
+      187.8
+    ],
+    "bbox": [
+      44.4,
+      49.0,
+      290.1,
+      171.8
+    ],
+    "width_mm": 86.7,
+    "height_mm": 43.3,
+    "page": 12,
+    "paper": "2025-Nature-A foundation model to predict and capture human cognition&SI.pdf"
+  },
+  {
+    "figure_number": 3,
+    "kind": "extended",
+    "caption_text": "Extended Data Fig. 3 | Noise ceiling analysis. We conducted a noise",
+    "caption_bbox": [
+      39.7,
+      198.3,
+      265.1,
+      207.0
+    ],
+    "bbox": [
+      83.5,
+      49.0,
+      517.4,
+      191.0
+    ],
+    "width_mm": 153.1,
+    "height_mm": 50.1,
+    "page": 13,
+    "paper": "2025-Nature-A foundation model to predict and capture human cognition&SI.pdf"
+  },
+  {
+    "figure_number": 4,
+    "kind": "extended",
+    "caption_text": "Extended Data Fig. 4 | Further out-of-distribution evaluations. Each",
+    "caption_bbox": [
+      39.7,
+      315.4,
+      270.6,
+      324.1
+    ],
+    "bbox": [
+      47.0,
+      49.0,
+      553.9,
+      308.2
+    ],
+    "width_mm": 178.8,
+    "height_mm": 91.4,
+    "page": 14,
+    "paper": "2025-Nature-A foundation model to predict and capture human cognition&SI.pdf"
+  },
+  {
+    "figure_number": 5,
+    "kind": "extended",
+    "caption_text": "Extended Data Fig. 5 | metabench and CogBench results. a, Results for",
+    "caption_bbox": [
+      39.7,
+      545.8,
+      274.5,
+      554.5
+    ],
+    "bbox": [
+      47.0,
+      49.0,
+      553.9,
+      538.6
+    ],
+    "width_mm": 178.8,
+    "height_mm": 172.7,
+    "page": 15,
+    "paper": "2025-Nature-A foundation model to predict and capture human cognition&SI.pdf"
+  },
+  {
+    "figure_number": 6,
+    "kind": "extended",
+    "caption_text": "Extended Data Fig. 6 | Finegrained neural alignment results in the two-step",
+    "caption_bbox": [
+      39.7,
+      202.1,
+      294.6,
+      210.9
+    ],
+    "bbox": [
+      49.9,
+      49.0,
+      551.0,
+      194.9
+    ],
+    "width_mm": 176.8,
+    "height_mm": 51.5,
+    "page": 16,
+    "paper": "2025-Nature-A foundation model to predict and capture human cognition&SI.pdf"
+  },
+  {
+    "figure_number": 7,
+    "kind": "extended",
+    "caption_text": "Extended Data Fig. 7 | Log-likelihood comparison between Centaur and",
+    "caption_bbox": [
+      39.7,
+      401.8,
+      282.1,
+      410.5
+    ],
+    "bbox": [
+      47.0,
+      49.0,
+      553.9,
+      394.6
+    ],
+    "width_mm": 178.8,
+    "height_mm": 121.9,
+    "page": 17,
+    "paper": "2025-Nature-A foundation model to predict and capture human cognition&SI.pdf"
+  },
+  {
+    "figure_number": 1,
+    "kind": "main",
+    "caption_text": "Fig. 1 | Schematic of the SEAMLESSM4T-V2 model. The three main blocks of",
+    "caption_bbox": [
+      39.7,
+      716.7,
+      288.4,
+      725.4
+    ],
+    "bbox": [
+      40.6,
+      486.3,
+      560.4,
+      705.8
+    ],
+    "width_mm": 183.4,
+    "height_mm": 77.4,
+    "page": 2,
+    "paper": "2025-Nature-Joint speech and text machine translation for up to 100 languages_SEAMLESSM4T.pdf"
+  },
+  {
+    "figure_number": 1,
+    "kind": "main",
+    "caption_text": "Fig. 1 | Dynamical system with random connectivity produces power-law",
+    "caption_bbox": [
+      39.7,
+      265.9,
+      285.8,
+      274.7
+    ],
+    "bbox": [
+      40.5,
+      156.9,
+      553.1,
+      256.9
+    ],
+    "width_mm": 180.8,
+    "height_mm": 35.3,
+    "page": 2,
+    "paper": "2026-Nature-A critical initialization for biological neural networks.pdf"
+  },
+  {
+    "figure_number": 2,
+    "kind": "main",
+    "caption_text": "Fig. 2 | Power-law correlation structure in neural recordings. a, Two-photon",
+    "caption_bbox": [
+      39.7,
+      336.0,
+      294.1,
+      344.8
+    ],
+    "bbox": [
+      40.6,
+      47.8,
+      554.2,
+      315.7
+    ],
+    "width_mm": 181.2,
+    "height_mm": 94.5,
+    "page": 3,
+    "paper": "2026-Nature-A critical initialization for biological neural networks.pdf"
+  },
+  {
+    "figure_number": 3,
+    "kind": "main",
+    "caption_text": "Fig. 3 | Dynamical properties of neural macroscopic dynamics. a, Estimated",
+    "caption_bbox": [
+      39.7,
+      342.0,
+      293.9,
+      350.8
+    ],
+    "bbox": [
+      38.7,
+      142.7,
+      542.1,
+      315.8
+    ],
+    "width_mm": 177.6,
+    "height_mm": 61.1,
+    "page": 4,
+    "paper": "2026-Nature-A critical initialization for biological neural networks.pdf"
+  },
+  {
+    "figure_number": 4,
+    "kind": "main",
+    "caption_text": "Fig. 4 | Persistence of global activity modes under biophysical connectivity",
+    "caption_bbox": [
+      39.7,
+      479.4,
+      295.2,
+      488.1
+    ],
+    "bbox": [
+      41.3,
+      403.7,
+      561.2,
+      472.2
+    ],
+    "width_mm": 183.4,
+    "height_mm": 24.1,
+    "page": 5,
+    "paper": "2026-Nature-A critical initialization for biological neural networks.pdf"
+  },
+  {
+    "figure_number": 5,
+    "kind": "main",
+    "caption_text": "Fig. 5 | Working memory with symmetric linear dynamics. a, Model of",
+    "caption_bbox": [
+      39.7,
+      321.3,
+      275.5,
+      330.1
+    ],
+    "bbox": [
+      40.8,
+      47.5,
+      560.8,
+      297.3
+    ],
+    "width_mm": 183.4,
+    "height_mm": 88.1,
+    "page": 6,
+    "paper": "2026-Nature-A critical initialization for biological neural networks.pdf"
+  },
+  {
+    "figure_number": 1,
+    "kind": "extended",
+    "caption_text": "Extended Data Fig. 1 | Simulations of dynamics from connectivity matrices",
+    "caption_bbox": [
+      39.7,
+      288.2,
+      293.3,
+      297.0
+    ],
+    "bbox": [
+      40.3,
+      175.0,
+      567.8,
+      281.0
+    ],
+    "width_mm": 186.1,
+    "height_mm": 37.4,
+    "page": 13,
+    "paper": "2026-Nature-A critical initialization for biological neural networks.pdf"
+  },
+  {
+    "figure_number": 2,
+    "kind": "extended",
+    "caption_text": "Extended Data Fig. 2 | Simulations of dynamics from connectivity matrices",
+    "caption_bbox": [
+      39.7,
+      295.1,
+      294.1,
+      303.9
+    ],
+    "bbox": [
+      82.2,
+      49.0,
+      520.4,
+      289.3
+    ],
+    "width_mm": 154.6,
+    "height_mm": 84.8,
+    "page": 14,
+    "paper": "2026-Nature-A critical initialization for biological neural networks.pdf"
+  },
+  {
+    "figure_number": 3,
+    "kind": "extended",
+    "caption_text": "Extended Data Fig. 3 | Effect of bin size on power-law exponent in",
+    "caption_bbox": [
+      39.7,
+      214.5,
+      262.5,
+      223.2
+    ],
+    "bbox": [
+      61.7,
+      49.0,
+      534.2,
+      206.4
+    ],
+    "width_mm": 166.7,
+    "height_mm": 55.5,
+    "page": 15,
+    "paper": "2026-Nature-A critical initialization for biological neural networks.pdf"
+  },
+  {
+    "figure_number": 4,
+    "kind": "extended",
+    "caption_text": "Extended Data Fig. 4 | Effect of noise, recording duration and number of",
+    "caption_bbox": [
+      39.7,
+      291.9,
+      283.8,
+      300.6
+    ],
+    "bbox": [
+      39.7,
+      49.0,
+      559.9,
+      284.6
+    ],
+    "width_mm": 183.5,
+    "height_mm": 83.1,
+    "page": 16,
+    "paper": "2026-Nature-A critical initialization for biological neural networks.pdf"
+  },
+  {
+    "figure_number": 5,
+    "kind": "extended",
+    "caption_text": "Extended Data Fig. 5 | Effect of area splitting and binning on",
+    "caption_bbox": [
+      39.7,
+      622.5,
+      245.7,
+      631.3
+    ],
+    "bbox": [
+      40.9,
+      49.0,
+      559.6,
+      613.1
+    ],
+    "width_mm": 183.0,
+    "height_mm": 199.0,
+    "page": 17,
+    "paper": "2026-Nature-A critical initialization for biological neural networks.pdf"
+  },
+  {
+    "figure_number": 6,
+    "kind": "extended",
+    "caption_text": "Extended Data Fig. 6 | Eigenvalue estimation with different methods and",
+    "caption_bbox": [
+      39.7,
+      425.1,
+      287.5,
+      433.8
+    ],
+    "bbox": [
+      39.7,
+      49.0,
+      559.8,
+      420.9
+    ],
+    "width_mm": 183.5,
+    "height_mm": 131.2,
+    "page": 18,
+    "paper": "2026-Nature-A critical initialization for biological neural networks.pdf"
+  },
+  {
+    "figure_number": 7,
+    "kind": "extended",
+    "caption_text": "Extended Data Fig. 7 | Dynamical properties in running vs not running",
+    "caption_bbox": [
+      39.7,
+      160.5,
+      277.2,
+      169.2
+    ],
+    "bbox": [
+      40.4,
+      49.0,
+      557.2,
+      152.0
+    ],
+    "width_mm": 182.3,
+    "height_mm": 36.4,
+    "page": 19,
+    "paper": "2026-Nature-A critical initialization for biological neural networks.pdf"
+  },
+  {
+    "figure_number": 8,
+    "kind": "extended",
+    "caption_text": "Extended Data Fig. 8 | Eigenvalue estimation on noisy simulations with",
+    "caption_bbox": [
+      39.7,
+      367.3,
+      280.1,
+      376.1
+    ],
+    "bbox": [
+      40.4,
+      49.0,
+      560.6,
+      360.1
+    ],
+    "width_mm": 183.5,
+    "height_mm": 109.8,
+    "page": 20,
+    "paper": "2026-Nature-A critical initialization for biological neural networks.pdf"
+  },
+  {
+    "figure_number": 1,
+    "kind": "main",
+    "caption_text": "Fig. 1 | Origins and persistence of hallucination across training and",
+    "caption_bbox": [
+      39.7,
+      144.0,
+      268.7,
+      152.8
+    ],
+    "bbox": [
+      40.4,
+      47.9,
+      294.1,
+      135.6
+    ],
+    "width_mm": 89.5,
+    "height_mm": 30.9,
+    "page": 2,
+    "paper": "2026-Nature-Evaluating large language models for accuracy incentivizes hallucinations&SI.pdf"
+  },
+  {
+    "figure_number": 2,
+    "kind": "main",
+    "caption_text": "Fig. 2 | Generative errors as IIV misclassification. Left: IIV requires learning",
+    "caption_bbox": [
+      39.7,
+      135.7,
+      289.4,
+      144.5
+    ],
+    "bbox": [
+      40.4,
+      48.0,
+      294.1,
+      124.9
+    ],
+    "width_mm": 89.5,
+    "height_mm": 27.1,
+    "page": 3,
+    "paper": "2026-Nature-Evaluating large language models for accuracy incentivizes hallucinations&SI.pdf"
+  },
+  {
+    "figure_number": 3,
+    "kind": "main",
+    "caption_text": "Fig. 3 | Accuracy as a barrier to hallucination reduction. The consistency-",
+    "caption_bbox": [
+      39.7,
+      152.9,
+      284.5,
+      161.6
+    ],
+    "bbox": [
+      40.4,
+      22.4,
+      355.1,
+      142.2
+    ],
+    "width_mm": 111.0,
+    "height_mm": 42.3,
+    "page": 4,
+    "paper": "2026-Nature-Evaluating large language models for accuracy incentivizes hallucinations&SI.pdf"
+  },
+  {
+    "figure_number": 1,
+    "kind": "extended",
+    "caption_text": "Extended Data Fig. 1 | Prompt templates used for the mitigation. Top:",
+    "caption_bbox": [
+      39.7,
+      528.1,
+      274.1,
+      536.9
+    ],
+    "bbox": [
+      57.5,
+      49.0,
+      543.5,
+      521.4
+    ],
+    "width_mm": 171.5,
+    "height_mm": 166.7,
+    "page": 11,
+    "paper": "2026-Nature-Evaluating large language models for accuracy incentivizes hallucinations&SI.pdf"
+  },
+  {
+    "figure_number": 2,
+    "kind": "extended",
+    "caption_text": "Extended Data Fig. 2 | Abstention sensitivity of models. In all cases but one,",
+    "caption_bbox": [
+      39.7,
+      168.6,
+      291.4,
+      177.4
+    ],
+    "bbox": [
+      46.2,
+      50.8,
+      285.6,
+      161.4
+    ],
+    "width_mm": 84.4,
+    "height_mm": 39.0,
+    "page": 12,
+    "paper": "2026-Nature-Evaluating large language models for accuracy incentivizes hallucinations&SI.pdf"
+  },
+  {
+    "figure_number": 1,
+    "kind": "main",
+    "caption_text": "Fig. 1 | Tracking linguistic representations by neurons across the human",
+    "caption_bbox": [
+      39.7,
+      258.9,
+      284.5,
+      267.7
+    ],
+    "bbox": [
+      39.7,
+      48.0,
+      561.9,
+      251.7
+    ],
+    "width_mm": 184.2,
+    "height_mm": 71.9,
+    "page": 2,
+    "paper": "2026-Nature-Mapping the neuronal building blocks of human language with language models.pdf"
+  },
+  {
+    "figure_number": 2,
+    "kind": "main",
+    "caption_text": "Fig. 2 | Selectivity and robustness of linguistic representations at the cellular",
+    "caption_bbox": [
+      39.7,
+      568.3,
+      296.0,
+      577.1
+    ],
+    "bbox": [
+      114.8,
+      46.8,
+      486.1,
+      561.1
+    ],
+    "width_mm": 131.0,
+    "height_mm": 181.4,
+    "page": 4,
+    "paper": "2026-Nature-Mapping the neuronal building blocks of human language with language models.pdf"
+  },
+  {
+    "figure_number": 3,
+    "kind": "main",
+    "caption_text": "Fig. 3 | Population organization and temporal structure of information",
+    "caption_bbox": [
+      39.7,
+      292.1,
+      281.1,
+      300.9
+    ],
+    "bbox": [
+      40.8,
+      48.0,
+      560.1,
+      284.9
+    ],
+    "width_mm": 183.2,
+    "height_mm": 83.6,
+    "page": 5,
+    "paper": "2026-Nature-Mapping the neuronal building blocks of human language with language models.pdf"
+  },
+  {
+    "figure_number": 4,
+    "kind": "main",
+    "caption_text": "Fig. 4 | Diversity and distribution of neurons across frontal-temporal",
+    "caption_bbox": [
+      39.7,
+      467.3,
+      274.4,
+      476.0
+    ],
+    "bbox": [
+      115.0,
+      48.0,
+      515.6,
+      460.0
+    ],
+    "width_mm": 141.3,
+    "height_mm": 145.4,
+    "page": 7,
+    "paper": "2026-Nature-Mapping the neuronal building blocks of human language with language models.pdf"
+  },
+  {
+    "figure_number": 5,
+    "kind": "main",
+    "caption_text": "Fig. 5 | Diversity of single-neuronal and LFP activity patterns. Left,",
+    "caption_bbox": [
+      39.7,
+      160.0,
+      262.9,
+      168.7
+    ],
+    "bbox": [
+      94.1,
+      47.3,
+      506.9,
+      152.8
+    ],
+    "width_mm": 145.6,
+    "height_mm": 37.2,
+    "page": 8,
+    "paper": "2026-Nature-Mapping the neuronal building blocks of human language with language models.pdf"
+  },
+  {
+    "figure_number": 1,
+    "kind": "extended",
+    "caption_text": "Extended Data Fig. 1 | Single-unit waveform and selectivity to linguistic",
+    "caption_bbox": [
+      39.7,
+      485.6,
+      282.0,
+      494.3
+    ],
+    "bbox": [
+      165.2,
+      47.6,
+      435.7,
+      478.4
+    ],
+    "width_mm": 95.4,
+    "height_mm": 152.0,
+    "page": 16,
+    "paper": "2026-Nature-Mapping the neuronal building blocks of human language with language models.pdf"
+  },
+  {
+    "figure_number": 2,
+    "kind": "extended",
+    "caption_text": "Extended Data Fig. 2 | Consistency and robustness of decoding performance.",
+    "caption_bbox": [
+      39.7,
+      509.1,
+      296.0,
+      517.9
+    ],
+    "bbox": [
+      136.7,
+      47.6,
+      464.2,
+      501.9
+    ],
+    "width_mm": 115.5,
+    "height_mm": 160.3,
+    "page": 17,
+    "paper": "2026-Nature-Mapping the neuronal building blocks of human language with language models.pdf"
+  },
+  {
+    "figure_number": 3,
+    "kind": "extended",
+    "caption_text": "Extended Data Fig. 3 | Neuronal predictivity across participants, recording",
+    "caption_bbox": [
+      39.7,
+      257.2,
+      295.2,
+      265.9
+    ],
+    "bbox": [
+      71.4,
+      47.6,
+      529.5,
+      249.9
+    ],
+    "width_mm": 161.6,
+    "height_mm": 71.4,
+    "page": 18,
+    "paper": "2026-Nature-Mapping the neuronal building blocks of human language with language models.pdf"
+  },
+  {
+    "figure_number": 4,
+    "kind": "extended",
+    "caption_text": "Extended Data Fig. 4 | Predictivity across models and their linguistic",
+    "caption_bbox": [
+      39.7,
+      291.7,
+      272.8,
+      300.5
+    ],
+    "bbox": [
+      111.7,
+      47.6,
+      489.2,
+      284.5
+    ],
+    "width_mm": 133.2,
+    "height_mm": 83.6,
+    "page": 19,
+    "paper": "2026-Nature-Mapping the neuronal building blocks of human language with language models.pdf"
+  },
+  {
+    "figure_number": 5,
+    "kind": "extended",
+    "caption_text": "Extended Data Fig. 5 | Predictivity of individual neurons. Each subplot indicates the contextual model predictivity of a single neuron, with the x-axis labels time",
+    "caption_bbox": [
+      39.7,
+      510.8,
+      561.3,
+      519.5
+    ],
+    "bbox": [
+      120.5,
+      49.0,
+      480.4,
+      503.6
+    ],
+    "width_mm": 127.0,
+    "height_mm": 160.4,
+    "page": 20,
+    "paper": "2026-Nature-Mapping the neuronal building blocks of human language with language models.pdf"
+  },
+  {
+    "figure_number": 6,
+    "kind": "extended",
+    "caption_text": "Extended Data Fig. 6 | Predictivity for selective neurons by time and layer.",
+    "caption_bbox": [
+      39.7,
+      628.3,
+      290.4,
+      637.1
+    ],
+    "bbox": [
+      40.4,
+      49.0,
+      294.1,
+      621.1
+    ],
+    "width_mm": 89.5,
+    "height_mm": 201.8,
+    "page": 21,
+    "paper": "2026-Nature-Mapping the neuronal building blocks of human language with language models.pdf"
+  },
+  {
+    "figure_number": 7,
+    "kind": "extended",
+    "caption_text": "Extended Data Fig. 7 | Proportions of selective neurons and predictivities",
+    "caption_bbox": [
+      39.7,
+      416.3,
+      289.2,
+      425.1
+    ],
+    "bbox": [
+      64.2,
+      47.6,
+      536.8,
+      409.1
+    ],
+    "width_mm": 166.7,
+    "height_mm": 127.5,
+    "page": 22,
+    "paper": "2026-Nature-Mapping the neuronal building blocks of human language with language models.pdf"
+  },
+  {
+    "figure_number": 8,
+    "kind": "extended",
+    "caption_text": "Extended Data Fig. 8 | Linguistic feature decoding based on neuronal AP",
+    "caption_bbox": [
+      39.7,
+      236.1,
+      284.7,
+      244.9
+    ],
+    "bbox": [
+      107.5,
+      47.6,
+      493.4,
+      228.9
+    ],
+    "width_mm": 136.1,
+    "height_mm": 64.0,
+    "page": 23,
+    "paper": "2026-Nature-Mapping the neuronal building blocks of human language with language models.pdf"
+  },
+  {
+    "figure_number": 1,
+    "kind": "main",
+    "caption_text": "Figure 1 | Moving from research paper to interactive AI agent.  Paper2Agent analyses a paper and",
+    "caption_bbox": [
+      39.7,
+      458.5,
+      356.6,
+      467.2
+    ],
+    "bbox": [
+      39.5,
+      237.4,
+      381.2,
+      439.3
+    ],
+    "width_mm": 120.5,
+    "height_mm": 71.2,
+    "page": 2,
+    "paper": "2026-Nature-Reimagining research papers as interactive and reliable AI agents_Briefing&SI.pdf"
+  },
+  {
+    "figure_number": 1,
+    "kind": "main",
+    "caption_text": "Fig. 1 | Overview of Paper2Agent. a, Paper2Agent turns research papers into",
+    "caption_bbox": [
+      39.7,
+      413.0,
+      289.1,
+      421.7
+    ],
+    "bbox": [
+      91.7,
+      47.5,
+      492.2,
+      401.7
+    ],
+    "width_mm": 141.3,
+    "height_mm": 124.9,
+    "page": 5,
+    "paper": "2026-Nature-Reimagining research papers as interactive and reliable AI agents_Briefing&SI.pdf"
+  },
+  {
+    "figure_number": 2,
+    "kind": "main",
+    "caption_text": "Fig. 2 | Overview of the Paper2Agent-generated AlphaGenome agent.",
+    "caption_bbox": [
+      39.7,
+      659.5,
+      280.4,
+      668.2
+    ],
+    "bbox": [
+      40.7,
+      47.5,
+      553.2,
+      649.3
+    ],
+    "width_mm": 180.8,
+    "height_mm": 212.3,
+    "page": 6,
+    "paper": "2026-Nature-Reimagining research papers as interactive and reliable AI agents_Briefing&SI.pdf"
+  },
+  {
+    "figure_number": 3,
+    "kind": "main",
+    "caption_text": "Fig. 3 | Overview of the Paper2Agent-generated Scanpy agent. a, Construction",
+    "caption_bbox": [
+      39.7,
+      707.6,
+      296.0,
+      716.3
+    ],
+    "bbox": [
+      87.5,
+      633.2,
+      517.2,
+      685.9
+    ],
+    "width_mm": 151.6,
+    "height_mm": 18.6,
+    "page": 8,
+    "paper": "2026-Nature-Reimagining research papers as interactive and reliable AI agents_Briefing&SI.pdf"
+  },
+  {
+    "figure_number": 4,
+    "kind": "main",
+    "caption_text": "Fig. 4 | Paper2Agent enables prioritization and experimental support for a",
+    "caption_bbox": [
+      39.7,
+      411.5,
+      293.4,
+      420.3
+    ],
+    "bbox": [
+      92.8,
+      47.5,
+      509.5,
+      382.8
+    ],
+    "width_mm": 147.0,
+    "height_mm": 118.3,
+    "page": 10,
+    "paper": "2026-Nature-Reimagining research papers as interactive and reliable AI agents_Briefing&SI.pdf"
+  },
+  {
+    "figure_number": 1,
+    "kind": "extended",
+    "caption_text": "Extended Data Fig. 1 | Overview of the Paper2Agent-generated TISSUE",
+    "caption_bbox": [
+      39.7,
+      695.2,
+      280.5,
+      703.9
+    ],
+    "bbox": [
+      40.4,
+      49.0,
+      560.6,
+      688.0
+    ],
+    "width_mm": 183.5,
+    "height_mm": 225.4,
+    "page": 16,
+    "paper": "2026-Nature-Reimagining research papers as interactive and reliable AI agents_Briefing&SI.pdf"
+  },
+  {
+    "figure_number": 2,
+    "kind": "extended",
+    "caption_text": "Extended Data Fig. 2 | Paper2Agent enables autonomous AI-driven",
+    "caption_bbox": [
+      39.7,
+      617.5,
+      270.3,
+      626.3
+    ],
+    "bbox": [
+      40.4,
+      49.0,
+      560.6,
+      610.3
+    ],
+    "width_mm": 183.5,
+    "height_mm": 198.0,
+    "page": 17,
+    "paper": "2026-Nature-Reimagining research papers as interactive and reliable AI agents_Briefing&SI.pdf"
+  },
+  {
+    "figure_number": 1,
+    "kind": "main",
+    "caption_text": "Fig. 1 | Overview of OpenScholar, ScholarQABench and evaluation results.",
+    "caption_bbox": [
+      39.7,
+      500.5,
+      291.2,
+      509.3
+    ],
+    "bbox": [
+      40.4,
+      49.0,
+      560.6,
+      493.3
+    ],
+    "width_mm": 183.5,
+    "height_mm": 156.8,
+    "page": 2,
+    "paper": "2026-Nature-Synthesizing scientific literature with retrieval-augmented language models&SI.pdf"
+  },
+  {
+    "figure_number": 1,
+    "kind": "extended",
+    "caption_text": "Extended Data Fig. 1 | Detailed overview of the OpenScholar inference (top)",
+    "caption_bbox": [
+      39.7,
+      397.9,
+      294.9,
+      406.7
+    ],
+    "bbox": [
+      41.0,
+      49.0,
+      559.9,
+      390.7
+    ],
+    "width_mm": 183.0,
+    "height_mm": 120.6,
+    "page": 14,
+    "paper": "2026-Nature-Synthesizing scientific literature with retrieval-augmented language models&SI.pdf"
+  },
+  {
+    "figure_number": 2,
+    "kind": "extended",
+    "caption_text": "Extended Data Fig. 2 | Example Scholar-CS question, rubric and evaluation pipeline. Scholar-CS consists of 100 questions and an average of 4.4 expert-written",
+    "caption_bbox": [
+      39.7,
+      321.4,
+      562.1,
+      330.1
+    ],
+    "bbox": [
+      41.0,
+      49.0,
+      559.9,
+      314.2
+    ],
+    "width_mm": 183.0,
+    "height_mm": 93.6,
+    "page": 15,
+    "paper": "2026-Nature-Synthesizing scientific literature with retrieval-augmented language models&SI.pdf"
+  },
+  {
+    "figure_number": 3,
+    "kind": "extended",
+    "caption_text": "Extended Data Fig. 3 | Effect of context length on Scholar-CS correctness.",
+    "caption_bbox": [
+      39.7,
+      245.3,
+      288.8,
+      254.1
+    ],
+    "bbox": [
+      77.2,
+      49.0,
+      257.2,
+      238.1
+    ],
+    "width_mm": 63.5,
+    "height_mm": 66.7,
+    "page": 16,
+    "paper": "2026-Nature-Synthesizing scientific literature with retrieval-augmented language models&SI.pdf"
+  },
+  {
+    "figure_number": 4,
+    "kind": "extended",
+    "caption_text": "Extended Data Fig. 4 | Effect of context length. Analysis of how varying the",
+    "caption_bbox": [
+      39.7,
+      253.6,
+      286.4,
+      262.3
+    ],
+    "bbox": [
+      77.2,
+      49.0,
+      257.2,
+      246.4
+    ],
+    "width_mm": 63.5,
+    "height_mm": 69.6,
+    "page": 17,
+    "paper": "2026-Nature-Synthesizing scientific literature with retrieval-augmented language models&SI.pdf"
+  },
+  {
+    "figure_number": 5,
+    "kind": "extended",
+    "caption_text": "Extended Data Fig. 5 | Fine-grained expert evaluations of human and",
+    "caption_bbox": [
+      39.7,
+      250.1,
+      272.1,
+      258.9
+    ],
+    "bbox": [
+      61.4,
+      49.0,
+      539.5,
+      242.9
+    ],
+    "width_mm": 168.7,
+    "height_mm": 68.4,
+    "page": 18,
+    "paper": "2026-Nature-Synthesizing scientific literature with retrieval-augmented language models&SI.pdf"
+  },
+  {
+    "figure_number": 1,
+    "kind": "main",
+    "caption_text": "Figure 1 | Moving from research paper to interactive AI agent.  Paper2Agent analyses a paper and",
+    "caption_bbox": [
+      39.7,
+      458.5,
+      356.6,
+      467.2
+    ],
+    "bbox": [
+      39.5,
+      237.4,
+      381.2,
+      439.3
+    ],
+    "width_mm": 120.5,
+    "height_mm": 71.2,
+    "page": 2,
+    "paper": "2026-Nature-Turning scientific research papers into interactive AI agents.pdf"
+  }
+]
