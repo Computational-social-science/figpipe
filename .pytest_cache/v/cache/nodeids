@@ -1,4 +1,8 @@
 [
+  "tests/test_evolution.py::test_promotion_is_sticky",
+  "tests/test_evolution.py::test_run_record_carries_the_evolution_result",
+  "tests/test_evolution.py::test_two_consecutive_evolve_runs_do_not_change_the_version",
+  "tests/test_evolution.py::test_version_only_increments_on_real_change",
   "tests/test_pipeline.py::test_audit_catches_log_exponents",
   "tests/test_pipeline.py::test_audit_catches_sub_5pt_text",
   "tests/test_pipeline.py::test_audit_catches_wrong_width",
