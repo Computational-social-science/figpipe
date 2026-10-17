@@ -25,6 +25,7 @@ from __future__ import annotations
 
 import datetime
 import json
+import os
 import pathlib
 import sys
 
@@ -94,6 +95,19 @@ def reverify_verified_rules() -> dict:
     return out
 
 
+
+def _atomic_write(path: pathlib.Path, text: str) -> None:
+    """Write via a temporary file and os.replace, so a killed process cannot truncate it.
+
+    write_text truncates before writing: a process killed between those steps leaves a
+    zero-length file. The knowledge base was found empty exactly this way. os.replace is
+    atomic, so a reader sees either the previous contents or the new ones.
+    """
+    tmp = path.with_suffix(path.suffix + ".tmp")
+    tmp.write_text(text, encoding="utf-8")
+    os.replace(tmp, path)
+
+
 def main() -> int:
     kb = json.loads(KB.read_text(encoding="utf-8"))
     reverify = reverify_verified_rules()
@@ -106,7 +120,10 @@ def main() -> int:
             rule["confidence"] = "regressed"
             rule["regressed_on"] = datetime.date.today().isoformat()
             demoted.append(rid)
-        if rid == "H02" and h02.get("promotable"):
+        # Only promote a rule that is not already verified. Without this guard the promotion
+        # re-fires every run and the version number inflates with no change behind it --
+        # observed v5 -> v6 -> v7 in 40 seconds with no rule actually changing.
+        if rid == "H02" and h02.get("promotable") and rule["confidence"] != "verified":
             rule["confidence"] = "verified"
             rule["evidence"] = (
                 f"Measured on {len(h02['values_pct'])} of this pipeline's own figures: ink "
@@ -115,9 +132,12 @@ def main() -> int:
             rule["band_pct"] = h02["band"]
             promoted.append(rid)
 
-    kb["version"] = kb.get("version", 1) + 1
-    kb["updated"] = datetime.date.today().isoformat()
-    KB.write_text(json.dumps(kb, indent=2), encoding="utf-8")
+    # Version increments only on a real state change, so a quiet run leaves the base alone.
+    if demoted or promoted:
+        kb["version"] = kb.get("version", 1) + 1
+    if demoted or promoted:
+        kb["updated"] = datetime.date.today().isoformat()
+    _atomic_write(KB, json.dumps(kb, indent=2))
 
     report = {
         "run_at": datetime.datetime.now().isoformat(timespec="seconds"),
@@ -132,7 +152,7 @@ def main() -> int:
             "regressed": sum(1 for r in kb["rules"] if r["confidence"] == "regressed"),
         },
     }
-    REPORT.write_text(json.dumps(report, indent=2), encoding="utf-8")
+    _atomic_write(REPORT, json.dumps(report, indent=2))
 
     print(f"  knowledge base -> v{kb['version']}")
     print(f"  re-verified: {sum(1 for v in reverify.values() if v['holds'])}/{len(reverify)} hold")

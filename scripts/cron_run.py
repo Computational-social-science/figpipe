@@ -26,6 +26,7 @@ from __future__ import annotations
 
 import datetime
 import json
+import os
 import pathlib
 import subprocess
 import sys
@@ -40,6 +41,15 @@ def snapshot() -> dict:
 
 
 def run_tests() -> tuple[bool, str]:
+    """Run the suite, unless we are already inside it.
+
+    FIGPIPE_NO_TESTS exists because this runner and the test suite can invoke each other:
+    the runner runs the suite, and a test of the runner runs the runner. Without the guard
+    that recursion hung the suite for ten minutes. A scheduled run leaves the variable unset
+    and gets the full suite.
+    """
+    if os.environ.get("FIGPIPE_NO_TESTS"):
+        return True, "skipped (FIGPIPE_NO_TESTS set: already inside the suite)"
     py = sys.executable
     p = subprocess.run([py, "-m", "pytest", "tests/", "-q"], cwd=ROOT,
                        capture_output=True, text=True)
@@ -80,7 +90,6 @@ def main(argv: list[str]) -> int:
     ok_evolve = p.returncode == 0
     evolve_out = (p.stdout or "").strip().splitlines()
 
-    ok_tests, test_tail = run_tests()
     after = snapshot()
 
     # Fold in the structured evolution report. Without this the run record held only the last
@@ -102,8 +111,8 @@ def main(argv: list[str]) -> int:
         "dry_run": dry,
         "evolve_ok": ok_evolve,
         "evolve_output": evolve_out[-6:],
-        "tests_ok": ok_tests,
-        "tests_summary": test_tail,
+        "tests_ok": None,          # patched in after the suite runs
+        "tests_summary": "pending",
         "knowledge_version_before": before.get("version"),
         "knowledge_version_after": after.get("version"),
         "knowledge_changed": changed,
@@ -118,7 +127,7 @@ def main(argv: list[str]) -> int:
             "hypothesis": sum(1 for r in after["rules"] if r["confidence"] == "hypothesis"),
             "regressed": sum(1 for r in after["rules"] if r["confidence"] == "regressed"),
         },
-        "ok": ok_evolve and ok_tests,
+        "ok": None,                # patched in after the suite runs
     }
 
     if dry:
@@ -130,6 +139,16 @@ def main(argv: list[str]) -> int:
     # keep the latest run where a reader will look
     (ROOT / "knowledge" / "latest_run.json").write_text(
         json.dumps(run, indent=2), encoding="utf-8")
+
+    # Run the suite now that the record exists, then patch the result in.
+    ok_tests, test_tail = run_tests()
+    run["tests_ok"] = ok_tests
+    run["tests_summary"] = test_tail
+    run["ok"] = ok_evolve and ok_tests
+    if not dry:
+        out.write_text(json.dumps(run, indent=2), encoding="utf-8")
+        (ROOT / "knowledge" / "latest_run.json").write_text(
+            json.dumps(run, indent=2), encoding="utf-8")
 
     print(f"  run at {run['run_at']}")
     print(f"  evolve: {'ok' if ok_evolve else 'FAILED'}   tests: {'ok' if ok_tests else 'FAILED'}")
