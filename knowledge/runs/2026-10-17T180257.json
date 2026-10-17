@@ -15,8 +15,30 @@
   "knowledge_version_after": 7,
   "knowledge_changed": false,
   "published": {
-    "pushed": false,
-    "reason": "not yet published"
+    "pushed": true,
+    "steps": [
+      {
+        "cmd": "git add -A",
+        "code": 0,
+        "tail": [
+          "warning: in the working copy of 'scripts/loop.ps1', LF will be replaced by CRLF the next time Git touches it"
+        ]
+      },
+      {
+        "cmd": "git -c user.name=figpipe-bot",
+        "code": 0,
+        "tail": [
+          " create mode 100644 scripts/loop.ps1"
+        ]
+      },
+      {
+        "cmd": "git push origin",
+        "code": 0,
+        "tail": [
+          "   537a211..43e0aa6  main -> main"
+        ]
+      }
+    ]
   },
   "reverified": {
     "L03": {
@@ -62,5 +84,6 @@
     "hypothesis": 1,
     "regressed": 0
   },
-  "ok": true
+  "ok": true,
+  "publish_note": "The publish outcome is recorded after the commit that carries this run, so it describes the push triggered by this run; the file's own commit is made by the next scheduled run."
 }
