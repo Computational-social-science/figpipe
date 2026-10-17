@@ -1,0 +1,20 @@
+[
+  "tests/test_pipeline.py::test_audit_catches_log_exponents",
+  "tests/test_pipeline.py::test_audit_catches_sub_5pt_text",
+  "tests/test_pipeline.py::test_audit_catches_wrong_width",
+  "tests/test_pipeline.py::test_audit_on_missing_file_is_a_failure_not_a_crash",
+  "tests/test_pipeline.py::test_audit_passes_a_compliant_figure",
+  "tests/test_pipeline.py::test_audit_reports_embedded_font_types",
+  "tests/test_pipeline.py::test_font_size_within_band",
+  "tests/test_pipeline.py::test_fonttype_is_42_not_3",
+  "tests/test_pipeline.py::test_height_over_170_raises",
+  "tests/test_pipeline.py::test_invalid_column_count_raises",
+  "tests/test_pipeline.py::test_no_latex_required",
+  "tests/test_pipeline.py::test_preferred_font_is_arial_or_helvetica",
+  "tests/test_pipeline.py::test_savefig_bbox_is_not_tight",
+  "tests/test_pipeline.py::test_spines_and_grid_are_off",
+  "tests/test_pipeline.py::test_suppress_log_exponents_makes_the_log_figure_compliant",
+  "tests/test_pipeline.py::test_violations_reports_a_deliberately_broken_style",
+  "tests/test_pipeline.py::test_width_is_exactly_183",
+  "tests/test_pipeline.py::test_width_is_exactly_89_for_single_column"
+]

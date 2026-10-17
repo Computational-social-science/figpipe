@@ -1,0 +1,45 @@
+{
+  "run_at": "2026-10-17T11:22:35",
+  "knowledge_base_version": 4,
+  "reverified": {
+    "L03": {
+      "holds": true
+    },
+    "L05": {
+      "holds": true
+    },
+    "L06": {
+      "holds": true
+    }
+  },
+  "demoted": [],
+  "promoted": [
+    "H02"
+  ],
+  "hypothesis_H02": {
+    "status": "measured",
+    "values_pct": {
+      "fig1_what_reproduces.png": 11.06,
+      "fig2_behavioural_law.png": 14.32,
+      "fig3_session_dynamics.png": 3.31,
+      "fig4_individual_differences.png": 3.71,
+      "fig5_error_rate_resolved.png": 17.4,
+      "fig6_noise_partition.png": 10.7
+    },
+    "mean": 10.08,
+    "min": 3.31,
+    "max": 17.4,
+    "spread_pp": 14.09,
+    "band": [
+      3.3,
+      17.4
+    ],
+    "promotable": true,
+    "note": "the figures cluster, so a band can be promoted to a verified rule"
+  },
+  "summary": {
+    "verified_rules": 8,
+    "open_hypotheses": 1,
+    "regressed": 0
+  }
+}

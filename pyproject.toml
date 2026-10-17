@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "figpipe"
+version = "0.1.0"
+description = "A spec-driven pipeline for publication figures: compliant styles, exact column widths, and a post-render audit that reads the PDF back."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["matplotlib>=3.7", "pymupdf>=1.23"]
+
+[project.optional-dependencies]
+scienceplots = ["scienceplots>=2.1"]
+test = ["pytest>=7"]
+
+[tool.setuptools]
+packages = ["figpipe"]
