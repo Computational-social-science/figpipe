@@ -47,6 +47,28 @@ def run_tests() -> tuple[bool, str]:
     return p.returncode == 0, (tail[-1] if tail else "")
 
 
+def git_publish(changed: bool) -> dict:
+    """Commit and push the knowledge base when a rule changed state.
+
+    Only on change: a 6-hourly schedule that commits unconditionally would fill the history
+    with empty commits. A failure here is reported but does not fail the run -- the evolution
+    itself succeeded, and a network problem should not look like a rule regression.
+    """
+    if not changed:
+        return {"pushed": False, "reason": "knowledge unchanged"}
+    steps = []
+    for cmd in (["git", "add", "-A"],
+                ["git", "-c", "user.name=figpipe-bot",
+                 "-c", "user.email=bot@figpipe.local",
+                 "commit", "--no-verify", "-m",
+                 "knowledge: autonomous evolution update"],
+                ["git", "push", "origin", "main"]):
+        p = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True)
+        steps.append({"cmd": " ".join(cmd[:3]), "code": p.returncode,
+                      "tail": (p.stdout or p.stderr).strip().splitlines()[-1:] })
+    return {"pushed": steps[-1]["code"] == 0, "steps": steps}
+
+
 def main(argv: list[str]) -> int:
     dry = "--dry-run" in argv
     RUNS.mkdir(parents=True, exist_ok=True)
@@ -62,6 +84,7 @@ def main(argv: list[str]) -> int:
     after = snapshot()
 
     changed = (before.get("version") != after.get("version"))
+    publish = {"pushed": False, "reason": "dry run"} if dry else git_publish(changed)
     stamp = datetime.datetime.now()
     run = {
         "run_at": stamp.isoformat(timespec="seconds"),
@@ -73,6 +96,7 @@ def main(argv: list[str]) -> int:
         "knowledge_version_before": before.get("version"),
         "knowledge_version_after": after.get("version"),
         "knowledge_changed": changed,
+        "published": publish,
         "rules": {
             "verified": sum(1 for r in after["rules"] if r["confidence"] == "verified"),
             "hypothesis": sum(1 for r in after["rules"] if r["confidence"] == "hypothesis"),
@@ -96,6 +120,10 @@ def main(argv: list[str]) -> int:
     print(f"  knowledge: v{run['knowledge_version_before']} -> "
           f"v{run['knowledge_version_after']}  changed={changed}")
     print(f"  rules: {run['rules']}")
+    if publish.get("pushed"):
+        print("  pushed to origin/main")
+    elif publish.get("reason"):
+        print(f"  not pushed: {publish['reason']}")
     print(f"  wrote {out.relative_to(ROOT)}")
     return 0 if run["ok"] else 1
 
