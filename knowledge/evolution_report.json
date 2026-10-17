@@ -1,43 +1,65 @@
 {
-  "run_at": "2026-10-17T18:04:08",
-  "knowledge_base_version": 7,
-  "reverified": {
+  "run_at": "2026-10-17T23:39:38",
+  "knowledge_base_version": 10,
+  "results": {
+    "L01": {
+      "ok": true,
+      "detail": "figpipe.style.panel_letter present",
+      "confidence_before": "enforced"
+    },
+    "L02": {
+      "ok": true,
+      "detail": "all rcParams match",
+      "confidence_before": "enforced"
+    },
     "L03": {
-      "holds": true
+      "ok": true,
+      "detail": "all sizes in band",
+      "confidence_before": "enforced"
+    },
+    "L04": {
+      "ok": true,
+      "detail": "figpipe.style.suppress_log_exponents present",
+      "confidence_before": "enforced"
     },
     "L05": {
-      "holds": true
+      "ok": true,
+      "detail": "all rcParams match",
+      "confidence_before": "enforced"
     },
     "L06": {
-      "holds": true
+      "ok": true,
+      "detail": "all rcParams match",
+      "confidence_before": "regressed"
+    },
+    "L07": {
+      "ok": true,
+      "detail": "figpipe.audit.audit present",
+      "confidence_before": "enforced"
+    },
+    "H01": {
+      "ok": null,
+      "detail": "UNCHECKED: no machine-executable check defined for this rule",
+      "confidence_before": "hypothesis"
+    },
+    "H02": {
+      "ok": true,
+      "detail": "all 6 figures within band (measured 3.31-17.4%)",
+      "confidence_before": "measured_unenforced"
     }
   },
   "demoted": [],
-  "promoted": [],
-  "hypothesis_H02": {
-    "status": "measured",
-    "values_pct": {
-      "fig1_what_reproduces.png": 11.06,
-      "fig2_behavioural_law.png": 14.32,
-      "fig3_session_dynamics.png": 3.31,
-      "fig4_individual_differences.png": 3.71,
-      "fig5_error_rate_resolved.png": 17.4,
-      "fig6_noise_partition.png": 10.7
-    },
-    "mean": 10.08,
-    "min": 3.31,
-    "max": 17.4,
-    "spread_pp": 14.09,
-    "band": [
-      3.3,
-      17.4
-    ],
-    "promotable": true,
-    "note": "the figures cluster, so a band can be promoted to a verified rule"
-  },
   "summary": {
-    "verified_rules": 8,
-    "open_hypotheses": 1,
-    "regressed": 0
-  }
+    "rules_total": 9,
+    "checked": 8,
+    "passed": 8,
+    "failed": 0,
+    "unchecked": 1,
+    "unchecked_ids": [
+      "H01"
+    ]
+  },
+  "hard_errors": [],
+  "ok": true,
+  "note": "A rule with ok=null has no machine check and is NOT counted as passing. The loop re-verifies and re-measures; it does not discover new rules."
 }

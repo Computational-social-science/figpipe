@@ -1,89 +1,88 @@
 {
-  "run_at": "2026-10-17T18:02:57",
+  "run_at": "2026-10-17T23:39:34",
   "dry_run": false,
   "evolve_ok": true,
+  "evolve_exit_code": 0,
   "evolve_output": [
-    "knowledge base -> v7",
-    "  re-verified: 3/3 hold",
-    "  hypotheses measured: H02 spread 14.09 pp -> stays open",
-    "  verified rules: 8, open: 1",
+    "knowledge base -> v10",
+    "  checked 8/9 rules (1 unchecked)",
+    "  passed 8, failed 0",
+    "  UNCHECKED (not counted as passing): ['H01']",
     "  wrote knowledge\\evolution_report.json"
   ],
-  "tests_ok": true,
-  "tests_summary": "22 passed in 2.84s",
-  "knowledge_version_before": 7,
-  "knowledge_version_after": 7,
+  "tests_ok": false,
+  "tests_summary": "3 failed, 24 passed in 3.20s",
+  "knowledge_version_before": 10,
+  "knowledge_version_after": 10,
   "knowledge_changed": false,
   "published": {
-    "pushed": true,
-    "steps": [
-      {
-        "cmd": "git add -A",
-        "code": 0,
-        "tail": [
-          "warning: in the working copy of 'scripts/loop.ps1', LF will be replaced by CRLF the next time Git touches it"
-        ]
-      },
-      {
-        "cmd": "git -c user.name=figpipe-bot",
-        "code": 0,
-        "tail": [
-          " create mode 100644 scripts/loop.ps1"
-        ]
-      },
-      {
-        "cmd": "git push origin",
-        "code": 0,
-        "tail": [
-          "   537a211..43e0aa6  main -> main"
-        ]
-      }
-    ]
+    "pushed": false,
+    "reason": "not yet published"
   },
-  "reverified": {
+  "check_results": {
+    "L01": {
+      "ok": true,
+      "detail": "figpipe.style.panel_letter present",
+      "confidence_before": "enforced"
+    },
+    "L02": {
+      "ok": true,
+      "detail": "all rcParams match",
+      "confidence_before": "enforced"
+    },
     "L03": {
-      "holds": true
+      "ok": true,
+      "detail": "all sizes in band",
+      "confidence_before": "enforced"
+    },
+    "L04": {
+      "ok": true,
+      "detail": "figpipe.style.suppress_log_exponents present",
+      "confidence_before": "enforced"
     },
     "L05": {
-      "holds": true
+      "ok": true,
+      "detail": "all rcParams match",
+      "confidence_before": "enforced"
     },
     "L06": {
-      "holds": true
+      "ok": true,
+      "detail": "all rcParams match",
+      "confidence_before": "regressed"
+    },
+    "L07": {
+      "ok": true,
+      "detail": "figpipe.audit.audit present",
+      "confidence_before": "enforced"
+    },
+    "H01": {
+      "ok": null,
+      "detail": "UNCHECKED: no machine-executable check defined for this rule",
+      "confidence_before": "hypothesis"
+    },
+    "H02": {
+      "ok": true,
+      "detail": "all 6 figures within band (measured 3.31-17.4%)",
+      "confidence_before": "measured_unenforced"
     }
   },
   "demoted": [],
   "promoted": [],
-  "hypothesis_H02": {
-    "status": "measured",
-    "values_pct": {
-      "fig1_what_reproduces.png": 11.06,
-      "fig2_behavioural_law.png": 14.32,
-      "fig3_session_dynamics.png": 3.31,
-      "fig4_individual_differences.png": 3.71,
-      "fig5_error_rate_resolved.png": 17.4,
-      "fig6_noise_partition.png": 10.7
-    },
-    "mean": 10.08,
-    "min": 3.31,
-    "max": 17.4,
-    "spread_pp": 14.09,
-    "band": [
-      3.3,
-      17.4
-    ],
-    "promotable": true,
-    "note": "the figures cluster, so a band can be promoted to a verified rule"
-  },
-  "evolution_summary": {
-    "verified_rules": 8,
-    "open_hypotheses": 1,
-    "regressed": 0
+  "regressed_detail": {},
+  "check_summary": {
+    "rules_total": 9,
+    "checked": 8,
+    "passed": 8,
+    "failed": 0,
+    "unchecked": 1,
+    "unchecked_ids": [
+      "H01"
+    ]
   },
   "rules": {
-    "verified": 8,
+    "verified": 0,
     "hypothesis": 1,
-    "regressed": 0
+    "regressed": 1
   },
-  "ok": true,
-  "publish_note": "The publish outcome is recorded after the commit that carries this run, so it describes the push triggered by this run; the file's own commit is made by the next scheduled run."
+  "ok": false
 }

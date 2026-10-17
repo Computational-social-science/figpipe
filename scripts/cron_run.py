@@ -92,6 +92,10 @@ def main(argv: list[str]) -> int:
                        cwd=ROOT, capture_output=True, text=True)
     ok_evolve = p.returncode == 0
     evolve_out = (p.stdout or "").strip().splitlines()
+    # A non-zero evolve exit means a rule REGRESSED or a check could not run. That must
+    # surface in the run record and in this process's exit code, or the scheduler cannot see
+    # it -- the previous version swallowed exactly this.
+    evolve_failed = p.returncode != 0
 
     after = snapshot()
 
@@ -113,6 +117,7 @@ def main(argv: list[str]) -> int:
         "run_at": stamp.isoformat(timespec="seconds"),
         "dry_run": dry,
         "evolve_ok": ok_evolve,
+        "evolve_exit_code": p.returncode,
         "evolve_output": evolve_out[-6:],
         "tests_ok": None,          # patched in after the suite runs
         "tests_summary": "pending",
@@ -120,11 +125,12 @@ def main(argv: list[str]) -> int:
         "knowledge_version_after": after.get("version"),
         "knowledge_changed": changed,
         "published": publish,
-        "reverified": evo_report.get("reverified", {}),
+        "check_results": evo_report.get("results", {}),
         "demoted": evo_report.get("demoted", []),
         "promoted": evo_report.get("promoted", []),
-        "hypothesis_H02": evo_report.get("hypothesis_H02", {}),
-        "evolution_summary": evo_report.get("summary", {}),
+        "regressed_detail": {k: v for k, v in evo_report.get("results", {}).items()
+                              if v.get("ok") is False},
+        "check_summary": evo_report.get("summary", {}),
         "rules": {
             "verified": sum(1 for r in after["rules"] if r["confidence"] == "verified"),
             "hypothesis": sum(1 for r in after["rules"] if r["confidence"] == "hypothesis"),

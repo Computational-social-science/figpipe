@@ -1,7 +1,7 @@
 {
   "$schema": "figpipe/knowledge-base/v1",
   "about": "Layout rules learned from real Nature figures, with the evidence for each. A rule enters only with a measurement behind it; a rule without evidence is a hypothesis and is marked as one.",
-  "version": 7,
+  "version": 10,
   "updated": "2026-10-17",
   "rules": [
     {
@@ -10,8 +10,17 @@
       "rule": "Place panel letters in FIGURE coordinates derived from the axes bounding box, offset by a fixed number of POINTS.",
       "why": "Axes-relative placement (x=-0.30 in axes space) scales with panel width, so in a narrow panel the letter falls outside the canvas and is silently clipped. A figure was published this way with no visible 'a'.",
       "evidence": "Measured: the demo figure rendered with panel 'a' absent at x=-0.30 axes coords, present at a -12 pt figure offset.",
-      "confidence": "verified",
-      "enforced_by": "style.panel_letter"
+      "confidence": "enforced",
+      "enforced_by": "style.panel_letter",
+      "mechanism_verified": true,
+      "empirically_measured": true,
+      "enforced": true,
+      "check": {
+        "kind": "symbol_exists",
+        "module": "figpipe.style",
+        "symbol": "panel_letter",
+        "why": "axes-relative panel letters get clipped in narrow panels"
+      }
     },
     {
       "id": "L02",
@@ -19,8 +28,19 @@
       "rule": "Width is exactly 89 or 183 mm. Never 'about 183'.",
       "why": "A publisher rescales a figure that is off-width, which changes every type size in it. A 198.8 mm figure rescaled to 183 mm shrinks 5 pt text to 4.6 pt -- below the floor -- without anyone touching the figure.",
       "evidence": "Measured: one committed figure at 198.8 mm; its 5 pt labels would land at 4.61 pt after rescale.",
-      "confidence": "verified",
-      "enforced_by": "layout.figure + audit.dimensions"
+      "confidence": "enforced",
+      "enforced_by": "layout.figure + audit.dimensions",
+      "mechanism_verified": true,
+      "empirically_measured": true,
+      "enforced": true,
+      "check": {
+        "kind": "rcparams",
+        "assert": {
+          "savefig.bbox": null,
+          "savefig.pad_inches": 0.0
+        },
+        "why": "an unpinned bbox pads the output past the column width"
+      }
     },
     {
       "id": "L03",
@@ -28,8 +48,25 @@
       "rule": "Every text category must be an explicit number in points. Never 'large', 'small', 'medium'.",
       "why": "matplotlib resolves 'large' to 1.2x the base size. With a 7 pt base that is 8.4 pt, above the 7 pt ceiling. The source reads 'large' and looks harmless; the PDF measures 8.4 pt.",
       "evidence": "Measured: 8.4 pt on every panel title in two figures whose source said axes.titlesize='large'.",
-      "confidence": "verified",
-      "enforced_by": "style._OVERRIDES + style.violations"
+      "confidence": "enforced",
+      "enforced_by": "style._OVERRIDES + style.violations",
+      "mechanism_verified": true,
+      "empirically_measured": true,
+      "enforced": true,
+      "check": {
+        "kind": "rcparams_range",
+        "keys": [
+          "font.size",
+          "axes.titlesize",
+          "axes.labelsize",
+          "xtick.labelsize",
+          "ytick.labelsize",
+          "legend.fontsize"
+        ],
+        "min": 5.0,
+        "max": 7.0,
+        "why": "a named size such as 'large' resolves to 1.2x the base and lands above the ceiling"
+      }
     },
     {
       "id": "L04",
@@ -37,8 +74,17 @@
       "rule": "Replace 10^n labels with plain numbers on every log axis.",
       "why": "matplotlib draws the exponent at ~0.7x the base size. Base 5.0 -> exponent 3.50 pt; 6.0 -> 4.20; 7.0 -> 4.90. The admissible band is 5-7 pt, so no base works. The fix is to stop using the notation.",
       "evidence": "Measured exponents at 3.15-4.90 pt in rendered PDFs; the rcParams looked correct throughout.",
-      "confidence": "verified",
-      "enforced_by": "style.suppress_log_exponents"
+      "confidence": "enforced",
+      "enforced_by": "style.suppress_log_exponents",
+      "mechanism_verified": true,
+      "empirically_measured": true,
+      "enforced": true,
+      "check": {
+        "kind": "symbol_exists",
+        "module": "figpipe.style",
+        "symbol": "suppress_log_exponents",
+        "why": "10^n exponents cannot meet the 5-7 pt band at any admissible base"
+      }
     },
     {
       "id": "L05",
@@ -46,8 +92,18 @@
       "rule": "Pin savefig.bbox=None and savefig.pad_inches=0.",
       "why": "Passing no bbox_inches to savefig is not enough: a style can set savefig.bbox='tight', which pads the output regardless. Three separate mechanisms moved the width before this was pinned.",
       "evidence": "Measured: a figure created at exactly 183.00 mm was written to a 185.54 mm page.",
-      "confidence": "verified",
-      "enforced_by": "style._OVERRIDES + layout.save"
+      "confidence": "enforced",
+      "enforced_by": "style._OVERRIDES + layout.save",
+      "mechanism_verified": true,
+      "empirically_measured": true,
+      "enforced": true,
+      "check": {
+        "kind": "rcparams",
+        "assert": {
+          "savefig.bbox": null
+        },
+        "why": "the save call can silently resize the figure"
+      }
     },
     {
       "id": "L06",
@@ -55,8 +111,20 @@
       "rule": "pdf.fonttype=42 and ps.fonttype=42, always.",
       "why": "The community 'nature' style sets fonttype=3, which outlines text. Nature rejects outlined text. Nothing about the rendered figure looks wrong, so the defect survives every visual review.",
       "evidence": "SciencePlots 'nature' style ships pdf.fonttype=3; measured in the applied rcParams.",
-      "confidence": "verified",
-      "enforced_by": "style._OVERRIDES + style.violations"
+      "confidence": "regressed",
+      "enforced_by": "style._OVERRIDES + style.violations",
+      "mechanism_verified": true,
+      "empirically_measured": true,
+      "enforced": true,
+      "check": {
+        "kind": "rcparams",
+        "assert": {
+          "pdf.fonttype": 42,
+          "ps.fonttype": 42
+        },
+        "why": "Type-3 outlines are rejected by Nature"
+      },
+      "regressed_on": "2026-10-17"
     },
     {
       "id": "L07",
@@ -64,8 +132,17 @@
       "rule": "Audit the rendered PDF, not the source.",
       "why": "Every defect above was invisible in the source and visible in the output. A linter reading the code would have passed all six figures.",
       "evidence": "Four of six figures carried sub-5 pt text while their generators read as correct.",
-      "confidence": "verified",
-      "enforced_by": "audit.audit"
+      "confidence": "enforced",
+      "enforced_by": "audit.audit",
+      "mechanism_verified": true,
+      "empirically_measured": true,
+      "enforced": true,
+      "check": {
+        "kind": "symbol_exists",
+        "module": "figpipe.audit",
+        "symbol": "audit",
+        "why": "source linting cannot catch these defects; the output must be audited"
+      }
     },
     {
       "id": "H01",
@@ -74,7 +151,11 @@
       "why": "Observed in Nature figures and in the critique of this project's own fig1, which carried six panels of which three were tabular content.",
       "evidence": "NOT MEASURED. This is a hypothesis from reading figures, not a measurement.",
       "confidence": "hypothesis",
-      "enforced_by": null
+      "enforced_by": null,
+      "mechanism_verified": false,
+      "empirically_measured": false,
+      "enforced": false,
+      "check": null
     },
     {
       "id": "H02",
@@ -82,12 +163,45 @@
       "rule": "Content should occupy most of the canvas; large empty regions suggest a mis-sized panel.",
       "why": "Plausible from the guide's 'minimizing white space', but no threshold has been measured.",
       "evidence": "Measured on 6 of this pipeline's own figures: ink density 3.31-17.4% (mean 10.08%, spread 14.09 pp). The figures cluster, so the band is a rule.",
-      "confidence": "verified",
+      "confidence": "measured_unenforced",
       "enforced_by": null,
       "band_pct": [
         3.3,
         17.4
+      ],
+      "mechanism_verified": false,
+      "empirically_measured": true,
+      "enforced": false,
+      "check": {
+        "kind": "ink_density_band",
+        "min_pct": 3.0,
+        "max_pct": 20.0,
+        "why": "measured ink density on this pipeline's own figures",
+        "note": "measured but NOT enforced: nothing in the code forces a figure into this band, so the rule cannot be more than 'measured'"
+      }
+    }
+  ],
+  "schema": "figpipe/knowledge-base/v2",
+  "schema_note": "v2 splits the old single `verified` flag into `mechanism_verified` (code enforces it AND a test locks it) and `empirically_measured` (a measurement supports it). `enforced` requires both. The old flag conflated these and let a rule be marked verified while nothing enforced it.",
+  "check_coverage": {
+    "rules_with_check": 8,
+    "rules_without_check": 1,
+    "without": [
+      "H01"
+    ],
+    "note": "The loop executes each rule's `check` generically, so coverage is a property of the data rather than of the loop's source. A rule with check=None is reported as UNCHECKED, not counted as passing."
+  },
+  "last_check": {
+    "at": "2026-10-17T23:39:38",
+    "summary": {
+      "rules_total": 9,
+      "checked": 8,
+      "passed": 8,
+      "failed": 0,
+      "unchecked": 1,
+      "unchecked_ids": [
+        "H01"
       ]
     }
-  ]
+  }
 }
