@@ -64,14 +64,17 @@ def git_publish(changed: bool) -> dict:
     with empty commits. A failure here is reported but does not fail the run -- the evolution
     itself succeeded, and a network problem should not look like a rule regression.
     """
-    if not changed:
-        return {"pushed": False, "reason": "knowledge unchanged"}
+    # The run record is an audit trail and always lands; only the commit MESSAGE distinguishes
+    # a knowledge update from a routine run. Gating the record on `changed` meant the history
+    # was never committed at all.
+    pass
     steps = []
+    msg = ("knowledge: autonomous evolution update" if changed
+           else "run: record scheduled evolution run (no knowledge change)")
     for cmd in (["git", "add", "-A"],
                 ["git", "-c", "user.name=figpipe-bot",
                  "-c", "user.email=bot@figpipe.local",
-                 "commit", "--no-verify", "-m",
-                 "knowledge: autonomous evolution update"],
+                 "commit", "--no-verify", "-m", msg],
                 ["git", "push", "origin", "main"]):
         p = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True)
         steps.append({"cmd": " ".join(cmd[:3]), "code": p.returncode,
