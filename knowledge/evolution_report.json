@@ -1,6 +1,6 @@
 {
-  "run_at": "2026-10-17T23:39:38",
-  "knowledge_base_version": 10,
+  "run_at": "2026-10-17T23:40:24",
+  "knowledge_base_version": 11,
   "results": {
     "L01": {
       "ok": true,
@@ -30,7 +30,7 @@
     "L06": {
       "ok": true,
       "detail": "all rcParams match",
-      "confidence_before": "regressed"
+      "confidence_before": "enforced"
     },
     "L07": {
       "ok": true,

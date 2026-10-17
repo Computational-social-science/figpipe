@@ -1,19 +1,19 @@
 {
-  "run_at": "2026-10-17T23:39:34",
+  "run_at": "2026-10-17T23:40:21",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
   "evolve_output": [
-    "knowledge base -> v10",
+    "knowledge base -> v11",
     "  checked 8/9 rules (1 unchecked)",
     "  passed 8, failed 0",
     "  UNCHECKED (not counted as passing): ['H01']",
     "  wrote knowledge\\evolution_report.json"
   ],
-  "tests_ok": false,
-  "tests_summary": "3 failed, 24 passed in 3.20s",
-  "knowledge_version_before": 10,
-  "knowledge_version_after": 10,
+  "tests_ok": true,
+  "tests_summary": "27 passed in 2.96s",
+  "knowledge_version_before": 11,
+  "knowledge_version_after": 11,
   "knowledge_changed": false,
   "published": {
     "pushed": false,
@@ -48,7 +48,7 @@
     "L06": {
       "ok": true,
       "detail": "all rcParams match",
-      "confidence_before": "regressed"
+      "confidence_before": "enforced"
     },
     "L07": {
       "ok": true,
@@ -82,7 +82,7 @@
   "rules": {
     "verified": 0,
     "hypothesis": 1,
-    "regressed": 1
+    "regressed": 0
   },
-  "ok": false
+  "ok": true
 }

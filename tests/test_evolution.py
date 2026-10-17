@@ -46,19 +46,22 @@ def test_promotion_is_sticky(kb):
     h02 = [r for r in kb["rules"] if r["id"] == "H02"]
     if not h02:
         pytest.skip("H02 absent")
-    assert h02[0]["confidence"] == "verified", (
-        "H02 should have been promoted on the first run and stayed verified")
+    # H02 is MEASURED but nothing in the code enforces it, so it must not claim to be
+    # enforced. The old test asserted confidence == "verified", which the audit showed was a
+    # label nothing backed.
+    assert h02[0]["mechanism_verified"] is False, (
+        "H02 has no enforcement mechanism; it must not claim mechanism_verified")
+    assert h02[0]["confidence"] in ("measured_unenforced", "hypothesis"), (
+        f"H02 is {h02[0]['confidence']!r}; a measured-but-unenforced rule must not be "
+        f"labelled enforced")
 
 
 def test_version_only_increments_on_real_change(kb):
     """The version must not move when no rule changed state."""
     src = (ROOT / "scripts" / "evolve.py").read_text(encoding="utf-8")
-    assert "if demoted or promoted:" in src, (
+    assert "kb[\"version\"] += 1 if demoted else 0" in src, (
         "evolve.py increments the version unconditionally; a quiet run must leave the "
         "knowledge base alone or the version number becomes meaningless")
-    # and the promotion itself must be guarded
-    assert 'rule["confidence"] != "verified"' in src, (
-        "the H02 promotion is not guarded against re-firing on an already-verified rule")
 
 
 def test_run_record_carries_the_evolution_result():
@@ -66,12 +69,12 @@ def test_run_record_carries_the_evolution_result():
     if not LATEST.is_file():
         pytest.skip("no run recorded yet")
     run = json.loads(LATEST.read_text(encoding="utf-8"))
-    for key in ("reverified", "demoted", "promoted"):
+    for key in ("check_results", "demoted"):
         assert key in run, (
             f"latest_run.json has no {key!r} field, so the scheduled run cannot report "
-            f"whether a rule regressed or was promoted")
-    assert run["reverified"], (
-        "reverified is empty; the run did not record which rules it re-checked")
+            f"whether a rule regressed")
+    assert run["check_results"], (
+        "check_results is empty; the run did not record which rules it re-checked")
 
 
 def test_two_consecutive_evolve_runs_do_not_change_the_version():

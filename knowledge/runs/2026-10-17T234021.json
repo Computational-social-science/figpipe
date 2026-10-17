@@ -1,0 +1,88 @@
+{
+  "run_at": "2026-10-17T23:40:21",
+  "dry_run": false,
+  "evolve_ok": true,
+  "evolve_exit_code": 0,
+  "evolve_output": [
+    "knowledge base -> v11",
+    "  checked 8/9 rules (1 unchecked)",
+    "  passed 8, failed 0",
+    "  UNCHECKED (not counted as passing): ['H01']",
+    "  wrote knowledge\\evolution_report.json"
+  ],
+  "tests_ok": true,
+  "tests_summary": "27 passed in 2.96s",
+  "knowledge_version_before": 11,
+  "knowledge_version_after": 11,
+  "knowledge_changed": false,
+  "published": {
+    "pushed": false,
+    "reason": "not yet published"
+  },
+  "check_results": {
+    "L01": {
+      "ok": true,
+      "detail": "figpipe.style.panel_letter present",
+      "confidence_before": "enforced"
+    },
+    "L02": {
+      "ok": true,
+      "detail": "all rcParams match",
+      "confidence_before": "enforced"
+    },
+    "L03": {
+      "ok": true,
+      "detail": "all sizes in band",
+      "confidence_before": "enforced"
+    },
+    "L04": {
+      "ok": true,
+      "detail": "figpipe.style.suppress_log_exponents present",
+      "confidence_before": "enforced"
+    },
+    "L05": {
+      "ok": true,
+      "detail": "all rcParams match",
+      "confidence_before": "enforced"
+    },
+    "L06": {
+      "ok": true,
+      "detail": "all rcParams match",
+      "confidence_before": "enforced"
+    },
+    "L07": {
+      "ok": true,
+      "detail": "figpipe.audit.audit present",
+      "confidence_before": "enforced"
+    },
+    "H01": {
+      "ok": null,
+      "detail": "UNCHECKED: no machine-executable check defined for this rule",
+      "confidence_before": "hypothesis"
+    },
+    "H02": {
+      "ok": true,
+      "detail": "all 6 figures within band (measured 3.31-17.4%)",
+      "confidence_before": "measured_unenforced"
+    }
+  },
+  "demoted": [],
+  "promoted": [],
+  "regressed_detail": {},
+  "check_summary": {
+    "rules_total": 9,
+    "checked": 8,
+    "passed": 8,
+    "failed": 0,
+    "unchecked": 1,
+    "unchecked_ids": [
+      "H01"
+    ]
+  },
+  "rules": {
+    "verified": 0,
+    "hypothesis": 1,
+    "regressed": 0
+  },
+  "ok": true
+}

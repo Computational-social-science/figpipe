@@ -1,7 +1,7 @@
 {
   "$schema": "figpipe/knowledge-base/v1",
   "about": "Layout rules learned from real Nature figures, with the evidence for each. A rule enters only with a measurement behind it; a rule without evidence is a hypothesis and is marked as one.",
-  "version": 10,
+  "version": 11,
   "updated": "2026-10-17",
   "rules": [
     {
@@ -111,7 +111,7 @@
       "rule": "pdf.fonttype=42 and ps.fonttype=42, always.",
       "why": "The community 'nature' style sets fonttype=3, which outlines text. Nature rejects outlined text. Nothing about the rendered figure looks wrong, so the defect survives every visual review.",
       "evidence": "SciencePlots 'nature' style ships pdf.fonttype=3; measured in the applied rcParams.",
-      "confidence": "regressed",
+      "confidence": "enforced",
       "enforced_by": "style._OVERRIDES + style.violations",
       "mechanism_verified": true,
       "empirically_measured": true,
@@ -123,8 +123,7 @@
           "ps.fonttype": 42
         },
         "why": "Type-3 outlines are rejected by Nature"
-      },
-      "regressed_on": "2026-10-17"
+      }
     },
     {
       "id": "L07",
@@ -192,7 +191,7 @@
     "note": "The loop executes each rule's `check` generically, so coverage is a property of the data rather than of the loop's source. A rule with check=None is reported as UNCHECKED, not counted as passing."
   },
   "last_check": {
-    "at": "2026-10-17T23:39:38",
+    "at": "2026-10-17T23:40:24",
     "summary": {
       "rules_total": 9,
       "checked": 8,
