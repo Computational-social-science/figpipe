@@ -1,0 +1,89 @@
+report candidates: ['vlm_report.json', '_vlm_report.py', '_vlm_report.txt', 'vlm_report.json']
+==========================================================================================
+vlm_report.json
+  n_figures_labelled: 40  n_papers: 21
+  null_ratio_overall: 0.1798
+  fields_never_null : ['arrow_style', 'column_width', 'figure_type', 'font_uniform', 'frame_restrained', 'high_contrast', 'min_font_legible', 'panel_count', 'panel_labels_present', 'panel_layout']
+  degenerate_fields : None
+  column_width_vs_geometry: {
+  "n_compared": 40,
+  "n_model_decided": 40,
+  "n_agree": 22,
+  "agreement": 0.55
+}
+  fabrication_watch: {
+  "fields_at_zero_null": [
+    "figure_type",
+    "column_width",
+    "font_uniform",
+    "min_font_legible",
+    "arrow_style",
+    "frame_restrained",
+    "high_contrast",
+    "panel_count",
+    "panel_layout",
+    "panel_labels_present"
+  ],
+  "interpretation": "A field with 0 nulls over 40 figures was answered every time. For the visual fields that is a warning, not a success: if the control images were also answered confidently, the model is guessing. Check `controls` before trusting these labels."
+}
+  controls: {
+  "model": "gemma3:12b",
+  "controls": [
+    {
+      "image": "control_blank.png",
+      "kind": "blank",
+      "why": "white page: nothing to annotate, so every field must be null",
+      "parse_ok": true,
+      "n_null": 13,
+      "n_asserted": 7,
+      "asserted_fields": {
+        "column_width": "single",
+        "frame_restrained": true,
+        "high_contrast": true,
+        "saturated_color_count": 0,
+        "panel_count": 0,
+        "panel_layout": "none",
+        "panel_labels_present": false
+      },
+      "n_trivially_true": 5,
+      "trivially_true_fields": {
+        "frame_restrained": true,
+        "saturated_color_count": 0,
+        "panel_count": 0,
+        "panel_layout": "none",
+        "panel_labels_present": false
+      },
+      "n_fabricated": 2,
+      "fabricated_f
+  consistency: {
+  "model": "gemma3:12b",
+  "fraction": 0.1,
+  "n_sampled": 4,
+  "n_pool": 40,
+  "overall_field_agreement": 1.0,
+  "agreement_excluding_both_null": 1.0,
+  "per_field_agreement": {
+    "figure_type": 1.0,
+    "column_width": 1.0,
+    "font_family": 1.0,
+    "font_uniform": 1.0,
+    "min_font_legible": 1.0,
+    "line_weight": 1.0,
+    "arrow_style": 1.0,
+    "frame_restrained": 1.0,
+    "high_contrast": 1.0,
+    "colorblind_safe": 1.0,
+    "saturated_color_count": 1.0,
+    "palette_description": 
+Traceback (most recent call last):
+  File "E:\2026-AI4S\figpipe\corpus\_vlm_report.py", line 6, in <module>
+    d = json.loads(c.read_text(encoding="utf-8"))
+  File "C:\Users\Administrator\AppData\Local\hermes\tools\python-3.14.7+20260901-win32-x64\Lib\json\__init__.py", line 352, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\Administrator\AppData\Local\hermes\tools\python-3.14.7+20260901-win32-x64\Lib\json\decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\hermes\tools\python-3.14.7+20260901-win32-x64\Lib\json\decoder.py", line 363, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)

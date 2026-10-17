@@ -1,0 +1,55 @@
+records: 40
+models: {'gemma3:12b': 40}
+parse_ok: {True: 40}
+
+==========================================================================================
+NULL RATE PER FIELD (the anti-fabrication design)
+==========================================================================================
+field                            null non-null    null%
+figure_type                         0       40     0.0%
+column_width                        0       40     0.0%
+font_family                         2       38     5.0%
+font_uniform                        0       40     0.0%
+min_font_legible                    0       40     0.0%
+line_weight                         1       39     2.5%
+arrow_style                         0       40     0.0%
+frame_restrained                    0       40     0.0%
+high_contrast                       0       40     0.0%
+colorblind_safe                    37        3    92.5%
+saturated_color_count              13       27    32.5%
+palette_description                12       28    30.0%
+caption_overview_first             14       26    35.0%
+caption_panel_by_panel             31        9    77.5%
+caption_has_stats                  13       27    32.5%
+caption_stats_last                 22       18    55.0%
+panel_count                         0       40     0.0%
+panel_layout                        0       40     0.0%
+panel_labels_present                0       40     0.0%
+whitespace_generous                 3       37     7.5%
+vector_or_bitmap                    3       37     7.5%
+
+==========================================================================================
+FABRICATION CHECK: fields the model CANNOT see from a cropped figure
+==========================================================================================
+  vector_or_bitmap           null in  3/40 =   7.5%
+  colorblind_safe            null in 37/40 =  92.5%
+  saturated_color_count      null in 13/40 =  32.5%
+  palette_description        null in 12/40 =  30.0%
+  caption_has_stats          null in 13/40 =  32.5%
+  caption_overview_first     null in 14/40 =  35.0%
+  caption_panel_by_panel     null in 31/40 =  77.5%
+  caption_stats_last         null in 22/40 =  55.0%
+
+==========================================================================================
+CONTRADICTION CHECK: does any record claim a value the image contradicts?
+==========================================================================================
+  MISMATCH 2024-nature-detecting-hallucinations-in-large-la-2: label=single geometry=double (width=186.1)
+  MISMATCH 2016-nature-multimodal-learning-with-next-token--6: label=single geometry=double (width=185.6)
+  MISMATCH 2023-nature-papers-and-patents-are-becoming-less-5: label=single geometry=double (width=171.7)
+  MISMATCH 2024-nature-scaling-neural-machine-translation-t-e: label=single geometry=double (width=127.2)
+  MISMATCH 2024-nature-scaling-neural-machine-translation-t-a: label=single geometry=double (width=127.2)
+  MISMATCH 2024-nature-scaling-neural-machine-translation-t-3: label=single geometry=double (width=123.5)
+  column_width vs measured geometry mismatches: 18/40
+
+  panel_count distribution: {1: 11, 6: 9, 3: 7, 4: 6, 2: 3, 5: 2, 7: 1, 8: 1}
+  figure_type distribution: {'multi_panel': 17, 'flowchart': 10, 'bar': 5, 'other': 4, 'heatmap': 2, 'line': 2}

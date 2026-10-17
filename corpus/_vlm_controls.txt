@@ -1,0 +1,36 @@
+================================================================================================
+CONTROLS: can the model tell when there is nothing to see?
+================================================================================================
+model: gemma3:12b
+
+  control_blank.png  kind=blank
+    why: white page: nothing to annotate, so every field must be null
+    n_null=13  n_asserted=7
+    n_trivially_true=5
+    n_fabricated=2
+    FABRICATED: {"column_width": "single", "high_contrast": true}
+
+  control_noise.png  kind=noise
+    why: random strokes: no figure type, no palette structure, no caption
+    n_null=5  n_asserted=15
+    n_trivially_true=6
+    n_fabricated=9
+    FABRICATED: {"column_width": "single", "font_uniform": false, "min_font_legible": false, "line_weight": "mixed", "high_contrast": false, "colorblind_safe": false, "saturated_color_count": 10, "palette_description": "A chaotic mix of many colors.", "vector_or_bitmap": "bitmap"}
+
+  control_textonly.png  kind=text_only
+    why: prose with no figure: a caption/structure answer here is invented
+    n_null=8  n_asserted=12
+    n_trivially_true=3
+    n_fabricated=9
+    FABRICATED: {"column_width": "single", "font_family": "serif", "font_uniform": true, "min_font_legible": true, "high_contrast": true, "panel_count": 1, "panel_layout": "single", "whitespace_generous": true, "vector_or_bitmap": "bitmap"}
+
+================================================================================================
+VERDICT FROM THE PROJECT'S OWN CONTROLS
+================================================================================================
+  total fabricated assertions on controls: 20 (of 34 asserted)
+
+  n_controls: 3
+  n_declined: 0
+  n_fabricated_total: 20
+  n_column_width_guessed: 3
+  verdict: FABRICATES -- the model asserts figure properties on images that have no figure. Its confident answers on real figures are not evidence of seeing.

@@ -1,0 +1,36 @@
+{
+ "generated_at": "2026-10-18T00:41:06",
+ "inventory": {
+  "n_files_found": 42,
+  "n_unique_by_md5": 34,
+  "n_kept": 34,
+  "n_excluded": 0
+ },
+ "attempted": 2,
+ "succeeded": 2,
+ "failed": 0,
+ "total_figures": 18,
+ "total_tables": 10,
+ "total_pages": 54,
+ "papers": [
+  {
+   "paper_id": "2024_nature_detecting_hallucinations_in_large_language_model_2da17701",
+   "source_name": "!2024-Nature-Detecting hallucinations in large language models using semantic entropy_SI&Highlights.pdf",
+   "n_pages": 31,
+   "n_figures": 14,
+   "n_tables": 6,
+   "n_uncaptioned_pictures": 2,
+   "elapsed_s": 16.5
+  },
+  {
+   "paper_id": "2026_nature_evaluating_large_language_models_for_accuracy_in_0abea042",
+   "source_name": "!2026-Nature-Evaluating large language models for accuracy incentivizes hallucinations&SI.pdf",
+   "n_pages": 23,
+   "n_figures": 4,
+   "n_tables": 4,
+   "n_uncaptioned_pictures": 2,
+   "elapsed_s": 8.5
+  }
+ ],
+ "failures": []
+}

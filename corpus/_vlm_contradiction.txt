@@ -1,0 +1,59 @@
+================================================================================================
+THE column_width CONTRADICTION -- verify it is real, not my bug
+================================================================================================
+
+The PROMPT contains, verbatim:
+  "- crop_width_mm: <w>"
+  "- nature_single_column_mm: 89.0 / nature_double_column_mm: 183.0"
+  "For column_width, use the measured crop_width_mm: a figure near 89.0 mm wide is
+   single; near 183.0 mm is double; clearly wider than the text block is full."
+
+So column_width is a DETERMINISTIC function of a number handed to the model.
+It is not a visual judgement. Any disagreement is a labelling error, not ambiguity.
+
+image                                                         label   geometry crop_mm
+2024-nature-detecting-hallucinations-in-large-la-20c39bb8_   single     double 186.1
+2016-nature-multimodal-learning-with-next-token--6639f8c8_   single     double 185.6
+2023-nature-papers-and-patents-are-becoming-less-54f68c95_   single     double 171.7
+2024-nature-scaling-neural-machine-translation-t-e06d513b_   single     double 127.2
+2024-nature-scaling-neural-machine-translation-t-a0dd5bf3_   single     double 127.2
+2024-nature-scaling-neural-machine-translation-t-3c8d7cb0_   single     double 123.5
+2025-nature-a-foundation-model-to-predict-and-ca-827c805b_   single     double 185.5
+2025-nature-accurate-predictions-on-small-data-w-b41d266a_   single     double 186.1
+2025-nature-comprehensive-echocardiogram-evaluat-9a59aedb_   single     double 120.0
+2025-nature-towards-multimodal-foundation-models-5e86efee_   single     double 182.3
+2025-nature-discovering-state-of-the-art-reinfor-67cfa892_   single     double 185.5
+2026-nature-mapping-the-neuronal-building-blocks-7d507a27_   single     double 186.3
+2026-nature-reimagining-research-papers-as-inter-92a27c09_   single     double 122.7
+2026-nature-training-large-language-models-on-na-dd9c4467_   single     double 147.6
+2026-nature-turning-scientific-research-papers-i-16ff0df6_   single     double 122.7
+2016-nature-multimodal-learning-with-next-token--6639f8c8_   single     double 180.9
+2025-nature-accurate-predictions-on-small-data-w-b41d266a_   single     double 146.7
+2026-nature-mapping-the-neuronal-building-blocks-7d507a27_   single     double 133.1
+
+TOTAL mismatches: 18 / 40 = 45.0%
+
+breakdown of the wrong ones (label -> geometry):
+   single -> double : 18
+
+================================================================================================
+IS THIS FIELD USED DOWNSTREAM AS A VERIFIED FACT?
+================================================================================================
+  rule L02 (column width is exact, not approximate): conf=enforced enforced=True
+  rule E01 (published figures rarely sit at a stated column width): conf=hypothesis enforced=False
+
+  column_width is one of the 21 VLM label fields. If it is used to derive any
+  'Nature figures are X%% single-column' claim, that claim inherits a 45%% error rate.
+  I found NO current rule citing VLM column_width -- so the damage is CONTAINED
+  for now, but the field is silently wrong and would corrupt any future rule.
+
+================================================================================================
+SECOND ISSUE: panel_count / panel_layout / panel_labels_present are 0%% null
+================================================================================================
+  panel_count null rate: 0%
+  Yet panel count IS hard to determine reliably from a crop.
+  Values: {1: 11, 6: 9, 3: 7, 4: 6, 2: 3, 5: 2, 7: 1, 8: 1}
+
+  Cross-check: does panel_count agree with panel_labels_present?
+  records with panel_count>=2 but panel_labels_present=False: 21
+  (possible, but worth flagging: unlabelled multi-panel figures)

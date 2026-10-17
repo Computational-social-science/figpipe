@@ -1,0 +1,5795 @@
+{
+ "paper_id": "2024_nature_scaling_neural_machine_translation_to_200_langua_46658cce",
+ "source_pdf": "D:\\2026-AI4S\\Metrics\\REFs\\2025-Tokens\\2025-Tokens\\2024-Nature-Scaling neural machine translation to 200 languages.pdf",
+ "source_sha256": "e06d513b106559b604d14be7494adc96fba9a270124d396fb397361af0681ab1",
+ "source_name": "2024-Nature-Scaling neural machine translation to 200 languages.pdf",
+ "n_pages": 12,
+ "page_size_pt": [
+  595.28,
+  790.87
+ ],
+ "coordinate_note": "bbox is PDF points with origin at the BOTTOM-LEFT, y increasing upward; bbox_norm divides by page size.",
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "generated_at": "2026-10-18T00:44:18",
+ "pages": [
+  {
+   "page_no": 1,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0001.png",
+   "elements": [
+    {
+     "reading_order": 0,
+     "page": 1,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 762.41,
+      "r": 85.69,
+      "b": 749.44,
+      "w": 46.0,
+      "h": 12.97,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.96402,
+      "r": 0.14395,
+      "b": 0.94762
+     },
+     "text": "Article",
+     "text_len": 7,
+     "level": 1,
+     "element_id": "p1_e0"
+    },
+    {
+     "reading_order": 1,
+     "page": 1,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 740.09,
+      "r": 490.88,
+      "b": 688.02,
+      "w": 451.2,
+      "h": 52.07,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.9358,
+      "r": 0.82463,
+      "b": 0.86996
+     },
+     "text": "Scaling neural machine translation to 200 languages",
+     "text_len": 51,
+     "level": 1,
+     "element_id": "p1_e1"
+    },
+    {
+     "reading_order": 2,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 644.32,
+      "r": 203.07,
+      "b": 637.32,
+      "w": 163.38,
+      "h": 7.0,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.8147,
+      "r": 0.34114,
+      "b": 0.80585
+     },
+     "text": "https://doi.org/10.1038/s41586-024-07335-x",
+     "text_len": 42,
+     "level": 1,
+     "element_id": "p1_e2"
+    },
+    {
+     "reading_order": 3,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 628.22,
+      "r": 121.63,
+      "b": 621.21,
+      "w": 81.94,
+      "h": 7.0,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.79434,
+      "r": 0.20433,
+      "b": 0.78548
+     },
+     "text": "Received: 8 May 2023",
+     "text_len": 20,
+     "level": 1,
+     "element_id": "p1_e3"
+    },
+    {
+     "reading_order": 4,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 612.11,
+      "r": 135.08,
+      "b": 605.11,
+      "w": 95.39,
+      "h": 7.0,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.77397,
+      "r": 0.22692,
+      "b": 0.76512
+     },
+     "text": "Accepted: 19 March 2024",
+     "text_len": 23,
+     "level": 1,
+     "element_id": "p1_e4"
+    },
+    {
+     "reading_order": 5,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 596.01,
+      "r": 151.38,
+      "b": 589.0,
+      "w": 111.7,
+      "h": 7.0,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.75362,
+      "r": 0.2543,
+      "b": 0.74475
+     },
+     "text": "Published online: 5 June 2024",
+     "text_len": 29,
+     "level": 1,
+     "element_id": "p1_e5"
+    },
+    {
+     "reading_order": 6,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 579.9,
+      "r": 88.11,
+      "b": 572.9,
+      "w": 48.42,
+      "h": 7.0,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.73325,
+      "r": 0.14802,
+      "b": 0.7244
+     },
+     "text": "Open access",
+     "text_len": 11,
+     "level": 1,
+     "element_id": "p1_e6"
+    },
+    {
+     "reading_order": 7,
+     "page": 1,
+     "label": "picture",
+     "bbox": {
+      "l": 39.14,
+      "t": 566.89,
+      "r": 50.15,
+      "b": 555.41,
+      "w": 11.01,
+      "h": 11.48,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06575,
+      "t": 0.7168,
+      "r": 0.08425,
+      "b": 0.70228
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p1_e7"
+    },
+    {
+     "reading_order": 8,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 51.98,
+      "t": 563.78,
+      "r": 120.53,
+      "b": 556.78,
+      "w": 68.54,
+      "h": 7.0,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.08732,
+      "t": 0.71286,
+      "r": 0.20248,
+      "b": 0.70401
+     },
+     "text": "Check for updates NLLB Team*",
+     "text_len": 28,
+     "level": 1,
+     "element_id": "p1_e8"
+    },
+    {
+     "reading_order": 9,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 612.85,
+      "r": 561.3,
+      "b": 331.54,
+      "w": 343.98,
+      "h": 281.31,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.77491,
+      "r": 0.94292,
+      "b": 0.41921
+     },
+     "text": "The development of neural techniques has opened up new avenues for research in machine translation. Today, neural machine translation (NMT) systems can leverage highly multilingual capacities and even perform zero-shot translation, delivering promising results in terms of language coverage and quality. However, scaling quality NMT requires large volumes of parallel bilingual data, which are not equally available for the 7,000+ languages in the world 1 . Focusing on improving the translation qualities of a relatively small group of high-resource languages comes at the expense of directing research attention to low-resource languages, exacerbating digital inequities in the long run. To break this pattern, here we introduce No Language Left Behinda single massively multilingual model that leverages transfer learning across languages. We developed a conditional computational model based on the Sparsely Gated Mixture of Experts architecture 2-7 , which we trained on data obtained with new mining techniques tailored for low-resource languages. Furthermore, we devised multiple architectural and training improvements to counteract overfitting while training on thousands of tasks. We evaluated the performance of our model over 40,000 translation directions using tools created specifically for this purpose-an automatic benchmark (FLORES-200), a human evaluation metric (XSTS) and a toxicity detector that covers every language in our model. Compared with the previous state-of-the-art models, our model achieves an average of 44% improvement in translation quality as measured by BLEU. By demonstrating how to scale NMT to 200 languages and making all contributions in this effort freely available for non-commercial use, our work lays important groundwork for the development of a universal translation system.",
+     "text_len": 1823,
+     "level": 1,
+     "element_id": "p1_e9"
+    },
+    {
+     "reading_order": 10,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 300.56,
+      "r": 294.91,
+      "b": 153.15,
+      "w": 255.23,
+      "h": 147.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.38004,
+      "r": 0.49542,
+      "b": 0.19365
+     },
+     "text": "The recent advent of neural machine translation (NMT) has pushed translation technologies to new frontiers, but its benefits are unevenly distributed 1 . The vast majority of improvements made have mainly benefited high-resource languages, leaving many low-resource languages behind. (For the purpose of our research, we define a high-resource language as a language for which we have at least 1 million sentences of aligned textual data (or bitext) with another language). This disparity could largely be attributed to a data gap: NMT models typically require large volumes of data to produce quality translations and, by definition, these volumes are not available for lower-resource languages. The No Language Left Behind (NLLB-200) project seeks to overcome this limitation by leveraging previously unknown approaches for building massively multilingual models with cross-lingual transfer abilities 8,9 , thereby enabling related languages to learn from each other 1,10,11 .",
+     "text_len": 978,
+     "level": 1,
+     "element_id": "p1_e10"
+    },
+    {
+     "reading_order": 11,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 150.06,
+      "r": 294.94,
+      "b": 67.15,
+      "w": 255.26,
+      "h": 82.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.18974,
+      "r": 0.49547,
+      "b": 0.08491
+     },
+     "text": "It has now been widely acknowledged that multilingual models have demonstrated promising performance improvement over bilingual models 12 . However, the question remains whether massively multilingual models can enable the representation of hundreds of languages without compromising quality. Our results demonstrate that doubling the number of supported languages in machine translation and maintaining output quality are not mutually exclusive endeavours. Our final model-which includes 200 languages and three times as many low-resource languages as high-resource ones-performs, as a mean, 44% better than the previous state-of-the-art systems. This paper presents some of the most important data-gathering, modelling and evaluation techniques used to achieve this goal.",
+     "text_len": 773,
+     "level": 1,
+     "element_id": "p1_e11"
+    },
+    {
+     "reading_order": 12,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 257.56,
+      "r": 561.42,
+      "b": 131.65,
+      "w": 255.28,
+      "h": 125.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.32567,
+      "r": 0.94313,
+      "b": 0.16646
+     },
+     "text": "First, compared with their high-resource counterparts, training data for low-resource languages are expensive and logistically challenging to procure 13-15 . Publicly available digital resources are either limited in volume or difficult for automated systems to detect (particularly in large public web datasets such as CommonCrawl). Regardless of whether collecting a critical mass of human-translated seed data is necessary, sufficient data acquisition relies on large-scale data mining and monolingual data pipelines 16-19 . The latter techniques are often affected by noise and biases, thereby making validating the quality of the datasets they generate tedious 20 . In NLLB-200, we show that a distillation-based sentence encoding technique, LASER3 (ref. 21), facilitates the effective mining of parallel data for low-resource languages.",
+     "text_len": 842,
+     "level": 1,
+     "element_id": "p1_e12"
+    },
+    {
+     "reading_order": 13,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 128.56,
+      "r": 561.39,
+      "b": 67.15,
+      "w": 255.25,
+      "h": 61.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.16256,
+      "r": 0.94308,
+      "b": 0.08491
+     },
+     "text": "Second, on the modelling side, we use an assemblage of seed, mined, open-source and back-translated datasets to train multilingual conditional computational models (more specifically, Sparsely Gated Mixtures-of-Experts models 2-7 that enable cross-lingual transfer between related languages without increasing interference between unrelated languages). We show how we can achieve state-of-the-art",
+     "text_len": 396,
+     "level": 1,
+     "element_id": "p1_e13"
+    }
+   ]
+  },
+  {
+   "page_no": 2,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0002.png",
+   "elements": [
+    {
+     "reading_order": 14,
+     "page": 2,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 762.41,
+      "r": 85.69,
+      "b": 749.44,
+      "w": 46.0,
+      "h": 12.97,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.96402,
+      "r": 0.14395,
+      "b": 0.94762
+     },
+     "text": "Article",
+     "text_len": 7,
+     "level": 1,
+     "element_id": "p2_e14"
+    },
+    {
+     "reading_order": 15,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 741.31,
+      "r": 294.93,
+      "b": 712.15,
+      "w": 255.25,
+      "h": 29.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.93734,
+      "r": 0.49545,
+      "b": 0.90047
+     },
+     "text": "performance with a more optimal trade-off between cross-lingual transfer and interference, and improve performance for low-resource languages.",
+     "text_len": 142,
+     "level": 1,
+     "element_id": "p2_e15"
+    },
+    {
+     "reading_order": 16,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 709.06,
+      "r": 294.9,
+      "b": 615.4,
+      "w": 255.22,
+      "h": 93.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.89656,
+      "r": 0.4954,
+      "b": 0.77813
+     },
+     "text": "Finally, for the purpose of quality evaluation, we created FLORES200-a massive multilingual benchmark that enables the measurement of translation quality across any of the approximately 40,000 translation directions covered by the NLLB-200 models. Apart from automatic metrics, we also created Cross-lingual Semantic Text Similarity (XSTS) and Evaluation of Toxicity (ETOX). XSTS is a human evaluation protocol that provides consistency across languages; ETOX is a tool to detect added toxicity in translations using toxicity word lists.",
+     "text_len": 537,
+     "level": 1,
+     "element_id": "p2_e16"
+    },
+    {
+     "reading_order": 17,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 612.31,
+      "r": 294.91,
+      "b": 540.15,
+      "w": 255.22,
+      "h": 72.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.77423,
+      "r": 0.49542,
+      "b": 0.68299
+     },
+     "text": "Beyond creating these models, we also reflect on the potential societal impact of NLLB. To amplify the practical applicability of our work in service of low-resource-speaking communities, we provide all the benchmarks, data, code and models described in this effort as resources freely available for non-commercial use (https://github.com/ facebookresearch/fairseq/tree/nllb) (see Data and Code availability statements for details).",
+     "text_len": 432,
+     "level": 1,
+     "element_id": "p2_e17"
+    },
+    {
+     "reading_order": 18,
+     "page": 2,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 518.64,
+      "r": 265.56,
+      "b": 509.62,
+      "w": 225.88,
+      "h": 9.02,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.65579,
+      "r": 0.44611,
+      "b": 0.64438
+     },
+     "text": "Automatically creating translation training data",
+     "text_len": 48,
+     "level": 1,
+     "element_id": "p2_e18"
+    },
+    {
+     "reading_order": 19,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 504.81,
+      "r": 294.82,
+      "b": 443.4,
+      "w": 255.13,
+      "h": 61.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.6383,
+      "r": 0.49527,
+      "b": 0.56065
+     },
+     "text": "The current techniques used for training translation models are difficult to extend to low-resource settings, in which aligned bilingual textual data (or bitext data) are relatively scarce 22 . Many low-resource languages are supported only by small targeted bitext data consisting primarily of translations of the Christian Bible 23 , which provide limited domain diversity.",
+     "text_len": 375,
+     "level": 1,
+     "element_id": "p2_e19"
+    },
+    {
+     "reading_order": 20,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 440.31,
+      "r": 294.98,
+      "b": 378.9,
+      "w": 255.29,
+      "h": 61.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.55674,
+      "r": 0.49553,
+      "b": 0.4791
+     },
+     "text": "To build a large-scale parallel training dataset that covers hundreds of languages, our approach centres around extending existing datasets by first collecting non-aligned monolingual data. Then, we used a semantic sentence similarity metric to guide a large-scale data mining effort aiming to identify sentences that have a high probability of being semantically equivalent in different languages 18 .",
+     "text_len": 402,
+     "level": 1,
+     "element_id": "p2_e20"
+    },
+    {
+     "reading_order": 21,
+     "page": 2,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 366.24,
+      "r": 263.99,
+      "b": 358.36,
+      "w": 224.31,
+      "h": 7.88,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.46309,
+      "r": 0.44347,
+      "b": 0.45312
+     },
+     "text": "Language identification for monolingual data collection",
+     "text_len": 55,
+     "level": 1,
+     "element_id": "p2_e21"
+    },
+    {
+     "reading_order": 22,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 354.31,
+      "r": 294.93,
+      "b": 292.9,
+      "w": 255.24,
+      "h": 61.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.448,
+      "r": 0.49545,
+      "b": 0.37035
+     },
+     "text": "Collecting monolingual data at scale requires a language identification (LID) system that accurately classifies textual resources for all NLLB-200 languages. Although LID could be seen as a solved problem in some domains 24 , it remains an open challenge for web data 25,26 . Specifically, issues coalesce around domain mismatch 26 , similar language disambiguation 27 and successful massively multilingual scaling 28 .",
+     "text_len": 419,
+     "level": 1,
+     "element_id": "p2_e22"
+    },
+    {
+     "reading_order": 23,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 289.81,
+      "r": 294.96,
+      "b": 163.9,
+      "w": 255.28,
+      "h": 125.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.36645,
+      "r": 0.4955,
+      "b": 0.20724
+     },
+     "text": "Devoted attention to advancing LID techniques led to a noticeable increase in both language coverage and accuracy over time. CLD3 (https://github.com/google/cld3) and fasttext 29 are two readily available models offering high detection performance for 107 and 187 languages, respectively. By using numerous public datasets, previous studies 30,31 report even higher coverage-464 and 1,366 languages, respectively. Another study 32 scales LID performance up to 1,629 languages using word lists and self-supervision to bootstrap training data found on the web. However, these approaches using found data suffer from domain imbalance. That is, because the available text domains vary by language, classifiers conflate different domains with different languages.",
+     "text_len": 758,
+     "level": 1,
+     "element_id": "p2_e23"
+    },
+    {
+     "reading_order": 24,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 160.81,
+      "r": 294.87,
+      "b": 77.9,
+      "w": 255.18,
+      "h": 82.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.20333,
+      "r": 0.49535,
+      "b": 0.0985
+     },
+     "text": "In our work, we curated FLORES-200 to use as a development set so that our LID system performance 33 is tuned over a uniform domain mix. Our approach combines a data-driven fasttext model trained on FLORES-200 with a small set of handwritten rules to address human feedback on classification errors. These rules are specifically mentioned in section 5.1.3 of ref. 34 and include linguistic filters to mitigate the learning of spurious correlations due to noisy training samples while modelling hundreds of languages.",
+     "text_len": 516,
+     "level": 1,
+     "element_id": "p2_e24"
+    },
+    {
+     "reading_order": 25,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 74.81,
+      "r": 294.82,
+      "b": 45.65,
+      "w": 255.14,
+      "h": 29.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.09459,
+      "r": 0.49527,
+      "b": 0.05772
+     },
+     "text": "We compare our LID model with three publicly available models: CLD3, LangId (https://github.com/saffsd/langid.py) and LangDetect (https://pypi.org/project/langdetect/). Table 1 reports the performance",
+     "text_len": 200,
+     "level": 1,
+     "element_id": "p2_e25"
+    },
+    {
+     "reading_order": 26,
+     "page": 2,
+     "label": "section_header",
+     "bbox": {
+      "l": 306.14,
+      "t": 740.98,
+      "r": 550.81,
+      "b": 723.11,
+      "w": 244.66,
+      "h": 17.87,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.93692,
+      "r": 0.9253,
+      "b": 0.91433
+     },
+     "text": "Table 1 | Comparison of publicly available language identification models with various intersections of labels",
+     "text_len": 110,
+     "level": 1,
+     "element_id": "p2_e26"
+    },
+    {
+     "reading_order": 27,
+     "page": 2,
+     "label": "table",
+     "bbox": {
+      "l": 305.21,
+      "t": 716.05,
+      "r": 562.06,
+      "b": 593.84,
+      "w": 256.85,
+      "h": 122.22,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51272,
+      "t": 0.9054,
+      "r": 0.9442,
+      "b": 0.75087
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p2_e27"
+    },
+    {
+     "reading_order": 28,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 596.75,
+      "r": 477.95,
+      "b": 591.49,
+      "w": 171.81,
+      "h": 5.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.75455,
+      "r": 0.8029,
+      "b": 0.7479
+     },
+     "text": "F1 is the micro-F1 score, and FPR is the micro-false-positive rate.",
+     "text_len": 67,
+     "level": 1,
+     "element_id": "p2_e28"
+    },
+    {
+     "reading_order": 29,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 569.31,
+      "r": 561.4,
+      "b": 464.9,
+      "w": 255.26,
+      "h": 104.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.71986,
+      "r": 0.94309,
+      "b": 0.58784
+     },
+     "text": "on three cascading sets of languages intersecting with NLLB-200: (1) 51 languages also supported by LangId, LangDetect and CLD3; (2) 78 languages also supported by LangId and CLD3; (3) 95 languages also supported by CLD3. We also report false-positive rates (FPR) to reflect the impact of false positives on unseen languages. Our results show that our model is equipped to handle all 200 languages found in FLORES-200 while achieving notably higher performance than LangId, LangDetect and CLD3. Furthermore, the gain in F1 score is accompanied by a notable improvement in FPR, suggesting a much stronger fit for extracting low-resource languages from web corpora 32 .",
+     "text_len": 667,
+     "level": 1,
+     "element_id": "p2_e29"
+    },
+    {
+     "reading_order": 30,
+     "page": 2,
+     "label": "section_header",
+     "bbox": {
+      "l": 306.14,
+      "t": 452.24,
+      "r": 373.62,
+      "b": 444.36,
+      "w": 67.48,
+      "h": 7.88,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.57183,
+      "r": 0.62764,
+      "b": 0.56187
+     },
+     "text": "Mining for bitext",
+     "text_len": 17,
+     "level": 1,
+     "element_id": "p2_e30"
+    },
+    {
+     "reading_order": 31,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 441.43,
+      "r": 561.42,
+      "b": 303.65,
+      "w": 255.28,
+      "h": 137.78,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.55816,
+      "r": 0.94313,
+      "b": 0.38395
+     },
+     "text": "Previous work 35 notes that translation quality generally increases with the amount of high-quality training data, which is difficult to procure when working with low-resource languages. Existing parallel corpora for low-resource languages are often conveniently drawn from known multilingual collections, such as the Christian Bible or the publications of multinational organizations, which are limited in quantity and domain. To overcome this problem, we created training datasets through global bitext mining in publicly available web content (drawn from repositories such as CommonCrawl). The underlying idea of our bitext mining approach is first to learn a multilingual sentence embedding space and use a similarity measure in that space to decide whether two sentences are parallel. This comparison can be done for all possible pairs in two collections of monolingual texts.",
+     "text_len": 881,
+     "level": 1,
+     "element_id": "p2_e31"
+    },
+    {
+     "reading_order": 32,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 300.56,
+      "r": 561.41,
+      "b": 120.9,
+      "w": 255.27,
+      "h": 179.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.38004,
+      "r": 0.94311,
+      "b": 0.15287
+     },
+     "text": "As our mining approach requires a multilingual embedding space, there are several challenges when scaling this representation to all NLLB-200 languages. First, we had to ensure that all languages were well learnt and that we accounted for large imbalances in available training data. Second, training a massively multilingual sentence encoder from scratch each time a new set of languages is introduced is computationally expensive. Furthermore, the main drawback of this approach is that the learnt embedding spaces from each new model are not necessarily mutually compatible. This can make mining intractable as for each new encoder, the entirety of available monolingual data needs to be re-embedded (for example, for English alone, this means thousands of millions of sentences and considerable computational resources). We solved this problem using a teacher-student approach 21 that extends the LASER embedding space 36 to all NLLB-200 languages. Languages are trained either as individual students or together with languages from the same family. The training of students follows the approach described in ref. 21.",
+     "text_len": 1121,
+     "level": 1,
+     "element_id": "p2_e32"
+    },
+    {
+     "reading_order": 33,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 117.81,
+      "r": 561.39,
+      "b": 45.65,
+      "w": 255.25,
+      "h": 72.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.14896,
+      "r": 0.94308,
+      "b": 0.05772
+     },
+     "text": "Our approach enables us to focus on the specifics of each language while taking advantage of related languages, which is crucial for dealing with very low-resource languages. (A language is defined as very low-resource if it has fewer than 100,000 samples across all pairings with any other language in our dataset). Using this method, we generated more than 1,100 million new sentence pairs of training data for 148 languages. This additional training data, paired with back translation We report chrF++ scores on FLORES-200 dev set on different types of language pairs. For eng_Latn-xx and xx-eng_Latn, we included all 199 pairs. For xx-yy, we randomly chose 200 directions. We observe that combining EOM and CL is particularly helpful for low and very low-resource languages. A language is defined as a very low resource if it has fewer than 100,000 samples across all pairings with any other language in our dataset. The highest score in each column is shown in bold.",
+     "text_len": 971,
+     "level": 1,
+     "element_id": "p2_e33"
+    }
+   ]
+  },
+  {
+   "page_no": 3,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0003.png",
+   "elements": [
+    {
+     "reading_order": 34,
+     "page": 3,
+     "label": "table",
+     "bbox": {
+      "l": 38.47,
+      "t": 726.08,
+      "r": 562.38,
+      "b": 662.49,
+      "w": 523.92,
+      "h": 63.59,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06463,
+      "t": 0.91808,
+      "r": 0.94474,
+      "b": 0.83768
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p3_e34"
+    },
+    {
+     "reading_order": 35,
+     "page": 3,
+     "label": "caption",
+     "bbox": {
+      "l": 39.69,
+      "t": 740.98,
+      "r": 212.68,
+      "b": 733.11,
+      "w": 173.0,
+      "h": 7.87,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.93692,
+      "r": 0.35728,
+      "b": 0.92697
+     },
+     "text": "Table 2 | Improvements from EOM and CL",
+     "text_len": 38,
+     "level": 2,
+     "element_id": "p3_e35"
+    },
+    {
+     "reading_order": 36,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 612.31,
+      "r": 294.94,
+      "b": 572.4,
+      "w": 255.26,
+      "h": 39.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.77423,
+      "r": 0.49547,
+      "b": 0.72376
+     },
+     "text": "(a conventional technique for data augmentation in NMT; ref. 37), ushered notable improvements in translation quality-specifically, +12.5 chrF++ (ref. 38) for translating very low-resource languages into English. For more details, see Supplementary Information D.",
+     "text_len": 263,
+     "level": 1,
+     "element_id": "p3_e36"
+    },
+    {
+     "reading_order": 37,
+     "page": 3,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 550.89,
+      "r": 87.89,
+      "b": 541.87,
+      "w": 48.2,
+      "h": 9.02,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.69657,
+      "r": 0.14765,
+      "b": 0.68516
+     },
+     "text": "Modelling",
+     "text_len": 9,
+     "level": 1,
+     "element_id": "p3_e37"
+    },
+    {
+     "reading_order": 38,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 537.06,
+      "r": 294.88,
+      "b": 454.15,
+      "w": 255.2,
+      "h": 82.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.67908,
+      "r": 0.49537,
+      "b": 0.57424
+     },
+     "text": "Even with marked data volume increases, the main challenge of low-resource translation is for training models to adequately represent 200 languages while adjusting to variable data capacity per language pair. Apart from techniques such as data augmentation (for example, with back translation) and self-supervision strategies on monolingual data, we used conditional computational models-more specifically, Sparsely Gated Mixture of Experts (henceforth MoE)-to minimize interference between unrelated language directions.",
+     "text_len": 521,
+     "level": 1,
+     "element_id": "p3_e38"
+    },
+    {
+     "reading_order": 39,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 451.06,
+      "r": 294.92,
+      "b": 357.4,
+      "w": 255.24,
+      "h": 93.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.57034,
+      "r": 0.49543,
+      "b": 0.45191
+     },
+     "text": "MoE transformer models differ from dense transformer models in that some of the feed-forward network layers are replaced with MoE layers in both the encoder and the decoder. An MoE layer consists of E experts (each is a feed-forward network) and a gating network to decide how to route input tokens to experts. The transformer encoderdecoder model, supplemented with MoE layers and their respective gating networks, learns to route input tokens to the corresponding top two experts by optimizing a linearly weighted combination of label-smoothed cross entropy 39 and an auxiliary load balancing loss 6 .",
+     "text_len": 603,
+     "level": 1,
+     "element_id": "p3_e39"
+    },
+    {
+     "reading_order": 40,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 354.31,
+      "r": 294.88,
+      "b": 282.15,
+      "w": 255.2,
+      "h": 72.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.448,
+      "r": 0.49537,
+      "b": 0.35676
+     },
+     "text": "We find that vanilla MoE models with overall dropout are suboptimal for low-resource languages and significantly overfit on low-resource pairs. To remedy this issue, we designed Expert Output Masking (EOM), a regularization strategy specific to MoE architectures, and compared it with existing regularization strategies, such as Gating Dropout 40 . We find that Gating Dropout performs better than vanilla MoE with overall dropout but is outperformed by EOM.",
+     "text_len": 458,
+     "level": 1,
+     "element_id": "p3_e40"
+    },
+    {
+     "reading_order": 41,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 279.06,
+      "r": 294.8,
+      "b": 228.4,
+      "w": 255.11,
+      "h": 50.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.35285,
+      "r": 0.49523,
+      "b": 0.2888
+     },
+     "text": "To further reduce overfitting on low-resource language pairs, we devised a curriculum learning that introduces language pairs in phases during model training. Pairs that empirically overfit within K updates are introduced with K updates before the end of training. This reduces overfitting while allowing pairs that benefit from additional training to continue their learning. Table 2 shows that combining curriculum learning and EOM improves performance, especially on low and very low-resource language pairs (see section 'Modelling' for more details).",
+     "text_len": 554,
+     "level": 1,
+     "element_id": "p3_e41"
+    },
+    {
+     "reading_order": 42,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 569.31,
+      "r": 561.38,
+      "b": 432.65,
+      "w": 255.23,
+      "h": 136.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.71986,
+      "r": 0.94306,
+      "b": 0.54706
+     },
+     "text": "To understand how MoE models are helpful for multilingual machine translation, we visualize similarities of experts in the MoE layers using heat maps (Fig. 1a-d). These heat maps demonstrate that in late decoder layers (Fig. 1d), languages are being separated (that is, dispatched to different sets of experts). Moreover, we observe that languages within the same family are highly similar in their choice of experts (that is, the late decoder MoE layers are language-specific). This is particularly the case for the Arabic dialects (the six rows and columns in the top-left corner), languages in the Benue-Congo subgrouping, as well as languages in the Devanagari script. By contrast, the early decoder MoE layers (Fig. 1c) seem to be less language-specific. The late encoder MoE layers are particularly language-agnostic in how they route tokens as can be attested by the uniform heat map in Fig. 1b.",
+     "text_len": 902,
+     "level": 1,
+     "element_id": "p3_e42"
+    },
+    {
+     "reading_order": 43,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 429.56,
+      "r": 561.36,
+      "b": 282.15,
+      "w": 255.22,
+      "h": 147.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.54315,
+      "r": 0.94302,
+      "b": 0.35676
+     },
+     "text": "Combining data (see section 'Automatically creating translation training data') and modelling contributions, Table 3 shows that NLLB200 outperforms the nearest state-of-the-art system by almost +7.3 spBLEU (ref. 41) on average, constituting a 44% improvement. We then compared NLLB-200 with a few other state-of-the-art models, such as Deepnet 42 and M2M-100 (ref. 1), to report scores for 87 languages against FLORES-101. On this smaller subset, NLLB-200 again outperforms by +7.0 spBLEU on average. Overall, the results show that NLLB200 improves on state-of-the-art systems by a notable margin despite supporting 200 languages, or twice as many languages (and more than 30,000 additional directions) compared with any previous work. We also show in additional experiments that NLLB-200 is a general-purpose NMT model, transferable to other domains by fine-tuning on small quantities of high-quality bitexts (see Supplementary Information E.3).",
+     "text_len": 946,
+     "level": 1,
+     "element_id": "p3_e43"
+    },
+    {
+     "reading_order": 44,
+     "page": 3,
+     "label": "section_header",
+     "bbox": {
+      "l": 306.14,
+      "t": 260.64,
+      "r": 361.57,
+      "b": 251.62,
+      "w": 55.43,
+      "h": 9.02,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.32956,
+      "r": 0.6074,
+      "b": 0.31816
+     },
+     "text": "Evaluations",
+     "text_len": 11,
+     "level": 1,
+     "element_id": "p3_e44"
+    },
+    {
+     "reading_order": 45,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 247.93,
+      "r": 561.31,
+      "b": 228.4,
+      "w": 255.17,
+      "h": 19.53,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.31349,
+      "r": 0.94294,
+      "b": 0.2888
+     },
+     "text": "Among the many aspects of model performance that can be evaluated 43 , this section emphasizes three aspects that have a marked impact on",
+     "text_len": 137,
+     "level": 1,
+     "element_id": "p3_e45"
+    },
+    {
+     "reading_order": 46,
+     "page": 3,
+     "label": "picture",
+     "bbox": {
+      "l": 44.78,
+      "t": 207.55,
+      "r": 554.65,
+      "b": 80.28,
+      "w": 509.87,
+      "h": 127.27,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07523,
+      "t": 0.26243,
+      "r": 0.93175,
+      "b": 0.10151
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p3_e46"
+    },
+    {
+     "reading_order": 47,
+     "page": 3,
+     "label": "caption",
+     "bbox": {
+      "l": 39.68,
+      "t": 72.4,
+      "r": 293.79,
+      "b": 45.9,
+      "w": 254.12,
+      "h": 26.5,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06666,
+      "t": 0.09155,
+      "r": 0.49354,
+      "b": 0.05804
+     },
+     "text": "Fig. 1 | Cosine similarity scores between languages at different layers of the encoder-decoder architecture. a-d, The first (a) and last (b) encoder layers and then the first (c) and last (d) decoder layers. The similarity is measured with",
+     "text_len": 239,
+     "level": 2,
+     "element_id": "p3_e47"
+    },
+    {
+     "reading_order": 48,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 306.13,
+      "t": 72.4,
+      "r": 552.86,
+      "b": 45.89,
+      "w": 246.73,
+      "h": 26.5,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51427,
+      "t": 0.09155,
+      "r": 0.92875,
+      "b": 0.05803
+     },
+     "text": "respect to the gating decisions (expert choice) per language (source side in the encoder and target side in the decoder). Lighter colours represent higher experts similarity, hence, a language-agnostic processing.",
+     "text_len": 213,
+     "level": 1,
+     "element_id": "p3_e48"
+    }
+   ]
+  },
+  {
+   "page_no": 4,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0004.png",
+   "elements": [
+    {
+     "reading_order": 49,
+     "page": 4,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 740.98,
+      "r": 224.62,
+      "b": 733.11,
+      "w": 184.93,
+      "h": 7.87,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.93692,
+      "r": 0.37734,
+      "b": 0.92697
+     },
+     "text": "Table 3 | Comparison of FLORES-101 devtest",
+     "text_len": 42,
+     "level": 1,
+     "element_id": "p4_e49"
+    },
+    {
+     "reading_order": 50,
+     "page": 4,
+     "label": "table",
+     "bbox": {
+      "l": 38.12,
+      "t": 728.83,
+      "r": 295.76,
+      "b": 623.93,
+      "w": 257.64,
+      "h": 104.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06404,
+      "t": 0.92156,
+      "r": 0.49685,
+      "b": 0.78892
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p4_e50"
+    },
+    {
+     "reading_order": 51,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 619.89,
+      "r": 289.19,
+      "b": 578.63,
+      "w": 249.5,
+      "h": 41.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.78381,
+      "r": 0.48581,
+      "b": 0.73164
+     },
+     "text": "We evaluated using FLORES-101 for 10,000 directions. We report both spBLEU and chrF++ scores when available. Scores for DeltaLM are taken from the FLORES-101 leaderboard. M2M-100 and Deepnet averages only apply to 87 languages that overlap with FLORES-101. The performance of NLLB-200 was evaluated on this subset of languages. The highest score in each column and in each grouping of languages is shown in bold.",
+     "text_len": 412,
+     "level": 1,
+     "element_id": "p4_e51"
+    },
+    {
+     "reading_order": 52,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 558.56,
+      "r": 294.68,
+      "b": 540.15,
+      "w": 254.99,
+      "h": 18.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.70626,
+      "r": 0.49503,
+      "b": 0.68299
+     },
+     "text": "the overall quality assessment: benchmarks for automatic evaluation, human evaluation protocols and toxicity evaluation.",
+     "text_len": 120,
+     "level": 1,
+     "element_id": "p4_e52"
+    },
+    {
+     "reading_order": 53,
+     "page": 4,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 527.49,
+      "r": 268.87,
+      "b": 519.61,
+      "w": 229.18,
+      "h": 7.88,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.66698,
+      "r": 0.45167,
+      "b": 0.65701
+     },
+     "text": "A benchmark for automatic evaluation using FLORES-200",
+     "text_len": 53,
+     "level": 1,
+     "element_id": "p4_e53"
+    },
+    {
+     "reading_order": 54,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 515.56,
+      "r": 294.87,
+      "b": 411.15,
+      "w": 255.18,
+      "h": 104.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.65189,
+      "r": 0.49535,
+      "b": 0.51987
+     },
+     "text": "The quality of NMT outputs is typically evaluated by automatic metrics such as BLEU 44 or spBLEU 41 . The computation of automatic quality scores using these metrics requires benchmark datasets that provide gold-standard human translations as references. In turn, the apples-to-apples evaluation of different approaches made possible by these benchmark datasets gives us a better understanding of what requires further research and development. For example, creating benchmark data sets at the Workshop on Machine Translation (WMT) 45 led to rapid progress in translation directions such as English to German and English to French.",
+     "text_len": 631,
+     "level": 1,
+     "element_id": "p4_e54"
+    },
+    {
+     "reading_order": 55,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 408.06,
+      "r": 294.94,
+      "b": 260.65,
+      "w": 255.25,
+      "h": 147.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.51597,
+      "r": 0.49547,
+      "b": 0.32958
+     },
+     "text": "For massively multilingual NMT, the largest benchmark dataset available was FLORES-101, which supports roughly half the number of languages in NLLB-200. The necessary expansion of FLORES-101 to FLORES-200 constitutes a further challenge in terms of quality assurance, in part because of differences in standardization practices and limited access to professional translators for all languages involved. To overcome this challenge, we adapted our workflow to pay particular attention to quality assurance mechanisms. The FLORES-200 workflow consists of four phases: (1) alignment; (2) translation, initial quality assurance and iteration(s); (3) final quality assurance; and (4) completion. A language FLORES-200 set is considered ready after passing a final human quality test with a 90 out of 100 quality score (that is, independent raters agreed with 90% of the FLORES-200 reference translations in that direction).",
+     "text_len": 917,
+     "level": 1,
+     "element_id": "p4_e55"
+    },
+    {
+     "reading_order": 56,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 257.56,
+      "r": 294.89,
+      "b": 185.4,
+      "w": 255.2,
+      "h": 72.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.32567,
+      "r": 0.49538,
+      "b": 0.23443
+     },
+     "text": "As a result of this redesigned workflow, we produced a three-split (dev, devtest, test) data set of parallel human reference translations for all NLLB-200 languages meeting the 90% quality threshold in a maximum turnaround time of 287 days (119 days on average, 70 days minimum). (Note that to avoid leakage with our models, we filtered data from FLORES and other evaluation benchmarks used (such as WMT and IWSLT) from our training data. This was done by comparing the hashes of training sentences against those of evaluation sentences, using the xxHash algorithm). Please refer to Supplementary Information C for more details on the evaluation process. Figure 2 shows the quality scores for all languages, some of which are labelled as examples.",
+     "text_len": 747,
+     "level": 1,
+     "element_id": "p4_e56"
+    },
+    {
+     "reading_order": 57,
+     "page": 4,
+     "label": "section_header",
+     "bbox": {
+      "l": 306.14,
+      "t": 677.99,
+      "r": 412.86,
+      "b": 670.11,
+      "w": 106.72,
+      "h": 7.88,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.85728,
+      "r": 0.69356,
+      "b": 0.84731
+     },
+     "text": "Reliable human evaluation",
+     "text_len": 25,
+     "level": 1,
+     "element_id": "p4_e57"
+    },
+    {
+     "reading_order": 58,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 666.06,
+      "r": 561.36,
+      "b": 540.15,
+      "w": 255.22,
+      "h": 125.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.84219,
+      "r": 0.94302,
+      "b": 0.68299
+     },
+     "text": "State-of-the-art automatic metrics often fail to capture aspects of language that, while subtle, can have a notable bearing on translation quality. Human evaluations are, therefore, essential to ensuring meaningful quality assessments 46 . That said, relying on them comes with two challenges: (1) any large-scale human evaluation of NMT quality, regardless of the number of translation directions involved, contends with potentially low inter-evaluator agreement (in the vicinity of 0.5 kappa); and (2) massively multilingual NMT introduces another complexity-that of quality evaluation consistency across language directions. We address these two issues by developing XSTS 47 , a new scoring metric focused on meaning, and by using a protocol that allows for the calibration of scores across evaluators and language pairs.",
+     "text_len": 824,
+     "level": 1,
+     "element_id": "p4_e58"
+    },
+    {
+     "reading_order": 59,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 538.18,
+      "r": 561.3,
+      "b": 464.9,
+      "w": 255.16,
+      "h": 73.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.68049,
+      "r": 0.94292,
+      "b": 0.58784
+     },
+     "text": "XSTS is a human evaluation protocol inspired by STS 48 , emphasizing meaning preservation over fluency. XSTS uses a five-point scale, in which 1 is the lowest score, and 3 represents the acceptability threshold. To ensure consistency not only across languages but also among different evaluators of any given language, we included the same subset of sentence pairs in the full set of sentence pairs given to each evaluator, making it possible to calibrate results.",
+     "text_len": 464,
+     "level": 1,
+     "element_id": "p4_e59"
+    },
+    {
+     "reading_order": 60,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 461.81,
+      "r": 561.28,
+      "b": 378.9,
+      "w": 255.13,
+      "h": 82.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.58393,
+      "r": 0.94289,
+      "b": 0.4791
+     },
+     "text": "We find that automated metrics such as spBLEU and chrF++ correlate reasonably well with calibrated human evaluations of translation quality, as shown in Fig. 3. Spearman's R correlation coefficients between aggregated XSTS and spBLEU, chrF++ (corpus) and chrF++ (average sentence-level) are 0.710, 0.687 and 0.694, respectively. Other correlation coefficients (Kendall's τ and Pearson's R) have the same ordering. Corpus spBLEU provides the best nominal correlation, followed by average sentence-level chrF++.",
+     "text_len": 509,
+     "level": 1,
+     "element_id": "p4_e60"
+    },
+    {
+     "reading_order": 61,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 375.81,
+      "r": 561.27,
+      "b": 314.4,
+      "w": 255.13,
+      "h": 61.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.47519,
+      "r": 0.94287,
+      "b": 0.39754
+     },
+     "text": "We also find that calibrated human evaluation scores correlate more strongly with automated scores than uncalibrated human evaluation scores across all automated metrics and choices of correlation coefficient. In particular, uncalibrated human evaluation scores have a Spearman's R correlation coefficient of 0.625, 0.607 and 0.611 for spBLEU, chrF++ (corpus) and chrF++ (average sentence-level), respectively.",
+     "text_len": 410,
+     "level": 1,
+     "element_id": "p4_e61"
+    },
+    {
+     "reading_order": 62,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 311.31,
+      "r": 561.3,
+      "b": 260.65,
+      "w": 255.16,
+      "h": 50.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.39363,
+      "r": 0.94292,
+      "b": 0.32958
+     },
+     "text": "Overall, a sample of 55 language directions were evaluated, including 8 into English, 27 out of English, and 20 other direct language directions. The overall mean of calibrated XSTS scores was 4.26, with 38/55 directions scoring over 4.0 (that is, high quality) and 52/56 directions scoring over 3.0.",
+     "text_len": 300,
+     "level": 1,
+     "element_id": "p4_e62"
+    },
+    {
+     "reading_order": 63,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 257.56,
+      "r": 561.33,
+      "b": 185.4,
+      "w": 255.19,
+      "h": 72.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.32567,
+      "r": 0.94297,
+      "b": 0.23443
+     },
+     "text": "We hypothesize that added toxicity may be because of the presence of toxicity in the training data and used our detectors to estimate, more specifically, unbalanced toxicity in the bitext data. We find that estimated levels of unbalanced toxicity vary from one corpus of bitext to the next and that unbalanced toxicity can be greatly attributed to misaligned bitext. In other words, training with this misaligned bitext could encourage mistranslations with added toxicity.",
+     "text_len": 472,
+     "level": 1,
+     "element_id": "p4_e63"
+    },
+    {
+     "reading_order": 64,
+     "page": 4,
+     "label": "picture",
+     "bbox": {
+      "l": 131.19,
+      "t": 166.27,
+      "r": 468.73,
+      "b": 59.3,
+      "w": 337.54,
+      "h": 106.97,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.22039,
+      "t": 0.21024,
+      "r": 0.78742,
+      "b": 0.07498
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p4_e64"
+    },
+    {
+     "reading_order": 65,
+     "page": 4,
+     "label": "caption",
+     "bbox": {
+      "l": 39.69,
+      "t": 52.4,
+      "r": 469.73,
+      "b": 45.91,
+      "w": 430.05,
+      "h": 6.5,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.06626,
+      "r": 0.7891,
+      "b": 0.05805
+     },
+     "text": "Fig. 2 | Quality of FLORES-200. Quality assurance scores for the languages in FLORES-200. The minimum acceptable standard is 90%.",
+     "text_len": 129,
+     "level": 2,
+     "element_id": "p4_e65"
+    }
+   ]
+  },
+  {
+   "page_no": 5,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0005.png",
+   "elements": [
+    {
+     "reading_order": 66,
+     "page": 5,
+     "label": "picture",
+     "bbox": {
+      "l": 44.53,
+      "t": 744.41,
+      "r": 554.66,
+      "b": 601.09,
+      "w": 510.13,
+      "h": 143.32,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07481,
+      "t": 0.94126,
+      "r": 0.93177,
+      "b": 0.76004
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p5_e66"
+    },
+    {
+     "reading_order": 67,
+     "page": 5,
+     "label": "caption",
+     "bbox": {
+      "l": 39.69,
+      "t": 592.0,
+      "r": 290.98,
+      "b": 555.49,
+      "w": 251.29,
+      "h": 36.51,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.74855,
+      "r": 0.48882,
+      "b": 0.70238
+     },
+     "text": "Fig. 3 | Correlations between aggregated human quality scores and automated metrics. a, The relationship between spBLEU and XSTS. b, The relationship between chrF++ and XSTS. c, The relationship between average sentence-level chrF++ and XSTS. All automated scores were computed only on",
+     "text_len": 285,
+     "level": 2,
+     "element_id": "p5_e67"
+    },
+    {
+     "reading_order": 68,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 537.06,
+      "r": 294.87,
+      "b": 464.9,
+      "w": 255.19,
+      "h": 72.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.67908,
+      "r": 0.49535,
+      "b": 0.58784
+     },
+     "text": "To mitigate this issue, we designed a bitext filtering procedure based on the detection of multiple instances of added toxicity (that is, cases in which one sentence in the bitext pair contains at least two more toxic items than the other sentence in the pair). (A previous detector quality analysis showed that a higher precision was reached in this situation). We added this toxicity filtering procedure as an option to the filtering process and experimented with or without it for comparison.",
+     "text_len": 495,
+     "level": 1,
+     "element_id": "p5_e68"
+    },
+    {
+     "reading_order": 69,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 461.81,
+      "r": 294.96,
+      "b": 378.9,
+      "w": 255.27,
+      "h": 82.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.58393,
+      "r": 0.4955,
+      "b": 0.4791
+     },
+     "text": "The experimental results on the FLORES-200 dev set for 10 translation directions (from and into English for Somali, Southern Sotho, Twi, Umbundu and Venetian) show that after filtering an average amount of around 30% parallel sentences, the translation quality (chrF++) improves by 5% and added toxicity (ETOX) reduces by the same amount. Therefore, the filtering pipeline that includes toxicity filtering not only reduces the number of toxic items in the translation output but also improves the overall translation performance.",
+     "text_len": 529,
+     "level": 1,
+     "element_id": "p5_e69"
+    },
+    {
+     "reading_order": 70,
+     "page": 5,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 357.39,
+      "r": 93.03,
+      "b": 348.37,
+      "w": 53.34,
+      "h": 9.02,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.4519,
+      "r": 0.15628,
+      "b": 0.44049
+     },
+     "text": "Conclusion",
+     "text_len": 10,
+     "level": 1,
+     "element_id": "p5_e70"
+    },
+    {
+     "reading_order": 71,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 343.56,
+      "r": 294.9,
+      "b": 282.15,
+      "w": 255.21,
+      "h": 61.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.43441,
+      "r": 0.4954,
+      "b": 0.35676
+     },
+     "text": "In 2016, the United Nations declared internet access a basic human right. Although the intent of this declaration was to limit censorship and allow for information and ideas to flow without interference, much of the internet today remains inaccessible to many due to language barriers. Our effort was designed to contribute one solution to help alter this status quo.",
+     "text_len": 367,
+     "level": 1,
+     "element_id": "p5_e71"
+    },
+    {
+     "reading_order": 72,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 279.06,
+      "r": 294.95,
+      "b": 88.65,
+      "w": 255.27,
+      "h": 190.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.35285,
+      "r": 0.49548,
+      "b": 0.11209
+     },
+     "text": "For many low-resource language communities, NLLB-200 is one of the first models designed to support translation into or out of their languages. Although applications of these new translation capabilities could be found in several domains of everyday life, we believe their impact would be most significant in a domain such as education. In formal educational settings, for instance, students and educators belonging to low-resource language groups could, with the help of NLLB-200, tap into more books, research articles and archives than before. Within the realms of informal learning, low-resource language speakers could experience greater access to information from global news outlets and social media platforms, as well as online encyclopaedias such as Wikipedia. Access to machine translation motivates more low-resource language writers or content creators to share localized knowledge or various aspects of their culture. Giving individuals access to new translation tools could thus open up opportunities for bidirectional learning, thereby also challenging Western-centric modes of knowledge production and dissemination, ultimately aiding in revitalizing certain minority cultures and languages.",
+     "text_len": 1207,
+     "level": 1,
+     "element_id": "p5_e72"
+    },
+    {
+     "reading_order": 73,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 85.56,
+      "r": 294.82,
+      "b": 45.65,
+      "w": 255.13,
+      "h": 39.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.10819,
+      "r": 0.49527,
+      "b": 0.05772
+     },
+     "text": "Since launching NLLB-200, we can already see the impact of the model across many directions. Four months after the launch of NLLB200, Wikimedia reported that our model was the third most used machine translation engine used by Wikipedia editors (accounting for 3.8% of all published translations) (https://web.archive.org/web/ 20221107181300/https://nbviewer.org/github/wikimedia-research/ machine-translation-service-analysis-2022/blob/main/mt_service_ comparison_Sept2022_update.ipynb). Compared with other machine translation services and across all languages, articles translated with NLLB-200 has the lowest percentage of deletion (0.13%) and highest percentage of translation modification kept under 10%.",
+     "text_len": 710,
+     "level": 1,
+     "element_id": "p5_e73"
+    },
+    {
+     "reading_order": 74,
+     "page": 5,
+     "label": "caption",
+     "bbox": {
+      "l": 306.14,
+      "t": 591.99,
+      "r": 557.85,
+      "b": 565.49,
+      "w": 251.7,
+      "h": 26.5,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.74853,
+      "r": 0.93713,
+      "b": 0.71503
+     },
+     "text": "the sentences evaluated for a given model and translation direction (either the full FLORES-200 dataset or a subset). NLLB-200 refers to a 55B parameter MoE model, and NLLB-200 Baseline refers to a dense 3.3B parameter model.",
+     "text_len": 225,
+     "level": 1,
+     "element_id": "p5_e74"
+    },
+    {
+     "reading_order": 75,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 461.81,
+      "r": 561.27,
+      "b": 335.9,
+      "w": 255.13,
+      "h": 125.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.58393,
+      "r": 0.94287,
+      "b": 0.42472
+     },
+     "text": "In many ways, the composition of the NLLB-200 effort speaks to the centrality of interdisciplinarity in shaping our vision. Machine translation and AI advancements lie at the intersection of technological, cultural and societal development, and thus require scholars with diverse training and standpoints to fully comprehend every angle 49,50 . It is our hope that in future iterations, NLLB-200 continues to include scholars from fields underrepresented in the world of machine translation and AI, particularly those from humanities and social sciences backgrounds. More importantly, we hope that teams developing these initiatives would come from a wide range of race, gender and cultural identities, much like the communities whose lives we seek to improve.",
+     "text_len": 760,
+     "level": 1,
+     "element_id": "p5_e75"
+    },
+    {
+     "reading_order": 76,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 332.81,
+      "r": 561.34,
+      "b": 228.4,
+      "w": 255.19,
+      "h": 104.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.42082,
+      "r": 0.94299,
+      "b": 0.2888
+     },
+     "text": "Finally, we want to emphasize that overcoming the challenges that prevent the web from being accessible to speakers of all languages requires a multifaceted approach. At the technical level, NLLB-200 overcomes many data, modelling and evaluation challenges in NMT research, but it still has its limitations, some of which are documented in Supplementary Information G. As a single technological intervention, NLLB-200 is all but one piece of a massive puzzle; policy interventions aimed at more fundamental issues surrounding education, internet access and digital literacy are imperative to eradicate the structural problem of language disparities.",
+     "text_len": 649,
+     "level": 1,
+     "element_id": "p5_e76"
+    },
+    {
+     "reading_order": 77,
+     "page": 5,
+     "label": "section_header",
+     "bbox": {
+      "l": 306.14,
+      "t": 206.89,
+      "r": 376.38,
+      "b": 197.87,
+      "w": 70.24,
+      "h": 9.02,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.2616,
+      "r": 0.63228,
+      "b": 0.25019
+     },
+     "text": "Online content",
+     "text_len": 14,
+     "level": 1,
+     "element_id": "p5_e77"
+    },
+    {
+     "reading_order": 78,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 193.06,
+      "r": 561.35,
+      "b": 142.4,
+      "w": 255.21,
+      "h": 50.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.24411,
+      "r": 0.94301,
+      "b": 0.18006
+     },
+     "text": "Any methods, additional references, Nature Portfolio reporting summaries, source data, extended data, supplementary information, acknowledgements, peer review information; details of author contributions and competing interests; and statements of data and code availability are available at https://doi.org/10.1038/s41586-024-07335-x.",
+     "text_len": 334,
+     "level": 1,
+     "element_id": "p5_e78"
+    },
+    {
+     "reading_order": 79,
+     "page": 5,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 123.87,
+      "r": 559.1,
+      "b": 110.6,
+      "w": 252.96,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.15663,
+      "r": 0.93923,
+      "b": 0.13985
+     },
+     "text": "Fan, A. et al. Beyond English-centric multilingual machine translation. J. Mach. Learn. Res 22, 1-48 (2021).",
+     "text_len": 108,
+     "level": 2,
+     "element_id": "p5_e79"
+    },
+    {
+     "reading_order": 80,
+     "page": 5,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 107.84,
+      "r": 561.28,
+      "b": 86.55,
+      "w": 255.14,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.13636,
+      "r": 0.94289,
+      "b": 0.10944
+     },
+     "text": "Du, N. et al. GlaM: efficient scaling of language models with mixture-of-experts. In Proceedings of the 39th International Conference on Machine Learning Vol. 162, 5547-5569 (PMLR, 2022).",
+     "text_len": 187,
+     "level": 2,
+     "element_id": "p5_e80"
+    },
+    {
+     "reading_order": 81,
+     "page": 5,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 83.79,
+      "r": 560.75,
+      "b": 70.52,
+      "w": 254.61,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.10595,
+      "r": 0.942,
+      "b": 0.08917
+     },
+     "text": "Hwang, C. et al. Tutel: adaptive mixture-of-experts at scale. In 6th Conference on Machine Learning and Systems (MLSys, 2023).",
+     "text_len": 126,
+     "level": 2,
+     "element_id": "p5_e81"
+    },
+    {
+     "reading_order": 82,
+     "page": 5,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 67.76,
+      "r": 546.65,
+      "b": 46.47,
+      "w": 240.5,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.08568,
+      "r": 0.91831,
+      "b": 0.05876
+     },
+     "text": "Lepikhin, D. et al. GShard: scaling giant models with conditional computation and automatic sharding. In International Conference on Learning Representations (ICLR, 2021).",
+     "text_len": 171,
+     "level": 2,
+     "element_id": "p5_e82"
+    }
+   ]
+  },
+  {
+   "page_no": 6,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0006.png",
+   "elements": [
+    {
+     "reading_order": 83,
+     "page": 6,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 762.41,
+      "r": 85.69,
+      "b": 749.44,
+      "w": 46.0,
+      "h": 12.97,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.96402,
+      "r": 0.14395,
+      "b": 0.94762
+     },
+     "text": "Article",
+     "text_len": 7,
+     "level": 1,
+     "element_id": "p6_e83"
+    },
+    {
+     "reading_order": 84,
+     "page": 6,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.69,
+      "t": 741.29,
+      "r": 286.42,
+      "b": 719.99,
+      "w": 246.74,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.93731,
+      "r": 0.48115,
+      "b": 0.91038
+     },
+     "text": "Lewis, M., Bhosale, S., Dettmers, T., Goyal, N. & Zettlemoyer, L. BASE layers: simplifying training of large, sparse models. In Proc. 38th International Conference on Machine Learning Vol. 139, 6265-6274 (PMLR, 2021).",
+     "text_len": 217,
+     "level": 2,
+     "element_id": "p6_e84"
+    },
+    {
+     "reading_order": 85,
+     "page": 6,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.69,
+      "t": 717.24,
+      "r": 288.88,
+      "b": 695.95,
+      "w": 249.19,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.9069,
+      "r": 0.48529,
+      "b": 0.87998
+     },
+     "text": "Shazeer, N. et al. Outrageously large neural networks: the sparsely-gated mixture-ofexperts layer. In Proc. 2017 International Conference on Learning Representations (ICLR) 1-19 (ICLR, 2017).",
+     "text_len": 191,
+     "level": 2,
+     "element_id": "p6_e85"
+    },
+    {
+     "reading_order": 86,
+     "page": 6,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.69,
+      "t": 693.19,
+      "r": 289.3,
+      "b": 679.91,
+      "w": 249.62,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.87649,
+      "r": 0.48599,
+      "b": 0.8597
+     },
+     "text": "Zoph, B. et al. ST-MoE: designing stable and transferable sparse expert models. Preprint at https://arxiv.org/abs/2202.08906 (2022).",
+     "text_len": 132,
+     "level": 2,
+     "element_id": "p6_e86"
+    },
+    {
+     "reading_order": 87,
+     "page": 6,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.69,
+      "t": 677.16,
+      "r": 294.66,
+      "b": 655.87,
+      "w": 254.98,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.85623,
+      "r": 0.495,
+      "b": 0.82931
+     },
+     "text": "Zoph, B., Yuret, D., May, J. & Knight, K. Transfer learning for low-resource neural machine translation. In Proc. 2016 Conference on Empirical Methods in Natural Language Processing (eds Su, J. et al.) 1568-1575 (Association for Computational Linguistics, 2016).",
+     "text_len": 262,
+     "level": 2,
+     "element_id": "p6_e87"
+    },
+    {
+     "reading_order": 88,
+     "page": 6,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.69,
+      "t": 653.11,
+      "r": 288.25,
+      "b": 623.8,
+      "w": 248.57,
+      "h": 29.31,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.82582,
+      "r": 0.48423,
+      "b": 0.78876
+     },
+     "text": "Nguyen, T. Q. & Chiang, D. Transfer learning across low-resource, related languages for neural machine translation. In Proc. Eighth International Joint Conference on Natural Language Processing Vol. 2 (eds Kondrak, G. & Watanabe, T.) 296-301 (Asian Federation of Natural Language Processing, 2017).",
+     "text_len": 298,
+     "level": 2,
+     "element_id": "p6_e88"
+    },
+    {
+     "reading_order": 89,
+     "page": 6,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.69,
+      "t": 621.05,
+      "r": 292.54,
+      "b": 591.74,
+      "w": 252.86,
+      "h": 29.31,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.78528,
+      "r": 0.49144,
+      "b": 0.74822
+     },
+     "text": "Arivazhagan, N. et al. Massively multilingual neural machine translation in the wild: findings and challenges. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies Vol. 1, 3874-3884 (Association for Computational Linguistics, 2019).",
+     "text_len": 325,
+     "level": 2,
+     "element_id": "p6_e89"
+    },
+    {
+     "reading_order": 90,
+     "page": 6,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.69,
+      "t": 588.98,
+      "r": 290.14,
+      "b": 567.69,
+      "w": 250.45,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.74473,
+      "r": 0.4874,
+      "b": 0.71781
+     },
+     "text": "Zhang, B., Williams, P., Titov, I. & Sennrich, R. Improving massively multilingual neural machine translation and zero-shot translation. In Proc. 58th Annual Meeting of the Association for Computational Linguistics (eds Jurafsky, D. et al.) 1628-1639 (ACL, 2020).",
+     "text_len": 263,
+     "level": 2,
+     "element_id": "p6_e90"
+    },
+    {
+     "reading_order": 91,
+     "page": 6,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.69,
+      "t": 564.94,
+      "r": 275.38,
+      "b": 543.64,
+      "w": 235.69,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.71433,
+      "r": 0.46261,
+      "b": 0.6874
+     },
+     "text": "Tran, C. et al. Facebook AI's WMT21 news translation task submission. In Proc. Sixth Conference on Machine Translation (eds Barrault, L.) 205-215 (ACL, 2021); https:// aclanthology.org/2021.wmt-1.19.",
+     "text_len": 199,
+     "level": 2,
+     "element_id": "p6_e91"
+    },
+    {
+     "reading_order": 92,
+     "page": 6,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.69,
+      "t": 540.89,
+      "r": 294.0,
+      "b": 527.61,
+      "w": 254.31,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.68392,
+      "r": 0.49389,
+      "b": 0.66713
+     },
+     "text": "Orife, I. et al. Masakhane - machine translation for Africa. Preprint at https://arxiv.org/abs/ 2003.11529 (2020).",
+     "text_len": 114,
+     "level": 2,
+     "element_id": "p6_e92"
+    },
+    {
+     "reading_order": 93,
+     "page": 6,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.69,
+      "t": 524.86,
+      "r": 294.78,
+      "b": 511.58,
+      "w": 255.1,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.66365,
+      "r": 0.4952,
+      "b": 0.64686
+     },
+     "text": "Kuwanto, G. et al. Low-resource machine translation training curriculum fit for low-resource languages. Preprint at https://arxiv.org/abs/2103.13272 (2021).",
+     "text_len": 156,
+     "level": 2,
+     "element_id": "p6_e93"
+    },
+    {
+     "reading_order": 94,
+     "page": 6,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.69,
+      "t": 508.82,
+      "r": 288.57,
+      "b": 487.53,
+      "w": 248.89,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.64337,
+      "r": 0.48477,
+      "b": 0.61645
+     },
+     "text": "Nekoto, W. et al. Participatory research for low-resourced machine translation: a case study in African languages. In Findings of the Association for Computational Linguistics: EMNLP 2020 (eds Cohn, T. et al.) 2144-2160 (ACL, 2020).",
+     "text_len": 232,
+     "level": 2,
+     "element_id": "p6_e94"
+    },
+    {
+     "reading_order": 95,
+     "page": 6,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.69,
+      "t": 484.78,
+      "r": 289.54,
+      "b": 471.5,
+      "w": 249.85,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.61297,
+      "r": 0.4864,
+      "b": 0.59618
+     },
+     "text": "Karakanta, A., Dehdari, J. & van Genabith, J. Neural machine translation for low-resource languages without parallel corpora. Mach. Transl. 32, 167-189 (2018).",
+     "text_len": 159,
+     "level": 2,
+     "element_id": "p6_e95"
+    },
+    {
+     "reading_order": 96,
+     "page": 6,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.69,
+      "t": 468.74,
+      "r": 294.83,
+      "b": 447.45,
+      "w": 255.14,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.59269,
+      "r": 0.49528,
+      "b": 0.56577
+     },
+     "text": "Bañón, M. et al. ParaCrawl: web-scale acquisition of parallel corpora. In Proc. 58th Annual Meeting of the Association for Computational Linguistics (eds Jurafsky, D. et al.) 4555-4567 (ACL, 2020).",
+     "text_len": 197,
+     "level": 2,
+     "element_id": "p6_e96"
+    },
+    {
+     "reading_order": 97,
+     "page": 6,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.69,
+      "t": 444.7,
+      "r": 294.59,
+      "b": 415.39,
+      "w": 254.91,
+      "h": 29.31,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.5623,
+      "r": 0.49488,
+      "b": 0.52523
+     },
+     "text": "Schwenk, H. et al. CCMatrix: mining billions of high-quality parallel sentences on the web. In Proc. 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing Vol. 1 (eds Zong, C. et al.) 6490-6500 (ACL, 2021).",
+     "text_len": 296,
+     "level": 2,
+     "element_id": "p6_e97"
+    },
+    {
+     "reading_order": 98,
+     "page": 6,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.69,
+      "t": 412.63,
+      "r": 286.22,
+      "b": 399.35,
+      "w": 246.53,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.52174,
+      "r": 0.48082,
+      "b": 0.50495
+     },
+     "text": "Ramesh, G. et al. Samanantar: the largest publicly available parallel corpora collection for 11 Indic languages. Trans. Assoc. Comput. Linguist. 10, 145-162 (2022).",
+     "text_len": 164,
+     "level": 2,
+     "element_id": "p6_e98"
+    },
+    {
+     "reading_order": 99,
+     "page": 6,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.69,
+      "t": 396.6,
+      "r": 294.24,
+      "b": 383.32,
+      "w": 254.56,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.50148,
+      "r": 0.49429,
+      "b": 0.48468
+     },
+     "text": "Kreutzer, J. et al. Quality at a glance: an audit of web-crawled multilingual datasets. Trans. Assoc. Comput. Linguist. 10, 50-72 (2022).",
+     "text_len": 137,
+     "level": 2,
+     "element_id": "p6_e99"
+    },
+    {
+     "reading_order": 100,
+     "page": 6,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.69,
+      "t": 380.57,
+      "r": 293.99,
+      "b": 359.27,
+      "w": 254.3,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.48121,
+      "r": 0.49387,
+      "b": 0.45427
+     },
+     "text": "Heffernan, K., Çelebi, O. & Schwenk, H. Bitext mining using distilled sentence representations for low-resource languages. Preprint at https://arxiv.org/abs/2205.12654 (2022).",
+     "text_len": 175,
+     "level": 2,
+     "element_id": "p6_e100"
+    },
+    {
+     "reading_order": 101,
+     "page": 6,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.69,
+      "t": 356.52,
+      "r": 288.35,
+      "b": 327.21,
+      "w": 248.66,
+      "h": 29.31,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.4508,
+      "r": 0.4844,
+      "b": 0.41374
+     },
+     "text": "Gowda, T., Zhang, Z., Mattmann, C. & May, J. Many-to-English machine translation tools, data, and pretrained models. In Proc. 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing: System Demonstrations (eds Ji, H. et al.) 306-316 (ACL, 2021).",
+     "text_len": 333,
+     "level": 2,
+     "element_id": "p6_e101"
+    },
+    {
+     "reading_order": 102,
+     "page": 6,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.69,
+      "t": 324.46,
+      "r": 287.58,
+      "b": 295.15,
+      "w": 247.89,
+      "h": 29.31,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.41026,
+      "r": 0.4831,
+      "b": 0.3732
+     },
+     "text": "McCarthy, A. D. et al. The Johns Hopkins University Bible corpus: 1600+ tongues for typological exploration. In Proc. 12th Language Resources and Evaluation Conference (eds Calzolari, N. et al.) 2884-2892 (European Language Resources Association, 2020); https://aclanthology.org/2020.lrec-1.352.",
+     "text_len": 295,
+     "level": 2,
+     "element_id": "p6_e102"
+    },
+    {
+     "reading_order": 103,
+     "page": 6,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.69,
+      "t": 292.39,
+      "r": 277.67,
+      "b": 279.11,
+      "w": 237.98,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.36971,
+      "r": 0.46646,
+      "b": 0.35292
+     },
+     "text": "McNamee, P. Language identification: a solved problem suitable for undergraduate instruction. J. Comput. Sci. Coll. 20, 94-101 (2005).",
+     "text_len": 134,
+     "level": 2,
+     "element_id": "p6_e103"
+    },
+    {
+     "reading_order": 104,
+     "page": 6,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.69,
+      "t": 276.36,
+      "r": 285.1,
+      "b": 263.08,
+      "w": 245.42,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.34944,
+      "r": 0.47894,
+      "b": 0.33265
+     },
+     "text": "Abadji, J., Suárez, P. J. O., Romary, L. & Sagot, B. Towards a cleaner document-oriented multilingual crawled corpus. Preprint at https://arxiv.org/abs/2201.06642 (2022).",
+     "text_len": 170,
+     "level": 2,
+     "element_id": "p6_e104"
+    },
+    {
+     "reading_order": 105,
+     "page": 6,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.69,
+      "t": 260.33,
+      "r": 289.55,
+      "b": 247.05,
+      "w": 249.86,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.32917,
+      "r": 0.48641,
+      "b": 0.31238
+     },
+     "text": "Widdows, D. & Brew, C. Language identification with a reciprocal rank classifier. Preprint at https://arxiv.org/abs/2109.09862 (2021).",
+     "text_len": 134,
+     "level": 2,
+     "element_id": "p6_e105"
+    },
+    {
+     "reading_order": 106,
+     "page": 6,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.69,
+      "t": 244.3,
+      "r": 272.17,
+      "b": 231.02,
+      "w": 232.49,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.3089,
+      "r": 0.45722,
+      "b": 0.29211
+     },
+     "text": "Goutte, C., Léger, S., Malmasi, S. & Zampieri, M. Discriminating similar languages: evaluations and explorations. Preprint at http://arxiv.org/abs/1610.00031 (2016).",
+     "text_len": 165,
+     "level": 2,
+     "element_id": "p6_e106"
+    },
+    {
+     "reading_order": 107,
+     "page": 6,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.69,
+      "t": 228.26,
+      "r": 291.12,
+      "b": 206.97,
+      "w": 251.43,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.28862,
+      "r": 0.48905,
+      "b": 0.2617
+     },
+     "text": "Jauhiainen, T., Lindén, K. & Jauhiainen, H. Evaluation of language identification methods using 285 languages. In Proc. 21st Nordic Conference on Computational Linguistics (eds. Tiedemann, J. & Tahmasebi, N.) 183-191 (2017).",
+     "text_len": 224,
+     "level": 2,
+     "element_id": "p6_e107"
+    },
+    {
+     "reading_order": 108,
+     "page": 6,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.69,
+      "t": 204.22,
+      "r": 290.94,
+      "b": 182.92,
+      "w": 251.26,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.25822,
+      "r": 0.48875,
+      "b": 0.23129
+     },
+     "text": "Grave, É., Bojanowski, P., Gupta, P., Joulin, A. & Mikolov, T. Learning word vectors for 157 languages. In Proc. 11th International Conference on Language Resources and Evaluation (LREC 2018) (eds Calzolari, N. et al.) (ELRA, 2018).",
+     "text_len": 232,
+     "level": 2,
+     "element_id": "p6_e108"
+    },
+    {
+     "reading_order": 109,
+     "page": 6,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.69,
+      "t": 180.17,
+      "r": 288.63,
+      "b": 166.89,
+      "w": 248.95,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.22781,
+      "r": 0.48487,
+      "b": 0.21102
+     },
+     "text": "Dunn, J. Mapping languages: the corpus of global language use. Lang. Resour. Eval. 54, 999-1018 (2020).",
+     "text_len": 103,
+     "level": 2,
+     "element_id": "p6_e109"
+    },
+    {
+     "reading_order": 110,
+     "page": 6,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.69,
+      "t": 164.14,
+      "r": 292.17,
+      "b": 142.84,
+      "w": 252.49,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.20754,
+      "r": 0.49081,
+      "b": 0.18061
+     },
+     "text": "Brown, R. D. Non-linear mapping for improved identification of 1300+ languages. In Proc. 2014 Conference on Empirical Methods in Natural Language Processing (EMNLP) (eds Moschitti, A. et al.) 627-632 (ACL, 2014).",
+     "text_len": 212,
+     "level": 2,
+     "element_id": "p6_e110"
+    },
+    {
+     "reading_order": 111,
+     "page": 6,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.69,
+      "t": 140.09,
+      "r": 293.09,
+      "b": 102.76,
+      "w": 253.4,
+      "h": 37.33,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.17713,
+      "r": 0.49236,
+      "b": 0.12993
+     },
+     "text": "Caswell, I., Breiner, T., van Esch, D. & Bapna, A. Language ID in the wild: unexpected challenges on the path to a thousand-language web text corpus. In Proc. 28th International Conference on Computational Linguistics (eds Scott, D. et al.) 6588-6608 (International Committee on Computational Linguistics, 2020); https://aclanthology.org/ 2020.coling-main.579.",
+     "text_len": 360,
+     "level": 2,
+     "element_id": "p6_e111"
+    },
+    {
+     "reading_order": 112,
+     "page": 6,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.69,
+      "t": 100.01,
+      "r": 294.06,
+      "b": 78.71,
+      "w": 254.37,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.12646,
+      "r": 0.49399,
+      "b": 0.09952
+     },
+     "text": "Joulin, A., Grave, E., Bojanowski, P. & Mikolov, T. Bag of tricks for efficient text classification. In Proc. 15th Conference of the European Chapter of the Association for Computational Linguistics Vol. 2 (eds Lapata, M. et al.) 427-431 (ACL, 2017).",
+     "text_len": 250,
+     "level": 2,
+     "element_id": "p6_e112"
+    },
+    {
+     "reading_order": 113,
+     "page": 6,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 741.37,
+      "r": 557.23,
+      "b": 728.09,
+      "w": 251.1,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.93742,
+      "r": 0.93609,
+      "b": 0.92062
+     },
+     "text": "NLLB Team et al. No language left behind: scaling human-centered machine translation. Preprint at https://arxiv.org/abs/2207.04672 (2022).",
+     "text_len": 138,
+     "level": 2,
+     "element_id": "p6_e113"
+    },
+    {
+     "reading_order": 114,
+     "page": 6,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 725.34,
+      "r": 541.46,
+      "b": 712.06,
+      "w": 235.32,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.91715,
+      "r": 0.90959,
+      "b": 0.90035
+     },
+     "text": "Koehn, P. & Knowles, R. Six challenges for neural machine translation. In Proc. First Workshop on Neural Machine Translation (eds Luong, T. et al.) 28-39 (ACL, 2017).",
+     "text_len": 166,
+     "level": 2,
+     "element_id": "p6_e114"
+    },
+    {
+     "reading_order": 115,
+     "page": 6,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 709.31,
+      "r": 548.83,
+      "b": 696.03,
+      "w": 242.69,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.89688,
+      "r": 0.92198,
+      "b": 0.88009
+     },
+     "text": "Artetxe, M. & Schwenk, H. Massively multilingual sentence embeddings for zero-shot cross-lingual transfer and beyond. Trans. Assoc. Comput. Linguist. 7, 597-610 (2019).",
+     "text_len": 168,
+     "level": 2,
+     "element_id": "p6_e115"
+    },
+    {
+     "reading_order": 116,
+     "page": 6,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 693.28,
+      "r": 552.61,
+      "b": 671.98,
+      "w": 246.47,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.87661,
+      "r": 0.92833,
+      "b": 0.84968
+     },
+     "text": "Sennrich, R., Haddow, B. & Birch, A. Improving neural machine translation models with monolingual data. In Proc. 54th Annual Meeting of the Association for Computational Linguistics (ACL) Vol. 1 (eds Erk, K. & Smith, N. A.) 86-96 (ACL, 2016).",
+     "text_len": 242,
+     "level": 2,
+     "element_id": "p6_e116"
+    },
+    {
+     "reading_order": 117,
+     "page": 6,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 669.23,
+      "r": 548.99,
+      "b": 655.95,
+      "w": 242.86,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.8462,
+      "r": 0.92224,
+      "b": 0.82941
+     },
+     "text": "Popović, M. chrf++: words helping character n-grams. In Proc. Second Conference on Machine Translation Vol. 2 (eds Bojar, O. et al.) 612-618 (ACL, 2017).",
+     "text_len": 153,
+     "level": 2,
+     "element_id": "p6_e117"
+    },
+    {
+     "reading_order": 118,
+     "page": 6,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 653.2,
+      "r": 547.77,
+      "b": 631.9,
+      "w": 241.63,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.82593,
+      "r": 0.9202,
+      "b": 0.799
+     },
+     "text": "Szegedy, C., Vanhoucke, V., Ioffe, S., Shlens, J. & Wojna, Z. Rethinking the inception architecture for computer vision. In IEEE Conference on Computer Vision and Pattern Recognition (CVPR) 2818-2826 (IEEE, 2016).",
+     "text_len": 213,
+     "level": 2,
+     "element_id": "p6_e118"
+    },
+    {
+     "reading_order": 119,
+     "page": 6,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 629.15,
+      "r": 561.16,
+      "b": 607.85,
+      "w": 255.02,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.79552,
+      "r": 0.94269,
+      "b": 0.76859
+     },
+     "text": "Liu, R., Kim, Y. J., Muzio, A., Mozafari, B. & Awadalla, H. H. Gating dropout: communicationefficient regularization for sparsely activated transformers. In Proceedings of the 39th International Conference on Machine Learning (PMLR, 2022).",
+     "text_len": 239,
+     "level": 2,
+     "element_id": "p6_e119"
+    },
+    {
+     "reading_order": 120,
+     "page": 6,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 605.1,
+      "r": 551.73,
+      "b": 591.82,
+      "w": 245.59,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.76511,
+      "r": 0.92685,
+      "b": 0.74832
+     },
+     "text": "Goyal, N. et al. The Flores-101 evaluation benchmark for low-resource and multilingual machine translation. Trans. Assoc. Comput. Linguist. 10, 522-538 (2022).",
+     "text_len": 159,
+     "level": 2,
+     "element_id": "p6_e120"
+    },
+    {
+     "reading_order": 121,
+     "page": 6,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 589.07,
+      "r": 553.09,
+      "b": 567.77,
+      "w": 246.95,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.74484,
+      "r": 0.92913,
+      "b": 0.71791
+     },
+     "text": "Wang, H. et al. DeepNet: scaling transformers to 1,000 layers. In IEEE Transactions on Pattern Analysis and Machine Intelligence https://doi.org/10.1109/TPAMI.2024.3386927 (IEEE, 2024)",
+     "text_len": 184,
+     "level": 2,
+     "element_id": "p6_e121"
+    },
+    {
+     "reading_order": 122,
+     "page": 6,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 565.02,
+      "r": 557.19,
+      "b": 535.71,
+      "w": 251.05,
+      "h": 29.31,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.71443,
+      "r": 0.93602,
+      "b": 0.67737
+     },
+     "text": "Freitag, M. et al. Results of the WMT21 metrics shared task: evaluating metrics with expert-based human evaluations on TED and news domain. In Proc. Sixth Conference on Machine Translation (eds Barrault, L. et al.) 733-774 (ACL, 2021); https://aclanthology. org/2021.wmt-1.73.",
+     "text_len": 276,
+     "level": 2,
+     "element_id": "p6_e122"
+    },
+    {
+     "reading_order": 123,
+     "page": 6,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 532.96,
+      "r": 554.62,
+      "b": 511.66,
+      "w": 248.48,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.67389,
+      "r": 0.9317,
+      "b": 0.64696
+     },
+     "text": "Papineni, K., Roukos, S., Ward, T. & Zhu, W.-J. Bleu: a method for automatic evaluation of machine translation. In Proc. 40th annual meeting of the Association for Computational Linguistics (eds Isabelle, P. et al.) 311-318 (ACL, 2002).",
+     "text_len": 236,
+     "level": 2,
+     "element_id": "p6_e123"
+    },
+    {
+     "reading_order": 124,
+     "page": 6,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 508.91,
+      "r": 558.09,
+      "b": 487.61,
+      "w": 251.95,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.64348,
+      "r": 0.93753,
+      "b": 0.61655
+     },
+     "text": "Akhbardeh, F. et al. Findings of the 2021 conference on machine translation (WMT21). In Proc. Sixth Conference on Machine Translation (eds Barrault, L. et al.) 1-88 (ACL, 2021); https://aclanthology.org/2021.wmt-1.1.",
+     "text_len": 216,
+     "level": 2,
+     "element_id": "p6_e124"
+    },
+    {
+     "reading_order": 125,
+     "page": 6,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 484.86,
+      "r": 551.49,
+      "b": 463.57,
+      "w": 245.35,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.61307,
+      "r": 0.92644,
+      "b": 0.58615
+     },
+     "text": "Kocmi, T. et al. To ship or not to ship: an extensive evaluation of automatic metrics for machine translation. In Proc. Sixth Conference on Machine Translation (eds Barrault, L. et al.) 478-494 (ACL, 2021).",
+     "text_len": 206,
+     "level": 2,
+     "element_id": "p6_e125"
+    },
+    {
+     "reading_order": 126,
+     "page": 6,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 460.81,
+      "r": 556.64,
+      "b": 431.5,
+      "w": 250.51,
+      "h": 29.31,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.58267,
+      "r": 0.9351,
+      "b": 0.5456
+     },
+     "text": "Licht, D. et al. Consistent human evaluation of machine translation across language pairs. In Proceedings of the 15th Biennial Conference of the Association for Machine Translation in the Americas Vol. 1, 309-321 (Association for Machine Translation in the Americas, 2022).",
+     "text_len": 273,
+     "level": 2,
+     "element_id": "p6_e126"
+    },
+    {
+     "reading_order": 127,
+     "page": 6,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 428.75,
+      "r": 553.91,
+      "b": 407.45,
+      "w": 247.77,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.54213,
+      "r": 0.93051,
+      "b": 0.51519
+     },
+     "text": "Agirre, E. et al. SemEval-2012 task 6: a pilot on semantic textual similarity. In Proc. *SEM 2012: The First Joint Conference on Lexical and Computational Semantics Vols 1-2 (eds Aggire, E. et al.) 385-393 (ACL, 2012).",
+     "text_len": 218,
+     "level": 2,
+     "element_id": "p6_e127"
+    },
+    {
+     "reading_order": 128,
+     "page": 6,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 404.7,
+      "r": 540.88,
+      "b": 391.42,
+      "w": 234.75,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.51172,
+      "r": 0.90862,
+      "b": 0.49493
+     },
+     "text": "Kusters, R. et al. Interdisciplinary research in artificial intelligence: Challenges and opportunities. Front. Big Data 3, 577974 (2020).",
+     "text_len": 137,
+     "level": 2,
+     "element_id": "p6_e128"
+    },
+    {
+     "reading_order": 129,
+     "page": 6,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 388.67,
+      "r": 559.81,
+      "b": 367.37,
+      "w": 253.67,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.49145,
+      "r": 0.94042,
+      "b": 0.46452
+     },
+     "text": "Wang, S., Cooper, N., Eby, M. & Jo, E. S. From human-centered to social-centered artificial intelligence: assessing ChatGPT's impact through disruptive events. Preprint at https:// arxiv.org/abs/2306.00227 (2023).",
+     "text_len": 213,
+     "level": 2,
+     "element_id": "p6_e129"
+    },
+    {
+     "reading_order": 130,
+     "page": 6,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 356.6,
+      "r": 539.12,
+      "b": 343.33,
+      "w": 232.98,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.4509,
+      "r": 0.90566,
+      "b": 0.43412
+     },
+     "text": "Publisher's note Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.",
+     "text_len": 135,
+     "level": 1,
+     "element_id": "p6_e130"
+    },
+    {
+     "reading_order": 131,
+     "page": 6,
+     "label": "picture",
+     "bbox": {
+      "l": 305.29,
+      "t": 334.03,
+      "r": 348.83,
+      "b": 318.8,
+      "w": 43.55,
+      "h": 15.23,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51285,
+      "t": 0.42236,
+      "r": 0.586,
+      "b": 0.4031
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p6_e131"
+    },
+    {
+     "reading_order": 132,
+     "page": 6,
+     "label": "text",
+     "bbox": {
+      "l": 350.65,
+      "t": 333.44,
+      "r": 559.1,
+      "b": 312.15,
+      "w": 208.46,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.58905,
+      "t": 0.42161,
+      "r": 0.93923,
+      "b": 0.39469
+     },
+     "text": "Open Access This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate",
+     "text_len": 227,
+     "level": 1,
+     "element_id": "p6_e132"
+    },
+    {
+     "reading_order": 133,
+     "page": 6,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 309.39,
+      "r": 560.03,
+      "b": 256.03,
+      "w": 253.88,
+      "h": 53.36,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.3912,
+      "r": 0.94079,
+      "b": 0.32373
+     },
+     "text": "credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if changes were made. The images or other third party material in this article are included in the article's Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the article's Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit http://creativecommons.org/licenses/by/4.0/.",
+     "text_len": 622,
+     "level": 1,
+     "element_id": "p6_e133"
+    },
+    {
+     "reading_order": 134,
+     "page": 6,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 245.27,
+      "r": 341.15,
+      "b": 240.01,
+      "w": 35.0,
+      "h": 5.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.31013,
+      "r": 0.5731,
+      "b": 0.30348
+     },
+     "text": "© Meta 2024",
+     "text_len": 11,
+     "level": 2,
+     "element_id": "p6_e134"
+    },
+    {
+     "reading_order": 135,
+     "page": 6,
+     "label": "section_header",
+     "bbox": {
+      "l": 306.14,
+      "t": 209.25,
+      "r": 337.38,
+      "b": 204.0,
+      "w": 31.24,
+      "h": 5.25,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.26458,
+      "r": 0.56676,
+      "b": 0.25795
+     },
+     "text": "NLLB Team",
+     "text_len": 9,
+     "level": 1,
+     "element_id": "p6_e135"
+    },
+    {
+     "reading_order": 136,
+     "page": 6,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 193.49,
+      "r": 549.72,
+      "b": 129.12,
+      "w": 243.58,
+      "h": 64.37,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.24466,
+      "r": 0.92347,
+      "b": 0.16326
+     },
+     "text": "Marta R. Costa-jussà 1 ✉ , James Cross 2 , Onur Çelebi 1 , Maha Elbayad 3 , Kenneth Heafield 4 , Kevin Heffernan 4 , Elahe Kalbassi 3 , Janice Lam 3 , Daniel Licht 3 , Jean Maillard 3 , Anna Sun 3 , Skyler Wang 3,5 , Guillaume Wenzek 1 , Al Youngblood 3 , Bapi Akula 3 , Loic Barrault 1 , Gabriel Mejia Gonzalez 3 , Prangthip Hansanti 3 , John Hoffman 3 , Semarley Jarrett 3 , Kaushik Ram Sadagopan 3 , Dirk Rowe 3 , Shannon Spruit 1 , Chau Tran 3 , Pierre Andrews 1 , Necip Fazil Ayan 3 , Shruti Bhosale 3 , Sergey Edunov 3 , Angela Fan 2 , Cynthia Gao 3 , Vedanuj Goswami 3 , Francisco Guzmán 3 , Philipp Koehn 2,6 , Alexandre Mourachko 1 , Christophe Ropers 3 , Safiyyah Saleem 2 , Holger Schwenk 1 & Jeff Wang 3",
+     "text_len": 715,
+     "level": 1,
+     "element_id": "p6_e136"
+    },
+    {
+     "reading_order": 137,
+     "page": 6,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 109.45,
+      "r": 555.91,
+      "b": 79.3,
+      "w": 249.77,
+      "h": 30.15,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.13839,
+      "r": 0.93387,
+      "b": 0.10027
+     },
+     "text": "1 Foundational AI Research (FAIR), Meta, Paris, France. 2 Foundational AI Research (FAIR), Meta, New York, NY, USA. 3 Foundational AI Research (FAIR), Meta, Menlo Park, CA, USA. 4 Foundational AI Research (FAIR), Meta, London, UK. 5 University of California, Berkeley, CA, USA. 6 Johns Hopkins University, Baltimore, MD, USA.",
+     "text_len": 325,
+     "level": 1,
+     "element_id": "p6_e137"
+    }
+   ]
+  },
+  {
+   "page_no": 7,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0007.png",
+   "elements": [
+    {
+     "reading_order": 138,
+     "page": 7,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 743.07,
+      "r": 91.02,
+      "b": 731.96,
+      "w": 51.34,
+      "h": 11.11,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.93956,
+      "r": 0.1529,
+      "b": 0.92552
+     },
+     "text": "Methods",
+     "text_len": 7,
+     "level": 1,
+     "element_id": "p7_e138"
+    },
+    {
+     "reading_order": 139,
+     "page": 7,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 720.99,
+      "r": 58.91,
+      "b": 713.11,
+      "w": 19.23,
+      "h": 7.88,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.91165,
+      "r": 0.09896,
+      "b": 0.90168
+     },
+     "text": "Data",
+     "text_len": 4,
+     "level": 1,
+     "element_id": "p7_e139"
+    },
+    {
+     "reading_order": 140,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 709.06,
+      "r": 294.8,
+      "b": 690.65,
+      "w": 255.12,
+      "h": 18.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.89656,
+      "r": 0.49523,
+      "b": 0.87328
+     },
+     "text": "This section describes the steps taken to design our language identification system and bitext mining protocol.",
+     "text_len": 111,
+     "level": 1,
+     "element_id": "p7_e140"
+    },
+    {
+     "reading_order": 141,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 676.81,
+      "r": 294.95,
+      "b": 583.15,
+      "w": 255.26,
+      "h": 93.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.85578,
+      "r": 0.49548,
+      "b": 0.73736
+     },
+     "text": "Language identification. To train language identification models, we used fasttext 33,51 , which has been widely used for text classification tasks because of its simplicity and speed. We embedded character-level n-grams from the input text and leveraged a multiclass linear classifier on top. The lightweight nature of fasttext enables our LID models to handle web-scale data. Furthermore, a linear model has the benefit of being easily explainable, allowing us to trace any classification error back to its root cause. This is instrumental in addressing common pitfalls that arise when detecting language on web corpora 32 .",
+     "text_len": 626,
+     "level": 1,
+     "element_id": "p7_e141"
+    },
+    {
+     "reading_order": 142,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 39.68,
+      "t": 580.06,
+      "r": 294.97,
+      "b": 475.65,
+      "w": 255.28,
+      "h": 104.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06666,
+      "t": 0.73345,
+      "r": 0.49552,
+      "b": 0.60143
+     },
+     "text": "Classifier design. We experimented with two different designs. First, we used a combination of multiple binary classifiers in which the final decision was obtained by selecting the language with the highest score after applying a threshold. We applied threshold optimization so that when the confidence of a classifier is low, the corresponding language is not considered for the final decision. A sentence was filtered out if none of the classifiers surpassed its threshold. Second, we built a multiclass classifier using softmax over all possible languages. In this case, the threshold optimization is done after the softmax.",
+     "text_len": 627,
+     "level": 1,
+     "element_id": "p7_e142"
+    },
+    {
+     "reading_order": 143,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 472.56,
+      "r": 294.97,
+      "b": 400.4,
+      "w": 255.29,
+      "h": 72.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.59752,
+      "r": 0.49552,
+      "b": 0.50628
+     },
+     "text": "Our results directed us to focus on the second approach, which offers several advantages. First, changing the threshold for one language did not affect the performance of the other (which is not true in the first setting). Second, this approach generalizes better to out-of-domain data, which is our primary use case (Wikipedia → web data). Finally, a single classifier has the added benefit of being computationally simpler, thus streamlining the language identification process.",
+     "text_len": 480,
+     "level": 1,
+     "element_id": "p7_e143"
+    },
+    {
+     "reading_order": 144,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 397.31,
+      "r": 294.95,
+      "b": 260.65,
+      "w": 255.26,
+      "h": 136.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.50237,
+      "r": 0.49548,
+      "b": 0.32958
+     },
+     "text": "Training data and handling massive class imbalance. We used publicly available datasets to train our LID system, partially covering our languages of interest. The public datasets deployed were mostly built from web pages such as CommonCrawl. We then supplemented these with NLLB-Seed data (Supplementary Information B) for any missing languages. However, this supplementation is insufficient in ensuring balance in the raw training data 32,30 . For example, English alone represents 10.1% of our training data, whereas Minangkabau (Latin script) represents only 0.06%. Following ref. 10, we experimented with multiple settings of temperature upsampling for underrepresented languages, in which sentences from a language l representing pl per cent of the data set are sampled proportionally to p l T 1/ . Optimal performance was obtained at 1/T = 0.3 (for more details, see section 5.1 of ref. 34).",
+     "text_len": 897,
+     "level": 1,
+     "element_id": "p7_e144"
+    },
+    {
+     "reading_order": 145,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 257.56,
+      "r": 294.9,
+      "b": 153.15,
+      "w": 255.21,
+      "h": 104.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.32567,
+      "r": 0.4954,
+      "b": 0.19365
+     },
+     "text": "Training parameters. Our best-performing model was trained with softmax loss over two epochs with a learning rate of 0.8 and embeddings with 256 dimensions. We discarded words with less than a thousand occurrences after upsampling and selecting a minimum and maximum character n-gram length of two and five, respectively (which were assigned a slot in buckets of size 1,000,000). (In fasttext, we refer to 'word' when it is separated by spaces. When it is a non-segmenting language, there is only one 'word' for the whole sentence (and we take character n-grams)). All hyperparameters were tuned on FLORES-200 dev (see section 5.1.2 of ref. 34).",
+     "text_len": 645,
+     "level": 1,
+     "element_id": "p7_e145"
+    },
+    {
+     "reading_order": 146,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 150.06,
+      "r": 294.96,
+      "b": 45.65,
+      "w": 255.27,
+      "h": 104.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.18974,
+      "r": 0.4955,
+      "b": 0.05772
+     },
+     "text": "Improving LID with linguistic analysis. Language identification is a challenging task in which numerous failure modes exist, often exacerbated by the gaps between the clean data on which LID models are trained and noisy data on which LID models are applied. In other words, LID models trained in a supervised manner on fluently written sentences may have difficulty identifying grammatically incorrect and incomplete strings extracted from the web. Furthermore, models can easily learn spurious correlations that are not meaningful for the task itself. Given these challenges, we collaborated closely with a team of linguists throughout different stages of LID development to identify proper focus areas, mitigate issues and explore solutions (see section 5.1.3 of ref. 34).",
+     "text_len": 774,
+     "level": 1,
+     "element_id": "p7_e146"
+    },
+    {
+     "reading_order": 147,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 709.06,
+      "r": 561.4,
+      "b": 561.65,
+      "w": 255.25,
+      "h": 147.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.89656,
+      "r": 0.94309,
+      "b": 0.71017
+     },
+     "text": "Bitext mining. The overall approach for bitext mining focused on starting with a massively multilingual sentence encoder teacher model and adapting it to several different low-resource student models. This approach enabled us to add low-resource languages without competing with high-resource languages for capacity. Doing so circumvents the need to retrain the entire model from scratch while maintaining compatibility with the multilingual embedding spaces for subsequent mining. Extended data Fig. 1 summarizes the overall architecture of the teacher-student approach. The teacher, LASER2, is an improved version of the open-source LASER encoder (https:// github.com/facebookresearch/LASER). The original training procedure 36 was adapted to include SentencePiece tokenization (including a vocabulary of 7,000 tokens) and the upsampling of low-resource languages.",
+     "text_len": 866,
+     "level": 1,
+     "element_id": "p7_e147"
+    },
+    {
+     "reading_order": 148,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 558.56,
+      "r": 561.4,
+      "b": 497.15,
+      "w": 255.26,
+      "h": 61.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.70626,
+      "r": 0.94309,
+      "b": 0.62861
+     },
+     "text": "The architecture of the five-layer BiLSTM encoder and the max pooling method to obtain sentence embeddings were left unchanged. The training was then performed on the same 93 languages with public resources obtained from OPUS 52 . See ref. 36 for details on the original LASER training procedure. Training of the students followed the approach described in greater detail in ref. 21, summarized below:",
+     "text_len": 401,
+     "level": 1,
+     "element_id": "p7_e148"
+    },
+    {
+     "reading_order": 149,
+     "page": 7,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 494.06,
+      "r": 555.45,
+      "b": 486.4,
+      "w": 249.31,
+      "h": 7.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.62471,
+      "r": 0.9331,
+      "b": 0.61502
+     },
+     "text": "students specialized in one language or several similar languages;",
+     "text_len": 66,
+     "level": 2,
+     "element_id": "p7_e149"
+    },
+    {
+     "reading_order": 150,
+     "page": 7,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 483.31,
+      "r": 561.23,
+      "b": 454.15,
+      "w": 255.09,
+      "h": 29.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.61111,
+      "r": 0.94281,
+      "b": 0.57424
+     },
+     "text": "students were randomly initialized because we wanted to handle low-resource language for which we did not have a pre-trained language model;",
+     "text_len": 140,
+     "level": 2,
+     "element_id": "p7_e150"
+    },
+    {
+     "reading_order": 151,
+     "page": 7,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 451.06,
+      "r": 561.27,
+      "b": 421.9,
+      "w": 255.12,
+      "h": 29.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.57034,
+      "r": 0.94287,
+      "b": 0.53347
+     },
+     "text": "students may have a dedicated SentencePiece vocabulary different from the teacher to better accommodate scripts and tokens in the student languages;",
+     "text_len": 148,
+     "level": 2,
+     "element_id": "p7_e151"
+    },
+    {
+     "reading_order": 152,
+     "page": 7,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 418.81,
+      "r": 561.27,
+      "b": 400.4,
+      "w": 255.12,
+      "h": 18.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.52956,
+      "r": 0.94287,
+      "b": 0.50628
+     },
+     "text": "as we used cosine distance for bitext mining (Fig. 1), students learnt to minimize the cosine loss with the teacher;",
+     "text_len": 116,
+     "level": 2,
+     "element_id": "p7_e152"
+    },
+    {
+     "reading_order": 153,
+     "page": 7,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 397.31,
+      "r": 561.26,
+      "b": 378.9,
+      "w": 255.11,
+      "h": 18.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.50237,
+      "r": 0.94286,
+      "b": 0.4791
+     },
+     "text": "students can have an MLM loss to leverage student language monolingual data (Fig. 1).",
+     "text_len": 85,
+     "level": 2,
+     "element_id": "p7_e153"
+    },
+    {
+     "reading_order": 154,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 365.06,
+      "r": 561.41,
+      "b": 228.4,
+      "w": 255.27,
+      "h": 136.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.4616,
+      "r": 0.94311,
+      "b": 0.2888
+     },
+     "text": "Training parameters. Our student encoders used a 12-layer transformer with a hidden size of 1,024, four attention heads, and around 250 million parameters. All students were trained with available bitexts in their respective language, complemented by 2 million sentences of English/English and English/Spanish. The motivation behind this approach is to anchor the students to the English embedding space, increasing robustness by including English/Spanish bitexts from CCMatrix and allowing for the joint learning of new languages. This technique is particularly useful when only limited amounts of bitexts are available to train the students. Teacher-student training was performed on 16 GPUs, the ADAM optimizer, a learning rate of 0.0005 and a batch size of 10,000. We trained student encoders for 148 languages and named these models LASER3.",
+     "text_len": 845,
+     "level": 1,
+     "element_id": "p7_e154"
+    },
+    {
+     "reading_order": 155,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 225.31,
+      "r": 561.39,
+      "b": 110.15,
+      "w": 255.25,
+      "h": 115.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.28489,
+      "r": 0.94308,
+      "b": 0.13928
+     },
+     "text": "Proxy metric for new encoders. Mined bitexts were subsequently used to improve translation quality for the languages of NLLB-200. However, mining and NMT training are computationally expensive, and it is intractable to perform this evaluation systematically for many different sentence encoder variants. As an evaluation proxy, we used a mining-based multilingual similarity search error rate, referred to here as xsim. In contrast to cosine accuracy, which aligns embeddings based on the highest cosine score, xsim aligns source and target embeddings based on the highest margin score, which has been shown to be beneficial in mining 53 . The margin-based score is defined as",
+     "text_len": 676,
+     "level": 1,
+     "element_id": "p7_e155"
+    },
+    {
+     "reading_order": 156,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 312.46,
+      "t": 90.45,
+      "r": 560.9,
+      "b": 50.89,
+      "w": 248.45,
+      "h": 39.57,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.5249,
+      "t": 0.11437,
+      "r": 0.94225,
+      "b": 0.06435
+     },
+     "text": "⎛ ⎝⎜⎜ ⎞ ⎠⎟⎟ ∑ ∑ x y x y x z k y v k score( , ) =margin cos( , ), cos( , ) 2 + cos( , ) 2 (1) z NN x v NN y ∈ ( ) ∈ ( ) k k",
+     "text_len": 122,
+     "level": 1,
+     "element_id": "p7_e156"
+    }
+   ]
+  },
+  {
+   "page_no": 8,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0008.png",
+   "elements": [
+    {
+     "reading_order": 157,
+     "page": 8,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 762.41,
+      "r": 85.69,
+      "b": 749.44,
+      "w": 46.0,
+      "h": 12.97,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.96402,
+      "r": 0.14395,
+      "b": 0.94762
+     },
+     "text": "Article",
+     "text_len": 7,
+     "level": 1,
+     "element_id": "p8_e157"
+    },
+    {
+     "reading_order": 158,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 741.31,
+      "r": 294.87,
+      "b": 647.65,
+      "w": 255.19,
+      "h": 93.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.93734,
+      "r": 0.49535,
+      "b": 0.81891
+     },
+     "text": "where x and y are the source and target sentences, and NNk(x) denotes the k nearest neighbours of x in the other language. We set k to 4. All xsim results are calculated on FLORES-200 devtest, using the ratio margin, where margin(a, b) = a/b. Moreover, all scores are calculated for translations into English (that is, xxx → eng). English is encoded by the teacher, and the other language is encoded by the LASER3 student. To facilitate further research using xsim, we also provide this evaluation method as an open-source resource (https://github.com/ facebookresearch/LASER/).",
+     "text_len": 578,
+     "level": 1,
+     "element_id": "p8_e158"
+    },
+    {
+     "reading_order": 159,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 644.56,
+      "r": 294.88,
+      "b": 550.9,
+      "w": 255.19,
+      "h": 93.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.81501,
+      "r": 0.49537,
+      "b": 0.69658
+     },
+     "text": "End-to-end encoder evaluation. Once we had identified the best sentence encoder for each language using the xsim scores, we performed mining, added the mined data to the existing bitexts and trained a bilingual NMT system. Initial experiments indicated that a threshold on the margin of 1.06 seems to be the best compromise between precision and recall for most languages. For these NMT baselines, we do not apply extra filtering on the bitexts and leave this to the training procedure of our massively multilingual NMT system.",
+     "text_len": 527,
+     "level": 1,
+     "element_id": "p8_e159"
+    },
+    {
+     "reading_order": 160,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 547.81,
+      "r": 294.97,
+      "b": 454.15,
+      "w": 255.28,
+      "h": 93.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.69267,
+      "r": 0.49552,
+      "b": 0.57424
+     },
+     "text": "We did not attempt to optimize the architecture and parameters of the bilingual NMT systems to the characteristics of each language pair but used the same architecture for all. Therefore, the reported results should not be interpreted as the best possible ones given the available resources-they are mainly provided to validate the mined bitexts. We used a 12-layer encoder and decoder and trained for 100 epochs. Moreover, we looked for the best performance on the FLORES-200 development set and report detokenized BLEU on the FLORES-200 devtest.",
+     "text_len": 547,
+     "level": 1,
+     "element_id": "p8_e160"
+    },
+    {
+     "reading_order": 161,
+     "page": 8,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 441.49,
+      "r": 80.97,
+      "b": 433.61,
+      "w": 41.28,
+      "h": 7.88,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.55824,
+      "r": 0.13602,
+      "b": 0.54827
+     },
+     "text": "Modelling",
+     "text_len": 9,
+     "level": 1,
+     "element_id": "p8_e161"
+    },
+    {
+     "reading_order": 162,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 429.56,
+      "r": 294.81,
+      "b": 378.9,
+      "w": 255.12,
+      "h": 50.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.54315,
+      "r": 0.49525,
+      "b": 0.4791
+     },
+     "text": "In this section, we first describe the multilingual machine translation task setup, which includes tokenization and base model architecture. Then, we outline how we leveraged conditional computation for massively multilingual machine translation with EOM regulation and our Curriculum Learning (CL) strategy for low-resource languages.",
+     "text_len": 335,
+     "level": 1,
+     "element_id": "p8_e162"
+    },
+    {
+     "reading_order": 163,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 365.06,
+      "r": 294.87,
+      "b": 239.15,
+      "w": 255.19,
+      "h": 125.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.4616,
+      "r": 0.49535,
+      "b": 0.30239
+     },
+     "text": "Task setup. We modelled multilingual NMT as a sequence-to-sequence task, in which we conditioned on an input sequence in the source language with an encoder and generated the output sequence in the expected target language with a decoder 54 . With the source sentence S, source language ℓs, and target language ℓt in hand, we trained to maximize the probability of the translation in the target language T-that is, P(T∣S, ℓs, ℓt). Below, we discuss details of the (1) tokenization of the text sequences in the source and target languages; and (2) model architecture with the input and output designed specifically for multilingual machine translation. For further details on the task setup, such as the amount of training data per language pair, please refer to Supplementary Information F or section 8 of ref. 34.",
+     "text_len": 814,
+     "level": 1,
+     "element_id": "p8_e163"
+    },
+    {
+     "reading_order": 164,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 236.06,
+      "r": 294.88,
+      "b": 120.9,
+      "w": 255.2,
+      "h": 115.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.29848,
+      "r": 0.49537,
+      "b": 0.15287
+     },
+     "text": "Segmentation with SentencePiece. To tokenize our text sequences, we trained a single SentencePiece model (SPM) 55 for all languages. We sampled a total of 100 million sentences from primary bitext data. To ensure low-resource languages are well-represented in the vocabulary, we downsampled high-resource and upsampled low-resource languages with a sampling temperature of five (ref. 10). Notably, vocabulary size is an important hyperparameter in multilingual translation models involving low-resource languages 56-58 . The vocabulary size of our trained SPM model is 256,000. Such a large vocabulary ensures adequate representation across the wide spectrum of languages we support.",
+     "text_len": 683,
+     "level": 1,
+     "element_id": "p8_e164"
+    },
+    {
+     "reading_order": 165,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 117.81,
+      "r": 294.9,
+      "b": 44.68,
+      "w": 255.22,
+      "h": 73.13,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.14896,
+      "r": 0.4954,
+      "b": 0.0565
+     },
+     "text": "Model architecture. Our sequence-to-sequence multilingual machine translation model is based on the transformer encoder-decoder architecture 59 . The encoder transforms the source token sequence into a sequence of token embeddings. Then, the decoder attends to the encoder output and autoregressively generates the target sentence token by token. More precisely, the encoder takes the sequence of tokens W = (w1, …, wS) and the source language ℓs, and produces a sequence of embeddings H = (h1, …, hS), which are then provided to the decoder with the target language ℓt to produce the target tokens V = (v1, …, vT) sequentially. In sum,",
+     "text_len": 636,
+     "level": 1,
+     "element_id": "p8_e165"
+    },
+    {
+     "reading_order": 166,
+     "page": 8,
+     "label": "formula",
+     "bbox": {
+      "l": 389.49,
+      "t": 701.96,
+      "r": 561.05,
+      "b": 692.72,
+      "w": 171.56,
+      "h": 9.23,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.6543,
+      "t": 0.88758,
+      "r": 0.9425,
+      "b": 0.8759
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p8_e166"
+    },
+    {
+     "reading_order": 167,
+     "page": 8,
+     "label": "formula",
+     "bbox": {
+      "l": 341.11,
+      "t": 677.48,
+      "r": 561.05,
+      "b": 668.24,
+      "w": 219.94,
+      "h": 9.23,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.57303,
+      "t": 0.85663,
+      "r": 0.9425,
+      "b": 0.84495
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p8_e167"
+    },
+    {
+     "reading_order": 168,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 655.31,
+      "r": 561.41,
+      "b": 561.65,
+      "w": 255.27,
+      "h": 93.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.8286,
+      "r": 0.94311,
+      "b": 0.71017
+     },
+     "text": "Note that we prefixed the source sequence with the source language, as opposed to the target language, as done in previous work 10,60 . We did so because we prioritized optimizing the zero-shot performance of our model on any pair of 200 languages at a minor cost to supervised performance. Empirically, we find zero-shot performance to be negatively affected when conditioning the encoder on the target language. When the source is conditioned on only the source language, the encoder generalizes better to pairs of source and target languages not encountered during training 1 .",
+     "text_len": 580,
+     "level": 1,
+     "element_id": "p8_e168"
+    },
+    {
+     "reading_order": 169,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 547.75,
+      "r": 561.42,
+      "b": 421.9,
+      "w": 255.28,
+      "h": 125.85,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.6926,
+      "r": 0.94313,
+      "b": 0.53347
+     },
+     "text": "Conditional computation for multilingual machine translation. A massively multilingual translation (MMT) model uses the same shared model capacity to train on several translation directions simultaneously. While doing so can lead to beneficial cross-lingual transfer between related languages, it can also add to the risk of interference between unrelated languages 1,61 . MoE models are a type of conditional computational models 62,63 that activate a subset of model parameters per input, as opposed to dense models that activate all model parameters per input. MoE models unlock marked representational capacity while maintaining the same inference and training efficiencies in terms of FLOPs compared with the core dense architecture.",
+     "text_len": 738,
+     "level": 1,
+     "element_id": "p8_e169"
+    },
+    {
+     "reading_order": 170,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 418.81,
+      "r": 561.35,
+      "b": 346.65,
+      "w": 255.21,
+      "h": 72.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.52956,
+      "r": 0.94301,
+      "b": 0.43832
+     },
+     "text": "However, as we increase the model capacity and the computational cost per update, the propensity for low or very low-resource languages to overfit increases, thus causing performance to deteriorate. In this section, we examine how we can use Sparsely Gated Mixture of Experts models 2-7 to achieve a more optimal trade-off between cross-lingual transfer and interference and improve performance for low-resource languages.",
+     "text_len": 422,
+     "level": 1,
+     "element_id": "p8_e170"
+    },
+    {
+     "reading_order": 171,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 343.56,
+      "r": 561.32,
+      "b": 282.15,
+      "w": 255.18,
+      "h": 61.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.43441,
+      "r": 0.94296,
+      "b": 0.35676
+     },
+     "text": "Sparsely gated mixture of experts. To build our MoE models, we substitute a quarter of the encoder and decoder feed-forward network layers with MoE layers, each with E distinct experts. We followed the Top-k-Gating algorithm in ref. 4 and dispatched each token to at most k = 2 experts. For more details on the training of MoE models, see Supplementary Information E.",
+     "text_len": 367,
+     "level": 1,
+     "element_id": "p8_e171"
+    },
+    {
+     "reading_order": 172,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 279.06,
+      "r": 561.41,
+      "b": 195.18,
+      "w": 255.27,
+      "h": 83.88,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.35285,
+      "r": 0.94311,
+      "b": 0.24679
+     },
+     "text": "Expert output masking. In this proposed regularization strategy, we masked the expert output for a random fraction (peom) of the input tokens. For input tokens with dropped expert outputs, the first and/ or second expert is effectively skipped. As shown in the second panel of Extended data Fig. 2, we masked both experts for the first token (x1 in red), chose not to mask any of the expert outputs for the second token (x2 in blue) and in the final scenario, masked only one expert for the last token (x3 in green).",
+     "text_len": 516,
+     "level": 1,
+     "element_id": "p8_e172"
+    },
+    {
+     "reading_order": 173,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 305.57,
+      "t": 182.31,
+      "r": 561.39,
+      "b": 45.65,
+      "w": 255.82,
+      "h": 136.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51332,
+      "t": 0.23052,
+      "r": 0.94308,
+      "b": 0.05772
+     },
+     "text": "Curriculum learning for MMT. Orthogonal to model-side regularization methods such as dropout, we explored regularizing MMT models by means of CL. We proposed starting training with high-resource pairs first, then introducing low-resource pairs-prone to overfitting-in later phases. To derive the phases of the curriculum, we first trained a vanilla MoE model (without CL), followed by partitioning the translation directions into n bins {b1, …, bn}. If T is the total number of training updates, we introduced each bin bi after T - ki updates. We based when k ( ) i i and what b ( ) i i directions to add at every phase of the step when we observed a language pair starting to overfit. Review the step-based CL algorithm in ref. 64 for more on how the directions are partitioned. See Supplementary Information E.2 for the list of directions added at each stage.",
+     "text_len": 861,
+     "level": 1,
+     "element_id": "p8_e173"
+    }
+   ]
+  },
+  {
+   "page_no": 9,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0009.png",
+   "elements": [
+    {
+     "reading_order": 174,
+     "page": 9,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 731.74,
+      "r": 86.89,
+      "b": 723.86,
+      "w": 47.21,
+      "h": 7.88,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.92524,
+      "r": 0.14597,
+      "b": 0.91528
+     },
+     "text": "Evaluations",
+     "text_len": 11,
+     "level": 1,
+     "element_id": "p9_e174"
+    },
+    {
+     "reading_order": 175,
+     "page": 9,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 719.81,
+      "r": 294.96,
+      "b": 626.15,
+      "w": 255.27,
+      "h": 93.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.91015,
+      "r": 0.4955,
+      "b": 0.79173
+     },
+     "text": "Automatic evaluation. Many automatic translation quality assessment metrics exist, including model-based ones such as COMET 65 and BLEURT 66 . Although model-based metrics have shown better correlation with human judgement in recent metrics shared tasks of the WMT 43 , they require training and are not easily extendable to a large set of low-resource languages. In this work, we rely on BLEU (and a variant of it) and chrF++. Both measures draw on the idea that translation quality can be quantified based on how similar a machine translation output is compared with that produced by a human translator.",
+     "text_len": 605,
+     "level": 1,
+     "element_id": "p9_e175"
+    },
+    {
+     "reading_order": 176,
+     "page": 9,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 624.18,
+      "r": 294.96,
+      "b": 325.15,
+      "w": 255.28,
+      "h": 299.03,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.78924,
+      "r": 0.4955,
+      "b": 0.41113
+     },
+     "text": "BLEU and spBLEU. The BLEU score 44 has been the standard metric for machine translation evaluation since its inception two decades ago. It measures the overlap between machine and human translations by combining the precision of 1-grams to 4-grams with a brevity penalty. The main disadvantage of BLEU is that it is tokenization-dependent. Efforts such as sacrebleu 67 have taken strides towards standardization, supporting the use of community-standard tokenizers under the hood. However, these tokenizers do not extend to many languages. Reference 41 proposes spBLEU, a BLEU metric based on a standardized SentencePiece model (SPM) covering 101 languages, released alongside FLORES-101. In this work, we provide SPM-200 along with FLORES-200 to enable the measurement of spBLEU. (Our analyses demonstrate that there are minor differences between SPM-200 from FLORES-200 and SPM-100 from FLORES-101 when measuring on the FLORES-101 languages. The major advantage of SPM-200 is that it covers 200 languages. More details on SPM-200 are reported in section 8.1.1 of ref. 34). chrF++. The chrF++ score 38 overcomes the limitation of the BLEU score, which requires that a sentence can be broken up into word tokens. However, some languages, such as Chinese or Thai, do not use spaces to separate words, and word segmentation tools may not be readily available. There is also a concern about highly agglutinative languages in which BLEU fails to assign any credit to morphological variants. chrF++ overcomes these weaknesses by basing the overlap calculation on character-level n-grams F-score (n ranging from 1 to 6) and complementing with word unigrams and bi-grams. In this work, we primarily evaluated using chrF++ using the settings from sacrebleu. However, when comparing with other published work, we used BLEU and spBLEU where appropriate.",
+     "text_len": 1843,
+     "level": 1,
+     "element_id": "p9_e176"
+    },
+    {
+     "reading_order": 177,
+     "page": 9,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 311.31,
+      "r": 294.79,
+      "b": 271.4,
+      "w": 255.11,
+      "h": 39.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.39363,
+      "r": 0.49522,
+      "b": 0.34317
+     },
+     "text": "Human evaluation methodology. When building machine translation systems for thousands of different language pairs, a core question is which pairs reach certain levels of quality. Therefore, we needed meaningful scores that are comparable across language pairs.",
+     "text_len": 260,
+     "level": 1,
+     "element_id": "p9_e177"
+    },
+    {
+     "reading_order": 178,
+     "page": 9,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 268.31,
+      "r": 294.91,
+      "b": 153.15,
+      "w": 255.23,
+      "h": 115.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.33926,
+      "r": 0.49542,
+      "b": 0.19365
+     },
+     "text": "XSTS evaluation protocol. We adapted the recently proposed XSTS methodology 48 . In short, XSTS is a human evaluation protocol focusing on meaning preservation above fluency. See details on this protocol in Supplementary Information F. For low-resource languages, translations are usually of poorer quality, and so we focused more on usable (that is, meaning-preserving) translations, even if they are not fully fluent. Compared with Direct Assessment 68 with a 5-point scale (the original direct assessment uses a 100-point scale), it is found that XSTS yields higher inter-annotator agreement 47 . XSTS rates each source sentence and its machine translation on a 5-point scale, in which 1 is the lowest and 5 is the highest.",
+     "text_len": 726,
+     "level": 1,
+     "element_id": "p9_e178"
+    },
+    {
+     "reading_order": 179,
+     "page": 9,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 150.06,
+      "r": 294.97,
+      "b": 45.65,
+      "w": 255.28,
+      "h": 104.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.18974,
+      "r": 0.49552,
+      "b": 0.05772
+     },
+     "text": "Calibration set. To enable meaningful scores comparable across language pairs, we asked each evaluator to provide assessments using the XSTS scale on precisely the same set of sentence pairs. This aims to identify annotators who have a systematic tendency to be more harsh or generous in their scoring and correct for this effect. The calibration set consists of the machine translation output paired with the reference translation only in English. Based on how evaluators used the XSTS scale on this calibration set, we adjusted their raw scores on the actual evaluation task to ensure consistency across evaluators. Although this monolingual calibration task does not precisely mimic the bilingual XSTS task, it is a reasonable first approximation and has been shown to increase the correlation between human and automatic metrics primarily by reducing one source of 'noise' in the human evaluationsthe lack of score calibration between annotators.",
+     "text_len": 950,
+     "level": 1,
+     "element_id": "p9_e179"
+    },
+    {
+     "reading_order": 180,
+     "page": 9,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 698.31,
+      "r": 561.34,
+      "b": 625.18,
+      "w": 255.2,
+      "h": 73.13,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.88297,
+      "r": 0.94299,
+      "b": 0.7905
+     },
+     "text": "Obtaining aggregated human quality metrics from multiple studies. To obtain an aggregate human quality metric for each language direction in an evaluation study, we take the majority XSTS score (that is, mean-median score) for each sentence and average these majority scores over all evaluated sentences. In a given study, the aggregate human evaluation score for any translation direction ls → lt is",
+     "text_len": 400,
+     "level": 1,
+     "element_id": "p9_e180"
+    },
+    {
+     "reading_order": 181,
+     "page": 9,
+     "label": "formula",
+     "bbox": {
+      "l": 322.24,
+      "t": 616.53,
+      "r": 560.91,
+      "b": 592.68,
+      "w": 238.67,
+      "h": 23.85,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.54133,
+      "t": 0.77956,
+      "r": 0.94227,
+      "b": 0.74941
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p9_e181"
+    },
+    {
+     "reading_order": 182,
+     "page": 9,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 580.06,
+      "r": 561.29,
+      "b": 496.18,
+      "w": 255.15,
+      "h": 83.88,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.73345,
+      "r": 0.94291,
+      "b": 0.62739
+     },
+     "text": "where ls and lt denote the source language and the target language, respectively; X S T ( , ) l l i → , s t denotes the XSTS score of the ith evaluator who evaluates sentences in a given translation direction ls → lt for a source sentence S and a target sentence T; M l l → s t denotes the total number of evaluators who evaluate the (source, translation) sentence pair (S, T) for translation direction ls → lt; T ∣ S T k N = {( , ) 1≤ ≤ } l l l l k l l k l l → → , → , → s t s t s t s t is the set of Nl l → s t (source, translation) sentence pairs being evaluated for translation direction ls → lt.",
+     "text_len": 600,
+     "level": 1,
+     "element_id": "p9_e182"
+    },
+    {
+     "reading_order": 183,
+     "page": 9,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 494.06,
+      "r": 562.18,
+      "b": 432.65,
+      "w": 256.03,
+      "h": 61.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.62471,
+      "r": 0.9444,
+      "b": 0.54706
+     },
+     "text": "Every evaluator in a given study s is also asked to provide ratings for all or parts of a calibration set-∣ S T k K = {( , ) 1≤ ≤ } s s k s k s , , C . Ss,k denotes the kth source sentence in the calibration set for an evaluation study; s, Ts,k denotes the translated sentence corresponding to Ss,k; and ∣ ∣ K = s s C is the number of sentence pairs in the calibration set for an evaluation study.",
+     "text_len": 397,
+     "level": 1,
+     "element_id": "p9_e183"
+    },
+    {
+     "reading_order": 184,
+     "page": 9,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 429.56,
+      "r": 561.16,
+      "b": 411.15,
+      "w": 255.02,
+      "h": 18.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.54315,
+      "r": 0.94269,
+      "b": 0.51987
+     },
+     "text": "For each language direction evaluated in a study, we obtained the majority score on the calibration set as follows:",
+     "text_len": 115,
+     "level": 1,
+     "element_id": "p9_e184"
+    },
+    {
+     "reading_order": 185,
+     "page": 9,
+     "label": "formula",
+     "bbox": {
+      "l": 335.64,
+      "t": 401.53,
+      "r": 561.05,
+      "b": 378.66,
+      "w": 225.41,
+      "h": 22.87,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.56384,
+      "t": 0.50771,
+      "r": 0.9425,
+      "b": 0.47879
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p9_e185"
+    },
+    {
+     "reading_order": 186,
+     "page": 9,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 366.7,
+      "r": 561.25,
+      "b": 334.28,
+      "w": 255.11,
+      "h": 32.42,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.46367,
+      "r": 0.94284,
+      "b": 0.42268
+     },
+     "text": "where X S T ( , ) l i s , ( ) denotes the XSTS score provided by the ith evaluator, for the language direction ls → lt, in study s, for a given source sentence S and a translated sentence T, in the calibration set s C of the study.",
+     "text_len": 231,
+     "level": 1,
+     "element_id": "p9_e186"
+    },
+    {
+     "reading_order": 187,
+     "page": 9,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 332.81,
+      "r": 561.37,
+      "b": 260.65,
+      "w": 255.23,
+      "h": 72.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.42082,
+      "r": 0.94304,
+      "b": 0.32958
+     },
+     "text": "To obtain aggregated calibrated XSTS scores on the language direction level, we explored several different calibration methodologies. None of the calibration methods we investigated showed a marked difference in correlation with automated scores, and all calibration methodologies we explored provided superior correlation compared with uncalibrated XSTS scores. For more details on these calibration methodologies, see section 7.2 of ref. 34.",
+     "text_len": 443,
+     "level": 1,
+     "element_id": "p9_e187"
+    },
+    {
+     "reading_order": 188,
+     "page": 9,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 246.81,
+      "r": 561.26,
+      "b": 206.9,
+      "w": 255.11,
+      "h": 39.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.31208,
+      "r": 0.94286,
+      "b": 0.26161
+     },
+     "text": "Added toxicity detection for 200 languages. To enable toxicity det­ ection at scale, we used a detector based on word lists. In this section, we provide more details about our toxicity definition and describe the detector (ETOX) and associated word lists.",
+     "text_len": 255,
+     "level": 1,
+     "element_id": "p9_e188"
+    },
+    {
+     "reading_order": 189,
+     "page": 9,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 203.81,
+      "r": 561.42,
+      "b": 99.4,
+      "w": 255.28,
+      "h": 104.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.2577,
+      "r": 0.94313,
+      "b": 0.12569
+     },
+     "text": "Toxic content. Owing to the subjective nature of toxicity, definitions of toxic language can vary. We included items that are commonly referred to as vulgar or profane language. (Note that vulgar or profane language is not always necessarily toxic. Some common slang, for instance, may be considered vulgar but is not necessarily toxic). Moreover, we also included items associated with depictions of pornographic content or sexual acts, some frequently used hate speech expressions and some expressions tied to bullying. We also included items, vulgar or not, referring to body parts that are commonly associated with sexual practices.",
+     "text_len": 636,
+     "level": 1,
+     "element_id": "p9_e189"
+    },
+    {
+     "reading_order": 190,
+     "page": 9,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 96.31,
+      "r": 561.37,
+      "b": 45.65,
+      "w": 255.23,
+      "h": 50.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.12178,
+      "r": 0.94304,
+      "b": 0.05772
+     },
+     "text": "The ETOX detector. We started with the assumption that generalpurpose machine translation systems should remain faithful to the source content and not add any toxic elements during the translation process. We define toxic elements as word tokens or short phrases present in our lists. ETOX identifies added toxicity using the following two",
+     "text_len": 339,
+     "level": 1,
+     "element_id": "p9_e190"
+    }
+   ]
+  },
+  {
+   "page_no": 10,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0010.png",
+   "elements": [
+    {
+     "reading_order": 191,
+     "page": 10,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 762.41,
+      "r": 85.69,
+      "b": 749.44,
+      "w": 46.0,
+      "h": 12.97,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.96402,
+      "r": 0.14395,
+      "b": 0.94762
+     },
+     "text": "Article",
+     "text_len": 7,
+     "level": 1,
+     "element_id": "p10_e191"
+    },
+    {
+     "reading_order": 192,
+     "page": 10,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 741.31,
+      "r": 294.95,
+      "b": 615.4,
+      "w": 255.26,
+      "h": 125.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.93734,
+      "r": 0.49548,
+      "b": 0.77813
+     },
+     "text": "criteria: number of toxic items and matched or non-matched toxicity. A toxic item is considered detected if it is present in a line and surroun­ ded by spaces or the start or end of a line. ETOX tracks the number of unique toxic items found in a line but does not count a phrase again if it has multiple occurrences. Matched toxicity indicates that the number of toxic items is the same in both the source and the translated content (that is, no added toxicity). Added toxicity is an instance of non-matched toxicity in which more toxic items are found in the translation output than in the source. For non-segmenting languages or some languages that use complex diacritics, space tokenization is insufficient to distinguish words from one another. In those cases, we used SentencePiece tokenization of both the sentence and toxicity word list.",
+     "text_len": 844,
+     "level": 1,
+     "element_id": "p10_e192"
+    },
+    {
+     "reading_order": 193,
+     "page": 10,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 612.31,
+      "r": 294.84,
+      "b": 540.15,
+      "w": 255.16,
+      "h": 72.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.77423,
+      "r": 0.4953,
+      "b": 0.68299
+     },
+     "text": "Toxicity-200 lists. Lists are based on professional translations from English, which were then heuristically adapted by linguists to better serve the target language. As toxicity is culturally sensitive, attempting to find equivalents in a largely multilingual setting constitutes a challenge when starting from one source language. To address this issue, translators were allowed to forgo translating some of the source items and add more culturally relevant items.",
+     "text_len": 466,
+     "level": 1,
+     "element_id": "p10_e193"
+    },
+    {
+     "reading_order": 194,
+     "page": 10,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 537.06,
+      "r": 294.92,
+      "b": 464.9,
+      "w": 255.23,
+      "h": 72.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.67908,
+      "r": 0.49543,
+      "b": 0.58784
+     },
+     "text": "In the initial release of the Toxicity-200 lists, the average number of items in a toxicity detection list was 271 entries, whereas the median number of entries was 143. The latter may be a better measure of central tendency than the mean average, given that languages with a rich inflectional morphology constitute extreme outliers (for example, the Czech list had 2,534 entries and the Polish list 2,004). The shortest list had 36 entries, and the longest 6,078.",
+     "text_len": 464,
+     "level": 1,
+     "element_id": "p10_e194"
+    },
+    {
+     "reading_order": 195,
+     "page": 10,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 443.39,
+      "r": 116.88,
+      "b": 434.37,
+      "w": 77.19,
+      "h": 9.02,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.56064,
+      "r": 0.19635,
+      "b": 0.54923
+     },
+     "text": "Data availability",
+     "text_len": 17,
+     "level": 1,
+     "element_id": "p10_e195"
+    },
+    {
+     "reading_order": 196,
+     "page": 10,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 429.56,
+      "r": 294.95,
+      "b": 292.9,
+      "w": 255.26,
+      "h": 136.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.54315,
+      "r": 0.49548,
+      "b": 0.37035
+     },
+     "text": "All data generated and described in the Article and its Supplementary Information are available at GitHub (https://github.com/facebookresearch/fairseq/tree/nllb) 69 as follows. The FLORES-200 dataset contains human-translated evaluation data in 204 languages. The NLLB-Seed database contains human-translation seed training data in 39 languages (Supplementary Information I). The NLLB-MD database contains human-translated seed data in different domains in six languages to assess generalization (Supplementary Information J). The Toxicity-200 database contains wordlists to detect toxicity in 200 languages. Mined bitext database contains publicly available web data for 148 English-centric and 1,465 non-English-centric language pairs. Publicly available data used to train NLLB models with references to download the data are listed in Supplementary Table 2.",
+     "text_len": 861,
+     "level": 1,
+     "element_id": "p10_e196"
+    },
+    {
+     "reading_order": 197,
+     "page": 10,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 271.39,
+      "r": 118.58,
+      "b": 262.37,
+      "w": 78.9,
+      "h": 9.02,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.34316,
+      "r": 0.1992,
+      "b": 0.33175
+     },
+     "text": "Code availability",
+     "text_len": 17,
+     "level": 1,
+     "element_id": "p10_e197"
+    },
+    {
+     "reading_order": 198,
+     "page": 10,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 257.56,
+      "r": 294.92,
+      "b": 131.65,
+      "w": 255.23,
+      "h": 125.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.32567,
+      "r": 0.49543,
+      "b": 0.16646
+     },
+     "text": "To make our work available to the community, we provide the following models and supporting code as resources freely available for non-commercial use, available at GitHub (https://github.com/ facebookresearch/fairseq/tree/nllb) 69 as follows. The translation models cover 200 languages; the NLLB models come in multiple sizes (54.5B MoE, 3.3B and 1.3B Dense, and 1.3B and 600M distilled). The language identification models contain more than 200 languages. LASER3 comprises sentence encoders for identifying aligned bitext for 148 languages. Stopes consists of a data-mining library that can be used to process and clean monolingual data, followed by the creation of aligned bitext. Scripts to recreate our training data and training and generation scripts to reproduce our models are also included.",
+     "text_len": 799,
+     "level": 1,
+     "element_id": "p10_e198"
+    },
+    {
+     "reading_order": 199,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.69,
+      "t": 118.87,
+      "r": 281.87,
+      "b": 105.6,
+      "w": 242.18,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.1503,
+      "r": 0.47351,
+      "b": 0.13352
+     },
+     "text": "Bojanowski, P., Grave, E., Joulin, A. & Mikolov, T. Enriching word vectors with subword onformation. Trans. Assoc. Comput. Linguist. 5, 135-146 (2017).",
+     "text_len": 151,
+     "level": 2,
+     "element_id": "p10_e199"
+    },
+    {
+     "reading_order": 200,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.68,
+      "t": 102.84,
+      "r": 283.33,
+      "b": 81.55,
+      "w": 243.64,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06666,
+      "t": 0.13003,
+      "r": 0.47596,
+      "b": 0.10311
+     },
+     "text": "Tiedemann, J. Parallel data, tools and interfaces in OPUS. In Proc. Eighth International Conference on Language Resources and Evaluation (eds Calzolari, N. et al.) 2214-2218 (ACL, 2012).",
+     "text_len": 186,
+     "level": 2,
+     "element_id": "p10_e200"
+    },
+    {
+     "reading_order": 201,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.68,
+      "t": 78.79,
+      "r": 294.64,
+      "b": 57.5,
+      "w": 254.96,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06666,
+      "t": 0.09962,
+      "r": 0.49496,
+      "b": 0.07271
+     },
+     "text": "Artetxe, M. & Schwenk, H. Margin-based parallel corpus mining with multilingual sentence embeddings. In Proc. 57th Annual Meeting of the Association for Computational Linguistics (eds Korhonen, A.) 3197-3203 (ACL, 2019).",
+     "text_len": 220,
+     "level": 2,
+     "element_id": "p10_e201"
+    },
+    {
+     "reading_order": 202,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 741.3,
+      "r": 561.09,
+      "b": 720.0,
+      "w": 254.95,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.93733,
+      "r": 0.94257,
+      "b": 0.91039
+     },
+     "text": "Bahdanau, D., Cho, K. H. & Bengio, Y. Neural machine translation by jointly learning to align and translate. In Proc. of the 3rd International Conference on Learning Representations (ICLR, 2015).",
+     "text_len": 195,
+     "level": 2,
+     "element_id": "p10_e202"
+    },
+    {
+     "reading_order": 203,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 717.25,
+      "r": 557.9,
+      "b": 687.94,
+      "w": 251.76,
+      "h": 29.31,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.90692,
+      "r": 0.93721,
+      "b": 0.86986
+     },
+     "text": "Kudo, T. & Richardson, J. SentencePiece: A simple and language independent subword tokenizer and detokenizer for Neural Text Processing. In Proc. 2018 Conference on Empirical Methods in Natural Language Processing, EMNLP 2018 (eds Blanco, E. & Lu, W.) 66-71 (ACL, 2018); https://doi.org/10.18653/v1/d18-2012.",
+     "text_len": 308,
+     "level": 2,
+     "element_id": "p10_e203"
+    },
+    {
+     "reading_order": 204,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.13,
+      "t": 685.18,
+      "r": 557.72,
+      "b": 655.87,
+      "w": 251.59,
+      "h": 29.31,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51427,
+      "t": 0.86637,
+      "r": 0.93691,
+      "b": 0.82931
+     },
+     "text": "Gu, J., Hassan, H., Devlin, J. & Li, V. O. Universal Neural Machine Translation for Extremely Low Resource Languages. In Proc. 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies Vol. 1 (eds Walker, M. et al.) 344-354 (ACL, 2018); https://aclanthology.org/N18-1032.",
+     "text_len": 337,
+     "level": 2,
+     "element_id": "p10_e204"
+    },
+    {
+     "reading_order": 205,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.13,
+      "t": 653.12,
+      "r": 553.42,
+      "b": 639.84,
+      "w": 247.29,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51427,
+      "t": 0.82583,
+      "r": 0.92969,
+      "b": 0.80904
+     },
+     "text": "Wang, X., Pham, H., Arthur, P. & Neubig, G. Multilingual neural machine translation with soft decoupled encoding. Preprint at https://arxiv.org/abs/1902.03499 (2019).",
+     "text_len": 166,
+     "level": 2,
+     "element_id": "p10_e205"
+    },
+    {
+     "reading_order": 206,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.13,
+      "t": 637.09,
+      "r": 556.16,
+      "b": 623.81,
+      "w": 250.03,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51427,
+      "t": 0.80556,
+      "r": 0.93429,
+      "b": 0.78877
+     },
+     "text": "Rajab, J. Effect of tokenisation strategies for low-resourced Southern African languages. In 3rd Workshop on African Natural Language Processing (ICLR, 2022).",
+     "text_len": 158,
+     "level": 2,
+     "element_id": "p10_e206"
+    },
+    {
+     "reading_order": 207,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.13,
+      "t": 621.06,
+      "r": 559.13,
+      "b": 607.78,
+      "w": 253.0,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51427,
+      "t": 0.78529,
+      "r": 0.93928,
+      "b": 0.7685
+     },
+     "text": "Vaswani, A. et al. Attention is all you need. In Proc. 31st Conference on Neural Information Processing Systems 5998-6008 (NIPS, 2017).",
+     "text_len": 135,
+     "level": 2,
+     "element_id": "p10_e207"
+    },
+    {
+     "reading_order": 208,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.13,
+      "t": 605.02,
+      "r": 546.88,
+      "b": 591.75,
+      "w": 240.74,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51427,
+      "t": 0.76501,
+      "r": 0.9187,
+      "b": 0.74823
+     },
+     "text": "Johnson, M. et al. Google's multilingual neural machine translation system: enabling zero-shot translation. Trans. Assoc. Comput. Linguist. 5, 339-351 (2017).",
+     "text_len": 158,
+     "level": 2,
+     "element_id": "p10_e208"
+    },
+    {
+     "reading_order": 209,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.13,
+      "t": 588.99,
+      "r": 561.24,
+      "b": 567.7,
+      "w": 255.1,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51427,
+      "t": 0.74474,
+      "r": 0.94282,
+      "b": 0.71782
+     },
+     "text": "Conneau, A. et al. Unsupervised cross-lingual representation learning at scale. In Proc. 58th Annual Meeting of the Association for Computational Linguistics (eds Jurafsky, D. et al.) 8440-8451 (ACL, 2020).",
+     "text_len": 206,
+     "level": 2,
+     "element_id": "p10_e209"
+    },
+    {
+     "reading_order": 210,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.13,
+      "t": 564.94,
+      "r": 548.98,
+      "b": 543.65,
+      "w": 242.84,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51427,
+      "t": 0.71433,
+      "r": 0.92223,
+      "b": 0.68741
+     },
+     "text": "Bengio, Y., Léonard, N. & Courville, A. C. Estimating or propagating gradients through stochastic neurons for conditional computation. Preprint at http://arxiv.org/abs/ 1308.3432 (2013).",
+     "text_len": 186,
+     "level": 2,
+     "element_id": "p10_e210"
+    },
+    {
+     "reading_order": 211,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.13,
+      "t": 540.9,
+      "r": 558.25,
+      "b": 527.62,
+      "w": 252.12,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51427,
+      "t": 0.68393,
+      "r": 0.9378,
+      "b": 0.66714
+     },
+     "text": "Almahairi, A. et al. Dynamic capacity networks. In Proc. 33rd International Conference on International Conference on Machine Learning Vol. 48, 2091-2100 (PMLR, 2016).",
+     "text_len": 167,
+     "level": 2,
+     "element_id": "p10_e211"
+    },
+    {
+     "reading_order": 212,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.13,
+      "t": 524.86,
+      "r": 546.02,
+      "b": 495.55,
+      "w": 239.89,
+      "h": 29.31,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51427,
+      "t": 0.66365,
+      "r": 0.91726,
+      "b": 0.62659
+     },
+     "text": "Elbayad, M., Sun, A. & Bhosale, S. Fixing MoE over-fitting on low-resource languages in multilingual machine translation. In Findings of the Association for Computational Linguistics: ACL 2023 (eds Rogers, A. et al.) 14237-14253 (ACL, 2023); https:// aclanthology.org/2023.findings-acl.897.",
+     "text_len": 290,
+     "level": 2,
+     "element_id": "p10_e212"
+    },
+    {
+     "reading_order": 213,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.13,
+      "t": 492.8,
+      "r": 560.5,
+      "b": 471.51,
+      "w": 254.37,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51427,
+      "t": 0.62311,
+      "r": 0.94158,
+      "b": 0.59619
+     },
+     "text": "Rei, R., Stewart, C., Farinha, A. C. & Lavie, A. COMET: a neural framework for MT evaluation. In Proc. 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP) (eds Webber, B. et al.) 2685-2702 (ACL, 2020).",
+     "text_len": 225,
+     "level": 2,
+     "element_id": "p10_e213"
+    },
+    {
+     "reading_order": 214,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.13,
+      "t": 468.75,
+      "r": 561.23,
+      "b": 447.46,
+      "w": 255.1,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51427,
+      "t": 0.5927,
+      "r": 0.94281,
+      "b": 0.56578
+     },
+     "text": "Sellam, T., Das, D. & Parikh, A. BLEURT: learning robust metrics for text generation. In Proc. 58th Annual Meeting of the Association for Computational Linguistics (eds Jurafsky, D. et al.) 7881-7892 (ACL, 2020).",
+     "text_len": 212,
+     "level": 2,
+     "element_id": "p10_e214"
+    },
+    {
+     "reading_order": 215,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.13,
+      "t": 444.7,
+      "r": 550.98,
+      "b": 423.41,
+      "w": 244.84,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51427,
+      "t": 0.5623,
+      "r": 0.92559,
+      "b": 0.53538
+     },
+     "text": "Post, M. A Call for Clarity in Reporting BLEU Scores. In Proc. Third Conference on Machine Translation: Research Papers (eds Bojar, O. et al.) 186-191 (ACL, 2018); https:// aclanthology.org/W18-6319.",
+     "text_len": 199,
+     "level": 2,
+     "element_id": "p10_e215"
+    },
+    {
+     "reading_order": 216,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.13,
+      "t": 420.66,
+      "r": 555.57,
+      "b": 399.36,
+      "w": 249.44,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51427,
+      "t": 0.5319,
+      "r": 0.9333,
+      "b": 0.50497
+     },
+     "text": "Graham, Y., Baldwin, T., Moffat, A. & Zobel, J. Continuous measurement scales in human evaluation of machine translation. In Proc. 7th Linguistic Annotation Workshop and Interoperability with Discourse 33-41 (eds Graham, Y. et al.) (ACL, 2013).",
+     "text_len": 244,
+     "level": 2,
+     "element_id": "p10_e216"
+    },
+    {
+     "reading_order": 217,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.13,
+      "t": 396.61,
+      "r": 560.04,
+      "b": 383.33,
+      "w": 253.91,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51427,
+      "t": 0.50149,
+      "r": 0.94081,
+      "b": 0.4847
+     },
+     "text": "NLLB Team et al. No Language Left Behind: scaling human-centered machine translation. GitHub https://github.com/facebookresearch/fairseq/tree/nllb (2022).",
+     "text_len": 154,
+     "level": 2,
+     "element_id": "p10_e217"
+    },
+    {
+     "reading_order": 218,
+     "page": 10,
+     "label": "text",
+     "bbox": {
+      "l": 306.13,
+      "t": 367.57,
+      "r": 559.5,
+      "b": 225.98,
+      "w": 253.37,
+      "h": 141.59,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51427,
+      "t": 0.46477,
+      "r": 0.9399,
+      "b": 0.28574
+     },
+     "text": "Acknowledgements We thank the following interns for their contributions to the project: C. Baziotis, D. Dua, A. Guo, O. Ignat, A. Kamran, T. Mohiuddin, A. N. Rubungo, S. Sun, S. Tan, H. Xu, S. Wu and Y. Zhang. We are grateful to all the Wikimedia Foundation staff and volunteers who worked with us and provided helpful feedback on our project. We thank V. Chaudhary for help with the data pipeline; E. Grave for his help in scaling fasttext to all FLORES-200 languages; M. Diab for her work on XSTS; L. Specia for her feedback on toxicity and XSTS; J. Ferrando and C. Escolano for their help in using the ALTI+ method; G. Chang, C.-J. Wu and R. Raghavendra for helping us to compute the CO2 cost of training our models; A. Sridhar for helping with FSDP; S. Jeschonek, G. Anantharaman, D. Sarina, J. Colombo, S. Krishnan, D. Kannappan, K. Saladi, V. Pai, A. Yajurvedi and S. Sengupta for their assistance with training infrastructure; K. Johnson for his help with UXR studies and model evaluation; B. O'Horo and J. Kao for their generative insights and guidance; P. Fung, N. Usunier, S. Riedel, S. Sengupta and E. Dinan for their helpful feedback on the paper. We would also like to thank A. Bordes, M. Zannoli and C. Moghbel for their overall support of this project. Finally, we are indebted to the translators, reviewers, human evaluators, linguists, as well as the translation and quality assurance agencies we partnered with, for helping to create FLORES-200, NLLB-Seed, NLLB-MD and Toxicity-200; performing human evaluations; and teaching us about their native languages.",
+     "text_len": 1576,
+     "level": 1,
+     "element_id": "p10_e218"
+    },
+    {
+     "reading_order": 219,
+     "page": 10,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 215.23,
+      "r": 561.05,
+      "b": 145.84,
+      "w": 254.9,
+      "h": 69.39,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.27214,
+      "r": 0.9425,
+      "b": 0.18441
+     },
+     "text": "Author contributions B.A., P.A., O.Ç., K. Heafield, K. Heffernan, S.J., H.S. and G.W. contributed to the data workstream of the project, which includes developing tools to facilitate data mining, cleaning and consolidation. L.B., S.B., J.C., M.E., V.G., J.M., K.R.S., A.S. and C.T. conducted research and experiments that gave rise to the models in this work. M.R.C., C.G., J.H., E.K., P.K., D.L., D.R., S.Spruit., S.W. and A.Y. implemented automatic and human evaluations of NLLB, including but not limited to quality, bias and toxicity. G.M.G., P.H., J.L. and C.R. performed all linguistics work in this project. N.F.A., S.E., A.F., F.G., A.M., S.S. and J.W. provided crucial technical and organizational leadership to help materialize this overall project. M.R.C., C.R., M.E. and S.W. prepared the paper for publication.",
+     "text_len": 823,
+     "level": 1,
+     "element_id": "p10_e219"
+    },
+    {
+     "reading_order": 220,
+     "page": 10,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 135.08,
+      "r": 484.04,
+      "b": 129.82,
+      "w": 177.89,
+      "h": 5.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.1708,
+      "r": 0.81314,
+      "b": 0.16415
+     },
+     "text": "Competing interests The authors declare no competing interests.",
+     "text_len": 63,
+     "level": 1,
+     "element_id": "p10_e220"
+    },
+    {
+     "reading_order": 221,
+     "page": 10,
+     "label": "section_header",
+     "bbox": {
+      "l": 306.14,
+      "t": 119.06,
+      "r": 369.54,
+      "b": 113.81,
+      "w": 63.4,
+      "h": 5.25,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.15054,
+      "r": 0.62079,
+      "b": 0.14391
+     },
+     "text": "Additional information",
+     "text_len": 22,
+     "level": 1,
+     "element_id": "p10_e221"
+    },
+    {
+     "reading_order": 222,
+     "page": 10,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 111.05,
+      "r": 556.86,
+      "b": 97.77,
+      "w": 250.72,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.14042,
+      "r": 0.93547,
+      "b": 0.12362
+     },
+     "text": "Supplementary information The online version contains supplementary material available at https://doi.org/10.1038/s41586-024-07335-x.",
+     "text_len": 133,
+     "level": 1,
+     "element_id": "p10_e222"
+    },
+    {
+     "reading_order": 223,
+     "page": 10,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 95.01,
+      "r": 556.85,
+      "b": 65.7,
+      "w": 250.7,
+      "h": 29.31,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.12013,
+      "r": 0.93545,
+      "b": 0.08307
+     },
+     "text": "Correspondence and requests for materials should be addressed to Marta R. Costa-jussà. Peer review information Nature thanks David Adelani, Sunipa Dev and the other, anonymous, reviewer(s) for their contribution to the peer review of this work. Peer reviewer reports are available.",
+     "text_len": 281,
+     "level": 1,
+     "element_id": "p10_e223"
+    },
+    {
+     "reading_order": 224,
+     "page": 10,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 62.95,
+      "r": 536.99,
+      "b": 57.69,
+      "w": 230.84,
+      "h": 5.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.0796,
+      "r": 0.90209,
+      "b": 0.07295
+     },
+     "text": "Reprints and permissions information is available at http://www.nature.com/reprints.",
+     "text_len": 84,
+     "level": 1,
+     "element_id": "p10_e224"
+    }
+   ]
+  },
+  {
+   "page_no": 11,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0011.png",
+   "elements": [
+    {
+     "reading_order": 225,
+     "page": 11,
+     "label": "picture",
+     "bbox": {
+      "l": 32.17,
+      "t": 744.35,
+      "r": 556.65,
+      "b": 528.14,
+      "w": 524.48,
+      "h": 216.21,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.05404,
+      "t": 0.94118,
+      "r": 0.93511,
+      "b": 0.6678
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p11_e225"
+    },
+    {
+     "reading_order": 226,
+     "page": 11,
+     "label": "caption",
+     "bbox": {
+      "l": 39.69,
+      "t": 522.07,
+      "r": 371.44,
+      "b": 514.62,
+      "w": 331.75,
+      "h": 7.45,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.66012,
+      "r": 0.62398,
+      "b": 0.6507
+     },
+     "text": "Extended Data Fig. 1 | Architecture of the LASER3 teacher-student approach. See 21 for more details.",
+     "text_len": 100,
+     "level": 2,
+     "element_id": "p11_e226"
+    }
+   ]
+  },
+  {
+   "page_no": 12,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0012.png",
+   "elements": [
+    {
+     "reading_order": 227,
+     "page": 12,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 762.41,
+      "r": 85.69,
+      "b": 749.44,
+      "w": 46.0,
+      "h": 12.97,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.96402,
+      "r": 0.14395,
+      "b": 0.94762
+     },
+     "text": "Article",
+     "text_len": 7,
+     "level": 1,
+     "element_id": "p12_e227"
+    },
+    {
+     "reading_order": 228,
+     "page": 12,
+     "label": "picture",
+     "bbox": {
+      "l": 36.72,
+      "t": 746.63,
+      "r": 595.28,
+      "b": 612.08,
+      "w": 558.56,
+      "h": 134.55,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06169,
+      "t": 0.94407,
+      "r": 1.00001,
+      "b": 0.77394
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p12_e228"
+    },
+    {
+     "reading_order": 229,
+     "page": 12,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 600.55,
+      "r": 536.49,
+      "b": 584.05,
+      "w": 496.81,
+      "h": 16.5,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.75936,
+      "r": 0.90125,
+      "b": 0.73849
+     },
+     "text": "Extended Data Fig. 2 | Illustration of EOM (panel c) in contrast to overall dropout (panel b) for MoE layers. A color represents a token, and each token is dispatched to two experts (Top-2-Gating) depending on the gating decision (panel a). Faded colors correspond to dropped units or masked outputs.",
+     "text_len": 300,
+     "level": 1,
+     "element_id": "p12_e229"
+    }
+   ]
+  }
+ ],
+ "caption_blocks": [
+  {
+   "page": 3,
+   "blocks": [
+    {
+     "text": "Table 2 | Improvements from EOM and CL",
+     "bbox": {
+      "l": 39.69,
+      "t": 740.98,
+      "r": 212.68,
+      "b": 733.11,
+      "w": 173.0,
+      "h": 7.87,
+      "coord": "pdf_points_bottomleft"
+     },
+     "element_ids": [
+      "p3_e35"
+     ]
+    },
+    {
+     "text": "Fig. 1 | Cosine similarity scores between languages at different layers of the encoder-decoder architecture. a-d, The first (a) and last (b) encoder layers and then the first (c) and last (d) decoder layers. The similarity is measured with",
+     "bbox": {
+      "l": 39.68,
+      "t": 72.4,
+      "r": 293.79,
+      "b": 45.9,
+      "w": 254.12,
+      "h": 26.5,
+      "coord": "pdf_points_bottomleft"
+     },
+     "element_ids": [
+      "p3_e47"
+     ]
+    }
+   ]
+  },
+  {
+   "page": 4,
+   "blocks": [
+    {
+     "text": "Fig. 2 | Quality of FLORES-200. Quality assurance scores for the languages in FLORES-200. The minimum acceptable standard is 90%.",
+     "bbox": {
+      "l": 39.69,
+      "t": 52.4,
+      "r": 469.73,
+      "b": 45.91,
+      "w": 430.05,
+      "h": 6.5,
+      "coord": "pdf_points_bottomleft"
+     },
+     "element_ids": [
+      "p4_e65"
+     ]
+    }
+   ]
+  },
+  {
+   "page": 5,
+   "blocks": [
+    {
+     "text": "Fig. 3 | Correlations between aggregated human quality scores and automated metrics. a, The relationship between spBLEU and XSTS. b, The relationship between chrF++ and XSTS. c, The relationship between average sentence-level chrF++ and XSTS. All automated scores were computed only on",
+     "bbox": {
+      "l": 39.69,
+      "t": 592.0,
+      "r": 290.98,
+      "b": 555.49,
+      "w": 251.29,
+      "h": 36.51,
+      "coord": "pdf_points_bottomleft"
+     },
+     "element_ids": [
+      "p5_e67"
+     ]
+    },
+    {
+     "text": "the sentences evaluated for a given model and translation direction (either the full FLORES-200 dataset or a subset). NLLB-200 refers to a 55B parameter MoE model, and NLLB-200 Baseline refers to a dense 3.3B parameter model.",
+     "bbox": {
+      "l": 306.14,
+      "t": 591.99,
+      "r": 557.85,
+      "b": 565.49,
+      "w": 251.7,
+      "h": 26.5,
+      "coord": "pdf_points_bottomleft"
+     },
+     "element_ids": [
+      "p5_e74"
+     ]
+    }
+   ]
+  },
+  {
+   "page": 11,
+   "blocks": [
+    {
+     "text": "Extended Data Fig. 1 | Architecture of the LASER3 teacher-student approach. See 21 for more details.",
+     "bbox": {
+      "l": 39.69,
+      "t": 522.07,
+      "r": 371.44,
+      "b": 514.62,
+      "w": 331.75,
+      "h": 7.45,
+      "coord": "pdf_points_bottomleft"
+     },
+     "element_ids": [
+      "p11_e226"
+     ]
+    }
+   ]
+  }
+ ],
+ "uncaptioned_pictures": [
+  {
+   "page": 1,
+   "bbox": {
+    "l": 39.14,
+    "t": 566.89,
+    "r": 50.15,
+    "b": 555.41,
+    "w": 11.01,
+    "h": 11.48,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": false,
+   "element_id": "p1_e7"
+  },
+  {
+   "page": 6,
+   "bbox": {
+    "l": 305.29,
+    "t": 334.03,
+    "r": 348.83,
+    "b": 318.8,
+    "w": 43.55,
+    "h": 15.23,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": false,
+   "element_id": "p6_e131"
+  },
+  {
+   "page": 12,
+   "bbox": {
+    "l": 36.72,
+    "t": 746.63,
+    "r": 595.28,
+    "b": 612.08,
+    "w": 558.56,
+    "h": 134.55,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": true,
+   "element_id": "p12_e228"
+  }
+ ]
+}

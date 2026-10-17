@@ -1,0 +1,558 @@
+{
+ "paper_id": "2016_nature_multimodal_learning_with_next_token_prediction_f_9eabd33e",
+ "source_pdf": "D:\\2026-AI4S\\REFs\\2016-Nature-Multimodal learning with next-token prediction for large multimodal models.pdf",
+ "source_sha256": "6639f8c81b5d4f13af5fded43db8072857871dd68852c1d8db7404b79433e8d2",
+ "source_name": "2016-Nature-Multimodal learning with next-token prediction for large multimodal models.pdf",
+ "n_pages": 20,
+ "generated_at": "2026-10-18T00:43:45",
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "n_figures": 7,
+ "n_tables": 8,
+ "n_pictures_detected": 24,
+ "n_uncaptioned_pictures": 17,
+ "figures": [
+  {
+   "figure_id": "fig_001",
+   "kind": "figure",
+   "label_form": "Fig. 1",
+   "figure_number": 1,
+   "page": 2,
+   "bbox": {
+    "l": 36.89,
+    "t": 746.98,
+    "r": 582.64,
+    "b": 390.45,
+    "w": 545.75,
+    "h": 356.52,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 74,
+    "y0": 88,
+    "x1": 1165,
+    "y1": 801,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_001.png",
+   "image_size_px": [
+    1091,
+    713
+   ],
+   "caption": "Fig. 1 | Emu3 framework. Emu3 first tokenizes multimodal data such as images, text, video and actions into discrete tokens and then sequences these tokens by order and performs unified next-token prediction at scale with a Transformer",
+   "caption_page": 2,
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 381.85,
+    "r": 294.78,
+    "b": 355.35,
+    "w": 255.09,
+    "h": 26.5,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p2_e17"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 8.6
+   },
+   "element_id": "p2_e16",
+   "reading_order": 16
+  },
+  {
+   "figure_id": "fig_002",
+   "kind": "figure",
+   "label_form": "Fig. 2",
+   "figure_number": 2,
+   "page": 3,
+   "bbox": {
+    "l": 36.98,
+    "t": 744.0,
+    "r": 562.12,
+    "b": 480.35,
+    "w": 525.14,
+    "h": 263.65,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 74,
+    "y0": 94,
+    "x1": 1124,
+    "y1": 621,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_002.png",
+   "image_size_px": [
+    1050,
+    527
+   ],
+   "caption": "Fig. 2 | Qualitative visualizations across diverse multimodal tasks. Representative qualitative results for T2I generation, T2V generation, future",
+   "caption_page": 3,
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 472.03,
+    "r": 280.25,
+    "b": 455.53,
+    "w": 240.56,
+    "h": 16.5,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p3_e27"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 8.32
+   },
+   "element_id": "p3_e26",
+   "reading_order": 26
+  },
+  {
+   "figure_id": "fig_003",
+   "kind": "figure",
+   "label_form": "Fig. 3",
+   "figure_number": 3,
+   "page": 4,
+   "bbox": {
+    "l": 77.96,
+    "t": 742.65,
+    "r": 250.65,
+    "b": 635.7,
+    "w": 172.69,
+    "h": 106.95,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 156,
+    "y0": 96,
+    "x1": 501,
+    "y1": 310,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_003.png",
+   "image_size_px": [
+    345,
+    214
+   ],
+   "caption": "Fig. 3 | Token-centric multimodal infrastructure and architectural comparisons with diffusion models and the encoder + LLM compositional paradigm. a, Multimodal data tokenization can be performed directly on edge devices, and only the resulting discrete token IDs are transmitted to large-scale servers for unified multimodal training and inference. b, GenEval overall scores as a function of training sample count for the image-generation task, comparing",
+   "caption_page": 4,
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 623.72,
+    "r": 294.73,
+    "b": 567.2,
+    "w": 255.05,
+    "h": 56.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p4_e51"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 11.98
+   },
+   "element_id": "p4_e37",
+   "reading_order": 37
+  },
+  {
+   "figure_id": "fig_004",
+   "kind": "figure",
+   "label_form": "Fig. 4",
+   "figure_number": 4,
+   "page": 5,
+   "bbox": {
+    "l": 86.65,
+    "t": 742.15,
+    "r": 513.58,
+    "b": 548.14,
+    "w": 426.93,
+    "h": 194.01,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 173,
+    "y0": 97,
+    "x1": 1027,
+    "y1": 485,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_004.png",
+   "image_size_px": [
+    854,
+    388
+   ],
+   "caption": "Fig. 4 | Scaling laws of Emu3 across multimodal tasks. a, Validation loss surfaces for three tasks: T2I, I2T and T2V, shown as functions of model size and number of training tokens. All three tasks demonstrated clear power-law behaviour with respect to scale. b, Predicted versus observed validation loss",
+   "caption_page": 5,
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 537.49,
+    "r": 291.2,
+    "b": 500.99,
+    "w": 251.51,
+    "h": 36.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p5_e95"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 10.65
+   },
+   "element_id": "p5_e94",
+   "reading_order": 94
+  },
+  {
+   "figure_id": "fig_005",
+   "kind": "figure",
+   "label_form": "Fig. 5",
+   "figure_number": 5,
+   "page": 6,
+   "bbox": {
+    "l": 37.84,
+    "t": 743.64,
+    "r": 561.47,
+    "b": 589.4,
+    "w": 523.63,
+    "h": 154.23,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 76,
+    "y0": 94,
+    "x1": 1123,
+    "y1": 403,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_005.png",
+   "image_size_px": [
+    1047,
+    309
+   ],
+   "caption": "Fig. 5 | Reconstruction samples of the tokenizer and comparison of unified video tokenizer and standalone image tokenizer. a, Original and reconstructed videos and images. Videos are at 540 × 960 resolution, with a sampling of 8 frames at 30 fps, and images are of 512 × 512 resolution. b, The video tokenizer achieved comparable reconstruction with four times",
+   "caption_page": 6,
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 579.47,
+    "r": 283.11,
+    "b": 532.96,
+    "w": 243.43,
+    "h": 46.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p6_e108"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 9.93
+   },
+   "element_id": "p6_e107",
+   "reading_order": 107
+  },
+  {
+   "figure_id": "fig_006",
+   "kind": "extended_data_figure",
+   "label_form": "Extended Data Fig. 1",
+   "figure_number": 1,
+   "page": 11,
+   "bbox": {
+    "l": 34.85,
+    "t": 741.74,
+    "r": 560.96,
+    "b": 340.36,
+    "w": 526.12,
+    "h": 401.39,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 70,
+    "y0": 98,
+    "x1": 1122,
+    "y1": 901,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_006.png",
+   "image_size_px": [
+    1052,
+    803
+   ],
+   "caption": "Extended Data Fig. 1 | Visualization of interleaved image-text generation results. Qualitative examples of generated interleaved image-text sequences, illustrating step-by-step multimodal generation for instructional tasks.",
+   "caption_page": 11,
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 331.87,
+    "r": 540.4,
+    "b": 315.37,
+    "w": 500.72,
+    "h": 16.5,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p11_e236"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 8.49
+   },
+   "element_id": "p11_e235",
+   "reading_order": 235
+  },
+  {
+   "figure_id": "fig_007",
+   "kind": "extended_data_figure",
+   "label_form": "Extended Data Fig. 2",
+   "figure_number": 2,
+   "page": 12,
+   "bbox": {
+    "l": 40.55,
+    "t": 577.43,
+    "r": 158.4,
+    "b": 460.35,
+    "w": 117.85,
+    "h": 117.09,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 81,
+    "y0": 427,
+    "x1": 317,
+    "y1": 661,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_007.png",
+   "image_size_px": [
+    236,
+    234
+   ],
+   "caption": "Extended Data Fig. 2 | Zero-shot image inpainting with Emu3 using spiral-in token order. Given the input images (left of each row) and corresponding prompts, Emu3 accurately fills the masked regions within the bounding boxes, generating semantically aligned content without task-specific fine-tuning.",
+   "caption_page": 12,
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 248.35,
+    "r": 533.71,
+    "b": 231.85,
+    "w": 494.02,
+    "h": 16.5,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p12_e241"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 212.0
+   },
+   "element_id": "p12_e239",
+   "reading_order": 239
+  }
+ ],
+ "tables": [
+  {
+   "table_id": "table_001",
+   "page": 4,
+   "bbox": {
+    "l": 305.02,
+    "t": 155.64,
+    "r": 561.36,
+    "b": 97.62,
+    "w": 256.34,
+    "h": 58.03,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": "Table 1 | Evaluation across multimodal tasks",
+   "caption_bbox": {
+    "l": 306.14,
+    "t": 171.46,
+    "r": 489.52,
+    "b": 163.59,
+    "w": 183.38,
+    "h": 7.87,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_page": 4,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": 7.95,
+    "paired": true
+   },
+   "element_id": "p4_e74"
+  },
+  {
+   "table_id": "table_002",
+   "page": 14,
+   "bbox": {
+    "l": 35.75,
+    "t": 722.63,
+    "r": 465.22,
+    "b": 337.25,
+    "w": 429.46,
+    "h": 385.38,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p14_e258"
+  },
+  {
+   "table_id": "table_003",
+   "page": 15,
+   "bbox": {
+    "l": 36.05,
+    "t": 723.69,
+    "r": 560.92,
+    "b": 336.93,
+    "w": 524.87,
+    "h": 386.75,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p15_e260"
+  },
+  {
+   "table_id": "table_004",
+   "page": 16,
+   "bbox": {
+    "l": 36.25,
+    "t": 742.09,
+    "r": 561.06,
+    "b": 498.1,
+    "w": 524.81,
+    "h": 244.0,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p16_e263"
+  },
+  {
+   "table_id": "table_005",
+   "page": 17,
+   "bbox": {
+    "l": 36.26,
+    "t": 727.13,
+    "r": 560.48,
+    "b": 502.18,
+    "w": 524.22,
+    "h": 224.95,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p17_e267"
+  },
+  {
+   "table_id": "table_006",
+   "page": 18,
+   "bbox": {
+    "l": 37.92,
+    "t": 724.41,
+    "r": 559.9,
+    "b": 539.46,
+    "w": 521.98,
+    "h": 184.95,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p18_e271"
+  },
+  {
+   "table_id": "table_007",
+   "page": 19,
+   "bbox": {
+    "l": 38.17,
+    "t": 721.51,
+    "r": 293.44,
+    "b": 579.88,
+    "w": 255.27,
+    "h": 141.63,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p19_e274"
+  },
+  {
+   "table_id": "table_008",
+   "page": 20,
+   "bbox": {
+    "l": 37.7,
+    "t": 723.17,
+    "r": 560.31,
+    "b": 558.78,
+    "w": 522.61,
+    "h": 164.39,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p20_e278"
+  }
+ ]
+}

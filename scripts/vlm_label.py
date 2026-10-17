@@ -90,6 +90,26 @@ MIN_W_PT, MIN_H_PT = 60.0, 40.0
 # instead of asking a model to infer a page fact from a crop.
 NATURE_SINGLE_COLUMN_MM = 89.0
 NATURE_TEXT_WIDTH_MM = 183.0
+# A crop is attributable to a column only when its width lands near that column's true value.
+COLUMN_TOLERANCE_MM = 10.0
+
+
+def column_from_caption(cap_rect, page_w: float) -> str:
+    """Column implied by where the CAPTION was set, which is the stronger of the two signals.
+
+    A Nature caption is set to the width of the block it belongs to, so the caption's own span
+    survives even when the figure inside it is narrower. A caption ending near 295 pt on a 595 pt
+    page is a one-column block; one running to ~560 pt spans the text measure. This is reported
+    alongside the crop-width estimate because the two answer different questions -- how wide the
+    figure is, and how wide the column it was set in is -- and a disagreement between them is
+    itself informative.
+    """
+    w_mm = cap_rect.width * 25.4 / 72.0
+    if abs(w_mm - NATURE_SINGLE_COLUMN_MM) <= COLUMN_TOLERANCE_MM:
+        return "single"
+    if abs(w_mm - NATURE_TEXT_WIDTH_MM) <= COLUMN_TOLERANCE_MM:
+        return "double"
+    return "ambiguous"
 
 CAPTION_RE = re.compile(r"^\s*(?:Fig\.?|Figure)\s*\|?\s*(\d+)\s*[\|\.:]", re.I)
 
@@ -152,9 +172,12 @@ MEASURED CONTEXT (facts, not things to infer)
 - page_text_width_mm: {text_width_mm}
 - nature_single_column_mm: {single_mm}
 - nature_double_column_mm: {text_width_mm}
-For `column_width`, use the measured crop_width_mm: a figure near {single_mm} mm wide is
-"single"; near {text_width_mm} mm is "double"; clearly wider than the text block is "full".
-Do not try to read the column width off the image.
+
+`column_width` IS ALREADY MEASURED, so do not spend judgement on it. Report the value implied by
+the numbers above, and nothing else: near {single_mm} mm -> "single"; near {text_width_mm} mm ->
+"double"; wider than the text block -> "full"; a width that is neither is not attributable to a
+column, so answer null. Do not read the column width off the image: the crop is a box around the
+figure and its apparent size says nothing about the page grid.
 
 FIELDS (all may be null)
 {field_list}
@@ -425,13 +448,21 @@ def render():
                 name = "%s_p%03d_fig%d.png" % (slug, pno + 1, num)
                 pix.save(str(IMAGES / name))
                 width_mm = crop.width * 25.4 / 72.0
-                # Geometry decides the column; this is the ground truth the VLM is checked against.
-                if width_mm < 120.0:
+                # COLUMN WIDTH IS A PDF FACT, NOT A VISION TASK. The crop is a tight box around
+                # the figure, so its width measures the FIGURE, not the column it was set in:
+                # the median crop here is 118 mm, which is neither Nature column. Only widths
+                # near the real 89 mm single or 183 mm double column are attributable; anything
+                # between is a figure that happens to be that wide and has no column to report.
+                # So geometry yields single/double/ambiguous, and the ambiguous band is reported
+                # as unknown rather than forced into one of the two.
+                if abs(width_mm - NATURE_SINGLE_COLUMN_MM) <= COLUMN_TOLERANCE_MM:
                     geom = "single"
-                elif width_mm <= 200.0:
+                elif abs(width_mm - NATURE_TEXT_WIDTH_MM) <= COLUMN_TOLERANCE_MM:
                     geom = "double"
-                else:
+                elif width_mm > NATURE_TEXT_WIDTH_MM + COLUMN_TOLERANCE_MM:
                     geom = "full"
+                else:
+                    geom = "ambiguous"
                 records.append({
                     "image": name, "paper": pdf.name, "page": pno + 1, "figure_number": num,
                     "crop_pt": [round(v, 1) for v in (crop.x0, crop.y0, crop.x1, crop.y1)],
@@ -441,6 +472,7 @@ def render():
                     "dpi": DPI, "ink_fraction": round(ink, 4),
                     "caption_width_pt": round(cap_rect.width, 1),
                     "column_from_geometry": geom,
+                    "column_from_caption_span": column_from_caption(cap_rect, page_w),
                     "caption_text": cap_text,
                     "graphic_objects": n_ink,
                     "page_vector_objects": n_vec,
@@ -735,7 +767,26 @@ def label(model: str, limit: int | None, force: bool, per_paper: int):
 
 
 def run_controls(model: str):
-    """Annotate the no-answer control images and report whether the model declines."""
+    """Annotate the no-answer control images and report whether the model declines.
+
+    SCORING A CONTROL HONESTLY
+    A first pass scored "any non-null field = fabricated" and that overstates the case: on a
+    blank canvas `panel_count: 0` and `panel_layout: "none"` are TRUE, not invented. Calling them
+    fabrication would be a false accusation, and a false accusation is as damaging to a control as
+    a missed one -- it trains the reader to ignore the warning.
+
+    So each asserted field is sorted into:
+      trivially_true -- defensible on an empty canvas (0 panels, no arrows, no labels)
+      fabricated     -- a claim about a figure that is not there: a figure type, a font family,
+                        a line weight, a palette judgement, a caption structure, a column width.
+    The control counts as DECLINED only when nothing was fabricated.
+
+    `column_width` is scored separately and is the sharpest probe in the set: the prompt supplies
+    `crop_width_mm: unknown` and states in as many words that this field is not to be read off the
+    image. Any non-null column_width on a control is therefore a direct observation of the model
+    ignoring an explicit instruction not to guess, which is the exact behaviour the corpus has to
+    be protected from.
+    """
     ctl_dir = CORPUS / "vlm_controls"
     if not ctl_dir.exists():
         make_controls()
@@ -747,34 +798,71 @@ def run_controls(model: str):
         {"image": "control_textonly.png", "kind": "text_only",
          "why": "prose with no figure: a caption/structure answer here is invented"},
     ]
+    # Values that are true of an empty canvas rather than invented about a figure.
+    TRIVIAL = {
+        "panel_count": {0},
+        "panel_layout": {"none"},
+        "panel_labels_present": {False},
+        "arrow_style": {"none"},
+        "saturated_color_count": {0},
+        "whitespace_generous": {False},
+        "frame_restrained": {True, False},   # an empty page has no heavy frames either way
+    }
     results = []
     for c in controls:
         path = ctl_dir / c["image"]
         if not path.exists():
             continue
-        rec = annotate_one(model, path, {"kind": "control", "caption_text": ""})
+        rec = annotate_one(model, path, {"kind": "control", "caption_text": "",
+                                         "crop_width_mm": "unknown"})
         labels = rec.get("labels") or {}
-        # On a control there is no figure. "other" is the only acceptable non-null figure_type;
-        # every other figure field must be null for the control to count as declined.
-        confident = {k: v for k, v in labels.items()
-                     if v is not None and not (k == "figure_type" and v == "other")}
+        asserted = {k: v for k, v in labels.items()
+                    if v is not None and not (k == "figure_type" and v == "other")}
+        trivial = {k: v for k, v in asserted.items()
+                   if k in TRIVIAL and v in TRIVIAL[k]}
+        fabricated = {k: v for k, v in asserted.items() if k not in trivial}
         results.append({
             "image": c["image"], "kind": c["kind"], "why": c["why"],
             "parse_ok": rec["parse_ok"], "n_null": rec["n_null"],
-            "n_confident": len(confident), "confident_fields": confident,
-            "raw_response": (rec["raw_responses"] or [""])[-1][:400],
-            "declined": rec["parse_ok"] and len(confident) == 0,
+            "n_asserted": len(asserted), "asserted_fields": asserted,
+            "n_trivially_true": len(trivial), "trivially_true_fields": trivial,
+            "n_fabricated": len(fabricated), "fabricated_fields": fabricated,
+            "column_width_asserted": labels.get("column_width"),
+            "column_width_is_fabrication": labels.get("column_width") is not None,
+            "raw_response": (rec["raw_responses"] or [""])[-1][:500],
+            "declined": rec["parse_ok"] and len(fabricated) == 0,
         })
-        print("  %-26s nulls=%2d  confident=%2d  declined=%s" % (
-            c["image"], rec["n_null"], len(confident), results[-1]["declined"]))
-    out = CORPUS / "vlm_controls.json"
-    out.write_text(json.dumps({"model": model, "controls": results}, indent=1,
-                              ensure_ascii=False), encoding="utf-8")
+        r = results[-1]
+        print("  %-26s nulls=%2d  asserted=%2d (trivial=%d)  FABRICATED=%2d  declined=%s"
+              % (c["image"], r["n_null"], r["n_asserted"], r["n_trivially_true"],
+                 r["n_fabricated"], r["declined"]))
+        if r["fabricated_fields"]:
+            print("      fabricated: %s" % json.dumps(r["fabricated_fields"], ensure_ascii=False)[:300])
+
     n_dec = sum(1 for r in results if r["declined"])
-    print("controls declined: %d of %d" % (n_dec, len(results)))
-    if n_dec == 0:
-        print("  [WARN] the model gave confident answers on images with no figure. Its confident")
-        print("         answers elsewhere are therefore not trustworthy evidence of seeing.")
+    cw_fab = sum(1 for r in results if r["column_width_is_fabrication"])
+    total_fab = sum(r["n_fabricated"] for r in results)
+    out = {
+        "model": model,
+        "controls": results,
+        "n_controls": len(results),
+        "n_declined": n_dec,
+        "n_fabricated_total": total_fab,
+        "n_column_width_guessed": cw_fab,
+        "verdict": ("DECLINES -- the model abstains when there is nothing to see"
+                    if n_dec == len(results) and results else
+                    "FABRICATES -- the model asserts figure properties on images that have no "
+                    "figure. Its confident answers on real figures are not evidence of seeing."),
+    }
+    out_path = CORPUS / "vlm_controls.json"
+    out_path.write_text(json.dumps(out, indent=1, ensure_ascii=False), encoding="utf-8")
+    print("controls declined: %d of %d | fabricated assertions: %d | column_width guessed: %d"
+          % (n_dec, len(results), total_fab, cw_fab))
+    if n_dec < len(results):
+        print("  [WARN] %s" % out["verdict"])
+        print("         The per-field null ratios below are reported, but a null the model")
+        print("         volunteers on hard fields is not proof it abstains when it could guess:")
+        print("         it guessed here, where the right answer was impossible.")
     return 0
 
 
@@ -887,13 +975,36 @@ def report():
                     if n else None)
     total_nulls = sum(r.get("n_null", 0) for r in figures)
 
-    # Column width is a PDF fact; compare the model against geometry.
-    geo_rows = [(r, (r.get("labels") or {}).get("column_width"),
-                 (r.get("source_geometry") or {}).get("column_from_geometry"))
-                for r in figures]
-    geo_rows = [g for g in geo_rows if g[2] is not None]
-    geo_agree = sum(1 for _, a, b in geo_rows if a == b)
-    geo_decided = [g for g in geo_rows if g[1] is not None]
+    # COLUMN WIDTH: the model is scored against the geometry it was TOLD, and only where that
+    # geometry actually determines an answer. Scoring against every figure compared the model with
+    # an "ambiguous" bucket it had never been asked to produce, which understated the failure.
+    geo_rows = []
+    for r in figures:
+        geom = (r.get("source_geometry") or {}).get("column_from_geometry")
+        geo_rows.append({
+            "image": r["image"],
+            "model": (r.get("labels") or {}).get("column_width"),
+            "geometry": geom,
+            "width_mm": (r.get("source_geometry") or {}).get("crop_width_mm"),
+        })
+    attributable = [g for g in geo_rows if g["geometry"] in ("single", "double", "full")]
+    geo_agree = sum(1 for g in attributable if g["model"] == g["geometry"])
+    # The sharpest measure: the model was handed a width that maps to exactly one answer.
+    unambiguous = [g for g in geo_rows if g["geometry"] in ("single", "double")]
+    unamb_agree = sum(1 for g in unambiguous if g["model"] == g["geometry"])
+
+    # A FIELD WITH ONE DOMINANT VALUE IS NOT A MEASUREMENT. If 37 of 40 figures are labelled
+    # "single", the field is carrying almost no information about the corpus, whatever its null
+    # ratio says. Reported next to the null ratios because the two failure modes look different
+    # and both mean the same thing: the label cannot be used as evidence about style.
+    from collections import Counter
+    modal_share, distinct_values = {}, {}
+    for f in FIELDS:
+        vals = [(r.get("labels") or {}).get(f) for r in figures]
+        c = Counter(v for v in vals if v is not None)
+        distinct_values[f] = len(c)
+        modal_share[f] = round(c.most_common(1)[0][1] / n, 4) if c and n else None
+    degenerate = sorted(f for f, s in modal_share.items() if s is not None and s >= 0.9)
 
     controls = None
     if (CORPUS / "vlm_controls.json").exists():
@@ -914,11 +1025,22 @@ def report():
         "n_field_slots": n * len(FIELDS),
         "null_ratio_per_field": per_field_null,
         "fields_never_null": sorted(f for f, v in per_field_null.items() if v == 0.0),
+        "distinct_values_per_field": distinct_values,
+        "modal_share_per_field": modal_share,
+        "degenerate_fields": degenerate,
         "column_width_vs_geometry": {
-            "n_compared": len(geo_rows),
-            "n_model_decided": len(geo_decided),
-            "n_agree": geo_agree,
-            "agreement": round(geo_agree / len(geo_rows), 4) if geo_rows else None,
+            "n_all": len(geo_rows),
+            "n_attributable": len(attributable),
+            "n_model_matches_geometry": geo_agree,
+            "agreement_on_attributable": (round(geo_agree / len(attributable), 4)
+                                          if attributable else None),
+            "n_unambiguous": len(unambiguous),
+            "n_unambiguous_agree": unamb_agree,
+            "agreement_on_unambiguous": (round(unamb_agree / len(unambiguous), 4)
+                                         if unambiguous else None),
+            "note": ("agreement_on_unambiguous is the honest measure: it counts only figures whose "
+                     "measured width maps to exactly one column under the instruction the model "
+                     "was given. The other figures have no column to be right or wrong about."),
         },
         "controls": controls,
         "consistency": consistency_data,
@@ -931,11 +1053,12 @@ def report():
     suspect = [f for f, v in per_field_null.items() if v == 0.0]
     out["fabrication_watch"] = {
         "fields_at_zero_null": suspect,
+        "degenerate_fields": degenerate,
         "interpretation": (
-            "A field with 0 nulls over %d figures was answered every time. For the visual fields "
-            "that is a warning, not a success: if the control images were also answered "
-            "confidently, the model is guessing. Check `controls` before trusting these labels."
-            % n),
+            "A field with 0 nulls over %d figures was answered every time; a field whose modal "
+            "value covers >=90 %% of figures carries almost no information even when it does "
+            "abstain sometimes. Together with the control result these say whether the model was "
+            "seeing or answering. Check `controls` before using these labels as evidence." % n),
     }
     REPORT.write_text(json.dumps(out, indent=1, ensure_ascii=False), encoding="utf-8")
 
@@ -946,8 +1069,11 @@ def report():
     print("null ratio overall    : %.1f %%  (%d of %d field slots)"
           % (100 * overall_null, total_nulls, n * len(FIELDS)))
     print("fields never null     : %s" % (suspect or "none"))
-    print("column vs geometry    : %d/%d agree (%s)"
-          % (geo_agree, len(geo_rows), out["column_width_vs_geometry"]["agreement"]))
+    print("degenerate fields     : %s" % (degenerate or "none"))
+    print("column width          : %s/%s on unambiguous widths (%s)"
+          % (out["column_width_vs_geometry"]["n_unambiguous_agree"],
+             out["column_width_vs_geometry"]["n_unambiguous"],
+             out["column_width_vs_geometry"]["agreement_on_unambiguous"]))
     if consistency_data:
         print("consistency (10%%)     : overall %s | decided-only %s"
               % (consistency_data["overall_field_agreement"],

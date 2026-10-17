@@ -1,0 +1,73 @@
+{
+ "paper_id": "1997_nature_a_novel_paradigm_1cf8ba19",
+ "source_pdf": "D:\\2026-AI4S\\Novel paradigm\\REFs\\1997-Nature_A novel paradigm.pdf",
+ "source_sha256": "e74dcfda9d9aa1a4cee778e322ca75e839a436d9684a464b5fa1a40b78e14fdd",
+ "source_name": "1997-Nature_A novel paradigm.pdf",
+ "n_pages": 1,
+ "generated_at": "2026-10-18T00:43:16",
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "n_figures": 1,
+ "n_tables": 0,
+ "n_pictures_detected": 1,
+ "n_uncaptioned_pictures": 0,
+ "figures": [
+  {
+   "figure_id": "fig_001",
+   "kind": "figure",
+   "label_form": "",
+   "figure_number": null,
+   "page": 1,
+   "bbox": {
+    "l": 32.92,
+    "t": 197.06,
+    "r": 195.75,
+    "b": 84.37,
+    "w": 162.83,
+    "h": 112.7,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 66,
+    "y0": 1193,
+    "x1": 392,
+    "y1": 1419,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_001.png",
+   "image_size_px": [
+    325,
+    226
+   ],
+   "caption": "Figure I Proportion of papers per year in the Medline database that contain the word 'novel' in the title or abstract. (y = 7.3749e - 126e10· 14263 x1 , R=0.998ll)",
+   "caption_page": 1,
+   "caption_bbox": {
+    "l": 32.56,
+    "t": 80.12,
+    "r": 194.67,
+    "b": 41.63,
+    "w": 162.11,
+    "h": 38.48,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p1_e7"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 4.25
+   },
+   "element_id": "p1_e6",
+   "reading_order": 6
+  }
+ ],
+ "tables": []
+}

@@ -214,7 +214,7 @@
     "note": "The loop executes each rule's `check` generically, so coverage is a property of the data rather than of the loop's source. A rule with check=None is reported as UNCHECKED, not counted as passing."
   },
   "last_check": {
-    "at": "2026-10-18T00:28:30",
+    "at": "2026-10-18T00:48:28",
     "summary": {
       "rules_total": 11,
       "checked": 7,

@@ -1,0 +1,878 @@
+{
+ "paper_id": "2023_nature_papers_and_patents_are_becoming_less_disruptive_e2bc44ca",
+ "source_pdf": "D:\\2026-AI4S\\Novel paradigm\\REFs\\2023-Nature_Papers and patents are becoming less disruptive over time_with SI.pdf",
+ "source_sha256": "54f68c957023273f25395dc69f986a8d67bbad5f31dc3893ab3959d7fcfa6c25",
+ "source_name": "2023-Nature_Papers and patents are becoming less disruptive over time_with SI.pdf",
+ "n_pages": 34,
+ "generated_at": "2026-10-18T00:44:07",
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "n_figures": 15,
+ "n_tables": 4,
+ "n_pictures_detected": 22,
+ "n_uncaptioned_pictures": 7,
+ "figures": [
+  {
+   "figure_id": "fig_001",
+   "kind": "figure",
+   "label_form": "Fig. 1",
+   "figure_number": 1,
+   "page": 2,
+   "bbox": {
+    "l": 33.52,
+    "t": 743.12,
+    "r": 560.11,
+    "b": 490.85,
+    "w": 526.59,
+    "h": 252.28,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 67,
+    "y0": 95,
+    "x1": 1120,
+    "y1": 600,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_001.png",
+   "image_size_px": [
+    1053,
+    505
+   ],
+   "caption": "Fig. 1 | Overview of the measurement approach. This figure shows a schematic visualization of the CD index. a, CD index value of three Nobel Prize-winning papers 31,32,58 and three notable patents 59-61 in our sample, measured as of five years post-publication (indicated by CD5). b, Distribution of CD5 for papers from WoS (n = 24,659,076) between 1945 and 2010 and patents from Patents View (n = 3,912,353) between 1976 and 2010, where a single dot represents a paper or patent. The vertical (up-down) dimension of each 'strip' corresponds to values of the CD index (with axis values shown in orange on the left).",
+   "caption_page": 2,
+   "caption_bbox": {
+    "l": 39.68,
+    "t": 482.65,
+    "r": 294.44,
+    "b": 406.14,
+    "w": 254.76,
+    "h": 76.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p2_e14"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 8.2
+   },
+   "element_id": "p2_e13",
+   "reading_order": 13
+  },
+  {
+   "figure_id": "fig_002",
+   "kind": "figure",
+   "label_form": "Fig. 2",
+   "figure_number": 2,
+   "page": 3,
+   "bbox": {
+    "l": 130.19,
+    "t": 743.41,
+    "r": 469.01,
+    "b": 569.46,
+    "w": 338.81,
+    "h": 173.94,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 260,
+    "y0": 95,
+    "x1": 938,
+    "y1": 443,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_002.png",
+   "image_size_px": [
+    678,
+    348
+   ],
+   "caption": "Fig. 2 | Decline of disruptive science and technology. a,b, Decline in CD5 over time, separately for papers (a, n = 24,659,076) and patents (b, n = 3,912,353). For papers, lines correspond to WoS research areas; from 1945 to 2010 the magnitude of decline ranges from 91.9% (social sciences) to 100% (physical sciences). For patents, lines correspond to National Bureau of Economic Research (NBER) technology categories; from 1980 to 2010 the magnitude",
+   "caption_page": 3,
+   "caption_bbox": {
+    "l": 39.68,
+    "t": 558.83,
+    "r": 292.21,
+    "b": 502.32,
+    "w": 252.52,
+    "h": 56.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p3_e23"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 10.63
+   },
+   "element_id": "p3_e21",
+   "reading_order": 21
+  },
+  {
+   "figure_id": "fig_003",
+   "kind": "figure",
+   "label_form": "",
+   "figure_number": null,
+   "page": 4,
+   "bbox": {
+    "l": 34.46,
+    "t": 741.36,
+    "r": 559.72,
+    "b": 411.58,
+    "w": 525.26,
+    "h": 329.78,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 69,
+    "y0": 99,
+    "x1": 1119,
+    "y1": 759,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_003.png",
+   "image_size_px": [
+    1050,
+    660
+   ],
+   "caption": "1945 to 2010 (b) and in Patents View patent titles from 1980 to 2010 (refs. 1,17 ) (e). For papers in both a and b, lines correspond to WoS research areas (n = 264 WoS research area × year observations). For patents in both d and e, lines correspond to NBER technology categories (n = 229 NBER technology category × year observations). c,f, Figures showing the frequency of the most commonly used verbs in paper titles for the first (red) and last (blue) decades of the observation period in paper (c, n = 24,659,076) and patent (f, n = 3,912,353) titles.",
+   "caption_page": 4,
+   "caption_bbox": {
+    "l": 306.13,
+    "t": 402.81,
+    "r": 561.0,
+    "b": 335.34,
+    "w": 254.87,
+    "h": 67.47,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p4_e37"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 8.77
+   },
+   "element_id": "p4_e34",
+   "reading_order": 34
+  },
+  {
+   "figure_id": "fig_004",
+   "kind": "figure",
+   "label_form": "Fig. 4",
+   "figure_number": 4,
+   "page": 4,
+   "bbox": {
+    "l": 130.51,
+    "t": 306.76,
+    "r": 470.1,
+    "b": 143.33,
+    "w": 339.59,
+    "h": 163.42,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 261,
+    "y0": 968,
+    "x1": 940,
+    "y1": 1295,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_004.png",
+   "image_size_px": [
+    679,
+    327
+   ],
+   "caption": "Fig. 4 | Conservation of highly disruptive work. This figure shows the number of disruptive papers (a, n = 5,030,179) and patents (b, n = 1,476,004) across four different ranges of CD5 (papers and patents with CD5 values in the range [-1.0, 0) are not represented in the figure). Lines correspond to different levels of disruptiveness as measured by CD5. Despite substantial increases in the numbers of papers and patents published each year, there is little change in the number of highly disruptive papers and patents, as evidenced by the relatively flat red, green and orange lines. This pattern helps to account for simultaneous observations of both aggregate evidence of slowing innovative activity and seemingly major",
+   "caption_page": 4,
+   "caption_bbox": {
+    "l": 39.68,
+    "t": 133.21,
+    "r": 294.82,
+    "b": 46.7,
+    "w": 255.14,
+    "h": 86.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p4_e38"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 10.12
+   },
+   "element_id": "p4_e36",
+   "reading_order": 36
+  },
+  {
+   "figure_id": "fig_005",
+   "kind": "figure",
+   "label_form": "Fig. 5",
+   "figure_number": 5,
+   "page": 5,
+   "bbox": {
+    "l": 41.08,
+    "t": 742.7,
+    "r": 290.25,
+    "b": 482.08,
+    "w": 249.18,
+    "h": 260.62,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 82,
+    "y0": 96,
+    "x1": 580,
+    "y1": 618,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_005.png",
+   "image_size_px": [
+    499,
+    522
+   ],
+   "caption": "Fig. 5 | CD index of high-quality science over time. This figure shows changes in CD5 over time for papers published in Nature, Proceedings of the National Academy of Sciences (PNAS) and Science (inset plot, n = 223,745) and Nobel Prizewinning papers (main plot, n = 635), with several notable examples 31,32,58,62-66 highlighted. Colours indicate the three different journals in the inset plot; colours indicate the three different fields in which the Nobel Prize is awarded in the main plot. Shaded bands correspond to 95% confidence intervals. For historical completeness, we plot CD index scores for all Nobel papers back to 1900 (the first year in which the prize was awarded); however, our main analyses begin in the post-1945 era, when the WoS data are generally more reliable. The figure indicates that changes in the quality of published science over time is unlikely to be responsible for the decline in disruption.",
+   "caption_page": 5,
+   "caption_bbox": {
+    "l": 39.68,
+    "t": 404.57,
+    "r": 294.72,
+    "b": 288.05,
+    "w": 255.04,
+    "h": 116.52,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p5_e41"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 77.51
+   },
+   "element_id": "p5_e40",
+   "reading_order": 40
+  },
+  {
+   "figure_id": "fig_006",
+   "kind": "figure",
+   "label_form": "Fig. 6",
+   "figure_number": 6,
+   "page": 6,
+   "bbox": {
+    "l": 34.14,
+    "t": 742.54,
+    "r": 559.6,
+    "b": 392.0,
+    "w": 525.46,
+    "h": 350.54,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 68,
+    "y0": 97,
+    "x1": 1119,
+    "y1": 798,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_006.png",
+   "image_size_px": [
+    1051,
+    701
+   ],
+   "caption": "Fig. 6 | Papers and patents are using narrower portions of existing knowledge. a-f, Changes in the level of diversity of existing scientific and technological knowledge use among papers (a, n = 264 WoS research area × year observations; b and c, n = 24,659,076 papers) and patents (d, 229 NBER technology category × year observations; e and f, n = 3,912,353 patents) based on following measures: diversity of work cited (a and d), mean number of self-citations (b and e) and mean age of cited work (c and f). Shaded bands (b,c,e and f) correspond to 95% confidence intervals. The inset plots of a and d show changes in the share of citations to the top 1% most highly cited papers (a(i) and d(i)) and in the semantic diversity of the top 1% most cited over time (a(ii) and d(ii)). Values of both measures are computed within field and year,",
+   "caption_page": 6,
+   "caption_bbox": {
+    "l": 39.68,
+    "t": 382.67,
+    "r": 294.42,
+    "b": 276.14,
+    "w": 254.74,
+    "h": 106.53,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p6_e50"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 9.33
+   },
+   "element_id": "p6_e49",
+   "reading_order": 49
+  },
+  {
+   "figure_id": "fig_007",
+   "kind": "extended_data_figure",
+   "label_form": "Extended Data Fig. 1",
+   "figure_number": 1,
+   "page": 12,
+   "bbox": {
+    "l": 73.69,
+    "t": 724.64,
+    "r": 266.57,
+    "b": 556.01,
+    "w": 192.88,
+    "h": 168.63,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 147,
+    "y0": 132,
+    "x1": 533,
+    "y1": 470,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_007.png",
+   "image_size_px": [
+    386,
+    338
+   ],
+   "caption": "Extended Data Fig. 1 | Distribution of CD5. This figure gives an overview of the distribution of CD5 for papers (n = 24,659,076) and patents (n = 3,912,353). Panels a and c show counts of papers and patents over discrete intervals of CD5. Panels b and d show the distribution of CD5 over time, within 10 (papers) and 5 (patents) year intervals, using letter-value plots. These plots are similar to",
+   "caption_page": 12,
+   "caption_bbox": {
+    "l": 39.68,
+    "t": 353.65,
+    "r": 294.0,
+    "b": 307.15,
+    "w": 254.31,
+    "h": 46.5,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p12_e195"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 202.36
+   },
+   "element_id": "p12_e192",
+   "reading_order": 192
+  },
+  {
+   "figure_id": "fig_008",
+   "kind": "extended_data_figure",
+   "label_form": "Extended Data Fig. 2",
+   "figure_number": 2,
+   "page": 13,
+   "bbox": {
+    "l": 58.39,
+    "t": 466.27,
+    "r": 287.2,
+    "b": 233.71,
+    "w": 228.81,
+    "h": 232.56,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 117,
+    "y0": 649,
+    "x1": 574,
+    "y1": 1114,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_008.png",
+   "image_size_px": [
+    457,
+    465
+   ],
+   "caption": "Extended Data Fig. 2 | CD index measured using alternative forward citation windows. This figure evaluates the sensitivity of our results to the use of different forward citation windows when computing the CD index for papers (n = 24,659,076) and patents (n = 3,912,353). In the main text, the index is computed based on citations made to papers and patents and their backward references as of 5 years after the year of publication. a and c plot the CD index",
+   "caption_page": 13,
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 225.65,
+    "r": 293.58,
+    "b": 169.14,
+    "w": 253.89,
+    "h": 56.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p13_e201"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 8.06
+   },
+   "element_id": "p13_e200",
+   "reading_order": 200
+  },
+  {
+   "figure_id": "fig_009",
+   "kind": "figure",
+   "label_form": "",
+   "figure_number": null,
+   "page": 13,
+   "bbox": {
+    "l": 308.11,
+    "t": 467.62,
+    "r": 538.54,
+    "b": 234.16,
+    "w": 230.43,
+    "h": 233.46,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 616,
+    "y0": 646,
+    "x1": 1077,
+    "y1": 1113,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_009.png",
+   "image_size_px": [
+    461,
+    467
+   ],
+   "caption": "using a longer, 10 year forward window, for papers and patents, respectively. b and d plot the CD index using all forward citations made to sample papers and patents as of the year 2017. Shaded bands correspond to 95% confidence intervals. Overall, the results mirror those reported in the main text, although the decline is somewhat steeper using longer forward citation windows, suggesting our primary results may represent a more conservative estimate.",
+   "caption_page": 13,
+   "caption_bbox": {
+    "l": 306.14,
+    "t": 225.64,
+    "r": 560.39,
+    "b": 169.13,
+    "w": 254.25,
+    "h": 56.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p13_e203"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 8.52
+   },
+   "element_id": "p13_e202",
+   "reading_order": 202
+  },
+  {
+   "figure_id": "fig_010",
+   "kind": "extended_data_figure",
+   "label_form": "Extended Data Fig. 3",
+   "figure_number": 3,
+   "page": 14,
+   "bbox": {
+    "l": 41.64,
+    "t": 744.64,
+    "r": 297.47,
+    "b": 492.78,
+    "w": 255.83,
+    "h": 251.86,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 83,
+    "y0": 92,
+    "x1": 595,
+    "y1": 596,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_010.png",
+   "image_size_px": [
+    512,
+    504
+   ],
+   "caption": "Extended Data Fig. 3 | Diversity of language use in science and technology over time. This figure shows changes in the ratio of unique to total words (also known as the type-token ratio) over time based on data from the abstracts of papers (a, n = 76 WoS research area × year observations) and patents (b, n = 229 NBER technology category × year observations). For papers, lines correspond to WoS research areas; for patents, lines correspond to NBER technology categories. For paper abstracts, lines begin in 1992 because WoS does not reliably record abstracts for papers published prior to the early 1990s. The ratio of unique to total words is computed separately by field (i.e., the uniqueness of",
+   "caption_page": 14,
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 484.78,
+    "r": 292.74,
+    "b": 398.26,
+    "w": 253.05,
+    "h": 86.52,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p14_e205"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 8.0
+   },
+   "element_id": "p14_e204",
+   "reading_order": 204
+  },
+  {
+   "figure_id": "fig_011",
+   "kind": "extended_data_figure",
+   "label_form": "Extended Data Fig. 4",
+   "figure_number": 4,
+   "page": 15,
+   "bbox": {
+    "l": 34.71,
+    "t": 746.11,
+    "r": 577.03,
+    "b": 498.29,
+    "w": 542.31,
+    "h": 247.83,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 69,
+    "y0": 90,
+    "x1": 1154,
+    "y1": 585,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_011.png",
+   "image_size_px": [
+    1085,
+    495
+   ],
+   "caption": "Extended Data Fig. 4 | Declining combinatorial novelty. This figure shows changing patterns in the combinatorial novelty/conventionality of papers (a, n = 24,659,076) and patents (b, n = 3,912,353), using a previously proposed measure of \"atypical combinations\" 14 . The measure quantifies the degree to which the prior work cited by a paper or patent would be expected by chance. For papers, we follow prior work 14 and consider combinations of cited journals. If a paper made three citations to prior work, and that work was published in three different journals-Nature, Cell, and Science-then there are three combinations-Nature × Cell, Nature × Science, and Science × Cell. To determine the degree to which each combination would be expected by chance, the frequency of observed pairings is compared to those in 10 \"rewired\" copies of the overall citation network, using a z-score. For patents, there is no natural",
+   "caption_page": 15,
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 490.93,
+    "r": 292.93,
+    "b": 374.42,
+    "w": 253.24,
+    "h": 116.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p15_e209"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 7.36
+   },
+   "element_id": "p15_e208",
+   "reading_order": 208
+  },
+  {
+   "figure_id": "fig_012",
+   "kind": "extended_data_figure",
+   "label_form": "Extended Data Fig. 6",
+   "figure_number": 6,
+   "page": 17,
+   "bbox": {
+    "l": 165.98,
+    "t": 744.65,
+    "r": 434.85,
+    "b": 495.91,
+    "w": 268.87,
+    "h": 248.74,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 332,
+    "y0": 92,
+    "x1": 870,
+    "y1": 590,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_012.png",
+   "image_size_px": [
+    538,
+    498
+   ],
+   "caption": "Extended Data Fig. 6 | CD index over time across data sources. This figure shows changes in CD5 over time across four additional data sources (the WoS [n = 24,659,076] and Patents View [n = 3,912,353] lines are included for reference): JSTOR (n = 1,703,353), the American Physical Society corpus (n = 478,373), Microsoft Academic Graph (n = 1,000,000), and PubMed (n = 16,774,282).",
+   "caption_page": 17,
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 479.67,
+    "r": 294.08,
+    "b": 433.16,
+    "w": 254.4,
+    "h": 46.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p17_e215"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 16.24
+   },
+   "element_id": "p17_e214",
+   "reading_order": 214
+  },
+  {
+   "figure_id": "fig_013",
+   "kind": "extended_data_figure",
+   "label_form": "Extended Data Fig. 7",
+   "figure_number": 7,
+   "page": 18,
+   "bbox": {
+    "l": 34.33,
+    "t": 745.64,
+    "r": 557.0,
+    "b": 486.02,
+    "w": 522.67,
+    "h": 259.62,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 69,
+    "y0": 90,
+    "x1": 1114,
+    "y1": 610,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_013.png",
+   "image_size_px": [
+    1045,
+    520
+   ],
+   "caption": "Extended Data Fig. 7 | Alternative measures of disruption. This figure shows the decline in the disruption of papers (a, n = 100,000) and patents (b, n = 100,000) based on two alternative measures of disruption. The blue lines calculate disruption using a measure proposed in Bornmann et al. 13 , DI l nok where l = 5, which makes the measure more resilient to marginal changes in the number of papers or patents that only cite the focal work's references. The orange lines calculate disruption using a measure proposed in Leydesdorff et al. 15 ,",
+   "caption_page": 18,
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 479.43,
+    "r": 294.18,
+    "b": 412.92,
+    "w": 254.5,
+    "h": 66.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p18_e218"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 6.59
+   },
+   "element_id": "p18_e217",
+   "reading_order": 217
+  },
+  {
+   "figure_id": "fig_014",
+   "kind": "extended_data_figure",
+   "label_form": "Extended Data Fig. 8",
+   "figure_number": 8,
+   "page": 19,
+   "bbox": {
+    "l": 41.13,
+    "t": 740.33,
+    "r": 555.24,
+    "b": 402.51,
+    "w": 514.11,
+    "h": 337.81,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 82,
+    "y0": 101,
+    "x1": 1110,
+    "y1": 777,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_014.png",
+   "image_size_px": [
+    1028,
+    676
+   ],
+   "caption": "Extended Data Fig. 8 | Robustness to changes in publication, citation, and authorship practices. This figure evaluates whether declines in disruptiveness may be attributable to changes in publication, citation, and authorship practices for papers (n = 24,659,076) and patents (n = 3,912,353). Panels a and d adjust for these changes using a normalization approach. We present two alternative versions of the CD index, both of which account for the tendency for papers and patents to cite more prior work over time. Blue lines indicate normalization at the paper level (accounting for the number of citations made by the focal paper/patent). Orange lines indicate normalization at the field and year level (accounting for the mean number of citations made by papers/patents in the focal field and year). Panels b (papers) and e (patents) adjust for changes in publication, citation, and authorship practices using a regression approach. The panels show predicted values of CD5 based on regressions reported in",
+   "caption_page": 19,
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 393.75,
+    "r": 294.52,
+    "b": 266.43,
+    "w": 254.83,
+    "h": 127.32,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p19_e221"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 8.76
+   },
+   "element_id": "p19_e220",
+   "reading_order": 220
+  },
+  {
+   "figure_id": "fig_015",
+   "kind": "extended_data_figure",
+   "label_form": "Extended Data Fig. 9",
+   "figure_number": 9,
+   "page": 20,
+   "bbox": {
+    "l": 33.67,
+    "t": 746.03,
+    "r": 557.05,
+    "b": 506.74,
+    "w": 523.38,
+    "h": 239.29,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 67,
+    "y0": 90,
+    "x1": 1114,
+    "y1": 568,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_015.png",
+   "image_size_px": [
+    1047,
+    478
+   ],
+   "caption": "Extended Data Fig. 9 | Growth of scientific and technological knowledge. This figure shows the number of papers (n = 24,659,076) published (a) and patents (n = 3,912,353) granted (b) over time. For papers, lines correspond to WoS research areas; for patents, lines correspond to NBER technology categories.",
+   "caption_page": 20,
+   "caption_bbox": {
+    "l": 39.68,
+    "t": 500.34,
+    "r": 550.21,
+    "b": 483.84,
+    "w": 510.54,
+    "h": 16.5,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p20_e224"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 6.4
+   },
+   "element_id": "p20_e223",
+   "reading_order": 223
+  }
+ ],
+ "tables": [
+  {
+   "table_id": "table_001",
+   "page": 21,
+   "bbox": {
+    "l": 37.48,
+    "t": 726.0,
+    "r": 550.5,
+    "b": 583.94,
+    "w": 513.01,
+    "h": 142.05,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p21_e227"
+  },
+  {
+   "table_id": "table_002",
+   "page": 31,
+   "bbox": {
+    "l": 35.75,
+    "t": 746.68,
+    "r": 575.17,
+    "b": 153.15,
+    "w": 539.43,
+    "h": 593.53,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": "Supplementary Table 1: Regression models of trends in disruptiveness adjusted for publication, citation, and authorship practices",
+   "caption_bbox": {
+    "l": 45.35,
+    "t": 754.51,
+    "r": 566.65,
+    "b": 745.55,
+    "w": 521.3,
+    "h": 8.96,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_page": 31,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": -1.13,
+    "paired": true
+   },
+   "element_id": "p31_e255"
+  },
+  {
+   "table_id": "table_003",
+   "page": 32,
+   "bbox": {
+    "l": 34.94,
+    "t": 745.98,
+    "r": 576.55,
+    "b": 579.5,
+    "w": 541.61,
+    "h": 166.48,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": "Supplementary Table 2: Regression models of disruptiveness and the growth of knowledge",
+   "caption_bbox": {
+    "l": 121.42,
+    "t": 754.51,
+    "r": 490.58,
+    "b": 745.55,
+    "w": 369.16,
+    "h": 8.96,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_page": 32,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": -0.43,
+    "paired": true
+   },
+   "element_id": "p32_e258"
+  },
+  {
+   "table_id": "table_004",
+   "page": 33,
+   "bbox": {
+    "l": 34.67,
+    "t": 538.21,
+    "r": 576.45,
+    "b": 348.79,
+    "w": 541.79,
+    "h": 189.41,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p33_e303"
+  }
+ ]
+}

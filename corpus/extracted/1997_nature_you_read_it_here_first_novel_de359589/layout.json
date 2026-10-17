@@ -1,0 +1,441 @@
+{
+ "paper_id": "1997_nature_you_read_it_here_first_novel_de359589",
+ "source_pdf": "D:\\2026-AI4S\\Novel paradigm\\REFs\\1997-Nature_You read it here first_'Novel'.pdf",
+ "source_sha256": "f6c03bc2929d76e8770a54739ce01ecdfd15939736c3998950df75ba1ddd41d3",
+ "source_name": "1997-Nature_You read it here first_'Novel'.pdf",
+ "n_pages": 1,
+ "page_size_pt": [
+  612.0,
+  792.0
+ ],
+ "coordinate_note": "bbox is PDF points with origin at the BOTTOM-LEFT, y increasing upward; bbox_norm divides by page size.",
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "generated_at": "2026-10-18T00:43:19",
+ "pages": [
+  {
+   "page_no": 1,
+   "width_pt": 612.0,
+   "height_pt": 792.0,
+   "png": "pages/page_0001.png",
+   "elements": [
+    {
+     "reading_order": 0,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 53.63,
+      "t": 735.54,
+      "r": 210.05,
+      "b": 590.97,
+      "w": 156.42,
+      "h": 144.58,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.08763,
+      "t": 0.92871,
+      "r": 0.34322,
+      "b": 0.74617
+     },
+     "text": "collective stranglehold on Chinese intellectual advancement. In addition, one critical point that is studiously not addressed by Chau and Chau is Needham's observations regarding the culturally defined roles of science in Chinese society, in which practitioners of science (in the broadest sense) traditionally served the authoritarian needs of the state (royal court), particularly in close conjunction with well-defined élite classes that promulgated the systematic abuse of the predominantly submissive agrarian population.",
+     "text_len": 526,
+     "level": 1,
+     "element_id": "p1_e0"
+    },
+    {
+     "reading_order": 1,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 53.71,
+      "t": 588.55,
+      "r": 214.51,
+      "b": 391.47,
+      "w": 160.8,
+      "h": 197.07,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.08776,
+      "t": 0.74312,
+      "r": 0.35051,
+      "b": 0.49428
+     },
+     "text": "To confound matters further, Chau and Chau seem not to understand that the concept of individualism has radically different meanings within the broader contexts of Asian and Western societies. They are also incorrect in stating that authoritarianism was unknown in the original writings of Confucian philosophers. On the contrary, Confucianism developed out of a society with a highly regimented social structure with little internal mobility; thus, virtue as a putatively beneficial quality was, and is, traditionally imposed from above in Chinese society. To the extent that moral courage existed in Chinese society, particularly during the Tang and Qing dynasties, it was a consequence of individual behaviour (and varied from person to person), not Confucianism. It was certainly not an idealistic consequence of well-travelled paths having been trodden in the search for greater meanings. Filial piety, therefore, is necessary for maintaining social harmony in Asian society. Confucian philosophers and scholars were hardly the only ones to have understood this point. Mao reformated this concept, and then used it to great ill-effect in his egotistical attempt to dominate Chinese society. Mao understood the Confucian Analects as well as any Chinese -probably more than most -and evidently to a much greater extent than the authors of the recent correspondence.",
+     "text_len": 1368,
+     "level": 1,
+     "element_id": "p1_e1"
+    },
+    {
+     "reading_order": 2,
+     "page": 1,
+     "label": "section_header",
+     "bbox": {
+      "l": 226.76,
+      "t": 567.22,
+      "r": 271.03,
+      "b": 559.57,
+      "w": 44.27,
+      "h": 7.65,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.37052,
+      "t": 0.71619,
+      "r": 0.44286,
+      "b": 0.70653
+     },
+     "text": "Peter Cohen",
+     "text_len": 11,
+     "level": 1,
+     "element_id": "p1_e2"
+    },
+    {
+     "reading_order": 3,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 226.75,
+      "t": 556.2,
+      "r": 334.01,
+      "b": 496.77,
+      "w": 107.26,
+      "h": 59.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.37051,
+      "t": 0.70227,
+      "r": 0.54577,
+      "b": 0.62723
+     },
+     "text": "Department of Chemistry, Columbia University, MC 3150, Havemeyer Hall, 3000 Broadway, New York, New York 10027, USA e-mail: cohen@chem.columbia.edu",
+     "text_len": 147,
+     "level": 1,
+     "element_id": "p1_e3"
+    },
+    {
+     "reading_order": 4,
+     "page": 1,
+     "label": "section_header",
+     "bbox": {
+      "l": 226.76,
+      "t": 474.89,
+      "r": 353.59,
+      "b": 459.79,
+      "w": 126.83,
+      "h": 15.1,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.37052,
+      "t": 0.59961,
+      "r": 0.57776,
+      "b": 0.58054
+     },
+     "text": "You read it here first",
+     "text_len": 22,
+     "level": 1,
+     "element_id": "p1_e4"
+    },
+    {
+     "reading_order": 5,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 226.73,
+      "t": 452.05,
+      "r": 385.49,
+      "b": 422.97,
+      "w": 158.76,
+      "h": 29.08,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.37047,
+      "t": 0.57077,
+      "r": 0.62989,
+      "b": 0.53405
+     },
+     "text": "Sir -S. H. Friedman and J. O. M. Karlsson recently reported what they believed to be a novel paradigm (Nature 385, 480; 1997).",
+     "text_len": 126,
+     "level": 1,
+     "element_id": "p1_e5"
+    },
+    {
+     "reading_order": 6,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 226.74,
+      "t": 420.55,
+      "r": 386.52,
+      "b": 391.47,
+      "w": 159.78,
+      "h": 29.08,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.37049,
+      "t": 0.531,
+      "r": 0.63157,
+      "b": 0.49428
+     },
+     "text": "They presented a graph of the proportion of articles in the Medline database with the word 'novel' in the title or",
+     "text_len": 114,
+     "level": 1,
+     "element_id": "p1_e6"
+    },
+    {
+     "reading_order": 7,
+     "page": 1,
+     "label": "section_header",
+     "bbox": {
+      "l": 440.12,
+      "t": 767.25,
+      "r": 561.8,
+      "b": 753.3,
+      "w": 121.68,
+      "h": 13.94,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.71915,
+      "t": 0.96875,
+      "r": 0.91797,
+      "b": 0.95114
+     },
+     "text": "correspondence",
+     "text_len": 14,
+     "level": 1,
+     "element_id": "p1_e7"
+    },
+    {
+     "reading_order": 8,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 399.89,
+      "t": 735.55,
+      "r": 560.12,
+      "b": 674.97,
+      "w": 160.23,
+      "h": 60.58,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.65342,
+      "t": 0.92872,
+      "r": 0.91523,
+      "b": 0.85223
+     },
+     "text": "abstract, plotted as a function of the year of publication. They extrapolated, from the exponential rise in the use of the word, that by 2020 all scientific papers will claim novel findings. It is ironic that their observation is itself not novel.",
+     "text_len": 247,
+     "level": 1,
+     "element_id": "p1_e8"
+    },
+    {
+     "reading_order": 9,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 399.92,
+      "t": 672.55,
+      "r": 568.52,
+      "b": 569.97,
+      "w": 168.61,
+      "h": 102.58,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.65346,
+      "t": 0.84918,
+      "r": 0.92895,
+      "b": 0.71966
+     },
+     "text": "8 Nature published correspondence in 1991 (350, 9; 1991) in which we noted the accelerating use of the word 'novel' and documented it with a graph of the frequency of use of 'novel' and two control words ('control' and 'unusual') in Medline database records. In addition, we recommended that authors reserve 'novel' for strikingly new discoveries, lest the word lose its impact.",
+     "text_len": 378,
+     "level": 1,
+     "element_id": "p1_e9"
+    },
+    {
+     "reading_order": 10,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 399.93,
+      "t": 567.55,
+      "r": 559.8,
+      "b": 485.97,
+      "w": 159.88,
+      "h": 81.58,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.65348,
+      "t": 0.7166,
+      "r": 0.91471,
+      "b": 0.6136
+     },
+     "text": "We are sorry to see, from the updated data provided by Friedman and Karlsson, that our recommendation has had no discernible impact. It appears that the editors of Nature recognize the dire consequences of the novelty explosion and will provide regular updates of the situation until the message takes hold.",
+     "text_len": 307,
+     "level": 1,
+     "element_id": "p1_e10"
+    },
+    {
+     "reading_order": 11,
+     "page": 1,
+     "label": "section_header",
+     "bbox": {
+      "l": 399.9,
+      "t": 483.22,
+      "r": 456.62,
+      "b": 475.57,
+      "w": 56.72,
+      "h": 7.65,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.65343,
+      "t": 0.61013,
+      "r": 0.74611,
+      "b": 0.60047
+     },
+     "text": "Robert W. Levis",
+     "text_len": 15,
+     "level": 1,
+     "element_id": "p1_e11"
+    },
+    {
+     "reading_order": 12,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 399.9,
+      "t": 472.2,
+      "r": 526.75,
+      "b": 454.75,
+      "w": 126.85,
+      "h": 17.45,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.65343,
+      "t": 0.59621,
+      "r": 0.8607,
+      "b": 0.57418
+     },
+     "text": "Fred Hutchinson Cancer Research Center, Seattle,",
+     "text_len": 48,
+     "level": 1,
+     "element_id": "p1_e12"
+    },
+    {
+     "reading_order": 13,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 399.91,
+      "t": 451.19,
+      "r": 475.03,
+      "b": 444.24,
+      "w": 75.12,
+      "h": 6.95,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.65345,
+      "t": 0.56968,
+      "r": 0.77619,
+      "b": 0.56091
+     },
+     "text": "Washington 98109, USA",
+     "text_len": 21,
+     "level": 1,
+     "element_id": "p1_e13"
+    },
+    {
+     "reading_order": 14,
+     "page": 1,
+     "label": "section_header",
+     "bbox": {
+      "l": 399.9,
+      "t": 441.22,
+      "r": 457.64,
+      "b": 433.57,
+      "w": 57.74,
+      "h": 7.65,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.65343,
+      "t": 0.5571,
+      "r": 0.74778,
+      "b": 0.54744
+     },
+     "text": "Steven Henikoff",
+     "text_len": 15,
+     "level": 1,
+     "element_id": "p1_e14"
+    },
+    {
+     "reading_order": 15,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 399.9,
+      "t": 430.2,
+      "r": 526.75,
+      "b": 402.26,
+      "w": 126.85,
+      "h": 27.94,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.65343,
+      "t": 0.54318,
+      "r": 0.8607,
+      "b": 0.5079
+     },
+     "text": "Fred Hutchinson Cancer Research Center, and Howard Hughes Medical Institute, Seattle,",
+     "text_len": 85,
+     "level": 1,
+     "element_id": "p1_e15"
+    },
+    {
+     "reading_order": 16,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 399.9,
+      "t": 398.71,
+      "r": 475.02,
+      "b": 391.76,
+      "w": 75.12,
+      "h": 6.95,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.65343,
+      "t": 0.50342,
+      "r": 0.77618,
+      "b": 0.49465
+     },
+     "text": "Washington 98109, USA",
+     "text_len": 21,
+     "level": 1,
+     "element_id": "p1_e16"
+    }
+   ]
+  }
+ ],
+ "caption_blocks": [],
+ "uncaptioned_pictures": []
+}

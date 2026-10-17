@@ -1,0 +1,16 @@
+import json, pathlib
+ROOT = pathlib.Path(r"E:\2026-AI4S\figpipe")
+cands = list((ROOT/"corpus").glob("*vlm*report*")) + list((ROOT/"corpus").glob("vlm_report*"))
+print("report candidates: %s" % [c.name for c in cands])
+for c in cands:
+    d = json.loads(c.read_text(encoding="utf-8"))
+    print("=" * 90)
+    print(c.name)
+    print("  n_figures_labelled: %s  n_papers: %s" % (d.get("n_figures_labelled"), d.get("n_papers")))
+    print("  null_ratio_overall: %s" % d.get("null_ratio_overall"))
+    print("  fields_never_null : %s" % d.get("fields_never_null"))
+    print("  degenerate_fields : %s" % d.get("degenerate_fields"))
+    print("  column_width_vs_geometry: %s" % json.dumps(d.get("column_width_vs_geometry"), indent=2))
+    print("  fabrication_watch: %s" % json.dumps(d.get("fabrication_watch"), indent=2, ensure_ascii=False)[:600])
+    print("  controls: %s" % json.dumps(d.get("controls"), indent=2, ensure_ascii=False)[:800])
+    print("  consistency: %s" % json.dumps(d.get("consistency"), indent=2, ensure_ascii=False)[:500])

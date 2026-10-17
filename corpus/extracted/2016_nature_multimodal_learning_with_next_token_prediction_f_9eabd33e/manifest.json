@@ -1,0 +1,34 @@
+{
+ "paper_id": "2016_nature_multimodal_learning_with_next_token_prediction_f_9eabd33e",
+ "source_name": "2016-Nature-Multimodal learning with next-token prediction for large multimodal models.pdf",
+ "source_pdf": "D:\\2026-AI4S\\REFs\\2016-Nature-Multimodal learning with next-token prediction for large multimodal models.pdf",
+ "source_sha256": "6639f8c81b5d4f13af5fded43db8072857871dd68852c1d8db7404b79433e8d2",
+ "source_md5": "9eabd33e960b34b999c7715083fb4ac0",
+ "journal_doi": "10.1038/s41586-025-10041-x",
+ "n_pages": 20,
+ "n_elements": 280,
+ "n_figures": 7,
+ "n_tables": 8,
+ "n_pictures_detected": 24,
+ "n_uncaptioned_pictures": 17,
+ "n_caption_blocks": 11,
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "elapsed_s": 12.6,
+ "artefacts": {
+  "pages_dir": "pages/",
+  "n_page_pngs": 20,
+  "figures_dir": "figures/",
+  "layout": "layout.json",
+  "content": "content.md",
+  "figures_meta": "figures_meta.json"
+ },
+ "status": "ok",
+ "generated_at": "2026-10-18T00:43:45"
+}

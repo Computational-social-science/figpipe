@@ -1,0 +1,852 @@
+{
+ "paper_id": "2024_nature_detecting_hallucinations_in_large_language_model_2da17701",
+ "source_pdf": "D:\\2026-AI4S\\!2024-Nature-Detecting hallucinations in large language models using semantic entropy_SI&Highlights.pdf",
+ "source_sha256": "20c39bb8a53916316c46fd38bee1d1778150bd8dfa023c681a96a3583cfd786f",
+ "source_name": "!2024-Nature-Detecting hallucinations in large language models using semantic entropy_SI&Highlights.pdf",
+ "n_pages": 31,
+ "generated_at": "2026-10-18T00:40:58",
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "n_figures": 14,
+ "n_tables": 6,
+ "n_pictures_detected": 16,
+ "n_uncaptioned_pictures": 2,
+ "figures": [
+  {
+   "figure_id": "fig_001",
+   "kind": "figure",
+   "figure_number": 1,
+   "page": 2,
+   "bbox": {
+    "l": 37.7,
+    "t": 740.72,
+    "r": 561.39,
+    "b": 586.45,
+    "w": 523.68,
+    "h": 154.27,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 75,
+    "y0": 100,
+    "x1": 1123,
+    "y1": 409,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_001.png",
+   "image_size_px": [
+    1048,
+    309
+   ],
+   "caption": "Figure 1 | A strategy for detecting LLM confabulations. Large language models (LLMs) can produce confabulations, a type of factually incorrect output. Farquhar et al. 5 developed a method for detecting such errors using LLMs. One LLM produced outputs to be evaluated. The authors used a second, 'semantic equivalence' LLM to group a set of possible outputs from the first LLM in terms",
+   "caption_page": 2,
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 580.27,
+    "r": 293.93,
+    "b": 533.77,
+    "w": 254.24,
+    "h": 46.5,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p2_e105"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 6.18
+   },
+   "element_id": "p2_e104",
+   "reading_order": 104
+  },
+  {
+   "figure_id": "fig_002",
+   "kind": "figure",
+   "figure_number": 1,
+   "page": 4,
+   "bbox": {
+    "l": 128.84,
+    "t": 742.18,
+    "r": 470.36,
+    "b": 416.04,
+    "w": 341.52,
+    "h": 326.14,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 258,
+    "y0": 97,
+    "x1": 941,
+    "y1": 750,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_002.png",
+   "image_size_px": [
+    683,
+    653
+   ],
+   "caption": "Fig. 1 | Overview of semantic entropy and confabulation detection. a, Naive entropy-based uncertainty measures variation in the exact answers, treating 'Paris', 'It's Paris' and 'France's capital Paris' as different. But this is unsuitable for language tasks for which sometimes different answers mean the same things. Our semantic entropy clusters answers which share meanings before computing the entropy. A low semantic entropy shows that the LLM is confident about the meaning. b, Semantic entropy can also detect confabulations in longer passages. We automatically decompose a long generated answer into",
+   "caption_page": 4,
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 408.26,
+    "r": 293.26,
+    "b": 331.74,
+    "w": 253.57,
+    "h": 76.52,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p4_e148",
+    "p4_e149"
+   ],
+   "caption_n_items": 2,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 7.78
+   },
+   "element_id": "p4_e147",
+   "reading_order": 147
+  },
+  {
+   "figure_id": "fig_003",
+   "kind": "figure",
+   "figure_number": 2,
+   "page": 5,
+   "bbox": {
+    "l": 134.3,
+    "t": 744.38,
+    "r": 465.42,
+    "b": 478.0,
+    "w": 331.12,
+    "h": 266.38,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 269,
+    "y0": 93,
+    "x1": 931,
+    "y1": 626,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_003.png",
+   "image_size_px": [
+    662,
+    533
+   ],
+   "caption": "Fig. 2 | Detecting confabulations in sentence-length generations. Semantic entropy outperforms leading baselines and naive entropy. AUROC (scored on the y-axes) measures how well methods predict LLM mistakes, which correlate with confabulations. AURAC (likewise scored on the y-axes) measures the",
+   "caption_page": 5,
+   "caption_bbox": {
+    "l": 39.69,
+    "t": 469.16,
+    "r": 292.9,
+    "b": 432.65,
+    "w": 253.21,
+    "h": 36.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p5_e157"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 8.84
+   },
+   "element_id": "p5_e156",
+   "reading_order": 156
+  },
+  {
+   "figure_id": "fig_004",
+   "kind": "figure",
+   "figure_number": 3,
+   "page": 7,
+   "bbox": {
+    "l": 34.83,
+    "t": 744.67,
+    "r": 288.92,
+    "b": 604.24,
+    "w": 254.09,
+    "h": 140.44,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 70,
+    "y0": 92,
+    "x1": 578,
+    "y1": 373,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_004.png",
+   "image_size_px": [
+    508,
+    281
+   ],
+   "caption": "Fig. 3 | Detecting GPT-4 confabulations in paragraph-length biographies. The discrete variant of our semantic entropy estimator outperforms baselines both when measured by AUROC and AURAC metrics (scored on the y-axis). The AUROC and AURAC are substantially higher than for both baselines. At above 80% of questions being answered, semantic entropy has the highest accuracy. Only when the top 20% of answers judged most likely to be confabulations are rejected does the answer accuracy on the remainder for the P(True) baseline exceed semantic entropy.",
+   "caption_page": 7,
+   "caption_bbox": {
+    "l": 39.68,
+    "t": 595.38,
+    "r": 291.98,
+    "b": 518.86,
+    "w": 252.29,
+    "h": 76.52,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p7_e175"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 8.86
+   },
+   "element_id": "p7_e174",
+   "reading_order": 174
+  },
+  {
+   "figure_id": "fig_005",
+   "kind": "supplementary_figure",
+   "figure_number": 1,
+   "page": 20,
+   "bbox": {
+    "l": 99.4,
+    "t": 766.02,
+    "r": 487.08,
+    "b": 551.2,
+    "w": 387.68,
+    "h": 214.81,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 199,
+    "y0": 152,
+    "x1": 974,
+    "y1": 581,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_005.png",
+   "image_size_px": [
+    775,
+    429
+   ],
+   "caption": "Supplementary Figure 1: Entailment method choice for paragraph biographies. Implementing the non-defeating bi-directional entailment with DeBERTa provided the best empirical results for paragraph biography confabulation detection.",
+   "caption_page": 20,
+   "caption_bbox": {
+    "l": 124.59,
+    "t": 535.32,
+    "r": 495.21,
+    "b": 502.58,
+    "w": 370.61,
+    "h": 32.74,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p20_e538"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 15.88
+   },
+   "element_id": "p20_e530",
+   "reading_order": 530
+  },
+  {
+   "figure_id": "fig_006",
+   "kind": "supplementary_figure",
+   "figure_number": 2,
+   "page": 22,
+   "bbox": {
+    "l": 98.61,
+    "t": 766.97,
+    "r": 491.34,
+    "b": 394.5,
+    "w": 392.73,
+    "h": 372.47,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 197,
+    "y0": 150,
+    "x1": 983,
+    "y1": 895,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_006.png",
+   "image_size_px": [
+    786,
+    745
+   ],
+   "caption": "Supplementary Figure 2: Number of sentence-length generations used for entropy. We find diminishing returns to increasing the number of generations sampled for the semantic entropy estimation, but select 10 as a reasonable number for results in this paper. The numbers annotating p(True) illustrate the number of few-shot examples we were able to include without exceeding the maximal input size for each dataset and number of generations.",
+   "caption_page": 22,
+   "caption_bbox": {
+    "l": 124.59,
+    "t": 390.06,
+    "r": 495.21,
+    "b": 321.32,
+    "w": 370.61,
+    "h": 68.74,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p22_e559"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 4.44
+   },
+   "element_id": "p22_e543",
+   "reading_order": 543
+  },
+  {
+   "figure_id": "fig_007",
+   "kind": "supplementary_figure",
+   "figure_number": 3,
+   "page": 23,
+   "bbox": {
+    "l": 106.78,
+    "t": 759.68,
+    "r": 463.27,
+    "b": 549.3,
+    "w": 356.48,
+    "h": 210.39,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 214,
+    "y0": 164,
+    "x1": 927,
+    "y1": 585,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_007.png",
+   "image_size_px": [
+    713,
+    421
+   ],
+   "caption": "Supplementary Figure 3: Number of factoid generations used in paragraphlength biographies. We find that confabulation-detection performance is not very sensitive to the number of generations, but that four total factoids per question (including the original one) results in competitive performance.",
+   "caption_page": 23,
+   "caption_bbox": {
+    "l": 100.07,
+    "t": 535.32,
+    "r": 470.69,
+    "b": 490.58,
+    "w": 370.61,
+    "h": 44.74,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p23_e562"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 13.98
+   },
+   "element_id": "p23_e561",
+   "reading_order": 561
+  },
+  {
+   "figure_id": "fig_008",
+   "kind": "supplementary_figure",
+   "figure_number": 4,
+   "page": 24,
+   "bbox": {
+    "l": 99.6,
+    "t": 765.63,
+    "r": 490.36,
+    "b": 590.5,
+    "w": 390.76,
+    "h": 175.13,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 199,
+    "y0": 153,
+    "x1": 981,
+    "y1": 503,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_008.png",
+   "image_size_px": [
+    782,
+    350
+   ],
+   "caption": "Supplementary Figure 4: In many cases, relatively few clusters are found, which can improve computational efficiency. The easiest dataset (TriviaQA) generally has fewest clusters because the answers are confident. In our results for the paragraphlength task, we use 4-factoids per question as shown in (supplementary figure 4e), but increasing the number of generations does not greatly increase the number of clusters (supplementary figure 4f). All sentence-length-generation plots are for LLaMA 2 Chat 70B while the paragraph-generation plots are GPT-4.",
+   "caption_page": 24,
+   "caption_bbox": {
+    "l": 124.6,
+    "t": 580.12,
+    "r": 495.21,
+    "b": 499.38,
+    "w": 370.61,
+    "h": 80.74,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p24_e598"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 10.38
+   },
+   "element_id": "p24_e565",
+   "reading_order": 565
+  },
+  {
+   "figure_id": "fig_009",
+   "kind": "supplementary_figure",
+   "figure_number": 5,
+   "page": 25,
+   "bbox": {
+    "l": 98.41,
+    "t": 768.29,
+    "r": 470.05,
+    "b": 460.12,
+    "w": 371.64,
+    "h": 308.17,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 197,
+    "y0": 147,
+    "x1": 940,
+    "y1": 764,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_009.png",
+   "image_size_px": [
+    743,
+    617
+   ],
+   "caption": "Supplementary Figure 5: Sentence-length confabulation detection-full AUROC. An unaggregated view of the AUROCs shown in Figure 2.",
+   "caption_page": 25,
+   "caption_bbox": {
+    "l": 100.07,
+    "t": 449.08,
+    "r": 470.68,
+    "b": 428.34,
+    "w": 370.61,
+    "h": 20.74,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p25_e604"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 11.04
+   },
+   "element_id": "p25_e603",
+   "reading_order": 603
+  },
+  {
+   "figure_id": "fig_010",
+   "kind": "supplementary_figure",
+   "figure_number": 6,
+   "page": 26,
+   "bbox": {
+    "l": 99.18,
+    "t": 768.73,
+    "r": 495.78,
+    "b": 469.72,
+    "w": 396.59,
+    "h": 299.0,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 198,
+    "y0": 146,
+    "x1": 992,
+    "y1": 744,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_010.png",
+   "image_size_px": [
+    794,
+    598
+   ],
+   "caption": "Supplementary Figure 6: Sentence-length confabulation detectionrejection accuracy. A more detailed view of the rejection accuracies of the figures provides further elaboration of the findings in Figure 2.",
+   "caption_page": 26,
+   "caption_bbox": {
+    "l": 124.59,
+    "t": 460.03,
+    "r": 495.21,
+    "b": 427.29,
+    "w": 370.61,
+    "h": 32.74,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p26_e675"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 9.69
+   },
+   "element_id": "p26_e653",
+   "reading_order": 653
+  },
+  {
+   "figure_id": "fig_011",
+   "kind": "supplementary_figure",
+   "figure_number": 7,
+   "page": 27,
+   "bbox": {
+    "l": 99.72,
+    "t": 618.55,
+    "r": 483.57,
+    "b": 312.04,
+    "w": 383.84,
+    "h": 306.51,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 199,
+    "y0": 447,
+    "x1": 967,
+    "y1": 1060,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_011.png",
+   "image_size_px": [
+    768,
+    613
+   ],
+   "caption": "Supplementary Figure 7: Short-Phrase confabulation detection. With a prompt that encourages short generations, we achieve a lower average answer length (15.9±21.8 characters compared to 95.6±69.6 for sentence-length generations). Semantic entropy still works well compared to p(True) and embedding regression, although its advantage over naive entropy is smaller to due to the lower syntactic variability of the shorter generations.",
+   "caption_page": 27,
+   "caption_bbox": {
+    "l": 100.07,
+    "t": 300.98,
+    "r": 470.68,
+    "b": 232.25,
+    "w": 370.61,
+    "h": 68.74,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p27_e682"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 11.06
+   },
+   "element_id": "p27_e681",
+   "reading_order": 681
+  },
+  {
+   "figure_id": "fig_012",
+   "kind": "supplementary_figure",
+   "figure_number": 8,
+   "page": 28,
+   "bbox": {
+    "l": 98.99,
+    "t": 768.94,
+    "r": 494.86,
+    "b": 458.59,
+    "w": 395.87,
+    "h": 310.35,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 198,
+    "y0": 146,
+    "x1": 990,
+    "y1": 767,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_012.png",
+   "image_size_px": [
+    792,
+    621
+   ],
+   "caption": "Supplementary Figure 8: Short-Phrase confabulation detection-Noninstruction-tuned models. Models that have not been instruction-tuned have slightly different output-distribution characteristics to instruction-tuned models. However, we find that both classes of models show broadly similar results and that semantic entropy continues to outperform baselines in this setting. employ five few-shot QA demonstrations before the main question, all following the template introduced above, which further encourages the LLM to predict with brevity as the reference answers are usually very short for our selection of datasets. The shortphrase scenario is less practically relevant, as users commonly interact with longer",
+   "caption_page": 28,
+   "caption_bbox": {
+    "l": 124.59,
+    "t": 449.08,
+    "r": 495.21,
+    "b": 297.85,
+    "w": 370.62,
+    "h": 151.23,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p28_e746",
+    "p28_e747"
+   ],
+   "caption_n_items": 2,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 9.51
+   },
+   "element_id": "p28_e729",
+   "reading_order": 729
+  },
+  {
+   "figure_id": "fig_013",
+   "kind": "supplementary_figure",
+   "figure_number": 9,
+   "page": 29,
+   "bbox": {
+    "l": 98.87,
+    "t": 768.25,
+    "r": 508.69,
+    "b": 469.97,
+    "w": 409.82,
+    "h": 298.28,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 198,
+    "y0": 147,
+    "x1": 1017,
+    "y1": 744,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_013.png",
+   "image_size_px": [
+    819,
+    597
+   ],
+   "caption": "Supplementary Figure 9: Short-Phrase confabulation detection-rejection accuracy. A more detailed view of the rejection accuracies of the figures provides further elaboration of the findings in supplementary figure 7.",
+   "caption_page": 29,
+   "caption_bbox": {
+    "l": 100.07,
+    "t": 460.03,
+    "r": 470.68,
+    "b": 427.29,
+    "w": 370.61,
+    "h": 32.74,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p29_e751"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 9.94
+   },
+   "element_id": "p29_e750",
+   "reading_order": 750
+  },
+  {
+   "figure_id": "fig_014",
+   "kind": "supplementary_figure",
+   "figure_number": 10,
+   "page": 30,
+   "bbox": {
+    "l": 99.14,
+    "t": 768.55,
+    "r": 495.79,
+    "b": 469.49,
+    "w": 396.64,
+    "h": 299.06,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 198,
+    "y0": 147,
+    "x1": 992,
+    "y1": 745,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_014.png",
+   "image_size_px": [
+    794,
+    598
+   ],
+   "caption": "Supplementary Figure 10: Short-Phrase confabulation detection-rejection accuracy for non-instruction tuned models. A more detailed view of the rejection accuracies of the figures provides further elaboration of the findings in supplementary figure 7.",
+   "caption_page": 30,
+   "caption_bbox": {
+    "l": 124.59,
+    "t": 460.03,
+    "r": 495.21,
+    "b": 415.29,
+    "w": 370.61,
+    "h": 44.74,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p30_e796"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 9.46
+   },
+   "element_id": "p30_e774",
+   "reading_order": 774
+  }
+ ],
+ "tables": [
+  {
+   "table_id": "table_001",
+   "page": 6,
+   "bbox": {
+    "l": 36.27,
+    "t": 726.42,
+    "r": 562.53,
+    "b": 423.18,
+    "w": 526.25,
+    "h": 303.24,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p6_e167"
+  },
+  {
+   "table_id": "table_002",
+   "page": 16,
+   "bbox": {
+    "l": 125.42,
+    "t": 482.99,
+    "r": 495.94,
+    "b": 399.76,
+    "w": 370.52,
+    "h": 83.23,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": "This note provides a worked example of the calculation of semantic entropy. As a worked example, suppose that we have asked \"Where is the Eiffel Tower?\". The model generates five answers with the length-normalised sequence log-probabilities 1N ∏Ni p(si | si) (given in the first column). In this hypothetical example, we happened to sample the literal string \"Paris.\" twice, because we are just randomly sampling from the language model which assigns the string high probability. But we also found a different string that was equivalent to it, as well as some wrong answers. Note that in the case of model APIs which do not report the log-probabilities (such as GPT-4 at time of writing) we will not have the final number, just the text. To compute the semantic entropy, we cluster these generations into clusters that can be considered to mean the same thing. We also add up the probabilities associated",
+   "caption_bbox": {
+    "l": 124.59,
+    "t": 706.74,
+    "r": 495.21,
+    "b": 498.0,
+    "w": 370.61,
+    "h": 208.75,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_page": 16,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": 15.01,
+    "paired": true
+   },
+   "element_id": "p16_e424"
+  },
+  {
+   "table_id": "table_003",
+   "page": 18,
+   "bbox": {
+    "l": 100.63,
+    "t": 768.21,
+    "r": 498.36,
+    "b": 716.75,
+    "w": 397.73,
+    "h": 51.46,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p18_e479"
+  },
+  {
+   "table_id": "table_004",
+   "page": 19,
+   "bbox": {
+    "l": 152.42,
+    "t": 769.39,
+    "r": 417.97,
+    "b": 704.83,
+    "w": 265.55,
+    "h": 64.56,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p19_e524"
+  },
+  {
+   "table_id": "table_005",
+   "page": 20,
+   "bbox": {
+    "l": 100.17,
+    "t": 478.05,
+    "r": 495.83,
+    "b": 217.1,
+    "w": 395.66,
+    "h": 260.95,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": 24.53,
+    "paired": false
+   },
+   "element_id": "p20_e537"
+  },
+  {
+   "table_id": "table_006",
+   "page": 27,
+   "bbox": {
+    "l": 109.54,
+    "t": 761.93,
+    "r": 460.93,
+    "b": 712.31,
+    "w": 351.4,
+    "h": 49.62,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p27_e679"
+  }
+ ]
+}

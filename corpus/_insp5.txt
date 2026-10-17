@@ -1,0 +1,52 @@
+================================================================================================
+THE KNOWLEDGE BASE NOW CONTRADICTS THE NEW DETECTOR -- in the same repo
+================================================================================================
+
+E01 (in layout_rules.json) says:
+  median width 171.6 mm; 27.6%% within 3 mm of 89/183
+  evidence: 369 bands from 38 papers (OLD detector)
+
+NEW detector (figures_caption_anchored.json) says:
+  73 figures from 11 papers
+  median width 168.7 mm
+  within 3mm of 89/183: 28 (38.4%)
+
+  => E01's headline numbers (171.6 mm, 27.6%%) come from a detector the
+     project has now declared ~50%% WRONG and rewritten.
+     The KB still presents them as 'Measured'.
+
+================================================================================================
+QUANTIFY THE DISAGREEMENT
+================================================================================================
+  old median 171.6 mm  vs  new median 168.7 mm   (delta -2.9 mm)
+  old near-column 27.6%  vs  new 38.4%  (delta +10.8 pp)
+  old n=369 bands      vs  new n=73 figures
+
+  E02: 34.0%% below 5pt on 188 bands -- the new detector does not compute
+  font sizes at all (no min_font_pt key in the 73 records):
+    new record keys: ['bbox', 'caption_bbox', 'caption_text', 'figure_number', 'height_mm', 'kind', 'page', 'paper', 'width_mm']
+    min_font_pt present: False
+
+  => E02 has NO replacement measurement. It cites a detector that no longer exists,
+     and the new detector does not measure the quantity E02 is about.
+
+================================================================================================
+DOES THE KB FLAG THIS?
+================================================================================================
+  E01 confidence=hypothesis caveat=NOT YET TRUSTWORTHY. The figure-band detector is a heuristic that merges overlap
+  E02 confidence=hypothesis caveat=Same detector caveat as E01, PLUS an unresolved scale question: PDF rendered siz
+
+  The caveat says 'NOT YET TRUSTWORTHY ... P0 requires a 20-band manual validation'.
+  P0 has NOW been done (detector_verification.json: 5/5) -- but on the NEW detector.
+  So the caveat's stated condition is met for a detector E01 does not use.
+
+================================================================================================
+IS THE OLD DETECTOR STILL THE SOURCE OF ANY LIVE NUMBER?
+================================================================================================
+  corpus/derived.json (tracked): bands_kept=369, median=171.6
+  corpus/measured.json (tracked): 420 bands from 38 papers
+  knowledge/layout_rules.json corpus block: bands_kept=369, papers=38
+  corpus/figures_caption_anchored.json (NEW, tracked): 73 figures, 11 papers
+
+  => FOUR tracked artefacts; TWO incompatible corpora definitions coexist.
+     Nothing marks derived.json/measured.json as superseded.

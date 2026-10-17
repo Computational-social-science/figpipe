@@ -1,0 +1,33 @@
+records: 73
+keys: ['figure_number', 'kind', 'caption_text', 'caption_bbox', 'bbox', 'width_mm', 'height_mm', 'page', 'paper']
+
+record[0]: figure_number=1 kind=main page=2 width=184.0 height=55.4
+  caption_text[:120]: Figure 1 | A strategy for detecting LLM confabulations.  Large language
+
+==========================================================================================
+NEW DETECTOR: 73 figures across 11 papers
+==========================================================================================
+kinds: {'main': 36, 'extended': 37}
+width_mm : min 63.5  median 168.7  max 186.8
+height_mm: min 18.6  median 71.4  max 225.4
+
+PHYSICAL IMPOSSIBILITY CHECK (old detector's failure):
+  height > 279 mm (A4): 0
+  width  > 210 mm (A4): 0
+  height > 240 mm     : 0
+  height <  20 mm     : 1
+
+near 89mm: 6   near 183mm: 22   share: 0.384
+
+per-paper figure counts:
+  !2024-Nature-Detecting hallucinations in large language mo 6
+  !2026-Nature-Evaluating large language models for accuracy 5
+  2024-Nature-Scaling neural machine translation to 200 lang 5
+  2025-Nature-A foundation model to predict and capture huma 11
+  2025-Nature-Joint speech and text machine translation for  1
+  2026-Nature-A critical initialization for biological neura 13
+  2026-Nature-Evaluating large language models for accuracy  5
+  2026-Nature-Mapping the neuronal building blocks of human  13
+  2026-Nature-Reimagining research papers as interactive and 7
+  2026-Nature-Synthesizing scientific literature with retrie 6
+  2026-Nature-Turning scientific research papers into intera 1

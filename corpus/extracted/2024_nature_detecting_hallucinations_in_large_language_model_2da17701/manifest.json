@@ -1,0 +1,34 @@
+{
+ "paper_id": "2024_nature_detecting_hallucinations_in_large_language_model_2da17701",
+ "source_name": "!2024-Nature-Detecting hallucinations in large language models using semantic entropy_SI&Highlights.pdf",
+ "source_pdf": "D:\\2026-AI4S\\!2024-Nature-Detecting hallucinations in large language models using semantic entropy_SI&Highlights.pdf",
+ "source_sha256": "20c39bb8a53916316c46fd38bee1d1778150bd8dfa023c681a96a3583cfd786f",
+ "source_md5": "2da1770197fecadf41fe062679e6aa77",
+ "journal_doi": null,
+ "n_pages": 31,
+ "n_elements": 804,
+ "n_figures": 14,
+ "n_tables": 6,
+ "n_pictures_detected": 16,
+ "n_uncaptioned_pictures": 2,
+ "n_caption_blocks": 20,
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "elapsed_s": 16.5,
+ "artefacts": {
+  "pages_dir": "pages/",
+  "n_page_pngs": 31,
+  "figures_dir": "figures/",
+  "layout": "layout.json",
+  "content": "content.md",
+  "figures_meta": "figures_meta.json"
+ },
+ "status": "ok",
+ "generated_at": "2026-10-18T00:40:58"
+}

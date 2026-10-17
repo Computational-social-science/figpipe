@@ -1,0 +1,798 @@
+{
+ "paper_id": "1997_nature_a_novel_paradigm_1cf8ba19",
+ "source_pdf": "D:\\2026-AI4S\\Novel paradigm\\REFs\\1997-Nature_A novel paradigm.pdf",
+ "source_sha256": "e74dcfda9d9aa1a4cee778e322ca75e839a436d9684a464b5fa1a40b78e14fdd",
+ "source_name": "1997-Nature_A novel paradigm.pdf",
+ "n_pages": 1,
+ "page_size_pt": [
+  581.09,
+  793.71
+ ],
+ "coordinate_note": "bbox is PDF points with origin at the BOTTOM-LEFT, y increasing upward; bbox_norm divides by page size.",
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "generated_at": "2026-10-18T00:43:16",
+ "pages": [
+  {
+   "page_no": 1,
+   "width_pt": 581.088,
+   "height_pt": 793.71,
+   "png": "pages/page_0001.png",
+   "elements": [
+    {
+     "reading_order": 0,
+     "page": 1,
+     "label": "section_header",
+     "bbox": {
+      "l": 32.92,
+      "t": 743.44,
+      "r": 508.18,
+      "b": 713.07,
+      "w": 475.26,
+      "h": 30.38,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.05665,
+      "t": 0.93666,
+      "r": 0.87453,
+      "b": 0.8984
+     },
+     "text": "Darwin a better name than Wallace?",
+     "text_len": 34,
+     "level": 1,
+     "element_id": "p1_e0"
+    },
+    {
+     "reading_order": 1,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 33.3,
+      "t": 701.94,
+      "r": 194.48,
+      "b": 556.93,
+      "w": 161.18,
+      "h": 145.0,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.05731,
+      "t": 0.88438,
+      "r": 0.33468,
+      "b": 0.70168
+     },
+     "text": "Sir- C. Ambrogi Lorenzini (Nature 384, 508; 1996) highlights the possibility that double-barrelled names may be incorrectly listed in publication databases. This is an important issue because citation rates are increasingly used to assess the value of research. But it is not only those with unusual names who may get a raw deal out of citation indices. Investigation of the relationship between alphabetical position of surname and citation rate reveals that researchers nearer to Darwin may appear to be making a bigger contribution than those nearer Wallace.",
+     "text_len": 561,
+     "level": 1,
+     "element_id": "p1_e1"
+    },
+    {
+     "reading_order": 2,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 32.99,
+      "t": 554.14,
+      "r": 193.78,
+      "b": 430.92,
+      "w": 160.79,
+      "h": 123.22,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.05677,
+      "t": 0.69816,
+      "r": 0.33348,
+      "b": 0.54292
+     },
+     "text": "The number of papers published by authors of a particular surname initial for 1994 was taken from the on -line Science Citation Index (SCI). Citation rates by initial are not easily gleaned from this source, so I measured the number of column centimetres of citations in the paper version of the 1994 SCI. Comparison of these data reveals a clear decrease in citations per publication with surname initial (linear regression r = 0.33, F= 12.04, P< 0.002). An obvious",
+     "text_len": 466,
+     "level": 1,
+     "element_id": "p1_e2"
+    },
+    {
+     "reading_order": 3,
+     "page": 1,
+     "label": "section_header",
+     "bbox": {
+      "l": 32.85,
+      "t": 406.79,
+      "r": 146.8,
+      "b": 391.99,
+      "w": 113.95,
+      "h": 14.8,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.05653,
+      "t": 0.51252,
+      "r": 0.25263,
+      "b": 0.49387
+     },
+     "text": "A novel paradigm",
+     "text_len": 16,
+     "level": 1,
+     "element_id": "p1_e3"
+    },
+    {
+     "reading_order": 4,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 32.76,
+      "t": 386.14,
+      "r": 194.69,
+      "b": 325.56,
+      "w": 161.93,
+      "h": 60.58,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.05638,
+      "t": 0.4865,
+      "r": 0.33504,
+      "b": 0.41018
+     },
+     "text": "Sir-We wish to report a novel paradigm. In recent years, we have observed an increase in the number of scientists who use the word 'novel' to describe their work. This observation has been borne out by a statistical analysis of the Medline database.",
+     "text_len": 249,
+     "level": 1,
+     "element_id": "p1_e4"
+    },
+    {
+     "reading_order": 5,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 32.75,
+      "t": 322.77,
+      "r": 194.87,
+      "b": 199.58,
+      "w": 162.12,
+      "h": 123.19,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.05636,
+      "t": 0.40666,
+      "r": 0.33535,
+      "b": 0.25145
+     },
+     "text": "The figure plots frequency of of the word 'novel' in titles and abstracts as a proportion of total papers. This shows the trend to greater novelty over time; in fact, the change is well fitted by an exponential. Two possible interpretations are ( 1) novelty in research is actually increasing over time at an exponential rate, thereby leading to the exciting possibility that in the morning hours of? February 2020 all science will be novel; or (2) the probability of someone using the word 'novel' to describe their explanation is that authorship of papers is sometimes determined alphabetically. Citations are based only on first-author papers, whereas the on-line database provides information on all authors, so those with later initials may be penalized through being less likely to be first author.",
+     "text_len": 804,
+     "level": 1,
+     "element_id": "p1_e5"
+    },
+    {
+     "reading_order": 6,
+     "page": 1,
+     "label": "picture",
+     "bbox": {
+      "l": 32.92,
+      "t": 197.06,
+      "r": 195.75,
+      "b": 84.37,
+      "w": 162.83,
+      "h": 112.7,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.05665,
+      "t": 0.24828,
+      "r": 0.33687,
+      "b": 0.1063
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p1_e6"
+    },
+    {
+     "reading_order": 7,
+     "page": 1,
+     "label": "caption",
+     "bbox": {
+      "l": 32.56,
+      "t": 80.12,
+      "r": 194.67,
+      "b": 41.63,
+      "w": 162.11,
+      "h": 38.48,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.05603,
+      "t": 0.10094,
+      "r": 0.33501,
+      "b": 0.05245
+     },
+     "text": "Figure I Proportion of papers per year in the Medline database that contain the word 'novel' in the title or abstract. (y = 7.3749e - 126e10· 14263 x1 , R=0.998ll)",
+     "text_len": 163,
+     "level": 2,
+     "element_id": "p1_e7"
+    },
+    {
+     "reading_order": 8,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 207.7,
+      "t": 628.28,
+      "r": 368.25,
+      "b": 430.69,
+      "w": 160.55,
+      "h": 197.59,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.35743,
+      "t": 0.79157,
+      "r": 0.63373,
+      "b": 0.54263
+     },
+     "text": "This doesn't, however, appear to be sufficient explanation. By measuring column centimetres per author in the index of 10 randomly chosen 1994 editions of Current Contents, which lists only first authors, one is able to estimate publications by first authors only. This also reveals a significant decrease in number of citations with position in the alphabet (linear regression r = 0.33, F= 16.7, P <0.0004). Because the citation index goes back many years, this result could arise from a past tendency to put authors in alphabetical order. But using order of authorship in Letters to Nature from the first issue of the past 25 years fails to support this idea. Taking into account the increased number of authors on more recent papers, there is no decrease",
+     "text_len": 757,
+     "level": 1,
+     "element_id": "p1_e8"
+    },
+    {
+     "reading_order": 9,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 207.47,
+      "t": 407.02,
+      "r": 366.72,
+      "b": 357.0,
+      "w": 159.24,
+      "h": 50.02,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.35704,
+      "t": 0.51281,
+      "r": 0.63109,
+      "b": 0.44979
+     },
+     "text": "work is proportional to the probability that they have seen this word used in a similar context before. This in turn is roughly proportional to the number of recent appearances in the literature.",
+     "text_len": 195,
+     "level": 1,
+     "element_id": "p1_e9"
+    },
+    {
+     "reading_order": 10,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 207.31,
+      "t": 354.46,
+      "r": 367.72,
+      "b": 273.0,
+      "w": 160.41,
+      "h": 81.45,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.35676,
+      "t": 0.44659,
+      "r": 0.63281,
+      "b": 0.34395
+     },
+     "text": "If the latter mechanism is at work, the inclusion of'exposure saturation' and 'staleness' factors in a mathematical model should lead to predictions of a novelty maximum and possibly a novelty decline. It is of interest to note that 'paradigms' are increasing in appearance exponentially as well. Indeed, the future looks very bright.",
+     "text_len": 334,
+     "level": 1,
+     "element_id": "p1_e10"
+    },
+    {
+     "reading_order": 11,
+     "page": 1,
+     "label": "section_header",
+     "bbox": {
+      "l": 207.41,
+      "t": 269.88,
+      "r": 278.98,
+      "b": 262.55,
+      "w": 71.57,
+      "h": 7.33,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.35693,
+      "t": 0.34002,
+      "r": 0.4801,
+      "b": 0.33079
+     },
+     "text": "Simon H. Friedman",
+     "text_len": 17,
+     "level": 1,
+     "element_id": "p1_e11"
+    },
+    {
+     "reading_order": 12,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 207.63,
+      "t": 258.71,
+      "r": 338.33,
+      "b": 241.95,
+      "w": 130.69,
+      "h": 16.76,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.35731,
+      "t": 0.32595,
+      "r": 0.58224,
+      "b": 0.30483
+     },
+     "text": "Department of Pharmaceutical Chemistry, University of California,",
+     "text_len": 65,
+     "level": 1,
+     "element_id": "p1_e12"
+    },
+    {
+     "reading_order": 13,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 207.56,
+      "t": 237.58,
+      "r": 341.54,
+      "b": 231.39,
+      "w": 133.98,
+      "h": 6.2,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.35719,
+      "t": 0.29933,
+      "r": 0.58776,
+      "b": 0.29153
+     },
+     "text": "San Francisco, California 94143-0446, USA",
+     "text_len": 41,
+     "level": 1,
+     "element_id": "p1_e13"
+    },
+    {
+     "reading_order": 14,
+     "page": 1,
+     "label": "section_header",
+     "bbox": {
+      "l": 207.27,
+      "t": 227.65,
+      "r": 277.4,
+      "b": 220.32,
+      "w": 70.13,
+      "h": 7.33,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.35669,
+      "t": 0.28682,
+      "r": 0.47738,
+      "b": 0.27758
+     },
+     "text": "Jens 0. M. Karlsson",
+     "text_len": 19,
+     "level": 1,
+     "element_id": "p1_e14"
+    },
+    {
+     "reading_order": 15,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 207.63,
+      "t": 216.46,
+      "r": 330.41,
+      "b": 199.71,
+      "w": 122.77,
+      "h": 16.75,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.35731,
+      "t": 0.27272,
+      "r": 0.56861,
+      "b": 0.25162
+     },
+     "text": "Departmellt of Mechanical Engineering, University of Illinois,",
+     "text_len": 62,
+     "level": 1,
+     "element_id": "p1_e15"
+    },
+    {
+     "reading_order": 16,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 207.67,
+      "t": 195.34,
+      "r": 294.98,
+      "b": 189.15,
+      "w": 87.31,
+      "h": 6.2,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.35738,
+      "t": 0.24611,
+      "r": 0.50763,
+      "b": 0.23831
+     },
+     "text": "Chicago, Illilwis 60607, USA",
+     "text_len": 28,
+     "level": 1,
+     "element_id": "p1_e16"
+    },
+    {
+     "reading_order": 17,
+     "page": 1,
+     "label": "section_header",
+     "bbox": {
+      "l": 207.0,
+      "t": 164.4,
+      "r": 290.08,
+      "b": 128.72,
+      "w": 83.08,
+      "h": 35.68,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.35623,
+      "t": 0.20713,
+      "r": 0.4992,
+      "b": 0.16218
+     },
+     "text": "Alternative therapy bias",
+     "text_len": 24,
+     "level": 1,
+     "element_id": "p1_e17"
+    },
+    {
+     "reading_order": 18,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 207.09,
+      "t": 122.85,
+      "r": 366.78,
+      "b": 62.52,
+      "w": 159.69,
+      "h": 60.32,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.35638,
+      "t": 0.15478,
+      "r": 0.6312,
+      "b": 0.07877
+     },
+     "text": "Sir- Complementary medicine is becoming increasingly popular: it is estimated that between a quarter and a half of the population in the United States, Europe and Australia have used this type of therapy. But how credible is this field?",
+     "text_len": 236,
+     "level": 1,
+     "element_id": "p1_e18"
+    },
+    {
+     "reading_order": 19,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 207.33,
+      "t": 59.74,
+      "r": 353.11,
+      "b": 41.4,
+      "w": 145.77,
+      "h": 18.33,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.3568,
+      "t": 0.07527,
+      "r": 0.60767,
+      "b": 0.05216
+     },
+     "text": "We have analysed the conclusions of papers in four leading journals of in the proportion of papers with alphabetical authors since 1972 (linear regression P = 0.17).",
+     "text_len": 165,
+     "level": 1,
+     "element_id": "p1_e19"
+    },
+    {
+     "reading_order": 20,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 382.63,
+      "t": 670.05,
+      "r": 544.05,
+      "b": 556.68,
+      "w": 161.42,
+      "h": 113.36,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.65847,
+      "t": 0.8442,
+      "r": 0.93626,
+      "b": 0.70136
+     },
+     "text": "So what is the explanation? Could it be that researchers tend to flick through reference lists and to have had their fill before they reach the end? Do we go to the library with an alphabetical list of papers to read and run out of steam half-way through? Certainly the effect is very robust; removing the five least cited initials from either regression does not drop significance below 0.05, so clearly something is going on.",
+     "text_len": 427,
+     "level": 1,
+     "element_id": "p1_e20"
+    },
+    {
+     "reading_order": 21,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 382.51,
+      "t": 553.89,
+      "r": 544.86,
+      "b": 472.69,
+      "w": 162.35,
+      "h": 81.2,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.65827,
+      "t": 0.69785,
+      "r": 0.93765,
+      "b": 0.59554
+     },
+     "text": "I suggest that, whatever the explanation, in fairness to those relegated to the end of reference lists, a correction factor should be applied using the slope of the regression of citation rate versus author initial. By this method, the citation rate of someone whose initial is, say, T should be multiplied by 1.36- quite a boost.",
+     "text_len": 330,
+     "level": 1,
+     "element_id": "p1_e21"
+    },
+    {
+     "reading_order": 22,
+     "page": 1,
+     "label": "section_header",
+     "bbox": {
+      "l": 382.45,
+      "t": 469.57,
+      "r": 434.0,
+      "b": 462.24,
+      "w": 51.54,
+      "h": 7.33,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.65816,
+      "t": 0.59161,
+      "r": 0.74687,
+      "b": 0.58238
+     },
+     "text": "Tom Tregenza",
+     "text_len": 12,
+     "level": 1,
+     "element_id": "p1_e22"
+    },
+    {
+     "reading_order": 23,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 382.83,
+      "t": 458.14,
+      "r": 454.36,
+      "b": 431.07,
+      "w": 71.53,
+      "h": 27.07,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.65882,
+      "t": 0.57721,
+      "r": 0.78191,
+      "b": 0.54311
+     },
+     "text": "Department of Biology, University of Leeds, Leeds LS2 9fT, UK",
+     "text_len": 61,
+     "level": 1,
+     "element_id": "p1_e23"
+    },
+    {
+     "reading_order": 24,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 382.29,
+      "t": 406.77,
+      "r": 539.51,
+      "b": 314.77,
+      "w": 157.21,
+      "h": 92.0,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.65789,
+      "t": 0.51249,
+      "r": 0.92845,
+      "b": 0.39658
+     },
+     "text": "complementary medicine, published in different countries by different publishers: Research in Complementary Medicine, Complementary Therapjes in Medicine, Alternative Therapies in Health and Medicine and Natura Med. (The editor of a fifth journal, Alternative and Complementary Medicine, did not wish to participate in our survey.)",
+     "text_len": 331,
+     "level": 1,
+     "element_id": "p1_e24"
+    },
+    {
+     "reading_order": 25,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 382.03,
+      "t": 311.98,
+      "r": 540.21,
+      "b": 220.21,
+      "w": 158.18,
+      "h": 91.77,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.65744,
+      "t": 0.39307,
+      "r": 0.92965,
+      "b": 0.27744
+     },
+     "text": "We categorized all204 articles in one year's editions of these journals as positive (a particular intervention is helpful for a particular condition), neutral (no clear conclusion) or negative (intervention is unhelpful) . The pattern in all four journals was strikingly similar, with 64% of papers classified as helpful, 35% neutral and only 1 o/o negative.",
+     "text_len": 358,
+     "level": 1,
+     "element_id": "p1_e25"
+    },
+    {
+     "reading_order": 26,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 381.96,
+      "t": 217.42,
+      "r": 543.21,
+      "b": 156.85,
+      "w": 161.25,
+      "h": 60.57,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.65732,
+      "t": 0.27393,
+      "r": 0.93482,
+      "b": 0.19762
+     },
+     "text": "Although our results are limited because our survey is small, they demonstrate a strong publication bias in favour of positive conclusions about alternative therapies. If confirmed, our findings imply that the literature in this field is not objective.",
+     "text_len": 252,
+     "level": 1,
+     "element_id": "p1_e26"
+    },
+    {
+     "reading_order": 27,
+     "page": 1,
+     "label": "section_header",
+     "bbox": {
+      "l": 382.0,
+      "t": 153.96,
+      "r": 427.3,
+      "b": 136.08,
+      "w": 45.29,
+      "h": 17.88,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.65739,
+      "t": 0.19398,
+      "r": 0.73534,
+      "b": 0.17145
+     },
+     "text": "E. Ernst M. H. Pittler",
+     "text_len": 22,
+     "level": 1,
+     "element_id": "p1_e27"
+    },
+    {
+     "reading_order": 28,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 382.11,
+      "t": 131.98,
+      "r": 511.0,
+      "b": 115.46,
+      "w": 128.88,
+      "h": 16.52,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.65758,
+      "t": 0.16628,
+      "r": 0.87938,
+      "b": 0.14547
+     },
+     "text": "Department of Complementary Medicine, University of Exeter,",
+     "text_len": 59,
+     "level": 1,
+     "element_id": "p1_e28"
+    },
+    {
+     "reading_order": 29,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 382.33,
+      "t": 111.42,
+      "r": 445.95,
+      "b": 104.9,
+      "w": 63.61,
+      "h": 6.52,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.65796,
+      "t": 0.14038,
+      "r": 0.76744,
+      "b": 0.13216
+     },
+     "text": "Exeter EX2 4NT, UK",
+     "text_len": 18,
+     "level": 1,
+     "element_id": "p1_e29"
+    },
+    {
+     "reading_order": 30,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 381.71,
+      "t": 90.8,
+      "r": 531.49,
+      "b": 41.94,
+      "w": 149.78,
+      "h": 48.86,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.65689,
+      "t": 0.1144,
+      "r": 0.91465,
+      "b": 0.05284
+     },
+     "text": "cones@nabre..com Letters submitted for Correspondence may be e-mailed to corres@nature.com. Do not send items intended for any other section by e-mail unless requested to do so.",
+     "text_len": 177,
+     "level": 1,
+     "element_id": "p1_e30"
+    }
+   ]
+  }
+ ],
+ "caption_blocks": [
+  {
+   "page": 1,
+   "blocks": [
+    {
+     "text": "Figure I Proportion of papers per year in the Medline database that contain the word 'novel' in the title or abstract. (y = 7.3749e - 126e10· 14263 x1 , R=0.998ll)",
+     "bbox": {
+      "l": 32.56,
+      "t": 80.12,
+      "r": 194.67,
+      "b": 41.63,
+      "w": 162.11,
+      "h": 38.48,
+      "coord": "pdf_points_bottomleft"
+     },
+     "element_ids": [
+      "p1_e7"
+     ]
+    }
+   ]
+  }
+ ],
+ "uncaptioned_pictures": []
+}

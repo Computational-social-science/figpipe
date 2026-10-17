@@ -340,15 +340,52 @@ def _text_spans(path: pathlib.Path) -> list[tuple[str, float, tuple]]:
 
 # --------------------------------------------------------------------------- 1. paper-figure-validator
 
-def _pfv_node_script(fig: pathlib.Path, source: Optional[pathlib.Path]) -> str:
-    """Build the Node program that calls the REAL validator with our derived metadata.
+def _derive_figure_facts(fig: pathlib.Path, source: Optional[pathlib.Path]) -> dict[str, Any]:
+    """Measure the facts paper-figure-validator asks about, instead of asserting them.
 
-    The validator takes declarative metadata (caption, purpose, kind...) plus the file path.
-    We derive what the file can tell us (format, size, width, editability) and pass the rest
-    explicitly, so the tool's own PASS/WARN/FAIL logic runs unchanged.
+    This matters: the validator's axis/units/legibility checks are only meaningful if the
+    inputs are measured. Passing a hard-coded ``axesLabeled: true`` would make those checks
+    inert -- a checker that always passes is not a checker. So each value below is derived
+    from the rendered file, and a value that cannot be measured is passed as unknown (the
+    tool then reports WARN rather than a false PASS).
     """
-    is_raster = fig.suffix.lower() in RASTER_EXTS
-    width = _width_mm(fig) or 183.0
+    ext = fig.suffix.lower()
+    facts: dict[str, Any] = {
+        "is_raster": ext in RASTER_EXTS,
+        "width_mm": _width_mm(fig) or 183.0,
+        "axes_present": None,
+        "axes_labeled": None,
+        "units_labeled": None,
+        "labels_legible": None,
+    }
+    spans = _text_spans(fig)
+    if not spans:
+        return facts
+
+    # Axis titles are the larger text (>= 6 pt here); tick labels are smaller numbers.
+    titles = [t for t, s, _ in spans if s >= 6.0]
+    facts["axes_present"] = True
+
+    # An axis label is a title-like string with letters. Units are a parenthesised token
+    # such as "(%)", "(s)", "(ms)" -- the spec requires units where they apply.
+    label_like = [t for t in titles if re.search(r"[A-Za-z]{2,}", t)]
+    facts["axes_labeled"] = bool(label_like)
+    facts["units_labeled"] = any(re.search(r"\(", t) for t in label_like)
+
+    # Legibility: every text span at print size is at or above the 5 pt floor.
+    facts["labels_legible"] = all(s >= MIN_PT - 1e-6 for _, s, _ in spans)
+    return facts
+
+
+def _pfv_node_script(fig: pathlib.Path, source: Optional[pathlib.Path]) -> str:
+    """Build the Node program that calls the REAL validator with measured metadata.
+
+    The validator takes declarative metadata plus the file path. Everything the file can tell
+    us is measured (see _derive_figure_facts); the rest is passed explicitly. The tool's own
+    PASS/WARN/FAIL logic then runs unchanged.
+    """
+    facts = _derive_figure_facts(fig, source)
+    width = facts["width_mm"]
     placement = "double-column" if width > 100 else "single-column"
     gen = json.dumps(str(source) if source else "")
     module_uri = (VENDOR / "paper_figure_validator" / "index.js").as_uri()
@@ -364,20 +401,21 @@ const result = validateFigureFile({{
   placement: {json.dumps(placement)},
   targetWidthInches: {width / 25.4!r},
   captionSelfContained: true,
-  labelsReadableAtPrintSize: true,
+  labelsReadableAtPrintSize: {json.dumps(facts["labels_legible"])},
   usesDecorativeElements: false,
   reproducibleFromCode: {json.dumps(bool(source))},
   generatorScriptPath: {gen},
-  axesPresent: true,
-  axesLabeled: true,
+  axesPresent: {json.dumps(facts["axes_present"])},
+  axesLabeled: {json.dumps(facts["axes_labeled"])},
   unitsRelevant: true,
-  unitsLabeled: true,
+  unitsLabeled: {json.dumps(facts["units_labeled"])},
   usesColor: true,
   colorPolicy: "colorblind-safe",
-  textEditability: {json.dumps("rasterized" if is_raster else "editable")},
+  textEditability: {json.dumps("rasterized" if facts["is_raster"] else "editable")},
 }});
 console.log(JSON.stringify(result));
 """
+
 
 
 def check_paper_figure_validator(fig: pathlib.Path, source: Optional[pathlib.Path]) -> list[Check]:
@@ -479,15 +517,42 @@ def check_light_figure(source: Optional[pathlib.Path]) -> list[Check]:
                       method="source")]
 
     out: list[Check] = []
+    reported = set()
     for f in payload.get("findings", []):
         cat = f.get("category", "?")
+        reported.add(cat)
         sev, note = _grade_light_finding(cat, source)
         out.append(Check(f"light.{cat}", TOOL_LIGHT, sev,
                          f"{f.get('issue', '')}{note}",
                          evidence=[f"line {f.get('line')}: {f.get('context', '')}"],
                          method="source"))
+
+    # SUPPLEMENTARY 3D check. The upstream lint matches its 3D regex per LINE, so a plot
+    # written across the usual three lines
+    #     fig = plt.figure()
+    #     ax = fig.add_subplot(111, projection="3d")
+    #     ax.bar3d(...)
+    # is silently missed (verified: multi-line input yields no finding, single-line does).
+    # This is our own check, not the tool's, and is tagged as such.
+    if "PIE_3D" not in reported and _has_3d_projection(_read(source)):
+        out.append(Check("qc.three_d_projection", TOOL_GATE, FAIL,
+                         "source creates a 3D projection; perspective distorts area/height "
+                         "encoding. This check is OURS: the upstream lint only matches 3D on a "
+                         "single line and missed this multi-line form",
+                         method="source"))
     return out or [Check("light.integrity", TOOL_LIGHT, PASS,
                          "no honesty-risk patterns in the plotting source", method="source")]
+
+
+def _has_3d_projection(text: str) -> bool:
+    """True if the source opens a 3D axes, however the call is split across lines."""
+    if re.search(r"Axes3D", text, re.I):
+        return True
+    if not re.search(r"projection\s*=\s*[\"']3d[\"']", text, re.I):
+        return False
+    # A 3D projection alone is not the defect; the defect is using it for bars/pies, where
+    # perspective inflates one dimension. A 3D line/scatter surface is a legitimate display.
+    return bool(re.search(r"\.(bar3d|bar|pie|barh)\s*\(", text))
 
 
 def _grade_light_finding(cat: str, source: pathlib.Path) -> tuple[str, str]:
@@ -516,7 +581,11 @@ def _grade_light_finding(cat: str, source: pathlib.Path) -> tuple[str, str]:
     if cat == "ERRBAR_NO_TYPE":
         return WARN, " -- error bars present but the type (SD/SEM/CI) and n are undeclared"
     if cat == "RAINBOW_CMAP":
-        return FAIL, " -- jet/rainbow is not perceptually uniform and is not colour-blind safe"
+        # The light-figure spec grades this WARN, not critical: a static lint cannot tell
+        # ordered data (where rainbow misleads) from categorical data (where it can be
+        # defended in the caption). Keep the tool's own severity rather than inflating it.
+        return WARN, (" -- jet/rainbow is not perceptually uniform and is not colour-blind "
+                      "safe for ordered data; use viridis/cividis")
     if cat == "PIE_3D":
         return FAIL, " -- 3D perspective distorts area/height encoding"
     if cat == "BAR_PLOT_SMALL":
@@ -892,6 +961,43 @@ def check_honesty_from_artifact(fig: pathlib.Path) -> list[Check]:
 
 # --------------------------------------------------------------------------- main entry point
 
+def check_colour_policy(fig_path) -> "Check":
+    """Colour policy measured from the RENDERED image, not from source text.
+
+    WHY THIS REPLACES THE SOURCE SCAN
+        The previous pfv.color-policy check searched the plotting source for the literal
+        name of a colour map. A PDF exported from any other tool could never be flagged, and
+        the audit found the check reported PASS while color-policy did not appear in this
+        module at all.
+
+        A colour map is a property of the pixels. This rasterises the figure and measures the
+        hue/lightness structure, which separates a rainbow (non-monotone lightness, many hue
+        reversals) from a perceptually uniform map (monotone).
+    """
+    try:
+        from .colourcheck import check_colour
+        res = check_colour(fig_path)
+    except Exception as e:                                       # noqa: BLE001
+        return [Check(id="colour.measured", tool="figpipe", severity="SKIP",
+                      detail=f"colour analysis unavailable: {type(e).__name__}",
+                      evidence=[], method="image", equivalent=False)]
+    checks = []
+    checks.append(Check(
+        id="colour.rainbow", tool="paper-figure-validator", severity=res["severity"],
+        detail=(f"rainbow colour map signature: {res['rainbow_detail']}"
+                if res["rainbow_signature"] else
+                f"no rainbow signature ({res['rainbow_detail']})"),
+        evidence=[res["rainbow_detail"]], method="image", equivalent=False))
+    checks.append(Check(
+        id="colour.red-green", tool="paper-figure-validator",
+        severity=res["red_green_severity"],
+        detail=(f"red/green encoding: {res['red_green_detail']}"
+                if res["red_green_encoded"] else
+                f"no red/green pairing ({res['red_green_detail']})"),
+        evidence=[res["red_green_detail"]], method="image", equivalent=False))
+    return checks
+
+
 def run_qc(fig_path, source_script=None, caption: Optional[str] = None) -> QCReport:
     """Run every QC check against one figure and return a structured report.
 
@@ -925,6 +1031,9 @@ def run_qc(fig_path, source_script=None, caption: Optional[str] = None) -> QCRep
     report.checks.extend(check_generator_provenance(fig, src))
     report.checks.extend(check_caption(caption))
     report.checks.extend(check_panel_labels(fig))
+    # Colour policy measured from the RENDERED pixels. The earlier source-text scan
+    # could never flag a PDF, and the audit caught it reporting PASS while doing nothing.
+    report.checks.extend(check_colour_policy(fig))
 
     # Visual honesty: source analysis when a source exists (preferred), artifact otherwise.
     if src is not None:

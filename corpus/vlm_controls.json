@@ -7,8 +7,8 @@
    "why": "white page: nothing to annotate, so every field must be null",
    "parse_ok": true,
    "n_null": 13,
-   "n_confident": 7,
-   "confident_fields": {
+   "n_asserted": 7,
+   "asserted_fields": {
     "column_width": "single",
     "frame_restrained": true,
     "high_contrast": true,
@@ -17,7 +17,22 @@
     "panel_layout": "none",
     "panel_labels_present": false
    },
-   "raw_response": "{\"figure_type\": \"other\", \"column_width\": \"single\", \"font_family\": null, \"font_uniform\": null, \"min_font_legible\": null, \"line_weight\": null, \"arrow_style\": null, \"frame_restrained\": true, \"high_contrast\": true, \"colorblind_safe\": null, \"saturated_color_count\": 0, \"palette_description\": null, \"caption_overview_first\": null, \"caption_panel_by_panel\": null, \"caption_has_stats\": null, \"caption_stats_l",
+   "n_trivially_true": 5,
+   "trivially_true_fields": {
+    "frame_restrained": true,
+    "saturated_color_count": 0,
+    "panel_count": 0,
+    "panel_layout": "none",
+    "panel_labels_present": false
+   },
+   "n_fabricated": 2,
+   "fabricated_fields": {
+    "column_width": "single",
+    "high_contrast": true
+   },
+   "column_width_asserted": "single",
+   "column_width_is_fabrication": true,
+   "raw_response": "{\"figure_type\": \"other\", \"column_width\": \"single\", \"font_family\": null, \"font_uniform\": null, \"min_font_legible\": null, \"line_weight\": null, \"arrow_style\": null, \"frame_restrained\": true, \"high_contrast\": true, \"colorblind_safe\": null, \"saturated_color_count\": 0, \"palette_description\": null, \"caption_overview_first\": null, \"caption_panel_by_panel\": null, \"caption_has_stats\": null, \"caption_stats_last\": null, \"panel_count\": 0, \"panel_layout\": \"none\", \"panel_labels_present\": false, \"whitespace_gen",
    "declined": false
   },
   {
@@ -26,8 +41,8 @@
    "why": "random strokes: no figure type, no palette structure, no caption",
    "parse_ok": true,
    "n_null": 5,
-   "n_confident": 15,
-   "confident_fields": {
+   "n_asserted": 15,
+   "asserted_fields": {
     "column_width": "single",
     "font_uniform": false,
     "min_font_legible": false,
@@ -44,7 +59,30 @@
     "whitespace_generous": false,
     "vector_or_bitmap": "bitmap"
    },
-   "raw_response": "{\"figure_type\": \"other\", \"column_width\": \"single\", \"font_family\": \"null\", \"font_uniform\": false, \"min_font_legible\": false, \"line_weight\": \"mixed\", \"arrow_style\": \"none\", \"frame_restrained\": false, \"high_contrast\": false, \"colorblind_safe\": false, \"saturated_color_count\": 10, \"palette_description\": \"A chaotic mix of many colors.\", \"caption_overview_first\": null, \"caption_panel_by_panel\": null, \"ca",
+   "n_trivially_true": 6,
+   "trivially_true_fields": {
+    "arrow_style": "none",
+    "frame_restrained": false,
+    "panel_count": 0,
+    "panel_layout": "none",
+    "panel_labels_present": false,
+    "whitespace_generous": false
+   },
+   "n_fabricated": 9,
+   "fabricated_fields": {
+    "column_width": "single",
+    "font_uniform": false,
+    "min_font_legible": false,
+    "line_weight": "mixed",
+    "high_contrast": false,
+    "colorblind_safe": false,
+    "saturated_color_count": 10,
+    "palette_description": "A chaotic mix of many colors.",
+    "vector_or_bitmap": "bitmap"
+   },
+   "column_width_asserted": "single",
+   "column_width_is_fabrication": true,
+   "raw_response": "{\"figure_type\": \"other\", \"column_width\": \"single\", \"font_family\": \"null\", \"font_uniform\": false, \"min_font_legible\": false, \"line_weight\": \"mixed\", \"arrow_style\": \"none\", \"frame_restrained\": false, \"high_contrast\": false, \"colorblind_safe\": false, \"saturated_color_count\": 10, \"palette_description\": \"A chaotic mix of many colors.\", \"caption_overview_first\": null, \"caption_panel_by_panel\": null, \"caption_has_stats\": null, \"caption_stats_last\": null, \"panel_count\": 0, \"panel_layout\": \"none\", \"panel",
    "declined": false
   },
   {
@@ -53,8 +91,8 @@
    "why": "prose with no figure: a caption/structure answer here is invented",
    "parse_ok": true,
    "n_null": 8,
-   "n_confident": 12,
-   "confident_fields": {
+   "n_asserted": 12,
+   "asserted_fields": {
     "column_width": "single",
     "font_family": "serif",
     "font_uniform": true,
@@ -68,8 +106,33 @@
     "whitespace_generous": true,
     "vector_or_bitmap": "bitmap"
    },
-   "raw_response": "{\"figure_type\": \"other\", \"column_width\": \"single\", \"font_family\": \"serif\", \"font_uniform\": true, \"min_font_legible\": true, \"line_weight\": null, \"arrow_style\": null, \"frame_restrained\": true, \"high_contrast\": true, \"colorblind_safe\": null, \"saturated_color_count\": 0, \"palette_description\": null, \"caption_overview_first\": null, \"caption_panel_by_panel\": null, \"caption_has_stats\": null, \"caption_stat",
+   "n_trivially_true": 3,
+   "trivially_true_fields": {
+    "frame_restrained": true,
+    "saturated_color_count": 0,
+    "panel_labels_present": false
+   },
+   "n_fabricated": 9,
+   "fabricated_fields": {
+    "column_width": "single",
+    "font_family": "serif",
+    "font_uniform": true,
+    "min_font_legible": true,
+    "high_contrast": true,
+    "panel_count": 1,
+    "panel_layout": "single",
+    "whitespace_generous": true,
+    "vector_or_bitmap": "bitmap"
+   },
+   "column_width_asserted": "single",
+   "column_width_is_fabrication": true,
+   "raw_response": "{\"figure_type\": \"other\", \"column_width\": \"single\", \"font_family\": \"serif\", \"font_uniform\": true, \"min_font_legible\": true, \"line_weight\": null, \"arrow_style\": null, \"frame_restrained\": true, \"high_contrast\": true, \"colorblind_safe\": null, \"saturated_color_count\": 0, \"palette_description\": null, \"caption_overview_first\": null, \"caption_panel_by_panel\": null, \"caption_has_stats\": null, \"caption_stats_last\": null, \"panel_count\": 1, \"panel_layout\": \"single\", \"panel_labels_present\": false, \"whitespac",
    "declined": false
   }
- ]
+ ],
+ "n_controls": 3,
+ "n_declined": 0,
+ "n_fabricated_total": 20,
+ "n_column_width_guessed": 3,
+ "verdict": "FABRICATES -- the model asserts figure properties on images that have no figure. Its confident answers on real figures are not evidence of seeing."
 }
