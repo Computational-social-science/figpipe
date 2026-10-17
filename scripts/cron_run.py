@@ -156,8 +156,15 @@ def main(argv: list[str]) -> int:
     # Publish LAST, so the commit snapshots the record of THIS run rather than the previous
     # one. Doing it earlier left the repository permanently one run behind.
     if not dry:
+        # Publish, then record the outcome. The record written here documents THIS run and is
+        # itself committed by the NEXT run's publish -- which is stated explicitly rather than
+        # left for a reader to discover from `git status`.
         publish = git_publish(changed)
         run["published"] = publish
+        run["publish_note"] = (
+            "The publish outcome is recorded after the commit that carries this run, so it "
+            "describes the push triggered by this run; the file's own commit is made by the "
+            "next scheduled run.")
         out.write_text(json.dumps(run, indent=2), encoding="utf-8")
         (ROOT / "knowledge" / "latest_run.json").write_text(
             json.dumps(run, indent=2), encoding="utf-8")

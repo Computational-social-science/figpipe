@@ -15,8 +15,28 @@
   "knowledge_version_after": 7,
   "knowledge_changed": false,
   "published": {
-    "pushed": false,
-    "reason": "not yet published"
+    "pushed": true,
+    "steps": [
+      {
+        "cmd": "git add -A",
+        "code": 0,
+        "tail": []
+      },
+      {
+        "cmd": "git -c user.name=figpipe-bot",
+        "code": 0,
+        "tail": [
+          " create mode 100644 knowledge/runs/2026-10-17T180143.json"
+        ]
+      },
+      {
+        "cmd": "git push origin",
+        "code": 0,
+        "tail": [
+          "   ccf124c..d192eab  main -> main"
+        ]
+      }
+    ]
   },
   "reverified": {
     "L03": {
