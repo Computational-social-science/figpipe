@@ -403,3 +403,18 @@ The scheduled run now records a **capability snapshot** (`skills`, `operators`, 
 mean distance, statistics reproduced, knowledge version, tests) plus an explicit delta, so "did the
 project gain capability since last run?" is answerable from `latest_run.json` instead of inferred
 from prose. Two tests pin the snapshot and the delta contract.
+
+## 21. The scheduled loop now measures capability — and its first run failed honestly (2026-10-19)
+
+The scheduled run initially failed for two reasons that are worth keeping in the record: pytest
+output was decoded with the Windows locale and raised `UnicodeDecodeError`, and the report contract
+test caught a `None` leaking into the capability-delta row. Both are fixed (`encoding="utf-8",
+errors="replace"` for subprocess captures; explicit `—` formatting). A later run passed and recorded
+the first capability snapshot:
+
+    skills 12 · operators 16 · benchmark 23/30 · tests 228
+
+with an explicit delta (`tests: — → 228` in the transition). This is the first time a scheduled run
+answers "did the project gain capability?" from artefacts rather than from prose. The deeper lesson:
+**the measurement machinery itself must be treated as a capability** — a capability snapshot that
+crashes on a localised error message is not yet a control.
