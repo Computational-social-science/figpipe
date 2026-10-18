@@ -380,10 +380,16 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
     hidden_note = ""
     if len(all_tasks) > MAX_TASK_ROWS:
         # sort by outcome: the cases a reader must see are the ones where the decision mattered
-        ranked = sorted(ok_tasks, key=lambda t: abs(float(t.get("delta") or 0.0)), reverse=True)
-        shown = ranked[:MAX_TASK_ROWS]
-        hidden_note = (f'<p class="tag">Showing the {len(shown)} tasks with the largest |Δ| out of '
-                       f'{len(all_tasks)} measured; the full per-task table is in '
+        # BOTH tails, because the regressions are the cases a reader must see and a magnitude
+        # ranking would bury them under the improvements.
+        by_delta = sorted(ok_tasks, key=lambda t: float(t.get("delta") or 0.0))
+        half = MAX_TASK_ROWS // 2
+        shown = by_delta[:half] + by_delta[-half:]
+        failed = [t for t in all_tasks if t.get("status") != "ok"][:4]
+        shown = shown + failed
+        hidden_note = (f'<p class="tag">Showing the {half} tasks where style transfer hurt most, '
+                       f'the {half} where it helped most, and {len(failed)} classified failures, '
+                       f'out of {len(all_tasks)} measured; the full per-task table is in '
                        f'<code>corpus/e2e/plottwin_report.json</code>.</p>')
 
     bench_rows = []
