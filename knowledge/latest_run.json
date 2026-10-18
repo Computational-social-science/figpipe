@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-19T05:40:46",
+  "run_at": "2026-10-19T05:46:45",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -9,37 +9,16 @@
     "  passed 8, failed 0",
     "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
     "  wrote knowledge\\evolution_report.json",
-    "  lean: tracked 79.7 -> 79.7 MB, worktree 108.2 -> 108.2 MB"
+    "  lean: tracked 79.7 -> 79.7 MB, worktree 109.9 -> 109.9 MB"
   ],
   "tests_ok": true,
-  "tests_summary": "272 passed, 2 skipped, 1 warning in 53.44s",
+  "tests_summary": "272 passed, 2 skipped, 1 warning in 54.44s",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
   "published": {
-    "pushed": true,
-    "steps": [
-      {
-        "cmd": "git add -A",
-        "code": 0,
-        "tail": []
-      },
-      {
-        "cmd": "git -c user.name=figpipe-bot",
-        "code": 0,
-        "tail": [
-          " create mode 100644 knowledge/runs/2026-10-19T054046.json"
-        ]
-      },
-      {
-        "cmd": "git push origin",
-        "code": 0,
-        "tail": [
-          "   c2b8ed1..1e640df  main -> main"
-        ]
-      }
-    ],
-    "withheld": []
+    "pushed": false,
+    "reason": "not yet published"
   },
   "check_results": {
     "L01": {
@@ -151,23 +130,23 @@
   },
   "benchmark_slice": {
     "ran": true,
-    "offset": 132,
+    "offset": 138,
     "tasks": 6,
     "code": 0,
     "tail": [
-      "    type Box/Violin     ok 1/1   d=0.38 base=0.503 delta=0.123 errors=0",
-      "    type Heatmap        ok 3/3   d=0.214 base=0.303 delta=0.089 errors=0",
-      "    type Polar/Radial   ok 1/1   d=0.363 base=0.37 delta=0.007 errors=0",
+      "    type Bar            ok 3/3   d=0.439 base=0.5 delta=0.061 errors=0",
+      "    type Box/Violin     ok 1/1   d=0.091 base=0.464 delta=0.373 errors=0",
+      "    type Heatmap        ok 2/2   d=0.163 base=0.279 delta=0.116 errors=0",
       "  wrote E:\\2026-AI4S\\figpipe\\corpus\\e2e\\plottwin_report.json"
     ]
   },
   "capabilities": {
     "skills": 16,
     "operators": 21,
-    "benchmark_tasks": 141,
-    "benchmark_ok": 132,
+    "benchmark_tasks": 145,
+    "benchmark_ok": 136,
     "benchmark_success_rate": 1.0,
-    "benchmark_mean_distance": 0.266,
+    "benchmark_mean_distance": 0.269,
     "benchmark_anchor_distance": 0.305,
     "benchmark_shipped_anchor_distance": 0.252,
     "benchmark_unsupported": 9,
@@ -179,48 +158,20 @@
     "changed": true,
     "delta": {
       "benchmark_tasks": {
-        "before": 126,
-        "after": 141
+        "before": 141,
+        "after": 145
       },
       "benchmark_ok": {
-        "before": 116,
-        "after": 132
-      },
-      "benchmark_success_rate": {
-        "before": 0.991,
-        "after": 1.0
+        "before": 132,
+        "after": 136
       },
       "benchmark_mean_distance": {
-        "before": 0.273,
-        "after": 0.266
-      },
-      "benchmark_anchor_distance": {
-        "before": 0.33,
-        "after": 0.305
-      },
-      "tests": {
-        "before": 271,
-        "after": 272
+        "before": 0.266,
+        "after": 0.269
       }
     },
     "verdict": {
-      "gains": [
-        {
-          "field": "benchmark_success_rate",
-          "before": 0.991,
-          "after": 1.0
-        },
-        {
-          "field": "benchmark_anchor_distance",
-          "before": 0.33,
-          "after": 0.305
-        },
-        {
-          "field": "tests",
-          "before": 271,
-          "after": 272
-        }
-      ],
+      "gains": [],
       "regressions": [],
       "ok": true,
       "judged_fields": [
@@ -237,6 +188,5 @@
   },
   "ok": true,
   "capability_ok": true,
-  "capability_regressions": [],
-  "publish_note": "The publish outcome is recorded after the commit that carries this run, so it describes the push triggered by this run; the file's own commit is made by the next scheduled run."
+  "capability_regressions": []
 }

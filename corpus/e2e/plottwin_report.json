@@ -6,18 +6,18 @@
     "arxiv": "2608.28814",
     "note": "deterministic metrics only; official combined score requires the benchmark's VLM scorer and is NOT claimed here"
   },
-  "n_tasks": 141,
-  "n_ok": 132,
+  "n_tasks": 145,
+  "n_ok": 136,
   "n_unsupported": 9,
   "n_error": 0,
   "unsupported_types": {},
-  "mean_distance": 0.266,
-  "mean_baseline": 0.364,
-  "mean_improvement": 0.098,
-  "improved": 121,
+  "mean_distance": 0.269,
+  "mean_baseline": 0.368,
+  "mean_improvement": 0.099,
+  "improved": 125,
   "worse": 7,
   "ties": 4,
-  "mean_best_of_two": 0.263,
+  "mean_best_of_two": 0.265,
   "semantic_violations": 0,
   "decision_service": {
     "up": false,
@@ -35,22 +35,22 @@
       "mean_shipped": null
     },
     "Bar": {
-      "n": 14,
-      "ok": 14,
+      "n": 17,
+      "ok": 17,
       "errors": 0,
-      "mean_distance": 0.284,
-      "mean_baseline": 0.329,
-      "mean_delta": 0.045,
-      "mean_shipped": 0.267
+      "mean_distance": 0.311,
+      "mean_baseline": 0.359,
+      "mean_delta": 0.048,
+      "mean_shipped": 0.302
     },
     "Box/Violin": {
-      "n": 14,
-      "ok": 14,
+      "n": 15,
+      "ok": 15,
       "errors": 0,
-      "mean_distance": 0.248,
-      "mean_baseline": 0.407,
-      "mean_delta": 0.159,
-      "mean_shipped": 0.169
+      "mean_distance": 0.238,
+      "mean_baseline": 0.411,
+      "mean_delta": 0.173,
+      "mean_shipped": 0.162
     },
     "Composite": {
       "n": 3,
@@ -3006,106 +3006,6 @@
       "semantic_findings": []
     },
     {
-      "id": "ChartNet-sample_97a7c092bc6a4a6c",
-      "chart": "Heatmap",
-      "panel_mode": "multi",
-      "skill": "matrix_plate",
-      "rationale": "matrix 8 measures",
-      "rows_used": 40,
-      "status": "ok",
-      "distance": 0.125,
-      "baseline_distance": 0.238,
-      "delta": 0.113,
-      "selected": "styled",
-      "selected_distance": 0.157,
-      "selected_gain": 0.081,
-      "selection_margin": 0.068,
-      "components": {
-        "palette": 0.174,
-        "aspect": 0.033,
-        "ink": 0.095
-      },
-      "hard_failures": 42,
-      "findings": [
-        {
-          "check": "text_collision",
-          "detail": "'net_soil_carbon_retention_gC_m2_yr' over 'soil_respiration_gC_m2_yr'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'gross_residue_carbon_input_gC_m2_yr' over 'soil_respiration_gC_m2_yr'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'gross_input_sd_gC_m2_yr' over 'net_soil_carbon_retention_gC_m2_yr'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'gross_residue_carbon_input_gC_m2_yr' over 'net_soil_carbon_retention_gC_m2_yr'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'gross_input_sd_gC_m2_yr' over 'respiration_sd_gC_m2_yr'",
-          "severity": "hard"
-        }
-      ],
-      "semantic_findings": []
-    },
-    {
-      "id": "ChartNet-sample_b07b3f6805a9e3b8",
-      "chart": "Heatmap",
-      "panel_mode": "multi",
-      "skill": "matrix_plate",
-      "rationale": "matrix 8 measures",
-      "rows_used": 40,
-      "status": "ok",
-      "distance": 0.201,
-      "baseline_distance": 0.32,
-      "delta": 0.119,
-      "selected": "styled",
-      "selected_distance": 0.115,
-      "selected_gain": 0.205,
-      "selection_margin": 0.091,
-      "components": {
-        "palette": 0.141,
-        "aspect": 0.111,
-        "ink": 0.438
-      },
-      "hard_failures": 34,
-      "findings": [
-        {
-          "check": "text_collision",
-          "detail": "'replicate_count' over 'valueuncertainty_sd'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'assay_day' over 'salinity_pulse_ppt'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'panel_rowpanel_col' over 'salinity_pulse_ppt'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'n_observations' over 'replicate_count'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'10' over '11'",
-          "severity": "hard"
-        }
-      ],
-      "semantic_findings": []
-    },
-    {
       "id": "arxiv-ml-bar-line-v2__2605.21125",
       "chart": "Polar/Radial",
       "panel_mode": "single",
@@ -4203,21 +4103,431 @@
         }
       ],
       "semantic_findings": []
+    },
+    {
+      "id": "ChartNet-sample_97a7c092bc6a4a6c",
+      "chart": "Heatmap",
+      "panel_mode": "multi",
+      "code_version": "8ea6d2b2ae0c",
+      "skill": "matrix_plate",
+      "rationale": "matrix 8 measures",
+      "rows_used": 40,
+      "status": "ok",
+      "distance": 0.125,
+      "baseline_distance": 0.238,
+      "delta": 0.113,
+      "selected": "styled",
+      "selected_distance": 0.157,
+      "selected_gain": 0.081,
+      "selection_margin": 0.068,
+      "components": {
+        "palette": 0.174,
+        "aspect": 0.033,
+        "ink": 0.095
+      },
+      "hard_failures": 42,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'net_soil_carbon_retention_gC_m2_yr' over 'soil_respiration_gC_m2_yr'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'gross_residue_carbon_input_gC_m2_yr' over 'soil_respiration_gC_m2_yr'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'gross_input_sd_gC_m2_yr' over 'net_soil_carbon_retention_gC_m2_yr'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'gross_residue_carbon_input_gC_m2_yr' over 'net_soil_carbon_retention_gC_m2_yr'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'gross_input_sd_gC_m2_yr' over 'respiration_sd_gC_m2_yr'",
+          "severity": "hard"
+        }
+      ],
+      "semantic_findings": []
+    },
+    {
+      "id": "ChartNet-sample_9fa23898eda05a63",
+      "chart": "Bar",
+      "panel_mode": "multi",
+      "code_version": "8ea6d2b2ae0c",
+      "skill": "grouped_measures",
+      "rationale": "grouped bars ['panel_row', 'panel_col', 'display_order'] by record_type",
+      "rows_used": 385,
+      "status": "ok",
+      "distance": 0.372,
+      "baseline_distance": 0.472,
+      "delta": 0.1,
+      "selected": "styled",
+      "selected_distance": 0.362,
+      "selected_gain": 0.11,
+      "selection_margin": 0.1,
+      "components": {
+        "palette": 0.601,
+        "aspect": 0.011,
+        "ink": 0.161
+      },
+      "hard_failures": 53,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'tidal_cycle_observation' over 'tidal_cycle_observation'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'irradiance_response_observation' over 'irradiance_response_observation'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'irradiance_response_observation' over 'irradiance_response_summary'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'isolate_summary' over 'tidal_cycle_observation'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'irradiance_response_observation' over 'tidal_cycle_observation'",
+          "severity": "hard"
+        }
+      ],
+      "semantic_findings": []
+    },
+    {
+      "id": "ChartNet-sample_ad3e2f8704f6e1b1__single",
+      "chart": "Bar",
+      "panel_mode": "single",
+      "code_version": "8ea6d2b2ae0c",
+      "skill": "grouped_measures",
+      "rationale": "grouped bars ['recovery_day', 'stack_order', 'gene_copies_per_mg_soil_thousands'] by record_type",
+      "rows_used": 504,
+      "status": "ok",
+      "distance": 0.47,
+      "baseline_distance": 0.505,
+      "delta": 0.035,
+      "selected": "styled",
+      "selected_distance": 0.473,
+      "selected_gain": 0.032,
+      "selection_margin": 0.033,
+      "components": {
+        "palette": 0.6,
+        "aspect": 0.005,
+        "ink": 0.612
+      },
+      "hard_failures": 20,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'soil_core_observation' over 'soil_core_observation'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'campaign_guild_aggregate' over 'soil_core_observation'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'campaign_total_summary' over 'soil_core_observation'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'campaign_guild_aggregate' over 'campaign_guild_aggregate'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'campaign_guild_aggrega' over 'soil_core_observation'",
+          "severity": "hard"
+        }
+      ],
+      "semantic_findings": []
+    },
+    {
+      "id": "ChartNet-sample_b07b3f6805a9e3b8",
+      "chart": "Heatmap",
+      "panel_mode": "multi",
+      "code_version": "8ea6d2b2ae0c",
+      "skill": "matrix_plate",
+      "rationale": "matrix 8 measures",
+      "rows_used": 40,
+      "status": "ok",
+      "distance": 0.201,
+      "baseline_distance": 0.32,
+      "delta": 0.119,
+      "selected": "styled",
+      "selected_distance": 0.115,
+      "selected_gain": 0.205,
+      "selection_margin": 0.091,
+      "components": {
+        "palette": 0.141,
+        "aspect": 0.111,
+        "ink": 0.438
+      },
+      "hard_failures": 34,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'replicate_count' over 'valueuncertainty_sd'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'assay_day' over 'salinity_pulse_ppt'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'panel_rowpanel_col' over 'salinity_pulse_ppt'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'n_observations' over 'replicate_count'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'10' over '11'",
+          "severity": "hard"
+        }
+      ],
+      "semantic_findings": []
+    },
+    {
+      "id": "ChartNet-sample_b2578adbadc0d71e",
+      "chart": "Box/Violin",
+      "panel_mode": "multi",
+      "code_version": "8ea6d2b2ae0c",
+      "skill": "distribution_comparison",
+      "rationale": "box panel_row by panel_group",
+      "rows_used": 128,
+      "status": "ok",
+      "distance": 0.091,
+      "baseline_distance": 0.464,
+      "delta": 0.373,
+      "selected": "styled",
+      "selected_distance": 0.09,
+      "selected_gain": 0.374,
+      "selection_margin": 0.368,
+      "components": {
+        "aspect": 0.003,
+        "ink": 0.179
+      },
+      "hard_failures": 0,
+      "findings": [],
+      "semantic_findings": []
+    },
+    {
+      "id": "ChartNet-sample_bbbf530e6aefa314",
+      "chart": "Bar",
+      "panel_mode": "multi",
+      "code_version": "8ea6d2b2ae0c",
+      "skill": "grouped_measures",
+      "rationale": "grouped bars ['study_year', 'annual_net_accretion_kg_m2_yr', 'measurement_se_kg_m2_yr'] by reef_complex",
+      "rows_used": 384,
+      "status": "ok",
+      "distance": 0.476,
+      "baseline_distance": 0.524,
+      "delta": 0.048,
+      "selected": "styled",
+      "selected_distance": 0.455,
+      "selected_gain": 0.069,
+      "selection_margin": 0.048,
+      "components": {
+        "palette": 0.657,
+        "aspect": 0.006,
+        "ink": 0.495
+      },
+      "hard_failures": 6,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'Lagoon_patch' over 'Outer_slope'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'Fringing_reef' over 'Outer_slope'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'Fringing_reef' over 'Lagoon_patch'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'Outer_slope' over 'Outer_slope'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'Fringing_reef' over 'Fringing_reef'",
+          "severity": "hard"
+        }
+      ],
+      "semantic_findings": []
     }
   ],
   "benchmark_anchor_distance": 0.305,
   "benchmark_shipped_anchor_distance": 0.252,
   "code_version": "8ea6d2b2ae0c",
-  "stale_tasks": [],
-  "n_stale": 0,
+  "stale_tasks": [
+    "arxiv_2510.17384",
+    "arxiv_2512.09767",
+    "arxiv_2512.25023",
+    "arxiv_2603.04948",
+    "arxiv_2603.08660",
+    "arxiv_2603.17004",
+    "arxiv_2603.23889",
+    "arxiv_2605.16790",
+    "arxiv_2605.22305",
+    "arxiv_2605.22455",
+    "local_gallery_hexbin_joint",
+    "local_picks_top_scatter__39",
+    "local_picks_top_violin__9",
+    "Chart2Code_level1_direct_HR_5",
+    "Chart2Code_level1_direct_combination_57",
+    "Chart2Code_level1_direct_density_11",
+    "Chart2Code_level1_direct_line_39",
+    "Chart2Code_level1_direct_line_8",
+    "Chart2Code_level2_3d_11_v2",
+    "Chart2Code_level2_radar_18_v5",
+    "Chart2Code_level2_scatter_13_v2",
+    "Chart2Code_level2_scatter_1_v2__single",
+    "Chart2Code_level2_scatter_22_v2__single",
+    "Chart2Code_level2_scatter_22_v3",
+    "Chart2Code_level2_scatter_27_v5",
+    "Chart2Code_level2_scatter_5_v5",
+    "Chart2Code_level2_violin_25_v4",
+    "Chart2Code_level3_table20_3_generate",
+    "Chart2NCode_ce7b7d946995482f9dd37ddad319cbc2",
+    "arxiv-astro-skymap__2510.17487",
+    "arxiv-ml-bar-line-v2__2511.15055",
+    "arxiv-phys-prx-prl__2603.21981",
+    "arxiv_2410.15876",
+    "arxiv_2502.15132",
+    "PMC13009336",
+    "PMC13022287",
+    "PMC13079874",
+    "PMC13135507",
+    "PMC13245775",
+    "PMC13252719",
+    "PMC13273070",
+    "PMC13286152",
+    "PMC13336770",
+    "PMC13342296",
+    "PMC13343911",
+    "Chart2Code_level2_3d_5_v4",
+    "Chart2Code_level2_area_3_v3",
+    "Chart2Code_level2_bar_10_v4",
+    "Chart2Code_level2_bar_22_v4",
+    "Chart2Code_level2_bar_25_v4",
+    "Chart2Code_level2_box_1_v5",
+    "Chart2Code_level2_combination_11_v2",
+    "Chart2Code_level2_combination_13_v5",
+    "Chart2Code_level2_combination_14_v5",
+    "Chart2Code_level2_combination_16_v5",
+    "Chart2Code_level2_combination_33_v5",
+    "Chart2Code_level2_combination_42_v5",
+    "Chart2Code_level2_combination_44_v3",
+    "Chart2Code_level2_density_12_v3",
+    "Chart2Code_level2_density_14_v4",
+    "Chart2Code_level2_errorpoint_10_v5",
+    "Chart2Code_level2_errorpoint_1_v5",
+    "Chart2Code_level2_errorpoint_5_v5",
+    "Chart2Code_level2_hist_2_v3",
+    "Chart2Code_level2_hist_2_v5",
+    "Chart2Code_level2_multidiff_1_v1",
+    "Chart2Code_level2_multidiff_5_v1",
+    "PMC11502666",
+    "PMC11840003",
+    "PMC12000431",
+    "PMC12354736",
+    "PMC12905268",
+    "arxiv-astro-skymap__2412.12637",
+    "arxiv-ml-3d-trajectory__2511.17399",
+    "arxiv-ml-3d-trajectory__2602.22552",
+    "arxiv_2604.01093",
+    "arxiv_2604.05237",
+    "Chart2Code_level2_contour_14_v1",
+    "Chart2Code_level2_contour_23_v4",
+    "Chart2Code_level2_contour_25_v2",
+    "Chart2Code_level2_contour_25_v3",
+    "Chart2Code_level2_contour_5_v5",
+    "Chart2Code_level2_multidiff_2_v2__single",
+    "Chart2Code_level2_quiver_10_v5",
+    "Chart2Code_level2_quiver_13_v1",
+    "Chart2Code_level2_quiver_14_v1",
+    "Chart2Code_level2_quiver_4_v5",
+    "Chart2NCode_f5989e4725654971a32e6c84c0dbdfa5",
+    "ChartNet-sample_01541e58b887ce36",
+    "ChartNet-sample_11168fb7e30df7c0",
+    "ChartNet-sample_12f1182db6964e8c",
+    "ChartNet-sample_21db7b1495645e96",
+    "ChartNet-sample_251d4b63cae5c39c",
+    "ChartNet-sample_27ec276af1be7f88",
+    "ChartNet-sample_3a712400d6efe5ca",
+    "ChartNet-sample_3d0ebd7ea1e10bf3",
+    "ChartNet-sample_42a8557ef11775e9",
+    "ChartNet-sample_46826fe4916b7d52",
+    "PMC12504421",
+    "PMC13106710",
+    "arxiv_2502.17598",
+    "arxiv_2605.14587",
+    "Chart2Code_level1_direct_contour_18",
+    "Chart2Code_level1_direct_heatmap_3",
+    "Chart2Code_level1_direct_heatmap_7",
+    "ChartNet-sample_1acf825b0429ddfd",
+    "arxiv-ml-bar-line-v2__2605.21125",
+    "Chart2Code_level2_radar_10_v2",
+    "Chart2Code_level2_radar_23_v3",
+    "Chart2Code_level2_radar_26_v3",
+    "Chart2Code_level2_radar_35_v4",
+    "Chart2Code_level2_radar_3_v1",
+    "Chart2Code_level2_radar_3_v3",
+    "Chart2Code_level2_radar_40_v5",
+    "Chart2Code_level2_radar_4_v3",
+    "Chart2Code_level2_radar_7_v3",
+    "Chart2Code_level2_radar_9_v4",
+    "ChartNet-sample_e17ff7b5495b0ee4",
+    "ChartNet-sample_51138e34911000f6",
+    "ChartNet-sample_55e97056fbbde5b6__single",
+    "ChartNet-sample_575be33996f0155c",
+    "ChartNet-sample_5781d64aa8377547",
+    "ChartNet-sample_5c19f37c2ecba73b",
+    "ChartNet-sample_5cf3859f3ce78167",
+    "ChartNet-sample_5e553d0091325708",
+    "ChartNet-sample_63115ff12f6710a3",
+    "ChartNet-sample_68d34458d8f08a48",
+    "ChartNet-sample_7c69a17fd376e251",
+    "ChartNet-sample_82a42a98d7e32b53",
+    "ChartNet-sample_953bb3ed650d8541"
+  ],
+  "n_stale": 130,
   "selection": {
-    "n": 103,
-    "shipped_mean": 0.235,
-    "always_styled_mean": 0.266,
-    "plain_mean": 0.35,
+    "n": 107,
+    "shipped_mean": 0.239,
+    "always_styled_mean": 0.269,
+    "plain_mean": 0.355,
     "gain_vs_always_styled": 0.03,
-    "gain_vs_plain": 0.115,
-    "picked_styled": 101,
+    "gain_vs_plain": 0.116,
+    "picked_styled": 105,
     "picked_plain": 2,
     "rule": "closer of plain/styled to the reference; the reference is an input"
   }
