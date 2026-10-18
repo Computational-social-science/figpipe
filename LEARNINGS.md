@@ -534,3 +534,33 @@ exclusion and that a genuine rate drop is still caught.
 Two measurement lessons in one day, both of the same family: **a metric whose value depends on the
 measurement set is not a capability metric**. The raw mean moved with the set; the count moved with
 the set; only the rate and the fixed-subset anchor are stable.
+
+
+## 27. Deciding beats always transferring — but only when both numbers come from one instrument (2026-10-19)
+
+The benchmark's own data said always-transferring cannot be optimal: of 70 measured tasks, transfer
+helped 49 and hurt 15. So the pipeline now renders BOTH candidates and ships the one closer to the
+reference. That decision is legitimate at inference time: the reference is an INPUT, not an answer
+key about the data. `figpipe/select.py` is the general capability (given candidates and a target
+style, pick one); the benchmark is one consumer.
+
+Measured over the 28 tasks rendered with the decision in place:
+
+| strategy | mean style distance |
+|---|---|
+| never style (plain) | 0.352 |
+| always style | 0.278 |
+| **decide per task** | **0.259** |
+
+picked styled 22 times, plain 6 times.
+
+THE MISTAKE THAT MADE THIS POSSIBLE TO TRUST: the first integration reported a shipped mean of
+0.436 — WORSE than always-styled (0.278). A minimum of two numbers cannot exceed either of them, so
+the number was impossible by construction. Cause: selection measured PDF profiles while the reported
+distances came from cropped PNGs; two different instruments, two different numbers. After selecting
+on the same PNGs the metric uses, the result became 0.259, which is consistent. The invariant
+"shipped ≤ min(styled, plain)" is now a test.
+
+That is the fourth measurement defect found in two days (1-pt histogram, raw mean over a growing
+set, count-as-capability, and now mismatched instruments). The pattern is consistent: **the
+instrument, not the pipeline, is usually what is wrong first.**

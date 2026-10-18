@@ -188,3 +188,25 @@ def test_counts_are_not_capabilities_but_the_rate_is():
                                  {"benchmark_success_rate": 0.80})
     assert loss["verdict"]["ok"] is False
     assert loss["verdict"]["regressions"][0]["field"] == "benchmark_success_rate"
+
+
+def test_the_shipped_distance_is_a_judged_capability():
+    """The selection step is a capability, so its metric must be judged, not merely recorded.
+
+    `benchmark_shipped_distance` is the mean distance of the figures the pipeline would actually
+    ship. Lower is better, and it is the number that improved when the decision replaced
+    always-transferring (0.278 -> 0.259 on the tasks measured with it).
+    """
+    if cron is None:
+        import pytest
+        pytest.skip("cron_run unavailable")
+    assert cron.CAPABILITY_DIRECTION.get("benchmark_shipped_distance") == -1
+    snap = cron.capability_snapshot()
+    assert "benchmark_shipped_distance" in snap
+    better = cron.capability_delta({"benchmark_shipped_distance": 0.278},
+                                   {"benchmark_shipped_distance": 0.259})
+    assert better["verdict"]["ok"] is True
+    assert better["verdict"]["gains"][0]["field"] == "benchmark_shipped_distance"
+    worse = cron.capability_delta({"benchmark_shipped_distance": 0.259},
+                                  {"benchmark_shipped_distance": 0.300})
+    assert worse["verdict"]["ok"] is False

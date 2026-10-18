@@ -96,6 +96,19 @@ def _fmt(value) -> str:
     return "—" if value is None else str(value)
 
 
+def _selection_text(sel) -> str:
+    if not sel:
+        return ("No task in the current set was rendered with the selection step yet; the "
+                "always-styled mean is the only comparable number.")
+    return (f"<b>Deciding beats always transferring.</b> Over the {sel['n']} tasks measured with "
+            f"the decision in place, the shipped figure averages "
+            f"<b>{sel['shipped_mean']}</b> style distance, versus {sel['always_styled_mean']} for "
+            f"always-styled and {sel['plain_mean']} for never styling. The decision picked the "
+            f"styled candidate {sel['picked_styled']} times and the plain one "
+            f"{sel['picked_plain']} times, using only the reference (an input, not the answer "
+            f"key).")
+
+
 def _regression_banner(latest: dict) -> str:
     """A loud banner when the last scheduled run found a capability regression."""
     verdict = ((latest.get("capabilities_delta") or {}).get("verdict") or {})
@@ -460,6 +473,8 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
 
 <div class="kpis">
   {kpi(f'{n_stats}', 'Published statistics reproduced', f'worst |Δ| = {worst}', '')}
+  {kpi((bench.get("selection") or {}).get("shipped_mean") or "—",
+       'Distance of shipped figures', 'closer of plain/styled, decided per task', '')}
   {kpi(bench.get("benchmark_anchor_distance") or "—", 'Anchor style distance',
        'fixed 20-task subset (comparable across runs)', '')}
   {kpi(f'{n_skills} / {n_ops}', 'Skills / classic operators', 'global verification floor on every recipe', '')}
@@ -503,6 +518,10 @@ and the palette never reached the histogram/box draw parameters. Only after that
 tasks improve. <b>"Looking like transfer" and "changing pixels" are different things.</b></div>
 
 <h2><span class="n">04</span>Authoritative benchmark: PlotTwin-Bench (FigMirror, arXiv 2608.28814)</h2>
+<p class="tag">The pipeline renders both a plain and a styled candidate and SHIPS the one closer
+to the reference; the reference is an input, so this decision is legitimate at inference time.
+"Always styled" is reported alongside, because the difference between the two is the measured value
+of deciding.</p>
 <p class="tag">Task: reference figure + new data → a figure in the reference style. Licence CC BY-NC
 4.0 (local evaluation only; the data is not redistributed). The numbers below are <b>deterministic
 metrics</b> (palette / aspect / ink density of the raster reference), <b>not the official combined
@@ -521,6 +540,7 @@ imitate.</p>
     <tbody>{''.join(bench_rows)}</tbody>
   </table>
 </div>
+<div class="okbox" style="margin-top:14px">{_selection_text(bench.get("selection"))}</div>
 <h3 style="margin-top:20px">By chart type</h3>
 <table><thead><tr><th>Chart type</th><th>OK / tasks</th><th>Mean distance</th><th>Baseline</th>
 <th>Δ</th></tr></thead><tbody>{''.join(type_rows)}</tbody></table>
