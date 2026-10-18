@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-19T02:15:45",
+  "run_at": "2026-10-19T02:18:39",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -9,10 +9,10 @@
     "  passed 8, failed 0",
     "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
     "  wrote knowledge\\evolution_report.json",
-    "  lean: tracked 79.4 -> 79.4 MB, worktree 130.6 -> 130.4 MB"
+    "  lean: tracked 79.5 -> 79.5 MB, worktree 130.6 -> 130.5 MB"
   ],
   "tests_ok": true,
-  "tests_summary": "249 passed, 2 skipped, 1 warning in 46.47s",
+  "tests_summary": "250 passed, 2 skipped, 1 warning in 46.97s",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
@@ -129,68 +129,47 @@
     "regressed": 0
   },
   "benchmark_slice": {
-    "ran": true,
-    "offset": 108,
-    "tasks": 6,
-    "code": 0,
-    "tail": [
-      "    type Line           ok 1/1   d=0.169 base=0.333 delta=0.164 errors=0",
-      "    type Scatter        ok 3/3   d=0.146 base=0.323 delta=0.177 errors=0",
-      "    FAIL Chart2NCode_7b87069f5442408286d1a4b0300eae18 3D           unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this is a deliberate exc",
-      "  wrote E:\\2026-AI4S\\figpipe\\corpus\\e2e\\plottwin_report.json"
-    ]
+    "ran": false,
+    "reason": "dry run"
   },
   "capabilities": {
     "skills": 15,
     "operators": 19,
     "benchmark_tasks": 78,
     "benchmark_ok": 70,
+    "benchmark_success_rate": 1.0,
     "benchmark_mean_distance": 0.287,
     "benchmark_anchor_distance": 0.297,
     "benchmark_unsupported": 8,
     "statistics_reproduced": 15,
     "knowledge_version": 16,
-    "tests": 249
+    "tests": 250
   },
   "capabilities_delta": {
     "changed": true,
     "delta": {
-      "benchmark_tasks": {
-        "before": 72,
-        "after": 78
+      "benchmark_success_rate": {
+        "before": null,
+        "after": 1.0
       },
-      "benchmark_ok": {
-        "before": 65,
-        "after": 70
-      },
-      "benchmark_mean_distance": {
-        "before": 0.292,
-        "after": 0.287
-      },
-      "benchmark_unsupported": {
-        "before": 7,
-        "after": 8
+      "tests": {
+        "before": 249,
+        "after": 250
       }
     },
     "verdict": {
       "gains": [
         {
-          "field": "benchmark_tasks",
-          "before": 72,
-          "after": 78
-        },
-        {
-          "field": "benchmark_ok",
-          "before": 65,
-          "after": 70
+          "field": "tests",
+          "before": 249,
+          "after": 250
         }
       ],
       "regressions": [],
       "ok": true,
       "judged_fields": [
         "benchmark_anchor_distance",
-        "benchmark_ok",
-        "benchmark_tasks",
+        "benchmark_success_rate",
         "knowledge_version",
         "operators",
         "skills",

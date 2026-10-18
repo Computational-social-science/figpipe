@@ -115,6 +115,8 @@ def _caps_text(caps: dict) -> str:
     parts = [f"skills {_fmt(caps.get('skills'))}",
              f"operators {_fmt(caps.get('operators'))}",
              f"benchmark {_fmt(caps.get('benchmark_ok'))}/{_fmt(caps.get('benchmark_tasks'))}",
+             f"success {_fmt(caps.get('benchmark_success_rate'))}",
+             f"anchor {_fmt(caps.get('benchmark_anchor_distance'))}",
              f"tests {_fmt(caps.get('tests'))}"]
     return " · ".join(parts)
 
@@ -574,7 +576,7 @@ The next step is to write benchmark pass rates and distances into the run record
 
 <h3 style="margin-top:20px">Capability trend (scheduled runs)</h3>
 <table><thead><tr><th>Run</th><th>Skills</th><th>Operators</th><th>Benchmark</th>
-<th>Anchor distance</th><th>Tests</th></tr></thead><tbody>{''.join(cap_rows)}</tbody></table>
+<th>Anchor distance</th><th>Success</th><th>Tests</th></tr></thead><tbody>{''.join(cap_rows)}</tbody></table>
 <p class="tag">Read from <code>knowledge/runs/*.json</code>. A run with no capability change is
 recorded as such; the loop fails when a judged capability field gets worse.</p>
 

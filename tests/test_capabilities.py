@@ -62,15 +62,15 @@ def test_a_capability_loss_is_a_regression_not_a_footnote():
     if cron is None:
         import pytest
         pytest.skip("cron_run unavailable")
-    prev = {"benchmark_ok": 26, "benchmark_tasks": 30, "skills": 12,
+    prev = {"benchmark_success_rate": 0.95, "skills": 12,
             "benchmark_anchor_distance": 0.28, "tests": 229}
-    cur = {"benchmark_ok": 23, "benchmark_tasks": 30, "skills": 12,
+    cur = {"benchmark_success_rate": 0.80, "skills": 12,
            "benchmark_anchor_distance": 0.31, "tests": 229}
     out = cron.capability_delta(prev, cur)
     verdict = out["verdict"]
     assert verdict["ok"] is False
     fields = {r["field"] for r in verdict["regressions"]}
-    assert fields == {"benchmark_ok", "benchmark_anchor_distance"}
+    assert fields == {"benchmark_success_rate", "benchmark_anchor_distance"}
     assert out["changed"] is True
 
 
@@ -164,3 +164,27 @@ def test_the_anchor_metric_is_stable_when_the_task_set_grows():
     worse = [dict(t, distance=0.40) for t in small]
     assert bench._anchor_distance(worse) == 0.4
     assert bench._anchor_distance(small[:3]) is None
+
+
+def test_counts_are_not_capabilities_but_the_rate_is():
+    """A benchmark COUNT rises whenever the measured set grows; a RATE does not.
+
+    The raw mean already produced one false regression (0.278/30 -> 0.302/66). The mirror-image
+    error is treating a growing count as a gain: benchmark_ok went 65 -> 70 in one run purely
+    because six more tasks were measured. Coverage is a fact, not a capability, so only the
+    success rate is judged.
+    """
+    if cron is None:
+        import pytest
+        pytest.skip("cron_run unavailable")
+    judged = cron.CAPABILITY_DIRECTION
+    assert "benchmark_success_rate" in judged
+    assert "benchmark_ok" not in judged
+    assert "benchmark_tasks" not in judged
+    assert "benchmark_mean_distance" not in judged
+    out = cron.capability_delta({"benchmark_ok": 65}, {"benchmark_ok": 70})
+    assert out["verdict"]["gains"] == [] and out["verdict"]["regressions"] == []
+    loss = cron.capability_delta({"benchmark_success_rate": 0.95},
+                                 {"benchmark_success_rate": 0.80})
+    assert loss["verdict"]["ok"] is False
+    assert loss["verdict"]["regressions"][0]["field"] == "benchmark_success_rate"

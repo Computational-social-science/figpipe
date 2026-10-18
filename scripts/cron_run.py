@@ -71,11 +71,19 @@ def capability_snapshot() -> dict:
     skills = _read("knowledge/skills_catalog.json")
     seed = _read("templates/seed/report.json")
     kb = _read("knowledge/layout_rules.json")
+    n_tasks = bench.get("n_tasks", 0) or 0
+    n_ok = bench.get("n_ok", 0) or 0
+    n_unsupported = bench.get("n_unsupported", 0) or 0
+    attempted = max(n_tasks - n_unsupported, 1)
     return {
         "skills": len(skills.get("skills", []) or []),
         "operators": len(skills.get("operators", []) or []),
-        "benchmark_tasks": bench.get("n_tasks", 0) or 0,
-        "benchmark_ok": bench.get("n_ok", 0) or 0,
+        "benchmark_tasks": n_tasks,
+        "benchmark_ok": n_ok,
+        # a RATE, not a count: ok-count rises whenever the measured set grows, which is the
+        # mirror image of the false regression the raw mean produced. Coverage and success rate
+        # are separate facts and only the rate is a capability.
+        "benchmark_success_rate": round(n_ok / attempted, 3) if n_tasks else None,
         "benchmark_mean_distance": bench.get("mean_distance"),
         # judged instead of the raw mean: the mean moves when the task SET changes, which is a
         # property of the measurement, not of the capability
@@ -93,8 +101,9 @@ def capability_snapshot() -> dict:
 CAPABILITY_DIRECTION = {
     "skills": +1,
     "operators": +1,
-    "benchmark_tasks": +1,
-    "benchmark_ok": +1,
+    "benchmark_success_rate": +1,
+    # NOTE: benchmark_tasks and benchmark_ok are counts, not capabilities: they rise whenever the
+    # measured set grows. They are recorded for coverage and are deliberately NOT judged.
     "benchmark_anchor_distance": -1,
     # NOTE: benchmark_mean_distance is deliberately NOT judged. It is a mean over a growing task
     # set, so it changes when the benchmark slice grows even if nothing about the pipeline did.
