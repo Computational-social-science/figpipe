@@ -517,3 +517,20 @@ a genuine worsening moves it.
 This is the second time in one day that the MEASUREMENT machinery, not the pipeline, produced the
 wrong signal (the first was the size-distance histogram that could not see a 6.0 → 6.5 change).
 A self-evolving system must audit its own instruments before it trusts their verdicts.
+
+
+## 26. Counts are not capabilities (2026-10-19)
+
+Right after fixing the false regression from a growing benchmark SET, the same defect appeared in
+the opposite direction: `benchmark_ok` rose 65 → 70 in one run and the verdict recorded it as a
+GAIN. Nothing had improved; six more tasks had been measured. A count inflates with coverage, and
+coverage is not capability.
+
+Fix: the judged field is now `benchmark_success_rate` (ok / attempted, where attempted excludes
+tasks of unsupported chart types). `benchmark_tasks` and `benchmark_ok` remain in the record as
+coverage facts but are excluded from the verdict, with a comment saying why. A test asserts the
+exclusion and that a genuine rate drop is still caught.
+
+Two measurement lessons in one day, both of the same family: **a metric whose value depends on the
+measurement set is not a capability metric**. The raw mean moved with the set; the count moved with
+the set; only the rate and the fixed-subset anchor are stable.
