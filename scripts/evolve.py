@@ -203,6 +203,42 @@ def main() -> int:
     if hard_errors:
         print(f"  !! HARD ERRORS: {hard_errors}")
     print(f"  wrote {REPORT.relative_to(ROOT)}")
+
+    # ---- LEAN PASS ----------------------------------------------------------------
+    # Runs after the verdict so slimming can never hide a regression.
+    try:
+        import slim as _slim
+        before = _slim.measure()
+        fat = _slim.tracked_regenerable()
+        trimmed = _slim.trim_run_records()
+        _slim.prune_scratch(apply=True)
+        freed = _slim.purge_disk(apply=True)
+        after = _slim.measure()
+        report["lean"] = {
+            "tracked_files_before": before["tracked_files"],
+            "tracked_files_after": after["tracked_files"],
+            "tracked_mb_before": before["tracked_mb"],
+            "tracked_mb_after": after["tracked_mb"],
+            "worktree_mb_before": before["worktree_mb"],
+            "worktree_mb_after": after["worktree_mb"],
+            "regenerable_still_tracked": {k: len(v) for k, v in fat.items()},
+            "run_records_trimmed": len(trimmed),
+            "disk_purged": freed,
+        }
+        _atomic_write(REPORT, json.dumps(report, indent=2))
+        print(f"  lean: tracked {before['tracked_mb']} -> {after['tracked_mb']} MB, "
+              f"worktree {before['worktree_mb']} -> {after['worktree_mb']} MB")
+        if fat:
+            print(f"  !! still tracking regenerable files: "
+                  f"{ {k: len(v) for k, v in fat.items()} }")
+        for line in freed:
+            print(f"     freed {line}")
+    except Exception as e:                                       # noqa: BLE001
+        # Recorded, not raised: a slimming failure must not look like a rule regression.
+        report["lean"] = {"error": f"{type(e).__name__}: {e}"}
+        _atomic_write(REPORT, json.dumps(report, indent=2))
+        print(f"  lean pass failed (recorded, not fatal): {type(e).__name__}")
+
     return 0 if report["ok"] else 1
 
 

@@ -27,6 +27,11 @@ import sys
 
 import pytest
 
+#: Page renders are regenerable (the VLM stage can rebuild them on demand) and were 64 % of the
+#: tracked bytes. They are checked only when the lean pass has not purged them, so the test
+#: suite is meaningful both before and after slimming.
+PAGES_REQUIRED = False
+
 # ---------------------------------------------------------------------------------------------
 # Known caption mis-pairs. Measured, enumerated, and guarded -- NOT tolerated away.
 #
@@ -226,8 +231,18 @@ def test_every_paper_has_the_full_artefact_set():
     for p in dirs:
         for name in ("layout.json", "content.md", "figures_meta.json"):
             assert (p / name).is_file(), f"{p.name}: missing {name}"
-        assert (p / "pages").is_dir() and any((p / "pages").glob("*.png")), \
-            f"{p.name}: no page renders"
+        # PAGE RENDERS ARE DELIBERATELY NOT REQUIRED.
+        #
+        # The owner's rule is that figpipe must stay lean. Page renders were 120.9 MB of the
+        # 187.8 MB tracked (64 %) and ~480 MB on disk. Nothing downstream needs them as files:
+        # the VLM stage has its own `render` subcommand that rebuilds pages from the PDF at
+        # whatever dpi it wants.
+        #
+        # Requiring pages/ would make slimming look like a regression -- the mirror of the
+        # mistake this project keeps making in the other direction.
+        if PAGES_REQUIRED:
+            assert (p / "pages").is_dir() and any((p / "pages").glob("*.png")), \
+                f"{p.name}: no page renders"
         assert (p / "figures").is_dir(), f"{p.name}: no figures dir"
 
 
