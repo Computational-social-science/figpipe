@@ -810,3 +810,25 @@ Three things this taught, and they generalise:
 Also fixed: the task cache held rows written before `reference_code` was fetched, so the official
 channel could only see 2 of 141 tasks. A cache entry missing a required field is now refreshed
 instead of silently reused -- the cache version of the staleness lesson.
+
+
+## 38. A judged field the snapshot never emitted (2026-10-19)
+
+I added `benchmark_official_code_score` to `CAPABILITY_DIRECTION` and reported "the official score
+is now a judged capability". It was not: `capability_snapshot()` never returned the field, so
+`capability_delta()` saw nothing to judge. The loop would have reported "no change" if the official
+score halved.
+
+This is the exact defect the project has fought since its first audit -- **a control that looks
+present and does nothing** -- reappearing in the capability system itself, one commit after I wrote
+a lesson about measurement defects.
+
+Fix: the snapshot emits the field; a test asserts `set(CAPABILITY_DIRECTION) <= set(snapshot)` so a
+judged-but-unmeasured field can never happen again. Second test confirms the official score is
+recorded and judged in both directions.
+
+Verified: the next run recorded `benchmark_official_code_score: 92.68` in the capability snapshot.
+
+The general rule, now enforced by test: **every field the system claims to judge must be a field it
+actually measures.** Claiming a capability check without wiring it is worse than not claiming it,
+because it makes the absence invisible.
