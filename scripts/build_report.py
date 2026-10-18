@@ -497,6 +497,8 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
        'Shipped distance (anchor)', 'fixed 20-task subset; closer of plain/styled per task', '')}
   {kpi(bench.get("benchmark_anchor_distance") or "—", 'Anchor style distance',
        'fixed 20-task subset (comparable across runs)', '')}
+  {kpi(bench.get("semantic_violations", "—"), 'Semantic violations',
+       'figures whose printed claims contradict their data', '')}
   {kpi(f'{n_skills} / {n_ops}', 'Skills / classic operators', 'global verification floor on every recipe', '')}
   {kpi(f'{n_tests}', 'Automated tests', 'negative controls and contract tests', '')}
   {kpi(f'{tracked_mb or "—"} MB', 'Repository size', 'lean budget ≤ 80 MB', '')}
@@ -562,6 +564,10 @@ imitate.</p>
   {hidden_note}
 </div>
 <div class="okbox" style="margin-top:14px">{_selection_text(bench.get("selection"))}</div>
+<div class="note"><b>A style metric cannot see a wrong number.</b> Every figure is now also checked
+by <code>figpipe/semantics.py</code>: the printed r must match the data's r, no drawn point may fall
+outside the axes, and the axis labels must be the ones the panel claims. Semantic violations in this
+run: <b>{bench.get("semantic_violations", 0)}</b>.</div>
 <h3 style="margin-top:20px">By chart type</h3>
 <table><thead><tr><th>Chart type</th><th>OK / tasks</th><th>Always styled</th><th>Plain</th>
 <th>Δ</th><th>Shipped</th></tr></thead><tbody>{''.join(type_rows)}</tbody></table>

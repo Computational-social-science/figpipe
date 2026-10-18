@@ -31,6 +31,8 @@ import pathlib
 import shutil
 import sys
 import tempfile
+import time
+import urllib.error
 import urllib.request
 
 import numpy as np
@@ -139,8 +141,21 @@ def fetch_row(offset: int) -> dict:
         return json.loads(cache.read_text(encoding="utf-8"))
     req = urllib.request.Request(API.format(offset=offset),
                                  headers={"User-Agent": "figpipe-bench/0.1"})
-    with urllib.request.urlopen(req, timeout=180) as r:
-        payload = json.load(r)
+    # The dataset server rate-limits (HTTP 429) when a type-wide scan walks the pool. Back off
+    # instead of hammering it, and treat exhaustion as a normal, reported outcome.
+    payload = None
+    for attempt in range(7):
+        try:
+            with urllib.request.urlopen(req, timeout=180) as r:
+                payload = json.load(r)
+            break
+        except urllib.error.HTTPError as exc:
+            if exc.code not in (429, 500, 502, 503, 504):
+                raise
+            time.sleep(min(30.0, 3.0 * (attempt + 1)))
+    if payload is None:
+        raise RuntimeError(f"dataset server kept rate-limiting offset {offset}")
+    time.sleep(0.35)
     prune_cache()
     row = payload["rows"][0]["row"]
     if row.get("id"):
@@ -356,7 +371,20 @@ def choose_reading(df: pd.DataFrame, chart: str, panel_mode: str):
             raise MappingError("polar/radial needs an angular category (<=12 levels)")
         return "radial_profile", {"theta": ang, "value": nums[0]}, df, \
             f"polar {nums[0]} by {ang}"
-    if chart in ("Heatmap", "Field 2D"):
+    if chart == "Field 2D":
+        # a field needs its own (x, y, value) triple: the pivot is the drawing
+        coord_candidates = [c for c in nums if df[c].nunique() >= 3]
+        if len(coord_candidates) >= 2:
+            xs = coord_candidates[0]
+            ys = coord_candidates[1]
+            val = next((c for c in nums if c not in (xs, ys)), None)
+            if val is not None:
+                sub = df[[xs, ys, val]].dropna()
+                if sub[xs].nunique() >= 2 and sub[ys].nunique() >= 2 and len(sub) >= 8:
+                    return "field_map", {"x": xs, "y": ys, "value": val}, sub, \
+                        f"field {val} over {xs} x {ys}"
+        raise MappingError("field 2D task has no usable (x, y, value) triple")
+    if chart == "Heatmap":
         data, why = _matrix_reading(df, nums, cats)
         if data is None:
             raise MappingError("heatmap target data has neither a numeric matrix nor a 2-category pivot")
@@ -434,6 +462,11 @@ def run_task(row: dict, out_dir: pathlib.Path) -> dict:
             "components": d_styled["details"],
             "hard_failures": (styled if chosen_is_styled else plain)["hard_failures"],
             "findings": (styled if chosen_is_styled else plain)["findings"][:5],
+            # semantic findings are separate from format findings: a figure can be perfectly
+            # compliant and still print a number its data do not support
+            "semantic_findings": [f for f in
+                                  (styled if chosen_is_styled else plain)["findings"]
+                                  if str(f.get("check", "")).startswith("semantics")],
         })
     except Exception as exc:                       # recorded, not hidden
         result.update({"status": "error", "error": f"{type(exc).__name__}: {exc}"})
@@ -627,6 +660,9 @@ def main(argv=None) -> int:
     ap.add_argument("--merge", action="store_true",
                     help="merge into the existing report instead of replacing it")
     ap.add_argument("--types", default="", help="comma list, e.g. Line,Distribution,Scatter")
+    ap.add_argument("--scan", action="store_true",
+                    help="with --types: walk the WHOLE pool and measure every task of those "
+                         "types, so a fixed operator is re-measured everywhere at once")
     args = ap.parse_args(argv)
     wanted = {t.strip() for t in args.types.split(",") if t.strip()}
     # Rendered candidates are INTERMEDIATES, not artefacts: 30 tasks produce ~600 files and
@@ -634,11 +670,21 @@ def main(argv=None) -> int:
     # that is removed at the end; the metric report (the actual deliverable) stays in the repo.
     out_dir = pathlib.Path(tempfile.mkdtemp(prefix="figpipe-bench-"))
     tasks = []
-    for off in range(args.offset, args.offset + args.limit):
-        row = fetch_row(off)
-        if wanted and row["chart_type_name"] not in wanted:
-            continue
-        tasks.append(row)
+    if args.scan and wanted:
+        # a type-wide re-measurement: the old rows must be replaced wherever they came from, and
+        # --limit now bounds the number of MATCHING tasks rather than a window of offsets
+        for off in range(POOL):
+            row = fetch_row(off)
+            if row["chart_type_name"] in wanted:
+                tasks.append(row)
+                if len(tasks) >= args.limit:
+                    break
+    else:
+        for off in range(args.offset, args.offset + args.limit):
+            row = fetch_row(off)
+            if wanted and row["chart_type_name"] not in wanted:
+                continue
+            tasks.append(row)
     print(f"  tasks fetched: {len(tasks)} (offset {args.offset}, limit {args.limit})")
     results = [run_task(row, out_dir) for row in tasks]
     ok = [r for r in results if r["status"] == "ok"]
@@ -689,6 +735,7 @@ def main(argv=None) -> int:
         "improved": improved, "worse": worse, "ties": ties,
         "mean_best_of_two": round(float(np.mean([min(r["distance"], r["baseline_distance"])
                                                  for r in ok])), 3) if ok else None,
+        "semantic_violations": sum(1 for r in ok if r.get("semantic_findings")),
         "decision_service": decision.health(),
         "by_type": type_stats,
         "failures": [{"id": r["id"], "chart": r["chart"], "error": r.get("error")}
@@ -701,7 +748,8 @@ def main(argv=None) -> int:
         except (OSError, ValueError):
             old = {}
         seen = {t["id"] for t in report["tasks"]}
-        merged = [t for t in old.get("tasks", []) if t.get("id") not in seen] + report["tasks"]
+        old_tasks = old.get("tasks", [])
+        merged = [t for t in old_tasks if t.get("id") not in seen] + report["tasks"]
         ok_all = [t for t in merged if t.get("status") == "ok"]
         uns = [t for t in merged if t.get("status") == "unsupported"]
         report["tasks"] = merged

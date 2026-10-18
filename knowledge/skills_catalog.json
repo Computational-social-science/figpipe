@@ -2,7 +2,8 @@
   "about": "Global skill floor + classic operators + named recipes for scientific figures.",
   "global_verify": [
     "verify.audit",
-    "verify.collisions"
+    "verify.collisions",
+    "verify.semantics"
   ],
   "operators": [
     {
@@ -76,6 +77,11 @@
       "doc": "Build one panel per level of a grouping column from a long table."
     },
     {
+      "name": "encode.field",
+      "kind": "build",
+      "doc": "Encode a scalar field over a 2-D coordinate grid (position x time, x x y, ...)."
+    },
+    {
       "name": "encode.polar",
       "kind": "build",
       "doc": "Encode a radial profile: one value per angle (category or degrees)."
@@ -94,6 +100,11 @@
       "name": "verify.collisions",
       "kind": "verify",
       "doc": "Glyph-level text collisions (rotated tick labels are not false positives)."
+    },
+    {
+      "name": "verify.semantics",
+      "kind": "verify",
+      "doc": "The panel's printed claims must match the data it was drawn from."
     },
     {
       "name": "verify.statistics",
@@ -143,7 +154,8 @@
       ],
       "global_checks": [
         "verify.audit",
-        "verify.collisions"
+        "verify.collisions",
+        "verify.semantics"
       ],
       "examples": [
         {
@@ -187,7 +199,8 @@
       "verify": [],
       "global_checks": [
         "verify.audit",
-        "verify.collisions"
+        "verify.collisions",
+        "verify.semantics"
       ],
       "examples": [
         {
@@ -230,7 +243,8 @@
       "verify": [],
       "global_checks": [
         "verify.audit",
-        "verify.collisions"
+        "verify.collisions",
+        "verify.semantics"
       ],
       "examples": [
         {
@@ -267,7 +281,8 @@
       "verify": [],
       "global_checks": [
         "verify.audit",
-        "verify.collisions"
+        "verify.collisions",
+        "verify.semantics"
       ],
       "examples": [
         {
@@ -303,7 +318,8 @@
       "verify": [],
       "global_checks": [
         "verify.audit",
-        "verify.collisions"
+        "verify.collisions",
+        "verify.semantics"
       ],
       "examples": [
         {
@@ -341,7 +357,8 @@
       "verify": [],
       "global_checks": [
         "verify.audit",
-        "verify.collisions"
+        "verify.collisions",
+        "verify.semantics"
       ],
       "examples": [
         {}
@@ -389,7 +406,8 @@
       ],
       "global_checks": [
         "verify.audit",
-        "verify.collisions"
+        "verify.collisions",
+        "verify.semantics"
       ],
       "examples": [
         {
@@ -428,7 +446,8 @@
       "verify": [],
       "global_checks": [
         "verify.audit",
-        "verify.collisions"
+        "verify.collisions",
+        "verify.semantics"
       ],
       "examples": [
         {
@@ -467,7 +486,8 @@
       "verify": [],
       "global_checks": [
         "verify.audit",
-        "verify.collisions"
+        "verify.collisions",
+        "verify.semantics"
       ],
       "examples": [
         {
@@ -504,7 +524,8 @@
       "verify": [],
       "global_checks": [
         "verify.audit",
-        "verify.collisions"
+        "verify.collisions",
+        "verify.semantics"
       ],
       "examples": [
         {
@@ -545,7 +566,8 @@
       "verify": [],
       "global_checks": [
         "verify.audit",
-        "verify.collisions"
+        "verify.collisions",
+        "verify.semantics"
       ],
       "examples": [
         {
@@ -585,7 +607,8 @@
       "verify": [],
       "global_checks": [
         "verify.audit",
-        "verify.collisions"
+        "verify.collisions",
+        "verify.semantics"
       ],
       "examples": [
         {
@@ -626,7 +649,8 @@
       "verify": [],
       "global_checks": [
         "verify.audit",
-        "verify.collisions"
+        "verify.collisions",
+        "verify.semantics"
       ],
       "examples": [
         {
@@ -634,6 +658,49 @@
           "x": "outcome_name",
           "y": "estimate",
           "err": "se"
+        }
+      ]
+    },
+    {
+      "name": "field_map",
+      "version": 1,
+      "description": "A scalar field over a 2-D coordinate grid, as a colour field with an optional contour overlay.",
+      "required": [
+        "x",
+        "y",
+        "value"
+      ],
+      "optional": [
+        "contour",
+        "cbar_label",
+        "cmap",
+        "columns",
+        "height_mm"
+      ],
+      "build": [
+        {
+          "operator": "encode.field",
+          "params": {}
+        },
+        {
+          "operator": "layout.plate",
+          "params": {
+            "columns": 1.0,
+            "height_mm": 100.0
+          }
+        }
+      ],
+      "verify": [],
+      "global_checks": [
+        "verify.audit",
+        "verify.collisions",
+        "verify.semantics"
+      ],
+      "examples": [
+        {
+          "x": "position_mm",
+          "y": "elapsed_time_min",
+          "value": "concentration"
         }
       ]
     },
@@ -666,7 +733,8 @@
       "verify": [],
       "global_checks": [
         "verify.audit",
-        "verify.collisions"
+        "verify.collisions",
+        "verify.semantics"
       ],
       "examples": [
         {
@@ -708,7 +776,8 @@
       "verify": [],
       "global_checks": [
         "verify.audit",
-        "verify.collisions"
+        "verify.collisions",
+        "verify.semantics"
       ],
       "examples": [
         {

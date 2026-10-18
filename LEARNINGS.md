@@ -645,3 +645,28 @@ Two more instrument defects, found by watching the worktree budget rather than t
 
 All three are the same lesson in a new place: **a derived quantity must be derived from the durable
 artefact, not from a cache.** The report is the artefact; the cache is an optimisation.
+
+
+## 32. A style metric cannot see a wrong number (2026-10-19)
+
+Every check in this project until now inspected appearance or geometry: `audit` (width, type size,
+fonts), `styleprofile` (palette, sizes, aspect), `score` (NPF dimensions). None of them re-derived a
+number from the data. A pipeline optimising style could therefore ship a perfectly formatted figure
+printing "r = +0.80" over data whose r is −0.20, and nothing would notice.
+
+`figpipe/semantics.py` closes that gap deterministically:
+  * `check_annotations` -- the printed r must match the drawn data's r (tol 0.02, the printed
+    precision); a missing r is reported when one is required
+  * `check_extent` -- no drawn point may fall outside the visible axes; silently clipping an
+    outlier changes the claim ("no point above 0.9" is not "the axis stops at 0.9")
+  * `check_marks` -- the number of drawn marks must equal the rows the panel claims
+  * `check_labels` -- labels must be the ones the panel says they are
+
+It is now part of the GLOBAL FLOOR, so every skill run is checked; the benchmark records
+`semantic_violations`; the report shows the count next to the style distance. Tests use negative
+controls (a false r, a clipped outlier, a wrong label) because a check that cannot fail is not a
+check.
+
+Scope is stated rather than implied: it verifies the claims OUR drawers make. It is not a semantic
+parser for arbitrary figures, and applying the point-count check to heatmaps/fields/bars would
+produce false failures -- which is how checks get switched off -- so it is limited to point drawers.

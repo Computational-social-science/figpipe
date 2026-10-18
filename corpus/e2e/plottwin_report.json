@@ -6,18 +6,19 @@
     "arxiv": "2608.28814",
     "note": "deterministic metrics only; official combined score requires the benchmark's VLM scorer and is NOT claimed here"
   },
-  "n_tasks": 108,
-  "n_ok": 99,
+  "n_tasks": 114,
+  "n_ok": 104,
   "n_unsupported": 9,
-  "n_error": 0,
+  "n_error": 1,
   "unsupported_types": {},
-  "mean_distance": 0.285,
-  "mean_baseline": 0.361,
+  "mean_distance": 0.3,
+  "mean_baseline": 0.376,
   "mean_improvement": 0.076,
-  "improved": 70,
-  "worse": 20,
-  "ties": 9,
-  "mean_best_of_two": 0.264,
+  "improved": 73,
+  "worse": 23,
+  "ties": 8,
+  "mean_best_of_two": 0.283,
+  "semantic_violations": 0,
   "decision_service": {
     "up": false,
     "url": "http://127.0.0.1:8090",
@@ -73,10 +74,10 @@
       "n": 15,
       "ok": 15,
       "errors": 0,
-      "mean_distance": 0.398,
-      "mean_baseline": 0.312,
-      "mean_delta": -0.086,
-      "mean_shipped": 0.288
+      "mean_distance": 0.501,
+      "mean_baseline": 0.441,
+      "mean_delta": -0.06,
+      "mean_shipped": 0.431
     },
     "Heatmap": {
       "n": 7,
@@ -106,13 +107,13 @@
       "mean_shipped": null
     },
     "Polar/Radial": {
-      "n": 5,
-      "ok": 5,
-      "errors": 0,
-      "mean_distance": 0.217,
-      "mean_baseline": 0.207,
-      "mean_delta": -0.01,
-      "mean_shipped": 0.079
+      "n": 11,
+      "ok": 10,
+      "errors": 1,
+      "mean_distance": 0.259,
+      "mean_baseline": 0.251,
+      "mean_delta": -0.008,
+      "mean_shipped": 0.205
     },
     "Scatter": {
       "n": 16,
@@ -133,7 +134,13 @@
       "mean_shipped": 0.332
     }
   },
-  "failures": [],
+  "failures": [
+    {
+      "id": "Chart2Code_level2_radar_4_v3",
+      "chart": "Polar/Radial",
+      "error": "ValueError: polar profile: 'panel_row' has non-finite values"
+    }
+  ],
   "tasks": [
     {
       "id": "arxiv_2506.14951",
@@ -277,96 +284,6 @@
       },
       "hard_failures": 0,
       "findings": []
-    },
-    {
-      "id": "arxiv_2604.01093",
-      "chart": "Field 2D",
-      "panel_mode": "multi",
-      "skill": "matrix_plate",
-      "rationale": "matrix 6 measures",
-      "rows_used": 40,
-      "status": "ok",
-      "distance": 0.313,
-      "baseline_distance": 0.181,
-      "delta": -0.132,
-      "components": {
-        "palette": 0.05,
-        "aspect": 0.801,
-        "ink": 0.482
-      },
-      "hard_failures": 6,
-      "findings": [
-        {
-          "check": "text_collision",
-          "detail": "'flux_uncertainty_umol_m2_h' over 'methane_flux_anomaly_umol_m2_h'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'vegetation_cover_percent' over 'water_table_depth_cm'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'flux_uncertainty_umol_m2_h' over 'water_table_depth_cm'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'methane_flux_anomaly_umol_m2_h' over 'y_m'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'methane_flux_anomaly_umol_m2_h' over 'water_table_depth_cm'",
-          "severity": "hard"
-        }
-      ]
-    },
-    {
-      "id": "arxiv_2604.05237",
-      "chart": "Field 2D",
-      "panel_mode": "multi",
-      "skill": "matrix_plate",
-      "rationale": "matrix 8 measures",
-      "rows_used": 40,
-      "status": "ok",
-      "distance": 0.47,
-      "baseline_distance": 0.31,
-      "delta": -0.16,
-      "components": {
-        "palette": 0.155,
-        "aspect": 0.728,
-        "ink": 1.0
-      },
-      "hard_failures": 10,
-      "findings": [
-        {
-          "check": "height",
-          "detail": "170.0 mm exceeds the 170.0 mm maximum",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'conductivity_uncertainty_sd' over 'failure_cycle_uncertainty_s'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'log10_failure_cycle_count' over 'log10_ionic_conductivity_S_m'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'log10_failure_cycle_count' over 'posterior_weight'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'conductivity_uncertainty_sd' over 'joint_density'",
-          "severity": "hard"
-        }
-      ]
     },
     {
       "id": "arxiv_2605.14587",
@@ -792,126 +709,6 @@
       "error": "unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this is a deliberate exclusion"
     },
     {
-      "id": "Chart2Code_level2_quiver_13_v1",
-      "chart": "Field 2D",
-      "panel_mode": "multi",
-      "skill": "matrix_plate",
-      "rationale": "matrix 8 measures",
-      "rows_used": 40,
-      "status": "ok",
-      "distance": 0.431,
-      "baseline_distance": 0.331,
-      "delta": -0.1,
-      "components": {
-        "palette": 0.058,
-        "aspect": 0.794,
-        "ink": 1.0
-      },
-      "hard_failures": 9,
-      "findings": [
-        {
-          "check": "text_collision",
-          "detail": "'velocity_magnitude_mm_per_' over 'velocity_y_mm_per_hour'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'velocity_x_mm_per_hour' over 'velocity_y_mm_per_hour'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'velocity_magnitude_mm_per_' over 'velocity_x_mm_per_hour'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'velocity_x_mm_per_hour' over 'y_position_mm'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'substrate_modulus_kPa' over 'x_position_mm'",
-          "severity": "hard"
-        }
-      ]
-    },
-    {
-      "id": "Chart2Code_level2_quiver_14_v1",
-      "chart": "Field 2D",
-      "panel_mode": "multi",
-      "skill": "matrix_plate",
-      "rationale": "matrix 8 measures",
-      "rows_used": 40,
-      "status": "ok",
-      "distance": 0.247,
-      "baseline_distance": 0.12,
-      "delta": -0.127,
-      "components": {
-        "palette": 0.093,
-        "aspect": 0.787,
-        "ink": 0.092
-      },
-      "hard_failures": 3,
-      "findings": [
-        {
-          "check": "text_collision",
-          "detail": "'velocity_x_um_per_hr' over 'velocity_y_um_per_hr'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'velocity_x_um_per_hr' over 'y_um'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'panel_rowpanel_col' over 'sample_indextime_h'",
-          "severity": "hard"
-        }
-      ]
-    },
-    {
-      "id": "Chart2Code_level2_quiver_4_v5",
-      "chart": "Field 2D",
-      "panel_mode": "multi",
-      "skill": "matrix_plate",
-      "rationale": "matrix 8 measures",
-      "rows_used": 40,
-      "status": "ok",
-      "distance": 0.462,
-      "baseline_distance": 0.368,
-      "delta": -0.094,
-      "components": {
-        "palette": 0.115,
-        "aspect": 0.792,
-        "ink": 1.0
-      },
-      "hard_failures": 4,
-      "findings": [
-        {
-          "check": "text_collision",
-          "detail": "'migration_vx_um_h' over 'migration_vy_um_h'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'migration_vy_um_h' over 'speed_um_h'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'speed_um_h' over 'vorticity_h_inv'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'migration_vx_um_h' over 'y_mm'",
-          "severity": "hard"
-        }
-      ]
-    },
-    {
       "id": "Chart2Code_level2_radar_10_v2",
       "chart": "Polar/Radial",
       "panel_mode": "multi",
@@ -1314,227 +1111,6 @@
       "findings": []
     },
     {
-      "id": "PMC11502666",
-      "chart": "Distribution",
-      "panel_mode": "multi",
-      "skill": "faceted_distribution",
-      "rationale": "faceted hist by panel_group",
-      "rows_used": 554,
-      "status": "ok",
-      "distance": 0.175,
-      "baseline_distance": 0.218,
-      "delta": 0.043,
-      "selected": "styled",
-      "selected_distance": 0.174,
-      "selected_gain": 0.044,
-      "selection_margin": 0.046,
-      "components": {
-        "palette": 0.152,
-        "aspect": 0.009,
-        "ink": 0.398
-      },
-      "hard_failures": 0,
-      "findings": []
-    },
-    {
-      "id": "PMC11840003",
-      "chart": "Box/Violin",
-      "panel_mode": "multi",
-      "skill": "distribution_comparison",
-      "rationale": "box panel_row by panel_group",
-      "rows_used": 1403,
-      "status": "ok",
-      "distance": 0.197,
-      "baseline_distance": 0.441,
-      "delta": 0.244,
-      "selected": "styled",
-      "selected_distance": 0.203,
-      "selected_gain": 0.238,
-      "selection_margin": 0.246,
-      "components": {
-        "palette": 0.149,
-        "aspect": 0.211,
-        "ink": 0.302
-      },
-      "hard_failures": 1,
-      "findings": [
-        {
-          "check": "height",
-          "detail": "170.0 mm exceeds the 170.0 mm maximum",
-          "severity": "hard"
-        }
-      ]
-    },
-    {
-      "id": "PMC12000431",
-      "chart": "Distribution",
-      "panel_mode": "multi",
-      "skill": "faceted_distribution",
-      "rationale": "faceted hist by panel_group",
-      "rows_used": 1414,
-      "status": "ok",
-      "distance": 0.202,
-      "baseline_distance": 0.255,
-      "delta": 0.053,
-      "selected": "styled",
-      "selected_distance": 0.203,
-      "selected_gain": 0.052,
-      "selection_margin": 0.054,
-      "components": {
-        "palette": 0.291,
-        "aspect": 0.005,
-        "ink": 0.177
-      },
-      "hard_failures": 0,
-      "findings": []
-    },
-    {
-      "id": "PMC12354736",
-      "chart": "Distribution",
-      "panel_mode": "multi",
-      "skill": "faceted_distribution",
-      "rationale": "faceted hist by panel_row",
-      "rows_used": 12196,
-      "status": "ok",
-      "distance": 0.295,
-      "baseline_distance": 0.355,
-      "delta": 0.06,
-      "selected": "styled",
-      "selected_distance": 0.299,
-      "selected_gain": 0.056,
-      "selection_margin": 0.057,
-      "components": {
-        "palette": 0.299,
-        "aspect": 0.183,
-        "ink": 0.399
-      },
-      "hard_failures": 1,
-      "findings": [
-        {
-          "check": "height",
-          "detail": "170.0 mm exceeds the 170.0 mm maximum",
-          "severity": "hard"
-        }
-      ]
-    },
-    {
-      "id": "PMC12504421",
-      "chart": "Heatmap",
-      "panel_mode": "multi",
-      "skill": "matrix_plate",
-      "rationale": "pivot panel_group x record_type of panel_row",
-      "rows_used": 4,
-      "status": "ok",
-      "distance": 0.288,
-      "baseline_distance": 0.426,
-      "delta": 0.138,
-      "selected": "styled",
-      "selected_distance": 0.261,
-      "selected_gain": 0.165,
-      "selection_margin": 0.116,
-      "components": {
-        "palette": 0.112,
-        "aspect": 0.166,
-        "ink": 0.852
-      },
-      "hard_failures": 3,
-      "findings": [
-        {
-          "check": "height",
-          "detail": "170.0 mm exceeds the 170.0 mm maximum",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'site_distribution_observation' over 'trajectory_indicator_score'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'feature_summary overlap_intersection' over 'site_distribution_observation'",
-          "severity": "hard"
-        }
-      ]
-    },
-    {
-      "id": "PMC12905268",
-      "chart": "Distribution",
-      "panel_mode": "multi",
-      "skill": "faceted_distribution",
-      "rationale": "faceted hist by shoreline_condition",
-      "rows_used": 1196,
-      "status": "ok",
-      "distance": 0.316,
-      "baseline_distance": 0.327,
-      "delta": 0.011,
-      "selected": "styled",
-      "selected_distance": 0.312,
-      "selected_gain": 0.015,
-      "selection_margin": 0.022,
-      "components": {
-        "palette": 0.256,
-        "aspect": 0.564,
-        "ink": 0.219
-      },
-      "hard_failures": 1,
-      "findings": [
-        {
-          "check": "height",
-          "detail": "170.0 mm exceeds the 170.0 mm maximum",
-          "severity": "hard"
-        }
-      ]
-    },
-    {
-      "id": "arxiv-astro-skymap__2412.12637",
-      "chart": "Field 2D",
-      "panel_mode": "single",
-      "skill": "matrix_plate",
-      "rationale": "matrix 8 measures",
-      "rows_used": 40,
-      "status": "ok",
-      "distance": 0.245,
-      "baseline_distance": 0.194,
-      "delta": -0.051,
-      "selected": "plain",
-      "selected_distance": 0.224,
-      "selected_gain": -0.03,
-      "selection_margin": 0.035,
-      "components": {
-        "palette": 0.095,
-        "aspect": 0.771,
-        "ink": 0.096
-      },
-      "hard_failures": 11,
-      "findings": [
-        {
-          "check": "text_collision",
-          "detail": "'incident_angle_deg' over 'surface_cell_solid_angle_sr'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'hydrogen_ion_flux_1e15_cm' over 'replicate_id'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'latitude_deg' over 'surface_cell_solid_angle_sr'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'incident_angle_deg' over 'replicate_id'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'coating_batch' over 'longitude_deg'",
-          "severity": "hard"
-        }
-      ]
-    },
-    {
       "id": "arxiv-astro-skymap__2510.17487",
       "chart": "Std-band",
       "panel_mode": "single",
@@ -1556,104 +1132,6 @@
       },
       "hard_failures": 0,
       "findings": []
-    },
-    {
-      "id": "arxiv-ml-3d-trajectory__2511.17399",
-      "chart": "Field 2D",
-      "panel_mode": "single",
-      "skill": "matrix_plate",
-      "rationale": "matrix 6 measures",
-      "rows_used": 40,
-      "status": "ok",
-      "distance": 0.473,
-      "baseline_distance": 0.379,
-      "delta": -0.094,
-      "selected": "plain",
-      "selected_distance": 0.354,
-      "selected_gain": 0.025,
-      "selection_margin": 0.097,
-      "components": {
-        "palette": 0.161,
-        "aspect": 0.725,
-        "ink": 1.0
-      },
-      "hard_failures": 8,
-      "findings": [
-        {
-          "check": "text_collision",
-          "detail": "'mean_log10_particle_deposition_flux_particles_cm2_h' over 'vertical_wind_deflection_normalized'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'mean_log10_particle_deposition_flux_particles_cm2_h' over 'standard_error_log10_flux'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'lateral_wind_deflection_normalized' over 'mean_log10_particle_deposition_flux_particles_cm2_h'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'lateral_wind_deflection_normalized' over 'vertical_wind_deflection_normalized'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'replicate_count' over 'standard_error_log10_flux'",
-          "severity": "hard"
-        }
-      ]
-    },
-    {
-      "id": "arxiv-ml-3d-trajectory__2602.22552",
-      "chart": "Field 2D",
-      "panel_mode": "single",
-      "skill": "matrix_plate",
-      "rationale": "matrix 5 measures",
-      "rows_used": 40,
-      "status": "ok",
-      "distance": 0.462,
-      "baseline_distance": 0.338,
-      "delta": -0.124,
-      "selected": "plain",
-      "selected_distance": 0.326,
-      "selected_gain": 0.012,
-      "selection_margin": 0.124,
-      "components": {
-        "palette": 0.12,
-        "aspect": 0.781,
-        "ink": 1.0
-      },
-      "hard_failures": 6,
-      "findings": [
-        {
-          "check": "text_collision",
-          "detail": "'inundation_anomaly_normalized' over 'mean_methane_flux_mg_ch4_m2_h'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'mean_methane_flux_mg_ch4_m2_h' over 'standard_error_mg_ch4_m2_h'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'inundation_anomaly_normalized' over 'salinity_anomaly_normalized'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'simulation_step' over 'standard_error_mg_ch4_m2_h'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'mean_methane_flux_mg_ch4_m2_h' over 'salinity_anomaly_normalized'",
-          "severity": "hard"
-        }
-      ]
     },
     {
       "id": "arxiv-ml-bar-line-v2__2511.15055",
@@ -2510,251 +1988,6 @@
       "findings": []
     },
     {
-      "id": "Chart2Code_level2_contour_14_v1",
-      "chart": "Field 2D",
-      "panel_mode": "multi",
-      "skill": "matrix_plate",
-      "rationale": "matrix 8 measures",
-      "rows_used": 40,
-      "status": "ok",
-      "distance": 0.39,
-      "baseline_distance": 0.244,
-      "delta": -0.146,
-      "selected": "plain",
-      "selected_distance": 0.18,
-      "selected_gain": 0.064,
-      "selection_margin": 0.141,
-      "components": {
-        "palette": 0.113,
-        "aspect": 0.8,
-        "ink": 0.669
-      },
-      "hard_failures": 6,
-      "findings": [
-        {
-          "check": "text_collision",
-          "detail": "'nitrate_concentration_mg_L' over 'seepage_horizontal_m_day'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'seepage_horizontal_m_day' over 'seepage_vertical_m_day'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'hydraulic_head_anomaly_m' over 'nitrate_concentration_mg_L'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'hydraulic_head_anomaly_m' over 'seepage_horizontal_m_day'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'nitrate_concentration_mg_L' over 'seepage_vertical_m_day'",
-          "severity": "hard"
-        }
-      ]
-    },
-    {
-      "id": "Chart2Code_level2_contour_23_v4",
-      "chart": "Field 2D",
-      "panel_mode": "multi",
-      "skill": "matrix_plate",
-      "rationale": "matrix 7 measures",
-      "rows_used": 40,
-      "status": "ok",
-      "distance": 0.436,
-      "baseline_distance": 0.433,
-      "delta": -0.003,
-      "selected": "plain",
-      "selected_distance": 0.331,
-      "selected_gain": 0.102,
-      "selection_margin": 0.016,
-      "components": {
-        "palette": 0.148,
-        "aspect": 0.766,
-        "ink": 0.827
-      },
-      "hard_failures": 8,
-      "findings": [
-        {
-          "check": "text_collision",
-          "detail": "'seedling_recovery_index_0_100' over 'standard_error_index_points'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'biochar_amendment_percent' over 'porewater_salinity_psu'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'porewater_salinity_psu' over 'seedling_recovery_index_0_100'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'replicate_pots' over 'standard_error_index_points'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'biochar_amendment_percent' over 'seedling_recovery_index_0_100'",
-          "severity": "hard"
-        }
-      ]
-    },
-    {
-      "id": "Chart2Code_level2_contour_25_v2",
-      "chart": "Field 2D",
-      "panel_mode": "multi",
-      "skill": "matrix_plate",
-      "rationale": "matrix 7 measures",
-      "rows_used": 40,
-      "status": "ok",
-      "distance": 0.581,
-      "baseline_distance": 0.528,
-      "delta": -0.053,
-      "selected": "plain",
-      "selected_distance": 0.442,
-      "selected_gain": 0.086,
-      "selection_margin": 0.058,
-      "components": {
-        "palette": 0.335,
-        "aspect": 0.779,
-        "ink": 1.0
-      },
-      "hard_failures": 5,
-      "findings": [
-        {
-          "check": "text_collision",
-          "detail": "'cross_wound_position_fraction' over 'normalized_actin_signal'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'normalized_actin_signal' over 'signal_standard_error'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'cross_wound_position_fraction' over 'panel_rowpanel_coltime_hours'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'cross_wound_position_fraction' over 'signal_standard_error'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'series_order' over 'signal_standard_error'",
-          "severity": "hard"
-        }
-      ]
-    },
-    {
-      "id": "Chart2Code_level2_contour_25_v3",
-      "chart": "Field 2D",
-      "panel_mode": "multi",
-      "skill": "matrix_plate",
-      "rationale": "matrix 8 measures",
-      "rows_used": 40,
-      "status": "ok",
-      "distance": 0.438,
-      "baseline_distance": 0.363,
-      "delta": -0.075,
-      "selected": "plain",
-      "selected_distance": 0.305,
-      "selected_gain": 0.058,
-      "selection_margin": 0.072,
-      "components": {
-        "palette": 0.077,
-        "aspect": 0.78,
-        "ink": 1.0
-      },
-      "hard_failures": 11,
-      "findings": [
-        {
-          "check": "text_collision",
-          "detail": "'normalized_drug_concentration_fraction' over 'temporal_change_fraction_per_min'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'spatial_gradient_fraction_per_mm' over 'temporal_change_fraction_per_min'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'concentration_standard_error_f' over 'spatial_gradient_fraction_per_mm'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'normalized_drug_concentration_fraction' over 'spatial_gradient_fraction_per_mm'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'concentration_standard_error_f' over 'temporal_change_fraction_per_min'",
-          "severity": "hard"
-        }
-      ]
-    },
-    {
-      "id": "Chart2Code_level2_contour_5_v5",
-      "chart": "Field 2D",
-      "panel_mode": "multi",
-      "skill": "matrix_plate",
-      "rationale": "matrix 8 measures",
-      "rows_used": 40,
-      "status": "ok",
-      "distance": 0.318,
-      "baseline_distance": 0.315,
-      "delta": -0.003,
-      "selected": "plain",
-      "selected_distance": 0.254,
-      "selected_gain": 0.061,
-      "selection_margin": 0.0,
-      "components": {
-        "palette": 0.056,
-        "aspect": 0.968,
-        "ink": 0.324
-      },
-      "hard_failures": 11,
-      "findings": [
-        {
-          "check": "text_collision",
-          "detail": "'response_standard_error_normalized' over 'response_value_normalized'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'cue_gradient_x_per_mm' over 'response_standard_error_normalized'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'cue_gradient_x_per_mm' over 'cue_gradient_y_per_mm'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'response_value_normalized' over 'vertical_position_mm'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'horizontal_position_mm' over 'vertical_position_mm'",
-          "severity": "hard"
-        }
-      ]
-    },
-    {
       "id": "Chart2Code_level2_density_12_v3",
       "chart": "Distribution",
       "panel_mode": "multi",
@@ -2936,55 +2169,6 @@
       "findings": []
     },
     {
-      "id": "Chart2Code_level2_multidiff_2_v2__single",
-      "chart": "Field 2D",
-      "panel_mode": "single",
-      "skill": "matrix_plate",
-      "rationale": "matrix 5 measures",
-      "rows_used": 40,
-      "status": "ok",
-      "distance": 0.388,
-      "baseline_distance": 0.313,
-      "delta": -0.075,
-      "selected": "plain",
-      "selected_distance": 0.232,
-      "selected_gain": 0.081,
-      "selection_margin": 0.069,
-      "components": {
-        "palette": 0.189,
-        "aspect": 0.783,
-        "ink": 0.492
-      },
-      "hard_failures": 5,
-      "findings": [
-        {
-          "check": "text_collision",
-          "detail": "'larval_recruitment_index_percent' over 'larval_recruitment_standard_error_percent'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'larval_recruitment_standard_error_percent' over 'sample_replicates'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'larval_recruitment_index_percent' over 'reef_elevation_relative_m'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'reef_elevation_relative_m' over 'spatial_year_relative_yr'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'larval_recruitment_standard_error_percent' over 'reef_elevation_relative_m'",
-          "severity": "hard"
-        }
-      ]
-    },
-    {
       "id": "Chart2Code_level2_multidiff_5_v1",
       "chart": "Line",
       "panel_mode": "multi",
@@ -3007,66 +2191,800 @@
       "findings": []
     },
     {
+      "id": "arxiv-astro-skymap__2412.12637",
+      "chart": "Field 2D",
+      "panel_mode": "single",
+      "skill": "field_map",
+      "rationale": "field panel_row over coating_batch x longitude_deg",
+      "rows_used": 5762,
+      "status": "ok",
+      "distance": 0.314,
+      "baseline_distance": 0.287,
+      "delta": -0.027,
+      "selected": "plain",
+      "selected_distance": 0.241,
+      "selected_gain": 0.046,
+      "selection_margin": 0.022,
+      "components": {
+        "palette": 0.168,
+        "aspect": 0.752,
+        "ink": 0.241
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "arxiv-ml-3d-trajectory__2511.17399",
+      "chart": "Field 2D",
+      "panel_mode": "single",
+      "skill": "field_map",
+      "rationale": "field mean_log10_particle_deposition_flux_particles_cm2_h over lateral_wind_deflection_normalized x vertical_wind_deflection_normalized",
+      "rows_used": 3362,
+      "status": "ok",
+      "distance": 0.563,
+      "baseline_distance": 0.499,
+      "delta": -0.064,
+      "selected": "plain",
+      "selected_distance": 0.498,
+      "selected_gain": 0.001,
+      "selection_margin": 0.06,
+      "components": {
+        "palette": 0.317,
+        "aspect": 0.742,
+        "ink": 1.0
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "arxiv-ml-3d-trajectory__2602.22552",
+      "chart": "Field 2D",
+      "panel_mode": "single",
+      "skill": "field_map",
+      "rationale": "field mean_methane_flux_mg_ch4_m2_h over salinity_anomaly_normalized x inundation_anomaly_normalized",
+      "rows_used": 2601,
+      "status": "ok",
+      "distance": 0.503,
+      "baseline_distance": 0.413,
+      "delta": -0.09,
+      "selected": "plain",
+      "selected_distance": 0.41,
+      "selected_gain": 0.003,
+      "selection_margin": 0.085,
+      "components": {
+        "palette": 0.207,
+        "aspect": 0.746,
+        "ink": 1.0
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "arxiv_2604.01093",
+      "chart": "Field 2D",
+      "panel_mode": "multi",
+      "skill": "field_map",
+      "rationale": "field methane_flux_anomaly_umol_m2_h over x_m x y_m",
+      "rows_used": 13159,
+      "status": "ok",
+      "distance": 0.47,
+      "baseline_distance": 0.38,
+      "delta": -0.09,
+      "selected": "plain",
+      "selected_distance": 0.397,
+      "selected_gain": -0.017,
+      "selection_margin": 0.085,
+      "components": {
+        "palette": 0.458,
+        "aspect": 0.757,
+        "ink": 0.212
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "arxiv_2604.05237",
+      "chart": "Field 2D",
+      "panel_mode": "multi",
+      "skill": "field_map",
+      "rationale": "field panel_row over log10_ionic_conductivity_S_m x log10_failure_cycle_count",
+      "rows_used": 118,
+      "status": "ok",
+      "distance": 0.423,
+      "baseline_distance": 0.28,
+      "delta": -0.143,
+      "selected": "plain",
+      "selected_distance": 0.294,
+      "selected_gain": -0.014,
+      "selection_margin": 0.118,
+      "components": {
+        "palette": 0.371,
+        "aspect": 0.725,
+        "ink": 0.25
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "Chart2Code_level2_contour_14_v1",
+      "chart": "Field 2D",
+      "panel_mode": "multi",
+      "skill": "field_map",
+      "rationale": "field panel_row over x_m x z_m",
+      "rows_used": 2780,
+      "status": "ok",
+      "distance": 0.489,
+      "baseline_distance": 0.385,
+      "delta": -0.104,
+      "selected": "plain",
+      "selected_distance": 0.386,
+      "selected_gain": -0.001,
+      "selection_margin": 0.098,
+      "components": {
+        "palette": 0.414,
+        "aspect": 0.779,
+        "ink": 0.387
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "Chart2Code_level2_contour_23_v4",
+      "chart": "Field 2D",
+      "panel_mode": "multi",
+      "skill": "field_map",
+      "rationale": "field panel_row over biochar_amendment_percent x porewater_salinity_psu",
+      "rows_used": 1310,
+      "status": "ok",
+      "distance": 0.483,
+      "baseline_distance": 0.494,
+      "delta": 0.011,
+      "selected": "plain",
+      "selected_distance": 0.5,
+      "selected_gain": -0.006,
+      "selection_margin": 0.022,
+      "components": {
+        "palette": 0.429,
+        "aspect": 0.772,
+        "ink": 0.33
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "Chart2Code_level2_contour_25_v2",
+      "chart": "Field 2D",
+      "panel_mode": "multi",
+      "skill": "field_map",
+      "rationale": "field panel_row over time_hours x cross_wound_position_fraction",
+      "rows_used": 11112,
+      "status": "ok",
+      "distance": 0.451,
+      "baseline_distance": 0.427,
+      "delta": -0.024,
+      "selected": "plain",
+      "selected_distance": 0.427,
+      "selected_gain": 0.0,
+      "selection_margin": 0.023,
+      "components": {
+        "palette": 0.358,
+        "aspect": 0.773,
+        "ink": 0.363
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "Chart2Code_level2_contour_25_v3",
+      "chart": "Field 2D",
+      "panel_mode": "multi",
+      "skill": "field_map",
+      "rationale": "field panel_row over position_mm x elapsed_time_min",
+      "rows_used": 15219,
+      "status": "ok",
+      "distance": 0.442,
+      "baseline_distance": 0.396,
+      "delta": -0.046,
+      "selected": "plain",
+      "selected_distance": 0.397,
+      "selected_gain": -0.001,
+      "selection_margin": 0.043,
+      "components": {
+        "palette": 0.399,
+        "aspect": 0.785,
+        "ink": 0.204
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "Chart2Code_level2_contour_5_v5",
+      "chart": "Field 2D",
+      "panel_mode": "multi",
+      "skill": "field_map",
+      "rationale": "field horizontal_position_mm over panel_row x panel_col",
+      "rows_used": 5350,
+      "status": "ok",
+      "distance": 0.653,
+      "baseline_distance": 0.664,
+      "delta": 0.011,
+      "selected": "styled",
+      "selected_distance": 0.615,
+      "selected_gain": 0.049,
+      "selection_margin": 0.02,
+      "components": {
+        "palette": 0.692,
+        "aspect": 0.953,
+        "ink": 0.253
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "Chart2Code_level2_multidiff_2_v2__single",
+      "chart": "Field 2D",
+      "panel_mode": "single",
+      "skill": "field_map",
+      "rationale": "field larval_recruitment_index_percent over spatial_year_relative_yr x reef_elevation_relative_m",
+      "rows_used": 1681,
+      "status": "ok",
+      "distance": 0.478,
+      "baseline_distance": 0.425,
+      "delta": -0.053,
+      "selected": "plain",
+      "selected_distance": 0.361,
+      "selected_gain": 0.064,
+      "selection_margin": 0.043,
+      "components": {
+        "palette": 0.378,
+        "aspect": 0.782,
+        "ink": 0.426
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
       "id": "Chart2Code_level2_quiver_10_v5",
       "chart": "Field 2D",
       "panel_mode": "multi",
-      "skill": "matrix_plate",
-      "rationale": "matrix 8 measures",
-      "rows_used": 40,
+      "skill": "field_map",
+      "rationale": "field panel row over intensity bin lower (umol L-1) x intensity bin upper (umol L-1)",
+      "rows_used": 66,
       "status": "ok",
-      "distance": 0.322,
-      "baseline_distance": 0.27,
-      "delta": -0.052,
+      "distance": 0.555,
+      "baseline_distance": 0.53,
+      "delta": -0.025,
       "selected": "plain",
-      "selected_distance": 0.232,
-      "selected_gain": 0.038,
-      "selection_margin": 0.037,
+      "selected_distance": 0.529,
+      "selected_gain": 0.001,
+      "selection_margin": 0.022,
       "components": {
-        "palette": 0.121,
-        "aspect": 0.772,
-        "ink": 0.374
+        "palette": 0.47,
+        "aspect": 0.761,
+        "ink": 0.56
       },
-      "hard_failures": 17,
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "Chart2Code_level2_quiver_13_v1",
+      "chart": "Field 2D",
+      "panel_mode": "multi",
+      "skill": "field_map",
+      "rationale": "field panel_row over x_position_mm x y_position_mm",
+      "rows_used": 1071,
+      "status": "ok",
+      "distance": 0.405,
+      "baseline_distance": 0.307,
+      "delta": -0.098,
+      "selected": "plain",
+      "selected_distance": 0.311,
+      "selected_gain": -0.004,
+      "selection_margin": 0.071,
+      "components": {
+        "palette": 0.368,
+        "aspect": 0.772,
+        "ink": 0.132
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "Chart2Code_level2_quiver_14_v1",
+      "chart": "Field 2D",
+      "panel_mode": "multi",
+      "skill": "field_map",
+      "rationale": "field panel_row over sample_index x time_h",
+      "rows_used": 2334,
+      "status": "ok",
+      "distance": 0.579,
+      "baseline_distance": 0.482,
+      "delta": -0.097,
+      "selected": "plain",
+      "selected_distance": 0.472,
+      "selected_gain": 0.01,
+      "selection_margin": 0.093,
+      "components": {
+        "palette": 0.421,
+        "aspect": 0.793,
+        "ink": 0.761
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "Chart2Code_level2_quiver_4_v5",
+      "chart": "Field 2D",
+      "panel_mode": "multi",
+      "skill": "field_map",
+      "rationale": "field panel_row over replicate_id x x_mm",
+      "rows_used": 32,
+      "status": "ok",
+      "distance": 0.703,
+      "baseline_distance": 0.639,
+      "delta": -0.064,
+      "selected": "plain",
+      "selected_distance": 0.627,
+      "selected_gain": 0.012,
+      "selection_margin": 0.062,
+      "components": {
+        "palette": 0.551,
+        "aspect": 0.785,
+        "ink": 1.0
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "PMC11502666",
+      "chart": "Distribution",
+      "panel_mode": "multi",
+      "skill": "faceted_distribution",
+      "rationale": "faceted hist by panel_group",
+      "rows_used": 554,
+      "status": "ok",
+      "distance": 0.175,
+      "baseline_distance": 0.218,
+      "delta": 0.043,
+      "selected": "styled",
+      "selected_distance": 0.174,
+      "selected_gain": 0.044,
+      "selection_margin": 0.046,
+      "components": {
+        "palette": 0.152,
+        "aspect": 0.009,
+        "ink": 0.398
+      },
+      "hard_failures": 0,
+      "findings": [],
+      "semantic_findings": []
+    },
+    {
+      "id": "PMC11840003",
+      "chart": "Box/Violin",
+      "panel_mode": "multi",
+      "skill": "distribution_comparison",
+      "rationale": "box panel_row by panel_group",
+      "rows_used": 1403,
+      "status": "ok",
+      "distance": 0.197,
+      "baseline_distance": 0.441,
+      "delta": 0.244,
+      "selected": "styled",
+      "selected_distance": 0.203,
+      "selected_gain": 0.238,
+      "selection_margin": 0.246,
+      "components": {
+        "palette": 0.149,
+        "aspect": 0.211,
+        "ink": 0.302
+      },
+      "hard_failures": 1,
+      "findings": [
+        {
+          "check": "height",
+          "detail": "170.0 mm exceeds the 170.0 mm maximum",
+          "severity": "hard"
+        }
+      ],
+      "semantic_findings": []
+    },
+    {
+      "id": "PMC12000431",
+      "chart": "Distribution",
+      "panel_mode": "multi",
+      "skill": "faceted_distribution",
+      "rationale": "faceted hist by panel_group",
+      "rows_used": 1414,
+      "status": "ok",
+      "distance": 0.202,
+      "baseline_distance": 0.255,
+      "delta": 0.053,
+      "selected": "styled",
+      "selected_distance": 0.203,
+      "selected_gain": 0.052,
+      "selection_margin": 0.054,
+      "components": {
+        "palette": 0.291,
+        "aspect": 0.005,
+        "ink": 0.177
+      },
+      "hard_failures": 0,
+      "findings": [],
+      "semantic_findings": []
+    },
+    {
+      "id": "PMC12354736",
+      "chart": "Distribution",
+      "panel_mode": "multi",
+      "skill": "faceted_distribution",
+      "rationale": "faceted hist by panel_row",
+      "rows_used": 12196,
+      "status": "ok",
+      "distance": 0.295,
+      "baseline_distance": 0.355,
+      "delta": 0.06,
+      "selected": "styled",
+      "selected_distance": 0.299,
+      "selected_gain": 0.056,
+      "selection_margin": 0.057,
+      "components": {
+        "palette": 0.299,
+        "aspect": 0.183,
+        "ink": 0.399
+      },
+      "hard_failures": 1,
+      "findings": [
+        {
+          "check": "height",
+          "detail": "170.0 mm exceeds the 170.0 mm maximum",
+          "severity": "hard"
+        }
+      ],
+      "semantic_findings": []
+    },
+    {
+      "id": "PMC12504421",
+      "chart": "Heatmap",
+      "panel_mode": "multi",
+      "skill": "matrix_plate",
+      "rationale": "pivot panel_group x record_type of panel_row",
+      "rows_used": 4,
+      "status": "ok",
+      "distance": 0.288,
+      "baseline_distance": 0.426,
+      "delta": 0.138,
+      "selected": "styled",
+      "selected_distance": 0.261,
+      "selected_gain": 0.165,
+      "selection_margin": 0.116,
+      "components": {
+        "palette": 0.112,
+        "aspect": 0.166,
+        "ink": 0.852
+      },
+      "hard_failures": 3,
+      "findings": [
+        {
+          "check": "height",
+          "detail": "170.0 mm exceeds the 170.0 mm maximum",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'site_distribution_observation' over 'trajectory_indicator_score'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'feature_summary overlap_intersection' over 'site_distribution_observation'",
+          "severity": "hard"
+        }
+      ],
+      "semantic_findings": []
+    },
+    {
+      "id": "PMC12905268",
+      "chart": "Distribution",
+      "panel_mode": "multi",
+      "skill": "faceted_distribution",
+      "rationale": "faceted hist by shoreline_condition",
+      "rows_used": 1196,
+      "status": "ok",
+      "distance": 0.316,
+      "baseline_distance": 0.327,
+      "delta": 0.011,
+      "selected": "styled",
+      "selected_distance": 0.312,
+      "selected_gain": 0.015,
+      "selection_margin": 0.022,
+      "components": {
+        "palette": 0.256,
+        "aspect": 0.564,
+        "ink": 0.219
+      },
+      "hard_failures": 1,
+      "findings": [
+        {
+          "check": "height",
+          "detail": "170.0 mm exceeds the 170.0 mm maximum",
+          "severity": "hard"
+        }
+      ],
+      "semantic_findings": []
+    },
+    {
+      "id": "Chart2Code_level2_radar_26_v3",
+      "chart": "Polar/Radial",
+      "panel_mode": "multi",
+      "skill": "radial_profile",
+      "rationale": "polar panel_row by block_id",
+      "rows_used": 164,
+      "status": "ok",
+      "distance": 0.252,
+      "baseline_distance": 0.246,
+      "delta": -0.006,
+      "selected": "plain",
+      "selected_distance": 0.169,
+      "selected_gain": 0.077,
+      "selection_margin": 0.063,
+      "components": {
+        "palette": 0.09,
+        "aspect": 0.796,
+        "ink": 0.112
+      },
+      "hard_failures": 6,
       "findings": [
         {
           "check": "text_collision",
-          "detail": "'dissolved oxygen concentration (umol L-1)' over 'normalized north-south coordinate'",
+          "detail": "'trend_C' over 'trend_C'",
           "severity": "hard"
         },
         {
           "check": "text_collision",
-          "detail": "'chemotactic velocity east (um s-1)' over 'oxygen concentration SEM (umol L-1)'",
+          "detail": "'radar_A' over 'radar_A'",
           "severity": "hard"
         },
         {
           "check": "text_collision",
-          "detail": "'chemotactic velocity east (um s-1)' over 'chemotactic velocity north (um'",
+          "detail": "'coverage_B' over 'trend_C'",
           "severity": "hard"
         },
         {
           "check": "text_collision",
-          "detail": "'normalized east-west coordinate' over 'normalized north-south coordinate'",
+          "detail": "'coverage_B' over 'radar_A'",
           "severity": "hard"
         },
         {
           "check": "text_collision",
-          "detail": "'dissolved oxygen concentration (umol L-1)' over 'oxygen concentration SEM (umol L-1)'",
+          "detail": "'coverage_B' over 'coverage_B'",
           "severity": "hard"
         }
-      ]
+      ],
+      "semantic_findings": []
+    },
+    {
+      "id": "Chart2Code_level2_radar_35_v4",
+      "chart": "Polar/Radial",
+      "panel_mode": "multi",
+      "skill": "radial_profile",
+      "rationale": "polar panel_row by block_id",
+      "rows_used": 385,
+      "status": "ok",
+      "distance": 0.323,
+      "baseline_distance": 0.337,
+      "delta": 0.014,
+      "selected": "plain",
+      "selected_distance": 0.233,
+      "selected_gain": 0.104,
+      "selection_margin": 0.075,
+      "components": {
+        "palette": 0.071,
+        "aspect": 0.63,
+        "ink": 0.646
+      },
+      "hard_failures": 13,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'raw_assay' over 'raw_assay'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'metric_traces' over 'profile_overview'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'profile_overview' over 'profile_overview'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'metric_traces' over 'metric_traces'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'profile_overview' over 'raw_assay'",
+          "severity": "hard"
+        }
+      ],
+      "semantic_findings": []
+    },
+    {
+      "id": "Chart2Code_level2_radar_3_v1",
+      "chart": "Polar/Radial",
+      "panel_mode": "multi",
+      "skill": "radial_profile",
+      "rationale": "polar panel_row by panel_group",
+      "rows_used": 260,
+      "status": "ok",
+      "distance": 0.284,
+      "baseline_distance": 0.28,
+      "delta": -0.004,
+      "selected": "plain",
+      "selected_distance": 0.253,
+      "selected_gain": 0.027,
+      "selection_margin": 0.038,
+      "components": {
+        "palette": 0.033,
+        "aspect": 0.546,
+        "ink": 0.648
+      },
+      "hard_failures": 26,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'shared_condition_measurements' over 'shared_condition_measurements'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'shared_condition_meas' over 'shared_condition_meas'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'shared_condition_measurem' over 'shared_condition_measurem'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'shared_condition_measurement' over 'shared_condition_measurements'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'shared_condition_measureme' over 'shared_condition_measureme'",
+          "severity": "hard"
+        }
+      ],
+      "semantic_findings": []
+    },
+    {
+      "id": "Chart2Code_level2_radar_3_v3",
+      "chart": "Polar/Radial",
+      "panel_mode": "multi",
+      "skill": "radial_profile",
+      "rationale": "polar panel_row by block_id",
+      "rows_used": 784,
+      "status": "ok",
+      "distance": 0.409,
+      "baseline_distance": 0.389,
+      "delta": -0.02,
+      "selected": "plain",
+      "selected_distance": 0.349,
+      "selected_gain": 0.04,
+      "selection_margin": 0.082,
+      "components": {
+        "palette": 0.097,
+        "aspect": 0.597,
+        "ink": 1.0
+      },
+      "hard_failures": 119,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'field_replicates' over 'field_replicates'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'b_ranked_function_comparison' over 'c_ordered_system_profiles'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'a_polar_function_profile' over 'c_ordered_system_profiles'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'a_polar_function_profile' over 'b_ranked_function_comparison'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'b_ranked_function_comparison' over 'field_replicates'",
+          "severity": "hard"
+        }
+      ],
+      "semantic_findings": []
+    },
+    {
+      "id": "Chart2Code_level2_radar_40_v5",
+      "chart": "Polar/Radial",
+      "panel_mode": "multi",
+      "skill": "radial_profile",
+      "rationale": "polar panel_row by block_id",
+      "rows_used": 281,
+      "status": "ok",
+      "distance": 0.233,
+      "baseline_distance": 0.225,
+      "delta": -0.008,
+      "selected": "plain",
+      "selected_distance": 0.146,
+      "selected_gain": 0.079,
+      "selection_margin": 0.09,
+      "components": {
+        "palette": 0.111,
+        "aspect": 0.407,
+        "ink": 0.364
+      },
+      "hard_failures": 8,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'A_clock' over 'A_clock'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'A_clock' over 'A_raw'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'A_raw' over 'A_raw'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'B_matrix' over 'B_matrix'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'D_summary' over 'D_summary'",
+          "severity": "hard"
+        }
+      ],
+      "semantic_findings": []
+    },
+    {
+      "id": "Chart2Code_level2_radar_4_v3",
+      "chart": "Polar/Radial",
+      "panel_mode": "multi",
+      "skill": "radial_profile",
+      "rationale": "polar panel_row by record_type",
+      "rows_used": 1215,
+      "status": "error",
+      "error": "ValueError: polar profile: 'panel_row' has non-finite values"
     }
   ],
-  "benchmark_anchor_distance": 0.329,
-  "benchmark_shipped_anchor_distance": 0.247,
+  "benchmark_anchor_distance": 0.356,
+  "benchmark_shipped_anchor_distance": 0.269,
   "selection": {
-    "n": 57,
-    "shipped_mean": 0.249,
-    "always_styled_mean": 0.279,
-    "plain_mean": 0.352,
-    "gain_vs_always_styled": 0.03,
-    "gain_vs_plain": 0.103,
-    "picked_styled": 44,
-    "picked_plain": 13,
+    "n": 67,
+    "shipped_mean": 0.282,
+    "always_styled_mean": 0.311,
+    "plain_mean": 0.37,
+    "gain_vs_always_styled": 0.029,
+    "gain_vs_plain": 0.087,
+    "picked_styled": 45,
+    "picked_plain": 22,
     "rule": "closer of plain/styled to the reference; the reference is an input"
   }
 }

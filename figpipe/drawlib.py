@@ -739,6 +739,57 @@ def ax_tile_diverging(ax, df: pd.DataFrame, cmap: str = "RdBu_r",
     return im
 
 
+def ax_field_2d(ax, df: pd.DataFrame, x: str, y: str, value: str,
+                cmap: str = "viridis", contour: bool = False,
+                levels: int = 7, xlabel: str = "", ylabel: str = "",
+                cbar_label: str = "", interpolate: bool = False,
+                log_color: bool = False):
+    """A scalar FIELD over a 2-D coordinate grid (position x time, x x y, ...).
+
+    WHY THIS IS NOT A MATRIX: the benchmark's Field 2D tasks carry long tables of
+    (x, y, value) samples -- position, elapsed time, measured concentration. Treating them as a
+    numeric matrix (the previous behaviour) drew 40 arbitrary rows as if they were a grid, which
+    is why Field 2D was the worst chart type in the benchmark (styled 0.398 vs plain 0.312).
+    A field has to be PIVOTED onto its own coordinates first, and the pivot is the whole point:
+    the axes must be the measured x and y, not the row index.
+
+    Missing cells stay blank rather than zero: an unmeasured corner of a field is not a value of
+    zero, and filling it would invent data.
+    """
+    df = _uniq(df)
+    for col in (x, y, value):
+        if col not in df.columns:
+            raise ValueError(f"field_2d: {col!r} is not a column of the data")
+    grid = df.pivot_table(index=y, columns=x, values=value, aggfunc="mean")
+    if grid.shape[0] < 2 or grid.shape[1] < 2:
+        raise ValueError(f"field_2d: the pivot is {grid.shape[0]}x{grid.shape[1]}; a field needs "
+                         "at least 2 x-values and 2 y-values")
+    grid = grid.sort_index().sort_index(axis=1)
+    data = grid.to_numpy(dtype=float)
+    if log_color:
+        if np.nanmin(data) <= 0:
+            raise ValueError("field_2d: log_color needs strictly positive values")
+        from matplotlib.colors import LogNorm
+        norm = LogNorm(vmin=float(np.nanmin(data)), vmax=float(np.nanmax(data)))
+    else:
+        norm = None
+    xs = np.asarray(grid.columns, dtype=float)
+    ys = np.asarray(grid.index, dtype=float)
+    mesh = ax.pcolormesh(xs, ys, np.ma.masked_invalid(data), cmap=cmap, norm=norm,
+                         shading="auto", rasterized=True)
+    if contour:
+        # contours on the FIELD, drawn over the same axes; a field with a single level would
+        # raise, so the level count is clamped to what the data can support
+        finite = data[np.isfinite(data)]
+        if finite.size and float(finite.min()) < float(finite.max()):
+            ax.contour(xs, ys, np.ma.masked_invalid(data),
+                       levels=min(levels, max(2, len(np.unique(finite)))),
+                       colors="black", linewidths=0.35, alpha=0.7)
+    ax.tick_params(direction="out")
+    _frame(ax, xlabel or x, ylabel or y)
+    return mesh
+
+
 def ax_histogram(ax, df: pd.DataFrame, value: str, bins: int = 20,
                  group: str | None = None, density: bool = True,
                  xlabel: str = "", ylabel: str = "",
@@ -895,6 +946,7 @@ DRAWERS.update({
     "histogram": ax_histogram,
     "dual_series": ax_dual_series,
     "polar_profile": ax_polar_profile,
+    "field_2d": ax_field_2d,
 })
 
 
@@ -978,7 +1030,7 @@ TEMPLATES = {
 
 #: Drawers that draw a scalar-mappable artist and can therefore carry a colour bar. The
 #: composer uses this to decide whether `Panel.colorbar` makes sense, instead of guessing.
-COLORBAR_CAPABLE = {"heatmap", "hexbin_corr", "tile_diverging"}
+COLORBAR_CAPABLE = {"heatmap", "hexbin_corr", "tile_diverging", "field_2d"}
 
 
 def render(name: str, df: pd.DataFrame, out_stem, **kw) -> list[pathlib.Path]:

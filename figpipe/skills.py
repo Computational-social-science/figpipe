@@ -39,7 +39,7 @@ import pandas as pd
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from figpipe import audit, composite, grammar, layout, styleprofile  # noqa: E402
+from figpipe import audit, composite, grammar, layout, semantics, styleprofile  # noqa: E402
 
 
 class SkillError(RuntimeError):
@@ -358,6 +358,18 @@ def _first_categorical(ctx) -> str:
     raise SkillError("layout.split_panels: no categorical axis column found")
 
 
+@operator("encode.field", "build")
+def op_encode_field(ctx: SkillContext, x: str, y: str, value: str,
+                    contour: bool = False, cbar_label: str = "",
+                    cmap: str = "viridis"):
+    """Encode a scalar field over a 2-D coordinate grid (position x time, x x y, ...)."""
+    ctx.add_panel(composite.Panel("field_2d", ctx.data,
+                                  {"x": x, "y": y, "value": value,
+                                   "contour": contour, "cmap": cmap,
+                                   "cbar_label": cbar_label}))
+    ctx.trace.append(f"encode.field({x},{y},{value})")
+
+
 @operator("encode.polar", "build")
 def op_encode_polar(ctx: SkillContext, theta: str, value: str,
                     line: bool = True, title: str | None = None):
@@ -417,6 +429,36 @@ def op_verify_collisions(ctx: SkillContext, fig, pdf_path):
     ctx.trace.append("verify.collisions")
 
 
+@operator("verify.semantics", "verify")
+def op_verify_semantics(ctx: SkillContext, fig, pdf_path):
+    """The panel's printed claims must match the data it was drawn from.
+
+    This is the only check in the pipeline that re-derives NUMBERS from the rendered figure; the
+    audit checks geometry, styleprofile checks appearance, score checks dimensions. A figure that
+    prints "r = +0.80" over data whose r is -0.20 passes every other check in this project.
+    """
+    #: Drawers whose geometry we can verify against the data: one mark per row on x/y.
+    #: A heatmap, a field or a bar panel draws a different geometry, and applying a point-count
+    #: check to them would produce a false failure -- which is how a check gets switched off.
+    POINT_DRAWERS = {"scatter_fit", "trend_band"}
+    for i, (panel, ax) in enumerate(zip(ctx.panels, fig.axes)):
+        if panel.draw not in POINT_DRAWERS:
+            ctx.trace.append(f"verify.semantics(skip panel {i}: {panel.draw})")
+            continue
+        kw = dict(panel.kwargs)
+        x, y = kw.get("x"), kw.get("y")
+        if not x or not y or x not in panel.data.columns or y not in panel.data.columns:
+            ctx.trace.append(f"verify.semantics(skip panel {i}: no x/y pair)")
+            continue
+        texts = [t.get_text() for t in ax.texts]
+        res = semantics.verify_panel(ax, panel.data, x=x, y=y, texts=texts,
+                                     mark_kind="points")
+        for f in res["findings"]:
+            ctx.findings.append({"check": f"semantics.{f['check']}",
+                                 "detail": f["detail"], "severity": "hard"})
+    ctx.trace.append("verify.semantics")
+
+
 @operator("verify.statistics", "verify")
 def op_verify_statistics(ctx: SkillContext, fig, pdf_path,
                          published: dict | None = None, computed: dict | None = None,
@@ -437,7 +479,7 @@ def op_verify_statistics(ctx: SkillContext, fig, pdf_path,
 
 
 #: The global skill: every recipe inherits these checks, whether it lists them or not.
-GLOBAL_VERIFY = ("verify.audit", "verify.collisions")
+GLOBAL_VERIFY = ("verify.audit", "verify.collisions", "verify.semantics")
 
 
 # --------------------------------------------------------------------------------------
@@ -556,7 +598,7 @@ def run(name: str, data: pd.DataFrame, out_stem=None, **params):
             fn = OPERATORS[op_name].fn
             used = _params_for(fn, {**params, "published": params.get("published"),
                                     "computed": params.get("computed")})
-            if op_name in ("verify.audit", "verify.collisions"):
+            if op_name in ("verify.audit", "verify.collisions", "verify.semantics"):
                 fn(ctx, fig, pdf)
             else:
                 fn(ctx, fig, pdf, **used)
@@ -715,6 +757,17 @@ _SKILLS = [
         optional=("err", "columns", "height_mm", "max_panels", "xtick_rotation"),
         examples=({"by": "panel_group", "x": "outcome_name", "y": "estimate",
                    "err": "se"},),
+        verify=(),
+    ),
+    Skill(
+        name="field_map",
+        description="A scalar field over a 2-D coordinate grid, as a colour field with an "
+                    "optional contour overlay.",
+        build=(("encode.field", {}), ("layout.plate", {"columns": 1.0, "height_mm": 100.0})),
+        required=("x", "y", "value"),
+        optional=("contour", "cbar_label", "cmap", "columns", "height_mm"),
+        examples=({"x": "position_mm", "y": "elapsed_time_min",
+                   "value": "concentration"},),
         verify=(),
     ),
     Skill(

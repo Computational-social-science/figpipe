@@ -109,6 +109,7 @@ SKILL_OPTIONS = {
     "radial_profile": "one measured value per angle, on a polar axis",
     "error_comparison": "a few entities compared with their uncertainty, as bars",
     "composite_groups": "one panel per level of a grouping column in a long table",
+    "field_map": "a scalar field over a 2-D coordinate grid (position x time, x x y)",
 }
 
 
