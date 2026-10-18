@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-19T02:49:19",
+  "run_at": "2026-10-19T03:15:21",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -12,36 +12,13 @@
     "  lean: tracked 79.5 -> 79.5 MB, worktree 130.6 -> 130.5 MB"
   ],
   "tests_ok": true,
-  "tests_summary": "258 passed, 2 skipped, 1 warning in 53.68s",
+  "tests_summary": "258 passed, 2 skipped, 1 warning in 52.90s",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
   "published": {
-    "pushed": true,
-    "steps": [
-      {
-        "cmd": "git add -A",
-        "code": 0,
-        "tail": [
-          "warning: in the working copy of 'figpipe/select.py', LF will be replaced by CRLF the next time Git touches it"
-        ]
-      },
-      {
-        "cmd": "git -c user.name=figpipe-bot",
-        "code": 0,
-        "tail": [
-          " create mode 100644 tests/test_select.py"
-        ]
-      },
-      {
-        "cmd": "git push origin",
-        "code": 0,
-        "tail": [
-          "   c88a5c9..aaa4a0b  main -> main"
-        ]
-      }
-    ],
-    "withheld": []
+    "pushed": false,
+    "reason": "not yet published"
   },
   "check_results": {
     "L01": {
@@ -153,13 +130,13 @@
   },
   "benchmark_slice": {
     "ran": true,
-    "offset": 0,
+    "offset": 6,
     "tasks": 6,
     "code": 0,
     "tail": [
-      "    type Box/Violin     ok 1/1   d=0.197 base=0.441 delta=0.244 errors=0",
-      "    type Distribution   ok 4/4   d=0.247 base=0.289 delta=0.042 errors=0",
-      "    type Heatmap        ok 1/1   d=0.288 base=0.426 delta=0.138 errors=0",
+      "    type Distribution   ok 1/1   d=0.262 base=0.293 delta=0.031 errors=0",
+      "    type Heatmap        ok 1/1   d=0.36 base=0.205 delta=-0.155 errors=0",
+      "    type Scatter        ok 1/1   d=0.259 base=0.575 delta=0.316 errors=0",
       "  wrote E:\\2026-AI4S\\figpipe\\corpus\\e2e\\plottwin_report.json"
     ]
   },
@@ -178,25 +155,10 @@
     "tests": 258
   },
   "capabilities_delta": {
-    "changed": true,
-    "delta": {
-      "benchmark_shipped_distance": {
-        "before": null,
-        "after": 0.259
-      },
-      "tests": {
-        "before": 250,
-        "after": 258
-      }
-    },
+    "changed": false,
+    "delta": {},
     "verdict": {
-      "gains": [
-        {
-          "field": "tests",
-          "before": 250,
-          "after": 258
-        }
-      ],
+      "gains": [],
       "regressions": [],
       "ok": true,
       "judged_fields": [
@@ -213,6 +175,5 @@
   },
   "ok": true,
   "capability_ok": true,
-  "capability_regressions": [],
-  "publish_note": "The publish outcome is recorded after the commit that carries this run, so it describes the push triggered by this run; the file's own commit is made by the next scheduled run."
+  "capability_regressions": []
 }

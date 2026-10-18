@@ -302,7 +302,7 @@ h2{font-size:19px;margin:38px 0 14px;color:var(--navy);display:flex;align-items:
 h2 .n{font-size:12px;color:#fff;background:var(--navy);border-radius:6px;padding:2px 8px;letter-spacing:1px}
 h3{font-size:14px;margin:0}
 p{font-size:13.5px}
-.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-top:20px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:14px;margin-top:20px}
 .kpi{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;box-shadow:0 4px 14px rgba(23,35,59,.04)}
 .kpi-v{font-size:26px;font-weight:800;color:var(--navy);line-height:1.2}
 .kpi-l{font-size:12.5px;color:var(--muted);margin-top:4px}
@@ -373,8 +373,21 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
                     "SKILLS.md", status="Design note"),
     ])
 
+    MAX_TASK_ROWS = 18
+    all_tasks = bench.get("tasks", []) or []
+    ok_tasks = [t for t in all_tasks if t.get("status") == "ok"]
+    shown = all_tasks
+    hidden_note = ""
+    if len(all_tasks) > MAX_TASK_ROWS:
+        # sort by outcome: the cases a reader must see are the ones where the decision mattered
+        ranked = sorted(ok_tasks, key=lambda t: abs(float(t.get("delta") or 0.0)), reverse=True)
+        shown = ranked[:MAX_TASK_ROWS]
+        hidden_note = (f'<p class="tag">Showing the {len(shown)} tasks with the largest |Δ| out of '
+                       f'{len(all_tasks)} measured; the full per-task table is in '
+                       f'<code>corpus/e2e/plottwin_report.json</code>.</p>')
+
     bench_rows = []
-    for t in bench.get("tasks", []) or []:
+    for t in shown:
         if t.get("status") != "ok":
             bench_rows.append(f'<tr><td>{esc(t.get("id"))}</td><td>{esc(t.get("chart"))}</td>'
                               f'<td>{esc(t.get("skill", "—"))}</td><td colspan="3">'
@@ -399,7 +412,8 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
             f'<tr><td>{esc(chart)}</td><td class="num">{t.get("ok")}/{t.get("n")}</td>'
             f'<td class="num">{_num(t.get("mean_distance"))}</td>'
             f'<td class="num">{_num(t.get("mean_baseline"))}</td>'
-            f'<td class="num">{_num(t.get("mean_delta"))}</td></tr>')
+            f'<td class="num">{_num(t.get("mean_delta"))}</td>'
+            f'<td class="num">{_num(t.get("mean_shipped"))}</td></tr>')
 
     cap_rows = []
     for rec in sorted((ROOT / "knowledge" / "runs").glob("*.json"))[-8:]:
@@ -539,11 +553,12 @@ imitate.</p>
     <thead><tr><th>Task</th><th>Chart</th><th>Skill</th><th>Distance</th><th>Baseline</th><th>Δ</th><th>Result</th></tr></thead>
     <tbody>{''.join(bench_rows)}</tbody>
   </table>
+  {hidden_note}
 </div>
 <div class="okbox" style="margin-top:14px">{_selection_text(bench.get("selection"))}</div>
 <h3 style="margin-top:20px">By chart type</h3>
-<table><thead><tr><th>Chart type</th><th>OK / tasks</th><th>Mean distance</th><th>Baseline</th>
-<th>Δ</th></tr></thead><tbody>{''.join(type_rows)}</tbody></table>
+<table><thead><tr><th>Chart type</th><th>OK / tasks</th><th>Always styled</th><th>Plain</th>
+<th>Δ</th><th>Shipped</th></tr></thead><tbody>{''.join(type_rows)}</tbody></table>
 <div class="warnbox"><b>Stated plainly:</b> this is not an SOTA claim. One of the ten tasks got
 worse (PMC13106710), so style transfer is not always beneficial. A formal claim requires all 150
 tasks, the official scorer (at least its non-VLM subset), a frozen protocol and a comparison with

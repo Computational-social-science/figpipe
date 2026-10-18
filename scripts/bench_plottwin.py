@@ -453,6 +453,11 @@ def main(argv=None) -> int:
             t["delta"].append(r["delta"])
         else:
             t["errors"].append(r.get("error", "")[:80])
+    def _shipped(rows):
+        vals = [r["selected_distance"] for r in rows
+                if r.get("selected_distance") is not None]
+        return round(float(np.mean(vals)), 3) if vals else None
+
     type_stats = {}
     for chart, t in sorted(by_type.items()):
         type_stats[chart] = {
@@ -460,6 +465,7 @@ def main(argv=None) -> int:
             "mean_distance": round(float(np.mean(t["d"])), 3) if t["d"] else None,
             "mean_baseline": round(float(np.mean(t["base"])), 3) if t["base"] else None,
             "mean_delta": round(float(np.mean(t["delta"])), 3) if t["delta"] else None,
+            "mean_shipped": _shipped([r for r in results if r["chart"] == chart]),
             "errors": len(t["errors"]), "error_examples": t["errors"][:3],
         }
     report = {
@@ -508,20 +514,23 @@ def main(argv=None) -> int:
         by_type = {}
         for t in merged:
             bucket = by_type.setdefault(t["chart"], {"n": 0, "ok": 0, "d": [], "base": [],
-                                                     "delta": [], "errors": 0})
+                                                     "delta": [], "ship": [], "errors": 0})
             bucket["n"] += 1
             if t.get("status") == "ok":
                 bucket["ok"] += 1
                 bucket["d"].append(t["distance"])
                 bucket["base"].append(t["baseline_distance"])
                 bucket["delta"].append(t["delta"])
+                if t.get("selected_distance") is not None:
+                    bucket["ship"].append(t["selected_distance"])
             else:
                 bucket["errors"] += 1
         report["by_type"] = {
             c: {"n": b["n"], "ok": b["ok"], "errors": b["errors"],
                 "mean_distance": round(float(np.mean(b["d"])), 3) if b["d"] else None,
                 "mean_baseline": round(float(np.mean(b["base"])), 3) if b["base"] else None,
-                "mean_delta": round(float(np.mean(b["delta"])), 3) if b["delta"] else None}
+                "mean_delta": round(float(np.mean(b["delta"])), 3) if b["delta"] else None,
+                "mean_shipped": round(float(np.mean(b["ship"])), 3) if b["ship"] else None}
             for c, b in sorted(by_type.items())}
     # ANCHOR METRIC. The mean distance over a growing task set is NOT comparable across runs:
     # adding a harder window moves the mean without any change in capability, which made the
