@@ -39,3 +39,9 @@ reports/*.docx
 # Default output of figpipe/skills.py when no out_stem is given.
 templates/skills/
 
+
+# Benchmark references are CC BY-NC: local evaluation cache only, never committed.
+corpus/e2e/cache/
+corpus/e2e/images/
+corpus/e2e/tmp/
+

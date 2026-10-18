@@ -4,7 +4,7 @@ WHY THESE TESTS EXIST
     The pipeline this replaces produced figure crops with no caption, no page
     number and no provenance: the old `_index.json` was a list of
     [png, width, height, pdf_name, page] tuples, so nothing downstream could
-    tell which figure a caption described. AUDIT.md called the figure detector
+    tell which figure a caption described. CRITICAL_AUDIT.md called the figure detector
     the project's weakest point. These tests pin the properties that make the
     replacement trustworthy:
 

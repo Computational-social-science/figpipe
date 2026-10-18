@@ -2,7 +2,7 @@
 
 WHY THIS REPLACES THE OLD DETECTOR
     The previous figure-band detector was a heuristic that merged overlapping
-    drawing/image rectangles. AUDIT.md and LEARNINGS.md both flagged it as the
+    drawing/image rectangles. CRITICAL_AUDIT.md and LEARNINGS.md both flagged it as the
     project's weakest point: it reported a band width distribution that nobody
     could trust, because the bands were guessed from vector drawing extents.
     This script uses docling (IBM, a professional document-understanding model)

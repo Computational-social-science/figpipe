@@ -1,7 +1,7 @@
 """The scheduled re-check: generic, complete, and able to fail.
 
 WHAT THE AUDIT CHANGED HERE
-    The previous version had three defects (AUDIT.md):
+    The previous version had three defects (CRITICAL_AUDIT.md):
 
     1. It hard-coded checks for only 3 of 8 rules and still printed "3/3 hold" -- a healthy
        number over the wrong denominator. Now every rule carries a machine-executable `check`

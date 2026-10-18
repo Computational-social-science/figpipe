@@ -701,6 +701,75 @@ def ax_tile_diverging(ax, df: pd.DataFrame, cmap: str = "RdBu_r",
     return im
 
 
+def ax_histogram(ax, df: pd.DataFrame, value: str, bins: int = 20,
+                 group: str | None = None, density: bool = True,
+                 xlabel: str = "", ylabel: str = "",
+                 xscale: str = "linear", yscale: str = "linear",
+                 alpha: float = 0.42, legend: bool = True,
+                 title: str | None = None):
+    """Distribution of one measured column, optionally split by a categorical column.
+
+    A histogram is the classic sanity check a reader expects before trusting a mean; it is also
+    the cheapest way to show that a "significant" difference is two shifted clouds rather than
+    two different mechanisms. `density=True` lets panels with different n share a y axis.
+    """
+    df = _uniq(df)
+    if xscale == "log":
+        vals = df[value].to_numpy(dtype=float)
+        if np.any(vals <= 0):
+            raise ValueError("histogram on a log axis needs strictly positive values")
+    if group:
+        groups = [str(g) for g in pd.unique(df[group])][:6]
+        for i, g in enumerate(groups):
+            sub = df.loc[df[group].astype(str) == g, value].to_numpy(dtype=float)
+            ax.hist(sub, bins=bins, density=density, alpha=alpha,
+                    color=_palette(len(groups))[i], edgecolor="black",
+                    linewidth=0.25, label=g)
+        if legend:
+            ax.legend(frameon=False, fontsize=5.5, handlelength=1.0,
+                      columnspacing=0.8, handletextpad=0.3)
+    else:
+        vals = df[value].to_numpy(dtype=float)
+        ax.hist(vals, bins=bins, density=density, alpha=0.55,
+                color=style.OKABE_ITO["sky_blue"], edgecolor="black",
+                linewidth=0.3)
+    ax.set_xscale(xscale)
+    ax.set_yscale(yscale)
+    _frame(ax, xlabel or value, ylabel or ("density" if density else "count"))
+    if title:
+        ax.set_title(title)
+    return None
+
+
+def ax_dual_series(ax, df: pd.DataFrame, x: str, y1: str, y2: str,
+                   xlabel: str = "", ylabel: str = "", ylabel2: str = "",
+                   annotate: bool = False):
+    """Two measured series on one x with separate y axes (left: y1, right: y2).
+
+    A dual axis is a rhetorical device: it invites the reader to compare shapes. It is therefore
+    forbidden to imply a causal relation silently -- both series are direct-labelled and the two
+    axis labels are always written, never left to the caption.
+    """
+    df = _uniq(df)
+    xs = df[x].to_numpy()
+    ax.plot(xs, df[y1].to_numpy(dtype=float), "-o", ms=2.4, lw=0.9,
+            color=style.OKABE_ITO["blue"], markeredgecolor="black",
+            markeredgewidth=0.2, label=ylabel or y1)
+    ax2 = ax.twinx()
+    ax2.plot(xs, df[y2].to_numpy(dtype=float), "-s", ms=2.2, lw=0.9,
+             color=style.OKABE_ITO["vermillion"], markeredgecolor="black",
+             markeredgewidth=0.2, label=ylabel2 or y2)
+    _frame(ax, xlabel or x, ylabel or y1)
+    ax2.set_ylabel(ylabel2 or y2)
+    ax2.tick_params(axis="y", labelsize=6)
+    ax.tick_params(axis="y", labelsize=6)
+    if annotate:
+        for a in (ax, ax2):
+            for sp in ("top",):
+                a.spines[sp].set_visible(False)
+    return None
+
+
 #: The idiom drawers join the same registry the templates use. The registry lives here, after
 #: every drawer it names, so a new drawing style is registered by existing rather than by an
 #: out-of-date list at the top of the module.
@@ -709,6 +778,8 @@ DRAWERS.update({
     "ranked_share": ax_ranked_share,
     "hexbin_corr": ax_hexbin_corr,
     "tile_diverging": ax_tile_diverging,
+    "histogram": ax_histogram,
+    "dual_series": ax_dual_series,
 })
 
 

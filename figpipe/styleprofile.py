@@ -110,6 +110,11 @@ class StyleProfile:
     rules_h: int = 0
     rules_v: int = 0
     spines: dict[str, bool] = field(default_factory=dict)
+    #: "vector" profiles carry exact type sizes; "image" profiles (raster references from a
+    #: benchmark) carry only palette, aspect and ink density. The comparison renormalises over
+    #: whatever both sides actually measured instead of pretending a size distribution exists.
+    modality: str = "vector"
+    ink_density: float = 0.0
 
     # ---- construction -------------------------------------------------------------
     @classmethod
@@ -204,6 +209,48 @@ class StyleProfile:
             name, dist = _nearest_okabe(_rgb(h))
             prof.colours.append({"hex": h, "count": n, "okabe": name,
                                  "rgb_distance": dist})
+        return prof
+
+    @classmethod
+    def from_image(cls, image_path, max_colours: int = 8) -> "StyleProfile":
+        """Profile a RASTER reference (PNG/JPEG): palette, aspect, ink density.
+
+        Exact type sizes and stroke widths cannot be recovered from pixels without OCR/vision,
+        so this profile is explicitly `modality="image"` and `compare()` only uses the shared
+        components. It exists because authoritative benchmarks such as PlotTwin-Bench publish
+        their references as images; measuring palette and aspect is still deterministic.
+        """
+        try:
+            from PIL import Image
+        except ImportError as exc:  # pragma: no cover
+            raise RuntimeError("Pillow is required to profile an image: pip install Pillow") from exc
+        im = Image.open(str(image_path)).convert("RGB")
+        w, h = im.size
+        arr = np.asarray(im)
+        ink = float(np.any(arr < 245, axis=2).mean())
+        q = im.convert("P", palette=Image.ADAPTIVE, colors=16).convert("RGB")
+        colours, counts = np.unique(np.asarray(q).reshape(-1, 3), axis=0,
+                                    return_counts=True)
+        order = np.argsort(-counts)
+        total = float(w * h)
+        out = []
+        for i in order:
+            rgb = tuple(int(c) for c in colours[i])
+            n = int(counts[i])
+            if n < 0.004 * total:
+                continue
+            if all(c > 240 for c in rgb):        # page white
+                continue
+            name, dist = _nearest_okabe(rgb)
+            out.append({"hex": _hex(rgb), "count": n, "okabe": name,
+                        "rgb_distance": dist})
+            if len(out) >= max_colours:
+                break
+        prof = cls(source=str(image_path), region="image", modality="image",
+                   ink_density=round(ink, 4), colours=out)
+        # width/height in PIXELS: only their ratio is used, and compare() documents the unit
+        prof.width_mm = float(w)
+        prof.height_mm = float(h)
         return prof
 
     # ---- serialisation ------------------------------------------------------------
@@ -414,7 +461,9 @@ def compare(a: StyleProfile, b: StyleProfile) -> dict:
     direction cannot be explained is useless for driving a template, and driving templates is
     what this module exists for.
     """
-    sizes = _size_distance(a, b)
+    details: dict[str, float] = {}
+    if a.sizes_pt and b.sizes_pt:
+        details["sizes"] = _size_distance(a, b)
 
     def _palette(a, b):
         ca = [(c["hex"], c["count"]) for c in a.colours]
@@ -429,32 +478,43 @@ def compare(a: StyleProfile, b: StyleProfile) -> dict:
             acc += (n / total) * (d / 441.67)             # max RGB distance normalised
         return acc
 
-    la = [lt["size_pt"] for lt in a.panel_letters]
-    lb = [lt["size_pt"] for lt in b.panel_letters]
-    letter_sizes = abs((np.mean(la) if la else 0.0) - (np.mean(lb) if lb else 0.0)) / 4.0
-    letter_counts = abs(len(la) - len(lb)) / max(len(la), len(lb), 1)
-    letters = min(1.0, 0.5 * letter_sizes + 0.5 * letter_counts)
+    if a.panel_letters or b.panel_letters:
+        la = [lt["size_pt"] for lt in a.panel_letters]
+        lb = [lt["size_pt"] for lt in b.panel_letters]
+        letter_sizes = abs((np.mean(la) if la else 0.0) - (np.mean(lb) if lb else 0.0)) / 4.0
+        letter_counts = abs(len(la) - len(lb)) / max(len(la), len(lb), 1)
+        details["letters"] = min(1.0, 0.5 * letter_sizes + 0.5 * letter_counts)
 
-    wa = float(np.median(a.line_widths_pt)) if a.line_widths_pt else 0.5
-    wb = float(np.median(b.line_widths_pt)) if b.line_widths_pt else 0.5
-    lines = min(1.0, abs(math.log((wa + 0.1) / (wb + 0.1))) / math.log(5.0))
+    if a.line_widths_pt and b.line_widths_pt:
+        wa = float(np.median(a.line_widths_pt))
+        wb = float(np.median(b.line_widths_pt))
+        details["lines"] = min(1.0, abs(math.log((wa + 0.1) / (wb + 0.1)))
+                               / math.log(5.0))
 
-    grid_a = (a.rules_h > 0) or (a.rules_v > 0)
-    grid_b = (b.rules_h > 0) or (b.rules_v > 0)
-    spine_mismatch = sum(1 for k in a.spines if a.spines.get(k) != b.spines.get(k)) / 4.0
-    rules = min(1.0, 0.7 * float(grid_a ^ grid_b) + 0.3 * spine_mismatch)
+    if a.spines and b.spines:
+        grid_a = (a.rules_h > 0) or (a.rules_v > 0)
+        grid_b = (b.rules_h > 0) or (b.rules_v > 0)
+        spine_mismatch = sum(1 for k in a.spines
+                             if a.spines.get(k) != b.spines.get(k)) / 4.0
+        details["rules"] = min(1.0, 0.7 * float(grid_a ^ grid_b) + 0.3 * spine_mismatch)
 
-    aspect = 0.0
+    if a.colours and b.colours:
+        details["palette"] = _palette(a, b)
+
     if a.width_mm and a.height_mm and b.width_mm and b.height_mm:
         # the SHAPE, not the width: two figures of the same width but 183x168 vs 184x154 have
         # visibly different compositions
         ra = a.width_mm / a.height_mm
         rb = b.width_mm / b.height_mm
-        aspect = min(1.0, abs(math.log(ra / rb)))
+        details["aspect"] = min(1.0, abs(math.log(ra / rb)))
 
-    details = {"sizes": sizes, "palette": _palette(a, b), "letters": letters,
-               "lines": lines, "rules": rules, "aspect": aspect}
-    score = sum(WEIGHTS[k] * v for k, v in details.items())
+    if a.ink_density > 0 and b.ink_density > 0:
+        details["ink"] = min(1.0, abs(a.ink_density - b.ink_density) / 0.5)
+
+    if not details:
+        raise ValueError("profiles share no measurable component")
+    weight_sum = sum(WEIGHTS.get(k, 0.10) for k in details)
+    score = sum(WEIGHTS.get(k, 0.10) * v for k, v in details.items()) / weight_sum
     return {"distance": round(float(score), 3),
             "details": {k: round(float(v), 3) for k, v in details.items()},
             "a": a.summary(), "b": b.summary()}

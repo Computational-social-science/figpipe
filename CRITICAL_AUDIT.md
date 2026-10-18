@@ -439,3 +439,14 @@ $ 搜索 palette|okabe|colormap|jet|truncat in tests/
 3. **42 篇 PDF 的期刊纯度** —— 我确认文件名含 NATURE 且排除了 Nature Communications / npj / Scientific Reports / National Science Review，但**未逐篇核对 DOI**，可能仍有非研究论文（1991/1997/2008 的短文）混入，这正是 LEARNINGS.md P1 指出的问题。
 4. **`measured.json` 是否由当前代码生成** —— 我复现了 `derived.json` 的清洗逻辑（除一处四舍五入），但**没有重跑 `learn_from_corpus.py` 全流程**（需数分钟扫描 38 篇 PDF）。`measured.json` 的 420 个 band 与我的独立提取是否逐条一致，我未完整比对。
 5. **其他 3 个 agent 的工作** —— 按铁律未采信。`vlm_label.py` 的 10 字节内容是我自己读出来的。
+
+
+---
+
+## 附录：第二轮复核与历史审计（原文件已删，细节见 git 历史）
+
+- 第二轮对抗性复核（原 `CRITICAL_AUDIT_R2.md`）更正了第一轮的两处判断，并明确认为
+  **图区检测器的修复有效**；其核心更正已并入本文件与 `LEARNINGS.md`，不再单独保留文件。
+- 更早的 `AUDIT.md`（格式化能力成立、"自主进化"为空的逻辑审计）的结论已由本文件与
+  `LEARNINGS.md` 覆盖。
+- 保留本文件作为唯一审计记录：它包含致命/严重项的证据与整改状态。

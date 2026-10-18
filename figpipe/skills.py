@@ -61,6 +61,7 @@ class SkillContext:
         "sharey": False, "letters": True, "margins": None})
     rc: dict | None = None
     reference: styleprofile.StyleProfile | None = None
+    meta: dict = field(default_factory=dict)      # axis scales, facet options, provenance
     trace: list[str] = field(default_factory=list)
     findings: list[dict] = field(default_factory=list)
 
@@ -181,10 +182,109 @@ def op_encode_bars(ctx: SkillContext, x: str, ycols):
 
 
 @operator("encode.scatter", "build")
-def op_encode_scatter(ctx: SkillContext, x: str, y: str):
+def op_encode_scatter(ctx: SkillContext, x: str, y: str,
+                      xlabel: str | None = None, ylabel: str | None = None):
     """Encode a relationship as a scatter with a fit and r."""
-    ctx.add_panel(grammar.panel("scatter_fit", ctx.data, x=x, y=y))
+    ctx.add_panel(composite.Panel("scatter_fit", ctx.data,
+                                  {"x": x, "y": y, "xlabel": xlabel or "",
+                                   "ylabel": ylabel or ""}))
     ctx.trace.append(f"encode.scatter({x},{y})")
+
+
+@operator("encode.hist", "build")
+def op_encode_hist(ctx: SkillContext, value: str, bins: int = 20,
+                   group: str | None = None, density: bool = True,
+                   xscale: str | None = None, yscale: str | None = None,
+                   title: str | None = None):
+    """Encode the distribution of one measured column (optionally split by a category)."""
+    kw = {"value": value, "bins": bins, "group": group, "density": density,
+          "xscale": xscale or ctx.meta.get("xscale", "linear"),
+          "yscale": yscale or ctx.meta.get("yscale", "linear"),
+          "title": title}
+    ctx.add_panel(composite.Panel(draw="histogram", data=ctx.data, kwargs=kw))
+    ctx.trace.append(f"encode.hist({value})")
+
+
+@operator("encode.dual", "build")
+def op_encode_dual(ctx: SkillContext, x: str, y1: str, y2: str,
+                   ylabel: str = "", ylabel2: str = ""):
+    """Encode two series on one x with separate left/right y axes (both labelled)."""
+    ctx.add_panel(composite.Panel(draw="dual_series", data=ctx.data,
+                                  kwargs={"x": x, "y1": y1, "y2": y2,
+                                          "ylabel": ylabel, "ylabel2": ylabel2}))
+    ctx.trace.append(f"encode.dual({y1},{y2})")
+
+
+@operator("axis.log", "build")
+def op_axis_log(ctx: SkillContext, which: str = "xy"):
+    """Set log scale for x, y, or both; encoders read it from the context."""
+    if not set(which) <= set("xy") or not which:
+        raise SkillError(f"axis.log: which must be 'x', 'y' or 'xy', got {which!r}")
+    if "x" in which:
+        ctx.meta["xscale"] = "log"
+    if "y" in which:
+        ctx.meta["yscale"] = "log"
+    ctx.trace.append(f"axis.log({which})")
+
+
+@operator("layout.facets", "build")
+def op_layout_facets(ctx: SkillContext, of: str = "hist", by: str = "",
+                     value: str | None = None, bins: int = 20,
+                     group: str | None = None, x: str | None = None,
+                     y: str | None = None, columns: float = 2.0,
+                     max_panels: int = 4, title: bool = True, **kwargs):
+    """Repeat one classic encoding for each level of a facet column.
+
+    This is the operator behind multi-panel benchmark tasks: the same encoding, one panel per
+    condition/site/region. It refuses silently truncated facets: more levels than `max_panels`
+    is an error, because dropping panels changes the claim.
+    """
+    if not by:
+        raise SkillError("layout.facets needs a facet column (by=...)")
+    if by not in ctx.data.columns:
+        raise SkillError(f"layout.facets: {by!r} is not a column of the data")
+    levels = sorted(str(v) for v in pd.unique(ctx.data[by]))
+    if len(levels) > max_panels:
+        raise SkillError(f"layout.facets: {len(levels)} levels but max_panels={max_panels}; "
+                         "raise max_panels deliberately or choose a coarser facet")
+    encoders = {"hist": op_encode_hist, "trend": op_encode_trend,
+                "scatter": op_encode_scatter}
+    if of not in encoders:
+        raise SkillError(f"layout.facets: unsupported encoder {of!r}; "
+                         f"choose from {sorted(encoders)}")
+    for level in levels:
+        sub = ctx.data[ctx.data[by].astype(str) == level].reset_index(drop=True)
+        child = SkillContext(data=sub, params=dict(ctx.params),
+                             layout=dict(ctx.layout), meta=dict(ctx.meta),
+                             rc=ctx.rc)
+        enc = encoders[of]
+        call = {"hist": dict(value=value or _first_numeric(ctx),
+                             bins=bins, group=group),
+                "trend": dict(x=x or _first_numeric(ctx), y=y or _second_numeric(ctx)),
+                "scatter": dict(x=x or _first_numeric(ctx), y=y or _second_numeric(ctx))}[of]
+        if of == "hist" and title:
+            call["title"] = level
+        elif of == "trend" and title:
+            call["title"] = level
+        enc(child, **{k: v for k, v in call.items() if v is not None})
+        ctx.panels.extend(child.panels)
+    ctx.layout["columns"] = columns
+    ctx.meta["facets"] = {"by": by, "levels": levels}
+    ctx.trace.append(f"layout.facets({by}:{len(levels)})")
+
+
+def _first_numeric(ctx) -> str:
+    num = [c for c in ctx.data.columns if pd.api.types.is_numeric_dtype(ctx.data[c])]
+    if not num:
+        raise SkillError("layout.facets: no numeric column to encode")
+    return num[0]
+
+
+def _second_numeric(ctx) -> str:
+    num = [c for c in ctx.data.columns if pd.api.types.is_numeric_dtype(ctx.data[c])]
+    if len(num) < 2:
+        raise SkillError("layout.facets: need two numeric columns for scatter/trend")
+    return num[1]
 
 
 @operator("style.profile", "build")
@@ -296,10 +396,18 @@ def define(skill: Skill) -> Skill:
 
 
 def _params_for(fn, supplied: dict) -> dict:
-    """Only pass parameters the operator actually accepts; report what was consumed."""
+    """Only pass parameters the operator actually accepts; report what was consumed.
+
+    An operator with **kwargs receives the remaining skill parameters: that is how
+    `layout.facets` forwards `value`/`bins`/`group` to the encoder it repeats per facet.
+    """
     sig = inspect.signature(fn)
     names = [p.name for p in sig.parameters.values()
              if p.kind in (p.POSITIONAL_OR_KEYWORD, p.KEYWORD_ONLY)]
+    has_var_kw = any(p.kind == p.VAR_KEYWORD for p in sig.parameters.values())
+    if has_var_kw:
+        skip = {"published", "computed"}
+        return {k: v for k, v in supplied.items() if k not in skip}
     return {k: v for k, v in supplied.items() if k in names}
 
 
@@ -312,7 +420,7 @@ def run(name: str, data: pd.DataFrame, out_stem=None, **params):
     if name not in SKILLS:
         raise SkillError(f"unknown skill {name!r}; available: {sorted(SKILLS)}")
     skill = SKILLS[name]
-    unknown = set(params) - set(skill.required) - set(skill.optional)
+    unknown = set(params) - set(skill.required) - set(skill.optional) - {"profile"}
     if unknown:
         raise SkillError(f"skill {name!r} does not understand parameters {sorted(unknown)}; "
                          f"required={list(skill.required)}, optional={list(skill.optional)}")
@@ -330,6 +438,10 @@ def run(name: str, data: pd.DataFrame, out_stem=None, **params):
         fn(ctx, **used)
     if not ctx.panels:
         raise SkillError(f"skill {name!r} produced no panels; check its build steps")
+    # a profile is a GLOBAL optional parameter: any skill can be rendered in a measured
+    # reference style, which is what the style-transfer benchmark asks for.
+    if params.get("profile") and ctx.reference is None:
+        op_style_profile(ctx, profile=params["profile"])
     if ctx.reference is not None:
         pal = styleprofile.style_from_profile(ctx.reference)["palette"]
         if pal:
@@ -461,6 +573,51 @@ _SKILLS = [
                   "published", "computed"),
         examples=({"x": "year", "y": "mean", "profile": "corpus/style/published_fig7.json"},),
         verify=(("verify.statistics", {}),),
+    ),
+    Skill(
+        name="histogram",
+        description="Distribution of one measure, optionally split by a category.",
+        build=(("encode.hist", {}), ("layout.plate", {"height_mm": 70.0})),
+        required=("value",),
+        optional=("bins", "group", "density", "columns", "height_mm"),
+        examples=({"value": "score", "bins": 25},),
+        verify=(),
+    ),
+    Skill(
+        name="dual_measure",
+        description="Two measures on one x with separate, labelled y axes.",
+        build=(("encode.dual", {}), ("layout.plate", {"height_mm": 70.0})),
+        required=("x", "y1", "y2"),
+        optional=("ylabel", "ylabel2", "columns", "height_mm"),
+        examples=({"x": "year", "y1": "temperature", "y2": "precipitation"},),
+        verify=(),
+    ),
+    Skill(
+        name="scatter_relationship",
+        description="A relationship: scatter with an OLS fit and r stated in the panel.",
+        build=(("encode.scatter", {}), ("layout.plate", {"height_mm": 70.0})),
+        required=("x", "y"),
+        optional=("columns", "height_mm"),
+        examples=({"x": "papers", "y": "citations"},),
+        verify=(),
+    ),
+    Skill(
+        name="log_scatter",
+        description="A relationship on log axes: scatter after axis.log.",
+        build=(("axis.log", {}), ("encode.scatter", {}), ("layout.plate", {"height_mm": 70.0})),
+        required=("x", "y"),
+        optional=("which", "columns", "height_mm"),
+        examples=({"x": "papers", "y": "citations", "which": "xy"},),
+        verify=(),
+    ),
+    Skill(
+        name="faceted_distribution",
+        description="The same distribution encoder repeated over a facet column.",
+        build=(("layout.facets", {"of": "hist"}), ("layout.plate", {"height_mm": 130.0})),
+        required=("value", "by"),
+        optional=("bins", "group", "columns", "height_mm", "of", "max_panels"),
+        examples=({"value": "score", "by": "condition"},),
+        verify=(),
     ),
 ]
 

@@ -159,9 +159,26 @@ cannot quietly reintroduce one. Notable ones:
 
 ## Provenance
 
-Extracted from `keystroke-observatory`, where the specification work lives in
-`docs/NATURE_SPEC.md` and the per-figure design critique in `docs/FIGURE_CRITIQUE.md`.
+Extracted from `keystroke-observatory`, where the specification work lives in the journal
+guide (sources below) and the per-figure design critique informed `LEARNINGS.md`.
 
 Specification sources:
 - <https://research-figure-guide.nature.com/figures/preparing-figures-our-specifications/>
 - <https://research-figure-guide.nature.com/figures/building-and-exporting-figure-panels/>
+
+
+---
+
+## Repository map
+
+| file | what it is |
+|---|---|
+| `ARCHITECTURE.md` | the current implementation, layer by layer |
+| `PIPELINE_V3.md` | the forward plan (entry layer, benchmark route, SOTA definition) |
+| `SKILLS.md` | global skill floor + classic operators + named recipes |
+| `LEARNINGS.md` | append-only lessons, including corrected mistakes |
+| `CRITICAL_AUDIT.md` | adversarial audit of the pipeline (canonical record) |
+| `SEED_REPRODUCTION.md` | the seed paper's reproduction record |
+| `PEER_LANDSCAPE.md` | peer projects, licences, and what was absorbed |
+| `REPRODUCTION_GAP_ANALYSIS.md` | what a figure reproduction does and does not prove |
+| `knowledge/benchmark_skill_map.json` | benchmark chart types -> our skills/coverage |

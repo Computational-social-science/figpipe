@@ -1,7 +1,7 @@
 """Migrate the knowledge base to the corrected schema.
 
 WHY THIS MIGRATION EXISTS
-    The audit (AUDIT.md) found that `verified` was carrying three different meanings at once:
+    The audit (CRITICAL_AUDIT.md) found that `verified` was carrying three different meanings at once:
     "a mechanism enforces it", "a measurement supports it", and "I looked at it once". That
     conflation produced a rule (H02) marked `verified` with `enforced_by: None` -- a rule
     nothing enforces and no test locks.

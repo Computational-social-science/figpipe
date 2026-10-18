@@ -1,0 +1,93 @@
+{
+  "benchmark": {
+    "name": "PlotTwin-Bench",
+    "paper": "FigMirror: Ground It, Code It, Plot It",
+    "arxiv": "2608.28814",
+    "source": "https://huggingface.co/datasets/figmirror/PlotTwin-Bench",
+    "license": "CC BY-NC 4.0 (non-commercial; local evaluation only, no redistribution)",
+    "tasks": 150,
+    "task": "given a reference figure + new tabular data, produce a figure in the reference's visual style",
+    "reference_modality": "raster image + matplotlib script (the script is shipped, the reference image is authoritative)",
+    "official_scorer": "plottwin_scorer: deterministic colour module (CIEDE2000) + VLM-based components; combined score requires a VLM, so local runs report deterministic metrics only",
+    "chart_type_frequencies": {
+      "Line": 20,
+      "Bar": 18,
+      "Distribution": 17,
+      "Scatter": 16,
+      "Box/Violin": 16,
+      "Field 2D": 15,
+      "Heatmap": 14,
+      "Polar/Radial": 13,
+      "Std-band": 9,
+      "3D": 7,
+      "Composite": 3,
+      "Network/Tree": 2
+    }
+  },
+  "mapping": {
+    "Line": {
+      "skill": "trend_with_uncertainty",
+      "status": "supported"
+    },
+    "Std-band": {
+      "skill": "trend_with_uncertainty",
+      "status": "supported",
+      "note": "band via lo/hi when the target data carries an interval"
+    },
+    "Bar": {
+      "skill": "grouped_measures",
+      "status": "supported",
+      "fallback": "ranked_composition when only one measure exists"
+    },
+    "Distribution": {
+      "skill": "histogram",
+      "status": "supported",
+      "fallback": "faceted_distribution when panel/group columns exist"
+    },
+    "Box/Violin": {
+      "skill": "distribution_comparison",
+      "status": "supported"
+    },
+    "Scatter": {
+      "skill": "scatter_relationship",
+      "status": "supported",
+      "fallback": "log_scatter when both measures span orders of magnitude"
+    },
+    "Heatmap": {
+      "skill": "matrix_plate",
+      "status": "supported",
+      "note": "needs a pivot/selection rule for the value matrix"
+    },
+    "Field 2D": {
+      "skill": "matrix_plate",
+      "status": "partial",
+      "note": "matrix path exists; contour/field semantics not yet an operator"
+    },
+    "Composite": {
+      "skill": null,
+      "status": "partial",
+      "note": "requires composing 2+ recipes; composition is in skills, not yet in the benchmark mapper"
+    },
+    "Polar/Radial": {
+      "skill": null,
+      "status": "unsupported",
+      "note": "backlog: needs a polar operator"
+    },
+    "3D": {
+      "skill": null,
+      "status": "unsupported",
+      "note": "deliberately out of scope: 3D rarely survives Nature print"
+    },
+    "Network/Tree": {
+      "skill": null,
+      "status": "unsupported",
+      "note": "backlog: needs a graph-layout operator"
+    }
+  },
+  "coverage": {
+    "supported_types": 7,
+    "supported_tasks": 110,
+    "partial_types": 2,
+    "unsupported_types": 3
+  }
+}
