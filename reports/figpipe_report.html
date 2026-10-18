@@ -79,8 +79,8 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
 <body>
 <div class="top">
   <b>FigPipeline · Research Figure Pipeline</b>
-  <div class="meta"><span>commit 02751e5</span><span>branch main</span>
-  <span>knowledge v16</span><span>generated 2026-10-19 01:43</span></div>
+  <div class="meta"><span>commit 898e1e8</span><span>branch main</span>
+  <span>knowledge v16</span><span>generated 2026-10-19 01:45</span></div>
 </div>
 <div class="wrap">
 
@@ -362,13 +362,13 @@ floor (compliance, glyph collisions, no silently ignored parameters, a reproduci
 <div class="two-col">
 <div class="panel">
 <table><thead><tr><th>Metric</th><th>Value</th><th>Meaning</th></tr></thead><tbody>
-<tr><td>Run records</td><td class="num">34</td><td>six-hour schedule + manual runs</td></tr>
+<tr><td>Run records</td><td class="num">35</td><td>six-hour schedule + manual runs</td></tr>
 <tr><td>Knowledge-changing runs</td><td class="num">4</td><td>all from manual migrations or capability work</td></tr>
 <tr><td>Knowledge-base version</td><td>v16</td><td>16 rules</td></tr>
 <tr><td>Machine-checked rules</td><td class="num">8 / 16</td><td>the rest are hypotheses/refuted/void</td></tr>
 <tr><td>Unchecked rules</td><td>H01, H02, E01, E02, C01, C02, C03, C04</td><td>not counted as passing</td></tr>
-<tr><td>Capability snapshot</td><td>skills 15 · operators 19 · benchmark 28/30 · tests 245</td><td>recorded by the scheduled run</td></tr>
-<tr><td>Last capability change</td><td>benchmark_unsupported: — → 2; tests: 244 → 245</td><td>explicit delta, not a claim</td></tr>
+<tr><td>Capability snapshot</td><td>skills 15 · operators 19 · benchmark 28/30 · tests 246</td><td>recorded by the scheduled run</td></tr>
+<tr><td>Last capability change</td><td>tests: 245 → 246</td><td>explicit delta, not a claim</td></tr>
 </tbody></table>
 <p class="tag" style="margin-top:10px">Conclusion: the loop currently re-verifies, prevents drift and
 records. It has no capability snapshot, mutation or selection, so it is <b>not self-improvement</b>.
@@ -389,7 +389,7 @@ The next step is to write benchmark pass rates and distances into the run record
 
 <h3 style="margin-top:20px">Capability trend (scheduled runs)</h3>
 <table><thead><tr><th>Run</th><th>Skills</th><th>Operators</th><th>Benchmark</th>
-<th>Mean distance</th><th>Tests</th></tr></thead><tbody><tr><td>2026-10-19 00:32</td><td class="num">12</td><td class="num">16</td><td class="num">23/30</td><td class="num">0.288</td><td class="num">—</td></tr><tr><td>2026-10-19 00:33</td><td class="num">12</td><td class="num">16</td><td class="num">23/30</td><td class="num">0.288</td><td class="num">228</td></tr><tr><td>2026-10-19 00:35</td><td class="num">12</td><td class="num">16</td><td class="num">23/30</td><td class="num">0.288</td><td class="num">229</td></tr><tr><td>2026-10-19 00:37</td><td class="num">12</td><td class="num">16</td><td class="num">23/30</td><td class="num">0.288</td><td class="num">229</td></tr><tr><td>2026-10-19 01:26</td><td class="num">15</td><td class="num">19</td><td class="num">28/30</td><td class="num">0.278</td><td class="num">244</td></tr><tr><td>2026-10-19 01:37</td><td class="num">15</td><td class="num">19</td><td class="num">28/30</td><td class="num">0.278</td><td class="num">245</td></tr></tbody></table>
+<th>Mean distance</th><th>Tests</th></tr></thead><tbody><tr><td>2026-10-19 00:32</td><td class="num">12</td><td class="num">16</td><td class="num">23/30</td><td class="num">0.288</td><td class="num">—</td></tr><tr><td>2026-10-19 00:33</td><td class="num">12</td><td class="num">16</td><td class="num">23/30</td><td class="num">0.288</td><td class="num">228</td></tr><tr><td>2026-10-19 00:35</td><td class="num">12</td><td class="num">16</td><td class="num">23/30</td><td class="num">0.288</td><td class="num">229</td></tr><tr><td>2026-10-19 00:37</td><td class="num">12</td><td class="num">16</td><td class="num">23/30</td><td class="num">0.288</td><td class="num">229</td></tr><tr><td>2026-10-19 01:26</td><td class="num">15</td><td class="num">19</td><td class="num">28/30</td><td class="num">0.278</td><td class="num">244</td></tr><tr><td>2026-10-19 01:37</td><td class="num">15</td><td class="num">19</td><td class="num">28/30</td><td class="num">0.278</td><td class="num">245</td></tr><tr><td>2026-10-19 01:44</td><td class="num">15</td><td class="num">19</td><td class="num">28/30</td><td class="num">0.278</td><td class="num">246</td></tr></tbody></table>
 <p class="tag">Read from <code>knowledge/runs/*.json</code>. A run with no capability change is
 recorded as such; the loop fails when a judged capability field gets worse.</p>
 
@@ -406,6 +406,6 @@ recorded as such; the loop fails when a judged capability field gets worse.</p>
   in this repository, with no external dependencies. PlotTwin-Bench reference images and target
   data are cached locally and never redistributed (CC BY-NC 4.0); StartLux-Decision weights are
   CC BY-NC 4.0 and called through a separate service, not vendored into this repository.</div>
-  <div style="margin-top:6px">commit 02751e5 · generated 2026-10-19 01:43 · tests 248</div>
+  <div style="margin-top:6px">commit 898e1e8 · generated 2026-10-19 01:45 · tests 248</div>
 </footer>
 </div></body></html>
