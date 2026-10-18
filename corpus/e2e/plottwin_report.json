@@ -6,18 +6,18 @@
     "arxiv": "2608.28814",
     "note": "deterministic metrics only; official combined score requires the benchmark's VLM scorer and is NOT claimed here"
   },
-  "n_tasks": 90,
-  "n_ok": 81,
+  "n_tasks": 96,
+  "n_ok": 87,
   "n_unsupported": 9,
   "n_error": 0,
   "unsupported_types": {},
-  "mean_distance": 0.286,
+  "mean_distance": 0.291,
   "mean_baseline": 0.367,
-  "mean_improvement": 0.081,
-  "improved": 60,
-  "worse": 15,
-  "ties": 6,
-  "mean_best_of_two": 0.266,
+  "mean_improvement": 0.076,
+  "improved": 62,
+  "worse": 18,
+  "ties": 7,
+  "mean_best_of_two": 0.269,
   "decision_service": {
     "up": false,
     "url": "http://127.0.0.1:8090",
@@ -61,22 +61,22 @@
       "mean_shipped": 0.242
     },
     "Distribution": {
+      "n": 13,
+      "ok": 13,
+      "errors": 0,
+      "mean_distance": 0.245,
+      "mean_baseline": 0.294,
+      "mean_delta": 0.048,
+      "mean_shipped": 0.205
+    },
+    "Field 2D": {
       "n": 12,
       "ok": 12,
       "errors": 0,
-      "mean_distance": 0.254,
-      "mean_baseline": 0.298,
-      "mean_delta": 0.043,
-      "mean_shipped": 0.212
-    },
-    "Field 2D": {
-      "n": 8,
-      "ok": 8,
-      "errors": 0,
-      "mean_distance": 0.388,
-      "mean_baseline": 0.278,
-      "mean_delta": -0.11,
-      "mean_shipped": 0.301
+      "mean_distance": 0.412,
+      "mean_baseline": 0.316,
+      "mean_delta": -0.097,
+      "mean_shipped": 0.309
     },
     "Heatmap": {
       "n": 7,
@@ -115,13 +115,13 @@
       "mean_shipped": 0.079
     },
     "Scatter": {
-      "n": 13,
-      "ok": 13,
+      "n": 14,
+      "ok": 14,
       "errors": 0,
       "mean_distance": 0.172,
-      "mean_baseline": 0.401,
-      "mean_delta": 0.229,
-      "mean_shipped": 0.269
+      "mean_baseline": 0.4,
+      "mean_delta": 0.228,
+      "mean_shipped": 0.218
     },
     "Std-band": {
       "n": 8,
@@ -2463,18 +2463,259 @@
       },
       "hard_failures": 0,
       "findings": []
+    },
+    {
+      "id": "Chart2Code_level2_combination_42_v5",
+      "chart": "Scatter",
+      "panel_mode": "multi",
+      "skill": "scatter_relationship",
+      "rationale": "scatter panel_row vs panel_col",
+      "rows_used": 51,
+      "status": "ok",
+      "distance": 0.167,
+      "baseline_distance": 0.389,
+      "delta": 0.222,
+      "selected": "styled",
+      "selected_distance": 0.166,
+      "selected_gain": 0.223,
+      "selection_margin": 0.21,
+      "components": {
+        "aspect": 0.004,
+        "ink": 0.33
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "Chart2Code_level2_combination_44_v3",
+      "chart": "Distribution",
+      "panel_mode": "multi",
+      "skill": "faceted_distribution",
+      "rationale": "faceted hist by panel_group",
+      "rows_used": 399,
+      "status": "ok",
+      "distance": 0.14,
+      "baseline_distance": 0.245,
+      "delta": 0.105,
+      "selected": "styled",
+      "selected_distance": 0.142,
+      "selected_gain": 0.103,
+      "selection_margin": 0.104,
+      "components": {
+        "palette": 0.099,
+        "aspect": 0.001,
+        "ink": 0.382
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "Chart2Code_level2_contour_14_v1",
+      "chart": "Field 2D",
+      "panel_mode": "multi",
+      "skill": "matrix_plate",
+      "rationale": "matrix 8 measures",
+      "rows_used": 40,
+      "status": "ok",
+      "distance": 0.39,
+      "baseline_distance": 0.244,
+      "delta": -0.146,
+      "selected": "plain",
+      "selected_distance": 0.18,
+      "selected_gain": 0.064,
+      "selection_margin": 0.141,
+      "components": {
+        "palette": 0.113,
+        "aspect": 0.8,
+        "ink": 0.669
+      },
+      "hard_failures": 6,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'nitrate_concentration_mg_L' over 'seepage_horizontal_m_day'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'seepage_horizontal_m_day' over 'seepage_vertical_m_day'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'hydraulic_head_anomaly_m' over 'nitrate_concentration_mg_L'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'hydraulic_head_anomaly_m' over 'seepage_horizontal_m_day'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'nitrate_concentration_mg_L' over 'seepage_vertical_m_day'",
+          "severity": "hard"
+        }
+      ]
+    },
+    {
+      "id": "Chart2Code_level2_contour_23_v4",
+      "chart": "Field 2D",
+      "panel_mode": "multi",
+      "skill": "matrix_plate",
+      "rationale": "matrix 7 measures",
+      "rows_used": 40,
+      "status": "ok",
+      "distance": 0.436,
+      "baseline_distance": 0.433,
+      "delta": -0.003,
+      "selected": "plain",
+      "selected_distance": 0.331,
+      "selected_gain": 0.102,
+      "selection_margin": 0.016,
+      "components": {
+        "palette": 0.148,
+        "aspect": 0.766,
+        "ink": 0.827
+      },
+      "hard_failures": 8,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'seedling_recovery_index_0_100' over 'standard_error_index_points'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'biochar_amendment_percent' over 'porewater_salinity_psu'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'porewater_salinity_psu' over 'seedling_recovery_index_0_100'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'replicate_pots' over 'standard_error_index_points'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'biochar_amendment_percent' over 'seedling_recovery_index_0_100'",
+          "severity": "hard"
+        }
+      ]
+    },
+    {
+      "id": "Chart2Code_level2_contour_25_v2",
+      "chart": "Field 2D",
+      "panel_mode": "multi",
+      "skill": "matrix_plate",
+      "rationale": "matrix 7 measures",
+      "rows_used": 40,
+      "status": "ok",
+      "distance": 0.581,
+      "baseline_distance": 0.528,
+      "delta": -0.053,
+      "selected": "plain",
+      "selected_distance": 0.442,
+      "selected_gain": 0.086,
+      "selection_margin": 0.058,
+      "components": {
+        "palette": 0.335,
+        "aspect": 0.779,
+        "ink": 1.0
+      },
+      "hard_failures": 5,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'cross_wound_position_fraction' over 'normalized_actin_signal'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'normalized_actin_signal' over 'signal_standard_error'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'cross_wound_position_fraction' over 'panel_rowpanel_coltime_hours'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'cross_wound_position_fraction' over 'signal_standard_error'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'series_order' over 'signal_standard_error'",
+          "severity": "hard"
+        }
+      ]
+    },
+    {
+      "id": "Chart2Code_level2_contour_25_v3",
+      "chart": "Field 2D",
+      "panel_mode": "multi",
+      "skill": "matrix_plate",
+      "rationale": "matrix 8 measures",
+      "rows_used": 40,
+      "status": "ok",
+      "distance": 0.438,
+      "baseline_distance": 0.363,
+      "delta": -0.075,
+      "selected": "plain",
+      "selected_distance": 0.305,
+      "selected_gain": 0.058,
+      "selection_margin": 0.072,
+      "components": {
+        "palette": 0.077,
+        "aspect": 0.78,
+        "ink": 1.0
+      },
+      "hard_failures": 11,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'normalized_drug_concentration_fraction' over 'temporal_change_fraction_per_min'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'spatial_gradient_fraction_per_mm' over 'temporal_change_fraction_per_min'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'concentration_standard_error_f' over 'spatial_gradient_fraction_per_mm'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'normalized_drug_concentration_fraction' over 'spatial_gradient_fraction_per_mm'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'concentration_standard_error_f' over 'temporal_change_fraction_per_min'",
+          "severity": "hard"
+        }
+      ]
     }
   ],
   "benchmark_anchor_distance": 0.329,
   "selection": {
-    "n": 39,
-    "shipped_mean": 0.257,
-    "always_styled_mean": 0.279,
+    "n": 45,
+    "shipped_mean": 0.258,
+    "always_styled_mean": 0.29,
     "plain_mean": 0.362,
-    "gain_vs_always_styled": 0.022,
-    "gain_vs_plain": 0.104,
-    "picked_styled": 33,
-    "picked_plain": 6,
+    "gain_vs_always_styled": 0.032,
+    "gain_vs_plain": 0.105,
+    "picked_styled": 35,
+    "picked_plain": 10,
     "rule": "closer of plain/styled to the reference; the reference is an input"
   }
 }

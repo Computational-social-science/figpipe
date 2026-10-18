@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-19T03:33:34",
+  "run_at": "2026-10-19T03:38:38",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -9,37 +9,16 @@
     "  passed 8, failed 0",
     "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
     "  wrote knowledge\\evolution_report.json",
-    "  lean: tracked 79.5 -> 79.5 MB, worktree 136.7 -> 136.5 MB"
+    "  lean: tracked 79.5 -> 79.5 MB, worktree 142.9 -> 142.9 MB"
   ],
   "tests_ok": true,
-  "tests_summary": "259 passed, 2 skipped, 1 warning in 52.57s",
+  "tests_summary": "259 passed, 2 skipped, 1 warning in 52.17s",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
   "published": {
-    "pushed": true,
-    "steps": [
-      {
-        "cmd": "git add -A",
-        "code": 0,
-        "tail": []
-      },
-      {
-        "cmd": "git -c user.name=figpipe-bot",
-        "code": 0,
-        "tail": [
-          " create mode 100644 knowledge/runs/2026-10-19T033334.json"
-        ]
-      },
-      {
-        "cmd": "git push origin",
-        "code": 0,
-        "tail": [
-          "   ddde95d..9f14b24  main -> main"
-        ]
-      }
-    ],
-    "withheld": []
+    "pushed": false,
+    "reason": "not yet published"
   },
   "check_results": {
     "L01": {
@@ -151,25 +130,25 @@
   },
   "benchmark_slice": {
     "ran": true,
-    "offset": 66,
+    "offset": 72,
     "tasks": 6,
     "code": 0,
     "tail": [
-      "    type Distribution   ok 2/2   d=0.166 base=0.225 delta=0.058 errors=0",
-      "    type Line           ok 1/1   d=0.438 base=0.564 delta=0.126 errors=0",
-      "    type Std-band       ok 1/1   d=0.145 base=0.271 delta=0.126 errors=0",
+      "    type Distribution   ok 1/1   d=0.14 base=0.245 delta=0.105 errors=0",
+      "    type Field 2D       ok 4/4   d=0.461 base=0.392 delta=-0.069 errors=0",
+      "    type Scatter        ok 1/1   d=0.167 base=0.389 delta=0.222 errors=0",
       "  wrote E:\\2026-AI4S\\figpipe\\corpus\\e2e\\plottwin_report.json"
     ]
   },
   "capabilities": {
     "skills": 15,
     "operators": 19,
-    "benchmark_tasks": 90,
-    "benchmark_ok": 81,
+    "benchmark_tasks": 96,
+    "benchmark_ok": 87,
     "benchmark_success_rate": 1.0,
-    "benchmark_mean_distance": 0.286,
+    "benchmark_mean_distance": 0.291,
     "benchmark_anchor_distance": 0.329,
-    "benchmark_shipped_distance": 0.257,
+    "benchmark_shipped_distance": 0.258,
     "benchmark_unsupported": 9,
     "statistics_reproduced": 15,
     "knowledge_version": 16,
@@ -179,32 +158,32 @@
     "changed": true,
     "delta": {
       "benchmark_tasks": {
-        "before": 84,
-        "after": 90
+        "before": 90,
+        "after": 96
       },
       "benchmark_ok": {
-        "before": 75,
-        "after": 81
+        "before": 81,
+        "after": 87
       },
       "benchmark_mean_distance": {
-        "before": 0.29,
-        "after": 0.286
+        "before": 0.286,
+        "after": 0.291
       },
       "benchmark_shipped_distance": {
-        "before": 0.269,
-        "after": 0.257
+        "before": 0.257,
+        "after": 0.258
       }
     },
     "verdict": {
-      "gains": [
+      "gains": [],
+      "regressions": [
         {
           "field": "benchmark_shipped_distance",
-          "before": 0.269,
-          "after": 0.257
+          "before": 0.257,
+          "after": 0.258
         }
       ],
-      "regressions": [],
-      "ok": true,
+      "ok": false,
       "judged_fields": [
         "benchmark_anchor_distance",
         "benchmark_shipped_distance",
@@ -217,8 +196,14 @@
       ]
     }
   },
-  "ok": true,
-  "capability_ok": true,
-  "capability_regressions": [],
-  "publish_note": "The publish outcome is recorded after the commit that carries this run, so it describes the push triggered by this run; the file's own commit is made by the next scheduled run."
+  "ok": false,
+  "capability_ok": false,
+  "capability_regressions": [
+    {
+      "field": "benchmark_shipped_distance",
+      "before": 0.257,
+      "after": 0.258
+    }
+  ],
+  "publish_note": "capability regression detected; record kept but the run exits non-zero (re-run with --accept-capability-regression to accept)"
 }
