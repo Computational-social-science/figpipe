@@ -1,0 +1,112 @@
+[
+  {
+    "id": "PMC11502666",
+    "chart_type_name": "Distribution",
+    "chart_type": "T4",
+    "panel_mode": "multi",
+    "target_data": "block_id,panel_group,panel_row,panel_col,record_type,condition,model_name,canopy_temperature_excess_c,chlorophyll_fluorescence_yield,nitrogen_stress_score,bin_left_score,bin_right_score,normalized_frequency,false_positive_rate,true_positive_rate,averaging_window_days,auc,standard_error,sample_id,replicate_count\nA,trait_landscape,1,1,surface_cell,,,0.25000,0.75500,-0.16000,,,,,,,,,,0\nA,trait_landsc",
+    "target_rows": 555,
+    "target_cols": 20,
+    "code_chars": 9223,
+    "code_head": "\"\"\"Self-contained renderer for the four-panel ISD figure.\"\"\"\n\nfrom pathlib import Path\n\nimport matplotlib\n\nmatplotlib.use(\"Agg\")\nimport matplotlib.pyplot as plt\nimport numpy as np\nfrom matplotlib.colo"
+  },
+  {
+    "id": "PMC11840003",
+    "chart_type_name": "Box/Violin",
+    "chart_type": "T5",
+    "panel_mode": "multi",
+    "target_data": "block_id,panel_group,panel_row,panel_col,record_type,material_system,coating_family,condition,stress_phase,time_hours,temperature_c,voltage_v,measurement,value,value_unit,uncertainty_sd,replicate_id,category,category_order,parent_category,notes\na,materials hierarchy,1,1,hierarchy_edge,NMC811,,,,,,,,0,tree depth,,,Nickel-rich NMC,1,Layered oxide cathodes,root\na,materials hierarchy,1,1,hierarchy_edg",
+    "target_rows": 1404,
+    "target_cols": 21,
+    "code_chars": 30529,
+    "code_head": "\"\"\"Code-native reconstruction of the PMC11840003 composite figure.\n\nThe original ``code.py`` drew an unrelated synthetic 3 x 4 distribution panel.\nThis version follows the visible topology of the supp"
+  },
+  {
+    "id": "PMC12000431",
+    "chart_type_name": "Distribution",
+    "chart_type": "T4",
+    "panel_mode": "multi",
+    "target_data": "study_id,panel_group,panel_row,panel_col,panel_title,panel_role,record_type,series_id,series_label,line_style,condition_group,sampling_site,x_variable,aerodynamic_diameter_um,density_per_log_um,uncertainty_sd,reference_marker_um,marker_label,marker_color,sample_count,replicate_id,measurement_unit,notes\nAEROVENT-24,field_observation,1,1,\"Intensive-care suite, measured aerosols\",anchor_observation,d",
+    "target_rows": 1415,
+    "target_cols": 23,
+    "code_chars": 8834,
+    "code_head": "\"\"\"Self-contained, deterministic renderer for the four-panel periodicity figure.\"\"\"\nfrom pathlib import Path\n\nimport matplotlib\nmatplotlib.use(\"Agg\")\nimport matplotlib.pyplot as plt\nimport numpy as np"
+  },
+  {
+    "id": "PMC12354736",
+    "chart_type_name": "Distribution",
+    "chart_type": "T4",
+    "panel_mode": "multi",
+    "target_data": "block_id,panel_group,panel_row,panel_col,record_type,condition,time_hours,microbial_state,feature_or_partner,x_coordinate_mm,depth_mm,value,lower_ci,upper_ci,standard_error,interaction_weight,neighborhood_id,source_zone,target_zone,distance_mm,rank_order\nA_enrichment,enrichment_matrix,1,1,matrix_cell,Post-pulse soil cores,240,Aerobic degrader,Oxygen,0,0,0.702,0.4599,0.9441,0.1235,0,1,0,0,0,1\nA_enr",
+    "target_rows": 12197,
+    "target_cols": 21,
+    "code_chars": 83563,
+    "code_head": "from pathlib import Path\n\nimport matplotlib\n\nmatplotlib.use(\"Agg\")\n\nimport matplotlib.pyplot as plt\nimport matplotlib.patches as patches\nfrom matplotlib.colors import Normalize\nfrom matplotlib.lines i"
+  },
+  {
+    "id": "PMC12504421",
+    "chart_type_name": "Heatmap",
+    "chart_type": "T6",
+    "panel_mode": "multi",
+    "target_data": "block_id,panel_group,panel_row,panel_col,record_type,trajectory,condition,site,sampling_week,indicator,indicator_class,measurement_value,measurement_unit,uncertainty_sd,normalized_score,percent_exceedance,overlap_set,overlap_count,method,average_effect,percent_detected,distribution_group,distribution_value,replicate_id\nheatmap_A,trajectory_heatmaps,1,1,trajectory_indicator_score,A,Freshwater recon",
+    "target_rows": 6452,
+    "target_cols": 24,
+    "code_chars": 20473,
+    "code_head": "#!/usr/bin/env python3\n\"\"\"Self-contained release render for the PMC12504421 trajectory composite.\"\"\"\n\nfrom pathlib import Path\n\nimport matplotlib\nmatplotlib.use(\"Agg\")\nimport matplotlib.pyplot as plt\n"
+  },
+  {
+    "id": "PMC12905268",
+    "chart_type_name": "Distribution",
+    "chart_type": "T4",
+    "panel_mode": "multi",
+    "target_data": "block_id,panel_group,panel_row,panel_col,estuary_region,sediment_depth_stratum,depth_order,shoreline_condition,condition_order,record_type,sample_id,denitrification_rate_umol_N_m2_h,summary_mean_umol_N_m2_h,ci95_low_umol_N_m2_h,ci95_high_umol_N_m2_h,replicate_count,core_organic_carbon_percent,bottom_water_temperature_C\ncoastal_denitrification,estuary_profiles,1,1,Salish Sea,0-2 cm,1,Living shoreli",
+    "target_rows": 1197,
+    "target_cols": 18,
+    "code_chars": 122400,
+    "code_head": "\"\"\"Self-contained reproduction of the supplied SOC-stocks figure.\"\"\"\nfrom pathlib import Path\n\nimport matplotlib\nmatplotlib.use(\"Agg\")\nimport matplotlib.pyplot as plt\nfrom matplotlib.lines import Line"
+  },
+  {
+    "id": "PMC13009336",
+    "chart_type_name": "Box/Violin",
+    "chart_type": "T5",
+    "panel_mode": "multi",
+    "target_data": "block_id,panel_group,panel_row,panel_col,record_type,sample_id,timepoint_days,reef_condition,bacterial_cluster,umap_1,umap_2,dmdp_signature_score,percent_target_cells,log2_fold_change_mesocosm,log2_fold_change_field,cell_category,normalized_gene_set_score,replicate_id,measurement_value,measurement_unit,uncertainty_sd,annotation\nA_B_C,community_embedding,1,1,single_bacterial_cell,embed_c0_000,,,0,-",
+    "target_rows": 4455,
+    "target_cols": 22,
+    "code_chars": 13350,
+    "code_head": "\"\"\"Self-contained, deterministic renderer for the PMC13009336 sample figure.\"\"\"\nfrom pathlib import Path\nimport numpy as np\nimport matplotlib\nmatplotlib.use(\"Agg\")\nimport matplotlib.pyplot as plt\nfrom"
+  },
+  {
+    "id": "PMC13022287",
+    "chart_type_name": "Distribution",
+    "chart_type": "T4",
+    "panel_mode": "multi",
+    "target_data": "block_id,panel_group,panel_row,panel_col,record_type,subject_id,cohort,condition,category,category_group,x_value,x_unit,y_value,y_unit,estimate,standard_error,lower_ci,upper_ci,p_value,q_value,color_group,size_value,label,rank\nA,community_ordination,1,1,ordination_point,core_Res_000,Discovery,Restored kelp forest,sediment microbiome,reef status,-0.053011585583534054,NMDS1,0.0045310312438685526,NMD",
+    "target_rows": 6298,
+    "target_cols": 24,
+    "code_chars": 15344,
+    "code_head": "\"\"\"Self-contained, deterministic rendering of the supplied composite figure.\"\"\"\nfrom pathlib import Path\nimport matplotlib as mpl\nimport matplotlib.pyplot as plt\nimport numpy as np\nfrom matplotlib.col"
+  },
+  {
+    "id": "PMC13079874",
+    "chart_type_name": "Box/Violin",
+    "chart_type": "T5",
+    "panel_mode": "multi",
+    "target_data": "block_id,panel_group,panel_row,panel_col,record_type,treatment,hydrologic_zone,measurement,unit,replicate_id,category,subgroup,x_value,y_value,lower_ci,upper_ci,stack_value,score_value,rank_value,significance\n\"a\",\"nitrate_removal\",\"1\",\"1\",\"individual_observation\",\"Unamended sediment\",\"mesocosm\",\"Nitrate removal efficiency\",\"percent\",1.0000,\"whole-cell trial\",\"day 28\",1.0000,53.8807,50.8807,56.8807",
+    "target_rows": 520,
+    "target_cols": 20,
+    "code_chars": 21261,
+    "code_head": "\"\"\"Compact, reference-shaped reconstruction of PMC13079874 panels a-e.\n\nThe a-d values are read from the unchanged long-format data file in the parent\ndirectory.  Panel e is a visual reconstruction of"
+  },
+  {
+    "id": "PMC13106710",
+    "chart_type_name": "Heatmap",
+    "chart_type": "T6",
+    "panel_mode": "multi",
+    "target_data": "block_id,panel_group,panel_row,panel_col,record_type,time_hours,light_phase,individual_id,family_id,treatment,replicate_id,metric_name,metric_unit,value,lower_ci,upper_ci,row_cluster,column_order,display_order,notes\nc_anchor,individual_tidal_heatmap,1,1,heatmap_cell,0,flow_on,M001,MF-01,ambient seawater,,valve pumping activity,percent of individual maximum,48.777,,,,1,0,\"Continuous impedance-deriv",
+    "target_rows": 3241,
+    "target_cols": 20,
+    "code_chars": 25098,
+    "code_head": "\"\"\"Compact, source-shaped reproduction of panels b, c, e and g.\n\nPanel e uses the genotype-by-behavior z-score matrix and genotype labels\nvisible in the supplied source figure; the other panels retain"
+  }
+]

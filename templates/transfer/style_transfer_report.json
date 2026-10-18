@@ -1,0 +1,377 @@
+{
+  "reference": {
+    "width_mm": 184.3,
+    "height_mm": 153.5,
+    "n_text_spans": 49,
+    "size_min_pt": 5.5,
+    "size_median_pt": 6.44,
+    "size_max_pt": 6.5,
+    "n_sizes": 3,
+    "panel_letters": "",
+    "dominant_colours": [
+      "#000000",
+      "#ebebeb",
+      "#3b4992",
+      "#008b45",
+      "#ee0000"
+    ],
+    "line_width_median_pt": 0.5,
+    "rules_h": 0,
+    "rules_v": 0,
+    "spines": {
+      "left": false,
+      "right": false,
+      "top": true,
+      "bottom": false
+    }
+  },
+  "derived_style": {
+    "rc": {
+      "font.size": 6.5,
+      "axes.labelsize": 6.5,
+      "axes.titlesize": 7.0,
+      "xtick.labelsize": 6.0,
+      "ytick.labelsize": 6.0,
+      "legend.fontsize": 6.0,
+      "axes.linewidth": 0.5,
+      "xtick.major.width": 0.5,
+      "ytick.major.width": 0.5
+    },
+    "palette": [
+      "#000000",
+      "#3b4992",
+      "#008b45",
+      "#ee0000"
+    ],
+    "height_mm": 152.4,
+    "source": "Seeds/0001/2026-NHB-The growing concentration of national influence in global science.pdf"
+  },
+  "baseline": {
+    "distance": {
+      "distance": 0.122,
+      "details": {
+        "sizes": 0.247,
+        "palette": 0.124,
+        "letters": 0.0,
+        "lines": 0.0,
+        "rules": 0.075,
+        "aspect": 0.097
+      },
+      "a": {
+        "width_mm": 184.3,
+        "height_mm": 153.5,
+        "n_text_spans": 49,
+        "size_min_pt": 5.5,
+        "size_median_pt": 6.44,
+        "size_max_pt": 6.5,
+        "n_sizes": 3,
+        "panel_letters": "",
+        "dominant_colours": [
+          "#000000",
+          "#ebebeb",
+          "#3b4992",
+          "#008b45",
+          "#ee0000"
+        ],
+        "line_width_median_pt": 0.5,
+        "rules_h": 0,
+        "rules_v": 0,
+        "spines": {
+          "left": false,
+          "right": false,
+          "top": true,
+          "bottom": false
+        }
+      },
+      "b": {
+        "width_mm": 183.0,
+        "height_mm": 168.0,
+        "n_text_spans": 33,
+        "size_min_pt": 6.0,
+        "size_median_pt": 6.0,
+        "size_max_pt": 7.0,
+        "n_sizes": 2,
+        "panel_letters": "",
+        "dominant_colours": [
+          "#000000",
+          "#1f1f1f",
+          "#ffffff",
+          "#8c8c8c",
+          "#b3b3b3"
+        ],
+        "line_width_median_pt": 0.5,
+        "rules_h": 0,
+        "rules_v": 0,
+        "spines": {
+          "left": false,
+          "right": false,
+          "top": false,
+          "bottom": false
+        }
+      }
+    },
+    "reward": 0.878,
+    "hard_findings": [],
+    "collisions": [],
+    "variant": {
+      "rc": "default",
+      "height": "default",
+      "palette": "default"
+    }
+  },
+  "best": {
+    "distance": {
+      "distance": 0.093,
+      "details": {
+        "sizes": 0.201,
+        "palette": 0.1,
+        "letters": 0.0,
+        "lines": 0.0,
+        "rules": 0.075,
+        "aspect": 0.0
+      },
+      "a": {
+        "width_mm": 184.3,
+        "height_mm": 153.5,
+        "n_text_spans": 49,
+        "size_min_pt": 5.5,
+        "size_median_pt": 6.44,
+        "size_max_pt": 6.5,
+        "n_sizes": 3,
+        "panel_letters": "",
+        "dominant_colours": [
+          "#000000",
+          "#ebebeb",
+          "#3b4992",
+          "#008b45",
+          "#ee0000"
+        ],
+        "line_width_median_pt": 0.5,
+        "rules_h": 0,
+        "rules_v": 0,
+        "spines": {
+          "left": false,
+          "right": false,
+          "top": true,
+          "bottom": false
+        }
+      },
+      "b": {
+        "width_mm": 183.0,
+        "height_mm": 152.4,
+        "n_text_spans": 33,
+        "size_min_pt": 6.0,
+        "size_median_pt": 6.0,
+        "size_max_pt": 7.0,
+        "n_sizes": 3,
+        "panel_letters": "",
+        "dominant_colours": [
+          "#000000",
+          "#1f1f1f",
+          "#ffffff",
+          "#8c8c8c",
+          "#b3b3b3"
+        ],
+        "line_width_median_pt": 0.5,
+        "rules_h": 0,
+        "rules_v": 0,
+        "spines": {
+          "left": false,
+          "right": false,
+          "top": false,
+          "bottom": false
+        }
+      }
+    },
+    "reward": 0.907,
+    "hard_findings": [],
+    "collisions": [],
+    "variant": {
+      "rc": "profile",
+      "height": "aspect",
+      "palette": "profile"
+    }
+  },
+  "improvement": {
+    "distance": 0.029,
+    "reward": 0.029
+  },
+  "variants": [
+    {
+      "variant": {
+        "rc": "default",
+        "height": "default",
+        "palette": "default"
+      },
+      "distance": 0.122,
+      "reward": 0.878,
+      "hard_findings": [],
+      "collisions": 0
+    },
+    {
+      "variant": {
+        "rc": "default",
+        "height": "default",
+        "palette": "profile"
+      },
+      "distance": 0.116,
+      "reward": 0.884,
+      "hard_findings": [],
+      "collisions": 0
+    },
+    {
+      "variant": {
+        "rc": "default",
+        "height": "aspect",
+        "palette": "default"
+      },
+      "distance": 0.113,
+      "reward": 0.887,
+      "hard_findings": [],
+      "collisions": 0
+    },
+    {
+      "variant": {
+        "rc": "default",
+        "height": "aspect",
+        "palette": "profile"
+      },
+      "distance": 0.106,
+      "reward": 0.894,
+      "hard_findings": [],
+      "collisions": 0
+    },
+    {
+      "variant": {
+        "rc": "profile",
+        "height": "default",
+        "palette": "default"
+      },
+      "distance": 0.109,
+      "reward": 0.891,
+      "hard_findings": [],
+      "collisions": 0
+    },
+    {
+      "variant": {
+        "rc": "profile",
+        "height": "default",
+        "palette": "profile"
+      },
+      "distance": 0.103,
+      "reward": 0.897,
+      "hard_findings": [],
+      "collisions": 0
+    },
+    {
+      "variant": {
+        "rc": "profile",
+        "height": "aspect",
+        "palette": "default"
+      },
+      "distance": 0.099,
+      "reward": 0.901,
+      "hard_findings": [],
+      "collisions": 0
+    },
+    {
+      "variant": {
+        "rc": "profile",
+        "height": "aspect",
+        "palette": "profile"
+      },
+      "distance": 0.093,
+      "reward": 0.907,
+      "hard_findings": [],
+      "collisions": 0
+    }
+  ],
+  "score": {
+    "pdf": "E:\\2026-AI4S\\figpipe\\templates\\transfer\\style_transfer_best.pdf",
+    "dimensions": {
+      "execution_pass_rate": {
+        "value": 1.0,
+        "scale": [
+          0,
+          2
+        ],
+        "evidence": "rendered and audit-clean"
+      },
+      "clarity_overlap": {
+        "value": 2,
+        "scale": [
+          0,
+          2
+        ],
+        "evidence": {
+          "collisions": []
+        }
+      },
+      "visual_fidelity": {
+        "value": 90.7,
+        "scale": [
+          0,
+          100
+        ],
+        "evidence": {
+          "style_distance": 0.093,
+          "details": {
+            "sizes": 0.201,
+            "palette": 0.1,
+            "letters": 0.0,
+            "lines": 0.0,
+            "rules": 0.075,
+            "aspect": 0.0
+          }
+        }
+      },
+      "layout_consistency": {
+        "value": 2,
+        "scale": [
+          0,
+          2
+        ],
+        "evidence": {
+          "width_mm": 183.0,
+          "height_mm": 152.4,
+          "panel_letters": 0,
+          "expected": null
+        }
+      },
+      "text_label_fidelity": {
+        "value": 2,
+        "scale": [
+          0,
+          2
+        ],
+        "evidence": {
+          "n_text_spans": 33,
+          "letters_ok": true
+        }
+      }
+    },
+    "invalidity": {
+      "direct_image_dependency_rate": {
+        "value": 0.0,
+        "evidence": "template pipeline never loads a target image"
+      },
+      "pixel_painting_or_raster_tracing_rate": {
+        "value": 0.0,
+        "evidence": "all marks are vector primitives"
+      }
+    },
+    "not_measured": {
+      "component_completeness": "no expected component list supplied",
+      "data_pattern_fidelity": "no published/computed statistics supplied",
+      "chart_type_consistency": "no expected intent supplied",
+      "axis_fidelity": "needs the reference panel or an interpretation; not measured",
+      "legend_colorbar_completeness": "needs the reference panel or an interpretation; not measured",
+      "scientific_notation_fidelity": "needs the reference panel or an interpretation; not measured",
+      "code_validity_editability": "needs the reference panel or an interpretation; not measured"
+    },
+    "n_measured": 5,
+    "n_not_measured": 7,
+    "note": "dimensions are reported separately, as the peer protocol requires; a weighted total is optional and deliberately not computed here"
+  },
+  "note": "exhaustive over eight compliant variants; every page was rendered, audited and profiled; the same invocation gives the same table"
+}

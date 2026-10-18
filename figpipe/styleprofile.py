@@ -310,6 +310,68 @@ def _resolve_region(page, bbox_pt, caption_prefix):
 
 
 # --------------------------------------------------------------------------------------
+# From measurement to template: turning a profile into style settings
+# --------------------------------------------------------------------------------------
+
+#: The submission band. A measured reference may sit outside it (journals render larger); the
+#: transfer clamps into the band rather than copying the reference out of spec.
+BAND = (5.0, 7.0)
+
+
+def palette_from_profile(profile: "StyleProfile", n: int = 4) -> list[str]:
+    """The reference's own colours, most-used first, without white/background greys.
+
+    Used for series colours when the target style is a specific paper. The colours are copied
+    from the measurement, not invented: that is the whole point of profiling a vector source.
+    """
+    out: list[str] = []
+    for c in profile.colours:
+        rgb = _rgb(c["hex"])
+        if rgb is None:
+            continue
+        r, g, b = rgb
+        if r > 240 and g > 240 and b > 240:        # page white
+            continue
+        if abs(r - g) < 6 and abs(g - b) < 6 and r > 200:   # light grey band
+            continue
+        if c["hex"] in out:
+            continue
+        out.append(c["hex"])
+        if len(out) >= n:
+            break
+    return out
+
+
+def style_from_profile(profile: "StyleProfile", columns: float = 2.0,
+                       height_mm: float | None = None) -> dict:
+    """Derive a compliant, ready-to-use style from a measured profile.
+
+    Returns `rc` (matplotlib rcParams), `palette`, and `height_mm` (the reference's own aspect,
+    clamped into 120-170 mm). Every number is traceable: the font tier comes from the measured
+    median clamped into 5-7 pt, the palette from the measured colours, the height from the
+    measured width/height. This is the step that turns "we measured a style" into "we can use it".
+    """
+    import numpy as np
+    sizes = sorted(profile.sizes_pt)
+    median = float(np.median(sizes)) if sizes else 6.0
+    base = min(max(round(median * 2) / 2, BAND[0]), BAND[1])     # half-point tier
+    label = min(max(round((median + 0.25) * 2) / 2, BAND[0]), BAND[1])
+    tick = min(max(base - 0.5, BAND[0]), BAND[1])
+    widths = sorted(profile.line_widths_pt)
+    lw = float(np.median(widths)) if widths else 0.5
+    rc = {"font.size": base, "axes.labelsize": label, "axes.titlesize": BAND[1],
+          "xtick.labelsize": tick, "ytick.labelsize": tick,
+          "legend.fontsize": tick, "axes.linewidth": round(lw, 2),
+          "xtick.major.width": round(lw, 2), "ytick.major.width": round(lw, 2)}
+    height = height_mm
+    if height is None and profile.width_mm and profile.height_mm:
+        aspect = profile.width_mm / profile.height_mm
+        height = min(max(round(183.0 / aspect, 1), 90.0), 170.0)
+    return {"rc": rc, "palette": palette_from_profile(profile),
+            "height_mm": height, "source": profile.source}
+
+
+# --------------------------------------------------------------------------------------
 # Comparison
 # --------------------------------------------------------------------------------------
 
@@ -317,6 +379,23 @@ def _resolve_region(page, bbox_pt, caption_prefix):
 #: property is off -- the per-property details are always returned alongside it.
 WEIGHTS = {"sizes": 0.30, "palette": 0.25, "letters": 0.15, "lines": 0.10,
            "rules": 0.10, "aspect": 0.10}
+
+
+def _size_distance(a: "StyleProfile", b: "StyleProfile") -> float:
+    """Wasserstein-1 between the two size distributions, normalised by 2 pt.
+
+    WHY NOT A HISTOGRAM: a 1-pt bin cannot see a 6.0 -> 6.5 change (both fall in [6,7)), so the
+    first style-transfer run improved six pages to an identical distance -- the metric, not the
+    figure, was blind to the difference. A continuous CDF distance is monotone in the shift and
+    does not depend on where the bin boundaries happen to land.
+    """
+    if not a.sizes_pt or not b.sizes_pt:
+        raise ValueError("both profiles need text sizes to be comparable")
+    grid = np.linspace(4.0, 12.0, 401)
+    ca = np.searchsorted(np.sort(a.sizes_pt), grid, side="right") / len(a.sizes_pt)
+    cb = np.searchsorted(np.sort(b.sizes_pt), grid, side="right") / len(b.sizes_pt)
+    w1 = float(np.sum(np.abs(ca - cb)) * (grid[1] - grid[0]))
+    return min(1.0, w1 / 2.0)
 
 
 def _size_hist(profile, bins=None) -> np.ndarray:
@@ -335,11 +414,7 @@ def compare(a: StyleProfile, b: StyleProfile) -> dict:
     direction cannot be explained is useless for driving a template, and driving templates is
     what this module exists for.
     """
-    ha, hb = _size_hist(a), _size_hist(b)
-    if ha.sum() == 0 or hb.sum() == 0:
-        raise ValueError("both profiles need text sizes to be comparable")
-    ha, hb = ha / ha.sum(), hb / hb.sum()
-    sizes = 0.5 * float(np.abs(ha - hb).sum())            # total variation, 0..1
+    sizes = _size_distance(a, b)
 
     def _palette(a, b):
         ca = [(c["hex"], c["count"]) for c in a.colours]

@@ -223,3 +223,12 @@ tracked ≤ 80 MB、worktree ≤ 150 MB 的预算内。
   方法、数据规模、评测协议与许可差异记录在 `PEER_LANDSCAPE.md`；只借鉴方法，不复制无许可代码。
 - 首测：种子论文 Fig 7 的发表 PDF 区 vs 复现版面，风格距离 0.158（sizes 0.367 / palette 0.124 /
   aspect 0.097）。下一步是让模板参数在规范带内被搜索以缩小距离，并把统计对账作为第二重目标。
+
+## 8. 从测量到成图：`style_transfer`（2026-10-18 追加）
+
+- `figpipe/styleprofile.py` 增加 `style_from_profile()` / `palette_from_profile()`：把实测画像转
+  成合规 rc（5–7 pt 档）、参考配色与参考宽高比（高度夹在 90–170 mm）。
+- `scripts/style_transfer.py`：参考 profile + 面板/数据 → 8 个合规变体全量渲染、审计、测量 → 取
+  距离最小者，输出 PDF/PNG、最佳画像与报告（含 NPF 维度评分）。
+- 实测：种子 Fig 7 四窗风格距离 0.122 → 0.093（−24%），八变体全部通过硬门槛。
+- 度量修正：字号距离由 1 pt 直方图改为 CDF Wasserstein-1，否则 6.0→6.5 的变化不可见。
