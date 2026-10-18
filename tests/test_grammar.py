@@ -155,6 +155,56 @@ def test_letterless_plate_is_allowed_and_a_missing_letter_is_not():
     assert composite.check(fig2, fig2._figpipe_report) == []
 
 
+def test_the_reproduction_report_declares_its_limits():
+    """A reproduction claim must carry its layer, estimator, deviations and own self-check.
+
+    The lesson from the first version: the report said "14 of 14" statistics (there were 15),
+    and its reproduction layer was unstated, so "reproduced" was unfalsifiable. The report now
+    derives its count from its own agreement tree and declares which layer each figure reaches.
+    """
+    report_path = ROOT / "templates" / "seed" / "report.json"
+    if not report_path.is_file():
+        pytest.skip("no reproduction report yet")
+    import json
+    r = json.loads(report_path.read_text(encoding="utf-8"))
+    for key in ("reproduction_layers", "discrepancies", "self_check", "figures",
+                "not_reproduced"):
+        assert key in r, f"the report no longer declares {key!r}"
+    assert set(r["not_reproduced"]) >= {"Fig 2", "Fig 4", "Fig 6"}
+    for name, entry in r["not_reproduced"].items():
+        assert entry.get("why"), f"{name} has no recorded reason"
+    for f in r["figures"]:
+        for key in ("layer", "estimator", "deviations", "audit_ok", "text_collisions",
+                    "published_panels", "reproduced_panels"):
+            assert key in f, f"{f['figure']} does not declare {key!r}"
+        assert f["audit_ok"], f"{f['figure']} failed its own audit"
+        assert f["text_collisions"] == [], f"{f['figure']}: text printed on text"
+    # the count is DERIVED: walking the tree must reproduce the recorded number
+    n = 0
+
+    def walk(node):
+        nonlocal n
+        if isinstance(node, dict):
+            if "published" in node and "computed" in node:
+                assert "delta" in node
+                n += 1 if node["delta"] is not None else 0
+                return
+            for v in node.values():
+                walk(v)
+
+    walk(r["agreement"])
+    assert n == r["self_check"]["statistics_recorded"], (
+        "the report's statistics count disagrees with its own agreement tree")
+    assert n == 15, f"{n} statistics recorded; the paper's reproduction table has 15"
+    assert r["self_check"]["worst_abs_delta"] <= 0.01
+    assert r["self_check"]["ok"] is True
+    # the one unresolved estimator is recorded, not hidden behind the matching value
+    d = next(x for x in r["discrepancies"] if x["figure"] == "Fig 1b")
+    assert {"raw_scale", "log_scale", "published", "resolution"} <= set(d)
+    assert d["raw_scale"] != d["log_scale"], (
+        "the Fig 1b raw/log ambiguity must record both estimator values")
+
+
 def test_the_seed_reproduction_still_matches_the_published_statistics():
     """THE TEST THAT MATTERS: re-build the seed panels and compare with the paper's numbers.
 
@@ -174,3 +224,9 @@ def test_the_seed_reproduction_still_matches_the_published_statistics():
     report = fig._figpipe_report
     assert composite.check(fig, report) == []
     assert report["n_panels"] == 4
+    # the stored report must not be stale: recomputing the panel must reproduce its numbers
+    import json
+    stored = json.loads((ROOT / "templates" / "seed" / "report.json").read_text(encoding="utf-8"))
+    fig7 = next(f for f in stored["figures"] if f["figure"].startswith("fig7"))
+    assert fig7["computed"] == meta["computed"], (
+        "templates/seed/report.json is stale; run reproduce_seed.py --stage render")

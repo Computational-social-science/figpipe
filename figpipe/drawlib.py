@@ -400,6 +400,31 @@ def _series_style(series: list[str], palette=None, markers=None):
             for i, s in enumerate(series)}
 
 
+def _empty_corner(ax, xs, ys):
+    """The axes-fraction corner with the fewest data points, for auto-placed annotations.
+
+    The published figures put 'r = ...' in whichever corner the panel left empty -- a decision
+    the author made per panel. A drawer that always writes at top-left collides with the data on
+    exactly the panels where the series rises into that corner, which is why the reproduction
+    kept sprouting overlaps that the original did not have.
+    """
+    xs = np.asarray(xs, dtype=float)
+    ys = np.asarray(ys, dtype=float)
+    if len(xs) == 0:
+        return (0.03, 0.97)
+    x0, x1 = ax.get_xlim()
+    y0, y1 = ax.get_ylim()
+    fx = (xs - x0) / (x1 - x0) if x1 != x0 else np.zeros_like(xs)
+    fy = (ys - y0) / (y1 - y0) if y1 != y0 else np.zeros_like(ys)
+    candidates = [
+        ((0.03, 0.97), (fx < 0.45) & (fy > 0.55)),
+        ((0.97, 0.97), (fx > 0.55) & (fy > 0.55)),
+        ((0.03, 0.03), (fx < 0.45) & (fy < 0.45)),
+        ((0.97, 0.03), (fx > 0.55) & (fy < 0.45)),
+    ]
+    return min(candidates, key=lambda c: int(c[1].sum()))[0]
+
+
 def ax_trend_band(ax, df: pd.DataFrame, x: str, y: str, lo: str | None = None,
                   hi: str | None = None, series: str | None = None,
                   fit: str | None = None, reference: float | None = None,
@@ -411,6 +436,7 @@ def ax_trend_band(ax, df: pd.DataFrame, x: str, y: str, lo: str | None = None,
                   band: str | None = None, connect: bool = False,
                   marker_size: float = 2.6, palette=None, markers=None,
                   fit_color=None, data_band_color=None,
+                  legend_below: bool = False,
                   xticks=None, title: str | None = None):
     """A yearly series with its uncertainty: the seed paper's dominant panel.
 
@@ -444,11 +470,15 @@ def ax_trend_band(ax, df: pd.DataFrame, x: str, y: str, lo: str | None = None,
             raise KeyError(f"column {col!r} not in frame; has {list(df.columns)}")
     groups = list(dict.fromkeys(df[series].astype(str))) if series else [None]
     sty = _series_style(groups if series else ["_"], palette, markers)
+    xs_all: list[float] = []
+    ys_all: list[float] = []
     for g in groups:
         sub = df if g is None else df[df[series].astype(str) == g]
         sub = sub.sort_values(x)
         xs = sub[x].to_numpy(dtype=float)
         ys = sub[y].to_numpy(dtype=float)
+        xs_all.extend(xs.tolist())
+        ys_all.extend(ys.tolist())
         colour, marker = sty[g if series else "_"]
         if connect:
             ax.plot(xs, ys, "-", lw=0.6, color="#8c8c8c", zorder=1)
@@ -472,14 +502,20 @@ def ax_trend_band(ax, df: pd.DataFrame, x: str, y: str, lo: str | None = None,
     if annotate:
         for g, spec in annotate.items():
             colour = sty[g][0] if g in sty else "black"
-            # a tuple (text, x, y) places one series' note; a bare string uses annotate_xy. Two
-            # series annotated at the same point is not an annotation, it is an overlap.
+            # a tuple (text, x, y) places one series' note; a bare string uses annotate_xy,
+            # which may be "auto" -- the emptiest corner of the panel. Two series annotated at
+            # one point is an overlap; a fixed corner that lands on the data is a collision the
+            # target never had, because the original author nudged each label per panel.
             if isinstance(spec, (tuple, list)) and len(spec) == 3:
                 text, ax_x, ax_y = spec
+                ha = "left"
             else:
-                text, (ax_x, ax_y) = spec, annotate_xy
+                text = spec
+                ax_x, ax_y = _empty_corner(ax, xs_all, ys_all) if annotate_xy == "auto" \
+                    else annotate_xy
+                ha = "left" if ax_x <= 0.5 else "right"
             ax.text(ax_x, ax_y, text, transform=ax.transAxes,
-                    fontsize=6, color=colour, va="top", ha="left")
+                    fontsize=6, color=colour, va="top", ha=ha)
     for note in notes or []:
         ax.text(note.get("x", 0.5), note.get("y", 0.5), note["text"],
                 transform=ax.transAxes if note.get("axes", True) else ax.transData,
@@ -494,9 +530,17 @@ def ax_trend_band(ax, df: pd.DataFrame, x: str, y: str, lo: str | None = None,
     if title:
         ax.set_title(title, fontsize=7)
     if legend and series:
-        ax.legend(frameon=False, ncol=legend_cols or len(groups), loc=legend_loc,
-                  handlelength=1.0, columnspacing=1.0, handletextpad=0.4,
-                  fontsize=6)
+        if legend_below:
+            # the published figures put the legend BENEATH the axes, not inside the data area;
+            # an inside legend is the most common way a faithful reproduction starts to look
+            # "assembled" rather than drawn
+            ax.legend(frameon=False, ncol=legend_cols or len(groups),
+                      loc="upper center", bbox_to_anchor=(0.5, -0.26),
+                      handlelength=1.0, columnspacing=1.0, handletextpad=0.4, fontsize=6)
+        else:
+            ax.legend(frameon=False, ncol=legend_cols or len(groups), loc=legend_loc,
+                      handlelength=1.0, columnspacing=1.0, handletextpad=0.4,
+                      fontsize=6)
     return None
 
 

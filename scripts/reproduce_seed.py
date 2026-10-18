@@ -101,6 +101,104 @@ PUBLISHED = {
 }
 
 
+#: A reproduction is only as complete as the LAYER it reaches. Saying "reproduced" without a
+#: layer is an unfalsifiable claim: this work re-ran the authors' transformation chain on their
+#: published aggregate tables; it did NOT rebuild those tables from the OpenAlex snapshot.
+REPRODUCTION_LAYERS = {
+    "L0 data construction": (
+        "NOT reproduced. The authors built the tables from a ~240M-work OpenAlex snapshot via "
+        "AWS Athena SQL, four key-phrase extractors and a 10-year citation window. This work "
+        "starts from the published OUTPUT_* aggregates and the authors' own 10,046-term censored "
+        "list, so an error in that construction would be INHERITED, not detected."),
+    "L1 transformation": (
+        "Reproduced. The R recipe was re-implemented in Python: sum weights per dyad-year, "
+        "filter to the censored terms, outer-join the two networks, per-year z-scoring, "
+        "relative influence as the difference, per-country centrality, Gini, mean +/- s.e.m. "
+        "This is a re-implementation of the SAME formulas, not an independent derivation: "
+        "where the authors' code is wrong, the reproduction is wrong the same way."),
+    "L2 figures": (
+        "Partially reproduced: 13 of the paper's 18 panels (Fig 1a/1b 2, Fig 3a/b/c 3, Fig 5 4, "
+        "Fig 7 4). Fig 2 (QAP permutations) is not in the package; Fig 4 was omitted (same "
+        "construction as Fig 3); Fig 6 needs a country->region mapping the package does not "
+        "ship."),
+    "L3 typography": (
+        "Deliberately different. The originals are ggplot2 figures rendered by the journal "
+        "(8x8 in, ~9-10 pt, grey grid, red/green diverging); the reproductions follow Nature's "
+        "submission spec (183 mm, 5-7 pt, Okabe-Ito, red-blue diverging). The statistics agree; "
+        "the graphic language does not, and must not be read as fidelity."),
+}
+
+#: Per-figure provenance of the reproduction claim: panels, estimator, inputs, deviations.
+FIGURE_META = {
+    "fig1_term_papers_and_density": {
+        "published_panels": 2, "reproduced_panels": 2,
+        "layer": "L1+L2 (L0 not reproduced)",
+        "estimator": ("Fig 1a: share of unique (term, year, influencer) rows per country; "
+                      "Fig 1b: Pearson r on log10(n_papers), log10(n_cites)"),
+        "inputs": ["OUTPUT_List_of_Censored_Terms_2024_03_19.csv",
+                   "OUTPUT_Python_MultiPaper_Discursive_Influence_2024_03_19.csv",
+                   "OUTPUT_Python_MultiPaper_Number_of_Cites_per_Influencer_Paper_"
+                   "Attributional_Influence_2024_03_19.csv"],
+        "deviations": [
+            "Fig 1b shows marginal histograms on BOTH axes in the paper; the reproduction has "
+            "the top marginal only, because the right side is used by the colour bar.",
+            "Fig 1a country names come from a small vendored ISO2 table; the authors use "
+            "raster::ccodes(), which is not in the package.",
+            "Fig 1b annotation quotes the log-scale r (0.775) to match the drawn scale; the "
+            "raw-scale r is 0.83. See the Fig 1b discrepancy record."],
+    },
+    "fig3_centrality_and_gini": {
+        "published_panels": 3, "reproduced_panels": 4,
+        "layer": "L1+L2 (L0 not reproduced)",
+        "estimator": "Pearson r of yearly Gini / yearly mean centrality against year",
+        "inputs": ["OUTPUT_Python_MultiPaper_Attributional_Influence_2024_03_19.csv",
+                   "OUTPUT_Python_MultiPaper_Discursive_Influence_2024_03_19.csv"],
+        "deviations": [
+            "The paper letters panel c once and splits it into two facets; the reproduction "
+            "uses letters c and d, so it carries one more letter.",
+            "Published facets use free_y; the reproduction shares one y scale per network.",
+            "The published panels carry a light grey grid; the reproduction has no gridlines "
+            "(figpipe style rule)."],
+    },
+    "fig5_relative_influence": {
+        "published_panels": 4, "reproduced_panels": 4,
+        "layer": "L1+L2 (L0 not reproduced)",
+        "estimator": ("Pearson r of yearly mean relative influence against year, per "
+                      "core/periphery dyad class"),
+        "inputs": ["OUTPUT_Python_MultiPaper_Attributional_Influence_2024_03_19.csv",
+                   "OUTPUT_Python_MultiPaper_Discursive_Influence_2024_03_19.csv"],
+        "deviations": [
+            "Pane titles shortened from three lines to one.",
+            "The loess band is APPROXIMATED (tricube local linear, global residual variance); "
+            "it is not ggplot2's loess variance -- stated in drawlib.",
+            "Directional labels ('greater discursive/attributational influence') are placed by "
+            "eye from the published figure, not measured."],
+    },
+    "fig7_national_signature_mimicry": {
+        "published_panels": 4, "reproduced_panels": 4,
+        "layer": "L1+L2 (L0 not reproduced)",
+        "estimator": "Pearson r of yearly mean cosine similarity against year, n=19 (1995-2013)",
+        "inputs": ["OUTPUT_Python_HNB_RR1_National_Signature_Influence_2024_03_19.csv"],
+        "deviations": [
+            "Pane titles shortened from three lines to one.",
+            "Marker and fit colours matched to the published panel (black points, blue fit)."],
+    },
+}
+
+#: Statistics whose ESTIMATOR could not be fully resolved from the package. A reproduction that
+#: silently switches estimator to hit a published number is not a reproduction, so the ambiguity
+#: is recorded as data rather than hidden behind the matching value.
+DISCREPANCIES = [
+    {"figure": "Fig 1b", "statistic": "Pearson r, term papers vs attributional papers",
+     "raw_scale": 0.83, "log_scale": 0.775, "published": 0.78,
+     "resolution": ("UNRESOLVED: published 0.78 matches the log-scale value and the axes are "
+                    "log10, but the authors' ggpubr::stat_cor call reads as raw-scale. Both "
+                    "values are reported; the figure quotes the drawn scale."),
+     "risk": ("if the authors computed raw-scale r, then 0.78 and 0.775 agree by coincidence "
+              "and the gap is real")},
+]
+
+
 # --------------------------------------------------------------------------------------
 # Inputs
 # --------------------------------------------------------------------------------------
@@ -454,16 +552,17 @@ def plate_fig3() -> tuple[list, dict]:
         panels.append(grammar.panel(
             "trend_with_uncertainty", part, x="Year", y="mean", lo="lo", hi="hi",
             series="series", band="data", fit="lm", reference=0.0,
-            xlabel="Year", ylabel="Country centrality\n(z-scores)",
-            title=f"{network} influence", legend=True,
+            xlabel="Year" if network == "Attributional" else "",
+            ylabel="Country centrality\n(z-scores)" if network == "Attributional" else "",
+            title=f"{network} influence", legend=network == "Attributional",
             palette=["#3b4cc0", "#d62728"], data_band_color="#b3b3b3",
-            legend_cols=2, legend_loc="lower center",
+            legend_below=True, legend_cols=2,
             annotate={"Core": (f"r = {rs['Core']:.2f}, n = {ns['Core']}", 0.04, 0.93),
                       "Periphery": (f"r = {rs['Periphery']:.2f}, n = {ns['Periphery']}",
                                     0.04, 0.79)}))
     return panels, {"computed": computed,
                     "layout": {"columns": 2.0, "height_mm": 168.0, "letters": True,
-                               "margins": {"bottom": 15.0}}}
+                               "margins": {"bottom": 24.0}}}
 
 
 def plate_fig1() -> tuple[list, dict]:
@@ -497,9 +596,17 @@ def _render(name: str, panels: list, layout_kw: dict) -> dict:
     report = getattr(fig, "_figpipe_report", composite.inspect(fig))
     problems = composite.check(fig, report)
     paths = layout.save(fig, stem)
+    # The span-bbox overlap test is run at GLYPH level: rotated tick labels (the 20 rotated
+    # country names of Fig 1a) make the span boxes overlap while the glyphs are clean, and a
+    # check that cries wolf on every rotated axis is a check everyone learns to ignore.
     a = audit.audit(paths[0], expect_width_mm=WIDTH_MM, check_overlap=False)
+    collisions = audit.overlapping_glyphs(paths[0])
     hard = [f for f in a["findings"]
             if f["check"] in ("font_size", "width", "height", "font_type", "exists")]
+    if collisions:
+        hard.append({"check": "text_collision",
+                     "detail": f"{len(collisions)} span pair(s) printed on top of each other",
+                     "examples": collisions[:5]})
     return {"figure": name,
             "pdf": str(pathlib.Path(paths[0]).relative_to(ROOT)),
             "png": str(pathlib.Path(paths[1]).relative_to(ROOT)),
@@ -508,6 +615,7 @@ def _render(name: str, panels: list, layout_kw: dict) -> dict:
             "gaps_x_mm": report["gaps_x_mm"], "gaps_y_mm": report["gaps_y_mm"],
             "width_mm": a["width_mm"], "height_mm": a["height_mm"],
             "audit_ok": a["ok"], "audit_hard_findings": hard,
+            "text_collisions": collisions,
             "geometry_problems": problems}
 
 
@@ -534,14 +642,19 @@ def render() -> dict:
         panels, meta = builder()
         rep = _render(name, panels, meta["layout"])
         rep["computed"] = meta["computed"]
+        rep.update(FIGURE_META.get(name, {}))
         figures.append(rep)
         print(f"  {name:<34} {rep['n_panels']} panels  {rep['width_mm']:.1f} x "
               f"{rep['height_mm']:.1f} mm  audit={'OK' if rep['audit_ok'] else 'FAIL'}  "
-              f"geometry={'OK' if not rep['geometry_problems'] else 'PROBLEM'}")
+              f"geometry={'OK' if not rep['geometry_problems'] else 'PROBLEM'}  "
+              f"collisions={len(rep['text_collisions'])}")
         for f in rep["audit_hard_findings"]:
             print(f"      {f['check']}: {f['detail'][:100]}")
         for p in rep["geometry_problems"]:
             print(f"      geometry: {p[:120]}")
+        for c in rep["text_collisions"]:
+            print(f"      collision: {c['a'][:26]!r} <-> {c['b'][:26]!r} "
+                  f"({c['glyph_pairs']} glyph pairs)")
     fig1 = next(f for f in figures if f["figure"].startswith("fig1"))
     fig3 = next(f for f in figures if f["figure"].startswith("fig3"))
     fig5 = next(f for f in figures if f["figure"].startswith("fig5"))
@@ -557,14 +670,45 @@ def render() -> dict:
     report = {
         "about": ("Reproduction of the seed paper's figures (NHB 2026, national influence) "
                   "from its own published data, through figpipe.grammar intents."),
+        "reproduction_layers": REPRODUCTION_LAYERS,
         "not_reproduced": {
-            "Fig 2": "QAP regression coefficients are not in the published data package",
-            "Fig 4": "same construction as Fig 3 from relative influence; omitted for run time",
-            "Fig 6": "arc diagram and region matrix need a country->region mapping the seed "
-                     "does not include (R uses raster::ccodes + a custom UNREGION1 table)",
+            "Fig 2": {"layer": "L0/L1", "why": "QAP regression coefficients and permutation "
+                                               "outputs are not in the published data package"},
+            "Fig 4": {"layer": "L1/L2", "why": "same construction as Fig 3 from relative "
+                                               "influence; omitted to keep the run short -- the "
+                                               "derived tables already support it"},
+            "Fig 6": {"layer": "L2", "why": "arc diagram and region matrix need a country->region "
+                                            "mapping the seed does not include (the R recipe uses "
+                                            "raster::ccodes + a custom UNREGION1 table)"},
         },
+        "discrepancies": DISCREPANCIES,
         "agreement": checks,
         "figures": figures,
+    }
+    # THE REPORT CHECKS ITSELF. Counting statistics by hand produced a wrong number once
+    # ("14 of 14" when there were 15), so the count and the worst delta are computed here and
+    # asserted against the data, not written down from memory.
+    deltas = []
+
+    def walk(node):
+        if isinstance(node, dict):
+            if "published" in node and "computed" in node:
+                if node.get("delta") is not None:
+                    deltas.append(node["delta"])
+                return
+            for v in node.values():
+                walk(v)
+
+    walk(checks)
+    worst = max((abs(d) for d in deltas), default=None)
+    report["self_check"] = {
+        "statistics_recorded": len(deltas),
+        "worst_abs_delta": worst,
+        "threshold": 0.01,
+        "ok": worst is not None and worst <= 0.01,
+        "hard_findings": sum(len(f["audit_hard_findings"]) for f in figures),
+        "text_collisions": sum(len(f["text_collisions"]) for f in figures),
+        "note": "counts are derived from the agreement tree, never typed by hand",
     }
     (OUT / "report.json").write_text(
         json.dumps(report, indent=2, ensure_ascii=False), encoding="utf-8")

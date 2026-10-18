@@ -143,6 +143,65 @@ def overlapping_text(pdf_path, iou_threshold: float = 0.30):
     return out
 
 
+def overlapping_glyphs(pdf_path, min_ratio: float = 0.25):
+    """Text-on-text collisions measured at GLYPH level, grouped by span pair.
+
+    WHY NOT THE SPAN BBOX TEST
+        `overlapping_text` compares axis-aligned span boxes. For ROTATED tick labels -- the 20
+        rotated country names of a ranked bar panel, for instance -- every neighbouring pair of
+        boxes overlaps heavily while the glyphs themselves are cleanly separated along the
+        diagonal. Running the span test on such a figure reports 22 "collisions" that a reader
+        would never see, which is worse than no check: it teaches everyone to ignore the check.
+
+        Comparing individual character boxes and ignoring pairs inside the same span removes the
+        rotated-label false positives while still catching the real defect (two labels printed on
+        top of each other). A collision is reported when the overlap covers at least `min_ratio`
+        of the smaller glyph box.
+    """
+    pymupdf = _require_pymupdf()
+    if pymupdf is None:
+        raise RuntimeError("PyMuPDF is required: pip install pymupdf")
+    out = []
+    doc = pymupdf.open(str(pdf_path))
+    try:
+        for pno, page in enumerate(doc, 1):
+            chars = []
+            for block in page.get_text("rawdict").get("blocks", []):
+                for line in block.get("lines", []):
+                    for sid, span in enumerate(line.get("spans", [])):
+                        text = "".join(c.get("c", "") for c in span.get("chars", []))
+                        for c in span.get("chars", []):
+                            ch = c.get("c", "")
+                            if not ch.strip():
+                                continue
+                            chars.append({"bbox": c["bbox"], "char": ch,
+                                          "span": text, "span_id": (pno, id(span), sid)})
+            chars.sort(key=lambda c: c["bbox"][0])
+            counts: dict[tuple, int] = {}
+            for i, a in enumerate(chars):
+                ax0, ay0, ax1, ay1 = a["bbox"]
+                for b in chars[i + 1:]:
+                    bx0, by0, bx1, by1 = b["bbox"]
+                    if bx0 >= ax1:
+                        break
+                    if a["span_id"] == b["span_id"]:
+                        continue
+                    ix = min(ax1, bx1) - max(ax0, bx0)
+                    iy = min(ay1, by1) - max(ay0, by0)
+                    if ix <= 0 or iy <= 0:
+                        continue
+                    area = min((ax1 - ax0) * (ay1 - ay0), (bx1 - bx0) * (by1 - by0))
+                    if area > 0 and (ix * iy) / area >= min_ratio:
+                        key = tuple(sorted([a["span"], b["span"]]))
+                        counts[key] = counts.get(key, 0) + 1
+            for (ta, tb), n in counts.items():
+                out.append({"page": pno, "a": ta, "b": tb, "glyph_pairs": n})
+    finally:
+        doc.close()
+    out.sort(key=lambda d: -d["glyph_pairs"])
+    return out
+
+
 def audit(pdf_path, min_pt=MIN_PT_DEFAULT, max_pt=MAX_PT_DEFAULT,
           expect_width_mm=None, check_overlap=True) -> dict:
     """Run every check and return a structured report.

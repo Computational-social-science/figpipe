@@ -1,10 +1,36 @@
 {
   "about": "Reproduction of the seed paper's figures (NHB 2026, national influence) from its own published data, through figpipe.grammar intents.",
-  "not_reproduced": {
-    "Fig 2": "QAP regression coefficients are not in the published data package",
-    "Fig 4": "same construction as Fig 3 from relative influence; omitted for run time",
-    "Fig 6": "arc diagram and region matrix need a country->region mapping the seed does not include (R uses raster::ccodes + a custom UNREGION1 table)"
+  "reproduction_layers": {
+    "L0 data construction": "NOT reproduced. The authors built the tables from a ~240M-work OpenAlex snapshot via AWS Athena SQL, four key-phrase extractors and a 10-year citation window. This work starts from the published OUTPUT_* aggregates and the authors' own 10,046-term censored list, so an error in that construction would be INHERITED, not detected.",
+    "L1 transformation": "Reproduced. The R recipe was re-implemented in Python: sum weights per dyad-year, filter to the censored terms, outer-join the two networks, per-year z-scoring, relative influence as the difference, per-country centrality, Gini, mean +/- s.e.m. This is a re-implementation of the SAME formulas, not an independent derivation: where the authors' code is wrong, the reproduction is wrong the same way.",
+    "L2 figures": "Partially reproduced: 13 of the paper's 18 panels (Fig 1a/1b 2, Fig 3a/b/c 3, Fig 5 4, Fig 7 4). Fig 2 (QAP permutations) is not in the package; Fig 4 was omitted (same construction as Fig 3); Fig 6 needs a country->region mapping the package does not ship.",
+    "L3 typography": "Deliberately different. The originals are ggplot2 figures rendered by the journal (8x8 in, ~9-10 pt, grey grid, red/green diverging); the reproductions follow Nature's submission spec (183 mm, 5-7 pt, Okabe-Ito, red-blue diverging). The statistics agree; the graphic language does not, and must not be read as fidelity."
   },
+  "not_reproduced": {
+    "Fig 2": {
+      "layer": "L0/L1",
+      "why": "QAP regression coefficients and permutation outputs are not in the published data package"
+    },
+    "Fig 4": {
+      "layer": "L1/L2",
+      "why": "same construction as Fig 3 from relative influence; omitted to keep the run short -- the derived tables already support it"
+    },
+    "Fig 6": {
+      "layer": "L2",
+      "why": "arc diagram and region matrix need a country->region mapping the seed does not include (the R recipe uses raster::ccodes + a custom UNREGION1 table)"
+    }
+  },
+  "discrepancies": [
+    {
+      "figure": "Fig 1b",
+      "statistic": "Pearson r, term papers vs attributional papers",
+      "raw_scale": 0.83,
+      "log_scale": 0.775,
+      "published": 0.78,
+      "resolution": "UNRESOLVED: published 0.78 matches the log-scale value and the axes are log10, but the authors' ggpubr::stat_cor call reads as raw-scale. Both values are reported; the figure quotes the drawn scale.",
+      "risk": "if the authors computed raw-scale r, then 0.78 and 0.775 agree by coincidence and the gap is real"
+    }
+  ],
   "agreement": {
     "fig1b_r": {
       "computed": 0.775,
@@ -114,10 +140,25 @@
       "height_mm": 96.0,
       "audit_ok": true,
       "audit_hard_findings": [],
+      "text_collisions": [],
       "geometry_problems": [],
       "computed": {
         "hexbin_r": 0.775
-      }
+      },
+      "published_panels": 2,
+      "reproduced_panels": 2,
+      "layer": "L1+L2 (L0 not reproduced)",
+      "estimator": "Fig 1a: share of unique (term, year, influencer) rows per country; Fig 1b: Pearson r on log10(n_papers), log10(n_cites)",
+      "inputs": [
+        "OUTPUT_List_of_Censored_Terms_2024_03_19.csv",
+        "OUTPUT_Python_MultiPaper_Discursive_Influence_2024_03_19.csv",
+        "OUTPUT_Python_MultiPaper_Number_of_Cites_per_Influencer_Paper_Attributional_Influence_2024_03_19.csv"
+      ],
+      "deviations": [
+        "Fig 1b shows marginal histograms on BOTH axes in the paper; the reproduction has the top marginal only, because the right side is used by the colour bar.",
+        "Fig 1a country names come from a small vendored ISO2 table; the authors use raster::ccodes(), which is not in the package.",
+        "Fig 1b annotation quotes the log-scale r (0.775) to match the drawn scale; the raw-scale r is 0.83. See the Fig 1b discrepancy record."
+      ]
     },
     {
       "figure": "fig3_centrality_and_gini",
@@ -140,6 +181,7 @@
       "height_mm": 168.0,
       "audit_ok": true,
       "audit_hard_findings": [],
+      "text_collisions": [],
       "geometry_problems": [],
       "computed": {
         "gini": {
@@ -156,7 +198,20 @@
             "Periphery": 0.855
           }
         }
-      }
+      },
+      "published_panels": 3,
+      "reproduced_panels": 4,
+      "layer": "L1+L2 (L0 not reproduced)",
+      "estimator": "Pearson r of yearly Gini / yearly mean centrality against year",
+      "inputs": [
+        "OUTPUT_Python_MultiPaper_Attributional_Influence_2024_03_19.csv",
+        "OUTPUT_Python_MultiPaper_Discursive_Influence_2024_03_19.csv"
+      ],
+      "deviations": [
+        "The paper letters panel c once and splits it into two facets; the reproduction uses letters c and d, so it carries one more letter.",
+        "Published facets use free_y; the reproduction shares one y scale per network.",
+        "The published panels carry a light grey grid; the reproduction has no gridlines (figpipe style rule)."
+      ]
     },
     {
       "figure": "fig5_relative_influence",
@@ -174,13 +229,27 @@
       "height_mm": 168.0,
       "audit_ok": true,
       "audit_hard_findings": [],
+      "text_collisions": [],
       "geometry_problems": [],
       "computed": {
         "Core→Core": 0.884,
         "Core→Periphery": 0.471,
         "Periphery→Core": -0.431,
         "Periphery→Periphery": 0.431
-      }
+      },
+      "published_panels": 4,
+      "reproduced_panels": 4,
+      "layer": "L1+L2 (L0 not reproduced)",
+      "estimator": "Pearson r of yearly mean relative influence against year, per core/periphery dyad class",
+      "inputs": [
+        "OUTPUT_Python_MultiPaper_Attributional_Influence_2024_03_19.csv",
+        "OUTPUT_Python_MultiPaper_Discursive_Influence_2024_03_19.csv"
+      ],
+      "deviations": [
+        "Pane titles shortened from three lines to one.",
+        "The loess band is APPROXIMATED (tricube local linear, global residual variance); it is not ggplot2's loess variance -- stated in drawlib.",
+        "Directional labels ('greater discursive/attributational influence') are placed by eye from the published figure, not measured."
+      ]
     },
     {
       "figure": "fig7_national_signature_mimicry",
@@ -198,13 +267,34 @@
       "height_mm": 168.0,
       "audit_ok": true,
       "audit_hard_findings": [],
+      "text_collisions": [],
       "geometry_problems": [],
       "computed": {
         "Core→Core": 0.958,
         "Core→Periphery": 0.659,
         "Periphery→Core": -0.624,
         "Periphery→Periphery": -0.686
-      }
+      },
+      "published_panels": 4,
+      "reproduced_panels": 4,
+      "layer": "L1+L2 (L0 not reproduced)",
+      "estimator": "Pearson r of yearly mean cosine similarity against year, n=19 (1995-2013)",
+      "inputs": [
+        "OUTPUT_Python_HNB_RR1_National_Signature_Influence_2024_03_19.csv"
+      ],
+      "deviations": [
+        "Pane titles shortened from three lines to one.",
+        "Marker and fit colours matched to the published panel (black points, blue fit)."
+      ]
     }
-  ]
+  ],
+  "self_check": {
+    "statistics_recorded": 15,
+    "worst_abs_delta": 0.005,
+    "threshold": 0.01,
+    "ok": true,
+    "hard_findings": 0,
+    "text_collisions": 0,
+    "note": "counts are derived from the agreement tree, never typed by hand"
+  }
 }
