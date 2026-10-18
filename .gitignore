@@ -31,3 +31,7 @@ Seeds/**/dataverse_files/*.pbz2
 # Seed reproduction: the edgelist aggregation is a regenerable intermediate, not an artefact.
 corpus/seed/cache/
 
+
+# The report DOCX is regenerable from scripts/build_capability_report.py; the PDF is the deliverable.
+reports/*.docx
+

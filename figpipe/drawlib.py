@@ -475,7 +475,15 @@ def ax_trend_band(ax, df: pd.DataFrame, x: str, y: str, lo: str | None = None,
     for g in groups:
         sub = df if g is None else df[df[series].astype(str) == g]
         sub = sub.sort_values(x)
-        xs = sub[x].to_numpy(dtype=float)
+        is_datetime = pd.api.types.is_datetime64_any_dtype(sub[x])
+        if is_datetime:
+            # a datetime axis plotted as raw numbers shows matplotlib's epoch offset
+            # ("x1e15") whose exponent renders at 4.2 pt -- outside Nature's 5-7 pt band.
+            # Convert to date numbers and format real dates instead.
+            import matplotlib.dates as mdates
+            xs = mdates.date2num(pd.to_datetime(sub[x]).dt.to_pydatetime())
+        else:
+            xs = sub[x].to_numpy(dtype=float)
         ys = sub[y].to_numpy(dtype=float)
         xs_all.extend(xs.tolist())
         ys_all.extend(ys.tolist())
@@ -521,6 +529,12 @@ def ax_trend_band(ax, df: pd.DataFrame, x: str, y: str, lo: str | None = None,
                 transform=ax.transAxes if note.get("axes", True) else ax.transData,
                 fontsize=6, color=note.get("colour", "black"),
                 ha=note.get("ha", "center"), va=note.get("va", "center"))
+    if is_datetime:
+        import matplotlib.dates as mdates
+        ax.xaxis.set_major_locator(mdates.AutoDateLocator())
+        ax.xaxis.set_major_formatter(
+            mdates.ConciseDateFormatter(ax.xaxis.get_major_locator()))
+        ax.xaxis.get_offset_text().set_visible(False)
     if xticks is not None:
         ax.set_xticks(list(xticks))
     # "" suppresses the label deliberately; None means "use the column name". The two cases are
