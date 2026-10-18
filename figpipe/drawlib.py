@@ -267,7 +267,7 @@ def ax_heatmap(ax, df: pd.DataFrame, xlabel: str = "", ylabel: str = "",
 
 
 def ax_boxplot(ax, df: pd.DataFrame, group: str, value: str, xlabel: str = "",
-               ylabel: str = ""):
+               ylabel: str = "", color: str | None = None):
     """Box plots per group, median marked, fliers suppressed at this size."""
     df = _uniq(df)
     groups = [str(g) for g in pd.unique(df[group])]
@@ -278,7 +278,7 @@ def ax_boxplot(ax, df: pd.DataFrame, group: str, value: str, xlabel: str = "",
                     whiskerprops={"linewidth": 0.5}, capprops={"linewidth": 0.5},
                     flierprops={"markersize": 1.6, "markeredgewidth": 0.2})
     for patch in bp["boxes"]:
-        patch.set_facecolor(style.OKABE_ITO["sky_blue"])
+        patch.set_facecolor(color or style.OKABE_ITO["sky_blue"])
         patch.set_alpha(0.85)
     ax.set_xticks(range(1, len(groups) + 1))
     ax.set_xticklabels(groups)
@@ -706,7 +706,7 @@ def ax_histogram(ax, df: pd.DataFrame, value: str, bins: int = 20,
                  xlabel: str = "", ylabel: str = "",
                  xscale: str = "linear", yscale: str = "linear",
                  alpha: float = 0.42, legend: bool = True,
-                 title: str | None = None):
+                 title: str | None = None, color: str | None = None):
     """Distribution of one measured column, optionally split by a categorical column.
 
     A histogram is the classic sanity check a reader expects before trusting a mean; it is also
@@ -731,7 +731,7 @@ def ax_histogram(ax, df: pd.DataFrame, value: str, bins: int = 20,
     else:
         vals = df[value].to_numpy(dtype=float)
         ax.hist(vals, bins=bins, density=density, alpha=0.55,
-                color=style.OKABE_ITO["sky_blue"], edgecolor="black",
+                color=color or style.OKABE_ITO["sky_blue"], edgecolor="black",
                 linewidth=0.3)
     ax.set_xscale(xscale)
     ax.set_yscale(yscale)

@@ -1,0 +1,276 @@
+{
+  "benchmark": {
+    "name": "PlotTwin-Bench",
+    "license": "CC BY-NC 4.0",
+    "source": "figmirror/PlotTwin-Bench",
+    "arxiv": "2608.28814",
+    "note": "deterministic metrics only; official combined score requires the benchmark's VLM scorer and is NOT claimed here"
+  },
+  "n_tasks": 10,
+  "n_ok": 10,
+  "mean_distance": 0.268,
+  "mean_baseline": 0.378,
+  "mean_improvement": 0.11,
+  "improved": 9,
+  "worse": 1,
+  "ties": 0,
+  "mean_best_of_two": 0.252,
+  "decision_service": {
+    "up": false,
+    "url": "http://127.0.0.1:8090",
+    "detail": "no health endpoint answered; the service is probably not running"
+  },
+  "tasks": [
+    {
+      "id": "PMC11502666",
+      "chart": "Distribution",
+      "panel_mode": "multi",
+      "skill": "faceted_distribution",
+      "rationale": "faceted hist by panel_group",
+      "rows_used": 554,
+      "status": "ok",
+      "distance": 0.175,
+      "baseline_distance": 0.218,
+      "delta": 0.043,
+      "components": {
+        "palette": 0.152,
+        "aspect": 0.009,
+        "ink": 0.398
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "PMC11840003",
+      "chart": "Box/Violin",
+      "panel_mode": "multi",
+      "skill": "distribution_comparison",
+      "rationale": "box panel_row by panel_group",
+      "rows_used": 1403,
+      "status": "ok",
+      "distance": 0.197,
+      "baseline_distance": 0.441,
+      "delta": 0.244,
+      "components": {
+        "palette": 0.149,
+        "aspect": 0.211,
+        "ink": 0.302
+      },
+      "hard_failures": 1,
+      "findings": [
+        {
+          "check": "height",
+          "detail": "170.0 mm exceeds the 170.0 mm maximum",
+          "severity": "hard"
+        }
+      ]
+    },
+    {
+      "id": "PMC12000431",
+      "chart": "Distribution",
+      "panel_mode": "multi",
+      "skill": "faceted_distribution",
+      "rationale": "faceted hist by panel_group",
+      "rows_used": 1414,
+      "status": "ok",
+      "distance": 0.202,
+      "baseline_distance": 0.255,
+      "delta": 0.053,
+      "components": {
+        "palette": 0.291,
+        "aspect": 0.005,
+        "ink": 0.177
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "PMC12354736",
+      "chart": "Distribution",
+      "panel_mode": "multi",
+      "skill": "faceted_distribution",
+      "rationale": "faceted hist by panel_row",
+      "rows_used": 12196,
+      "status": "ok",
+      "distance": 0.295,
+      "baseline_distance": 0.355,
+      "delta": 0.06,
+      "components": {
+        "palette": 0.299,
+        "aspect": 0.183,
+        "ink": 0.399
+      },
+      "hard_failures": 1,
+      "findings": [
+        {
+          "check": "height",
+          "detail": "170.0 mm exceeds the 170.0 mm maximum",
+          "severity": "hard"
+        }
+      ]
+    },
+    {
+      "id": "PMC12504421",
+      "chart": "Heatmap",
+      "panel_mode": "multi",
+      "skill": "matrix_plate",
+      "rationale": "pivot panel_group x record_type of panel_row",
+      "rows_used": 4,
+      "status": "ok",
+      "distance": 0.288,
+      "baseline_distance": 0.426,
+      "delta": 0.138,
+      "components": {
+        "palette": 0.112,
+        "aspect": 0.166,
+        "ink": 0.852
+      },
+      "hard_failures": 3,
+      "findings": [
+        {
+          "check": "height",
+          "detail": "170.0 mm exceeds the 170.0 mm maximum",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'site_distribution_observation' over 'trajectory_indicator_score'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'feature_summary overlap_intersection' over 'site_distribution_observation'",
+          "severity": "hard"
+        }
+      ]
+    },
+    {
+      "id": "PMC12905268",
+      "chart": "Distribution",
+      "panel_mode": "multi",
+      "skill": "faceted_distribution",
+      "rationale": "faceted hist by shoreline_condition",
+      "rows_used": 1196,
+      "status": "ok",
+      "distance": 0.316,
+      "baseline_distance": 0.327,
+      "delta": 0.011,
+      "components": {
+        "palette": 0.256,
+        "aspect": 0.564,
+        "ink": 0.219
+      },
+      "hard_failures": 1,
+      "findings": [
+        {
+          "check": "height",
+          "detail": "170.0 mm exceeds the 170.0 mm maximum",
+          "severity": "hard"
+        }
+      ]
+    },
+    {
+      "id": "PMC13009336",
+      "chart": "Box/Violin",
+      "panel_mode": "multi",
+      "skill": "distribution_comparison",
+      "rationale": "box panel_row by panel_group",
+      "rows_used": 4454,
+      "status": "ok",
+      "distance": 0.178,
+      "baseline_distance": 0.61,
+      "delta": 0.432,
+      "components": {
+        "aspect": 0.009,
+        "ink": 0.346
+      },
+      "hard_failures": 1,
+      "findings": [
+        {
+          "check": "height",
+          "detail": "170.0 mm exceeds the 170.0 mm maximum",
+          "severity": "hard"
+        }
+      ]
+    },
+    {
+      "id": "PMC13022287",
+      "chart": "Distribution",
+      "panel_mode": "multi",
+      "skill": "faceted_distribution",
+      "rationale": "faceted hist by panel_row",
+      "rows_used": 6297,
+      "status": "ok",
+      "distance": 0.262,
+      "baseline_distance": 0.293,
+      "delta": 0.031,
+      "components": {
+        "palette": 0.267,
+        "aspect": 0.283,
+        "ink": 0.227
+      },
+      "hard_failures": 1,
+      "findings": [
+        {
+          "check": "height",
+          "detail": "170.0 mm exceeds the 170.0 mm maximum",
+          "severity": "hard"
+        }
+      ]
+    },
+    {
+      "id": "PMC13079874",
+      "chart": "Box/Violin",
+      "panel_mode": "multi",
+      "skill": "distribution_comparison",
+      "rationale": "box panel_row by panel_group",
+      "rows_used": 519,
+      "status": "ok",
+      "distance": 0.405,
+      "baseline_distance": 0.65,
+      "delta": 0.245,
+      "components": {
+        "aspect": 0.314,
+        "ink": 0.497
+      },
+      "hard_failures": 1,
+      "findings": [
+        {
+          "check": "height",
+          "detail": "170.0 mm exceeds the 170.0 mm maximum",
+          "severity": "hard"
+        }
+      ]
+    },
+    {
+      "id": "PMC13106710",
+      "chart": "Heatmap",
+      "panel_mode": "multi",
+      "skill": "matrix_plate",
+      "rationale": "matrix 7 measures",
+      "rows_used": 40,
+      "status": "ok",
+      "distance": 0.36,
+      "baseline_distance": 0.205,
+      "delta": -0.155,
+      "components": {
+        "palette": 0.109,
+        "aspect": 0.661,
+        "ink": 0.688
+      },
+      "hard_failures": 2,
+      "findings": [
+        {
+          "check": "height",
+          "detail": "170.0 mm exceeds the 170.0 mm maximum",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'column_order' over 'display_order'",
+          "severity": "hard"
+        }
+      ]
+    }
+  ]
+}

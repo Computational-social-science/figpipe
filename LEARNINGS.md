@@ -358,3 +358,18 @@ Nature 的 PDF 可能是放大生成的。做法：找到页面尺寸与最终�
 同时修复：趋势面板遇到 datetime 轴时，matplotlib 会画 `×10^15` 偏差文本（4.2 pt，违反 5–7 pt
 带）——改为日期数值 + ConciseDateFormatter 并隐藏 offset。**这是"真画一遍"才会暴露的缺陷，也是
 重构必须从入口层开始的原因。**
+
+## 18. 权威基准的首批端到端数字（2026-10-19）
+
+`scripts/bench_plottwin.py` 在 **PlotTwin-Bench**（FigMirror，arXiv 2608.28814，CC BY-NC 4.0）
+上跑了 10 个任务（官方参考图 + target_data，本地评测、不再分发数据）：10/10 成功执行，
+风格距离（栅格可测的调色板/宽高比/墨迹密度）**0.378 → 0.268**，9 个改善、1 个变差；
+best-of-two 0.252。这是**确定性指标**，不是官方 combined 分（后者需要其 VLM scorer）。
+
+**必须记住的教训**：第一次运行时 styled 与 plain 的距离完全相同（delta=0.0）——因为 skill
+的默认 height 覆盖了参考宽高比、且 palette 只施加到带 palette 参数的 drawer。**"看起来在
+做风格迁移"和"真的改变了像素"是两回事**，修复后才有了上面的 0.11 平均改善。
+
+决策模型接口：`figpipe/decision.py` 已接到共享的 StartLux-Decision 服务（`/v1/systemone`），
+无静默回退（不可用即 `DecisionUnavailable`，无选项即 `DecisionRejected`）；服务当前未启动，
+基准 harness 的映射回退路径已接好但未被真实调用——启动方式见 decision-service/scripts/serve.ps1。

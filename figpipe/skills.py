@@ -305,6 +305,8 @@ def op_style_profile(ctx: SkillContext, profile=None):
         for p in ctx.panels:
             if "palette" in p.kwargs:
                 p.kwargs["palette"] = pal
+            elif p.draw in ("histogram", "boxplot"):
+                p.kwargs["color"] = pal[0]
     ctx.trace.append(f"style.profile({getattr(prof, 'source', 'profile')})")
 
 
@@ -443,6 +445,11 @@ def run(name: str, data: pd.DataFrame, out_stem=None, **params):
     if params.get("profile") and ctx.reference is None:
         op_style_profile(ctx, profile=params["profile"])
     if ctx.reference is not None:
+        if "height_mm" not in params:
+            # a reference style's aspect is the point of style transfer; a skill's default
+            # height must not silently win over it when the caller did not ask for one
+            ctx.layout["height_mm"] = styleprofile.style_from_profile(
+                ctx.reference)["height_mm"]
         pal = styleprofile.style_from_profile(ctx.reference)["palette"]
         if pal:
             for p in ctx.panels:
