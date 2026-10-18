@@ -19,16 +19,6 @@
   "ties": 4,
   "mean_best_of_two": 0.265,
   "semantic_violations": 0,
-  "official_code_channel": {
-    "channel": "code_deviation",
-    "weight_upstream": 0.35,
-    "note": "official deterministic channel only; the 0.65 vision channel is NOT run, so this is not the combined score",
-    "n_scored": 15,
-    "n_unavailable": 5,
-    "mean_score": 92.68,
-    "min_score": 68.86,
-    "max_score": 100.0
-  },
   "decision_service": {
     "up": false,
     "url": "http://127.0.0.1:8090",
@@ -4825,6 +4815,16 @@
   ],
   "benchmark_anchor_distance": 0.305,
   "benchmark_shipped_anchor_distance": 0.252,
+  "official_code_channel": {
+    "channel": "code_deviation",
+    "weight_upstream": 0.35,
+    "note": "official deterministic channel only; the 0.65 vision channel is NOT run, so this is not the combined score",
+    "n_scored": 15,
+    "n_unavailable": 5,
+    "mean_score": 92.68,
+    "min_score": 68.86,
+    "max_score": 100.0
+  },
   "code_version": "8ea6d2b2ae0c",
   "freshness": {
     "fresh": [
