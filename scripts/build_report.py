@@ -564,11 +564,12 @@ imitate.</p>
   {hidden_note}
 </div>
 <div class="okbox" style="margin-top:14px">{_selection_text(bench.get("selection"))}</div>
-<div class="note"><b>Stale rows:</b> {bench.get("n_stale", 0)} of {n_ok} executed tasks were
-measured with an earlier version of the rendering code (fingerprint
-<code>{esc(bench.get("code_version", "—"))}</code>). Re-measure a chart type with
-<code>--types X --scan</code> after any change to the shared style/layout layer; a stale row can
-make a fix look like a regression.</div>
+<div class="note"><b>Measurement freshness:</b> {bench.get("n_fresh", 0)} of {n_ok} executed tasks
+were measured with the current rendering code (fingerprint
+<code>{esc(bench.get("code_version", "—"))}</code>), {bench.get("n_stale", 0)} with an earlier
+version, and {bench.get("n_unknown", 0)} before the fingerprint was recorded — those are
+<b>unknown</b>, not stale. Re-measure a chart type with <code>--types X --scan</code> after a change
+to the shared style/layout layer; a stale row can make a fix look like a regression.</div>
 <div class="note"><b>A style metric cannot see a wrong number.</b> Every figure is now also checked
 by <code>figpipe/semantics.py</code>: the printed r must match the data's r, no drawn point may fall
 outside the axes, and the axis labels must be the ones the panel claims. Semantic violations in this

@@ -431,10 +431,33 @@ def _code_version() -> str:
 CODE_VERSION = _code_version()
 
 
+def freshness(tasks) -> dict:
+    """Three-valued freshness: fresh / stale / unknown.
+
+    WHY THREE, NOT TWO: the first version reported every row without a recorded version as
+    "stale", so 117 of 141 rows stayed permanently stale and the signal became noise. A row whose
+    fingerprint was never recorded is UNKNOWN -- it may have been rendered by the current code, we
+    simply cannot prove it. Collapsing unknown into stale is the same error as collapsing a missing
+    measurement into a passing one.
+    """
+    fresh, stale, unknown = [], [], []
+    for t in tasks:
+        if t.get("status") != "ok":
+            continue
+        version = t.get("code_version")
+        if not version:
+            unknown.append(t.get("id"))
+        elif version == CODE_VERSION:
+            fresh.append(t.get("id"))
+        else:
+            stale.append(t.get("id"))
+    return {"fresh": fresh, "stale": stale, "unknown": unknown,
+            "n_fresh": len(fresh), "n_stale": len(stale), "n_unknown": len(unknown)}
+
+
 def stale_tasks(tasks) -> list[str]:
-    """Ids whose measurement predates the current code fingerprint."""
-    return [t.get("id") for t in tasks
-            if t.get("status") == "ok" and t.get("code_version") != CODE_VERSION]
+    """Ids KNOWN to have been measured by a different rendering fingerprint."""
+    return freshness(tasks)["stale"]
 
 
 def run_task(row: dict, out_dir: pathlib.Path) -> dict:
@@ -841,8 +864,12 @@ def main(argv=None) -> int:
     report["benchmark_anchor_distance"] = _anchor_distance(report["tasks"])
     report["benchmark_shipped_anchor_distance"] = _shipped_anchor_distance(report["tasks"])
     report["code_version"] = CODE_VERSION
-    report["stale_tasks"] = stale_tasks(report["tasks"])
-    report["n_stale"] = len(report["stale_tasks"])
+    fresh = freshness(report["tasks"])
+    report["freshness"] = fresh
+    report["stale_tasks"] = fresh["stale"]
+    report["n_stale"] = fresh["n_stale"]
+    report["n_unknown"] = fresh["n_unknown"]
+    report["n_fresh"] = fresh["n_fresh"]
     # SELECTION IS MEASURED ON ITS OWN SUBSET. Only tasks rendered after the decision existed
     # carry `selected_distance`; averaging those against a mean over ALL tasks compares two
     # different task sets -- the exact defect this project has now fixed three times. Every

@@ -274,8 +274,14 @@ def test_stale_rows_are_detectable_not_guessed():
     assert "bench_plottwin.py" not in fp_block.split("for rel in")[1].split("):")[0]
     fresh = [{"id": "a", "status": "ok", "code_version": bench.CODE_VERSION}]
     old = [{"id": "b", "status": "ok", "code_version": "deadbeef1234"}]
-    unsupported = [{"id": "c", "status": "unsupported"}]
+    missing = [{"id": "c", "status": "ok"}]                 # predates the field
+    unsupported = [{"id": "d", "status": "unsupported"}]
     assert bench.stale_tasks(fresh) == []
     assert bench.stale_tasks(old) == ["b"]
     assert bench.stale_tasks(unsupported) == []
     assert bench.stale_tasks(fresh + old) == ["b"]
+    # UNKNOWN IS NOT STALE. A row without a recorded version may well have been rendered by the
+    # current code; reporting it as stale made 117 of 141 rows permanently "stale".
+    f = bench.freshness(fresh + old + missing + unsupported)
+    assert f["n_fresh"] == 1 and f["n_stale"] == 1 and f["n_unknown"] == 1
+    assert bench.stale_tasks(missing) == []

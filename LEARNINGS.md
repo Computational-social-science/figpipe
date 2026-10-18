@@ -755,3 +755,21 @@ Two milestones reached this round:
   1. every supported chart type now benefits from style transfer (was 2 negative types)
   2. the selection step is measured on 96 tasks: shipped 0.237 vs always-styled 0.264 vs plain
      0.349 -- deciding beats transferring by 0.027 and beats not styling by 0.112.
+
+
+## 36. "Unknown" is not "stale" (2026-10-19)
+
+The staleness signal fired on 129 of 141 rows and was wrong. Diagnosis: 117 rows were measured
+BEFORE the `code_version` field existed, so `t.get("code_version") != CODE_VERSION` was true for
+them forever. A row whose fingerprint was never recorded may well have been rendered by the current
+code -- we simply cannot prove it.
+
+`freshness()` is now three-valued: fresh / stale / unknown, reported separately. `stale_tasks()`
+returns only the rows KNOWN to have been rendered by a different fingerprint.
+
+This is the same error class as collapsing a missing measurement into a passing one -- which this
+project already refuses to do for knowledge rules (`ok=None` for UNCHECKED). The rule generalises:
+**absence of evidence must be its own value, not the negative of the claim.**
+
+Benchmark pool COMPLETE this round: 141/150 executed, 9 classified unsupported (3D x7,
+Network/Tree x2), 0 errors, success rate 1.0.
