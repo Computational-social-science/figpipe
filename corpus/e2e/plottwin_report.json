@@ -6,18 +6,18 @@
     "arxiv": "2608.28814",
     "note": "deterministic metrics only; official combined score requires the benchmark's VLM scorer and is NOT claimed here"
   },
-  "n_tasks": 66,
-  "n_ok": 59,
+  "n_tasks": 72,
+  "n_ok": 65,
   "n_unsupported": 7,
   "n_error": 0,
   "unsupported_types": {},
-  "mean_distance": 0.302,
-  "mean_baseline": 0.369,
-  "mean_improvement": 0.068,
-  "improved": 40,
+  "mean_distance": 0.292,
+  "mean_baseline": 0.364,
+  "mean_improvement": 0.072,
+  "improved": 44,
   "worse": 15,
-  "ties": 4,
-  "mean_best_of_two": 0.273,
+  "ties": 6,
+  "mean_best_of_two": 0.267,
   "decision_service": {
     "up": false,
     "url": "http://127.0.0.1:8090",
@@ -33,12 +33,12 @@
       "mean_delta": null
     },
     "Bar": {
-      "n": 2,
-      "ok": 2,
+      "n": 3,
+      "ok": 3,
       "errors": 0,
-      "mean_distance": 0.346,
-      "mean_baseline": 0.411,
-      "mean_delta": 0.066
+      "mean_distance": 0.332,
+      "mean_baseline": 0.397,
+      "mean_delta": 0.065
     },
     "Box/Violin": {
       "n": 5,
@@ -97,20 +97,20 @@
       "mean_delta": null
     },
     "Polar/Radial": {
-      "n": 3,
-      "ok": 3,
+      "n": 5,
+      "ok": 5,
       "errors": 0,
-      "mean_distance": 0.196,
-      "mean_baseline": 0.177,
-      "mean_delta": -0.019
+      "mean_distance": 0.217,
+      "mean_baseline": 0.207,
+      "mean_delta": -0.01
     },
     "Scatter": {
-      "n": 7,
-      "ok": 7,
+      "n": 10,
+      "ok": 10,
       "errors": 0,
-      "mean_distance": 0.2,
-      "mean_baseline": 0.459,
-      "mean_delta": 0.259
+      "mean_distance": 0.18,
+      "mean_baseline": 0.424,
+      "mean_delta": 0.244
     },
     "Std-band": {
       "n": 7,
@@ -1760,7 +1760,186 @@
           "severity": "hard"
         }
       ]
+    },
+    {
+      "id": "Chart2Code_level2_radar_7_v3",
+      "chart": "Polar/Radial",
+      "panel_mode": "multi",
+      "skill": "radial_profile",
+      "rationale": "polar panel_row by block_id",
+      "rows_used": 381,
+      "status": "ok",
+      "distance": 0.28,
+      "baseline_distance": 0.28,
+      "delta": 0.0,
+      "components": {
+        "palette": 0.111,
+        "aspect": 0.531,
+        "ink": 0.451
+      },
+      "hard_failures": 44,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'field_surveys' over 'field_surveys'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'field_surveys' over 'site_design_summaries'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'site_design_summaries' over 'site_design_summaries'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'field_' over 'field_'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'field_surve' over 'field_survey'",
+          "severity": "hard"
+        }
+      ]
+    },
+    {
+      "id": "Chart2Code_level2_radar_9_v4",
+      "chart": "Polar/Radial",
+      "panel_mode": "multi",
+      "skill": "radial_profile",
+      "rationale": "polar panel_row by block_id",
+      "rows_used": 192,
+      "status": "ok",
+      "distance": 0.218,
+      "baseline_distance": 0.222,
+      "delta": 0.004,
+      "components": {
+        "palette": 0.052,
+        "aspect": 0.287,
+        "ink": 0.563
+      },
+      "hard_failures": 45,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'condition_measurements' over 'condition_measurements'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'habitat_profile' over 'habitat_profile'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'anchor_overview' over 'anchor_overview'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'ondition_measurements' over 'ondition_measurements'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'condition_' over 'condition_'",
+          "severity": "hard"
+        }
+      ]
+    },
+    {
+      "id": "Chart2Code_level2_scatter_13_v2",
+      "chart": "Scatter",
+      "panel_mode": "multi",
+      "skill": "scatter_relationship",
+      "rationale": "scatter panel_row vs panel_col",
+      "rows_used": 56,
+      "status": "ok",
+      "distance": 0.078,
+      "baseline_distance": 0.305,
+      "delta": 0.227,
+      "components": {
+        "aspect": 0.003,
+        "ink": 0.154
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "Chart2Code_level2_scatter_1_v2__single",
+      "chart": "Bar",
+      "panel_mode": "single",
+      "skill": "grouped_measures",
+      "rationale": "grouped bars ['plot_order', 'metric_value', 'uncertainty_se'] by record_type",
+      "rows_used": 80,
+      "status": "ok",
+      "distance": 0.305,
+      "baseline_distance": 0.368,
+      "delta": 0.063,
+      "components": {
+        "palette": 0.519,
+        "aspect": 0.024,
+        "ink": 0.051
+      },
+      "hard_failures": 3,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'component_point' over 'component_point'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'component_point' over 'composite_summary'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'composite_summary' over 'composite_summary'",
+          "severity": "hard"
+        }
+      ]
+    },
+    {
+      "id": "Chart2Code_level2_scatter_22_v2__single",
+      "chart": "Scatter",
+      "panel_mode": "single",
+      "skill": "scatter_relationship",
+      "rationale": "scatter microbiome_divergence_index_unitless vs colonization_resistance_score_percent",
+      "rows_used": 80,
+      "status": "ok",
+      "distance": 0.126,
+      "baseline_distance": 0.355,
+      "delta": 0.229,
+      "components": {
+        "aspect": 0.001,
+        "ink": 0.25
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "Chart2Code_level2_scatter_22_v3",
+      "chart": "Scatter",
+      "panel_mode": "multi",
+      "skill": "scatter_relationship",
+      "rationale": "scatter replicate_id vs panel_row",
+      "rows_used": 106,
+      "status": "ok",
+      "distance": 0.195,
+      "baseline_distance": 0.365,
+      "delta": 0.17,
+      "components": {
+        "aspect": 0.015,
+        "ink": 0.374
+      },
+      "hard_failures": 0,
+      "findings": []
     }
   ],
-  "benchmark_anchor_distance": 0.305
+  "benchmark_anchor_distance": 0.297
 }
