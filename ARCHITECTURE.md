@@ -211,3 +211,15 @@ tracked ≤ 80 MB、worktree ≤ 150 MB 的预算内。
    包内。宁可标注为缺口，也不凭空构造区域。
 3. **`trend_band` 的 loess 带是近似**：tricube 局部线性 + 全局残差方差替代 loess 的逐点方差，已
    在代码与文档中写明，不得表述为与 ggplot2 loess 等价。
+
+## 7. 同行版图与风格画像（2026-10-18 追加，详见 `PEER_LANDSCAPE.md`）
+
+- `figpipe/styleprofile.py`：从 PDF 矢量对象测风格（字号/字体/字母/配色/线宽/框线），`compare()`
+  给可解释的 0–1 距离。这是对 FigMirror "VLM 读图 + Grounded Measurement" 的确定性替代：无模型、
+  同输入同输出、可审计。
+- `scripts/profile_figure.py`：`--pdf/--bbox/--caption` 生成画像 JSON，`--compare A B` 比较；
+  `corpus/style/` 保存实测产物。
+- 五个同行项目（FigMirror、NaturePanelForge、DeTi*k*Zify、Math-VR-CodePlot-CoT、ChartCoder）的
+  方法、数据规模、评测协议与许可差异记录在 `PEER_LANDSCAPE.md`；只借鉴方法，不复制无许可代码。
+- 首测：种子论文 Fig 7 的发表 PDF 区 vs 复现版面，风格距离 0.158（sizes 0.367 / palette 0.124 /
+  aspect 0.097）。下一步是让模板参数在规范带内被搜索以缩小距离，并把统计对账作为第二重目标。
