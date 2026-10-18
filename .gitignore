@@ -45,3 +45,8 @@ corpus/e2e/cache/
 corpus/e2e/images/
 corpus/e2e/tmp/
 
+
+# Reports are HTML only; the old DOCX/PDF formats are not produced.
+reports/*.pdf
+reports/*.docx
+

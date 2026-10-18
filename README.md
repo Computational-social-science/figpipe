@@ -182,3 +182,10 @@ Specification sources:
 | `PEER_LANDSCAPE.md` | peer projects, licences, and what was absorbed |
 | `REPRODUCTION_GAP_ANALYSIS.md` | what a figure reproduction does and does not prove |
 | `knowledge/benchmark_skill_map.json` | benchmark chart types -> our skills/coverage |
+| `reports/figpipe_report.html` | generated progress / deliverables report (HTML only) |
+
+## Language policy
+
+Research outputs of this project -- reports, README, commit messages and new documentation -- are
+written in English. The HTML report is the only report format: DOCX and PDF reports are not
+produced; figures themselves remain PDF/PNG deliverables.
