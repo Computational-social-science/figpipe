@@ -152,18 +152,23 @@ def ax_scatter_fit(ax, df: pd.DataFrame, x: str, y: str, xlabel: str = "", ylabe
     linear and the number is stated, so a reader can disagree with it.
     """
     df = _uniq(df)
-    xv = df[x].to_numpy(dtype=float)
-    yv = df[y].to_numpy(dtype=float)
+    raw_x = df[x].to_numpy(dtype=float)
+    raw_y = df[y].to_numpy(dtype=float)
+    ok = np.isfinite(raw_x) & np.isfinite(raw_y)
+    xv, yv = raw_x[ok], raw_y[ok]
     ax.plot(xv, yv, "o", ms=2.8, color=style.OKABE_ITO["blue"],
             markeredgecolor="black", markeredgewidth=0.3, alpha=0.85)
-    if len(xv) >= 3 and np.ptp(xv) > 0:
-        m, b = np.polyfit(xv, yv, 1)
-        xs = np.linspace(xv.min(), xv.max(), 50)
-        ax.plot(xs, m * xs + b, "-", lw=0.9, color=style.OKABE_ITO["vermillion"])
-        if annotate_r:
-            r = float(np.corrcoef(xv, yv)[0, 1])
-            ax.text(0.03, 0.96, f"r = {r:+.2f}", transform=ax.transAxes,
-                    va="top", fontsize=6)
+    if len(xv) >= 3 and np.ptp(xv) > 0 and np.ptp(yv) > 0:
+        try:
+            xs = np.linspace(xv.min(), xv.max(), 50)
+            gy, _ = _ols_fit(xv, yv, xs, 1)
+            ax.plot(xs, gy, "-", lw=0.9, color=style.OKABE_ITO["vermillion"])
+            if annotate_r:
+                r = float(np.corrcoef(xv, yv)[0, 1])
+                ax.text(0.03, 0.96, f"r = {r:+.2f}", transform=ax.transAxes,
+                        va="top", fontsize=6)
+        except (ValueError, np.linalg.LinAlgError):
+            pass
     _frame(ax, xlabel or x, ylabel or y)
     return None
 
@@ -323,8 +328,24 @@ def _design(x: np.ndarray, x0: float, degree: int) -> np.ndarray:
 
 
 def _ols_fit(x, y, x_grid, degree: int = 1):
-    """OLS fit with the classical prediction standard error."""
-    X = np.vstack([x ** k for k in range(degree + 1)]).T
+    """OLS fit with the classical prediction standard error.
+
+    x is centred and scaled before the fit: raw x values in the 1e9 range (epoch seconds,
+    nanometres, years since a geological epoch) make the Vandermonde matrix ill-conditioned and
+    np.linalg.lstsq raises "SVD did not converge" -- a benchmark task failed exactly this way.
+    Non-finite pairs are dropped rather than poisoning the whole fit.
+    """
+    x = np.asarray(x, dtype=float)
+    y = np.asarray(y, dtype=float)
+    ok = np.isfinite(x) & np.isfinite(y)
+    x, y = x[ok], y[ok]
+    if len(x) < degree + 2 or np.ptp(x) == 0:
+        raise ValueError(f"cannot fit degree {degree} to {len(x)} usable points")
+    xm = float(np.mean(x))
+    xs = float(np.std(x)) or 1.0
+    xn = (x - xm) / xs
+    x_grid = (np.asarray(x_grid, dtype=float) - xm) / xs
+    X = np.vstack([xn ** k for k in range(degree + 1)]).T
     beta, *_ = np.linalg.lstsq(X, y, rcond=None)
     resid = y - X @ beta
     dof = max(len(x) - X.shape[1], 1)
@@ -498,12 +519,20 @@ def ax_trend_band(ax, df: pd.DataFrame, x: str, y: str, lo: str | None = None,
         ax.plot(xs, ys, "o", ms=marker_size, color=colour, markeredgecolor="black",
                 markeredgewidth=0.25, zorder=3, label=str(g) if g is not None else None)
         if fit:
+            # an unknown fit name is a programming error, not a degeneracy: validate it BEFORE
+            # the guard below, which exists only for data that cannot support a fit
+            if fit not in FITS:
+                raise ValueError(f"unknown fit {fit!r}; available: {FITS}")
             gx = np.linspace(xs.min(), xs.max(), 80)
-            gy, gse = _band_curve(xs, ys, fit, gx)
-            if band == "fit":
-                ax.fill_between(gx, gy - 1.96 * gse, gy + 1.96 * gse, color="#b3b3b3",
-                                alpha=0.55, linewidth=0, zorder=1)
-            ax.plot(gx, gy, "-", lw=1.0, color=fit_color or colour, zorder=2)
+            try:
+                gy, gse = _band_curve(xs, ys, fit, gx)
+            except (ValueError, np.linalg.LinAlgError):
+                gy = gse = None
+            if gy is not None:
+                if band == "fit":
+                    ax.fill_between(gx, gy - 1.96 * gse, gy + 1.96 * gse, color="#b3b3b3",
+                                    alpha=0.55, linewidth=0, zorder=1)
+                ax.plot(gx, gy, "-", lw=1.0, color=fit_color or colour, zorder=2)
     if reference is not None:
         ax.axhline(reference, linestyle=(0, (4, 3)), color="black", linewidth=0.6,
                    zorder=0)

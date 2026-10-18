@@ -79,8 +79,8 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
 <body>
 <div class="top">
   <b>FigPipeline · Research Figure Pipeline</b>
-  <div class="meta"><span>commit 5ea9faf</span><span>branch main</span>
-  <span>knowledge v16</span><span>generated 2026-10-19 00:15</span></div>
+  <div class="meta"><span>commit 0f0d558</span><span>branch main</span>
+  <span>knowledge v16</span><span>generated 2026-10-19 00:32</span></div>
 </div>
 <div class="wrap">
 
@@ -90,20 +90,20 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
   artefacts: every number can be recomputed by a script, and every deliverable can be opened and
   checked. It tracks progress, exposes the evidence, and records what is not finished yet.</p>
   <div class="pills">
-    <span class="pill">tests 226 passed</span>
+    <span class="pill">tests 231 passed</span>
     <span class="pill">statistics reproduced: 15</span>
-    <span class="pill">benchmark tasks 10/10</span>
+    <span class="pill">benchmark tasks 23/30</span>
     <span class="pill">skills 12 · operators 16</span>
-    <span class="pill">tracked 78.6 MB</span>
+    <span class="pill">tracked 79.3 MB</span>
   </div>
 </header>
 
 <div class="kpis">
   <div class="kpi "><div class="kpi-v">15</div><div class="kpi-l">Published statistics reproduced</div><div class="kpi-s">worst |Δ| = 0.005</div></div>
-  <div class="kpi "><div class="kpi-v">0.378 → 0.268</div><div class="kpi-l">Benchmark style distance</div><div class="kpi-s">default style → reference style (deterministic)</div></div>
+  <div class="kpi "><div class="kpi-v">0.376 → 0.288</div><div class="kpi-l">Benchmark style distance</div><div class="kpi-s">default style → reference style (deterministic)</div></div>
   <div class="kpi "><div class="kpi-v">12 / 16</div><div class="kpi-l">Skills / classic operators</div><div class="kpi-s">global verification floor on every recipe</div></div>
-  <div class="kpi "><div class="kpi-v">226</div><div class="kpi-l">Automated tests</div><div class="kpi-s">negative controls and contract tests</div></div>
-  <div class="kpi "><div class="kpi-v">78.6 MB</div><div class="kpi-l">Repository size</div><div class="kpi-s">lean budget ≤ 80 MB</div></div>
+  <div class="kpi "><div class="kpi-v">231</div><div class="kpi-l">Automated tests</div><div class="kpi-s">negative controls and contract tests</div></div>
+  <div class="kpi "><div class="kpi-v">79.3 MB</div><div class="kpi-l">Repository size</div><div class="kpi-s">lean budget ≤ 80 MB</div></div>
 </div>
 
 <h2><span class="n">01</span>Progress overview</h2>
@@ -111,17 +111,17 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
   <div class="progress-row"><div class="progress-head"><span>Reproduction and statistics</span><span class="pct">100%</span></div><div class="bar"><i class="done" style="width:100%"></i></div><div class="evidence">4 figures + 15 statistics checked; L0 construction explicitly not reproduced</div></div>
   <div class="progress-row"><div class="progress-head"><span>Style measurement and transfer</span><span class="pct">100%</span></div><div class="bar"><i class="done" style="width:100%"></i></div><div class="evidence">vector/raster profiles; variant search; every skill accepts a profile</div></div>
   <div class="progress-row"><div class="progress-head"><span>Skills and operators</span><span class="pct">100%</span></div><div class="bar"><i class="done" style="width:100%"></i></div><div class="evidence">12 recipes, 16 operators, global compliance floor</div></div>
-  <div class="progress-row"><div class="progress-head"><span>Authoritative benchmark (PlotTwin-Bench)</span><span class="pct">7%</span></div><div class="bar"><i class="hold" style="width:7%"></i></div><div class="evidence">10/150 tasks run; remaining tasks and chart types in the backlog</div></div>
+  <div class="progress-row"><div class="progress-head"><span>Authoritative benchmark (PlotTwin-Bench)</span><span class="pct">20%</span></div><div class="bar"><i class="hold" style="width:20%"></i></div><div class="evidence">30/150 tasks run; remaining tasks and chart types in the backlog</div></div>
   <div class="progress-row"><div class="progress-head"><span>Decision-model integration</span><span class="pct">60%</span></div><div class="bar"><i class="hold" style="width:60%"></i></div><div class="evidence">bridge and 6 contract tests complete; service offline</div></div>
   <div class="progress-row"><div class="progress-head"><span>Self-evolution</span><span class="pct">40%</span></div><div class="bar"><i class="hold" style="width:40%"></i></div><div class="evidence">8/16 rules have machine checks; no capability snapshot or mutation yet</div></div>
-  <div class="progress-row"><div class="progress-head"><span>Documentation and slimming</span><span class="pct">100%</span></div><div class="bar"><i class="done" style="width:100%"></i></div><div class="evidence">tracked 78.6 MB; redundant audit documents consolidated</div></div>
+  <div class="progress-row"><div class="progress-head"><span>Documentation and slimming</span><span class="pct">100%</span></div><div class="bar"><i class="done" style="width:100%"></i></div><div class="evidence">tracked 79.3 MB; redundant audit documents consolidated</div></div>
 </div>
 
 <h2><span class="n">02</span>Research deliverables</h2>
 <div class="cards">
 <div class="card deliverable"><div class="card-top"><h3>Seed-paper reproduction (4 figures / 15 statistics)</h3><span class="pill ok">Delivered</span></div><p>Reproduces Figs. 1/3/5/7 from the authors' public aggregates and checks every published statistic; L0 data construction is explicitly marked as not reproduced.</p><div class="meta"><code>templates/seed/report.json</code> · worst |Δ| = 0.005</div><a class="file-link" href="../templates/seed/report.json">Open artifact →</a></div>
 <div class="card deliverable"><div class="card-top"><h3>Style measurement and transfer</h3><span class="pill ok">Delivered</span></div><p>Reference PDF/PNG → measured style profile → compliant derived style → variant selection; distance drops on seed Fig. 7.</p><div class="meta"><code>templates/transfer/style_transfer_report.json</code></div><a class="file-link" href="../templates/transfer/style_transfer_report.json">Open artifact →</a></div>
-<div class="card deliverable"><div class="card-top"><h3>PlotTwin-Bench end-to-end report</h3><span class="pill ok">Delivered</span></div><p>Ten authoritative benchmark tasks: deterministic style distance and execution outcome, default style vs reference style.</p><div class="meta"><code>corpus/e2e/plottwin_report.json</code> · 10/10 ok</div><a class="file-link" href="../corpus/e2e/plottwin_report.json">Open artifact →</a></div>
+<div class="card deliverable"><div class="card-top"><h3>PlotTwin-Bench end-to-end report</h3><span class="pill ok">Delivered</span></div><p>Ten authoritative benchmark tasks: deterministic style distance and execution outcome, default style vs reference style.</p><div class="meta"><code>corpus/e2e/plottwin_report.json</code> · 23/30 ok</div><a class="file-link" href="../corpus/e2e/plottwin_report.json">Open artifact →</a></div>
 <div class="card deliverable"><div class="card-top"><h3>Skills and operators catalogue</h3><span class="pill ok">Delivered</span></div><p>12 named recipes + 16 classic operators + a global verification floor, machine-readable.</p><div class="meta"><code>knowledge/skills_catalog.json</code> · 12 skills / 16 operators</div><a class="file-link" href="../knowledge/skills_catalog.json">Open artifact →</a></div>
 <div class="card deliverable"><div class="card-top"><h3>Architecture and priority plan</h3><span class="pill ok">Delivered</span></div><p>Entry layer, reference understanding, evaluation layer and the per-metric SOTA definition.</p><div class="meta"><code>PIPELINE_V3.md</code> · v3</div><a class="file-link" href="../PIPELINE_V3.md">Open artifact →</a></div>
 <div class="card deliverable"><div class="card-top"><h3>Skills-layer design note</h3><span class="pill warn">Design note</span></div><p>Global SKILLS + classic operators + the rule for extending recipes.</p><div class="meta"><code>SKILLS.md</code></div><a class="file-link" href="../SKILLS.md">Open artifact →</a></div>
@@ -153,80 +153,161 @@ metrics</b> (palette / aspect / ink density of the raster reference), <b>not the
 score</b>; the latter needs the benchmark's VLM scorer, which this project has not run and does not
 imitate.</p>
 <div class="kpis">
-  <div class="kpi "><div class="kpi-v">10/10</div><div class="kpi-l">Tasks run</div><div class="kpi-s">execution success</div></div>
-  <div class="kpi "><div class="kpi-v">0.378 → 0.268</div><div class="kpi-l">Mean style distance</div><div class="kpi-s">improvement +0.110</div></div>
-  <div class="kpi "><div class="kpi-v">9 / 1 / 0</div><div class="kpi-l">Improved / worse / tie</div><div class="kpi-s">per-task outcome</div></div>
-  <div class="kpi "><div class="kpi-v">0.252</div><div class="kpi-l">best-of-two</div><div class="kpi-s">candidate-selection floor with the reference available</div></div>
+  <div class="kpi "><div class="kpi-v">23/30</div><div class="kpi-l">Tasks run</div><div class="kpi-s">execution success</div></div>
+  <div class="kpi "><div class="kpi-v">0.376 → 0.288</div><div class="kpi-l">Mean style distance</div><div class="kpi-s">improvement +0.088</div></div>
+  <div class="kpi "><div class="kpi-v">18 / 4 / 1</div><div class="kpi-l">Improved / worse / tie</div><div class="kpi-s">per-task outcome</div></div>
+  <div class="kpi "><div class="kpi-v">0.27</div><div class="kpi-l">best-of-two</div><div class="kpi-s">candidate-selection floor with the reference available</div></div>
 </div>
 <div class="two-col" style="margin-top:16px">
-  <div><svg viewBox="0 0 760 380" role="img" aria-label="benchmark per-task style distance" class="bench-svg">
+  <div><svg viewBox="0 0 760 822" role="img" aria-label="benchmark per-task style distance" class="bench-svg">
 <text x="8" y="18" class="svg-title">Per-task style distance (shorter is better)</text>
 <text x="8" y="46" class="svg-label">PMC11502666 · Distribution</text>
-<rect x="120" y="32" width="160.4" height="9" class="bar-base"></rect>
-<text x="286.4" y="40" class="svg-val">0.218</text>
-<rect x="120" y="43" width="128.8" height="9" class="bar-styled"></rect>
-<text x="254.8" y="51" class="svg-val">0.175</text>
+<rect x="120" y="32" width="152.7" height="9" class="bar-base"></rect>
+<text x="278.7" y="40" class="svg-val">0.218</text>
+<rect x="120" y="43" width="122.5" height="9" class="bar-styled"></rect>
+<text x="248.5" y="51" class="svg-val">0.175</text>
 <text x="744" y="48" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="80" class="svg-label">PMC11840003 · Box/Violin</text>
-<rect x="120" y="66" width="324.5" height="9" class="bar-base"></rect>
-<text x="450.5" y="74" class="svg-val">0.441</text>
-<rect x="120" y="77" width="144.9" height="9" class="bar-styled"></rect>
-<text x="270.9" y="85" class="svg-val">0.197</text>
+<rect x="120" y="66" width="308.8" height="9" class="bar-base"></rect>
+<text x="434.8" y="74" class="svg-val">0.441</text>
+<rect x="120" y="77" width="137.9" height="9" class="bar-styled"></rect>
+<text x="263.9" y="85" class="svg-val">0.197</text>
 <text x="744" y="82" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="114" class="svg-label">PMC12000431 · Distribution</text>
-<rect x="120" y="100" width="187.6" height="9" class="bar-base"></rect>
-<text x="313.6" y="108" class="svg-val">0.255</text>
-<rect x="120" y="111" width="148.6" height="9" class="bar-styled"></rect>
-<text x="274.6" y="119" class="svg-val">0.202</text>
+<rect x="120" y="100" width="178.6" height="9" class="bar-base"></rect>
+<text x="304.6" y="108" class="svg-val">0.255</text>
+<rect x="120" y="111" width="141.4" height="9" class="bar-styled"></rect>
+<text x="267.4" y="119" class="svg-val">0.202</text>
 <text x="744" y="116" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="148" class="svg-label">PMC12354736 · Distribution</text>
-<rect x="120" y="134" width="261.2" height="9" class="bar-base"></rect>
-<text x="387.2" y="142" class="svg-val">0.355</text>
-<rect x="120" y="145" width="217.1" height="9" class="bar-styled"></rect>
-<text x="343.1" y="153" class="svg-val">0.295</text>
+<rect x="120" y="134" width="248.6" height="9" class="bar-base"></rect>
+<text x="374.6" y="142" class="svg-val">0.355</text>
+<rect x="120" y="145" width="206.6" height="9" class="bar-styled"></rect>
+<text x="332.6" y="153" class="svg-val">0.295</text>
 <text x="744" y="150" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="182" class="svg-label">PMC12504421 · Heatmap</text>
-<rect x="120" y="168" width="313.4" height="9" class="bar-base"></rect>
-<text x="439.4" y="176" class="svg-val">0.426</text>
-<rect x="120" y="179" width="211.9" height="9" class="bar-styled"></rect>
-<text x="337.9" y="187" class="svg-val">0.288</text>
+<rect x="120" y="168" width="298.3" height="9" class="bar-base"></rect>
+<text x="424.3" y="176" class="svg-val">0.426</text>
+<rect x="120" y="179" width="201.7" height="9" class="bar-styled"></rect>
+<text x="327.7" y="187" class="svg-val">0.288</text>
 <text x="744" y="184" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="216" class="svg-label">PMC12905268 · Distribution</text>
-<rect x="120" y="202" width="240.6" height="9" class="bar-base"></rect>
-<text x="366.6" y="210" class="svg-val">0.327</text>
-<rect x="120" y="213" width="232.5" height="9" class="bar-styled"></rect>
-<text x="358.5" y="221" class="svg-val">0.316</text>
+<rect x="120" y="202" width="229.0" height="9" class="bar-base"></rect>
+<text x="355.0" y="210" class="svg-val">0.327</text>
+<rect x="120" y="213" width="221.3" height="9" class="bar-styled"></rect>
+<text x="347.3" y="221" class="svg-val">0.316</text>
 <text x="744" y="218" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="250" class="svg-label">PMC13009336 · Box/Violin</text>
-<rect x="120" y="236" width="448.8" height="9" class="bar-base"></rect>
-<text x="574.8" y="244" class="svg-val">0.610</text>
-<rect x="120" y="247" width="131.0" height="9" class="bar-styled"></rect>
-<text x="257.0" y="255" class="svg-val">0.178</text>
+<rect x="120" y="236" width="427.1" height="9" class="bar-base"></rect>
+<text x="553.1" y="244" class="svg-val">0.610</text>
+<rect x="120" y="247" width="124.6" height="9" class="bar-styled"></rect>
+<text x="250.6" y="255" class="svg-val">0.178</text>
 <text x="744" y="252" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="284" class="svg-label">PMC13022287 · Distribution</text>
-<rect x="120" y="270" width="215.6" height="9" class="bar-base"></rect>
-<text x="341.6" y="278" class="svg-val">0.293</text>
-<rect x="120" y="281" width="192.8" height="9" class="bar-styled"></rect>
-<text x="318.8" y="289" class="svg-val">0.262</text>
+<rect x="120" y="270" width="205.2" height="9" class="bar-base"></rect>
+<text x="331.2" y="278" class="svg-val">0.293</text>
+<rect x="120" y="281" width="183.5" height="9" class="bar-styled"></rect>
+<text x="309.5" y="289" class="svg-val">0.262</text>
 <text x="744" y="286" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="318" class="svg-label">PMC13079874 · Box/Violin</text>
-<rect x="120" y="304" width="478.3" height="9" class="bar-base"></rect>
-<text x="604.3" y="312" class="svg-val">0.650</text>
-<rect x="120" y="315" width="298.0" height="9" class="bar-styled"></rect>
-<text x="424.0" y="323" class="svg-val">0.405</text>
+<rect x="120" y="304" width="455.2" height="9" class="bar-base"></rect>
+<text x="581.2" y="312" class="svg-val">0.650</text>
+<rect x="120" y="315" width="283.6" height="9" class="bar-styled"></rect>
+<text x="409.6" y="323" class="svg-val">0.405</text>
 <text x="744" y="320" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="352" class="svg-label">PMC13106710 · Heatmap</text>
-<rect x="120" y="338" width="150.8" height="9" class="bar-base"></rect>
-<text x="276.8" y="346" class="svg-val">0.205</text>
-<rect x="120" y="349" width="264.9" height="9" class="bar-styled"></rect>
-<text x="390.9" y="357" class="svg-val">0.360</text>
+<rect x="120" y="338" width="143.5" height="9" class="bar-base"></rect>
+<text x="269.5" y="346" class="svg-val">0.205</text>
+<rect x="120" y="349" width="252.1" height="9" class="bar-styled"></rect>
+<text x="378.1" y="357" class="svg-val">0.360</text>
 <text x="744" y="354" class="svg-delta bad" text-anchor="end">↑</text>
+<text x="8" y="386" class="svg-label">PMC13135507 · Scatter</text>
+<rect x="120" y="372" width="402.6" height="9" class="bar-base"></rect>
+<text x="528.6" y="380" class="svg-val">0.575</text>
+<rect x="120" y="383" width="181.4" height="9" class="bar-styled"></rect>
+<text x="307.4" y="391" class="svg-val">0.259</text>
+<text x="744" y="388" class="svg-delta good" text-anchor="end">↓</text>
+<text x="8" y="420" class="svg-label">PMC13273070 · Box/Violin</text>
+<rect x="120" y="406" width="246.5" height="9" class="bar-base"></rect>
+<text x="372.5" y="414" class="svg-val">0.352</text>
+<rect x="120" y="417" width="122.5" height="9" class="bar-styled"></rect>
+<text x="248.5" y="425" class="svg-val">0.175</text>
+<text x="744" y="422" class="svg-delta good" text-anchor="end">↓</text>
+<text x="8" y="454" class="svg-label">PMC13336770 · Distribution</text>
+<rect x="120" y="440" width="224.1" height="9" class="bar-base"></rect>
+<text x="350.1" y="448" class="svg-val">0.320</text>
+<rect x="120" y="451" width="114.8" height="9" class="bar-styled"></rect>
+<text x="240.8" y="459" class="svg-val">0.164</text>
+<text x="744" y="456" class="svg-delta good" text-anchor="end">↓</text>
+<text x="8" y="488" class="svg-label">PMC13342296 · Distribution</text>
+<rect x="120" y="474" width="137.2" height="9" class="bar-base"></rect>
+<text x="263.2" y="482" class="svg-val">0.196</text>
+<rect x="120" y="485" width="114.8" height="9" class="bar-styled"></rect>
+<text x="240.8" y="493" class="svg-val">0.164</text>
+<text x="744" y="490" class="svg-delta good" text-anchor="end">↓</text>
+<text x="8" y="522" class="svg-label">PMC13343911 · Line</text>
+<rect x="120" y="508" width="334.0" height="9" class="bar-base"></rect>
+<text x="460.0" y="516" class="svg-val">0.477</text>
+<rect x="120" y="519" width="265.4" height="9" class="bar-styled"></rect>
+<text x="391.4" y="527" class="svg-val">0.379</text>
+<text x="744" y="524" class="svg-delta good" text-anchor="end">↓</text>
+<text x="8" y="556" class="svg-label">arxiv-astro-skymap__2412.12637 · Field 2D</text>
+<rect x="120" y="542" width="135.8" height="9" class="bar-base"></rect>
+<text x="261.8" y="550" class="svg-val">0.194</text>
+<rect x="120" y="553" width="171.6" height="9" class="bar-styled"></rect>
+<text x="297.6" y="561" class="svg-val">0.245</text>
+<text x="744" y="558" class="svg-delta bad" text-anchor="end">↑</text>
+<text x="8" y="590" class="svg-label">arxiv-astro-skymap__2510.17487 · Std-band</text>
+<rect x="120" y="576" width="249.3" height="9" class="bar-base"></rect>
+<text x="375.3" y="584" class="svg-val">0.356</text>
+<rect x="120" y="587" width="239.5" height="9" class="bar-styled"></rect>
+<text x="365.5" y="595" class="svg-val">0.342</text>
+<text x="744" y="592" class="svg-delta good" text-anchor="end">↓</text>
+<text x="8" y="624" class="svg-label">arxiv-ml-3d-trajectory__2511.17399 · Field 2D</text>
+<rect x="120" y="610" width="265.4" height="9" class="bar-base"></rect>
+<text x="391.4" y="618" class="svg-val">0.379</text>
+<rect x="120" y="621" width="331.2" height="9" class="bar-styled"></rect>
+<text x="457.2" y="629" class="svg-val">0.473</text>
+<text x="744" y="626" class="svg-delta bad" text-anchor="end">↑</text>
+<text x="8" y="658" class="svg-label">arxiv-ml-3d-trajectory__2602.22552 · Field 2D</text>
+<rect x="120" y="644" width="236.7" height="9" class="bar-base"></rect>
+<text x="362.7" y="652" class="svg-val">0.338</text>
+<rect x="120" y="655" width="323.5" height="9" class="bar-styled"></rect>
+<text x="449.5" y="663" class="svg-val">0.462</text>
+<text x="744" y="660" class="svg-delta bad" text-anchor="end">↑</text>
+<text x="8" y="692" class="svg-label">arxiv-ml-bar-line-v2__2511.15055 · Std-band</text>
+<rect x="120" y="678" width="346.6" height="9" class="bar-base"></rect>
+<text x="472.6" y="686" class="svg-val">0.495</text>
+<rect x="120" y="689" width="324.9" height="9" class="bar-styled"></rect>
+<text x="450.9" y="697" class="svg-val">0.464</text>
+<text x="744" y="694" class="svg-delta good" text-anchor="end">↓</text>
+<text x="8" y="726" class="svg-label">arxiv_2410.15876 · Std-band</text>
+<rect x="120" y="712" width="478.3" height="9" class="bar-base"></rect>
+<text x="604.3" y="720" class="svg-val">0.683</text>
+<rect x="120" y="723" width="285.7" height="9" class="bar-styled"></rect>
+<text x="411.7" y="731" class="svg-val">0.408</text>
+<text x="744" y="728" class="svg-delta good" text-anchor="end">↓</text>
+<text x="8" y="760" class="svg-label">arxiv_2502.15132 · Line</text>
+<rect x="120" y="746" width="91.7" height="9" class="bar-base"></rect>
+<text x="217.7" y="754" class="svg-val">0.131</text>
+<rect x="120" y="757" width="26.6" height="9" class="bar-styled"></rect>
+<text x="152.6" y="765" class="svg-val">0.038</text>
+<text x="744" y="762" class="svg-delta good" text-anchor="end">↓</text>
+<text x="8" y="794" class="svg-label">arxiv_2502.17598 · Heatmap</text>
+<rect x="120" y="780" width="268.2" height="9" class="bar-base"></rect>
+<text x="394.2" y="788" class="svg-val">0.383</text>
+<rect x="120" y="791" width="268.2" height="9" class="bar-styled"></rect>
+<text x="394.2" y="799" class="svg-val">0.383</text>
+<text x="744" y="796" class="svg-delta flat" text-anchor="end">=</text>
 </svg></div>
   <table>
     <thead><tr><th>Task</th><th>Chart</th><th>Skill</th><th>Distance</th><th>Baseline</th><th>Δ</th><th>Result</th></tr></thead>
-    <tbody><tr><td>PMC11502666</td><td>Distribution</td><td>faceted_distribution</td><td class="num">0.175</td><td class="num">0.218</td><td class="num">+0.043</td><td><span class="pill ok">improved</span></td></tr><tr><td>PMC11840003</td><td>Box/Violin</td><td>distribution_comparison</td><td class="num">0.197</td><td class="num">0.441</td><td class="num">+0.244</td><td><span class="pill ok">improved</span></td></tr><tr><td>PMC12000431</td><td>Distribution</td><td>faceted_distribution</td><td class="num">0.202</td><td class="num">0.255</td><td class="num">+0.053</td><td><span class="pill ok">improved</span></td></tr><tr><td>PMC12354736</td><td>Distribution</td><td>faceted_distribution</td><td class="num">0.295</td><td class="num">0.355</td><td class="num">+0.060</td><td><span class="pill ok">improved</span></td></tr><tr><td>PMC12504421</td><td>Heatmap</td><td>matrix_plate</td><td class="num">0.288</td><td class="num">0.426</td><td class="num">+0.138</td><td><span class="pill ok">improved</span></td></tr><tr><td>PMC12905268</td><td>Distribution</td><td>faceted_distribution</td><td class="num">0.316</td><td class="num">0.327</td><td class="num">+0.011</td><td><span class="pill ok">improved</span></td></tr><tr><td>PMC13009336</td><td>Box/Violin</td><td>distribution_comparison</td><td class="num">0.178</td><td class="num">0.610</td><td class="num">+0.432</td><td><span class="pill ok">improved</span></td></tr><tr><td>PMC13022287</td><td>Distribution</td><td>faceted_distribution</td><td class="num">0.262</td><td class="num">0.293</td><td class="num">+0.031</td><td><span class="pill ok">improved</span></td></tr><tr><td>PMC13079874</td><td>Box/Violin</td><td>distribution_comparison</td><td class="num">0.405</td><td class="num">0.650</td><td class="num">+0.245</td><td><span class="pill ok">improved</span></td></tr><tr><td>PMC13106710</td><td>Heatmap</td><td>matrix_plate</td><td class="num">0.360</td><td class="num">0.205</td><td class="num">-0.155</td><td><span class="pill bad">worse</span></td></tr></tbody>
+    <tbody><tr><td>PMC11502666</td><td>Distribution</td><td>faceted_distribution</td><td class="num">0.175</td><td class="num">0.218</td><td class="num">+0.043</td><td><span class="pill ok">improved</span></td></tr><tr><td>PMC11840003</td><td>Box/Violin</td><td>distribution_comparison</td><td class="num">0.197</td><td class="num">0.441</td><td class="num">+0.244</td><td><span class="pill ok">improved</span></td></tr><tr><td>PMC12000431</td><td>Distribution</td><td>faceted_distribution</td><td class="num">0.202</td><td class="num">0.255</td><td class="num">+0.053</td><td><span class="pill ok">improved</span></td></tr><tr><td>PMC12354736</td><td>Distribution</td><td>faceted_distribution</td><td class="num">0.295</td><td class="num">0.355</td><td class="num">+0.060</td><td><span class="pill ok">improved</span></td></tr><tr><td>PMC12504421</td><td>Heatmap</td><td>matrix_plate</td><td class="num">0.288</td><td class="num">0.426</td><td class="num">+0.138</td><td><span class="pill ok">improved</span></td></tr><tr><td>PMC12905268</td><td>Distribution</td><td>faceted_distribution</td><td class="num">0.316</td><td class="num">0.327</td><td class="num">+0.011</td><td><span class="pill ok">improved</span></td></tr><tr><td>PMC13009336</td><td>Box/Violin</td><td>distribution_comparison</td><td class="num">0.178</td><td class="num">0.610</td><td class="num">+0.432</td><td><span class="pill ok">improved</span></td></tr><tr><td>PMC13022287</td><td>Distribution</td><td>faceted_distribution</td><td class="num">0.262</td><td class="num">0.293</td><td class="num">+0.031</td><td><span class="pill ok">improved</span></td></tr><tr><td>PMC13079874</td><td>Box/Violin</td><td>distribution_comparison</td><td class="num">0.405</td><td class="num">0.650</td><td class="num">+0.245</td><td><span class="pill ok">improved</span></td></tr><tr><td>PMC13106710</td><td>Heatmap</td><td>matrix_plate</td><td class="num">0.360</td><td class="num">0.205</td><td class="num">-0.155</td><td><span class="pill bad">worse</span></td></tr><tr><td>PMC13135507</td><td>Scatter</td><td>scatter_relationship</td><td class="num">0.259</td><td class="num">0.575</td><td class="num">+0.316</td><td><span class="pill ok">improved</span></td></tr><tr><td>PMC13245775</td><td>Composite</td><td>—</td><td colspan="3">DecisionUnavailable: decision service unreachable at http://127.0.0.1:8090/v1/systemone: URLError: &lt;urlopen error [WinError 10061] &gt;. Start it with scripts/serve.sh, or set DECISION_SERVICE_URL.</td><td><span class="pill bad">failed</span></td></tr><tr><td>PMC13252719</td><td>Composite</td><td>—</td><td colspan="3">DecisionUnavailable: decision service unreachable at http://127.0.0.1:8090/v1/systemone: URLError: &lt;urlopen error [WinError 10061] &gt;. Start it with scripts/serve.sh, or set DECISION_SERVICE_URL.</td><td><span class="pill bad">failed</span></td></tr><tr><td>PMC13273070</td><td>Box/Violin</td><td>distribution_comparison</td><td class="num">0.175</td><td class="num">0.352</td><td class="num">+0.177</td><td><span class="pill ok">improved</span></td></tr><tr><td>PMC13286152</td><td>Composite</td><td>—</td><td colspan="3">DecisionUnavailable: decision service unreachable at http://127.0.0.1:8090/v1/systemone: URLError: &lt;urlopen error [WinError 10061] &gt;. Start it with scripts/serve.sh, or set DECISION_SERVICE_URL.</td><td><span class="pill bad">failed</span></td></tr><tr><td>PMC13336770</td><td>Distribution</td><td>histogram</td><td class="num">0.164</td><td class="num">0.320</td><td class="num">+0.156</td><td><span class="pill ok">improved</span></td></tr><tr><td>PMC13342296</td><td>Distribution</td><td>faceted_distribution</td><td class="num">0.164</td><td class="num">0.196</td><td class="num">+0.032</td><td><span class="pill ok">improved</span></td></tr><tr><td>PMC13343911</td><td>Line</td><td>trend_with_uncertainty</td><td class="num">0.379</td><td class="num">0.477</td><td class="num">+0.098</td><td><span class="pill ok">improved</span></td></tr><tr><td>arxiv-astro-skymap__2412.12637</td><td>Field 2D</td><td>matrix_plate</td><td class="num">0.245</td><td class="num">0.194</td><td class="num">-0.051</td><td><span class="pill bad">worse</span></td></tr><tr><td>arxiv-astro-skymap__2510.17487</td><td>Std-band</td><td>trend_with_uncertainty</td><td class="num">0.342</td><td class="num">0.356</td><td class="num">+0.014</td><td><span class="pill ok">improved</span></td></tr><tr><td>arxiv-ml-3d-trajectory__2511.17399</td><td>Field 2D</td><td>matrix_plate</td><td class="num">0.473</td><td class="num">0.379</td><td class="num">-0.094</td><td><span class="pill bad">worse</span></td></tr><tr><td>arxiv-ml-3d-trajectory__2602.22552</td><td>Field 2D</td><td>matrix_plate</td><td class="num">0.462</td><td class="num">0.338</td><td class="num">-0.124</td><td><span class="pill bad">worse</span></td></tr><tr><td>arxiv-ml-bar-line-v2__2511.15055</td><td>Std-band</td><td>trend_with_uncertainty</td><td class="num">0.464</td><td class="num">0.495</td><td class="num">+0.031</td><td><span class="pill ok">improved</span></td></tr><tr><td>arxiv-ml-bar-line-v2__2605.21125</td><td>Polar/Radial</td><td>—</td><td colspan="3">DecisionUnavailable: decision service unreachable at http://127.0.0.1:8090/v1/systemone: URLError: &lt;urlopen error [WinError 10061] &gt;. Start it with scripts/serve.sh, or set DECISION_SERVICE_URL.</td><td><span class="pill bad">failed</span></td></tr><tr><td>arxiv-phys-prx-prl__2603.21981</td><td>Line</td><td>trend_with_uncertainty</td><td colspan="3">LinAlgError: SVD did not converge in Linear Least Squares</td><td><span class="pill bad">failed</span></td></tr><tr><td>arxiv_2410.15876</td><td>Std-band</td><td>trend_with_uncertainty</td><td class="num">0.408</td><td class="num">0.683</td><td class="num">+0.275</td><td><span class="pill ok">improved</span></td></tr><tr><td>arxiv_2502.15132</td><td>Line</td><td>trend_with_uncertainty</td><td class="num">0.038</td><td class="num">0.131</td><td class="num">+0.093</td><td><span class="pill ok">improved</span></td></tr><tr><td>arxiv_2502.17598</td><td>Heatmap</td><td>matrix_plate</td><td class="num">0.383</td><td class="num">0.383</td><td class="num">+0.000</td><td><span class="pill warn">tie</span></td></tr><tr><td>arxiv_2502.18153</td><td>3D</td><td>—</td><td colspan="3">DecisionUnavailable: decision service unreachable at http://127.0.0.1:8090/v1/systemone: URLError: &lt;urlopen error [WinError 10061] &gt;. Start it with scripts/serve.sh, or set DECISION_SERVICE_URL.</td><td><span class="pill bad">failed</span></td></tr><tr><td>arxiv_2505.19527</td><td>3D</td><td>—</td><td colspan="3">DecisionUnavailable: decision service unreachable at http://127.0.0.1:8090/v1/systemone: URLError: &lt;urlopen error [WinError 10061] &gt;. Start it with scripts/serve.sh, or set DECISION_SERVICE_URL.</td><td><span class="pill bad">failed</span></td></tr></tbody>
   </table>
 </div>
+<h3 style="margin-top:20px">By chart type</h3>
+<table><thead><tr><th>Chart type</th><th>OK / tasks</th><th>Mean distance</th><th>Baseline</th>
+<th>Δ</th></tr></thead><tbody><tr><td>3D</td><td class="num">0/2</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr><td>Box/Violin</td><td class="num">4/4</td><td class="num">0.239</td><td class="num">0.513</td><td class="num">0.274</td></tr><tr><td>Composite</td><td class="num">0/3</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr><td>Distribution</td><td class="num">7/7</td><td class="num">0.225</td><td class="num">0.281</td><td class="num">0.055</td></tr><tr><td>Field 2D</td><td class="num">3/3</td><td class="num">0.393</td><td class="num">0.304</td><td class="num">-0.09</td></tr><tr><td>Heatmap</td><td class="num">3/3</td><td class="num">0.344</td><td class="num">0.338</td><td class="num">-0.006</td></tr><tr><td>Line</td><td class="num">2/3</td><td class="num">0.208</td><td class="num">0.304</td><td class="num">0.096</td></tr><tr><td>Polar/Radial</td><td class="num">0/1</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr><td>Scatter</td><td class="num">1/1</td><td class="num">0.259</td><td class="num">0.575</td><td class="num">0.316</td></tr><tr><td>Std-band</td><td class="num">3/3</td><td class="num">0.405</td><td class="num">0.511</td><td class="num">0.107</td></tr></tbody></table>
 <div class="warnbox"><b>Stated plainly:</b> this is not an SOTA claim. One of the ten tasks got
 worse (PMC13106710), so style transfer is not always beneficial. A formal claim requires all 150
 tasks, the official scorer (at least its non-VLM subset), a frozen protocol and a comparison with
@@ -255,6 +336,8 @@ floor (compliance, glyph collisions, no silently ignored parameters, a reproduci
 <tr><td>Knowledge-base version</td><td>v16</td><td>16 rules</td></tr>
 <tr><td>Machine-checked rules</td><td class="num">8 / 16</td><td>the rest are hypotheses/refuted/void</td></tr>
 <tr><td>Unchecked rules</td><td>H01, H02, E01, E02, C01, C02, C03, C04</td><td>not counted as passing</td></tr>
+<tr><td>Capability snapshot</td><td>not recorded yet</td><td>recorded by the scheduled run</td></tr>
+<tr><td>Last capability change</td><td>not recorded yet</td><td>explicit delta, not a claim</td></tr>
 </tbody></table>
 <p class="tag" style="margin-top:10px">Conclusion: the loop currently re-verifies, prevents drift and
 records. It has no capability snapshot, mutation or selection, so it is <b>not self-improvement</b>.
@@ -275,7 +358,7 @@ The next step is to write benchmark pass rates and distances into the run record
 
 <h2><span class="n">07</span>Next steps (with acceptance criteria)</h2>
 <div class="cards">
-<div class="card deliverable"><div class="card-top"><h3>P0 · Run all 150 benchmark tasks</h3><span class="pill warn">In progress</span></div><p>Complete the chart-type mapping and operators; add per-type breakdowns and failure classes.</p><div class="meta"><code>knowledge/benchmark_skill_map.json</code> · 10/150 now</div><a class="file-link" href="../knowledge/benchmark_skill_map.json">Open artifact →</a></div>
+<div class="card deliverable"><div class="card-top"><h3>P0 · Run all 150 benchmark tasks</h3><span class="pill warn">In progress</span></div><p>Complete the chart-type mapping and operators; add per-type breakdowns and failure classes.</p><div class="meta"><code>knowledge/benchmark_skill_map.json</code> · 30/150 now</div><a class="file-link" href="../knowledge/benchmark_skill_map.json">Open artifact →</a></div>
 <div class="card deliverable"><div class="card-top"><h3>P0 · Start the decision service</h3><span class="pill warn">Pending</span></div><p>Start the shared StartLux-Decision and exercise the rule-failure → model-choice fallback.</p><div class="meta"><code>figpipe/decision.py</code> · 6 tests</div><a class="file-link" href="../figpipe/decision.py">Open artifact →</a></div>
 <div class="card deliverable"><div class="card-top"><h3>P1 · Integrate the non-VLM scorer subset</h3><span class="pill warn">Planned</span></div><p>Compare with public baselines under a frozen protocol; no combined SOTA claim before that.</p><div class="meta"><code>corpus/e2e/plottwin_report.json</code> · protocol TBD</div><a class="file-link" href="../corpus/e2e/plottwin_report.json">Open artifact →</a></div>
 <div class="card deliverable"><div class="card-top"><h3>P1 · Validate the metric</h3><span class="pill warn">Planned</span></div><p>Annotate 30 figures and test the correlation between style distance and expert ranking.</p><div class="meta"><code>templates/transfer/style_transfer_report.json</code> · Spearman ≥ 0.7</div><a class="file-link" href="../templates/transfer/style_transfer_report.json">Open artifact →</a></div>
@@ -286,6 +369,6 @@ The next step is to write benchmark pass rates and distances into the run record
   in this repository, with no external dependencies. PlotTwin-Bench reference images and target
   data are cached locally and never redistributed (CC BY-NC 4.0); StartLux-Decision weights are
   CC BY-NC 4.0 and called through a separate service, not vendored into this repository.</div>
-  <div style="margin-top:6px">commit 5ea9faf · generated 2026-10-19 00:15 · tests 226</div>
+  <div style="margin-top:6px">commit 0f0d558 · generated 2026-10-19 00:32 · tests 231</div>
 </footer>
 </div></body></html>

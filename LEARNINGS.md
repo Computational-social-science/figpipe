@@ -387,3 +387,19 @@ Report contents: progress overview with per-workstream percentages, research del
 clickable repository paths, the three-figure style-transfer evidence, per-task PlotTwin-Bench results
 and an inline SVG chart, the skills/operators catalogue, an honest self-evolution audit, remaining
 risks and the next acceptance criteria.
+
+## 20. Benchmark expansion and capability snapshot (2026-10-19)
+
+Expanded PlotTwin-Bench from 10 to 30 tasks: 23/30 executed, deterministic distance 0.376 → 0.288
+(Δ +0.088), 9 improved overall but by type the picture is mixed — Box/Violin +0.274, Scatter +0.316,
+Std-band +0.107, Line +0.096, Distribution +0.055, **Heatmap −0.006 and Field 2D −0.090**. Six
+failures are unsupported chart types whose map failed and the decision service was offline; one Line
+task failed with `LinAlgError: SVD did not converge` because raw x values were in the 1e9 range and a
+NaN poisoned the fit. Fits are now centred/scaled, drop non-finite pairs, and skip a degenerate fit
+instead of killing the panel (regression test added). This is exactly the kind of defect that only a
+real benchmark exposes.
+
+The scheduled run now records a **capability snapshot** (`skills`, `operators`, benchmark tasks/ok/
+mean distance, statistics reproduced, knowledge version, tests) plus an explicit delta, so "did the
+project gain capability since last run?" is answerable from `latest_run.json` instead of inferred
+from prose. Two tests pin the snapshot and the delta contract.

@@ -7,6 +7,7 @@ WHY THESE TESTS
 """
 from __future__ import annotations
 
+import json
 import pathlib
 import re
 import sys
@@ -29,7 +30,8 @@ def test_report_is_english_self_contained_and_has_the_key_evidence(tmp_path):
     text = pathlib.Path(out).read_text(encoding="utf-8")
     assert text.startswith("<!DOCTYPE html>")
     assert "PlotTwin-Bench" in text
-    assert "0.268" in text
+    bench = json.loads((ROOT / "corpus/e2e/plottwin_report.json").read_text(encoding="utf-8"))
+    assert f'{bench["mean_distance"]:.3f}' in text
     assert "Progress overview" in text and "Research deliverables" in text
     assert not re.search(r"[\u4e00-\u9fff]", text), "report must be English-only"
     assert "None" not in text

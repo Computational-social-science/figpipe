@@ -49,6 +49,50 @@ def snapshot() -> dict:
     return json.loads(KB.read_text(encoding="utf-8"))
 
 
+def capability_snapshot() -> dict:
+    """A machine-readable snapshot of what the project can DO, not just what it knows.
+
+    WHY THIS EXISTS
+        The run record used to contain rules, tests and publish status -- all measures of
+        self-consistency. It could not answer "did the project gain capability since the last
+        run?", which is the only question that separates self-check from self-improvement.
+        This snapshot reads capability artefacts that other scripts produce (skills catalogue,
+        seed reproduction report, PlotTwin-Bench report) so a scheduled run can record and diff
+        them. It deliberately contains no derived opinion: every field is a count or a measured
+        distance from a file.
+    """
+    def _read(rel):
+        try:
+            return json.loads((ROOT / rel).read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            return {}
+
+    bench = _read("corpus/e2e/plottwin_report.json")
+    skills = _read("knowledge/skills_catalog.json")
+    seed = _read("templates/seed/report.json")
+    kb = _read("knowledge/layout_rules.json")
+    return {
+        "skills": len(skills.get("skills", []) or []),
+        "operators": len(skills.get("operators", []) or []),
+        "benchmark_tasks": bench.get("n_tasks", 0) or 0,
+        "benchmark_ok": bench.get("n_ok", 0) or 0,
+        "benchmark_mean_distance": bench.get("mean_distance"),
+        "statistics_reproduced": (seed.get("self_check") or {}).get("statistics_recorded"),
+        "knowledge_version": kb.get("version"),
+        "tests": None,             # patched in after the suite runs
+    }
+
+
+def capability_delta(previous: dict, current: dict) -> dict:
+    """Which capability fields changed, and by how much. `changed` is explicit."""
+    delta = {}
+    for key, value in current.items():
+        old = (previous or {}).get(key)
+        if old != value:
+            delta[key] = {"before": old, "after": value}
+    return {"changed": bool(delta), "delta": delta}
+
+
 def run_tests() -> tuple[bool, str]:
     """Run the suite, unless we are already inside it.
 
@@ -137,6 +181,13 @@ def git_publish(changed: bool) -> dict:
 def main(argv: list[str]) -> int:
     dry = "--dry-run" in argv
     RUNS.mkdir(parents=True, exist_ok=True)
+    previous_caps = {}
+    try:
+        previous_caps = json.loads((ROOT / "knowledge" / "latest_run.json")
+                                   .read_text(encoding="utf-8")).get("capabilities", {})
+    except (OSError, json.JSONDecodeError):
+        previous_caps = {}
+    caps = capability_snapshot()
     before = snapshot()
 
     ok_evolve, _ = True, ""
@@ -193,6 +244,8 @@ def main(argv: list[str]) -> int:
             "hypothesis": sum(1 for r in after["rules"] if r["confidence"] == "hypothesis"),
             "regressed": sum(1 for r in after["rules"] if r["confidence"] == "regressed"),
         },
+        "capabilities": caps,
+        "capabilities_delta": capability_delta(previous_caps, caps),
         "ok": None,                # patched in after the suite runs
     }
 
@@ -210,6 +263,10 @@ def main(argv: list[str]) -> int:
     ok_tests, test_tail = run_tests()
     run["tests_ok"] = ok_tests
     run["tests_summary"] = test_tail
+    import re as _re
+    m = _re.search(r"(\d+) passed", test_tail or "")
+    run["capabilities"]["tests"] = int(m.group(1)) if m else None
+    run["capabilities_delta"] = capability_delta(previous_caps, run["capabilities"])
     run["ok"] = ok_evolve and ok_tests
     if not dry:
         out.write_text(json.dumps(run, indent=2), encoding="utf-8")

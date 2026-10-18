@@ -83,6 +83,34 @@ def data_uri(path, max_width=900):
     return "data:image/png;base64," + base64.b64encode(raw).decode("ascii")
 
 
+def _caps_text(caps: dict) -> str:
+    if not caps:
+        return "not recorded yet"
+    parts = [f"skills {caps.get('skills')}", f"operators {caps.get('operators')}",
+             f"benchmark {caps.get('benchmark_ok')}/{caps.get('benchmark_tasks')}",
+             f"tests {caps.get('tests')}"]
+    return " · ".join(parts)
+
+
+def _delta_text(delta: dict) -> str:
+    if not delta:
+        return "not recorded yet"
+    if not delta.get("changed"):
+        return "no change since the previous run"
+    items = [f"{k}: {v['before']} → {v['after']}" for k, v in delta.get("delta", {}).items()]
+    return "; ".join(items)
+
+
+def _ascii(text) -> str:
+    """Keep the report English-only even when an OS error message is localised.
+
+    A Windows "connection refused" message arrives in Chinese; embedding it would break the
+    English-only policy that the report test enforces. The error CLASS and the actionable
+    English part are kept; the localised tail is dropped visibly rather than translated.
+    """
+    return re.sub(r"[^\x00-\x7f]+", "", str(text)).strip()
+
+
 def esc(value) -> str:
     return html.escape("" if value is None else str(value))
 
@@ -203,6 +231,8 @@ def build(out: pathlib.Path = OUT, live_tests: bool = True) -> pathlib.Path:
     decision_up = (bench.get("decision_service") or {}).get("up")
     decision_note = "service online" if decision_up else "service offline"
 
+    caps = latest.get("capabilities") or {}
+    caps_delta = latest.get("capabilities_delta") or {}
     style_best = (style.get("best") or {}).get("distance", {}) or {}
     style_base = (style.get("baseline") or {}).get("distance", {}) or {}
     best_distance = style_best.get("distance")
@@ -305,7 +335,7 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
         if t.get("status") != "ok":
             bench_rows.append(f'<tr><td>{esc(t.get("id"))}</td><td>{esc(t.get("chart"))}</td>'
                               f'<td>{esc(t.get("skill", "—"))}</td><td colspan="3">'
-                              f'{esc(t.get("error", ""))}</td><td>{pill("failed", "bad")}</td></tr>')
+                              f'{esc(_ascii(t.get("error", "")))}</td><td>{pill("failed", "bad")}</td></tr>')
             continue
         delta_t = float(t.get("delta") or 0.0)
         result = pill("improved", "ok") if delta_t > 0.005 else (
@@ -316,6 +346,17 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
             f'<td class="num">{float(t["distance"]):.3f}</td>'
             f'<td class="num">{float(t["baseline_distance"]):.3f}</td>'
             f'<td class="num">{delta_t:+.3f}</td><td>{result}</td></tr>')
+
+    def _num(value):
+        return "—" if value is None else value
+
+    type_rows = []
+    for chart, t in (bench.get("by_type") or {}).items():
+        type_rows.append(
+            f'<tr><td>{esc(chart)}</td><td class="num">{t.get("ok")}/{t.get("n")}</td>'
+            f'<td class="num">{_num(t.get("mean_distance"))}</td>'
+            f'<td class="num">{_num(t.get("mean_baseline"))}</td>'
+            f'<td class="num">{_num(t.get("mean_delta"))}</td></tr>')
 
     skill_rows = []
     for s in skills.get("skills", []):
@@ -431,6 +472,9 @@ imitate.</p>
     <tbody>{''.join(bench_rows)}</tbody>
   </table>
 </div>
+<h3 style="margin-top:20px">By chart type</h3>
+<table><thead><tr><th>Chart type</th><th>OK / tasks</th><th>Mean distance</th><th>Baseline</th>
+<th>Δ</th></tr></thead><tbody>{''.join(type_rows)}</tbody></table>
 <div class="warnbox"><b>Stated plainly:</b> this is not an SOTA claim. One of the ten tasks got
 worse (PMC13106710), so style transfer is not always beneficial. A formal claim requires all 150
 tasks, the official scorer (at least its non-VLM subset), a frozen protocol and a comparison with
@@ -459,6 +503,8 @@ floor (compliance, glyph collisions, no silently ignored parameters, a reproduci
 <tr><td>Knowledge-base version</td><td>v{esc(kb.get('version','—'))}</td><td>{n_rules} rules</td></tr>
 <tr><td>Machine-checked rules</td><td class="num">{enforced} / {n_rules}</td><td>the rest are hypotheses/refuted/void</td></tr>
 <tr><td>Unchecked rules</td><td>{esc(', '.join(unchecked) or '—')}</td><td>not counted as passing</td></tr>
+<tr><td>Capability snapshot</td><td>{esc(_caps_text(caps))}</td><td>recorded by the scheduled run</td></tr>
+<tr><td>Last capability change</td><td>{esc(_delta_text(caps_delta))}</td><td>explicit delta, not a claim</td></tr>
 </tbody></table>
 <p class="tag" style="margin-top:10px">Conclusion: the loop currently re-verifies, prevents drift and
 records. It has no capability snapshot, mutation or selection, so it is <b>not self-improvement</b>.

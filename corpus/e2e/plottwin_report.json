@@ -6,20 +6,160 @@
     "arxiv": "2608.28814",
     "note": "deterministic metrics only; official combined score requires the benchmark's VLM scorer and is NOT claimed here"
   },
-  "n_tasks": 10,
-  "n_ok": 10,
-  "mean_distance": 0.268,
-  "mean_baseline": 0.378,
-  "mean_improvement": 0.11,
-  "improved": 9,
-  "worse": 1,
-  "ties": 0,
-  "mean_best_of_two": 0.252,
+  "n_tasks": 30,
+  "n_ok": 23,
+  "mean_distance": 0.288,
+  "mean_baseline": 0.376,
+  "mean_improvement": 0.088,
+  "improved": 18,
+  "worse": 4,
+  "ties": 1,
+  "mean_best_of_two": 0.27,
   "decision_service": {
     "up": false,
     "url": "http://127.0.0.1:8090",
     "detail": "no health endpoint answered; the service is probably not running"
   },
+  "by_type": {
+    "3D": {
+      "n": 2,
+      "ok": 0,
+      "mean_distance": null,
+      "mean_baseline": null,
+      "mean_delta": null,
+      "errors": 2,
+      "error_examples": [
+        "DecisionUnavailable: decision service unreachable at http://127.0.0.1:8090/v1/sy",
+        "DecisionUnavailable: decision service unreachable at http://127.0.0.1:8090/v1/sy"
+      ]
+    },
+    "Box/Violin": {
+      "n": 4,
+      "ok": 4,
+      "mean_distance": 0.239,
+      "mean_baseline": 0.513,
+      "mean_delta": 0.274,
+      "errors": 0,
+      "error_examples": []
+    },
+    "Composite": {
+      "n": 3,
+      "ok": 0,
+      "mean_distance": null,
+      "mean_baseline": null,
+      "mean_delta": null,
+      "errors": 3,
+      "error_examples": [
+        "DecisionUnavailable: decision service unreachable at http://127.0.0.1:8090/v1/sy",
+        "DecisionUnavailable: decision service unreachable at http://127.0.0.1:8090/v1/sy",
+        "DecisionUnavailable: decision service unreachable at http://127.0.0.1:8090/v1/sy"
+      ]
+    },
+    "Distribution": {
+      "n": 7,
+      "ok": 7,
+      "mean_distance": 0.225,
+      "mean_baseline": 0.281,
+      "mean_delta": 0.055,
+      "errors": 0,
+      "error_examples": []
+    },
+    "Field 2D": {
+      "n": 3,
+      "ok": 3,
+      "mean_distance": 0.393,
+      "mean_baseline": 0.304,
+      "mean_delta": -0.09,
+      "errors": 0,
+      "error_examples": []
+    },
+    "Heatmap": {
+      "n": 3,
+      "ok": 3,
+      "mean_distance": 0.344,
+      "mean_baseline": 0.338,
+      "mean_delta": -0.006,
+      "errors": 0,
+      "error_examples": []
+    },
+    "Line": {
+      "n": 3,
+      "ok": 2,
+      "mean_distance": 0.208,
+      "mean_baseline": 0.304,
+      "mean_delta": 0.096,
+      "errors": 1,
+      "error_examples": [
+        "LinAlgError: SVD did not converge in Linear Least Squares"
+      ]
+    },
+    "Polar/Radial": {
+      "n": 1,
+      "ok": 0,
+      "mean_distance": null,
+      "mean_baseline": null,
+      "mean_delta": null,
+      "errors": 1,
+      "error_examples": [
+        "DecisionUnavailable: decision service unreachable at http://127.0.0.1:8090/v1/sy"
+      ]
+    },
+    "Scatter": {
+      "n": 1,
+      "ok": 1,
+      "mean_distance": 0.259,
+      "mean_baseline": 0.575,
+      "mean_delta": 0.316,
+      "errors": 0,
+      "error_examples": []
+    },
+    "Std-band": {
+      "n": 3,
+      "ok": 3,
+      "mean_distance": 0.405,
+      "mean_baseline": 0.511,
+      "mean_delta": 0.107,
+      "errors": 0,
+      "error_examples": []
+    }
+  },
+  "failures": [
+    {
+      "id": "PMC13245775",
+      "chart": "Composite",
+      "error": "DecisionUnavailable: decision service unreachable at http://127.0.0.1:8090/v1/systemone: URLError: <urlopen error [WinError 10061] 由于目标计算机积极拒绝，无法连接。>. Start it with scripts/serve.sh, or set DECISION_SERVICE_URL."
+    },
+    {
+      "id": "PMC13252719",
+      "chart": "Composite",
+      "error": "DecisionUnavailable: decision service unreachable at http://127.0.0.1:8090/v1/systemone: URLError: <urlopen error [WinError 10061] 由于目标计算机积极拒绝，无法连接。>. Start it with scripts/serve.sh, or set DECISION_SERVICE_URL."
+    },
+    {
+      "id": "PMC13286152",
+      "chart": "Composite",
+      "error": "DecisionUnavailable: decision service unreachable at http://127.0.0.1:8090/v1/systemone: URLError: <urlopen error [WinError 10061] 由于目标计算机积极拒绝，无法连接。>. Start it with scripts/serve.sh, or set DECISION_SERVICE_URL."
+    },
+    {
+      "id": "arxiv-ml-bar-line-v2__2605.21125",
+      "chart": "Polar/Radial",
+      "error": "DecisionUnavailable: decision service unreachable at http://127.0.0.1:8090/v1/systemone: URLError: <urlopen error [WinError 10061] 由于目标计算机积极拒绝，无法连接。>. Start it with scripts/serve.sh, or set DECISION_SERVICE_URL."
+    },
+    {
+      "id": "arxiv-phys-prx-prl__2603.21981",
+      "chart": "Line",
+      "error": "LinAlgError: SVD did not converge in Linear Least Squares"
+    },
+    {
+      "id": "arxiv_2502.18153",
+      "chart": "3D",
+      "error": "DecisionUnavailable: decision service unreachable at http://127.0.0.1:8090/v1/systemone: URLError: <urlopen error [WinError 10061] 由于目标计算机积极拒绝，无法连接。>. Start it with scripts/serve.sh, or set DECISION_SERVICE_URL."
+    },
+    {
+      "id": "arxiv_2505.19527",
+      "chart": "3D",
+      "error": "DecisionUnavailable: decision service unreachable at http://127.0.0.1:8090/v1/systemone: URLError: <urlopen error [WinError 10061] 由于目标计算机积极拒绝，无法连接。>. Start it with scripts/serve.sh, or set DECISION_SERVICE_URL."
+    }
+  ],
   "tasks": [
     {
       "id": "PMC11502666",
@@ -271,6 +411,418 @@
           "severity": "hard"
         }
       ]
+    },
+    {
+      "id": "PMC13135507",
+      "chart": "Scatter",
+      "panel_mode": "multi",
+      "skill": "scatter_relationship",
+      "rationale": "scatter panel_row vs panel_col",
+      "rows_used": 1248,
+      "status": "ok",
+      "distance": 0.259,
+      "baseline_distance": 0.575,
+      "delta": 0.316,
+      "components": {
+        "aspect": 0.094,
+        "ink": 0.424
+      },
+      "hard_failures": 1,
+      "findings": [
+        {
+          "check": "height",
+          "detail": "170.0 mm exceeds the 170.0 mm maximum",
+          "severity": "hard"
+        }
+      ]
+    },
+    {
+      "id": "PMC13245775",
+      "chart": "Composite",
+      "panel_mode": "multi",
+      "status": "error",
+      "error": "DecisionUnavailable: decision service unreachable at http://127.0.0.1:8090/v1/systemone: URLError: <urlopen error [WinError 10061] 由于目标计算机积极拒绝，无法连接。>. Start it with scripts/serve.sh, or set DECISION_SERVICE_URL."
+    },
+    {
+      "id": "PMC13252719",
+      "chart": "Composite",
+      "panel_mode": "multi",
+      "status": "error",
+      "error": "DecisionUnavailable: decision service unreachable at http://127.0.0.1:8090/v1/systemone: URLError: <urlopen error [WinError 10061] 由于目标计算机积极拒绝，无法连接。>. Start it with scripts/serve.sh, or set DECISION_SERVICE_URL."
+    },
+    {
+      "id": "PMC13273070",
+      "chart": "Box/Violin",
+      "panel_mode": "multi",
+      "skill": "distribution_comparison",
+      "rationale": "box panel_row by panel_group",
+      "rows_used": 606,
+      "status": "ok",
+      "distance": 0.175,
+      "baseline_distance": 0.352,
+      "delta": 0.177,
+      "components": {
+        "palette": 0.279,
+        "aspect": 0.003,
+        "ink": 0.087
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "PMC13286152",
+      "chart": "Composite",
+      "panel_mode": "multi",
+      "status": "error",
+      "error": "DecisionUnavailable: decision service unreachable at http://127.0.0.1:8090/v1/systemone: URLError: <urlopen error [WinError 10061] 由于目标计算机积极拒绝，无法连接。>. Start it with scripts/serve.sh, or set DECISION_SERVICE_URL."
+    },
+    {
+      "id": "PMC13336770",
+      "chart": "Distribution",
+      "panel_mode": "multi",
+      "skill": "histogram",
+      "rationale": "hist panel_col",
+      "rows_used": 978,
+      "status": "ok",
+      "distance": 0.164,
+      "baseline_distance": 0.32,
+      "delta": 0.156,
+      "components": {
+        "palette": 0.187,
+        "aspect": 0.001,
+        "ink": 0.269
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "PMC13342296",
+      "chart": "Distribution",
+      "panel_mode": "multi",
+      "skill": "faceted_distribution",
+      "rationale": "faceted hist by panel_group",
+      "rows_used": 392,
+      "status": "ok",
+      "distance": 0.164,
+      "baseline_distance": 0.196,
+      "delta": 0.032,
+      "components": {
+        "palette": 0.205,
+        "aspect": 0.002,
+        "ink": 0.223
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "PMC13343911",
+      "chart": "Line",
+      "panel_mode": "multi",
+      "skill": "trend_with_uncertainty",
+      "rationale": "trend time_months->panel_row",
+      "rows_used": 387,
+      "status": "ok",
+      "distance": 0.379,
+      "baseline_distance": 0.477,
+      "delta": 0.098,
+      "components": {
+        "aspect": 0.595,
+        "ink": 0.163
+      },
+      "hard_failures": 1,
+      "findings": [
+        {
+          "check": "height",
+          "detail": "170.0 mm exceeds the 170.0 mm maximum",
+          "severity": "hard"
+        }
+      ]
+    },
+    {
+      "id": "arxiv-astro-skymap__2412.12637",
+      "chart": "Field 2D",
+      "panel_mode": "single",
+      "skill": "matrix_plate",
+      "rationale": "matrix 8 measures",
+      "rows_used": 40,
+      "status": "ok",
+      "distance": 0.245,
+      "baseline_distance": 0.194,
+      "delta": -0.051,
+      "components": {
+        "palette": 0.095,
+        "aspect": 0.771,
+        "ink": 0.096
+      },
+      "hard_failures": 10,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'incident_angle_deg' over 'surface_cell_solid_angle_sr'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'hydrogen_ion_flux_1e15_cm2' over 'replicate_id'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'latitude_deg' over 'surface_cell_solid_angle_sr'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'hydrogen_ion_flux_1e15_cm2' over 'incident_angle_deg'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'latitude_deg' over 'longitude_deg'",
+          "severity": "hard"
+        }
+      ]
+    },
+    {
+      "id": "arxiv-astro-skymap__2510.17487",
+      "chart": "Std-band",
+      "panel_mode": "single",
+      "skill": "trend_with_uncertainty",
+      "rationale": "trend acquisition_frequency_hz->phosphate_detection_limit_mg_per_l",
+      "rows_used": 460,
+      "status": "ok",
+      "distance": 0.342,
+      "baseline_distance": 0.356,
+      "delta": 0.014,
+      "components": {
+        "palette": 0.515,
+        "aspect": 0.006,
+        "ink": 0.245
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "arxiv-ml-3d-trajectory__2511.17399",
+      "chart": "Field 2D",
+      "panel_mode": "single",
+      "skill": "matrix_plate",
+      "rationale": "matrix 6 measures",
+      "rows_used": 40,
+      "status": "ok",
+      "distance": 0.473,
+      "baseline_distance": 0.379,
+      "delta": -0.094,
+      "components": {
+        "palette": 0.161,
+        "aspect": 0.725,
+        "ink": 1.0
+      },
+      "hard_failures": 7,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'mean_log10_particle_deposition_flux_particles_cm2_h' over 'vertical_wind_deflection_normalized'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'mean_log10_particle_deposition_flux_particles_cm2_h' over 'standard_error_log10_flux'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'lateral_wind_deflection_normalized' over 'vertical_wind_deflection_normalized'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'lateral_wind_deflection_normalized' over 'mean_log10_particle_deposition_flux_particles_cm2_h'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'mean_log10_particle_deposition_flux_particles_cm2_h' over 'replicate_countdisplay_order'",
+          "severity": "hard"
+        }
+      ]
+    },
+    {
+      "id": "arxiv-ml-3d-trajectory__2602.22552",
+      "chart": "Field 2D",
+      "panel_mode": "single",
+      "skill": "matrix_plate",
+      "rationale": "matrix 5 measures",
+      "rows_used": 40,
+      "status": "ok",
+      "distance": 0.462,
+      "baseline_distance": 0.338,
+      "delta": -0.124,
+      "components": {
+        "palette": 0.12,
+        "aspect": 0.781,
+        "ink": 1.0
+      },
+      "hard_failures": 6,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'inundation_anomaly_normalized' over 'mean_methane_flux_mg_ch4_m2_h'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'mean_methane_flux_mg_ch4_m2_h' over 'standard_error_mg_ch4_m2_h'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'inundation_anomaly_normalized' over 'salinity_anomaly_normalized'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'simulation_step' over 'standard_error_mg_ch4_m2_h'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'mean_methane_flux_mg_ch4_m2_h' over 'salinity_anomaly_normalized'",
+          "severity": "hard"
+        }
+      ]
+    },
+    {
+      "id": "arxiv-ml-bar-line-v2__2511.15055",
+      "chart": "Std-band",
+      "panel_mode": "single",
+      "skill": "trend_with_uncertainty",
+      "rationale": "trend survey_day->survey_week",
+      "rows_used": 386,
+      "status": "ok",
+      "distance": 0.464,
+      "baseline_distance": 0.495,
+      "delta": 0.031,
+      "components": {
+        "palette": 0.556,
+        "aspect": 0.009,
+        "ink": 0.688
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "arxiv-ml-bar-line-v2__2605.21125",
+      "chart": "Polar/Radial",
+      "panel_mode": "single",
+      "status": "error",
+      "error": "DecisionUnavailable: decision service unreachable at http://127.0.0.1:8090/v1/systemone: URLError: <urlopen error [WinError 10061] 由于目标计算机积极拒绝，无法连接。>. Start it with scripts/serve.sh, or set DECISION_SERVICE_URL."
+    },
+    {
+      "id": "arxiv-phys-prx-prl__2603.21981",
+      "chart": "Line",
+      "panel_mode": "single",
+      "skill": "trend_with_uncertainty",
+      "rationale": "trend radial_month->panel_col",
+      "rows_used": 1394,
+      "status": "error",
+      "error": "LinAlgError: SVD did not converge in Linear Least Squares"
+    },
+    {
+      "id": "arxiv_2410.15876",
+      "chart": "Std-band",
+      "panel_mode": "multi",
+      "skill": "trend_with_uncertainty",
+      "rationale": "trend panel_row->panel_col",
+      "rows_used": 80,
+      "status": "ok",
+      "distance": 0.408,
+      "baseline_distance": 0.683,
+      "delta": 0.275,
+      "components": {
+        "palette": 0.334,
+        "aspect": 0.001,
+        "ink": 1.0
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "arxiv_2502.15132",
+      "chart": "Line",
+      "panel_mode": "multi",
+      "skill": "trend_with_uncertainty",
+      "rationale": "trend diffraction_patterns_100k->neighboring_grains_in_fit",
+      "rows_used": 78,
+      "status": "ok",
+      "distance": 0.038,
+      "baseline_distance": 0.131,
+      "delta": 0.093,
+      "components": {
+        "aspect": 0.005,
+        "ink": 0.07
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "arxiv_2502.17598",
+      "chart": "Heatmap",
+      "panel_mode": "multi",
+      "skill": "matrix_plate",
+      "rationale": "matrix 8 measures",
+      "rows_used": 40,
+      "status": "ok",
+      "distance": 0.383,
+      "baseline_distance": 0.383,
+      "delta": 0.0,
+      "components": {
+        "palette": 0.078,
+        "aspect": 0.946,
+        "ink": 0.581
+      },
+      "hard_failures": 11,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'estimated_oxygen_flux_change_umol_g_root_h' over 'standard_error_umol_g_root_h'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'bacterial_isolate_index' over 'estimated_oxygen_flux_change_umol_g_root_h'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'estimated_oxygen_flux_change_umol_g_root_h' over 'posterior_association_probability'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'posterior_association_probability' over 'standard_error_umol_g_root_h'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'posterior_association_probability' over 'replicate_plants'",
+          "severity": "hard"
+        }
+      ]
+    },
+    {
+      "id": "arxiv_2502.18153",
+      "chart": "3D",
+      "panel_mode": "multi",
+      "status": "error",
+      "error": "DecisionUnavailable: decision service unreachable at http://127.0.0.1:8090/v1/systemone: URLError: <urlopen error [WinError 10061] 由于目标计算机积极拒绝，无法连接。>. Start it with scripts/serve.sh, or set DECISION_SERVICE_URL."
+    },
+    {
+      "id": "arxiv_2505.19527",
+      "chart": "3D",
+      "panel_mode": "multi",
+      "status": "error",
+      "error": "DecisionUnavailable: decision service unreachable at http://127.0.0.1:8090/v1/systemone: URLError: <urlopen error [WinError 10061] 由于目标计算机积极拒绝，无法连接。>. Start it with scripts/serve.sh, or set DECISION_SERVICE_URL."
     }
   ]
 }

@@ -311,6 +311,27 @@ def main(argv=None) -> int:
     improved = sum(1 for d in deltas if d > 0.005)
     worse = sum(1 for d in deltas if d < -0.005)
     ties = len(deltas) - improved - worse
+    by_type = {}
+    for r in results:
+        t = by_type.setdefault(r["chart"], {"n": 0, "ok": 0, "d": [], "base": [],
+                                            "delta": [], "errors": []})
+        t["n"] += 1
+        if r["status"] == "ok":
+            t["ok"] += 1
+            t["d"].append(r["distance"])
+            t["base"].append(r["baseline_distance"])
+            t["delta"].append(r["delta"])
+        else:
+            t["errors"].append(r.get("error", "")[:80])
+    type_stats = {}
+    for chart, t in sorted(by_type.items()):
+        type_stats[chart] = {
+            "n": t["n"], "ok": t["ok"],
+            "mean_distance": round(float(np.mean(t["d"])), 3) if t["d"] else None,
+            "mean_baseline": round(float(np.mean(t["base"])), 3) if t["base"] else None,
+            "mean_delta": round(float(np.mean(t["delta"])), 3) if t["delta"] else None,
+            "errors": len(t["errors"]), "error_examples": t["errors"][:3],
+        }
     report = {
         "benchmark": {"name": "PlotTwin-Bench", "license": "CC BY-NC 4.0",
                       "source": "figmirror/PlotTwin-Bench", "arxiv": "2608.28814",
@@ -324,15 +345,21 @@ def main(argv=None) -> int:
         "mean_best_of_two": round(float(np.mean([min(r["distance"], r["baseline_distance"])
                                                  for r in ok])), 3) if ok else None,
         "decision_service": decision.health(),
+        "by_type": type_stats,
+        "failures": [{"id": r["id"], "chart": r["chart"], "error": r.get("error")}
+                     for r in results if r["status"] != "ok"],
         "tasks": results,
     }
     OUT.write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"  ok {len(ok)}/{len(results)}  mean distance {report['mean_distance']}  "
           f"baseline {report['mean_baseline']}  delta {report['mean_improvement']}")
+    for chart, t in sorted(type_stats.items()):
+        print(f"    type {chart:<14} ok {t['ok']}/{t['n']:<3} "
+              f"d={t['mean_distance']} base={t['mean_baseline']} "
+              f"delta={t['mean_delta']} errors={t['errors']}")
     for r in results:
-        print(f"    {r['id']:<12} {r['chart']:<12} {r.get('status'):<6} "
-              f"{r.get('skill', '-'):<24} d={r.get('distance', '-')} "
-              f"base={r.get('baseline_distance', '-')}")
+        if r["status"] != "ok":
+            print(f"    FAIL {r['id']:<12} {r['chart']:<12} {str(r.get('error'))[:100]}")
     print(f"  wrote {OUT}")
     return 0
 
