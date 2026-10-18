@@ -83,14 +83,51 @@ def capability_snapshot() -> dict:
     }
 
 
+#: Which direction is "better" for each capability field. +1 = higher is better, -1 = lower is
+#: better. A field that is not listed is reported but never judged: an unjudged field cannot
+#: silently count as an improvement.
+CAPABILITY_DIRECTION = {
+    "skills": +1,
+    "operators": +1,
+    "benchmark_tasks": +1,
+    "benchmark_ok": +1,
+    "benchmark_mean_distance": -1,
+    "statistics_reproduced": +1,
+    "tests": +1,
+    "knowledge_version": +1,
+}
+
+
 def capability_delta(previous: dict, current: dict) -> dict:
-    """Which capability fields changed, and by how much. `changed` is explicit."""
+    """Which capability fields changed, by how much, and whether any of them got WORSE.
+
+    Recording a delta is not a control. The review of the loop found that a run could report
+    "capability 23/30" after a previous run reported "26/30" and still exit 0, because nothing
+    compared the two. `verdict.regressions` makes a capability loss explicit, and main() turns
+    it into a non-zero exit unless the operator accepts it on the command line -- the same
+    shape as a rule regression.
+    """
     delta = {}
     for key, value in current.items():
         old = (previous or {}).get(key)
         if old != value:
             delta[key] = {"before": old, "after": value}
-    return {"changed": bool(delta), "delta": delta}
+    gains, regressions = [], []
+    for key, change in delta.items():
+        direction = CAPABILITY_DIRECTION.get(key)
+        old, new = change["before"], change["after"]
+        if direction is None or old is None or new is None:
+            continue
+        move = (new - old) * direction
+        entry = {"field": key, "before": old, "after": new}
+        if move > 0:
+            gains.append(entry)
+        elif move < 0:
+            regressions.append(entry)
+    return {"changed": bool(delta), "delta": delta,
+            "verdict": {"gains": gains, "regressions": regressions,
+                        "ok": not regressions,
+                        "judged_fields": sorted(CAPABILITY_DIRECTION)}}
 
 
 def run_tests() -> tuple[bool, str]:
@@ -267,7 +304,15 @@ def main(argv: list[str]) -> int:
     m = _re.search(r"(\d+) passed", test_tail or "")
     run["capabilities"]["tests"] = int(m.group(1)) if m else None
     run["capabilities_delta"] = capability_delta(previous_caps, run["capabilities"])
-    run["ok"] = ok_evolve and ok_tests
+    cap_ok = (run["capabilities_delta"].get("verdict") or {}).get("ok", True)
+    accept = "--accept-capability-regression" in argv
+    run["capability_ok"] = cap_ok or accept
+    run["capability_regressions"] = ((run["capabilities_delta"].get("verdict") or {})
+                                     .get("regressions", []))
+    if not cap_ok and not accept:
+        run["publish_note"] = ("capability regression detected; record kept but the run exits "
+                               "non-zero (re-run with --accept-capability-regression to accept)")
+    run["ok"] = ok_evolve and ok_tests and (cap_ok or accept)
     if not dry:
         out.write_text(json.dumps(run, indent=2), encoding="utf-8")
         (ROOT / "knowledge" / "latest_run.json").write_text(

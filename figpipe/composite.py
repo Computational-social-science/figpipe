@@ -367,7 +367,10 @@ def composite(panels: list[Panel], columns: float = 2.0, height_mm: float | None
             share["sharex"] = first_in_col[cell["col"]]
         if sharey and cell["col"] > 0 and cell["row"] in first_in_row:
             share["sharey"] = first_in_row[cell["row"]]
-        ax = fig.add_axes([x0 / W, y0 / H, ax_w / W, h / H], **share)
+        projection = ("polar" if p.draw in getattr(drawlib, "POLAR_DRAWERS", set())
+                      else None)
+        ax = fig.add_axes([x0 / W, y0 / H, ax_w / W, h / H],
+                          projection=projection, **share)
         first_in_col.setdefault(cell["col"], ax)
         first_in_row.setdefault(cell["row"], ax)
         artist = drawlib.DRAWERS[p.draw](ax, p.data, **dict(p.kwargs))

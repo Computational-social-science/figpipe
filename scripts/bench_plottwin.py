@@ -50,6 +50,19 @@ class MappingError(RuntimeError):
     """The task's target data has no supported reading. Recorded, never silently defaulted."""
 
 
+#: Chart types with NO operator, and why. A task of one of these types is a CLASSIFIED failure:
+#: it must not be routed to the decision service, because no choice among our skills could ever
+#: be right, and a model asked anyway would be forced to pick a wrong one.
+UNSUPPORTED_TYPES = {
+    "3D": "no 3D operator; 3D rarely survives Nature print, so this is a deliberate exclusion",
+}
+
+
+def classify_failure(chart: str) -> str | None:
+    """A reason code when the chart type is deliberately unsupported, else None."""
+    return UNSUPPORTED_TYPES.get(chart)
+
+
 def fetch_row(offset: int) -> dict:
     CACHE.mkdir(parents=True, exist_ok=True)
     cache = CACHE / f"{offset}.json"
@@ -168,6 +181,25 @@ def _reading_from_skill(skill, df, nums, cats):
         if not pref:
             raise MappingError("ranked_composition needs a categorical axis")
         return {"label": pref, "value": nums[0]}, df, f"ranked {nums[0]} by {pref}"
+    if skill == "error_comparison":
+        label = next((c for c in cats if df[c].nunique() <= 20), None)
+        if not label:
+            raise MappingError("error_comparison needs a categorical axis")
+        return {"x": label, "y": nums[0]}, df, f"bars {nums[0]} by {label}"
+    if skill == "composite_groups":
+        group = next((c for c in df.columns
+                      if any(k in str(c).lower() for k in ("panel_group", "panel_block",
+                                                           "block_id", "facet"))
+                      and 2 <= df[c].nunique() <= 4), None)
+        label = next((c for c in cats if c != group and df[c].nunique() <= 12), None)
+        if not (group and label):
+            raise MappingError("composite_groups needs a 2-4 level panel group and a category")
+        return {"by": group, "x": label, "y": nums[0]}, df, f"composite {group} x {label}"
+    if skill == "radial_profile":
+        cat = next((c for c in cats if df[c].nunique() <= 12), None)
+        if not cat:
+            raise MappingError("radial_profile needs an angular category (<=12 levels)")
+        return {"theta": cat, "value": nums[0]}, df, f"polar {nums[0]} by {cat}"
     if skill == "matrix_plate":
         data, why = _matrix_reading(df, nums, cats)
         if data is None:
@@ -232,6 +264,26 @@ def choose_reading(df: pd.DataFrame, chart: str, panel_mode: str):
             return "ranked_composition", {"label": pref, "value": nums[0]}, df, \
                 f"ranked {nums[0]} by {pref}"
         raise MappingError("bar needs a categorical axis")
+    if chart == "Composite":
+        group = next((c for c in df.columns
+                      if any(k in str(c).lower() for k in ("panel_group", "panel_block",
+                                                           "block_id", "facet"))
+                      and 2 <= df[c].nunique() <= 4), None)
+        label = next((c for c in cats if c != group and df[c].nunique() <= 12), None)
+        if group and label and nums:
+            err = next((c for c in nums
+                        if any(k in c.lower() for k in ("ci95_lower", "lower", "err"))), None)
+            hi = next((c for c in nums
+                       if any(k in c.lower() for k in ("ci95_upper", "upper"))), None)
+            return "composite_groups", {"by": group, "x": label, "y": nums[0]}, df, \
+                f"composite {group} x {label}"
+        raise MappingError("composite task has no 2-4 level panel group with a categorical axis")
+    if chart == "Polar/Radial":
+        ang = next((c for c in cats if df[c].nunique() <= 12), None)
+        if not ang:
+            raise MappingError("polar/radial needs an angular category (<=12 levels)")
+        return "radial_profile", {"theta": ang, "value": nums[0]}, df, \
+            f"polar {nums[0]} by {ang}"
     if chart in ("Heatmap", "Field 2D"):
         data, why = _matrix_reading(df, nums, cats)
         if data is None:
@@ -251,6 +303,11 @@ def run_task(row: dict, out_dir: pathlib.Path) -> dict:
         try:
             skill, params, data, why = choose_reading(df, row["chart_type_name"], row["panel_mode"])
         except MappingError as map_exc:
+            reason = classify_failure(row["chart_type_name"])
+            if reason:
+                result.update({"status": "unsupported", "error": f"unsupported chart type: "
+                                                                  f"{reason}"})
+                return result
             nums = _numeric(df)
             cats = _categorical(df, nums)
             try:
@@ -307,6 +364,8 @@ def main(argv=None) -> int:
     print(f"  tasks fetched: {len(tasks)} (offset {args.offset}, limit {args.limit})")
     results = [run_task(row, out_dir) for row in tasks]
     ok = [r for r in results if r["status"] == "ok"]
+    unsupported = [r for r in results if r["status"] == "unsupported"]
+    errored = [r for r in results if r["status"] == "error"]
     deltas = [r["delta"] for r in ok]
     improved = sum(1 for d in deltas if d > 0.005)
     worse = sum(1 for d in deltas if d < -0.005)
@@ -338,6 +397,8 @@ def main(argv=None) -> int:
                       "note": "deterministic metrics only; official combined score requires the "
                               "benchmark's VLM scorer and is NOT claimed here"},
         "n_tasks": len(results), "n_ok": len(ok),
+        "n_unsupported": len(unsupported), "n_error": len(errored),
+        "unsupported_types": {r["chart"]: r.get("error") for r in unsupported},
         "mean_distance": round(float(np.mean([r["distance"] for r in ok])), 3) if ok else None,
         "mean_baseline": round(float(np.mean([r["baseline_distance"] for r in ok])), 3) if ok else None,
         "mean_improvement": round(float(np.mean(deltas)), 3) if ok else None,

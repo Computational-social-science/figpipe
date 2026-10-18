@@ -56,27 +56,27 @@
     "Heatmap": {
       "skill": "matrix_plate",
       "status": "supported",
-      "note": "needs a pivot/selection rule for the value matrix"
+      "note": "style transfer can worsen it; see benchmark by_type"
     },
     "Field 2D": {
       "skill": "matrix_plate",
       "status": "partial",
-      "note": "matrix path exists; contour/field semantics not yet an operator"
+      "note": "contour/field semantics not yet an operator; measured worse"
     },
     "Composite": {
-      "skill": null,
-      "status": "partial",
-      "note": "requires composing 2+ recipes; composition is in skills, not yet in the benchmark mapper"
+      "skill": "composite_groups",
+      "status": "supported",
+      "note": "one panel per panel_group/block level"
     },
     "Polar/Radial": {
-      "skill": null,
-      "status": "unsupported",
-      "note": "backlog: needs a polar operator"
+      "skill": "radial_profile",
+      "status": "supported",
+      "note": "polar projection via POLAR_DRAWERS"
     },
     "3D": {
       "skill": null,
-      "status": "unsupported",
-      "note": "deliberately out of scope: 3D rarely survives Nature print"
+      "status": "excluded",
+      "note": "no 3D operator; 3D rarely survives Nature print, so tasks of this type are reported as classified failures, not attempts"
     },
     "Network/Tree": {
       "skill": null,
@@ -85,9 +85,11 @@
     }
   },
   "coverage": {
-    "supported_types": 7,
-    "supported_tasks": 110,
-    "partial_types": 2,
-    "unsupported_types": 3
+    "supported_types": 9,
+    "supported_tasks": 141,
+    "partial_types": 1,
+    "excluded_types": 1,
+    "unsupported_types": 1,
+    "note": "3D excluded by design; Network/Tree still lacks an operator"
   }
 }

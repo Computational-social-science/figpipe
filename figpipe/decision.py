@@ -106,6 +106,9 @@ SKILL_OPTIONS = {
     "grouped_measures": "parallel measured columns compared across categories",
     "ranked_composition": "categories ranked by one measured share/value",
     "matrix_plate": "a numeric matrix, or a long table pivoted into one",
+    "radial_profile": "one measured value per angle, on a polar axis",
+    "error_comparison": "a few entities compared with their uncertainty, as bars",
+    "composite_groups": "one panel per level of a grouping column in a long table",
 }
 
 

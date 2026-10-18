@@ -50,3 +50,56 @@ def test_delta_names_what_changed_and_reports_no_change():
     assert d["delta"]["skills"] == {"before": 12, "after": 13}
     assert d["delta"]["tests"] == {"before": 225, "after": 230}
     assert "operators" not in d["delta"]
+
+
+def test_a_capability_loss_is_a_regression_not_a_footnote():
+    """The loop must FAIL when a judged capability field gets worse.
+
+    WHY: recording "benchmark_ok: 23" after a previous "26" is not a control. The verdict has
+    to name the loss and main() has to exit non-zero, otherwise a run that lost capability
+    reports success.
+    """
+    if cron is None:
+        import pytest
+        pytest.skip("cron_run unavailable")
+    prev = {"benchmark_ok": 26, "benchmark_tasks": 30, "skills": 12,
+            "benchmark_mean_distance": 0.28, "tests": 229}
+    cur = {"benchmark_ok": 23, "benchmark_tasks": 30, "skills": 12,
+           "benchmark_mean_distance": 0.31, "tests": 229}
+    out = cron.capability_delta(prev, cur)
+    verdict = out["verdict"]
+    assert verdict["ok"] is False
+    fields = {r["field"] for r in verdict["regressions"]}
+    assert fields == {"benchmark_ok", "benchmark_mean_distance"}
+    assert out["changed"] is True
+
+
+def test_an_improvement_is_recorded_as_a_gain():
+    if cron is None:
+        import pytest
+        pytest.skip("cron_run unavailable")
+    out = cron.capability_delta({"skills": 12, "operators": 16},
+                                {"skills": 13, "operators": 16})
+    assert out["verdict"]["ok"] is True
+    assert [g["field"] for g in out["verdict"]["gains"]] == ["skills"]
+
+
+def test_a_lower_distance_counts_as_improvement():
+    """Lower style distance is better; the direction table must not treat it as a loss."""
+    if cron is None:
+        import pytest
+        pytest.skip("cron_run unavailable")
+    out = cron.capability_delta({"benchmark_mean_distance": 0.31},
+                                {"benchmark_mean_distance": 0.28})
+    assert out["verdict"]["ok"] is True
+    assert [g["field"] for g in out["verdict"]["gains"]] == ["benchmark_mean_distance"]
+
+
+def test_unjudged_fields_never_count_as_gains_or_regressions():
+    if cron is None:
+        import pytest
+        pytest.skip("cron_run unavailable")
+    out = cron.capability_delta({"mystery": 1}, {"mystery": 0})
+    assert out["changed"] is True
+    assert out["verdict"]["ok"] is True
+    assert out["verdict"]["gains"] == [] and out["verdict"]["regressions"] == []

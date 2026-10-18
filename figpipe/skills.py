@@ -287,6 +287,86 @@ def _second_numeric(ctx) -> str:
     return num[1]
 
 
+@operator("encode.error_bars", "build")
+def op_encode_error_bars(ctx: SkillContext, x: str, y: str, err: str | None = None,
+                         title: str | None = None, xtick_rotation: float = 30.0,
+                         xlabel: str | None = None, ylabel: str | None = None):
+    """Encode a few entities compared with their uncertainty, as bars + error bars."""
+    kw = {"x": x, "y": y, "xtick_rotation": xtick_rotation,
+          "xlabel": xlabel or "", "ylabel": ylabel or "", "title": title}
+    if err:
+        kw["err"] = err
+    ctx.add_panel(composite.Panel("bar_with_errors", ctx.data, kw))
+    ctx.trace.append(f"encode.error_bars({x},{y},{err})")
+
+
+@operator("layout.split_panels", "build")
+def op_layout_split_panels(ctx: SkillContext, by: str, of: str = "error_bars",
+                           x: str | None = None, y: str | None = None,
+                           err: str | None = None, columns: float = 2.0,
+                           max_panels: int = 4, max_rows: int = 20,
+                           xtick_rotation: float = 30.0, **kwargs):
+    """Build one panel per level of a grouping column from a long table.
+
+    This is the operator behind benchmark "Composite" tasks: a single table carries several
+    sub-figures distinguished by a group column (panel_group / panel_block), and the honest
+    reading is one panel per group. More levels than `max_panels` is an error, because silently
+    dropping a panel changes what the figure claims.
+    """
+    if not by or by not in ctx.data.columns:
+        raise SkillError(f"layout.split_panels needs a grouping column; got {by!r}")
+    levels = [str(v) for v in pd.unique(ctx.data[by])]
+    if len(levels) > max_panels:
+        raise SkillError(f"layout.split_panels: {len(levels)} levels but max_panels="
+                         f"{max_panels}; raise it deliberately")
+    if of != "error_bars":
+        raise SkillError(f"layout.split_panels: unsupported encoder {of!r}")
+    label = x or _first_categorical(ctx)
+    aggregated: list[str] = []
+    for level in levels:
+        sub = ctx.data[ctx.data[by].astype(str) == level].reset_index(drop=True)
+        if len(sub) > max_rows:
+            # A bar panel with 300 bars is not a comparison, it is a smear: every bar is
+            # narrower than a pixel and the axis carries 300 ticks. Aggregate by the categorical
+            # axis and RECORD it -- silently truncating would change what the panel claims.
+            grouped = (sub.groupby(label, observed=True)[y or _first_numeric(ctx)]
+                       .mean().reset_index())
+            if len(grouped) > max_rows:
+                grouped = grouped.head(max_rows)
+                aggregated.append(f"{level}: top {max_rows} of {len(grouped)}")
+            else:
+                aggregated.append(f"{level}: {len(sub)} rows -> mean per {label}")
+            sub = grouped
+        child = SkillContext(data=sub, params=dict(ctx.params), layout=dict(ctx.layout),
+                             meta=dict(ctx.meta), rc=ctx.rc)
+        op_encode_error_bars(child, x=label, y=y or _first_numeric(child),
+                             err=err, title=level, xtick_rotation=xtick_rotation)
+        ctx.panels.extend(child.panels)
+    ctx.layout["columns"] = columns
+    ctx.meta["split"] = {"by": by, "levels": levels, "aggregated": aggregated}
+    ctx.trace.append(f"layout.split_panels({by}:{len(levels)})")
+    for note in aggregated:
+        ctx.trace.append(f"layout.split_panels.aggregate({note})")
+
+
+def _first_categorical(ctx) -> str:
+    for c in ctx.data.columns:
+        if not pd.api.types.is_numeric_dtype(ctx.data[c]):
+            if 2 <= ctx.data[c].nunique() <= 30:
+                return c
+    raise SkillError("layout.split_panels: no categorical axis column found")
+
+
+@operator("encode.polar", "build")
+def op_encode_polar(ctx: SkillContext, theta: str, value: str,
+                    line: bool = True, title: str | None = None):
+    """Encode a radial profile: one value per angle (category or degrees)."""
+    ctx.add_panel(composite.Panel("polar_profile", ctx.data,
+                                  {"theta": theta, "value": value, "line": line,
+                                   "title": title}))
+    ctx.trace.append(f"encode.polar({theta},{value})")
+
+
 @operator("style.profile", "build")
 def op_style_profile(ctx: SkillContext, profile=None):
     """Apply a measured reference style: rcParams, palette, and its aspect-derived height."""
@@ -615,6 +695,34 @@ _SKILLS = [
         required=("x", "y"),
         optional=("which", "columns", "height_mm"),
         examples=({"x": "papers", "y": "citations", "which": "xy"},),
+        verify=(),
+    ),
+    Skill(
+        name="error_comparison",
+        description="A few entities compared with their uncertainty, as bars with error bars.",
+        build=(("encode.error_bars", {}), ("layout.plate", {"height_mm": 90.0})),
+        required=("x", "y"),
+        optional=("err", "title", "xtick_rotation", "columns", "height_mm"),
+        examples=({"x": "model", "y": "estimate", "err": "se"},),
+        verify=(),
+    ),
+    Skill(
+        name="composite_groups",
+        description="One panel per level of a grouping column, drawn from a long table.",
+        build=(("layout.split_panels", {}), ("layout.plate", {"height_mm": 140.0})),
+        required=("by", "x", "y"),
+        optional=("err", "columns", "height_mm", "max_panels", "xtick_rotation"),
+        examples=({"by": "panel_group", "x": "outcome_name", "y": "estimate",
+                   "err": "se"},),
+        verify=(),
+    ),
+    Skill(
+        name="radial_profile",
+        description="A radial profile: one measured value per angle, drawn on a polar axis.",
+        build=(("encode.polar", {}), ("layout.plate", {"columns": 1.0, "height_mm": 70.0})),
+        required=("theta", "value"),
+        optional=("line", "columns", "height_mm"),
+        examples=({"theta": "direction", "value": "speed"},),
         verify=(),
     ),
     Skill(

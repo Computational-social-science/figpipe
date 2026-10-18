@@ -51,6 +51,7 @@ audit / score / styleprofile（验证层）     "合规、碰撞、统计、风�
 | `encode.box` | build | 分组箱线（分布比较） |
 | `encode.bars` | build | 多测度分组柱（并列比较） |
 | `encode.scatter` | build | 散点 + 拟合 + r（关系） |
+| `encode.polar` | build | 极坐标径向剖面（角度类别或 0–360°） |
 | `style.profile` | build | 参考画像 → rc/配色/宽高比（风格迁移） |
 | `verify.audit` | verify | 合规审计 |
 | `verify.collisions` | verify | 字形碰撞 |
@@ -60,7 +61,7 @@ audit / score / styleprofile（验证层）     "合规、碰撞、统计、风�
 
 ---
 
-## 4 技能配方（当前 7 个）
+## 4 技能配方（当前 13 个）
 
 | 技能 | 契约（必填） | 可选项 | 内部算子 | 验证 |
 |---|---|---|---|---|
@@ -70,6 +71,7 @@ audit / score / styleprofile（验证层）     "合规、碰撞、统计、风�
 | `distribution_comparison` | group, value | columns/height_mm | encode.box → layout.plate | 全局 |
 | `grouped_measures` | x, ycols | columns/height_mm | encode.bars → layout.plate | 全局 |
 | `matrix_plate` | — | columns/colorbar/height_mm | encode.matrix → layout.plate | 全局 |
+| `radial_profile` | theta, value | line/columns/height_mm | encode.polar → layout.plate | 全局 |
 | `styled_trend` | x, y, profile | lo/hi/fit/band/reference/columns/height_mm/published/computed | style.profile → encode.trend → layout.plate | 全局 + 统计 |
 
 每个配方带 `version`；机器可读目录由 `figpipe.skills.export_catalogue()` 生成，测试会检查目录与

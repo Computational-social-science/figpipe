@@ -7,14 +7,19 @@
     "note": "deterministic metrics only; official combined score requires the benchmark's VLM scorer and is NOT claimed here"
   },
   "n_tasks": 30,
-  "n_ok": 23,
-  "mean_distance": 0.288,
-  "mean_baseline": 0.376,
-  "mean_improvement": 0.088,
-  "improved": 18,
-  "worse": 4,
-  "ties": 1,
-  "mean_best_of_two": 0.27,
+  "n_ok": 28,
+  "n_unsupported": 2,
+  "n_error": 0,
+  "unsupported_types": {
+    "3D": "unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this is a deliberate exclusion"
+  },
+  "mean_distance": 0.278,
+  "mean_baseline": 0.352,
+  "mean_improvement": 0.074,
+  "improved": 21,
+  "worse": 5,
+  "ties": 2,
+  "mean_best_of_two": 0.261,
   "decision_service": {
     "up": false,
     "url": "http://127.0.0.1:8090",
@@ -29,8 +34,8 @@
       "mean_delta": null,
       "errors": 2,
       "error_examples": [
-        "DecisionUnavailable: decision service unreachable at http://127.0.0.1:8090/v1/sy",
-        "DecisionUnavailable: decision service unreachable at http://127.0.0.1:8090/v1/sy"
+        "unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this",
+        "unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this"
       ]
     },
     "Box/Violin": {
@@ -44,16 +49,12 @@
     },
     "Composite": {
       "n": 3,
-      "ok": 0,
-      "mean_distance": null,
-      "mean_baseline": null,
-      "mean_delta": null,
-      "errors": 3,
-      "error_examples": [
-        "DecisionUnavailable: decision service unreachable at http://127.0.0.1:8090/v1/sy",
-        "DecisionUnavailable: decision service unreachable at http://127.0.0.1:8090/v1/sy",
-        "DecisionUnavailable: decision service unreachable at http://127.0.0.1:8090/v1/sy"
-      ]
+      "ok": 3,
+      "mean_distance": 0.25,
+      "mean_baseline": 0.273,
+      "mean_delta": 0.023,
+      "errors": 0,
+      "error_examples": []
     },
     "Distribution": {
       "n": 7,
@@ -84,25 +85,21 @@
     },
     "Line": {
       "n": 3,
-      "ok": 2,
-      "mean_distance": 0.208,
-      "mean_baseline": 0.304,
-      "mean_delta": 0.096,
-      "errors": 1,
-      "error_examples": [
-        "LinAlgError: SVD did not converge in Linear Least Squares"
-      ]
+      "ok": 3,
+      "mean_distance": 0.23,
+      "mean_baseline": 0.302,
+      "mean_delta": 0.072,
+      "errors": 0,
+      "error_examples": []
     },
     "Polar/Radial": {
       "n": 1,
-      "ok": 0,
-      "mean_distance": null,
-      "mean_baseline": null,
-      "mean_delta": null,
-      "errors": 1,
-      "error_examples": [
-        "DecisionUnavailable: decision service unreachable at http://127.0.0.1:8090/v1/sy"
-      ]
+      "ok": 1,
+      "mean_distance": 0.127,
+      "mean_baseline": 0.084,
+      "mean_delta": -0.043,
+      "errors": 0,
+      "error_examples": []
     },
     "Scatter": {
       "n": 1,
@@ -125,39 +122,14 @@
   },
   "failures": [
     {
-      "id": "PMC13245775",
-      "chart": "Composite",
-      "error": "DecisionUnavailable: decision service unreachable at http://127.0.0.1:8090/v1/systemone: URLError: <urlopen error [WinError 10061] 由于目标计算机积极拒绝，无法连接。>. Start it with scripts/serve.sh, or set DECISION_SERVICE_URL."
-    },
-    {
-      "id": "PMC13252719",
-      "chart": "Composite",
-      "error": "DecisionUnavailable: decision service unreachable at http://127.0.0.1:8090/v1/systemone: URLError: <urlopen error [WinError 10061] 由于目标计算机积极拒绝，无法连接。>. Start it with scripts/serve.sh, or set DECISION_SERVICE_URL."
-    },
-    {
-      "id": "PMC13286152",
-      "chart": "Composite",
-      "error": "DecisionUnavailable: decision service unreachable at http://127.0.0.1:8090/v1/systemone: URLError: <urlopen error [WinError 10061] 由于目标计算机积极拒绝，无法连接。>. Start it with scripts/serve.sh, or set DECISION_SERVICE_URL."
-    },
-    {
-      "id": "arxiv-ml-bar-line-v2__2605.21125",
-      "chart": "Polar/Radial",
-      "error": "DecisionUnavailable: decision service unreachable at http://127.0.0.1:8090/v1/systemone: URLError: <urlopen error [WinError 10061] 由于目标计算机积极拒绝，无法连接。>. Start it with scripts/serve.sh, or set DECISION_SERVICE_URL."
-    },
-    {
-      "id": "arxiv-phys-prx-prl__2603.21981",
-      "chart": "Line",
-      "error": "LinAlgError: SVD did not converge in Linear Least Squares"
-    },
-    {
       "id": "arxiv_2502.18153",
       "chart": "3D",
-      "error": "DecisionUnavailable: decision service unreachable at http://127.0.0.1:8090/v1/systemone: URLError: <urlopen error [WinError 10061] 由于目标计算机积极拒绝，无法连接。>. Start it with scripts/serve.sh, or set DECISION_SERVICE_URL."
+      "error": "unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this is a deliberate exclusion"
     },
     {
       "id": "arxiv_2505.19527",
       "chart": "3D",
-      "error": "DecisionUnavailable: decision service unreachable at http://127.0.0.1:8090/v1/systemone: URLError: <urlopen error [WinError 10061] 由于目标计算机积极拒绝，无法连接。>. Start it with scripts/serve.sh, or set DECISION_SERVICE_URL."
+      "error": "unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this is a deliberate exclusion"
     }
   ],
   "tasks": [
@@ -440,15 +412,56 @@
       "id": "PMC13245775",
       "chart": "Composite",
       "panel_mode": "multi",
-      "status": "error",
-      "error": "DecisionUnavailable: decision service unreachable at http://127.0.0.1:8090/v1/systemone: URLError: <urlopen error [WinError 10061] 由于目标计算机积极拒绝，无法连接。>. Start it with scripts/serve.sh, or set DECISION_SERVICE_URL."
+      "skill": "composite_groups",
+      "rationale": "composite block_id x panel_group",
+      "rows_used": 33,
+      "status": "ok",
+      "distance": 0.205,
+      "baseline_distance": 0.232,
+      "delta": 0.027,
+      "components": {
+        "palette": 0.141,
+        "aspect": 0.032,
+        "ink": 0.537
+      },
+      "hard_failures": 1,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'gical responses' over 'gical responses'",
+          "severity": "hard"
+        }
+      ]
     },
     {
       "id": "PMC13252719",
       "chart": "Composite",
       "panel_mode": "multi",
-      "status": "error",
-      "error": "DecisionUnavailable: decision service unreachable at http://127.0.0.1:8090/v1/systemone: URLError: <urlopen error [WinError 10061] 由于目标计算机积极拒绝，无法连接。>. Start it with scripts/serve.sh, or set DECISION_SERVICE_URL."
+      "skill": "composite_groups",
+      "rationale": "composite block_id x record_type",
+      "rows_used": 182,
+      "status": "ok",
+      "distance": 0.215,
+      "baseline_distance": 0.212,
+      "delta": -0.003,
+      "components": {
+        "palette": 0.161,
+        "aspect": 0.025,
+        "ink": 0.541
+      },
+      "hard_failures": 2,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'ate_observation' over 'ate_observation'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'forest_summary' over 'forest_summary'",
+          "severity": "hard"
+        }
+      ]
     },
     {
       "id": "PMC13273070",
@@ -473,8 +486,46 @@
       "id": "PMC13286152",
       "chart": "Composite",
       "panel_mode": "multi",
-      "status": "error",
-      "error": "DecisionUnavailable: decision service unreachable at http://127.0.0.1:8090/v1/systemone: URLError: <urlopen error [WinError 10061] 由于目标计算机积极拒绝，无法连接。>. Start it with scripts/serve.sh, or set DECISION_SERVICE_URL."
+      "skill": "composite_groups",
+      "rationale": "composite block_id x panel_group",
+      "rows_used": 660,
+      "status": "ok",
+      "distance": 0.329,
+      "baseline_distance": 0.374,
+      "delta": 0.045,
+      "components": {
+        "palette": 0.138,
+        "aspect": 0.135,
+        "ink": 1.0
+      },
+      "hard_failures": 5,
+      "findings": [
+        {
+          "check": "height",
+          "detail": "170.0 mm exceeds the 170.0 mm maximum",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'forest_plot' over 'forest_plot'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'observations' over 'observations'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'al' over 'observations'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'al' over 'al'",
+          "severity": "hard"
+        }
+      ]
     },
     {
       "id": "PMC13336770",
@@ -715,8 +766,26 @@
       "id": "arxiv-ml-bar-line-v2__2605.21125",
       "chart": "Polar/Radial",
       "panel_mode": "single",
-      "status": "error",
-      "error": "DecisionUnavailable: decision service unreachable at http://127.0.0.1:8090/v1/systemone: URLError: <urlopen error [WinError 10061] 由于目标计算机积极拒绝，无法连接。>. Start it with scripts/serve.sh, or set DECISION_SERVICE_URL."
+      "skill": "radial_profile",
+      "rationale": "polar component_order by record_type",
+      "rows_used": 80,
+      "status": "ok",
+      "distance": 0.127,
+      "baseline_distance": 0.084,
+      "delta": -0.043,
+      "components": {
+        "palette": 0.046,
+        "aspect": 0.311,
+        "ink": 0.146
+      },
+      "hard_failures": 1,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'replicate' over 'replicate'",
+          "severity": "hard"
+        }
+      ]
     },
     {
       "id": "arxiv-phys-prx-prl__2603.21981",
@@ -725,8 +794,16 @@
       "skill": "trend_with_uncertainty",
       "rationale": "trend radial_month->panel_col",
       "rows_used": 1394,
-      "status": "error",
-      "error": "LinAlgError: SVD did not converge in Linear Least Squares"
+      "status": "ok",
+      "distance": 0.274,
+      "baseline_distance": 0.298,
+      "delta": 0.024,
+      "components": {
+        "aspect": 0.001,
+        "ink": 0.548
+      },
+      "hard_failures": 0,
+      "findings": []
     },
     {
       "id": "arxiv_2410.15876",
@@ -814,15 +891,15 @@
       "id": "arxiv_2502.18153",
       "chart": "3D",
       "panel_mode": "multi",
-      "status": "error",
-      "error": "DecisionUnavailable: decision service unreachable at http://127.0.0.1:8090/v1/systemone: URLError: <urlopen error [WinError 10061] 由于目标计算机积极拒绝，无法连接。>. Start it with scripts/serve.sh, or set DECISION_SERVICE_URL."
+      "status": "unsupported",
+      "error": "unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this is a deliberate exclusion"
     },
     {
       "id": "arxiv_2505.19527",
       "chart": "3D",
       "panel_mode": "multi",
-      "status": "error",
-      "error": "DecisionUnavailable: decision service unreachable at http://127.0.0.1:8090/v1/systemone: URLError: <urlopen error [WinError 10061] 由于目标计算机积极拒绝，无法连接。>. Start it with scripts/serve.sh, or set DECISION_SERVICE_URL."
+      "status": "unsupported",
+      "error": "unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this is a deliberate exclusion"
     }
   ]
 }

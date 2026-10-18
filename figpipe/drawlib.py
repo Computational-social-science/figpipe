@@ -799,6 +799,82 @@ def ax_dual_series(ax, df: pd.DataFrame, x: str, y1: str, y2: str,
     return None
 
 
+def ax_polar_profile(ax, df: pd.DataFrame, theta: str, value: str,
+                     xlabel: str = "", ylabel: str = "", title: str | None = None,
+                     colour: str | None = None, line: bool = True,
+                     grid_labels: bool = True, direction: int = 1):
+    """A radial profile: one measured value per angle, as a closed line and/or bars.
+
+    WHY THIS DRAWER EXISTS
+        PlotTwin-Bench contains 13 Polar/Radial tasks and the pipeline could not draw a single
+        one: every drawer assumed Cartesian axes, so the benchmark mapper had no operator and the
+        task failed. A polar axis is not a style variant of a bar chart -- the axes projection
+        itself changes -- so it is a new drawer plus a projection flag in the composer, not a
+        parameter on an existing one.
+
+    The angle column is taken as a CATEGORY (a compass direction, a month, a phase bin) unless
+    it parses as a number, in which case it is read as an angle in DEGREES. Both readings are
+    explicit and a value outside 0-360 is an error, never silently wrapped.
+    """
+    df = _uniq(df)
+    labels = [str(v) for v in df[theta]]
+    vals = df[value].to_numpy(dtype=float)
+    if not np.all(np.isfinite(vals)):
+        raise ValueError(f"polar profile: {value!r} has non-finite values")
+    if len(vals) < 3:
+        # a radial profile needs enough spokes to be a profile; with one or two points
+        # matplotlib autoscales theta to a sliver and its ThetaLocator tries to draw
+        # thousands of spokes (observed: "attempting to generate 1582 ticks")
+        raise ValueError(f"polar profile needs at least 3 angles, got {len(vals)}")
+    numeric_theta = all(_is_number(v) for v in labels)
+    if numeric_theta:
+        angles = np.deg2rad(df[theta].to_numpy(dtype=float))
+        if np.any(angles < 0) or np.any(angles > 2 * np.pi + 1e-9):
+            raise ValueError("polar profile: numeric angles must be within 0-360 degrees")
+        if np.any(np.diff(angles) < 0):
+            order = np.argsort(angles)
+            angles, vals = angles[order], vals[order]
+            labels = [labels[i] for i in order]
+    else:
+        n = len(vals)
+        angles = np.linspace(0, 2 * np.pi, n, endpoint=False)
+    col = colour or style.OKABE_ITO["blue"]
+    if line:
+        closed_a = np.append(angles, angles[0])
+        closed_v = np.append(vals, vals[0])
+        ax.plot(closed_a, closed_v, "-", lw=1.0, color=col, marker="o", ms=2.6,
+                markeredgecolor="black", markeredgewidth=0.25)
+    else:
+        ax.bar(angles, vals, width=0.8 * (angles[1] - angles[0] if len(angles) > 1 else 1.0),
+               color=col, edgecolor="black", linewidth=0.3)
+    if grid_labels:
+        if numeric_theta:
+            # a numeric angle axis gets at most 8 spokes; matplotlib's default locator tries to
+            # fill the circle and warns about >1000 ticks on dense data
+            step = max(1, int(np.ceil(len(angles) / 8)))
+            ax.set_xticks(angles[::step])
+        else:
+            ax.set_xticks(angles)
+            ax.set_xticklabels(labels, fontsize=6)
+    from matplotlib.ticker import MaxNLocator
+    ax.yaxis.set_major_locator(MaxNLocator(4))
+    ax.set_thetalim(0, 2 * np.pi)      # fixed full circle: an autoscaled sliver is unreadable
+    ax.set_theta_direction(direction)
+    ax.tick_params(labelsize=6)
+    if xlabel:
+        ax.set_xlabel(xlabel)
+    if ylabel:
+        ax.set_ylabel(ylabel, labelpad=10)
+    if title:
+        ax.set_title(title, fontsize=7)
+    return None
+
+
+#: Drawers that need a non-Cartesian axes. The composer reads this set to create the right
+#: projection; a polar drawer on a Cartesian axes would silently draw a straight line.
+POLAR_DRAWERS = {"polar_profile"}
+
+
 #: The idiom drawers join the same registry the templates use. The registry lives here, after
 #: every drawer it names, so a new drawing style is registered by existing rather than by an
 #: out-of-date list at the top of the module.
@@ -809,6 +885,7 @@ DRAWERS.update({
     "tile_diverging": ax_tile_diverging,
     "histogram": ax_histogram,
     "dual_series": ax_dual_series,
+    "polar_profile": ax_polar_profile,
 })
 
 

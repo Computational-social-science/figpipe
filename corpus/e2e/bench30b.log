@@ -1,0 +1,20 @@
+E:\2026-AI4S\figpipe\figpipe\layout.py:36: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`). Consider using `matplotlib.pyplot.close()`.
+  fig = plt.figure(figsize=(width_mm * MM, height_mm * MM), **kwargs)
+  tasks fetched: 30 (offset 0, limit 30)
+  ok 25/30  mean distance 0.281  baseline 0.361  delta 0.08
+    type 3D             ok 0/2   d=None base=None delta=None errors=2
+    type Box/Violin     ok 4/4   d=0.239 base=0.513 delta=0.274 errors=0
+    type Composite      ok 0/3   d=None base=None delta=None errors=3
+    type Distribution   ok 7/7   d=0.225 base=0.281 delta=0.055 errors=0
+    type Field 2D       ok 3/3   d=0.393 base=0.304 delta=-0.09 errors=0
+    type Heatmap        ok 3/3   d=0.344 base=0.338 delta=-0.006 errors=0
+    type Line           ok 3/3   d=0.23 base=0.302 delta=0.072 errors=0
+    type Polar/Radial   ok 1/1   d=0.124 base=0.078 delta=-0.046 errors=0
+    type Scatter        ok 1/1   d=0.259 base=0.575 delta=0.316 errors=0
+    type Std-band       ok 3/3   d=0.405 base=0.511 delta=0.107 errors=0
+    FAIL PMC13245775  Composite    DecisionUnavailable: decision service unreachable at http://127.0.0.1:8090/v1/systemone: URLError: <
+    FAIL PMC13252719  Composite    DecisionUnavailable: decision service unreachable at http://127.0.0.1:8090/v1/systemone: URLError: <
+    FAIL PMC13286152  Composite    DecisionUnavailable: decision service unreachable at http://127.0.0.1:8090/v1/systemone: URLError: <
+    FAIL arxiv_2502.18153 3D           DecisionUnavailable: decision service unreachable at http://127.0.0.1:8090/v1/systemone: URLError: <
+    FAIL arxiv_2505.19527 3D           DecisionUnavailable: decision service unreachable at http://127.0.0.1:8090/v1/systemone: URLError: <
+  wrote E:\2026-AI4S\figpipe\corpus\e2e\plottwin_report.json

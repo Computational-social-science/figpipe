@@ -87,6 +87,19 @@ def _fmt(value) -> str:
     return "—" if value is None else str(value)
 
 
+def _regression_banner(latest: dict) -> str:
+    """A loud banner when the last scheduled run found a capability regression."""
+    verdict = ((latest.get("capabilities_delta") or {}).get("verdict") or {})
+    regressions = verdict.get("regressions") or []
+    if not regressions:
+        return ""
+    rows = "".join(
+        f'<li><b>{esc(r["field"])}</b>: {esc(_fmt(r["before"]))} → {esc(_fmt(r["after"]))}</li>'
+        for r in regressions)
+    return (f'<div class="warnbox" style="margin-top:18px"><b>Capability regression in the last '
+            f'scheduled run</b><ul style="margin:6px 0 0 18px">{rows}</ul></div>')
+
+
 def _caps_text(caps: dict) -> str:
     if not caps:
         return "not recorded yet"
@@ -364,6 +377,23 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
             f'<td class="num">{_num(t.get("mean_baseline"))}</td>'
             f'<td class="num">{_num(t.get("mean_delta"))}</td></tr>')
 
+    cap_rows = []
+    for rec in sorted((ROOT / "knowledge" / "runs").glob("*.json"))[-8:]:
+        try:
+            r = json.loads(rec.read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            continue
+        c = r.get("capabilities") or {}
+        if not c:
+            continue
+        cap_rows.append(
+            f'<tr><td>{esc((r.get("run_at") or "")[:16].replace("T", " "))}</td>'
+            f'<td class="num">{_fmt(c.get("skills"))}</td>'
+            f'<td class="num">{_fmt(c.get("operators"))}</td>'
+            f'<td class="num">{_fmt(c.get("benchmark_ok"))}/{_fmt(c.get("benchmark_tasks"))}</td>'
+            f'<td class="num">{_fmt(c.get("benchmark_mean_distance"))}</td>'
+            f'<td class="num">{_fmt(c.get("tests"))}</td></tr>')
+
     skill_rows = []
     for s in skills.get("skills", []):
         build_ops = " → ".join(step["operator"] for step in s.get("build", []))
@@ -425,6 +455,7 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
   {kpi(f'{tracked_mb or "—"} MB', 'Repository size', 'lean budget ≤ 80 MB', '')}
 </div>
 
+{_regression_banner(latest)}
 <h2><span class="n">01</span>Progress overview</h2>
 <div class="panel">
   {progress('Reproduction and statistics', 100, f'4 figures + {n_stats} statistics checked; L0 construction explicitly not reproduced', 'done')}
@@ -466,7 +497,7 @@ metrics</b> (palette / aspect / ink density of the raster reference), <b>not the
 score</b>; the latter needs the benchmark's VLM scorer, which this project has not run and does not
 imitate.</p>
 <div class="kpis">
-  {kpi(f'{n_ok}/{n_tasks}', 'Tasks run', 'execution success', '')}
+  {kpi(f'{n_ok}/{n_tasks}', 'Tasks run', f"execution success · {bench.get('n_unsupported', 0)} classified unsupported", '')}
   {kpi(bench_mean, 'Mean style distance', f'improvement {delta:+.3f}' if delta is not None else '', '')}
   {kpi(f'{improved} / {worse} / {ties}', 'Improved / worse / tie', 'per-task outcome', '')}
   {kpi(f'{bench.get("mean_best_of_two", "—")}', 'best-of-two', 'candidate-selection floor with the reference available', '')}
@@ -528,6 +559,12 @@ The next step is to write benchmark pass rates and distances into the run record
 </ul>
 </div>
 </div>
+
+<h3 style="margin-top:20px">Capability trend (scheduled runs)</h3>
+<table><thead><tr><th>Run</th><th>Skills</th><th>Operators</th><th>Benchmark</th>
+<th>Mean distance</th><th>Tests</th></tr></thead><tbody>{''.join(cap_rows)}</tbody></table>
+<p class="tag">Read from <code>knowledge/runs/*.json</code>. A run with no capability change is
+recorded as such; the loop fails when a judged capability field gets worse.</p>
 
 <h2><span class="n">07</span>Next steps (with acceptance criteria)</h2>
 <div class="cards">
