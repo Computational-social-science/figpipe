@@ -601,3 +601,26 @@ was checked.
 
 The loop's next run then behaved correctly: it walked to an uncovered window, measured 6 new tasks,
 shipped distance improved 0.269 -> 0.257, no regressions, exit 0.
+
+
+## 30. The same defect, a third time: a mean over a growing set (2026-10-19)
+
+Run 44 exited 1 with:
+
+    capability regression: benchmark_shipped_distance 0.257 -> 0.258
+
+A 0.001 change on a run that only added six tasks. The shipped mean is averaged over the tasks that
+carry a selection decision, and that set grows as coverage advances -- so it moves whenever a task is
+added. This is the THIRD appearance of one defect family in one day:
+
+    raw mean over a growing set          -> false regression 0.278/30 -> 0.302/66
+    count (benchmark_ok) over a growing set -> false GAIN 65 -> 70
+    shipped mean over a growing set      -> false regression 0.257 -> 0.258
+
+Each time the fix is identical: judge a metric over a FROZEN task subset. `benchmark_shipped_anchor.json`
+now freezes 20 task ids for the shipped metric, exactly as `benchmark_anchor.json` does for the
+always-styled metric. The full-set means stay in the record for information and are explicitly NOT
+judged, with the reason written beside the direction table.
+
+Rule extracted, and now applied twice: **any judged metric must be a function of a fixed task set.**
+If a metric's denominator can grow, it is a measurement, not a capability.

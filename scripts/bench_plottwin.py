@@ -429,6 +429,44 @@ def anchor_ids(tasks) -> list[str]:
     return ids
 
 
+#: The shipped-figure metric needs its OWN frozen subset. The shipped mean is averaged over the
+#: tasks that carry a selection decision, and that set GROWS as coverage advances -- so the mean
+#: moves whenever a new task is added, which produced a false "regression" of 0.257 -> 0.258 on
+#: 2026-10-19 (a 0.001 change with no capability change). Same defect family as the raw mean and
+#: the sorted-id anchor; the fix is the same: freeze the ids.
+SHIPPED_ANCHOR_FILE = ROOT / "knowledge" / "benchmark_shipped_anchor.json"
+
+
+def shipped_anchor_ids(tasks) -> list[str]:
+    """Frozen task ids for the shipped-figure metric, created once from the first decisions."""
+    if SHIPPED_ANCHOR_FILE.is_file():
+        try:
+            data = json.loads(SHIPPED_ANCHOR_FILE.read_text(encoding="utf-8"))
+            if data.get("ids"):
+                return list(data["ids"])
+        except (OSError, ValueError):
+            pass
+    ready = sorted((t for t in tasks
+                    if t.get("selected_distance") is not None
+                    and t.get("status") == "ok"), key=lambda t: str(t["id"]))
+    ids = [t["id"] for t in ready[:ANCHOR_N]]
+    if len(ids) >= 5:
+        SHIPPED_ANCHOR_FILE.parent.mkdir(parents=True, exist_ok=True)
+        SHIPPED_ANCHOR_FILE.write_text(json.dumps(
+            {"ids": ids, "n": len(ids),
+             "why": "frozen so the shipped-figure metric measures the same tasks across runs"},
+            indent=2) + "\n", encoding="utf-8")
+    return ids
+
+
+def _shipped_anchor_distance(tasks) -> float | None:
+    """Mean shipped distance over the FROZEN shipped subset."""
+    ids = set(shipped_anchor_ids(tasks))
+    vals = [t["selected_distance"] for t in tasks
+            if t.get("id") in ids and t.get("selected_distance") is not None]
+    return round(float(np.mean(vals)), 3) if len(vals) >= 5 else None
+
+
 def _anchor_distance(tasks) -> float | None:
     """Mean style distance over the FROZEN anchor subset -- comparable across runs."""
     ids = set(anchor_ids(tasks))
@@ -607,6 +645,7 @@ def main(argv=None) -> int:
     # The anchor is the mean over the FIRST `ANCHOR_N` task ids in sorted order, which is stable
     # as long as those tasks stay in the report.
     report["benchmark_anchor_distance"] = _anchor_distance(report["tasks"])
+    report["benchmark_shipped_anchor_distance"] = _shipped_anchor_distance(report["tasks"])
     # SELECTION IS MEASURED ON ITS OWN SUBSET. Only tasks rendered after the decision existed
     # carry `selected_distance`; averaging those against a mean over ALL tasks compares two
     # different task sets -- the exact defect this project has now fixed three times. Every

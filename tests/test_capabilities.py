@@ -191,20 +191,44 @@ def test_the_anchor_ids_are_frozen_not_recomputed():
     assert bench._anchor_distance(tasks) == 0.3
 
 
-def test_the_shipped_distance_is_a_judged_capability():
-    """The selection step is a capability, so its metric must be judged, not merely recorded."""
+def test_the_shipped_distance_is_judged_on_a_frozen_subset():
+    """The selection step is a capability, and its metric must be both judged and stable.
+
+    The FULL-SET shipped mean moves whenever a task is added (0.257 -> 0.258 on a coverage-only
+    run, a false regression). The judged field is therefore the frozen-subset version, exactly as
+    for the always-styled anchor.
+    """
     if cron is None:
         import pytest
         pytest.skip("cron_run unavailable")
-    assert cron.CAPABILITY_DIRECTION.get("benchmark_shipped_distance") == -1
+    assert cron.CAPABILITY_DIRECTION.get("benchmark_shipped_anchor_distance") == -1
+    assert "benchmark_shipped_distance" not in cron.CAPABILITY_DIRECTION
     snap = cron.capability_snapshot()
-    assert "benchmark_shipped_distance" in snap
-    better = cron.capability_delta({"benchmark_shipped_distance": 0.278},
-                                   {"benchmark_shipped_distance": 0.259})
+    assert "benchmark_shipped_anchor_distance" in snap
+    better = cron.capability_delta({"benchmark_shipped_anchor_distance": 0.278},
+                                   {"benchmark_shipped_anchor_distance": 0.259})
     assert better["verdict"]["ok"] is True
-    worse = cron.capability_delta({"benchmark_shipped_distance": 0.259},
-                                  {"benchmark_shipped_distance": 0.300})
+    worse = cron.capability_delta({"benchmark_shipped_anchor_distance": 0.259},
+                                  {"benchmark_shipped_anchor_distance": 0.300})
     assert worse["verdict"]["ok"] is False
+
+
+def test_the_shipped_anchor_is_frozen_and_ignores_new_tasks():
+    import sys, json
+    sys.path.insert(0, str(ROOT / "scripts"))
+    try:
+        import bench_plottwin as bench
+    except Exception:                    # pragma: no cover
+        import pytest
+        pytest.skip("benchmark harness unavailable")
+    ids = bench.shipped_anchor_ids([])
+    if len(ids) < 5:
+        import pytest
+        pytest.skip("shipped anchor not initialised")
+    base = [{"id": i, "status": "ok", "distance": 0.4, "selected_distance": 0.30} for i in ids]
+    grown = base + [{"id": f"zz{i}", "status": "ok", "distance": 0.9,
+                     "selected_distance": 0.90} for i in range(30)]
+    assert bench._shipped_anchor_distance(base) == bench._shipped_anchor_distance(grown) == 0.3
 
 
 def test_the_benchmark_slice_walks_forward_instead_of_re_measuring():

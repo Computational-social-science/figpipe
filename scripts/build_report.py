@@ -493,8 +493,8 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
 
 <div class="kpis">
   {kpi(f'{n_stats}', 'Published statistics reproduced', f'worst |Δ| = {worst}', '')}
-  {kpi((bench.get("selection") or {}).get("shipped_mean") or "—",
-       'Distance of shipped figures', 'closer of plain/styled, decided per task', '')}
+  {kpi(bench.get("benchmark_shipped_anchor_distance") or "—",
+       'Shipped distance (anchor)', 'fixed 20-task subset; closer of plain/styled per task', '')}
   {kpi(bench.get("benchmark_anchor_distance") or "—", 'Anchor style distance',
        'fixed 20-task subset (comparable across runs)', '')}
   {kpi(f'{n_skills} / {n_ops}', 'Skills / classic operators', 'global verification floor on every recipe', '')}

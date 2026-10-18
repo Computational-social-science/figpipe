@@ -1,0 +1,206 @@
+{
+  "run_at": "2026-10-19T03:44:46",
+  "dry_run": false,
+  "evolve_ok": true,
+  "evolve_exit_code": 0,
+  "evolve_output": [
+    "knowledge base -> v16",
+    "  checked 8/16 rules (8 unchecked)",
+    "  passed 8, failed 0",
+    "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
+    "  wrote knowledge\\evolution_report.json",
+    "  lean: tracked 79.6 -> 79.6 MB, worktree 147.3 -> 147.1 MB"
+  ],
+  "tests_ok": true,
+  "tests_summary": "260 passed, 2 skipped, 1 warning in 52.56s",
+  "knowledge_version_before": 16,
+  "knowledge_version_after": 16,
+  "knowledge_changed": false,
+  "published": {
+    "pushed": false,
+    "reason": "not yet published"
+  },
+  "check_results": {
+    "L01": {
+      "ok": true,
+      "detail": "figpipe.style.panel_letter present",
+      "confidence_before": "enforced"
+    },
+    "L02": {
+      "ok": true,
+      "detail": "all rcParams match",
+      "confidence_before": "enforced"
+    },
+    "L03": {
+      "ok": true,
+      "detail": "all sizes in band",
+      "confidence_before": "enforced"
+    },
+    "L04": {
+      "ok": true,
+      "detail": "figpipe.style.suppress_log_exponents present",
+      "confidence_before": "enforced"
+    },
+    "L05": {
+      "ok": true,
+      "detail": "all rcParams match",
+      "confidence_before": "enforced"
+    },
+    "L06": {
+      "ok": true,
+      "detail": "all rcParams match",
+      "confidence_before": "enforced"
+    },
+    "L07": {
+      "ok": true,
+      "detail": "figpipe.audit.audit present",
+      "confidence_before": "enforced"
+    },
+    "H01": {
+      "ok": null,
+      "detail": "UNCHECKED: no machine-executable check defined for this rule",
+      "confidence_before": "hypothesis"
+    },
+    "H02": {
+      "ok": null,
+      "detail": "UNCHECKED: no machine-executable check defined for this rule",
+      "confidence_before": "refuted"
+    },
+    "E01": {
+      "ok": null,
+      "detail": "UNCHECKED: no machine-executable check defined for this rule",
+      "confidence_before": "void"
+    },
+    "E02": {
+      "ok": null,
+      "detail": "UNCHECKED: no machine-executable check defined for this rule",
+      "confidence_before": "void"
+    },
+    "C01": {
+      "ok": null,
+      "detail": "UNCHECKED: no machine-executable check defined for this rule",
+      "confidence_before": "hypothesis"
+    },
+    "C02": {
+      "ok": null,
+      "detail": "UNCHECKED: no machine-executable check defined for this rule",
+      "confidence_before": "hypothesis"
+    },
+    "C03": {
+      "ok": null,
+      "detail": "UNCHECKED: no machine-executable check defined for this rule",
+      "confidence_before": "hypothesis"
+    },
+    "C04": {
+      "ok": null,
+      "detail": "UNCHECKED: no machine-executable check defined for this rule",
+      "confidence_before": "hypothesis"
+    },
+    "L08": {
+      "ok": true,
+      "detail": "4 panels, letters ['a', 'b', 'c', 'd'], gaps x=[9.0] y=[13.2] mm, page 183.0x140.0 mm",
+      "confidence_before": "enforced"
+    }
+  },
+  "demoted": [],
+  "promoted": [],
+  "regressed_detail": {},
+  "check_summary": {
+    "rules_total": 16,
+    "checked": 8,
+    "passed": 8,
+    "failed": 0,
+    "unchecked": 8,
+    "unchecked_ids": [
+      "H01",
+      "H02",
+      "E01",
+      "E02",
+      "C01",
+      "C02",
+      "C03",
+      "C04"
+    ]
+  },
+  "rules": {
+    "enforced": 8,
+    "measured_unenforced": 0,
+    "hypothesis": 5,
+    "regressed": 0
+  },
+  "benchmark_slice": {
+    "ran": true,
+    "offset": 78,
+    "tasks": 6,
+    "code": 0,
+    "tail": [
+      "    type Line           ok 1/1   d=0.353 base=0.424 delta=0.071 errors=0",
+      "    type Scatter        ok 2/2   d=0.138 base=0.419 delta=0.282 errors=0",
+      "    type Std-band       ok 1/1   d=0.303 base=0.404 delta=0.101 errors=0",
+      "  wrote E:\\2026-AI4S\\figpipe\\corpus\\e2e\\plottwin_report.json"
+    ]
+  },
+  "capabilities": {
+    "skills": 15,
+    "operators": 19,
+    "benchmark_tasks": 102,
+    "benchmark_ok": 93,
+    "benchmark_success_rate": 1.0,
+    "benchmark_mean_distance": 0.288,
+    "benchmark_anchor_distance": 0.329,
+    "benchmark_shipped_anchor_distance": 0.247,
+    "benchmark_unsupported": 9,
+    "statistics_reproduced": 15,
+    "knowledge_version": 16,
+    "tests": 260
+  },
+  "capabilities_delta": {
+    "changed": true,
+    "delta": {
+      "benchmark_tasks": {
+        "before": 96,
+        "after": 102
+      },
+      "benchmark_ok": {
+        "before": 87,
+        "after": 93
+      },
+      "benchmark_mean_distance": {
+        "before": 0.291,
+        "after": 0.288
+      },
+      "benchmark_shipped_anchor_distance": {
+        "before": null,
+        "after": 0.247
+      },
+      "tests": {
+        "before": 259,
+        "after": 260
+      }
+    },
+    "verdict": {
+      "gains": [
+        {
+          "field": "tests",
+          "before": 259,
+          "after": 260
+        }
+      ],
+      "regressions": [],
+      "ok": true,
+      "judged_fields": [
+        "benchmark_anchor_distance",
+        "benchmark_shipped_anchor_distance",
+        "benchmark_success_rate",
+        "knowledge_version",
+        "operators",
+        "skills",
+        "statistics_reproduced",
+        "tests"
+      ]
+    }
+  },
+  "ok": true,
+  "capability_ok": true,
+  "capability_regressions": []
+}

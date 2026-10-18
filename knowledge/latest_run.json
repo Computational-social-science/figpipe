@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-19T03:38:38",
+  "run_at": "2026-10-19T03:44:46",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -9,10 +9,10 @@
     "  passed 8, failed 0",
     "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
     "  wrote knowledge\\evolution_report.json",
-    "  lean: tracked 79.5 -> 79.5 MB, worktree 142.9 -> 142.9 MB"
+    "  lean: tracked 79.6 -> 79.6 MB, worktree 147.3 -> 147.1 MB"
   ],
   "tests_ok": true,
-  "tests_summary": "259 passed, 2 skipped, 1 warning in 52.17s",
+  "tests_summary": "260 passed, 2 skipped, 1 warning in 52.56s",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
@@ -130,63 +130,67 @@
   },
   "benchmark_slice": {
     "ran": true,
-    "offset": 72,
+    "offset": 78,
     "tasks": 6,
     "code": 0,
     "tail": [
-      "    type Distribution   ok 1/1   d=0.14 base=0.245 delta=0.105 errors=0",
-      "    type Field 2D       ok 4/4   d=0.461 base=0.392 delta=-0.069 errors=0",
-      "    type Scatter        ok 1/1   d=0.167 base=0.389 delta=0.222 errors=0",
+      "    type Line           ok 1/1   d=0.353 base=0.424 delta=0.071 errors=0",
+      "    type Scatter        ok 2/2   d=0.138 base=0.419 delta=0.282 errors=0",
+      "    type Std-band       ok 1/1   d=0.303 base=0.404 delta=0.101 errors=0",
       "  wrote E:\\2026-AI4S\\figpipe\\corpus\\e2e\\plottwin_report.json"
     ]
   },
   "capabilities": {
     "skills": 15,
     "operators": 19,
-    "benchmark_tasks": 96,
-    "benchmark_ok": 87,
+    "benchmark_tasks": 102,
+    "benchmark_ok": 93,
     "benchmark_success_rate": 1.0,
-    "benchmark_mean_distance": 0.291,
+    "benchmark_mean_distance": 0.288,
     "benchmark_anchor_distance": 0.329,
-    "benchmark_shipped_distance": 0.258,
+    "benchmark_shipped_anchor_distance": 0.247,
     "benchmark_unsupported": 9,
     "statistics_reproduced": 15,
     "knowledge_version": 16,
-    "tests": 259
+    "tests": 260
   },
   "capabilities_delta": {
     "changed": true,
     "delta": {
       "benchmark_tasks": {
-        "before": 90,
-        "after": 96
+        "before": 96,
+        "after": 102
       },
       "benchmark_ok": {
-        "before": 81,
-        "after": 87
+        "before": 87,
+        "after": 93
       },
       "benchmark_mean_distance": {
-        "before": 0.286,
-        "after": 0.291
+        "before": 0.291,
+        "after": 0.288
       },
-      "benchmark_shipped_distance": {
-        "before": 0.257,
-        "after": 0.258
+      "benchmark_shipped_anchor_distance": {
+        "before": null,
+        "after": 0.247
+      },
+      "tests": {
+        "before": 259,
+        "after": 260
       }
     },
     "verdict": {
-      "gains": [],
-      "regressions": [
+      "gains": [
         {
-          "field": "benchmark_shipped_distance",
-          "before": 0.257,
-          "after": 0.258
+          "field": "tests",
+          "before": 259,
+          "after": 260
         }
       ],
-      "ok": false,
+      "regressions": [],
+      "ok": true,
       "judged_fields": [
         "benchmark_anchor_distance",
-        "benchmark_shipped_distance",
+        "benchmark_shipped_anchor_distance",
         "benchmark_success_rate",
         "knowledge_version",
         "operators",
@@ -196,14 +200,7 @@
       ]
     }
   },
-  "ok": false,
-  "capability_ok": false,
-  "capability_regressions": [
-    {
-      "field": "benchmark_shipped_distance",
-      "before": 0.257,
-      "after": 0.258
-    }
-  ],
-  "publish_note": "capability regression detected; record kept but the run exits non-zero (re-run with --accept-capability-regression to accept)"
+  "ok": true,
+  "capability_ok": true,
+  "capability_regressions": []
 }
