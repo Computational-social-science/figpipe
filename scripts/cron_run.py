@@ -77,6 +77,9 @@ def capability_snapshot() -> dict:
         "benchmark_tasks": bench.get("n_tasks", 0) or 0,
         "benchmark_ok": bench.get("n_ok", 0) or 0,
         "benchmark_mean_distance": bench.get("mean_distance"),
+        # judged instead of the raw mean: the mean moves when the task SET changes, which is a
+        # property of the measurement, not of the capability
+        "benchmark_anchor_distance": bench.get("benchmark_anchor_distance"),
         "benchmark_unsupported": bench.get("n_unsupported"),
         "statistics_reproduced": (seed.get("self_check") or {}).get("statistics_recorded"),
         "knowledge_version": kb.get("version"),
@@ -92,7 +95,10 @@ CAPABILITY_DIRECTION = {
     "operators": +1,
     "benchmark_tasks": +1,
     "benchmark_ok": +1,
-    "benchmark_mean_distance": -1,
+    "benchmark_anchor_distance": -1,
+    # NOTE: benchmark_mean_distance is deliberately NOT judged. It is a mean over a growing task
+    # set, so it changes when the benchmark slice grows even if nothing about the pipeline did.
+    # Judging it produced a false capability regression on 2026-10-19 (0.278/30 -> 0.302/66).
     "statistics_reproduced": +1,
     "tests": +1,
     "knowledge_version": +1,

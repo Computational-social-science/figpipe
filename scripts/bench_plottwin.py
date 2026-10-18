@@ -370,6 +370,20 @@ def run_task(row: dict, out_dir: pathlib.Path) -> dict:
     return result
 
 
+#: How many tasks make up the stable anchor metric.
+ANCHOR_N = 20
+
+
+def _anchor_distance(tasks) -> float | None:
+    """Mean style distance over a fixed, sorted subset -- comparable across runs."""
+    ok = sorted((t for t in tasks
+                 if t.get("status") == "ok" and t.get("distance") is not None),
+                key=lambda t: str(t["id"]))[:ANCHOR_N]
+    if len(ok) < 5:
+        return None
+    return round(float(np.mean([t["distance"] for t in ok])), 3)
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--limit", type=int, default=8)
@@ -480,6 +494,12 @@ def main(argv=None) -> int:
                 "mean_baseline": round(float(np.mean(b["base"])), 3) if b["base"] else None,
                 "mean_delta": round(float(np.mean(b["delta"])), 3) if b["delta"] else None}
             for c, b in sorted(by_type.items())}
+    # ANCHOR METRIC. The mean distance over a growing task set is NOT comparable across runs:
+    # adding a harder window moves the mean without any change in capability, which made the
+    # loop report a false regression on 2026-10-19 (0.278 over 30 tasks -> 0.302 over 66).
+    # The anchor is the mean over the FIRST `ANCHOR_N` task ids in sorted order, which is stable
+    # as long as those tasks stay in the report.
+    report["benchmark_anchor_distance"] = _anchor_distance(report["tasks"])
     OUT.write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     from figpipe import sources
     sources.assert_writable(out_dir)

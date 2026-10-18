@@ -63,14 +63,14 @@ def test_a_capability_loss_is_a_regression_not_a_footnote():
         import pytest
         pytest.skip("cron_run unavailable")
     prev = {"benchmark_ok": 26, "benchmark_tasks": 30, "skills": 12,
-            "benchmark_mean_distance": 0.28, "tests": 229}
+            "benchmark_anchor_distance": 0.28, "tests": 229}
     cur = {"benchmark_ok": 23, "benchmark_tasks": 30, "skills": 12,
-           "benchmark_mean_distance": 0.31, "tests": 229}
+           "benchmark_anchor_distance": 0.31, "tests": 229}
     out = cron.capability_delta(prev, cur)
     verdict = out["verdict"]
     assert verdict["ok"] is False
     fields = {r["field"] for r in verdict["regressions"]}
-    assert fields == {"benchmark_ok", "benchmark_mean_distance"}
+    assert fields == {"benchmark_ok", "benchmark_anchor_distance"}
     assert out["changed"] is True
 
 
@@ -89,10 +89,22 @@ def test_a_lower_distance_counts_as_improvement():
     if cron is None:
         import pytest
         pytest.skip("cron_run unavailable")
-    out = cron.capability_delta({"benchmark_mean_distance": 0.31},
-                                {"benchmark_mean_distance": 0.28})
+    out = cron.capability_delta({"benchmark_anchor_distance": 0.31},
+                                {"benchmark_anchor_distance": 0.28})
     assert out["verdict"]["ok"] is True
-    assert [g["field"] for g in out["verdict"]["gains"]] == ["benchmark_mean_distance"]
+    assert [g["field"] for g in out["verdict"]["gains"]] == ["benchmark_anchor_distance"]
+
+
+def test_the_raw_benchmark_mean_is_not_judged():
+    """A growing task set moves the mean; that is a property of the measurement, not of the
+    capability, so it must never produce a regression."""
+    if cron is None:
+        import pytest
+        pytest.skip("cron_run unavailable")
+    out = cron.capability_delta({"benchmark_mean_distance": 0.278},
+                                {"benchmark_mean_distance": 0.302})
+    assert out["verdict"]["ok"] is True
+    assert out["verdict"]["regressions"] == []
 
 
 def test_unjudged_fields_never_count_as_gains_or_regressions():
@@ -130,3 +142,25 @@ def test_a_scheduled_commit_may_not_delete_evidence():
         subprocess.run(["git", "reset", "-q", "--",
                         str(target.relative_to(repo))], cwd=repo, check=False)
     assert cron.deletion_problems() == []
+
+
+def test_the_anchor_metric_is_stable_when_the_task_set_grows():
+    """A growing benchmark must not look like a capability regression.
+
+    On 2026-10-19 the loop reported one: 0.278 over 30 tasks -> 0.302 over 66. Nothing about the
+    pipeline had changed; the SET had. The judged metric is now the mean over a fixed, sorted
+    subset (ANCHOR_N), which only moves when those tasks' results move.
+    """
+    import sys
+    sys.path.insert(0, str(ROOT / "scripts"))
+    try:
+        import bench_plottwin as bench
+    except Exception:                    # pragma: no cover
+        import pytest
+        pytest.skip("benchmark harness unavailable")
+    small = [{"id": f"t{i:02d}", "status": "ok", "distance": 0.30} for i in range(20)]
+    grown = small + [{"id": f"u{i:02d}", "status": "ok", "distance": 0.90} for i in range(40)]
+    assert bench._anchor_distance(small) == bench._anchor_distance(grown) == 0.3
+    worse = [dict(t, distance=0.40) for t in small]
+    assert bench._anchor_distance(worse) == 0.4
+    assert bench._anchor_distance(small[:3]) is None
