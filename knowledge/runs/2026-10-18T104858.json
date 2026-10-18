@@ -1,0 +1,102 @@
+{
+  "run_at": "2026-10-18T10:48:58",
+  "dry_run": false,
+  "evolve_ok": true,
+  "evolve_exit_code": 0,
+  "evolve_output": [
+    "knowledge base -> v13",
+    "  checked 7/11 rules (4 unchecked)",
+    "  passed 7, failed 0",
+    "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02']",
+    "  wrote knowledge\\evolution_report.json"
+  ],
+  "tests_ok": true,
+  "tests_summary": "101 passed, 2 skipped in 24.87s",
+  "knowledge_version_before": 13,
+  "knowledge_version_after": 13,
+  "knowledge_changed": false,
+  "published": {
+    "pushed": false,
+    "reason": "not yet published"
+  },
+  "check_results": {
+    "L01": {
+      "ok": true,
+      "detail": "figpipe.style.panel_letter present",
+      "confidence_before": "enforced"
+    },
+    "L02": {
+      "ok": true,
+      "detail": "all rcParams match",
+      "confidence_before": "enforced"
+    },
+    "L03": {
+      "ok": true,
+      "detail": "all sizes in band",
+      "confidence_before": "enforced"
+    },
+    "L04": {
+      "ok": true,
+      "detail": "figpipe.style.suppress_log_exponents present",
+      "confidence_before": "enforced"
+    },
+    "L05": {
+      "ok": true,
+      "detail": "all rcParams match",
+      "confidence_before": "enforced"
+    },
+    "L06": {
+      "ok": true,
+      "detail": "all rcParams match",
+      "confidence_before": "enforced"
+    },
+    "L07": {
+      "ok": true,
+      "detail": "figpipe.audit.audit present",
+      "confidence_before": "enforced"
+    },
+    "H01": {
+      "ok": null,
+      "detail": "UNCHECKED: no machine-executable check defined for this rule",
+      "confidence_before": "hypothesis"
+    },
+    "H02": {
+      "ok": null,
+      "detail": "UNCHECKED: no machine-executable check defined for this rule",
+      "confidence_before": "refuted"
+    },
+    "E01": {
+      "ok": null,
+      "detail": "UNCHECKED: no machine-executable check defined for this rule",
+      "confidence_before": "void"
+    },
+    "E02": {
+      "ok": null,
+      "detail": "UNCHECKED: no machine-executable check defined for this rule",
+      "confidence_before": "void"
+    }
+  },
+  "demoted": [],
+  "promoted": [],
+  "regressed_detail": {},
+  "check_summary": {
+    "rules_total": 11,
+    "checked": 7,
+    "passed": 7,
+    "failed": 0,
+    "unchecked": 4,
+    "unchecked_ids": [
+      "H01",
+      "H02",
+      "E01",
+      "E02"
+    ]
+  },
+  "rules": {
+    "enforced": 7,
+    "measured_unenforced": 0,
+    "hypothesis": 1,
+    "regressed": 0
+  },
+  "ok": true
+}
