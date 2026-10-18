@@ -148,6 +148,38 @@ def run_tests() -> tuple[bool, str]:
     return p.returncode == 0, (tail[-1] if tail else "")
 
 
+#: Tracked paths a scheduled commit must never DELETE on its own.
+#:
+#: WHY: the publisher runs `git add -A`. On 2026-10-19 a scheduled run committed the deletion of
+#: the entire seed package (the paper PDF, seven published figure PNGs, the authors' recipe) --
+#: 3.7 MB of INPUT data that cannot be regenerated from this repository. The commit message said
+#: "no knowledge change". The files were simply missing from the worktree at that moment, and
+#: `git add -A` recorded their absence as intent.
+#:
+#: A scheduled job may add and modify; it may not remove evidence. Deleting these paths is a
+#: human decision and has to be made with `--allow-deletions`.
+PROTECTED_PREFIXES = (
+    "Seeds/",
+    "corpus/style/",
+    "templates/seed/",
+    "templates/transfer/",
+    "knowledge/layout_rules.json",
+    "knowledge/skills_catalog.json",
+    "knowledge/benchmark_skill_map.json",
+    "reports/",
+)
+
+
+def deletion_problems(cwd=None) -> list[str]:
+    """Tracked files the staged change would DELETE inside a protected prefix."""
+    cwd = cwd or ROOT
+    p = subprocess.run(["git", "diff", "--cached", "--diff-filter=D", "--name-only"],
+                       cwd=cwd, capture_output=True, text=True,
+                       encoding="utf-8", errors="replace")
+    deleted = [line.strip() for line in (p.stdout or "").splitlines() if line.strip()]
+    return [d for d in deleted if d.startswith(PROTECTED_PREFIXES)]
+
+
 def staged_problems(cwd=None) -> list[dict]:
     """Staged ADDITIONS that exceed the commit budget, as [{path, mb, why}].
 
@@ -178,7 +210,7 @@ def staged_problems(cwd=None) -> list[dict]:
     return out
 
 
-def git_publish(changed: bool) -> dict:
+def git_publish(changed: bool, allow_deletions: bool = False) -> dict:
     """Commit and push the knowledge base when a rule changed state.
 
     Only on change: a 6-hourly schedule that commits unconditionally would fill the history
@@ -199,6 +231,14 @@ def git_publish(changed: bool) -> dict:
     # THE GUARD. `git add -A` is what let 1.57 GB into the history; unstage the additions that
     # blow the budget and commit the rest, reporting exactly what was withheld and why.
     problems = staged_problems()
+    deletions = [] if allow_deletions else deletion_problems()
+    if deletions:
+        # unstage everything: a commit that deletes evidence is not worth making
+        subprocess.run(["git", "reset", "-q"], cwd=ROOT, capture_output=True, text=True)
+        return {"pushed": False, "withheld": [],
+                "blocked_deletions": deletions,
+                "reason": "refusing to commit deletions of protected paths; re-run with "
+                          "--allow-deletions if this is intentional"}
     real = [d["path"] for d in problems if not d["path"].startswith("<")]
     if real:
         subprocess.run(["git", "reset", "-q", "--"] + real, cwd=ROOT,
@@ -325,7 +365,8 @@ def main(argv: list[str]) -> int:
         # Publish, then record the outcome. The record written here documents THIS run and is
         # itself committed by the NEXT run's publish -- which is stated explicitly rather than
         # left for a reader to discover from `git status`.
-        publish = git_publish(changed)
+        publish = git_publish(changed,
+                              allow_deletions="--allow-deletions" in argv)
         run["published"] = publish
         run["publish_note"] = (
             "The publish outcome is recorded after the commit that carries this run, so it "

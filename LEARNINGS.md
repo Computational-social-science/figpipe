@@ -439,3 +439,27 @@ verdict with `gains`/`regressions` and a direction table (higher-is-better vs lo
 smaller style distance counts as an improvement). A run that loses a judged capability field exits
 non-zero unless the operator passes `--accept-capability-regression`. Recording a delta was not a
 control; this is.
+
+
+## 23. The scheduled run deleted the seed package and called it "no knowledge change" (2026-10-19)
+
+The worst defect of the whole project, found by restoring state rather than by a test:
+
+    commit 8b64e78  run: record scheduled evolution run (no knowledge change)
+    ... deleted: the seed paper PDF, seven published figure PNGs, the authors' recipe
+    (3.7 MB of INPUT that cannot be regenerated from this repository)
+
+Cause: the publisher runs `git add -A`. The seed files were missing from the worktree at that
+moment, so their absence was staged and committed as intent. No test covered "the scheduler must
+not delete evidence", and the commit message asserted the opposite of what the commit did.
+
+Fixes:
+1. Seeds/ restored from the pre-deletion commit.
+2. `cron_run.deletion_problems()` + `PROTECTED_PREFIXES`: a scheduled commit that would delete a
+   file under Seeds/, corpus/style/, templates/seed/, templates/transfer/, knowledge/*.json or
+   reports/ is REFUSED (everything is unstaged) unless `--allow-deletions` is passed explicitly.
+3. A test stages a real deletion of a protected fixture and asserts the guard blocks it, then
+   unstages and asserts a clean tree passes.
+
+Lesson for the mission: an unattended loop needs guards against ACTIONS, not only assertions about
+results. "It ran and reported success" is not evidence that it did the right thing.

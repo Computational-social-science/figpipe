@@ -341,7 +341,7 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
                     "templates/transfer/style_transfer_report.json"),
         deliverable("PlotTwin-Bench end-to-end report", "Ten authoritative benchmark tasks: deterministic style distance and execution outcome, default style vs reference style.",
                     "corpus/e2e/plottwin_report.json", meta=f"{n_ok}/{n_tasks} ok"),
-        deliverable("Skills and operators catalogue", "12 named recipes + 16 classic operators + a global verification floor, machine-readable.",
+        deliverable("Skills and operators catalogue", f"{n_skills} named recipes + {n_ops} classic operators + a global verification floor, machine-readable.",
                     "knowledge/skills_catalog.json", meta=f"{n_skills} skills / {n_ops} operators"),
         deliverable("Architecture and priority plan", "Entry layer, reference understanding, evaluation layer and the per-metric SOTA definition.",
                     "PIPELINE_V3.md", meta="v3"),
