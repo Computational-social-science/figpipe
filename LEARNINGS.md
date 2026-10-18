@@ -322,3 +322,14 @@ Nature 的 PDF 可能是放大生成的。做法：找到页面尺寸与最终�
 
 下一步不是多画几张图：把距离写进复现报告、由画像生成模板、用"硬门槛 + 距离 + 统计对账"做确定性
 程序空间搜索（替代 VLM 评审循环），并建立**不依赖 VLM 的面板级可验证 benchmark**。
+
+## 14. 从同行整合了什么（2026-10-18 晚）
+
+- **代码级整合**：DeTi*k*Zify 的 MIT MCTS 整包 vendor 到 `third_party/mcts/`（保留许可与出处），
+  `figpipe/search.py` 用它做探索策略、用我们的确定性奖励做评价；首跑把风格距离 0.456 → 0.416。
+- **方法级整合**：NaturePanelForge（MIT）的 SciFigure2Code 维度表被实现为 `figpipe/score.py` 的
+  确定性评分（8 个可测 + 4 个显式 N/A + 无效性声明），不再依赖 VLM 打分。
+- **只用思想**：FigMirror（无许可）的 Drawer/Reviewer、preserve list、quality floor；Math-VR /
+  ChartCoder（均无许可）的数据引擎与"代码即视觉思考"。未复制任何无许可代码或数据。
+- **教训**：整合的门槛是许可与依赖，不是"看起来有用"。ImageSim 类评测器虽好，但要 torch+GPU，
+  与"CPU、瘦身、可复现"的定位冲突——所以只借设计，不借依赖。

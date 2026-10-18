@@ -322,7 +322,7 @@ def composite(panels: list[Panel], columns: float = 2.0, height_mm: float | None
               width_ratios=None, height_ratios=None, gutter_mm: float | None = None,
               sharex: bool = False, sharey: bool = False, letters: bool = True,
               margins: dict | None = None, ncols: int | None = None,
-              nrows: int | None = None):
+              nrows: int | None = None, rc: dict | None = None):
     """Build one multi-panel figure. Returns the matplotlib figure.
 
     `columns` 1 or 2 -> exactly 89 or 183 mm wide. `height_mm=None` derives the height from
@@ -343,7 +343,10 @@ def composite(panels: list[Panel], columns: float = 2.0, height_mm: float | None
         raise ValueError("sharex/sharey is only defined for a plain grid; with `at=` spans the "
                          "axes in a column need not share a scale. Rejected rather than "
                          "silently sharing the wrong axes.")
-    style.apply()
+    # `rc` lets a caller search the STYLE dimension (font size tier, line width, ...) without
+    # forking the composer: the style must be applied before the axes are created, so it has to
+    # travel with the layout call rather than being patched afterwards.
+    style.apply(**(rc or {}))
     pri = priors()
     gutter = float(pri["gutter_mm"] if gutter_mm is None else gutter_mm)
     plan = _plan(panels, columns, height_mm, width_ratios, height_ratios,

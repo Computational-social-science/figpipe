@@ -141,3 +141,52 @@ GPU/API、以及"评审模型 + 迭代上限"来兜底不确定性。
 **教训（与本项目"控件看起来在、实际不起作用"同构）：** 工具"存在"不等于"可用"；一个只在普通
 HTML 上成功的抓取器，会在 raw 文本源上静默失败。遇到同类问题先做**分端点探测**（本地直连 vs
 工具链路、不同 host），再改配置。
+
+---
+
+## 7. 汲取与整合（2026-10-18，晚）
+
+只分析不吸收等于没读。按许可逐项判断"能用代码 / 能用方法 / 只能用思想"，并落地了能落地的部分：
+
+| 资源 | 许可 | 处理方式 | 落地结果 |
+|---|---|---|---|
+| **DeTi*k*Zify 的 MCTS**（`mcts/` 包） | 仓库 Apache-2.0，该包 MIT | **整包 vendor，未改一行** | `third_party/mcts/`（保留 LICENSE + NOTICE）；`figpipe/search.py` 用它作为**探索策略**，奖励换成我们确定性的"风格距离 + 硬门槛" |
+| DeTi*k*Zify 的评测器（ImageSim/CrystalBLEU/KID） | Apache-2.0 | 不 vendor（依赖 torch/transformers/POT，与瘦身冲突） | 记录设计；CrystalBLEU 可在 P1 做纯 Python 兼容实现 |
+| **NaturePanelForge 的评测维度**（SciFigure2Code P0/P1/P2） | MIT | **采用其维度表**，用确定性度量重写 | `figpipe/score.py`：8 个可测维度 + 4 个明确 N/A（并给原因）；无效性指标 0 并声明结构性原因 |
+| NaturePanelForge 的 `clean_tiny100` 清单 | MIT（清单/代码）；面板图像来自第三方论文 | 不 vendor 图像 | 记录其 schema，P1 做**许可核对后的兼容评测** |
+| FigMirror 的 Drawer/Reviewer 循环、preserve list、quality floor、Grounded Measurement | **无 LICENSE** | **只用思想** | 其 quality floor 与我们的 audit 同构；"保真锚点"思想对应我们的规则/报告；不复制代码或 prompt |
+| Math-VR-CodePlot-CoT 的"代码作为视觉思考" | 无 LICENSE | 只用思想 | 记录为不适配生产管线；其渲染回喂思想已体现在我们的"渲染→测量→搜索"环 |
+| ChartCoder 的数据引擎（Chart2Code-160K） | 无 LICENSE | 只用思想 | 记录为 P2（数据引擎），不复用数据/代码 |
+
+### 整合后的两个新能力
+
+**(a) 确定性程序空间搜索**（`figpipe/search.py` + `scripts/search_style.py`）
+用 vendored MCTS 搜索模板风格变体（字号档 5.5/6.0/6.5/7.0、误差带 α、marker 大小），奖励 =
+`1 − 风格距离`，命中硬门槛（栏宽/字号/碰撞）再扣分。首跑（budget=8，seed=0）：
+
+```
+baseline  size=6.0  reward 0.544  distance 0.456
+best      size=6.5  reward 0.584  distance 0.416   improvement +0.040
+```
+
+每一个候选都被真实渲染并测量，trace 存 `templates/search/style_search_trace.json`；同 seed 同
+budget 结果可复现。**这既是 DeTi*k*Zify 搜索机制的复用，也暴露了当前风格画像的盲点**：α 与
+marker 尺寸不在 profile 里，所以搜索只能靠字号改善——这直接变成下一步（把 fill opacity、marker
+尺寸、图例位置纳入 profile）。
+
+**(b) 确定性 P0/P1/P2 评分器**（`figpipe/score.py`）
+按 NPF 的维度表输出：execution / visual fidelity / clarity-overlap / layout / text labels /
+component completeness / data-pattern fidelity / chart-type consistency 八个可测维度（每项附证据），
+以及 axis / legend-colorbar / scientific notation / code validity 四个 **NOT MEASURED + 原因**；
+invalidity 两项为 0 并说明结构性原因（模板管线不读目标图、所有 marks 都是矢量图元）。
+这把"peer 有榜单、我们没有协议"的差距，变成了**无 VLM、可复现、带证据的协议**。
+
+### 修正后的下一步
+
+- **P0**：用 `score.py` 给四张种子复现版面出一张 NPF 维度表；把 `search.py` 的搜索空间从"风格
+  三参数"扩到**版面拓扑**（图例内外、注释角、刻度定位），并用"统计对账"做第二重奖励；扩展
+  `styleprofile` 记录 fill opacity / marker 尺寸 / 图例位置。
+- **P1**：在许可核对后接 `clean_tiny100` 做外部对比（我们跑确定性评分，不跑 VLM）；用 MIT 的
+  NPF 清单 schema 做兼容层；CrystalBLEU 纯 Python 兼容实现用于"代码可编辑性"维度。
+- **P2**：把"确定性测量+搜索"与"VLM 评审"做同预算对照实验并写成方法短文——这是"青出于蓝"最有
+  说服力的证据：同等或更好的距离，零模型调用，结果可复算。
