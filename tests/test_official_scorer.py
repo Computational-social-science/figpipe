@@ -88,3 +88,31 @@ def test_deviating_code_scores_lower_than_matching_code(tmp_path):
     assert res["available"] is True
     assert res["score"] < 100.0
     assert "grid" in res["scored_dimensions"] or "palette" in res["scored_dimensions"]
+
+
+def test_the_official_aggregate_covers_the_whole_report_not_a_slice():
+    """A per-slice aggregate changes whenever a new window is measured.
+
+    The first version computed the mean over the CURRENT slice only: it reported 97.87 over 6
+    scored tasks while the report held 20. This is the same defect as the raw mean over a growing
+    set, so the aggregate must be computed after the merge.
+    """
+    import json
+    import sys
+    sys.path.insert(0, str(ROOT / "scripts"))
+    try:
+        import bench_plottwin as bench
+    except Exception:                    # pragma: no cover
+        import pytest
+        pytest.skip("benchmark harness unavailable")
+    report = ROOT / "corpus" / "e2e" / "plottwin_report.json"
+    if not report.is_file():
+        import pytest
+        pytest.skip("report absent")
+    data = json.loads(report.read_text(encoding="utf-8"))
+    ok = [t for t in data["tasks"] if t.get("status") == "ok"]
+    agg = bench._official_summary(ok)
+    stored = data.get("official_code_channel") or {}
+    assert agg["n_scored"] == stored.get("n_scored"), (
+        f"stored aggregate covers {stored.get('n_scored')} tasks, report holds "
+        f"{agg['n_scored']} scored")

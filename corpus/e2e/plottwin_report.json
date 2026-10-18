@@ -23,10 +23,10 @@
     "channel": "code_deviation",
     "weight_upstream": 0.35,
     "note": "official deterministic channel only; the 0.65 vision channel is NOT run, so this is not the combined score",
-    "n_scored": 6,
-    "n_unavailable": 0,
-    "mean_score": 97.87,
-    "min_score": 92.16,
+    "n_scored": 15,
+    "n_unavailable": 5,
+    "mean_score": 92.68,
+    "min_score": 68.86,
     "max_score": 100.0
   },
   "decision_service": {

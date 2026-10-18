@@ -908,7 +908,6 @@ def main(argv=None) -> int:
         "mean_best_of_two": round(float(np.mean([min(r["distance"], r["baseline_distance"])
                                                  for r in ok])), 3) if ok else None,
         "semantic_violations": sum(1 for r in ok if r.get("semantic_findings")),
-        "official_code_channel": _official_summary(ok),
         "decision_service": decision.health(),
         "by_type": type_stats,
         "failures": [{"id": r["id"], "chart": r["chart"], "error": r.get("error")}
@@ -967,6 +966,10 @@ def main(argv=None) -> int:
     # as long as those tasks stay in the report.
     report["benchmark_anchor_distance"] = _anchor_distance(report["tasks"])
     report["benchmark_shipped_anchor_distance"] = _shipped_anchor_distance(report["tasks"])
+    # computed AFTER the merge, over every task in the report -- a per-slice aggregate would
+    # change whenever a new window is measured, the same defect as the raw mean
+    report["official_code_channel"] = _official_summary(
+        [t for t in report["tasks"] if t.get("status") == "ok"])
     report["code_version"] = CODE_VERSION
     fresh = freshness(report["tasks"])
     report["freshness"] = fresh

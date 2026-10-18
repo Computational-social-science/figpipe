@@ -110,6 +110,7 @@ CAPABILITY_DIRECTION = {
     # NOTE: benchmark_tasks and benchmark_ok are counts, not capabilities: they rise whenever the
     # measured set grows. They are recorded for coverage and are deliberately NOT judged.
     "benchmark_anchor_distance": -1,
+    "benchmark_official_code_score": +1,
     "benchmark_shipped_anchor_distance": -1,
     # NOTE: benchmark_shipped_distance (full-set) is recorded but NOT judged, for the same reason
     # as benchmark_mean_distance: its value depends on which tasks are in the set.
