@@ -495,3 +495,25 @@ exactly what the best-of-two number (0.261) already hints at.
 The scheduled loop now runs a rotating 6-task benchmark slice (`--skip-benchmark` to disable) and
 records it in the run record, so capability is measured continuously instead of when someone
 remembers.
+
+
+## 25. The loop reported a capability regression that did not exist (2026-10-19)
+
+The first scheduled run with the benchmark slice in the loop exited non-zero:
+
+    capability regression: benchmark_mean_distance 0.278 -> 0.302
+
+Nothing about the pipeline had changed. The benchmark SET had grown from 30 to 66 tasks, and the
+slice happened to include harder windows (Field 2D −0.107, Heatmap negative). The guard worked
+exactly as designed and was exactly wrong: it judged a metric whose value depends on the
+measurement set rather than on the capability.
+
+Fix: a stable ANCHOR metric -- the mean style distance over the first 20 task ids in sorted order.
+It only moves when those tasks' results move, so it is comparable across runs. The raw mean stays
+in the report (it is informative) but is deliberately NOT judged. `capability_delta` now carries a
+comment saying why, and a test asserts that growing the task set leaves the anchor unchanged while
+a genuine worsening moves it.
+
+This is the second time in one day that the MEASUREMENT machinery, not the pipeline, produced the
+wrong signal (the first was the size-distance histogram that could not see a 6.0 → 6.5 change).
+A self-evolving system must audit its own instruments before it trusts their verdicts.

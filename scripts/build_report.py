@@ -458,7 +458,8 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
 
 <div class="kpis">
   {kpi(f'{n_stats}', 'Published statistics reproduced', f'worst |Δ| = {worst}', '')}
-  {kpi(bench_mean, 'Benchmark style distance', 'default style → reference style (deterministic)', '')}
+  {kpi(bench.get("benchmark_anchor_distance") or "—", 'Anchor style distance',
+       'fixed 20-task subset (comparable across runs)', '')}
   {kpi(f'{n_skills} / {n_ops}', 'Skills / classic operators', 'global verification floor on every recipe', '')}
   {kpi(f'{n_tests}', 'Automated tests', 'negative controls and contract tests', '')}
   {kpi(f'{tracked_mb or "—"} MB', 'Repository size', 'lean budget ≤ 80 MB', '')}
@@ -573,7 +574,7 @@ The next step is to write benchmark pass rates and distances into the run record
 
 <h3 style="margin-top:20px">Capability trend (scheduled runs)</h3>
 <table><thead><tr><th>Run</th><th>Skills</th><th>Operators</th><th>Benchmark</th>
-<th>Mean distance</th><th>Tests</th></tr></thead><tbody>{''.join(cap_rows)}</tbody></table>
+<th>Anchor distance</th><th>Tests</th></tr></thead><tbody>{''.join(cap_rows)}</tbody></table>
 <p class="tag">Read from <code>knowledge/runs/*.json</code>. A run with no capability change is
 recorded as such; the loop fails when a judged capability field gets worse.</p>
 
