@@ -18,7 +18,7 @@
   "worse": 7,
   "ties": 4,
   "mean_best_of_two": 0.265,
-  "semantic_violations": 1,
+  "semantic_violations": 0,
   "decision_service": {
     "up": false,
     "url": "http://127.0.0.1:8090",
@@ -1744,144 +1744,6 @@
       "findings": []
     },
     {
-      "id": "PMC11502666",
-      "chart": "Distribution",
-      "panel_mode": "multi",
-      "skill": "faceted_distribution",
-      "rationale": "faceted hist by panel_group",
-      "rows_used": 554,
-      "status": "ok",
-      "distance": 0.175,
-      "baseline_distance": 0.218,
-      "delta": 0.043,
-      "selected": "styled",
-      "selected_distance": 0.174,
-      "selected_gain": 0.044,
-      "selection_margin": 0.046,
-      "components": {
-        "palette": 0.152,
-        "aspect": 0.009,
-        "ink": 0.398
-      },
-      "hard_failures": 0,
-      "findings": [],
-      "semantic_findings": []
-    },
-    {
-      "id": "PMC11840003",
-      "chart": "Box/Violin",
-      "panel_mode": "multi",
-      "skill": "distribution_comparison",
-      "rationale": "box panel_row by panel_group",
-      "rows_used": 1403,
-      "status": "ok",
-      "distance": 0.197,
-      "baseline_distance": 0.441,
-      "delta": 0.244,
-      "selected": "styled",
-      "selected_distance": 0.203,
-      "selected_gain": 0.238,
-      "selection_margin": 0.246,
-      "components": {
-        "palette": 0.149,
-        "aspect": 0.211,
-        "ink": 0.302
-      },
-      "hard_failures": 1,
-      "findings": [
-        {
-          "check": "height",
-          "detail": "170.0 mm exceeds the 170.0 mm maximum",
-          "severity": "hard"
-        }
-      ],
-      "semantic_findings": []
-    },
-    {
-      "id": "PMC12000431",
-      "chart": "Distribution",
-      "panel_mode": "multi",
-      "skill": "faceted_distribution",
-      "rationale": "faceted hist by panel_group",
-      "rows_used": 1414,
-      "status": "ok",
-      "distance": 0.202,
-      "baseline_distance": 0.255,
-      "delta": 0.053,
-      "selected": "styled",
-      "selected_distance": 0.203,
-      "selected_gain": 0.052,
-      "selection_margin": 0.054,
-      "components": {
-        "palette": 0.291,
-        "aspect": 0.005,
-        "ink": 0.177
-      },
-      "hard_failures": 0,
-      "findings": [],
-      "semantic_findings": []
-    },
-    {
-      "id": "PMC12354736",
-      "chart": "Distribution",
-      "panel_mode": "multi",
-      "skill": "faceted_distribution",
-      "rationale": "faceted hist by panel_row",
-      "rows_used": 12196,
-      "status": "ok",
-      "distance": 0.295,
-      "baseline_distance": 0.355,
-      "delta": 0.06,
-      "selected": "styled",
-      "selected_distance": 0.299,
-      "selected_gain": 0.056,
-      "selection_margin": 0.057,
-      "components": {
-        "palette": 0.299,
-        "aspect": 0.183,
-        "ink": 0.399
-      },
-      "hard_failures": 1,
-      "findings": [
-        {
-          "check": "height",
-          "detail": "170.0 mm exceeds the 170.0 mm maximum",
-          "severity": "hard"
-        }
-      ],
-      "semantic_findings": []
-    },
-    {
-      "id": "PMC12905268",
-      "chart": "Distribution",
-      "panel_mode": "multi",
-      "skill": "faceted_distribution",
-      "rationale": "faceted hist by shoreline_condition",
-      "rows_used": 1196,
-      "status": "ok",
-      "distance": 0.316,
-      "baseline_distance": 0.327,
-      "delta": 0.011,
-      "selected": "styled",
-      "selected_distance": 0.312,
-      "selected_gain": 0.015,
-      "selection_margin": 0.022,
-      "components": {
-        "palette": 0.256,
-        "aspect": 0.564,
-        "ink": 0.219
-      },
-      "hard_failures": 1,
-      "findings": [
-        {
-          "check": "height",
-          "detail": "170.0 mm exceeds the 170.0 mm maximum",
-          "severity": "hard"
-        }
-      ],
-      "semantic_findings": []
-    },
-    {
       "id": "arxiv-astro-skymap__2412.12637",
       "chart": "Field 2D",
       "panel_mode": "single",
@@ -2633,46 +2495,6 @@
       },
       "hard_failures": 0,
       "findings": [],
-      "semantic_findings": []
-    },
-    {
-      "id": "PMC12504421",
-      "chart": "Heatmap",
-      "panel_mode": "multi",
-      "skill": "matrix_plate",
-      "rationale": "pivot panel_group x record_type of panel_row",
-      "rows_used": 4,
-      "status": "ok",
-      "distance": 0.288,
-      "baseline_distance": 0.426,
-      "delta": 0.138,
-      "selected": "styled",
-      "selected_distance": 0.261,
-      "selected_gain": 0.165,
-      "selection_margin": 0.116,
-      "components": {
-        "palette": 0.112,
-        "aspect": 0.166,
-        "ink": 0.852
-      },
-      "hard_failures": 3,
-      "findings": [
-        {
-          "check": "height",
-          "detail": "170.0 mm exceeds the 170.0 mm maximum",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'site_distribution_observation' over 'trajectory_indicator_score'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'feature_summary overlap_intersection' over 'site_distribution_observation'",
-          "severity": "hard"
-        }
-      ],
       "semantic_findings": []
     },
     {
@@ -4544,37 +4366,195 @@
       "hard_failures": 0,
       "findings": [],
       "semantic_findings": []
+    },
+    {
+      "id": "PMC11502666",
+      "chart": "Distribution",
+      "panel_mode": "multi",
+      "code_version": "8ea6d2b2ae0c",
+      "skill": "faceted_distribution",
+      "rationale": "faceted hist by panel_group",
+      "rows_used": 554,
+      "status": "ok",
+      "distance": 0.175,
+      "baseline_distance": 0.218,
+      "delta": 0.043,
+      "selected": "styled",
+      "selected_distance": 0.174,
+      "selected_gain": 0.044,
+      "selection_margin": 0.046,
+      "components": {
+        "palette": 0.152,
+        "aspect": 0.009,
+        "ink": 0.398
+      },
+      "hard_failures": 0,
+      "findings": [],
+      "semantic_findings": []
+    },
+    {
+      "id": "PMC11840003",
+      "chart": "Box/Violin",
+      "panel_mode": "multi",
+      "code_version": "8ea6d2b2ae0c",
+      "skill": "distribution_comparison",
+      "rationale": "box panel_row by panel_group",
+      "rows_used": 1403,
+      "status": "ok",
+      "distance": 0.197,
+      "baseline_distance": 0.441,
+      "delta": 0.244,
+      "selected": "styled",
+      "selected_distance": 0.203,
+      "selected_gain": 0.238,
+      "selection_margin": 0.246,
+      "components": {
+        "palette": 0.149,
+        "aspect": 0.211,
+        "ink": 0.302
+      },
+      "hard_failures": 1,
+      "findings": [
+        {
+          "check": "height",
+          "detail": "170.0 mm exceeds the 170.0 mm maximum",
+          "severity": "hard"
+        }
+      ],
+      "semantic_findings": []
+    },
+    {
+      "id": "PMC12000431",
+      "chart": "Distribution",
+      "panel_mode": "multi",
+      "code_version": "8ea6d2b2ae0c",
+      "skill": "faceted_distribution",
+      "rationale": "faceted hist by panel_group",
+      "rows_used": 1414,
+      "status": "ok",
+      "distance": 0.202,
+      "baseline_distance": 0.255,
+      "delta": 0.053,
+      "selected": "styled",
+      "selected_distance": 0.203,
+      "selected_gain": 0.052,
+      "selection_margin": 0.054,
+      "components": {
+        "palette": 0.291,
+        "aspect": 0.005,
+        "ink": 0.177
+      },
+      "hard_failures": 0,
+      "findings": [],
+      "semantic_findings": []
+    },
+    {
+      "id": "PMC12354736",
+      "chart": "Distribution",
+      "panel_mode": "multi",
+      "code_version": "8ea6d2b2ae0c",
+      "skill": "faceted_distribution",
+      "rationale": "faceted hist by panel_row",
+      "rows_used": 12196,
+      "status": "ok",
+      "distance": 0.295,
+      "baseline_distance": 0.355,
+      "delta": 0.06,
+      "selected": "styled",
+      "selected_distance": 0.299,
+      "selected_gain": 0.056,
+      "selection_margin": 0.057,
+      "components": {
+        "palette": 0.299,
+        "aspect": 0.183,
+        "ink": 0.399
+      },
+      "hard_failures": 1,
+      "findings": [
+        {
+          "check": "height",
+          "detail": "170.0 mm exceeds the 170.0 mm maximum",
+          "severity": "hard"
+        }
+      ],
+      "semantic_findings": []
+    },
+    {
+      "id": "PMC12504421",
+      "chart": "Heatmap",
+      "panel_mode": "multi",
+      "code_version": "8ea6d2b2ae0c",
+      "skill": "matrix_plate",
+      "rationale": "pivot panel_group x record_type of panel_row",
+      "rows_used": 4,
+      "status": "ok",
+      "distance": 0.288,
+      "baseline_distance": 0.426,
+      "delta": 0.138,
+      "selected": "styled",
+      "selected_distance": 0.261,
+      "selected_gain": 0.165,
+      "selection_margin": 0.116,
+      "components": {
+        "palette": 0.112,
+        "aspect": 0.166,
+        "ink": 0.852
+      },
+      "hard_failures": 3,
+      "findings": [
+        {
+          "check": "height",
+          "detail": "170.0 mm exceeds the 170.0 mm maximum",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'site_distribution_observation' over 'trajectory_indicator_score'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'feature_summary overlap_intersection' over 'site_distribution_observation'",
+          "severity": "hard"
+        }
+      ],
+      "semantic_findings": []
+    },
+    {
+      "id": "PMC12905268",
+      "chart": "Distribution",
+      "panel_mode": "multi",
+      "code_version": "8ea6d2b2ae0c",
+      "skill": "faceted_distribution",
+      "rationale": "faceted hist by shoreline_condition",
+      "rows_used": 1196,
+      "status": "ok",
+      "distance": 0.316,
+      "baseline_distance": 0.327,
+      "delta": 0.011,
+      "selected": "styled",
+      "selected_distance": 0.312,
+      "selected_gain": 0.015,
+      "selection_margin": 0.022,
+      "components": {
+        "palette": 0.256,
+        "aspect": 0.564,
+        "ink": 0.219
+      },
+      "hard_failures": 1,
+      "findings": [
+        {
+          "check": "height",
+          "detail": "170.0 mm exceeds the 170.0 mm maximum",
+          "severity": "hard"
+        }
+      ],
+      "semantic_findings": []
     }
   ],
   "benchmark_anchor_distance": 0.305,
   "benchmark_shipped_anchor_distance": 0.252,
   "code_version": "8ea6d2b2ae0c",
-  "stale_tasks": [
-    "ChartNet-sample_51138e34911000f6",
-    "ChartNet-sample_55e97056fbbde5b6__single",
-    "ChartNet-sample_575be33996f0155c",
-    "ChartNet-sample_5781d64aa8377547",
-    "ChartNet-sample_5c19f37c2ecba73b",
-    "ChartNet-sample_5cf3859f3ce78167",
-    "ChartNet-sample_5e553d0091325708",
-    "ChartNet-sample_63115ff12f6710a3",
-    "ChartNet-sample_68d34458d8f08a48",
-    "ChartNet-sample_7c69a17fd376e251",
-    "ChartNet-sample_82a42a98d7e32b53",
-    "ChartNet-sample_953bb3ed650d8541"
-  ],
-  "n_stale": 12,
-  "selection": {
-    "n": 112,
-    "shipped_mean": 0.24,
-    "always_styled_mean": 0.268,
-    "plain_mean": 0.355,
-    "gain_vs_always_styled": 0.028,
-    "gain_vs_plain": 0.116,
-    "picked_styled": 110,
-    "picked_plain": 2,
-    "rule": "closer of plain/styled to the reference; the reference is an input"
-  },
   "freshness": {
     "fresh": [
       "ChartNet-sample_97a7c092bc6a4a6c",
@@ -4588,7 +4568,13 @@
       "ChartNet-sample_d7325ced9dcb3e94",
       "ChartNet-sample_e17ff7b5495b0ee4",
       "ChartNet-sample_f31f9780b9bd6948",
-      "ChartNet-sample_f743754444c3a3d9"
+      "ChartNet-sample_f743754444c3a3d9",
+      "PMC11502666",
+      "PMC11840003",
+      "PMC12000431",
+      "PMC12354736",
+      "PMC12504421",
+      "PMC12905268"
     ],
     "stale": [
       "ChartNet-sample_51138e34911000f6",
@@ -4672,11 +4658,6 @@
       "Chart2Code_level2_hist_2_v5",
       "Chart2Code_level2_multidiff_1_v1",
       "Chart2Code_level2_multidiff_5_v1",
-      "PMC11502666",
-      "PMC11840003",
-      "PMC12000431",
-      "PMC12354736",
-      "PMC12905268",
       "arxiv-astro-skymap__2412.12637",
       "arxiv-ml-3d-trajectory__2511.17399",
       "arxiv-ml-3d-trajectory__2602.22552",
@@ -4703,7 +4684,6 @@
       "ChartNet-sample_3d0ebd7ea1e10bf3",
       "ChartNet-sample_42a8557ef11775e9",
       "ChartNet-sample_46826fe4916b7d52",
-      "PMC12504421",
       "PMC13106710",
       "arxiv_2502.17598",
       "arxiv_2605.14587",
@@ -4723,10 +4703,36 @@
       "Chart2Code_level2_radar_7_v3",
       "Chart2Code_level2_radar_9_v4"
     ],
-    "n_fresh": 12,
+    "n_fresh": 18,
     "n_stale": 12,
-    "n_unknown": 117
+    "n_unknown": 111
   },
-  "n_unknown": 117,
-  "n_fresh": 12
+  "stale_tasks": [
+    "ChartNet-sample_51138e34911000f6",
+    "ChartNet-sample_55e97056fbbde5b6__single",
+    "ChartNet-sample_575be33996f0155c",
+    "ChartNet-sample_5781d64aa8377547",
+    "ChartNet-sample_5c19f37c2ecba73b",
+    "ChartNet-sample_5cf3859f3ce78167",
+    "ChartNet-sample_5e553d0091325708",
+    "ChartNet-sample_63115ff12f6710a3",
+    "ChartNet-sample_68d34458d8f08a48",
+    "ChartNet-sample_7c69a17fd376e251",
+    "ChartNet-sample_82a42a98d7e32b53",
+    "ChartNet-sample_953bb3ed650d8541"
+  ],
+  "n_stale": 12,
+  "n_unknown": 111,
+  "n_fresh": 18,
+  "selection": {
+    "n": 112,
+    "shipped_mean": 0.24,
+    "always_styled_mean": 0.268,
+    "plain_mean": 0.355,
+    "gain_vs_always_styled": 0.028,
+    "gain_vs_plain": 0.116,
+    "picked_styled": 110,
+    "picked_plain": 2,
+    "rule": "closer of plain/styled to the reference; the reference is an input"
+  }
 }
