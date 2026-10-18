@@ -105,7 +105,7 @@ def run_tests() -> tuple[bool, str]:
         return True, "skipped (FIGPIPE_NO_TESTS set: already inside the suite)"
     py = sys.executable
     p = subprocess.run([py, "-m", "pytest", "tests/", "-q"], cwd=ROOT,
-                       capture_output=True, text=True)
+                       capture_output=True, text=True, encoding="utf-8", errors="replace")
     tail = (p.stdout or p.stderr).strip().splitlines()
     return p.returncode == 0, (tail[-1] if tail else "")
 
@@ -119,7 +119,7 @@ def staged_problems(cwd=None) -> list[dict]:
     """
     cwd = cwd or ROOT
     p = subprocess.run(["git", "diff", "--cached", "--name-only", "--diff-filter=A"],
-                       cwd=cwd, capture_output=True, text=True)
+                       cwd=cwd, capture_output=True, text=True, encoding="utf-8", errors="replace")
     if p.returncode != 0:
         return [{"path": "<git>", "mb": 0.0, "why": (p.stderr or "").strip()[:200]}]
     files = [ln for ln in p.stdout.splitlines() if ln.strip()]
@@ -155,7 +155,7 @@ def git_publish(changed: bool) -> dict:
     msg = ("knowledge: autonomous evolution update" if changed
            else "run: record scheduled evolution run (no knowledge change)")
     for cmd in (["git", "add", "-A"],):
-        p = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True)
+        p = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True, encoding="utf-8", errors="replace")
         steps.append({"cmd": " ".join(cmd[:3]), "code": p.returncode,
                       "tail": (p.stdout or p.stderr).strip().splitlines()[-1:]})
     # THE GUARD. `git add -A` is what let 1.57 GB into the history; unstage the additions that
@@ -164,7 +164,7 @@ def git_publish(changed: bool) -> dict:
     real = [d["path"] for d in problems if not d["path"].startswith("<")]
     if real:
         subprocess.run(["git", "reset", "-q", "--"] + real, cwd=ROOT,
-                       capture_output=True, text=True)
+                       capture_output=True, text=True, encoding="utf-8", errors="replace")
     if problems:
         steps.append({"cmd": "budget guard", "code": 1, "withheld": problems,
                       "tail": [f"refused to stage {len(problems)} over-budget addition(s)"]})
@@ -172,7 +172,7 @@ def git_publish(changed: bool) -> dict:
                  "-c", "user.email=bot@figpipe.local",
                  "commit", "--no-verify", "-m", msg],
                 ["git", "push", "origin", "main"]):
-        p = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True)
+        p = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True, encoding="utf-8", errors="replace")
         steps.append({"cmd": " ".join(cmd[:3]), "code": p.returncode,
                       "tail": (p.stdout or p.stderr).strip().splitlines()[-1:] })
     return {"pushed": steps[-1]["code"] == 0, "steps": steps, "withheld": problems}
@@ -192,7 +192,7 @@ def main(argv: list[str]) -> int:
 
     ok_evolve, _ = True, ""
     p = subprocess.run([sys.executable, str(ROOT / "scripts" / "evolve.py")],
-                       cwd=ROOT, capture_output=True, text=True)
+                       cwd=ROOT, capture_output=True, text=True, encoding="utf-8", errors="replace")
     ok_evolve = p.returncode == 0
     evolve_out = (p.stdout or "").strip().splitlines()
     # A non-zero evolve exit means a rule REGRESSED or a check could not run. That must

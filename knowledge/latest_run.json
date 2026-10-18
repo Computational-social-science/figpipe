@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-19T00:32:32",
+  "run_at": "2026-10-19T00:33:49",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -9,10 +9,10 @@
     "  passed 8, failed 0",
     "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
     "  wrote knowledge\\evolution_report.json",
-    "  lean: tracked 79.3 -> 79.3 MB, worktree 80.7 -> 80.7 MB"
+    "  lean: tracked 79.3 -> 79.3 MB, worktree 80.9 -> 80.8 MB"
   ],
   "tests_ok": false,
-  "tests_summary": "",
+  "tests_summary": "1 failed, 228 passed, 2 skipped, 1 warning in 42.46s",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
@@ -136,38 +136,14 @@
     "benchmark_mean_distance": 0.288,
     "statistics_reproduced": 15,
     "knowledge_version": 16,
-    "tests": null
+    "tests": 228
   },
   "capabilities_delta": {
     "changed": true,
     "delta": {
-      "skills": {
+      "tests": {
         "before": null,
-        "after": 12
-      },
-      "operators": {
-        "before": null,
-        "after": 16
-      },
-      "benchmark_tasks": {
-        "before": null,
-        "after": 30
-      },
-      "benchmark_ok": {
-        "before": null,
-        "after": 23
-      },
-      "benchmark_mean_distance": {
-        "before": null,
-        "after": 0.288
-      },
-      "statistics_reproduced": {
-        "before": null,
-        "after": 15
-      },
-      "knowledge_version": {
-        "before": null,
-        "after": 16
+        "after": 228
       }
     }
   },
