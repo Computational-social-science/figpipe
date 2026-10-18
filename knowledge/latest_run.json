@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-19T06:40:18",
+  "run_at": "2026-10-19T06:43:38",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -9,10 +9,10 @@
     "  passed 8, failed 0",
     "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
     "  wrote knowledge\\evolution_report.json",
-    "  lean: tracked 79.9 -> 79.9 MB, worktree 102.0 -> 102.0 MB"
+    "  lean: tracked 79.9 -> 79.9 MB, worktree 102.1 -> 102.0 MB"
   ],
   "tests_ok": true,
-  "tests_summary": "278 passed, 2 skipped, 1 warning in 55.08s",
+  "tests_summary": "280 passed, 2 skipped, 1 warning in 55.33s",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
@@ -129,16 +129,8 @@
     "regressed": 0
   },
   "benchmark_slice": {
-    "ran": true,
-    "offset": 0,
-    "tasks": 6,
-    "code": 0,
-    "tail": [
-      "    type Box/Violin     ok 1/1   d=0.197 base=0.441 delta=0.244 errors=0",
-      "    type Distribution   ok 4/4   d=0.247 base=0.289 delta=0.042 errors=0",
-      "    type Heatmap        ok 1/1   d=0.288 base=0.426 delta=0.138 errors=0",
-      "  wrote E:\\2026-AI4S\\figpipe\\corpus\\e2e\\plottwin_report.json"
-    ]
+    "ran": false,
+    "reason": "dry run"
   },
   "capabilities": {
     "skills": 16,
@@ -150,24 +142,29 @@
     "benchmark_anchor_distance": 0.305,
     "benchmark_shipped_anchor_distance": 0.252,
     "benchmark_unsupported": 9,
+    "benchmark_official_code_score": 92.68,
     "statistics_reproduced": 15,
     "knowledge_version": 16,
-    "tests": 278
+    "tests": 280
   },
   "capabilities_delta": {
     "changed": true,
     "delta": {
+      "benchmark_official_code_score": {
+        "before": null,
+        "after": 92.68
+      },
       "tests": {
-        "before": 277,
-        "after": 278
+        "before": 278,
+        "after": 280
       }
     },
     "verdict": {
       "gains": [
         {
           "field": "tests",
-          "before": 277,
-          "after": 278
+          "before": 278,
+          "after": 280
         }
       ],
       "regressions": [],

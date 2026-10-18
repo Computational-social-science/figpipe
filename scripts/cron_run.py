@@ -94,6 +94,13 @@ def capability_snapshot() -> dict:
         # added (0.257 -> 0.258 on a coverage-only run), which is the same defect as the raw mean.
         "benchmark_shipped_anchor_distance": bench.get("benchmark_shipped_anchor_distance"),
         "benchmark_unsupported": bench.get("n_unsupported"),
+        # The benchmark's OWN deterministic channel (deviation-defect-v1, 35% weight upstream).
+        # This is the only number produced by THEIR scorer, so it is the closest thing to an
+        # external measure this project has. It was added to CAPABILITY_DIRECTION without being
+        # added HERE -- a judged field the snapshot never returns is never judged, which is the
+        # "control that looks present and does nothing" defect this project keeps finding.
+        "benchmark_official_code_score": (bench.get("official_code_channel") or {}).get(
+            "mean_score"),
         "statistics_reproduced": (seed.get("self_check") or {}).get("statistics_recorded"),
         "knowledge_version": kb.get("version"),
         "tests": None,             # patched in after the suite runs

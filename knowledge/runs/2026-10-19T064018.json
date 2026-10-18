@@ -17,8 +17,29 @@
   "knowledge_version_after": 16,
   "knowledge_changed": false,
   "published": {
-    "pushed": false,
-    "reason": "not yet published"
+    "pushed": true,
+    "steps": [
+      {
+        "cmd": "git add -A",
+        "code": 0,
+        "tail": []
+      },
+      {
+        "cmd": "git -c user.name=figpipe-bot",
+        "code": 0,
+        "tail": [
+          " create mode 100644 knowledge/runs/2026-10-19T064018.json"
+        ]
+      },
+      {
+        "cmd": "git push origin",
+        "code": 0,
+        "tail": [
+          "   ae48488..85311a4  main -> main"
+        ]
+      }
+    ],
+    "withheld": []
   },
   "check_results": {
     "L01": {
@@ -187,5 +208,6 @@
   },
   "ok": true,
   "capability_ok": true,
-  "capability_regressions": []
+  "capability_regressions": [],
+  "publish_note": "The publish outcome is recorded after the commit that carries this run, so it describes the push triggered by this run; the file's own commit is made by the next scheduled run."
 }

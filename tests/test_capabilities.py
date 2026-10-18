@@ -285,3 +285,35 @@ def test_stale_rows_are_detectable_not_guessed():
     f = bench.freshness(fresh + old + missing + unsupported)
     assert f["n_fresh"] == 1 and f["n_stale"] == 1 and f["n_unknown"] == 1
     assert bench.stale_tasks(missing) == []
+
+
+def test_every_judged_field_is_actually_measured():
+    """A field in CAPABILITY_DIRECTION that the snapshot never returns is never judged.
+
+    This is the recurring "control that looks present and does nothing" defect. It happened again:
+    benchmark_official_code_score was added to the direction table but not to the snapshot, so the
+    loop could never have noticed a change in it.
+    """
+    if cron is None:
+        import pytest
+        pytest.skip("cron_run unavailable")
+    snap = cron.capability_snapshot()
+    missing = [k for k in cron.CAPABILITY_DIRECTION if k not in snap]
+    assert not missing, (
+        f"these fields are judged but the snapshot never emits them: {missing}")
+
+
+def test_the_official_score_is_recorded_and_judged():
+    """The benchmark's own channel is the closest thing to an external measure we have."""
+    if cron is None:
+        import pytest
+        pytest.skip("cron_run unavailable")
+    snap = cron.capability_snapshot()
+    assert "benchmark_official_code_score" in snap
+    assert cron.CAPABILITY_DIRECTION["benchmark_official_code_score"] == +1
+    better = cron.capability_delta({"benchmark_official_code_score": 88.0},
+                                   {"benchmark_official_code_score": 92.68})
+    assert better["verdict"]["gains"][0]["field"] == "benchmark_official_code_score"
+    worse = cron.capability_delta({"benchmark_official_code_score": 92.68},
+                                  {"benchmark_official_code_score": 80.0})
+    assert worse["verdict"]["ok"] is False
