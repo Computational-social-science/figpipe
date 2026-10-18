@@ -6,18 +6,20 @@
     "arxiv": "2608.28814",
     "note": "deterministic metrics only; official combined score requires the benchmark's VLM scorer and is NOT claimed here"
   },
-  "n_tasks": 72,
-  "n_ok": 65,
-  "n_unsupported": 7,
+  "n_tasks": 78,
+  "n_ok": 70,
+  "n_unsupported": 8,
   "n_error": 0,
-  "unsupported_types": {},
-  "mean_distance": 0.292,
+  "unsupported_types": {
+    "3D": "unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this is a deliberate exclusion"
+  },
+  "mean_distance": 0.287,
   "mean_baseline": 0.364,
-  "mean_improvement": 0.072,
-  "improved": 44,
+  "mean_improvement": 0.078,
+  "improved": 49,
   "worse": 15,
   "ties": 6,
-  "mean_best_of_two": 0.267,
+  "mean_best_of_two": 0.263,
   "decision_service": {
     "up": false,
     "url": "http://127.0.0.1:8090",
@@ -25,9 +27,9 @@
   },
   "by_type": {
     "3D": {
-      "n": 5,
+      "n": 6,
       "ok": 0,
-      "errors": 5,
+      "errors": 6,
       "mean_distance": null,
       "mean_baseline": null,
       "mean_delta": null
@@ -41,12 +43,12 @@
       "mean_delta": 0.065
     },
     "Box/Violin": {
-      "n": 5,
-      "ok": 5,
+      "n": 6,
+      "ok": 6,
       "errors": 0,
-      "mean_distance": 0.213,
-      "mean_baseline": 0.468,
-      "mean_delta": 0.255
+      "mean_distance": 0.255,
+      "mean_baseline": 0.479,
+      "mean_delta": 0.224
     },
     "Composite": {
       "n": 3,
@@ -81,12 +83,12 @@
       "mean_delta": -0.039
     },
     "Line": {
-      "n": 7,
-      "ok": 7,
+      "n": 8,
+      "ok": 8,
       "errors": 0,
-      "mean_distance": 0.278,
-      "mean_baseline": 0.352,
-      "mean_delta": 0.074
+      "mean_distance": 0.265,
+      "mean_baseline": 0.35,
+      "mean_delta": 0.085
     },
     "Network/Tree": {
       "n": 2,
@@ -105,12 +107,12 @@
       "mean_delta": -0.01
     },
     "Scatter": {
-      "n": 10,
-      "ok": 10,
+      "n": 13,
+      "ok": 13,
       "errors": 0,
-      "mean_distance": 0.18,
-      "mean_baseline": 0.424,
-      "mean_delta": 0.244
+      "mean_distance": 0.172,
+      "mean_baseline": 0.401,
+      "mean_delta": 0.229
     },
     "Std-band": {
       "n": 7,
@@ -121,7 +123,13 @@
       "mean_delta": 0.141
     }
   },
-  "failures": [],
+  "failures": [
+    {
+      "id": "Chart2NCode_7b87069f5442408286d1a4b0300eae18",
+      "chart": "3D",
+      "error": "unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this is a deliberate exclusion"
+    }
+  ],
   "tasks": [
     {
       "id": "PMC11502666",
@@ -1936,6 +1944,104 @@
       "components": {
         "aspect": 0.015,
         "ink": 0.374
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "Chart2Code_level2_scatter_27_v5",
+      "chart": "Scatter",
+      "panel_mode": "multi",
+      "skill": "scatter_relationship",
+      "rationale": "scatter panel_row vs panel_col",
+      "rows_used": 3310,
+      "status": "ok",
+      "distance": 0.206,
+      "baseline_distance": 0.394,
+      "delta": 0.188,
+      "components": {
+        "aspect": 0.013,
+        "ink": 0.398
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "Chart2Code_level2_scatter_5_v5",
+      "chart": "Scatter",
+      "panel_mode": "multi",
+      "skill": "scatter_relationship",
+      "rationale": "scatter panel_row vs panel_col",
+      "rows_used": 272,
+      "status": "ok",
+      "distance": 0.121,
+      "baseline_distance": 0.308,
+      "delta": 0.187,
+      "components": {
+        "aspect": 0.007,
+        "ink": 0.235
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "Chart2Code_level2_violin_25_v4",
+      "chart": "Box/Violin",
+      "panel_mode": "multi",
+      "skill": "distribution_comparison",
+      "rationale": "box panel_row by panel_group",
+      "rows_used": 1775,
+      "status": "ok",
+      "distance": 0.464,
+      "baseline_distance": 0.531,
+      "delta": 0.067,
+      "components": {
+        "palette": 0.691,
+        "aspect": 0.011,
+        "ink": 0.351
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "Chart2Code_level3_table20_3_generate",
+      "chart": "Scatter",
+      "panel_mode": "multi",
+      "skill": "scatter_relationship",
+      "rationale": "scatter complexity_band_order vs complexity_index_unitless",
+      "rows_used": 584,
+      "status": "ok",
+      "distance": 0.112,
+      "baseline_distance": 0.267,
+      "delta": 0.155,
+      "components": {
+        "aspect": 0.009,
+        "ink": 0.216
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "Chart2NCode_7b87069f5442408286d1a4b0300eae18",
+      "chart": "3D",
+      "panel_mode": "multi",
+      "status": "unsupported",
+      "error": "unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this is a deliberate exclusion"
+    },
+    {
+      "id": "Chart2NCode_ce7b7d946995482f9dd37ddad319cbc2",
+      "chart": "Line",
+      "panel_mode": "multi",
+      "skill": "trend_with_uncertainty",
+      "rationale": "trend time_day->panel_row",
+      "rows_used": 114,
+      "status": "ok",
+      "distance": 0.169,
+      "baseline_distance": 0.333,
+      "delta": 0.164,
+      "components": {
+        "aspect": 0.006,
+        "ink": 0.333
       },
       "hard_failures": 0,
       "findings": []
