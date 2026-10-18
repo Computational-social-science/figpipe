@@ -417,8 +417,11 @@ def _code_version() -> str:
     """
     import hashlib
     h = hashlib.sha1()
+    # RENDERING code only. Including the harness made every edit to this file invalidate all
+    # rows, which turned the staleness signal into noise (120 of 132 "stale" after a one-line
+    # change to the report). What matters is whether the FIGURE would come out differently.
     for rel in ("figpipe/drawlib.py", "figpipe/skills.py", "figpipe/styleprofile.py",
-                "figpipe/composite.py", "scripts/bench_plottwin.py"):
+                "figpipe/composite.py", "figpipe/layout.py", "figpipe/style.py"):
         path = ROOT / rel
         if path.is_file():
             h.update(path.read_bytes())

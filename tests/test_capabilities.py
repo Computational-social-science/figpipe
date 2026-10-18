@@ -267,6 +267,11 @@ def test_stale_rows_are_detectable_not_guessed():
         import pytest
         pytest.skip("benchmark harness unavailable")
     assert len(bench.CODE_VERSION) == 12
+    # the fingerprint must cover RENDERING code only: including the harness invalidated every row
+    # on every edit and turned the signal into noise
+    src = (ROOT / "scripts" / "bench_plottwin.py").read_text(encoding="utf-8")
+    fp_block = src[src.index("def _code_version"):src.index("CODE_VERSION = _code_version()")]
+    assert "bench_plottwin.py" not in fp_block.split("for rel in")[1].split("):")[0]
     fresh = [{"id": "a", "status": "ok", "code_version": bench.CODE_VERSION}]
     old = [{"id": "b", "status": "ok", "code_version": "deadbeef1234"}]
     unsupported = [{"id": "c", "status": "unsupported"}]
