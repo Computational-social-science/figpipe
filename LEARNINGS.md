@@ -564,3 +564,19 @@ on the same PNGs the metric uses, the result became 0.259, which is consistent. 
 That is the fourth measurement defect found in two days (1-pt histogram, raw mean over a growing
 set, count-as-capability, and now mismatched instruments). The pattern is consistent: **the
 instrument, not the pipeline, is usually what is wrong first.**
+
+
+## 28. The loop was re-measuring tasks it had already measured (2026-10-19)
+
+Run 43 landed on benchmark offset 12, whose six tasks had been measured hours earlier. The slice
+offset was computed as `(runs * tasks) % 120`, which cycles rather than advances: the loop looked
+busy, ran the benchmark every cycle, and grew nothing.
+
+Fix: `bench_plottwin.covered_offsets()` reads which offsets' task ids are already in the report and
+`next_uncovered_offset()` returns the first window that still contains an unmeasured task (wrapping
+to 0 only when all 150 are covered). A test asserts the chosen window is not a subset of the
+covered set.
+
+This is the fifth self-measurement defect in two days, and the pattern is now unmistakable: **the
+instruments and the scheduling of measurement are more likely to be wrong than the pipeline they
+measure.** Recording a number every six hours is not the same as learning something every six hours.

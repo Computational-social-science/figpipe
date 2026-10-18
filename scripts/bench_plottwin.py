@@ -413,6 +413,48 @@ def _anchor_distance(tasks) -> float | None:
     return round(float(np.mean([t["distance"] for t in ok])), 3)
 
 
+#: The benchmark pool size, used to walk every window before repeating one.
+POOL = 150
+
+
+def covered_offsets(report_path=None) -> set[int]:
+    """Offsets whose task ids already appear in the report.
+
+    WHY: the scheduled slice rotated by `(runs * tasks) % 120`, which re-measured windows that
+    were already covered (run 43 landed on offset 12, whose tasks were measured hours earlier).
+    A loop that keeps re-measuring the same tasks cannot advance coverage toward the full pool --
+    it looks busy and grows nothing. Coverage is only honest when the slice walks forward.
+    """
+    path = pathlib.Path(report_path or OUT)
+    if not path.is_file():
+        return set()
+    try:
+        report = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return set()
+    ids = {t.get("id") for t in report.get("tasks", [])}
+    covered = set()
+    for off in range(POOL):
+        cache = CACHE / f"{off}.json"
+        if cache.is_file():
+            try:
+                row = json.loads(cache.read_text(encoding="utf-8"))
+            except (OSError, ValueError):
+                continue
+            if row.get("id") in ids:
+                covered.add(off)
+    return covered
+
+
+def next_uncovered_offset(tasks: int, report_path=None) -> int:
+    """The first window that still contains an unmeasured task; wraps to 0 when done."""
+    covered = covered_offsets(report_path)
+    for off in range(0, POOL, tasks):
+        if not all(o in covered for o in range(off, min(off + tasks, POOL))):
+            return off
+    return 0
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--limit", type=int, default=8)

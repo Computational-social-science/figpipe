@@ -6,18 +6,20 @@
     "arxiv": "2608.28814",
     "note": "deterministic metrics only; official combined score requires the benchmark's VLM scorer and is NOT claimed here"
   },
-  "n_tasks": 78,
-  "n_ok": 70,
-  "n_unsupported": 8,
+  "n_tasks": 84,
+  "n_ok": 75,
+  "n_unsupported": 9,
   "n_error": 0,
-  "unsupported_types": {},
-  "mean_distance": 0.287,
-  "mean_baseline": 0.364,
-  "mean_improvement": 0.078,
-  "improved": 49,
+  "unsupported_types": {
+    "3D": "unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this is a deliberate exclusion"
+  },
+  "mean_distance": 0.29,
+  "mean_baseline": 0.369,
+  "mean_improvement": 0.079,
+  "improved": 54,
   "worse": 15,
   "ties": 6,
-  "mean_best_of_two": 0.263,
+  "mean_best_of_two": 0.267,
   "decision_service": {
     "up": false,
     "url": "http://127.0.0.1:8090",
@@ -25,22 +27,22 @@
   },
   "by_type": {
     "3D": {
-      "n": 6,
+      "n": 7,
       "ok": 0,
-      "errors": 6,
+      "errors": 7,
       "mean_distance": null,
       "mean_baseline": null,
       "mean_delta": null,
       "mean_shipped": null
     },
     "Bar": {
-      "n": 3,
-      "ok": 3,
+      "n": 5,
+      "ok": 5,
       "errors": 0,
-      "mean_distance": 0.332,
-      "mean_baseline": 0.397,
-      "mean_delta": 0.065,
-      "mean_shipped": null
+      "mean_distance": 0.288,
+      "mean_baseline": 0.337,
+      "mean_delta": 0.049,
+      "mean_shipped": 0.214
     },
     "Box/Violin": {
       "n": 6,
@@ -88,13 +90,13 @@
       "mean_shipped": 0.274
     },
     "Line": {
-      "n": 8,
-      "ok": 8,
+      "n": 11,
+      "ok": 11,
       "errors": 0,
-      "mean_distance": 0.265,
-      "mean_baseline": 0.35,
-      "mean_delta": 0.085,
-      "mean_shipped": 0.233
+      "mean_distance": 0.302,
+      "mean_baseline": 0.403,
+      "mean_delta": 0.101,
+      "mean_shipped": 0.316
     },
     "Network/Tree": {
       "n": 2,
@@ -133,7 +135,13 @@
       "mean_shipped": 0.404
     }
   },
-  "failures": [],
+  "failures": [
+    {
+      "id": "Chart2Code_level2_3d_2_v3",
+      "chart": "3D",
+      "error": "unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this is a deliberate exclusion"
+    }
+  ],
   "tasks": [
     {
       "id": "arxiv_2506.14951",
@@ -2156,17 +2164,188 @@
           "severity": "hard"
         }
       ]
+    },
+    {
+      "id": "Chart2Code_level2_3d_2_v3",
+      "chart": "3D",
+      "panel_mode": "multi",
+      "status": "unsupported",
+      "error": "unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this is a deliberate exclusion"
+    },
+    {
+      "id": "Chart2Code_level2_3d_5_v4",
+      "chart": "Bar",
+      "panel_mode": "multi",
+      "skill": "grouped_measures",
+      "rationale": "grouped bars ['panel_col', 'biochar_rate_percent', 'day_after_rewetting_days'] by biochar_amendment_label",
+      "rows_used": 80,
+      "status": "ok",
+      "distance": 0.23,
+      "baseline_distance": 0.263,
+      "delta": 0.033,
+      "selected": "styled",
+      "selected_distance": 0.237,
+      "selected_gain": 0.026,
+      "selection_margin": 0.04,
+      "components": {
+        "palette": 0.337,
+        "aspect": 0.017,
+        "ink": 0.173
+      },
+      "hard_failures": 9,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'No biochar control' over 'No biochar control'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'Very high biochar' over 'Very high biochar'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'Moderate biochar' over 'Moderate biochar'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'High biochar' over 'High biochar'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'Low biochar' over 'Low biochar'",
+          "severity": "hard"
+        }
+      ]
+    },
+    {
+      "id": "Chart2Code_level2_area_3_v3",
+      "chart": "Line",
+      "panel_mode": "multi",
+      "skill": "trend_with_uncertainty",
+      "rationale": "trend timepoint_day->panel_row",
+      "rows_used": 95,
+      "status": "ok",
+      "distance": 0.37,
+      "baseline_distance": 0.495,
+      "delta": 0.125,
+      "selected": "styled",
+      "selected_distance": 0.37,
+      "selected_gain": 0.125,
+      "selection_margin": 0.121,
+      "components": {
+        "aspect": 0.002,
+        "ink": 0.739
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "Chart2Code_level2_bar_10_v4",
+      "chart": "Line",
+      "panel_mode": "multi",
+      "skill": "trend_with_uncertainty",
+      "rationale": "trend incubation_time_h->panel_row",
+      "rows_used": 173,
+      "status": "ok",
+      "distance": 0.415,
+      "baseline_distance": 0.579,
+      "delta": 0.164,
+      "selected": "styled",
+      "selected_distance": 0.41,
+      "selected_gain": 0.169,
+      "selection_margin": 0.168,
+      "components": {
+        "aspect": 0.014,
+        "ink": 0.817
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "Chart2Code_level2_bar_22_v4",
+      "chart": "Bar",
+      "panel_mode": "multi",
+      "skill": "grouped_measures",
+      "rationale": "grouped bars ['panel_row', 'panel_col', 'condition_order'] by panel_group",
+      "rows_used": 220,
+      "status": "ok",
+      "distance": 0.213,
+      "baseline_distance": 0.232,
+      "delta": 0.019,
+      "selected": "styled",
+      "selected_distance": 0.191,
+      "selected_gain": 0.041,
+      "selection_margin": 0.024,
+      "components": {
+        "palette": 0.336,
+        "aspect": 0.011,
+        "ink": 0.107
+      },
+      "hard_failures": 8,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'field_immersion' over 'field_immersion'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'accelerated_chamber' over 'field_immersion'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'accelerated_chamber' over 'accelerated_chamber'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'performance_rank' over 'performance_rank'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'exposure_family_mean' over 'performance_rank'",
+          "severity": "hard"
+        }
+      ]
+    },
+    {
+      "id": "Chart2Code_level2_bar_25_v4",
+      "chart": "Line",
+      "panel_mode": "multi",
+      "skill": "trend_with_uncertainty",
+      "rationale": "trend measurement_day->panel_row",
+      "rows_used": 386,
+      "status": "ok",
+      "distance": 0.417,
+      "baseline_distance": 0.56,
+      "delta": 0.143,
+      "selected": "styled",
+      "selected_distance": 0.415,
+      "selected_gain": 0.145,
+      "selection_margin": 0.141,
+      "components": {
+        "aspect": 0.004,
+        "ink": 0.829
+      },
+      "hard_failures": 0,
+      "findings": []
     }
   ],
-  "benchmark_anchor_distance": 0.297,
+  "benchmark_anchor_distance": 0.329,
   "selection": {
-    "n": 28,
-    "shipped_mean": 0.259,
-    "always_styled_mean": 0.278,
-    "plain_mean": 0.352,
-    "gain_vs_always_styled": 0.019,
-    "gain_vs_plain": 0.093,
-    "picked_styled": 22,
+    "n": 33,
+    "shipped_mean": 0.269,
+    "always_styled_mean": 0.286,
+    "plain_mean": 0.363,
+    "gain_vs_always_styled": 0.017,
+    "gain_vs_plain": 0.094,
+    "picked_styled": 27,
     "picked_plain": 6,
     "rule": "closer of plain/styled to the reference; the reference is an input"
   }

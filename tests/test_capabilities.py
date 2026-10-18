@@ -210,3 +210,27 @@ def test_the_shipped_distance_is_a_judged_capability():
     worse = cron.capability_delta({"benchmark_shipped_distance": 0.259},
                                   {"benchmark_shipped_distance": 0.300})
     assert worse["verdict"]["ok"] is False
+
+
+def test_the_benchmark_slice_walks_forward_instead_of_re_measuring():
+    """Coverage must advance: re-measuring covered tasks looks busy and grows nothing.
+
+    The slice used to rotate by `(runs * tasks) % 120`; run 43 landed on offset 12, whose tasks
+    had been measured hours earlier, so the capability numbers could not move.
+    """
+    import sys
+    sys.path.insert(0, str(ROOT / "scripts"))
+    try:
+        import bench_plottwin as bench
+    except Exception:                      # pragma: no cover
+        import pytest
+        pytest.skip("benchmark harness unavailable")
+    covered = bench.covered_offsets()
+    assert isinstance(covered, set)
+    nxt = bench.next_uncovered_offset(6)
+    assert 0 <= nxt < bench.POOL
+    # the window chosen must contain at least one task that is not yet covered
+    window = set(range(nxt, min(nxt + 6, bench.POOL)))
+    if covered:
+        assert not window.issubset(covered) or nxt == 0, (
+            f"offset {nxt} only covers already-measured tasks: {sorted(window & covered)}")

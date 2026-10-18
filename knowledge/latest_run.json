@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-19T03:21:23",
+  "run_at": "2026-10-19T03:27:06",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -9,10 +9,10 @@
     "  passed 8, failed 0",
     "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
     "  wrote knowledge\\evolution_report.json",
-    "  lean: tracked 79.5 -> 79.5 MB, worktree 130.5 -> 130.5 MB"
+    "  lean: tracked 79.5 -> 79.5 MB, worktree 132.4 -> 132.3 MB"
   ],
   "tests_ok": true,
-  "tests_summary": "258 passed, 2 skipped, 1 warning in 52.37s",
+  "tests_summary": "259 passed, 2 skipped, 1 warning in 52.45s",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
@@ -130,37 +130,83 @@
   },
   "benchmark_slice": {
     "ran": true,
-    "offset": 12,
+    "offset": 60,
     "tasks": 6,
     "code": 0,
     "tail": [
-      "    type Composite      ok 2/2   d=0.273 base=0.293 delta=0.02 errors=0",
-      "    type Distribution   ok 2/2   d=0.164 base=0.258 delta=0.094 errors=0",
-      "    type Line           ok 1/1   d=0.379 base=0.477 delta=0.098 errors=0",
+      "    type Bar            ok 2/2   d=0.222 base=0.247 delta=0.026 errors=0",
+      "    type Line           ok 3/3   d=0.401 base=0.545 delta=0.144 errors=0",
+      "    FAIL Chart2Code_level2_3d_2_v3 3D           unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this is a deliberate exc",
       "  wrote E:\\2026-AI4S\\figpipe\\corpus\\e2e\\plottwin_report.json"
     ]
   },
   "capabilities": {
     "skills": 15,
     "operators": 19,
-    "benchmark_tasks": 78,
-    "benchmark_ok": 70,
+    "benchmark_tasks": 84,
+    "benchmark_ok": 75,
     "benchmark_success_rate": 1.0,
-    "benchmark_mean_distance": 0.287,
-    "benchmark_anchor_distance": 0.297,
-    "benchmark_shipped_distance": 0.259,
-    "benchmark_unsupported": 8,
+    "benchmark_mean_distance": 0.29,
+    "benchmark_anchor_distance": 0.329,
+    "benchmark_shipped_distance": 0.269,
+    "benchmark_unsupported": 9,
     "statistics_reproduced": 15,
     "knowledge_version": 16,
-    "tests": 258
+    "tests": 259
   },
   "capabilities_delta": {
-    "changed": false,
-    "delta": {},
+    "changed": true,
+    "delta": {
+      "benchmark_tasks": {
+        "before": 78,
+        "after": 84
+      },
+      "benchmark_ok": {
+        "before": 70,
+        "after": 75
+      },
+      "benchmark_mean_distance": {
+        "before": 0.287,
+        "after": 0.29
+      },
+      "benchmark_anchor_distance": {
+        "before": 0.297,
+        "after": 0.329
+      },
+      "benchmark_shipped_distance": {
+        "before": 0.259,
+        "after": 0.269
+      },
+      "benchmark_unsupported": {
+        "before": 8,
+        "after": 9
+      },
+      "tests": {
+        "before": 258,
+        "after": 259
+      }
+    },
     "verdict": {
-      "gains": [],
-      "regressions": [],
-      "ok": true,
+      "gains": [
+        {
+          "field": "tests",
+          "before": 258,
+          "after": 259
+        }
+      ],
+      "regressions": [
+        {
+          "field": "benchmark_anchor_distance",
+          "before": 0.297,
+          "after": 0.329
+        },
+        {
+          "field": "benchmark_shipped_distance",
+          "before": 0.259,
+          "after": 0.269
+        }
+      ],
+      "ok": false,
       "judged_fields": [
         "benchmark_anchor_distance",
         "benchmark_shipped_distance",
@@ -173,7 +219,19 @@
       ]
     }
   },
-  "ok": true,
-  "capability_ok": true,
-  "capability_regressions": []
+  "ok": false,
+  "capability_ok": false,
+  "capability_regressions": [
+    {
+      "field": "benchmark_anchor_distance",
+      "before": 0.297,
+      "after": 0.329
+    },
+    {
+      "field": "benchmark_shipped_distance",
+      "before": 0.259,
+      "after": 0.269
+    }
+  ],
+  "publish_note": "capability regression detected; record kept but the run exits non-zero (re-run with --accept-capability-regression to accept)"
 }

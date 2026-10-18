@@ -165,8 +165,14 @@ def benchmark_slice(tasks: int = 6) -> dict:
     script = ROOT / "scripts" / "bench_plottwin.py"
     if not script.is_file():
         return {"ran": False, "reason": "benchmark harness absent"}
-    runs = sorted((ROOT / "knowledge" / "runs").glob("*.json"))
-    offset = (len(runs) * tasks) % 120
+    # walk forward over UNCOVERED windows instead of re-measuring covered ones
+    try:
+        sys.path.insert(0, str(ROOT / "scripts"))
+        import bench_plottwin as _bench
+        offset = _bench.next_uncovered_offset(tasks)
+    except Exception:                                  # noqa: BLE001 - never fail the run
+        runs = sorted((ROOT / "knowledge" / "runs").glob("*.json"))
+        offset = (len(runs) * tasks) % 120
     cmd = [sys.executable, str(script), "--limit", str(tasks), "--offset", str(offset),
            "--merge"]
     try:
