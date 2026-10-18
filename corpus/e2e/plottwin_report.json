@@ -23,10 +23,10 @@
     "channel": "code_deviation",
     "weight_upstream": 0.35,
     "note": "official deterministic channel only; the 0.65 vision channel is NOT run, so this is not the combined score",
-    "n_scored": 15,
-    "n_unavailable": 5,
-    "mean_score": 92.68,
-    "min_score": 68.86,
+    "n_scored": 6,
+    "n_unavailable": 0,
+    "mean_score": 97.87,
+    "min_score": 92.16,
     "max_score": 100.0
   },
   "decision_service": {
@@ -4010,271 +4010,6 @@
       "semantic_findings": []
     },
     {
-      "id": "PMC11502666",
-      "chart": "Distribution",
-      "panel_mode": "multi",
-      "code_version": "8ea6d2b2ae0c",
-      "skill": "faceted_distribution",
-      "rationale": "faceted hist by panel_group",
-      "rows_used": 554,
-      "status": "ok",
-      "distance": 0.175,
-      "baseline_distance": 0.218,
-      "delta": 0.043,
-      "selected": "styled",
-      "selected_distance": 0.174,
-      "selected_gain": 0.044,
-      "selection_margin": 0.046,
-      "components": {
-        "palette": 0.152,
-        "aspect": 0.009,
-        "ink": 0.398
-      },
-      "hard_failures": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 100.0,
-        "n_activated": 2,
-        "scored": [
-          "palette",
-          "grid"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": []
-    },
-    {
-      "id": "PMC11840003",
-      "chart": "Box/Violin",
-      "panel_mode": "multi",
-      "code_version": "8ea6d2b2ae0c",
-      "skill": "distribution_comparison",
-      "rationale": "box panel_row by panel_group",
-      "rows_used": 1403,
-      "status": "ok",
-      "distance": 0.197,
-      "baseline_distance": 0.441,
-      "delta": 0.244,
-      "selected": "styled",
-      "selected_distance": 0.203,
-      "selected_gain": 0.238,
-      "selection_margin": 0.246,
-      "components": {
-        "palette": 0.149,
-        "aspect": 0.211,
-        "ink": 0.302
-      },
-      "hard_failures": 1,
-      "findings": [
-        {
-          "check": "height",
-          "detail": "170.0 mm exceeds the 170.0 mm maximum",
-          "severity": "hard"
-        }
-      ],
-      "official_code_score": {
-        "available": true,
-        "score": 97.81182459845145,
-        "n_activated": 4,
-        "scored": [
-          "palette",
-          "figure_aspect",
-          "linewidth",
-          "grid"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": []
-    },
-    {
-      "id": "PMC12000431",
-      "chart": "Distribution",
-      "panel_mode": "multi",
-      "code_version": "8ea6d2b2ae0c",
-      "skill": "faceted_distribution",
-      "rationale": "faceted hist by panel_group",
-      "rows_used": 1414,
-      "status": "ok",
-      "distance": 0.202,
-      "baseline_distance": 0.255,
-      "delta": 0.053,
-      "selected": "styled",
-      "selected_distance": 0.203,
-      "selected_gain": 0.052,
-      "selection_margin": 0.054,
-      "components": {
-        "palette": 0.291,
-        "aspect": 0.005,
-        "ink": 0.177
-      },
-      "hard_failures": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 100.0,
-        "n_activated": 2,
-        "scored": [
-          "palette",
-          "legend_frame"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": []
-    },
-    {
-      "id": "PMC12354736",
-      "chart": "Distribution",
-      "panel_mode": "multi",
-      "code_version": "8ea6d2b2ae0c",
-      "skill": "faceted_distribution",
-      "rationale": "faceted hist by panel_row",
-      "rows_used": 12196,
-      "status": "ok",
-      "distance": 0.295,
-      "baseline_distance": 0.355,
-      "delta": 0.06,
-      "selected": "styled",
-      "selected_distance": 0.299,
-      "selected_gain": 0.056,
-      "selection_margin": 0.057,
-      "components": {
-        "palette": 0.299,
-        "aspect": 0.183,
-        "ink": 0.399
-      },
-      "hard_failures": 1,
-      "findings": [
-        {
-          "check": "height",
-          "detail": "170.0 mm exceeds the 170.0 mm maximum",
-          "severity": "hard"
-        }
-      ],
-      "official_code_score": {
-        "available": true,
-        "score": 99.9988792326005,
-        "n_activated": 4,
-        "scored": [
-          "palette",
-          "figure_aspect",
-          "grid",
-          "legend_frame"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": []
-    },
-    {
-      "id": "PMC12504421",
-      "chart": "Heatmap",
-      "panel_mode": "multi",
-      "code_version": "8ea6d2b2ae0c",
-      "skill": "matrix_plate",
-      "rationale": "pivot panel_group x record_type of panel_row",
-      "rows_used": 4,
-      "status": "ok",
-      "distance": 0.288,
-      "baseline_distance": 0.426,
-      "delta": 0.138,
-      "selected": "styled",
-      "selected_distance": 0.261,
-      "selected_gain": 0.165,
-      "selection_margin": 0.116,
-      "components": {
-        "palette": 0.112,
-        "aspect": 0.166,
-        "ink": 0.852
-      },
-      "hard_failures": 3,
-      "findings": [
-        {
-          "check": "height",
-          "detail": "170.0 mm exceeds the 170.0 mm maximum",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'site_distribution_observation' over 'trajectory_indicator_score'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'feature_summary overlap_intersection' over 'site_distribution_observation'",
-          "severity": "hard"
-        }
-      ],
-      "official_code_score": {
-        "available": true,
-        "score": 97.26052664416929,
-        "n_activated": 5,
-        "scored": [
-          "palette",
-          "figure_aspect",
-          "linewidth",
-          "grid",
-          "tick_direction"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": []
-    },
-    {
-      "id": "PMC12905268",
-      "chart": "Distribution",
-      "panel_mode": "multi",
-      "code_version": "8ea6d2b2ae0c",
-      "skill": "faceted_distribution",
-      "rationale": "faceted hist by shoreline_condition",
-      "rows_used": 1196,
-      "status": "ok",
-      "distance": 0.316,
-      "baseline_distance": 0.327,
-      "delta": 0.011,
-      "selected": "styled",
-      "selected_distance": 0.312,
-      "selected_gain": 0.015,
-      "selection_margin": 0.022,
-      "components": {
-        "palette": 0.256,
-        "aspect": 0.564,
-        "ink": 0.219
-      },
-      "hard_failures": 1,
-      "findings": [
-        {
-          "check": "height",
-          "detail": "170.0 mm exceeds the 170.0 mm maximum",
-          "severity": "hard"
-        }
-      ],
-      "official_code_score": {
-        "available": true,
-        "score": 92.15644498682671,
-        "n_activated": 4,
-        "scored": [
-          "palette",
-          "figure_aspect",
-          "linewidth",
-          "legend_frame"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": []
-    },
-    {
       "id": "PMC13009336",
       "chart": "Box/Violin",
       "panel_mode": "multi",
@@ -4821,6 +4556,271 @@
         "note": "code channel only; the 0.65 vision channel is not run"
       },
       "semantic_findings": []
+    },
+    {
+      "id": "PMC11502666",
+      "chart": "Distribution",
+      "panel_mode": "multi",
+      "code_version": "8ea6d2b2ae0c",
+      "skill": "faceted_distribution",
+      "rationale": "faceted hist by panel_group",
+      "rows_used": 554,
+      "status": "ok",
+      "distance": 0.175,
+      "baseline_distance": 0.218,
+      "delta": 0.043,
+      "selected": "styled",
+      "selected_distance": 0.174,
+      "selected_gain": 0.044,
+      "selection_margin": 0.046,
+      "components": {
+        "palette": 0.152,
+        "aspect": 0.009,
+        "ink": 0.398
+      },
+      "hard_failures": 0,
+      "findings": [],
+      "official_code_score": {
+        "available": true,
+        "score": 100.0,
+        "n_activated": 2,
+        "scored": [
+          "palette",
+          "grid"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": []
+    },
+    {
+      "id": "PMC11840003",
+      "chart": "Box/Violin",
+      "panel_mode": "multi",
+      "code_version": "8ea6d2b2ae0c",
+      "skill": "distribution_comparison",
+      "rationale": "box panel_row by panel_group",
+      "rows_used": 1403,
+      "status": "ok",
+      "distance": 0.197,
+      "baseline_distance": 0.441,
+      "delta": 0.244,
+      "selected": "styled",
+      "selected_distance": 0.203,
+      "selected_gain": 0.238,
+      "selection_margin": 0.246,
+      "components": {
+        "palette": 0.149,
+        "aspect": 0.211,
+        "ink": 0.302
+      },
+      "hard_failures": 1,
+      "findings": [
+        {
+          "check": "height",
+          "detail": "170.0 mm exceeds the 170.0 mm maximum",
+          "severity": "hard"
+        }
+      ],
+      "official_code_score": {
+        "available": true,
+        "score": 97.81182459845145,
+        "n_activated": 4,
+        "scored": [
+          "palette",
+          "figure_aspect",
+          "linewidth",
+          "grid"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": []
+    },
+    {
+      "id": "PMC12000431",
+      "chart": "Distribution",
+      "panel_mode": "multi",
+      "code_version": "8ea6d2b2ae0c",
+      "skill": "faceted_distribution",
+      "rationale": "faceted hist by panel_group",
+      "rows_used": 1414,
+      "status": "ok",
+      "distance": 0.202,
+      "baseline_distance": 0.255,
+      "delta": 0.053,
+      "selected": "styled",
+      "selected_distance": 0.203,
+      "selected_gain": 0.052,
+      "selection_margin": 0.054,
+      "components": {
+        "palette": 0.291,
+        "aspect": 0.005,
+        "ink": 0.177
+      },
+      "hard_failures": 0,
+      "findings": [],
+      "official_code_score": {
+        "available": true,
+        "score": 100.0,
+        "n_activated": 2,
+        "scored": [
+          "palette",
+          "legend_frame"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": []
+    },
+    {
+      "id": "PMC12354736",
+      "chart": "Distribution",
+      "panel_mode": "multi",
+      "code_version": "8ea6d2b2ae0c",
+      "skill": "faceted_distribution",
+      "rationale": "faceted hist by panel_row",
+      "rows_used": 12196,
+      "status": "ok",
+      "distance": 0.295,
+      "baseline_distance": 0.355,
+      "delta": 0.06,
+      "selected": "styled",
+      "selected_distance": 0.299,
+      "selected_gain": 0.056,
+      "selection_margin": 0.057,
+      "components": {
+        "palette": 0.299,
+        "aspect": 0.183,
+        "ink": 0.399
+      },
+      "hard_failures": 1,
+      "findings": [
+        {
+          "check": "height",
+          "detail": "170.0 mm exceeds the 170.0 mm maximum",
+          "severity": "hard"
+        }
+      ],
+      "official_code_score": {
+        "available": true,
+        "score": 99.9988792326005,
+        "n_activated": 4,
+        "scored": [
+          "palette",
+          "figure_aspect",
+          "grid",
+          "legend_frame"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": []
+    },
+    {
+      "id": "PMC12504421",
+      "chart": "Heatmap",
+      "panel_mode": "multi",
+      "code_version": "8ea6d2b2ae0c",
+      "skill": "matrix_plate",
+      "rationale": "pivot panel_group x record_type of panel_row",
+      "rows_used": 4,
+      "status": "ok",
+      "distance": 0.288,
+      "baseline_distance": 0.426,
+      "delta": 0.138,
+      "selected": "styled",
+      "selected_distance": 0.261,
+      "selected_gain": 0.165,
+      "selection_margin": 0.116,
+      "components": {
+        "palette": 0.112,
+        "aspect": 0.166,
+        "ink": 0.852
+      },
+      "hard_failures": 3,
+      "findings": [
+        {
+          "check": "height",
+          "detail": "170.0 mm exceeds the 170.0 mm maximum",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'site_distribution_observation' over 'trajectory_indicator_score'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'feature_summary overlap_intersection' over 'site_distribution_observation'",
+          "severity": "hard"
+        }
+      ],
+      "official_code_score": {
+        "available": true,
+        "score": 97.26052664416929,
+        "n_activated": 5,
+        "scored": [
+          "palette",
+          "figure_aspect",
+          "linewidth",
+          "grid",
+          "tick_direction"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": []
+    },
+    {
+      "id": "PMC12905268",
+      "chart": "Distribution",
+      "panel_mode": "multi",
+      "code_version": "8ea6d2b2ae0c",
+      "skill": "faceted_distribution",
+      "rationale": "faceted hist by shoreline_condition",
+      "rows_used": 1196,
+      "status": "ok",
+      "distance": 0.316,
+      "baseline_distance": 0.327,
+      "delta": 0.011,
+      "selected": "styled",
+      "selected_distance": 0.312,
+      "selected_gain": 0.015,
+      "selection_margin": 0.022,
+      "components": {
+        "palette": 0.256,
+        "aspect": 0.564,
+        "ink": 0.219
+      },
+      "hard_failures": 1,
+      "findings": [
+        {
+          "check": "height",
+          "detail": "170.0 mm exceeds the 170.0 mm maximum",
+          "severity": "hard"
+        }
+      ],
+      "official_code_score": {
+        "available": true,
+        "score": 92.15644498682671,
+        "n_activated": 4,
+        "scored": [
+          "palette",
+          "figure_aspect",
+          "linewidth",
+          "legend_frame"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": []
     }
   ],
   "benchmark_anchor_distance": 0.305,
@@ -4840,12 +4840,6 @@
       "ChartNet-sample_e17ff7b5495b0ee4",
       "ChartNet-sample_f31f9780b9bd6948",
       "ChartNet-sample_f743754444c3a3d9",
-      "PMC11502666",
-      "PMC11840003",
-      "PMC12000431",
-      "PMC12354736",
-      "PMC12504421",
-      "PMC12905268",
       "PMC13009336",
       "PMC13022287",
       "PMC13079874",
@@ -4859,7 +4853,13 @@
       "PMC13342296",
       "PMC13343911",
       "arxiv-astro-skymap__2412.12637",
-      "arxiv-astro-skymap__2510.17487"
+      "arxiv-astro-skymap__2510.17487",
+      "PMC11502666",
+      "PMC11840003",
+      "PMC12000431",
+      "PMC12354736",
+      "PMC12504421",
+      "PMC12905268"
     ],
     "stale": [
       "ChartNet-sample_51138e34911000f6",
