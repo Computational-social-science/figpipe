@@ -304,7 +304,7 @@ def op_encode_error_bars(ctx: SkillContext, x: str, y: str, err: str | None = No
 def op_layout_split_panels(ctx: SkillContext, by: str, of: str = "error_bars",
                            x: str | None = None, y: str | None = None,
                            err: str | None = None, columns: float = 2.0,
-                           max_panels: int = 4, max_rows: int = 20,
+                           max_panels: int = 4, max_rows: int = 200,
                            xtick_rotation: float = 30.0, **kwargs):
     """Build one panel per level of a grouping column from a long table.
 

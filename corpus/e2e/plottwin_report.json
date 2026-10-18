@@ -441,27 +441,16 @@
       "rationale": "composite block_id x record_type",
       "rows_used": 182,
       "status": "ok",
-      "distance": 0.215,
+      "distance": 0.216,
       "baseline_distance": 0.212,
-      "delta": -0.003,
+      "delta": -0.004,
       "components": {
-        "palette": 0.161,
+        "palette": 0.185,
         "aspect": 0.025,
-        "ink": 0.541
+        "ink": 0.486
       },
-      "hard_failures": 2,
-      "findings": [
-        {
-          "check": "text_collision",
-          "detail": "'ate_observation' over 'ate_observation'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'forest_summary' over 'forest_summary'",
-          "severity": "hard"
-        }
-      ]
+      "hard_failures": 0,
+      "findings": []
     },
     {
       "id": "PMC13273070",
@@ -498,31 +487,11 @@
         "aspect": 0.135,
         "ink": 1.0
       },
-      "hard_failures": 5,
+      "hard_failures": 1,
       "findings": [
         {
           "check": "height",
           "detail": "170.0 mm exceeds the 170.0 mm maximum",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'forest_plot' over 'forest_plot'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'observations' over 'observations'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'al' over 'observations'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'al' over 'al'",
           "severity": "hard"
         }
       ]

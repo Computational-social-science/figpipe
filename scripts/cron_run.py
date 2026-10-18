@@ -77,6 +77,7 @@ def capability_snapshot() -> dict:
         "benchmark_tasks": bench.get("n_tasks", 0) or 0,
         "benchmark_ok": bench.get("n_ok", 0) or 0,
         "benchmark_mean_distance": bench.get("mean_distance"),
+        "benchmark_unsupported": bench.get("n_unsupported"),
         "statistics_reproduced": (seed.get("self_check") or {}).get("statistics_recorded"),
         "knowledge_version": kb.get("version"),
         "tests": None,             # patched in after the suite runs

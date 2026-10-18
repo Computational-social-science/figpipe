@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-19T01:26:24",
+  "run_at": "2026-10-19T01:37:19",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -9,10 +9,10 @@
     "  passed 8, failed 0",
     "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
     "  wrote knowledge\\evolution_report.json",
-    "  lean: tracked 75.4 -> 75.4 MB, worktree 159.2 -> 159.1 MB"
+    "  lean: tracked 75.4 -> 75.4 MB, worktree 95.6 -> 95.5 MB"
   ],
-  "tests_ok": false,
-  "tests_summary": "1 failed, 244 passed, 2 skipped, 1 warning in 73.40s (0:01:13)",
+  "tests_ok": true,
+  "tests_summary": "245 passed, 2 skipped, 1 warning in 41.88s",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
@@ -134,60 +134,29 @@
     "benchmark_tasks": 30,
     "benchmark_ok": 28,
     "benchmark_mean_distance": 0.278,
+    "benchmark_unsupported": 2,
     "statistics_reproduced": 15,
     "knowledge_version": 16,
-    "tests": 244
+    "tests": 245
   },
   "capabilities_delta": {
     "changed": true,
     "delta": {
-      "skills": {
-        "before": 12,
-        "after": 15
-      },
-      "operators": {
-        "before": 16,
-        "after": 19
-      },
-      "benchmark_ok": {
-        "before": 23,
-        "after": 28
-      },
-      "benchmark_mean_distance": {
-        "before": 0.288,
-        "after": 0.278
+      "benchmark_unsupported": {
+        "before": null,
+        "after": 2
       },
       "tests": {
-        "before": 229,
-        "after": 244
+        "before": 244,
+        "after": 245
       }
     },
     "verdict": {
       "gains": [
         {
-          "field": "skills",
-          "before": 12,
-          "after": 15
-        },
-        {
-          "field": "operators",
-          "before": 16,
-          "after": 19
-        },
-        {
-          "field": "benchmark_ok",
-          "before": 23,
-          "after": 28
-        },
-        {
-          "field": "benchmark_mean_distance",
-          "before": 0.288,
-          "after": 0.278
-        },
-        {
           "field": "tests",
-          "before": 229,
-          "after": 244
+          "before": 244,
+          "after": 245
         }
       ],
       "regressions": [],
@@ -204,7 +173,7 @@
       ]
     }
   },
-  "ok": false,
+  "ok": true,
   "capability_ok": true,
   "capability_regressions": []
 }

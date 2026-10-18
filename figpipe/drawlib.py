@@ -131,11 +131,20 @@ def ax_bar_with_errors(ax, df: pd.DataFrame, x: str, y: str, err: str | None = N
     ax.bar(pos, vals, width=0.62, color=style.OKABE_ITO["blue"],
            edgecolor="black", linewidth=0.4, yerr=yerr,
            error_kw={"elinewidth": 0.7, "capsize": 2, "capthick": 0.7})
-    ax.set_xticks(pos)
-    ax.set_xticklabels([str(v) for v in (xtick_labels if xtick_labels is not None
-                                         else df[x])],
-                       rotation=xtick_rotation,
-                       ha="right" if xtick_rotation else "center")
+    labels = [str(v) for v in (xtick_labels if xtick_labels is not None else df[x])]
+    if len(labels) <= 24:
+        ax.set_xticks(pos)
+        ax.set_xticklabels(labels, rotation=xtick_rotation,
+                           ha="right" if xtick_rotation else "center")
+    else:
+        # one tick per bar is unreadable past ~24 bars (and a numeric locator tries to draw
+        # thousands); keep every BAR and thin only the LABELS, evenly spaced
+        from matplotlib.ticker import MaxNLocator
+        step = int(np.ceil(len(labels) / 12))
+        ax.set_xticks(pos[::step])
+        ax.set_xticklabels(labels[::step], rotation=xtick_rotation,
+                           ha="right" if xtick_rotation else "center")
+        ax.xaxis.set_major_locator(MaxNLocator(nbins=12))
     if headroom and np.nanmax(vals) > 0:
         ax.set_ylim(0, np.nanmax(vals) * (1 + headroom))
     _frame(ax, xlabel or x, ylabel or y)

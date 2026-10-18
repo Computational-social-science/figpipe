@@ -28,7 +28,9 @@ import argparse
 import io
 import json
 import pathlib
+import shutil
 import sys
+import tempfile
 import urllib.request
 
 import numpy as np
@@ -353,8 +355,10 @@ def main(argv=None) -> int:
     ap.add_argument("--types", default="", help="comma list, e.g. Line,Distribution,Scatter")
     args = ap.parse_args(argv)
     wanted = {t.strip() for t in args.types.split(",") if t.strip()}
-    out_dir = ROOT / "corpus" / "e2e" / "tmp"
-    out_dir.mkdir(parents=True, exist_ok=True)
+    # Rendered candidates are INTERMEDIATES, not artefacts: 30 tasks produce ~600 files and
+    # ~60 MB, which alone blew the 150 MB worktree budget. They go to a system temp directory
+    # that is removed at the end; the metric report (the actual deliverable) stays in the repo.
+    out_dir = pathlib.Path(tempfile.mkdtemp(prefix="figpipe-bench-"))
     tasks = []
     for off in range(args.offset, args.offset + args.limit):
         row = fetch_row(off)
@@ -412,6 +416,9 @@ def main(argv=None) -> int:
         "tasks": results,
     }
     OUT.write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    from figpipe import sources
+    sources.assert_writable(out_dir)
+    shutil.rmtree(out_dir, ignore_errors=True)
     print(f"  ok {len(ok)}/{len(results)}  mean distance {report['mean_distance']}  "
           f"baseline {report['mean_baseline']}  delta {report['mean_improvement']}")
     for chart, t in sorted(type_stats.items()):

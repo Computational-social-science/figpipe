@@ -418,3 +418,24 @@ with an explicit delta (`tests: — → 228` in the transition). This is the fir
 answers "did the project gain capability?" from artefacts rather than from prose. The deeper lesson:
 **the measurement machinery itself must be treated as a capability** — a capability snapshot that
 crashes on a localised error message is not yet a control.
+
+
+## 22. Benchmark-driven capability: polar + composite operators, capability regression guard (2026-10-19)
+
+PlotTwin-Bench failures became operators, and the operators were validated on the benchmark:
+
+| added | why | benchmark effect |
+|---|---|---|
+| `polar_profile` drawer + `POLAR_DRAWERS` projection flag | 13 Polar/Radial tasks had no operator; a polar axis is a projection, not a style parameter | Polar 0/1 → 1/1 (d=0.127) |
+| `encode.error_bars`, `layout.split_panels` | Composite tasks carry several sub-figures in one long table | Composite 0/3 → 3/3 |
+| unsupported-type classification | 3D has no operator and asking a model to choose among our skills would force a wrong answer | 2 tasks now report a REASON instead of a service error |
+| bar label thinning above 24 bars | one tick per bar is unreadable and a numeric locator asks for thousands of ticks | removes the 1582/1978-tick warnings |
+
+Aggregate: **28/30 executed, distance 0.361 → 0.287 (Δ +0.074)**, with per-type honesty:
+Field 2D −0.090, Polar −0.043 and Heatmap −0.006 still get WORSE under style transfer.
+
+The scheduled loop now also **fails on a capability regression**: `capability_delta()` carries a
+verdict with `gains`/`regressions` and a direction table (higher-is-better vs lower-is-better, so a
+smaller style distance counts as an improvement). A run that loses a judged capability field exits
+non-zero unless the operator passes `--accept-capability-regression`. Recording a delta was not a
+control; this is.
