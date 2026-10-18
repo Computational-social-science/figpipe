@@ -253,6 +253,67 @@ class StyleProfile:
         prof.height_mm = float(h)
         return prof
 
+    @classmethod
+    def from_image_detailed(cls, image_path, max_colours: int = 8) -> "StyleProfile":
+        """Profile a raster reference, including the LINE structure a picture still shows.
+
+        WHY THIS EXISTS
+            `from_image` recovers palette and aspect only. The official PlotTwin-Bench code channel
+            also scores grid, spines, tick direction, serif and legend frame, which are code
+            constructs -- but a rendered picture still shows GRID LINES and SPINES as long straight
+            runs of ink. Detecting them is ordinary image analysis, not vision-model guessing, and
+            it is the difference between a candidate that can only copy colours and one that can
+            reproduce the reference's structure.
+
+        Method (deterministic):
+            * binarise to ink
+            * find rows/columns whose ink fraction exceeds a threshold and whose run is long:
+              those are horizontal/vertical RULES
+            * rules near the ink bounding box edge are SPINES; interior rules are GRID
+        """
+        try:
+            from PIL import Image
+        except ImportError as exc:  # pragma: no cover
+            raise RuntimeError("Pillow is required: pip install Pillow") from exc
+        prof = cls.from_image(image_path, max_colours=max_colours)
+        im = Image.open(str(image_path)).convert("L")
+        arr = np.asarray(im, dtype=np.uint8)
+        ink = arr < 200
+        h, w = ink.shape
+        if h < 8 or w < 8 or not ink.any():
+            prof.rules_h = prof.rules_v = 0
+            prof.spines = {}
+            return prof
+        ys, xs = np.where(ink)
+        y0, y1, x0, x1 = ys.min(), ys.max(), xs.min(), xs.max()
+        span_h, span_v = max(1, x1 - x0), max(1, y1 - y0)
+        # a RULE is a row/column that is ink for most of the ink bounding box
+        row_ink = ink[:, x0:x1 + 1].mean(axis=1)
+        col_ink = ink[y0:y1 + 1, :].mean(axis=0)
+        h_rules = [int(i) for i in np.where(row_ink > 0.55)[0]]
+        v_rules = [int(i) for i in np.where(col_ink > 0.55)[0]]
+        edge = max(2, int(round(0.02 * max(span_h, span_v))))
+        spines = {"left": False, "right": False, "top": False, "bottom": False}
+        interior_h = interior_v = 0
+        for y in h_rules:
+            if abs(y - y0) <= edge:
+                spines["top"] = True
+            elif abs(y - y1) <= edge:
+                spines["bottom"] = True
+            else:
+                interior_h += 1
+        for x in v_rules:
+            if abs(x - x0) <= edge:
+                spines["left"] = True
+            elif abs(x - x1) <= edge:
+                spines["right"] = True
+            else:
+                interior_v += 1
+        prof.rules_h, prof.rules_v = interior_h, interior_v
+        prof.spines = spines
+        prof.modality = "image"
+        return prof
+
     # ---- serialisation ------------------------------------------------------------
     def to_dict(self) -> dict:
         d = asdict(self)

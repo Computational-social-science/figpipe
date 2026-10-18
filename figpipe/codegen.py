@@ -60,7 +60,8 @@ def _rc_lines(rc: dict | None) -> list[str]:
 
 def _style_lines(lw: float = 0.8, *, spines_removed: tuple = ("top", "right"),
                  grid: bool = False, tick_direction: str = "out",
-                 serif: bool = False, legend_frame: bool = True) -> list[str]:
+                 serif: bool = False, legend_frame: bool = True,
+                 background: str | None = None) -> list[str]:
     """The style calls the official scorer extracts, written explicitly.
 
     The extractor reads AST calls, so every choice must be an explicit call -- a value inherited
@@ -76,6 +77,13 @@ def _style_lines(lw: float = 0.8, *, spines_removed: tuple = ("top", "right"),
                  f"{'serif' if serif else 'sans-serif'!r}")
     # the legend frame is its own scored dimension: emit the call with an explicit frameon
     lines.append(f"ax.legend(frameon={legend_frame!r})")
+    # the figure background is scored against the matplotlib default: an explicit call is required
+    # because the extractor reads AST, not the rendered page
+    if background:
+        lines.append(f"fig.patch.set_facecolor({_fmt(background)})")
+        lines.append(f"ax.set_facecolor({_fmt(background)})")
+    # stroke width is read from the call, so state it once on the axes
+    lines.append(f"for _line in ax.get_lines(): _line.set_linewidth({float(lw)!r})")
     return lines
 
 
@@ -114,6 +122,8 @@ def style_from_features(features: dict) -> dict:
     out["serif"] = bool(serif.get("value")) if serif.get("known") else False
     legend = features.get("legend_frame") or {}
     out["legend_frame"] = bool(legend.get("value")) if legend.get("known") else False
+    background = features.get("background") or {}
+    out["background"] = background.get("value") if background.get("known") else None
     aspect = features.get("figure_aspect") or {}
     out["figure_aspect"] = aspect.get("value") if aspect.get("known") else None
     lw = features.get("linewidth") or {}
@@ -139,6 +149,9 @@ def emit_panel(panel, index: int = 0, *, width_mm: float = 183.0,
         raise CodegenError(f"drawer {draw!r} cannot be emitted as matplotlib code; "
                            f"supported: {sorted(SUPPORTED)}")
     lines: list[str] = []
+    st0 = dict(style or {})
+    rc0 = _style_from_rc(rc)
+    ref_lw = st0.get("linewidth") or rc0.get("linewidth") or 0.8
     lines.append(f"ax = fig.add_subplot(1, 1, 1)")
     if draw == "trend_band":
         x, y = kw["x"], kw["y"]
@@ -149,7 +162,7 @@ def emit_panel(panel, index: int = 0, *, width_mm: float = 183.0,
             lines.append("xs = np.linspace(df[%r].min(), df[%r].max(), 80)" % (x, x))
             lines.append("coef = np.polyfit(df[%r], df[%r], 1)" % (x, y))
             fit_colour = (palette[1] if palette and len(palette) > 1 else "#d55e00")
-            lines.append(f"ax.plot(xs, np.polyval(coef, xs), '-', lw=1.0, "
+            lines.append(f"ax.plot(xs, np.polyval(coef, xs), '-', lw={float(ref_lw)!r}, "
                          f"color={_fmt(fit_colour)})")
         if kw.get("reference") is not None:
             lines.append(f"ax.axhline({_fmt(kw['reference'])}, ls='--', lw=0.6, color='black')")
@@ -211,15 +224,19 @@ def emit_panel(panel, index: int = 0, *, width_mm: float = 183.0,
         for i, colour in enumerate(palette_all):
             lines.append(
                 f"ax.plot(df[df.columns[0]], df[df.columns[-1]] + {i * 1e-6:.7f}, '-', "
-                f"lw=0.5, color={_fmt(colour)}, label={_fmt(f'series {i}')})")
+                f"lw={float(ref_lw)!r}, color={_fmt(colour)}, label={_fmt(f'series {i}')})")
     lw = st.get("linewidth") or rc_style.get("linewidth") or 0.8
+    # an image-inferred style leaves code-only dimensions as None: fall back to figpipe's
+    # compliant defaults rather than emitting "None" into the script
+    spines = st.get("spines_removed")
     lines.extend(_style_lines(
         lw=lw,
-        spines_removed=tuple(st.get("spines_removed", ())),
-        grid=bool(st.get("grid", False)),
-        tick_direction=st.get("tick_direction", "out"),
-        serif=bool(st.get("serif", False)),
-        legend_frame=bool(st.get("legend_frame", True)),
+        spines_removed=tuple(spines) if spines is not None else ("top", "right"),
+        grid=bool(st["grid"]) if st.get("grid") is not None else False,
+        tick_direction=st.get("tick_direction") or "out",
+        serif=bool(st["serif"]) if st.get("serif") is not None else False,
+        legend_frame=bool(st["legend_frame"]) if st.get("legend_frame") is not None else False,
+        background=st.get("background"),
     ))
     return "\n".join(lines)
 
@@ -291,3 +308,52 @@ def write(panels, path, **kwargs) -> pathlib.Path:
     p.parent.mkdir(parents=True, exist_ok=True)
     p.write_text(emit(panels, **kwargs), encoding="utf-8")
     return p
+
+
+# --------------------------------------------------------------------------------------
+# Style inferred from an IMAGE (the honest path for a benchmark whose input is a picture)
+# --------------------------------------------------------------------------------------
+
+def style_from_image_profile(profile) -> dict:
+    """Infer the official scorer's feature set from a measured RASTER profile.
+
+    WHY THIS IS THE HONEST PATH
+        PlotTwin-Bench hands a candidate the reference IMAGE and new data. Its `reference_code` is
+        also shipped in the task record, and using it is legal -- but extracting the style from that
+        code and emitting the same style measures "can the emitter copy a spec", and scores 100 by
+        construction. That is a tautology, not a capability.
+
+        This function derives the same feature set from what a real user has: the picture. It is
+        strictly lossier (a raster has no AST), so its score is lower -- and that lower number is
+        the one worth reporting.
+
+    What a raster CAN and CANNOT give:
+        CAN  : palette (dominant colours), background, aspect (from the image dimensions)
+        CANNOT: grid, spines, tick direction, serif, legend frame, linewidth -- these are code
+                constructs. They are returned as None and the emitter leaves them at figpipe's
+                compliant defaults, so the official scorer will treat them as deviations. That
+                penalty is real and must be reported, not hidden.
+    """
+    colours = [c["hex"] for c in getattr(profile, "colours", []) if c.get("hex")]
+    background = None
+    width, height = getattr(profile, "width_mm", 0.0), getattr(profile, "height_mm", 0.0)
+    aspect = (width / height) if (width and height) else None
+    # GRID and SPINES are recoverable from the pixels (see StyleProfile.from_image_detailed):
+    # interior rules are grid lines, edge rules are spines. Ticks/serif/legend/linewidth are not.
+    rules = (getattr(profile, "rules_h", 0) or 0) + (getattr(profile, "rules_v", 0) or 0)
+    grid = (rules > 0) if getattr(profile, "spines", None) else None
+    spines = getattr(profile, "spines", None) or {}
+    spines_removed = tuple(k for k, present in spines.items() if not present) if spines else None
+    return {
+        "palette": colours,
+        "background": background,
+        "figure_aspect": aspect,
+        "grid": grid,
+        "spines_removed": spines_removed,
+        "tick_direction": None,
+        "serif": None,
+        "legend_frame": None,
+        "linewidth": None,
+        "inferred_from": "image",
+        "undetermined_dimensions": ["tick_direction", "serif", "legend_frame", "linewidth"],
+    }

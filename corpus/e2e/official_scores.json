@@ -1,0 +1,328 @@
+{
+  "summary": {
+    "channel": "code_deviation",
+    "scorer": "plottwin_scorer deviation-defect-v1 (vendored, unmodified)",
+    "weight_upstream": 0.35,
+    "note": "OFFICIAL deterministic channel only. The 0.65 vision channel is not run, so this is NOT the combined score.",
+    "style_source": "image",
+    "n_tasks": 20,
+    "n_scored": 20,
+    "n_unscored": 0,
+    "n_unavailable": 0,
+    "mean_score": 71.16,
+    "min_score": 45.86,
+    "max_score": 90.37,
+    "by_type": {
+      "Box/Violin": {
+        "n": 4,
+        "mean": 74.85
+      },
+      "Composite": {
+        "n": 3,
+        "mean": 77.61
+      },
+      "Distribution": {
+        "n": 7,
+        "mean": 76.73
+      },
+      "Field 2D": {
+        "n": 1,
+        "mean": 50.5
+      },
+      "Heatmap": {
+        "n": 2,
+        "mean": 63.35
+      },
+      "Line": {
+        "n": 1,
+        "mean": 75.28
+      },
+      "Scatter": {
+        "n": 1,
+        "mean": 55.58
+      },
+      "Std-band": {
+        "n": 1,
+        "mean": 45.86
+      }
+    },
+    "unscored_reasons": {}
+  },
+  "records": [
+    {
+      "id": "PMC11502666",
+      "chart": "Distribution",
+      "status": "scored",
+      "score": 57.83714575512349,
+      "n_activated": 2,
+      "scored_dimensions": [
+        "palette",
+        "grid"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "PMC11840003",
+      "chart": "Box/Violin",
+      "status": "scored",
+      "score": 72.86941076237514,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "PMC12000431",
+      "chart": "Distribution",
+      "status": "scored",
+      "score": 50.0,
+      "n_activated": 2,
+      "scored_dimensions": [
+        "palette",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "PMC12354736",
+      "chart": "Distribution",
+      "status": "scored",
+      "score": 82.39151959842667,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "PMC12504421",
+      "chart": "Heatmap",
+      "status": "scored",
+      "score": 49.82753435362412,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "tick_direction"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "PMC12905268",
+      "chart": "Distribution",
+      "status": "scored",
+      "score": 90.37237132547638,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "PMC13009336",
+      "chart": "Box/Violin",
+      "status": "scored",
+      "score": 87.53763543282264,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "linewidth",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "PMC13022287",
+      "chart": "Distribution",
+      "status": "scored",
+      "score": 83.80273502543128,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "PMC13079874",
+      "chart": "Box/Violin",
+      "status": "scored",
+      "score": 68.01853320019046,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "PMC13106710",
+      "chart": "Heatmap",
+      "status": "scored",
+      "score": 76.86819458987303,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "PMC13135507",
+      "chart": "Scatter",
+      "status": "scored",
+      "score": 55.582899294546216,
+      "n_activated": 3,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "PMC13245775",
+      "chart": "Composite",
+      "status": "scored",
+      "score": 79.80811627538145,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "PMC13252719",
+      "chart": "Composite",
+      "status": "scored",
+      "score": 89.83637723128075,
+      "n_activated": 2,
+      "scored_dimensions": [
+        "palette",
+        "linewidth"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "PMC13273070",
+      "chart": "Box/Violin",
+      "status": "scored",
+      "score": 70.97557193339038,
+      "n_activated": 3,
+      "scored_dimensions": [
+        "palette",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "PMC13286152",
+      "chart": "Composite",
+      "status": "scored",
+      "score": 63.181965943598826,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "spines_removed"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "PMC13336770",
+      "chart": "Distribution",
+      "status": "scored",
+      "score": 89.99199955738811,
+      "n_activated": 3,
+      "scored_dimensions": [
+        "palette",
+        "linewidth",
+        "spines_removed"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "PMC13342296",
+      "chart": "Distribution",
+      "status": "scored",
+      "score": 82.73898581112681,
+      "n_activated": 3,
+      "scored_dimensions": [
+        "palette",
+        "linewidth",
+        "spines_removed"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "PMC13343911",
+      "chart": "Line",
+      "status": "scored",
+      "score": 75.27584844721144,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "arxiv-astro-skymap__2412.12637",
+      "chart": "Field 2D",
+      "status": "scored",
+      "score": 50.50361591212407,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "serif"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "arxiv-astro-skymap__2510.17487",
+      "chart": "Std-band",
+      "status": "scored",
+      "score": 45.85753087106336,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "grid",
+        "tick_direction",
+        "serif"
+      ],
+      "unavailable_dimensions": []
+    }
+  ]
+}

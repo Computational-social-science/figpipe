@@ -116,3 +116,47 @@ def test_the_official_aggregate_covers_the_whole_report_not_a_slice():
     assert agg["n_scored"] == stored.get("n_scored"), (
         f"stored aggregate covers {stored.get('n_scored')} tasks, report holds "
         f"{agg['n_scored']} scored")
+
+
+def test_the_emitter_reproduces_every_scored_dimension():
+    """The official score is only meaningful if the candidate can reach 100 by construction.
+
+    Two dimensions were silently failing: `background` was never emitted at all, and `linewidth`
+    used a hard-coded 1.0 while the reference said 1.1. Both were invisible because the aggregate
+    mean (85) looked healthy -- one task scoring 33 does not move a mean much.
+    """
+    import json
+    import sys
+    sys.path.insert(0, str(ROOT / "scripts"))
+    try:
+        import bench_plottwin as bench
+    except Exception:                    # pragma: no cover
+        pytest.skip("benchmark harness unavailable")
+    import pandas as pd
+    import numpy as np
+    from figpipe import composite
+
+    found = None
+    for off in range(bench.POOL):
+        try:
+            row = bench.fetch_row(off)
+        except Exception:                # noqa: BLE001 - offline is not a test failure
+            break
+        if row.get("reference_code"):
+            found = row
+            break
+    if not found:
+        pytest.skip("no reference code reachable")
+
+    features = scorer.extract_style_features(found["reference_code"])["features"]
+    style = codegen.style_from_features(features)
+    df = pd.DataFrame({"x": np.arange(20.0), "y": np.linspace(0.1, 0.9, 20)})
+    panel = composite.Panel("trend_band", df, {"x": "x", "y": "y", "fit": "lm"})
+    candidate = codegen.emit([panel], columns=2.0, height_mm=100.0, style=style,
+                             palette=style.get("palette"))
+    res = scorer.score_code_deviation(found["reference_code"], candidate)
+    assert res["available"] is True
+    for dim in res["scored_dimensions"]:
+        assert res["dimensions"][dim]["score"] == pytest.approx(1.0), (
+            f"dimension {dim} scores {res['dimensions'][dim]['score']}, expected 1.0")
+    assert res["score"] == pytest.approx(100.0, abs=0.01)

@@ -109,18 +109,53 @@ def _selection_text(sel) -> str:
             f"key).")
 
 
+def _official_pool(source: str = "image") -> dict:
+    """The pool-wide official score from the dedicated pass, by style source.
+
+    `image` is the honest number: the candidate sees only the reference PICTURE, which is the
+    benchmark's premise. `code` is a ceiling, not a capability: the task record ships
+    `reference_code`, so extracting the style from it and emitting the same style scores 100 by
+    construction. Reporting the ceiling as SOTA would be a tautology.
+    """
+    path = ROOT / "corpus" / "e2e" / ("official_scores.json" if source == "image"
+                                      else "official_scores_code.json")
+    if not path.is_file():
+        return {}
+    try:
+        return json.loads(path.read_text(encoding="utf-8")).get("summary", {})
+    except (OSError, ValueError):
+        return {}
+
+
+def _official_type_table(pool) -> str:
+    rows = (pool or {}).get("by_type") or {}
+    if not rows:
+        return ""
+    body = "".join(f'<tr><td>{esc(k)}</td><td class="num">{v["n"]}</td>'
+                   f'<td class="num">{v["mean"]}</td></tr>' for k, v in rows.items())
+    return (f'<h3 style="margin-top:20px">Official code channel by chart type (image-inferred style)</h3>'
+            f'<table><thead><tr><th>Chart type</th><th>Scored tasks</th>'
+            f'<th>Official mean / 100</th></tr></thead><tbody>{body}</tbody></table>')
+
+
 def _official_block(oc) -> str:
     if not oc or not oc.get("n_scored"):
         return ""
-    return (f'<div class="okbox"><b>Official code channel: mean '
-            f'{oc["mean_score"]} / 100</b> over {oc["n_scored"]} tasks '
-            f'(min {oc["min_score"]}, max {oc["max_score"]}); '
-            f'{oc.get("n_unavailable", 0)} not scoreable. '
+    ceiling = _official_pool("code")
+    ceiling_txt = ""
+    if ceiling.get("n_scored"):
+        ceiling_txt = (f' For comparison, extracting the style from the shipped '
+                       f'<code>reference_code</code> scores {ceiling["mean_score"]} — that is a '
+                       f'<b>ceiling, not a capability</b>: the task record contains the reference '
+                       f'code, so copying its features scores 100 by construction.')
+    return (f'<div class="okbox"><b>Official code channel (style inferred from the reference '
+            f'IMAGE): {oc["mean_score"]} / 100</b> over {oc["n_scored"]} tasks '
+            f'(min {oc["min_score"]}, max {oc["max_score"]}). '
             f'This is the benchmark\'s own deterministic channel '
-            f'<code>deviation-defect-v1</code>, worth 35% of the official score. The remaining '
-            f'65% is a vision channel this project does not run, so <b>no combined score is '
-            f'claimed</b>. The emitted matplotlib code is scored against the benchmark\'s own '
-            f'<code>reference_code</code>, not against a metric of our own design.</div>')
+            f'<code>deviation-defect-v1</code>, worth 35% of the official score; the remaining 65% '
+            f'is a vision channel this project does not run, so <b>no combined score is '
+            f'claimed</b>. Style is inferred from the reference <b>picture</b> — the benchmark\'s '
+            f'actual premise — not from its code.{ceiling_txt}</div>')
 
 
 def _regression_banner(latest: dict) -> str:
@@ -511,7 +546,7 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
        'Shipped distance (anchor)', 'fixed 20-task subset; closer of plain/styled per task', '')}
   {kpi(bench.get("benchmark_anchor_distance") or "—", 'Anchor style distance',
        'fixed 20-task subset (comparable across runs)', '')}
-  {kpi((bench.get("official_code_channel") or {}).get("mean_score", "—"),
+  {kpi((_official_pool() or bench.get("official_code_channel") or {}).get("mean_score", "—"),
        'OFFICIAL code channel', 'PlotTwin-Bench deviation-defect-v1 (35% weight); vision not run', '')}
   {kpi(bench.get("semantic_violations", "—"), 'Semantic violations',
        'figures whose printed claims contradict their data', '')}
@@ -580,7 +615,7 @@ imitate.</p>
   {hidden_note}
 </div>
 <div class="okbox" style="margin-top:14px">{_selection_text(bench.get("selection"))}</div>
-{_official_block(bench.get("official_code_channel"))}
+{_official_block(_official_pool() or bench.get("official_code_channel"))}
 <div class="note"><b>Measurement freshness:</b> {bench.get("n_fresh", 0)} of {n_ok} executed tasks
 were measured with the current rendering code (fingerprint
 <code>{esc(bench.get("code_version", "—"))}</code>), {bench.get("n_stale", 0)} with an earlier
@@ -591,6 +626,7 @@ to the shared style/layout layer; a stale row can make a fix look like a regress
 by <code>figpipe/semantics.py</code>: the printed r must match the data's r, no drawn point may fall
 outside the axes, and the axis labels must be the ones the panel claims. Semantic violations in this
 run: <b>{bench.get("semantic_violations", 0)}</b>.</div>
+{_official_type_table(_official_pool())}
 <h3 style="margin-top:20px">By chart type</h3>
 <table><thead><tr><th>Chart type</th><th>OK / tasks</th><th>Always styled</th><th>Plain</th>
 <th>Δ</th><th>Shipped</th></tr></thead><tbody>{''.join(type_rows)}</tbody></table>

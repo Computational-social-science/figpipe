@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-19T06:43:38",
+  "run_at": "2026-10-19T07:32:06",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -9,37 +9,16 @@
     "  passed 8, failed 0",
     "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
     "  wrote knowledge\\evolution_report.json",
-    "  lean: tracked 79.9 -> 79.9 MB, worktree 102.1 -> 102.0 MB"
+    "  lean: tracked 79.9 -> 79.9 MB, worktree 113.2 -> 113.2 MB"
   ],
   "tests_ok": true,
-  "tests_summary": "280 passed, 2 skipped, 1 warning in 55.33s",
+  "tests_summary": "281 passed, 2 skipped, 1 warning in 101.95s (0:01:41)",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
   "published": {
-    "pushed": true,
-    "steps": [
-      {
-        "cmd": "git add -A",
-        "code": 0,
-        "tail": []
-      },
-      {
-        "cmd": "git -c user.name=figpipe-bot",
-        "code": 0,
-        "tail": [
-          " create mode 100644 knowledge/runs/2026-10-19T064338.json"
-        ]
-      },
-      {
-        "cmd": "git push origin",
-        "code": 0,
-        "tail": [
-          "   85311a4..5bde770  main -> main"
-        ]
-      }
-    ],
-    "withheld": []
+    "pushed": false,
+    "reason": "not yet published"
   },
   "check_results": {
     "L01": {
@@ -150,8 +129,16 @@
     "regressed": 0
   },
   "benchmark_slice": {
-    "ran": false,
-    "reason": "dry run"
+    "ran": true,
+    "offset": 0,
+    "tasks": 6,
+    "code": 0,
+    "tail": [
+      "    type Box/Violin     ok 1/1   d=0.197 base=0.441 delta=0.244 errors=0",
+      "    type Distribution   ok 4/4   d=0.247 base=0.289 delta=0.042 errors=0",
+      "    type Heatmap        ok 1/1   d=0.288 base=0.426 delta=0.138 errors=0",
+      "  wrote E:\\2026-AI4S\\figpipe\\corpus\\e2e\\plottwin_report.json"
+    ]
   },
   "capabilities": {
     "skills": 16,
@@ -163,29 +150,34 @@
     "benchmark_anchor_distance": 0.305,
     "benchmark_shipped_anchor_distance": 0.252,
     "benchmark_unsupported": 9,
-    "benchmark_official_code_score": 92.68,
+    "benchmark_official_code_score": 93.53,
     "statistics_reproduced": 15,
     "knowledge_version": 16,
-    "tests": 280
+    "tests": 281
   },
   "capabilities_delta": {
     "changed": true,
     "delta": {
       "benchmark_official_code_score": {
-        "before": null,
-        "after": 92.68
+        "before": 92.68,
+        "after": 93.53
       },
       "tests": {
-        "before": 278,
-        "after": 280
+        "before": 280,
+        "after": 281
       }
     },
     "verdict": {
       "gains": [
         {
+          "field": "benchmark_official_code_score",
+          "before": 92.68,
+          "after": 93.53
+        },
+        {
           "field": "tests",
-          "before": 278,
-          "after": 280
+          "before": 280,
+          "after": 281
         }
       ],
       "regressions": [],
@@ -205,6 +197,5 @@
   },
   "ok": true,
   "capability_ok": true,
-  "capability_regressions": [],
-  "publish_note": "The publish outcome is recorded after the commit that carries this run, so it describes the push triggered by this run; the file's own commit is made by the next scheduled run."
+  "capability_regressions": []
 }
