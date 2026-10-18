@@ -1486,155 +1486,6 @@
       ]
     },
     {
-      "id": "PMC13252719",
-      "chart": "Composite",
-      "panel_mode": "multi",
-      "skill": "composite_groups",
-      "rationale": "composite block_id x record_type",
-      "rows_used": 182,
-      "status": "ok",
-      "distance": 0.216,
-      "baseline_distance": 0.212,
-      "delta": -0.004,
-      "selected": "styled",
-      "selected_distance": 0.202,
-      "selected_gain": 0.01,
-      "selection_margin": 0.007,
-      "components": {
-        "palette": 0.185,
-        "aspect": 0.025,
-        "ink": 0.486
-      },
-      "hard_failures": 0,
-      "findings": []
-    },
-    {
-      "id": "PMC13273070",
-      "chart": "Box/Violin",
-      "panel_mode": "multi",
-      "skill": "distribution_comparison",
-      "rationale": "box panel_row by panel_group",
-      "rows_used": 606,
-      "status": "ok",
-      "distance": 0.175,
-      "baseline_distance": 0.352,
-      "delta": 0.177,
-      "selected": "styled",
-      "selected_distance": 0.18,
-      "selected_gain": 0.172,
-      "selection_margin": 0.171,
-      "components": {
-        "palette": 0.279,
-        "aspect": 0.003,
-        "ink": 0.087
-      },
-      "hard_failures": 0,
-      "findings": []
-    },
-    {
-      "id": "PMC13286152",
-      "chart": "Composite",
-      "panel_mode": "multi",
-      "skill": "composite_groups",
-      "rationale": "composite block_id x panel_group",
-      "rows_used": 660,
-      "status": "ok",
-      "distance": 0.329,
-      "baseline_distance": 0.374,
-      "delta": 0.045,
-      "selected": "styled",
-      "selected_distance": 0.336,
-      "selected_gain": 0.038,
-      "selection_margin": 0.043,
-      "components": {
-        "palette": 0.138,
-        "aspect": 0.135,
-        "ink": 1.0
-      },
-      "hard_failures": 1,
-      "findings": [
-        {
-          "check": "height",
-          "detail": "170.0 mm exceeds the 170.0 mm maximum",
-          "severity": "hard"
-        }
-      ]
-    },
-    {
-      "id": "PMC13336770",
-      "chart": "Distribution",
-      "panel_mode": "multi",
-      "skill": "histogram",
-      "rationale": "hist panel_col",
-      "rows_used": 978,
-      "status": "ok",
-      "distance": 0.164,
-      "baseline_distance": 0.32,
-      "delta": 0.156,
-      "selected": "styled",
-      "selected_distance": 0.151,
-      "selected_gain": 0.169,
-      "selection_margin": 0.145,
-      "components": {
-        "palette": 0.187,
-        "aspect": 0.001,
-        "ink": 0.269
-      },
-      "hard_failures": 0,
-      "findings": []
-    },
-    {
-      "id": "PMC13342296",
-      "chart": "Distribution",
-      "panel_mode": "multi",
-      "skill": "faceted_distribution",
-      "rationale": "faceted hist by panel_group",
-      "rows_used": 392,
-      "status": "ok",
-      "distance": 0.164,
-      "baseline_distance": 0.196,
-      "delta": 0.032,
-      "selected": "styled",
-      "selected_distance": 0.165,
-      "selected_gain": 0.031,
-      "selection_margin": 0.032,
-      "components": {
-        "palette": 0.205,
-        "aspect": 0.002,
-        "ink": 0.223
-      },
-      "hard_failures": 0,
-      "findings": []
-    },
-    {
-      "id": "PMC13343911",
-      "chart": "Line",
-      "panel_mode": "multi",
-      "skill": "trend_with_uncertainty",
-      "rationale": "trend time_months->panel_row",
-      "rows_used": 387,
-      "status": "ok",
-      "distance": 0.379,
-      "baseline_distance": 0.477,
-      "delta": 0.098,
-      "selected": "styled",
-      "selected_distance": 0.388,
-      "selected_gain": 0.089,
-      "selection_margin": 0.094,
-      "components": {
-        "aspect": 0.595,
-        "ink": 0.163
-      },
-      "hard_failures": 1,
-      "findings": [
-        {
-          "check": "height",
-          "detail": "170.0 mm exceeds the 170.0 mm maximum",
-          "severity": "hard"
-        }
-      ]
-    },
-    {
       "id": "arxiv-astro-skymap__2412.12637",
       "chart": "Field 2D",
       "panel_mode": "single",
@@ -2153,6 +2004,155 @@
         {
           "check": "text_collision",
           "detail": "'gical responses' over 'gical responses'",
+          "severity": "hard"
+        }
+      ]
+    },
+    {
+      "id": "PMC13252719",
+      "chart": "Composite",
+      "panel_mode": "multi",
+      "skill": "composite_groups",
+      "rationale": "composite block_id x record_type",
+      "rows_used": 182,
+      "status": "ok",
+      "distance": 0.216,
+      "baseline_distance": 0.212,
+      "delta": -0.004,
+      "selected": "styled",
+      "selected_distance": 0.202,
+      "selected_gain": 0.01,
+      "selection_margin": 0.007,
+      "components": {
+        "palette": 0.185,
+        "aspect": 0.025,
+        "ink": 0.486
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "PMC13273070",
+      "chart": "Box/Violin",
+      "panel_mode": "multi",
+      "skill": "distribution_comparison",
+      "rationale": "box panel_row by panel_group",
+      "rows_used": 606,
+      "status": "ok",
+      "distance": 0.175,
+      "baseline_distance": 0.352,
+      "delta": 0.177,
+      "selected": "styled",
+      "selected_distance": 0.18,
+      "selected_gain": 0.172,
+      "selection_margin": 0.171,
+      "components": {
+        "palette": 0.279,
+        "aspect": 0.003,
+        "ink": 0.087
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "PMC13286152",
+      "chart": "Composite",
+      "panel_mode": "multi",
+      "skill": "composite_groups",
+      "rationale": "composite block_id x panel_group",
+      "rows_used": 660,
+      "status": "ok",
+      "distance": 0.329,
+      "baseline_distance": 0.374,
+      "delta": 0.045,
+      "selected": "styled",
+      "selected_distance": 0.336,
+      "selected_gain": 0.038,
+      "selection_margin": 0.043,
+      "components": {
+        "palette": 0.138,
+        "aspect": 0.135,
+        "ink": 1.0
+      },
+      "hard_failures": 1,
+      "findings": [
+        {
+          "check": "height",
+          "detail": "170.0 mm exceeds the 170.0 mm maximum",
+          "severity": "hard"
+        }
+      ]
+    },
+    {
+      "id": "PMC13336770",
+      "chart": "Distribution",
+      "panel_mode": "multi",
+      "skill": "histogram",
+      "rationale": "hist panel_col",
+      "rows_used": 978,
+      "status": "ok",
+      "distance": 0.164,
+      "baseline_distance": 0.32,
+      "delta": 0.156,
+      "selected": "styled",
+      "selected_distance": 0.151,
+      "selected_gain": 0.169,
+      "selection_margin": 0.145,
+      "components": {
+        "palette": 0.187,
+        "aspect": 0.001,
+        "ink": 0.269
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "PMC13342296",
+      "chart": "Distribution",
+      "panel_mode": "multi",
+      "skill": "faceted_distribution",
+      "rationale": "faceted hist by panel_group",
+      "rows_used": 392,
+      "status": "ok",
+      "distance": 0.164,
+      "baseline_distance": 0.196,
+      "delta": 0.032,
+      "selected": "styled",
+      "selected_distance": 0.165,
+      "selected_gain": 0.031,
+      "selection_margin": 0.032,
+      "components": {
+        "palette": 0.205,
+        "aspect": 0.002,
+        "ink": 0.223
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "PMC13343911",
+      "chart": "Line",
+      "panel_mode": "multi",
+      "skill": "trend_with_uncertainty",
+      "rationale": "trend time_months->panel_row",
+      "rows_used": 387,
+      "status": "ok",
+      "distance": 0.379,
+      "baseline_distance": 0.477,
+      "delta": 0.098,
+      "selected": "styled",
+      "selected_distance": 0.388,
+      "selected_gain": 0.089,
+      "selection_margin": 0.094,
+      "components": {
+        "aspect": 0.595,
+        "ink": 0.163
+      },
+      "hard_failures": 1,
+      "findings": [
+        {
+          "check": "height",
+          "detail": "170.0 mm exceeds the 170.0 mm maximum",
           "severity": "hard"
         }
       ]

@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-19T03:15:21",
+  "run_at": "2026-10-19T03:21:23",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -9,37 +9,16 @@
     "  passed 8, failed 0",
     "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
     "  wrote knowledge\\evolution_report.json",
-    "  lean: tracked 79.5 -> 79.5 MB, worktree 130.6 -> 130.5 MB"
+    "  lean: tracked 79.5 -> 79.5 MB, worktree 130.5 -> 130.5 MB"
   ],
   "tests_ok": true,
-  "tests_summary": "258 passed, 2 skipped, 1 warning in 52.90s",
+  "tests_summary": "258 passed, 2 skipped, 1 warning in 52.37s",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
   "published": {
-    "pushed": true,
-    "steps": [
-      {
-        "cmd": "git add -A",
-        "code": 0,
-        "tail": []
-      },
-      {
-        "cmd": "git -c user.name=figpipe-bot",
-        "code": 0,
-        "tail": [
-          " create mode 100644 knowledge/runs/2026-10-19T031521.json"
-        ]
-      },
-      {
-        "cmd": "git push origin",
-        "code": 0,
-        "tail": [
-          "   fc7311a..7a8d23b  main -> main"
-        ]
-      }
-    ],
-    "withheld": []
+    "pushed": false,
+    "reason": "not yet published"
   },
   "check_results": {
     "L01": {
@@ -151,13 +130,13 @@
   },
   "benchmark_slice": {
     "ran": true,
-    "offset": 6,
+    "offset": 12,
     "tasks": 6,
     "code": 0,
     "tail": [
-      "    type Distribution   ok 1/1   d=0.262 base=0.293 delta=0.031 errors=0",
-      "    type Heatmap        ok 1/1   d=0.36 base=0.205 delta=-0.155 errors=0",
-      "    type Scatter        ok 1/1   d=0.259 base=0.575 delta=0.316 errors=0",
+      "    type Composite      ok 2/2   d=0.273 base=0.293 delta=0.02 errors=0",
+      "    type Distribution   ok 2/2   d=0.164 base=0.258 delta=0.094 errors=0",
+      "    type Line           ok 1/1   d=0.379 base=0.477 delta=0.098 errors=0",
       "  wrote E:\\2026-AI4S\\figpipe\\corpus\\e2e\\plottwin_report.json"
     ]
   },
@@ -196,6 +175,5 @@
   },
   "ok": true,
   "capability_ok": true,
-  "capability_regressions": [],
-  "publish_note": "The publish outcome is recorded after the commit that carries this run, so it describes the push triggered by this run; the file's own commit is made by the next scheduled run."
+  "capability_regressions": []
 }
