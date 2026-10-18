@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-19T00:35:54",
+  "run_at": "2026-10-19T00:37:24",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -9,37 +9,16 @@
     "  passed 8, failed 0",
     "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
     "  wrote knowledge\\evolution_report.json",
-    "  lean: tracked 79.3 -> 79.3 MB, worktree 80.9 -> 80.8 MB"
+    "  lean: tracked 79.3 -> 79.3 MB, worktree 80.8 -> 80.8 MB"
   ],
   "tests_ok": true,
-  "tests_summary": "229 passed, 2 skipped, 1 warning in 39.38s",
+  "tests_summary": "229 passed, 2 skipped, 1 warning in 39.55s",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
   "published": {
-    "pushed": true,
-    "steps": [
-      {
-        "cmd": "git add -A",
-        "code": 0,
-        "tail": []
-      },
-      {
-        "cmd": "git -c user.name=figpipe-bot",
-        "code": 0,
-        "tail": [
-          " create mode 100644 knowledge/runs/2026-10-19T003554.json"
-        ]
-      },
-      {
-        "cmd": "git push origin",
-        "code": 0,
-        "tail": [
-          "   9b897c2..bb636f2  main -> main"
-        ]
-      }
-    ],
-    "withheld": []
+    "pushed": false,
+    "reason": "not yet published"
   },
   "check_results": {
     "L01": {
@@ -160,14 +139,8 @@
     "tests": 229
   },
   "capabilities_delta": {
-    "changed": true,
-    "delta": {
-      "tests": {
-        "before": 228,
-        "after": 229
-      }
-    }
+    "changed": false,
+    "delta": {}
   },
-  "ok": true,
-  "publish_note": "The publish outcome is recorded after the commit that carries this run, so it describes the push triggered by this run; the file's own commit is made by the next scheduled run."
+  "ok": true
 }
