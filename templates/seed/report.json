@@ -1,0 +1,210 @@
+{
+  "about": "Reproduction of the seed paper's figures (NHB 2026, national influence) from its own published data, through figpipe.grammar intents.",
+  "not_reproduced": {
+    "Fig 2": "QAP regression coefficients are not in the published data package",
+    "Fig 4": "same construction as Fig 3 from relative influence; omitted for run time",
+    "Fig 6": "arc diagram and region matrix need a country->region mapping the seed does not include (R uses raster::ccodes + a custom UNREGION1 table)"
+  },
+  "agreement": {
+    "fig1b_r": {
+      "computed": 0.775,
+      "published": 0.78,
+      "delta": -0.005
+    },
+    "fig3": {
+      "gini": {
+        "Attributional": {
+          "computed": 0.876,
+          "published": 0.88,
+          "delta": -0.004
+        },
+        "Discursive": {
+          "computed": 0.857,
+          "published": 0.86,
+          "delta": -0.003
+        }
+      },
+      "centrality": {
+        "Attributional": {
+          "Core": {
+            "computed": 0.982,
+            "published": 0.98,
+            "delta": 0.002
+          },
+          "Periphery": {
+            "computed": 0.868,
+            "published": 0.87,
+            "delta": -0.002
+          }
+        },
+        "Discursive": {
+          "Core": {
+            "computed": 0.985,
+            "published": 0.99,
+            "delta": -0.005
+          },
+          "Periphery": {
+            "computed": 0.855,
+            "published": 0.86,
+            "delta": -0.005
+          }
+        }
+      }
+    },
+    "fig5": {
+      "Core→Core": {
+        "computed": 0.884,
+        "published": 0.88,
+        "delta": 0.004
+      },
+      "Core→Periphery": {
+        "computed": 0.471,
+        "published": 0.47,
+        "delta": 0.001
+      },
+      "Periphery→Core": {
+        "computed": -0.431,
+        "published": -0.43,
+        "delta": -0.001
+      },
+      "Periphery→Periphery": {
+        "computed": 0.431,
+        "published": 0.43,
+        "delta": 0.001
+      }
+    },
+    "fig7": {
+      "Core→Core": {
+        "computed": 0.958,
+        "published": 0.96,
+        "delta": -0.002
+      },
+      "Core→Periphery": {
+        "computed": 0.659,
+        "published": 0.66,
+        "delta": -0.001
+      },
+      "Periphery→Core": {
+        "computed": -0.624,
+        "published": -0.62,
+        "delta": -0.004
+      },
+      "Periphery→Periphery": {
+        "computed": -0.686,
+        "published": -0.69,
+        "delta": 0.004
+      }
+    }
+  },
+  "figures": [
+    {
+      "figure": "fig1_term_papers_and_density",
+      "pdf": "templates\\seed\\fig1_term_papers_and_density.pdf",
+      "png": "templates\\seed\\fig1_term_papers_and_density.png",
+      "n_panels": 2,
+      "letters": [
+        "a",
+        "b"
+      ],
+      "gaps_x_mm": [
+        9.0
+      ],
+      "gaps_y_mm": [],
+      "width_mm": 183.0,
+      "height_mm": 96.0,
+      "audit_ok": true,
+      "audit_hard_findings": [],
+      "geometry_problems": [],
+      "computed": {
+        "hexbin_r": 0.775
+      }
+    },
+    {
+      "figure": "fig3_centrality_and_gini",
+      "pdf": "templates\\seed\\fig3_centrality_and_gini.pdf",
+      "png": "templates\\seed\\fig3_centrality_and_gini.png",
+      "n_panels": 4,
+      "letters": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "gaps_x_mm": [
+        9.0
+      ],
+      "gaps_y_mm": [
+        13.2
+      ],
+      "width_mm": 183.0,
+      "height_mm": 168.0,
+      "audit_ok": true,
+      "audit_hard_findings": [],
+      "geometry_problems": [],
+      "computed": {
+        "gini": {
+          "Attributional": 0.876,
+          "Discursive": 0.857
+        },
+        "centrality": {
+          "Attributional": {
+            "Core": 0.982,
+            "Periphery": 0.868
+          },
+          "Discursive": {
+            "Core": 0.985,
+            "Periphery": 0.855
+          }
+        }
+      }
+    },
+    {
+      "figure": "fig5_relative_influence",
+      "pdf": "templates\\seed\\fig5_relative_influence.pdf",
+      "png": "templates\\seed\\fig5_relative_influence.png",
+      "n_panels": 4,
+      "letters": [],
+      "gaps_x_mm": [
+        3.0
+      ],
+      "gaps_y_mm": [
+        6.2
+      ],
+      "width_mm": 183.0,
+      "height_mm": 168.0,
+      "audit_ok": true,
+      "audit_hard_findings": [],
+      "geometry_problems": [],
+      "computed": {
+        "Core→Core": 0.884,
+        "Core→Periphery": 0.471,
+        "Periphery→Core": -0.431,
+        "Periphery→Periphery": 0.431
+      }
+    },
+    {
+      "figure": "fig7_national_signature_mimicry",
+      "pdf": "templates\\seed\\fig7_national_signature_mimicry.pdf",
+      "png": "templates\\seed\\fig7_national_signature_mimicry.png",
+      "n_panels": 4,
+      "letters": [],
+      "gaps_x_mm": [
+        3.0
+      ],
+      "gaps_y_mm": [
+        6.2
+      ],
+      "width_mm": 183.0,
+      "height_mm": 168.0,
+      "audit_ok": true,
+      "audit_hard_findings": [],
+      "geometry_problems": [],
+      "computed": {
+        "Core→Core": 0.958,
+        "Core→Periphery": 0.659,
+        "Periphery→Core": -0.624,
+        "Periphery→Periphery": -0.686
+      }
+    }
+  ]
+}

@@ -32,3 +32,20 @@ The paper, its printed panels and its R recipe stay tracked (3.75 MB total): tho
 large, replaceable, and not the thing figpipe is learning from. Reproducing this paper's
 seven-panel plate is a concrete test case for `figpipe.composite`, and the recipe in
 `dataverse_files/` says which data file feeds which panel.
+
+## Reproduction status (2026-10-18)
+
+The seed is now used as the test of the template layer, not just as an archive:
+
+* `figpipe/grammar.py` -- the panel intents learned from these seven figures
+  (`trend_with_uncertainty`, `ranked_composition`, `density_relationship`, `signed_matrix`, ...)
+* `scripts/reproduce_seed.py` -- recomputes the paper's panels from the raw tables and compares
+  every correlation with the published value (14 of 14 within 0.005)
+* `templates/seed/` -- four reproduced plates, audited; `report.json` records the comparison
+* `SEED_REPRODUCTION.md` -- what was learned, what was reproduced, what was NOT and why
+
+    python scripts/reproduce_seed.py --stage derive   # reads the 1.57 GB of raw data (~2 min)
+    python scripts/reproduce_seed.py --stage render   # plates + audit + statistics check
+
+The derived panel tables (small) live in `corpus/seed/derived/`; the edgelist aggregation is a
+regenerable cache in `corpus/seed/cache/` and is not versioned.

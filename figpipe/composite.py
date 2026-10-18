@@ -162,6 +162,8 @@ class Panel:
     letter: str | None = None
     colorbar: bool = False
     letter_dx_pt: float | None = None
+    letter_dy_pt: float | None = None
+    cbar_label: str = ""
 
     def __post_init__(self):
         if self.draw not in drawlib.DRAWERS:
@@ -370,14 +372,17 @@ def composite(panels: list[Panel], columns: float = 2.0, height_mm: float | None
             cax = fig.add_axes([(x0 + ax_w + CBAR_PAD_MM) / W, y0 / H,
                                 CBAR_WIDTH_MM / W, h / H])
             cb = fig.colorbar(artist, cax=cax)
-            cb.set_label(str(p.kwargs.get("label", "value")), fontsize=6)
+            if p.cbar_label:
+                cb.set_label(p.cbar_label, fontsize=6)
             cb.ax.tick_params(labelsize=5.5)
             cax._figpipe_cbar = True
         axes.append(ax)
 
     if sharex:
+        # the BOTTOM row carries the shared x labels; the rows above it are the inner ones
+        bottom = max(cell["row"] for cell in plan.cells)
         for ax, cell in zip(axes, plan.cells):
-            if cell["row"] > 0:
+            if cell["row"] < bottom:
                 ax.tick_params(labelbottom=False)
                 ax.set_xlabel("")
     if sharey:
@@ -392,11 +397,13 @@ def composite(panels: list[Panel], columns: float = 2.0, height_mm: float | None
             letter = p.letter or LETTERS[i]
             dx_pt = p.letter_dx_pt if p.letter_dx_pt is not None else \
                 pri["letter_dx_mm"] * PT_PER_MM
-            dy_pt = pri["letter_dy_mm"] * PT_PER_MM
+            dy_pt = p.letter_dy_pt if p.letter_dy_pt is not None else \
+                pri["letter_dy_mm"] * PT_PER_MM
             style.panel_letter(ax, letter, dx_pt=dx_pt, dy_pt=dy_pt)
 
     report = inspect(fig)
     report["priors"] = pri
+    report["letters_expected"] = bool(letters)
     report["planned"] = {"rows": plan.rows, "cols": plan.cols,
                          "gap_x_mm": round(plan.gap_x_mm, 2),
                          "gap_y_mm": round(plan.gap_y_mm, 2),
@@ -420,7 +427,7 @@ def inspect(fig) -> dict:
     h_mm = float(fig.get_size_inches()[1] * 25.4)
     cells = []
     for ax in fig.axes:
-        if getattr(ax, "_figpipe_cbar", False):
+        if getattr(ax, "_figpipe_cbar", False) or getattr(ax, "_figpipe_marginal", False):
             continue
         b = ax.get_position()
         cells.append({"x0": float(b.x0 * w_mm), "y0": float(b.y0 * h_mm),
@@ -498,7 +505,10 @@ def check(fig, report: dict | None = None) -> list[str]:
         out.append(f"height {r['height_mm']} mm exceeds {style.MAX_HEIGHT_MM} mm")
     if r["overflow"]:
         out.append(f"{len(r['overflow'])} panel(s) extend past the canvas")
-    if len(r["letters"]) != r["n_panels"]:
+    if r.get("letters_expected", True) and len(r["letters"]) != r["n_panels"]:
+        # title-labelled plates exist: the seed paper's Figs 5 and 7 label their four panes
+        # with descriptive titles instead of a-d. A plate built WITHOUT letters is not a
+        # defect; a plate that asked for letters and got fewer is.
         out.append(f"{r['n_panels']} panels but {len(r['letters'])} panel letters")
     for lt in r["letters"]:
         if abs(lt["size_pt"] - style.PANEL_LETTER_PT) > 0.2:

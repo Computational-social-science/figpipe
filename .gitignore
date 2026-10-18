@@ -27,3 +27,7 @@ corpus/_qc_*
 Seeds/**/dataverse_files/*.csv
 Seeds/**/dataverse_files/*.pbz2
 
+
+# Seed reproduction: the edgelist aggregation is a regenerable intermediate, not an artefact.
+corpus/seed/cache/
+

@@ -36,6 +36,9 @@ READ_ONLY_ROOTS = [
     pathlib.Path("D:/2026-AI4S"),
     pathlib.Path("D:/"),
     pathlib.Path("C:/keystroke-corpus"),
+    # the seed paper's raw OpenAlex-derived tables, moved out of the repository to keep it lean
+    # (see Seeds/README.md). They are the INPUT to the reproduction and must never be written.
+    pathlib.Path("E:/2026-AI4S/dataverse_cache"),
 ]
 
 #: Only this subtree may be written by figpipe.

@@ -55,6 +55,8 @@ sys.path.insert(0, str(ROOT))
 
 from figpipe import layout, style  # noqa: E402
 
+import matplotlib.pyplot as plt  # noqa: E402  (after style, which selects the Agg backend)
+
 #: Where a single-panel wrapper puts its axes inside the canvas. INSIDE the canvas, never as
 #: tight padding: `layout.save` does not expand the saved box (rule L05), so any label that
 #: needs 0.20 of the width gets 0.20 of the width and is clipped rather than silently growing
@@ -298,6 +300,361 @@ DRAWERS = {
 
 
 # --------------------------------------------------------------------------------------
+# THE IDIOMS OF THE SEED PAPER -- measured, then generalised
+# --------------------------------------------------------------------------------------
+# Five of the seven figures in the seed paper (GBM/NHB-2026 national influence) are built from
+# ONE idiom: a yearly series drawn as points, a shaded uncertainty band, a fitted line and an
+# explicit reference line, with the correlation stated in the panel corner. Two more are a
+# ranked share bar and a log-log density hexbin. These are the recurring visual sentences; the
+# drawers below carry them so a new paper is described as intents plus tidy data, not as a
+# page of plotting calls.
+#
+# The numbers used here (band alpha, marker size, reference-line style) are the seed paper's
+# own conventions, read off its figures and its R recipe, not invented.
+
+#: Fits a trend panel may use. "lm" is the seed's line for the centrality panels, "poly3" its
+#: cubic for the Gini panels, and "loess" stands in for ggplot2's loess, the seed's default for
+#: the dyad panels. A name outside this tuple is a ValueError, never a quiet fallback.
+FITS = ("lm", "poly3", "loess")
+
+
+def _design(x: np.ndarray, x0: float, degree: int) -> np.ndarray:
+    return np.vstack([(x - x0) ** k for k in range(degree + 1)]).T
+
+
+def _ols_fit(x, y, x_grid, degree: int = 1):
+    """OLS fit with the classical prediction standard error."""
+    X = np.vstack([x ** k for k in range(degree + 1)]).T
+    beta, *_ = np.linalg.lstsq(X, y, rcond=None)
+    resid = y - X @ beta
+    dof = max(len(x) - X.shape[1], 1)
+    sigma2 = float(resid @ resid) / dof
+    Xg = np.vstack([x_grid ** k for k in range(degree + 1)]).T
+    cov = sigma2 * np.linalg.pinv(X.T @ X)
+    se = np.sqrt(np.maximum(np.einsum("ij,jk,ik->i", Xg, cov, Xg), 0.0))
+    return Xg @ beta, se
+
+
+def _loess_fit(x, y, x_grid, frac: float = 0.75):
+    """Local-linear smoother with an approximate standard error for the fitted mean.
+
+    ggplot2's loess is what the seed's dyad panels use; matplotlib has no loess, so this is a
+    tricube-weighted local linear fit at the same span. The band is an APPROXIMATION: the
+    weighted-least-squares variance of the local mean with the global residual variance
+    substituted, rather than loess's own pointwise variance. It is documented as one because a
+    band that looks like loess's and is computed differently must not be presented as equal.
+    """
+    n = len(x)
+    if n < 4:
+        raise ValueError(f"loess needs at least 4 points, got {n}")
+    h = max(np.quantile(np.abs(x - np.median(x)), min(frac, 1.0)), 1e-9)
+    fitted = np.empty(n)
+    for i, x0 in enumerate(x):
+        d = np.abs(x - x0) / h
+        w = np.where(d < 1, (1 - d ** 3) ** 3, 0.0)
+        if w.sum() <= 0:
+            fitted[i] = y[i]
+            continue
+        X = _design(x, x0, 1)
+        W = np.diag(w)
+        beta, *_ = np.linalg.lstsq(X.T @ W @ X, X.T @ W @ y, rcond=None)
+        fitted[i] = beta[0]
+    sigma2 = float(np.mean((y - fitted) ** 2)) if n > 2 else 1.0
+    out = np.empty(len(x_grid))
+    se = np.empty(len(x_grid))
+    for i, x0 in enumerate(x_grid):
+        d = np.abs(x - x0) / h
+        w = np.where(d < 1, (1 - d ** 3) ** 3, 0.0)
+        sw = w.sum()
+        if sw <= 0:
+            out[i], se[i] = np.nan, np.nan
+            continue
+        X = _design(x, x0, 1)
+        W = np.diag(w)
+        beta, *_ = np.linalg.lstsq(X.T @ W @ X, X.T @ W @ y, rcond=None)
+        out[i] = beta[0]
+        # variance of the local mean: sigma^2 * sum(w^2) / (sum w)^2, weighted N
+        neff = sw ** 2 / max((w ** 2).sum(), 1e-12)
+        se[i] = np.sqrt(sigma2 / max(neff, 1.0))
+    return out, se
+
+
+def _band_curve(x, y, kind: str, x_grid=None):
+    x = np.asarray(x, dtype=float)
+    y = np.asarray(y, dtype=float)
+    if kind not in FITS:
+        raise ValueError(f"unknown fit {kind!r}; available: {FITS}")
+    if x_grid is None:
+        x_grid = np.linspace(x.min(), x.max(), 80)
+    if kind == "lm":
+        return _ols_fit(x, y, x_grid, 1)
+    if kind == "poly3":
+        return _ols_fit(x, y, x_grid, 3)
+    return _loess_fit(x, y, x_grid)
+
+
+def _series_style(series: list[str], palette=None, markers=None):
+    colours = list(palette or _palette(max(len(series), 1)))
+    marks = list(markers or _MARKERS)
+    return {s: (colours[i % len(colours)], marks[i % len(marks)])
+            for i, s in enumerate(series)}
+
+
+def ax_trend_band(ax, df: pd.DataFrame, x: str, y: str, lo: str | None = None,
+                  hi: str | None = None, series: str | None = None,
+                  fit: str | None = None, reference: float | None = None,
+                  annotate: dict[str, str] | None = None, notes=None,
+                  xlabel: str | None = None, ylabel: str | None = None,
+                  legend: bool = True,
+                  legend_cols: int | None = None, legend_loc: str = "best",
+                  annotate_xy=(0.03, 0.97), band_alpha: float = 0.25,
+                  band: str | None = None, connect: bool = False,
+                  marker_size: float = 2.6, palette=None, markers=None,
+                  fit_color=None, data_band_color=None,
+                  xticks=None, title: str | None = None):
+    """A yearly series with its uncertainty: the seed paper's dominant panel.
+
+    points + shaded band + fitted line + an explicit reference line + the correlation stated in
+    the corner. That sentence covers five of the seed's seven figures; the same drawer produces
+    a Gini panel (no band, cubic fit), a centrality panel (mean ± s.e.m., linear fit) and the
+    four dyad panes (the fit's own confidence band, linear or smooth fit).
+
+    BOTH KINDS OF BAND OCCUR IN THE SEED, AND THEY MEAN DIFFERENT THINGS:
+      band="data"  the interval comes from the data (lo/hi, e.g. mean ± s.e.m.). This is the
+                   centrality panels of Fig. 3c: the band moves with the yearly means.
+      band="fit"   the interval is the fitted line's own confidence band. This is Figs 5 and 7:
+                   the band follows the smooth curve, not the points.
+    Conflating them would mis-state the uncertainty, so the choice is explicit and one without
+    its inputs raises rather than falling back to the other.
+
+    `connect=True` draws the thin line between the yearly points that the seed's dyad panels
+    have under the fit. `annotate` maps a series name to its corner text (the r/P string),
+    coloured like the series; `notes` are free annotations [{x, y, text, colour?, ha?, va?}].
+    """
+    df = _uniq(df)
+    if band not in (None, "data", "fit"):
+        raise ValueError(f"band must be None, 'data' or 'fit', got {band!r}")
+    if band == "data":
+        if lo is None or hi is None:
+            raise ValueError("band='data' needs lo and hi")
+    if band == "fit" and fit is None:
+        raise ValueError("band='fit' needs fit=")
+    for col in [x, y] + ([lo, hi] if lo else []) + ([series] if series else []):
+        if col not in df.columns:
+            raise KeyError(f"column {col!r} not in frame; has {list(df.columns)}")
+    groups = list(dict.fromkeys(df[series].astype(str))) if series else [None]
+    sty = _series_style(groups if series else ["_"], palette, markers)
+    for g in groups:
+        sub = df if g is None else df[df[series].astype(str) == g]
+        sub = sub.sort_values(x)
+        xs = sub[x].to_numpy(dtype=float)
+        ys = sub[y].to_numpy(dtype=float)
+        colour, marker = sty[g if series else "_"]
+        if connect:
+            ax.plot(xs, ys, "-", lw=0.6, color="#8c8c8c", zorder=1)
+        if band == "data":
+            ax.fill_between(xs, sub[lo].to_numpy(dtype=float),
+                            sub[hi].to_numpy(dtype=float),
+                            color=data_band_color or colour,
+                            alpha=band_alpha, linewidth=0, zorder=1)
+        ax.plot(xs, ys, "o", ms=marker_size, color=colour, markeredgecolor="black",
+                markeredgewidth=0.25, zorder=3, label=str(g) if g is not None else None)
+        if fit:
+            gx = np.linspace(xs.min(), xs.max(), 80)
+            gy, gse = _band_curve(xs, ys, fit, gx)
+            if band == "fit":
+                ax.fill_between(gx, gy - 1.96 * gse, gy + 1.96 * gse, color="#b3b3b3",
+                                alpha=0.55, linewidth=0, zorder=1)
+            ax.plot(gx, gy, "-", lw=1.0, color=fit_color or colour, zorder=2)
+    if reference is not None:
+        ax.axhline(reference, linestyle=(0, (4, 3)), color="black", linewidth=0.6,
+                   zorder=0)
+    if annotate:
+        for g, spec in annotate.items():
+            colour = sty[g][0] if g in sty else "black"
+            # a tuple (text, x, y) places one series' note; a bare string uses annotate_xy. Two
+            # series annotated at the same point is not an annotation, it is an overlap.
+            if isinstance(spec, (tuple, list)) and len(spec) == 3:
+                text, ax_x, ax_y = spec
+            else:
+                text, (ax_x, ax_y) = spec, annotate_xy
+            ax.text(ax_x, ax_y, text, transform=ax.transAxes,
+                    fontsize=6, color=colour, va="top", ha="left")
+    for note in notes or []:
+        ax.text(note.get("x", 0.5), note.get("y", 0.5), note["text"],
+                transform=ax.transAxes if note.get("axes", True) else ax.transData,
+                fontsize=6, color=note.get("colour", "black"),
+                ha=note.get("ha", "center"), va=note.get("va", "center"))
+    if xticks is not None:
+        ax.set_xticks(list(xticks))
+    # "" suppresses the label deliberately; None means "use the column name". The two cases are
+    # different in a plate, where an inner panel must carry NO label while its data still names
+    # the axis.
+    _frame(ax, x if xlabel is None else xlabel, y if ylabel is None else ylabel)
+    if title:
+        ax.set_title(title, fontsize=7)
+    if legend and series:
+        ax.legend(frameon=False, ncol=legend_cols or len(groups), loc=legend_loc,
+                  handlelength=1.0, columnspacing=1.0, handletextpad=0.4,
+                  fontsize=6)
+    return None
+
+
+def ax_ranked_share(ax, df: pd.DataFrame, label: str, value: str, top: int = 20,
+                    percent: bool = False, xlabel: str = "", ylabel: str = "",
+                    value_fmt: str | None = None, bar_color=None,
+                    xtick_rotation: float = 0.0):
+    """A ranked composition: bars in decreasing order, value printed above each bar.
+
+    The seed's Fig. 1a. Ranking plus the number printed on the bar means a reader can take the
+    value without reading the axis, which is why this idiom travels: it is the same drawing
+    whether the quantity is a share of papers, of citations or of funding.
+    """
+    df = _uniq(df)
+    if top < 1:
+        raise ValueError("top must be >= 1")
+    d = df.dropna(subset=[label, value]).copy()
+    d[value] = pd.to_numeric(d[value], errors="coerce")
+    d = d.dropna(subset=[value]).sort_values(value, ascending=False).head(top)
+    if d.empty:
+        raise ValueError("no rows left after dropping missing values")
+    vals = d[value].to_numpy(dtype=float)
+    pos = np.arange(len(d))
+    fmt = value_fmt or ("{:.0f}%" if percent else "{:.3g}")
+    shown = vals * 100 if percent else vals
+    ax.bar(pos, shown, width=0.72, color=bar_color or style.OKABE_ITO["blue"],
+           edgecolor="black", linewidth=0.35)
+    span = float(np.nanmax(shown)) if np.nanmax(shown) > 0 else 1.0
+    for i, v in enumerate(shown):
+        ax.text(i, v + 0.02 * span, fmt.format(v), ha="center", va="bottom", fontsize=5.5)
+    ax.set_ylim(0, span * 1.12)
+    ax.set_xticks(pos)
+    ax.set_xticklabels([str(s) for s in d[label]],
+                       rotation=xtick_rotation,
+                       ha="right" if xtick_rotation else "center")
+    _frame(ax, xlabel or "", ylabel or "")
+    return None
+
+
+def ax_hexbin_corr(ax, df: pd.DataFrame, x: str, y: str, gridsize: int = 30,
+                   xscale: str = "log", yscale: str = "log", cmap: str = "viridis",
+                   annotate_r: bool = True, xlabel: str = "", ylabel: str = "",
+                   marginals: bool = False):
+    """A 2-D density of many points on log axes, with the correlation stated.
+
+    The seed's Fig. 1b: 10,046 terms, x = term papers, y = attributional papers. A scatter of
+    10k points over four decades is a solid black cloud; a hexbin shows where the mass is, and
+    the plain-number log ticks (rule L04) keep every glyph in the 5-7 pt band.
+
+    `marginals=True` adds the seed's small histograms above and to the right. They are drawn as
+    inset axes marked `_figpipe_marginal`, which `composite.inspect` ignores when counting
+    panels -- a marginal distribution is part of one panel, not a panel of its own.
+    """
+    df = _uniq(df)
+    xv = pd.to_numeric(df[x], errors="coerce").to_numpy(dtype=float)
+    yv = pd.to_numeric(df[y], errors="coerce").to_numpy(dtype=float)
+    keep = np.isfinite(xv) & np.isfinite(yv)
+    xv, yv = xv[keep], yv[keep]
+    if len(xv) < 10:
+        raise ValueError(f"hexbin needs at least 10 complete pairs, got {len(xv)}")
+    hb = ax.hexbin(xv, yv, gridsize=gridsize, cmap=cmap, mincnt=1,
+                   xscale=xscale, yscale=yscale, linewidths=0.15)
+    ax.set_xscale(xscale)
+    ax.set_yscale(yscale)
+    if annotate_r:
+        # THE CORRELATION IS COMPUTED ON THE SCALE THAT IS PLOTTED. On a log-log axes a raw
+        # Pearson r is dominated by the few largest points and does not describe the cloud the
+        # reader sees; the seed's caption value (r = 0.78) is the log-space correlation, and a
+        # figure that annotates +0.83 next to a log-log cloud would be quoting a different
+        # statistic from the one it draws.
+        xr = np.log10(xv) if xscale == "log" else xv
+        yr = np.log10(yv) if yscale == "log" else yv
+        r = float(np.corrcoef(xr, yr)[0, 1])
+        ax.text(0.03, 0.97, f"r = {r:.2f}", transform=ax.transAxes,
+                va="top", fontsize=6)
+    if marginals:
+        _marginals(ax, xv, yv, top_only=(marginals == "top"))
+    _frame(ax, xlabel or x, ylabel or y)
+    return hb
+
+
+def _marginals(ax, xv, yv, top_only: bool = False) -> None:
+    """Small histograms above and to the right of `ax`, on the same log scales."""
+    top = ax.inset_axes([0.0, 1.02, 1.0, 0.18], transform=ax.transAxes)
+    bins_x = np.logspace(np.log10(max(xv.min(), 1e-9)), np.log10(xv.max()), 30)
+    top.hist(xv, bins=bins_x, color="#4d4d4d", edgecolor="black", linewidth=0.2)
+    top.set_xscale("log")
+    top.tick_params(labelsize=5, length=1.5, width=0.4, direction="out")
+    top.set_yticks([])
+    top.set_xticklabels([])
+    # a marginal distribution belongs to the panel: the composer must not count it as one
+    top._figpipe_marginal = True
+    if top_only:
+        return
+    right = ax.inset_axes([1.02, 0.0, 0.18, 1.0], transform=ax.transAxes)
+    bins_y = np.logspace(np.log10(max(yv.min(), 1e-9)), np.log10(yv.max()), 30)
+    right.hist(yv, bins=bins_y, color="#4d4d4d", edgecolor="black", linewidth=0.2,
+               orientation="horizontal")
+    right.set_yscale("log")
+    right.tick_params(labelsize=5, length=1.5, width=0.4, direction="out")
+    right.set_xticks([])
+    right.set_yticklabels([])
+    right._figpipe_marginal = True
+
+
+def ax_tile_diverging(ax, df: pd.DataFrame, cmap: str = "RdBu_r",
+                      annotate: bool = True, annot_fmt: str = "{:.2f}",
+                      missing_color: str = "#d9d9d9", xlabel: str = "",
+                      ylabel: str = "", cbar_label: str = "", tick_rotation: float = 0.0):
+    """A matrix of signed values: one hue each side of zero, grey where data are missing.
+
+    The seed's Fig. 6b. Two decisions are made deliberately rather than copied: the diverging
+    map is red-BLUE, not the paper's red-green (red-green is the pair Nature's own guide warns
+    about, and figpipe's colour check would flag it), and missing cells are grey rather than
+    white so that "no data" is visibly different from "zero".
+    """
+    df = _uniq(df)
+    data = df.to_numpy(dtype=float)
+    finite = np.isfinite(data)
+    if not finite.any():
+        raise ValueError("the matrix has no finite values")
+    lo, hi = float(np.nanmin(data)), float(np.nanmax(data))
+    norm = None
+    if lo < 0 < hi:
+        from matplotlib.colors import TwoSlopeNorm
+        norm = TwoSlopeNorm(vmin=lo, vcenter=0.0, vmax=hi)
+    cmap_obj = plt.get_cmap(cmap).copy()
+    cmap_obj.set_bad(missing_color)
+    im = ax.imshow(np.ma.masked_invalid(data), cmap=cmap_obj, norm=norm,
+                   aspect="auto", interpolation="nearest")
+    ax.set_xticks(range(data.shape[1]))
+    ax.set_xticklabels([str(c) for c in df.columns],
+                       rotation=tick_rotation,
+                       ha="right" if tick_rotation else "center")
+    ax.set_yticks(range(data.shape[0]))
+    ax.set_yticklabels([str(i) for i in df.index])
+    if annotate and finite.sum() <= 200:
+        for i in range(data.shape[0]):
+            for j in range(data.shape[1]):
+                if np.isfinite(data[i, j]):
+                    ax.text(j, i, annot_fmt.format(data[i, j]), ha="center",
+                            va="center", fontsize=5.5, color="black")
+    _frame(ax, xlabel or "", ylabel or "")
+    return im
+
+
+#: The idiom drawers join the same registry the templates use. The registry lives here, after
+#: every drawer it names, so a new drawing style is registered by existing rather than by an
+#: out-of-date list at the top of the module.
+DRAWERS.update({
+    "trend_band": ax_trend_band,
+    "ranked_share": ax_ranked_share,
+    "hexbin_corr": ax_hexbin_corr,
+    "tile_diverging": ax_tile_diverging,
+})
+
+
+# --------------------------------------------------------------------------------------
 # TEMPLATES -- one drawer on its own canvas, plus the margins and the letter.
 # --------------------------------------------------------------------------------------
 
@@ -377,7 +734,7 @@ TEMPLATES = {
 
 #: Drawers that draw a scalar-mappable artist and can therefore carry a colour bar. The
 #: composer uses this to decide whether `Panel.colorbar` makes sense, instead of guessing.
-COLORBAR_CAPABLE = {"heatmap"}
+COLORBAR_CAPABLE = {"heatmap", "hexbin_corr", "tile_diverging"}
 
 
 def render(name: str, df: pd.DataFrame, out_stem, **kw) -> list[pathlib.Path]:

@@ -1,0 +1,94 @@
+{
+  "generated_at": "2026-10-18T22:20:55",
+  "years": [
+    1990,
+    2013
+  ],
+  "core_countries": [
+    "AT",
+    "AU",
+    "BE",
+    "CA",
+    "CH",
+    "CN",
+    "DE",
+    "DK",
+    "ES",
+    "FI",
+    "FR",
+    "GB",
+    "IE",
+    "IL",
+    "IS",
+    "IT",
+    "JP",
+    "KR",
+    "NL",
+    "NO",
+    "NZ",
+    "PT",
+    "SE",
+    "SG",
+    "TW",
+    "US"
+  ],
+  "inputs": [
+    {
+      "file": "OUTPUT_List_of_Censored_Terms_2024_03_19.csv",
+      "bytes": 190823,
+      "mtime_ns": 1792271522000000000,
+      "sha256_or_sample": "34a8fc1d38947aef6ad6af0100562b400f2ed77f150095fb827262fd1937d4d3"
+    },
+    {
+      "file": "OUTPUT_Python_MultiPaper_Discursive_Influence_2024_03_19.csv",
+      "bytes": 89374485,
+      "mtime_ns": 1792271522000000000,
+      "sha256_or_sample": "d107eddbd2c2e19693d6b4cd4ab1222d4c42024f4e48325df61024994c364a17+sampled"
+    },
+    {
+      "file": "OUTPUT_Python_MultiPaper_Attributional_Influence_2024_03_19.csv",
+      "bytes": 670329591,
+      "mtime_ns": 1792271456000000000,
+      "sha256_or_sample": "58851c3ab46437233e25ff4b282b6b5c79eb73408c429039b1305b43d628f50d+sampled"
+    },
+    {
+      "file": "OUTPUT_Python_MultiPaper_Number_of_Cites_per_Influencer_Paper_Attributional_Influence_2024_03_19.csv",
+      "bytes": 159451994,
+      "mtime_ns": 1792271616000000000,
+      "sha256_or_sample": "c87e7ba9a33218bdfdeda979cd5f9748561915f72801b1219f90ffb571f2207c+sampled"
+    },
+    {
+      "file": "OUTPUT_Python_HNB_RR1_National_Signature_Influence_2024_03_19.csv",
+      "bytes": 9577605,
+      "mtime_ns": 1792271528000000000,
+      "sha256_or_sample": "d54b169b8e813aa8513c0846dec842522afc035839769fb4f7e9683236656ef5"
+    }
+  ],
+  "derived": {
+    "fig5_relative_influence": {
+      "file": "corpus\\seed\\derived\\fig5_relative_influence.csv",
+      "rows": 96
+    },
+    "fig3_centrality": {
+      "file": "corpus\\seed\\derived\\fig3_centrality.csv",
+      "rows": 96
+    },
+    "fig3_gini": {
+      "file": "corpus\\seed\\derived\\fig3_gini.csv",
+      "rows": 48
+    },
+    "fig7_mimicry": {
+      "file": "corpus\\seed\\derived\\fig7_mimicry.csv",
+      "rows": 76
+    },
+    "fig1a_country_share": {
+      "file": "corpus\\seed\\derived\\fig1a_country_share.csv",
+      "rows": 200
+    },
+    "fig1b_term_counts": {
+      "file": "corpus\\seed\\derived\\fig1b_term_counts.csv",
+      "rows": 10046
+    }
+  },
+  "note": "Computed by scripts/reproduce_seed.py from the seed package. The edgelist aggregation is cached under corpus/seed/cache/ (regenerable, not versioned)."
+}
