@@ -6,18 +6,18 @@
     "arxiv": "2608.28814",
     "note": "deterministic metrics only; official combined score requires the benchmark's VLM scorer and is NOT claimed here"
   },
-  "n_tasks": 120,
-  "n_ok": 110,
+  "n_tasks": 126,
+  "n_ok": 116,
   "n_unsupported": 9,
   "n_error": 1,
   "unsupported_types": {},
-  "mean_distance": 0.275,
-  "mean_baseline": 0.372,
-  "mean_improvement": 0.096,
-  "improved": 91,
-  "worse": 11,
+  "mean_distance": 0.273,
+  "mean_baseline": 0.367,
+  "mean_improvement": 0.094,
+  "improved": 96,
+  "worse": 12,
   "ties": 8,
-  "mean_best_of_two": 0.267,
+  "mean_best_of_two": 0.265,
   "semantic_violations": 0,
   "decision_service": {
     "up": false,
@@ -35,22 +35,22 @@
       "mean_shipped": null
     },
     "Bar": {
-      "n": 8,
-      "ok": 8,
+      "n": 10,
+      "ok": 10,
       "errors": 0,
       "mean_distance": 0.281,
-      "mean_baseline": 0.33,
-      "mean_delta": 0.049,
-      "mean_shipped": 0.244
+      "mean_baseline": 0.327,
+      "mean_delta": 0.046,
+      "mean_shipped": 0.254
     },
     "Box/Violin": {
-      "n": 9,
-      "ok": 9,
+      "n": 11,
+      "ok": 11,
       "errors": 0,
-      "mean_distance": 0.249,
-      "mean_baseline": 0.443,
-      "mean_delta": 0.194,
-      "mean_shipped": 0.195
+      "mean_distance": 0.237,
+      "mean_baseline": 0.409,
+      "mean_delta": 0.172,
+      "mean_shipped": 0.19
     },
     "Composite": {
       "n": 3,
@@ -89,13 +89,13 @@
       "mean_shipped": 0.229
     },
     "Line": {
-      "n": 15,
-      "ok": 15,
+      "n": 17,
+      "ok": 17,
       "errors": 0,
-      "mean_distance": 0.306,
-      "mean_baseline": 0.4,
-      "mean_delta": 0.094,
-      "mean_shipped": 0.313
+      "mean_distance": 0.297,
+      "mean_baseline": 0.386,
+      "mean_delta": 0.088,
+      "mean_shipped": 0.284
     },
     "Network/Tree": {
       "n": 2,
@@ -3219,18 +3219,224 @@
         }
       ],
       "semantic_findings": []
+    },
+    {
+      "id": "ChartNet-sample_251d4b63cae5c39c",
+      "chart": "Box/Violin",
+      "panel_mode": "multi",
+      "skill": "distribution_comparison",
+      "rationale": "box observation_year by reef_sector",
+      "rows_used": 220,
+      "status": "ok",
+      "distance": 0.125,
+      "baseline_distance": 0.242,
+      "delta": 0.117,
+      "selected": "styled",
+      "selected_distance": 0.115,
+      "selected_gain": 0.127,
+      "selection_margin": 0.11,
+      "components": {
+        "palette": 0.123,
+        "aspect": 0.021,
+        "ink": 0.233
+      },
+      "hard_failures": 9,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'Deep Forereef Transition' over 'Southern Reference Terra'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'Lagoon Patch-Reef Mosaic' over 'Outer-Slope Acropora Belt'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'Outer-Slope Acropora Belt' over 'Seaward Spur-and-Groove'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'Channel Restoration Plots' over 'Seaward Spur-and-Groove'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'Leeward Boulder Garden' over 'Turbid Inshore Reef Flat'",
+          "severity": "hard"
+        }
+      ],
+      "semantic_findings": []
+    },
+    {
+      "id": "ChartNet-sample_27ec276af1be7f88",
+      "chart": "Bar",
+      "panel_mode": "multi",
+      "skill": "grouped_measures",
+      "rationale": "grouped bars ['panel_row', 'panel_col', 'display_order'] by panel_group",
+      "rows_used": 28,
+      "status": "ok",
+      "distance": 0.256,
+      "baseline_distance": 0.282,
+      "delta": 0.026,
+      "selected": "styled",
+      "selected_distance": 0.26,
+      "selected_gain": 0.022,
+      "selection_margin": 0.031,
+      "components": {
+        "palette": 0.324,
+        "aspect": 0.014,
+        "ink": 0.328
+      },
+      "hard_failures": 3,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'formulation_ranked' over 'formulation_ranked'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'feedstock_summary' over 'feedstock_summary'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'feedstock_summary' over 'formulation_ranked'",
+          "severity": "hard"
+        }
+      ],
+      "semantic_findings": []
+    },
+    {
+      "id": "ChartNet-sample_3a712400d6efe5ca",
+      "chart": "Line",
+      "panel_mode": "multi",
+      "skill": "trend_with_uncertainty",
+      "rationale": "trend sampling_year->panel_row",
+      "rows_used": 1505,
+      "status": "ok",
+      "distance": 0.261,
+      "baseline_distance": 0.242,
+      "delta": -0.019,
+      "selected": "styled",
+      "selected_distance": 0.092,
+      "selected_gain": 0.15,
+      "selection_margin": 0.146,
+      "components": {
+        "palette": 0.396,
+        "aspect": 0.005,
+        "ink": 0.182
+      },
+      "hard_failures": 0,
+      "findings": [],
+      "semantic_findings": []
+    },
+    {
+      "id": "ChartNet-sample_3d0ebd7ea1e10bf3",
+      "chart": "Line",
+      "panel_mode": "multi",
+      "skill": "trend_with_uncertainty",
+      "rationale": "trend observation_day->panel_row",
+      "rows_used": 956,
+      "status": "ok",
+      "distance": 0.197,
+      "baseline_distance": 0.31,
+      "delta": 0.113,
+      "selected": "styled",
+      "selected_distance": 0.195,
+      "selected_gain": 0.115,
+      "selection_margin": 0.115,
+      "components": {
+        "aspect": 0.007,
+        "ink": 0.388
+      },
+      "hard_failures": 0,
+      "findings": [],
+      "semantic_findings": []
+    },
+    {
+      "id": "ChartNet-sample_42a8557ef11775e9",
+      "chart": "Bar",
+      "panel_mode": "multi",
+      "skill": "grouped_measures",
+      "rationale": "grouped bars ['panel_row', 'cluster_rank', 'observation_year'] by panel_group",
+      "rows_used": 113,
+      "status": "ok",
+      "distance": 0.31,
+      "baseline_distance": 0.354,
+      "delta": 0.044,
+      "selected": "styled",
+      "selected_distance": 0.299,
+      "selected_gain": 0.055,
+      "selection_margin": 0.041,
+      "components": {
+        "palette": 0.503,
+        "aspect": 0.003,
+        "ink": 0.134
+      },
+      "hard_failures": 4,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'annual_removal_profiles' over 'annual_removal_profiles'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'annual_removal_profiles' over 'ranked_cumulative_overview'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'ranked_cumulative_overview' over 'ranked_cumulative_overview'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'annual_removal_profile' over 'annual_removal_profiles'",
+          "severity": "hard"
+        }
+      ],
+      "semantic_findings": []
+    },
+    {
+      "id": "ChartNet-sample_46826fe4916b7d52",
+      "chart": "Box/Violin",
+      "panel_mode": "multi",
+      "skill": "distribution_comparison",
+      "rationale": "box panel_row by panel_group",
+      "rows_used": 1402,
+      "status": "ok",
+      "distance": 0.237,
+      "baseline_distance": 0.264,
+      "delta": 0.027,
+      "selected": "styled",
+      "selected_distance": 0.229,
+      "selected_gain": 0.035,
+      "selection_margin": 0.022,
+      "components": {
+        "palette": 0.36,
+        "aspect": 0.006,
+        "ink": 0.16
+      },
+      "hard_failures": 0,
+      "findings": [],
+      "semantic_findings": []
     }
   ],
   "benchmark_anchor_distance": 0.33,
   "benchmark_shipped_anchor_distance": 0.252,
   "selection": {
-    "n": 73,
-    "shipped_mean": 0.258,
-    "always_styled_mean": 0.273,
-    "plain_mean": 0.364,
-    "gain_vs_always_styled": 0.014,
-    "gain_vs_plain": 0.105,
-    "picked_styled": 64,
+    "n": 79,
+    "shipped_mean": 0.254,
+    "always_styled_mean": 0.27,
+    "plain_mean": 0.357,
+    "gain_vs_always_styled": 0.016,
+    "gain_vs_plain": 0.104,
+    "picked_styled": 70,
     "picked_plain": 9,
     "rule": "closer of plain/styled to the reference; the reference is an input"
   }
