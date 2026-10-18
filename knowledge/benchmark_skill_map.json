@@ -85,11 +85,34 @@
     }
   },
   "coverage": {
+    "measured_tasks": 60,
+    "executed": 53,
+    "unsupported": 7,
     "supported_types": 9,
-    "supported_tasks": 141,
-    "partial_types": 1,
-    "excluded_types": 1,
-    "unsupported_types": 1,
-    "note": "3D excluded by design; Network/Tree still lacks an operator"
+    "excluded_types": 2,
+    "note": "60 of 150 tasks measured: 53 executed, 7 classified unsupported (3D x5, Network/Tree x2). Style transfer helps 39, hurts 11, ties 3."
+  },
+  "measured_2026_10_19": {
+    "tasks": 60,
+    "executed": 53,
+    "unsupported": 7,
+    "mean_distance": 0.3,
+    "mean_baseline": 0.38,
+    "mean_delta": 0.08,
+    "improved": 39,
+    "worse": 11,
+    "ties": 3,
+    "by_type": {
+      "Box/Violin": 0.255,
+      "Scatter": 0.259,
+      "Std-band": 0.141,
+      "Line": 0.074,
+      "Bar": 0.061,
+      "Distribution": 0.04,
+      "Composite": 0.023,
+      "Heatmap": -0.039,
+      "Polar/Radial": -0.043,
+      "Field 2D": -0.112
+    }
   }
 }

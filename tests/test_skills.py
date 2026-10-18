@@ -110,3 +110,62 @@ def test_committed_catalogue_is_not_stale():
     assert json.loads(path.read_text(encoding="utf-8")) == skills.catalogue(), (
         "knowledge/skills_catalog.json is stale; run "
         "python -c 'from figpipe import skills; skills.export_catalogue()'")
+
+
+def test_every_registered_skill_can_actually_build(tmp_path):
+    """A skill that cannot run is worse than a missing one: it advertises capability it lacks.
+
+    This caught `grouped_measures`, whose operator passed a drawer name ("grouped_bars") to the
+    grammar as if it were an INTENT, so every grouped-bar task in the benchmark failed with a
+    KeyError while the skill sat in the catalogue looking healthy. Each skill is invoked with
+    parameters derived from its DECLARED contract, so the contract must be runnable, not
+    decorative.
+    """
+    import pandas as pd
+    n = 12
+    df = pd.DataFrame({
+        "x": list(range(n)),
+        "y": [0.1 + 0.01 * i for i in range(n)],
+        "value": [0.2 + 0.01 * i for i in range(n)],
+        "label": ["a", "b", "c", "d"] * 3,
+        "group": ["g1", "g2"] * 6,
+        "by": ["p1", "p2"] * 6,
+        "theta": ["N", "E", "S", "W"] * 3,
+        "y1": [0.3 + 0.01 * i for i in range(n)],
+        "y2": [0.6 - 0.01 * i for i in range(n)],
+        # strictly positive measures: the density drawer log-scales both axes by design
+        "pos_a": [10.0 + i for i in range(n)],
+        "pos_b": [5.0 + 2 * i for i in range(n)],
+    })
+    profile = ROOT / "corpus" / "style" / "published_fig7.json"
+
+    def params_for(name: str, required: tuple) -> dict:
+        if name == "matrix_plate":
+            return {}
+        if name == "styled_trend":
+            if not profile.is_file():
+                pytest.skip("reference profile absent")
+            return {"x": "x", "y": "y", "profile": profile}
+        mapping = {"x": "x", "y": "y", "value": "value", "label": "label",
+                   "group": "group", "by": "by", "theta": "theta",
+                   "y1": "y1", "y2": "y2"}
+        if name in ("density_relationship", "log_scatter"):
+            # these two deliberately draw on log axes; feeding them a value that crosses zero
+            # is a data error, not a skill failure
+            mapping = dict(mapping, x="pos_a", y="pos_b")
+        if "ycols" in required:
+            return {"x": "label", "ycols": ["y", "y1"]}
+        out = {}
+        for key in required:
+            out[key] = mapping[key]
+        return out
+
+    failures = []
+    for name, skill in skills.SKILLS.items():
+        params = params_for(name, tuple(skill.required))
+        try:
+            res = skills.run(name, df, out_stem=tmp_path / name, **params)
+            assert res["hard_failures"] == 0, (name, res["findings"])
+        except Exception as exc:                      # noqa: BLE001 - reported, not raised
+            failures.append(f"{name}: {type(exc).__name__}: {exc}")
+    assert not failures, failures

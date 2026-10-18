@@ -463,3 +463,35 @@ Fixes:
 
 Lesson for the mission: an unattended loop needs guards against ACTIONS, not only assertions about
 results. "It ran and reported success" is not evidence that it did the right thing.
+
+
+## 24. 60 benchmark tasks measured, and a skill that could not run (2026-10-19)
+
+Window 2 (tasks 31-60) exposed a defect the catalogue hid: `grouped_measures` passed the DRAWER
+name `grouped_bars` to `grammar.panel()`, which expects an INTENT. Every grouped-bar task failed
+with a KeyError while the skill sat in `knowledge/skills_catalog.json` looking healthy. The fix is
+mechanical (build the panel through the composer, like `scatter_relationship` already did); the
+lesson is not: **the catalogue advertised a capability that could not execute**, and nothing
+checked. `tests/test_skills.py::test_every_registered_skill_can_actually_build` now runs EVERY
+registered skill from its declared contract, so the catalogue cannot lie again.
+
+Measured on 60 of the 150 PlotTwin-Bench tasks (deterministic metrics only):
+
+| | value |
+|---|---|
+| executed | **53 / 60** (7 classified unsupported: 3D x5, Network/Tree x2) |
+| mean style distance | **0.380 → 0.300** (Δ +0.080) |
+| improved / worse / tie | **39 / 11 / 3** |
+
+Per chart type (Δ): Box/Violin +0.255, Scatter +0.259, Std-band +0.141, Line +0.074, Bar +0.061,
+Distribution +0.040, Composite +0.023, **Heatmap −0.039, Polar/Radial −0.043, Field 2D −0.112**.
+
+The honest reading: style transfer is not universally good. For matrix-like targets (Heatmap,
+Field 2D) copying a reference's palette/aspect makes our figure WORSE, because the reference's
+appearance is driven by its own colormap and aspect, not by a transferable type tier. The next
+capability step is not "always transfer" but "decide per task whether to transfer" -- which is
+exactly what the best-of-two number (0.261) already hints at.
+
+The scheduled loop now runs a rotating 6-task benchmark slice (`--skip-benchmark` to disable) and
+records it in the run record, so capability is measured continuously instead of when someone
+remembers.

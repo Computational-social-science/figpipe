@@ -83,6 +83,15 @@ def data_uri(path, max_width=900):
     return "data:image/png;base64," + base64.b64encode(raw).decode("ascii")
 
 
+def _slice_text(slice_info) -> str:
+    if not slice_info:
+        return "not run"
+    if not slice_info.get("ran"):
+        return f"skipped: {slice_info.get('reason', 'unknown')}"
+    return (f"{slice_info.get('tasks')} tasks from offset {slice_info.get('offset')} "
+            f"(exit {slice_info.get('code')})")
+
+
 def _fmt(value) -> str:
     return "—" if value is None else str(value)
 
@@ -540,6 +549,8 @@ floor (compliance, glyph collisions, no silently ignored parameters, a reproduci
 <tr><td>Knowledge-base version</td><td>v{esc(kb.get('version','—'))}</td><td>{n_rules} rules</td></tr>
 <tr><td>Machine-checked rules</td><td class="num">{enforced} / {n_rules}</td><td>the rest are hypotheses/refuted/void</td></tr>
 <tr><td>Unchecked rules</td><td>{esc(', '.join(unchecked) or '—')}</td><td>not counted as passing</td></tr>
+<tr><td>Benchmark slice</td><td>{esc(_slice_text(latest.get("benchmark_slice")))}</td>
+<td>rotating tasks measured by the loop</td></tr>
 <tr><td>Capability snapshot</td><td>{esc(_caps_text(caps))}</td><td>recorded by the scheduled run</td></tr>
 <tr><td>Last capability change</td><td>{esc(_delta_text(caps_delta))}</td><td>explicit delta, not a claim</td></tr>
 </tbody></table>

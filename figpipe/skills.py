@@ -176,8 +176,9 @@ def op_encode_bars(ctx: SkillContext, x: str, ycols):
     """Encode parallel measures per category as grouped bars."""
     if isinstance(ycols, str):
         ycols = [c.strip() for c in ycols.split(",") if c.strip()]
-    ctx.add_panel(grammar.panel("grouped_bars", ctx.data, x=x, ycols=ycols,
-                                labels={c: c for c in ycols}))
+    ctx.add_panel(composite.Panel("grouped_bars", ctx.data,
+                                  {"x": x, "ycols": list(ycols),
+                                   "labels": {c: c for c in ycols}}))
     ctx.trace.append(f"encode.bars({x},{ycols})")
 
 

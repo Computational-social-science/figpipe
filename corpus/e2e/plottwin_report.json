@@ -6,20 +6,21 @@
     "arxiv": "2608.28814",
     "note": "deterministic metrics only; official combined score requires the benchmark's VLM scorer and is NOT claimed here"
   },
-  "n_tasks": 30,
-  "n_ok": 28,
-  "n_unsupported": 2,
+  "n_tasks": 60,
+  "n_ok": 53,
+  "n_unsupported": 7,
   "n_error": 0,
   "unsupported_types": {
-    "3D": "unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this is a deliberate exclusion"
+    "3D": "unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this is a deliberate exclusion",
+    "Network/Tree": "unsupported chart type: no graph-layout operator yet (backlog: node-link layout, not a chart encoding this library owns)"
   },
-  "mean_distance": 0.278,
-  "mean_baseline": 0.352,
-  "mean_improvement": 0.074,
-  "improved": 21,
-  "worse": 5,
-  "ties": 2,
-  "mean_best_of_two": 0.261,
+  "mean_distance": 0.3,
+  "mean_baseline": 0.38,
+  "mean_improvement": 0.08,
+  "improved": 39,
+  "worse": 11,
+  "ties": 3,
+  "mean_best_of_two": 0.275,
   "decision_service": {
     "up": false,
     "url": "http://127.0.0.1:8090",
@@ -27,107 +28,125 @@
   },
   "by_type": {
     "3D": {
-      "n": 2,
+      "n": 5,
       "ok": 0,
+      "errors": 5,
       "mean_distance": null,
       "mean_baseline": null,
-      "mean_delta": null,
-      "errors": 2,
-      "error_examples": [
-        "unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this",
-        "unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this"
-      ]
+      "mean_delta": null
+    },
+    "Bar": {
+      "n": 1,
+      "ok": 1,
+      "errors": 0,
+      "mean_distance": 0.404,
+      "mean_baseline": 0.465,
+      "mean_delta": 0.061
     },
     "Box/Violin": {
-      "n": 4,
-      "ok": 4,
-      "mean_distance": 0.239,
-      "mean_baseline": 0.513,
-      "mean_delta": 0.274,
+      "n": 5,
+      "ok": 5,
       "errors": 0,
-      "error_examples": []
+      "mean_distance": 0.213,
+      "mean_baseline": 0.468,
+      "mean_delta": 0.255
     },
     "Composite": {
       "n": 3,
       "ok": 3,
+      "errors": 0,
       "mean_distance": 0.25,
       "mean_baseline": 0.273,
-      "mean_delta": 0.023,
-      "errors": 0,
-      "error_examples": []
+      "mean_delta": 0.023
     },
     "Distribution": {
-      "n": 7,
-      "ok": 7,
-      "mean_distance": 0.225,
-      "mean_baseline": 0.281,
-      "mean_delta": 0.055,
+      "n": 10,
+      "ok": 10,
       "errors": 0,
-      "error_examples": []
+      "mean_distance": 0.272,
+      "mean_baseline": 0.312,
+      "mean_delta": 0.04
     },
     "Field 2D": {
-      "n": 3,
-      "ok": 3,
-      "mean_distance": 0.393,
-      "mean_baseline": 0.304,
-      "mean_delta": -0.09,
+      "n": 5,
+      "ok": 5,
       "errors": 0,
-      "error_examples": []
+      "mean_distance": 0.393,
+      "mean_baseline": 0.28,
+      "mean_delta": -0.112
     },
     "Heatmap": {
-      "n": 3,
-      "ok": 3,
-      "mean_distance": 0.344,
-      "mean_baseline": 0.338,
-      "mean_delta": -0.006,
+      "n": 7,
+      "ok": 7,
       "errors": 0,
-      "error_examples": []
+      "mean_distance": 0.379,
+      "mean_baseline": 0.34,
+      "mean_delta": -0.039
     },
     "Line": {
-      "n": 3,
-      "ok": 3,
-      "mean_distance": 0.23,
-      "mean_baseline": 0.302,
-      "mean_delta": 0.072,
+      "n": 7,
+      "ok": 7,
       "errors": 0,
-      "error_examples": []
+      "mean_distance": 0.278,
+      "mean_baseline": 0.352,
+      "mean_delta": 0.074
+    },
+    "Network/Tree": {
+      "n": 2,
+      "ok": 0,
+      "errors": 2,
+      "mean_distance": null,
+      "mean_baseline": null,
+      "mean_delta": null
     },
     "Polar/Radial": {
       "n": 1,
       "ok": 1,
+      "errors": 0,
       "mean_distance": 0.127,
       "mean_baseline": 0.084,
-      "mean_delta": -0.043,
-      "errors": 0,
-      "error_examples": []
+      "mean_delta": -0.043
     },
     "Scatter": {
-      "n": 1,
-      "ok": 1,
-      "mean_distance": 0.259,
-      "mean_baseline": 0.575,
-      "mean_delta": 0.316,
+      "n": 7,
+      "ok": 7,
       "errors": 0,
-      "error_examples": []
+      "mean_distance": 0.2,
+      "mean_baseline": 0.459,
+      "mean_delta": 0.259
     },
     "Std-band": {
-      "n": 3,
-      "ok": 3,
-      "mean_distance": 0.405,
-      "mean_baseline": 0.511,
-      "mean_delta": 0.107,
+      "n": 7,
+      "ok": 7,
       "errors": 0,
-      "error_examples": []
+      "mean_distance": 0.412,
+      "mean_baseline": 0.553,
+      "mean_delta": 0.141
     }
   },
   "failures": [
     {
-      "id": "arxiv_2502.18153",
+      "id": "arxiv_2506.14951",
       "chart": "3D",
       "error": "unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this is a deliberate exclusion"
     },
     {
-      "id": "arxiv_2505.19527",
+      "id": "arxiv_2508.01948",
+      "chart": "3D",
+      "error": "unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this is a deliberate exclusion"
+    },
+    {
+      "id": "local-reuse__local_picks_top_hepfit_wheel",
+      "chart": "Network/Tree",
+      "error": "unsupported chart type: no graph-layout operator yet (backlog: node-link layout, not a chart encoding this library owns)"
+    },
+    {
+      "id": "local_picks_top_cust_graph__24",
+      "chart": "Network/Tree",
+      "error": "unsupported chart type: no graph-layout operator yet (backlog: node-link layout, not a chart encoding this library owns)"
+    },
+    {
+      "id": "Chart2Code_level2_3d_1_v1__single",
       "chart": "3D",
       "error": "unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this is a deliberate exclusion"
     }
@@ -867,6 +886,662 @@
       "id": "arxiv_2505.19527",
       "chart": "3D",
       "panel_mode": "multi",
+      "status": "unsupported",
+      "error": "unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this is a deliberate exclusion"
+    },
+    {
+      "id": "arxiv_2506.14951",
+      "chart": "3D",
+      "panel_mode": "multi",
+      "status": "unsupported",
+      "error": "unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this is a deliberate exclusion"
+    },
+    {
+      "id": "arxiv_2508.01948",
+      "chart": "3D",
+      "panel_mode": "multi",
+      "status": "unsupported",
+      "error": "unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this is a deliberate exclusion"
+    },
+    {
+      "id": "arxiv_2510.17384",
+      "chart": "Scatter",
+      "panel_mode": "multi",
+      "skill": "scatter_relationship",
+      "rationale": "scatter panel_col vs independent_value",
+      "rows_used": 80,
+      "status": "ok",
+      "distance": 0.206,
+      "baseline_distance": 0.347,
+      "delta": 0.141,
+      "components": {
+        "aspect": 0.009,
+        "ink": 0.403
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "arxiv_2512.09767",
+      "chart": "Distribution",
+      "panel_mode": "multi",
+      "skill": "faceted_distribution",
+      "rationale": "faceted hist by study_condition",
+      "rows_used": 4402,
+      "status": "ok",
+      "distance": 0.146,
+      "baseline_distance": 0.381,
+      "delta": 0.235,
+      "components": {
+        "palette": 0.222,
+        "aspect": 0.01,
+        "ink": 0.091
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "arxiv_2512.25023",
+      "chart": "Std-band",
+      "panel_mode": "multi",
+      "skill": "trend_with_uncertainty",
+      "rationale": "trend maturation_day->panel_row",
+      "rows_used": 178,
+      "status": "ok",
+      "distance": 0.356,
+      "baseline_distance": 0.514,
+      "delta": 0.158,
+      "components": {
+        "aspect": 0.005,
+        "ink": 0.707
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "arxiv_2603.04948",
+      "chart": "Std-band",
+      "panel_mode": "multi",
+      "skill": "trend_with_uncertainty",
+      "rationale": "trend panel_col->event_order",
+      "rows_used": 216,
+      "status": "ok",
+      "distance": 0.609,
+      "baseline_distance": 0.846,
+      "delta": 0.237,
+      "components": {
+        "aspect": 0.517,
+        "ink": 0.7
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "arxiv_2603.08660",
+      "chart": "Std-band",
+      "panel_mode": "multi",
+      "skill": "trend_with_uncertainty",
+      "rationale": "trend panel_col->replicate_id",
+      "rows_used": 72,
+      "status": "ok",
+      "distance": 0.375,
+      "baseline_distance": 0.612,
+      "delta": 0.237,
+      "components": {
+        "aspect": 0.344,
+        "ink": 0.406
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "arxiv_2603.17004",
+      "chart": "Line",
+      "panel_mode": "multi",
+      "skill": "trend_with_uncertainty",
+      "rationale": "trend ammonia_loading_mg_N_L->nitrogen_recovery_shift_mg_N_L",
+      "rows_used": 465,
+      "status": "ok",
+      "distance": 0.32,
+      "baseline_distance": 0.328,
+      "delta": 0.008,
+      "components": {
+        "palette": 0.474,
+        "aspect": 0.002,
+        "ink": 0.252
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "arxiv_2603.23889",
+      "chart": "Std-band",
+      "panel_mode": "multi",
+      "skill": "trend_with_uncertainty",
+      "rationale": "trend monitoring_day->panel_row",
+      "rows_used": 5340,
+      "status": "ok",
+      "distance": 0.327,
+      "baseline_distance": 0.362,
+      "delta": 0.035,
+      "components": {
+        "palette": 0.391,
+        "aspect": 0.003,
+        "ink": 0.489
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "arxiv_2604.01093",
+      "chart": "Field 2D",
+      "panel_mode": "multi",
+      "skill": "matrix_plate",
+      "rationale": "matrix 6 measures",
+      "rows_used": 40,
+      "status": "ok",
+      "distance": 0.313,
+      "baseline_distance": 0.181,
+      "delta": -0.132,
+      "components": {
+        "palette": 0.05,
+        "aspect": 0.801,
+        "ink": 0.482
+      },
+      "hard_failures": 6,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'flux_uncertainty_umol_m2_h' over 'methane_flux_anomaly_umol_m2_h'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'vegetation_cover_percent' over 'water_table_depth_cm'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'flux_uncertainty_umol_m2_h' over 'water_table_depth_cm'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'methane_flux_anomaly_umol_m2_h' over 'y_m'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'methane_flux_anomaly_umol_m2_h' over 'water_table_depth_cm'",
+          "severity": "hard"
+        }
+      ]
+    },
+    {
+      "id": "arxiv_2604.05237",
+      "chart": "Field 2D",
+      "panel_mode": "multi",
+      "skill": "matrix_plate",
+      "rationale": "matrix 8 measures",
+      "rows_used": 40,
+      "status": "ok",
+      "distance": 0.47,
+      "baseline_distance": 0.31,
+      "delta": -0.16,
+      "components": {
+        "palette": 0.155,
+        "aspect": 0.728,
+        "ink": 1.0
+      },
+      "hard_failures": 10,
+      "findings": [
+        {
+          "check": "height",
+          "detail": "170.0 mm exceeds the 170.0 mm maximum",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'conductivity_uncertainty_sd' over 'failure_cycle_uncertainty_s'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'log10_failure_cycle_count' over 'log10_ionic_conductivity_S_m'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'log10_failure_cycle_count' over 'posterior_weight'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'conductivity_uncertainty_sd' over 'joint_density'",
+          "severity": "hard"
+        }
+      ]
+    },
+    {
+      "id": "arxiv_2605.14587",
+      "chart": "Heatmap",
+      "panel_mode": "multi",
+      "skill": "matrix_plate",
+      "rationale": "matrix 8 measures",
+      "rows_used": 40,
+      "status": "ok",
+      "distance": 0.364,
+      "baseline_distance": 0.343,
+      "delta": -0.021,
+      "components": {
+        "palette": 0.14,
+        "aspect": 0.806,
+        "ink": 0.482
+      },
+      "hard_failures": 7,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'observed_mean' over 'observed_standard_error'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'observed_standard_error' over 'protocol_rank'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'replicate_count' over 'sampling_unit_order'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'column_group_order' over 'sampling_unit_order'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'observed_mean' over 'replicate_count'",
+          "severity": "hard"
+        }
+      ]
+    },
+    {
+      "id": "arxiv_2605.16790",
+      "chart": "Line",
+      "panel_mode": "multi",
+      "skill": "trend_with_uncertainty",
+      "rationale": "trend time_after_salinity_shock_hours->mean_ammonia_removal_fraction",
+      "rows_used": 1205,
+      "status": "ok",
+      "distance": 0.421,
+      "baseline_distance": 0.474,
+      "delta": 0.053,
+      "components": {
+        "palette": 0.505,
+        "aspect": 0.001,
+        "ink": 0.629
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "arxiv_2605.22305",
+      "chart": "Distribution",
+      "panel_mode": "multi",
+      "skill": "faceted_distribution",
+      "rationale": "faceted hist by panel_group",
+      "rows_used": 6928,
+      "status": "ok",
+      "distance": 0.393,
+      "baseline_distance": 0.492,
+      "delta": 0.099,
+      "components": {
+        "palette": 0.306,
+        "aspect": 0.004,
+        "ink": 1.0
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "arxiv_2605.22455",
+      "chart": "Scatter",
+      "panel_mode": "multi",
+      "skill": "scatter_relationship",
+      "rationale": "scatter panel_col vs survey_day",
+      "rows_used": 6302,
+      "status": "ok",
+      "distance": 0.388,
+      "baseline_distance": 0.478,
+      "delta": 0.09,
+      "components": {
+        "aspect": 0.111,
+        "ink": 0.666
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "local-reuse__local_picks_top_hepfit_wheel",
+      "chart": "Network/Tree",
+      "panel_mode": "single",
+      "status": "unsupported",
+      "error": "unsupported chart type: no graph-layout operator yet (backlog: node-link layout, not a chart encoding this library owns)"
+    },
+    {
+      "id": "local_gallery_hexbin_joint",
+      "chart": "Scatter",
+      "panel_mode": "multi",
+      "skill": "scatter_relationship",
+      "rationale": "scatter smoke_exposure_ug_m3 vs recovery_hours",
+      "rows_used": 840,
+      "status": "ok",
+      "distance": 0.243,
+      "baseline_distance": 0.7,
+      "delta": 0.457,
+      "components": {
+        "aspect": 0.061,
+        "ink": 0.425
+      },
+      "hard_failures": 1,
+      "findings": [
+        {
+          "check": "height",
+          "detail": "170.0 mm exceeds the 170.0 mm maximum",
+          "severity": "hard"
+        }
+      ]
+    },
+    {
+      "id": "local_picks_top_cust_graph__24",
+      "chart": "Network/Tree",
+      "panel_mode": "multi",
+      "status": "unsupported",
+      "error": "unsupported chart type: no graph-layout operator yet (backlog: node-link layout, not a chart encoding this library owns)"
+    },
+    {
+      "id": "local_picks_top_scatter__39",
+      "chart": "Scatter",
+      "panel_mode": "multi",
+      "skill": "scatter_relationship",
+      "rationale": "scatter incubation_temperature_C vs methane_oxidation_rate_nmol_g_dry_h",
+      "rows_used": 21,
+      "status": "ok",
+      "distance": 0.037,
+      "baseline_distance": 0.437,
+      "delta": 0.4,
+      "components": {
+        "aspect": 0.017,
+        "ink": 0.057
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "local_picks_top_violin__9",
+      "chart": "Box/Violin",
+      "panel_mode": "multi",
+      "skill": "distribution_comparison",
+      "rationale": "box panel_row by panel_group",
+      "rows_used": 507,
+      "status": "ok",
+      "distance": 0.112,
+      "baseline_distance": 0.289,
+      "delta": 0.177,
+      "components": {
+        "palette": 0.095,
+        "aspect": 0.001,
+        "ink": 0.267
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "Chart2Code_level1_direct_HR_5",
+      "chart": "Scatter",
+      "panel_mode": "multi",
+      "skill": "scatter_relationship",
+      "rationale": "scatter panel_row vs panel_col",
+      "rows_used": 832,
+      "status": "ok",
+      "distance": 0.121,
+      "baseline_distance": 0.269,
+      "delta": 0.148,
+      "components": {
+        "aspect": 0.011,
+        "ink": 0.23
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "Chart2Code_level1_direct_combination_57",
+      "chart": "Bar",
+      "panel_mode": "multi",
+      "skill": "grouped_measures",
+      "rationale": "grouped bars ['panel_row', 'panel_col', 'guild_order'] by panel_group",
+      "rows_used": 432,
+      "status": "ok",
+      "distance": 0.404,
+      "baseline_distance": 0.465,
+      "delta": 0.061,
+      "components": {
+        "palette": 0.59,
+        "aspect": 0.015,
+        "ink": 0.329
+      },
+      "hard_failures": 4,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'anchor_bars' over 'anchor_bars'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'composition_companion' over 'composition_companion'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'anchor_bars' over 'composition_companion'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'composition_companio' over 'composition_companion'",
+          "severity": "hard"
+        }
+      ]
+    },
+    {
+      "id": "Chart2Code_level1_direct_contour_18",
+      "chart": "Heatmap",
+      "panel_mode": "multi",
+      "skill": "matrix_plate",
+      "rationale": "matrix 8 measures",
+      "rows_used": 40,
+      "status": "ok",
+      "distance": 0.43,
+      "baseline_distance": 0.429,
+      "delta": -0.001,
+      "components": {
+        "palette": 0.14,
+        "aspect": 0.854,
+        "ink": 0.73
+      },
+      "hard_failures": 11,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'mean_methane_flux_umol_CH4_m2_h' over 'relative_flux_uncertainty_percent'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'flux_standard_error_umol_CH4_m2_h' over 'relative_flux_uncertainty_percent'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'flux_standard_error_umol_CH4_m2_h' over 'replicate_core_count'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'flux_standard_error_umol_CH4_m2_h' over 'mean_methane_flux_umol_CH4_m2_h'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'incubation_days' over 'mean_methane_flux_umol_CH4_m2_h'",
+          "severity": "hard"
+        }
+      ]
+    },
+    {
+      "id": "Chart2Code_level1_direct_density_11",
+      "chart": "Distribution",
+      "panel_mode": "multi",
+      "skill": "faceted_distribution",
+      "rationale": "faceted hist by panel_group",
+      "rows_used": 900,
+      "status": "ok",
+      "distance": 0.602,
+      "baseline_distance": 0.286,
+      "delta": -0.316,
+      "components": {
+        "palette": 0.845,
+        "aspect": 0.008,
+        "ink": 0.587
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "Chart2Code_level1_direct_heatmap_3",
+      "chart": "Heatmap",
+      "panel_mode": "multi",
+      "skill": "matrix_plate",
+      "rationale": "matrix 8 measures",
+      "rows_used": 40,
+      "status": "ok",
+      "distance": 0.361,
+      "baseline_distance": 0.3,
+      "delta": -0.061,
+      "components": {
+        "palette": 0.239,
+        "aspect": 0.771,
+        "ink": 0.254
+      },
+      "hard_failures": 8,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'recall_standard_error_perce' over 'stage_recall_percent'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'stage_recall_percent' over 'within_true_stage_percent'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'absolute_stage_error' over 'incubation_temperature_c'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'cell_count' over 'within_true_stage_percent'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'recall_standard_error_perce' over 'within_true_stage_percent'",
+          "severity": "hard"
+        }
+      ]
+    },
+    {
+      "id": "Chart2Code_level1_direct_heatmap_7",
+      "chart": "Heatmap",
+      "panel_mode": "multi",
+      "skill": "matrix_plate",
+      "rationale": "matrix 3 measures",
+      "rows_used": 40,
+      "status": "ok",
+      "distance": 0.466,
+      "baseline_distance": 0.295,
+      "delta": -0.171,
+      "components": {
+        "palette": 0.175,
+        "aspect": 0.803,
+        "ink": 0.858
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "Chart2Code_level1_direct_line_39",
+      "chart": "Line",
+      "panel_mode": "multi",
+      "skill": "trend_with_uncertainty",
+      "rationale": "trend calendar_year->panel_row",
+      "rows_used": 88,
+      "status": "ok",
+      "distance": 0.102,
+      "baseline_distance": 0.198,
+      "delta": 0.096,
+      "components": {
+        "aspect": 0.001,
+        "ink": 0.203
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "Chart2Code_level1_direct_line_8",
+      "chart": "Line",
+      "panel_mode": "multi",
+      "skill": "trend_with_uncertainty",
+      "rationale": "trend time_step->panel_row",
+      "rows_used": 110,
+      "status": "ok",
+      "distance": 0.414,
+      "baseline_distance": 0.558,
+      "delta": 0.144,
+      "components": {
+        "aspect": 0.004,
+        "ink": 0.824
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "Chart2Code_level2_3d_11_v2",
+      "chart": "Scatter",
+      "panel_mode": "multi",
+      "skill": "scatter_relationship",
+      "rationale": "scatter panel_row vs panel_col",
+      "rows_used": 276,
+      "status": "ok",
+      "distance": 0.144,
+      "baseline_distance": 0.407,
+      "delta": 0.263,
+      "components": {
+        "aspect": 0.001,
+        "ink": 0.288
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "Chart2Code_level2_3d_1_v1__single",
+      "chart": "3D",
+      "panel_mode": "single",
       "status": "unsupported",
       "error": "unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this is a deliberate exclusion"
     }

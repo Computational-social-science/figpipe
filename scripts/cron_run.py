@@ -131,6 +131,35 @@ def capability_delta(previous: dict, current: dict) -> dict:
                         "judged_fields": sorted(CAPABILITY_DIRECTION)}}
 
 
+def benchmark_slice(tasks: int = 6) -> dict:
+    """Run a small, rotating PlotTwin-Bench slice and record the outcome.
+
+    WHY IN THE LOOP
+        Capability that is only measured when someone remembers to run a script is not tracked
+        capability. The slice rotates through the 150-task pool (offset derived from the run
+        count) so successive runs cover new tasks without a long run time, and every result is
+        merged into the same report the deliverable points at.
+
+    A missing network, a missing dataset cache or a broken harness must NOT fail the scheduled
+    run: this is a measurement, and a measurement that cannot run is reported as skipped.
+    """
+    script = ROOT / "scripts" / "bench_plottwin.py"
+    if not script.is_file():
+        return {"ran": False, "reason": "benchmark harness absent"}
+    runs = sorted((ROOT / "knowledge" / "runs").glob("*.json"))
+    offset = (len(runs) * tasks) % 120
+    cmd = [sys.executable, str(script), "--limit", str(tasks), "--offset", str(offset),
+           "--merge"]
+    try:
+        p = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True,
+                           encoding="utf-8", errors="replace", timeout=1800)
+    except (OSError, subprocess.SubprocessError) as exc:
+        return {"ran": False, "reason": f"{type(exc).__name__}: {exc}"}
+    tail = (p.stdout or p.stderr or "").strip().splitlines()
+    return {"ran": True, "offset": offset, "tasks": tasks, "code": p.returncode,
+            "tail": tail[-4:]}
+
+
 def run_tests() -> tuple[bool, str]:
     """Run the suite, unless we are already inside it.
 
@@ -265,6 +294,9 @@ def main(argv: list[str]) -> int:
                                    .read_text(encoding="utf-8")).get("capabilities", {})
     except (OSError, json.JSONDecodeError):
         previous_caps = {}
+    bench_run = {"ran": False, "reason": "dry run"}
+    if not dry and "--skip-benchmark" not in argv:
+        bench_run = benchmark_slice()
     caps = capability_snapshot()
     before = snapshot()
 
@@ -322,6 +354,7 @@ def main(argv: list[str]) -> int:
             "hypothesis": sum(1 for r in after["rules"] if r["confidence"] == "hypothesis"),
             "regressed": sum(1 for r in after["rules"] if r["confidence"] == "regressed"),
         },
+        "benchmark_slice": bench_run,
         "capabilities": caps,
         "capabilities_delta": capability_delta(previous_caps, caps),
         "ok": None,                # patched in after the suite runs

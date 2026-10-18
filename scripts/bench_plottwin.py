@@ -45,6 +45,25 @@ API = ("https://datasets-server.huggingface.co/rows?dataset=figmirror%2FPlotTwin
        "&config=bench&split=test&offset={offset}&length=1")
 CACHE = ROOT / "corpus" / "e2e" / "cache"
 IMAGES = ROOT / "corpus" / "e2e" / "images"
+#: The task cache is an INTERMEDIATE (the licence forbids redistributing the data anyway), but it
+#: lives in the worktree, which has a size budget. Keeping it bounded is the difference between a
+#: cache and a leak: 60 tasks already cost 38 MB.
+MAX_CACHE_MB = 40.0
+
+
+def prune_cache() -> int:
+    """Drop the oldest cached tasks when the cache exceeds its budget; return files removed."""
+    files = sorted(CACHE.glob("*.json"), key=lambda f: f.stat().st_mtime)
+    total = sum(f.stat().st_size for f in files)
+    removed = 0
+    while total > MAX_CACHE_MB * 1e6 and files:
+        victim = files.pop(0)
+        size = victim.stat().st_size
+        victim.unlink(missing_ok=True)
+        (IMAGES / f"{victim.stem}.png").unlink(missing_ok=True)
+        total -= size
+        removed += 1
+    return removed
 OUT = ROOT / "corpus" / "e2e" / "plottwin_report.json"
 
 
@@ -57,6 +76,8 @@ class MappingError(RuntimeError):
 #: be right, and a model asked anyway would be forced to pick a wrong one.
 UNSUPPORTED_TYPES = {
     "3D": "no 3D operator; 3D rarely survives Nature print, so this is a deliberate exclusion",
+    "Network/Tree": "no graph-layout operator yet (backlog: node-link layout, not a chart "
+                    "encoding this library owns)",
 }
 
 
@@ -74,6 +95,7 @@ def fetch_row(offset: int) -> dict:
                                  headers={"User-Agent": "figpipe-bench/0.1"})
     with urllib.request.urlopen(req, timeout=180) as r:
         payload = json.load(r)
+    prune_cache()
     row = payload["rows"][0]["row"]
     keep = {"id": row.get("id"), "chart_type_name": row.get("chart_type_name"),
             "panel_mode": row.get("panel_mode"), "target_data": row.get("target_data"),
@@ -352,6 +374,8 @@ def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--limit", type=int, default=8)
     ap.add_argument("--offset", type=int, default=0)
+    ap.add_argument("--merge", action="store_true",
+                    help="merge into the existing report instead of replacing it")
     ap.add_argument("--types", default="", help="comma list, e.g. Line,Distribution,Scatter")
     args = ap.parse_args(argv)
     wanted = {t.strip() for t in args.types.split(",") if t.strip()}
@@ -415,6 +439,47 @@ def main(argv=None) -> int:
                      for r in results if r["status"] != "ok"],
         "tasks": results,
     }
+    if args.merge and OUT.is_file():
+        try:
+            old = json.loads(OUT.read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            old = {}
+        seen = {t["id"] for t in report["tasks"]}
+        merged = [t for t in old.get("tasks", []) if t.get("id") not in seen] + report["tasks"]
+        ok_all = [t for t in merged if t.get("status") == "ok"]
+        uns = [t for t in merged if t.get("status") == "unsupported"]
+        report["tasks"] = merged
+        report["n_tasks"] = len(merged)
+        report["n_ok"] = len(ok_all)
+        report["n_unsupported"] = len(uns)
+        report["n_error"] = len(merged) - len(ok_all) - len(uns)
+        if ok_all:
+            report["mean_distance"] = round(float(np.mean([t["distance"] for t in ok_all])), 3)
+            report["mean_baseline"] = round(float(np.mean([t["baseline_distance"] for t in ok_all])), 3)
+            report["mean_improvement"] = round(float(np.mean([t["delta"] for t in ok_all])), 3)
+            report["mean_best_of_two"] = round(float(np.mean([
+                min(t["distance"], t["baseline_distance"]) for t in ok_all])), 3)
+            report["improved"] = sum(1 for t in ok_all if t["delta"] > 0.005)
+            report["worse"] = sum(1 for t in ok_all if t["delta"] < -0.005)
+            report["ties"] = len(ok_all) - report["improved"] - report["worse"]
+        by_type = {}
+        for t in merged:
+            bucket = by_type.setdefault(t["chart"], {"n": 0, "ok": 0, "d": [], "base": [],
+                                                     "delta": [], "errors": 0})
+            bucket["n"] += 1
+            if t.get("status") == "ok":
+                bucket["ok"] += 1
+                bucket["d"].append(t["distance"])
+                bucket["base"].append(t["baseline_distance"])
+                bucket["delta"].append(t["delta"])
+            else:
+                bucket["errors"] += 1
+        report["by_type"] = {
+            c: {"n": b["n"], "ok": b["ok"], "errors": b["errors"],
+                "mean_distance": round(float(np.mean(b["d"])), 3) if b["d"] else None,
+                "mean_baseline": round(float(np.mean(b["base"])), 3) if b["base"] else None,
+                "mean_delta": round(float(np.mean(b["delta"])), 3) if b["delta"] else None}
+            for c, b in sorted(by_type.items())}
     OUT.write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     from figpipe import sources
     sources.assert_writable(out_dir)
