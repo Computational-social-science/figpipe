@@ -1,0 +1,145 @@
+{
+  "source": "corpus/caption_features.jsonl",
+  "overall": {
+    "n": 196,
+    "caption_overview_first": {
+      "count": 189,
+      "share": 0.9643
+    },
+    "caption_panel_by_panel": {
+      "count": 65,
+      "share": 0.3316
+    },
+    "caption_has_stats": {
+      "count": 41,
+      "share": 0.2092
+    },
+    "caption_stats_last": {
+      "count": 15,
+      "share": 0.0765
+    },
+    "caption_defines_error": {
+      "count": 9,
+      "share": 0.0459
+    },
+    "caption_chars": {
+      "median": 283,
+      "p25": 200,
+      "p75": 446,
+      "max": 1210
+    },
+    "panel_markers": {
+      "median": 0,
+      "p90": 3,
+      "max": 11,
+      "share_with_2_or_more": 0.3316
+    }
+  },
+  "by_kind": {
+    "extended_data_figure": {
+      "n": 52,
+      "caption_overview_first": {
+        "count": 51,
+        "share": 0.9808
+      },
+      "caption_panel_by_panel": {
+        "count": 17,
+        "share": 0.3269
+      },
+      "caption_has_stats": {
+        "count": 17,
+        "share": 0.3269
+      },
+      "caption_stats_last": {
+        "count": 7,
+        "share": 0.1346
+      },
+      "caption_defines_error": {
+        "count": 4,
+        "share": 0.0769
+      },
+      "caption_chars": {
+        "median": 278,
+        "p25": 188,
+        "p75": 427,
+        "max": 985
+      },
+      "panel_markers": {
+        "median": 0,
+        "p90": 2,
+        "max": 5,
+        "share_with_2_or_more": 0.3269
+      }
+    },
+    "figure": {
+      "n": 124,
+      "caption_overview_first": {
+        "count": 118,
+        "share": 0.9516
+      },
+      "caption_panel_by_panel": {
+        "count": 48,
+        "share": 0.3871
+      },
+      "caption_has_stats": {
+        "count": 23,
+        "share": 0.1855
+      },
+      "caption_stats_last": {
+        "count": 8,
+        "share": 0.0645
+      },
+      "caption_defines_error": {
+        "count": 5,
+        "share": 0.0403
+      },
+      "caption_chars": {
+        "median": 290,
+        "p25": 200,
+        "p75": 484,
+        "max": 1210
+      },
+      "panel_markers": {
+        "median": 0,
+        "p90": 4,
+        "max": 11,
+        "share_with_2_or_more": 0.3871
+      }
+    },
+    "supplementary_figure": {
+      "n": 20,
+      "caption_overview_first": {
+        "count": 20,
+        "share": 1.0
+      },
+      "caption_panel_by_panel": {
+        "count": 0,
+        "share": 0.0
+      },
+      "caption_has_stats": {
+        "count": 1,
+        "share": 0.05
+      },
+      "caption_stats_last": {
+        "count": 0,
+        "share": 0.0
+      },
+      "caption_defines_error": {
+        "count": 0,
+        "share": 0.0
+      },
+      "caption_chars": {
+        "median": 285,
+        "p25": 213,
+        "p75": 414,
+        "max": 713
+      },
+      "panel_markers": {
+        "median": 0,
+        "p90": 0,
+        "max": 0,
+        "share_with_2_or_more": 0.0
+      }
+    }
+  }
+}

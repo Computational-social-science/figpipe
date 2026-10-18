@@ -161,6 +161,13 @@ def main() -> int:
         "unchecked_ids": unchecked,
     }
 
+    # DERIVE check_coverage FROM THE RULES, EVERY RUN.
+    # It was previously written once by a one-shot migration and drifted: it claimed 8 rules
+    # with a check while only 7 had one, in the same JSON whose last_check block said
+    # unchecked: 4. Recomputed here so it cannot go stale again.
+    from refresh_coverage import compute as _compute_coverage
+    kb["check_coverage"] = _compute_coverage(kb["rules"])
+
     kb["version"] += 1 if demoted else 0
     if demoted:
         kb["updated"] = datetime.date.today().isoformat()
