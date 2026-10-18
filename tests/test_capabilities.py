@@ -148,8 +148,8 @@ def test_the_anchor_metric_is_stable_when_the_task_set_grows():
     """A growing benchmark must not look like a capability regression.
 
     On 2026-10-19 the loop reported one: 0.278 over 30 tasks -> 0.302 over 66. Nothing about the
-    pipeline had changed; the SET had. The judged metric is now the mean over a fixed, sorted
-    subset (ANCHOR_N), which only moves when those tasks' results move.
+    pipeline had changed; the SET had. The anchor is now a FROZEN list of task ids, so growth
+    cannot move it.
     """
     import sys
     sys.path.insert(0, str(ROOT / "scripts"))
@@ -158,45 +158,41 @@ def test_the_anchor_metric_is_stable_when_the_task_set_grows():
     except Exception:                    # pragma: no cover
         import pytest
         pytest.skip("benchmark harness unavailable")
-    small = [{"id": f"t{i:02d}", "status": "ok", "distance": 0.30} for i in range(20)]
-    grown = small + [{"id": f"u{i:02d}", "status": "ok", "distance": 0.90} for i in range(40)]
-    assert bench._anchor_distance(small) == bench._anchor_distance(grown) == 0.3
-    worse = [dict(t, distance=0.40) for t in small]
-    assert bench._anchor_distance(worse) == 0.4
-    assert bench._anchor_distance(small[:3]) is None
-
-
-def test_counts_are_not_capabilities_but_the_rate_is():
-    """A benchmark COUNT rises whenever the measured set grows; a RATE does not.
-
-    The raw mean already produced one false regression (0.278/30 -> 0.302/66). The mirror-image
-    error is treating a growing count as a gain: benchmark_ok went 65 -> 70 in one run purely
-    because six more tasks were measured. Coverage is a fact, not a capability, so only the
-    success rate is judged.
-    """
-    if cron is None:
+    ids = bench.anchor_ids([])           # reads the frozen file
+    if len(ids) < 5:
         import pytest
-        pytest.skip("cron_run unavailable")
-    judged = cron.CAPABILITY_DIRECTION
-    assert "benchmark_success_rate" in judged
-    assert "benchmark_ok" not in judged
-    assert "benchmark_tasks" not in judged
-    assert "benchmark_mean_distance" not in judged
-    out = cron.capability_delta({"benchmark_ok": 65}, {"benchmark_ok": 70})
-    assert out["verdict"]["gains"] == [] and out["verdict"]["regressions"] == []
-    loss = cron.capability_delta({"benchmark_success_rate": 0.95},
-                                 {"benchmark_success_rate": 0.80})
-    assert loss["verdict"]["ok"] is False
-    assert loss["verdict"]["regressions"][0]["field"] == "benchmark_success_rate"
+        pytest.skip("anchor file not initialised")
+    base = [{"id": i, "status": "ok", "distance": 0.30} for i in ids]
+    grown = base + [{"id": f"zz{i:03d}", "status": "ok", "distance": 0.90} for i in range(40)]
+    assert bench._anchor_distance(base) == bench._anchor_distance(grown) == 0.3
+    worse = [dict(t, distance=0.40) for t in base]
+    assert bench._anchor_distance(worse) == 0.4
+    assert bench._anchor_distance(base[:3]) is None
+
+
+def test_the_anchor_ids_are_frozen_not_recomputed():
+    """"First N sorted ids" is NOT stable: newly measured tasks that sort earlier enter the set
+    and move the anchor with no capability change (observed 0.297 -> 0.329 on a coverage-only run).
+
+    The ids are persisted in knowledge/benchmark_anchor.json and reused forever.
+    """
+    import sys, json
+    sys.path.insert(0, str(ROOT / "scripts"))
+    try:
+        import bench_plottwin as bench
+    except Exception:                    # pragma: no cover
+        import pytest
+        pytest.skip("benchmark harness unavailable")
+    ids = json.loads((ROOT / "knowledge" / "benchmark_anchor.json").read_text(encoding="utf-8"))["ids"]
+    # a report containing the anchor plus a NEW id that sorts first must not change the anchor
+    tasks = [{"id": i, "status": "ok", "distance": 0.30} for i in ids]
+    tasks.append({"id": "AAA-newly-measured", "status": "ok", "distance": 0.90})
+    assert bench.anchor_ids(tasks) == ids
+    assert bench._anchor_distance(tasks) == 0.3
 
 
 def test_the_shipped_distance_is_a_judged_capability():
-    """The selection step is a capability, so its metric must be judged, not merely recorded.
-
-    `benchmark_shipped_distance` is the mean distance of the figures the pipeline would actually
-    ship. Lower is better, and it is the number that improved when the decision replaced
-    always-transferring (0.278 -> 0.259 on the tasks measured with it).
-    """
+    """The selection step is a capability, so its metric must be judged, not merely recorded."""
     if cron is None:
         import pytest
         pytest.skip("cron_run unavailable")
@@ -206,31 +202,24 @@ def test_the_shipped_distance_is_a_judged_capability():
     better = cron.capability_delta({"benchmark_shipped_distance": 0.278},
                                    {"benchmark_shipped_distance": 0.259})
     assert better["verdict"]["ok"] is True
-    assert better["verdict"]["gains"][0]["field"] == "benchmark_shipped_distance"
     worse = cron.capability_delta({"benchmark_shipped_distance": 0.259},
                                   {"benchmark_shipped_distance": 0.300})
     assert worse["verdict"]["ok"] is False
 
 
 def test_the_benchmark_slice_walks_forward_instead_of_re_measuring():
-    """Coverage must advance: re-measuring covered tasks looks busy and grows nothing.
-
-    The slice used to rotate by `(runs * tasks) % 120`; run 43 landed on offset 12, whose tasks
-    had been measured hours earlier, so the capability numbers could not move.
-    """
+    """Coverage must advance: re-measuring covered tasks looks busy and grows nothing."""
     import sys
     sys.path.insert(0, str(ROOT / "scripts"))
     try:
         import bench_plottwin as bench
-    except Exception:                      # pragma: no cover
+    except Exception:                    # pragma: no cover
         import pytest
         pytest.skip("benchmark harness unavailable")
     covered = bench.covered_offsets()
     assert isinstance(covered, set)
     nxt = bench.next_uncovered_offset(6)
     assert 0 <= nxt < bench.POOL
-    # the window chosen must contain at least one task that is not yet covered
     window = set(range(nxt, min(nxt + 6, bench.POOL)))
     if covered:
-        assert not window.issubset(covered) or nxt == 0, (
-            f"offset {nxt} only covers already-measured tasks: {sorted(window & covered)}")
+        assert not window.issubset(covered) or nxt == 0

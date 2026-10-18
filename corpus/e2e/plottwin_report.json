@@ -6,20 +6,18 @@
     "arxiv": "2608.28814",
     "note": "deterministic metrics only; official combined score requires the benchmark's VLM scorer and is NOT claimed here"
   },
-  "n_tasks": 84,
-  "n_ok": 75,
+  "n_tasks": 90,
+  "n_ok": 81,
   "n_unsupported": 9,
   "n_error": 0,
-  "unsupported_types": {
-    "3D": "unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this is a deliberate exclusion"
-  },
-  "mean_distance": 0.29,
-  "mean_baseline": 0.369,
-  "mean_improvement": 0.079,
-  "improved": 54,
+  "unsupported_types": {},
+  "mean_distance": 0.286,
+  "mean_baseline": 0.367,
+  "mean_improvement": 0.081,
+  "improved": 60,
   "worse": 15,
   "ties": 6,
-  "mean_best_of_two": 0.267,
+  "mean_best_of_two": 0.266,
   "decision_service": {
     "up": false,
     "url": "http://127.0.0.1:8090",
@@ -45,13 +43,13 @@
       "mean_shipped": 0.214
     },
     "Box/Violin": {
-      "n": 6,
-      "ok": 6,
+      "n": 8,
+      "ok": 8,
       "errors": 0,
-      "mean_distance": 0.255,
-      "mean_baseline": 0.479,
-      "mean_delta": 0.224,
-      "mean_shipped": 0.242
+      "mean_distance": 0.26,
+      "mean_baseline": 0.463,
+      "mean_delta": 0.203,
+      "mean_shipped": 0.203
     },
     "Composite": {
       "n": 3,
@@ -63,13 +61,13 @@
       "mean_shipped": 0.242
     },
     "Distribution": {
-      "n": 10,
-      "ok": 10,
+      "n": 12,
+      "ok": 12,
       "errors": 0,
-      "mean_distance": 0.272,
-      "mean_baseline": 0.312,
-      "mean_delta": 0.04,
-      "mean_shipped": 0.224
+      "mean_distance": 0.254,
+      "mean_baseline": 0.298,
+      "mean_delta": 0.043,
+      "mean_shipped": 0.212
     },
     "Field 2D": {
       "n": 8,
@@ -90,13 +88,13 @@
       "mean_shipped": 0.274
     },
     "Line": {
-      "n": 11,
-      "ok": 11,
+      "n": 12,
+      "ok": 12,
       "errors": 0,
-      "mean_distance": 0.302,
-      "mean_baseline": 0.403,
-      "mean_delta": 0.101,
-      "mean_shipped": 0.316
+      "mean_distance": 0.313,
+      "mean_baseline": 0.416,
+      "mean_delta": 0.103,
+      "mean_shipped": 0.333
     },
     "Network/Tree": {
       "n": 2,
@@ -126,22 +124,16 @@
       "mean_shipped": 0.269
     },
     "Std-band": {
-      "n": 7,
-      "ok": 7,
+      "n": 8,
+      "ok": 8,
       "errors": 0,
-      "mean_distance": 0.412,
-      "mean_baseline": 0.553,
-      "mean_delta": 0.141,
-      "mean_shipped": 0.404
+      "mean_distance": 0.378,
+      "mean_baseline": 0.517,
+      "mean_delta": 0.139,
+      "mean_shipped": 0.339
     }
   },
-  "failures": [
-    {
-      "id": "Chart2Code_level2_3d_2_v3",
-      "chart": "3D",
-      "error": "unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this is a deliberate exclusion"
-    }
-  ],
+  "failures": [],
   "tasks": [
     {
       "id": "arxiv_2506.14951",
@@ -2335,17 +2327,153 @@
       },
       "hard_failures": 0,
       "findings": []
+    },
+    {
+      "id": "Chart2Code_level2_box_1_v5",
+      "chart": "Box/Violin",
+      "panel_mode": "multi",
+      "skill": "distribution_comparison",
+      "rationale": "box panel_row by record_type",
+      "rows_used": 3163,
+      "status": "ok",
+      "distance": 0.128,
+      "baseline_distance": 0.318,
+      "delta": 0.19,
+      "selected": "styled",
+      "selected_distance": 0.142,
+      "selected_gain": 0.176,
+      "selection_margin": 0.182,
+      "components": {
+        "palette": 0.155,
+        "aspect": 0.006,
+        "ink": 0.185
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "Chart2Code_level2_combination_11_v2",
+      "chart": "Std-band",
+      "panel_mode": "multi",
+      "skill": "trend_with_uncertainty",
+      "rationale": "trend panel_row->panel_col",
+      "rows_used": 155,
+      "status": "ok",
+      "distance": 0.145,
+      "baseline_distance": 0.271,
+      "delta": 0.126,
+      "selected": "styled",
+      "selected_distance": 0.145,
+      "selected_gain": 0.126,
+      "selection_margin": 0.122,
+      "components": {
+        "aspect": 0.002,
+        "ink": 0.287
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "Chart2Code_level2_combination_13_v5",
+      "chart": "Line",
+      "panel_mode": "multi",
+      "skill": "trend_with_uncertainty",
+      "rationale": "trend panel_row->panel_col",
+      "rows_used": 672,
+      "status": "ok",
+      "distance": 0.438,
+      "baseline_distance": 0.564,
+      "delta": 0.126,
+      "selected": "styled",
+      "selected_distance": 0.438,
+      "selected_gain": 0.126,
+      "selection_margin": 0.122,
+      "components": {
+        "aspect": 0.002,
+        "ink": 0.874
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "Chart2Code_level2_combination_14_v5",
+      "chart": "Distribution",
+      "panel_mode": "multi",
+      "skill": "faceted_distribution",
+      "rationale": "faceted hist by panel_row",
+      "rows_used": 4208,
+      "status": "ok",
+      "distance": 0.192,
+      "baseline_distance": 0.257,
+      "delta": 0.065,
+      "selected": "styled",
+      "selected_distance": 0.192,
+      "selected_gain": 0.065,
+      "selection_margin": 0.066,
+      "components": {
+        "palette": 0.189,
+        "aspect": 0.007,
+        "ink": 0.383
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "Chart2Code_level2_combination_16_v5",
+      "chart": "Box/Violin",
+      "panel_mode": "multi",
+      "skill": "distribution_comparison",
+      "rationale": "box panel_row by panel_group",
+      "rows_used": 959,
+      "status": "ok",
+      "distance": 0.424,
+      "baseline_distance": 0.514,
+      "delta": 0.09,
+      "selected": "styled",
+      "selected_distance": 0.107,
+      "selected_gain": 0.407,
+      "selection_margin": 0.401,
+      "components": {
+        "palette": 0.675,
+        "aspect": 0.005,
+        "ink": 0.213
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "Chart2Code_level2_combination_33_v5",
+      "chart": "Distribution",
+      "panel_mode": "multi",
+      "skill": "faceted_distribution",
+      "rationale": "faceted hist by panel_group",
+      "rows_used": 3037,
+      "status": "ok",
+      "distance": 0.14,
+      "baseline_distance": 0.192,
+      "delta": 0.052,
+      "selected": "styled",
+      "selected_distance": 0.142,
+      "selected_gain": 0.05,
+      "selection_margin": 0.051,
+      "components": {
+        "palette": 0.153,
+        "aspect": 0.002,
+        "ink": 0.247
+      },
+      "hard_failures": 0,
+      "findings": []
     }
   ],
   "benchmark_anchor_distance": 0.329,
   "selection": {
-    "n": 33,
-    "shipped_mean": 0.269,
-    "always_styled_mean": 0.286,
-    "plain_mean": 0.363,
-    "gain_vs_always_styled": 0.017,
-    "gain_vs_plain": 0.094,
-    "picked_styled": 27,
+    "n": 39,
+    "shipped_mean": 0.257,
+    "always_styled_mean": 0.279,
+    "plain_mean": 0.362,
+    "gain_vs_always_styled": 0.022,
+    "gain_vs_plain": 0.104,
+    "picked_styled": 33,
     "picked_plain": 6,
     "rule": "closer of plain/styled to the reference; the reference is an input"
   }

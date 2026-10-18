@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-19T03:27:06",
+  "run_at": "2026-10-19T03:33:34",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -9,10 +9,10 @@
     "  passed 8, failed 0",
     "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
     "  wrote knowledge\\evolution_report.json",
-    "  lean: tracked 79.5 -> 79.5 MB, worktree 132.4 -> 132.3 MB"
+    "  lean: tracked 79.5 -> 79.5 MB, worktree 136.7 -> 136.5 MB"
   ],
   "tests_ok": true,
-  "tests_summary": "259 passed, 2 skipped, 1 warning in 52.45s",
+  "tests_summary": "259 passed, 2 skipped, 1 warning in 52.57s",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
@@ -130,25 +130,25 @@
   },
   "benchmark_slice": {
     "ran": true,
-    "offset": 60,
+    "offset": 66,
     "tasks": 6,
     "code": 0,
     "tail": [
-      "    type Bar            ok 2/2   d=0.222 base=0.247 delta=0.026 errors=0",
-      "    type Line           ok 3/3   d=0.401 base=0.545 delta=0.144 errors=0",
-      "    FAIL Chart2Code_level2_3d_2_v3 3D           unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this is a deliberate exc",
+      "    type Distribution   ok 2/2   d=0.166 base=0.225 delta=0.058 errors=0",
+      "    type Line           ok 1/1   d=0.438 base=0.564 delta=0.126 errors=0",
+      "    type Std-band       ok 1/1   d=0.145 base=0.271 delta=0.126 errors=0",
       "  wrote E:\\2026-AI4S\\figpipe\\corpus\\e2e\\plottwin_report.json"
     ]
   },
   "capabilities": {
     "skills": 15,
     "operators": 19,
-    "benchmark_tasks": 84,
-    "benchmark_ok": 75,
+    "benchmark_tasks": 90,
+    "benchmark_ok": 81,
     "benchmark_success_rate": 1.0,
-    "benchmark_mean_distance": 0.29,
+    "benchmark_mean_distance": 0.286,
     "benchmark_anchor_distance": 0.329,
-    "benchmark_shipped_distance": 0.269,
+    "benchmark_shipped_distance": 0.257,
     "benchmark_unsupported": 9,
     "statistics_reproduced": 15,
     "knowledge_version": 16,
@@ -158,55 +158,32 @@
     "changed": true,
     "delta": {
       "benchmark_tasks": {
-        "before": 78,
-        "after": 84
+        "before": 84,
+        "after": 90
       },
       "benchmark_ok": {
-        "before": 70,
-        "after": 75
+        "before": 75,
+        "after": 81
       },
       "benchmark_mean_distance": {
-        "before": 0.287,
-        "after": 0.29
-      },
-      "benchmark_anchor_distance": {
-        "before": 0.297,
-        "after": 0.329
+        "before": 0.29,
+        "after": 0.286
       },
       "benchmark_shipped_distance": {
-        "before": 0.259,
-        "after": 0.269
-      },
-      "benchmark_unsupported": {
-        "before": 8,
-        "after": 9
-      },
-      "tests": {
-        "before": 258,
-        "after": 259
+        "before": 0.269,
+        "after": 0.257
       }
     },
     "verdict": {
       "gains": [
         {
-          "field": "tests",
-          "before": 258,
-          "after": 259
-        }
-      ],
-      "regressions": [
-        {
-          "field": "benchmark_anchor_distance",
-          "before": 0.297,
-          "after": 0.329
-        },
-        {
           "field": "benchmark_shipped_distance",
-          "before": 0.259,
-          "after": 0.269
+          "before": 0.269,
+          "after": 0.257
         }
       ],
-      "ok": false,
+      "regressions": [],
+      "ok": true,
       "judged_fields": [
         "benchmark_anchor_distance",
         "benchmark_shipped_distance",
@@ -219,19 +196,7 @@
       ]
     }
   },
-  "ok": false,
-  "capability_ok": false,
-  "capability_regressions": [
-    {
-      "field": "benchmark_anchor_distance",
-      "before": 0.297,
-      "after": 0.329
-    },
-    {
-      "field": "benchmark_shipped_distance",
-      "before": 0.259,
-      "after": 0.269
-    }
-  ],
-  "publish_note": "capability regression detected; record kept but the run exits non-zero (re-run with --accept-capability-regression to accept)"
+  "ok": true,
+  "capability_ok": true,
+  "capability_regressions": []
 }

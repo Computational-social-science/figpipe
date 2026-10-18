@@ -395,6 +395,12 @@ def run_task(row: dict, out_dir: pathlib.Path) -> dict:
 #: How many tasks make up the stable anchor metric.
 ANCHOR_N = 20
 
+#: The anchor's task ids, FROZEN on first creation. A "first N sorted ids" rule is not stable:
+#: as new tasks are measured, ids that sort earlier enter the set and the anchor moves without
+#: any capability change (observed: 0.297 -> 0.329 on a run that only added coverage). The list is
+#: persisted so the anchor measures the SAME tasks forever.
+ANCHOR_FILE = ROOT / "knowledge" / "benchmark_anchor.json"
+
 
 def _selected_mean(tasks) -> float | None:
     """Mean distance of the pages the pipeline would SHIP (the closer of the two candidates)."""
@@ -403,11 +409,32 @@ def _selected_mean(tasks) -> float | None:
     return round(float(np.mean(vals)), 3) if vals else None
 
 
+def anchor_ids(tasks) -> list[str]:
+    """The frozen anchor task ids, created from the first ANCHOR_N measured tasks if absent."""
+    if ANCHOR_FILE.is_file():
+        try:
+            data = json.loads(ANCHOR_FILE.read_text(encoding="utf-8"))
+            if data.get("ids"):
+                return list(data["ids"])
+        except (OSError, ValueError):
+            pass
+    ok = sorted((t for t in tasks if t.get("status") == "ok"), key=lambda t: str(t["id"]))
+    ids = [t["id"] for t in ok[:ANCHOR_N]]
+    if len(ids) >= 5:
+        ANCHOR_FILE.parent.mkdir(parents=True, exist_ok=True)
+        ANCHOR_FILE.write_text(json.dumps(
+            {"ids": ids, "n": len(ids),
+             "why": "frozen so the anchor measures the same tasks across runs"},
+            indent=2) + "\n", encoding="utf-8")
+    return ids
+
+
 def _anchor_distance(tasks) -> float | None:
-    """Mean style distance over a fixed, sorted subset -- comparable across runs."""
-    ok = sorted((t for t in tasks
-                 if t.get("status") == "ok" and t.get("distance") is not None),
-                key=lambda t: str(t["id"]))[:ANCHOR_N]
+    """Mean style distance over the FROZEN anchor subset -- comparable across runs."""
+    ids = set(anchor_ids(tasks))
+    ok = [t for t in tasks
+          if t.get("status") == "ok" and t.get("distance") is not None
+          and t.get("id") in ids]
     if len(ok) < 5:
         return None
     return round(float(np.mean([t["distance"] for t in ok])), 3)
