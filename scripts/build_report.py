@@ -83,12 +83,17 @@ def data_uri(path, max_width=900):
     return "data:image/png;base64," + base64.b64encode(raw).decode("ascii")
 
 
+def _fmt(value) -> str:
+    return "—" if value is None else str(value)
+
+
 def _caps_text(caps: dict) -> str:
     if not caps:
         return "not recorded yet"
-    parts = [f"skills {caps.get('skills')}", f"operators {caps.get('operators')}",
-             f"benchmark {caps.get('benchmark_ok')}/{caps.get('benchmark_tasks')}",
-             f"tests {caps.get('tests')}"]
+    parts = [f"skills {_fmt(caps.get('skills'))}",
+             f"operators {_fmt(caps.get('operators'))}",
+             f"benchmark {_fmt(caps.get('benchmark_ok'))}/{_fmt(caps.get('benchmark_tasks'))}",
+             f"tests {_fmt(caps.get('tests'))}"]
     return " · ".join(parts)
 
 
@@ -97,7 +102,8 @@ def _delta_text(delta: dict) -> str:
         return "not recorded yet"
     if not delta.get("changed"):
         return "no change since the previous run"
-    items = [f"{k}: {v['before']} → {v['after']}" for k, v in delta.get("delta", {}).items()]
+    items = [f"{k}: {_fmt(v['before'])} → {_fmt(v['after'])}"
+             for k, v in delta.get("delta", {}).items()]
     return "; ".join(items)
 
 

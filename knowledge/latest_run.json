@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-19T00:33:49",
+  "run_at": "2026-10-19T00:35:54",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -11,8 +11,8 @@
     "  wrote knowledge\\evolution_report.json",
     "  lean: tracked 79.3 -> 79.3 MB, worktree 80.9 -> 80.8 MB"
   ],
-  "tests_ok": false,
-  "tests_summary": "1 failed, 228 passed, 2 skipped, 1 warning in 42.46s",
+  "tests_ok": true,
+  "tests_summary": "229 passed, 2 skipped, 1 warning in 39.38s",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
@@ -136,16 +136,16 @@
     "benchmark_mean_distance": 0.288,
     "statistics_reproduced": 15,
     "knowledge_version": 16,
-    "tests": 228
+    "tests": 229
   },
   "capabilities_delta": {
     "changed": true,
     "delta": {
       "tests": {
-        "before": null,
-        "after": 228
+        "before": 228,
+        "after": 229
       }
     }
   },
-  "ok": false
+  "ok": true
 }
