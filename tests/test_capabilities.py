@@ -242,8 +242,11 @@ def test_the_benchmark_slice_walks_forward_instead_of_re_measuring():
         pytest.skip("benchmark harness unavailable")
     covered = bench.covered_offsets()
     assert isinstance(covered, set)
+    # coverage is defined by the REPORT, so it must survive pruning the cache entirely
+    seen = bench.measured_ids()
+    assert isinstance(seen, set)
     nxt = bench.next_uncovered_offset(6)
     assert 0 <= nxt < bench.POOL
     window = set(range(nxt, min(nxt + 6, bench.POOL)))
-    if covered:
+    if seen and covered:
         assert not window.issubset(covered) or nxt == 0

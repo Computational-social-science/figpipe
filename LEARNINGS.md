@@ -624,3 +624,24 @@ judged, with the reason written beside the direction table.
 
 Rule extracted, and now applied twice: **any judged metric must be a function of a fixed task set.**
 If a metric's denominator can grow, it is a measurement, not a capability.
+
+
+## 31. The cache guard measured half the cache, and pruning broke coverage (2026-10-19)
+
+Two more instrument defects, found by watching the worktree budget rather than the pipeline:
+
+1. `prune_cache()` counted only the task JSON, not the reference images, so it reported 34 MB while
+   66 MB sat in the worktree; the worktree reached 147 MB of its 150 MB budget. A guard that
+   measures half of what it guards is the same defect as a metric over a growing set.
+
+2. Images are named by TASK ID while the cache is named by OFFSET, so the pruner unlinked
+   `<offset>.png` -- which never existed -- and left every reference image orphaned.
+
+3. Worse: pruning the cache made `covered_offsets()` return an EMPTY set (it derived coverage from
+   the cache), so the next scheduled run would have restarted the benchmark from offset 0 and
+   re-measured everything. Coverage is now defined by the REPORT (`measured_ids()`), with an
+   offset->id index written as a side effect of fetching; the chooser self-heals if the cache is
+   pruned again.
+
+All three are the same lesson in a new place: **a derived quantity must be derived from the durable
+artefact, not from a cache.** The report is the artefact; the cache is an optimisation.

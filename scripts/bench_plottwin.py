@@ -45,22 +45,68 @@ API = ("https://datasets-server.huggingface.co/rows?dataset=figmirror%2FPlotTwin
        "&config=bench&split=test&offset={offset}&length=1")
 CACHE = ROOT / "corpus" / "e2e" / "cache"
 IMAGES = ROOT / "corpus" / "e2e" / "images"
+#: offset -> task id. The CACHE is prunable (it holds megabytes of target data), so coverage must
+#: not be derived from it: pruning the cache once made `covered_offsets()` return an empty set and
+#: the loop restarted from offset 0. This index is a few kilobytes and is never pruned.
+COVERAGE_FILE = ROOT / "corpus" / "e2e" / "coverage.json"
+
+
+def _read_coverage() -> dict:
+    if not COVERAGE_FILE.is_file():
+        return {}
+    try:
+        return {int(k): v for k, v in json.loads(
+            COVERAGE_FILE.read_text(encoding="utf-8")).items()}
+    except (OSError, ValueError):
+        return {}
+
+
+def _record_coverage(offset: int, task_id: str) -> None:
+    cov = _read_coverage()
+    if cov.get(offset) == task_id:
+        return
+    cov[offset] = task_id
+    COVERAGE_FILE.parent.mkdir(parents=True, exist_ok=True)
+    COVERAGE_FILE.write_text(json.dumps({str(k): v for k, v in sorted(cov.items())},
+                                        indent=2) + "\n", encoding="utf-8")
 #: The task cache is an INTERMEDIATE (the licence forbids redistributing the data anyway), but it
 #: lives in the worktree, which has a size budget. Keeping it bounded is the difference between a
 #: cache and a leak: 60 tasks already cost 38 MB.
-MAX_CACHE_MB = 40.0
+#: Budget for the WHOLE cache (task JSON + reference images). The earlier version counted only
+#: the JSON files, so 66 MB of cache and images sat in the worktree while the guard reported
+#: 34 MB -- and the worktree reached 147 MB of its 150 MB budget. A guard that measures half of
+#: what it guards is the same defect as a metric over a growing set.
+MAX_CACHE_MB = 24.0
+
+
+def _cache_bytes() -> int:
+    return (sum(f.stat().st_size for f in CACHE.glob("*.json"))
+            + sum(f.stat().st_size for f in IMAGES.glob("*.png")))
 
 
 def prune_cache() -> int:
-    """Drop the oldest cached tasks when the cache exceeds its budget; return files removed."""
+    """Drop the oldest cached tasks until the WHOLE cache fits its budget."""
     files = sorted(CACHE.glob("*.json"), key=lambda f: f.stat().st_mtime)
-    total = sum(f.stat().st_size for f in files)
+    total = _cache_bytes()
     removed = 0
-    while total > MAX_CACHE_MB * 1e6 and files:
+    # prune a little BELOW the budget so the next task does not immediately exceed it again
+    target = MAX_CACHE_MB * 0.8 * 1e6
+    while total > target and files:
         victim = files.pop(0)
         size = victim.stat().st_size
+        task_id = None
+        try:
+            task_id = json.loads(victim.read_text(encoding="utf-8")).get("id")
+        except (OSError, ValueError):
+            pass
         victim.unlink(missing_ok=True)
-        (IMAGES / f"{victim.stem}.png").unlink(missing_ok=True)
+        # images are named by TASK ID, not by offset: unlinking "<offset>.png" never matched and
+        # left 31 MB of orphaned reference images in the worktree
+        if task_id:
+            img = IMAGES / f"{task_id}.png"
+            if img.is_file():
+                size += img.stat().st_size
+                img.unlink(missing_ok=True)
         total -= size
         removed += 1
     return removed
@@ -97,6 +143,8 @@ def fetch_row(offset: int) -> dict:
         payload = json.load(r)
     prune_cache()
     row = payload["rows"][0]["row"]
+    if row.get("id"):
+        _record_coverage(offset, row["id"])
     keep = {"id": row.get("id"), "chart_type_name": row.get("chart_type_name"),
             "panel_mode": row.get("panel_mode"), "target_data": row.get("target_data"),
             "reference_url": (row.get("reference_image") or {}).get("src")}
@@ -498,26 +546,78 @@ def covered_offsets(report_path=None) -> set[int]:
     except (OSError, ValueError):
         return set()
     ids = {t.get("id") for t in report.get("tasks", [])}
-    covered = set()
-    for off in range(POOL):
-        cache = CACHE / f"{off}.json"
-        if cache.is_file():
-            try:
-                row = json.loads(cache.read_text(encoding="utf-8"))
-            except (OSError, ValueError):
-                continue
-            if row.get("id") in ids:
-                covered.add(off)
-    return covered
+    return {off for off, task_id in _read_coverage().items()
+            if off < POOL and task_id in ids}
+
+
+def measured_ids(report_path=None) -> set[str]:
+    """Task ids already present in the report -- the durable definition of "covered"."""
+    path = pathlib.Path(report_path or OUT)
+    if not path.is_file():
+        return set()
+    try:
+        report = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return set()
+    return {t.get("id") for t in report.get("tasks", []) if t.get("id")}
 
 
 def next_uncovered_offset(tasks: int, report_path=None) -> int:
-    """The first window that still contains an unmeasured task; wraps to 0 when done."""
-    covered = covered_offsets(report_path)
+    """The first window containing a task the report does not already have; 0 when complete.
+
+    Coverage is defined by the REPORT, not by the cache: the cache is prunable (it holds megabytes
+    of target data), and deriving coverage from it made the loop restart from offset 0 after a
+    prune. The offset->id index is written as a side effect of fetching, so a walk is cheap once
+    the rows are cached, and it self-heals if the cache is pruned again.
+    """
+    seen = measured_ids(report_path)
     for off in range(0, POOL, tasks):
-        if not all(o in covered for o in range(off, min(off + tasks, POOL))):
+        window = range(off, min(off + tasks, POOL))
+        known = _read_coverage()
+        if all(known.get(o) in seen and known.get(o) for o in window):
+            continue
+        missing = False
+        for o in window:
+            task_id = known.get(o)
+            if not task_id:
+                try:
+                    task_id = fetch_row(o).get("id")
+                except Exception:                       # noqa: BLE001 - offline is not fatal
+                    task_id = None
+            if task_id not in seen:
+                missing = True
+                break
+        if missing:
             return off
     return 0
+
+
+def backfill_coverage() -> int:
+    """Rebuild the coverage index from the report and whatever cache remains.
+
+    Called once after the index was introduced: without it, coverage would restart from zero even
+    though 102 tasks had already been measured.
+    """
+    if not OUT.is_file():
+        return 0
+    try:
+        report = json.loads(OUT.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return 0
+    ids = {t.get("id") for t in report.get("tasks", [])}
+    added = 0
+    for off in range(POOL):
+        cache = CACHE / f"{off}.json"
+        if not cache.is_file():
+            continue
+        try:
+            row = json.loads(cache.read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            continue
+        if row.get("id") in ids:
+            _record_coverage(off, row["id"])
+            added += 1
+    return added
 
 
 def main(argv=None) -> int:

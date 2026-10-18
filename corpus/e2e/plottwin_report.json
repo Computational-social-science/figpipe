@@ -6,18 +6,18 @@
     "arxiv": "2608.28814",
     "note": "deterministic metrics only; official combined score requires the benchmark's VLM scorer and is NOT claimed here"
   },
-  "n_tasks": 102,
-  "n_ok": 93,
+  "n_tasks": 108,
+  "n_ok": 99,
   "n_unsupported": 9,
   "n_error": 0,
   "unsupported_types": {},
-  "mean_distance": 0.288,
-  "mean_baseline": 0.367,
-  "mean_improvement": 0.079,
-  "improved": 67,
-  "worse": 18,
-  "ties": 8,
-  "mean_best_of_two": 0.267,
+  "mean_distance": 0.285,
+  "mean_baseline": 0.361,
+  "mean_improvement": 0.076,
+  "improved": 70,
+  "worse": 20,
+  "ties": 9,
+  "mean_best_of_two": 0.264,
   "decision_service": {
     "up": false,
     "url": "http://127.0.0.1:8090",
@@ -61,22 +61,22 @@
       "mean_shipped": 0.242
     },
     "Distribution": {
-      "n": 14,
-      "ok": 14,
+      "n": 17,
+      "ok": 17,
       "errors": 0,
-      "mean_distance": 0.24,
-      "mean_baseline": 0.287,
-      "mean_delta": 0.046,
-      "mean_shipped": 0.202
+      "mean_distance": 0.228,
+      "mean_baseline": 0.275,
+      "mean_delta": 0.047,
+      "mean_shipped": 0.198
     },
     "Field 2D": {
-      "n": 13,
-      "ok": 13,
+      "n": 15,
+      "ok": 15,
       "errors": 0,
-      "mean_distance": 0.405,
-      "mean_baseline": 0.316,
-      "mean_delta": -0.089,
-      "mean_shipped": 0.302
+      "mean_distance": 0.398,
+      "mean_baseline": 0.312,
+      "mean_delta": -0.086,
+      "mean_shipped": 0.288
     },
     "Heatmap": {
       "n": 7,
@@ -88,13 +88,13 @@
       "mean_shipped": 0.274
     },
     "Line": {
-      "n": 13,
-      "ok": 13,
+      "n": 14,
+      "ok": 14,
       "errors": 0,
-      "mean_distance": 0.316,
-      "mean_baseline": 0.417,
-      "mean_delta": 0.101,
-      "mean_shipped": 0.335
+      "mean_distance": 0.309,
+      "mean_baseline": 0.412,
+      "mean_delta": 0.103,
+      "mean_shipped": 0.321
     },
     "Network/Tree": {
       "n": 2,
@@ -2865,19 +2865,208 @@
       },
       "hard_failures": 0,
       "findings": []
+    },
+    {
+      "id": "Chart2Code_level2_hist_2_v3",
+      "chart": "Distribution",
+      "panel_mode": "multi",
+      "skill": "histogram",
+      "rationale": "hist sampling_day by consortium_treatment",
+      "rows_used": 315,
+      "status": "ok",
+      "distance": 0.216,
+      "baseline_distance": 0.269,
+      "delta": 0.053,
+      "selected": "styled",
+      "selected_distance": 0.221,
+      "selected_gain": 0.048,
+      "selection_margin": 0.101,
+      "components": {
+        "palette": 0.312,
+        "aspect": 0.009,
+        "ink": 0.183
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "Chart2Code_level2_hist_2_v5",
+      "chart": "Distribution",
+      "panel_mode": "multi",
+      "skill": "faceted_distribution",
+      "rationale": "faceted hist by panel_group",
+      "rows_used": 3071,
+      "status": "ok",
+      "distance": 0.141,
+      "baseline_distance": 0.142,
+      "delta": 0.001,
+      "selected": "styled",
+      "selected_distance": 0.142,
+      "selected_gain": 0.0,
+      "selection_margin": 0.001,
+      "components": {
+        "palette": 0.142,
+        "aspect": 0.002,
+        "ink": 0.279
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "Chart2Code_level2_multidiff_1_v1",
+      "chart": "Distribution",
+      "panel_mode": "multi",
+      "skill": "faceted_distribution",
+      "rationale": "faceted hist by panel_group",
+      "rows_used": 942,
+      "status": "ok",
+      "distance": 0.148,
+      "baseline_distance": 0.248,
+      "delta": 0.1,
+      "selected": "styled",
+      "selected_distance": 0.194,
+      "selected_gain": 0.054,
+      "selection_margin": 0.055,
+      "components": {
+        "palette": 0.15,
+        "aspect": 0.007,
+        "ink": 0.285
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "Chart2Code_level2_multidiff_2_v2__single",
+      "chart": "Field 2D",
+      "panel_mode": "single",
+      "skill": "matrix_plate",
+      "rationale": "matrix 5 measures",
+      "rows_used": 40,
+      "status": "ok",
+      "distance": 0.388,
+      "baseline_distance": 0.313,
+      "delta": -0.075,
+      "selected": "plain",
+      "selected_distance": 0.232,
+      "selected_gain": 0.081,
+      "selection_margin": 0.069,
+      "components": {
+        "palette": 0.189,
+        "aspect": 0.783,
+        "ink": 0.492
+      },
+      "hard_failures": 5,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'larval_recruitment_index_percent' over 'larval_recruitment_standard_error_percent'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'larval_recruitment_standard_error_percent' over 'sample_replicates'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'larval_recruitment_index_percent' over 'reef_elevation_relative_m'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'reef_elevation_relative_m' over 'spatial_year_relative_yr'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'larval_recruitment_standard_error_percent' over 'reef_elevation_relative_m'",
+          "severity": "hard"
+        }
+      ]
+    },
+    {
+      "id": "Chart2Code_level2_multidiff_5_v1",
+      "chart": "Line",
+      "panel_mode": "multi",
+      "skill": "trend_with_uncertainty",
+      "rationale": "trend panel_row->panel_col",
+      "rows_used": 2165,
+      "status": "ok",
+      "distance": 0.211,
+      "baseline_distance": 0.351,
+      "delta": 0.14,
+      "selected": "styled",
+      "selected_distance": 0.21,
+      "selected_gain": 0.141,
+      "selection_margin": 0.137,
+      "components": {
+        "aspect": 0.004,
+        "ink": 0.419
+      },
+      "hard_failures": 0,
+      "findings": []
+    },
+    {
+      "id": "Chart2Code_level2_quiver_10_v5",
+      "chart": "Field 2D",
+      "panel_mode": "multi",
+      "skill": "matrix_plate",
+      "rationale": "matrix 8 measures",
+      "rows_used": 40,
+      "status": "ok",
+      "distance": 0.322,
+      "baseline_distance": 0.27,
+      "delta": -0.052,
+      "selected": "plain",
+      "selected_distance": 0.232,
+      "selected_gain": 0.038,
+      "selection_margin": 0.037,
+      "components": {
+        "palette": 0.121,
+        "aspect": 0.772,
+        "ink": 0.374
+      },
+      "hard_failures": 17,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'dissolved oxygen concentration (umol L-1)' over 'normalized north-south coordinate'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'chemotactic velocity east (um s-1)' over 'oxygen concentration SEM (umol L-1)'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'chemotactic velocity east (um s-1)' over 'chemotactic velocity north (um'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'normalized east-west coordinate' over 'normalized north-south coordinate'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'dissolved oxygen concentration (umol L-1)' over 'oxygen concentration SEM (umol L-1)'",
+          "severity": "hard"
+        }
+      ]
     }
   ],
   "benchmark_anchor_distance": 0.329,
   "benchmark_shipped_anchor_distance": 0.247,
   "selection": {
-    "n": 51,
-    "shipped_mean": 0.254,
-    "always_styled_mean": 0.284,
-    "plain_mean": 0.362,
+    "n": 57,
+    "shipped_mean": 0.249,
+    "always_styled_mean": 0.279,
+    "plain_mean": 0.352,
     "gain_vs_always_styled": 0.03,
-    "gain_vs_plain": 0.108,
-    "picked_styled": 40,
-    "picked_plain": 11,
+    "gain_vs_plain": 0.103,
+    "picked_styled": 44,
+    "picked_plain": 13,
     "rule": "closer of plain/styled to the reference; the reference is an input"
   }
 }

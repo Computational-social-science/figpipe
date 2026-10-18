@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-19T03:44:46",
+  "run_at": "2026-10-19T03:57:40",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -9,10 +9,10 @@
     "  passed 8, failed 0",
     "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
     "  wrote knowledge\\evolution_report.json",
-    "  lean: tracked 79.6 -> 79.6 MB, worktree 147.3 -> 147.1 MB"
+    "  lean: tracked 79.6 -> 79.6 MB, worktree 102.6 -> 102.6 MB"
   ],
   "tests_ok": true,
-  "tests_summary": "260 passed, 2 skipped, 1 warning in 52.56s",
+  "tests_summary": "260 passed, 2 skipped, 1 warning in 76.00s (0:01:15)",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
@@ -130,23 +130,23 @@
   },
   "benchmark_slice": {
     "ran": true,
-    "offset": 78,
+    "offset": 84,
     "tasks": 6,
     "code": 0,
     "tail": [
-      "    type Line           ok 1/1   d=0.353 base=0.424 delta=0.071 errors=0",
-      "    type Scatter        ok 2/2   d=0.138 base=0.419 delta=0.282 errors=0",
-      "    type Std-band       ok 1/1   d=0.303 base=0.404 delta=0.101 errors=0",
+      "    type Distribution   ok 3/3   d=0.168 base=0.22 delta=0.051 errors=0",
+      "    type Field 2D       ok 2/2   d=0.355 base=0.291 delta=-0.064 errors=0",
+      "    type Line           ok 1/1   d=0.211 base=0.351 delta=0.14 errors=0",
       "  wrote E:\\2026-AI4S\\figpipe\\corpus\\e2e\\plottwin_report.json"
     ]
   },
   "capabilities": {
     "skills": 15,
     "operators": 19,
-    "benchmark_tasks": 102,
-    "benchmark_ok": 93,
+    "benchmark_tasks": 108,
+    "benchmark_ok": 99,
     "benchmark_success_rate": 1.0,
-    "benchmark_mean_distance": 0.288,
+    "benchmark_mean_distance": 0.285,
     "benchmark_anchor_distance": 0.329,
     "benchmark_shipped_anchor_distance": 0.247,
     "benchmark_unsupported": 9,
@@ -158,34 +158,20 @@
     "changed": true,
     "delta": {
       "benchmark_tasks": {
-        "before": 96,
-        "after": 102
+        "before": 102,
+        "after": 108
       },
       "benchmark_ok": {
-        "before": 87,
-        "after": 93
+        "before": 93,
+        "after": 99
       },
       "benchmark_mean_distance": {
-        "before": 0.291,
-        "after": 0.288
-      },
-      "benchmark_shipped_anchor_distance": {
-        "before": null,
-        "after": 0.247
-      },
-      "tests": {
-        "before": 259,
-        "after": 260
+        "before": 0.288,
+        "after": 0.285
       }
     },
     "verdict": {
-      "gains": [
-        {
-          "field": "tests",
-          "before": 259,
-          "after": 260
-        }
-      ],
+      "gains": [],
       "regressions": [],
       "ok": true,
       "judged_fields": [
