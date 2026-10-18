@@ -1,0 +1,368 @@
+{
+  "about": "Global skill floor + classic operators + named recipes for scientific figures.",
+  "global_verify": [
+    "verify.audit",
+    "verify.collisions"
+  ],
+  "operators": [
+    {
+      "name": "layout.plate",
+      "kind": "build",
+      "doc": "Set the plate geometry: column width, height, sharing, letters, margins."
+    },
+    {
+      "name": "encode.trend",
+      "kind": "build",
+      "doc": "Encode a trend panel: points, optional interval, fit, reference line."
+    },
+    {
+      "name": "encode.ranked",
+      "kind": "build",
+      "doc": "Encode a ranked composition: bars sorted by value, number printed on each bar."
+    },
+    {
+      "name": "encode.density",
+      "kind": "build",
+      "doc": "Encode a dense relationship as a hexbin with optional marginals and colour bar."
+    },
+    {
+      "name": "encode.matrix",
+      "kind": "build",
+      "doc": "Encode a numeric matrix (all numeric columns, or a comma list) as signed tiles."
+    },
+    {
+      "name": "encode.box",
+      "kind": "build",
+      "doc": "Encode a distribution comparison as box plots."
+    },
+    {
+      "name": "encode.bars",
+      "kind": "build",
+      "doc": "Encode parallel measures per category as grouped bars."
+    },
+    {
+      "name": "encode.scatter",
+      "kind": "build",
+      "doc": "Encode a relationship as a scatter with a fit and r."
+    },
+    {
+      "name": "style.profile",
+      "kind": "build",
+      "doc": "Apply a measured reference style: rcParams, palette, and its aspect-derived height."
+    },
+    {
+      "name": "verify.audit",
+      "kind": "verify",
+      "doc": "Compliance audit on the rendered PDF (fonts, width, height, embedded fonts)."
+    },
+    {
+      "name": "verify.collisions",
+      "kind": "verify",
+      "doc": "Glyph-level text collisions (rotated tick labels are not false positives)."
+    },
+    {
+      "name": "verify.statistics",
+      "kind": "verify",
+      "doc": "Reconcile reproduced statistics against the published values."
+    }
+  ],
+  "skills": [
+    {
+      "name": "trend_with_uncertainty",
+      "version": 1,
+      "description": "A measured trend: points, optional interval, fit, reference line, r.",
+      "required": [
+        "x",
+        "y"
+      ],
+      "optional": [
+        "lo",
+        "hi",
+        "fit",
+        "band",
+        "reference",
+        "series",
+        "title",
+        "xlabel",
+        "ylabel",
+        "columns",
+        "height_mm",
+        "published",
+        "computed"
+      ],
+      "build": [
+        {
+          "operator": "encode.trend",
+          "params": {}
+        },
+        {
+          "operator": "layout.plate",
+          "params": {}
+        }
+      ],
+      "verify": [
+        {
+          "operator": "verify.statistics",
+          "params": {}
+        }
+      ],
+      "global_checks": [
+        "verify.audit",
+        "verify.collisions"
+      ],
+      "examples": [
+        {
+          "x": "year",
+          "y": "mean"
+        }
+      ]
+    },
+    {
+      "name": "ranked_composition",
+      "version": 1,
+      "description": "Ranked composition: sorted bars with the value printed on each bar.",
+      "required": [
+        "label",
+        "value"
+      ],
+      "optional": [
+        "top",
+        "percent",
+        "xtick_rotation",
+        "xlabel",
+        "ylabel",
+        "columns",
+        "height_mm"
+      ],
+      "build": [
+        {
+          "operator": "encode.ranked",
+          "params": {}
+        },
+        {
+          "operator": "layout.plate",
+          "params": {
+            "height_mm": 100.0,
+            "margins": {
+              "bottom": 26.0
+            }
+          }
+        }
+      ],
+      "verify": [],
+      "global_checks": [
+        "verify.audit",
+        "verify.collisions"
+      ],
+      "examples": [
+        {
+          "label": "country",
+          "value": "share",
+          "percent": true
+        }
+      ]
+    },
+    {
+      "name": "density_relationship",
+      "version": 1,
+      "description": "A dense relationship on log axes: hexbin, marginals, colour bar.",
+      "required": [
+        "x",
+        "y"
+      ],
+      "optional": [
+        "marginals",
+        "colorbar",
+        "gridsize",
+        "columns",
+        "height_mm"
+      ],
+      "build": [
+        {
+          "operator": "encode.density",
+          "params": {}
+        },
+        {
+          "operator": "layout.plate",
+          "params": {
+            "height_mm": 96.0,
+            "margins": {
+              "top": 17.0
+            }
+          }
+        }
+      ],
+      "verify": [],
+      "global_checks": [
+        "verify.audit",
+        "verify.collisions"
+      ],
+      "examples": [
+        {
+          "x": "papers",
+          "y": "cites",
+          "marginals": "top"
+        }
+      ]
+    },
+    {
+      "name": "distribution_comparison",
+      "version": 1,
+      "description": "Compare distributions across categories with box plots.",
+      "required": [
+        "group",
+        "value"
+      ],
+      "optional": [
+        "columns",
+        "height_mm"
+      ],
+      "build": [
+        {
+          "operator": "encode.box",
+          "params": {}
+        },
+        {
+          "operator": "layout.plate",
+          "params": {
+            "height_mm": 70.0
+          }
+        }
+      ],
+      "verify": [],
+      "global_checks": [
+        "verify.audit",
+        "verify.collisions"
+      ],
+      "examples": [
+        {
+          "group": "condition",
+          "value": "score"
+        }
+      ]
+    },
+    {
+      "name": "grouped_measures",
+      "version": 1,
+      "description": "Parallel measures per category as grouped bars.",
+      "required": [
+        "x",
+        "ycols"
+      ],
+      "optional": [
+        "columns",
+        "height_mm"
+      ],
+      "build": [
+        {
+          "operator": "encode.bars",
+          "params": {}
+        },
+        {
+          "operator": "layout.plate",
+          "params": {
+            "height_mm": 90.0
+          }
+        }
+      ],
+      "verify": [],
+      "global_checks": [
+        "verify.audit",
+        "verify.collisions"
+      ],
+      "examples": [
+        {
+          "x": "model",
+          "ycols": [
+            "accuracy",
+            "f1"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "matrix_plate",
+      "version": 1,
+      "description": "A signed numeric matrix as tiles with a colour bar.",
+      "required": [],
+      "optional": [
+        "columns",
+        "colorbar",
+        "height_mm"
+      ],
+      "build": [
+        {
+          "operator": "encode.matrix",
+          "params": {}
+        },
+        {
+          "operator": "layout.plate",
+          "params": {
+            "columns": 1.0,
+            "height_mm": 90.0
+          }
+        }
+      ],
+      "verify": [],
+      "global_checks": [
+        "verify.audit",
+        "verify.collisions"
+      ],
+      "examples": [
+        {}
+      ]
+    },
+    {
+      "name": "styled_trend",
+      "version": 1,
+      "description": "A trend rendered in the measured style of a reference figure.",
+      "required": [
+        "x",
+        "y",
+        "profile"
+      ],
+      "optional": [
+        "lo",
+        "hi",
+        "fit",
+        "band",
+        "reference",
+        "columns",
+        "height_mm",
+        "published",
+        "computed"
+      ],
+      "build": [
+        {
+          "operator": "style.profile",
+          "params": {}
+        },
+        {
+          "operator": "encode.trend",
+          "params": {}
+        },
+        {
+          "operator": "layout.plate",
+          "params": {}
+        }
+      ],
+      "verify": [
+        {
+          "operator": "verify.statistics",
+          "params": {}
+        }
+      ],
+      "global_checks": [
+        "verify.audit",
+        "verify.collisions"
+      ],
+      "examples": [
+        {
+          "x": "year",
+          "y": "mean",
+          "profile": "corpus/style/published_fig7.json"
+        }
+      ]
+    }
+  ]
+}

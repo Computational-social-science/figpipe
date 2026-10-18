@@ -35,3 +35,7 @@ corpus/seed/cache/
 # The report DOCX is regenerable from scripts/build_capability_report.py; the PDF is the deliverable.
 reports/*.docx
 
+
+# Default output of figpipe/skills.py when no out_stem is given.
+templates/skills/
+
