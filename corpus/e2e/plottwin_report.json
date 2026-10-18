@@ -6,18 +6,18 @@
     "arxiv": "2608.28814",
     "note": "deterministic metrics only; official combined score requires the benchmark's VLM scorer and is NOT claimed here"
   },
-  "n_tasks": 126,
-  "n_ok": 116,
+  "n_tasks": 139,
+  "n_ok": 130,
   "n_unsupported": 9,
-  "n_error": 1,
+  "n_error": 0,
   "unsupported_types": {},
-  "mean_distance": 0.273,
-  "mean_baseline": 0.367,
-  "mean_improvement": 0.094,
-  "improved": 96,
-  "worse": 12,
-  "ties": 8,
-  "mean_best_of_two": 0.265,
+  "mean_distance": 0.265,
+  "mean_baseline": 0.363,
+  "mean_improvement": 0.098,
+  "improved": 119,
+  "worse": 7,
+  "ties": 4,
+  "mean_best_of_two": 0.261,
   "semantic_violations": 0,
   "decision_service": {
     "up": false,
@@ -35,22 +35,22 @@
       "mean_shipped": null
     },
     "Bar": {
-      "n": 10,
-      "ok": 10,
+      "n": 13,
+      "ok": 13,
       "errors": 0,
-      "mean_distance": 0.281,
-      "mean_baseline": 0.327,
-      "mean_delta": 0.046,
-      "mean_shipped": 0.254
+      "mean_distance": 0.28,
+      "mean_baseline": 0.325,
+      "mean_delta": 0.045,
+      "mean_shipped": 0.263
     },
     "Box/Violin": {
-      "n": 11,
-      "ok": 11,
+      "n": 13,
+      "ok": 13,
       "errors": 0,
-      "mean_distance": 0.237,
-      "mean_baseline": 0.409,
-      "mean_delta": 0.172,
-      "mean_shipped": 0.19
+      "mean_distance": 0.238,
+      "mean_baseline": 0.399,
+      "mean_delta": 0.161,
+      "mean_shipped": 0.176
     },
     "Composite": {
       "n": 3,
@@ -80,13 +80,13 @@
       "mean_shipped": 0.343
     },
     "Heatmap": {
-      "n": 8,
-      "ok": 8,
+      "n": 14,
+      "ok": 14,
       "errors": 0,
-      "mean_distance": 0.355,
-      "mean_baseline": 0.334,
-      "mean_delta": -0.021,
-      "mean_shipped": 0.229
+      "mean_distance": 0.247,
+      "mean_baseline": 0.333,
+      "mean_delta": 0.086,
+      "mean_shipped": 0.174
     },
     "Line": {
       "n": 17,
@@ -107,13 +107,13 @@
       "mean_shipped": null
     },
     "Polar/Radial": {
-      "n": 11,
-      "ok": 10,
-      "errors": 1,
-      "mean_distance": 0.259,
-      "mean_baseline": 0.251,
-      "mean_delta": -0.008,
-      "mean_shipped": 0.205
+      "n": 13,
+      "ok": 13,
+      "errors": 0,
+      "mean_distance": 0.264,
+      "mean_baseline": 0.27,
+      "mean_delta": 0.006,
+      "mean_shipped": 0.186
     },
     "Scatter": {
       "n": 16,
@@ -278,51 +278,6 @@
       },
       "hard_failures": 0,
       "findings": []
-    },
-    {
-      "id": "arxiv_2605.14587",
-      "chart": "Heatmap",
-      "panel_mode": "multi",
-      "skill": "matrix_plate",
-      "rationale": "matrix 8 measures",
-      "rows_used": 40,
-      "status": "ok",
-      "distance": 0.364,
-      "baseline_distance": 0.343,
-      "delta": -0.021,
-      "components": {
-        "palette": 0.14,
-        "aspect": 0.806,
-        "ink": 0.482
-      },
-      "hard_failures": 7,
-      "findings": [
-        {
-          "check": "text_collision",
-          "detail": "'observed_mean' over 'observed_standard_error'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'observed_standard_error' over 'protocol_rank'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'replicate_count' over 'sampling_unit_order'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'column_group_order' over 'sampling_unit_order'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'observed_mean' over 'replicate_count'",
-          "severity": "hard"
-        }
-      ]
     },
     {
       "id": "arxiv_2605.16790",
@@ -514,51 +469,6 @@
       ]
     },
     {
-      "id": "Chart2Code_level1_direct_contour_18",
-      "chart": "Heatmap",
-      "panel_mode": "multi",
-      "skill": "matrix_plate",
-      "rationale": "matrix 8 measures",
-      "rows_used": 40,
-      "status": "ok",
-      "distance": 0.43,
-      "baseline_distance": 0.429,
-      "delta": -0.001,
-      "components": {
-        "palette": 0.14,
-        "aspect": 0.854,
-        "ink": 0.73
-      },
-      "hard_failures": 11,
-      "findings": [
-        {
-          "check": "text_collision",
-          "detail": "'mean_methane_flux_umol_CH4_m2_h' over 'relative_flux_uncertainty_percent'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'flux_standard_error_umol_CH4_m2_h' over 'relative_flux_uncertainty_percent'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'flux_standard_error_umol_CH4_m2_h' over 'replicate_core_count'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'flux_standard_error_umol_CH4_m2_h' over 'mean_methane_flux_umol_CH4_m2_h'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'incubation_days' over 'mean_methane_flux_umol_CH4_m2_h'",
-          "severity": "hard"
-        }
-      ]
-    },
-    {
       "id": "Chart2Code_level1_direct_density_11",
       "chart": "Distribution",
       "panel_mode": "multi",
@@ -573,70 +483,6 @@
         "palette": 0.845,
         "aspect": 0.008,
         "ink": 0.587
-      },
-      "hard_failures": 0,
-      "findings": []
-    },
-    {
-      "id": "Chart2Code_level1_direct_heatmap_3",
-      "chart": "Heatmap",
-      "panel_mode": "multi",
-      "skill": "matrix_plate",
-      "rationale": "matrix 8 measures",
-      "rows_used": 40,
-      "status": "ok",
-      "distance": 0.361,
-      "baseline_distance": 0.3,
-      "delta": -0.061,
-      "components": {
-        "palette": 0.239,
-        "aspect": 0.771,
-        "ink": 0.254
-      },
-      "hard_failures": 8,
-      "findings": [
-        {
-          "check": "text_collision",
-          "detail": "'recall_standard_error_perce' over 'stage_recall_percent'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'stage_recall_percent' over 'within_true_stage_percent'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'absolute_stage_error' over 'incubation_temperature_c'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'cell_count' over 'within_true_stage_percent'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'recall_standard_error_perce' over 'within_true_stage_percent'",
-          "severity": "hard"
-        }
-      ]
-    },
-    {
-      "id": "Chart2Code_level1_direct_heatmap_7",
-      "chart": "Heatmap",
-      "panel_mode": "multi",
-      "skill": "matrix_plate",
-      "rationale": "matrix 3 measures",
-      "rows_used": 40,
-      "status": "ok",
-      "distance": 0.466,
-      "baseline_distance": 0.295,
-      "delta": -0.171,
-      "components": {
-        "palette": 0.175,
-        "aspect": 0.803,
-        "ink": 0.858
       },
       "hard_failures": 0,
       "findings": []
@@ -703,51 +549,6 @@
       "error": "unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this is a deliberate exclusion"
     },
     {
-      "id": "Chart2Code_level2_radar_10_v2",
-      "chart": "Polar/Radial",
-      "panel_mode": "multi",
-      "skill": "radial_profile",
-      "rationale": "polar panel_col by block_id",
-      "rows_used": 460,
-      "status": "ok",
-      "distance": 0.341,
-      "baseline_distance": 0.329,
-      "delta": -0.012,
-      "components": {
-        "palette": 0.114,
-        "aspect": 0.314,
-        "ink": 0.936
-      },
-      "hard_failures": 101,
-      "findings": [
-        {
-          "check": "text_collision",
-          "detail": "'field_replicates' over 'field_replicates'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'field_replicate' over 'field_replicates'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'field_replica' over 'field_replica'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'field_' over 'field_'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'field_replicat' over 'field_replicate'",
-          "severity": "hard"
-        }
-      ]
-    },
-    {
       "id": "Chart2Code_level2_radar_18_v5",
       "chart": "Bar",
       "panel_mode": "multi",
@@ -778,141 +579,6 @@
         {
           "check": "text_collision",
           "detail": "'condition_observation' over 'strain_summary'",
-          "severity": "hard"
-        }
-      ]
-    },
-    {
-      "id": "Chart2Code_level2_radar_23_v3",
-      "chart": "Polar/Radial",
-      "panel_mode": "multi",
-      "skill": "radial_profile",
-      "rationale": "polar panel_row by condition_id",
-      "rows_used": 175,
-      "status": "ok",
-      "distance": 0.12,
-      "baseline_distance": 0.119,
-      "delta": -0.001,
-      "components": {
-        "palette": 0.077,
-        "aspect": 0.162,
-        "ink": 0.184
-      },
-      "hard_failures": 17,
-      "findings": [
-        {
-          "check": "text_collision",
-          "detail": "'LSH' over 'LSH'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'TRP' over 'TRP'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'SAP' over 'SAP'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'CTL' over 'CTL'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'REF' over 'REF'",
-          "severity": "hard"
-        }
-      ]
-    },
-    {
-      "id": "Chart2Code_level2_radar_7_v3",
-      "chart": "Polar/Radial",
-      "panel_mode": "multi",
-      "skill": "radial_profile",
-      "rationale": "polar panel_row by block_id",
-      "rows_used": 381,
-      "status": "ok",
-      "distance": 0.28,
-      "baseline_distance": 0.28,
-      "delta": 0.0,
-      "components": {
-        "palette": 0.111,
-        "aspect": 0.531,
-        "ink": 0.451
-      },
-      "hard_failures": 44,
-      "findings": [
-        {
-          "check": "text_collision",
-          "detail": "'field_surveys' over 'field_surveys'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'field_surveys' over 'site_design_summaries'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'site_design_summaries' over 'site_design_summaries'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'field_' over 'field_'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'field_surve' over 'field_survey'",
-          "severity": "hard"
-        }
-      ]
-    },
-    {
-      "id": "Chart2Code_level2_radar_9_v4",
-      "chart": "Polar/Radial",
-      "panel_mode": "multi",
-      "skill": "radial_profile",
-      "rationale": "polar panel_row by block_id",
-      "rows_used": 192,
-      "status": "ok",
-      "distance": 0.218,
-      "baseline_distance": 0.222,
-      "delta": 0.004,
-      "components": {
-        "palette": 0.052,
-        "aspect": 0.287,
-        "ink": 0.563
-      },
-      "hard_failures": 45,
-      "findings": [
-        {
-          "check": "text_collision",
-          "detail": "'condition_measurements' over 'condition_measurements'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'habitat_profile' over 'habitat_profile'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'anchor_overview' over 'anchor_overview'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'ondition_measurements' over 'ondition_measurements'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'condition_' over 'condition_'",
           "severity": "hard"
         }
       ]
@@ -1151,35 +817,6 @@
       "findings": []
     },
     {
-      "id": "arxiv-ml-bar-line-v2__2605.21125",
-      "chart": "Polar/Radial",
-      "panel_mode": "single",
-      "skill": "radial_profile",
-      "rationale": "polar component_order by record_type",
-      "rows_used": 80,
-      "status": "ok",
-      "distance": 0.127,
-      "baseline_distance": 0.084,
-      "delta": -0.043,
-      "selected": "plain",
-      "selected_distance": 0.079,
-      "selected_gain": 0.005,
-      "selection_margin": 0.178,
-      "components": {
-        "palette": 0.046,
-        "aspect": 0.311,
-        "ink": 0.146
-      },
-      "hard_failures": 1,
-      "findings": [
-        {
-          "check": "text_collision",
-          "detail": "'replicate' over 'replicate'",
-          "severity": "hard"
-        }
-      ]
-    },
-    {
       "id": "arxiv-phys-prx-prl__2603.21981",
       "chart": "Line",
       "panel_mode": "single",
@@ -1245,55 +882,6 @@
       },
       "hard_failures": 0,
       "findings": []
-    },
-    {
-      "id": "arxiv_2502.17598",
-      "chart": "Heatmap",
-      "panel_mode": "multi",
-      "skill": "matrix_plate",
-      "rationale": "matrix 8 measures",
-      "rows_used": 40,
-      "status": "ok",
-      "distance": 0.383,
-      "baseline_distance": 0.383,
-      "delta": 0.0,
-      "selected": "plain",
-      "selected_distance": 0.418,
-      "selected_gain": -0.035,
-      "selection_margin": 0.0,
-      "components": {
-        "palette": 0.078,
-        "aspect": 0.946,
-        "ink": 0.581
-      },
-      "hard_failures": 13,
-      "findings": [
-        {
-          "check": "text_collision",
-          "detail": "'estimated_oxygen_flux_change_umol_g_root_h' over 'standard_error_umol_g_root_h'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'posterior_association_probability' over 'standard_error_umol_g_root_h'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'bacterial_isolate_index' over 'estimated_oxygen_flux_change_umol_g_root_h'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'estimated_oxygen_flux_change_umol_g_root_h' over 'posterior_association_probability'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'posterior_association_probability' over 'replicate_plants'",
-          "severity": "hard"
-        }
-      ]
     },
     {
       "id": "arxiv_2502.18153",
@@ -1390,35 +978,6 @@
         {
           "check": "height",
           "detail": "170.0 mm exceeds the 170.0 mm maximum",
-          "severity": "hard"
-        }
-      ]
-    },
-    {
-      "id": "PMC13106710",
-      "chart": "Heatmap",
-      "panel_mode": "multi",
-      "skill": "matrix_plate",
-      "rationale": "matrix 7 measures",
-      "rows_used": 40,
-      "status": "ok",
-      "distance": 0.36,
-      "baseline_distance": 0.205,
-      "delta": -0.155,
-      "selected": "plain",
-      "selected_distance": 0.144,
-      "selected_gain": 0.061,
-      "selection_margin": 0.149,
-      "components": {
-        "palette": 0.109,
-        "aspect": 0.661,
-        "ink": 0.688
-      },
-      "hard_failures": 1,
-      "findings": [
-        {
-          "check": "text_collision",
-          "detail": "'display_order' over 'value column_order'",
           "severity": "hard"
         }
       ]
@@ -2293,46 +1852,6 @@
       "semantic_findings": []
     },
     {
-      "id": "PMC12504421",
-      "chart": "Heatmap",
-      "panel_mode": "multi",
-      "skill": "matrix_plate",
-      "rationale": "pivot panel_group x record_type of panel_row",
-      "rows_used": 4,
-      "status": "ok",
-      "distance": 0.288,
-      "baseline_distance": 0.426,
-      "delta": 0.138,
-      "selected": "styled",
-      "selected_distance": 0.261,
-      "selected_gain": 0.165,
-      "selection_margin": 0.116,
-      "components": {
-        "palette": 0.112,
-        "aspect": 0.166,
-        "ink": 0.852
-      },
-      "hard_failures": 3,
-      "findings": [
-        {
-          "check": "height",
-          "detail": "170.0 mm exceeds the 170.0 mm maximum",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'site_distribution_observation' over 'trajectory_indicator_score'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'feature_summary overlap_intersection' over 'site_distribution_observation'",
-          "severity": "hard"
-        }
-      ],
-      "semantic_findings": []
-    },
-    {
       "id": "PMC12905268",
       "chart": "Distribution",
       "panel_mode": "multi",
@@ -2361,266 +1880,6 @@
         }
       ],
       "semantic_findings": []
-    },
-    {
-      "id": "Chart2Code_level2_radar_26_v3",
-      "chart": "Polar/Radial",
-      "panel_mode": "multi",
-      "skill": "radial_profile",
-      "rationale": "polar panel_row by block_id",
-      "rows_used": 164,
-      "status": "ok",
-      "distance": 0.252,
-      "baseline_distance": 0.246,
-      "delta": -0.006,
-      "selected": "plain",
-      "selected_distance": 0.169,
-      "selected_gain": 0.077,
-      "selection_margin": 0.063,
-      "components": {
-        "palette": 0.09,
-        "aspect": 0.796,
-        "ink": 0.112
-      },
-      "hard_failures": 6,
-      "findings": [
-        {
-          "check": "text_collision",
-          "detail": "'trend_C' over 'trend_C'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'radar_A' over 'radar_A'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'coverage_B' over 'trend_C'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'coverage_B' over 'radar_A'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'coverage_B' over 'coverage_B'",
-          "severity": "hard"
-        }
-      ],
-      "semantic_findings": []
-    },
-    {
-      "id": "Chart2Code_level2_radar_35_v4",
-      "chart": "Polar/Radial",
-      "panel_mode": "multi",
-      "skill": "radial_profile",
-      "rationale": "polar panel_row by block_id",
-      "rows_used": 385,
-      "status": "ok",
-      "distance": 0.323,
-      "baseline_distance": 0.337,
-      "delta": 0.014,
-      "selected": "plain",
-      "selected_distance": 0.233,
-      "selected_gain": 0.104,
-      "selection_margin": 0.075,
-      "components": {
-        "palette": 0.071,
-        "aspect": 0.63,
-        "ink": 0.646
-      },
-      "hard_failures": 13,
-      "findings": [
-        {
-          "check": "text_collision",
-          "detail": "'raw_assay' over 'raw_assay'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'metric_traces' over 'profile_overview'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'profile_overview' over 'profile_overview'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'metric_traces' over 'metric_traces'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'profile_overview' over 'raw_assay'",
-          "severity": "hard"
-        }
-      ],
-      "semantic_findings": []
-    },
-    {
-      "id": "Chart2Code_level2_radar_3_v1",
-      "chart": "Polar/Radial",
-      "panel_mode": "multi",
-      "skill": "radial_profile",
-      "rationale": "polar panel_row by panel_group",
-      "rows_used": 260,
-      "status": "ok",
-      "distance": 0.284,
-      "baseline_distance": 0.28,
-      "delta": -0.004,
-      "selected": "plain",
-      "selected_distance": 0.253,
-      "selected_gain": 0.027,
-      "selection_margin": 0.038,
-      "components": {
-        "palette": 0.033,
-        "aspect": 0.546,
-        "ink": 0.648
-      },
-      "hard_failures": 26,
-      "findings": [
-        {
-          "check": "text_collision",
-          "detail": "'shared_condition_measurements' over 'shared_condition_measurements'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'shared_condition_meas' over 'shared_condition_meas'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'shared_condition_measurem' over 'shared_condition_measurem'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'shared_condition_measurement' over 'shared_condition_measurements'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'shared_condition_measureme' over 'shared_condition_measureme'",
-          "severity": "hard"
-        }
-      ],
-      "semantic_findings": []
-    },
-    {
-      "id": "Chart2Code_level2_radar_3_v3",
-      "chart": "Polar/Radial",
-      "panel_mode": "multi",
-      "skill": "radial_profile",
-      "rationale": "polar panel_row by block_id",
-      "rows_used": 784,
-      "status": "ok",
-      "distance": 0.409,
-      "baseline_distance": 0.389,
-      "delta": -0.02,
-      "selected": "plain",
-      "selected_distance": 0.349,
-      "selected_gain": 0.04,
-      "selection_margin": 0.082,
-      "components": {
-        "palette": 0.097,
-        "aspect": 0.597,
-        "ink": 1.0
-      },
-      "hard_failures": 119,
-      "findings": [
-        {
-          "check": "text_collision",
-          "detail": "'field_replicates' over 'field_replicates'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'b_ranked_function_comparison' over 'c_ordered_system_profiles'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'a_polar_function_profile' over 'c_ordered_system_profiles'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'a_polar_function_profile' over 'b_ranked_function_comparison'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'b_ranked_function_comparison' over 'field_replicates'",
-          "severity": "hard"
-        }
-      ],
-      "semantic_findings": []
-    },
-    {
-      "id": "Chart2Code_level2_radar_40_v5",
-      "chart": "Polar/Radial",
-      "panel_mode": "multi",
-      "skill": "radial_profile",
-      "rationale": "polar panel_row by block_id",
-      "rows_used": 281,
-      "status": "ok",
-      "distance": 0.233,
-      "baseline_distance": 0.225,
-      "delta": -0.008,
-      "selected": "plain",
-      "selected_distance": 0.146,
-      "selected_gain": 0.079,
-      "selection_margin": 0.09,
-      "components": {
-        "palette": 0.111,
-        "aspect": 0.407,
-        "ink": 0.364
-      },
-      "hard_failures": 8,
-      "findings": [
-        {
-          "check": "text_collision",
-          "detail": "'A_clock' over 'A_clock'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'A_clock' over 'A_raw'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'A_raw' over 'A_raw'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'B_matrix' over 'B_matrix'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'D_summary' over 'D_summary'",
-          "severity": "hard"
-        }
-      ],
-      "semantic_findings": []
-    },
-    {
-      "id": "Chart2Code_level2_radar_4_v3",
-      "chart": "Polar/Radial",
-      "panel_mode": "multi",
-      "skill": "radial_profile",
-      "rationale": "polar panel_row by record_type",
-      "rows_used": 1215,
-      "status": "error",
-      "error": "ValueError: polar profile: 'panel_row' has non-finite values"
     },
     {
       "id": "arxiv-astro-skymap__2412.12637",
@@ -3121,56 +2380,6 @@
       "semantic_findings": []
     },
     {
-      "id": "ChartNet-sample_1acf825b0429ddfd",
-      "chart": "Heatmap",
-      "panel_mode": "multi",
-      "skill": "matrix_plate",
-      "rationale": "matrix 7 measures",
-      "rows_used": 40,
-      "status": "ok",
-      "distance": 0.19,
-      "baseline_distance": 0.291,
-      "delta": 0.101,
-      "selected": "styled",
-      "selected_distance": 0.095,
-      "selected_gain": 0.196,
-      "selection_margin": 0.117,
-      "components": {
-        "palette": 0.167,
-        "aspect": 0.109,
-        "ink": 0.328
-      },
-      "hard_failures": 34,
-      "findings": [
-        {
-          "check": "text_collision",
-          "detail": "'change_from_control' over 'standard_error'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'annotation' over 'change_from_control'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'copper_sulfate_mg_per_L' over 'panel_col'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'copper_sulfate_mg_per_L' over 'value'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'10' over '11'",
-          "severity": "hard"
-        }
-      ],
-      "semantic_findings": []
-    },
-    {
       "id": "ChartNet-sample_21db7b1495645e96",
       "chart": "Bar",
       "panel_mode": "multi",
@@ -3425,19 +2634,1636 @@
       "hard_failures": 0,
       "findings": [],
       "semantic_findings": []
+    },
+    {
+      "id": "PMC12504421",
+      "chart": "Heatmap",
+      "panel_mode": "multi",
+      "skill": "matrix_plate",
+      "rationale": "pivot panel_group x record_type of panel_row",
+      "rows_used": 4,
+      "status": "ok",
+      "distance": 0.288,
+      "baseline_distance": 0.426,
+      "delta": 0.138,
+      "selected": "styled",
+      "selected_distance": 0.261,
+      "selected_gain": 0.165,
+      "selection_margin": 0.116,
+      "components": {
+        "palette": 0.112,
+        "aspect": 0.166,
+        "ink": 0.852
+      },
+      "hard_failures": 3,
+      "findings": [
+        {
+          "check": "height",
+          "detail": "170.0 mm exceeds the 170.0 mm maximum",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'site_distribution_observation' over 'trajectory_indicator_score'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'feature_summary overlap_intersection' over 'site_distribution_observation'",
+          "severity": "hard"
+        }
+      ],
+      "semantic_findings": []
+    },
+    {
+      "id": "PMC13106710",
+      "chart": "Heatmap",
+      "panel_mode": "multi",
+      "skill": "matrix_plate",
+      "rationale": "matrix 7 measures",
+      "rows_used": 40,
+      "status": "ok",
+      "distance": 0.206,
+      "baseline_distance": 0.205,
+      "delta": -0.001,
+      "selected": "styled",
+      "selected_distance": 0.137,
+      "selected_gain": 0.068,
+      "selection_margin": 0.007,
+      "components": {
+        "palette": 0.109,
+        "aspect": 0.017,
+        "ink": 0.636
+      },
+      "hard_failures": 1,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'column_order' over 'display_order'",
+          "severity": "hard"
+        }
+      ],
+      "semantic_findings": []
+    },
+    {
+      "id": "arxiv_2502.17598",
+      "chart": "Heatmap",
+      "panel_mode": "multi",
+      "skill": "matrix_plate",
+      "rationale": "matrix 8 measures",
+      "rows_used": 40,
+      "status": "ok",
+      "distance": 0.279,
+      "baseline_distance": 0.383,
+      "delta": 0.104,
+      "selected": "styled",
+      "selected_distance": 0.333,
+      "selected_gain": 0.05,
+      "selection_margin": 0.085,
+      "components": {
+        "palette": 0.064,
+        "aspect": 0.487,
+        "ink": 0.609
+      },
+      "hard_failures": 41,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'estimated_oxygen_flux_change_umol_g_root_h' over 'standard_error_umol_g_root_h'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'bacterial_isolate_index' over 'estimated_oxygen_flux_change_umol_g_root_h'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'estimated_oxygen_flux_change_umol_g_root_h' over 'posterior_association_probability'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'posterior_association_probability' over 'standard_error_umol_g_root_h'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'posterior_association_probability' over 'replicate_plants'",
+          "severity": "hard"
+        }
+      ],
+      "semantic_findings": []
+    },
+    {
+      "id": "arxiv_2605.14587",
+      "chart": "Heatmap",
+      "panel_mode": "multi",
+      "skill": "matrix_plate",
+      "rationale": "matrix 8 measures",
+      "rows_used": 40,
+      "status": "ok",
+      "distance": 0.315,
+      "baseline_distance": 0.343,
+      "delta": 0.028,
+      "selected": "styled",
+      "selected_distance": 0.091,
+      "selected_gain": 0.252,
+      "selection_margin": 0.033,
+      "components": {
+        "palette": 0.395,
+        "aspect": 0.028,
+        "ink": 0.402
+      },
+      "hard_failures": 46,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'observed_mean' over 'observed_standard_error'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'observed_standard_error' over 'protocol_rank'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'replicate_count' over 'sampling_unit_order'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'column_group_order' over 'sampling_unit_order'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'observed_mean' over 'replicate_count'",
+          "severity": "hard"
+        }
+      ],
+      "semantic_findings": []
+    },
+    {
+      "id": "Chart2Code_level1_direct_contour_18",
+      "chart": "Heatmap",
+      "panel_mode": "multi",
+      "skill": "matrix_plate",
+      "rationale": "matrix 8 measures",
+      "rows_used": 40,
+      "status": "ok",
+      "distance": 0.334,
+      "baseline_distance": 0.429,
+      "delta": 0.095,
+      "selected": "styled",
+      "selected_distance": 0.244,
+      "selected_gain": 0.185,
+      "selection_margin": 0.119,
+      "components": {
+        "palette": 0.181,
+        "aspect": 0.395,
+        "ink": 0.655
+      },
+      "hard_failures": 41,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'mean_methane_flux_umol_CH4_m2_h' over 'relative_flux_uncertainty_percent'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'flux_standard_error_umol_CH4_m2_h' over 'relative_flux_uncertainty_percent'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'flux_standard_error_umol_CH4_m2_h' over 'replicate_core_count'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'flux_standard_error_umol_CH4_m2_h' over 'mean_methane_flux_umol_CH4_m2_h'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'incubation_days' over 'mean_methane_flux_umol_CH4_m2_h'",
+          "severity": "hard"
+        }
+      ],
+      "semantic_findings": []
+    },
+    {
+      "id": "Chart2Code_level1_direct_heatmap_3",
+      "chart": "Heatmap",
+      "panel_mode": "multi",
+      "skill": "matrix_plate",
+      "rationale": "matrix 8 measures",
+      "rows_used": 40,
+      "status": "ok",
+      "distance": 0.198,
+      "baseline_distance": 0.3,
+      "delta": 0.102,
+      "selected": "styled",
+      "selected_distance": 0.176,
+      "selected_gain": 0.124,
+      "selection_margin": 0.07,
+      "components": {
+        "palette": 0.235,
+        "aspect": 0.096,
+        "ink": 0.206
+      },
+      "hard_failures": 38,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'recall_standard_error_perce' over 'stage_recall_percent'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'stage_recall_percent' over 'within_true_stage_percent'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'absolute_stage_error' over 'incubation_temperature_c'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'cell_count' over 'within_true_stage_percent'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'recall_standard_error_perce' over 'within_true_stage_percent'",
+          "severity": "hard"
+        }
+      ],
+      "semantic_findings": []
+    },
+    {
+      "id": "Chart2Code_level1_direct_heatmap_7",
+      "chart": "Heatmap",
+      "panel_mode": "multi",
+      "skill": "matrix_plate",
+      "rationale": "matrix 3 measures",
+      "rows_used": 40,
+      "status": "ok",
+      "distance": 0.274,
+      "baseline_distance": 0.295,
+      "delta": 0.021,
+      "selected": "styled",
+      "selected_distance": 0.175,
+      "selected_gain": 0.12,
+      "selection_margin": 0.044,
+      "components": {
+        "palette": 0.176,
+        "aspect": 0.02,
+        "ink": 0.77
+      },
+      "hard_failures": 95,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'4.00' over '4.00'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'0.07' over '0.12'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'0.11' over '0.13'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'0.07' over '0.11'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'0.11' over '0.12'",
+          "severity": "hard"
+        }
+      ],
+      "semantic_findings": []
+    },
+    {
+      "id": "ChartNet-sample_1acf825b0429ddfd",
+      "chart": "Heatmap",
+      "panel_mode": "multi",
+      "skill": "matrix_plate",
+      "rationale": "matrix 7 measures",
+      "rows_used": 40,
+      "status": "ok",
+      "distance": 0.19,
+      "baseline_distance": 0.291,
+      "delta": 0.101,
+      "selected": "styled",
+      "selected_distance": 0.095,
+      "selected_gain": 0.196,
+      "selection_margin": 0.117,
+      "components": {
+        "palette": 0.167,
+        "aspect": 0.109,
+        "ink": 0.328
+      },
+      "hard_failures": 34,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'change_from_control' over 'standard_error'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'annotation' over 'change_from_control'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'copper_sulfate_mg_per_L' over 'panel_col'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'copper_sulfate_mg_per_L' over 'value'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'10' over '11'",
+          "severity": "hard"
+        }
+      ],
+      "semantic_findings": []
+    },
+    {
+      "id": "ChartNet-sample_7c69a17fd376e251",
+      "chart": "Heatmap",
+      "panel_mode": "multi",
+      "skill": "matrix_plate",
+      "rationale": "pivot block_id x panel_group of panel_row",
+      "rows_used": 4,
+      "status": "ok",
+      "distance": 0.151,
+      "baseline_distance": 0.195,
+      "delta": 0.044,
+      "selected": "styled",
+      "selected_distance": 0.081,
+      "selected_gain": 0.114,
+      "selection_margin": 0.102,
+      "components": {
+        "palette": 0.089,
+        "aspect": 0.139,
+        "ink": 0.317
+      },
+      "hard_failures": 3,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'individual channel performance' over 'influent-loading-band totals'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'influent-loading-band totals' over 'paired inoculum uplift'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'paired inoculum uplift' over 'watershed-cluster totals'",
+          "severity": "hard"
+        }
+      ],
+      "semantic_findings": []
+    },
+    {
+      "id": "ChartNet-sample_82a42a98d7e32b53",
+      "chart": "Heatmap",
+      "panel_mode": "multi",
+      "skill": "matrix_plate",
+      "rationale": "matrix 6 measures",
+      "rows_used": 40,
+      "status": "ok",
+      "distance": 0.262,
+      "baseline_distance": 0.377,
+      "delta": 0.115,
+      "selected": "styled",
+      "selected_distance": 0.187,
+      "selected_gain": 0.19,
+      "selection_margin": 0.103,
+      "components": {
+        "palette": 0.161,
+        "aspect": 0.108,
+        "ink": 0.67
+      },
+      "hard_failures": 37,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'photosystem_ii_efficiency_percent_of_preheat_baseline' over 'standard_deviation_percentage_points'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'standard_deviation_percentage_points' over 'uncertainty_ci95_half_width_percentag'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'photosystem_ii_efficiency_percent_of_preheat_baseline' over 'uncertainty_ci95_half_width_percentag'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'day_post_heat_stress_days' over 'photosystem_ii_efficiency_percent_of_preheat_baseline'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'panel_col' over 'photosystem_ii_efficiency_percent_of_preheat_baseline'",
+          "severity": "hard"
+        }
+      ],
+      "semantic_findings": []
+    },
+    {
+      "id": "ChartNet-sample_97a7c092bc6a4a6c",
+      "chart": "Heatmap",
+      "panel_mode": "multi",
+      "skill": "matrix_plate",
+      "rationale": "matrix 8 measures",
+      "rows_used": 40,
+      "status": "ok",
+      "distance": 0.125,
+      "baseline_distance": 0.238,
+      "delta": 0.113,
+      "selected": "styled",
+      "selected_distance": 0.157,
+      "selected_gain": 0.081,
+      "selection_margin": 0.068,
+      "components": {
+        "palette": 0.174,
+        "aspect": 0.033,
+        "ink": 0.095
+      },
+      "hard_failures": 42,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'net_soil_carbon_retention_gC_m2_yr' over 'soil_respiration_gC_m2_yr'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'gross_residue_carbon_input_gC_m2_yr' over 'soil_respiration_gC_m2_yr'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'gross_input_sd_gC_m2_yr' over 'net_soil_carbon_retention_gC_m2_yr'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'gross_residue_carbon_input_gC_m2_yr' over 'net_soil_carbon_retention_gC_m2_yr'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'gross_input_sd_gC_m2_yr' over 'respiration_sd_gC_m2_yr'",
+          "severity": "hard"
+        }
+      ],
+      "semantic_findings": []
+    },
+    {
+      "id": "ChartNet-sample_b07b3f6805a9e3b8",
+      "chart": "Heatmap",
+      "panel_mode": "multi",
+      "skill": "matrix_plate",
+      "rationale": "matrix 8 measures",
+      "rows_used": 40,
+      "status": "ok",
+      "distance": 0.201,
+      "baseline_distance": 0.32,
+      "delta": 0.119,
+      "selected": "styled",
+      "selected_distance": 0.115,
+      "selected_gain": 0.205,
+      "selection_margin": 0.091,
+      "components": {
+        "palette": 0.141,
+        "aspect": 0.111,
+        "ink": 0.438
+      },
+      "hard_failures": 34,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'replicate_count' over 'valueuncertainty_sd'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'assay_day' over 'salinity_pulse_ppt'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'panel_rowpanel_col' over 'salinity_pulse_ppt'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'n_observations' over 'replicate_count'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'10' over '11'",
+          "severity": "hard"
+        }
+      ],
+      "semantic_findings": []
+    },
+    {
+      "id": "arxiv-ml-bar-line-v2__2605.21125",
+      "chart": "Polar/Radial",
+      "panel_mode": "single",
+      "skill": "radial_profile",
+      "rationale": "polar component_order by record_type",
+      "rows_used": 80,
+      "status": "ok",
+      "distance": 0.074,
+      "baseline_distance": 0.084,
+      "delta": 0.01,
+      "selected": "styled",
+      "selected_distance": 0.065,
+      "selected_gain": 0.019,
+      "selection_margin": 0.014,
+      "components": {
+        "palette": 0.042,
+        "aspect": 0.201,
+        "ink": 0.028
+      },
+      "hard_failures": 1,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'replicate' over 'replicate'",
+          "severity": "hard"
+        }
+      ],
+      "semantic_findings": []
+    },
+    {
+      "id": "Chart2Code_level2_radar_10_v2",
+      "chart": "Polar/Radial",
+      "panel_mode": "multi",
+      "skill": "radial_profile",
+      "rationale": "polar panel_col by block_id",
+      "rows_used": 460,
+      "status": "ok",
+      "distance": 0.291,
+      "baseline_distance": 0.329,
+      "delta": 0.038,
+      "selected": "styled",
+      "selected_distance": 0.205,
+      "selected_gain": 0.124,
+      "selection_margin": 0.058,
+      "components": {
+        "palette": 0.074,
+        "aspect": 0.124,
+        "ink": 1.0
+      },
+      "hard_failures": 17,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'field_replicates' over 'field_replicates'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'advantage_profile' over 'attribute_scorecard'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'attribute_scorecard' over 'benchmark_profile'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'advantage_profile' over 'benchmark_profile'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'advantage_profile' over 'context_profile'",
+          "severity": "hard"
+        }
+      ],
+      "semantic_findings": []
+    },
+    {
+      "id": "Chart2Code_level2_radar_23_v3",
+      "chart": "Polar/Radial",
+      "panel_mode": "multi",
+      "skill": "radial_profile",
+      "rationale": "polar panel_row by condition_id",
+      "rows_used": 175,
+      "status": "ok",
+      "distance": 0.119,
+      "baseline_distance": 0.119,
+      "delta": 0.0,
+      "selected": "styled",
+      "selected_distance": 0.07,
+      "selected_gain": 0.049,
+      "selection_margin": 0.008,
+      "components": {
+        "palette": 0.085,
+        "aspect": 0.095,
+        "ink": 0.229
+      },
+      "hard_failures": 10,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'TRP' over 'TRP'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'SAP' over 'SAP'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'LSH' over 'LSH'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'REF' over 'REF'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'CTL' over 'CTL'",
+          "severity": "hard"
+        }
+      ],
+      "semantic_findings": []
+    },
+    {
+      "id": "Chart2Code_level2_radar_26_v3",
+      "chart": "Polar/Radial",
+      "panel_mode": "multi",
+      "skill": "radial_profile",
+      "rationale": "polar panel_row by block_id",
+      "rows_used": 164,
+      "status": "ok",
+      "distance": 0.271,
+      "baseline_distance": 0.246,
+      "delta": -0.025,
+      "selected": "styled",
+      "selected_distance": 0.136,
+      "selected_gain": 0.11,
+      "selection_margin": 0.033,
+      "components": {
+        "palette": 0.08,
+        "aspect": 0.684,
+        "ink": 0.336
+      },
+      "hard_failures": 6,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'trend_C' over 'trend_C'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'radar_A' over 'radar_A'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'coverage_B' over 'radar_A'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'coverage_B' over 'trend_C'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'coverage_B' over 'coverage_B'",
+          "severity": "hard"
+        }
+      ],
+      "semantic_findings": []
+    },
+    {
+      "id": "Chart2Code_level2_radar_35_v4",
+      "chart": "Polar/Radial",
+      "panel_mode": "multi",
+      "skill": "radial_profile",
+      "rationale": "polar panel_row by block_id",
+      "rows_used": 385,
+      "status": "ok",
+      "distance": 0.326,
+      "baseline_distance": 0.337,
+      "delta": 0.011,
+      "selected": "styled",
+      "selected_distance": 0.198,
+      "selected_gain": 0.139,
+      "selection_margin": 0.035,
+      "components": {
+        "palette": 0.074,
+        "aspect": 0.451,
+        "ink": 0.833
+      },
+      "hard_failures": 10,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'raw_assay' over 'raw_assay'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'metric_traces' over 'profile_overview'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'profile_overview' over 'profile_overview'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'metric_traces' over 'metric_traces'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'profile_overview' over 'raw_assay'",
+          "severity": "hard"
+        }
+      ],
+      "semantic_findings": []
+    },
+    {
+      "id": "Chart2Code_level2_radar_3_v1",
+      "chart": "Polar/Radial",
+      "panel_mode": "multi",
+      "skill": "radial_profile",
+      "rationale": "polar panel_row by panel_group",
+      "rows_used": 260,
+      "status": "ok",
+      "distance": 0.291,
+      "baseline_distance": 0.28,
+      "delta": -0.011,
+      "selected": "styled",
+      "selected_distance": 0.226,
+      "selected_gain": 0.054,
+      "selection_margin": 0.027,
+      "components": {
+        "palette": 0.051,
+        "aspect": 0.237,
+        "ink": 0.944
+      },
+      "hard_failures": 17,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'shared_condition_measurements' over 'shared_condition_measurements'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'shared_condition_measureme' over 'shared_condition_measureme'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'shared_condition_measurem' over 'shared_condition_measurem'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'shared_condition_measuremen' over 'shared_condition_measuremen'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'shared_condition_measurement' over 'shared_condition_measurements'",
+          "severity": "hard"
+        }
+      ],
+      "semantic_findings": []
+    },
+    {
+      "id": "Chart2Code_level2_radar_3_v3",
+      "chart": "Polar/Radial",
+      "panel_mode": "multi",
+      "skill": "radial_profile",
+      "rationale": "polar panel_row by block_id",
+      "rows_used": 784,
+      "status": "ok",
+      "distance": 0.402,
+      "baseline_distance": 0.389,
+      "delta": -0.013,
+      "selected": "styled",
+      "selected_distance": 0.32,
+      "selected_gain": 0.069,
+      "selection_margin": 0.029,
+      "components": {
+        "palette": 0.18,
+        "aspect": 0.361,
+        "ink": 1.0
+      },
+      "hard_failures": 30,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'field_replicates' over 'field_replicates'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'a_polar_function_profile' over 'c_ordered_system_profiles'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'b_ranked_function_comparison' over 'c_ordered_system_profiles'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'a_polar_function_profile' over 'b_ranked_function_comparison'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'b_ranked_function_comparison' over 'field_replicates'",
+          "severity": "hard"
+        }
+      ],
+      "semantic_findings": []
+    },
+    {
+      "id": "Chart2Code_level2_radar_40_v5",
+      "chart": "Polar/Radial",
+      "panel_mode": "multi",
+      "skill": "radial_profile",
+      "rationale": "polar panel_row by block_id",
+      "rows_used": 281,
+      "status": "ok",
+      "distance": 0.25,
+      "baseline_distance": 0.225,
+      "delta": -0.025,
+      "selected": "styled",
+      "selected_distance": 0.109,
+      "selected_gain": 0.116,
+      "selection_margin": 0.037,
+      "components": {
+        "palette": 0.109,
+        "aspect": 0.264,
+        "ink": 0.59
+      },
+      "hard_failures": 8,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'A_clock' over 'A_raw'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'A_clock' over 'A_clock'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'B_matrix' over 'B_matrix'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'A_raw' over 'A_raw'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'A_clock' over 'B_matrix'",
+          "severity": "hard"
+        }
+      ],
+      "semantic_findings": []
+    },
+    {
+      "id": "Chart2Code_level2_radar_4_v3",
+      "chart": "Polar/Radial",
+      "panel_mode": "multi",
+      "skill": "radial_profile",
+      "rationale": "polar days_since_fire_d by record_type",
+      "rows_used": 1212,
+      "status": "ok",
+      "distance": 0.414,
+      "baseline_distance": 0.436,
+      "delta": 0.022,
+      "selected": "styled",
+      "selected_distance": 0.33,
+      "selected_gain": 0.106,
+      "selection_margin": 0.063,
+      "components": {
+        "palette": 0.198,
+        "aspect": 0.37,
+        "ink": 1.0
+      },
+      "hard_failures": 9,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'raw_plot_measurement' over 'raw_plot_measurement'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'radar_profile_summary' over 'radar_profile_summary'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'radar_profile_summary' over 'raw_plot_measurement'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'radar_profile_summary' over 'succession_line_summar'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'raw_plot_measurement' over 'succession_line_summar'",
+          "severity": "hard"
+        }
+      ],
+      "semantic_findings": []
+    },
+    {
+      "id": "Chart2Code_level2_radar_7_v3",
+      "chart": "Polar/Radial",
+      "panel_mode": "multi",
+      "skill": "radial_profile",
+      "rationale": "polar panel_row by block_id",
+      "rows_used": 381,
+      "status": "ok",
+      "distance": 0.265,
+      "baseline_distance": 0.28,
+      "delta": 0.015,
+      "selected": "styled",
+      "selected_distance": 0.189,
+      "selected_gain": 0.091,
+      "selection_margin": 0.04,
+      "components": {
+        "palette": 0.114,
+        "aspect": 0.281,
+        "ink": 0.627
+      },
+      "hard_failures": 10,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'field_surveys' over 'field_surveys'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'field_surveys' over 'site_design_summaries'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'site_design_summaries' over 'site_design_summaries'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'field_surveys' over 'treatment_range_summari'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'site_design_summaries' over 'treatment_range_summari'",
+          "severity": "hard"
+        }
+      ],
+      "semantic_findings": []
+    },
+    {
+      "id": "Chart2Code_level2_radar_9_v4",
+      "chart": "Polar/Radial",
+      "panel_mode": "multi",
+      "skill": "radial_profile",
+      "rationale": "polar panel_row by block_id",
+      "rows_used": 192,
+      "status": "ok",
+      "distance": 0.213,
+      "baseline_distance": 0.222,
+      "delta": 0.009,
+      "selected": "styled",
+      "selected_distance": 0.156,
+      "selected_gain": 0.066,
+      "selection_margin": 0.025,
+      "components": {
+        "palette": 0.05,
+        "aspect": 0.059,
+        "ink": 0.773
+      },
+      "hard_failures": 13,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'condition_measurements' over 'condition_measurements'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'habitat_profile' over 'habitat_profile'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'anchor_overview' over 'anchor_overview'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'anchor_overview' over 'habitat_profile'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'condition_measuremen' over 'condition_measuremen'",
+          "severity": "hard"
+        }
+      ],
+      "semantic_findings": []
+    },
+    {
+      "id": "ChartNet-sample_e17ff7b5495b0ee4",
+      "chart": "Polar/Radial",
+      "panel_mode": "multi",
+      "skill": "radial_profile",
+      "rationale": "polar panel_row by block_id",
+      "rows_used": 44,
+      "status": "ok",
+      "distance": 0.15,
+      "baseline_distance": 0.19,
+      "delta": 0.04,
+      "selected": "styled",
+      "selected_distance": 0.138,
+      "selected_gain": 0.052,
+      "selection_margin": 0.05,
+      "components": {
+        "palette": 0.095,
+        "aspect": 0.394,
+        "ink": 0.044
+      },
+      "hard_failures": 4,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'station_composition' over 'station_composition'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'reactor_replicates' over 'reactor_replicates'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'1.8' over 'media_composition'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'a' over 'station_composition'",
+          "severity": "hard"
+        }
+      ],
+      "semantic_findings": []
+    },
+    {
+      "id": "ChartNet-sample_51138e34911000f6",
+      "chart": "Heatmap",
+      "panel_mode": "multi",
+      "code_version": "636ee66b4fdf",
+      "skill": "matrix_plate",
+      "rationale": "matrix 8 measures",
+      "rows_used": 40,
+      "status": "ok",
+      "distance": 0.405,
+      "baseline_distance": 0.523,
+      "delta": 0.118,
+      "selected": "plain",
+      "selected_distance": 0.249,
+      "selected_gain": 0.274,
+      "selection_margin": 0.073,
+      "components": {
+        "palette": 0.435,
+        "aspect": 0.16,
+        "ink": 0.576
+      },
+      "hard_failures": 8,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'aggregated_reactor_count' over 'baseline_coulombic_retention_'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'aggregated_reactor_count' over 'replicate_count'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'measurement_value' over 'standard_error'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'replicate_count' over 'standard_error'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'baseline_coulombic_retention_' over 'replicate_count'",
+          "severity": "hard"
+        }
+      ],
+      "semantic_findings": []
+    },
+    {
+      "id": "ChartNet-sample_55e97056fbbde5b6__single",
+      "chart": "Bar",
+      "panel_mode": "single",
+      "code_version": "636ee66b4fdf",
+      "skill": "grouped_measures",
+      "rationale": "grouped bars ['connectivity_rank', 'year', 'value'] by record_type",
+      "rows_used": 88,
+      "status": "ok",
+      "distance": 0.321,
+      "baseline_distance": 0.366,
+      "delta": 0.045,
+      "selected": "styled",
+      "selected_distance": 0.329,
+      "selected_gain": 0.037,
+      "selection_margin": 0.045,
+      "components": {
+        "palette": 0.355,
+        "aspect": 0.005,
+        "ink": 0.553
+      },
+      "hard_failures": 6,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'annual_replicate' over 'annual_replicate'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'annual_replicate' over 'bar_segment'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'annual_replicate' over 'annual_summary'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'annual_summary' over 'bar_segment'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'bar_segment' over 'bar_segment'",
+          "severity": "hard"
+        }
+      ],
+      "semantic_findings": []
+    },
+    {
+      "id": "ChartNet-sample_575be33996f0155c",
+      "chart": "Bar",
+      "panel_mode": "multi",
+      "code_version": "636ee66b4fdf",
+      "skill": "grouped_measures",
+      "rationale": "grouped bars ['panel_row', 'panel_col', 'observation_order'] by panel_group",
+      "rows_used": 59,
+      "status": "ok",
+      "distance": 0.307,
+      "baseline_distance": 0.344,
+      "delta": 0.037,
+      "selected": "styled",
+      "selected_distance": 0.311,
+      "selected_gain": 0.033,
+      "selection_margin": 0.042,
+      "components": {
+        "palette": 0.388,
+        "aspect": 0.017,
+        "ink": 0.396
+      },
+      "hard_failures": 5,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'growth_momentum' over 'growth_momentum'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'annual_scale' over 'annual_scale'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'habitat_contribution' over 'habitat_contribution'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'growth_momentum' over 'habitat_contribution'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'annual_scale' over 'growth_momentum'",
+          "severity": "hard"
+        }
+      ],
+      "semantic_findings": []
+    },
+    {
+      "id": "ChartNet-sample_5781d64aa8377547",
+      "chart": "Box/Violin",
+      "panel_mode": "multi",
+      "code_version": "636ee66b4fdf",
+      "skill": "distribution_comparison",
+      "rationale": "box lag_start_hours by catchment_substrate",
+      "rows_used": 288,
+      "status": "ok",
+      "distance": 0.107,
+      "baseline_distance": 0.215,
+      "delta": 0.108,
+      "selected": "styled",
+      "selected_distance": 0.119,
+      "selected_gain": 0.096,
+      "selection_margin": 0.093,
+      "components": {
+        "palette": 0.158,
+        "aspect": 0.019,
+        "ink": 0.067
+      },
+      "hard_failures": 0,
+      "findings": [],
+      "semantic_findings": []
+    },
+    {
+      "id": "ChartNet-sample_5c19f37c2ecba73b",
+      "chart": "Box/Violin",
+      "panel_mode": "multi",
+      "code_version": "636ee66b4fdf",
+      "skill": "distribution_comparison",
+      "rationale": "box study_year by sampling_campaign",
+      "rows_used": 522,
+      "status": "ok",
+      "distance": 0.385,
+      "baseline_distance": 0.48,
+      "delta": 0.095,
+      "selected": "styled",
+      "selected_distance": 0.112,
+      "selected_gain": 0.368,
+      "selection_margin": 0.36,
+      "components": {
+        "palette": 0.599,
+        "aspect": 0.014,
+        "ink": 0.223
+      },
+      "hard_failures": 0,
+      "findings": [],
+      "semantic_findings": []
+    },
+    {
+      "id": "ChartNet-sample_5cf3859f3ce78167",
+      "chart": "Bar",
+      "panel_mode": "multi",
+      "code_version": "636ee66b4fdf",
+      "skill": "grouped_measures",
+      "rationale": "grouped bars ['panel_row', 'panel_col', 'nickel_loading_wt_percent'] by panel_group",
+      "rows_used": 91,
+      "status": "ok",
+      "distance": 0.2,
+      "baseline_distance": 0.243,
+      "delta": 0.043,
+      "selected": "styled",
+      "selected_distance": 0.21,
+      "selected_gain": 0.033,
+      "selection_margin": 0.04,
+      "components": {
+        "palette": 0.341,
+        "aspect": 0.0,
+        "ink": 0.048
+      },
+      "hard_failures": 5,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'cycle_resolved_traces' over 'cycle_resolved_traces'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'cycle_resolved_traces' over 'formulation_overview'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'cycle_resolved_traces' over 'stability_variation'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'formulation_overview' over 'stability_variation'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'formulation_overview' over 'formulation_overview'",
+          "severity": "hard"
+        }
+      ],
+      "semantic_findings": []
+    },
+    {
+      "id": "ChartNet-sample_5e553d0091325708",
+      "chart": "Polar/Radial",
+      "panel_mode": "multi",
+      "code_version": "636ee66b4fdf",
+      "skill": "radial_profile",
+      "rationale": "polar panel_col by block_id",
+      "rows_used": 310,
+      "status": "ok",
+      "distance": 0.363,
+      "baseline_distance": 0.37,
+      "delta": 0.007,
+      "selected": "styled",
+      "selected_distance": 0.273,
+      "selected_gain": 0.097,
+      "selection_margin": 0.051,
+      "components": {
+        "palette": 0.105,
+        "aspect": 0.371,
+        "ink": 1.0
+      },
+      "hard_failures": 8,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'anchor_replicates' over 'trajectory_replicates'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'trajectory_replicates' over 'trajectory_replicates'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'anchor_replicates' over 'anchor_replicates'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'trajectory_summary' over 'trajectory_summary'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'anchor_replicates' over 'trajectory_summary'",
+          "severity": "hard"
+        }
+      ],
+      "semantic_findings": []
+    },
+    {
+      "id": "ChartNet-sample_63115ff12f6710a3",
+      "chart": "Heatmap",
+      "panel_mode": "multi",
+      "code_version": "636ee66b4fdf",
+      "skill": "matrix_plate",
+      "rationale": "matrix 8 measures",
+      "rows_used": 40,
+      "status": "ok",
+      "distance": 0.23,
+      "baseline_distance": 0.338,
+      "delta": 0.108,
+      "selected": "styled",
+      "selected_distance": 0.134,
+      "selected_gain": 0.204,
+      "selection_margin": 0.122,
+      "components": {
+        "palette": 0.18,
+        "aspect": 0.134,
+        "ink": 0.451
+      },
+      "hard_failures": 36,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'nitrification_resilience_index' over 'standard_error_index_units'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'nitrification_resilience_index' over 'time_label'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'microhabitat_order' over 'panel_rowpanel_col'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'time_label' over 'year season_order'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'nitrification_resilience_index' over 'year season_order'",
+          "severity": "hard"
+        }
+      ],
+      "semantic_findings": []
     }
   ],
-  "benchmark_anchor_distance": 0.33,
+  "benchmark_anchor_distance": 0.305,
   "benchmark_shipped_anchor_distance": 0.252,
+  "code_version": "636ee66b4fdf",
+  "stale_tasks": [
+    "arxiv_2510.17384",
+    "arxiv_2512.09767",
+    "arxiv_2512.25023",
+    "arxiv_2603.04948",
+    "arxiv_2603.08660",
+    "arxiv_2603.17004",
+    "arxiv_2603.23889",
+    "arxiv_2605.16790",
+    "arxiv_2605.22305",
+    "arxiv_2605.22455",
+    "local_gallery_hexbin_joint",
+    "local_picks_top_scatter__39",
+    "local_picks_top_violin__9",
+    "Chart2Code_level1_direct_HR_5",
+    "Chart2Code_level1_direct_combination_57",
+    "Chart2Code_level1_direct_density_11",
+    "Chart2Code_level1_direct_line_39",
+    "Chart2Code_level1_direct_line_8",
+    "Chart2Code_level2_3d_11_v2",
+    "Chart2Code_level2_radar_18_v5",
+    "Chart2Code_level2_scatter_13_v2",
+    "Chart2Code_level2_scatter_1_v2__single",
+    "Chart2Code_level2_scatter_22_v2__single",
+    "Chart2Code_level2_scatter_22_v3",
+    "Chart2Code_level2_scatter_27_v5",
+    "Chart2Code_level2_scatter_5_v5",
+    "Chart2Code_level2_violin_25_v4",
+    "Chart2Code_level3_table20_3_generate",
+    "Chart2NCode_ce7b7d946995482f9dd37ddad319cbc2",
+    "arxiv-astro-skymap__2510.17487",
+    "arxiv-ml-bar-line-v2__2511.15055",
+    "arxiv-phys-prx-prl__2603.21981",
+    "arxiv_2410.15876",
+    "arxiv_2502.15132",
+    "PMC13009336",
+    "PMC13022287",
+    "PMC13079874",
+    "PMC13135507",
+    "PMC13245775",
+    "PMC13252719",
+    "PMC13273070",
+    "PMC13286152",
+    "PMC13336770",
+    "PMC13342296",
+    "PMC13343911",
+    "Chart2Code_level2_3d_5_v4",
+    "Chart2Code_level2_area_3_v3",
+    "Chart2Code_level2_bar_10_v4",
+    "Chart2Code_level2_bar_22_v4",
+    "Chart2Code_level2_bar_25_v4",
+    "Chart2Code_level2_box_1_v5",
+    "Chart2Code_level2_combination_11_v2",
+    "Chart2Code_level2_combination_13_v5",
+    "Chart2Code_level2_combination_14_v5",
+    "Chart2Code_level2_combination_16_v5",
+    "Chart2Code_level2_combination_33_v5",
+    "Chart2Code_level2_combination_42_v5",
+    "Chart2Code_level2_combination_44_v3",
+    "Chart2Code_level2_density_12_v3",
+    "Chart2Code_level2_density_14_v4",
+    "Chart2Code_level2_errorpoint_10_v5",
+    "Chart2Code_level2_errorpoint_1_v5",
+    "Chart2Code_level2_errorpoint_5_v5",
+    "Chart2Code_level2_hist_2_v3",
+    "Chart2Code_level2_hist_2_v5",
+    "Chart2Code_level2_multidiff_1_v1",
+    "Chart2Code_level2_multidiff_5_v1",
+    "PMC11502666",
+    "PMC11840003",
+    "PMC12000431",
+    "PMC12354736",
+    "PMC12905268",
+    "arxiv-astro-skymap__2412.12637",
+    "arxiv-ml-3d-trajectory__2511.17399",
+    "arxiv-ml-3d-trajectory__2602.22552",
+    "arxiv_2604.01093",
+    "arxiv_2604.05237",
+    "Chart2Code_level2_contour_14_v1",
+    "Chart2Code_level2_contour_23_v4",
+    "Chart2Code_level2_contour_25_v2",
+    "Chart2Code_level2_contour_25_v3",
+    "Chart2Code_level2_contour_5_v5",
+    "Chart2Code_level2_multidiff_2_v2__single",
+    "Chart2Code_level2_quiver_10_v5",
+    "Chart2Code_level2_quiver_13_v1",
+    "Chart2Code_level2_quiver_14_v1",
+    "Chart2Code_level2_quiver_4_v5",
+    "Chart2NCode_f5989e4725654971a32e6c84c0dbdfa5",
+    "ChartNet-sample_01541e58b887ce36",
+    "ChartNet-sample_11168fb7e30df7c0",
+    "ChartNet-sample_12f1182db6964e8c",
+    "ChartNet-sample_21db7b1495645e96",
+    "ChartNet-sample_251d4b63cae5c39c",
+    "ChartNet-sample_27ec276af1be7f88",
+    "ChartNet-sample_3a712400d6efe5ca",
+    "ChartNet-sample_3d0ebd7ea1e10bf3",
+    "ChartNet-sample_42a8557ef11775e9",
+    "ChartNet-sample_46826fe4916b7d52",
+    "PMC12504421",
+    "PMC13106710",
+    "arxiv_2502.17598",
+    "arxiv_2605.14587",
+    "Chart2Code_level1_direct_contour_18",
+    "Chart2Code_level1_direct_heatmap_3",
+    "Chart2Code_level1_direct_heatmap_7",
+    "ChartNet-sample_1acf825b0429ddfd",
+    "ChartNet-sample_7c69a17fd376e251",
+    "ChartNet-sample_82a42a98d7e32b53",
+    "ChartNet-sample_97a7c092bc6a4a6c",
+    "ChartNet-sample_b07b3f6805a9e3b8",
+    "arxiv-ml-bar-line-v2__2605.21125",
+    "Chart2Code_level2_radar_10_v2",
+    "Chart2Code_level2_radar_23_v3",
+    "Chart2Code_level2_radar_26_v3",
+    "Chart2Code_level2_radar_35_v4",
+    "Chart2Code_level2_radar_3_v1",
+    "Chart2Code_level2_radar_3_v3",
+    "Chart2Code_level2_radar_40_v5",
+    "Chart2Code_level2_radar_4_v3",
+    "Chart2Code_level2_radar_7_v3",
+    "Chart2Code_level2_radar_9_v4",
+    "ChartNet-sample_e17ff7b5495b0ee4"
+  ],
+  "n_stale": 122,
   "selection": {
-    "n": 79,
-    "shipped_mean": 0.254,
-    "always_styled_mean": 0.27,
-    "plain_mean": 0.357,
-    "gain_vs_always_styled": 0.016,
-    "gain_vs_plain": 0.104,
-    "picked_styled": 70,
-    "picked_plain": 9,
+    "n": 101,
+    "shipped_mean": 0.236,
+    "always_styled_mean": 0.264,
+    "plain_mean": 0.348,
+    "gain_vs_always_styled": 0.028,
+    "gain_vs_plain": 0.112,
+    "picked_styled": 99,
+    "picked_plain": 2,
     "rule": "closer of plain/styled to the reference; the reference is an input"
   }
 }

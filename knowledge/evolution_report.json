@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-19T04:57:10",
+  "run_at": "2026-10-19T05:37:49",
   "knowledge_base_version": 16,
   "results": {
     "L01": {
@@ -105,12 +105,12 @@
   "ok": true,
   "note": "A rule with ok=null has no machine check and is NOT counted as passing. The loop re-verifies and re-measures; it does not discover new rules.",
   "lean": {
-    "tracked_files_before": 960,
-    "tracked_files_after": 960,
-    "tracked_mb_before": 79.6,
-    "tracked_mb_after": 79.6,
-    "worktree_mb_before": 101.7,
-    "worktree_mb_after": 101.7,
+    "tracked_files_before": 961,
+    "tracked_files_after": 961,
+    "tracked_mb_before": 79.7,
+    "tracked_mb_after": 79.7,
+    "worktree_mb_before": 107.0,
+    "worktree_mb_after": 107.0,
     "regenerable_still_tracked": {},
     "run_records_trimmed": 0,
     "disk_purged": []

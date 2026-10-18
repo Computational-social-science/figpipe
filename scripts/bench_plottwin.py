@@ -153,6 +153,12 @@ def fetch_row(offset: int) -> dict:
             if exc.code not in (429, 500, 502, 503, 504):
                 raise
             time.sleep(min(30.0, 3.0 * (attempt + 1)))
+        except (urllib.error.URLError, ConnectionError, TimeoutError) as exc:
+            # a dropped connection (WinError 10054) is transient, not a task failure
+            if attempt == 6:
+                raise RuntimeError(
+                    f"dataset server unreachable at offset {offset}: {exc}") from exc
+            time.sleep(min(30.0, 3.0 * (attempt + 1)))
     if payload is None:
         raise RuntimeError(f"dataset server kept rate-limiting offset {offset}")
     time.sleep(0.35)
@@ -369,8 +375,17 @@ def choose_reading(df: pd.DataFrame, chart: str, panel_mode: str):
         ang = next((c for c in cats if df[c].nunique() <= 12), None)
         if not ang:
             raise MappingError("polar/radial needs an angular category (<=12 levels)")
-        return "radial_profile", {"theta": ang, "value": nums[0]}, df, \
-            f"polar {nums[0]} by {ang}"
+        # a MEASURE must be mostly finite: bookkeeping columns such as panel_row are >90% NaN and
+        # drawing them raises "has non-finite values" instead of producing a profile
+        usable = [c for c in nums if df[c].notna().mean() >= 0.8]
+        if not usable:
+            raise MappingError("polar/radial has no mostly-finite numeric measure")
+        val = usable[0]
+        sub = df[[ang, val]].dropna()
+        if len(sub) < 3:
+            raise MappingError("polar/radial has fewer than 3 complete (angle, value) rows")
+        return "radial_profile", {"theta": ang, "value": val}, sub, \
+            f"polar {val} by {ang}"
     if chart == "Field 2D":
         # a field needs its own (x, y, value) triple: the pivot is the drawing
         coord_candidates = [c for c in nums if df[c].nunique() >= 3]
@@ -392,8 +407,36 @@ def choose_reading(df: pd.DataFrame, chart: str, panel_mode: str):
     raise MappingError(f"chart type {chart!r} has no operator yet (see knowledge/benchmark_skill_map.json)")
 
 
+def _code_version() -> str:
+    """A short fingerprint of the code that renders figures.
+
+    WHY: rows rendered before a fix are STALE, and re-running the fixed operator over a report that
+    still holds pre-fix numbers makes the fix look like a regression (observed twice: Field 2D and
+    Heatmap both looked broken because their rows predated the canvas-width fix). Recording the
+    version makes staleness a queryable fact instead of a suspicion.
+    """
+    import hashlib
+    h = hashlib.sha1()
+    for rel in ("figpipe/drawlib.py", "figpipe/skills.py", "figpipe/styleprofile.py",
+                "figpipe/composite.py", "scripts/bench_plottwin.py"):
+        path = ROOT / rel
+        if path.is_file():
+            h.update(path.read_bytes())
+    return h.hexdigest()[:12]
+
+
+CODE_VERSION = _code_version()
+
+
+def stale_tasks(tasks) -> list[str]:
+    """Ids whose measurement predates the current code fingerprint."""
+    return [t.get("id") for t in tasks
+            if t.get("status") == "ok" and t.get("code_version") != CODE_VERSION]
+
+
 def run_task(row: dict, out_dir: pathlib.Path) -> dict:
-    result = {"id": row["id"], "chart": row["chart_type_name"], "panel_mode": row["panel_mode"]}
+    result = {"id": row["id"], "chart": row["chart_type_name"], "panel_mode": row["panel_mode"],
+              "code_version": CODE_VERSION}
     try:
         ref_img = crop_ink(download_image(row), out_dir / f"{row['id']}_ref.png")
         ref_profile = styleprofile.StyleProfile.from_image(ref_img)
@@ -794,6 +837,9 @@ def main(argv=None) -> int:
     # as long as those tasks stay in the report.
     report["benchmark_anchor_distance"] = _anchor_distance(report["tasks"])
     report["benchmark_shipped_anchor_distance"] = _shipped_anchor_distance(report["tasks"])
+    report["code_version"] = CODE_VERSION
+    report["stale_tasks"] = stale_tasks(report["tasks"])
+    report["n_stale"] = len(report["stale_tasks"])
     # SELECTION IS MEASURED ON ITS OWN SUBSET. Only tasks rendered after the decision existed
     # carry `selected_distance`; averaging those against a mean over ALL tasks compares two
     # different task sets -- the exact defect this project has now fixed three times. Every

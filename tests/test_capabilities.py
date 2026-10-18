@@ -250,3 +250,27 @@ def test_the_benchmark_slice_walks_forward_instead_of_re_measuring():
     window = set(range(nxt, min(nxt + 6, bench.POOL)))
     if seen and covered:
         assert not window.issubset(covered) or nxt == 0
+
+
+def test_stale_rows_are_detectable_not_guessed():
+    """Rows rendered before a fix must be identifiable as stale.
+
+    Field 2D and Heatmap both looked like operator failures because their rows predated the
+    canvas-width fix. Each row now records the fingerprint of the rendering code, so staleness is a
+    queryable fact instead of a suspicion.
+    """
+    import sys
+    sys.path.insert(0, str(ROOT / "scripts"))
+    try:
+        import bench_plottwin as bench
+    except Exception:                    # pragma: no cover
+        import pytest
+        pytest.skip("benchmark harness unavailable")
+    assert len(bench.CODE_VERSION) == 12
+    fresh = [{"id": "a", "status": "ok", "code_version": bench.CODE_VERSION}]
+    old = [{"id": "b", "status": "ok", "code_version": "deadbeef1234"}]
+    unsupported = [{"id": "c", "status": "unsupported"}]
+    assert bench.stale_tasks(fresh) == []
+    assert bench.stale_tasks(old) == ["b"]
+    assert bench.stale_tasks(unsupported) == []
+    assert bench.stale_tasks(fresh + old) == ["b"]

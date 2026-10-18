@@ -704,3 +704,54 @@ Three lessons, in order of importance:
    single-column figure, and the old `matrix_plate` path happened to have a matching aspect by luck.
 3. **Component-level diagnostics localise a regression in seconds.** `aspect: 0.75` on every task of
    one type, and `0.001` on another, named the defect without reading any code.
+
+
+## 34. One shared bug was making two chart types look bad (2026-10-19)
+
+After the canvas-width fix (##33), Heatmap was re-measured and flipped as well:
+
+    Heatmap before: styled 0.355  plain 0.334  delta -0.021   (blamed on matrix_plate)
+    Heatmap after : styled 0.247  plain 0.333  delta +0.086
+
+The Heatmap rows had been measured BEFORE the fix -- they were stale, and their component
+breakdown still showed the signature: `aspect` 0.66-0.95 on nearly every task, versus 0.001 on
+two-column figures. One bug in the style layer had been making TWO chart types look like operator
+failures.
+
+After re-measuring the stale rows, **no supported chart type is negative**:
+
+    Scatter +0.235  Box/Violin +0.172  Std-band +0.135  Field 2D +0.098  Line +0.088
+    Heatmap +0.086  Distribution +0.047  Bar +0.046  Composite +0.023  Polar +0.006
+
+Also fixed while measuring Polar:
+  * the mapper chose `panel_row` (95% NaN bookkeeping) as the measured value -> "has non-finite
+    values"; a measure must now be >=80% finite and rows are dropped before drawing
+  * a dropped connection (WinError 10054) is now retried like a 5xx instead of crashing the scan
+
+METHOD NOTE, now the third time it has paid: **stale rows are a measurement defect too.** Re-running
+a fixed operator over a report that still holds pre-fix numbers makes the fix look like a regression.
+Before concluding anything about a chart type, check whether its rows were rendered after the last
+change to the shared layer.
+
+
+## 35. Staleness is now a queryable fact (2026-10-19)
+
+Field 2D and Heatmap both looked broken because their rows predated the canvas-width fix. The
+lesson from ##34 was "check whether the rows are stale" -- which is a guess until the rows say so.
+
+Every task row now records `code_version`: a 12-char fingerprint over the files that render figures
+(drawlib, skills, styleprofile, composite, the harness). The report states how many executed tasks
+were measured with an earlier fingerprint, and `--types X --scan` re-measures a whole type after any
+change to the shared layer.
+
+Current state after the fix, all measured on the SAME fingerprint:
+
+    125/134 executed, 0 errors, 9 classified unsupported
+    Scatter +0.235  Box/Violin +0.172  Std-band +0.135  Field 2D +0.098  Line +0.088
+    Heatmap +0.086  Distribution +0.047  Bar +0.046  Composite +0.023  Polar +0.006
+    NO chart type is negative any more.
+
+Two milestones reached this round:
+  1. every supported chart type now benefits from style transfer (was 2 negative types)
+  2. the selection step is measured on 96 tasks: shipped 0.237 vs always-styled 0.264 vs plain
+     0.349 -- deciding beats transferring by 0.027 and beats not styling by 0.112.
