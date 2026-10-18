@@ -6,18 +6,18 @@
     "arxiv": "2608.28814",
     "note": "deterministic metrics only; official combined score requires the benchmark's VLM scorer and is NOT claimed here"
   },
-  "n_tasks": 139,
-  "n_ok": 130,
+  "n_tasks": 141,
+  "n_ok": 132,
   "n_unsupported": 9,
   "n_error": 0,
   "unsupported_types": {},
-  "mean_distance": 0.265,
-  "mean_baseline": 0.363,
+  "mean_distance": 0.266,
+  "mean_baseline": 0.364,
   "mean_improvement": 0.098,
-  "improved": 119,
+  "improved": 121,
   "worse": 7,
   "ties": 4,
-  "mean_best_of_two": 0.261,
+  "mean_best_of_two": 0.263,
   "semantic_violations": 0,
   "decision_service": {
     "up": false,
@@ -35,22 +35,22 @@
       "mean_shipped": null
     },
     "Bar": {
-      "n": 13,
-      "ok": 13,
+      "n": 14,
+      "ok": 14,
       "errors": 0,
-      "mean_distance": 0.28,
-      "mean_baseline": 0.325,
+      "mean_distance": 0.284,
+      "mean_baseline": 0.329,
       "mean_delta": 0.045,
-      "mean_shipped": 0.263
+      "mean_shipped": 0.267
     },
     "Box/Violin": {
-      "n": 13,
-      "ok": 13,
+      "n": 14,
+      "ok": 14,
       "errors": 0,
-      "mean_distance": 0.238,
-      "mean_baseline": 0.399,
-      "mean_delta": 0.161,
-      "mean_shipped": 0.176
+      "mean_distance": 0.248,
+      "mean_baseline": 0.407,
+      "mean_delta": 0.159,
+      "mean_shipped": 0.169
     },
     "Composite": {
       "n": 3,
@@ -3006,96 +3006,6 @@
       "semantic_findings": []
     },
     {
-      "id": "ChartNet-sample_7c69a17fd376e251",
-      "chart": "Heatmap",
-      "panel_mode": "multi",
-      "skill": "matrix_plate",
-      "rationale": "pivot block_id x panel_group of panel_row",
-      "rows_used": 4,
-      "status": "ok",
-      "distance": 0.151,
-      "baseline_distance": 0.195,
-      "delta": 0.044,
-      "selected": "styled",
-      "selected_distance": 0.081,
-      "selected_gain": 0.114,
-      "selection_margin": 0.102,
-      "components": {
-        "palette": 0.089,
-        "aspect": 0.139,
-        "ink": 0.317
-      },
-      "hard_failures": 3,
-      "findings": [
-        {
-          "check": "text_collision",
-          "detail": "'individual channel performance' over 'influent-loading-band totals'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'influent-loading-band totals' over 'paired inoculum uplift'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'paired inoculum uplift' over 'watershed-cluster totals'",
-          "severity": "hard"
-        }
-      ],
-      "semantic_findings": []
-    },
-    {
-      "id": "ChartNet-sample_82a42a98d7e32b53",
-      "chart": "Heatmap",
-      "panel_mode": "multi",
-      "skill": "matrix_plate",
-      "rationale": "matrix 6 measures",
-      "rows_used": 40,
-      "status": "ok",
-      "distance": 0.262,
-      "baseline_distance": 0.377,
-      "delta": 0.115,
-      "selected": "styled",
-      "selected_distance": 0.187,
-      "selected_gain": 0.19,
-      "selection_margin": 0.103,
-      "components": {
-        "palette": 0.161,
-        "aspect": 0.108,
-        "ink": 0.67
-      },
-      "hard_failures": 37,
-      "findings": [
-        {
-          "check": "text_collision",
-          "detail": "'photosystem_ii_efficiency_percent_of_preheat_baseline' over 'standard_deviation_percentage_points'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'standard_deviation_percentage_points' over 'uncertainty_ci95_half_width_percentag'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'photosystem_ii_efficiency_percent_of_preheat_baseline' over 'uncertainty_ci95_half_width_percentag'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'day_post_heat_stress_days' over 'photosystem_ii_efficiency_percent_of_preheat_baseline'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'panel_col' over 'photosystem_ii_efficiency_percent_of_preheat_baseline'",
-          "severity": "hard"
-        }
-      ],
-      "semantic_findings": []
-    },
-    {
       "id": "ChartNet-sample_97a7c092bc6a4a6c",
       "chart": "Heatmap",
       "panel_mode": "multi",
@@ -4125,6 +4035,174 @@
         }
       ],
       "semantic_findings": []
+    },
+    {
+      "id": "ChartNet-sample_68d34458d8f08a48",
+      "chart": "Box/Violin",
+      "panel_mode": "multi",
+      "code_version": "636ee66b4fdf",
+      "skill": "distribution_comparison",
+      "rationale": "box panel_row by panel_group",
+      "rows_used": 188,
+      "status": "ok",
+      "distance": 0.38,
+      "baseline_distance": 0.503,
+      "delta": 0.123,
+      "selected": "styled",
+      "selected_distance": 0.082,
+      "selected_gain": 0.421,
+      "selection_margin": 0.415,
+      "components": {
+        "palette": 0.617,
+        "aspect": 0.002,
+        "ink": 0.162
+      },
+      "hard_failures": 0,
+      "findings": [],
+      "semantic_findings": []
+    },
+    {
+      "id": "ChartNet-sample_7c69a17fd376e251",
+      "chart": "Heatmap",
+      "panel_mode": "multi",
+      "code_version": "636ee66b4fdf",
+      "skill": "matrix_plate",
+      "rationale": "pivot block_id x panel_group of panel_row",
+      "rows_used": 4,
+      "status": "ok",
+      "distance": 0.151,
+      "baseline_distance": 0.195,
+      "delta": 0.044,
+      "selected": "styled",
+      "selected_distance": 0.081,
+      "selected_gain": 0.114,
+      "selection_margin": 0.102,
+      "components": {
+        "palette": 0.089,
+        "aspect": 0.139,
+        "ink": 0.317
+      },
+      "hard_failures": 3,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'individual channel performance' over 'influent-loading-band totals'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'influent-loading-band totals' over 'paired inoculum uplift'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'paired inoculum uplift' over 'watershed-cluster totals'",
+          "severity": "hard"
+        }
+      ],
+      "semantic_findings": []
+    },
+    {
+      "id": "ChartNet-sample_82a42a98d7e32b53",
+      "chart": "Heatmap",
+      "panel_mode": "multi",
+      "code_version": "636ee66b4fdf",
+      "skill": "matrix_plate",
+      "rationale": "matrix 6 measures",
+      "rows_used": 40,
+      "status": "ok",
+      "distance": 0.262,
+      "baseline_distance": 0.377,
+      "delta": 0.115,
+      "selected": "styled",
+      "selected_distance": 0.187,
+      "selected_gain": 0.19,
+      "selection_margin": 0.103,
+      "components": {
+        "palette": 0.161,
+        "aspect": 0.108,
+        "ink": 0.67
+      },
+      "hard_failures": 37,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'photosystem_ii_efficiency_percent_of_preheat_baseline' over 'standard_deviation_percentage_points'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'standard_deviation_percentage_points' over 'uncertainty_ci95_half_width_percentag'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'photosystem_ii_efficiency_percent_of_preheat_baseline' over 'uncertainty_ci95_half_width_percentag'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'day_post_heat_stress_days' over 'photosystem_ii_efficiency_percent_of_preheat_baseline'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'panel_col' over 'photosystem_ii_efficiency_percent_of_preheat_baseline'",
+          "severity": "hard"
+        }
+      ],
+      "semantic_findings": []
+    },
+    {
+      "id": "ChartNet-sample_953bb3ed650d8541",
+      "chart": "Bar",
+      "panel_mode": "multi",
+      "code_version": "636ee66b4fdf",
+      "skill": "grouped_measures",
+      "rationale": "grouped bars ['panel_row', 'panel_col', 'year'] by panel_group",
+      "rows_used": 263,
+      "status": "ok",
+      "distance": 0.328,
+      "baseline_distance": 0.378,
+      "delta": 0.05,
+      "selected": "styled",
+      "selected_distance": 0.311,
+      "selected_gain": 0.067,
+      "selection_margin": 0.049,
+      "components": {
+        "palette": 0.477,
+        "aspect": 0.005,
+        "ink": 0.28
+      },
+      "hard_failures": 5,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'landscape_observations' over 'landscape_observations'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'landscape_observations' over 'regional_anchor'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'regional_anchor' over 'regional_anchor'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'landscape_observations' over 'ranked_distribution'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'ranked_distribution' over 'ranked_distribution'",
+          "severity": "hard"
+        }
+      ],
+      "semantic_findings": []
     }
   ],
   "benchmark_anchor_distance": 0.305,
@@ -4237,8 +4315,6 @@
     "Chart2Code_level1_direct_heatmap_3",
     "Chart2Code_level1_direct_heatmap_7",
     "ChartNet-sample_1acf825b0429ddfd",
-    "ChartNet-sample_7c69a17fd376e251",
-    "ChartNet-sample_82a42a98d7e32b53",
     "ChartNet-sample_97a7c092bc6a4a6c",
     "ChartNet-sample_b07b3f6805a9e3b8",
     "arxiv-ml-bar-line-v2__2605.21125",
@@ -4254,15 +4330,15 @@
     "Chart2Code_level2_radar_9_v4",
     "ChartNet-sample_e17ff7b5495b0ee4"
   ],
-  "n_stale": 122,
+  "n_stale": 120,
   "selection": {
-    "n": 101,
-    "shipped_mean": 0.236,
-    "always_styled_mean": 0.264,
-    "plain_mean": 0.348,
-    "gain_vs_always_styled": 0.028,
-    "gain_vs_plain": 0.112,
-    "picked_styled": 99,
+    "n": 103,
+    "shipped_mean": 0.235,
+    "always_styled_mean": 0.266,
+    "plain_mean": 0.35,
+    "gain_vs_always_styled": 0.03,
+    "gain_vs_plain": 0.115,
+    "picked_styled": 101,
     "picked_plain": 2,
     "rule": "closer of plain/styled to the reference; the reference is an input"
   }
