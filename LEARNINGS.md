@@ -580,3 +580,24 @@ covered set.
 This is the fifth self-measurement defect in two days, and the pattern is now unmistakable: **the
 instruments and the scheduling of measurement are more likely to be wrong than the pipeline they
 measure.** Recording a number every six hours is not the same as learning something every six hours.
+
+
+## 29. The anchor was stable in name only (2026-10-19)
+
+The "fixed 20-task subset" anchor moved 0.297 -> 0.329 on a run that only added coverage. Cause: it
+was defined as "the first 20 task ids in sorted order", which is stable only while no new id sorts
+earlier than an existing one. The moment the loop walked into the Chart2Code block, six new ids
+entered the anchor set and the metric changed with no capability change -- a false regression, the
+second one produced by the same anchor idea.
+
+Fix: the anchor ids are FROZEN in `knowledge/benchmark_anchor.json` on first creation and reused
+forever. A test appends a new id that sorts first and asserts the anchor set and its value do not
+move. The current anchor (0.329) is therefore the value over those 20 specific tasks, whatever else
+gets measured later.
+
+Also restored two tests that a careless edit had dropped (shipped-distance and slice coverage) --
+a reminder that deleting tests is a capability regression too, and it was invisible until the count
+was checked.
+
+The loop's next run then behaved correctly: it walked to an uncovered window, measured 6 new tasks,
+shipped distance improved 0.269 -> 0.257, no regressions, exit 0.
