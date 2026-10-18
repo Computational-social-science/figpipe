@@ -1,0 +1,150 @@
+{
+  "run_at": "2026-10-18T19:16:37",
+  "dry_run": false,
+  "evolve_ok": true,
+  "evolve_exit_code": 0,
+  "evolve_output": [
+    "knowledge base -> v14",
+    "  checked 7/15 rules (8 unchecked)",
+    "  passed 7, failed 0",
+    "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
+    "  wrote knowledge\\evolution_report.json",
+    "  lean: tracked 70.1 -> 70.1 MB, worktree 1718.5 -> 1718.4 MB"
+  ],
+  "tests_ok": false,
+  "tests_summary": "1 failed, 139 passed, 2 skipped in 34.43s",
+  "knowledge_version_before": 14,
+  "knowledge_version_after": 14,
+  "knowledge_changed": false,
+  "published": {
+    "pushed": false,
+    "steps": [
+      {
+        "cmd": "git add -A",
+        "code": 0,
+        "tail": [
+          "warning: in the working copy of 'Seeds/0001/dataverse_files/Step_X6_R_Relative_Influence_Figures_LATEST.R', LF will be replaced by CRLF the next time Git touches it"
+        ]
+      },
+      {
+        "cmd": "git -c user.name=figpipe-bot",
+        "code": 0,
+        "tail": [
+          " create mode 100644 knowledge/runs/2026-10-18T191637.json"
+        ]
+      },
+      {
+        "cmd": "git push origin",
+        "code": 1,
+        "tail": [
+          "error: failed to push some refs to 'https://github.com/Computational-social-science/figpipe.git'"
+        ]
+      }
+    ]
+  },
+  "check_results": {
+    "L01": {
+      "ok": true,
+      "detail": "figpipe.style.panel_letter present",
+      "confidence_before": "enforced"
+    },
+    "L02": {
+      "ok": true,
+      "detail": "all rcParams match",
+      "confidence_before": "enforced"
+    },
+    "L03": {
+      "ok": true,
+      "detail": "all sizes in band",
+      "confidence_before": "enforced"
+    },
+    "L04": {
+      "ok": true,
+      "detail": "figpipe.style.suppress_log_exponents present",
+      "confidence_before": "enforced"
+    },
+    "L05": {
+      "ok": true,
+      "detail": "all rcParams match",
+      "confidence_before": "enforced"
+    },
+    "L06": {
+      "ok": true,
+      "detail": "all rcParams match",
+      "confidence_before": "enforced"
+    },
+    "L07": {
+      "ok": true,
+      "detail": "figpipe.audit.audit present",
+      "confidence_before": "enforced"
+    },
+    "H01": {
+      "ok": null,
+      "detail": "UNCHECKED: no machine-executable check defined for this rule",
+      "confidence_before": "hypothesis"
+    },
+    "H02": {
+      "ok": null,
+      "detail": "UNCHECKED: no machine-executable check defined for this rule",
+      "confidence_before": "refuted"
+    },
+    "E01": {
+      "ok": null,
+      "detail": "UNCHECKED: no machine-executable check defined for this rule",
+      "confidence_before": "void"
+    },
+    "E02": {
+      "ok": null,
+      "detail": "UNCHECKED: no machine-executable check defined for this rule",
+      "confidence_before": "void"
+    },
+    "C01": {
+      "ok": null,
+      "detail": "UNCHECKED: no machine-executable check defined for this rule",
+      "confidence_before": "hypothesis"
+    },
+    "C02": {
+      "ok": null,
+      "detail": "UNCHECKED: no machine-executable check defined for this rule",
+      "confidence_before": "hypothesis"
+    },
+    "C03": {
+      "ok": null,
+      "detail": "UNCHECKED: no machine-executable check defined for this rule",
+      "confidence_before": "hypothesis"
+    },
+    "C04": {
+      "ok": null,
+      "detail": "UNCHECKED: no machine-executable check defined for this rule",
+      "confidence_before": "hypothesis"
+    }
+  },
+  "demoted": [],
+  "promoted": [],
+  "regressed_detail": {},
+  "check_summary": {
+    "rules_total": 15,
+    "checked": 7,
+    "passed": 7,
+    "failed": 0,
+    "unchecked": 8,
+    "unchecked_ids": [
+      "H01",
+      "H02",
+      "E01",
+      "E02",
+      "C01",
+      "C02",
+      "C03",
+      "C04"
+    ]
+  },
+  "rules": {
+    "enforced": 7,
+    "measured_unenforced": 0,
+    "hypothesis": 5,
+    "regressed": 0
+  },
+  "ok": false,
+  "publish_note": "The publish outcome is recorded after the commit that carries this run, so it describes the push triggered by this run; the file's own commit is made by the next scheduled run."
+}

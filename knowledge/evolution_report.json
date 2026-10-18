@@ -1,6 +1,6 @@
 {
-  "run_at": "2026-10-18T12:00:47",
-  "knowledge_base_version": 14,
+  "run_at": "2026-10-18T22:05:17",
+  "knowledge_base_version": 16,
   "results": {
     "L01": {
       "ok": true,
@@ -76,13 +76,18 @@
       "ok": null,
       "detail": "UNCHECKED: no machine-executable check defined for this rule",
       "confidence_before": "hypothesis"
+    },
+    "L08": {
+      "ok": true,
+      "detail": "4 panels, letters ['a', 'b', 'c', 'd'], gaps x=[9.0] y=[13.2] mm, page 183.0x140.0 mm",
+      "confidence_before": "enforced"
     }
   },
   "demoted": [],
   "summary": {
-    "rules_total": 15,
-    "checked": 7,
-    "passed": 7,
+    "rules_total": 16,
+    "checked": 8,
+    "passed": 8,
     "failed": 0,
     "unchecked": 8,
     "unchecked_ids": [
@@ -100,12 +105,12 @@
   "ok": true,
   "note": "A rule with ok=null has no machine check and is NOT counted as passing. The loop re-verifies and re-measures; it does not discover new rules.",
   "lean": {
-    "tracked_files_before": 799,
-    "tracked_files_after": 799,
-    "tracked_mb_before": 69.3,
-    "tracked_mb_after": 69.3,
-    "worktree_mb_before": 70.4,
-    "worktree_mb_after": 70.4,
+    "tracked_files_before": 838,
+    "tracked_files_after": 838,
+    "tracked_mb_before": 74.0,
+    "tracked_mb_after": 74.0,
+    "worktree_mb_before": 76.6,
+    "worktree_mb_after": 76.6,
     "regenerable_still_tracked": {},
     "run_records_trimmed": 0,
     "disk_purged": []

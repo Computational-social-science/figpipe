@@ -87,6 +87,9 @@ _OVERRIDES = {
     "figure.dpi": 400,
     # Explicit sizes only: a named size such as "large" resolves to 1.2x the base
     # and lands ABOVE the 7 pt ceiling. Measured at 8.4 pt on panel titles.
+    # The BASE size is pinned too: matplotlib's default is 10 pt, which fails the
+    # 5-7 pt Nature band for every text element that has no explicit override.
+    "font.size": 6.0,
     "axes.titlesize": 7.0,
     "axes.labelsize": 7.0,
     "xtick.labelsize": 6.0,

@@ -1,0 +1,88 @@
+############################
+### Create Athena Table
+############################
+
+NOTE - use the timestap of the CSV to track different versions of the data. 
+Upload the file to S3 bucket - INPUT_Python_OpenAlex_All_Work_IDs_Extracted_and_WikiData_Terms_2024_03_19.csv
+
+CREATE EXTERNAL TABLE IF NOT EXISTS `mag_staging`.`project_phoenix_extracted_terms_work_ids_2024_03_19` (
+  `work_id` string
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe'
+WITH SERDEPROPERTIES (
+ 'serialization.format' = ',',
+ 'field.delim' = ','
+)
+LOCATION 's3://mag-output/PROJECT_Phoenix/Extracted_Terms_Work_IDs/'
+TBLPROPERTIES ('skip.header.line.count'='1')
+
+
+############################
+### Papers Citing the Uploaded Work IDs
+############################
+
+# N.B., First split citing_work_id by ' ' then by '+'.
+# For Country, split by '=' then by '+'
+# Run and name file - INPUT_Python_OpenAlex_Citing_IDs_for_Extracted_and_WikiData_Terms_2024_03_19.csv
+
+with citation_table as (SELECT referenced_work_id as cited_work_id, work_id as citing_work_id FROM "open_alex"."works_referenced_works"),
+
+publication_year_table as (SELECT id as work_id, year FROM "open_alex"."semantic_works"),
+
+country_code_table as (Select work_id, array_join(array_agg(concat(country_code,'-',author_position)), '=') as country
+    From (SELECT work_id,
+          institution_id,
+          author_position
+        FROM "open_alex"."works_authorships"
+      ) auth
+      join(SELECT id,
+          country_code
+        FROM "open_alex"."institutions"
+      ) inst ON inst.id = auth.institution_id
+    group by work_id
+  )
+
+SELECT distinct extracted_terms_table.work_id, 
+        array_join(array_agg(concat(concat(year,'+',citing_work_id),'+',country)),' ') as citing_work_id
+FROM "mag_staging"."project_phoenix_extracted_terms_work_ids_2024_03_19" as extracted_terms_table
+
+JOIN citation_table on extracted_terms_table.work_id = citation_table.cited_work_id 
+JOIN publication_year_table on citation_table.citing_work_id = publication_year_table.work_id
+JOIN country_code_table on citation_table.citing_work_id = country_code_table.work_id
+
+Group by extracted_terms_table.work_id
+
+
+############################
+### Papers that the Uploaded Work ID List Cited (the References of the Uploaded Work ID)
+############################
+
+# N.B., File for Step X6
+# Run and name File - INPUT_Python_OpenAlex_Papers_Cited_by_Extracted_and_WikiData_Terms_2024_03_19.csv
+
+with citation_table as (SELECT referenced_work_id as cited_work_id, work_id as citing_work_id FROM "open_alex"."works_referenced_works"),
+
+publication_year_table as (SELECT id as work_id, year FROM "open_alex"."semantic_works"),
+
+country_code_table as (Select work_id, array_join(array_agg(concat(country_code,'-',author_position)), '=') as country
+    From (SELECT work_id,
+          institution_id,
+          author_position
+        FROM "open_alex"."works_authorships"
+      ) auth
+      join(SELECT id,
+          country_code
+        FROM "open_alex"."institutions"
+      ) inst ON inst.id = auth.institution_id
+    group by work_id
+  )
+
+SELECT distinct extracted_terms_table.work_id, 
+        array_join(array_agg(concat(concat(year,'+',cited_work_id),'+',country)),' ') as cited_work_id
+FROM "mag_staging"."project_phoenix_extracted_terms_work_ids_2024_03_19" as extracted_terms_table
+
+JOIN citation_table on extracted_terms_table.work_id = citation_table.citing_work_id 
+JOIN publication_year_table on citation_table.cited_work_id = publication_year_table.work_id
+JOIN country_code_table on citation_table.cited_work_id = country_code_table.work_id
+
+Group by extracted_terms_table.work_id

@@ -1,0 +1,41 @@
+############################
+### Create Athena Table
+############################
+
+# NOTE - use the timestap of the CSV to track different versions of the data. 
+# Upload INPUT_Python_OpenAlex_Work_IDs_WikiData_Terms_for_Country_Affiliation_2024_03_19.csv
+
+CREATE EXTERNAL TABLE IF NOT EXISTS `mag_staging`.`project_phoenix_wikidata_terms_work_ids_2024_03_19` (
+  `work_id` string
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe'
+WITH SERDEPROPERTIES (
+ 'serialization.format' = ',',
+ 'field.delim' = ','
+)
+LOCATION 's3://mag-output/PROJECT_Phoenix/Extracted_Wikidata_Work_IDs/'
+TBLPROPERTIES ('skip.header.line.count'='1')
+
+
+############################
+### WikiData Work IDs and Country Affiliations
+############################
+
+# For Country, split by '=' then by '+'
+# Run and name file - INPUT_Python_OpenAlex_Work_IDs_WikiData_Terms_2024_03_19.csv
+
+with country_code_table as (Select work_id, array_join(array_agg(concat(country_code,'-',author_position)), '=') as country
+    From (SELECT work_id,
+          institution_id,
+          author_position
+        FROM "open_alex"."works_authorships"
+      ) auth
+      join(SELECT id,
+          country_code
+        FROM "open_alex"."institutions"
+      ) inst ON inst.id = auth.institution_id
+    group by work_id
+  )
+SELECT distinct extracted_terms_table.work_id, country
+FROM "mag_staging"."project_phoenix_extracted_terms_work_ids_2024_03_19" as extracted_terms_table
+JOIN country_code_table on extracted_terms_table.work_id = country_code_table.work_id

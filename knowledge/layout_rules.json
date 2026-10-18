@@ -1,7 +1,7 @@
 {
   "$schema": "figpipe/knowledge-base/v1",
   "about": "Layout rules learned from real Nature figures, with the evidence for each. A rule enters only with a measurement behind it; a rule without evidence is a hypothesis and is marked as one.",
-  "version": 14,
+  "version": 16,
   "updated": "2026-10-18",
   "rules": [
     {
@@ -270,13 +270,29 @@
       "observed_practice": true,
       "caveat": "This describes what published captions DO, not what a submission MUST do. It is not enforced and must not be treated as a requirement. The classifier is a text heuristic; its rules are pinned by tests and a mutation test proves the tests fail when the rule is broken.",
       "check": null
+    },
+    {
+      "id": "L08",
+      "name": "a plate is not a swatch",
+      "rule": "A figure with more than one panel is built by figpipe.composite: every panel carries exactly one 8 pt letter, and one gutter width runs through the whole plate.",
+      "why": "Six single-panel templates produced one axes each, so the library could draw a swatch but not the plate a paper actually prints. The composer owns the geometry; the panel only owns its drawing. An empty grid cell, an uneven gutter and a missing letter are all visible defects, and a composer without a read-back check ships them silently.",
+      "evidence": "Measured on the caption-anchored corpus (73 real figures): 36 composites, of which 29 had every internal boundary inside an empty band; gutter median None mm (n=61), panel aspect median 1.34 (n=90), and every one of 46 detected panel letters was 8.0 pt.",
+      "confidence": "enforced",
+      "enforced_by": "figpipe.composite.check",
+      "mechanism_verified": true,
+      "empirically_measured": true,
+      "enforced": true,
+      "check": {
+        "kind": "composite_plate",
+        "why": "composes a real four-panel plate and reads the letters, gutters and page size back; a composer that stack panels on top of each other fails it"
+      }
     }
   ],
   "schema": "figpipe/knowledge-base/v2",
   "schema_note": "v2 splits the old single `verified` flag into `mechanism_verified` (code enforces it AND a test locks it) and `empirically_measured` (a measurement supports it). `enforced` requires both. The old flag conflated these and let a rule be marked verified while nothing enforced it.",
   "check_coverage": {
-    "rules_total": 15,
-    "rules_with_check": 7,
+    "rules_total": 16,
+    "rules_with_check": 8,
     "rules_without_check": 8,
     "without": [
       "H01",
@@ -297,11 +313,11 @@
     "note": "Derived from the rules on every run, not stored by a migration. A rule with check=None is reported UNCHECKED and never counted as passing."
   },
   "last_check": {
-    "at": "2026-10-18T12:00:47",
+    "at": "2026-10-18T22:05:17",
     "summary": {
-      "rules_total": 15,
-      "checked": 7,
-      "passed": 7,
+      "rules_total": 16,
+      "checked": 8,
+      "passed": 8,
       "failed": 0,
       "unchecked": 8,
       "unchecked_ids": [
@@ -352,6 +368,38 @@
       "extended_data_figure": 52,
       "figure": 124,
       "supplementary_figure": 20
+    },
+    "measured_at": "2026-10-18"
+  },
+  "composite_study": {
+    "source": "corpus/composite_layouts.json",
+    "method": "Each figure's caption-anchored bbox is rendered at 300 dpi and binarised (ink = grey < 200). Panel letters are read from the PDF's own text spans (single characters a-h, 7-9.5 pt). Full captions come from corpus/caption_features.jsonl joined through the extraction manifests; the caption letter counter accepts only forms Nature writes: '(a)', 'a,', 'a;', 'a-c' ranges, 'Figure 1a'. The panel count is the detected letter count, falling back to the caption count, falling back to 1. For a count of n the factor pairs (rows, cols) are enumerated; a boundary starts at the next letter's position (letters sit at the panel's top-left, so the split is just left of the following letter) or at equal division, and is refined to the emptiest 0.8 mm band within +-15 mm on the ink projection. A grid is accepted when every cell holds ink and has aspect in 0.15-8. Gutters are the ink-free run around the accepted boundary, in mm.",
+    "n_figures_measured": 73,
+    "n_composites": 36,
+    "n_split_verified": 29,
+    "n_caption_agreement": 24,
+    "gutter_mm": {
+      "median": null,
+      "p25": null,
+      "p75": null,
+      "n": 61
+    },
+    "panel_aspect": {
+      "median": 1.34,
+      "n": 90
+    },
+    "grid_distribution": {
+      "1x1": 37,
+      "1x2": 4,
+      "1x3": 3,
+      "1x4": 4,
+      "1x5": 2,
+      "2x1": 7,
+      "2x2": 5,
+      "2x3": 5,
+      "3x1": 3,
+      "4x1": 2,
+      "4x2": 1
     },
     "measured_at": "2026-10-18"
   }

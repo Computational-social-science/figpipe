@@ -35,6 +35,15 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 RUNS = ROOT / "knowledge" / "runs"
 KB = ROOT / "knowledge" / "layout_rules.json"
 
+#: A commit made by the schedule may not ADD more than this. The budget exists because the
+#: publisher ran `git add -A` blindly: on 2026-10-18 it staged 1567.5 MB of dataverse CSVs
+#: sitting in the worktree and committed them, taking the tracked footprint from ~70 MB to
+#: 1717.6 MB. `tests/test_lean.py` noticed -- but only after the commit had landed and been
+#: pushed. A budget the publisher itself enforces is the difference between a test and a
+#: control.
+MAX_ADDED_MB = 25.0
+MAX_ADDED_FILE_MB = 8.0
+
 
 def snapshot() -> dict:
     return json.loads(KB.read_text(encoding="utf-8"))
@@ -57,6 +66,36 @@ def run_tests() -> tuple[bool, str]:
     return p.returncode == 0, (tail[-1] if tail else "")
 
 
+def staged_problems(cwd=None) -> list[dict]:
+    """Staged ADDITIONS that exceed the commit budget, as [{path, mb, why}].
+
+    Checks the INDEX, not the worktree: what matters is what the next commit would carry.
+    Only fully-added files are measured -- a deletion costs nothing, and modifying a file that
+    is already tracked was inside the budget when it was first added.
+    """
+    cwd = cwd or ROOT
+    p = subprocess.run(["git", "diff", "--cached", "--name-only", "--diff-filter=A"],
+                       cwd=cwd, capture_output=True, text=True)
+    if p.returncode != 0:
+        return [{"path": "<git>", "mb": 0.0, "why": (p.stderr or "").strip()[:200]}]
+    files = [ln for ln in p.stdout.splitlines() if ln.strip()]
+    out, total = [], 0.0
+    for f in files:
+        try:
+            b = pathlib.Path(cwd, f).stat().st_size
+        except OSError:
+            continue
+        total += b
+        mb = b / 1e6
+        if mb > MAX_ADDED_FILE_MB:
+            out.append({"path": f, "mb": round(mb, 1),
+                        "why": f"single file over {MAX_ADDED_FILE_MB} MB"})
+    if total / 1e6 > MAX_ADDED_MB:
+        out.append({"path": f"<{len(files)} new files>", "mb": round(total / 1e6, 1),
+                    "why": f"total additions over {MAX_ADDED_MB} MB"})
+    return out
+
+
 def git_publish(changed: bool) -> dict:
     """Commit and push the knowledge base when a rule changed state.
 
@@ -71,15 +110,28 @@ def git_publish(changed: bool) -> dict:
     steps = []
     msg = ("knowledge: autonomous evolution update" if changed
            else "run: record scheduled evolution run (no knowledge change)")
-    for cmd in (["git", "add", "-A"],
-                ["git", "-c", "user.name=figpipe-bot",
+    for cmd in (["git", "add", "-A"],):
+        p = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True)
+        steps.append({"cmd": " ".join(cmd[:3]), "code": p.returncode,
+                      "tail": (p.stdout or p.stderr).strip().splitlines()[-1:]})
+    # THE GUARD. `git add -A` is what let 1.57 GB into the history; unstage the additions that
+    # blow the budget and commit the rest, reporting exactly what was withheld and why.
+    problems = staged_problems()
+    real = [d["path"] for d in problems if not d["path"].startswith("<")]
+    if real:
+        subprocess.run(["git", "reset", "-q", "--"] + real, cwd=ROOT,
+                       capture_output=True, text=True)
+    if problems:
+        steps.append({"cmd": "budget guard", "code": 1, "withheld": problems,
+                      "tail": [f"refused to stage {len(problems)} over-budget addition(s)"]})
+    for cmd in (["git", "-c", "user.name=figpipe-bot",
                  "-c", "user.email=bot@figpipe.local",
                  "commit", "--no-verify", "-m", msg],
                 ["git", "push", "origin", "main"]):
         p = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True)
         steps.append({"cmd": " ".join(cmd[:3]), "code": p.returncode,
                       "tail": (p.stdout or p.stderr).strip().splitlines()[-1:] })
-    return {"pushed": steps[-1]["code"] == 0, "steps": steps}
+    return {"pushed": steps[-1]["code"] == 0, "steps": steps, "withheld": problems}
 
 
 def main(argv: list[str]) -> int:

@@ -105,6 +105,42 @@ def test_the_corpus_itself_is_still_tracked():
     assert len(crop) >= 150, f"only {len(crop)} figure crops tracked; verification is crippled"
 
 
+def test_publisher_refuses_to_stage_a_bloated_addition(tmp_path):
+    """THE DEFECT THAT GOT PAST THE BUDGET: `git add -A` in the scheduled publisher.
+
+    On 2026-10-18 a scheduled run staged 1567.5 MB of dataverse CSVs that were sitting in the
+    worktree and committed them, taking the tracked footprint from ~70 MB to 1717.6 MB. The
+    budget test above noticed -- but only after the commit existed. The publisher now measures
+    the index before committing. This proves the measurement fires, on a real repository.
+    """
+    import subprocess
+
+    cron = pytest.importorskip("cron_run")
+    repo = tmp_path / "repo"
+    repo.mkdir()
+
+    def git(*args):
+        return subprocess.run(["git", *args], cwd=repo, capture_output=True, text=True)
+
+    git("init", "-q")
+    git("config", "user.email", "t@t")
+    git("config", "user.name", "t")
+    (repo / "small.txt").write_text("ok", encoding="utf-8")
+    with (repo / "big.csv").open("wb") as fh:
+        fh.write(b"0" * 9_000_000)
+    git("add", "small.txt", "big.csv")
+
+    problems = cron.staged_problems(cwd=repo)
+    flagged = {p["path"] for p in problems}
+    assert "big.csv" in flagged, (
+        f"a 9 MB addition was not flagged by the publish guard: {problems}")
+    assert "small.txt" not in flagged, problems
+    git("reset", "-q", "--", "big.csv")
+    assert cron.staged_problems(cwd=repo) == [], (
+        "the guard still flags the index after the oversized file was unstaged; it would "
+        "block every routine commit")
+
+
 def test_slim_measures_and_reports_consistently():
     m = slim.measure()
     assert m["tracked_files"] == len(_tracked_files())

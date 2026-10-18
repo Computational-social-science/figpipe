@@ -21,3 +21,9 @@ corpus/_r3_*
 corpus/_vlm_*
 corpus/_insp*
 corpus/_qc_*
+
+# Raw third-party datasets are CACHE, not source: 1.57 GB of dataverse CSVs defeated the
+# 80 MB tracked budget in one scheduled commit (see SeedsREADME.md).
+Seeds/**/dataverse_files/*.csv
+Seeds/**/dataverse_files/*.pbz2
+

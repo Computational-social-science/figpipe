@@ -104,11 +104,40 @@ def _check_ink_density_band(spec: dict) -> tuple[bool, str]:
     return True, f"all {len(vals)} figures within band (measured {lo}-{hi}%)"
 
 
+def _check_composite_plate(spec: dict) -> tuple[bool, str]:
+    """Compose a real four-panel plate and verify the properties the rule claims.
+
+    A rule about multi-panel figures that is "verified" by `hasattr(composite, "composite")`
+    would still pass with a composer that placed every panel on top of the others. This runs
+    the mechanism and reads the finished figure back: the letters, the gutters, the page size.
+    """
+    import numpy as np
+    import pandas as pd
+    from figpipe import composite
+    df = pd.DataFrame({"g": list("abcde"), "v": np.linspace(5, 25, 5),
+                       "w": np.linspace(9, 30, 5)})
+    panels = [
+        composite.Panel("grouped_bars", df, {"x": "g", "ycols": ["v"], "legend": False}),
+        composite.Panel("grouped_bars", df, {"x": "g", "ycols": ["w"], "legend": False}),
+        composite.Panel("bar_with_errors", df, {"x": "g", "y": "v"}),
+        composite.Panel("line_series", df, {"x": "g", "ycols": ["v", "w"], "legend": False}),
+    ]
+    f = composite.composite(panels, columns=2.0, height_mm=140.0)
+    r = composite.inspect(f)
+    problems = composite.check(f, r)
+    if problems:
+        return False, "; ".join(problems)
+    return True, (f"{r['n_panels']} panels, letters "
+                  f"{[lt['letter'] for lt in r['letters']]}, gaps x={r['gaps_x_mm']} "
+                  f"y={r['gaps_y_mm']} mm, page {r['width_mm']}x{r['height_mm']} mm")
+
+
 RUNNERS = {
     "rcparams": _check_rcparams,
     "rcparams_range": _check_rcparams_range,
     "symbol_exists": _check_symbol_exists,
     "ink_density_band": _check_ink_density_band,
+    "composite_plate": _check_composite_plate,
 }
 
 

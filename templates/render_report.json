@@ -1,0 +1,52 @@
+[
+  {
+    "template": "bar_with_errors",
+    "paper": "2026_nature_synthesizing_scientific_literature_with_retrieva_3f36e53a",
+    "n_rows": 9,
+    "pdf": "templates\\out\\template_bar_with_errors.pdf",
+    "audit_ok": true,
+    "width_mm": 183.0,
+    "height_mm": 60.0,
+    "findings": []
+  },
+  {
+    "template": "scatter_fit",
+    "paper": "2026_nature_synthesizing_scientific_literature_with_retrieva_3f36e53a",
+    "n_rows": 9,
+    "pdf": "templates\\out\\template_scatter_fit.pdf",
+    "audit_ok": true,
+    "width_mm": 89.0,
+    "height_mm": 55.0,
+    "findings": []
+  },
+  {
+    "template": "line_series",
+    "paper": "2026_nature_synthesizing_scientific_literature_with_retrieva_3f36e53a",
+    "n_rows": 9,
+    "pdf": "templates\\out\\template_line_series.pdf",
+    "audit_ok": true,
+    "width_mm": 183.0,
+    "height_mm": 58.0,
+    "findings": []
+  },
+  {
+    "template": "heatmap",
+    "paper": "2026_nature_synthesizing_scientific_literature_with_retrieva_3f36e53a",
+    "n_rows": 9,
+    "pdf": "templates\\out\\template_heatmap.pdf",
+    "audit_ok": true,
+    "width_mm": 89.0,
+    "height_mm": 62.0,
+    "findings": []
+  },
+  {
+    "template": "boxplot",
+    "paper": "2026_nature_synthesizing_scientific_literature_with_retrieva_3f36e53a",
+    "n_rows": 9,
+    "pdf": "templates\\out\\template_boxplot.pdf",
+    "audit_ok": true,
+    "width_mm": 89.0,
+    "height_mm": 55.0,
+    "findings": []
+  }
+]
