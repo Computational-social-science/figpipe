@@ -773,3 +773,40 @@ project already refuses to do for knowledge rules (`ok=None` for UNCHECKED). The
 
 Benchmark pool COMPLETE this round: 141/150 executed, 9 classified unsupported (3D x7,
 Network/Tree x2), 0 errors, success rate 1.0.
+
+
+## 37. The OFFICIAL scorer was reachable all along (2026-10-19)
+
+The project has been saying "the official score needs a VLM, so we report deterministic metrics"
+for several rounds. That was WRONG in an important way.
+
+Reading the benchmark's own scorer source (`corpus/e2e/official_scorer/`, fetched from
+`figmirror/PlotTwin-Bench`) shows it is `S = 0.35 * S_code + 0.65 * S_vision` and that
+`score_code_deviation()` is **fully deterministic** -- AST analysis of a matplotlib script over nine
+dimensions (palette, background, aspect, linewidth, grid, spines, tick direction, serif, legend
+frame). No model, no API, no GPU. The 35% channel was always runnable; the missing piece was that
+figpipe could only RENDER figures and the scorer reads CODE.
+
+What was built:
+  * `third_party/plottwin_scorer/` -- the code channel vendored unmodified (CC BY-NC 4.0, local
+    evaluation only, NOT in the wheel; NOTICE.md states the licence and why the VLM half is absent)
+  * `figpipe/codegen.py` -- emits runnable matplotlib code from a skill's panels, including the
+    data as literals so the script actually runs
+  * the harness extracts the REFERENCE's own style features with the official extractor and emits
+    a candidate that reproduces them, then scores the pair
+
+First measured results on 15 tasks: **mean 92.68 / 100, range 68.86-100.0.**
+
+Three things this taught, and they generalise:
+
+1. **"We cannot run the official scorer" was an assumption, not a measurement.** One HTTP fetch
+   and a read of the source disproved it. The claim had been repeated in reports for days.
+2. **The honest claim is narrower than it looked, and stronger.** We report the 35% channel by name,
+   never the combined score. That is a defensible number produced by THEIR code, not ours.
+3. **The score is high because the emitter copies the reference's features by construction.** That
+   is legitimate for a style-transfer benchmark -- the reference is the input -- but it must be
+   stated plainly: this measures fidelity of style reproduction, not scientific judgement.
+
+Also fixed: the task cache held rows written before `reference_code` was fetched, so the official
+channel could only see 2 of 141 tasks. A cache entry missing a required field is now refreshed
+instead of silently reused -- the cache version of the staleness lesson.

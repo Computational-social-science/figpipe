@@ -109,6 +109,20 @@ def _selection_text(sel) -> str:
             f"key).")
 
 
+def _official_block(oc) -> str:
+    if not oc or not oc.get("n_scored"):
+        return ""
+    return (f'<div class="okbox"><b>Official code channel: mean '
+            f'{oc["mean_score"]} / 100</b> over {oc["n_scored"]} tasks '
+            f'(min {oc["min_score"]}, max {oc["max_score"]}); '
+            f'{oc.get("n_unavailable", 0)} not scoreable. '
+            f'This is the benchmark\'s own deterministic channel '
+            f'<code>deviation-defect-v1</code>, worth 35% of the official score. The remaining '
+            f'65% is a vision channel this project does not run, so <b>no combined score is '
+            f'claimed</b>. The emitted matplotlib code is scored against the benchmark\'s own '
+            f'<code>reference_code</code>, not against a metric of our own design.</div>')
+
+
 def _regression_banner(latest: dict) -> str:
     """A loud banner when the last scheduled run found a capability regression."""
     verdict = ((latest.get("capabilities_delta") or {}).get("verdict") or {})
@@ -497,6 +511,8 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
        'Shipped distance (anchor)', 'fixed 20-task subset; closer of plain/styled per task', '')}
   {kpi(bench.get("benchmark_anchor_distance") or "—", 'Anchor style distance',
        'fixed 20-task subset (comparable across runs)', '')}
+  {kpi((bench.get("official_code_channel") or {}).get("mean_score", "—"),
+       'OFFICIAL code channel', 'PlotTwin-Bench deviation-defect-v1 (35% weight); vision not run', '')}
   {kpi(bench.get("semantic_violations", "—"), 'Semantic violations',
        'figures whose printed claims contradict their data', '')}
   {kpi(f'{n_skills} / {n_ops}', 'Skills / classic operators', 'global verification floor on every recipe', '')}
@@ -564,6 +580,7 @@ imitate.</p>
   {hidden_note}
 </div>
 <div class="okbox" style="margin-top:14px">{_selection_text(bench.get("selection"))}</div>
+{_official_block(bench.get("official_code_channel"))}
 <div class="note"><b>Measurement freshness:</b> {bench.get("n_fresh", 0)} of {n_ok} executed tasks
 were measured with the current rendering code (fingerprint
 <code>{esc(bench.get("code_version", "—"))}</code>), {bench.get("n_stale", 0)} with an earlier

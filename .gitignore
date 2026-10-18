@@ -50,3 +50,12 @@ corpus/e2e/tmp/
 reports/*.pdf
 reports/*.docx
 
+
+# The official scorer is vendored for LOCAL evaluation only (CC BY-NC 4.0); it is not packaged.
+# See third_party/plottwin_scorer/NOTICE.md
+corpus/e2e/official_scorer/
+
+
+# Benchmark run logs are scratch.
+corpus/e2e/*.log
+

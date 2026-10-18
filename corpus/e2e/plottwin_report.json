@@ -19,6 +19,16 @@
   "ties": 4,
   "mean_best_of_two": 0.265,
   "semantic_violations": 0,
+  "official_code_channel": {
+    "channel": "code_deviation",
+    "weight_upstream": 0.35,
+    "note": "official deterministic channel only; the 0.65 vision channel is NOT run, so this is not the combined score",
+    "n_scored": 15,
+    "n_unavailable": 5,
+    "mean_score": 92.68,
+    "min_score": 68.86,
+    "max_score": 100.0
+  },
   "decision_service": {
     "up": false,
     "url": "http://127.0.0.1:8090",
@@ -771,29 +781,6 @@
       "findings": []
     },
     {
-      "id": "arxiv-astro-skymap__2510.17487",
-      "chart": "Std-band",
-      "panel_mode": "single",
-      "skill": "trend_with_uncertainty",
-      "rationale": "trend acquisition_frequency_hz->phosphate_detection_limit_mg_per_l",
-      "rows_used": 460,
-      "status": "ok",
-      "distance": 0.342,
-      "baseline_distance": 0.356,
-      "delta": 0.014,
-      "selected": "styled",
-      "selected_distance": 0.341,
-      "selected_gain": 0.015,
-      "selection_margin": 0.017,
-      "components": {
-        "palette": 0.515,
-        "aspect": 0.006,
-        "ink": 0.245
-      },
-      "hard_failures": 0,
-      "findings": []
-    },
-    {
       "id": "arxiv-ml-bar-line-v2__2511.15055",
       "chart": "Std-band",
       "panel_mode": "single",
@@ -896,297 +883,6 @@
       "panel_mode": "multi",
       "status": "unsupported",
       "error": "unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this is a deliberate exclusion"
-    },
-    {
-      "id": "PMC13009336",
-      "chart": "Box/Violin",
-      "panel_mode": "multi",
-      "skill": "distribution_comparison",
-      "rationale": "box panel_row by panel_group",
-      "rows_used": 4454,
-      "status": "ok",
-      "distance": 0.178,
-      "baseline_distance": 0.61,
-      "delta": 0.432,
-      "selected": "styled",
-      "selected_distance": 0.174,
-      "selected_gain": 0.436,
-      "selection_margin": 0.428,
-      "components": {
-        "aspect": 0.009,
-        "ink": 0.346
-      },
-      "hard_failures": 1,
-      "findings": [
-        {
-          "check": "height",
-          "detail": "170.0 mm exceeds the 170.0 mm maximum",
-          "severity": "hard"
-        }
-      ]
-    },
-    {
-      "id": "PMC13022287",
-      "chart": "Distribution",
-      "panel_mode": "multi",
-      "skill": "faceted_distribution",
-      "rationale": "faceted hist by panel_row",
-      "rows_used": 6297,
-      "status": "ok",
-      "distance": 0.262,
-      "baseline_distance": 0.293,
-      "delta": 0.031,
-      "selected": "styled",
-      "selected_distance": 0.266,
-      "selected_gain": 0.027,
-      "selection_margin": 0.029,
-      "components": {
-        "palette": 0.267,
-        "aspect": 0.283,
-        "ink": 0.227
-      },
-      "hard_failures": 1,
-      "findings": [
-        {
-          "check": "height",
-          "detail": "170.0 mm exceeds the 170.0 mm maximum",
-          "severity": "hard"
-        }
-      ]
-    },
-    {
-      "id": "PMC13079874",
-      "chart": "Box/Violin",
-      "panel_mode": "multi",
-      "skill": "distribution_comparison",
-      "rationale": "box panel_row by panel_group",
-      "rows_used": 519,
-      "status": "ok",
-      "distance": 0.405,
-      "baseline_distance": 0.65,
-      "delta": 0.245,
-      "selected": "styled",
-      "selected_distance": 0.411,
-      "selected_gain": 0.239,
-      "selection_margin": 0.239,
-      "components": {
-        "aspect": 0.314,
-        "ink": 0.497
-      },
-      "hard_failures": 1,
-      "findings": [
-        {
-          "check": "height",
-          "detail": "170.0 mm exceeds the 170.0 mm maximum",
-          "severity": "hard"
-        }
-      ]
-    },
-    {
-      "id": "PMC13135507",
-      "chart": "Scatter",
-      "panel_mode": "multi",
-      "skill": "scatter_relationship",
-      "rationale": "scatter panel_row vs panel_col",
-      "rows_used": 1248,
-      "status": "ok",
-      "distance": 0.259,
-      "baseline_distance": 0.575,
-      "delta": 0.316,
-      "selected": "styled",
-      "selected_distance": 0.269,
-      "selected_gain": 0.306,
-      "selection_margin": 0.435,
-      "components": {
-        "aspect": 0.094,
-        "ink": 0.424
-      },
-      "hard_failures": 1,
-      "findings": [
-        {
-          "check": "height",
-          "detail": "170.0 mm exceeds the 170.0 mm maximum",
-          "severity": "hard"
-        }
-      ]
-    },
-    {
-      "id": "PMC13245775",
-      "chart": "Composite",
-      "panel_mode": "multi",
-      "skill": "composite_groups",
-      "rationale": "composite block_id x panel_group",
-      "rows_used": 33,
-      "status": "ok",
-      "distance": 0.205,
-      "baseline_distance": 0.232,
-      "delta": 0.027,
-      "selected": "styled",
-      "selected_distance": 0.187,
-      "selected_gain": 0.045,
-      "selection_margin": 0.04,
-      "components": {
-        "palette": 0.141,
-        "aspect": 0.032,
-        "ink": 0.537
-      },
-      "hard_failures": 1,
-      "findings": [
-        {
-          "check": "text_collision",
-          "detail": "'gical responses' over 'gical responses'",
-          "severity": "hard"
-        }
-      ]
-    },
-    {
-      "id": "PMC13252719",
-      "chart": "Composite",
-      "panel_mode": "multi",
-      "skill": "composite_groups",
-      "rationale": "composite block_id x record_type",
-      "rows_used": 182,
-      "status": "ok",
-      "distance": 0.216,
-      "baseline_distance": 0.212,
-      "delta": -0.004,
-      "selected": "styled",
-      "selected_distance": 0.202,
-      "selected_gain": 0.01,
-      "selection_margin": 0.007,
-      "components": {
-        "palette": 0.185,
-        "aspect": 0.025,
-        "ink": 0.486
-      },
-      "hard_failures": 0,
-      "findings": []
-    },
-    {
-      "id": "PMC13273070",
-      "chart": "Box/Violin",
-      "panel_mode": "multi",
-      "skill": "distribution_comparison",
-      "rationale": "box panel_row by panel_group",
-      "rows_used": 606,
-      "status": "ok",
-      "distance": 0.175,
-      "baseline_distance": 0.352,
-      "delta": 0.177,
-      "selected": "styled",
-      "selected_distance": 0.18,
-      "selected_gain": 0.172,
-      "selection_margin": 0.171,
-      "components": {
-        "palette": 0.279,
-        "aspect": 0.003,
-        "ink": 0.087
-      },
-      "hard_failures": 0,
-      "findings": []
-    },
-    {
-      "id": "PMC13286152",
-      "chart": "Composite",
-      "panel_mode": "multi",
-      "skill": "composite_groups",
-      "rationale": "composite block_id x panel_group",
-      "rows_used": 660,
-      "status": "ok",
-      "distance": 0.329,
-      "baseline_distance": 0.374,
-      "delta": 0.045,
-      "selected": "styled",
-      "selected_distance": 0.336,
-      "selected_gain": 0.038,
-      "selection_margin": 0.043,
-      "components": {
-        "palette": 0.138,
-        "aspect": 0.135,
-        "ink": 1.0
-      },
-      "hard_failures": 1,
-      "findings": [
-        {
-          "check": "height",
-          "detail": "170.0 mm exceeds the 170.0 mm maximum",
-          "severity": "hard"
-        }
-      ]
-    },
-    {
-      "id": "PMC13336770",
-      "chart": "Distribution",
-      "panel_mode": "multi",
-      "skill": "histogram",
-      "rationale": "hist panel_col",
-      "rows_used": 978,
-      "status": "ok",
-      "distance": 0.164,
-      "baseline_distance": 0.32,
-      "delta": 0.156,
-      "selected": "styled",
-      "selected_distance": 0.151,
-      "selected_gain": 0.169,
-      "selection_margin": 0.145,
-      "components": {
-        "palette": 0.187,
-        "aspect": 0.001,
-        "ink": 0.269
-      },
-      "hard_failures": 0,
-      "findings": []
-    },
-    {
-      "id": "PMC13342296",
-      "chart": "Distribution",
-      "panel_mode": "multi",
-      "skill": "faceted_distribution",
-      "rationale": "faceted hist by panel_group",
-      "rows_used": 392,
-      "status": "ok",
-      "distance": 0.164,
-      "baseline_distance": 0.196,
-      "delta": 0.032,
-      "selected": "styled",
-      "selected_distance": 0.165,
-      "selected_gain": 0.031,
-      "selection_margin": 0.032,
-      "components": {
-        "palette": 0.205,
-        "aspect": 0.002,
-        "ink": 0.223
-      },
-      "hard_failures": 0,
-      "findings": []
-    },
-    {
-      "id": "PMC13343911",
-      "chart": "Line",
-      "panel_mode": "multi",
-      "skill": "trend_with_uncertainty",
-      "rationale": "trend time_months->panel_row",
-      "rows_used": 387,
-      "status": "ok",
-      "distance": 0.379,
-      "baseline_distance": 0.477,
-      "delta": 0.098,
-      "selected": "styled",
-      "selected_distance": 0.388,
-      "selected_gain": 0.089,
-      "selection_margin": 0.094,
-      "components": {
-        "aspect": 0.595,
-        "ink": 0.163
-      },
-      "hard_failures": 1,
-      "findings": [
-        {
-          "check": "height",
-          "detail": "170.0 mm exceeds the 170.0 mm maximum",
-          "severity": "hard"
-        }
-      ]
     },
     {
       "id": "Chart2Code_level2_3d_2_v3",
@@ -1742,30 +1438,6 @@
       },
       "hard_failures": 0,
       "findings": []
-    },
-    {
-      "id": "arxiv-astro-skymap__2412.12637",
-      "chart": "Field 2D",
-      "panel_mode": "single",
-      "skill": "field_map",
-      "rationale": "field panel_row over coating_batch x longitude_deg",
-      "rows_used": 5762,
-      "status": "ok",
-      "distance": 0.137,
-      "baseline_distance": 0.287,
-      "delta": 0.15,
-      "selected": "styled",
-      "selected_distance": 0.153,
-      "selected_gain": 0.134,
-      "selection_margin": 0.088,
-      "components": {
-        "palette": 0.162,
-        "aspect": 0.116,
-        "ink": 0.093
-      },
-      "hard_failures": 0,
-      "findings": [],
-      "semantic_findings": []
     },
     {
       "id": "arxiv-ml-3d-trajectory__2511.17399",
@@ -2495,36 +2167,6 @@
       },
       "hard_failures": 0,
       "findings": [],
-      "semantic_findings": []
-    },
-    {
-      "id": "PMC13106710",
-      "chart": "Heatmap",
-      "panel_mode": "multi",
-      "skill": "matrix_plate",
-      "rationale": "matrix 7 measures",
-      "rows_used": 40,
-      "status": "ok",
-      "distance": 0.206,
-      "baseline_distance": 0.205,
-      "delta": -0.001,
-      "selected": "styled",
-      "selected_distance": 0.137,
-      "selected_gain": 0.068,
-      "selection_margin": 0.007,
-      "components": {
-        "palette": 0.109,
-        "aspect": 0.017,
-        "ink": 0.636
-      },
-      "hard_failures": 1,
-      "findings": [
-        {
-          "check": "text_collision",
-          "detail": "'column_order' over 'display_order'",
-          "severity": "hard"
-        }
-      ],
       "semantic_findings": []
     },
     {
@@ -4390,6 +4032,18 @@
       },
       "hard_failures": 0,
       "findings": [],
+      "official_code_score": {
+        "available": true,
+        "score": 100.0,
+        "n_activated": 2,
+        "scored": [
+          "palette",
+          "grid"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
       "semantic_findings": []
     },
     {
@@ -4421,6 +4075,20 @@
           "severity": "hard"
         }
       ],
+      "official_code_score": {
+        "available": true,
+        "score": 97.81182459845145,
+        "n_activated": 4,
+        "scored": [
+          "palette",
+          "figure_aspect",
+          "linewidth",
+          "grid"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
       "semantic_findings": []
     },
     {
@@ -4446,6 +4114,18 @@
       },
       "hard_failures": 0,
       "findings": [],
+      "official_code_score": {
+        "available": true,
+        "score": 100.0,
+        "n_activated": 2,
+        "scored": [
+          "palette",
+          "legend_frame"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
       "semantic_findings": []
     },
     {
@@ -4477,6 +4157,20 @@
           "severity": "hard"
         }
       ],
+      "official_code_score": {
+        "available": true,
+        "score": 99.9988792326005,
+        "n_activated": 4,
+        "scored": [
+          "palette",
+          "figure_aspect",
+          "grid",
+          "legend_frame"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
       "semantic_findings": []
     },
     {
@@ -4518,6 +4212,21 @@
           "severity": "hard"
         }
       ],
+      "official_code_score": {
+        "available": true,
+        "score": 97.26052664416929,
+        "n_activated": 5,
+        "scored": [
+          "palette",
+          "figure_aspect",
+          "linewidth",
+          "grid",
+          "tick_direction"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
       "semantic_findings": []
     },
     {
@@ -4549,6 +4258,568 @@
           "severity": "hard"
         }
       ],
+      "official_code_score": {
+        "available": true,
+        "score": 92.15644498682671,
+        "n_activated": 4,
+        "scored": [
+          "palette",
+          "figure_aspect",
+          "linewidth",
+          "legend_frame"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": []
+    },
+    {
+      "id": "PMC13009336",
+      "chart": "Box/Violin",
+      "panel_mode": "multi",
+      "code_version": "8ea6d2b2ae0c",
+      "skill": "distribution_comparison",
+      "rationale": "box panel_row by panel_group",
+      "rows_used": 4454,
+      "status": "ok",
+      "distance": 0.178,
+      "baseline_distance": 0.61,
+      "delta": 0.432,
+      "selected": "styled",
+      "selected_distance": 0.174,
+      "selected_gain": 0.436,
+      "selection_margin": 0.428,
+      "components": {
+        "aspect": 0.009,
+        "ink": 0.346
+      },
+      "hard_failures": 1,
+      "findings": [
+        {
+          "check": "height",
+          "detail": "170.0 mm exceeds the 170.0 mm maximum",
+          "severity": "hard"
+        }
+      ],
+      "official_code_score": {
+        "available": true,
+        "score": 92.15650569942187,
+        "n_activated": 4,
+        "scored": [
+          "palette",
+          "linewidth",
+          "spines_removed",
+          "legend_frame"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": []
+    },
+    {
+      "id": "PMC13022287",
+      "chart": "Distribution",
+      "panel_mode": "multi",
+      "code_version": "8ea6d2b2ae0c",
+      "skill": "faceted_distribution",
+      "rationale": "faceted hist by panel_row",
+      "rows_used": 6297,
+      "status": "ok",
+      "distance": 0.262,
+      "baseline_distance": 0.293,
+      "delta": 0.031,
+      "selected": "styled",
+      "selected_distance": 0.266,
+      "selected_gain": 0.027,
+      "selection_margin": 0.029,
+      "components": {
+        "palette": 0.267,
+        "aspect": 0.283,
+        "ink": 0.227
+      },
+      "hard_failures": 1,
+      "findings": [
+        {
+          "check": "height",
+          "detail": "170.0 mm exceeds the 170.0 mm maximum",
+          "severity": "hard"
+        }
+      ],
+      "official_code_score": {
+        "available": true,
+        "score": 96.87550854794458,
+        "n_activated": 5,
+        "scored": [
+          "palette",
+          "figure_aspect",
+          "linewidth",
+          "grid",
+          "legend_frame"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": []
+    },
+    {
+      "id": "PMC13079874",
+      "chart": "Box/Violin",
+      "panel_mode": "multi",
+      "code_version": "8ea6d2b2ae0c",
+      "skill": "distribution_comparison",
+      "rationale": "box panel_row by panel_group",
+      "rows_used": 519,
+      "status": "ok",
+      "distance": 0.405,
+      "baseline_distance": 0.65,
+      "delta": 0.245,
+      "selected": "styled",
+      "selected_distance": 0.411,
+      "selected_gain": 0.239,
+      "selection_margin": 0.239,
+      "components": {
+        "aspect": 0.314,
+        "ink": 0.497
+      },
+      "hard_failures": 1,
+      "findings": [
+        {
+          "check": "height",
+          "detail": "170.0 mm exceeds the 170.0 mm maximum",
+          "severity": "hard"
+        }
+      ],
+      "official_code_score": {
+        "available": true,
+        "score": 74.99969000920903,
+        "n_activated": 4,
+        "scored": [
+          "palette",
+          "figure_aspect",
+          "linewidth",
+          "legend_frame"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": []
+    },
+    {
+      "id": "PMC13106710",
+      "chart": "Heatmap",
+      "panel_mode": "multi",
+      "code_version": "8ea6d2b2ae0c",
+      "skill": "matrix_plate",
+      "rationale": "matrix 7 measures",
+      "rows_used": 40,
+      "status": "ok",
+      "distance": 0.206,
+      "baseline_distance": 0.205,
+      "delta": -0.001,
+      "selected": "styled",
+      "selected_distance": 0.137,
+      "selected_gain": 0.068,
+      "selection_margin": 0.007,
+      "components": {
+        "palette": 0.109,
+        "aspect": 0.017,
+        "ink": 0.636
+      },
+      "hard_failures": 1,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'column_order' over 'display_order'",
+          "severity": "hard"
+        }
+      ],
+      "official_code_score": {
+        "available": true,
+        "score": 98.09681677198206,
+        "n_activated": 5,
+        "scored": [
+          "palette",
+          "figure_aspect",
+          "linewidth",
+          "spines_removed",
+          "legend_frame"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": []
+    },
+    {
+      "id": "PMC13135507",
+      "chart": "Scatter",
+      "panel_mode": "multi",
+      "code_version": "8ea6d2b2ae0c",
+      "skill": "scatter_relationship",
+      "rationale": "scatter panel_row vs panel_col",
+      "rows_used": 1248,
+      "status": "ok",
+      "distance": 0.259,
+      "baseline_distance": 0.575,
+      "delta": 0.316,
+      "selected": "styled",
+      "selected_distance": 0.269,
+      "selected_gain": 0.306,
+      "selection_margin": 0.435,
+      "components": {
+        "aspect": 0.094,
+        "ink": 0.424
+      },
+      "hard_failures": 1,
+      "findings": [
+        {
+          "check": "height",
+          "detail": "170.0 mm exceeds the 170.0 mm maximum",
+          "severity": "hard"
+        }
+      ],
+      "official_code_score": {
+        "available": true,
+        "score": 96.83345029835989,
+        "n_activated": 3,
+        "scored": [
+          "palette",
+          "figure_aspect",
+          "linewidth"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": []
+    },
+    {
+      "id": "PMC13245775",
+      "chart": "Composite",
+      "panel_mode": "multi",
+      "code_version": "8ea6d2b2ae0c",
+      "skill": "composite_groups",
+      "rationale": "composite block_id x panel_group",
+      "rows_used": 33,
+      "status": "ok",
+      "distance": 0.205,
+      "baseline_distance": 0.232,
+      "delta": 0.027,
+      "selected": "styled",
+      "selected_distance": 0.187,
+      "selected_gain": 0.045,
+      "selection_margin": 0.04,
+      "components": {
+        "palette": 0.141,
+        "aspect": 0.032,
+        "ink": 0.537
+      },
+      "hard_failures": 1,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'gical responses' over 'gical responses'",
+          "severity": "hard"
+        }
+      ],
+      "official_code_score": {
+        "available": false,
+        "reason": "CodegenError: skill 'composite_groups' has no code emitter yet"
+      },
+      "semantic_findings": []
+    },
+    {
+      "id": "PMC13252719",
+      "chart": "Composite",
+      "panel_mode": "multi",
+      "code_version": "8ea6d2b2ae0c",
+      "skill": "composite_groups",
+      "rationale": "composite block_id x record_type",
+      "rows_used": 182,
+      "status": "ok",
+      "distance": 0.216,
+      "baseline_distance": 0.212,
+      "delta": -0.004,
+      "selected": "styled",
+      "selected_distance": 0.202,
+      "selected_gain": 0.01,
+      "selection_margin": 0.007,
+      "components": {
+        "palette": 0.185,
+        "aspect": 0.025,
+        "ink": 0.486
+      },
+      "hard_failures": 0,
+      "findings": [],
+      "official_code_score": {
+        "available": false,
+        "reason": "CodegenError: skill 'composite_groups' has no code emitter yet"
+      },
+      "semantic_findings": []
+    },
+    {
+      "id": "PMC13273070",
+      "chart": "Box/Violin",
+      "panel_mode": "multi",
+      "code_version": "8ea6d2b2ae0c",
+      "skill": "distribution_comparison",
+      "rationale": "box panel_row by panel_group",
+      "rows_used": 606,
+      "status": "ok",
+      "distance": 0.175,
+      "baseline_distance": 0.352,
+      "delta": 0.177,
+      "selected": "styled",
+      "selected_distance": 0.18,
+      "selected_gain": 0.172,
+      "selection_margin": 0.171,
+      "components": {
+        "palette": 0.279,
+        "aspect": 0.003,
+        "ink": 0.087
+      },
+      "hard_failures": 0,
+      "findings": [],
+      "official_code_score": {
+        "available": true,
+        "score": 100.0,
+        "n_activated": 3,
+        "scored": [
+          "palette",
+          "spines_removed",
+          "legend_frame"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": []
+    },
+    {
+      "id": "PMC13286152",
+      "chart": "Composite",
+      "panel_mode": "multi",
+      "code_version": "8ea6d2b2ae0c",
+      "skill": "composite_groups",
+      "rationale": "composite block_id x panel_group",
+      "rows_used": 660,
+      "status": "ok",
+      "distance": 0.329,
+      "baseline_distance": 0.374,
+      "delta": 0.045,
+      "selected": "styled",
+      "selected_distance": 0.336,
+      "selected_gain": 0.038,
+      "selection_margin": 0.043,
+      "components": {
+        "palette": 0.138,
+        "aspect": 0.135,
+        "ink": 1.0
+      },
+      "hard_failures": 1,
+      "findings": [
+        {
+          "check": "height",
+          "detail": "170.0 mm exceeds the 170.0 mm maximum",
+          "severity": "hard"
+        }
+      ],
+      "official_code_score": {
+        "available": false,
+        "reason": "CodegenError: skill 'composite_groups' has no code emitter yet"
+      },
+      "semantic_findings": []
+    },
+    {
+      "id": "PMC13336770",
+      "chart": "Distribution",
+      "panel_mode": "multi",
+      "code_version": "8ea6d2b2ae0c",
+      "skill": "histogram",
+      "rationale": "hist panel_col",
+      "rows_used": 978,
+      "status": "ok",
+      "distance": 0.164,
+      "baseline_distance": 0.32,
+      "delta": 0.156,
+      "selected": "styled",
+      "selected_distance": 0.151,
+      "selected_gain": 0.169,
+      "selection_margin": 0.145,
+      "components": {
+        "palette": 0.187,
+        "aspect": 0.001,
+        "ink": 0.269
+      },
+      "hard_failures": 0,
+      "findings": [],
+      "official_code_score": {
+        "available": true,
+        "score": 75.07704132501027,
+        "n_activated": 3,
+        "scored": [
+          "palette",
+          "linewidth",
+          "spines_removed"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": []
+    },
+    {
+      "id": "PMC13342296",
+      "chart": "Distribution",
+      "panel_mode": "multi",
+      "code_version": "8ea6d2b2ae0c",
+      "skill": "faceted_distribution",
+      "rationale": "faceted hist by panel_group",
+      "rows_used": 392,
+      "status": "ok",
+      "distance": 0.164,
+      "baseline_distance": 0.196,
+      "delta": 0.032,
+      "selected": "styled",
+      "selected_distance": 0.165,
+      "selected_gain": 0.031,
+      "selection_margin": 0.032,
+      "components": {
+        "palette": 0.205,
+        "aspect": 0.002,
+        "ink": 0.223
+      },
+      "hard_failures": 0,
+      "findings": [],
+      "official_code_score": {
+        "available": true,
+        "score": 68.85896927087505,
+        "n_activated": 3,
+        "scored": [
+          "palette",
+          "linewidth",
+          "spines_removed"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": []
+    },
+    {
+      "id": "PMC13343911",
+      "chart": "Line",
+      "panel_mode": "multi",
+      "code_version": "8ea6d2b2ae0c",
+      "skill": "trend_with_uncertainty",
+      "rationale": "trend time_months->panel_row",
+      "rows_used": 387,
+      "status": "ok",
+      "distance": 0.379,
+      "baseline_distance": 0.477,
+      "delta": 0.098,
+      "selected": "styled",
+      "selected_distance": 0.388,
+      "selected_gain": 0.089,
+      "selection_margin": 0.094,
+      "components": {
+        "aspect": 0.595,
+        "ink": 0.163
+      },
+      "hard_failures": 1,
+      "findings": [
+        {
+          "check": "height",
+          "detail": "170.0 mm exceeds the 170.0 mm maximum",
+          "severity": "hard"
+        }
+      ],
+      "official_code_score": {
+        "available": false,
+        "score": null,
+        "n_activated": 5,
+        "scored": [
+          "palette",
+          "figure_aspect",
+          "spines_removed",
+          "legend_frame"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": []
+    },
+    {
+      "id": "arxiv-astro-skymap__2412.12637",
+      "chart": "Field 2D",
+      "panel_mode": "single",
+      "code_version": "8ea6d2b2ae0c",
+      "skill": "field_map",
+      "rationale": "field panel_row over coating_batch x longitude_deg",
+      "rows_used": 5762,
+      "status": "ok",
+      "distance": 0.137,
+      "baseline_distance": 0.287,
+      "delta": 0.15,
+      "selected": "styled",
+      "selected_distance": 0.153,
+      "selected_gain": 0.134,
+      "selection_margin": 0.088,
+      "components": {
+        "palette": 0.162,
+        "aspect": 0.116,
+        "ink": 0.093
+      },
+      "hard_failures": 0,
+      "findings": [],
+      "official_code_score": {
+        "available": false,
+        "reason": "CodegenError: skill 'field_map' has no code emitter yet"
+      },
+      "semantic_findings": []
+    },
+    {
+      "id": "arxiv-astro-skymap__2510.17487",
+      "chart": "Std-band",
+      "panel_mode": "single",
+      "code_version": "8ea6d2b2ae0c",
+      "skill": "trend_with_uncertainty",
+      "rationale": "trend acquisition_frequency_hz->phosphate_detection_limit_mg_per_l",
+      "rows_used": 460,
+      "status": "ok",
+      "distance": 0.342,
+      "baseline_distance": 0.356,
+      "delta": 0.014,
+      "selected": "styled",
+      "selected_distance": 0.341,
+      "selected_gain": 0.015,
+      "selection_margin": 0.017,
+      "components": {
+        "palette": 0.515,
+        "aspect": 0.006,
+        "ink": 0.245
+      },
+      "hard_failures": 0,
+      "findings": [],
+      "official_code_score": {
+        "available": true,
+        "score": 100.0,
+        "n_activated": 4,
+        "scored": [
+          "palette",
+          "grid",
+          "tick_direction",
+          "serif"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
       "semantic_findings": []
     }
   ],
@@ -4574,7 +4845,21 @@
       "PMC12000431",
       "PMC12354736",
       "PMC12504421",
-      "PMC12905268"
+      "PMC12905268",
+      "PMC13009336",
+      "PMC13022287",
+      "PMC13079874",
+      "PMC13106710",
+      "PMC13135507",
+      "PMC13245775",
+      "PMC13252719",
+      "PMC13273070",
+      "PMC13286152",
+      "PMC13336770",
+      "PMC13342296",
+      "PMC13343911",
+      "arxiv-astro-skymap__2412.12637",
+      "arxiv-astro-skymap__2510.17487"
     ],
     "stale": [
       "ChartNet-sample_51138e34911000f6",
@@ -4620,22 +4905,10 @@
       "Chart2Code_level2_violin_25_v4",
       "Chart2Code_level3_table20_3_generate",
       "Chart2NCode_ce7b7d946995482f9dd37ddad319cbc2",
-      "arxiv-astro-skymap__2510.17487",
       "arxiv-ml-bar-line-v2__2511.15055",
       "arxiv-phys-prx-prl__2603.21981",
       "arxiv_2410.15876",
       "arxiv_2502.15132",
-      "PMC13009336",
-      "PMC13022287",
-      "PMC13079874",
-      "PMC13135507",
-      "PMC13245775",
-      "PMC13252719",
-      "PMC13273070",
-      "PMC13286152",
-      "PMC13336770",
-      "PMC13342296",
-      "PMC13343911",
       "Chart2Code_level2_3d_5_v4",
       "Chart2Code_level2_area_3_v3",
       "Chart2Code_level2_bar_10_v4",
@@ -4658,7 +4931,6 @@
       "Chart2Code_level2_hist_2_v5",
       "Chart2Code_level2_multidiff_1_v1",
       "Chart2Code_level2_multidiff_5_v1",
-      "arxiv-astro-skymap__2412.12637",
       "arxiv-ml-3d-trajectory__2511.17399",
       "arxiv-ml-3d-trajectory__2602.22552",
       "arxiv_2604.01093",
@@ -4684,7 +4956,6 @@
       "ChartNet-sample_3d0ebd7ea1e10bf3",
       "ChartNet-sample_42a8557ef11775e9",
       "ChartNet-sample_46826fe4916b7d52",
-      "PMC13106710",
       "arxiv_2502.17598",
       "arxiv_2605.14587",
       "Chart2Code_level1_direct_contour_18",
@@ -4703,9 +4974,9 @@
       "Chart2Code_level2_radar_7_v3",
       "Chart2Code_level2_radar_9_v4"
     ],
-    "n_fresh": 18,
+    "n_fresh": 32,
     "n_stale": 12,
-    "n_unknown": 111
+    "n_unknown": 97
   },
   "stale_tasks": [
     "ChartNet-sample_51138e34911000f6",
@@ -4722,8 +4993,8 @@
     "ChartNet-sample_953bb3ed650d8541"
   ],
   "n_stale": 12,
-  "n_unknown": 111,
-  "n_fresh": 18,
+  "n_unknown": 97,
+  "n_fresh": 32,
   "selection": {
     "n": 112,
     "shipped_mean": 0.24,

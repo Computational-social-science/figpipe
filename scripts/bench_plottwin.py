@@ -41,7 +41,13 @@ import pandas as pd
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from figpipe import decision, select, skills, styleprofile  # noqa: E402
+from figpipe import codegen, decision, select, skills, styleprofile  # noqa: E402
+
+sys.path.insert(0, str(ROOT / "third_party"))
+try:                                            # official scorer is optional and CC BY-NC
+    import plottwin_scorer as official
+except Exception:                               # noqa: BLE001 - reported, not fatal
+    official = None
 
 API = ("https://datasets-server.huggingface.co/rows?dataset=figmirror%2FPlotTwin-Bench"
        "&config=bench&split=test&offset={offset}&length=1")
@@ -137,8 +143,16 @@ def classify_failure(chart: str) -> str | None:
 def fetch_row(offset: int) -> dict:
     CACHE.mkdir(parents=True, exist_ok=True)
     cache = CACHE / f"{offset}.json"
+    #: Fields the harness needs. A cache entry written before a field existed must be refreshed,
+    #: or that measurement dimension stays permanently empty while looking "cached".
+    REQUIRED = ("id", "chart_type_name", "panel_mode", "target_data")
     if cache.is_file():
-        return json.loads(cache.read_text(encoding="utf-8"))
+        try:
+            cached = json.loads(cache.read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            cached = {}
+        if all(k in cached for k in REQUIRED) and "reference_code" in cached:
+            return cached
     req = urllib.request.Request(API.format(offset=offset),
                                  headers={"User-Agent": "figpipe-bench/0.1"})
     # The dataset server rate-limits (HTTP 429) when a type-wide scan walks the pool. Back off
@@ -168,6 +182,7 @@ def fetch_row(offset: int) -> dict:
         _record_coverage(offset, row["id"])
     keep = {"id": row.get("id"), "chart_type_name": row.get("chart_type_name"),
             "panel_mode": row.get("panel_mode"), "target_data": row.get("target_data"),
+            "reference_code": row.get("reference_code"),
             "reference_url": (row.get("reference_image") or {}).get("src")}
     cache.write_text(json.dumps(keep), encoding="utf-8")
     return keep
@@ -460,6 +475,75 @@ def stale_tasks(tasks) -> list[str]:
     return freshness(tasks)["stale"]
 
 
+def _official_summary(tasks) -> dict:
+    """Aggregate the OFFICIAL code channel: how many tasks it could score, and the mean."""
+    scores = [t["official_code_score"]["score"] for t in tasks
+              if isinstance(t.get("official_code_score"), dict)
+              and t["official_code_score"].get("score") is not None]
+    unavailable = [t["id"] for t in tasks
+                   if isinstance(t.get("official_code_score"), dict)
+                   and t["official_code_score"].get("score") is None]
+    return {
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "official deterministic channel only; the 0.65 vision channel is NOT run, so this "
+                "is not the combined score",
+        "n_scored": len(scores),
+        "n_unavailable": len(unavailable),
+        "mean_score": round(float(np.mean(scores)), 2) if scores else None,
+        "min_score": round(float(np.min(scores)), 2) if scores else None,
+        "max_score": round(float(np.max(scores)), 2) if scores else None,
+    }
+
+
+def _official_code_score(ref_code, skill, data, params, *, height_mm, columns,
+                         rc=None, palette=None, style=None):
+    """Score figpipe's emitted code against the benchmark's own reference code.
+
+    Returns None when the scorer is not vendored, the task has no reference code, or the drawer
+    cannot be expressed as a script -- each is a reported absence, not a zero.
+    """
+    if official is None or not ref_code:
+        return None
+    try:
+        panel = _panel_for(skill, data, params)
+        cand = codegen.emit([panel], columns=columns, height_mm=float(height_mm),
+                            rc=rc, palette=palette, style=style)
+    except Exception as exc:                       # noqa: BLE001 - unsupported drawer
+        return {"available": False, "reason": f"{type(exc).__name__}: {exc}"}
+    try:
+        oc = official.score_code_deviation(ref_code, cand)
+    except Exception as exc:                       # noqa: BLE001
+        return {"available": False, "reason": f"{type(exc).__name__}: {exc}"}
+    return {"available": oc["available"], "score": oc["score"],
+            "n_activated": oc["n_activated"], "scored": oc["scored_dimensions"],
+            "channel": "code_deviation", "weight_upstream": 0.35,
+            "note": "code channel only; the 0.65 vision channel is not run"}
+
+
+def _panel_for(skill, data, params):
+    """Rebuild the panel a skill drew, for code emission."""
+    from figpipe import composite
+    if skill == "trend_with_uncertainty":
+        kw = {k: v for k, v in params.items() if k in ("x", "y", "lo", "hi", "fit",
+                                                       "reference", "xlabel", "ylabel")}
+        return composite.Panel("trend_band", data, kw)
+    if skill == "scatter_relationship":
+        return composite.Panel("scatter_fit", data,
+                               {"x": params["x"], "y": params["y"]})
+    if skill in ("histogram", "faceted_distribution"):
+        return composite.Panel("histogram", data, {"value": params["value"]})
+    if skill == "distribution_comparison":
+        return composite.Panel("boxplot", data,
+                               {"group": params["group"], "value": params["value"]})
+    if skill == "matrix_plate":
+        return composite.Panel("heatmap", data, {})
+    if skill == "grouped_measures":
+        return composite.Panel("line_series", data,
+                               {"x": params["x"], "ycols": list(params["ycols"])})
+    raise codegen.CodegenError(f"skill {skill!r} has no code emitter yet")
+
+
 def run_task(row: dict, out_dir: pathlib.Path) -> dict:
     result = {"id": row["id"], "chart": row["chart_type_name"], "panel_mode": row["panel_mode"],
               "code_version": CODE_VERSION}
@@ -516,6 +600,26 @@ def run_task(row: dict, out_dir: pathlib.Path) -> dict:
             "plain": pathlib.Path(plain["png"]),
             "styled": pathlib.Path(styled["png"]),
         })
+        # OFFICIAL code channel (35% of the benchmark score), deterministic, no VLM.
+        # The honest claim is "code channel", never the combined score: the vision channel is
+        # 65% and is not run here.
+        # The official channel compares AST-extracted style features, so the candidate must carry
+        # the REFERENCE's own features (palette/grid/spines/ticks/serif/legend/aspect), not a
+        # guess derived from a raster profile. Extract them from the reference code itself.
+        ref_style = None
+        if official is not None and row.get("reference_code"):
+            try:
+                ref_style = codegen.style_from_features(
+                    official.extract_style_features(row["reference_code"])["features"])
+            except Exception:                      # noqa: BLE001 - reference not parseable
+                ref_style = None
+        official_score = _official_code_score(
+            row.get("reference_code"), skill, data, params,
+            height_mm=(styled["layout"]["height_mm"] or 120.0),
+            columns=float(styled["layout"]["columns"] or 2.0),
+            rc=None,
+            palette=(ref_style or {}).get("palette"),
+            style=ref_style)
         chosen_is_styled = picked["choice"] == "styled"
         result.update({
             "status": "ok",
@@ -531,8 +635,7 @@ def run_task(row: dict, out_dir: pathlib.Path) -> dict:
             "components": d_styled["details"],
             "hard_failures": (styled if chosen_is_styled else plain)["hard_failures"],
             "findings": (styled if chosen_is_styled else plain)["findings"][:5],
-            # semantic findings are separate from format findings: a figure can be perfectly
-            # compliant and still print a number its data do not support
+            "official_code_score": official_score,
             "semantic_findings": [f for f in
                                   (styled if chosen_is_styled else plain)["findings"]
                                   if str(f.get("check", "")).startswith("semantics")],
@@ -805,6 +908,7 @@ def main(argv=None) -> int:
         "mean_best_of_two": round(float(np.mean([min(r["distance"], r["baseline_distance"])
                                                  for r in ok])), 3) if ok else None,
         "semantic_violations": sum(1 for r in ok if r.get("semantic_findings")),
+        "official_code_channel": _official_summary(ok),
         "decision_service": decision.health(),
         "by_type": type_stats,
         "failures": [{"id": r["id"], "chart": r["chart"], "error": r.get("error")}
