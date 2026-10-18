@@ -58,11 +58,22 @@ def test_palette_comes_from_the_reference_and_drops_page_white(tmp_path):
 
 
 def test_the_derived_height_matches_the_reference_aspect(tmp_path):
+    """The derived height depends on the CANVAS WIDTH, not on a hard-coded 183 mm.
+
+    Getting this wrong is not cosmetic: applying a 183 mm-derived height to an 89 mm
+    single-column figure doubles the aspect error, which the benchmark measured as an aspect
+    component of 0.75 on every Field 2D task versus 0.001 on two-column Line tasks.
+    """
     ref = styleprofile.StyleProfile.from_pdf(_reference_pdf(tmp_path))
     ref.width_mm, ref.height_mm = 183.0, 122.0
-    assert styleprofile.style_from_profile(ref)["height_mm"] == pytest.approx(122.0, abs=0.5)
+    assert styleprofile.style_from_profile(ref, columns=2.0)["height_mm"] == pytest.approx(
+        122.0, abs=0.5)
+    # the same reference on a one-column canvas must give half the height (89/1.5 = 59.3,
+    # clamped by the 60 mm floor)
+    assert styleprofile.style_from_profile(ref, columns=1.0)["height_mm"] == pytest.approx(
+        60.0, abs=0.5)
     ref.height_mm = 40.0        # absurdly wide reference: the lower bound must win
-    assert styleprofile.style_from_profile(ref)["height_mm"] == pytest.approx(90.0, abs=0.1)
+    assert styleprofile.style_from_profile(ref)["height_mm"] == pytest.approx(60.0, abs=0.1)
 
 
 def test_transfer_improves_or_holds_and_audits_the_best_page(tmp_path):

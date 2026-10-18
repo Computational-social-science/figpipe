@@ -390,7 +390,8 @@ def palette_from_profile(profile: "StyleProfile", n: int = 4) -> list[str]:
 
 
 def style_from_profile(profile: "StyleProfile", columns: float = 2.0,
-                       height_mm: float | None = None) -> dict:
+                       height_mm: float | None = None,
+                       canvas_mm: float | None = None) -> dict:
     """Derive a compliant, ready-to-use style from a measured profile.
 
     Returns `rc` (matplotlib rcParams), `palette`, and `height_mm` (the reference's own aspect,
@@ -412,8 +413,14 @@ def style_from_profile(profile: "StyleProfile", columns: float = 2.0,
           "xtick.major.width": round(lw, 2), "ytick.major.width": round(lw, 2)}
     height = height_mm
     if height is None and profile.width_mm and profile.height_mm:
+        # THE CANVAS MATTERS. The reference's aspect is a property of the reference; the height
+        # that reproduces it depends on the width the CANDIDATE will be drawn at. Deriving the
+        # height from a hard-coded 183 mm and then drawing a 89 mm single-column figure makes the
+        # aspect wrong by ~2x -- which is exactly what the benchmark caught on Field 2D tasks
+        # (aspect component 0.75 for every one of them, vs 0.001 for two-column Line tasks).
+        width = canvas_mm if canvas_mm is not None else (183.0 if columns == 2.0 else 89.0)
         aspect = profile.width_mm / profile.height_mm
-        height = min(max(round(183.0 / aspect, 1), 90.0), 170.0)
+        height = min(max(round(width / aspect, 1), 60.0), 170.0)
     return {"rc": rc, "palette": palette_from_profile(profile),
             "height_mm": height, "source": profile.source}
 

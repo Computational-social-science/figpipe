@@ -670,3 +670,37 @@ check.
 Scope is stated rather than implied: it verifies the claims OUR drawers make. It is not a semantic
 parser for arbitrary figures, and applying the point-count check to heatmaps/fields/bars would
 produce false failures -- which is how checks get switched off -- so it is limited to point drawers.
+
+
+## 33. A real regression the loop caught, and the bug it exposed (2026-10-19)
+
+The scheduled run exited non-zero with three genuine regressions:
+
+    benchmark_success_rate          1.00 -> 0.99
+    benchmark_anchor_distance       0.329 -> 0.356
+    benchmark_shipped_anchor_distance 0.247 -> 0.269
+
+This time the alarm was CORRECT. Diagnosing it found a bug in the style-transfer layer itself, not
+in the new field operator:
+
+**The derived height ignored the canvas width.** `style_from_profile` computed the height from a
+hard-coded 183 mm and then the skill drew a 89 mm single-column figure, so the aspect was wrong by
+~2x. The style components proved it: every Field 2D task had an `aspect` component of **0.74-0.75**,
+while two-column Line tasks had **0.001**. The operator was fine; the style transfer was ruining it.
+
+Fix: `style_from_profile(..., columns=)` derives the height from the width the candidate will
+actually be drawn at (183 mm for two columns, 89 mm for one), and `skills.run` passes its own column
+count. Result on Field 2D:
+
+    before: styled 0.501  plain 0.441  delta -0.060   (worst chart type)
+    after : styled 0.343  plain 0.441  delta +0.098   (a clear gain)
+
+Three lessons, in order of importance:
+
+1. **The regression guard paid for itself.** It caught a defect that no test would have found,
+   because every test rendered at a single column width.
+2. **A new operator can be blamed for an old bug.** Field 2D got WORSE the moment it switched to
+   `field_map`, but the operator was correct -- the style layer had been silently distorting every
+   single-column figure, and the old `matrix_plate` path happened to have a matching aspect by luck.
+3. **Component-level diagnostics localise a regression in seconds.** `aspect: 0.75` on every task of
+   one type, and `0.001` on another, named the defect without reading any code.

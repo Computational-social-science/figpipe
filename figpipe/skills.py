@@ -570,9 +570,11 @@ def run(name: str, data: pd.DataFrame, out_stem=None, **params):
     if ctx.reference is not None:
         if "height_mm" not in params:
             # a reference style's aspect is the point of style transfer; a skill's default
-            # height must not silently win over it when the caller did not ask for one
+            # height must not silently win over it when the caller did not ask for one.
+            # The height depends on the COLUMN WIDTH the skill draws at: deriving it from a
+            # hard-coded 183 mm while drawing at 89 mm doubles the aspect error.
             ctx.layout["height_mm"] = styleprofile.style_from_profile(
-                ctx.reference)["height_mm"]
+                ctx.reference, columns=ctx.layout["columns"])["height_mm"]
         pal = styleprofile.style_from_profile(ctx.reference)["palette"]
         if pal:
             for p in ctx.panels:
