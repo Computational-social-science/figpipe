@@ -1,0 +1,6089 @@
+{
+ "paper_id": "2019_nature_immunization_vital_progress_unfinished_agenda_f6489ba2",
+ "source_pdf": "D:\\2024-Origin and evolution of virus genera\\2020-Herd Immunity\\!2019-Nature_Immunization_vital progress, unfinished agenda.pdf",
+ "source_sha256": "b43e17e9ac11d9900e9485e1ce3a92504a2063e4d41a1ab9f8f074e723f7cce2",
+ "source_name": "!2019-Nature_Immunization_vital progress, unfinished agenda.pdf",
+ "n_pages": 11,
+ "page_size_pt": [
+  595.28,
+  790.87
+ ],
+ "coordinate_note": "bbox is PDF points with origin at the BOTTOM-LEFT, y increasing upward; bbox_norm divides by page size.",
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "generated_at": "2026-10-18T11:27:46",
+ "pages": [
+  {
+   "page_no": 1,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0001.png",
+   "elements": [
+    {
+     "reading_order": 0,
+     "page": 1,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 740.09,
+      "r": 519.07,
+      "b": 688.44,
+      "w": 479.39,
+      "h": 51.64,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.9358,
+      "r": 0.87198,
+      "b": 0.87049
+     },
+     "text": "Immunization: vital progress, unfinished agenda",
+     "text_len": 47,
+     "level": 1,
+     "element_id": "p1_e0"
+    },
+    {
+     "reading_order": 1,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 644.32,
+      "r": 199.65,
+      "b": 637.32,
+      "w": 159.97,
+      "h": 7.0,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.8147,
+      "r": 0.33539,
+      "b": 0.80585
+     },
+     "text": "https://doi.org/10.1038/s41586-019-1656-7",
+     "text_len": 41,
+     "level": 2,
+     "element_id": "p1_e1"
+    },
+    {
+     "reading_order": 2,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 628.22,
+      "r": 122.31,
+      "b": 621.21,
+      "w": 82.62,
+      "h": 7.0,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.79434,
+      "r": 0.20547,
+      "b": 0.78548
+     },
+     "text": "Received: 5 June 2019",
+     "text_len": 21,
+     "level": 2,
+     "element_id": "p1_e2"
+    },
+    {
+     "reading_order": 3,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 612.11,
+      "r": 149.05,
+      "b": 605.11,
+      "w": 109.37,
+      "h": 7.0,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.77397,
+      "r": 0.25039,
+      "b": 0.76512
+     },
+     "text": "Accepted: 6 September 2019",
+     "text_len": 26,
+     "level": 2,
+     "element_id": "p1_e3"
+    },
+    {
+     "reading_order": 4,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 596.01,
+      "r": 172.33,
+      "b": 589.0,
+      "w": 132.65,
+      "h": 7.0,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.75362,
+      "r": 0.2895,
+      "b": 0.74475
+     },
+     "text": "Published online: 6 November 2019",
+     "text_len": 33,
+     "level": 1,
+     "element_id": "p1_e4"
+    },
+    {
+     "reading_order": 5,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 645.43,
+      "r": 534.16,
+      "b": 626.57,
+      "w": 316.84,
+      "h": 18.86,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.81611,
+      "r": 0.89733,
+      "b": 0.79226
+     },
+     "text": "Peter Piot 1 *, Heidi J. Larson 1,2,3 , Katherine L. O'Brien 4 , John N'kengasong 5 , Edmond Ng 1 , Samba Sow 6 & Beate Kampmann 1,7",
+     "text_len": 132,
+     "level": 1,
+     "element_id": "p1_e5"
+    },
+    {
+     "reading_order": 6,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 602.1,
+      "r": 557.74,
+      "b": 489.78,
+      "w": 340.42,
+      "h": 112.32,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.76132,
+      "r": 0.93694,
+      "b": 0.6193
+     },
+     "text": "Vaccination against infectious diseases has changed the future of the human species, saving millions of lives every year, both children and adults, and providing major benefits to society as a whole. Here we show, however, that national and sub-national coverage of vaccination varies greatly and major unmet needs persist. Although scientific progress opens exciting perspectives in terms of new vaccines, the pathway from discovery to sustainable implementation can be long and difficult, from the financing, development and licensing to programme implementation and public acceptance. Immunization is one of the best investments in health and should remain a priority for research, industry, public health and society.",
+     "text_len": 721,
+     "level": 1,
+     "element_id": "p1_e6"
+    },
+    {
+     "reading_order": 7,
+     "page": 1,
+     "label": "picture",
+     "bbox": {
+      "l": 38.45,
+      "t": 454.44,
+      "r": 175.23,
+      "b": 393.49,
+      "w": 136.79,
+      "h": 60.95,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06459,
+      "t": 0.57461,
+      "r": 0.29437,
+      "b": 0.49754
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p1_e7"
+    },
+    {
+     "reading_order": 8,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 375.81,
+      "r": 294.95,
+      "b": 185.4,
+      "w": 255.27,
+      "h": 190.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.47519,
+      "r": 0.49548,
+      "b": 0.23443
+     },
+     "text": "On 14 May 1796, 73 years before the first issue of Nature, and inspired by Lady Montagu's \"variolation\" concept, Edward Jenner inoculated eight-year-old James Phipps with cowpox pus to prove that the less virulent cowpox would protect against smallpox. This experiment was a game changer in medicine and health. For the first time, it was possible to medically prevent infection in a healthy person. Although vaccines have been widely introduced in high-income countries since the late 1950s, it took 180 years after Jenner before the Expanded Programme on Immunization (EPI) was launched in 1974, promoting access to six essential vaccines in all countries worldwide. Today, vaccines against 26 infectious diseases are internationally available according to the World Health Organization (WHO) 1 , although more have been licensed worldwide, changing the future of the human species. Others are in experimental public health use, such as Ebola vaccines, or pilot implementation such as the RTS,S malaria vaccine, and about 240 vaccine candidates are in development 2 (Table 1). The US Centers for Disease Control and Prevention declared vaccination the number one success story for public health in the twentieth century 3 .",
+     "text_len": 1225,
+     "level": 1,
+     "element_id": "p1_e8"
+    },
+    {
+     "reading_order": 9,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 182.31,
+      "r": 294.87,
+      "b": 120.9,
+      "w": 255.18,
+      "h": 61.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.23052,
+      "r": 0.49535,
+      "b": 0.15287
+     },
+     "text": "However, progress in vaccine coverage remains highly uneven-both between and within countries-which threatens hard-won progress and raises uncertainty about how to make further advances. Vaccinepreventable diseases such as measles are on the rise, and episodes of vaccine reluctance and refusal are occurring globally, questioning one of the most transformative interventions for survival and health.",
+     "text_len": 400,
+     "level": 1,
+     "element_id": "p1_e9"
+    },
+    {
+     "reading_order": 10,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 117.81,
+      "r": 294.83,
+      "b": 88.65,
+      "w": 255.14,
+      "h": 29.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.14896,
+      "r": 0.49528,
+      "b": 0.11209
+     },
+     "text": "This Review focuses on preventive immunization in humans and its impact (rather than on the vaccines themselves), including in low-, middle- and high-income countries. We discuss the current status of vaccine coverage, as well as unmet needs, four hurdles to overcome to ensure sustainable immunization programmes starting with the discovery of a new vaccine, the growing issue of vaccine confidence, and conclude with several opportunities and needed actions to ensure the full potential of immunization for human health and society. Developmental challenges for vaccine production for low- and middle-income countries, which were recently discussed in separate articles 4,5 , and therapeutic vaccines are not discussed.",
+     "text_len": 721,
+     "level": 1,
+     "element_id": "p1_e10"
+    },
+    {
+     "reading_order": 11,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 375.81,
+      "r": 561.41,
+      "b": 249.9,
+      "w": 255.27,
+      "h": 125.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.47519,
+      "r": 0.94311,
+      "b": 0.31598
+     },
+     "text": "Vaccines are biological products that induce protective immunity against infection and disease; they consist of sub-components, killed or inactivated organisms or live-attenuated viruses that train the immune system for a future response to a natural infection. They are probably the only medical intervention that is recommended for every single individual on the planet. Unlike therapeutics, vaccines are used in healthy people, and demand a very high standard of safety and require continuous monitoring for potential side effects. Besides considerations of safety, effectiveness, impact and cost, this raises complex governance, regulatory and public trust issues. All countries have a national immunization plan, often with goals inspired by the Global Vaccine Action Plan (GVAP) framework for 2011-2020 6 .",
+     "text_len": 812,
+     "level": 1,
+     "element_id": "p1_e11"
+    },
+    {
+     "reading_order": 12,
+     "page": 1,
+     "label": "section_header",
+     "bbox": {
+      "l": 306.14,
+      "t": 228.39,
+      "r": 535.33,
+      "b": 219.53,
+      "w": 229.19,
+      "h": 8.86,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.28878,
+      "r": 0.8993,
+      "b": 0.27758
+     },
+     "text": "How immunization has crucially benefited society",
+     "text_len": 48,
+     "level": 1,
+     "element_id": "p1_e12"
+    },
+    {
+     "reading_order": 13,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 214.56,
+      "r": 561.36,
+      "b": 110.15,
+      "w": 255.22,
+      "h": 104.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.2713,
+      "r": 0.94302,
+      "b": 0.13928
+     },
+     "text": "It is hard to imagine a world without vaccines. A decade ago, the WHO, UNICEF and the World Bank estimated that routine childhood immunization programmes were preventing more than 2.5 million deaths every year 7 . With the increase in vaccine coverage, the growth of populations, and the introduction of new life-saving vaccines, immunization is ever more important for survival. In addition to preventing deaths, vaccines prevent disease and disability, including in adults and the elderly. In a high-income country such as the United States, for a single birth cohort, vaccines prevent nearly 20 million cases of disease, and more than 40,000 deaths 8 .",
+     "text_len": 655,
+     "level": 1,
+     "element_id": "p1_e13"
+    },
+    {
+     "reading_order": 14,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 107.06,
+      "r": 561.29,
+      "b": 88.65,
+      "w": 255.15,
+      "h": 18.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.13537,
+      "r": 0.94291,
+      "b": 0.11209
+     },
+     "text": "A vaccine has for the first time in history eradicated a human disease, smallpox. Efforts to eradicate polio are in the final stages, with",
+     "text_len": 138,
+     "level": 1,
+     "element_id": "p1_e14"
+    },
+    {
+     "reading_order": 15,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 39.68,
+      "t": 79.47,
+      "r": 558.49,
+      "b": 46.38,
+      "w": 518.8,
+      "h": 33.1,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06666,
+      "t": 0.10048,
+      "r": 0.9382,
+      "b": 0.05864
+     },
+     "text": "1 Office of the Director, Vaccine Centre and Vaccine Confidence Project, London School of Hygiene & Tropical Medicine, London, UK. 2 Institute for Health Metrics and Evaluation, University of Washington, Seattle, WA, USA. 3 Centre for the Evaluation of Vaccination (CEV), University of Antwerp, Antwerp, Belgium. 4 Department of Immunization, Vaccines and Biologicals, World Health Organization, Geneva, Switzerland. 5 Africa Centres for Disease Control and Prevention, Addis Ababa, Ethiopia. 6 Center for Vaccine Development, Bamako, Mali. 7 MRC Unit The Gambia at the LSHTM, Banjul, The Gambia. *e-mail: peter.piot@lshtm.ac.uk",
+     "text_len": 628,
+     "level": 1,
+     "element_id": "p1_e15"
+    }
+   ]
+  },
+  {
+   "page_no": 2,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0002.png",
+   "elements": [
+    {
+     "reading_order": 16,
+     "page": 2,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 762.41,
+      "r": 87.29,
+      "b": 749.69,
+      "w": 47.6,
+      "h": 12.72,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.96402,
+      "r": 0.14664,
+      "b": 0.94794
+     },
+     "text": "Review",
+     "text_len": 6,
+     "level": 1,
+     "element_id": "p2_e16"
+    },
+    {
+     "reading_order": 17,
+     "page": 2,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 740.97,
+      "r": 258.75,
+      "b": 733.1,
+      "w": 219.07,
+      "h": 7.87,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.93691,
+      "r": 0.43467,
+      "b": 0.92696
+     },
+     "text": "Table 1 | Historic timeline of introduction of vaccines",
+     "text_len": 55,
+     "level": 1,
+     "element_id": "p2_e17"
+    },
+    {
+     "reading_order": 18,
+     "page": 2,
+     "label": "table",
+     "bbox": {
+      "l": 37.31,
+      "t": 727.08,
+      "r": 561.87,
+      "b": 324.86,
+      "w": 524.56,
+      "h": 402.21,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06268,
+      "t": 0.91935,
+      "r": 0.94388,
+      "b": 0.41076
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p2_e18"
+    },
+    {
+     "reading_order": 19,
+     "page": 2,
+     "label": "footnote",
+     "bbox": {
+      "l": 39.68,
+      "t": 319.84,
+      "r": 425.19,
+      "b": 313.75,
+      "w": 385.51,
+      "h": 6.1,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06666,
+      "t": 0.40442,
+      "r": 0.71427,
+      "b": 0.39672
+     },
+     "text": "Table adapted from Plotkin & Plotkin (2018) 111 . The year of licensing is indicated wherever possible. rBS, recombinant B subunit; WC, whole cell.",
+     "text_len": 147,
+     "level": 2,
+     "element_id": "p2_e19"
+    },
+    {
+     "reading_order": 20,
+     "page": 2,
+     "label": "footnote",
+     "bbox": {
+      "l": 39.68,
+      "t": 310.84,
+      "r": 193.84,
+      "b": 304.75,
+      "w": 154.16,
+      "h": 6.1,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06666,
+      "t": 0.39304,
+      "r": 0.32563,
+      "b": 0.38534
+     },
+     "text": "a Capsular polysaccharide conjugated to carrier proteins.",
+     "text_len": 57,
+     "level": 2,
+     "element_id": "p2_e20"
+    },
+    {
+     "reading_order": 21,
+     "page": 2,
+     "label": "footnote",
+     "bbox": {
+      "l": 39.68,
+      "t": 301.84,
+      "r": 537.05,
+      "b": 295.75,
+      "w": 497.36,
+      "h": 6.1,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06666,
+      "t": 0.38166,
+      "r": 0.90219,
+      "b": 0.37396
+     },
+     "text": "b An investigational vaccine, rVSV-ZEBOV, was used under 'expanded access' during the Ebola outbreak in West Africa in 2015 and the 2018-2019 outbreak in the Democratic Republic of",
+     "text_len": 180,
+     "level": 2,
+     "element_id": "p2_e21"
+    },
+    {
+     "reading_order": 22,
+     "page": 2,
+     "label": "footnote",
+     "bbox": {
+      "l": 39.69,
+      "t": 292.01,
+      "r": 370.48,
+      "b": 286.75,
+      "w": 330.79,
+      "h": 5.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.36923,
+      "r": 0.62237,
+      "b": 0.36258
+     },
+     "text": "the Congo; the Ad26.ZEBOV/MVA-BN-Filo vaccine was used in 2019 in Rwanda and the Democratic Republic of the Congo.",
+     "text_len": 114,
+     "level": 2,
+     "element_id": "p2_e22"
+    },
+    {
+     "reading_order": 23,
+     "page": 2,
+     "label": "footnote",
+     "bbox": {
+      "l": 39.68,
+      "t": 283.84,
+      "r": 463.7,
+      "b": 277.75,
+      "w": 424.02,
+      "h": 6.1,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06666,
+      "t": 0.3589,
+      "r": 0.77897,
+      "b": 0.3512
+     },
+     "text": "c Positive opinion from the EMA under article 58 issued in 2015. Approved for routine use in pilot implementation settings in Ghana, Malawi and Kenya in 2018.",
+     "text_len": 158,
+     "level": 2,
+     "element_id": "p2_e23"
+    },
+    {
+     "reading_order": 24,
+     "page": 2,
+     "label": "footnote",
+     "bbox": {
+      "l": 39.68,
+      "t": 274.84,
+      "r": 99.72,
+      "b": 268.75,
+      "w": 60.03,
+      "h": 6.1,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06666,
+      "t": 0.34752,
+      "r": 0.16752,
+      "b": 0.33982
+     },
+     "text": "d Reverse vaccinology.",
+     "text_len": 22,
+     "level": 2,
+     "element_id": "p2_e24"
+    },
+    {
+     "reading_order": 25,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 39.59,
+      "t": 246.81,
+      "r": 294.87,
+      "b": 196.15,
+      "w": 255.28,
+      "h": 50.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06651,
+      "t": 0.31208,
+      "r": 0.49535,
+      "b": 0.24802
+     },
+     "text": "only two countries, Afghanistan and Pakistan, still experiencing wild transmission of the polio virus. All countries with the exception of 13 have eliminated neonatal and maternal tetanus. Without vaccination, there would be far more infections that require antibiotic therapy, exacerbating the major problem of drug-resistant infections.",
+     "text_len": 338,
+     "level": 1,
+     "element_id": "p2_e25"
+    },
+    {
+     "reading_order": 26,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 39.59,
+      "t": 193.06,
+      "r": 294.8,
+      "b": 142.4,
+      "w": 255.2,
+      "h": 50.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06651,
+      "t": 0.24411,
+      "r": 0.49523,
+      "b": 0.18006
+     },
+     "text": "Between 1990 and 2017, immunization contributed to a 55% global decline in under-five mortality rates, with a drop from 87 to 39 deaths per 1,000 live births 9 . More than 14 million deaths are estimated to have been prevented by measles vaccination alone between 2011 and 2020 6 .",
+     "text_len": 281,
+     "level": 1,
+     "element_id": "p2_e26"
+    },
+    {
+     "reading_order": 27,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 39.59,
+      "t": 139.31,
+      "r": 294.88,
+      "b": 45.65,
+      "w": 255.29,
+      "h": 93.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06651,
+      "t": 0.17615,
+      "r": 0.49537,
+      "b": 0.05772
+     },
+     "text": "Vaccination benefits not only those who are vaccinated, but also others in their family and community. This population-wide benefit, known as 'herd immunity', reduces the exposure of unvaccinated individuals to pathogens through a reduction or interruption of the chains of transmission. A recent study in Kenya showed that the introduction of a pneumococcal vaccine resulted in not only a major reduction in invasive pneumococcal disease, but also a nearly 100% decline in incidence among infants too young to be vaccinated, and a more than 74% reduction among unvaccinated children 10 . Community or herd immunity is an important consideration when estimating the full public health value of immunization. The threshold to achieve such community protection can be as high as 95% for measles, but as low as 80% for rubella, and 60% in high-income settings for the effect to begin for pneumococcal vaccination, which means that the programme strength required to derive additional impact varies substantially by vaccine 11-13 . These differences in the required critical vaccination coverage rates are due to the basic reproductive ratio of an infection (R0) 14 , which can vary greatly among various infectious diseases. The R0 of a specific infection indicates the average number of cases one case generates in a population-in the case of measles it is 12-18, which is among the highest 15 . It is an indicator of how contagious an infection is, and determines the minimum level of vaccination coverage needed to generate herd immunity.",
+     "text_len": 1538,
+     "level": 1,
+     "element_id": "p2_e27"
+    },
+    {
+     "reading_order": 28,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 107.06,
+      "r": 561.33,
+      "b": 45.65,
+      "w": 255.19,
+      "h": 61.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.13537,
+      "r": 0.94297,
+      "b": 0.05772
+     },
+     "text": "Potential long-term effects beyond direct protection against a specific pathogen or disease have been attributed to several vaccines, in particular the BCG vaccine against tuberculosis and the measles vaccine, in which observational studies suggested a survival advantage compared with children who had remained unvaccinated. These non-specific effects (also known as heterologous effects) would add to the disease-specific, proven Not only do vaccines provide important health benefits for all stages in life, but they also provide benefits for travellers, healthcare workers and individuals with existing health conditions. Note that the lists of vaccines are illustrative only, rather than exhaustive, and do not indicate that these are universally recommended for each life phase in all countries. Routine vaccines recommended by the WHO are available at: https://www.who.int/immunization/policy/immunization_tables/en/ (last accessed 3 September 2019). BCG, Bacillus Calmette-Guérin; CMV; cytomegalovirus; ETEC, enterotoxigenic Escherichia coli; RSV, respiratory syncytial virus.",
+     "text_len": 1084,
+     "level": 1,
+     "element_id": "p2_e28"
+    }
+   ]
+  },
+  {
+   "page_no": 3,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0003.png",
+   "elements": [
+    {
+     "reading_order": 29,
+     "page": 3,
+     "label": "table",
+     "bbox": {
+      "l": 37.67,
+      "t": 737.84,
+      "r": 560.72,
+      "b": 418.79,
+      "w": 523.04,
+      "h": 319.06,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06328,
+      "t": 0.93295,
+      "r": 0.94195,
+      "b": 0.52953
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p3_e29"
+    },
+    {
+     "reading_order": 30,
+     "page": 3,
+     "label": "caption",
+     "bbox": {
+      "l": 40.02,
+      "t": 740.98,
+      "r": 230.23,
+      "b": 733.11,
+      "w": 190.21,
+      "h": 7.87,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06723,
+      "t": 0.93692,
+      "r": 0.38676,
+      "b": 0.92697
+     },
+     "text": "Table 2 | Vaccines across the human life cycle",
+     "text_len": 46,
+     "level": 2,
+     "element_id": "p3_e30"
+    },
+    {
+     "reading_order": 31,
+     "page": 3,
+     "label": "footnote",
+     "bbox": {
+      "l": 40.02,
+      "t": 378.91,
+      "r": 416.95,
+      "b": 372.81,
+      "w": 376.92,
+      "h": 6.1,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06723,
+      "t": 0.47911,
+      "r": 0.70043,
+      "b": 0.47139
+     },
+     "text": "a The following vaccines are recommended for these conditions in the United States: diphtheria booster; tetanus booster; pertussis booster.",
+     "text_len": 139,
+     "level": 1,
+     "element_id": "p3_e31"
+    },
+    {
+     "reading_order": 32,
+     "page": 3,
+     "label": "footnote",
+     "bbox": {
+      "l": 40.02,
+      "t": 369.91,
+      "r": 365.76,
+      "b": 363.81,
+      "w": 325.74,
+      "h": 6.1,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06723,
+      "t": 0.46773,
+      "r": 0.61444,
+      "b": 0.46001
+     },
+     "text": "b The following vaccines are recommended for these conditions in the United States: measles; mumps; rubella; varicella.",
+     "text_len": 119,
+     "level": 1,
+     "element_id": "p3_e32"
+    },
+    {
+     "reading_order": 33,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 343.56,
+      "r": 294.82,
+      "b": 292.9,
+      "w": 255.13,
+      "h": 50.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.43441,
+      "r": 0.49527,
+      "b": 0.37035
+     },
+     "text": "benefits of vaccines, and have been attributed to epigenetic changes in innate immune cells as opposed to the adaptive immunity induced by the antigen-specific responses to the vaccine 16,17 . However, the importance of heterologous effects remains controversial, and plausible immunological findings still need to be validated in large-scale clinical trials.",
+     "text_len": 359,
+     "level": 1,
+     "element_id": "p3_e33"
+    },
+    {
+     "reading_order": 34,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 289.81,
+      "r": 294.94,
+      "b": 239.15,
+      "w": 255.26,
+      "h": 50.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.36645,
+      "r": 0.49547,
+      "b": 0.30239
+     },
+     "text": "The benefits of vaccines in general go beyond health, and include economic, educational, health security and other benefits 18 . Their full economic value is not sufficiently quantified in assessments of costbenefit, or in investment terms, and is an increasing area of inquiry and empiric measurement 19 .",
+     "text_len": 306,
+     "level": 1,
+     "element_id": "p3_e34"
+    },
+    {
+     "reading_order": 35,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 236.06,
+      "r": 294.84,
+      "b": 131.65,
+      "w": 255.16,
+      "h": 104.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.29848,
+      "r": 0.4953,
+      "b": 0.16646
+     },
+     "text": "Vaccination is a sound investment. Thus, the return on investment from childhood immunization in low- and middle-income countries is high. For every US$1 invested in immunization against ten diseases, $16-$18 are saved in healthcare costs, and the net return is as high as $44 per dollar spent when the broad economic benefits are considered, although the return on the investment varies by individual vaccine 20 . This is compared with the cost per DTPcv3-vaccinated child of $27 (having received all three doses of diphtheria-tetanus-pertussis (DTP)-containing vaccine) 21 . In the United States, the net economic benefits of vaccination in one birth cohort amount to almost $69 million 22 .",
+     "text_len": 693,
+     "level": 1,
+     "element_id": "p3_e35"
+    },
+    {
+     "reading_order": 36,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 128.56,
+      "r": 294.85,
+      "b": 45.65,
+      "w": 255.17,
+      "h": 82.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.16256,
+      "r": 0.49532,
+      "b": 0.05772
+     },
+     "text": "Modelling and observational data suggest that in low- and middleincome countries, vaccination contributes to the alleviation of, and protection against, poverty. Financial risk protection provided by the benefits of vaccination are accrued by the poorest households by the reduction of catastrophic and impoverishing health expenditures 23,24 . There is also evidence that vaccination improves childhood physical development, educational outcomes, and equity in distribution of health gains 25 . Finally, without vaccines, absenteeism from school and work would be much higher, and periodic epidemics would disrupt society. The economic effects of periodic influenza epidemics, for example, are enormous 26-28 , and can be reduced by immunization 29 .",
+     "text_len": 751,
+     "level": 1,
+     "element_id": "p3_e36"
+    },
+    {
+     "reading_order": 37,
+     "page": 3,
+     "label": "section_header",
+     "bbox": {
+      "l": 305.96,
+      "t": 292.89,
+      "r": 468.87,
+      "b": 284.03,
+      "w": 162.91,
+      "h": 8.86,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51398,
+      "t": 0.37034,
+      "r": 0.78765,
+      "b": 0.35914
+     },
+     "text": "Vaccination is a lifetime investment",
+     "text_len": 36,
+     "level": 1,
+     "element_id": "p3_e37"
+    },
+    {
+     "reading_order": 38,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 305.96,
+      "t": 279.06,
+      "r": 561.08,
+      "b": 228.4,
+      "w": 255.12,
+      "h": 50.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51398,
+      "t": 0.35285,
+      "r": 0.94255,
+      "b": 0.2888
+     },
+     "text": "In addition to being the backbone of maternal and child health, vaccines provide important health benefits for all stages in life (Table 2). Given adaptations of the immune system throughout life, not all vaccines work equally well at all stages of life or in all geographical regions 30,31 .",
+     "text_len": 292,
+     "level": 1,
+     "element_id": "p3_e38"
+    },
+    {
+     "reading_order": 39,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 305.96,
+      "t": 225.31,
+      "r": 561.18,
+      "b": 163.9,
+      "w": 255.22,
+      "h": 61.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51398,
+      "t": 0.28489,
+      "r": 0.94272,
+      "b": 0.20724
+     },
+     "text": "Starting in infancy, the presence of maternal antibodies in the newborn can impede the response to vaccines, as the neonatal immune system undergoes its own journey of ontogeny, which enables it to adapt from the 'sterile' in utero environment to the confrontation with colonizing and potentially pathogenic microorganisms 32 . Particular immunological pathways have been identified 33 .",
+     "text_len": 387,
+     "level": 1,
+     "element_id": "p3_e39"
+    },
+    {
+     "reading_order": 40,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 305.96,
+      "t": 160.81,
+      "r": 561.24,
+      "b": 45.65,
+      "w": 255.28,
+      "h": 115.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51398,
+      "t": 0.20333,
+      "r": 0.94282,
+      "b": 0.05772
+     },
+     "text": "Despite considerable progress in reducing the rates of under-five mortality, important gaps remain in addressing neonatal morbidity and mortality. Neonates are particularly vulnerable to infection with Gramnegative bacteria and group B streptococcus, for which no neonatal vaccines currently exist 33,34 . The gap in early protection can potentially be bridged by administering vaccines to women in pregnancy, relying on passively transferred antibodies to protect infants in the first few months of life, until vaccinations administered in infancy or later can provide protection. On the basis of this principle, tetanus, influenza and pertussis vaccinations are recommended for pregnant women to prevent neonatal infections such as neonatal tetanus 35 . This maternal",
+     "text_len": 769,
+     "level": 1,
+     "element_id": "p3_e40"
+    }
+   ]
+  },
+  {
+   "page_no": 4,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0004.png",
+   "elements": [
+    {
+     "reading_order": 41,
+     "page": 4,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 762.41,
+      "r": 87.29,
+      "b": 749.69,
+      "w": 47.6,
+      "h": 12.72,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.96402,
+      "r": 0.14664,
+      "b": 0.94794
+     },
+     "text": "Review",
+     "text_len": 6,
+     "level": 1,
+     "element_id": "p4_e41"
+    },
+    {
+     "reading_order": 42,
+     "page": 4,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.94,
+      "t": 740.97,
+      "r": 434.23,
+      "b": 733.1,
+      "w": 394.3,
+      "h": 7.87,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06709,
+      "t": 0.93691,
+      "r": 0.72946,
+      "b": 0.92696
+     },
+     "text": "Table 3 | From discovery to sustainable effect of immunization: overcoming four major hurdles",
+     "text_len": 93,
+     "level": 1,
+     "element_id": "p4_e42"
+    },
+    {
+     "reading_order": 43,
+     "page": 4,
+     "label": "table",
+     "bbox": {
+      "l": 37.48,
+      "t": 726.24,
+      "r": 561.93,
+      "b": 457.79,
+      "w": 524.45,
+      "h": 268.46,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06296,
+      "t": 0.91828,
+      "r": 0.94398,
+      "b": 0.57885
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p4_e43"
+    },
+    {
+     "reading_order": 44,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 440.31,
+      "r": 294.89,
+      "b": 421.9,
+      "w": 255.21,
+      "h": 18.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.55674,
+      "r": 0.49538,
+      "b": 0.53347
+     },
+     "text": "immunization strategy may be expanded with promising vaccines against group B streptococcus and respiratory syncytial virus 36 .",
+     "text_len": 128,
+     "level": 1,
+     "element_id": "p4_e44"
+    },
+    {
+     "reading_order": 45,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 418.81,
+      "r": 294.9,
+      "b": 335.9,
+      "w": 255.22,
+      "h": 82.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.52956,
+      "r": 0.4954,
+      "b": 0.42472
+     },
+     "text": "For adolescents, life-saving vaccines against human papilloma virus (HPV; the cause of cervical, anal, penile and head and neck cancers) are being increasingly introduced and need to be administered before the likely acquisition of HPV via sexual contacts. Vaccines against meningococcal meningitis-a potentially lethal infection with a second peak in adolescence-have also been introduced into this age group in some countries. New platforms such as schools had to be engaged to administer these vaccines.",
+     "text_len": 506,
+     "level": 1,
+     "element_id": "p4_e45"
+    },
+    {
+     "reading_order": 46,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 332.81,
+      "r": 294.91,
+      "b": 282.15,
+      "w": 255.23,
+      "h": 50.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.42082,
+      "r": 0.49542,
+      "b": 0.35676
+     },
+     "text": "Outbreaks of mumps have very occasionally been seen in teenagers, despite a solid vaccination record. This highlights the need for surveillance of all age groups for disease outbreaks, and could be due to waning of protection induced by vaccines that are otherwise regarded as highly efficacious 37-39 .",
+     "text_len": 303,
+     "level": 1,
+     "element_id": "p4_e46"
+    },
+    {
+     "reading_order": 47,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 279.06,
+      "r": 294.89,
+      "b": 239.15,
+      "w": 255.21,
+      "h": 39.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.35285,
+      "r": 0.49538,
+      "b": 0.30239
+     },
+     "text": "Booster vaccines against diphtheria, tetanus and polio are required to guarantee long-lasting protection and are required throughout adulthood to maintain protective immunity levels-although recommendations may vary by country.",
+     "text_len": 227,
+     "level": 1,
+     "element_id": "p4_e47"
+    },
+    {
+     "reading_order": 48,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 236.06,
+      "r": 294.93,
+      "b": 174.65,
+      "w": 255.24,
+      "h": 61.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.29848,
+      "r": 0.49545,
+      "b": 0.22083
+     },
+     "text": "A life-course approach to vaccination has become ever more pressing with pneumonia, influenza and shingles differentially affecting older adults, and death rates from pneumonia and influenza 130 times higher for adults over 85 than for younger adults 40 . Vaccination of the elderly with existing vaccines could prevent up to 90,000 deaths per year in the United States alone 41 .",
+     "text_len": 380,
+     "level": 1,
+     "element_id": "p4_e48"
+    },
+    {
+     "reading_order": 49,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 171.56,
+      "r": 294.96,
+      "b": 45.65,
+      "w": 255.27,
+      "h": 125.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.21693,
+      "r": 0.4955,
+      "b": 0.05772
+     },
+     "text": "Adult immunization does not have a clear prioritization in low- and middleincome countries, and is a complex programme across high-income countries. It is different from paediatric immunization, which has a global programme and focused, substantial funding. As the demographics are shifting across the world to an older distribution, a focus on adult immunization will become increasingly relevant, as advocated by the World Coalition on Adult Vaccination 42 . Despite national recommendations 43,44 , vaccine coverage among adults in high-income countries is uneven 45 (vaccine coverage for herpes zoster, which causes shingles, among adults aged 60 or over in the United States was 24% compared with 65% for influenza among those aged 65 or over), and very low or not even available in most low- and middle-income countries 46 . Yet, several studies have shown good cost-effectiveness of adult vaccinations against influenza, pneumococcal infection, shingles, HPV and tetanus-diphtheria-pertussis 47 .",
+     "text_len": 1003,
+     "level": 1,
+     "element_id": "p4_e49"
+    },
+    {
+     "reading_order": 50,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 418.81,
+      "r": 561.4,
+      "b": 335.9,
+      "w": 255.26,
+      "h": 82.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.52956,
+      "r": 0.94309,
+      "b": 0.42472
+     },
+     "text": "Important gaps also exist in our understanding of the fundamental biology of adult immunization. Owing to 'immunosenescence'-the gradual decline of the immune system associated with ageing-vaccination of older adults is in general not as effective as in younger people, but the reasons for poorer responsiveness are not well defined, and require a new effort in terms of strategies and products for immunization of adults. However, it is likely that several compartments of the immune system are affected 48 .",
+     "text_len": 509,
+     "level": 1,
+     "element_id": "p4_e50"
+    },
+    {
+     "reading_order": 51,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 332.81,
+      "r": 561.35,
+      "b": 292.9,
+      "w": 255.21,
+      "h": 39.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.42082,
+      "r": 0.94301,
+      "b": 0.37035
+     },
+     "text": "There are three areas in which alterations to increase vaccine efficacy in the elderly could be considered: (i) increased vaccine potency; (ii) the use of adjuvants to enhance immunity; and (iii) application of immune modulators or other interventions to alter host immunity generally.",
+     "text_len": 285,
+     "level": 1,
+     "element_id": "p4_e51"
+    },
+    {
+     "reading_order": 52,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 289.81,
+      "r": 561.3,
+      "b": 260.65,
+      "w": 255.16,
+      "h": 29.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.36645,
+      "r": 0.94292,
+      "b": 0.32958
+     },
+     "text": "As populations age across the world, it will be increasingly important to identify how to integrate immunization programmes in health and care services to reach all age groups.",
+     "text_len": 176,
+     "level": 1,
+     "element_id": "p4_e52"
+    },
+    {
+     "reading_order": 53,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 257.56,
+      "r": 561.36,
+      "b": 228.4,
+      "w": 255.22,
+      "h": 29.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.32567,
+      "r": 0.94302,
+      "b": 0.2888
+     },
+     "text": "In addition, vaccinations are needed for travel, particular professions or specific health conditions 49-51 , and international travel has had a role in the resurgence of measles in areas such as the United States 52 .",
+     "text_len": 218,
+     "level": 1,
+     "element_id": "p4_e53"
+    },
+    {
+     "reading_order": 54,
+     "page": 4,
+     "label": "section_header",
+     "bbox": {
+      "l": 306.14,
+      "t": 206.89,
+      "r": 543.24,
+      "b": 198.03,
+      "w": 237.1,
+      "h": 8.86,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.2616,
+      "r": 0.91259,
+      "b": 0.2504
+     },
+     "text": "From discovery to impact: four hurdles to overcome",
+     "text_len": 50,
+     "level": 1,
+     "element_id": "p4_e54"
+    },
+    {
+     "reading_order": 55,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 193.06,
+      "r": 561.42,
+      "b": 99.4,
+      "w": 255.28,
+      "h": 93.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.24411,
+      "r": 0.94313,
+      "b": 0.12569
+     },
+     "text": "There are still major infectious diseases that required an effective vaccine for control and ultimate elimination, such as HIV infection and tuberculosis. Therefore, the continuing development of new vaccines is a public health imperative. Unfortunately, most early vaccine candidates in the discovery phase never make it as a safe and effective product. Development and deployment of vaccines is a long and complex process. We briefly describe here four hurdles that need to be overcome from the discovery phase of a new vaccine to sustainable population impact (Table 3).",
+     "text_len": 573,
+     "level": 1,
+     "element_id": "p4_e55"
+    },
+    {
+     "reading_order": 56,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 96.31,
+      "r": 561.38,
+      "b": 45.65,
+      "w": 255.24,
+      "h": 50.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.12178,
+      "r": 0.94306,
+      "b": 0.05772
+     },
+     "text": "The first hurdle is a 'valley of death' from discovery to early clinical development, when a potential antigen, adjuvant or new vaccine formulation developed in the laboratory is further tested for clinical proofof-concept and safety in humans, in addition to optimizing production elements. Real progress has been made in recent years owing to several public and private initiatives that are helping partly to overcome this first major challenge, such as the Coalition for Epidemic Preparedness Innovation (CEPI) 53 , which was created after the 2014-2015 Ebola epidemic in West Africa to accelerate the development of vaccines against epidemic pathogens 2,4,54 .",
+     "text_len": 664,
+     "level": 1,
+     "element_id": "p4_e56"
+    }
+   ]
+  },
+  {
+   "page_no": 5,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0005.png",
+   "elements": [
+    {
+     "reading_order": 57,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 687.56,
+      "r": 294.94,
+      "b": 486.4,
+      "w": 255.25,
+      "h": 201.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.86938,
+      "r": 0.49547,
+      "b": 0.61502
+     },
+     "text": "The second hurdle in vaccine development, also referred to as the 'second valley of death', relates to the shift from early clinical development to the large and very expensive efficacy trials most often needed 4 , unless a previous similar vaccine is already developed and a new product can be licensed using an established correlate of immunity or protection. This is also the most expensive phase of vaccine development, absorbing more than two-thirds of the total costs of development of a new vaccine, including the building of special manufacturing facilities and conducting phase 3 trials in several countries, ideally with independent research partners. Often, this major financial effort is beyond the means of smaller biotech companies, and in general only big pharmaceutical companies and large foundations or public institutions have the financial bandwidth to support such trials that can cost as much as hundreds of millions of dollars. For vaccine candidates without a prospect of a high-income market to ensure a return on investment, and when the potential market for the new vaccine is limited to low- and middle-income countries, there is an almost unsurmountable valley of death unless philanthropic and public funding intervene 2 .",
+     "text_len": 1252,
+     "level": 1,
+     "element_id": "p5_e57"
+    },
+    {
+     "reading_order": 58,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 483.31,
+      "r": 294.88,
+      "b": 260.65,
+      "w": 255.19,
+      "h": 222.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.61111,
+      "r": 0.49537,
+      "b": 0.32958
+     },
+     "text": "The needs and unique challenges of vaccines against epidemic pathogens demand innovation in product development pathways. The Merck recombinant vesicular stomatitis virus-Zaire Ebola virus (rVSV-ZEBOV) vaccine was deployed on a large scale during the recent Ebola outbreak in eastern Democratic Republic of the Congo before the product was licensed-even for indications for which no efficacy data were available such as primary prevention in healthcare workers. A second experimental vaccine, Ad26.ZEBOV/MVA-BN-Filo, is now also deployed for the same outbreak and in Rwanda 55 . Well-informed country leadership and transparent governance of such use are crucial, as is genuine community involvement. The 'animal efficacy rule' that applies when efficacy trials in humans are not feasible or ethical 56 should also be considered for vaccines against epidemic pathogens. The development of Ebola vaccines has shown how this type of 'learning by doing' model can offer early access in humanitarian situations 55,57 , although it should be stressed that nearly five years after the first Ebola vaccine clinical trials in West Africa, no Ebola vaccine is licensed despite well-documented immunogenicity, safety, and human and/or non-human primate efficacy data. When a crisis such as Ebola is no longer the headline news, the sense of urgency is lost, and regulators and normative committees go back to often extraordinarily long processes.",
+     "text_len": 1436,
+     "level": 1,
+     "element_id": "p5_e58"
+    },
+    {
+     "reading_order": 59,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 257.56,
+      "r": 294.83,
+      "b": 153.15,
+      "w": 255.15,
+      "h": 104.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.32567,
+      "r": 0.49528,
+      "b": 0.19365
+     },
+     "text": "After a successful phase 3 trial, there is a complex path to the licensing of any new vaccine, which requires reproducibility and safety tests of several batches of vaccines, while manufacturing facilities are finalized. Many countries still request clinical trial data conducted locally, delaying country licensing and implementation considerably, while further raising the costs of development. In Europe, there is advanced harmonization in the regulatory approval of vaccines through the European Medicines Agency (EMA), and in sub-Saharan Africa, the Africa Vaccine Regulatory Forum (AVAREF) is aiming to strengthen regulatory capacity for clinical trials and harmonization of regulatory practices 58 .",
+     "text_len": 706,
+     "level": 1,
+     "element_id": "p5_e59"
+    },
+    {
+     "reading_order": 60,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 150.06,
+      "r": 294.92,
+      "b": 77.9,
+      "w": 255.23,
+      "h": 72.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.18974,
+      "r": 0.49543,
+      "b": 0.0985
+     },
+     "text": "Following all of these activities, which can take as long as ten years or more, a new vaccine is now ready for deployment, but a third hurdle can occur between the licensing of a vaccine and broad-scale implementation, which is dependent on both a policy recommendation and the ability to implement. Many years can go by before important new vaccines reach communities in need, the cost of which is measured in human lives that could have been saved as well as money for their development.",
+     "text_len": 489,
+     "level": 1,
+     "element_id": "p5_e60"
+    },
+    {
+     "reading_order": 61,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 74.81,
+      "r": 294.95,
+      "b": 45.65,
+      "w": 255.26,
+      "h": 29.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.09459,
+      "r": 0.49548,
+      "b": 0.05772
+     },
+     "text": "There are many contributors to this third hurdle: first is cost, which is especially relevant for countries that are neither wealthy enough to procure vaccines at high cost nor poor enough to receive funding assistance from Gavi, the Vaccine Alliance. However, when a Gavi-eligible country transitions out of the programme owing to an increase in its gross national income per capita, it needs to increasingly mobilize domestic resources or other development assistance 59 . Even when the broader value proposition of a new vaccine is substantial, there remains the question of affordability. Second is the question of country capacity to take on new vaccines; the past decade has been a remarkable era for vaccine introduction, with 113 countries having introduced at least one new vaccine, which represents a real success story 60 . Country capacity to introduce and sustain ever growing programmes involves human and financial resources, and time to build political support and community demand. Both the pneumococcal conjugate and the rotavirus vaccines now have coverage in low-income Gavi countries that meets or exceeds the global average; however, this reflects the fact that not all countries in any income strata have yet introduced these vaccines in spite of their availability 61 . Even high-income countries can experience delays. Thus, in the United Kingdom, a meningococcal B vaccine was licensed in January 2013, recommended for introduction in March 2014, and finally announced for introduction in May 2015. It then took more than 12 months to resolve procurement discussions to enable implementation 62 .",
+     "text_len": 1622,
+     "level": 1,
+     "element_id": "p5_e61"
+    },
+    {
+     "reading_order": 62,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 515.56,
+      "r": 561.42,
+      "b": 292.9,
+      "w": 255.28,
+      "h": 222.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.65189,
+      "r": 0.94313,
+      "b": 0.37035
+     },
+     "text": "For products that address priority diseases for low-income countries, the uncertainty of the market may risk products collapsing unless a full end-to-end product solution is articulated, with non-commercial support. Inclusion of the new vaccine in the WHO's pre-qualification list is a requirement for procurement through funders such as UNICEF and Gavi. Some of these are vaccines against parasitic diseases, which are much more complex than bacterial or viral vaccines owing to the wide range of antigens with often a complex life cycle that exhibit different antigens relevant for vaccine protection. Thus, the RTS,S vaccine-the first ever malaria vaccine used in a routine immunization system 63 -took nearly 30 years since its creation by GlaxoSmithKline in 1987 64 before the EMA issued a positive scientific opinion in 2015, and the WHO recommended large-scale pilot programmes in 2016. These programmes took another three years to start in several African countries, and demonstrate the sometimes incredibly long development, licensing, and introduction times. The RTS,S malaria vaccine is also an example of a vaccine for which the clinical trial performance of partial protection led to a policy decision to advance in a step-wise manner rather than full programmatic deployment. This may become a more common pathway for future products, in part because these vaccines have performance and implementation characteristics that are more complex than those of current vaccines.",
+     "text_len": 1485,
+     "level": 1,
+     "element_id": "p5_e62"
+    },
+    {
+     "reading_order": 63,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 289.81,
+      "r": 561.4,
+      "b": 196.15,
+      "w": 255.26,
+      "h": 93.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.36645,
+      "r": 0.94309,
+      "b": 0.24802
+     },
+     "text": "We are entering an era in which the path from vaccine licensing to routine implementation requires more than safety and efficacy data. Policy recommendations for new vaccines may only be realized after implementation research to determine how to ensure use and impact most effectively. Deliberations about cost effectiveness, the full value of vaccine assessments, and country priorities in the face of constrained resources remain drivers for delays associated with the third hurdle. National Immunization Technical Advisory Groups (NITAGS) will be increasingly important to guide evidence-based decision making.",
+     "text_len": 613,
+     "level": 1,
+     "element_id": "p5_e63"
+    },
+    {
+     "reading_order": 64,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 193.06,
+      "r": 561.42,
+      "b": 45.65,
+      "w": 255.28,
+      "h": 147.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.24411,
+      "r": 0.94313,
+      "b": 0.05772
+     },
+     "text": "Even after the lengthy and costly trajectory to introduce a new vaccine, ensuring sustainable impact faces a fourth set of hurdles that need to be overcome. These include supply and demand sustainability, and resilience and acceptance of immunization. Logistical issues such as the in-country 'cold chain' system of transporting and storing vaccines at recommended temperatures, procurement management, and the organization of vaccination clinics in remote areas, vaccine hesitancy, and equity of access can all present challenges. In addition, the misuse of vaccination campaigns as political tools has seriously damaged vaccine confidence in areas such as the Philippines, Nigeria, Afghanistan, Italy and Pakistan 65 . Some side effects or limitations of duration of protection may only become obvious after larger scale use, such as for live oral rotavirus vaccination in high-mortality settings 66 , pertussis vaccine 67 and others 68 . A recent example is the results from a retrospective analysis of global coverage, and solid lines represent regional coverages. DTP3, diphtheria, tetanus and pertussis; AFR, AMR, EMR, EUR, SEAR and WPR are WHO subregions of Africa, Americas, Eastern Mediterranean, Europe, South-East Asia and Western Pacific, respectively. Adapted from ref. 76 . Source: WHO/UNICEF coverage estimates 2018 revision, July 2019.",
+     "text_len": 1351,
+     "level": 1,
+     "element_id": "p5_e64"
+    }
+   ]
+  },
+  {
+   "page_no": 6,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0006.png",
+   "elements": [
+    {
+     "reading_order": 65,
+     "page": 6,
+     "label": "picture",
+     "bbox": {
+      "l": 130.86,
+      "t": 743.44,
+      "r": 469.85,
+      "b": 555.94,
+      "w": 338.99,
+      "h": 187.49,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.21983,
+      "t": 0.94003,
+      "r": 0.7893,
+      "b": 0.70295
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p6_e65"
+    },
+    {
+     "reading_order": 66,
+     "page": 6,
+     "label": "caption",
+     "bbox": {
+      "l": 39.69,
+      "t": 546.79,
+      "r": 294.8,
+      "b": 500.28,
+      "w": 255.12,
+      "h": 46.51,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.69138,
+      "r": 0.49523,
+      "b": 0.63257
+     },
+     "text": "Fig. 1 | Coverage of DTP3 immunization over time globally, combining coverage and regional variations, 1980-2018. The coverage of DTP3 (containing products) immunization improved rapid in the 1980s, with large regional variations. Stagnation over the past 10 years has meant that 19.4 million children remained under-vaccinated or unvaccinated. The thick red line denotes",
+     "text_len": 371,
+     "level": 2,
+     "element_id": "p6_e66"
+    },
+    {
+     "reading_order": 67,
+     "page": 6,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 483.31,
+      "r": 294.86,
+      "b": 421.9,
+      "w": 255.18,
+      "h": 61.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.61111,
+      "r": 0.49533,
+      "b": 0.53347
+     },
+     "text": "long-term efficacy trials that show that although there is a clear overall population benefit of the Dengvaxia vaccine against dengue, the vaccine also caused an excessive risk of severe dengue in seronegative vaccinees (that is, those not exposed to dengue virus 69 ). In the Philippines, this new risk was reported after more than 800,000 school children were vaccinated, prompting a marked reaction by the public in 2018 70 .",
+     "text_len": 428,
+     "level": 1,
+     "element_id": "p6_e67"
+    },
+    {
+     "reading_order": 68,
+     "page": 6,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 418.81,
+      "r": 294.94,
+      "b": 335.9,
+      "w": 255.26,
+      "h": 82.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.52956,
+      "r": 0.49547,
+      "b": 0.42472
+     },
+     "text": "Stock-out events and vaccine manufacturing capacity have been problematic for particular vaccines, even in high-income countries. Manufacturers emphasize the time needed to build and commission a factory 71 . Although manufacturers in middle-income country are now supplying most low-cost vaccines globally, they face low profit margins, ferocious tenders, and often unpredictable procurement schemes. More efficient and modular production technologies may enable decentralized production with lower capital costs.",
+     "text_len": 514,
+     "level": 1,
+     "element_id": "p6_e68"
+    },
+    {
+     "reading_order": 69,
+     "page": 6,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 332.81,
+      "r": 294.94,
+      "b": 282.15,
+      "w": 255.26,
+      "h": 50.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.42082,
+      "r": 0.49547,
+      "b": 0.35676
+     },
+     "text": "Each of the four hurdles can be overcome, although the fourth one should be a continuing concern for every national immunization programme. Depending on the phase, they may require different sets of policy actors, and are sometimes a matter of policy, management and leadership, rather than money.",
+     "text_len": 297,
+     "level": 1,
+     "element_id": "p6_e69"
+    },
+    {
+     "reading_order": 70,
+     "page": 6,
+     "label": "text",
+     "bbox": {
+      "l": 39.68,
+      "t": 279.06,
+      "r": 294.91,
+      "b": 185.4,
+      "w": 255.23,
+      "h": 93.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06666,
+      "t": 0.35285,
+      "r": 0.49542,
+      "b": 0.23443
+     },
+     "text": "Throughout the development and use of vaccines, vaccine safety is an overriding concern, and requires a continuous and careful scientific and societal assessment. Safety monitoring during manufacturing typically occupies a major part of the process and costs of a vaccine, and is a key element of any vaccine programme. In specific high-income populations, such as in the elderly, personalized medicine approaches have been proposed to maximize both immunogenicity and safety in the presence of chronic conditions and changes related to older age, but large-scale applicability is still questionable at present 72-74 .",
+     "text_len": 618,
+     "level": 1,
+     "element_id": "p6_e70"
+    },
+    {
+     "reading_order": 71,
+     "page": 6,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 163.89,
+      "r": 218.98,
+      "b": 155.03,
+      "w": 179.29,
+      "h": 8.86,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.20723,
+      "r": 0.36786,
+      "b": 0.19603
+     },
+     "text": "Persistent unmet needs for vaccination",
+     "text_len": 38,
+     "level": 1,
+     "element_id": "p6_e71"
+    },
+    {
+     "reading_order": 72,
+     "page": 6,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 150.06,
+      "r": 294.93,
+      "b": 45.65,
+      "w": 255.25,
+      "h": 104.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.18974,
+      "r": 0.49545,
+      "b": 0.05772
+     },
+     "text": "The extraordinary achievement of vaccines is reflected in countries having vaccinated more than 116 million infants in 2018 alone 75 -which represents the largest number ever-and a comparable number of infants were also estimated to have been vaccinated in 2017. The global and regional coverage of diphtheria-tetanus-pertussis (DPT3) vaccination between 1980 and 2018 in Fig. 1 shows overall high coverage with regional variations, but also some stagnation in coverage over the past 10 years 76 . Despite the high coverage, there still remained 19.4 million under-vaccinated or unvaccinated children, who were vulnerable to diseases that they could and should have been protected from.",
+     "text_len": 686,
+     "level": 1,
+     "element_id": "p6_e72"
+    },
+    {
+     "reading_order": 73,
+     "page": 6,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 483.31,
+      "r": 561.29,
+      "b": 443.4,
+      "w": 255.14,
+      "h": 39.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.61111,
+      "r": 0.94291,
+      "b": 0.56065
+     },
+     "text": "Substantial improvements in coverage have been achieved in some countries, whereas coverage is regressing in others, often because of social disruption, conflict, or political upheaval, which highlights the extremely dynamic nature of vaccine programme performance.",
+     "text_len": 265,
+     "level": 1,
+     "element_id": "p6_e73"
+    },
+    {
+     "reading_order": 74,
+     "page": 6,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 440.31,
+      "r": 561.44,
+      "b": 260.65,
+      "w": 255.29,
+      "h": 179.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.55674,
+      "r": 0.94316,
+      "b": 0.32958
+     },
+     "text": "Around 60% of all children who did not receive basic immunization in 2018 live in ten countries: Angola, Brazil, the Democratic Republic of the Congo, Ethiopia, India, Indonesia, Nigeria, Pakistan, the Philippines and Vietnam 77 . To achieve rapid change in this situation requires the full commitment of governments, supported by international organizations. The Gavi Alliance provides funding for vaccination programmes in lowand low- to middle-income countries, and has had substantial impact. The technical support provided by Gavi partners will be essential to address persistent gaps in vaccine coverage. Consistently delivering vaccines with high coverage, reaching at least the minimum coverage required to achieve herd immunity in line with the basic reproductive ratio of an infection as mentioned above, remains a struggle in many other countries including in middle- and high-income settings, with poor children not being reached 78,79 . For example, in 2017 in the United States, 100,000 children under the age of two (1.3% of the population of that age) were not immunized against DPT and MMR (measles, mumps and rubella), which represents a fourfold increase since 2001 79,80 .",
+     "text_len": 1192,
+     "level": 1,
+     "element_id": "p6_e74"
+    },
+    {
+     "reading_order": 75,
+     "page": 6,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 257.56,
+      "r": 561.41,
+      "b": 120.9,
+      "w": 255.27,
+      "h": 136.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.32567,
+      "r": 0.94311,
+      "b": 0.15287
+     },
+     "text": "Of particular concern are countries in which vaccination coverage has declined. There are 19 countries that had more than 80% coverage for first-dose measles at some point between 2011 and 2017, but with coverage in 2018 at least 10% lower than their peak coverage. The measles vaccine coverage of those 19 regressing countries now ranges from 38% to 88%, with 10 countries with well below 80% coverage 61 . Some of the regression on vaccine coverage may represent improvements in data rather than actual slippage in coverage. The data systems to monitor both the number of children born and the number of children vaccinated accurately are highly variable in quality 81,82 . In some settings, management and reward systems probably incentivize inaccurate reporting of coverage data to meet targets, rather than incentivizing accurate reporting.",
+     "text_len": 845,
+     "level": 1,
+     "element_id": "p6_e75"
+    },
+    {
+     "reading_order": 76,
+     "page": 6,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 117.81,
+      "r": 561.34,
+      "b": 45.65,
+      "w": 255.2,
+      "h": 72.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.14896,
+      "r": 0.94299,
+      "b": 0.05772
+     },
+     "text": "Outbreaks of measles, diphtheria and yellow fever are the result of what happens when the world is complacent and immunization coverage declines. Diphtheria outbreaks surged in Russia in the early 1990s; outbreaks of meningitis occurred among Rohingya refugees from Myanmar in refugee camps in 2017; and the transmission of polio persists in parts of Afghanistan and Pakistan 83 . Measles outbreaks are occurring in all regions of the world. The recent 80-fold increase in reported measles cases in the WHO European Region over four years to more than 82,000 cases in 2018 with 72 deaths 84,85 is a result of a mixture of vaccine refusals, cultural beliefs, and access issues that include interruptions in vaccine supply, such as in Ukraine 86 , and have led to a WHO declaration of a grade 2 health emergency 87 . In the Americas, thousands of cases have been reported in Venezuela owing to the political and economic crisis, with cases also appearing in Brazil, Colombia and Ecuador, and four countries in the WHO European Region (United Kingdom, Albania, Greece and the Czech Republic) have now lost their measles elimination status. The United States is also at risk of losing their measles elimination status.",
+     "text_len": 1214,
+     "level": 1,
+     "element_id": "p6_e76"
+    }
+   ]
+  },
+  {
+   "page_no": 7,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0007.png",
+   "elements": [
+    {
+     "reading_order": 77,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 633.81,
+      "r": 294.82,
+      "b": 583.15,
+      "w": 255.14,
+      "h": 50.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.80141,
+      "r": 0.49527,
+      "b": 0.73736
+     },
+     "text": "These outbreaks reflect failures to achieve and maintain high vaccination coverage, community by community. Low vaccination coverage and high heterogeneity in coverage are most deeply seen among African countries where routine rates of immunization in many countries are well below the GVAP targets 88 .",
+     "text_len": 303,
+     "level": 1,
+     "element_id": "p7_e77"
+    },
+    {
+     "reading_order": 78,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 580.06,
+      "r": 294.95,
+      "b": 475.65,
+      "w": 255.26,
+      "h": 104.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.73345,
+      "r": 0.49548,
+      "b": 0.60143
+     },
+     "text": "Since 2010, routine immunization levels have either stagnated or decreased in 54 out of 85 middle-income countries, who do not qualify for support from the Gavi Alliance 78 . Vaccine expenditures per child are often lower in middle-income countries than in low-income Gavi countries. The issue may not be solely due to a lack of funding capability, but may also arise owing to a lack of prioritization of immunization, countries not participating in pooled procurement mechanisms such as via UNICEF, low volumes of vaccines, insufficient efforts to reach vulnerable populations, vaccine choices, and duplicative local regulatory requirements that delay the introduction of new vaccines.",
+     "text_len": 686,
+     "level": 1,
+     "element_id": "p7_e78"
+    },
+    {
+     "reading_order": 79,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 472.56,
+      "r": 294.92,
+      "b": 400.4,
+      "w": 255.23,
+      "h": 72.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.59752,
+      "r": 0.49543,
+      "b": 0.50628
+     },
+     "text": "Another unmet need concerns the introduction of new vaccines. Rapid progress has been made to scale up the introduction of vaccines through Gavi investments in low-income countries, but not all vaccines have progressed at the same rapid pace. The adolescent HPV vaccine has been particularly slow to be introduced outside of high-income settings because of programmatic challenges, public-access issues, supply constraints and pricing issues.",
+     "text_len": 442,
+     "level": 1,
+     "element_id": "p7_e79"
+    },
+    {
+     "reading_order": 80,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 397.31,
+      "r": 294.95,
+      "b": 217.65,
+      "w": 255.26,
+      "h": 179.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.50237,
+      "r": 0.49548,
+      "b": 0.2752
+     },
+     "text": "Addressing these unmet needs will require persistent implementation of strategies that have been shown to be effective-such as detailed microplanning of local efforts to assure all children are identified and immunized-and special campaigns and approaches such as drone delivery of vaccines in areas that are harder to reach 89 . Systematic evaluation and implementation research should be part of these efforts to develop a firm evidence base for overcoming such programmatic challenges. The WHO has elaborated guidance on implementing high impact immunization programmes (Global Routine Immunization Strategies and Practices, GRISP) to address these unmet needs. Middle-income countries that do not benefit from funding from the Gavi Alliance need procurement mechanisms that can secure more predictable tiered pricing. No set of strategies, however, will succeed without substantially enhanced domestic investment and local political commitment, which continue to limit progress in many parts of the world. As demand for services from communities increases, responsiveness to that demand from governments, the funder of such services in most countries, is more likely 90 .",
+     "text_len": 1175,
+     "level": 1,
+     "element_id": "p7_e80"
+    },
+    {
+     "reading_order": 81,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 214.56,
+      "r": 294.86,
+      "b": 120.9,
+      "w": 255.18,
+      "h": 93.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.2713,
+      "r": 0.49533,
+      "b": 0.15287
+     },
+     "text": "In addition to the unmet needs related to existing vaccines, nearly half of all deaths from infectious diseases are caused by infections for which no vaccine is available (for example, more than 0.5 million deaths globally in children under 5 years from enteric infections for which there is no vaccine 91 ). These should be the priorities for vaccine research and development, as well as improvements needed for particular vaccines such as those against rotavirus, pertussis, polio and yellow fever. Innovations in delivery devices are also important (for example, micropatches, temperature-stable vaccines, improved cold-chain equipment).",
+     "text_len": 640,
+     "level": 1,
+     "element_id": "p7_e81"
+    },
+    {
+     "reading_order": 82,
+     "page": 7,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 99.39,
+      "r": 141.36,
+      "b": 90.53,
+      "w": 101.67,
+      "h": 8.86,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.12567,
+      "r": 0.23747,
+      "b": 0.11447
+     },
+     "text": "The equity imperative",
+     "text_len": 21,
+     "level": 1,
+     "element_id": "p7_e82"
+    },
+    {
+     "reading_order": 83,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 85.56,
+      "r": 294.81,
+      "b": 45.65,
+      "w": 255.12,
+      "h": 39.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.10819,
+      "r": 0.49525,
+      "b": 0.05772
+     },
+     "text": "Equity has been a primary goal of immunization programmes. To reach those who are in greatest need means addressing issues of vaccine availability, affordability, accessibility, acceptability and financing. An effective immunization system that delivers vaccines with high equity across social and ethnic strata, maternal and community education, and geographies, is a purpose-built programme to deliver impact, and has been shown to be the crucial programmatic target.",
+     "text_len": 469,
+     "level": 1,
+     "element_id": "p7_e83"
+    },
+    {
+     "reading_order": 84,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 709.06,
+      "r": 561.39,
+      "b": 658.4,
+      "w": 255.25,
+      "h": 50.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.89656,
+      "r": 0.94308,
+      "b": 0.83251
+     },
+     "text": "Country-level vaccine coverage values mask subnational inequity, risking disease outbreaks and backsliding on achievements of vaccination. Immunization improvements should focus at the subnational level, as well as on other determinants of inequity, not all of which would be addressed by focused supplementary vaccine campaigns.",
+     "text_len": 329,
+     "level": 1,
+     "element_id": "p7_e84"
+    },
+    {
+     "reading_order": 85,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 655.31,
+      "r": 561.28,
+      "b": 593.9,
+      "w": 255.14,
+      "h": 61.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.8286,
+      "r": 0.94289,
+      "b": 0.75095
+     },
+     "text": "There is a special case for vaccine development for pathogens that cause epidemics. These diseases have little to no market incentive to drive product development, hence the need for innovative arrangements such as the CEPI 53 , US Biomedical Advanced Research and Development Authority (BARDA) 92 and the European Innovative Medicines Initiative (IMI; https://www.imi.europa.eu) 93 .",
+     "text_len": 384,
+     "level": 1,
+     "element_id": "p7_e85"
+    },
+    {
+     "reading_order": 86,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 590.81,
+      "r": 561.43,
+      "b": 497.15,
+      "w": 255.29,
+      "h": 93.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.74704,
+      "r": 0.94314,
+      "b": 0.62861
+     },
+     "text": "Humanitarian crises are another increasing impediment to immunization. The number, size and duration of conflicts, the migration of refugees, and natural disasters have all caused major disruptions to immunization programmes and resulted in serious disease outbreaks. The persisting hurdles to the eradication of polio reveal how political, social and conflict situations can disrupt access to populations and risk violence targeting vaccinators such as in Pakistan and Afghanistan 94 . Nearly 100 polio vaccinators and their security guards have been targeted and killed while attempting to reach children for vaccination 95 .",
+     "text_len": 627,
+     "level": 1,
+     "element_id": "p7_e86"
+    },
+    {
+     "reading_order": 87,
+     "page": 7,
+     "label": "section_header",
+     "bbox": {
+      "l": 306.14,
+      "t": 475.64,
+      "r": 510.91,
+      "b": 466.78,
+      "w": 204.77,
+      "h": 8.86,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.60142,
+      "r": 0.85827,
+      "b": 0.59021
+     },
+     "text": "The growing challenge of vaccine confidence",
+     "text_len": 43,
+     "level": 1,
+     "element_id": "p7_e87"
+    },
+    {
+     "reading_order": 88,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 461.81,
+      "r": 561.37,
+      "b": 357.4,
+      "w": 255.23,
+      "h": 104.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.58393,
+      "r": 0.94304,
+      "b": 0.45191
+     },
+     "text": "Despite the success and wide acceptance of the importance of immunization, there are growing groups of people who delay or refuse vaccines. In 2013, the WHO Strategic Advisory Group of Experts (SAGE) established a working group to investigate the scope and scale of vaccine hesitancy 96 , the US National Vaccine Advisory Committee (NVAC) put together a Vaccine Confidence Working Group to investigate the situation in the United States (National Vaccine Advisory Committee, 2015), and the European Centre for Disease Prevention and Control (ECDC) published a review of the state of vaccine hesitancy in Europe 97 . In January 2019, the WHO named vaccine hesitancy as one of the top ten global health threats.",
+     "text_len": 709,
+     "level": 1,
+     "element_id": "p7_e88"
+    },
+    {
+     "reading_order": 89,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 354.31,
+      "r": 561.39,
+      "b": 228.4,
+      "w": 255.25,
+      "h": 125.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.448,
+      "r": 0.94308,
+      "b": 0.2888
+     },
+     "text": "Since 2015, the Vaccine Confidence Index (VCI) has surveyed more than 300,000 respondents globally to detect early signals of waning public confidence in vaccine importance, safety and effectiveness, to prompt early intervention where needed (see Fig. 2 for world map of confidence in vaccine safety in 2018). The European Commission adopted the VCI as part of an effort in 2018 to strengthen cooperation against vaccine-preventable diseases 98 , and the Wellcome Trust used the VCI as part of their 144-country study into public confidence in vaccines (Wellcome Global Monitor 2018) 99 . Safety was identified as a key issue in both the 2018 European study and the Wellcome report, with public confidence in vaccine safety being consistently lower than the confidence in vaccine effectiveness and importance 99 .",
+     "text_len": 813,
+     "level": 1,
+     "element_id": "p7_e89"
+    },
+    {
+     "reading_order": 90,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 225.31,
+      "r": 561.43,
+      "b": 131.65,
+      "w": 255.28,
+      "h": 93.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.28489,
+      "r": 0.94314,
+      "b": 0.16646
+     },
+     "text": "Although a lack of familiarity by both physicians and parents with many childhood diseases because of years of successful vaccination programmes may have a role in a lack of interest in vaccines, the reasons for a decline in vaccine confidence are far more complex. Newer challenges to vaccine confidence include social media campaigns that have disrupted MMR vaccination efforts in southern India, collapsed HPV vaccination efforts in Japan, provoked false scares of vaccine poisoning in Pakistan, and undermined vaccination programmes in Indonesia.",
+     "text_len": 550,
+     "level": 1,
+     "element_id": "p7_e90"
+    },
+    {
+     "reading_order": 91,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 128.56,
+      "r": 561.41,
+      "b": 45.65,
+      "w": 255.27,
+      "h": 82.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.16256,
+      "r": 0.94311,
+      "b": 0.05772
+     },
+     "text": "Vaccine confidence issues are highly varied by setting and vaccine. In a three-year review (2015-2017) of the WHO/UNICEF Joint Reporting Form (JRF) completed annually by national immunization programmes, over 90% of the 194 countries reported that they experienced vaccine hesitancy. The top three reasons for hesitancy were: (1) 'risk-benefit (scientific evidence)'-that is, safety concerns; (2) lack of knowledge on the benefits of immunization; and (3) religion, culture and socioeconomic issues 100 .",
+     "text_len": 504,
+     "level": 1,
+     "element_id": "p7_e91"
+    }
+   ]
+  },
+  {
+   "page_no": 8,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0008.png",
+   "elements": [
+    {
+     "reading_order": 92,
+     "page": 8,
+     "label": "picture",
+     "bbox": {
+      "l": 52.56,
+      "t": 742.1,
+      "r": 559.64,
+      "b": 503.62,
+      "w": 507.08,
+      "h": 238.48,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0883,
+      "t": 0.93834,
+      "r": 0.94014,
+      "b": 0.6368
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p8_e92"
+    },
+    {
+     "reading_order": 93,
+     "page": 8,
+     "label": "caption",
+     "bbox": {
+      "l": 39.69,
+      "t": 489.07,
+      "r": 290.4,
+      "b": 462.57,
+      "w": 250.72,
+      "h": 26.5,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.6184,
+      "r": 0.48784,
+      "b": 0.58489
+     },
+     "text": "Fig. 2 | Global confidence in vaccine safety in 2018. Levels of confidence in vaccine safety varied considerably across countries and regions, with several countries showing very low levels of confidence. The colour chart at the bottom",
+     "text_len": 235,
+     "level": 2,
+     "element_id": "p8_e93"
+    },
+    {
+     "reading_order": 94,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 489.07,
+      "r": 559.5,
+      "b": 462.57,
+      "w": 253.36,
+      "h": 26.49,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.6184,
+      "r": 0.9399,
+      "b": 0.58489
+     },
+     "text": "shows increasing levels of confidence. Note that the question asked in the survey was 'Do you agree with the following statement: vaccines are safe?'. Source: ref. 99 . Map credit: Alexandre De Figueiredo, The Vaccine Confidence Project.",
+     "text_len": 237,
+     "level": 1,
+     "element_id": "p8_e94"
+    },
+    {
+     "reading_order": 95,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 440.31,
+      "r": 294.81,
+      "b": 335.9,
+      "w": 255.12,
+      "h": 104.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.55674,
+      "r": 0.49525,
+      "b": 0.42472
+     },
+     "text": "Challenges around building confidence in vaccine safety are well beyond communication, although more accessible public communication around the complex issues of safety and risk benefit analysis are important. What needs to be addressed is not only better communication around the known, albeit sometimes misinterpreted, risks and benefits of vaccination, but also investing in more research in the areas in which the public is asking questions and the science is incomplete. Findings that the AS03-adjuvanted influenza vaccine Pandemrix was linked to increased cases of narcolepsy in Europe prompted further research, but a systematic review concluded that more research is needed 101 .",
+     "text_len": 687,
+     "level": 1,
+     "element_id": "p8_e95"
+    },
+    {
+     "reading_order": 96,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 332.81,
+      "r": 294.98,
+      "b": 239.15,
+      "w": 255.3,
+      "h": 93.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.42082,
+      "r": 0.49553,
+      "b": 0.30239
+     },
+     "text": "Although uncertainty is the norm in science, the political and social worlds of the public have become less tolerant of ambiguity and risk 102 . New modes of listening to the public, with rapidly evolving technologies to monitor social media, can collect emerging safety questions as well as detect signals of possible issues that need investigation. Working towards better aligned public questions and accessible, evidence-based answers should be a goal. The WHO Vaccine Safety Net initiative is an important resource and can be further built on to address new questions as they emerge, as well as to make new research accessible 103 .",
+     "text_len": 636,
+     "level": 1,
+     "element_id": "p8_e96"
+    },
+    {
+     "reading_order": 97,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 236.06,
+      "r": 294.96,
+      "b": 142.4,
+      "w": 255.28,
+      "h": 93.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.29848,
+      "r": 0.4955,
+      "b": 0.18006
+     },
+     "text": "Social and political contexts and the reliability of health services are important levers of trust, and a low trust setting will have less tolerance for risk than one with high trust. A 2015 study showed that high trust in immunization services clearly correlated with lower rates of vaccine hesitancy 104 . The public's experience with health services and health workers is highly influential in vaccine decision, but both are needed. The Wellcome Global Monitor report showed that in Japan, for example, despite low trust in vaccines and low trust in government, confidence in health providers remained high.",
+     "text_len": 610,
+     "level": 1,
+     "element_id": "p8_e97"
+    },
+    {
+     "reading_order": 98,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 139.31,
+      "r": 294.96,
+      "b": 88.65,
+      "w": 255.27,
+      "h": 50.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.17615,
+      "r": 0.4955,
+      "b": 0.11209
+     },
+     "text": "Introducing new vaccines into populations requires adequate time to train and prepare front-line health workers and vaccinators to be ready to manage public questions, and continuing dialogue between scientists and the public will be important to build confidence from the start, as well as to anticipate and manage adverse events.",
+     "text_len": 331,
+     "level": 1,
+     "element_id": "p8_e98"
+    },
+    {
+     "reading_order": 99,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 85.56,
+      "r": 294.85,
+      "b": 45.65,
+      "w": 255.16,
+      "h": 39.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.10819,
+      "r": 0.49532,
+      "b": 0.05772
+     },
+     "text": "As mentioned above, reported risks of a recently introduced dengue vaccine 105 in the Philippines amplified into public outrage mediated through Facebook pages, and were made more complex because the events occurred during political elections. The result was a marked drop in public confidence in vaccines more generally from 99.5% in 2015 to 76.2% in 2018, and confidence in vaccine safety plummeted from 99.5% to 65.2% 65 (Fig. 3). The overall drop in public trust affected willingness to accept even the measles vaccine, prompting measles outbreaks with more than 25,000 measles cases and 355 deaths by March 2019 106 and requiring considerable efforts to rebuild public confidence and increase vaccine uptake.",
+     "text_len": 713,
+     "level": 1,
+     "element_id": "p8_e99"
+    },
+    {
+     "reading_order": 100,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 365.06,
+      "r": 561.42,
+      "b": 314.4,
+      "w": 255.28,
+      "h": 50.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.4616,
+      "r": 0.94313,
+      "b": 0.39754
+     },
+     "text": "Conflict situations also affect confidence in vaccines and vaccinators owing to an environment of distrust and uncertainty, such as in Pakistan and Afghanistan, and in the Democratic Republic of the Congo, where local violence and conflict in the Ebola-affected areas has been an obstacle to vaccination efforts.",
+     "text_len": 312,
+     "level": 1,
+     "element_id": "p8_e100"
+    },
+    {
+     "reading_order": 101,
+     "page": 8,
+     "label": "section_header",
+     "bbox": {
+      "l": 306.14,
+      "t": 292.89,
+      "r": 433.36,
+      "b": 284.03,
+      "w": 127.22,
+      "h": 8.86,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.37034,
+      "r": 0.728,
+      "b": 0.35914
+     },
+     "text": "The future of immunization",
+     "text_len": 26,
+     "level": 1,
+     "element_id": "p8_e101"
+    },
+    {
+     "reading_order": 102,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 279.06,
+      "r": 561.38,
+      "b": 228.4,
+      "w": 255.24,
+      "h": 50.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.35285,
+      "r": 0.94306,
+      "b": 0.2888
+     },
+     "text": "The contribution of immunization to human health, security and prosperity has been matched by few other activities in health and development, and has been crucial for progress in child survival. As immunization coverage among adults is generally low, it is another area in which greater advances can be made.",
+     "text_len": 308,
+     "level": 1,
+     "element_id": "p8_e102"
+    },
+    {
+     "reading_order": 103,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 225.31,
+      "r": 561.13,
+      "b": 206.9,
+      "w": 254.99,
+      "h": 18.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.28489,
+      "r": 0.94264,
+      "b": 0.26161
+     },
+     "text": "Addressing the following issues will be crucial to ensure that the effect of vaccination is optimized.",
+     "text_len": 102,
+     "level": 1,
+     "element_id": "p8_e103"
+    },
+    {
+     "reading_order": 104,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 203.81,
+      "r": 561.38,
+      "b": 110.15,
+      "w": 255.24,
+      "h": 93.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.2577,
+      "r": 0.94306,
+      "b": 0.13928
+     },
+     "text": "(1) Leadership and funding. Achieving immunization for all those in need should be a top priority for every country. This will require stronger political leadership and a continuing increase in investments in immunization, both domestically and internationally 6 . The power of immunization to achieve wider health and societal benefits should be further documented. The prioritization of vaccines is particularly crucial for middle-income countries that no longer benefit from support from the Gavi Alliance and for countries that are transitioning out of Gavi support.",
+     "text_len": 570,
+     "level": 1,
+     "element_id": "p8_e104"
+    },
+    {
+     "reading_order": 105,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 107.06,
+      "r": 561.27,
+      "b": 67.15,
+      "w": 255.13,
+      "h": 39.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.13537,
+      "r": 0.94287,
+      "b": 0.08491
+     },
+     "text": "A successful replenishment of Gavi resources in 2020 for the proposed Gavi 5.0 strategy 107 is vital for the next decade of progress in child survival, and will be a test of the commitment of the international community to immunization and global health.",
+     "text_len": 254,
+     "level": 1,
+     "element_id": "p8_e105"
+    },
+    {
+     "reading_order": 106,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 64.06,
+      "r": 561.39,
+      "b": 45.65,
+      "w": 255.25,
+      "h": 18.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.081,
+      "r": 0.94308,
+      "b": 0.05772
+     },
+     "text": "(2) Universal vaccine coverage and equity. Overcoming the stagnation in reaching all people in need with even the basic vaccines is an overriding priority in all countries, especially in those with the lowest coverage and the greatest number of unvaccinated children. As we look towards the next decade, ensuring that vulnerable people in all countries are not left behind should be a top concern, particularly in middle-income countries, as there will be more poor people living there than in poorer countries 78 .",
+     "text_len": 515,
+     "level": 1,
+     "element_id": "p8_e106"
+    }
+   ]
+  },
+  {
+   "page_no": 9,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0009.png",
+   "elements": [
+    {
+     "reading_order": 107,
+     "page": 9,
+     "label": "picture",
+     "bbox": {
+      "l": 36.53,
+      "t": 744.9,
+      "r": 292.62,
+      "b": 598.11,
+      "w": 256.08,
+      "h": 146.78,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06137,
+      "t": 0.94188,
+      "r": 0.49157,
+      "b": 0.75627
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p9_e107"
+    },
+    {
+     "reading_order": 108,
+     "page": 9,
+     "label": "caption",
+     "bbox": {
+      "l": 39.03,
+      "t": 589.55,
+      "r": 294.01,
+      "b": 543.05,
+      "w": 254.98,
+      "h": 46.5,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06557,
+      "t": 0.74545,
+      "r": 0.49391,
+      "b": 0.68665
+     },
+     "text": "Fig. 3 | Changing levels of vaccine confidence in the Philippines between 2015 and 2019. A marked reduction in public confidence in vaccine safety in the Philippines was partly due to the impact of social media and local politics. Source: The Vaccine Confidence Project 65 , data collected by the Gallup International Association (PSRC).",
+     "text_len": 337,
+     "level": 2,
+     "element_id": "p9_e108"
+    },
+    {
+     "reading_order": 109,
+     "page": 9,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 461.81,
+      "r": 294.94,
+      "b": 335.9,
+      "w": 255.25,
+      "h": 125.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.58393,
+      "r": 0.49547,
+      "b": 0.42472
+     },
+     "text": "Ensuring a sustainable and affordable supply of quality vaccines, with differential pricing according to the wealth of a country, is fundamental to achieving sustainability and equity of immunization. Only a few multinational companies are producing vaccines, and a growing number of middleincome manufacturers are major suppliers. There is a risk that continuous lowering of prices may lead to new monopolies, and possibly to higher prices. Healthy vaccine markets with sustainable supply are an important objective for vaccine programmes. Harmonization and strengthening of regulatory capabilities of low- and middle-income countries are essential. Initiatives such as the AVAREF 58 deserve support. The fact that some countries require local clinical trials despite WHO pre-qualification can be a source of major delays in the introduction of vaccines.",
+     "text_len": 855,
+     "level": 1,
+     "element_id": "p9_e109"
+    },
+    {
+     "reading_order": 110,
+     "page": 9,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 332.81,
+      "r": 294.99,
+      "b": 249.9,
+      "w": 255.3,
+      "h": 82.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.42082,
+      "r": 0.49555,
+      "b": 0.31598
+     },
+     "text": "(3) People-centred programmes. Immunization programmes can become more effective with a systems-driven and 'precision public health' approach, taking into account local variation in immunization levels, specific needs, cultural specifics, and circumstances of vulnerable populations. Quality data at administrative levels closer to communities should be collected to inform 'micro-planning' and adaptive programme delivery. Innovative efforts such as thoughtful integration of immunization into health services, education systems and elderly care are needed.",
+     "text_len": 558,
+     "level": 1,
+     "element_id": "p9_e110"
+    },
+    {
+     "reading_order": 111,
+     "page": 9,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 246.81,
+      "r": 294.89,
+      "b": 217.65,
+      "w": 255.21,
+      "h": 29.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.31208,
+      "r": 0.49538,
+      "b": 0.2752
+     },
+     "text": "As most vaccines have incomplete efficacy, tailored approaches to optimize their impact will be needed, particularly for vaccines against malaria, influenza, dengue and probably HIV when it becomes available.",
+     "text_len": 208,
+     "level": 1,
+     "element_id": "p9_e111"
+    },
+    {
+     "reading_order": 112,
+     "page": 9,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 214.56,
+      "r": 294.94,
+      "b": 45.65,
+      "w": 255.25,
+      "h": 168.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.2713,
+      "r": 0.49547,
+      "b": 0.05772
+     },
+     "text": "(4) Vaccine confidence. Vaccine confidence needs to be addressed up front and be an integral part of immunization programmes. Many approaches to increasing vaccine uptake do not take into account the social, historical and political realities of the public for whom information alone is not the antidote to vaccine reluctance. Instead of older demand-creation models, a new model and language of engaging with the public is needed, starting with better listening and prompt responding to concerns as well as building on local capacities. Inclusion of non-traditional partners, new modes of digital communication, social scientists, and religious and traditional leaders have been invaluable in addressing hesitancy around polio vaccination, and the engagement of teenage girls in co-designing social media outreach to address HPV vaccination concerns had positive effects on vaccine uptake in Denmark. With safety anxieties being reported as one of the top reasons for vaccine hesitancy, aligning vaccine safety research with dominant safety concerns will also be important for confidence building.",
+     "text_len": 1098,
+     "level": 1,
+     "element_id": "p9_e112"
+    },
+    {
+     "reading_order": 113,
+     "page": 9,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 741.31,
+      "r": 561.39,
+      "b": 475.65,
+      "w": 255.25,
+      "h": 265.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.93734,
+      "r": 0.94308,
+      "b": 0.60143
+     },
+     "text": "(5) Investment in research and innovation. Many issues mentioned in the other recommendations require further research in a wide range of disciplines. Product innovation as a result of the formidable progress in immunology and infection pathogenesis has been a strong driver of immunization programmes. There is reluctance of industry to develop vaccines when market incentives are limited, and licensing is uncertain. Although companies such as Merck and Johnson & Johnson invested considerably in the development of candidate Ebola vaccines, partly supported by public funds in North America and Europe, but without a prospect of a return on investment, it would be unrealistic to expect that industry will follow this example for each new emerging pathogen. There is a major role for the public sector and philanthropy to support mechanisms such as the CEPI to develop vaccines for low-income countries 2 . As discussed under the 'second hurdle' on the challenge to fund and conduct late clinical development through to the market introduction for vaccines for which there is no market incentive, there is an urgent need to address this gap, possibly via a specific global initiative or at least a concerted action of several funders. There is also a need for innovation in trial design (for faster trials with smaller sample sizes, and including collection of valuable biosamples to inform correlates of protection) and in trial analysis, as well as in vaccine delivery. Escalating antimicrobial resistance is a powerful incentive to develop vaccines against bacterial infections, malaria, tuberculosis and HIV infection 108-110 . Innovation in the delivery of vaccination programmes is as important as product innovation.",
+     "text_len": 1726,
+     "level": 1,
+     "element_id": "p9_e113"
+    },
+    {
+     "reading_order": 114,
+     "page": 9,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 472.56,
+      "r": 561.34,
+      "b": 421.9,
+      "w": 255.2,
+      "h": 50.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.59752,
+      "r": 0.94299,
+      "b": 0.53347
+     },
+     "text": "The world cannot afford to turn the clock back on immunization, and ever more innovative vaccines will offer additional opportunities to reduce mortality and improve the quality of life for every person on the planet. This will require the best of science, entrepreneurship, programme implementation on the ground, and politics.",
+     "text_len": 328,
+     "level": 1,
+     "element_id": "p9_e114"
+    },
+    {
+     "reading_order": 115,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 404.57,
+      "r": 553.05,
+      "b": 391.3,
+      "w": 246.91,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.51155,
+      "r": 0.92906,
+      "b": 0.49477
+     },
+     "text": "World Health Organization. Vaccines and Diseases https://www.who.int/immunization/ diseases/en/ (2019).",
+     "text_len": 103,
+     "level": 2,
+     "element_id": "p9_e115"
+    },
+    {
+     "reading_order": 116,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 388.54,
+      "r": 553.16,
+      "b": 375.26,
+      "w": 247.01,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.49128,
+      "r": 0.92925,
+      "b": 0.47449
+     },
+     "text": "Kaslow, D. C. et al. Vaccine candidates for poor nations are going to waste. Nature 564, 337-339 (2018).",
+     "text_len": 104,
+     "level": 2,
+     "element_id": "p9_e116"
+    },
+    {
+     "reading_order": 117,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 372.51,
+      "r": 553.95,
+      "b": 351.22,
+      "w": 247.81,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.47102,
+      "r": 0.93058,
+      "b": 0.4441
+     },
+     "text": "Centers for Disease Control and Prevention (CDC). Ten great public health achievements-United States, 1900-1999. MMWR Morb. Mortal. Wkly. Rep. 48, 241-243 (1999).",
+     "text_len": 162,
+     "level": 2,
+     "element_id": "p9_e117"
+    },
+    {
+     "reading_order": 118,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 348.46,
+      "r": 559.62,
+      "b": 311.14,
+      "w": 253.48,
+      "h": 37.33,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.44061,
+      "r": 0.9401,
+      "b": 0.39342
+     },
+     "text": "Rappuoli, R., Black, S. & Bloom, D. E. Vaccines and global health: in search of a sustainable model for vaccine development and delivery. Sci. Transl. Med. 11, eaaw2888 (2019). The authors demonstrate how promising and much needed vaccines for global health fail to reach full development because of inadequate financial incentives, and propose mechanisms to overcome this problem.",
+     "text_len": 381,
+     "level": 2,
+     "element_id": "p9_e118"
+    },
+    {
+     "reading_order": 119,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 308.38,
+      "r": 560.75,
+      "b": 295.1,
+      "w": 254.61,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.38993,
+      "r": 0.942,
+      "b": 0.37314
+     },
+     "text": "Rappuoli, R., Mandl, C. W., Black, S. & De Gregorio, E. Vaccines for the twenty-first century society. Nat. Rev. Immunol. 11, 865-872 (2011).",
+     "text_len": 141,
+     "level": 2,
+     "element_id": "p9_e119"
+    },
+    {
+     "reading_order": 120,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 292.35,
+      "r": 555.75,
+      "b": 279.07,
+      "w": 249.61,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.36966,
+      "r": 0.9336,
+      "b": 0.35287
+     },
+     "text": "World Health Organization. Global Vaccine Action Plan 2011-2020 https://www.who.int/ immunization/global_vaccine_action_plan/GVAP_doc_2011_2020/en/ (2013).",
+     "text_len": 155,
+     "level": 2,
+     "element_id": "p9_e120"
+    },
+    {
+     "reading_order": 121,
+     "page": 9,
+     "label": "section_header",
+     "bbox": {
+      "l": 320.31,
+      "t": 276.32,
+      "r": 522.03,
+      "b": 271.06,
+      "w": 201.72,
+      "h": 5.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.53809,
+      "t": 0.34939,
+      "r": 0.87695,
+      "b": 0.34274
+     },
+     "text": "This is the global reference for most national immunization programmes.",
+     "text_len": 71,
+     "level": 1,
+     "element_id": "p9_e121"
+    },
+    {
+     "reading_order": 122,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 268.3,
+      "r": 553.24,
+      "b": 255.02,
+      "w": 247.1,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.33925,
+      "r": 0.92938,
+      "b": 0.32246
+     },
+     "text": "World Health Organization. State of the World's Vaccines and Immunization. 3rd edition https://www.who.int/immunization/sowvi/en/ (2009).",
+     "text_len": 137,
+     "level": 2,
+     "element_id": "p9_e122"
+    },
+    {
+     "reading_order": 123,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 252.27,
+      "r": 549.57,
+      "b": 238.99,
+      "w": 243.43,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.31898,
+      "r": 0.92322,
+      "b": 0.30219
+     },
+     "text": "Orenstein, W. A. & Ahmed, R. Simply put: vaccination saves lives. Proc. Natl Acad. Sci. USA 114, 4031-4033 (2017).",
+     "text_len": 114,
+     "level": 2,
+     "element_id": "p9_e123"
+    },
+    {
+     "reading_order": 124,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 236.24,
+      "r": 556.12,
+      "b": 222.96,
+      "w": 249.98,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.29871,
+      "r": 0.93422,
+      "b": 0.28192
+     },
+     "text": "Bill & Melinda Gates Foundation. The Goalkeepers Report https://www.gatesfoundation. org/goalkeepers/report (2018).",
+     "text_len": 115,
+     "level": 2,
+     "element_id": "p9_e124"
+    },
+    {
+     "reading_order": 125,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 220.21,
+      "r": 556.72,
+      "b": 190.9,
+      "w": 250.58,
+      "h": 29.31,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.27844,
+      "r": 0.93523,
+      "b": 0.24138
+     },
+     "text": "Hammitt, L. L. et al. Population effect of 10-valent pneumococcal conjugate vaccine on nasopharyngeal carriage of Streptococcus pneumoniae and non-typeable Haemophilus influenzae in Kilifi, Kenya: findings from cross-sectional carriage studies. Lancet Glob. Health 2, e397-e405 (2014).",
+     "text_len": 285,
+     "level": 2,
+     "element_id": "p9_e125"
+    },
+    {
+     "reading_order": 126,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 188.14,
+      "r": 558.09,
+      "b": 174.86,
+      "w": 251.95,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.23789,
+      "r": 0.93753,
+      "b": 0.2211
+     },
+     "text": "World Health Organization. Rubella vaccines: WHO position paper. Wkly. Epidemiol. Rec. 86, 301-316 (2011).",
+     "text_len": 106,
+     "level": 2,
+     "element_id": "p9_e126"
+    },
+    {
+     "reading_order": 127,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 172.11,
+      "r": 533.24,
+      "b": 166.85,
+      "w": 227.1,
+      "h": 5.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.21762,
+      "r": 0.89579,
+      "b": 0.21097
+     },
+     "text": "World Health Organization. Summary of WHO Position Paper on Measles (2017).",
+     "text_len": 75,
+     "level": 2,
+     "element_id": "p9_e127"
+    },
+    {
+     "reading_order": 128,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 164.09,
+      "r": 559.49,
+      "b": 134.78,
+      "w": 253.34,
+      "h": 29.31,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.20748,
+      "r": 0.93988,
+      "b": 0.17042
+     },
+     "text": "Chan, J. et al. Determining the pneumococcal conjugate vaccine coverage required for indirect protection against vaccine-type pneumococcal carriage in low and middleincome countries: a protocol for a prospective observational study. BMJ Open 8, e021512 (2018).",
+     "text_len": 260,
+     "level": 2,
+     "element_id": "p9_e128"
+    },
+    {
+     "reading_order": 129,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 132.03,
+      "r": 546.54,
+      "b": 126.77,
+      "w": 240.4,
+      "h": 5.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.16694,
+      "r": 0.91813,
+      "b": 0.16029
+     },
+     "text": "Vynnycky, E. & White, R. An Introduction to Infectious Disease Modelling (OUP, 2010).",
+     "text_len": 85,
+     "level": 2,
+     "element_id": "p9_e129"
+    },
+    {
+     "reading_order": 130,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 124.01,
+      "r": 553.63,
+      "b": 110.7,
+      "w": 247.49,
+      "h": 13.31,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.1568,
+      "r": 0.93004,
+      "b": 0.13997
+     },
+     "text": "Guerra, F. M. et al. The basic reproduction number (R0) of measles: a systematic review. Lancet Infect. Dis. 17, e420-e428 (2017).",
+     "text_len": 130,
+     "level": 2,
+     "element_id": "p9_e130"
+    },
+    {
+     "reading_order": 131,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 107.95,
+      "r": 559.93,
+      "b": 86.65,
+      "w": 253.79,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.1365,
+      "r": 0.94062,
+      "b": 0.10956
+     },
+     "text": "Aaby, P., Kollmann, T. R. & Benn, C. S. Nonspecific effects of neonatal and infant vaccination: public-health, immunological and conceptual challenges. Nat. Immunol. 15, 895-899 (2014).",
+     "text_len": 185,
+     "level": 2,
+     "element_id": "p9_e131"
+    },
+    {
+     "reading_order": 132,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 83.9,
+      "r": 560.88,
+      "b": 62.61,
+      "w": 254.74,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.10609,
+      "r": 0.94222,
+      "b": 0.07917
+     },
+     "text": "World Health Organziation. Meeting of the Strategic Advisory Group of Experts on immunization, April 2014 - conclusions and recommendations. Wkly. Epidemiol. Rec. 89, 221-236 (2014).",
+     "text_len": 182,
+     "level": 2,
+     "element_id": "p9_e132"
+    },
+    {
+     "reading_order": 133,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 59.85,
+      "r": 548.25,
+      "b": 46.57,
+      "w": 242.11,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.07568,
+      "r": 0.921,
+      "b": 0.05888
+     },
+     "text": "Wilder-Smith, A. et al. The public health value of vaccines beyond efficacy: methods, measures and outcomes. BMC Med. 15, 138 (2017).",
+     "text_len": 133,
+     "level": 2,
+     "element_id": "p9_e133"
+    }
+   ]
+  },
+  {
+   "page_no": 10,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0010.png",
+   "elements": [
+    {
+     "reading_order": 134,
+     "page": 10,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 762.41,
+      "r": 87.29,
+      "b": 749.69,
+      "w": 47.6,
+      "h": 12.72,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.96402,
+      "r": 0.14664,
+      "b": 0.94794
+     },
+     "text": "Review",
+     "text_len": 6,
+     "level": 1,
+     "element_id": "p10_e134"
+    },
+    {
+     "reading_order": 135,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.69,
+      "t": 741.29,
+      "r": 290.36,
+      "b": 728.01,
+      "w": 250.67,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.93731,
+      "r": 0.48777,
+      "b": 0.92052
+     },
+     "text": "Bärnighausen, T., Bloom, D. E., Cafiero-Fonseca, E. T. & O'Brien, J. C. Valuing vaccination. Proc. Natl Acad. Sci. USA 111, 12313-12319 (2014).",
+     "text_len": 143,
+     "level": 2,
+     "element_id": "p10_e135"
+    },
+    {
+     "reading_order": 136,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.68,
+      "t": 725.26,
+      "r": 288.46,
+      "b": 711.98,
+      "w": 248.77,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06666,
+      "t": 0.91705,
+      "r": 0.48458,
+      "b": 0.90025
+     },
+     "text": "Ozawa, S. et al. Return on investment from childhood immunization in low- and middleincome countries, 2011-20. Health Aff. (Millwood) 35, 199-207 (2016).",
+     "text_len": 153,
+     "level": 2,
+     "element_id": "p10_e136"
+    },
+    {
+     "reading_order": 137,
+     "page": 10,
+     "label": "text",
+     "bbox": {
+      "l": 53.86,
+      "t": 709.22,
+      "r": 294.8,
+      "b": 687.93,
+      "w": 240.95,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.09048,
+      "t": 0.89676,
+      "r": 0.49523,
+      "b": 0.86984
+     },
+     "text": "The economic analysis in this paper of 10 vaccines administered in 73 low- and middleincome countries between 2011 and 2020 shows that a total of 20 million lives and over $350 billion could be saved, making vaccines a best buy in public health.",
+     "text_len": 245,
+     "level": 1,
+     "element_id": "p10_e137"
+    },
+    {
+     "reading_order": 138,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.68,
+      "t": 685.18,
+      "r": 285.13,
+      "b": 663.88,
+      "w": 245.45,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06666,
+      "t": 0.86637,
+      "r": 0.47899,
+      "b": 0.83943
+     },
+     "text": "Brenzel, L. What have we learned on costs and financing of routine immunization from the comprehensive multi-year plans in GAVI eligible countries? Vaccine 33 (Suppl. 1), A93-A98 (2015).",
+     "text_len": 186,
+     "level": 2,
+     "element_id": "p10_e138"
+    },
+    {
+     "reading_order": 139,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.68,
+      "t": 661.13,
+      "r": 293.71,
+      "b": 647.85,
+      "w": 254.02,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06666,
+      "t": 0.83596,
+      "r": 0.4934,
+      "b": 0.81917
+     },
+     "text": "Zhou, F. et al. Economic evaluation of the routine childhood immunization program in the United States, 2009. Pediatrics 133, 577-585 (2014).",
+     "text_len": 141,
+     "level": 2,
+     "element_id": "p10_e139"
+    },
+    {
+     "reading_order": 140,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.68,
+      "t": 645.1,
+      "r": 292.46,
+      "b": 623.8,
+      "w": 252.77,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06666,
+      "t": 0.81569,
+      "r": 0.4913,
+      "b": 0.78876
+     },
+     "text": "Riumallo-Herl, C. et al. Poverty reduction and equity benefits of introducing or scaling up measles, rotavirus and pneumococcal vaccines in low-income and middle-income countries: a modelling study. BMJ Global Health 3, e000613 (2018).",
+     "text_len": 235,
+     "level": 2,
+     "element_id": "p10_e140"
+    },
+    {
+     "reading_order": 141,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.68,
+      "t": 621.05,
+      "r": 287.83,
+      "b": 599.75,
+      "w": 248.14,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06666,
+      "t": 0.78528,
+      "r": 0.48352,
+      "b": 0.75835
+     },
+     "text": "Chang, A. Y. et al. The equity impact vaccines may have on averting deaths and medical impoverishment in developing countries. Health Aff. (Millwood) 37, 316-324 (2018).",
+     "text_len": 169,
+     "level": 2,
+     "element_id": "p10_e141"
+    },
+    {
+     "reading_order": 142,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.68,
+      "t": 597.0,
+      "r": 287.26,
+      "b": 583.72,
+      "w": 247.58,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06666,
+      "t": 0.75487,
+      "r": 0.48257,
+      "b": 0.73808
+     },
+     "text": "Jit, M. et al. The broader economic impact of vaccination: reviewing and appraising the strength of evidence. BMC Med. 13, 209 (2015).",
+     "text_len": 134,
+     "level": 2,
+     "element_id": "p10_e142"
+    },
+    {
+     "reading_order": 143,
+     "page": 10,
+     "label": "section_header",
+     "bbox": {
+      "l": 53.86,
+      "t": 580.97,
+      "r": 289.84,
+      "b": 559.67,
+      "w": 235.99,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.09048,
+      "t": 0.7346,
+      "r": 0.4869,
+      "b": 0.70767
+     },
+     "text": "This paper considers the broader economic benefits around childhood development, household behaviour, and macro-economic indicators in addition to the usual microeconomic evaluations of immunization.",
+     "text_len": 199,
+     "level": 1,
+     "element_id": "p10_e143"
+    },
+    {
+     "reading_order": 144,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.68,
+      "t": 556.92,
+      "r": 292.83,
+      "b": 535.63,
+      "w": 253.15,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06666,
+      "t": 0.70419,
+      "r": 0.49192,
+      "b": 0.67727
+     },
+     "text": "Smith, R. D., Keogh-Brown, M. R., Barnett, T. & Tait, J. The economy-wide impact of pandemic influenza on the UK: a computable general equilibrium modelling experiment. Br. Med. J. 339, b4571 (2009).",
+     "text_len": 199,
+     "level": 2,
+     "element_id": "p10_e144"
+    },
+    {
+     "reading_order": 145,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.68,
+      "t": 532.87,
+      "r": 284.15,
+      "b": 519.59,
+      "w": 244.47,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06666,
+      "t": 0.67378,
+      "r": 0.47734,
+      "b": 0.65699
+     },
+     "text": "Putri, W. C. W. S., Muscatello, D. J., Stockwell, M. S. & Newall, A. T. Economic burden of seasonal influenza in the United States. Vaccine 36, 3960-3966 (2018).",
+     "text_len": 161,
+     "level": 2,
+     "element_id": "p10_e145"
+    },
+    {
+     "reading_order": 146,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.68,
+      "t": 516.84,
+      "r": 284.72,
+      "b": 487.53,
+      "w": 245.04,
+      "h": 29.31,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06666,
+      "t": 0.65351,
+      "r": 0.4783,
+      "b": 0.61645
+     },
+     "text": "The World Bank. From Panic and Neglect to Investing in Health Security: Financing Pandemic Preparedness at a National Level https://www.worldbank.org/en/topic/ pandemics/publication/from-panic-neglect-to-investing-in-health-security-financingpandemic-preparedness-at-a-national-level (2017).",
+     "text_len": 291,
+     "level": 2,
+     "element_id": "p10_e146"
+    },
+    {
+     "reading_order": 147,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.68,
+      "t": 484.78,
+      "r": 294.24,
+      "b": 471.5,
+      "w": 254.56,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06666,
+      "t": 0.61297,
+      "r": 0.49429,
+      "b": 0.59618
+     },
+     "text": "VoICE. The Value of Immunization Compendium of Evidence https://immunizationevidence. org/about/ (2019).",
+     "text_len": 104,
+     "level": 2,
+     "element_id": "p10_e147"
+    },
+    {
+     "reading_order": 148,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.67,
+      "t": 468.74,
+      "r": 293.55,
+      "b": 455.47,
+      "w": 253.88,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06664,
+      "t": 0.59269,
+      "r": 0.49313,
+      "b": 0.57591
+     },
+     "text": "Grassly, N. C., Kang, G. & Kampmann, B. Biological challenges to effective vaccines in the developing world. Phil. Trans. R. Soc. Lond. B 370, 20140138 (2015).",
+     "text_len": 159,
+     "level": 2,
+     "element_id": "p10_e148"
+    },
+    {
+     "reading_order": 149,
+     "page": 10,
+     "label": "text",
+     "bbox": {
+      "l": 53.85,
+      "t": 452.71,
+      "r": 287.86,
+      "b": 423.4,
+      "w": 234.0,
+      "h": 29.31,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.09046,
+      "t": 0.57242,
+      "r": 0.48357,
+      "b": 0.53536
+     },
+     "text": "This article introduces a series of papers presented at a scientific meeting held at the Royal Society in London in 2015 that address the wide range of biological reasons for the variability in vaccine efficacy, such as age, sex, environment, genetics and coinfections.",
+     "text_len": 269,
+     "level": 1,
+     "element_id": "p10_e149"
+    },
+    {
+     "reading_order": 150,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.68,
+      "t": 420.65,
+      "r": 289.82,
+      "b": 399.35,
+      "w": 250.15,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06666,
+      "t": 0.53189,
+      "r": 0.48687,
+      "b": 0.50495
+     },
+     "text": "Permar, S., Levy, O., Kollman, T. R., Singh, A. & De Paris, K. Early life HIV-1 immunization: providing a window for protection before sexual debut. AIDS Res. Hum. Retroviruses 34, 823-827 (2018).",
+     "text_len": 196,
+     "level": 2,
+     "element_id": "p10_e150"
+    },
+    {
+     "reading_order": 151,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.68,
+      "t": 396.6,
+      "r": 287.69,
+      "b": 383.32,
+      "w": 248.01,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06666,
+      "t": 0.50148,
+      "r": 0.48329,
+      "b": 0.48468
+     },
+     "text": "Lee, A. H. et al. Dynamic molecular changes during the first week of human life follow a robust developmental trajectory. Nat. Commun. 10, 1092 (2019).",
+     "text_len": 151,
+     "level": 2,
+     "element_id": "p10_e151"
+    },
+    {
+     "reading_order": 152,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.68,
+      "t": 380.57,
+      "r": 282.34,
+      "b": 359.27,
+      "w": 242.67,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06666,
+      "t": 0.48121,
+      "r": 0.4743,
+      "b": 0.45427
+     },
+     "text": "Kobayashi, M. et al. Group B Streptococcus vaccine development: present status and future considerations, with emphasis on perspectives for low and middle income countries. F1000 Res. 5, 2355 (2016).",
+     "text_len": 199,
+     "level": 2,
+     "element_id": "p10_e152"
+    },
+    {
+     "reading_order": 153,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.67,
+      "t": 356.52,
+      "r": 285.26,
+      "b": 343.24,
+      "w": 245.59,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06664,
+      "t": 0.4508,
+      "r": 0.47921,
+      "b": 0.43401
+     },
+     "text": "Madhi, S. A. & Dangor, Z. Prospects for preventing infant invasive GBS disease through maternal vaccination. Vaccine 35, 4457-4460 (2017).",
+     "text_len": 138,
+     "level": 2,
+     "element_id": "p10_e153"
+    },
+    {
+     "reading_order": 154,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.67,
+      "t": 340.49,
+      "r": 231.12,
+      "b": 335.23,
+      "w": 191.45,
+      "h": 5.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06664,
+      "t": 0.43053,
+      "r": 0.38826,
+      "b": 0.42388
+     },
+     "text": "Yen, L. M. & Thwaites, C. L. Tetanus. Lancet 393, 1657-1668 (2019).",
+     "text_len": 67,
+     "level": 2,
+     "element_id": "p10_e154"
+    },
+    {
+     "reading_order": 155,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.67,
+      "t": 332.47,
+      "r": 268.98,
+      "b": 311.18,
+      "w": 229.3,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06664,
+      "t": 0.42039,
+      "r": 0.45186,
+      "b": 0.39347
+     },
+     "text": "Munoz, F. M. et al. The Fourth International Neonatal and Maternal Immunization Symposium (INMIS 2017): Toward integrating maternal and infant immunization programs. mSphere 3, e00221-18 (2018).",
+     "text_len": 194,
+     "level": 2,
+     "element_id": "p10_e155"
+    },
+    {
+     "reading_order": 156,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.67,
+      "t": 308.42,
+      "r": 288.71,
+      "b": 287.13,
+      "w": 249.04,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06664,
+      "t": 0.38998,
+      "r": 0.485,
+      "b": 0.36306
+     },
+     "text": "Westphal, D. W. et al. A protracted mumps outbreak in Western Australia despite high vaccine coverage: a population-based surveillance study. Lancet Infect. Dis. 19, 177-184 (2019).",
+     "text_len": 181,
+     "level": 2,
+     "element_id": "p10_e156"
+    },
+    {
+     "reading_order": 157,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.67,
+      "t": 284.38,
+      "r": 294.0,
+      "b": 271.1,
+      "w": 254.33,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06664,
+      "t": 0.35958,
+      "r": 0.49389,
+      "b": 0.34279
+     },
+     "text": "Fields, V. S. et al. Mumps in a highly vaccinated Marshallese community in Arkansas, USA: an outbreak report. Lancet Infect. Dis. 19, 185-192 (2019).",
+     "text_len": 149,
+     "level": 2,
+     "element_id": "p10_e157"
+    },
+    {
+     "reading_order": 158,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.67,
+      "t": 268.34,
+      "r": 289.89,
+      "b": 255.07,
+      "w": 250.22,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06664,
+      "t": 0.3393,
+      "r": 0.48698,
+      "b": 0.32252
+     },
+     "text": "Hotez, P. America and Europe's new normal: the return of vaccine-preventable diseases. Pediatr. Res. 85, 912-914 (2019).",
+     "text_len": 120,
+     "level": 2,
+     "element_id": "p10_e158"
+    },
+    {
+     "reading_order": 159,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.66,
+      "t": 252.31,
+      "r": 293.84,
+      "b": 239.03,
+      "w": 254.18,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06662,
+      "t": 0.31903,
+      "r": 0.49362,
+      "b": 0.30224
+     },
+     "text": "Alliance for Aging Research. The Silver Book®: Infectious Diseases and Prevention through Vaccination http://www.silverbook.org/publication/infectious-diseases/ (2013).",
+     "text_len": 168,
+     "level": 2,
+     "element_id": "p10_e159"
+    },
+    {
+     "reading_order": 160,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.66,
+      "t": 236.28,
+      "r": 289.49,
+      "b": 223.0,
+      "w": 249.83,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06662,
+      "t": 0.29876,
+      "r": 0.48631,
+      "b": 0.28197
+     },
+     "text": "de Gomensoro, E., Del Giudice, G. & Doherty, T. M. Challenges in adult vaccination. Ann. Med. 50, 181-192 (2018).",
+     "text_len": 113,
+     "level": 2,
+     "element_id": "p10_e160"
+    },
+    {
+     "reading_order": 161,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.66,
+      "t": 220.25,
+      "r": 293.39,
+      "b": 206.97,
+      "w": 253.73,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06662,
+      "t": 0.27849,
+      "r": 0.49286,
+      "b": 0.2617
+     },
+     "text": "International Federation on Ageing. World Coalition on Adult Vaccination https://www.ifafiv.org/project/adult-immunization-advocacy-2/ (2019).",
+     "text_len": 142,
+     "level": 2,
+     "element_id": "p10_e161"
+    },
+    {
+     "reading_order": 162,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.66,
+      "t": 204.22,
+      "r": 292.23,
+      "b": 182.92,
+      "w": 252.56,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06662,
+      "t": 0.25822,
+      "r": 0.49092,
+      "b": 0.23129
+     },
+     "text": "Kim, D. K., Riley, L. E., Harriman, K. H., Hunter, P. & Bridges, C. B. Recommended immunization schedule for adults aged 19 years or older, United States, 2017. Ann. Intern. Med. 166, 209-219 (2017).",
+     "text_len": 199,
+     "level": 2,
+     "element_id": "p10_e162"
+    },
+    {
+     "reading_order": 163,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.66,
+      "t": 180.17,
+      "r": 279.76,
+      "b": 166.89,
+      "w": 240.1,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06662,
+      "t": 0.22781,
+      "r": 0.46997,
+      "b": 0.21102
+     },
+     "text": "National Health Service. Vaccinations; Vaccines Given to Adults https://www.nhs.uk/ conditions/vaccinations/?tabname=adults (accessed 1 September 2019).",
+     "text_len": 152,
+     "level": 2,
+     "element_id": "p10_e163"
+    },
+    {
+     "reading_order": 164,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.66,
+      "t": 164.14,
+      "r": 288.99,
+      "b": 150.86,
+      "w": 249.33,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06662,
+      "t": 0.20754,
+      "r": 0.48547,
+      "b": 0.19075
+     },
+     "text": "Bridges, C. B. et al. Meeting the challenges of immunizing adults. Vaccine 33 (Suppl. 4), D114-D120 (2015).",
+     "text_len": 107,
+     "level": 2,
+     "element_id": "p10_e164"
+    },
+    {
+     "reading_order": 165,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.66,
+      "t": 148.1,
+      "r": 282.79,
+      "b": 126.81,
+      "w": 243.13,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06662,
+      "t": 0.18726,
+      "r": 0.47506,
+      "b": 0.16034
+     },
+     "text": "Phillips, D. E., Dieleman, J. L., Lim, S. S. & Shearer, J. Determinants of effective vaccine coverage in low and middle-income countries: a systematic review and interpretive synthesis. BMC Health Serv. Res. 17, 681 (2017).",
+     "text_len": 223,
+     "level": 2,
+     "element_id": "p10_e165"
+    },
+    {
+     "reading_order": 166,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.66,
+      "t": 124.06,
+      "r": 290.83,
+      "b": 110.78,
+      "w": 251.17,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06662,
+      "t": 0.15687,
+      "r": 0.48856,
+      "b": 0.14007
+     },
+     "text": "Leidner, A. J. et al. Cost-effectiveness of adult vaccinations: a systematic review. Vaccine 37, 226-234 (2018).",
+     "text_len": 112,
+     "level": 2,
+     "element_id": "p10_e166"
+    },
+    {
+     "reading_order": 167,
+     "page": 10,
+     "label": "section_header",
+     "bbox": {
+      "l": 53.83,
+      "t": 108.02,
+      "r": 293.29,
+      "b": 94.75,
+      "w": 239.45,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.09043,
+      "t": 0.13658,
+      "r": 0.4927,
+      "b": 0.11981
+     },
+     "text": "This paper provides insights into the biological challenges to advance the concept of a life course of vaccination.",
+     "text_len": 115,
+     "level": 1,
+     "element_id": "p10_e167"
+    },
+    {
+     "reading_order": 168,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.66,
+      "t": 91.99,
+      "r": 273.91,
+      "b": 78.71,
+      "w": 234.25,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06662,
+      "t": 0.11632,
+      "r": 0.46014,
+      "b": 0.09952
+     },
+     "text": "Derhovanessian, E. & Pawelec, G. Vaccination in the elderly. Microb. Biotechnol. 5, 226-232 (2012).",
+     "text_len": 99,
+     "level": 2,
+     "element_id": "p10_e168"
+    },
+    {
+     "reading_order": 169,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.66,
+      "t": 75.96,
+      "r": 286.14,
+      "b": 62.68,
+      "w": 246.49,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06662,
+      "t": 0.09605,
+      "r": 0.48068,
+      "b": 0.07925
+     },
+     "text": "Public Health England. Complete Routine Immunisation Schedule https://www.gov.uk/ government/publications/the-complete-routine-immunisation-schedule (2019).",
+     "text_len": 156,
+     "level": 2,
+     "element_id": "p10_e169"
+    },
+    {
+     "reading_order": 170,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.66,
+      "t": 59.93,
+      "r": 290.84,
+      "b": 46.65,
+      "w": 251.18,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06662,
+      "t": 0.07578,
+      "r": 0.48858,
+      "b": 0.05899
+     },
+     "text": "Centers for Disease Control and Prevention. Vaccines & Immunizations https://www.cdc. gov/vaccines/index.html (2016).",
+     "text_len": 117,
+     "level": 2,
+     "element_id": "p10_e170"
+    },
+    {
+     "reading_order": 171,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.11,
+      "t": 741.37,
+      "r": 558.76,
+      "b": 720.08,
+      "w": 252.65,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51423,
+      "t": 0.93742,
+      "r": 0.93866,
+      "b": 0.9105
+     },
+     "text": "Public Health England. Immunisation of Healthcare and Laboratory Staff: the Green Book, Chapter 12 https://www.gov.uk/government/publications/immunisation-of-healthcareand-laboratory-staff-the-green-book-chapter-12 (2013).",
+     "text_len": 222,
+     "level": 2,
+     "element_id": "p10_e171"
+    },
+    {
+     "reading_order": 172,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.11,
+      "t": 717.32,
+      "r": 542.16,
+      "b": 696.03,
+      "w": 236.05,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51423,
+      "t": 0.90701,
+      "r": 0.91077,
+      "b": 0.88009
+     },
+     "text": "Sarkar, S., Zlojutro, A., Khan, K. & Gardner, L. Measles resurgence in the USA: how international travel compounds vaccine resistance. Lancet Infect. Dis. 19, 684-686 (2019).",
+     "text_len": 174,
+     "level": 2,
+     "element_id": "p10_e172"
+    },
+    {
+     "reading_order": 173,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.11,
+      "t": 693.28,
+      "r": 541.93,
+      "b": 688.01,
+      "w": 235.82,
+      "h": 5.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51423,
+      "t": 0.87661,
+      "r": 0.91038,
+      "b": 0.86995
+     },
+     "text": "CEPI. The Coalition for Epidemic Preparedness Innovations https://cepi.net/ (2019).",
+     "text_len": 83,
+     "level": 2,
+     "element_id": "p10_e173"
+    },
+    {
+     "reading_order": 174,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.1,
+      "t": 685.26,
+      "r": 543.24,
+      "b": 671.98,
+      "w": 237.14,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51422,
+      "t": 0.86647,
+      "r": 0.91259,
+      "b": 0.84968
+     },
+     "text": "Butler, D. Translational research: crossing the valley of death. Nature 453, 840-842 (2008).",
+     "text_len": 92,
+     "level": 2,
+     "element_id": "p10_e174"
+    },
+    {
+     "reading_order": 175,
+     "page": 10,
+     "label": "text",
+     "bbox": {
+      "l": 306.1,
+      "t": 669.23,
+      "r": 561.06,
+      "b": 663.97,
+      "w": 254.95,
+      "h": 5.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51422,
+      "t": 0.8462,
+      "r": 0.94252,
+      "b": 0.83955
+     },
+     "text": "55. Winslow, R. L. et al. Immune responses to novel adenovirus type 26 and modified vaccinia",
+     "text_len": 92,
+     "level": 1,
+     "element_id": "p10_e175"
+    },
+    {
+     "reading_order": 176,
+     "page": 10,
+     "label": "text",
+     "bbox": {
+      "l": 320.28,
+      "t": 661.21,
+      "r": 556.69,
+      "b": 655.95,
+      "w": 236.42,
+      "h": 5.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.53804,
+      "t": 0.83606,
+      "r": 0.93518,
+      "b": 0.82941
+     },
+     "text": "virus Ankara-vectored Ebola vaccines at 1 year. J. Am. Med. Assoc. 317, 1075-1077 (2017).",
+     "text_len": 89,
+     "level": 1,
+     "element_id": "p10_e176"
+    },
+    {
+     "reading_order": 177,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.1,
+      "t": 653.2,
+      "r": 554.76,
+      "b": 639.92,
+      "w": 248.66,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51422,
+      "t": 0.82593,
+      "r": 0.93194,
+      "b": 0.80914
+     },
+     "text": "Snoy, P. J. Establishing efficacy of human products using animals: the US food and drug administration's \"animal rule\". Vet. Pathol. 47, 774-778 (2010).",
+     "text_len": 152,
+     "level": 2,
+     "element_id": "p10_e177"
+    },
+    {
+     "reading_order": 178,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.1,
+      "t": 637.16,
+      "r": 560.2,
+      "b": 615.87,
+      "w": 254.1,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51422,
+      "t": 0.80565,
+      "r": 0.94108,
+      "b": 0.77873
+     },
+     "text": "Henao-Restrepo, A. M. et al. Efficacy and effectiveness of an rVSV-vectored vaccine in preventing Ebola virus disease: final results from the Guinea ring vaccination, open-label, cluster-randomised trial (Ebola Ça Suffit!). Lancet 389, 505-518 (2017).",
+     "text_len": 251,
+     "level": 2,
+     "element_id": "p10_e178"
+    },
+    {
+     "reading_order": 179,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.1,
+      "t": 613.12,
+      "r": 553.56,
+      "b": 591.82,
+      "w": 247.46,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51422,
+      "t": 0.77525,
+      "r": 0.92992,
+      "b": 0.74832
+     },
+     "text": "Akanmori, B., Bellah, A., Ward, M. & Rago, L. The African vaccine regulatory forum (AVAREF): a platform for collaboration in a public health emergency. WHO Drug Inf. 29, 127-132 (2015).",
+     "text_len": 185,
+     "level": 2,
+     "element_id": "p10_e179"
+    },
+    {
+     "reading_order": 180,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.1,
+      "t": 589.07,
+      "r": 560.67,
+      "b": 575.79,
+      "w": 254.57,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51422,
+      "t": 0.74484,
+      "r": 0.94187,
+      "b": 0.72805
+     },
+     "text": "Kallenberg, J. et al. Gavi's transition policy: moving from development assistance to domestic financing of immunization programs. Health Aff. (Millwood) 35, 250-258 (2016).",
+     "text_len": 173,
+     "level": 2,
+     "element_id": "p10_e180"
+    },
+    {
+     "reading_order": 181,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.1,
+      "t": 573.04,
+      "r": 537.91,
+      "b": 551.74,
+      "w": 231.82,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51422,
+      "t": 0.72457,
+      "r": 0.90363,
+      "b": 0.69764
+     },
+     "text": "World Health Organization. Assessment Report of the Global Vaccine Action Plan: Strategic Advisory Group of Experts on Immunization https://apps.who.int/iris/ handle/10665/276967 (2018).",
+     "text_len": 186,
+     "level": 2,
+     "element_id": "p10_e181"
+    },
+    {
+     "reading_order": 182,
+     "page": 10,
+     "label": "section_header",
+     "bbox": {
+      "l": 320.27,
+      "t": 548.99,
+      "r": 549.04,
+      "b": 535.71,
+      "w": 228.77,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.53802,
+      "t": 0.69416,
+      "r": 0.92233,
+      "b": 0.67737
+     },
+     "text": "This is the annual update on the state of immunization in the world, with a wealth of data.",
+     "text_len": 91,
+     "level": 1,
+     "element_id": "p10_e182"
+    },
+    {
+     "reading_order": 183,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.1,
+      "t": 532.96,
+      "r": 554.79,
+      "b": 519.68,
+      "w": 248.69,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51422,
+      "t": 0.67389,
+      "r": 0.93199,
+      "b": 0.6571
+     },
+     "text": "World Health Organization. Immunization, Vaccines and Biologicals. Data, Statistics and Graphics https://www.who.int/immunization/monitoring_surveillance/data/en/ (2019).",
+     "text_len": 170,
+     "level": 2,
+     "element_id": "p10_e183"
+    },
+    {
+     "reading_order": 184,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.1,
+      "t": 516.92,
+      "r": 559.55,
+      "b": 503.65,
+      "w": 253.45,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51422,
+      "t": 0.65361,
+      "r": 0.93998,
+      "b": 0.63683
+     },
+     "text": "Findlow, J. Vaccines for the prevention of meningococcal capsular group B disease: what have we recently learned? Hum. Vaccin. Immunother. 12, 235-238 (2016).",
+     "text_len": 158,
+     "level": 2,
+     "element_id": "p10_e184"
+    },
+    {
+     "reading_order": 185,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.09,
+      "t": 500.89,
+      "r": 553.5,
+      "b": 487.61,
+      "w": 247.41,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.5142,
+      "t": 0.63334,
+      "r": 0.92982,
+      "b": 0.61655
+     },
+     "text": "World Health Organization. Malaria Vaccine Pilot Launched in Malawi https://www.who. int/news-room/detail/23-04-2019-malaria-vaccine-pilot-launched-in-malawi (2019).",
+     "text_len": 165,
+     "level": 2,
+     "element_id": "p10_e185"
+    },
+    {
+     "reading_order": 186,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.09,
+      "t": 484.86,
+      "r": 555.49,
+      "b": 471.58,
+      "w": 249.4,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.5142,
+      "t": 0.61307,
+      "r": 0.93316,
+      "b": 0.59628
+     },
+     "text": "Roland, D. Malaria vaccine: GSK's thirty-year quest to eradicate a global killer. Telegraph (8 October 2013).",
+     "text_len": 109,
+     "level": 2,
+     "element_id": "p10_e186"
+    },
+    {
+     "reading_order": 187,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.09,
+      "t": 468.83,
+      "r": 554.2,
+      "b": 447.53,
+      "w": 248.11,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.5142,
+      "t": 0.59281,
+      "r": 0.931,
+      "b": 0.56587
+     },
+     "text": "Larson, H. J., Hartigan-Go, K. & de Figueiredo, A. Vaccine confidence plummets in the Philippines following dengue vaccine scare: why it matters to pandemic preparedness. Hum. Vaccin. Immunother. 15, 625-627 (2019).",
+     "text_len": 215,
+     "level": 2,
+     "element_id": "p10_e187"
+    },
+    {
+     "reading_order": 188,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.09,
+      "t": 444.78,
+      "r": 548.76,
+      "b": 431.5,
+      "w": 242.67,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.5142,
+      "t": 0.5624,
+      "r": 0.92186,
+      "b": 0.5456
+     },
+     "text": "Clark, A. et al. Efficacy of live oral rotavirus vaccines by duration of follow-up: a metaregression of randomised controlled trials. Lancet Infect. Dis. 19, 717-727 (2019).",
+     "text_len": 173,
+     "level": 2,
+     "element_id": "p10_e188"
+    },
+    {
+     "reading_order": 189,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.09,
+      "t": 428.75,
+      "r": 555.82,
+      "b": 407.45,
+      "w": 249.72,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.5142,
+      "t": 0.54213,
+      "r": 0.93372,
+      "b": 0.51519
+     },
+     "text": "Burdin, N., Handy, L. K. & Plotkin, S. A. What is wrong with pertussis vaccine immunity? The problem of waning effectiveness of pertussis vaccines. Cold Spring Harb. Perspect. Biol. 9, a029454 (2017).",
+     "text_len": 200,
+     "level": 2,
+     "element_id": "p10_e189"
+    },
+    {
+     "reading_order": 190,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.09,
+      "t": 404.7,
+      "r": 556.48,
+      "b": 391.42,
+      "w": 250.39,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.5142,
+      "t": 0.51172,
+      "r": 0.93483,
+      "b": 0.49493
+     },
+     "text": "Khan, M. I. et al. Barriers to typhoid fever vaccine access in endemic countries. Res. Rep. Trop. Med. 8, 37-44 (2017).",
+     "text_len": 119,
+     "level": 2,
+     "element_id": "p10_e190"
+    },
+    {
+     "reading_order": 191,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.08,
+      "t": 388.67,
+      "r": 547.19,
+      "b": 367.37,
+      "w": 241.1,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51418,
+      "t": 0.49145,
+      "r": 0.91922,
+      "b": 0.46452
+     },
+     "text": "Wilder-Smith, A. et al. Deliberations of the Strategic Advisory Group of Experts on Immunization on the use of CYD-TDV dengue vaccine. Lancet Infect. Dis. 19, e31-e38 (2019).",
+     "text_len": 174,
+     "level": 2,
+     "element_id": "p10_e191"
+    },
+    {
+     "reading_order": 192,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.08,
+      "t": 364.62,
+      "r": 558.51,
+      "b": 351.34,
+      "w": 252.43,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51418,
+      "t": 0.46104,
+      "r": 0.93824,
+      "b": 0.44425
+     },
+     "text": "Cabico, G. K. How the Dengvaxia scare helped erode decades of public trust in vaccines. Philstar Global Corp. (6 February 2019).",
+     "text_len": 128,
+     "level": 2,
+     "element_id": "p10_e192"
+    },
+    {
+     "reading_order": 193,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.08,
+      "t": 348.59,
+      "r": 548.68,
+      "b": 319.28,
+      "w": 242.59,
+      "h": 29.31,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51418,
+      "t": 0.44077,
+      "r": 0.92172,
+      "b": 0.40371
+     },
+     "text": "Plotkin, S., Robinson, J. M., Cunningham, G., Iqbal, R. & Larsen, S. The complexity and cost of vaccine manufacturing - an overview. Vaccine 35, 4064-4071 (2017). An important paper to help to understand the complexity and cost of vaccine manufacturing.",
+     "text_len": 253,
+     "level": 2,
+     "element_id": "p10_e193"
+    },
+    {
+     "reading_order": 194,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.08,
+      "t": 316.52,
+      "r": 557.5,
+      "b": 303.25,
+      "w": 251.41,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51418,
+      "t": 0.40022,
+      "r": 0.93654,
+      "b": 0.38344
+     },
+     "text": "Poland, G. A., Ovsyannikova, I. G. & Jacobson, R. M. Personalized vaccines: the emerging field of vaccinomics. Expert Opin. Biol. Ther. 8, 1659-1667 (2008).",
+     "text_len": 156,
+     "level": 2,
+     "element_id": "p10_e194"
+    },
+    {
+     "reading_order": 195,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.08,
+      "t": 300.49,
+      "r": 557.31,
+      "b": 279.2,
+      "w": 251.23,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51418,
+      "t": 0.37995,
+      "r": 0.93622,
+      "b": 0.35303
+     },
+     "text": "Poland, G. A., Ovsyannikova, I. G., Jacobson, R. M. & Smith, D. I. Heterogeneity in vaccine immune response: the role of immunogenetics and the emerging field of vaccinomics. Clin. Pharmacol. Ther. 82, 653-664 (2007).",
+     "text_len": 217,
+     "level": 2,
+     "element_id": "p10_e195"
+    },
+    {
+     "reading_order": 196,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.08,
+      "t": 276.44,
+      "r": 553.04,
+      "b": 255.15,
+      "w": 246.96,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51418,
+      "t": 0.34954,
+      "r": 0.92905,
+      "b": 0.32262
+     },
+     "text": "Mentzer, A. J., O'Connor, D., Pollard, A. J. & Hill, A. V. Searching for the human genetic factors standing in the way of universally effective vaccines. Phil. Trans. R. Soc. Lond. B 370, 20140341 (2015).",
+     "text_len": 204,
+     "level": 2,
+     "element_id": "p10_e196"
+    },
+    {
+     "reading_order": 197,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.08,
+      "t": 252.4,
+      "r": 555.65,
+      "b": 231.1,
+      "w": 249.57,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51418,
+      "t": 0.31914,
+      "r": 0.93343,
+      "b": 0.29221
+     },
+     "text": "UNICEF & World Health Organization. Progress and Challenges with Achieving Universal Immunization Coverage https://www.who.int/immunization/monitoring_surveillance/ who-immuniz.pdf?ua=1 (2019).",
+     "text_len": 193,
+     "level": 2,
+     "element_id": "p10_e197"
+    },
+    {
+     "reading_order": 198,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.08,
+      "t": 228.35,
+      "r": 559.56,
+      "b": 207.05,
+      "w": 253.48,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51418,
+      "t": 0.28873,
+      "r": 0.94,
+      "b": 0.2618
+     },
+     "text": "UNICEF & World Health Organization. Progress Towards Global Immunization Goals - 2018 https://www.who.int/immunization/monitoring_surveillance/SlidesGlobalImmunization. pptx?ua=1 (2019).",
+     "text_len": 186,
+     "level": 2,
+     "element_id": "p10_e198"
+    },
+    {
+     "reading_order": 199,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.08,
+      "t": 204.3,
+      "r": 558.6,
+      "b": 191.02,
+      "w": 252.52,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51418,
+      "t": 0.25832,
+      "r": 0.93839,
+      "b": 0.24153
+     },
+     "text": "World Health Organization. Immunization Coverage https://www.who.int/en/news-room/ fact-sheets/detail/immunization-coverage (2019).",
+     "text_len": 131,
+     "level": 2,
+     "element_id": "p10_e199"
+    },
+    {
+     "reading_order": 200,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.08,
+      "t": 188.27,
+      "r": 557.17,
+      "b": 183.01,
+      "w": 251.09,
+      "h": 5.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51418,
+      "t": 0.23806,
+      "r": 0.93599,
+      "b": 0.2314
+     },
+     "text": "Berkley, S. Vaccination lags behind in middle-income countries. Nature 569, 309 (2019).",
+     "text_len": 87,
+     "level": 2,
+     "element_id": "p10_e200"
+    },
+    {
+     "reading_order": 201,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 180.1,
+      "r": 559.76,
+      "b": 158.8,
+      "w": 253.62,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.22773,
+      "r": 0.94034,
+      "b": 0.20079
+     },
+     "text": "Hill, H. A., Elam-Evans, L. D., Yankey, D., Singleton, J. A. & Kang, Y. Vaccination coverage among children aged 19-35 months - United States, 2017. MMWR Morb. Mortal. Wkly. Rep. 67, 1123-1128 (2018).",
+     "text_len": 200,
+     "level": 2,
+     "element_id": "p10_e201"
+    },
+    {
+     "reading_order": 202,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 156.05,
+      "r": 543.92,
+      "b": 142.77,
+      "w": 237.78,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.19732,
+      "r": 0.91373,
+      "b": 0.18052
+     },
+     "text": "Zimlich, R. How Many Kids are Completely Unvaccinated? https://www.contemporary pediatrics.com/pediatrics/how-many-kids-are-completely-unvaccinated (2018).",
+     "text_len": 155,
+     "level": 2,
+     "element_id": "p10_e202"
+    },
+    {
+     "reading_order": 203,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 140.02,
+      "r": 559.04,
+      "b": 118.72,
+      "w": 252.9,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.17705,
+      "r": 0.93913,
+      "b": 0.15011
+     },
+     "text": "Gong, W. et al. Comparison of three rapid household survey sampling methods for vaccination coverage assessment in a peri-urban setting in Pakistan. Int. J. Epidemiol. 48, 583-595 (2018).",
+     "text_len": 187,
+     "level": 2,
+     "element_id": "p10_e203"
+    },
+    {
+     "reading_order": 204,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 115.97,
+      "r": 546.36,
+      "b": 94.68,
+      "w": 240.22,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.14664,
+      "r": 0.91783,
+      "b": 0.11972
+     },
+     "text": "Cutts, F. T., Izurieta, H. S. & Rhoda, D. A. Measuring coverage in MNCH: design, implementation, and interpretation challenges associated with tracking vaccination coverage using household surveys. PLoS Med. 10, e1001404 (2013).",
+     "text_len": 228,
+     "level": 2,
+     "element_id": "p10_e204"
+    },
+    {
+     "reading_order": 205,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 91.92,
+      "r": 541.76,
+      "b": 70.63,
+      "w": 235.62,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.11623,
+      "r": 0.9101,
+      "b": 0.08931
+     },
+     "text": "Lam, E., McCarthy, A. & Brennan, M. Vaccine-preventable diseases in humanitarian emergencies among refugee and internally-displaced populations. Hum. Vaccin. Immunother. 11, 2627-2636 (2015).",
+     "text_len": 191,
+     "level": 2,
+     "element_id": "p10_e205"
+    },
+    {
+     "reading_order": 206,
+     "page": 10,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 67.87,
+      "r": 559.07,
+      "b": 46.58,
+      "w": 252.93,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.08582,
+      "r": 0.93918,
+      "b": 0.0589
+     },
+     "text": "World Health Organization Regional Office for Europe. Measles in Europe: Record Number of Both Sick and Immunized http://www.euro.who.int/en/media-centre/sections/pressreleases/2019/measles-in-europe-record-number-of-both-sick-and-immunized (2019).",
+     "text_len": 248,
+     "level": 2,
+     "element_id": "p10_e206"
+    }
+   ]
+  },
+  {
+   "page_no": 11,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0011.png",
+   "elements": [
+    {
+     "reading_order": 207,
+     "page": 11,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.69,
+      "t": 741.29,
+      "r": 280.63,
+      "b": 719.99,
+      "w": 240.94,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.93731,
+      "r": 0.47143,
+      "b": 0.91038
+     },
+     "text": "European Centre for Disease Prevention and Control. Monthly Measles and Rubella Monitoring Report, April 2019 https://ecdc.europa.eu/en/publications-data/monthlymeasles-and-rubella-monitoring-report-april-2019 (2019).",
+     "text_len": 217,
+     "level": 2,
+     "element_id": "p11_e207"
+    },
+    {
+     "reading_order": 208,
+     "page": 11,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.69,
+      "t": 717.24,
+      "r": 280.48,
+      "b": 711.98,
+      "w": 240.79,
+      "h": 5.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.9069,
+      "r": 0.47118,
+      "b": 0.90025
+     },
+     "text": "The Lancet. Measles, war, and health-care reforms in Ukraine. Lancet 392, 711 (2018).",
+     "text_len": 85,
+     "level": 2,
+     "element_id": "p11_e208"
+    },
+    {
+     "reading_order": 209,
+     "page": 11,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.69,
+      "t": 709.22,
+      "r": 285.43,
+      "b": 671.9,
+      "w": 245.75,
+      "h": 37.33,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.89676,
+      "r": 0.47949,
+      "b": 0.84958
+     },
+     "text": "World Health Organization Regional Office for Europe. Over 100,000 People Sick With Measles in 14 Months: with Measles Cases at an Alarming Level in the European Region, WHO Scales up Response http://www.euro.who.int/en/media-centre/sections/pressreleases/2019/over-100-000-people-sick-with-measles-in-14-months-with-measlescases-at-an-alarming-level-in-the-european-region,-who-scales-up-response (2019).",
+     "text_len": 405,
+     "level": 2,
+     "element_id": "p11_e209"
+    },
+    {
+     "reading_order": 210,
+     "page": 11,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.69,
+      "t": 669.14,
+      "r": 282.62,
+      "b": 631.82,
+      "w": 242.93,
+      "h": 37.33,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.84609,
+      "r": 0.47477,
+      "b": 0.7989
+     },
+     "text": "Mosser, J. F. et al. Mapping diphtheria-pertussis-tetanus vaccine coverage in Africa, 2000-2016: a spatial and temporal modelling study. Lancet 393, 1843-1855 (2019). This paper shows that the monitoring of vaccine coverage over time, at local rather than national levels, is crucial for programme management, improvement and for implementing operational approaches that enhance vaccine coverage equity.",
+     "text_len": 403,
+     "level": 2,
+     "element_id": "p11_e210"
+    },
+    {
+     "reading_order": 211,
+     "page": 11,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.69,
+      "t": 629.06,
+      "r": 281.4,
+      "b": 615.79,
+      "w": 241.71,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.79541,
+      "r": 0.47272,
+      "b": 0.77863
+     },
+     "text": "Murray, J. Vaccines by air as drone medicine service takes off in Ghana. The Guardian (25 April 2019).",
+     "text_len": 102,
+     "level": 2,
+     "element_id": "p11_e211"
+    },
+    {
+     "reading_order": 212,
+     "page": 11,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.69,
+      "t": 613.03,
+      "r": 277.15,
+      "b": 591.74,
+      "w": 237.46,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.77514,
+      "r": 0.46558,
+      "b": 0.74822
+     },
+     "text": "World Health Organization. Immunization, Vaccines and Biologicals: Global Routine Immunization Strategies and Practices (GRISP) https://www.who.int/immunization/ programmes_systems/policies_strategies/GRISP/en/ (2019).",
+     "text_len": 218,
+     "level": 2,
+     "element_id": "p11_e212"
+    },
+    {
+     "reading_order": 213,
+     "page": 11,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.69,
+      "t": 588.98,
+      "r": 293.37,
+      "b": 567.69,
+      "w": 253.68,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.74473,
+      "r": 0.49283,
+      "b": 0.71781
+     },
+     "text": "GBD 2017 Causes of Death Collaborators. Global, regional, and national age-sex-specific mortality for 282 causes of death in 195 countries and territories, 1980-2017: a systematic analysis for the Global Burden of Disease Study 2017. Lancet 392, 1736-1788 (2018).",
+     "text_len": 263,
+     "level": 2,
+     "element_id": "p11_e213"
+    },
+    {
+     "reading_order": 214,
+     "page": 11,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.69,
+      "t": 564.94,
+      "r": 283.51,
+      "b": 551.66,
+      "w": 243.82,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.71433,
+      "r": 0.47627,
+      "b": 0.69754
+     },
+     "text": "US Department of Health and Human Services. Biomedical Advanced Research and Development Authority https://www.phe.gov/about/barda/Pages/default.aspx (2019).",
+     "text_len": 157,
+     "level": 2,
+     "element_id": "p11_e214"
+    },
+    {
+     "reading_order": 215,
+     "page": 11,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.69,
+      "t": 548.9,
+      "r": 283.88,
+      "b": 527.61,
+      "w": 244.19,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.69405,
+      "r": 0.47689,
+      "b": 0.66713
+     },
+     "text": "Panteli, D. & Edwards, S. Ensuring Access to Medicines: How to Stimulate Innovation to Meet Patients' Needs? (eds Richardson, E. et al.) (World Health Organization Regional Office for Europe, 2018).",
+     "text_len": 198,
+     "level": 2,
+     "element_id": "p11_e215"
+    },
+    {
+     "reading_order": 216,
+     "page": 11,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.69,
+      "t": 524.86,
+      "r": 294.61,
+      "b": 519.59,
+      "w": 254.93,
+      "h": 5.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.66365,
+      "r": 0.49491,
+      "b": 0.65699
+     },
+     "text": "McNeil, D. G. Jr. Polio cases surge in Pakistan and Afghanistan. The New York Times (2019).",
+     "text_len": 91,
+     "level": 2,
+     "element_id": "p11_e216"
+    },
+    {
+     "reading_order": 217,
+     "page": 11,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.69,
+      "t": 516.84,
+      "r": 293.23,
+      "b": 503.56,
+      "w": 253.54,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.65351,
+      "r": 0.4926,
+      "b": 0.63672
+     },
+     "text": "DW NEWS. Pakistani Government Suspends Polio Vaccination Drives https://www.dw.com/ cda/en/pakistani-government-suspends-polio-vaccination-drives/av-48677882 (2019).",
+     "text_len": 165,
+     "level": 2,
+     "element_id": "p11_e217"
+    },
+    {
+     "reading_order": 218,
+     "page": 11,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.69,
+      "t": 500.81,
+      "r": 285.87,
+      "b": 479.51,
+      "w": 246.19,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.63324,
+      "r": 0.48023,
+      "b": 0.60631
+     },
+     "text": "World Health Organization. Report of the SAGE Working Group on Vaccine Hesitancy https://www.who.int/immunization/sage/meetings/2014/october/1_Report_WORKING_ GROUP_vaccine_hesitancy_final.pdf (2014).",
+     "text_len": 200,
+     "level": 2,
+     "element_id": "p11_e218"
+    },
+    {
+     "reading_order": 219,
+     "page": 11,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.69,
+      "t": 476.76,
+      "r": 294.78,
+      "b": 447.45,
+      "w": 255.09,
+      "h": 29.31,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.60283,
+      "r": 0.4952,
+      "b": 0.56577
+     },
+     "text": "European Centre for Disease Prevention and Control. Rapid Literature Review on Motivating Hesitant Population Groups in Europe to Vaccinate https://ecdc.europa.eu/en/ publications-data/rapid-literature-review-motivating-hesitant-population-groups-europevaccinate (2015).",
+     "text_len": 270,
+     "level": 2,
+     "element_id": "p11_e219"
+    },
+    {
+     "reading_order": 220,
+     "page": 11,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.69,
+      "t": 444.7,
+      "r": 294.5,
+      "b": 431.42,
+      "w": 254.81,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.5623,
+      "r": 0.49473,
+      "b": 0.5455
+     },
+     "text": "European Commission. The State of Vaccine Confidence in the EU: 2018 https://www. vaccineconfidence.org/research/the-state-of-vaccine-confidence-in-the-eu-2018/ (2018).",
+     "text_len": 168,
+     "level": 2,
+     "element_id": "p11_e220"
+    },
+    {
+     "reading_order": 221,
+     "page": 11,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.69,
+      "t": 428.66,
+      "r": 286.12,
+      "b": 407.37,
+      "w": 246.44,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.54201,
+      "r": 0.48065,
+      "b": 0.51509
+     },
+     "text": "The Wellcome Trust. Wellcome Global Monitor 2018 - Chapter 5: Attitudes to Vaccines https://wellcome.ac.uk/reports/wellcome-global-monitor/2018/chapter-5-attitudesvaccines (2019).",
+     "text_len": 179,
+     "level": 2,
+     "element_id": "p11_e221"
+    },
+    {
+     "reading_order": 222,
+     "page": 11,
+     "label": "section_header",
+     "bbox": {
+      "l": 53.86,
+      "t": 404.62,
+      "r": 283.81,
+      "b": 391.34,
+      "w": 229.96,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.09048,
+      "t": 0.51162,
+      "r": 0.47677,
+      "b": 0.49482
+     },
+     "text": "This is one of the largest studies to evaluate of people's attitudes, interest, trust and beliefs about science including immunization.",
+     "text_len": 135,
+     "level": 1,
+     "element_id": "p11_e222"
+    },
+    {
+     "reading_order": 223,
+     "page": 11,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.69,
+      "t": 388.58,
+      "r": 291.47,
+      "b": 367.29,
+      "w": 251.78,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.49133,
+      "r": 0.48964,
+      "b": 0.46441
+     },
+     "text": "Lane, S., MacDonald, N. E., Marti, M. & Dumolard, L. Vaccine hesitancy around the globe: Analysis of three years of WHO/UNICEF Joint Reporting Form data-2015-2017. Vaccine 36, 3861-3867 (2018).",
+     "text_len": 193,
+     "level": 2,
+     "element_id": "p11_e223"
+    },
+    {
+     "reading_order": 224,
+     "page": 11,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.69,
+      "t": 364.54,
+      "r": 288.57,
+      "b": 351.26,
+      "w": 248.88,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.46094,
+      "r": 0.48477,
+      "b": 0.44415
+     },
+     "text": "Cohet, C. et al. Safety of AS03-adjuvanted influenza vaccines: a review of the evidence. Vaccine 37, 3006-3021 (2019).",
+     "text_len": 118,
+     "level": 2,
+     "element_id": "p11_e224"
+    },
+    {
+     "reading_order": 225,
+     "page": 11,
+     "label": "list_item",
+     "bbox": {
+      "l": 39.69,
+      "t": 348.5,
+      "r": 277.76,
+      "b": 327.21,
+      "w": 238.07,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.44066,
+      "r": 0.46661,
+      "b": 0.41374
+     },
+     "text": "Karafillakis, E. & Larson, H. J. The benefit of the doubt or doubts over benefits? A systematic literature review of perceived risks of vaccines in European populations. Vaccine 35, 4840-4850 (2017).",
+     "text_len": 199,
+     "level": 2,
+     "element_id": "p11_e225"
+    },
+    {
+     "reading_order": 226,
+     "page": 11,
+     "label": "text",
+     "bbox": {
+      "l": 53.86,
+      "t": 324.46,
+      "r": 278.14,
+      "b": 311.19,
+      "w": 224.29,
+      "h": 13.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.09048,
+      "t": 0.41026,
+      "r": 0.46725,
+      "b": 0.39348
+     },
+     "text": "This systematic review of vaccination risk perceptions and concerns published between 2004 and 2014 across Europe shows that the main concern was vaccine",
+     "text_len": 153,
+     "level": 1,
+     "element_id": "p11_e226"
+    },
+    {
+     "reading_order": 227,
+     "page": 11,
+     "label": "section_header",
+     "bbox": {
+      "l": 320.31,
+      "t": 741.34,
+      "r": 546.91,
+      "b": 728.06,
+      "w": 226.6,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.53809,
+      "t": 0.93738,
+      "r": 0.91875,
+      "b": 0.92059
+     },
+     "text": "safety, followed by perceptions of low risk of contracting the vaccine-preventable diseases and, if contracted, that they were not severe.",
+     "text_len": 138,
+     "level": 1,
+     "element_id": "p11_e227"
+    },
+    {
+     "reading_order": 228,
+     "page": 11,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 725.31,
+      "r": 544.87,
+      "b": 712.03,
+      "w": 238.73,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.91711,
+      "r": 0.91532,
+      "b": 0.90032
+     },
+     "text": "World Health Organization. Vaccine Safety Net https://www.who.int/vaccine_safety/ initiative/communication/network/vaccine_safety_websites/en (2019).",
+     "text_len": 149,
+     "level": 2,
+     "element_id": "p11_e228"
+    },
+    {
+     "reading_order": 229,
+     "page": 11,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 709.28,
+      "r": 552.94,
+      "b": 679.97,
+      "w": 246.8,
+      "h": 29.31,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.89684,
+      "r": 0.92888,
+      "b": 0.85978
+     },
+     "text": "London School of Hygiene & Tropical Medicine. The State of Vaccine Confidence 2015 https://www.vaccineconfidence.org/research/2015-vaccine-confidence (2015). This was the first benchmark report by the Vaccine Confidence Project, providing an overview on the key issues affecting confidence globally.",
+     "text_len": 299,
+     "level": 2,
+     "element_id": "p11_e229"
+    },
+    {
+     "reading_order": 230,
+     "page": 11,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 677.21,
+      "r": 550.45,
+      "b": 663.94,
+      "w": 244.32,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.85629,
+      "r": 0.9247,
+      "b": 0.83951
+     },
+     "text": "Sridhar, S. et al. Effect of dengue serostatus on dengue vaccine safety and efficacy. N. Engl. J. Med. 379, 327-340 (2018).",
+     "text_len": 123,
+     "level": 2,
+     "element_id": "p11_e230"
+    },
+    {
+     "reading_order": 231,
+     "page": 11,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 661.18,
+      "r": 547.36,
+      "b": 639.89,
+      "w": 241.22,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.83602,
+      "r": 0.91951,
+      "b": 0.8091
+     },
+     "text": "UNICEF & World Health Organization. Situation Report 8: Measles Outbreak https:// reliefweb.int/report/philippines/unicef-who-philippines-measles-outbreak-situationreport-8-2-april-2019 (2019).",
+     "text_len": 193,
+     "level": 2,
+     "element_id": "p11_e231"
+    },
+    {
+     "reading_order": 232,
+     "page": 11,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 637.13,
+      "r": 551.36,
+      "b": 615.84,
+      "w": 245.22,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.80561,
+      "r": 0.92623,
+      "b": 0.77869
+     },
+     "text": "Gavi. Gavi Board Starts Framing Alliance's Approach to 2021-2025 Period https://www. gavi.org/library/news/press-releases/2018/gavi-board-starts-framing-alliance-sapproach-to-2021-2025-period/ (2018).",
+     "text_len": 200,
+     "level": 2,
+     "element_id": "p11_e232"
+    },
+    {
+     "reading_order": 233,
+     "page": 11,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 613.09,
+      "r": 560.21,
+      "b": 599.81,
+      "w": 254.07,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.77521,
+      "r": 0.94109,
+      "b": 0.75842
+     },
+     "text": "Bloom, D. E., Black, S., Salisbury, D. & Rappuoli, R. Antimicrobial resistance and the role of vaccines. Proc. Natl Acad. Sci. USA 115, 12868-12871 (2018).",
+     "text_len": 155,
+     "level": 2,
+     "element_id": "p11_e233"
+    },
+    {
+     "reading_order": 234,
+     "page": 11,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.13,
+      "t": 597.05,
+      "r": 557.94,
+      "b": 575.76,
+      "w": 251.8,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51427,
+      "t": 0.75493,
+      "r": 0.93728,
+      "b": 0.72801
+     },
+     "text": "Klugman, K. P. & Black, S. Impact of existing vaccines in reducing antibiotic resistance: primary and secondary effects. Proc. Natl Acad. Sci. USA 115, 12896-12901 (2018).",
+     "text_len": 171,
+     "level": 2,
+     "element_id": "p11_e234"
+    },
+    {
+     "reading_order": 235,
+     "page": 11,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.13,
+      "t": 573.01,
+      "r": 558.87,
+      "b": 551.71,
+      "w": 252.74,
+      "h": 21.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51427,
+      "t": 0.72453,
+      "r": 0.93884,
+      "b": 0.6976
+     },
+     "text": "Sevilla, J. P., Bloom, D. E., Cadarette, D., Jit, M. & Lipsitch, M. Toward economic evaluation of the value of vaccines and other health technologies in addressing AMR. Proc. Natl Acad. Sci. USA 115, 12911-12919 (2018).",
+     "text_len": 219,
+     "level": 2,
+     "element_id": "p11_e235"
+    },
+    {
+     "reading_order": 236,
+     "page": 11,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.13,
+      "t": 548.96,
+      "r": 545.11,
+      "b": 535.68,
+      "w": 238.98,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51427,
+      "t": 0.69413,
+      "r": 0.91573,
+      "b": 0.67733
+     },
+     "text": "Plotkin, S. L. & Plotkin, S. A. in Plotkin's Vaccines 7th edn (eds Plotkin, S. A. et al.) 1-15 (Elsevier, 2018).",
+     "text_len": 112,
+     "level": 2,
+     "element_id": "p11_e236"
+    },
+    {
+     "reading_order": 237,
+     "page": 11,
+     "label": "text",
+     "bbox": {
+      "l": 306.13,
+      "t": 518.75,
+      "r": 554.92,
+      "b": 481.43,
+      "w": 248.78,
+      "h": 37.33,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51427,
+      "t": 0.65593,
+      "r": 0.93221,
+      "b": 0.60874
+     },
+     "text": "Acknowledgements Vaccine research by P.P., H.J.L., B.K. and S.S. is supported by the EU's Innovative Medicines Initiative, the Medical Research Council of UK research and Innovation, The Bill & Melinda Gates Foundation, the European Commission, PATH, the National Institute for Health Research,GSK, Pfizer, and the Wellcome Trust. This Review does not necessarily reflect the position of the World Health Organization.",
+     "text_len": 418,
+     "level": 1,
+     "element_id": "p11_e237"
+    },
+    {
+     "reading_order": 238,
+     "page": 11,
+     "label": "text",
+     "bbox": {
+      "l": 306.13,
+      "t": 470.17,
+      "r": 531.6,
+      "b": 456.89,
+      "w": 225.46,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51427,
+      "t": 0.5945,
+      "r": 0.89303,
+      "b": 0.57771
+     },
+     "text": "Author contributions All authors contributed to the development and writing of the manuscript.",
+     "text_len": 94,
+     "level": 1,
+     "element_id": "p11_e238"
+    },
+    {
+     "reading_order": 239,
+     "page": 11,
+     "label": "text",
+     "bbox": {
+      "l": 306.13,
+      "t": 445.64,
+      "r": 559.29,
+      "b": 376.25,
+      "w": 253.16,
+      "h": 69.39,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51427,
+      "t": 0.56348,
+      "r": 0.93955,
+      "b": 0.47574
+     },
+     "text": "Competing interests P.P. is a board member of the Coalition for Epidemic Preparedness Innovation (CEPI), and the Global Health Innovative Technology Fund; H.J.L. has a grant from GSK, and is on an Advisory Board of Takeda; K.L.O. is the director of the Department of Immunization, Vaccines, and Biologicals at the World Health Organization; J.N. is Director of the African Centres for Disease Control and Prevention of the African Union, and is a Board member of CEPI. S.S. is the Director General of the Centre for Vaccine Development, Ministry of Health, Mali and a member of the WHO/SAGE Meningitis Working Group, and is an alternate Board Member of Gavi The Vaccine Alliance; B.K. is the Director of the LSHTM Vaccine Centre, and has grants from Pfizer and GSK.",
+     "text_len": 765,
+     "level": 1,
+     "element_id": "p11_e239"
+    },
+    {
+     "reading_order": 240,
+     "page": 11,
+     "label": "section_header",
+     "bbox": {
+      "l": 306.13,
+      "t": 364.99,
+      "r": 369.53,
+      "b": 359.74,
+      "w": 63.4,
+      "h": 5.25,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51427,
+      "t": 0.46151,
+      "r": 0.62077,
+      "b": 0.45487
+     },
+     "text": "Additional information",
+     "text_len": 22,
+     "level": 1,
+     "element_id": "p11_e240"
+    },
+    {
+     "reading_order": 241,
+     "page": 11,
+     "label": "text",
+     "bbox": {
+      "l": 306.13,
+      "t": 356.98,
+      "r": 501.97,
+      "b": 351.71,
+      "w": 195.84,
+      "h": 5.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51427,
+      "t": 0.45138,
+      "r": 0.84326,
+      "b": 0.44472
+     },
+     "text": "Correspondence and requests for materials should be addressed to P.P.",
+     "text_len": 69,
+     "level": 1,
+     "element_id": "p11_e241"
+    },
+    {
+     "reading_order": 242,
+     "page": 11,
+     "label": "text",
+     "bbox": {
+      "l": 306.13,
+      "t": 348.96,
+      "r": 552.18,
+      "b": 335.68,
+      "w": 246.05,
+      "h": 13.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51427,
+      "t": 0.44124,
+      "r": 0.9276,
+      "b": 0.42445
+     },
+     "text": "Peer review information Nature thanks Alan Barrett, Kathryn Edwards and Rino Rappuoli for their contribution to the peer review of this work.",
+     "text_len": 141,
+     "level": 1,
+     "element_id": "p11_e242"
+    },
+    {
+     "reading_order": 243,
+     "page": 11,
+     "label": "text",
+     "bbox": {
+      "l": 306.13,
+      "t": 332.93,
+      "r": 536.98,
+      "b": 327.67,
+      "w": 230.84,
+      "h": 5.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51427,
+      "t": 0.42097,
+      "r": 0.90207,
+      "b": 0.41432
+     },
+     "text": "Reprints and permissions information is available at http://www.nature.com/reprints.",
+     "text_len": 84,
+     "level": 1,
+     "element_id": "p11_e243"
+    },
+    {
+     "reading_order": 244,
+     "page": 11,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.13,
+      "t": 316.41,
+      "r": 391.63,
+      "b": 311.15,
+      "w": 85.49,
+      "h": 5.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51427,
+      "t": 0.40008,
+      "r": 0.6579,
+      "b": 0.39343
+     },
+     "text": "© Springer Nature Limited 2019",
+     "text_len": 30,
+     "level": 2,
+     "element_id": "p11_e244"
+    }
+   ]
+  }
+ ],
+ "caption_blocks": [
+  {
+   "page": 3,
+   "blocks": [
+    {
+     "text": "Table 2 | Vaccines across the human life cycle",
+     "bbox": {
+      "l": 40.02,
+      "t": 740.98,
+      "r": 230.23,
+      "b": 733.11,
+      "w": 190.21,
+      "h": 7.87,
+      "coord": "pdf_points_bottomleft"
+     },
+     "element_ids": [
+      "p3_e30"
+     ]
+    }
+   ]
+  },
+  {
+   "page": 6,
+   "blocks": [
+    {
+     "text": "Fig. 1 | Coverage of DTP3 immunization over time globally, combining coverage and regional variations, 1980-2018. The coverage of DTP3 (containing products) immunization improved rapid in the 1980s, with large regional variations. Stagnation over the past 10 years has meant that 19.4 million children remained under-vaccinated or unvaccinated. The thick red line denotes",
+     "bbox": {
+      "l": 39.69,
+      "t": 546.79,
+      "r": 294.8,
+      "b": 500.28,
+      "w": 255.12,
+      "h": 46.51,
+      "coord": "pdf_points_bottomleft"
+     },
+     "element_ids": [
+      "p6_e66"
+     ]
+    }
+   ]
+  },
+  {
+   "page": 8,
+   "blocks": [
+    {
+     "text": "Fig. 2 | Global confidence in vaccine safety in 2018. Levels of confidence in vaccine safety varied considerably across countries and regions, with several countries showing very low levels of confidence. The colour chart at the bottom",
+     "bbox": {
+      "l": 39.69,
+      "t": 489.07,
+      "r": 290.4,
+      "b": 462.57,
+      "w": 250.72,
+      "h": 26.5,
+      "coord": "pdf_points_bottomleft"
+     },
+     "element_ids": [
+      "p8_e93"
+     ]
+    }
+   ]
+  },
+  {
+   "page": 9,
+   "blocks": [
+    {
+     "text": "Fig. 3 | Changing levels of vaccine confidence in the Philippines between 2015 and 2019. A marked reduction in public confidence in vaccine safety in the Philippines was partly due to the impact of social media and local politics. Source: The Vaccine Confidence Project 65 , data collected by the Gallup International Association (PSRC).",
+     "bbox": {
+      "l": 39.03,
+      "t": 589.55,
+      "r": 294.01,
+      "b": 543.05,
+      "w": 254.98,
+      "h": 46.5,
+      "coord": "pdf_points_bottomleft"
+     },
+     "element_ids": [
+      "p9_e108"
+     ]
+    }
+   ]
+  }
+ ],
+ "uncaptioned_pictures": [
+  {
+   "page": 1,
+   "bbox": {
+    "l": 38.45,
+    "t": 454.44,
+    "r": 175.23,
+    "b": 393.49,
+    "w": 136.79,
+    "h": 60.95,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": true,
+   "element_id": "p1_e7"
+  }
+ ]
+}

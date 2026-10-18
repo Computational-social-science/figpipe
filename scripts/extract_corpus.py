@@ -56,7 +56,15 @@ import time
 import traceback
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-CORPUS_SRC = r"D:\2026-AI4S"
+#: Directories searched for Nature PDFs. Order matters only for reporting.
+#: A survey of D:\ found 1,425 NATURE-named PDFs, 1,416 of them Nature proper after excluding
+#: sister journals -- the corpus was previously pinned to the 42 in the first entry.
+CORPUS_ROOTS = [
+    r"D:\2026-AI4S",
+    "D:/",
+]
+#: Kept for backward compatibility with anything importing the old name.
+CORPUS_SRC = CORPUS_ROOTS[0]
 OUT_ROOT = os.path.join(ROOT, "corpus", "extracted")
 
 # Sister journals that must not enter the corpus. The rule is applied to the
@@ -271,10 +279,18 @@ def classify_pdf(path: str) -> dict:
 def build_inventory() -> dict:
     """Find every NATURE-named PDF, dedupe by content, classify, keep Nature proper."""
     files = []
-    for root, _dirs, names in os.walk(CORPUS_SRC):
-        for n in names:
-            if n.lower().endswith(".pdf") and "nature" in n.lower():
-                files.append(os.path.join(root, n))
+    seen_paths: set[str] = set()
+    for src in CORPUS_ROOTS:
+        if not os.path.isdir(src):
+            continue
+        for root, _dirs, names in os.walk(src):
+            for n in names:
+                if n.lower().endswith(".pdf") and "nature" in n.lower():
+                    full = os.path.abspath(os.path.join(root, n))
+                    if full in seen_paths:      # D:\ contains D:\2026-AI4S
+                        continue
+                    seen_paths.add(full)
+                    files.append(full)
     files.sort()
     recs = [classify_pdf(p) for p in files]
 
@@ -294,7 +310,7 @@ def build_inventory() -> dict:
     for r in kept:
         r["paper_id"] = paper_id_for(r["name"], r["md5"])
     return {
-        "source_root": CORPUS_SRC,
+        "source_roots": [r for r in CORPUS_ROOTS if os.path.isdir(r)],
         "generated_at": datetime.datetime.now().isoformat(timespec="seconds"),
         "n_files_found": len(files),
         "n_unique_by_md5": len(unique),

@@ -1,0 +1,105 @@
+{
+ "paper_id": "2015_nature_defining_the_anthropocene_6c66351f",
+ "source_pdf": "D:\\2026-MisspellingsMemory\\Anthropocene\\!2015-Nature-Defining the Anthropocene.pdf",
+ "source_sha256": "350236d696974fa24c5138b353c623f7a033211597b967960185f55c9e9abb91",
+ "source_name": "!2015-Nature-Defining the Anthropocene.pdf",
+ "n_pages": 10,
+ "generated_at": "2026-10-18T11:27:37",
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "n_figures": 1,
+ "n_tables": 1,
+ "n_pictures_detected": 11,
+ "n_uncaptioned_pictures": 10,
+ "figures": [
+  {
+   "figure_id": "fig_001",
+   "kind": "figure",
+   "label_form": "Figure 2",
+   "figure_number": 2,
+   "page": 4,
+   "bbox": {
+    "l": 36.05,
+    "t": 724.16,
+    "r": 289.58,
+    "b": 348.89,
+    "w": 253.52,
+    "h": 375.27,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 72,
+    "y0": 116,
+    "x1": 579,
+    "y1": 867,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_001.png",
+   "image_size_px": [
+    507,
+    751
+   ],
+   "caption": "Figure 2 | Defining thebeginningof theAnthropocene. a, CurrentGTS2012 GSSP boundary between the Pleistocene and Holocene 38 (dashed line), with global temperature anomalies (relative to the early Holocene average over the period 11,500 BP to 6,500 BP) 112 (blue), and atmospheric carbon dioxide composite 113 on the AICC2012 timescale 114 (red). b, Early Anthropogenic Hypothesis GSSP suggested boundary (dashed line), which posits that early extensive farming impacts caused global environmental changes, defined here by the inflection and lowest level of atmospheric methane (in parts per billion, p.p.b.) from the GRIP ice core 59 (green), with global temperature anomalies (relative to the average over the period 1961 to 1990) 115 (blue), and atmospheric carbon dioxide 113 (red). c, Orbis GSSP suggested boundary (dashed line), representing the collision of the Old and New World peoples and homogenization of once distinct biotas, and defined by the pronounced dip in atmospheric carbon dioxide (dashed line) from the Law Dome ice core 75,76 (blue), with global temperature data anomalies (relative to the average over the period 1961 to 1990) 115 (red). d, Bomb GSSP suggested boundary (dashed line), characterized by the peak in atmospheric radiocarbon from annual tree-rings (black) 103 (the D 14 C value is the relative difference between the absolute international standard (base year 1950) and sample activity corrected for the time of collection and d 13 C), with atmospheric carbon dioxide from Mauna Loa, Hawaii, post-1958 116 , and ice core records pre-1958 75,76 (red), and global temperature anomalies (relative to the average over the period 1961 to 1990) 116 (blue).",
+   "caption_page": 4,
+   "caption_text": "Figure 2 | Defining thebeginningof theAnthropocene. a, CurrentGTS2012 GSSP boundary between the Pleistocene and Holocene 38 (dashed line), with global temperature anomalies (relative to the early Holocene average over the period 11,500 BP to 6,500 BP) 112 (blue), and atmospheric carbon dioxide composite 113 on the AICC2012 timescale 114 (red). b, Early Anthropogenic Hypothesis GSSP suggested boundary (dashed line), which posits that early extensive farming impacts caused global environmental changes, defined here by the inflection and lowest level of atmospheric methane (in parts per billion, p.p.b.) from the GRIP ice core 59 (green), with global temperature anomalies (relative to the average over the period 1961 to 1990) 115 (blue), and atmospheric carbon dioxide 113 (red). c, Orbis GSSP suggested boundary (dashed line), representing the collision of the Old and New World peoples and homogenization of once distinct biotas, and defined by the pronounced dip in atmospheric carbon dioxide (dashed line) from the Law Dome ice core 75,76 (blue), with global temperature data anomalies (relative to the average over the period 1961 to 1990) 115 (red). d, Bomb GSSP suggested boundary (dashed line), characterized by the peak in atmospheric radiocarbon from annual tree-rings (black) 103 (the D 14 C value is the relative difference between the absolute international standard (base year 1950) and sample activity corrected for the time of collection and d 13 C), with atmospheric carbon dioxide from Mauna Loa, Hawaii, post-1958 116 , and ice core records pre-1958 75,76 (red), and global temperature anomalies (relative to the average over the period 1961 to 1990) 116 (blue).",
+   "caption_bbox": {
+    "l": 36.85,
+    "t": 340.31,
+    "r": 289.22,
+    "b": 124.01,
+    "w": 252.37,
+    "h": 216.3,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p4_e66"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 8.58
+   },
+   "element_id": "p4_e65",
+   "reading_order": 65
+  }
+ ],
+ "tables": [
+  {
+   "table_id": "table_001",
+   "page": 5,
+   "bbox": {
+    "l": 41.3,
+    "t": 716.19,
+    "r": 559.0,
+    "b": 492.34,
+    "w": 517.7,
+    "h": 223.85,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": "Table 1 | Potential start dates for a formal Anthropocene Epoch",
+   "caption_bbox": {
+    "l": 42.52,
+    "t": 725.22,
+    "r": 279.74,
+    "b": 716.63,
+    "w": 237.22,
+    "h": 8.59,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_page": 5,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": 0.44,
+    "paired": true
+   },
+   "element_id": "p5_e73"
+  }
+ ]
+}

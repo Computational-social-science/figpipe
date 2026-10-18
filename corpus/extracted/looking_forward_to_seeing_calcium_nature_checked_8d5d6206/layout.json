@@ -1,0 +1,4037 @@
+{
+ "paper_id": "looking_forward_to_seeing_calcium_nature_checked_8d5d6206",
+ "source_pdf": "D:\\个人简历及资质材料\\博士期间资料\\学位论文研究资料\\Ratio imaging microscope system(历史)\\!   Looking forward to seeing calcium(Nature)(checked).pdf",
+ "source_sha256": "0b8d1fe64acc341b907863c627dcb6633517867f7340fd833b82c21bbcdb5ac2",
+ "source_name": "!   Looking forward to seeing calcium(Nature)(checked).pdf",
+ "n_pages": 8,
+ "page_size_pt": [
+  595.0,
+  842.0
+ ],
+ "coordinate_note": "bbox is PDF points with origin at the BOTTOM-LEFT, y increasing upward; bbox_norm divides by page size.",
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "generated_at": "2026-10-18T11:21:16",
+ "pages": [
+  {
+   "page_no": 1,
+   "width_pt": 595.0,
+   "height_pt": 842.0,
+   "png": "pages/page_0001.png",
+   "elements": [
+    {
+     "reading_order": 0,
+     "page": 1,
+     "label": "section_header",
+     "bbox": {
+      "l": 273.27,
+      "t": 749.77,
+      "r": 555.58,
+      "b": 709.63,
+      "w": 282.3,
+      "h": 40.14,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.45928,
+      "t": 0.89046,
+      "r": 0.93375,
+      "b": 0.84279
+     },
+     "text": "PERSPECTIVES",
+     "text_len": 12,
+     "level": 1,
+     "element_id": "p1_e0"
+    },
+    {
+     "reading_order": 1,
+     "page": 1,
+     "label": "picture",
+     "bbox": {
+      "l": 44.71,
+      "t": 601.92,
+      "r": 117.17,
+      "b": 588.6,
+      "w": 72.46,
+      "h": 13.32,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07514,
+      "t": 0.71487,
+      "r": 0.19692,
+      "b": 0.69905
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p1_e1"
+    },
+    {
+     "reading_order": 2,
+     "page": 1,
+     "label": "section_header",
+     "bbox": {
+      "l": 43.57,
+      "t": 571.84,
+      "r": 346.34,
+      "b": 552.73,
+      "w": 302.76,
+      "h": 19.11,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07323,
+      "t": 0.67914,
+      "r": 0.58208,
+      "b": 0.65645
+     },
+     "text": "Looking forward to seeing calcium",
+     "text_len": 33,
+     "level": 1,
+     "element_id": "p1_e2"
+    },
+    {
+     "reading_order": 3,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 43.57,
+      "t": 530.69,
+      "r": 355.23,
+      "b": 520.26,
+      "w": 311.66,
+      "h": 10.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07323,
+      "t": 0.63027,
+      "r": 0.59703,
+      "b": 0.61789
+     },
+     "text": "Rüdiger Rudolf,Marco Mongillo, Rosario Rizzuto and Tullio Pozzan",
+     "text_len": 64,
+     "level": 1,
+     "element_id": "p1_e3"
+    },
+    {
+     "reading_order": 4,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 43.71,
+      "t": 506.96,
+      "r": 201.89,
+      "b": 411.27,
+      "w": 158.17,
+      "h": 95.69,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07346,
+      "t": 0.60209,
+      "r": 0.33931,
+      "b": 0.48844
+     },
+     "text": "From molecules, single cells and tissues to whole organisms, our insights into Ca 2+ signalling and the corresponding physiological phenomena are growing exponentially. Here, we describe the improvements that have been made in the development of the probes and instrumentation that are used for Ca 2+ imaging and the expanding applications of Ca 2+ imaging in basic and applied research.",
+     "text_len": 387,
+     "level": 1,
+     "element_id": "p1_e4"
+    },
+    {
+     "reading_order": 5,
+     "page": 1,
+     "label": "section_header",
+     "bbox": {
+      "l": 47.54,
+      "t": 396.03,
+      "r": 131.25,
+      "b": 387.96,
+      "w": 83.71,
+      "h": 8.07,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0799,
+      "t": 0.47034,
+      "r": 0.22059,
+      "b": 0.46076
+     },
+     "text": "Box 1 | Ca 2+ sensors",
+     "text_len": 21,
+     "level": 1,
+     "element_id": "p1_e5"
+    },
+    {
+     "reading_order": 6,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 219.25,
+      "t": 506.87,
+      "r": 377.29,
+      "b": 410.88,
+      "w": 158.04,
+      "h": 95.99,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36849,
+      "t": 0.60198,
+      "r": 0.6341,
+      "b": 0.48798
+     },
+     "text": "For the past five decades, the study of the dynamics of intracellular Ca 2+ concentration, [Ca 2+ ] i , has been a main focus of life sciences research. More important than for other signalling molecules, the study of the role of Ca 2+ in cell physiopathology requires the ability to monitor the dynamics of its concentration in living cells with both spatial and temporal accuracy. In fact, the concentration of the free Ca 2+ is highly heterogeneous within cells it ranges from micromolar to nanomolar concentrations in the endoplasmic reticulum (ER) and resting cytoplasm, respectively 1 . Moreover, the changes in the cytoplasmic and organellar Ca 2+ concentrations that are induced by cell stimulation occur with a defined spatial and/or temporal pattern,which is pivotal in determining the final functional outcome 2 .As a result of this biological complexity, it is therefore not surprising that our understanding of Ca 2+ signalling has been largely dependent on the development of methodologies that can be used to monitor Ca 2+ concentration in living cells.",
+     "text_len": 1069,
+     "level": 1,
+     "element_id": "p1_e6"
+    },
+    {
+     "reading_order": 7,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 394.92,
+      "t": 429.87,
+      "r": 552.68,
+      "b": 410.88,
+      "w": 157.76,
+      "h": 18.99,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66373,
+      "t": 0.51053,
+      "r": 0.92887,
+      "b": 0.48798
+     },
+     "text": "Here, we describe the development of the various Ca 2+ probes and the scientific",
+     "text_len": 80,
+     "level": 1,
+     "element_id": "p1_e7"
+    },
+    {
+     "reading_order": 8,
+     "page": 1,
+     "label": "section_header",
+     "bbox": {
+      "l": 47.54,
+      "t": 379.27,
+      "r": 109.66,
+      "b": 371.45,
+      "w": 62.12,
+      "h": 7.82,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0799,
+      "t": 0.45044,
+      "r": 0.1843,
+      "b": 0.44115
+     },
+     "text": "Ratiometric dyes",
+     "text_len": 16,
+     "level": 1,
+     "element_id": "p1_e8"
+    },
+    {
+     "reading_order": 9,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 47.54,
+      "t": 368.77,
+      "r": 382.59,
+      "b": 266.56,
+      "w": 335.05,
+      "h": 102.21,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0799,
+      "t": 0.43797,
+      "r": 0.64301,
+      "b": 0.31658
+     },
+     "text": "The excitation (or emission) spectrum (see figure, part a) of ratiometric dyes, such as fura-2 and indo-1, changes according to the free Ca 2+ concentration, [Ca 2+ ]. The Ca 2+ concentration is measured as the ratio between two fluorescence intensity values that are taken at two wavelengths, λ1 and λ2. Ratiometric dyes correct for unequal dye loading, bleaching and focal-plane shift, for example, as the ratio does not depend on the absolute intensity of the two signals. This can be illustrated by a simple example: if there are two cells,A and B, that have the same intracellular Ca 2+ concentration, [Ca 2+ ] i , but different concentrations of the dye, the ratio between the two wavelengths will immediately reveal that their [Ca 2+ ] i is identical, whereas a complex calibration procedure would be necessary to obtain the same information with an indicator that only changes its intensity as a function of Ca 2+ concentration.",
+     "text_len": 936,
+     "level": 1,
+     "element_id": "p1_e9"
+    },
+    {
+     "reading_order": 10,
+     "page": 1,
+     "label": "section_header",
+     "bbox": {
+      "l": 47.54,
+      "t": 259.52,
+      "r": 126.66,
+      "b": 251.7,
+      "w": 79.11,
+      "h": 7.82,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0799,
+      "t": 0.30822,
+      "r": 0.21287,
+      "b": 0.29893
+     },
+     "text": "Non-ratiometric dyes",
+     "text_len": 20,
+     "level": 1,
+     "element_id": "p1_e10"
+    },
+    {
+     "reading_order": 11,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 47.54,
+      "t": 249.29,
+      "r": 387.66,
+      "b": 209.81,
+      "w": 340.11,
+      "h": 39.48,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0799,
+      "t": 0.29607,
+      "r": 0.65153,
+      "b": 0.24918
+     },
+     "text": "Ca 2+ concentration is determined solely by a relative increase in the fluorescence intensity (see figure, part b) of non-ratiometric dyes, such as fluo dyes and rhod dyes, on elevation of the free Ca 2+ concentration. The single excitation allows for simpler instrumentation or simultaneous observation of other parameters. These dyes mainly work in the visible range.",
+     "text_len": 369,
+     "level": 1,
+     "element_id": "p1_e11"
+    },
+    {
+     "reading_order": 12,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 47.54,
+      "t": 202.44,
+      "r": 388.39,
+      "b": 79.55,
+      "w": 340.85,
+      "h": 122.89,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0799,
+      "t": 0.24043,
+      "r": 0.65276,
+      "b": 0.09448
+     },
+     "text": "It should be noted that dyes are available with a range of K d values and spectral properties that make them suitable for use at common laser lines, and some of the single-wavelength indicators give extremely strong fluorescence changes on Ca 2+ binding. It is also important to note that relative, approximate, and not absolute, Ca 2+ concentration values are usually all that is measured. Measuring the Fmin/Fmax or Rmin/Rmax values in cells or tissues requires the exposure of the dye within intact cells to a known Ca 2+ concentration by harsh biochemical methods, such as high doses of ionophores, that are often incompatible with cell survival. This is an even bigger problem with probes targeted to organelles.AU, arbitrary units; F, fluorescence intensity; Fmax, F at saturating Ca 2+ concentration; Fmin, F at zero Ca 2+ concentration; K d , dissociation constant; R, ratio between two wavelengths; Rmax, R at saturating Ca 2+ concentration; Rmin, R at zero Ca 2+ concentration; Sb2, value at saturating Ca 2+ concentration for wavelength two; Sf2, value at zero Ca 2+ concentration for wavelength two.",
+     "text_len": 1111,
+     "level": 1,
+     "element_id": "p1_e12"
+    },
+    {
+     "reading_order": 13,
+     "page": 1,
+     "label": "picture",
+     "bbox": {
+      "l": 396.45,
+      "t": 383.48,
+      "r": 553.11,
+      "b": 232.33,
+      "w": 156.67,
+      "h": 151.15,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.6663,
+      "t": 0.45544,
+      "r": 0.9296,
+      "b": 0.27593
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p1_e13"
+    },
+    {
+     "reading_order": 14,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 397.41,
+      "t": 225.91,
+      "r": 402.59,
+      "b": 218.86,
+      "w": 5.18,
+      "h": 7.06,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66792,
+      "t": 0.2683,
+      "r": 0.67662,
+      "b": 0.25993
+     },
+     "text": "b",
+     "text_len": 1,
+     "level": 1,
+     "element_id": "p1_e14"
+    },
+    {
+     "reading_order": 15,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 445.11,
+      "t": 220.49,
+      "r": 487.79,
+      "b": 211.06,
+      "w": 42.68,
+      "h": 9.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.74808,
+      "t": 0.26186,
+      "r": 0.81982,
+      "b": 0.25067
+     },
+     "text": "[Ca2+] = Kd ×",
+     "text_len": 13,
+     "level": 1,
+     "element_id": "p1_e15"
+    },
+    {
+     "reading_order": 16,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 491.68,
+      "t": 225.2,
+      "r": 513.58,
+      "b": 218.87,
+      "w": 21.9,
+      "h": 6.33,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.82635,
+      "t": 0.26746,
+      "r": 0.86316,
+      "b": 0.25994
+     },
+     "text": "F-Fmin",
+     "text_len": 6,
+     "level": 1,
+     "element_id": "p1_e16"
+    },
+    {
+     "reading_order": 17,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 492.18,
+      "t": 212.19,
+      "r": 516.03,
+      "b": 205.85,
+      "w": 23.85,
+      "h": 6.34,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.82719,
+      "t": 0.25201,
+      "r": 0.86728,
+      "b": 0.24448
+     },
+     "text": "Fmax-F",
+     "text_len": 6,
+     "level": 1,
+     "element_id": "p1_e17"
+    },
+    {
+     "reading_order": 18,
+     "page": 1,
+     "label": "picture",
+     "bbox": {
+      "l": 396.0,
+      "t": 206.52,
+      "r": 552.55,
+      "b": 87.18,
+      "w": 156.55,
+      "h": 119.34,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66555,
+      "t": 0.24527,
+      "r": 0.92866,
+      "b": 0.10354
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p1_e18"
+    },
+    {
+     "reading_order": 19,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 533.14,
+      "t": 88.81,
+      "r": 551.69,
+      "b": 81.99,
+      "w": 18.56,
+      "h": 6.82,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.89603,
+      "t": 0.10548,
+      "r": 0.92721,
+      "b": 0.09738
+     },
+     "text": "λ (nm)",
+     "text_len": 6,
+     "level": 1,
+     "element_id": "p1_e19"
+    }
+   ]
+  },
+  {
+   "page_no": 2,
+   "width_pt": 595.0,
+   "height_pt": 842.0,
+   "png": "pages/page_0002.png",
+   "elements": [
+    {
+     "reading_order": 20,
+     "page": 2,
+     "label": "section_header",
+     "bbox": {
+      "l": 42.16,
+      "t": 785.72,
+      "r": 139.74,
+      "b": 775.91,
+      "w": 97.59,
+      "h": 9.81,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07086,
+      "t": 0.93316,
+      "r": 0.23486,
+      "b": 0.92151
+     },
+     "text": "P ERSP EC T I V E S",
+     "text_len": 19,
+     "level": 1,
+     "element_id": "p2_e20"
+    },
+    {
+     "reading_order": 21,
+     "page": 2,
+     "label": "picture",
+     "bbox": {
+      "l": 44.34,
+      "t": 749.4,
+      "r": 205.46,
+      "b": 642.55,
+      "w": 161.12,
+      "h": 106.85,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07452,
+      "t": 0.89002,
+      "r": 0.34531,
+      "b": 0.76312
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p2_e21"
+    },
+    {
+     "reading_order": 22,
+     "page": 2,
+     "label": "section_header",
+     "bbox": {
+      "l": 44.9,
+      "t": 630.93,
+      "r": 118.77,
+      "b": 623.87,
+      "w": 73.87,
+      "h": 7.06,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07546,
+      "t": 0.74932,
+      "r": 0.19961,
+      "b": 0.74094
+     },
+     "text": "b Calibration and use",
+     "text_len": 21,
+     "level": 1,
+     "element_id": "p2_e22"
+    },
+    {
+     "reading_order": 23,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 45.45,
+      "t": 589.84,
+      "r": 51.78,
+      "b": 507.89,
+      "w": 6.34,
+      "h": 81.94,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07639,
+      "t": 0.70052,
+      "r": 0.08703,
+      "b": 0.60319
+     },
+     "text": "Fluorescence intensity/ratio Ca2+ concentration",
+     "text_len": 47,
+     "level": 1,
+     "element_id": "p2_e23"
+    },
+    {
+     "reading_order": 24,
+     "page": 2,
+     "label": "picture",
+     "bbox": {
+      "l": 55.62,
+      "t": 621.03,
+      "r": 205.07,
+      "b": 475.91,
+      "w": 149.45,
+      "h": 145.12,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.09348,
+      "t": 0.73757,
+      "r": 0.34466,
+      "b": 0.56521
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p2_e24"
+    },
+    {
+     "reading_order": 25,
+     "page": 2,
+     "label": "caption",
+     "bbox": {
+      "l": 42.97,
+      "t": 456.03,
+      "r": 171.83,
+      "b": 439.41,
+      "w": 128.86,
+      "h": 16.62,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07222,
+      "t": 0.5416,
+      "r": 0.28879,
+      "b": 0.52186
+     },
+     "text": "Figure 1 | Procedure of a typical Ca 2+ measurement experiment. a | The",
+     "text_len": 71,
+     "level": 1,
+     "element_id": "p2_e25"
+    },
+    {
+     "reading_order": 26,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 42.97,
+      "t": 437.03,
+      "r": 201.42,
+      "b": 325.41,
+      "w": 158.45,
+      "h": 111.62,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07222,
+      "t": 0.51904,
+      "r": 0.33852,
+      "b": 0.38647
+     },
+     "text": "polycarboxylate Ca 2+ probe is introduced into the cells, either by incubation of the lipophilic acetoxymethyl (AM) esters (intracellular cleavage by cellular esterases releases the original hydrophilic compound) or forced introduction of the hydrophilic compound (for example, by microinjection or through a patch pipette). Other methods (for example, using liposomes or electroporation) have rarely been used, whereas genetically encoded probes can be introduced by standard transfection, transgene techniques or microinjection of the purified protein.",
+     "text_len": 554,
+     "level": 1,
+     "element_id": "p2_e26"
+    },
+    {
+     "reading_order": 27,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 42.97,
+      "t": 323.03,
+      "r": 198.47,
+      "b": 201.91,
+      "w": 155.5,
+      "h": 121.12,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07222,
+      "t": 0.38365,
+      "r": 0.33356,
+      "b": 0.2398
+     },
+     "text": "b | To quantify Ca 2+ concentration, the dissociation constant (K d ) of the probe should ideally be determined both in situ and in the specific cell used. However, the K d from the literature is most often used. To transform the fluorescent data into Ca 2+ concentration values, it is necessary to measure the fluorescence at very low and at saturating Ca 2+ concentrations with the instrumentation and the experimental setting used in the experiment (BOX 1). For further details, see the Introduction to Ca 2+ measurement with fluorescent indicators web site (see Online Links).",
+     "text_len": 580,
+     "level": 1,
+     "element_id": "p2_e27"
+    },
+    {
+     "reading_order": 28,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 42.97,
+      "t": 176.87,
+      "r": 201.62,
+      "b": 80.88,
+      "w": 158.65,
+      "h": 95.99,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07222,
+      "t": 0.21006,
+      "r": 0.33886,
+      "b": 0.09606
+     },
+     "text": "concepts that form the basis of this sophisticated measurement toolkit, which has no equivalent counterpart in other biological fields. These advances are not only pushing research in Ca 2+ signalling forward, but are also stimulating neighbouring fields (for example, the development of new probes for measuring protein phosphorylation or cyclic nucleotides 3 ).",
+     "text_len": 363,
+     "level": 1,
+     "element_id": "p2_e28"
+    },
+    {
+     "reading_order": 29,
+     "page": 2,
+     "label": "section_header",
+     "bbox": {
+      "l": 218.72,
+      "t": 748.96,
+      "r": 342.02,
+      "b": 741.55,
+      "w": 123.31,
+      "h": 7.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.3676,
+      "t": 0.8895,
+      "r": 0.57482,
+      "b": 0.8807
+     },
+     "text": "Measuring Ca 2+ concentration",
+     "text_len": 29,
+     "level": 1,
+     "element_id": "p2_e29"
+    },
+    {
+     "reading_order": 30,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 218.72,
+      "t": 738.51,
+      "r": 377.48,
+      "b": 476.88,
+      "w": 158.77,
+      "h": 261.64,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.3676,
+      "t": 0.87709,
+      "r": 0.63442,
+      "b": 0.56637
+     },
+     "text": "Ca 2+ probes (also known as indicators, reporters or sensors) are molecules that can not only form selective and reversible complexes with Ca 2+ ions, but, uniquely, the physicochemical characteristics of the free and bound form are sufficiently different to enable their relative concentrations to be measured.Most commonly, the differences in the absorbance and/or emission of light are used (BOX 1), but other properties, such as the nuclear magnetic spectrum 4 , have also been used to this end. So, similar to a pH indicator, the concentration of free Ca 2+ is not measured directly, but instead the indicator monitors the amounts of free and complexed probe. The concentration of free Ca 2+ is then calculated on the basis of the effective dissociation constant (K d ) of the probe for Ca 2+ in the specific environment (BOX 1). Another basic concept is that all Ca 2+ indicators are Ca 2+ buffers and so, unavoidably, the measurement of the Ca 2+ concentration with indicators leads to an increase in the Ca 2+ buffering capacity.",
+     "text_len": 1037,
+     "level": 1,
+     "element_id": "p2_e30"
+    },
+    {
+     "reading_order": 31,
+     "page": 2,
+     "label": "section_header",
+     "bbox": {
+      "l": 218.72,
+      "t": 462.96,
+      "r": 372.33,
+      "b": 455.55,
+      "w": 153.61,
+      "h": 7.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.3676,
+      "t": 0.54983,
+      "r": 0.62576,
+      "b": 0.54103
+     },
+     "text": "Evolution of synthetic Ca 2+ indicators",
+     "text_len": 39,
+     "level": 1,
+     "element_id": "p2_e31"
+    },
+    {
+     "reading_order": 32,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 218.72,
+      "t": 451.87,
+      "r": 377.49,
+      "b": 245.88,
+      "w": 158.77,
+      "h": 205.99,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.3676,
+      "t": 0.53666,
+      "r": 0.63444,
+      "b": 0.29202
+     },
+     "text": "In the 1960s and 1970s, the spectral properties of the organic coloured compounds murexide, the azo dyes and chlortetracycline, were serendipitously found to change on binding of Ca 2+ (REF. 5).Whereas murexide has been mainly used to monitor the ability of isolated organelles (such as mitochondria or the sarcoplasmic reticulum) to take up Ca 2+ from the medium, the azo dyes have been extensively used to investigate Ca 2+ signalling in skeletal muscle and giant axons. The main limitations of azo dyes are the complex and variable Ca 2+ -dye stoichiometries, the small signal-to-noise ratio and the need for the dyes to be introduced into cells by technically demanding methods, such as microinjection or intracellular perfusion, that are mainly applicable to large and robust cells.",
+     "text_len": 787,
+     "level": 1,
+     "element_id": "p2_e32"
+    },
+    {
+     "reading_order": 33,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 218.72,
+      "t": 242.87,
+      "r": 377.51,
+      "b": 80.88,
+      "w": 158.8,
+      "h": 162.0,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.3676,
+      "t": 0.28844,
+      "r": 0.63447,
+      "b": 0.09606
+     },
+     "text": "By contrast, chlortetracycline shows large increases in fluorescence on Ca 2+ binding. Changes in the Ca 2+ concentration that are monitored by chlortetracycline have often been referred to as representing changes in membrane Ca 2+ concentration; however, chlortetracycline might measure the Ca 2+ concentration close to membranes, but not within membranes.Chlortetracycline is also sensitive to several other parameters, including Mg 2+ concentration, membrane potential and pH, and the advances in the understanding of Ca 2+ signalling resulting from the use of chlortetracycline have been limited.",
+     "text_len": 600,
+     "level": 1,
+     "element_id": "p2_e33"
+    },
+    {
+     "reading_order": 34,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 394.46,
+      "t": 748.87,
+      "r": 553.33,
+      "b": 311.87,
+      "w": 158.86,
+      "h": 437.0,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66296,
+      "t": 0.88939,
+      "r": 0.92997,
+      "b": 0.37039
+     },
+     "text": "It was only in the late 1970s that Roger Tsien synthesized the first, rationally designed, fluorescent Ca 2+ probes for intracellular use 6 . These fluorescent polycarboxylate dyes are based on a very simple design, as they are derivatives of the best known selective Ca 2+ -chelator available, EGTA. In BAPTA, the prototype fluorescent polycarboxylate dye, the two methylene groups of EGTA have been replaced by two benzene rings to enable it to function as a chromophore. The conformational change caused by Ca 2+ binding to the carboxyl groups is transmitted to the chromophore and results in changes in the excitation and/or emission properties of the dye. Despite being largely different in terms of their spectral properties and Ca 2+ -binding affinities, all of the polycarboxylate dyes now available are derived from this original design. BAPTA itself could not be used as an intracellular indicator because it absorbs light in the far ultraviolet (UV) spectrum, but its derivative quin2 became immediately popular as an intracellular indicator, despite being far from ideal in terms of its selectivity and fluorescence intensity 7 . The polycarboxylate Ca 2+ indicators became such popular probes owing to the synthesis of their acetoxymethyl esters 8 , which allowed the trapping of these indicators in living cells (FIG. 1). Rather than the time-consuming and complex microinjection technique (FIG. 1), the ester-loading technique is simple, requires no specific expertise and is highly effective in virtually all cell types. The flexibility of the chemical design (which enabled the synthesis of many new and better dyes within a few years), the efficacy and simplicity of the loading technique and the minimal side effects have made these dyes invaluable for many researchers.",
+     "text_len": 1789,
+     "level": 1,
+     "element_id": "p2_e34"
+    },
+    {
+     "reading_order": 35,
+     "page": 2,
+     "label": "section_header",
+     "bbox": {
+      "l": 394.46,
+      "t": 297.96,
+      "r": 516.15,
+      "b": 290.55,
+      "w": 121.69,
+      "h": 7.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66296,
+      "t": 0.35387,
+      "r": 0.86748,
+      "b": 0.34507
+     },
+     "text": "Protein-based Ca 2+ indicators",
+     "text_len": 30,
+     "level": 1,
+     "element_id": "p2_e35"
+    },
+    {
+     "reading_order": 36,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 394.46,
+      "t": 286.87,
+      "r": 553.34,
+      "b": 212.88,
+      "w": 158.88,
+      "h": 73.99,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66296,
+      "t": 0.3407,
+      "r": 0.92998,
+      "b": 0.25283
+     },
+     "text": "In the first century AD, the Roman scientist and historian Plinius Secundus described medusae, which contract on contact and simultaneously emit a bright green light; \"urticae noctu vagantus locumque mutant … cum admoveri sibi manum sentit, colorem mutat et contrahitur\" 9 (\"in the night medusae",
+     "text_len": 295,
+     "level": 1,
+     "element_id": "p2_e36"
+    },
+    {
+     "reading_order": 37,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 394.46,
+      "t": 187.68,
+      "r": 545.93,
+      "b": 79.51,
+      "w": 151.46,
+      "h": 108.17,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66296,
+      "t": 0.2229,
+      "r": 0.91753,
+      "b": 0.09443
+     },
+     "text": "\"In AD 79 the volcano Mount Vesuvius entombed bioluminescence research under metres of ash, together with Plinius who died in Pompeii during the eruption.\"",
+     "text_len": 155,
+     "level": 1,
+     "element_id": "p2_e37"
+    }
+   ]
+  },
+  {
+   "page_no": 3,
+   "width_pt": 595.0,
+   "height_pt": 842.0,
+   "png": "pages/page_0003.png",
+   "elements": [
+    {
+     "reading_order": 38,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 11.3,
+      "t": 108.75,
+      "r": 38.3,
+      "b": 89.52,
+      "w": 27.0,
+      "h": 19.23,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.01899,
+      "t": 0.12916,
+      "r": 0.06437,
+      "b": 0.10632
+     },
+     "text": "真实信 号",
+     "text_len": 5,
+     "level": 1,
+     "element_id": "p3_e38"
+    },
+    {
+     "reading_order": 39,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 43.45,
+      "t": 748.87,
+      "r": 202.03,
+      "b": 597.88,
+      "w": 158.59,
+      "h": 150.99,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07303,
+      "t": 0.88939,
+      "r": 0.33955,
+      "b": 0.71007
+     },
+     "text": "float and change their position … when it realizes that a hand is approaching, it changes its colour and contracts\"). In AD 79 the volcano Mount Vesuvius entombed bioluminescence research under metres of ash, together with Plinius who died in Pompeii during the eruption. However, in the 1960s the phenomenon of bioluminescence was reinvestigated in the medusa Aequorea victoria. These studies identified two proteins - aequorin (AEQ) 10 and green fluorescent protein (GFP) 11 , both of which have impacted greatly on the life sciences and are central to this article.",
+     "text_len": 568,
+     "level": 1,
+     "element_id": "p3_e39"
+    },
+    {
+     "reading_order": 40,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 43.45,
+      "t": 583.87,
+      "r": 202.02,
+      "b": 80.87,
+      "w": 158.58,
+      "h": 502.99,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07303,
+      "t": 0.69343,
+      "r": 0.33953,
+      "b": 0.09605
+     },
+     "text": "Aequorin. Although several cnidarian chemiluminescent proteins, which include mnemiopsin and obelin, emit photons on Ca 2+ binding 12 , there is no doubt that the AEQ photoprotein 10 (BOX 2) has dominated the Ca 2+ -signalling field. For almost 30 years, the protein had to be painstakingly extracted from the jellyfish, carefully purified to prevent contact with Ca 2+ (as this would cause the immediate emission of chemiluminescence, thereby rendering the protein unsuitable for measuring purposes) and eventually microinjected.However, after the cloning of AEQ complementary DNA 13 , the possibility of recombinant expression of the AEQ protein gave a new impetus to the use of this probe.However, the most important incentive to re-examine the use of AEQ was the introduction of a new concept in the field of Ca 2+ indicators - that of specifically targeted probes 14 .With the exception of rhod-2 (the positively charged Ca 2+ indicator that is largely retained within the mitochondrial matrix 15 ), the targeting of chemicalcompound dyes had been based largely on unanticipated, cell-specific conditions, and was often unsatisfactory. By contrast, AEQ could be selectively targeted to most subcellular compartments by the insertion of specific signal sequences 16 . The use of chimeric AEQs allowed substantial advances in our understanding of Ca 2+ signalling, such as the interplay between the ER and mitochondria 17 , the presence of sub-plasmalemmal Ca 2+ microdomains 18 and the role of the Golgi as an important Ca 2+ store 19 , but was plagued by their small inherent signal. So, although the amount of photons that are emitted from a cell population is more than adequate for the measurement of the Ca 2+ concentration, the amount of photons that are emitted by a single cell (with the exception of very large cells such as oocytes or muscle fibres) is very low, and substantial signal accumulation is required to overcome the background noise, at the expense of both",
+     "text_len": 1981,
+     "level": 1,
+     "element_id": "p3_e40"
+    },
+    {
+     "reading_order": 41,
+     "page": 3,
+     "label": "picture",
+     "bbox": {
+      "l": 219.61,
+      "t": 748.98,
+      "r": 555.84,
+      "b": 357.77,
+      "w": 336.24,
+      "h": 391.21,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36909,
+      "t": 0.88952,
+      "r": 0.93418,
+      "b": 0.4249
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p3_e41"
+    },
+    {
+     "reading_order": 42,
+     "page": 3,
+     "label": "section_header",
+     "bbox": {
+      "l": 223.79,
+      "t": 345.03,
+      "r": 278.57,
+      "b": 337.21,
+      "w": 54.78,
+      "h": 7.82,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.37612,
+      "t": 0.40977,
+      "r": 0.46818,
+      "b": 0.40049
+     },
+     "text": "Photoproteins",
+     "text_len": 13,
+     "level": 1,
+     "element_id": "p3_e42"
+    },
+    {
+     "reading_order": 43,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 223.79,
+      "t": 334.8,
+      "r": 543.63,
+      "b": 284.82,
+      "w": 319.84,
+      "h": 49.98,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.37612,
+      "t": 0.39762,
+      "r": 0.91366,
+      "b": 0.33827
+     },
+     "text": "A Ca 2+ -induced conformational change of the apoprotein (depicted as a rod-shaped structure) leads to peroxidation of the coenzyme (the reduced form of the coenzyme coelenterazine is shown in black and the oxidized form, coelenteramide, is shown in dark blue), which results in the release of blue light (see figure, part A). Red circles represent the peroxide molecules.",
+     "text_len": 372,
+     "level": 1,
+     "element_id": "p3_e43"
+    },
+    {
+     "reading_order": 44,
+     "page": 3,
+     "label": "section_header",
+     "bbox": {
+      "l": 223.79,
+      "t": 277.78,
+      "r": 292.54,
+      "b": 269.96,
+      "w": 68.75,
+      "h": 7.82,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.37612,
+      "t": 0.3299,
+      "r": 0.49166,
+      "b": 0.32062
+     },
+     "text": "GFP-based probes",
+     "text_len": 16,
+     "level": 1,
+     "element_id": "p3_e44"
+    },
+    {
+     "reading_order": 45,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 223.79,
+      "t": 267.55,
+      "r": 553.33,
+      "b": 154.57,
+      "w": 329.54,
+      "h": 112.98,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.37612,
+      "t": 0.31776,
+      "r": 0.92997,
+      "b": 0.18357
+     },
+     "text": "In the case of cameleon, a Ca 2+ -induced interaction between calmodulin (CaM) and the CaM-binding peptide M13 increases fluorescence resonance energy transfer (FRET) leading to a decrease in the fluorescence of cyan fluorescent protein (CFP) and an increase in the fluorescence of yellow fluorescent protein (YFP) (see figure, part Ba). A similar FRET-based probe, FIP-CB, was constructed that measured the concentration of free Ca 2+ as a decrease of FRET (not shown). For the camgaroo probe, the Ca 2+ -induced conformational change in CaM leads to an increase in the fluorescence of YFP (see figure, part Bb). The Ca 2+ -induced interaction between CaM and the binding peptide M13 of pericam leads to changes in the fluorescence characteristics of circularly permuted (cp)YFP (see figure, part Bc). A similar probe with circularly permuted enhanced green fluorescent protein (cpEGFP) has also been developed (not shown).",
+     "text_len": 924,
+     "level": 1,
+     "element_id": "p3_e45"
+    },
+    {
+     "reading_order": 46,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 223.79,
+      "t": 151.45,
+      "r": 552.52,
+      "b": 81.07,
+      "w": 328.73,
+      "h": 70.39,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.37612,
+      "t": 0.17987,
+      "r": 0.92861,
+      "b": 0.09628
+     },
+     "text": "Sensitivity to pH is a bigger problem with GFP-based indicators than with synthetic dyes. With the synthetic dyes, pH has an effect on fluorescence and Ca 2+ affinity only below about pH 6.5, whereas with most GFP-based probes, even pH changes around neutral can lead to marked changes in fluorescence. Finally, it is worth pointing out that the loss of signal (owing to photobleaching and/or photoisomerization) with protein dyes is more significant than with synthetic dyes, and that some GFPs have absorption spectra that are not suitable for standard confocal microscope laser lines.",
+     "text_len": 587,
+     "level": 1,
+     "element_id": "p3_e46"
+    }
+   ]
+  },
+  {
+   "page_no": 4,
+   "width_pt": 595.0,
+   "height_pt": 842.0,
+   "png": "pages/page_0004.png",
+   "elements": [
+    {
+     "reading_order": 47,
+     "page": 4,
+     "label": "section_header",
+     "bbox": {
+      "l": 42.16,
+      "t": 785.72,
+      "r": 139.74,
+      "b": 775.91,
+      "w": 97.59,
+      "h": 9.81,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07086,
+      "t": 0.93316,
+      "r": 0.23486,
+      "b": 0.92151
+     },
+     "text": "P ERSP EC T I V E S",
+     "text_len": 19,
+     "level": 1,
+     "element_id": "p4_e47"
+    },
+    {
+     "reading_order": 48,
+     "page": 4,
+     "label": "picture",
+     "bbox": {
+      "l": 42.27,
+      "t": 750.9,
+      "r": 379.11,
+      "b": 388.98,
+      "w": 336.84,
+      "h": 361.92,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07104,
+      "t": 0.89181,
+      "r": 0.63716,
+      "b": 0.46197
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p4_e48"
+    },
+    {
+     "reading_order": 49,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 118.11,
+      "t": 393.65,
+      "r": 145.38,
+      "b": 387.32,
+      "w": 27.27,
+      "h": 6.33,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.1985,
+      "t": 0.46752,
+      "r": 0.24434,
+      "b": 0.46
+     },
+     "text": "Time (ns)",
+     "text_len": 9,
+     "level": 1,
+     "element_id": "p4_e49"
+    },
+    {
+     "reading_order": 50,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 298.82,
+      "t": 393.65,
+      "r": 326.09,
+      "b": 387.32,
+      "w": 27.27,
+      "h": 6.33,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50222,
+      "t": 0.46752,
+      "r": 0.54805,
+      "b": 0.46
+     },
+     "text": "Time (ns)",
+     "text_len": 9,
+     "level": 1,
+     "element_id": "p4_e50"
+    },
+    {
+     "reading_order": 51,
+     "page": 4,
+     "label": "caption",
+     "bbox": {
+      "l": 42.97,
+      "t": 381.15,
+      "r": 376.5,
+      "b": 231.87,
+      "w": 333.54,
+      "h": 149.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07222,
+      "t": 0.45267,
+      "r": 0.63277,
+      "b": 0.27538
+     },
+     "text": "Figure 2 | Fluorescence resonance energy transfer. Fluorescence resonance energy transfer (FRET) is the physicochemical phenomenon that is characterized by the transfer of energy from an excited donor chromophore to an acceptor chromophore, without associated radiation release. FRET occurs when the donor emission and acceptor excitation spectra overlap considerably (not shown) and the two dipoles are very close to each other (2-7 nm). FRET is proportional to the 6 th power of the distance between the chromophores and, therefore, even minor conformational changes can induce considerable FRET changes. At the Förster radius, R 0 , 50% of the energy is transmitted to the acceptor. The occurrence of FRET results in the change of several fluorescence parameters - two used in the measurement of Ca 2+ concentration are changes in the emission spectrum at constant excitation and in the fluorescence decay time. The former has been used the most because of the simplicity of its use, the relatively limited cost and the high velocity of image acquisition, which mainly depends on the speed of the imaging system and the dissociation time constant of Ca 2+ from the probe. Fluorescence decay or lifetime imaging microscopy (FLIM), however, requires a dedicated apparatus and is slow, but it offers the advantage of being relatively insensitive to other environmental parameters, such as pH changes and unequal loading of the probe. τ1 and τ2 indicate the time constants of fluorescence decay in the absence or the presence of FRET, respectively.",
+     "text_len": 1547,
+     "level": 1,
+     "element_id": "p4_e51"
+    },
+    {
+     "reading_order": 52,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 42.97,
+      "t": 209.87,
+      "r": 201.63,
+      "b": 157.88,
+      "w": 158.67,
+      "h": 51.99,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07222,
+      "t": 0.24925,
+      "r": 0.33887,
+      "b": 0.18751
+     },
+     "text": "space and time resolution. As a result, only very few researchers have attempted to image recombinant AEQ and, at best, the time resolution in a small mammalian cell has been a few seconds 20,21 .",
+     "text_len": 196,
+     "level": 1,
+     "element_id": "p4_e52"
+    },
+    {
+     "reading_order": 53,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 42.97,
+      "t": 143.87,
+      "r": 201.61,
+      "b": 80.88,
+      "w": 158.64,
+      "h": 62.99,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07222,
+      "t": 0.17087,
+      "r": 0.33884,
+      "b": 0.09606
+     },
+     "text": "GFP-based indicators. Soon after it was shown that heterologously expressed GFP maintains its strong fluorescence 22 , recombinant Ca 2+ probes based on GFP were developed 23,24 .At present, there are three main types of this sensor that are in use; the so-called cameleons 23 , the camgaroos 25 and the pericams 26 , as well as some variations 25-29 (BOX 2). All of these probes use calmodulin (CaM) as a molecular switch, which changes its conformation on the binding of Ca 2+ . In turn, this conformational change alters the fluorescence properties of the GFP-based moieties, and this is then used to calculate the concentration of Ca 2+ (BOX 2).",
+     "text_len": 649,
+     "level": 1,
+     "element_id": "p4_e53"
+    },
+    {
+     "reading_order": 54,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 218.72,
+      "t": 110.87,
+      "r": 377.48,
+      "b": 80.88,
+      "w": 158.76,
+      "h": 29.99,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.3676,
+      "t": 0.13167,
+      "r": 0.63442,
+      "b": 0.09606
+     },
+     "text": "The first two GFP-based fluorescent Ca 2+ indicators were developed in 1997 (REFS 23, 24).Both probes are based on a similar strategy - the change of fluorescence resonance energy transfer (FRET) (FIG. 2) between two different coloured mutants of GFP that is caused by the interaction between Ca 2+ - activated CaM and the target peptide 23,24 . In cameleon 23 , the probe designed by Tsien and co-workers, the CaM-binding peptide M13 and CaM are fused together. The resulting protein construct is flanked at the carboxyl and amino termini by blue and green mutants of GFP, respectively, and the addition of Ca 2+ leads to an increase in FRET 23 (BOX 2). The probe developed by Persechini and colleagues, FIP-CB SM (REF. 24), comprised a blue and a green mutant of GFP linked by the M13 peptide.After an increase in Ca 2+ concentration, endogenous or transfected CaM binds to M13, causing a drop in FRET 24 . Several variations of these probes have been produced by replacing the blue and green GFP mutants with cyan and yellow mutants, by introducing mutations in the CaM domain and by replacing M13 with a different CaM-binding peptide 23,27,29,30 .Many of the recombinant expression strategies initially used for AEQ have also been used with the cameleons, and several variants with targeting sequences and Ca 2+ sensitivity that are suitable for many subcellular compartments are now available 23,31-33 .The success of the cameleons, however, is limited by two principal experimental problems.The first is the relatively small change in signal on Ca 2+ binding, and the second is the large size and molecular complexity that might, in some cases, significantly impair its targeting efficiency, for example to the mitochondrial matrix.However, the low diffusion rate owing to its high molecular mass,might turn into an advantage when high spatial accuracy is needed, for example, to measure and localize Ca 2+ 'puffs'or 'sparks'.",
+     "text_len": 1932,
+     "level": 1,
+     "element_id": "p4_e54"
+    },
+    {
+     "reading_order": 55,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 394.46,
+      "t": 297.87,
+      "r": 553.34,
+      "b": 80.88,
+      "w": 158.88,
+      "h": 216.99,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66296,
+      "t": 0.35376,
+      "r": 0.92998,
+      "b": 0.09606
+     },
+     "text": "To overcome these limitations, efforts to understand the structure-to-photochemistry relationship of the GFPs 34,35 has led to new, rationally designed, Ca 2+ probes that are based on a single GFP. For this generation of new biosensors, GFP has been engineered so that its chromophore and surrounding hydrogen network are affected by even subtle changes in its protein structure 25 . The mechanism for the fluorescence change of most of these probes is that the binding of Ca 2+ ions to CaM that is fused to GFP alters the pK a (the pH at which 50% of the probe is protonated) of the chromophore. In other words, the binding of Ca 2+ mimics alkalization or acidification and so results in the increase or decrease of the chromophore fluorescence 25 . To achieve such sensitivity, two types of modification have been introduced. First, it was discovered that there is a unique site in the GFP primary sequence (tyrosine (Tyr) 145) where relatively long peptides can be inserted without impairing the ability of the protein to fold and form the chromophore 25 . In camgaroos 25 (BOX 2), the insertion of CaM between position 145 and 146 of yellow fluorescent protein (YFP), a yellow mutant of GFP, resulted in a protein in which binding of Ca 2+ mimics alkalization 25 . However, this makes all insertional mutants of GFP intrinsically pH sensitive. Second, Tyr145 can be at the centre of a more spectacular modification, circular permutation 25 . In this variant, the original amino and carboxyl termini of YFP are linked by a spacer, and the new amino and carboxyl termini allow different fusion strategies. Pericam reporters 26 (BOX 2) were designed on this basis by sandwiching circularly permuted YFP between CaM and M13 (REF. 26).Random or rational mutations introduced into the sequence generated three variants of pericams 26 , one of which, known as ratiometric pericam, has an excitation spectrum that shifts on Ca 2+ binding, thereby allowing ratiometric measurement 26 (BOX 1). For the advantages of ratiometric measurement, see BOX 1. Similar to camgaroos, pericams are also highly pH sensitive.",
+     "text_len": 2106,
+     "level": 1,
+     "element_id": "p4_e55"
+    }
+   ]
+  },
+  {
+   "page_no": 5,
+   "width_pt": 595.0,
+   "height_pt": 842.0,
+   "png": "pages/page_0005.png",
+   "elements": [
+    {
+     "reading_order": 56,
+     "page": 5,
+     "label": "table",
+     "bbox": {
+      "l": 43.28,
+      "t": 750.16,
+      "r": 554.0,
+      "b": 641.74,
+      "w": 510.72,
+      "h": 108.42,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07274,
+      "t": 0.89093,
+      "r": 0.93109,
+      "b": 0.76216
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p5_e56"
+    },
+    {
+     "reading_order": 57,
+     "page": 5,
+     "label": "footnote",
+     "bbox": {
+      "l": 48.33,
+      "t": 638.48,
+      "r": 548.84,
+      "b": 597.83,
+      "w": 500.51,
+      "h": 40.65,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.08123,
+      "t": 0.75829,
+      "r": 0.92242,
+      "b": 0.71001
+     },
+     "text": "*The new generation of polycarboxylates are quite variable in terms of the fluorescence intensities of the Ca 2+ -free and Ca 2+ -bound forms. Some are strongly fluorescent without Ca 2+ , but the changes on Ca 2+ binding are relatively small (for example, Oregon Green), whereas others are very dim without Ca 2+ and the fluorescence increases many times on Ca 2+ binding (for example, fluo-3). ‡ Although the Ca 2+ selectivity over Mg 2+ and monovalent cations of most polycarboxylate indicators is very good, they bind with a significantly higher affinity than other divalent and trivalent cations. § Although the molecular mass of all polycarboxylate indicators is about 1 kDa, they can be conjugated to dextrans of different molecular weights. GFP, green fluorescent protein; ND, not determined; UV, ultraviolet.",
+     "text_len": 817,
+     "level": 2,
+     "element_id": "p5_e57"
+    },
+    {
+     "reading_order": 58,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 43.45,
+      "t": 242.87,
+      "r": 202.05,
+      "b": 80.88,
+      "w": 158.6,
+      "h": 161.99,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07303,
+      "t": 0.28844,
+      "r": 0.33958,
+      "b": 0.09606
+     },
+     "text": "The 'readout' of all single-GFP-based biosensors, with the notable exception of ratiometric pericam 26 , is a fluorescence intensity change 26 . Such imaging is easily attainable with most confocal and conventional experimental systems, but this fluorescence intensity changemight represent an important limitation in the ability to quantify the signal, for example owing to movement of the sample or of the cell (for example owing to contraction), photobleaching or a change in the microscope focus.One possible solution to correct for any such problem is the co-transfection with a Ca 2+ -insensitive GFP mutant, although this might not be practical in many experimental systems. In contrast to FRET-based probes, ratiometric pericams do not change their emission spectra on Ca 2+ binding, instead they change their excitation spectra 26 . The normalization for shifts in the microscopic focal plane and protein distribution inferred by the ratiometric nature of the measurement allows simultaneous imaging of Ca 2+ in two spatially resolved cellular compartments in cells that co-express two differently targeted variants of the probe 26,36 .However, ratiometric pericams have to be excited at two different wavelengths and are therefore inadequate for very fast imaging experiments, and for most confocal microscopes.",
+     "text_len": 1321,
+     "level": 1,
+     "element_id": "p5_e58"
+    },
+    {
+     "reading_order": 59,
+     "page": 5,
+     "label": "section_header",
+     "bbox": {
+      "l": 394.74,
+      "t": 572.96,
+      "r": 510.0,
+      "b": 565.55,
+      "w": 115.26,
+      "h": 7.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66343,
+      "t": 0.68048,
+      "r": 0.85714,
+      "b": 0.67167
+     },
+     "text": "Towards an ideal Ca 2+ probe",
+     "text_len": 28,
+     "level": 1,
+     "element_id": "p5_e59"
+    },
+    {
+     "reading_order": 60,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 394.74,
+      "t": 561.87,
+      "r": 553.57,
+      "b": 454.88,
+      "w": 158.83,
+      "h": 106.99,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66343,
+      "t": 0.6673,
+      "r": 0.93037,
+      "b": 0.54024
+     },
+     "text": "As described previously, the past three decades have seen a tremendous development of fluorescent Ca 2+ indicators that can be used for a wide range of in vitro and in vivo applications.Despite these advances, however,we are still far from having the ideal Ca 2+ probe (TABLE 1). Here we speculate about future directions in the development of both synthetic polycarboxylate dyes and protein-based probes.",
+     "text_len": 405,
+     "level": 1,
+     "element_id": "p5_e60"
+    },
+    {
+     "reading_order": 61,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 394.74,
+      "t": 451.87,
+      "r": 553.56,
+      "b": 410.87,
+      "w": 158.82,
+      "h": 40.99,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66343,
+      "t": 0.53666,
+      "r": 0.93035,
+      "b": 0.48797
+     },
+     "text": "How could the qualities of polycarboxylates be ameliorated? One problem that is often neglected is that the hydrolysis products of acetoxymethyl esters, in particular",
+     "text_len": 166,
+     "level": 1,
+     "element_id": "p5_e61"
+    },
+    {
+     "reading_order": 62,
+     "page": 5,
+     "label": "picture",
+     "bbox": {
+      "l": 218.78,
+      "t": 400.01,
+      "r": 554.19,
+      "b": 243.76,
+      "w": 335.41,
+      "h": 156.24,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.3677,
+      "t": 0.47507,
+      "r": 0.93141,
+      "b": 0.2895
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p5_e62"
+    },
+    {
+     "reading_order": 63,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 219.73,
+      "t": 247.92,
+      "r": 250.01,
+      "b": 240.33,
+      "w": 30.28,
+      "h": 7.59,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36929,
+      "t": 0.29444,
+      "r": 0.42018,
+      "b": 0.28543
+     },
+     "text": "Low Ca2+",
+     "text_len": 8,
+     "level": 1,
+     "element_id": "p5_e63"
+    },
+    {
+     "reading_order": 64,
+     "page": 5,
+     "label": "caption",
+     "bbox": {
+      "l": 218.99,
+      "t": 230.91,
+      "r": 553.65,
+      "b": 81.29,
+      "w": 334.66,
+      "h": 149.62,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36805,
+      "t": 0.27424,
+      "r": 0.9305,
+      "b": 0.09654
+     },
+     "text": "Figure 3 | Examples of Ca 2+ -concentration signalling in living cells. a | Pseudo-colour-coded ratioimages obtained by conventional epifluorescence micrographs of a HeLa cell transfected with ratiometric pericam. Ca 2+ concentrations are colour coded with a basal Ca 2+ concentration in blue and a high Ca 2+ concentration in yellow and red. Note the strong increase in mitochondrial Ca 2+ concentration on histamine-induced release from the endoplasmic reticulum (see also Online Video 1). b | The pseudocolour-coded ratio-images (as in FIG. 3a) of indo-1-loaded acute brain slices were obtained by confocal microscopy and show the Ca 2+ waves in astrocytes that were induced by stimulation of the CA1 nerve fibres that contact the CA3 region of the hippocampus (known as the 'Schaffer collateral pathway') with an extracellular electrode, which results in the depolarization of the nerve terminals and the release of neurotransmitter. The panels show sequential frames of Online Video 2. Note that the waves are sweeping from one process to another, traversing the whole cell. The numbers indicate the time after stimulation. c | Two-photon confocal micrographs of a muscle fibre from tibialis anterior muscle transfected with cytoplasmic cameleon in live mouse. The upper four panels show the yellow (YFP) and cyan fluorescence channel micrographs (CFP) from the cameleon probe that are responsible for the pseudo-colour-coded ratio-images (lower 2 panels) as in FIG. 3a. Note the increase in the intracellular Ca 2+ concentration in the muscle on stimulation of the sciatic nerve.",
+     "text_len": 1585,
+     "level": 1,
+     "element_id": "p5_e64"
+    }
+   ]
+  },
+  {
+   "page_no": 6,
+   "width_pt": 595.0,
+   "height_pt": 842.0,
+   "png": "pages/page_0006.png",
+   "elements": [
+    {
+     "reading_order": 65,
+     "page": 6,
+     "label": "section_header",
+     "bbox": {
+      "l": 42.16,
+      "t": 785.72,
+      "r": 139.74,
+      "b": 775.91,
+      "w": 97.59,
+      "h": 9.81,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07086,
+      "t": 0.93316,
+      "r": 0.23486,
+      "b": 0.92151
+     },
+     "text": "P ERSP EC T I V E S",
+     "text_len": 19,
+     "level": 1,
+     "element_id": "p6_e65"
+    },
+    {
+     "reading_order": 66,
+     "page": 6,
+     "label": "picture",
+     "bbox": {
+      "l": 41.75,
+      "t": 751.45,
+      "r": 551.24,
+      "b": 559.74,
+      "w": 509.49,
+      "h": 191.71,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07017,
+      "t": 0.89246,
+      "r": 0.92645,
+      "b": 0.66477
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p6_e66"
+    },
+    {
+     "reading_order": 67,
+     "page": 6,
+     "label": "caption",
+     "bbox": {
+      "l": 42.97,
+      "t": 551.05,
+      "r": 552.67,
+      "b": 477.43,
+      "w": 509.7,
+      "h": 73.62,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07222,
+      "t": 0.65445,
+      "r": 0.92886,
+      "b": 0.56702
+     },
+     "text": "Figure 4 | Description of major decisions for the planning of a Ca 2+ -concentration imaging experiment. The flow chart summarizes the main decisions to be made in a typical Ca 2+ -concentration imaging experiment (left column, green) and the corresponding hardware that is available at present for each of these steps (right columns, blue and yellow). At certain points, according to the experimental approach, there are several choices of hardware, which are indicated by forked lines. *The use of a monochromator increases the time resolution considerably when compared with filter wheel-equipped microscopes. While the costs associated with confocal laser scanning microscopy are considerably higher than those associated with conventional microscopy, the costs associated with multiphoton microscopy are even greater. ‡ Note that targeted chemical probes are only available in the form of rhod2 for mitochondria. Low-affinity dyes could be used under certain instances for Ca 2+ -concentration measurements in the endoplasmic reticulum. FW, filter wheel; INT, intensity measurement; MC, monochromator; MR, emission ratioing; XR, excitation ratioing.",
+     "text_len": 1154,
+     "level": 2,
+     "element_id": "p6_e67"
+    },
+    {
+     "reading_order": 68,
+     "page": 6,
+     "label": "text",
+     "bbox": {
+      "l": 42.97,
+      "t": 451.87,
+      "r": 201.63,
+      "b": 80.86,
+      "w": 158.66,
+      "h": 371.01,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07222,
+      "t": 0.53666,
+      "r": 0.33887,
+      "b": 0.09603
+     },
+     "text": "formaldehyde, are potentially highly toxic. Although in short experiments these byproducts can be surprisingly innocuous to cells, in longer experiments acetoxymethyl hydrolysis per semight have important deleterious effects 37. Although in the early days Tsien considered the possibility of designing alternative esters, the efficacy of acetoxymethyl esters has deterred other investigators from designing alternatives.The use of new esters could also be exploited as an approach to improve targeting of the polycarboxylate indicators. Indeed, acetoxymethyl esters are cleaved by enzymes that are expressed at different levels in most cellular compartments.But if esters could be designed that were selectively cleaved by enzymes that are localized or recombinantly expressed in organelles, a simple and effective way to target the probes will have been found. 20 years after their synthesis, it is surprising that the only ratiometric probes available are fura-2 and indo-1 (and their low-affinity derivatives). This highly desirable property (that is, the spectral shift and so the ratiometric property) would be a great advantage for the use of indicators that absorb light in the visible range (loading with two different probes, as described above for two GFPs has been considered as an alternative, but has inherent technical problems). Both fura-2 and indo-1 need to be excited in the UV spectrum and this, in turn, poses technical problems for the use of microscopes (for example, special optics and expensive UV lasers for confocal microscopy), not to mention background fluorescence, lower penetration of the exciting beam and the toxicity of UV illumination.",
+     "text_len": 1670,
+     "level": 1,
+     "element_id": "p6_e68"
+    },
+    {
+     "reading_order": 69,
+     "page": 6,
+     "label": "text",
+     "bbox": {
+      "l": 218.72,
+      "t": 407.87,
+      "r": 377.49,
+      "b": 212.88,
+      "w": 158.77,
+      "h": 194.99,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.3676,
+      "t": 0.48441,
+      "r": 0.63444,
+      "b": 0.25283
+     },
+     "text": "It could be argued that the introduction of the protein-based indicators has reduced the efforts of scientists and companies to develop new, optimized dyes. However, this should only be true in part. Although these probes have undoubtedly solved the problem of selective targeting, there is still room for substantial improvement, especially of the GFP-based probes, which are still lacking a thorough methodological analysis of their advantages and disadvantages.This might explain why the use of these probes, until now, has been relatively limited. In particular, a crucial feature of the available GFP-based probes is that they all contain CaM as the Ca 2+ -sensing component. This protein has been chosen for its high Ca 2+ affinity and the marked conformational change that is induced by Ca 2+ binding.",
+     "text_len": 808,
+     "level": 1,
+     "element_id": "p6_e69"
+    },
+    {
+     "reading_order": 70,
+     "page": 6,
+     "label": "text",
+     "bbox": {
+      "l": 218.72,
+      "t": 189.28,
+      "r": 375.16,
+      "b": 79.82,
+      "w": 156.44,
+      "h": 109.45,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.3676,
+      "t": 0.2248,
+      "r": 0.63052,
+      "b": 0.0948
+     },
+     "text": "\"…the past three decades have seen a tremendous development of fluorescent Ca 2+ indicators … despite these advances, however, we are still far from having the ideal Ca 2+ probe.\"",
+     "text_len": 179,
+     "level": 1,
+     "element_id": "p6_e70"
+    },
+    {
+     "reading_order": 71,
+     "page": 6,
+     "label": "text",
+     "bbox": {
+      "l": 394.46,
+      "t": 451.87,
+      "r": 553.34,
+      "b": 80.88,
+      "w": 158.88,
+      "h": 370.99,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66296,
+      "t": 0.53666,
+      "r": 0.92998,
+      "b": 0.09606
+     },
+     "text": "However,CaM is also known to be important in many physiological processes, and overexpression of these probes might therefore result in a substantial alteration of some of the many reactions that depend on CaM in cells. So, it might not be entirely surprising that transgenic models expressing GFP-based probes have so far been described only in lower organisms, such as Caenorhabditis elegans 38 and Drosophila 39-42 , but not in mammals. Indeed, the construction of new protein-based Ca 2+ biosensors would require a protein component as sensitive and selective as CaM that undergoes a marked Ca 2+ -dependent conformational change, but which is characterized by negligible interference from endogenous components of the cell.Finally,biosensors that exploit CaM inevitably suffer from the relatively slow kinetics of the Ca 2+ -induced conformational change.Therefore,whether these tools can be used to monitor fluctuations in Ca 2+ concentration of the order of milliseconds (a technically feasible advance with modern imaging systems), is still under evaluation. So,when the need for speed is compelling, fluorescent Ca 2+ dyes still rule.A further problem is the necessity to overcome the bleaching and photoisomerization of GFP on illumination 43 . It is not easy to imagine a solution to these problems, but the identification of new fluorescent proteins in organisms other than Aequorea could provide alternatives.An insurmountable problem of GFP-based Ca 2+ probes is their large size.Unless fluorescent proteins much smaller than GFP are found, it will be hard to significantly reduce the size of probes that are based on this protein.Methods for selective in situ labelling of endogenous proteins have been introduced by Tsien's laboratory that take advantage of small peptide tags and organic fluorescent probes 44 . It would not be surprising if, eventually, such methodologies could be applied to the generation of a new family of Ca 2+ indicators that would couple the selectivity of localization of protein-based probes to the small size of the polycarboxylate dyes.",
+     "text_len": 2082,
+     "level": 1,
+     "element_id": "p6_e71"
+    }
+   ]
+  },
+  {
+   "page_no": 7,
+   "width_pt": 595.0,
+   "height_pt": 842.0,
+   "png": "pages/page_0007.png",
+   "elements": [
+    {
+     "reading_order": 72,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 43.45,
+      "t": 606.51,
+      "r": 202.02,
+      "b": 80.87,
+      "w": 158.57,
+      "h": 525.64,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07303,
+      "t": 0.72032,
+      "r": 0.33953,
+      "b": 0.09605
+     },
+     "text": "So far,most research in Ca 2+ signalling has been carried out in cultured cells (FIG. 3a) or acute tissue slices (FIG. 3b).However,modern biology is advancing towards the analysis of highly complex systems and possibly whole living organisms (FIG.3c).The challenge to advance the measurement of Ca 2+ -concentration is therefore not only to develop new and better probes, but also instruments that can take advantage of the new probes and that, at the same time, are flexible and potent enough to allow the investigation of the whole living organism. This is likely to be one of the reasons why the genetically encoded probes are rapidly becoming popular, given that by judicious genetic manipulation the new organism will already be intrinsically equipped with the probe ready for in vivomeasurement. Twophoton confocal microscopes, although still very expensive and often cumbersome to use, at the moment seem to be the ideal instruments for this type of in vivo analysis (FIGS 4 and3c). In the meantime, however, important improvements in the more classical approaches could be the development of multicolour excitation for the simultaneous observation of different processes, online emission spectrum analysis for an increased sensitivity to FRET and video-rate acquisition in confocal microscopy.As to the latter feature, the need for better time resolution of confocal imaging has been limited by the relative low speed of laser scanning. Line scan has been the only practical alternative, but at the expense of poor spatial resolution. The new confocal microscopes with a Nipkow disc already ensure time resolution for full images in the order of 10 ms per image. Furthermore, taking into consideration the complex spatiotemporal compartmentalization of Ca 2+ , the field will greatly profit from the close interaction with biocomputing scientists for the development of more powerful image analysis software. In summary, methodologies, hardware and measurement probes are evolving in a synergistic manner and will undoubtedly affect our future insights into the biology of the fascinating field of Ca 2+ signalling.",
+     "text_len": 2123,
+     "level": 1,
+     "element_id": "p7_e72"
+    },
+    {
+     "reading_order": 73,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 219.27,
+      "t": 748.65,
+      "r": 377.59,
+      "b": 714.7,
+      "w": 158.32,
+      "h": 33.95,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36852,
+      "t": 0.88913,
+      "r": 0.63461,
+      "b": 0.84881
+     },
+     "text": "Rüdiger Rudolfand Tullio Pozzan are at the Department of Biomedical Sciences, CNR Institute of Neurosciences,University of Padova, via G. Columbo 3, 35121 Padova, Italy.",
+     "text_len": 169,
+     "level": 1,
+     "element_id": "p7_e73"
+    },
+    {
+     "reading_order": 74,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 238.98,
+      "t": 706.98,
+      "r": 377.59,
+      "b": 682.03,
+      "w": 138.61,
+      "h": 24.95,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.40165,
+      "t": 0.83964,
+      "r": 0.63461,
+      "b": 0.81001
+     },
+     "text": "Marco Mongillo and Tullio Pozzan are at the Venetian Institute for Molecular Medicine, via Orus 2, 35129 Padova, Italy.",
+     "text_len": 119,
+     "level": 1,
+     "element_id": "p7_e74"
+    },
+    {
+     "reading_order": 75,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 220.98,
+      "t": 674.31,
+      "r": 377.58,
+      "b": 640.36,
+      "w": 156.6,
+      "h": 33.95,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.37139,
+      "t": 0.80084,
+      "r": 0.63459,
+      "b": 0.76052
+     },
+     "text": "Rosario Rizzuto is at the Department of Experimental and Diagnostic Medicine, Section of General Pathology,University of Ferrara, via Borsari 46, 44100 Ferrara, Italy.",
+     "text_len": 167,
+     "level": 1,
+     "element_id": "p7_e75"
+    },
+    {
+     "reading_order": 76,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 281.27,
+      "t": 632.64,
+      "r": 377.58,
+      "b": 607.91,
+      "w": 96.31,
+      "h": 24.73,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.47272,
+      "t": 0.75135,
+      "r": 0.63459,
+      "b": 0.72198
+     },
+     "text": "Correspondence to T.P. e-mail: tullio.pozzan@unipd.it doi:10.1038/nrm1153",
+     "text_len": 73,
+     "level": 1,
+     "element_id": "p7_e76"
+    },
+    {
+     "reading_order": 77,
+     "page": 7,
+     "label": "list_item",
+     "bbox": {
+      "l": 218.99,
+      "t": 596.01,
+      "r": 373.13,
+      "b": 575.62,
+      "w": 154.14,
+      "h": 20.39,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36805,
+      "t": 0.70785,
+      "r": 0.62711,
+      "b": 0.68363
+     },
+     "text": "Pozzan, T., Rizzuto, R., Volpe, P. & Meldolesi, J. Molecular and cellular physiology of intracellular calcium stores. Physiol. Rev. 74, 595-636 (1994).",
+     "text_len": 151,
+     "level": 2,
+     "element_id": "p7_e77"
+    },
+    {
+     "reading_order": 78,
+     "page": 7,
+     "label": "list_item",
+     "bbox": {
+      "l": 218.99,
+      "t": 573.57,
+      "r": 374.33,
+      "b": 553.18,
+      "w": 155.34,
+      "h": 20.39,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36805,
+      "t": 0.6812,
+      "r": 0.62913,
+      "b": 0.65698
+     },
+     "text": "Berridge, M. J., Lipp, P. & Bootman, M. D. The versatility and universality of calcium signalling. Nature Rev. Mol. Cell Biol. 1, 11-21 (2000).",
+     "text_len": 143,
+     "level": 2,
+     "element_id": "p7_e78"
+    },
+    {
+     "reading_order": 79,
+     "page": 7,
+     "label": "list_item",
+     "bbox": {
+      "l": 218.99,
+      "t": 551.13,
+      "r": 372.06,
+      "b": 530.74,
+      "w": 153.07,
+      "h": 20.39,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36805,
+      "t": 0.65455,
+      "r": 0.62531,
+      "b": 0.63033
+     },
+     "text": "Zhang, J., Campbell, R. E., Ting, A. Y. & Tsien, R. Y. Creating new fluorescent probes for cell biology. Nature Rev. Mol. Cell Biol. 3, 906-918 (2002).",
+     "text_len": 151,
+     "level": 2,
+     "element_id": "p7_e79"
+    },
+    {
+     "reading_order": 80,
+     "page": 7,
+     "label": "list_item",
+     "bbox": {
+      "l": 218.99,
+      "t": 528.69,
+      "r": 375.39,
+      "b": 500.82,
+      "w": 156.4,
+      "h": 27.87,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36805,
+      "t": 0.6279,
+      "r": 0.63091,
+      "b": 0.5948
+     },
+     "text": "Smith, G. A., Hesketh, R. T., Metcalfe, J. C., Feeney, J. & Morris, P. G. Intracellular calcium measurements by 19F NMR of fluorine-labeled chelators. Proc. Natl Acad. Sci. USA 80, 7178-7182 (1983).",
+     "text_len": 198,
+     "level": 2,
+     "element_id": "p7_e80"
+    },
+    {
+     "reading_order": 81,
+     "page": 7,
+     "label": "list_item",
+     "bbox": {
+      "l": 218.99,
+      "t": 498.77,
+      "r": 374.49,
+      "b": 478.38,
+      "w": 155.5,
+      "h": 20.39,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36805,
+      "t": 0.59236,
+      "r": 0.62939,
+      "b": 0.56815
+     },
+     "text": "Thomas, M. V. in Techniques in Calcium Research (eds Treherne, J. E. & Rubery, P. H.) (Academic, London, New York, Paris, 1982).",
+     "text_len": 128,
+     "level": 2,
+     "element_id": "p7_e81"
+    },
+    {
+     "reading_order": 82,
+     "page": 7,
+     "label": "list_item",
+     "bbox": {
+      "l": 218.99,
+      "t": 476.33,
+      "r": 360.6,
+      "b": 440.98,
+      "w": 141.61,
+      "h": 35.35,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36805,
+      "t": 0.56571,
+      "r": 0.60605,
+      "b": 0.52373
+     },
+     "text": "Tsien, R. Y. New calcium indicators and buffers with high selectivity against magnesium and protons: design, synthesis, and properties of prototype structures. Biochemistry 19, 2396-2404 (1980).",
+     "text_len": 194,
+     "level": 2,
+     "element_id": "p7_e82"
+    },
+    {
+     "reading_order": 83,
+     "page": 7,
+     "label": "list_item",
+     "bbox": {
+      "l": 218.99,
+      "t": 438.93,
+      "r": 373.67,
+      "b": 411.06,
+      "w": 154.68,
+      "h": 27.87,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36805,
+      "t": 0.52129,
+      "r": 0.62802,
+      "b": 0.48819
+     },
+     "text": "Tsien, R. Y., Pozzan, T. & Rink, T. J. T-cell mitogens cause early changes in cytoplasmic free Ca 2+ and membrane potential in lymphocytes. Nature 295, 68-71 (1982).",
+     "text_len": 165,
+     "level": 2,
+     "element_id": "p7_e83"
+    },
+    {
+     "reading_order": 84,
+     "page": 7,
+     "label": "list_item",
+     "bbox": {
+      "l": 218.99,
+      "t": 409.01,
+      "r": 364.88,
+      "b": 388.62,
+      "w": 145.89,
+      "h": 20.39,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36805,
+      "t": 0.48576,
+      "r": 0.61324,
+      "b": 0.46154
+     },
+     "text": "Tsien, R. Y. A non-disruptive technique for loading calcium buffers and indicators into cells. Nature 290, 527-528 (1981).",
+     "text_len": 122,
+     "level": 2,
+     "element_id": "p7_e84"
+    },
+    {
+     "reading_order": 85,
+     "page": 7,
+     "label": "list_item",
+     "bbox": {
+      "l": 218.99,
+      "t": 386.57,
+      "r": 358.16,
+      "b": 381.14,
+      "w": 139.17,
+      "h": 5.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36805,
+      "t": 0.45911,
+      "r": 0.60195,
+      "b": 0.45266
+     },
+     "text": "Plinius, G. S. Naturalis Historia Liber IX, §146 (77).",
+     "text_len": 54,
+     "level": 2,
+     "element_id": "p7_e85"
+    },
+    {
+     "reading_order": 86,
+     "page": 7,
+     "label": "list_item",
+     "bbox": {
+      "l": 218.99,
+      "t": 379.09,
+      "r": 368.61,
+      "b": 343.74,
+      "w": 149.61,
+      "h": 35.35,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36805,
+      "t": 0.45023,
+      "r": 0.61951,
+      "b": 0.40824
+     },
+     "text": "Shimomura, O., Johnson, F. H. & Saiga, Y. Extraction, purification and properties of aequorin, a bioluminescent protein from the luminous hydromedusan, Aequorea. J. Cell. Comp. Physiol. 59, 223-239 (1962).",
+     "text_len": 205,
+     "level": 2,
+     "element_id": "p7_e86"
+    },
+    {
+     "reading_order": 87,
+     "page": 7,
+     "label": "list_item",
+     "bbox": {
+      "l": 218.99,
+      "t": 341.69,
+      "r": 371.91,
+      "b": 313.82,
+      "w": 152.92,
+      "h": 27.87,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36805,
+      "t": 0.40581,
+      "r": 0.62506,
+      "b": 0.37271
+     },
+     "text": "Morise, H., Shimomura, O., Johnson, F. H. & Winant, J. Intermolecular energy transfer in the bioluminescent system of Aequorea. Biochemistry 13, 2656-2662 (1974).",
+     "text_len": 162,
+     "level": 2,
+     "element_id": "p7_e87"
+    },
+    {
+     "reading_order": 88,
+     "page": 7,
+     "label": "list_item",
+     "bbox": {
+      "l": 218.99,
+      "t": 311.77,
+      "r": 374.05,
+      "b": 283.9,
+      "w": 155.05,
+      "h": 27.87,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36805,
+      "t": 0.37027,
+      "r": 0.62866,
+      "b": 0.33717
+     },
+     "text": "Tsuji, F. I., Ohmiya, Y., Fagan, T. F., Toh, H. & Inouye, S. Molecular evolution of the Ca 2+ -binding photoproteins of the Hydrozoa. Photochem. Photobiol. 62, 657-661 (1995).",
+     "text_len": 175,
+     "level": 2,
+     "element_id": "p7_e88"
+    },
+    {
+     "reading_order": 89,
+     "page": 7,
+     "label": "list_item",
+     "bbox": {
+      "l": 218.99,
+      "t": 281.85,
+      "r": 371.39,
+      "b": 246.5,
+      "w": 152.4,
+      "h": 35.35,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36805,
+      "t": 0.33474,
+      "r": 0.62418,
+      "b": 0.29276
+     },
+     "text": "Prasher, D., McCann, R. O. & Cormier, M. J. Cloning and expression of the cDNA coding for aequorin, a bioluminescent calcium-binding protein. Biochem. Biophys. Res. Commun. 126, 1259-1268 (1985).",
+     "text_len": 195,
+     "level": 2,
+     "element_id": "p7_e89"
+    },
+    {
+     "reading_order": 90,
+     "page": 7,
+     "label": "list_item",
+     "bbox": {
+      "l": 218.99,
+      "t": 244.45,
+      "r": 375.39,
+      "b": 216.58,
+      "w": 156.4,
+      "h": 27.87,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36805,
+      "t": 0.29032,
+      "r": 0.63091,
+      "b": 0.25722
+     },
+     "text": "Rizzuto, R., Simpson, A. W., Brini, M. & Pozzan, T. Rapid changes of mitochondrial Ca 2+ revealed by specifically targeted recombinant aequorin. Nature 358, 325-327 (1992); erratum in 360, 768 (1992).",
+     "text_len": 200,
+     "level": 2,
+     "element_id": "p7_e90"
+    },
+    {
+     "reading_order": 91,
+     "page": 7,
+     "label": "list_item",
+     "bbox": {
+      "l": 218.99,
+      "t": 214.53,
+      "r": 373.49,
+      "b": 186.66,
+      "w": 154.49,
+      "h": 27.87,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36805,
+      "t": 0.25479,
+      "r": 0.62771,
+      "b": 0.22169
+     },
+     "text": "Minta, A., Kao, J. P. & Tsien, R. Y. Fluorescent indicators for cytosolic calcium based on rhodamine and fluorescein chromophores. J. Biol. Chem. 264, 8171-8178 (1989).",
+     "text_len": 168,
+     "level": 2,
+     "element_id": "p7_e91"
+    },
+    {
+     "reading_order": 92,
+     "page": 7,
+     "label": "list_item",
+     "bbox": {
+      "l": 218.99,
+      "t": 184.61,
+      "r": 374.2,
+      "b": 164.22,
+      "w": 155.2,
+      "h": 20.39,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36805,
+      "t": 0.21925,
+      "r": 0.62891,
+      "b": 0.19504
+     },
+     "text": "Rizzuto, R., Brini, M. & Pozzan, T. Targeting recombinant aequorin to specific intracellular organelles. Methods Cell Biol. 40, 339-358 (1994).",
+     "text_len": 143,
+     "level": 2,
+     "element_id": "p7_e92"
+    },
+    {
+     "reading_order": 93,
+     "page": 7,
+     "label": "list_item",
+     "bbox": {
+      "l": 218.99,
+      "t": 162.17,
+      "r": 368.49,
+      "b": 141.78,
+      "w": 149.49,
+      "h": 20.39,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36805,
+      "t": 0.1926,
+      "r": 0.61931,
+      "b": 0.16838
+     },
+     "text": "Rizzuto, R. et al. Close contacts with the endoplasmic reticulum as determinants of mitochondrial Ca 2+ responses. Science 280, 1763-1766 (1998).",
+     "text_len": 145,
+     "level": 2,
+     "element_id": "p7_e93"
+    },
+    {
+     "reading_order": 94,
+     "page": 7,
+     "label": "list_item",
+     "bbox": {
+      "l": 218.99,
+      "t": 139.73,
+      "r": 373.36,
+      "b": 111.86,
+      "w": 154.37,
+      "h": 27.87,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36805,
+      "t": 0.16595,
+      "r": 0.6275,
+      "b": 0.13285
+     },
+     "text": "Marsault, R., Murgia, M., Pozzan, T. & Rizzuto, R. Domains of high Ca 2+ beneath the plasma membrane of living A7r5 cells. EMBO J. 16, 1575-1581 (1997).",
+     "text_len": 152,
+     "level": 2,
+     "element_id": "p7_e94"
+    },
+    {
+     "reading_order": 95,
+     "page": 7,
+     "label": "list_item",
+     "bbox": {
+      "l": 218.99,
+      "t": 109.81,
+      "r": 375.48,
+      "b": 81.94,
+      "w": 156.49,
+      "h": 27.87,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36805,
+      "t": 0.13042,
+      "r": 0.63106,
+      "b": 0.09732
+     },
+     "text": "Pinton, P., Pozzan, T. & Rizzuto, R. The Golgi apparatus is an inositol 1,4,5-trisphosphate-sensitive Ca 2+ store, with functional properties distinct from those of the endoplasmic reticulum. EMBO J. 17, 5298-5308 (1998).",
+     "text_len": 221,
+     "level": 2,
+     "element_id": "p7_e95"
+    },
+    {
+     "reading_order": 96,
+     "page": 7,
+     "label": "section_header",
+     "bbox": {
+      "l": 456.74,
+      "t": 785.72,
+      "r": 554.33,
+      "b": 775.91,
+      "w": 97.59,
+      "h": 9.81,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.76763,
+      "t": 0.93316,
+      "r": 0.93165,
+      "b": 0.92151
+     },
+     "text": "P ERSP EC T I V E S",
+     "text_len": 19,
+     "level": 1,
+     "element_id": "p7_e96"
+    },
+    {
+     "reading_order": 97,
+     "page": 7,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.74,
+      "t": 749.5,
+      "r": 544.59,
+      "b": 714.31,
+      "w": 149.85,
+      "h": 35.19,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66343,
+      "t": 0.89014,
+      "r": 0.91528,
+      "b": 0.84835
+     },
+     "text": "Rutter, G. A. et al. Subcellular imaging of intramitochondrial Ca 2+ with recombinant targeted aequorin: significance for the regulation of pyruvate dehydrogenase activity. Proc. Natl Acad. Sci. USA 93, 5489-5494 (1996).",
+     "text_len": 220,
+     "level": 2,
+     "element_id": "p7_e97"
+    },
+    {
+     "reading_order": 98,
+     "page": 7,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.74,
+      "t": 712.3,
+      "r": 552.99,
+      "b": 684.55,
+      "w": 158.25,
+      "h": 27.75,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66343,
+      "t": 0.84596,
+      "r": 0.92939,
+      "b": 0.813
+     },
+     "text": "Villalobos, C., Nunez, L., Chamero, P., Alonso, M. T. & Garcia-Sancho, J. Mitochondrial [Ca 2+ ] oscillations driven by local high [Ca 2+ ] domains generated by spontaneous electric activity. J. Biol. Chem. 276, 40293-40297 (2001).",
+     "text_len": 231,
+     "level": 2,
+     "element_id": "p7_e98"
+    },
+    {
+     "reading_order": 99,
+     "page": 7,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.74,
+      "t": 682.54,
+      "r": 548.25,
+      "b": 662.23,
+      "w": 153.51,
+      "h": 20.31,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66343,
+      "t": 0.81062,
+      "r": 0.92143,
+      "b": 0.7865
+     },
+     "text": "Chalfie, M., Tu, Y., Euskirchen, G., Ward, W. W. & Prasher, D. C. Green fluorescent protein as a marker for gene expression. Science 263, 802-805 (1994).",
+     "text_len": 153,
+     "level": 2,
+     "element_id": "p7_e99"
+    },
+    {
+     "reading_order": 100,
+     "page": 7,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.74,
+      "t": 660.49,
+      "r": 549.22,
+      "b": 639.91,
+      "w": 154.48,
+      "h": 20.58,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66343,
+      "t": 0.78443,
+      "r": 0.92306,
+      "b": 0.75999
+     },
+     "text": "Miyawaki, A. et al. Fluorescent indicators for Ca 2+ based on green fluorescent proteins and calmodulin. Nature 388, 882-887 (1997).",
+     "text_len": 132,
+     "level": 2,
+     "element_id": "p7_e100"
+    },
+    {
+     "reading_order": 101,
+     "page": 7,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.74,
+      "t": 637.9,
+      "r": 552.39,
+      "b": 595.27,
+      "w": 157.65,
+      "h": 42.63,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66343,
+      "t": 0.7576,
+      "r": 0.92839,
+      "b": 0.70697
+     },
+     "text": "Romoser, V. A., Hinkle, P. M. & Persechini, A. Detection in living cells of Ca 2+ -dependent changes in the fluorescence emission of an indicator composed of two green fluorescent protein variants linked by a calmodulinbinding sequence. A new class of fluorescent indicators. J. Biol. Chem. 272, 13270-13274 (1997).",
+     "text_len": 315,
+     "level": 2,
+     "element_id": "p7_e101"
+    },
+    {
+     "reading_order": 102,
+     "page": 7,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.74,
+      "t": 593.26,
+      "r": 536.64,
+      "b": 565.51,
+      "w": 141.9,
+      "h": 27.75,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66343,
+      "t": 0.70458,
+      "r": 0.90192,
+      "b": 0.67163
+     },
+     "text": "Baird, G. S., Zacharias, D. A. & Tsien, R. Y. Circular permutation and receptor insertion within green fluorescent proteins. Proc. Natl Acad. Sci. USA 96, 11241-11246 (1999).",
+     "text_len": 174,
+     "level": 2,
+     "element_id": "p7_e102"
+    },
+    {
+     "reading_order": 103,
+     "page": 7,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.74,
+      "t": 563.5,
+      "r": 551.04,
+      "b": 535.75,
+      "w": 156.3,
+      "h": 27.75,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66343,
+      "t": 0.66924,
+      "r": 0.92612,
+      "b": 0.63628
+     },
+     "text": "Nagai, T., Sawano, A., Park, E. S. & Miyawaki, A. Circularly permuted green fluorescent proteins engineered to sense Ca 2+ . Proc. Natl Acad. Sci. USA 98, 3197-3202 (2001).",
+     "text_len": 172,
+     "level": 2,
+     "element_id": "p7_e103"
+    },
+    {
+     "reading_order": 104,
+     "page": 7,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.74,
+      "t": 533.74,
+      "r": 539.82,
+      "b": 505.99,
+      "w": 145.08,
+      "h": 27.75,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66343,
+      "t": 0.6339,
+      "r": 0.90726,
+      "b": 0.60094
+     },
+     "text": "Miyawaki, A., Griesbeck, O., Heim, R. & Tsien, R. Y. Dynamic and quantitative Ca 2+ measurements using improved cameleons. Proc. Natl Acad. Sci. USA 96, 2135-2140 (1999).",
+     "text_len": 170,
+     "level": 2,
+     "element_id": "p7_e104"
+    },
+    {
+     "reading_order": 105,
+     "page": 7,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.74,
+      "t": 503.98,
+      "r": 548.11,
+      "b": 483.67,
+      "w": 153.37,
+      "h": 20.31,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66343,
+      "t": 0.59855,
+      "r": 0.92119,
+      "b": 0.57443
+     },
+     "text": "Nakai, J., Ohkura, M. & Imoto, K. A high signal-to-noise Ca 2+ probe composed of a single green fluorescent protein. Nature Biotechnol. 19, 137-141 (2001).",
+     "text_len": 155,
+     "level": 2,
+     "element_id": "p7_e105"
+    },
+    {
+     "reading_order": 106,
+     "page": 7,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.74,
+      "t": 481.93,
+      "r": 544.33,
+      "b": 461.35,
+      "w": 149.59,
+      "h": 20.58,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66343,
+      "t": 0.57236,
+      "r": 0.91484,
+      "b": 0.54792
+     },
+     "text": "Truong, K. et al. FRET-based in vivo Ca 2+ imaging by a new calmodulin-GFP fusion molecule. Nature Struct. Biol. 8, 1069-1073 (2001).",
+     "text_len": 133,
+     "level": 2,
+     "element_id": "p7_e106"
+    },
+    {
+     "reading_order": 107,
+     "page": 7,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.74,
+      "t": 459.34,
+      "r": 537.41,
+      "b": 439.03,
+      "w": 142.67,
+      "h": 20.31,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66343,
+      "t": 0.54553,
+      "r": 0.90321,
+      "b": 0.52141
+     },
+     "text": "Persechini, A., Lynch, J. A. & Romoser, V. A. Novel fluorescent indicator proteins for monitoring free intracellular Ca 2+ . Cell Calcium22, 209-216 (1997).",
+     "text_len": 156,
+     "level": 2,
+     "element_id": "p7_e107"
+    },
+    {
+     "reading_order": 108,
+     "page": 7,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.74,
+      "t": 437.29,
+      "r": 547.75,
+      "b": 409.27,
+      "w": 153.01,
+      "h": 28.02,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66343,
+      "t": 0.51935,
+      "r": 0.92059,
+      "b": 0.48607
+     },
+     "text": "Emmanouilidou, E. et al. Imaging Ca 2+ concentration changes at the secretory vesicle surface with a recombinant targeted cameleon. Curr. Biol. 9, 915-918 (1999).",
+     "text_len": 162,
+     "level": 2,
+     "element_id": "p7_e108"
+    },
+    {
+     "reading_order": 109,
+     "page": 7,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.74,
+      "t": 407.53,
+      "r": 550.52,
+      "b": 372.07,
+      "w": 155.78,
+      "h": 35.46,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66343,
+      "t": 0.484,
+      "r": 0.92524,
+      "b": 0.44189
+     },
+     "text": "Jaconi, M. et al. Inositol 1,4,5-trisphosphate directs Ca 2+ flow between mitochondria and the endoplasmic/sarcoplasmic reticulum: a role in regulating cardiac autonomic Ca 2+ spiking. Mol. Biol. Cell 11, 1845-1858 (2000).",
+     "text_len": 222,
+     "level": 2,
+     "element_id": "p7_e109"
+    },
+    {
+     "reading_order": 110,
+     "page": 7,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.74,
+      "t": 370.06,
+      "r": 552.39,
+      "b": 342.31,
+      "w": 157.65,
+      "h": 27.75,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66343,
+      "t": 0.4395,
+      "r": 0.92839,
+      "b": 0.40654
+     },
+     "text": "Isshiki, M., Ying, Y. S., Fujita, T. & Anderson, R. G. A molecular sensor detects signal transduction from caveolae in living cells. J. Biol. Chem. 277, 43389-43398 (2002).",
+     "text_len": 172,
+     "level": 2,
+     "element_id": "p7_e110"
+    },
+    {
+     "reading_order": 111,
+     "page": 7,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.74,
+      "t": 340.3,
+      "r": 550.5,
+      "b": 319.99,
+      "w": 155.76,
+      "h": 20.31,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66343,
+      "t": 0.40416,
+      "r": 0.92521,
+      "b": 0.38004
+     },
+     "text": "Ormo, M. et al. Crystal structure of the Aequorea victoria green fluorescent protein. Science 273, 1392-1395 (1996).",
+     "text_len": 116,
+     "level": 2,
+     "element_id": "p7_e111"
+    },
+    {
+     "reading_order": 112,
+     "page": 7,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.74,
+      "t": 317.98,
+      "r": 551.68,
+      "b": 297.67,
+      "w": 156.94,
+      "h": 20.31,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66343,
+      "t": 0.37765,
+      "r": 0.92719,
+      "b": 0.35353
+     },
+     "text": "Yang, F., Moss, L. G. & Phillips, G. N. Jr. The molecular structure of green fluorescent protein. Nature Biotechnol. 14, 1246-1251 (1996).",
+     "text_len": 138,
+     "level": 2,
+     "element_id": "p7_e112"
+    },
+    {
+     "reading_order": 113,
+     "page": 7,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.74,
+      "t": 295.66,
+      "r": 552.09,
+      "b": 282.79,
+      "w": 157.35,
+      "h": 12.87,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66343,
+      "t": 0.35114,
+      "r": 0.92788,
+      "b": 0.33586
+     },
+     "text": "Robert, V. et al. Beat-to-beat oscillations of mitochondrial [Ca 2+ ] in cardiac cells. EMBO J. 20, 4998-5007 (2001).",
+     "text_len": 117,
+     "level": 2,
+     "element_id": "p7_e113"
+    },
+    {
+     "reading_order": 114,
+     "page": 7,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.74,
+      "t": 280.78,
+      "r": 542.19,
+      "b": 253.03,
+      "w": 147.45,
+      "h": 27.75,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66343,
+      "t": 0.33347,
+      "r": 0.91124,
+      "b": 0.30051
+     },
+     "text": "Murgia, M. et al. Cytosolic free calcium concentration in the mitogenic stimulation of T lymphocytes by anti-CD3 monoclonal antibodies. Cell Calcium16, 167-180 (1994).",
+     "text_len": 167,
+     "level": 2,
+     "element_id": "p7_e114"
+    },
+    {
+     "reading_order": 115,
+     "page": 7,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.74,
+      "t": 251.02,
+      "r": 545.85,
+      "b": 230.71,
+      "w": 151.11,
+      "h": 20.31,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66343,
+      "t": 0.29812,
+      "r": 0.91739,
+      "b": 0.274
+     },
+     "text": "Kerr, R. et al. Optical imaging of calcium transients in neurons and pharyngeal muscle of C. elegans. Neuron 26, 583-594 (2000).",
+     "text_len": 128,
+     "level": 2,
+     "element_id": "p7_e115"
+    },
+    {
+     "reading_order": 116,
+     "page": 7,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.74,
+      "t": 228.7,
+      "r": 553.08,
+      "b": 200.95,
+      "w": 158.34,
+      "h": 27.75,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66343,
+      "t": 0.27162,
+      "r": 0.92955,
+      "b": 0.23866
+     },
+     "text": "Diegelmann, S., Fiala, A., Leibold, C., Spall, T. & Buchner, E. Transgenic flies expressing the fluorescence calcium sensor cameleon 2.1 under UAS control. Genesis 34, 95-98 (2002).",
+     "text_len": 181,
+     "level": 2,
+     "element_id": "p7_e116"
+    },
+    {
+     "reading_order": 117,
+     "page": 7,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.74,
+      "t": 198.94,
+      "r": 543.12,
+      "b": 171.19,
+      "w": 148.38,
+      "h": 27.75,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66343,
+      "t": 0.23627,
+      "r": 0.91281,
+      "b": 0.20331
+     },
+     "text": "Fiala, A. et al. Genetically expressed cameleon in Drosophila melanogaster is used to visualize olfactory information in projection neurons. Curr. Biol. 12, 1877-1884 (2002).",
+     "text_len": 174,
+     "level": 2,
+     "element_id": "p7_e117"
+    },
+    {
+     "reading_order": 118,
+     "page": 7,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.74,
+      "t": 169.18,
+      "r": 543.08,
+      "b": 141.43,
+      "w": 148.34,
+      "h": 27.75,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66343,
+      "t": 0.20093,
+      "r": 0.91274,
+      "b": 0.16797
+     },
+     "text": "Reiff, D. F., Thiel, P. R. & Schuster, C. M. Differential regulation of active zone density during long-term strengthening of Drosophila neuromuscular junctions. J. Neurosci. 22, 9399-9409 (2002).",
+     "text_len": 196,
+     "level": 2,
+     "element_id": "p7_e118"
+    },
+    {
+     "reading_order": 119,
+     "page": 7,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.74,
+      "t": 139.42,
+      "r": 553.3,
+      "b": 111.67,
+      "w": 158.56,
+      "h": 27.75,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66343,
+      "t": 0.16558,
+      "r": 0.92992,
+      "b": 0.13262
+     },
+     "text": "Yu, D., Baird, G. S., Tsien, R. Y. & Davis, R. L. Detection of calcium transients in Drosophila mushroom body neurons with camgaroo reporters. J. Neurosci. 23, 64-72 (2003).",
+     "text_len": 173,
+     "level": 2,
+     "element_id": "p7_e119"
+    },
+    {
+     "reading_order": 120,
+     "page": 7,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.74,
+      "t": 109.66,
+      "r": 551.25,
+      "b": 81.91,
+      "w": 156.51,
+      "h": 27.75,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66343,
+      "t": 0.13024,
+      "r": 0.92647,
+      "b": 0.09728
+     },
+     "text": "Patterson, G. H., Knobel, S. M., Sharif, W. D., Kain, S. R. & Piston, D. W. Use of the green fluorescent protein and its mutants in quantitative fluorescence microscopy. Biophys. J. 73, 2782-2790 (1997).",
+     "text_len": 203,
+     "level": 2,
+     "element_id": "p7_e120"
+    }
+   ]
+  },
+  {
+   "page_no": 8,
+   "width_pt": 595.0,
+   "height_pt": 842.0,
+   "png": "pages/page_0008.png",
+   "elements": [
+    {
+     "reading_order": 121,
+     "page": 8,
+     "label": "section_header",
+     "bbox": {
+      "l": 42.16,
+      "t": 785.72,
+      "r": 139.74,
+      "b": 775.91,
+      "w": 97.59,
+      "h": 9.81,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07086,
+      "t": 0.93316,
+      "r": 0.23486,
+      "b": 0.92151
+     },
+     "text": "P ERSP EC T I V E S",
+     "text_len": 19,
+     "level": 1,
+     "element_id": "p8_e121"
+    },
+    {
+     "reading_order": 122,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 42.97,
+      "t": 749.5,
+      "r": 200.59,
+      "b": 729.27,
+      "w": 157.62,
+      "h": 20.23,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07222,
+      "t": 0.89014,
+      "r": 0.33713,
+      "b": 0.86612
+     },
+     "text": "Griffin, B. A., Adams, S. R. & Tsien, R. Y. Specific covalent labeling of recombinant protein molecules inside live cells. Science 281, 269-272 (1998).",
+     "text_len": 151,
+     "level": 2,
+     "element_id": "p8_e122"
+    },
+    {
+     "reading_order": 123,
+     "page": 8,
+     "label": "section_header",
+     "bbox": {
+      "l": 42.97,
+      "t": 720.61,
+      "r": 103.05,
+      "b": 714.28,
+      "w": 60.08,
+      "h": 6.34,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07222,
+      "t": 0.85583,
+      "r": 0.17319,
+      "b": 0.84831
+     },
+     "text": "Acknowledgements",
+     "text_len": 16,
+     "level": 1,
+     "element_id": "p8_e123"
+    },
+    {
+     "reading_order": 124,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 42.97,
+      "t": 712.5,
+      "r": 201.6,
+      "b": 655.27,
+      "w": 158.63,
+      "h": 57.23,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07222,
+      "t": 0.8462,
+      "r": 0.33882,
+      "b": 0.77823
+     },
+     "text": "The original work by the authors was supported by grants from the Italian Ministry of University, the Italian Research Council (CNR), Italian Telethon, the Italian Association for Cancer Research (AIRC), ASI, Human Science Frontier and from the European Union (EU) to T.P. and R. Rizzuto. R. Rudolf is supported by an EU Marie Curie fellowship. We are grateful to G. Carmignoto and L. Filippin for supplying artwork and to P. Magalhães for help with image processing.",
+     "text_len": 467,
+     "level": 1,
+     "element_id": "p8_e124"
+    },
+    {
+     "reading_order": 125,
+     "page": 8,
+     "label": "section_header",
+     "bbox": {
+      "l": 60.54,
+      "t": 640.28,
+      "r": 113.14,
+      "b": 632.79,
+      "w": 52.6,
+      "h": 7.5,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.10175,
+      "t": 0.76043,
+      "r": 0.19015,
+      "b": 0.75153
+     },
+     "text": "Online links",
+     "text_len": 12,
+     "level": 1,
+     "element_id": "p8_e125"
+    },
+    {
+     "reading_order": 126,
+     "page": 8,
+     "label": "section_header",
+     "bbox": {
+      "l": 42.97,
+      "t": 623.7,
+      "r": 80.78,
+      "b": 618.41,
+      "w": 37.81,
+      "h": 5.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07222,
+      "t": 0.74074,
+      "r": 0.13576,
+      "b": 0.73445
+     },
+     "text": "DATABASES",
+     "text_len": 9,
+     "level": 1,
+     "element_id": "p8_e126"
+    },
+    {
+     "reading_order": 127,
+     "page": 8,
+     "label": "section_header",
+     "bbox": {
+      "l": 42.97,
+      "t": 616.16,
+      "r": 201.26,
+      "b": 611.04,
+      "w": 158.29,
+      "h": 5.12,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07222,
+      "t": 0.73178,
+      "r": 0.33825,
+      "b": 0.7257
+     },
+     "text": "The following terms in this article are linked online to:",
+     "text_len": 57,
+     "level": 1,
+     "element_id": "p8_e127"
+    },
+    {
+     "reading_order": 128,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 42.97,
+      "t": 608.9,
+      "r": 133.39,
+      "b": 596.07,
+      "w": 90.42,
+      "h": 12.83,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07222,
+      "t": 0.72316,
+      "r": 0.22418,
+      "b": 0.70792
+     },
+     "text": "Swiss-Prot: http://www.expasy.ch/ AEQ | CaM | GFP",
+     "text_len": 49,
+     "level": 1,
+     "element_id": "p8_e128"
+    },
+    {
+     "reading_order": 129,
+     "page": 8,
+     "label": "section_header",
+     "bbox": {
+      "l": 42.97,
+      "t": 586.7,
+      "r": 119.87,
+      "b": 581.41,
+      "w": 76.9,
+      "h": 5.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07222,
+      "t": 0.69679,
+      "r": 0.20146,
+      "b": 0.69051
+     },
+     "text": "FURTHER INFORMATION",
+     "text_len": 19,
+     "level": 1,
+     "element_id": "p8_e129"
+    },
+    {
+     "reading_order": 130,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 42.97,
+      "t": 579.3,
+      "r": 114.01,
+      "b": 573.87,
+      "w": 71.04,
+      "h": 5.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07222,
+      "t": 0.688,
+      "r": 0.19161,
+      "b": 0.68156
+     },
+     "text": "Tullio Pozzan's laboratory:",
+     "text_len": 27,
+     "level": 1,
+     "element_id": "p8_e130"
+    },
+    {
+     "reading_order": 131,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 42.97,
+      "t": 571.9,
+      "r": 154.43,
+      "b": 566.47,
+      "w": 111.46,
+      "h": 5.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07222,
+      "t": 0.67922,
+      "r": 0.25955,
+      "b": 0.67277
+     },
+     "text": "http://www.bio.unipd.it/~pozzan/home.html",
+     "text_len": 41,
+     "level": 1,
+     "element_id": "p8_e131"
+    },
+    {
+     "reading_order": 132,
+     "page": 8,
+     "label": "section_header",
+     "bbox": {
+      "l": 218.72,
+      "t": 749.5,
+      "r": 329.28,
+      "b": 744.07,
+      "w": 110.57,
+      "h": 5.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.3676,
+      "t": 0.89014,
+      "r": 0.55341,
+      "b": 0.88369
+     },
+     "text": "Venetian Institute of Molecular Medicine:",
+     "text_len": 41,
+     "level": 2,
+     "element_id": "p8_e132"
+    },
+    {
+     "reading_order": 133,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 218.72,
+      "t": 742.1,
+      "r": 267.13,
+      "b": 736.67,
+      "w": 48.42,
+      "h": 5.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.3676,
+      "t": 0.88135,
+      "r": 0.44896,
+      "b": 0.8749
+     },
+     "text": "http://www.vimm.it",
+     "text_len": 18,
+     "level": 2,
+     "element_id": "p8_e133"
+    },
+    {
+     "reading_order": 134,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 218.72,
+      "t": 734.97,
+      "r": 355.81,
+      "b": 721.87,
+      "w": 137.1,
+      "h": 13.1,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.3676,
+      "t": 0.87289,
+      "r": 0.598,
+      "b": 0.85733
+     },
+     "text": "Introduction to Ca 2+ measurement with fluorescent indicators:",
+     "text_len": 62,
+     "level": 2,
+     "element_id": "p8_e134"
+    },
+    {
+     "reading_order": 135,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 218.72,
+      "t": 719.9,
+      "r": 358.43,
+      "b": 707.07,
+      "w": 139.72,
+      "h": 12.83,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.3676,
+      "t": 0.85499,
+      "r": 0.6024,
+      "b": 0.83975
+     },
+     "text": "http://www.probes.com/handbook/sections/2001.html Atsushi Miyawaki's laboratory:",
+     "text_len": 80,
+     "level": 2,
+     "element_id": "p8_e135"
+    },
+    {
+     "reading_order": 136,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 218.72,
+      "t": 705.1,
+      "r": 292.14,
+      "b": 699.67,
+      "w": 73.42,
+      "h": 5.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.3676,
+      "t": 0.83741,
+      "r": 0.49099,
+      "b": 0.83096
+     },
+     "text": "http://www.riken.go.jp/engn/",
+     "text_len": 28,
+     "level": 2,
+     "element_id": "p8_e136"
+    },
+    {
+     "reading_order": 137,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 218.72,
+      "t": 697.7,
+      "r": 325.45,
+      "b": 692.27,
+      "w": 106.73,
+      "h": 5.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.3676,
+      "t": 0.82862,
+      "r": 0.54697,
+      "b": 0.82217
+     },
+     "text": "r-world/research/lab/nokagaku/tip/faculty/",
+     "text_len": 42,
+     "level": 2,
+     "element_id": "p8_e137"
+    },
+    {
+     "reading_order": 138,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 218.72,
+      "t": 690.3,
+      "r": 292.45,
+      "b": 684.87,
+      "w": 73.74,
+      "h": 5.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.3676,
+      "t": 0.81983,
+      "r": 0.49151,
+      "b": 0.81338
+     },
+     "text": "Roger Y. Tsien's laboratory:",
+     "text_len": 28,
+     "level": 2,
+     "element_id": "p8_e138"
+    },
+    {
+     "reading_order": 139,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 218.72,
+      "t": 682.9,
+      "r": 295.87,
+      "b": 677.47,
+      "w": 77.16,
+      "h": 5.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.3676,
+      "t": 0.81105,
+      "r": 0.49726,
+      "b": 0.8046
+     },
+     "text": "http://www.tsienlab.ucsd.edu/",
+     "text_len": 29,
+     "level": 2,
+     "element_id": "p8_e139"
+    },
+    {
+     "reading_order": 140,
+     "page": 8,
+     "label": "section_header",
+     "bbox": {
+      "l": 218.72,
+      "t": 668.1,
+      "r": 315.52,
+      "b": 662.81,
+      "w": 96.81,
+      "h": 5.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.3676,
+      "t": 0.79347,
+      "r": 0.53029,
+      "b": 0.78719
+     },
+     "text": "MICROSCOPES AND CAMERAS",
+     "text_len": 23,
+     "level": 1,
+     "element_id": "p8_e140"
+    },
+    {
+     "reading_order": 141,
+     "page": 8,
+     "label": "section_header",
+     "bbox": {
+      "l": 218.72,
+      "t": 660.7,
+      "r": 238.52,
+      "b": 655.27,
+      "w": 19.8,
+      "h": 5.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.3676,
+      "t": 0.78468,
+      "r": 0.40087,
+      "b": 0.77823
+     },
+     "text": "Biorad:",
+     "text_len": 7,
+     "level": 1,
+     "element_id": "p8_e141"
+    },
+    {
+     "reading_order": 142,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 218.72,
+      "t": 653.3,
+      "r": 370.24,
+      "b": 610.87,
+      "w": 151.52,
+      "h": 42.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.3676,
+      "t": 0.77589,
+      "r": 0.62225,
+      "b": 0.7255
+     },
+     "text": "http://microscopy.bio-rad.com/products/products.htm Leica: http://www.leica-microsystems.com/website/lms.nsf Perkin Elmer: http://lifesciences.perkinelmer.com Sutter Instruments: http://www.sutter.com T.I.L.L. Photonics: http://www.till-photonics.de/ Zeiss: http://www.zeiss.de/",
+     "text_len": 278,
+     "level": 1,
+     "element_id": "p8_e142"
+    },
+    {
+     "reading_order": 143,
+     "page": 8,
+     "label": "section_header",
+     "bbox": {
+      "l": 218.72,
+      "t": 601.5,
+      "r": 337.31,
+      "b": 596.21,
+      "w": 118.6,
+      "h": 5.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.3676,
+      "t": 0.71437,
+      "r": 0.56691,
+      "b": 0.70809
+     },
+     "text": "FLUORESCENT PROBES AND FILTERS",
+     "text_len": 30,
+     "level": 1,
+     "element_id": "p8_e143"
+    },
+    {
+     "reading_order": 144,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 218.72,
+      "t": 594.1,
+      "r": 306.07,
+      "b": 588.67,
+      "w": 87.35,
+      "h": 5.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.3676,
+      "t": 0.70558,
+      "r": 0.5144,
+      "b": 0.69913
+     },
+     "text": "Chroma: http://www.chroma.com",
+     "text_len": 29,
+     "level": 2,
+     "element_id": "p8_e144"
+    },
+    {
+     "reading_order": 145,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 218.72,
+      "t": 586.7,
+      "r": 362.44,
+      "b": 566.64,
+      "w": 143.72,
+      "h": 20.06,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.3676,
+      "t": 0.69679,
+      "r": 0.60914,
+      "b": 0.67297
+     },
+     "text": "Molecular Probes: http://www.probes.com Omega Opticals: http://www.omegafilters.com Access to this interactive links box is free online.",
+     "text_len": 136,
+     "level": 2,
+     "element_id": "p8_e145"
+    },
+    {
+     "reading_order": 146,
+     "page": 8,
+     "label": "picture",
+     "bbox": {
+      "l": 42.91,
+      "t": 538.88,
+      "r": 107.68,
+      "b": 525.8,
+      "w": 64.77,
+      "h": 13.07,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07212,
+      "t": 0.64,
+      "r": 0.18097,
+      "b": 0.62447
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p8_e146"
+    },
+    {
+     "reading_order": 147,
+     "page": 8,
+     "label": "section_header",
+     "bbox": {
+      "l": 41.85,
+      "t": 508.3,
+      "r": 248.71,
+      "b": 465.18,
+      "w": 206.86,
+      "h": 43.11,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07034,
+      "t": 0.60368,
+      "r": 0.418,
+      "b": 0.55247
+     },
+     "text": "20 years of Ins(1,4,5)P 3 , and 40 years before",
+     "text_len": 47,
+     "level": 1,
+     "element_id": "p8_e147"
+    },
+    {
+     "reading_order": 148,
+     "page": 8,
+     "label": "section_header",
+     "bbox": {
+      "l": 41.85,
+      "t": 442.69,
+      "r": 110.4,
+      "b": 432.26,
+      "w": 68.55,
+      "h": 10.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07034,
+      "t": 0.52576,
+      "r": 0.18555,
+      "b": 0.51337
+     },
+     "text": "Robin F. Irvine",
+     "text_len": 15,
+     "level": 1,
+     "element_id": "p8_e148"
+    },
+    {
+     "reading_order": 149,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 42.97,
+      "t": 418.96,
+      "r": 197.77,
+      "b": 345.27,
+      "w": 154.8,
+      "h": 73.69,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07222,
+      "t": 0.49758,
+      "r": 0.33239,
+      "b": 0.41006
+     },
+     "text": "This year marks the 20th birthday of the discovery of inositol-1,4,5-trisphosphate as a second messenger. The background to this discovery is a complex story that goes back more than 50 years and involves a large cast of characters, both chemical and human.",
+     "text_len": 257,
+     "level": 1,
+     "element_id": "p8_e149"
+    },
+    {
+     "reading_order": 150,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 218.72,
+      "t": 419.51,
+      "r": 377.48,
+      "b": 344.88,
+      "w": 158.76,
+      "h": 74.64,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.3676,
+      "t": 0.49823,
+      "r": 0.63442,
+      "b": 0.4096
+     },
+     "text": "Streb et al. 1 were the first to show that inositol1,4,5-trisphosphate (Ins(1,4,5)P 3 ) can mobilize Ca 2+ from stores in the endoplasmic reticulum (ER), and that it could therefore function as a second messenger that is generated by receptor activation and that regulates intracellular Ca 2+ .This account can only highlight the",
+     "text_len": 329,
+     "level": 1,
+     "element_id": "p8_e150"
+    },
+    {
+     "reading_order": 151,
+     "page": 8,
+     "label": "section_header",
+     "bbox": {
+      "l": 398.72,
+      "t": 743.76,
+      "r": 470.64,
+      "b": 736.07,
+      "w": 71.92,
+      "h": 7.69,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.67012,
+      "t": 0.88333,
+      "r": 0.79099,
+      "b": 0.87419
+     },
+     "text": "Box 1 | Inositides",
+     "text_len": 18,
+     "level": 1,
+     "element_id": "p8_e151"
+    },
+    {
+     "reading_order": 152,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 398.72,
+      "t": 727.05,
+      "r": 551.73,
+      "b": 656.67,
+      "w": 153.01,
+      "h": 70.39,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.67012,
+      "t": 0.86348,
+      "r": 0.92728,
+      "b": 0.77989
+     },
+     "text": "The word 'inositide' has had various meanings over the years that are covered by this article. In the present context, inositide is used as a blanket term for any compound containing inositol as a part of its structure. The two principal forms of inositide are inositol lipids and inositol phosphates.",
+     "text_len": 301,
+     "level": 1,
+     "element_id": "p8_e152"
+    },
+    {
+     "reading_order": 153,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 394.46,
+      "t": 638.87,
+      "r": 553.31,
+      "b": 564.88,
+      "w": 158.85,
+      "h": 73.99,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66296,
+      "t": 0.75875,
+      "r": 0.92993,
+      "b": 0.67088
+     },
+     "text": "principal milestones that led to the publication of this original paper and, for reasons discussed below, it focuses more on the inositides (BOX 1) than on Ca 2+ .An extensive history has been written by Bob Michell 2 , and briefer personal accounts have been written by Lowell Hokin 3 and Michael Berridge 4 .",
+     "text_len": 310,
+     "level": 1,
+     "element_id": "p8_e153"
+    },
+    {
+     "reading_order": 154,
+     "page": 8,
+     "label": "section_header",
+     "bbox": {
+      "l": 394.46,
+      "t": 550.6,
+      "r": 452.17,
+      "b": 543.55,
+      "w": 57.7,
+      "h": 7.06,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66296,
+      "t": 0.65392,
+      "r": 0.75995,
+      "b": 0.64555
+     },
+     "text": "The 'PI effect'",
+     "text_len": 15,
+     "level": 1,
+     "element_id": "p8_e154"
+    },
+    {
+     "reading_order": 155,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 394.46,
+      "t": 539.87,
+      "r": 553.33,
+      "b": 344.87,
+      "w": 158.86,
+      "h": 195.0,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66296,
+      "t": 0.64118,
+      "r": 0.92997,
+      "b": 0.40958
+     },
+     "text": "The original demonstration of receptorstimulated lipid turnover in 1953 (which is another anniversary to celebrate this year!) was a classic piece of serendipity that was imaginatively exploited 5 . Lowell and Mabel Hokin (FIG. 1a,b) were investigating what they believed to be an increase in the incorporation of 32 P into RNA,which was caused by the stimulation of pancreatic slices with acetylcholine.However, as they purified the RNA (they carried the radiolabelled samples with them from Sheffield,UK, to Halifax,Canada, before doing the purification), they noticed that the radioactivity was lost. So, they reinvestigated the discarded 'junk', and found that most of the radioactivity was in the phospholipid fraction. Separating individual phospholipids for analysis was difficult in",
+     "text_len": 790,
+     "level": 1,
+     "element_id": "p8_e155"
+    },
+    {
+     "reading_order": 156,
+     "page": 8,
+     "label": "picture",
+     "bbox": {
+      "l": 43.56,
+      "t": 333.1,
+      "r": 550.39,
+      "b": 81.61,
+      "w": 506.83,
+      "h": 251.48,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07321,
+      "t": 0.39561,
+      "r": 0.92503,
+      "b": 0.09692
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p8_e156"
+    }
+   ]
+  }
+ ],
+ "caption_blocks": [
+  {
+   "page": 2,
+   "blocks": [
+    {
+     "text": "Figure 1 | Procedure of a typical Ca 2+ measurement experiment. a | The",
+     "bbox": {
+      "l": 42.97,
+      "t": 456.03,
+      "r": 171.83,
+      "b": 439.41,
+      "w": 128.86,
+      "h": 16.62,
+      "coord": "pdf_points_bottomleft"
+     },
+     "element_ids": [
+      "p2_e25"
+     ]
+    }
+   ]
+  },
+  {
+   "page": 4,
+   "blocks": [
+    {
+     "text": "Figure 2 | Fluorescence resonance energy transfer. Fluorescence resonance energy transfer (FRET) is the physicochemical phenomenon that is characterized by the transfer of energy from an excited donor chromophore to an acceptor chromophore, without associated radiation release. FRET occurs when the donor emission and acceptor excitation spectra overlap considerably (not shown) and the two dipoles are very close to each other (2-7 nm). FRET is proportional to the 6 th power of the distance between the chromophores and, therefore, even minor conformational changes can induce considerable FRET changes. At the Förster radius, R 0 , 50% of the energy is transmitted to the acceptor. The occurrence of FRET results in the change of several fluorescence parameters - two used in the measurement of Ca 2+ concentration are changes in the emission spectrum at constant excitation and in the fluorescence decay time. The former has been used the most because of the simplicity of its use, the relatively limited cost and the high velocity of image acquisition, which mainly depends on the speed of the imaging system and the dissociation time constant of Ca 2+ from the probe. Fluorescence decay or lifetime imaging microscopy (FLIM), however, requires a dedicated apparatus and is slow, but it offers the advantage of being relatively insensitive to other environmental parameters, such as pH changes and unequal loading of the probe. τ1 and τ2 indicate the time constants of fluorescence decay in the absence or the presence of FRET, respectively.",
+     "bbox": {
+      "l": 42.97,
+      "t": 381.15,
+      "r": 376.5,
+      "b": 231.87,
+      "w": 333.54,
+      "h": 149.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "element_ids": [
+      "p4_e51"
+     ]
+    }
+   ]
+  },
+  {
+   "page": 5,
+   "blocks": [
+    {
+     "text": "Figure 3 | Examples of Ca 2+ -concentration signalling in living cells. a | Pseudo-colour-coded ratioimages obtained by conventional epifluorescence micrographs of a HeLa cell transfected with ratiometric pericam. Ca 2+ concentrations are colour coded with a basal Ca 2+ concentration in blue and a high Ca 2+ concentration in yellow and red. Note the strong increase in mitochondrial Ca 2+ concentration on histamine-induced release from the endoplasmic reticulum (see also Online Video 1). b | The pseudocolour-coded ratio-images (as in FIG. 3a) of indo-1-loaded acute brain slices were obtained by confocal microscopy and show the Ca 2+ waves in astrocytes that were induced by stimulation of the CA1 nerve fibres that contact the CA3 region of the hippocampus (known as the 'Schaffer collateral pathway') with an extracellular electrode, which results in the depolarization of the nerve terminals and the release of neurotransmitter. The panels show sequential frames of Online Video 2. Note that the waves are sweeping from one process to another, traversing the whole cell. The numbers indicate the time after stimulation. c | Two-photon confocal micrographs of a muscle fibre from tibialis anterior muscle transfected with cytoplasmic cameleon in live mouse. The upper four panels show the yellow (YFP) and cyan fluorescence channel micrographs (CFP) from the cameleon probe that are responsible for the pseudo-colour-coded ratio-images (lower 2 panels) as in FIG. 3a. Note the increase in the intracellular Ca 2+ concentration in the muscle on stimulation of the sciatic nerve.",
+     "bbox": {
+      "l": 218.99,
+      "t": 230.91,
+      "r": 553.65,
+      "b": 81.29,
+      "w": 334.66,
+      "h": 149.62,
+      "coord": "pdf_points_bottomleft"
+     },
+     "element_ids": [
+      "p5_e64"
+     ]
+    }
+   ]
+  },
+  {
+   "page": 6,
+   "blocks": [
+    {
+     "text": "Figure 4 | Description of major decisions for the planning of a Ca 2+ -concentration imaging experiment. The flow chart summarizes the main decisions to be made in a typical Ca 2+ -concentration imaging experiment (left column, green) and the corresponding hardware that is available at present for each of these steps (right columns, blue and yellow). At certain points, according to the experimental approach, there are several choices of hardware, which are indicated by forked lines. *The use of a monochromator increases the time resolution considerably when compared with filter wheel-equipped microscopes. While the costs associated with confocal laser scanning microscopy are considerably higher than those associated with conventional microscopy, the costs associated with multiphoton microscopy are even greater. ‡ Note that targeted chemical probes are only available in the form of rhod2 for mitochondria. Low-affinity dyes could be used under certain instances for Ca 2+ -concentration measurements in the endoplasmic reticulum. FW, filter wheel; INT, intensity measurement; MC, monochromator; MR, emission ratioing; XR, excitation ratioing.",
+     "bbox": {
+      "l": 42.97,
+      "t": 551.05,
+      "r": 552.67,
+      "b": 477.43,
+      "w": 509.7,
+      "h": 73.62,
+      "coord": "pdf_points_bottomleft"
+     },
+     "element_ids": [
+      "p6_e67"
+     ]
+    }
+   ]
+  }
+ ],
+ "uncaptioned_pictures": [
+  {
+   "page": 1,
+   "bbox": {
+    "l": 44.71,
+    "t": 601.92,
+    "r": 117.17,
+    "b": 588.6,
+    "w": 72.46,
+    "h": 13.32,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": false,
+   "element_id": "p1_e1"
+  },
+  {
+   "page": 1,
+   "bbox": {
+    "l": 396.45,
+    "t": 383.48,
+    "r": 553.11,
+    "b": 232.33,
+    "w": 156.67,
+    "h": 151.15,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": true,
+   "element_id": "p1_e13"
+  },
+  {
+   "page": 1,
+   "bbox": {
+    "l": 396.0,
+    "t": 206.52,
+    "r": 552.55,
+    "b": 87.18,
+    "w": 156.55,
+    "h": 119.34,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": true,
+   "element_id": "p1_e18"
+  },
+  {
+   "page": 2,
+   "bbox": {
+    "l": 55.62,
+    "t": 621.03,
+    "r": 205.07,
+    "b": 475.91,
+    "w": 149.45,
+    "h": 145.12,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": true,
+   "element_id": "p2_e24"
+  },
+  {
+   "page": 3,
+   "bbox": {
+    "l": 219.61,
+    "t": 748.98,
+    "r": 555.84,
+    "b": 357.77,
+    "w": 336.24,
+    "h": 391.21,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": true,
+   "element_id": "p3_e41"
+  },
+  {
+   "page": 8,
+   "bbox": {
+    "l": 42.91,
+    "t": 538.88,
+    "r": 107.68,
+    "b": 525.8,
+    "w": 64.77,
+    "h": 13.07,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": false,
+   "element_id": "p8_e146"
+  },
+  {
+   "page": 8,
+   "bbox": {
+    "l": 43.56,
+    "t": 333.1,
+    "r": 550.39,
+    "b": 81.61,
+    "w": 506.83,
+    "h": 251.48,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": true,
+   "element_id": "p8_e156"
+  }
+ ]
+}

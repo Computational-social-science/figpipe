@@ -1,0 +1,5311 @@
+{
+ "paper_id": "2015_nature_deep_learning_aee96f20",
+ "source_pdf": "D:\\2024-Biological neural networks(BNNs)\\! 2015-Nature-Deep learning.pdf",
+ "source_sha256": "b889f4a6817608b32f9294a8f503f9f943432c89b2f30c53cff289cb3356d0f3",
+ "source_name": "! 2015-Nature-Deep learning.pdf",
+ "n_pages": 9,
+ "page_size_pt": [
+  595.28,
+  782.36
+ ],
+ "coordinate_note": "bbox is PDF points with origin at the BOTTOM-LEFT, y increasing upward; bbox_norm divides by page size.",
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "generated_at": "2026-10-18T11:24:04",
+ "pages": [
+  {
+   "page_no": 1,
+   "width_pt": 595.276,
+   "height_pt": 782.362,
+   "png": "pages/page_0001.png",
+   "elements": [
+    {
+     "reading_order": 0,
+     "page": 1,
+     "label": "picture",
+     "bbox": {
+      "l": 36.71,
+      "t": 746.66,
+      "r": 178.14,
+      "b": 717.69,
+      "w": 141.43,
+      "h": 28.97,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06167,
+      "t": 0.95437,
+      "r": 0.29926,
+      "b": 0.91734
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p1_e0"
+    },
+    {
+     "reading_order": 1,
+     "page": 1,
+     "label": "section_header",
+     "bbox": {
+      "l": 36.85,
+      "t": 674.6,
+      "r": 213.88,
+      "b": 648.35,
+      "w": 177.03,
+      "h": 26.25,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.86226,
+      "r": 0.3593,
+      "b": 0.82871
+     },
+     "text": "Deep learning",
+     "text_len": 13,
+     "level": 1,
+     "element_id": "p1_e1"
+    },
+    {
+     "reading_order": 2,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 36.85,
+      "t": 640.77,
+      "r": 241.28,
+      "b": 631.08,
+      "w": 204.43,
+      "h": 9.69,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.81902,
+      "r": 0.40532,
+      "b": 0.80663
+     },
+     "text": "Yann LeCun1,2, Yoshua Bengio3 & Geoffrey Hinton4,5",
+     "text_len": 50,
+     "level": 1,
+     "element_id": "p1_e2"
+    },
+    {
+     "reading_order": 3,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 45.35,
+      "t": 598.51,
+      "r": 544.48,
+      "b": 526.8,
+      "w": 499.13,
+      "h": 71.72,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07618,
+      "t": 0.765,
+      "r": 0.91467,
+      "b": 0.67335
+     },
+     "text": "Deep learning allows computational models that are composed of multiple processing layers to learn representations of data with multiple levels of abstraction. These methods have dramatically improved the state-of-the-art in speech recognition, visual object recognition, object detection and many other domains such as drug discovery and genomics. Deep learning discovers intricate structure in large data sets by using the backpropagation algorithm to indicate how a machine should change its internal parameters that are used to compute the representation in each layer from the representation in the previous layer. Deep convolutional nets have brought about breakthroughs in processing images, video, speech and audio, whereas recurrent nets have shone light on sequential data such as text and speech.",
+     "text_len": 807,
+     "level": 1,
+     "element_id": "p1_e3"
+    },
+    {
+     "reading_order": 4,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 35.77,
+      "t": 503.59,
+      "r": 289.23,
+      "b": 411.3,
+      "w": 253.46,
+      "h": 92.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06009,
+      "t": 0.64368,
+      "r": 0.48588,
+      "b": 0.52572
+     },
+     "text": "M achine-learning technology powers many aspects of modern society: from web searches to content filtering on social networks to recommendations on e-commerce websites, and it is increasingly present in consumer products such as cameras and smartphones. Machine-learning systems are used to identify objects in images, transcribe speech into text, match news items, posts or products with users' interests, and select relevant results of search. Increasingly, these applications make use of a class of techniques called deep learning.",
+     "text_len": 534,
+     "level": 1,
+     "element_id": "p1_e4"
+    },
+    {
+     "reading_order": 5,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 36.85,
+      "t": 409.06,
+      "r": 289.23,
+      "b": 327.3,
+      "w": 252.38,
+      "h": 81.76,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.52285,
+      "r": 0.48588,
+      "b": 0.41835
+     },
+     "text": "Conventional machine-learning techniques were limited in their ability to process natural data in their raw form. For decades, constructing a pattern-recognition or machine-learning system required careful engineering and considerable domain expertise to design a feature extractor that transformed the raw data (such as the pixel values of an image) into a suitable internal representation or feature vector from which the learning subsystem, often a classifier, could detect or classify patterns in the input.",
+     "text_len": 511,
+     "level": 1,
+     "element_id": "p1_e5"
+    },
+    {
+     "reading_order": 6,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 36.85,
+      "t": 325.06,
+      "r": 289.24,
+      "b": 106.8,
+      "w": 252.39,
+      "h": 218.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.41549,
+      "r": 0.48589,
+      "b": 0.13651
+     },
+     "text": "Representation learning is a set of methods that allows a machine to be fed with raw data and to automatically discover the representations needed for detection or classification. Deep-learning methods are representation-learning methods with multiple levels of representation, obtained by composing simple but non-linear modules that each transform the representation at one level (starting with the raw input) into a representation at a higher, slightly more abstract level. With the composition of enough such transformations, very complex functions can be learned. For classification tasks, higher layers of representation amplify aspects of the input that are important for discrimination and suppress irrelevant variations. An image, for example, comes in the form of an array of pixel values, and the learned features in the first layer of representation typically represent the presence or absence of edges at particular orientations and locations in the image. The second layer typically detects motifs by spotting particular arrangements of edges, regardless of small variations in the edge positions. The third layer may assemble motifs into larger combinations that correspond to parts of familiar objects, and subsequent layers would detect objects as combinations of these parts. The key aspect of deep learning is that these layers of features are not designed by human engineers: they are learned from data using a general-purpose learning procedure.",
+     "text_len": 1466,
+     "level": 1,
+     "element_id": "p1_e6"
+    },
+    {
+     "reading_order": 7,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 36.85,
+      "t": 104.56,
+      "r": 289.24,
+      "b": 75.3,
+      "w": 252.39,
+      "h": 29.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.13365,
+      "r": 0.48589,
+      "b": 0.09625
+     },
+     "text": "Deep learning is making major advances in solving problems that have resisted the best attempts of the artificial intelligence community for many years. It has turned out to be very good at discovering intricate structures in high-dimensional data and is therefore applicable to many domains of science, business and government. In addition to beating records in image recognition 1-4 and speech recognition 5-7 , it has beaten other machine-learning techniques at predicting the activity of potential drug molecules 8 , analysing particle accelerator data 9,10 , reconstructing brain circuits 11 , and predicting the effects of mutations in non-coding DNA on gene expression and disease 12,13 . Perhaps more surprisingly, deep learning has produced extremely promising results for various tasks in natural language understanding 14 , particularly topic classification, sentiment analysis, question answering 15 and language translation 16,17 .",
+     "text_len": 944,
+     "level": 1,
+     "element_id": "p1_e7"
+    },
+    {
+     "reading_order": 8,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 300.47,
+      "t": 388.06,
+      "r": 552.87,
+      "b": 327.3,
+      "w": 252.39,
+      "h": 60.76,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50476,
+      "t": 0.49601,
+      "r": 0.92876,
+      "b": 0.41835
+     },
+     "text": "We think that deep learning will have many more successes in the near future because it requires very little engineering by hand, so it can easily take advantage of increases in the amount of available computation and data. New learning algorithms and architectures that are currently being developed for deep neural networks will only accelerate this progress.",
+     "text_len": 361,
+     "level": 1,
+     "element_id": "p1_e8"
+    },
+    {
+     "reading_order": 9,
+     "page": 1,
+     "label": "section_header",
+     "bbox": {
+      "l": 300.47,
+      "t": 315.5,
+      "r": 390.88,
+      "b": 306.13,
+      "w": 90.41,
+      "h": 9.38,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50476,
+      "t": 0.40327,
+      "r": 0.65664,
+      "b": 0.39129
+     },
+     "text": "Supervised learning",
+     "text_len": 19,
+     "level": 1,
+     "element_id": "p1_e9"
+    },
+    {
+     "reading_order": 10,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 300.47,
+      "t": 304.06,
+      "r": 552.88,
+      "b": 138.3,
+      "w": 252.41,
+      "h": 165.76,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50476,
+      "t": 0.38864,
+      "r": 0.92878,
+      "b": 0.17677
+     },
+     "text": "The most common form of machine learning, deep or not, is supervised learning. Imagine that we want to build a system that can classify images as containing, say, a house, a car, a person or a pet. We first collect a large data set of images of houses, cars, people and pets, each labelled with its category. During training, the machine is shown an image and produces an output in the form of a vector of scores, one for each category. We want the desired category to have the highest score of all categories, but this is unlikely to happen before training. We compute an objective function that measures the error (or distance) between the output scores and the desired pattern of scores. The machine then modifies its internal adjustable parameters to reduce this error. These adjustable parameters, often called weights, are real numbers that can be seen as 'knobs' that define the input-output function of the machine. In a typical deep-learning system, there may be hundreds of millions of these adjustable weights, and hundreds of millions of labelled examples with which to train the machine.",
+     "text_len": 1100,
+     "level": 1,
+     "element_id": "p1_e10"
+    },
+    {
+     "reading_order": 11,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 300.47,
+      "t": 136.06,
+      "r": 552.76,
+      "b": 85.8,
+      "w": 252.28,
+      "h": 50.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50476,
+      "t": 0.17391,
+      "r": 0.92858,
+      "b": 0.10967
+     },
+     "text": "To properly adjust the weight vector, the learning algorithm computes a gradient vector that, for each weight, indicates by what amount the error would increase or decrease if the weight were increased by a tiny amount. The weight vector is then adjusted in the opposite direction to the gradient vector.",
+     "text_len": 304,
+     "level": 1,
+     "element_id": "p1_e11"
+    },
+    {
+     "reading_order": 12,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 308.98,
+      "t": 83.56,
+      "r": 552.68,
+      "b": 75.3,
+      "w": 243.7,
+      "h": 8.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51905,
+      "t": 0.1068,
+      "r": 0.92844,
+      "b": 0.09625
+     },
+     "text": "The objective function, averaged over all the training examples, can be seen as a kind of hilly landscape in the high-dimensional space of weight values. The negative gradient vector indicates the direction of steepest descent in this landscape, taking it closer to a minimum, where the output error is low on average.",
+     "text_len": 318,
+     "level": 1,
+     "element_id": "p1_e12"
+    },
+    {
+     "reading_order": 13,
+     "page": 1,
+     "label": "footnote",
+     "bbox": {
+      "l": 36.85,
+      "t": 57.93,
+      "r": 543.89,
+      "b": 34.65,
+      "w": 507.04,
+      "h": 23.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.07405,
+      "r": 0.91368,
+      "b": 0.04429
+     },
+     "text": "1 Facebook AI Research, 770 Broadway, New York, New York 10003 USA. 2 New York University, 715 Broadway, New York, New York 10003, USA. 3 Department of Computer Science and Operations Research Université de Montréal, Pavillon André-Aisenstadt, PO Box 6128 Centre-Ville STN Montréal, Quebec H3C 3J7, Canada. 4 Google, 1600 Amphitheatre Parkway, Mountain View, California 94043, USA. 5 Department of Computer Science, University of Toronto, 6 King's College Road, Toronto, Ontario M5S 3G4, Canada.",
+     "text_len": 495,
+     "level": 1,
+     "element_id": "p1_e13"
+    }
+   ]
+  },
+  {
+   "page_no": 2,
+   "width_pt": 595.276,
+   "height_pt": 782.362,
+   "png": "pages/page_0002.png",
+   "elements": [
+    {
+     "reading_order": 14,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 682.06,
+      "r": 294.88,
+      "b": 537.3,
+      "w": 252.36,
+      "h": 144.76,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.8718,
+      "r": 0.49537,
+      "b": 0.68677
+     },
+     "text": "In practice, most practitioners use a procedure called stochastic gradient descent (SGD). This consists of showing the input vector for a few examples, computing the outputs and the errors, computing the average gradient for those examples, and adjusting the weights accordingly. The process is repeated for many small sets of examples from the training set until the average of the objective function stops decreasing. It is called stochastic because each small set of examples gives a noisy estimate of the average gradient over all examples. This simple procedure usually finds a good set of weights surprisingly quickly when compared with far more elaborate optimization techniques 18 . After training, the performance of the system is measured on a different set of examples called a test set. This serves to test the generalization ability of the machine - its ability to produce sensible answers on new inputs that it has never seen during training.",
+     "text_len": 956,
+     "level": 1,
+     "element_id": "p2_e14"
+    },
+    {
+     "reading_order": 15,
+     "page": 2,
+     "label": "picture",
+     "bbox": {
+      "l": 478.37,
+      "t": 761.88,
+      "r": 558.82,
+      "b": 742.6,
+      "w": 80.45,
+      "h": 19.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.80361,
+      "t": 0.97382,
+      "r": 0.93876,
+      "b": 0.94918
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p2_e15"
+    },
+    {
+     "reading_order": 16,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 724.06,
+      "r": 558.51,
+      "b": 673.8,
+      "w": 252.36,
+      "h": 50.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.92548,
+      "r": 0.93824,
+      "b": 0.86124
+     },
+     "text": "Many of the current practical applications of machine learning use linear classifiers on top of hand-engineered features. A two-class linear classifier computes a weighted sum of the feature vector components. If the weighted sum is above a threshold, the input is classified as belonging to a particular category.",
+     "text_len": 314,
+     "level": 1,
+     "element_id": "p2_e16"
+    },
+    {
+     "reading_order": 17,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 671.56,
+      "r": 558.55,
+      "b": 537.3,
+      "w": 252.41,
+      "h": 134.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.85838,
+      "r": 0.9383,
+      "b": 0.68677
+     },
+     "text": "Since the 1960s we have known that linear classifiers can only carve their input space into very simple regions, namely half-spaces separated by a hyperplane 19 . But problems such as image and speech recognition require the input-output function to be insensitive to irrelevant variations of the input, such as variations in position, orientation or illumination of an object, or variations in the pitch or accent of speech, while being very sensitive to particular minute variations (for example, the difference between a white wolf and a breed of wolf-like white dog called a Samoyed). At the pixel level, images of two Samoyeds in different poses and in different environments may be very different from each other, whereas two images of a Samoyed and a wolf in the same position and on similar backgrounds may be very similar to each other. A linear classifier, or any other 'shallow' classifier operating on",
+     "text_len": 913,
+     "level": 1,
+     "element_id": "p2_e17"
+    },
+    {
+     "reading_order": 18,
+     "page": 2,
+     "label": "picture",
+     "bbox": {
+      "l": 78.17,
+      "t": 523.05,
+      "r": 508.25,
+      "b": 224.15,
+      "w": 430.08,
+      "h": 298.9,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.13132,
+      "t": 0.66855,
+      "r": 0.85381,
+      "b": 0.2865
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p2_e18"
+    },
+    {
+     "reading_order": 19,
+     "page": 2,
+     "label": "caption",
+     "bbox": {
+      "l": 42.5,
+      "t": 211.26,
+      "r": 294.79,
+      "b": 32.83,
+      "w": 252.29,
+      "h": 178.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0714,
+      "t": 0.27003,
+      "r": 0.49522,
+      "b": 0.04196
+     },
+     "text": "Figure 1 | Multilayer neural networks and backpropagation. a, A multilayer neural network (shown by the connected dots) can distort the input space to make the classes of data (examples of which are on the red and blue lines) linearly separable. Note how a regular grid (shown on the left) in input space is also transformed (shown in the middle panel) by hidden units. This is an illustrative example with only two input units, two hidden units and one output unit, but the networks used for object recognition or natural language processing contain tens or hundreds of thousands of units. Reproduced with permission from C. Olah (http://colah.github.io/). b, The chain rule of derivatives tells us how two small effects (that of a small change of x on y, and that of y on z) are composed. A small change Δx in x gets transformed first into a small change Δy in y by getting multiplied by ∂y/∂x (that is, the definition of partial derivative). Similarly, the change Δy creates a change Δz in z. Substituting one equation into the other gives the chain rule of derivatives - how Δx gets turned into Δz through multiplication by the product of ∂y/∂x and ∂z/∂x. It also works when x, y and z are vectors (and the derivatives are Jacobian matrices). c, The equations used for computing the forward pass in a neural net with two hidden layers and one output layer, each constituting a module through",
+     "text_len": 1395,
+     "level": 2,
+     "element_id": "p2_e19"
+    },
+    {
+     "reading_order": 20,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 306.13,
+      "t": 211.19,
+      "r": 556.0,
+      "b": 31.93,
+      "w": 249.87,
+      "h": 179.27,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51427,
+      "t": 0.26994,
+      "r": 0.93402,
+      "b": 0.04081
+     },
+     "text": "which one can backpropagate gradients. At each layer, we first compute the total input z to each unit, which is a weighted sum of the outputs of the units in the layer below. Then a non-linear function f(.) is applied to z to get the output of the unit. For simplicity, we have omitted bias terms. The non-linear functions used in neural networks include the rectified linear unit (ReLU) f(z) = max(0,z), commonly used in recent years, as well as the more conventional sigmoids, such as the hyberbolic tangent, f(z) = (exp(z) - exp(-z))/(exp(z) + exp(-z)) and logistic function logistic, f(z) = 1/(1 + exp(-z)). d, The equations used for computing the backward pass. At each hidden layer we compute the error derivative with respect to the output of each unit, which is a weighted sum of the error derivatives with respect to the total inputs to the units in the layer above. We then convert the error derivative with respect to the output into the error derivative with respect to the input by multiplying it by the gradient of f(z). At the output layer, the error derivative with respect to the output of a unit is computed by differentiating the cost function. This gives yl - tl if the cost function for unit l is 0.5(yl - tl) 2 , where tl is the target value. Once the ∂E/∂zk is known, the error-derivative for the weight wjk on the connection from unit j in the layer below is just yj ∂E/∂zk.",
+     "text_len": 1398,
+     "level": 1,
+     "element_id": "p2_e20"
+    }
+   ]
+  },
+  {
+   "page_no": 3,
+   "width_pt": 595.276,
+   "height_pt": 782.362,
+   "png": "pages/page_0003.png",
+   "elements": [
+    {
+     "reading_order": 21,
+     "page": 3,
+     "label": "picture",
+     "bbox": {
+      "l": 35.8,
+      "t": 761.56,
+      "r": 117.01,
+      "b": 742.78,
+      "w": 81.21,
+      "h": 18.78,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06014,
+      "t": 0.97341,
+      "r": 0.19656,
+      "b": 0.94941
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p3_e21"
+    },
+    {
+     "reading_order": 22,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 39.25,
+      "t": 723.93,
+      "r": 404.03,
+      "b": 717.97,
+      "w": 364.78,
+      "h": 5.96,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06594,
+      "t": 0.92531,
+      "r": 0.67873,
+      "b": 0.9177
+     },
+     "text": "Samoyed (16); Papillon (5.7); Pomeranian (2.7); Arctic fox (1.0); Eskimo dog (0.6); white wolf (0.4); Siberian husky (0.4)",
+     "text_len": 122,
+     "level": 1,
+     "element_id": "p3_e22"
+    },
+    {
+     "reading_order": 23,
+     "page": 3,
+     "label": "picture",
+     "bbox": {
+      "l": 35.58,
+      "t": 704.75,
+      "r": 548.03,
+      "b": 507.96,
+      "w": 512.46,
+      "h": 196.79,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.05977,
+      "t": 0.9008,
+      "r": 0.92063,
+      "b": 0.64926
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p3_e23"
+    },
+    {
+     "reading_order": 24,
+     "page": 3,
+     "label": "caption",
+     "bbox": {
+      "l": 36.85,
+      "t": 501.57,
+      "r": 275.81,
+      "b": 465.69,
+      "w": 238.96,
+      "h": 35.88,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.6411,
+      "r": 0.46333,
+      "b": 0.59524
+     },
+     "text": "Figure 2 | Inside a convolutional network. The outputs (not the filters) of each layer (horizontally) of a typical convolutional network architecture applied to the image of a Samoyed dog (bottom left; and RGB (red, green, blue) inputs, bottom right). Each rectangular image is a feature map",
+     "text_len": 291,
+     "level": 2,
+     "element_id": "p3_e24"
+    },
+    {
+     "reading_order": 25,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 300.48,
+      "t": 501.57,
+      "r": 551.28,
+      "b": 465.69,
+      "w": 250.8,
+      "h": 35.88,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50477,
+      "t": 0.6411,
+      "r": 0.92609,
+      "b": 0.59524
+     },
+     "text": "corresponding to the output for one of the learned features, detected at each of the image positions. Information flows bottom up, with lower-level features acting as oriented edge detectors, and a score is computed for each image class in output. ReLU, rectified linear unit.",
+     "text_len": 276,
+     "level": 1,
+     "element_id": "p3_e25"
+    },
+    {
+     "reading_order": 26,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 36.85,
+      "t": 451.06,
+      "r": 289.2,
+      "b": 295.8,
+      "w": 252.35,
+      "h": 155.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.57654,
+      "r": 0.48583,
+      "b": 0.37809
+     },
+     "text": "raw pixels could not possibly distinguish the latter two, while putting the former two in the same category. This is why shallow classifiers require a good feature extractor that solves the selectivity-invariance dilemma - one that produces representations that are selective to the aspects of the image that are important for discrimination, but that are invariant to irrelevant aspects such as the pose of the animal. To make classifiers more powerful, one can use generic non-linear features, as with kernel methods 20 , but generic features such as those arising with the Gaussian kernel do not allow the learner to generalize well far from the training examples 21 . The conventional option is to hand design good feature extractors, which requires a considerable amount of engineering skill and domain expertise. But this can all be avoided if good features can be learned automatically using a general-purpose learning procedure. This is the key advantage of deep learning.",
+     "text_len": 980,
+     "level": 1,
+     "element_id": "p3_e26"
+    },
+    {
+     "reading_order": 27,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 36.85,
+      "t": 293.56,
+      "r": 289.16,
+      "b": 190.8,
+      "w": 252.31,
+      "h": 102.76,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.37522,
+      "r": 0.48576,
+      "b": 0.24388
+     },
+     "text": "A deep-learning architecture is a multilayer stack of simple modules, all (or most) of which are subject to learning, and many of which compute non-linear input-output mappings. Each module in the stack transforms its input to increase both the selectivity and the invariance of the representation. With multiple non-linear layers, say a depth of 5 to 20, a system can implement extremely intricate functions of its inputs that are simultaneously sensitive to minute details - distinguishing Samoyeds from white wolves - and insensitive to large irrelevant variations such as the background, pose, lighting and surrounding objects.",
+     "text_len": 631,
+     "level": 1,
+     "element_id": "p3_e27"
+    },
+    {
+     "reading_order": 28,
+     "page": 3,
+     "label": "section_header",
+     "bbox": {
+      "l": 36.85,
+      "t": 179.0,
+      "r": 257.86,
+      "b": 169.63,
+      "w": 221.01,
+      "h": 9.38,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.22879,
+      "r": 0.43318,
+      "b": 0.21682
+     },
+     "text": "Backpropagation to train multilayer architectures",
+     "text_len": 49,
+     "level": 1,
+     "element_id": "p3_e28"
+    },
+    {
+     "reading_order": 29,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 36.85,
+      "t": 169.09,
+      "r": 289.23,
+      "b": 64.8,
+      "w": 252.38,
+      "h": 104.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.21613,
+      "r": 0.48588,
+      "b": 0.08283
+     },
+     "text": "From the earliest days of pattern recognition 22,23 , the aim of researchers has been to replace hand-engineered features with trainable multilayer networks, but despite its simplicity, the solution was not widely understood until the mid 1980s. As it turns out, multilayer architectures can be trained by simple stochastic gradient descent. As long as the modules are relatively smooth functions of their inputs and of their internal weights, one can compute gradients using the backpropagation procedure. The idea that this could be done, and that it worked, was discovered independently by several different groups during the 1970s and 1980s 24-27 .",
+     "text_len": 652,
+     "level": 1,
+     "element_id": "p3_e29"
+    },
+    {
+     "reading_order": 30,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 36.85,
+      "t": 62.56,
+      "r": 289.19,
+      "b": 33.3,
+      "w": 252.34,
+      "h": 29.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.07996,
+      "r": 0.48581,
+      "b": 0.04256
+     },
+     "text": "The backpropagation procedure to compute the gradient of an objective function with respect to the weights of a multilayer stack of modules is nothing more than a practical application of the chain rule for derivatives. The key insight is that the derivative (or gradient) of the objective with respect to the input of a module can be computed by working backwards from the gradient with respect to the output of that module (or the input of the subsequent module) (Fig. 1). The backpropagation equation can be applied repeatedly to propagate gradients through all modules, starting from the output at the top (where the network produces its prediction) all the way to the bottom (where the external input is fed). Once these gradients have been computed, it is straightforward to compute the gradients with respect to the weights of each module.",
+     "text_len": 846,
+     "level": 1,
+     "element_id": "p3_e30"
+    },
+    {
+     "reading_order": 31,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 300.47,
+      "t": 346.06,
+      "r": 552.79,
+      "b": 190.8,
+      "w": 252.32,
+      "h": 155.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50476,
+      "t": 0.44233,
+      "r": 0.92863,
+      "b": 0.24388
+     },
+     "text": "Many applications of deep learning use feedforward neural network architectures (Fig. 1), which learn to map a fixed-size input (for example, an image) to a fixed-size output (for example, a probability for each of several categories). To go from one layer to the next, a set of units compute a weighted sum of their inputs from the previous layer and pass the result through a non-linear function. At present, the most popular non-linear function is the rectified linear unit (ReLU), which is simply the half-wave rectifier f(z) = max(z, 0). In past decades, neural nets used smoother non-linearities, such as tanh(z) or 1/(1 + exp(-z)), but the ReLU typically learns much faster in networks with many layers, allowing training of a deep supervised network without unsupervised pre-training 28 . Units that are not in the input or output layer are conventionally called hidden units. The hidden layers can be seen as distorting the input in a non-linear way so that categories become linearly separable by the last layer (Fig. 1).",
+     "text_len": 1031,
+     "level": 1,
+     "element_id": "p3_e31"
+    },
+    {
+     "reading_order": 32,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 300.47,
+      "t": 188.56,
+      "r": 552.85,
+      "b": 106.8,
+      "w": 252.38,
+      "h": 81.76,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50476,
+      "t": 0.24101,
+      "r": 0.92873,
+      "b": 0.13651
+     },
+     "text": "In the late 1990s, neural nets and backpropagation were largely forsaken by the machine-learning community and ignored by the computer-vision and speech-recognition communities. It was widely thought that learning useful, multistage, feature extractors with little prior knowledge was infeasible. In particular, it was commonly thought that simple gradient descent would get trapped in poor local minima - weight configurations for which no small change would reduce the average error.",
+     "text_len": 485,
+     "level": 1,
+     "element_id": "p3_e32"
+    },
+    {
+     "reading_order": 33,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 300.47,
+      "t": 104.56,
+      "r": 552.85,
+      "b": 33.3,
+      "w": 252.38,
+      "h": 71.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50476,
+      "t": 0.13365,
+      "r": 0.92873,
+      "b": 0.04256
+     },
+     "text": "In practice, poor local minima are rarely a problem with large networks. Regardless of the initial conditions, the system nearly always reaches solutions of very similar quality. Recent theoretical and empirical results strongly suggest that local minima are not a serious issue in general. Instead, the landscape is packed with a combinatorially large number of saddle points where the gradient is zero, and the surface curves up in most dimensions and curves down in the remainder 29,30 . The analysis seems to show that saddle points with only a few downward curving directions are present in very large numbers, but almost all of them have very similar values of the objective function. Hence, it does not much matter which of these saddle points the algorithm gets stuck at.",
+     "text_len": 779,
+     "level": 1,
+     "element_id": "p3_e33"
+    }
+   ]
+  },
+  {
+   "page_no": 4,
+   "width_pt": 595.276,
+   "height_pt": 782.362,
+   "png": "pages/page_0004.png",
+   "elements": [
+    {
+     "reading_order": 34,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 671.56,
+      "r": 294.9,
+      "b": 516.3,
+      "w": 252.38,
+      "h": 155.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.85838,
+      "r": 0.4954,
+      "b": 0.65992
+     },
+     "text": "Interest in deep feedforward networks was revived around 2006 (refs 31-34) by a group of researchers brought together by the Canadian Institute for Advanced Research (CIFAR). The researchers introduced unsupervised learning procedures that could create layers of feature detectors without requiring labelled data. The objective in learning each layer of feature detectors was to be able to reconstruct or model the activities of feature detectors (or raw inputs) in the layer below. By 'pre-training' several layers of progressively more complex feature detectors using this reconstruction objective, the weights of a deep network could be initialized to sensible values. A final layer of output units could then be added to the top of the network and the whole deep system could be fine-tuned using standard backpropagation 33-35 . This worked remarkably well for recognizing handwritten digits or for detecting pedestrians, especially when the amount of labelled data was very limited 36 .",
+     "text_len": 991,
+     "level": 1,
+     "element_id": "p4_e34"
+    },
+    {
+     "reading_order": 35,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 514.06,
+      "r": 294.9,
+      "b": 316.8,
+      "w": 252.38,
+      "h": 197.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.65706,
+      "r": 0.4954,
+      "b": 0.40493
+     },
+     "text": "The first major application of this pre-training approach was in speech recognition, and it was made possible by the advent of fast graphics processing units (GPUs) that were convenient to program 37 and allowed researchers to train networks 10 or 20 times faster. In 2009, the approach was used to map short temporal windows of coefficients extracted from a sound wave to a set of probabilities for the various fragments of speech that might be represented by the frame in the centre of the window. It achieved record-breaking results on a standard speech recognition benchmark that used a small vocabulary 38 and was quickly developed to give record-breaking results on a large vocabulary task 39 . By 2012, versions of the deep net from 2009 were being developed by many of the major speech groups 6 and were already being deployed in Android phones. For smaller data sets, unsupervised pre-training helps to prevent overfitting 40 , leading to significantly better generalization when the number of labelled examples is small, or in a transfer setting where we have lots of examples for some 'source' tasks but very few for some 'target' tasks. Once deep learning had been rehabilitated, it turned out that the pre-training stage was only needed for small data sets.",
+     "text_len": 1270,
+     "level": 1,
+     "element_id": "p4_e35"
+    },
+    {
+     "reading_order": 36,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 314.56,
+      "r": 294.81,
+      "b": 243.3,
+      "w": 252.29,
+      "h": 71.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.40206,
+      "r": 0.49525,
+      "b": 0.31098
+     },
+     "text": "There was, however, one particular type of deep, feedforward network that was much easier to train and generalized much better than networks with full connectivity between adjacent layers. This was the convolutional neural network (ConvNet) 41,42 . It achieved many practical successes during the period when neural networks were out of favour and it has recently been widely adopted by the computervision community.",
+     "text_len": 416,
+     "level": 1,
+     "element_id": "p4_e36"
+    },
+    {
+     "reading_order": 37,
+     "page": 4,
+     "label": "section_header",
+     "bbox": {
+      "l": 42.52,
+      "t": 231.5,
+      "r": 181.32,
+      "b": 222.13,
+      "w": 138.8,
+      "h": 9.38,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.2959,
+      "r": 0.3046,
+      "b": 0.28392
+     },
+     "text": "Convolutional neural networks",
+     "text_len": 29,
+     "level": 1,
+     "element_id": "p4_e37"
+    },
+    {
+     "reading_order": 38,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 220.06,
+      "r": 294.88,
+      "b": 127.8,
+      "w": 252.36,
+      "h": 92.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.28128,
+      "r": 0.49537,
+      "b": 0.16335
+     },
+     "text": "ConvNets are designed to process data that come in the form of multiple arrays, for example a colour image composed of three 2D arrays containing pixel intensities in the three colour channels. Many data modalities are in the form of multiple arrays: 1D for signals and sequences, including language; 2D for images or audio spectrograms; and 3D for video or volumetric images. There are four key ideas behind ConvNets that take advantage of the properties of natural signals: local connections, shared weights, pooling and the use of many layers.",
+     "text_len": 546,
+     "level": 1,
+     "element_id": "p4_e38"
+    },
+    {
+     "reading_order": 39,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 125.56,
+      "r": 294.87,
+      "b": 33.3,
+      "w": 252.35,
+      "h": 92.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.16049,
+      "r": 0.49535,
+      "b": 0.04256
+     },
+     "text": "The architecture of a typical ConvNet (Fig. 2) is structured as a series of stages. The first few stages are composed of two types of layers: convolutional layers and pooling layers. Units in a convolutional layer are organized in feature maps, within which each unit is connected to local patches in the feature maps of the previous layer through a set of weights called a filter bank. The result of this local weighted sum is then passed through a non-linearity such as a ReLU. All units in a feature map share the same filter bank. Different feature maps in a layer use different filter banks. The reason for this architecture is twofold. First, in array data such as images, local groups of values are often highly correlated, forming distinctive local motifs that are easily detected. Second, the local statistics of images and other signals are invariant to location. In other words, if a motif can appear in one part of the image, it could appear anywhere, hence the idea of units at different locations sharing the same weights and detecting the same pattern in different parts of the array. Mathematically, the filtering operation performed by a feature map is a discrete convolution, hence the name.",
+     "text_len": 1209,
+     "level": 1,
+     "element_id": "p4_e39"
+    },
+    {
+     "reading_order": 40,
+     "page": 4,
+     "label": "picture",
+     "bbox": {
+      "l": 478.01,
+      "t": 762.0,
+      "r": 558.9,
+      "b": 742.24,
+      "w": 80.89,
+      "h": 19.76,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.80301,
+      "t": 0.97397,
+      "r": 0.93889,
+      "b": 0.94872
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p4_e40"
+    },
+    {
+     "reading_order": 41,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 629.56,
+      "r": 558.53,
+      "b": 474.3,
+      "w": 252.39,
+      "h": 155.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.80469,
+      "r": 0.93827,
+      "b": 0.60624
+     },
+     "text": "Although the role of the convolutional layer is to detect local conjunctions of features from the previous layer, the role of the pooling layer is to merge semantically similar features into one. Because the relative positions of the features forming a motif can vary somewhat, reliably detecting the motif can be done by coarse-graining the position of each feature. A typical pooling unit computes the maximum of a local patch of units in one feature map (or in a few feature maps). Neighbouring pooling units take input from patches that are shifted by more than one row or column, thereby reducing the dimension of the representation and creating an invariance to small shifts and distortions. Two or three stages of convolution, non-linearity and pooling are stacked, followed by more convolutional and fully-connected layers. Backpropagating gradients through a ConvNet is as simple as through a regular deep network, allowing all the weights in all the filter banks to be trained.",
+     "text_len": 987,
+     "level": 1,
+     "element_id": "p4_e41"
+    },
+    {
+     "reading_order": 42,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 472.06,
+      "r": 558.52,
+      "b": 390.3,
+      "w": 252.38,
+      "h": 81.76,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.60338,
+      "r": 0.93825,
+      "b": 0.49887
+     },
+     "text": "Deep neural networks exploit the property that many natural signals are compositional hierarchies, in which higher-level features are obtained by composing lower-level ones. In images, local combinations of edges form motifs, motifs assemble into parts, and parts form objects. Similar hierarchies exist in speech and text from sounds to phones, phonemes, syllables, words and sentences. The pooling allows representations to vary very little when elements in the previous layer vary in position and appearance.",
+     "text_len": 511,
+     "level": 1,
+     "element_id": "p4_e42"
+    },
+    {
+     "reading_order": 43,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 388.06,
+      "r": 558.52,
+      "b": 264.3,
+      "w": 252.38,
+      "h": 123.76,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.49601,
+      "r": 0.93825,
+      "b": 0.33782
+     },
+     "text": "The convolutional and pooling layers in ConvNets are directly inspired by the classic notions of simple cells and complex cells in visual neuroscience 43 , and the overall architecture is reminiscent of the LGN-V1-V2-V4-IT hierarchy in the visual cortex ventral pathway 44 . When ConvNet models and monkeys are shown the same picture, the activations of high-level units in the ConvNet explains half of the variance of random sets of 160 neurons in the monkey's inferotemporal cortex 45 . ConvNets have their roots in the neocognitron 46 , the architecture of which was somewhat similar, but did not have an end-to-end supervised-learning algorithm such as backpropagation. A primitive 1D ConvNet called a time-delay neural net was used for the recognition of phonemes and simple words 47,48 .",
+     "text_len": 793,
+     "level": 1,
+     "element_id": "p4_e43"
+    },
+    {
+     "reading_order": 44,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 262.06,
+      "r": 558.5,
+      "b": 148.8,
+      "w": 252.36,
+      "h": 113.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.33496,
+      "r": 0.93822,
+      "b": 0.19019
+     },
+     "text": "There have been numerous applications of convolutional networks going back to the early 1990s, starting with time-delay neural networks for speech recognition 47 and document reading 42 . The document reading system used a ConvNet trained jointly with a probabilistic model that implemented language constraints. By the late 1990s this system was reading over 10% of all the cheques in the United States. A number of ConvNet-based optical character recognition and handwriting recognition systems were later deployed by Microsoft 49 . ConvNets were also experimented with in the early 1990s for object detection in natural images, including faces and hands 50,51 , and for face recognition 52 .",
+     "text_len": 694,
+     "level": 1,
+     "element_id": "p4_e44"
+    },
+    {
+     "reading_order": 45,
+     "page": 4,
+     "label": "section_header",
+     "bbox": {
+      "l": 306.14,
+      "t": 137.0,
+      "r": 557.21,
+      "b": 127.63,
+      "w": 251.07,
+      "h": 9.38,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.17511,
+      "r": 0.93605,
+      "b": 0.16313
+     },
+     "text": "Image understanding with deep convolutional networks",
+     "text_len": 52,
+     "level": 1,
+     "element_id": "p4_e45"
+    },
+    {
+     "reading_order": 46,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 125.56,
+      "r": 558.49,
+      "b": 54.3,
+      "w": 252.35,
+      "h": 71.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.16049,
+      "r": 0.9382,
+      "b": 0.06941
+     },
+     "text": "Since the early 2000s, ConvNets have been applied with great success to the detection, segmentation and recognition of objects and regions in images. These were all tasks in which labelled data was relatively abundant, such as traffic sign recognition 53 , the segmentation of biological images 54 particularly for connectomics 55 , and the detection of faces, text, pedestrians and human bodies in natural images 36,50,51,56-58 . A major recent practical success of ConvNets is face recognition 59 .",
+     "text_len": 500,
+     "level": 1,
+     "element_id": "p4_e46"
+    },
+    {
+     "reading_order": 47,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 52.06,
+      "r": 558.43,
+      "b": 33.3,
+      "w": 252.29,
+      "h": 18.76,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.06654,
+      "r": 0.9381,
+      "b": 0.04256
+     },
+     "text": "Importantly, images can be labelled at the pixel level, which will have applications in technology, including autonomous mobile robots and with permission from ref. 102. When the RNN is given the ability to focus its attention on a different location in the input image (middle and bottom; the lighter patches were given more attention) as it generates each word (bold), we found 86 that it exploits this to achieve better 'translation' of images into captions.",
+     "text_len": 461,
+     "level": 1,
+     "element_id": "p4_e47"
+    }
+   ]
+  },
+  {
+   "page_no": 5,
+   "width_pt": 595.276,
+   "height_pt": 782.362,
+   "png": "pages/page_0005.png",
+   "elements": [
+    {
+     "reading_order": 48,
+     "page": 5,
+     "label": "picture",
+     "bbox": {
+      "l": 36.05,
+      "t": 761.76,
+      "r": 116.95,
+      "b": 742.56,
+      "w": 80.9,
+      "h": 19.2,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06056,
+      "t": 0.97367,
+      "r": 0.19646,
+      "b": 0.94913
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p5_e48"
+    },
+    {
+     "reading_order": 49,
+     "page": 5,
+     "label": "picture",
+     "bbox": {
+      "l": 42.06,
+      "t": 722.73,
+      "r": 553.27,
+      "b": 380.82,
+      "w": 511.21,
+      "h": 341.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07066,
+      "t": 0.92378,
+      "r": 0.92943,
+      "b": 0.48676
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p5_e49"
+    },
+    {
+     "reading_order": 50,
+     "page": 5,
+     "label": "caption",
+     "bbox": {
+      "l": 53.18,
+      "t": 384.12,
+      "r": 190.1,
+      "b": 378.08,
+      "w": 136.92,
+      "h": 6.04,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.08934,
+      "t": 0.49097,
+      "r": 0.31935,
+      "b": 0.48325
+     },
+     "text": "A little girl sitting on a bed with a teddy bear.",
+     "text_len": 49,
+     "level": 2,
+     "element_id": "p5_e50"
+    },
+    {
+     "reading_order": 51,
+     "page": 5,
+     "label": "caption",
+     "bbox": {
+      "l": 223.02,
+      "t": 384.12,
+      "r": 368.26,
+      "b": 378.08,
+      "w": 145.24,
+      "h": 6.04,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.37465,
+      "t": 0.49097,
+      "r": 0.61864,
+      "b": 0.48325
+     },
+     "text": "A group of people sitting on a boat in the water.",
+     "text_len": 49,
+     "level": 1,
+     "element_id": "p5_e51"
+    },
+    {
+     "reading_order": 52,
+     "page": 5,
+     "label": "caption",
+     "bbox": {
+      "l": 36.85,
+      "t": 355.97,
+      "r": 284.77,
+      "b": 320.09,
+      "w": 247.92,
+      "h": 35.88,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.45499,
+      "r": 0.47838,
+      "b": 0.40913
+     },
+     "text": "Figure 3 | From image to text. Captions generated by a recurrent neural network (RNN) taking, as extra input, the representation extracted by a deep convolution neural network (CNN) from a test image, with the RNN trained to 'translate' high-level representations of images into captions (top). Reproduced",
+     "text_len": 305,
+     "level": 1,
+     "element_id": "p5_e52"
+    },
+    {
+     "reading_order": 53,
+     "page": 5,
+     "label": "caption",
+     "bbox": {
+      "l": 417.57,
+      "t": 384.07,
+      "r": 517.71,
+      "b": 370.28,
+      "w": 100.15,
+      "h": 13.79,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.70147,
+      "t": 0.49091,
+      "r": 0.8697,
+      "b": 0.47328
+     },
+     "text": "A giraffe standing in a forest with trees in the background.",
+     "text_len": 60,
+     "level": 1,
+     "element_id": "p5_e53"
+    },
+    {
+     "reading_order": 54,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 36.85,
+      "t": 305.59,
+      "r": 289.19,
+      "b": 264.3,
+      "w": 252.34,
+      "h": 41.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.3906,
+      "r": 0.48581,
+      "b": 0.33782
+     },
+     "text": "self-driving cars 60,61 . Companies such as Mobileye and NVIDIA are using such ConvNet-based methods in their upcoming vision systems for cars. Other applications gaining importance involve natural language understanding 14 and speech recognition 7 .",
+     "text_len": 250,
+     "level": 1,
+     "element_id": "p5_e54"
+    },
+    {
+     "reading_order": 55,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 36.85,
+      "t": 262.06,
+      "r": 289.22,
+      "b": 106.8,
+      "w": 252.37,
+      "h": 155.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.33496,
+      "r": 0.48586,
+      "b": 0.13651
+     },
+     "text": "Despite these successes, ConvNets were largely forsaken by the mainstream computer-vision and machine-learning communities until the ImageNet competition in 2012. When deep convolutional networks were applied to a data set of about a million images from the web that contained 1,000 different classes, they achieved spectacular results, almost halving the error rates of the best competing approaches 1 . This success came from the efficient use of GPUs, ReLUs, a new regularization technique called dropout 62 , and techniques to generate more training examples by deforming the existing ones. This success has brought about a revolution in computer vision; ConvNets are now the dominant approach for almost all recognition and detection tasks 4,58,59,63-65 and approach human performance on some tasks. A recent stunning demonstration combines ConvNets and recurrent net modules for the generation of image captions (Fig. 3).",
+     "text_len": 927,
+     "level": 1,
+     "element_id": "p5_e55"
+    },
+    {
+     "reading_order": 56,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 36.85,
+      "t": 104.56,
+      "r": 289.13,
+      "b": 54.3,
+      "w": 252.28,
+      "h": 50.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.13365,
+      "r": 0.48571,
+      "b": 0.06941
+     },
+     "text": "Recent ConvNet architectures have 10 to 20 layers of ReLUs, hundreds of millions of weights, and billions of connections between units. Whereas training such large networks could have taken weeks only two years ago, progress in hardware, software and algorithm parallelization have reduced training times to a few hours.",
+     "text_len": 320,
+     "level": 1,
+     "element_id": "p5_e56"
+    },
+    {
+     "reading_order": 57,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 36.85,
+      "t": 52.06,
+      "r": 289.17,
+      "b": 33.3,
+      "w": 252.31,
+      "h": 18.76,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.06654,
+      "r": 0.48577,
+      "b": 0.04256
+     },
+     "text": "The performance of ConvNet-based vision systems has caused most major technology companies, including Google, Facebook, Microsoft, IBM, Yahoo!, Twitter and Adobe, as well as a quickly growing number of start-ups to initiate research and development projects and to deploy ConvNet-based image understanding products and services.",
+     "text_len": 328,
+     "level": 1,
+     "element_id": "p5_e57"
+    },
+    {
+     "reading_order": 58,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 300.47,
+      "t": 262.06,
+      "r": 552.76,
+      "b": 211.8,
+      "w": 252.29,
+      "h": 50.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50476,
+      "t": 0.33496,
+      "r": 0.92858,
+      "b": 0.27072
+     },
+     "text": "ConvNets are easily amenable to efficient hardware implementations in chips or field-programmable gate arrays 66,67 . A number of companies such as NVIDIA, Mobileye, Intel, Qualcomm and Samsung are developing ConvNet chips to enable real-time vision applications in smartphones, cameras, robots and self-driving cars.",
+     "text_len": 317,
+     "level": 1,
+     "element_id": "p5_e58"
+    },
+    {
+     "reading_order": 59,
+     "page": 5,
+     "label": "section_header",
+     "bbox": {
+      "l": 300.47,
+      "t": 200.0,
+      "r": 535.53,
+      "b": 190.63,
+      "w": 235.05,
+      "h": 9.38,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50476,
+      "t": 0.25564,
+      "r": 0.89963,
+      "b": 0.24366
+     },
+     "text": "Distributed representations and language processing",
+     "text_len": 51,
+     "level": 1,
+     "element_id": "p5_e59"
+    },
+    {
+     "reading_order": 60,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 300.47,
+      "t": 188.56,
+      "r": 552.85,
+      "b": 75.3,
+      "w": 252.37,
+      "h": 113.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50476,
+      "t": 0.24101,
+      "r": 0.92873,
+      "b": 0.09625
+     },
+     "text": "Deep-learning theory shows that deep nets have two different exponential advantages over classic learning algorithms that do not use distributed representations 21 . Both of these advantages arise from the power of composition and depend on the underlying data-generating distribution having an appropriate componential structure 40 . First, learning distributed representations enable generalization to new combinations of the values of learned features beyond those seen during training (for example, 2 n combinations are possible with n binary features) 68,69 . Second, composing layers of representation in a deep net brings the potential for another exponential advantage 70 (exponential in the depth).",
+     "text_len": 707,
+     "level": 1,
+     "element_id": "p5_e60"
+    },
+    {
+     "reading_order": 61,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 300.47,
+      "t": 73.06,
+      "r": 552.82,
+      "b": 33.3,
+      "w": 252.34,
+      "h": 39.76,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50476,
+      "t": 0.09338,
+      "r": 0.92868,
+      "b": 0.04256
+     },
+     "text": "The hidden layers of a multilayer neural network learn to represent the network's inputs in a way that makes it easy to predict the target outputs. This is nicely demonstrated by training a multilayer neural network to predict the next word in a sequence from a local context of earlier words 71 . Each word in the context is presented to the network as a one-of-N vector, that is, one component has a value of 1 and the rest are 0. In the first layer, each word creates a different pattern of activations, or word vectors (Fig. 4). In a language model, the other layers of the network learn to convert the input word vectors into an output word vector for the predicted next word, which can be used to predict the probability for any word in the vocabulary to appear as the next word. The network learns word vectors that contain many active components each of which can be interpreted as a separate feature of the word, as was first demonstrated 27 in the context of learning distributed representations for symbols. These semantic features were not explicitly present in the input. They were discovered by the learning procedure as a good way of factorizing the structured relationships between the input and output symbols into multiple 'micro-rules'. Learning word vectors turned out to also work very well when the word sequences come from a large corpus of real text and the individual micro-rules are unreliable 71 . When trained to predict the next word in a news story, for example, the learned word vectors for Tuesday and Wednesday are very similar, as are the word vectors for Sweden and Norway. Such representations are called distributed representations because their elements (the features) are not mutually exclusive and their many configurations correspond to the variations seen in the observed data. These word vectors are composed of learned features that were not determined ahead of time by experts, but automatically discovered by the neural network. Vector representations of words learned from text are now very widely used in natural language applications 14,17,72-76 .",
+     "text_len": 2096,
+     "level": 1,
+     "element_id": "p5_e61"
+    }
+   ]
+  },
+  {
+   "page_no": 6,
+   "width_pt": 595.276,
+   "height_pt": 782.362,
+   "png": "pages/page_0006.png",
+   "elements": [
+    {
+     "reading_order": 62,
+     "page": 6,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 440.56,
+      "r": 294.88,
+      "b": 337.8,
+      "w": 252.36,
+      "h": 102.76,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.56312,
+      "r": 0.49537,
+      "b": 0.43177
+     },
+     "text": "The issue of representation lies at the heart of the debate between the logic-inspired and the neural-network-inspired paradigms for cognition. In the logic-inspired paradigm, an instance of a symbol is something for which the only property is that it is either identical or non-identical to other symbol instances. It has no internal structure that is relevant to its use; and to reason with symbols, they must be bound to the variables in judiciously chosen rules of inference. By contrast, neural networks just use big activity vectors, big weight matrices and scalar non-linearities to perform the type of fast 'intuitive' inference that underpins effortless commonsense reasoning.",
+     "text_len": 685,
+     "level": 1,
+     "element_id": "p6_e62"
+    },
+    {
+     "reading_order": 63,
+     "page": 6,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 337.09,
+      "r": 294.81,
+      "b": 274.8,
+      "w": 252.29,
+      "h": 62.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.43086,
+      "r": 0.49525,
+      "b": 0.35124
+     },
+     "text": "Before the introduction of neural language models 71 , the standard approach to statistical modelling of language did not exploit distributed representations: it was based on counting frequencies of occurrences of short symbol sequences of length up to N (called N-grams). The number of possible N-grams is on the order of V N , where V is the vocabulary size, so taking into account a context of more than a handful of words would require very large training corpora. N-grams treat each word as an atomic unit, so they cannot generalize across semantically related sequences of words, whereas neural language models can because they associate each word with a vector of real valued features, and semantically related words end up close to each other in that vector space (Fig. 4).",
+     "text_len": 781,
+     "level": 1,
+     "element_id": "p6_e63"
+    },
+    {
+     "reading_order": 64,
+     "page": 6,
+     "label": "picture",
+     "bbox": {
+      "l": 45.33,
+      "t": 259.53,
+      "r": 275.8,
+      "b": 89.79,
+      "w": 230.47,
+      "h": 169.74,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07615,
+      "t": 0.33173,
+      "r": 0.46331,
+      "b": 0.11477
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p6_e64"
+    },
+    {
+     "reading_order": 65,
+     "page": 6,
+     "label": "picture",
+     "bbox": {
+      "l": 478.16,
+      "t": 762.04,
+      "r": 558.96,
+      "b": 742.44,
+      "w": 80.8,
+      "h": 19.61,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.80326,
+      "t": 0.97402,
+      "r": 0.93899,
+      "b": 0.94897
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p6_e65"
+    },
+    {
+     "reading_order": 66,
+     "page": 6,
+     "label": "section_header",
+     "bbox": {
+      "l": 306.14,
+      "t": 651.5,
+      "r": 427.26,
+      "b": 642.13,
+      "w": 121.12,
+      "h": 9.38,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.83273,
+      "r": 0.71775,
+      "b": 0.82076
+     },
+     "text": "Recurrent neural networks",
+     "text_len": 25,
+     "level": 1,
+     "element_id": "p6_e66"
+    },
+    {
+     "reading_order": 67,
+     "page": 6,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 640.06,
+      "r": 558.54,
+      "b": 537.3,
+      "w": 252.39,
+      "h": 102.76,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.81811,
+      "r": 0.93829,
+      "b": 0.68677
+     },
+     "text": "When backpropagation was first introduced, its most exciting use was for training recurrent neural networks (RNNs). For tasks that involve sequential inputs, such as speech and language, it is often better to use RNNs (Fig. 5). RNNs process an input sequence one element at a time, maintaining in their hidden units a 'state vector' that implicitly contains information about the history of all the past elements of the sequence. When we consider the outputs of the hidden units at different discrete time steps as if they were the outputs of different neurons in a deep multilayer network (Fig. 5, right), it becomes clear how we can apply backpropagation to train RNNs.",
+     "text_len": 671,
+     "level": 1,
+     "element_id": "p6_e67"
+    },
+    {
+     "reading_order": 68,
+     "page": 6,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 535.06,
+      "r": 558.47,
+      "b": 495.3,
+      "w": 252.33,
+      "h": 39.76,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.6839,
+      "r": 0.93817,
+      "b": 0.63308
+     },
+     "text": "RNNs are very powerful dynamic systems, but training them has proved to be problematic because the backpropagated gradients either grow or shrink at each time step, so over many time steps they typically explode or vanish 77,78 .",
+     "text_len": 229,
+     "level": 1,
+     "element_id": "p6_e68"
+    },
+    {
+     "reading_order": 69,
+     "page": 6,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 494.59,
+      "r": 558.52,
+      "b": 274.8,
+      "w": 252.38,
+      "h": 219.79,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.63218,
+      "r": 0.93825,
+      "b": 0.35124
+     },
+     "text": "Thanks to advances in their architecture 79,80 and ways of training them 81,82 , RNNs have been found to be very good at predicting the next character in the text 83 or the next word in a sequence 75 , but they can also be used for more complex tasks. For example, after reading an English sentence one word at a time, an English 'encoder' network can be trained so that the final state vector of its hidden units is a good representation of the thought expressed by the sentence. This thought vector can then be used as the initial hidden state of (or as extra input to) a jointly trained French 'decoder' network, which outputs a probability distribution for the first word of the French translation. If a particular first word is chosen from this distribution and provided as input to the decoder network it will then output a probability distribution for the second word of the translation and so on until a full stop is chosen 17,72,76 . Overall, this process generates sequences of French words according to a probability distribution that depends on the English sentence. This rather naive way of performing machine translation has quickly become competitive with the state-of-the-art, and this raises serious doubts about whether understanding a sentence requires anything like the internal symbolic expressions that are manipulated by using inference rules. It is more compatible with the view that everyday reasoning involves many simultaneous analogies that each contribute plausibility to a conclusion 84,85 .",
+     "text_len": 1521,
+     "level": 1,
+     "element_id": "p6_e69"
+    },
+    {
+     "reading_order": 70,
+     "page": 6,
+     "label": "picture",
+     "bbox": {
+      "l": 303.74,
+      "t": 256.89,
+      "r": 546.52,
+      "b": 89.96,
+      "w": 242.78,
+      "h": 166.92,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51025,
+      "t": 0.32835,
+      "r": 0.9181,
+      "b": 0.11499
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p6_e70"
+    },
+    {
+     "reading_order": 71,
+     "page": 6,
+     "label": "caption",
+     "bbox": {
+      "l": 42.52,
+      "t": 79.2,
+      "r": 294.28,
+      "b": 33.82,
+      "w": 251.76,
+      "h": 45.38,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.10123,
+      "r": 0.49436,
+      "b": 0.04323
+     },
+     "text": "Figure 4 | Visualizing the learned word vectors. On the left is an illustration of word representations learned for modelling language, non-linearly projected to 2D for visualization using the t-SNE algorithm 103 . On the right is a 2D representation of phrases learned by an English-to-French encoder-decoder recurrent neural network 75 . One can observe that semantically similar words",
+     "text_len": 387,
+     "level": 2,
+     "element_id": "p6_e71"
+    },
+    {
+     "reading_order": 72,
+     "page": 6,
+     "label": "caption",
+     "bbox": {
+      "l": 306.14,
+      "t": 79.19,
+      "r": 557.94,
+      "b": 33.81,
+      "w": 251.79,
+      "h": 45.38,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.10122,
+      "r": 0.93728,
+      "b": 0.04322
+     },
+     "text": "or sequences of words are mapped to nearby representations. The distributed representations of words are obtained by using backpropagation to jointly learn a representation for each word and a function that predicts a target quantity such as the next word in a sequence (for language modelling) or a whole sequence of translated words (for machine translation) 18,75 .",
+     "text_len": 368,
+     "level": 1,
+     "element_id": "p6_e72"
+    }
+   ]
+  },
+  {
+   "page_no": 7,
+   "width_pt": 595.276,
+   "height_pt": 782.362,
+   "png": "pages/page_0007.png",
+   "elements": [
+    {
+     "reading_order": 73,
+     "page": 7,
+     "label": "picture",
+     "bbox": {
+      "l": 35.84,
+      "t": 762.31,
+      "r": 117.1,
+      "b": 742.4,
+      "w": 81.25,
+      "h": 19.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06021,
+      "t": 0.97437,
+      "r": 0.19672,
+      "b": 0.94892
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p7_e73"
+    },
+    {
+     "reading_order": 74,
+     "page": 7,
+     "label": "picture",
+     "bbox": {
+      "l": 70.46,
+      "t": 722.03,
+      "r": 256.85,
+      "b": 651.27,
+      "w": 186.39,
+      "h": 70.76,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.11837,
+      "t": 0.92288,
+      "r": 0.43148,
+      "b": 0.83244
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p7_e74"
+    },
+    {
+     "reading_order": 75,
+     "page": 7,
+     "label": "caption",
+     "bbox": {
+      "l": 36.85,
+      "t": 639.72,
+      "r": 288.37,
+      "b": 498.38,
+      "w": 251.52,
+      "h": 141.33,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.81768,
+      "r": 0.48443,
+      "b": 0.63702
+     },
+     "text": "Figure 5 | A recurrent neural network and the unfolding in time of the computation involved in its forward computation. The artificial neurons (for example, hidden units grouped under node s with values st at time t) get inputs from other neurons at previous time steps (this is represented with the black square, representing a delay of one time step, on the left). In this way, a recurrent neural network can map an input sequence with elements xt into an output sequence with elements ot, with each ot depending on all the previous xtʹ (for tʹ ≤ t). The same parameters (matrices U,V,W ) are used at each time step. Many other architectures are possible, including a variant in which the network can generate a sequence of outputs (for example, words), each of which is used as inputs for the next time step. The backpropagation algorithm (Fig. 1) can be directly applied to the computational graph of the unfolded network on the right, to compute the derivative of a total error (for example, the log-probability of generating the right sequence of outputs) with respect to all the states st and all the parameters.",
+     "text_len": 1119,
+     "level": 2,
+     "element_id": "p7_e75"
+    },
+    {
+     "reading_order": 76,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 36.85,
+      "t": 472.06,
+      "r": 289.23,
+      "b": 400.8,
+      "w": 252.38,
+      "h": 71.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.60338,
+      "r": 0.48588,
+      "b": 0.51229
+     },
+     "text": "Instead of translating the meaning of a French sentence into an English sentence, one can learn to 'translate' the meaning of an image into an English sentence (Fig. 3). The encoder here is a deep ConvNet that converts the pixels into an activity vector in its last hidden layer. The decoder is an RNN similar to the ones used for machine translation and neural language modelling. There has been a surge of interest in such systems recently (see examples mentioned in ref. 86).",
+     "text_len": 478,
+     "level": 1,
+     "element_id": "p7_e76"
+    },
+    {
+     "reading_order": 77,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 36.85,
+      "t": 398.56,
+      "r": 289.19,
+      "b": 348.3,
+      "w": 252.34,
+      "h": 50.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.50943,
+      "r": 0.48581,
+      "b": 0.44519
+     },
+     "text": "RNNs, once unfolded in time (Fig. 5), can be seen as very deep feedforward networks in which all the layers share the same weights. Although their main purpose is to learn long-term dependencies, theoretical and empirical evidence shows that it is difficult to learn to store information for very long 78 .",
+     "text_len": 306,
+     "level": 1,
+     "element_id": "p7_e77"
+    },
+    {
+     "reading_order": 78,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 36.85,
+      "t": 346.06,
+      "r": 289.19,
+      "b": 243.3,
+      "w": 252.34,
+      "h": 102.76,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.44233,
+      "r": 0.48581,
+      "b": 0.31098
+     },
+     "text": "To correct for that, one idea is to augment the network with an explicit memory. The first proposal of this kind is the long short-term memory (LSTM) networks that use special hidden units, the natural behaviour of which is to remember inputs for a long time 79 . A special unit called the memory cell acts like an accumulator or a gated leaky neuron: it has a connection to itself at the next time step that has a weight of one, so it copies its own real-valued state and accumulates the external signal, but this self-connection is multiplicatively gated by another unit that learns to decide when to clear the content of the memory.",
+     "text_len": 635,
+     "level": 1,
+     "element_id": "p7_e78"
+    },
+    {
+     "reading_order": 79,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 36.85,
+      "t": 241.06,
+      "r": 289.23,
+      "b": 169.8,
+      "w": 252.38,
+      "h": 71.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.30812,
+      "r": 0.48588,
+      "b": 0.21704
+     },
+     "text": "LSTM networks have subsequently proved to be more effective than conventional RNNs, especially when they have several layers for each time step 87 , enabling an entire speech recognition system that goes all the way from acoustics to the sequence of characters in the transcription. LSTM networks or related forms of gated units are also currently used for the encoder and decoder networks that perform so well at machine translation 17,72,76 .",
+     "text_len": 444,
+     "level": 1,
+     "element_id": "p7_e79"
+    },
+    {
+     "reading_order": 80,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 36.85,
+      "t": 167.56,
+      "r": 289.22,
+      "b": 75.3,
+      "w": 252.38,
+      "h": 92.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.21417,
+      "r": 0.48586,
+      "b": 0.09625
+     },
+     "text": "Over the past year, several authors have made different proposals to augment RNNs with a memory module. Proposals include the Neural Turing Machine in which the network is augmented by a 'tape-like' memory that the RNN can choose to read from or write to 88 , and memory networks, in which a regular network is augmented by a kind of associative memory 89 . Memory networks have yielded excellent performance on standard question-answering benchmarks. The memory is used to remember the story about which the network is later asked to answer questions.",
+     "text_len": 552,
+     "level": 1,
+     "element_id": "p7_e80"
+    },
+    {
+     "reading_order": 81,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 36.85,
+      "t": 73.06,
+      "r": 289.18,
+      "b": 33.3,
+      "w": 252.33,
+      "h": 39.76,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.09338,
+      "r": 0.48579,
+      "b": 0.04256
+     },
+     "text": "Beyond simple memorization, neural Turing machines and memory networks are being used for tasks that would normally require reasoning and symbol manipulation. Neural Turing machines can be taught 'algorithms'. Among other things, they can learn to output a sorted list of symbols when their input consists of an unsorted sequence in which each symbol is accompanied by a real value that indicates its priority in the list 88 . Memory networks can be trained to keep track of the state of the world in a setting similar to a text adventure game and after reading a story, they can answer questions that require complex inference 90 . In one test example, the network is shown a 15-sentence version of the The Lord of the Rings and correctly answers questions such as \"where is Frodo now?\" 89 .",
+     "text_len": 792,
+     "level": 1,
+     "element_id": "p7_e81"
+    },
+    {
+     "reading_order": 82,
+     "page": 7,
+     "label": "section_header",
+     "bbox": {
+      "l": 300.47,
+      "t": 630.5,
+      "r": 421.2,
+      "b": 621.13,
+      "w": 120.73,
+      "h": 9.38,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50476,
+      "t": 0.80589,
+      "r": 0.70757,
+      "b": 0.79392
+     },
+     "text": "The future of deep learning",
+     "text_len": 27,
+     "level": 1,
+     "element_id": "p7_e82"
+    },
+    {
+     "reading_order": 83,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 300.47,
+      "t": 620.59,
+      "r": 552.82,
+      "b": 547.8,
+      "w": 252.35,
+      "h": 72.79,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50476,
+      "t": 0.79323,
+      "r": 0.92868,
+      "b": 0.70019
+     },
+     "text": "Unsupervised learning 91-98 had a catalytic effect in reviving interest in deep learning, but has since been overshadowed by the successes of purely supervised learning. Although we have not focused on it in this Review, we expect unsupervised learning to become far more important in the longer term. Human and animal learning is largely unsupervised: we discover the structure of the world by observing it, not by being told the name of every object.",
+     "text_len": 452,
+     "level": 1,
+     "element_id": "p7_e83"
+    },
+    {
+     "reading_order": 84,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 300.47,
+      "t": 545.56,
+      "r": 552.87,
+      "b": 453.3,
+      "w": 252.4,
+      "h": 92.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50476,
+      "t": 0.69732,
+      "r": 0.92876,
+      "b": 0.5794
+     },
+     "text": "Human vision is an active process that sequentially samples the optic array in an intelligent, task-specific way using a small, high-resolution fovea with a large, low-resolution surround. We expect much of the future progress in vision to come from systems that are trained end-toend and combine ConvNets with RNNs that use reinforcement learning to decide where to look. Systems combining deep learning and reinforcement learning are in their infancy, but they already outperform passive vision systems 99 at classification tasks and produce impressive results in learning to play many different video games 100 .",
+     "text_len": 615,
+     "level": 1,
+     "element_id": "p7_e84"
+    },
+    {
+     "reading_order": 85,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 300.47,
+      "t": 451.06,
+      "r": 552.8,
+      "b": 400.8,
+      "w": 252.33,
+      "h": 50.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50476,
+      "t": 0.57654,
+      "r": 0.92864,
+      "b": 0.51229
+     },
+     "text": "Natural language understanding is another area in which deep learning is poised to make a large impact over the next few years. We expect systems that use RNNs to understand sentences or whole documents will become much better when they learn strategies for selectively attending to one part at a time 76,86 .",
+     "text_len": 309,
+     "level": 1,
+     "element_id": "p7_e85"
+    },
+    {
+     "reading_order": 86,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 300.47,
+      "t": 398.56,
+      "r": 552.84,
+      "b": 337.8,
+      "w": 252.36,
+      "h": 60.76,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50476,
+      "t": 0.50943,
+      "r": 0.92871,
+      "b": 0.43177
+     },
+     "text": "Ultimately, major progress in artificial intelligence will come about through systems that combine representation learning with complex reasoning. Although deep learning and simple reasoning have been used for speech and handwriting recognition for a long time, new paradigms are needed to replace rule-based manipulation of symbolic expressions by operations on large vectors 101 . ■",
+     "text_len": 384,
+     "level": 1,
+     "element_id": "p7_e86"
+    },
+    {
+     "reading_order": 87,
+     "page": 7,
+     "label": "section_header",
+     "bbox": {
+      "l": 300.47,
+      "t": 329.23,
+      "r": 440.96,
+      "b": 322.73,
+      "w": 140.49,
+      "h": 6.5,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50476,
+      "t": 0.42082,
+      "r": 0.74077,
+      "b": 0.41251
+     },
+     "text": "Received 25 February; accepted 1 May 2015.",
+     "text_len": 42,
+     "level": 1,
+     "element_id": "p7_e87"
+    },
+    {
+     "reading_order": 88,
+     "page": 7,
+     "label": "list_item",
+     "bbox": {
+      "l": 300.47,
+      "t": 313.18,
+      "r": 533.41,
+      "b": 290.76,
+      "w": 232.94,
+      "h": 22.42,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50476,
+      "t": 0.4003,
+      "r": 0.89607,
+      "b": 0.37164
+     },
+     "text": "Krizhevsky, A., Sutskever, I. & Hinton, G. ImageNet classification with deep convolutional neural networks. In Proc. Advances in Neural Information Processing Systems 25 1090-1098 (2012).",
+     "text_len": 187,
+     "level": 2,
+     "element_id": "p7_e88"
+    },
+    {
+     "reading_order": 89,
+     "page": 7,
+     "label": "list_item",
+     "bbox": {
+      "l": 314.64,
+      "t": 289.23,
+      "r": 546.26,
+      "b": 266.73,
+      "w": 231.62,
+      "h": 22.5,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.52856,
+      "t": 0.36969,
+      "r": 0.91766,
+      "b": 0.34093
+     },
+     "text": "This report was a breakthrough that used convolutional nets to almost halve the error rate for object recognition, and precipitated the rapid adoption of deep learning by the computer vision community.",
+     "text_len": 201,
+     "level": 2,
+     "element_id": "p7_e89"
+    },
+    {
+     "reading_order": 90,
+     "page": 7,
+     "label": "list_item",
+     "bbox": {
+      "l": 300.47,
+      "t": 265.18,
+      "r": 552.5,
+      "b": 250.73,
+      "w": 252.03,
+      "h": 14.45,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50476,
+      "t": 0.33895,
+      "r": 0.92814,
+      "b": 0.32048
+     },
+     "text": "Farabet, C., Couprie, C., Najman, L. & LeCun, Y. Learning hierarchical features for scene labeling. IEEE Trans. Pattern Anal. Mach. Intell. 35, 1915-1929 (2013).",
+     "text_len": 161,
+     "level": 2,
+     "element_id": "p7_e90"
+    },
+    {
+     "reading_order": 91,
+     "page": 7,
+     "label": "list_item",
+     "bbox": {
+      "l": 300.47,
+      "t": 249.18,
+      "r": 551.7,
+      "b": 226.76,
+      "w": 251.23,
+      "h": 22.42,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50476,
+      "t": 0.3185,
+      "r": 0.9268,
+      "b": 0.28984
+     },
+     "text": "Tompson, J., Jain, A., LeCun, Y. & Bregler, C. Joint training of a convolutional network and a graphical model for human pose estimation. In Proc. Advances in Neural Information Processing Systems 27 1799-1807 (2014).",
+     "text_len": 217,
+     "level": 2,
+     "element_id": "p7_e91"
+    },
+    {
+     "reading_order": 92,
+     "page": 7,
+     "label": "list_item",
+     "bbox": {
+      "l": 300.47,
+      "t": 225.18,
+      "r": 545.44,
+      "b": 210.76,
+      "w": 244.97,
+      "h": 14.42,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50476,
+      "t": 0.28782,
+      "r": 0.91628,
+      "b": 0.26939
+     },
+     "text": "Szegedy, C. et al. Going deeper with convolutions. Preprint at http://arxiv.org/ abs/1409.4842 (2014).",
+     "text_len": 102,
+     "level": 2,
+     "element_id": "p7_e92"
+    },
+    {
+     "reading_order": 93,
+     "page": 7,
+     "label": "list_item",
+     "bbox": {
+      "l": 300.47,
+      "t": 209.18,
+      "r": 548.56,
+      "b": 186.76,
+      "w": 248.09,
+      "h": 22.42,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50476,
+      "t": 0.26737,
+      "r": 0.92152,
+      "b": 0.23871
+     },
+     "text": "Mikolov, T., Deoras, A., Povey, D., Burget, L. & Cernocky, J. Strategies for training large scale neural network language models. In Proc. Automatic Speech Recognition and Understanding 196-201 (2011).",
+     "text_len": 201,
+     "level": 2,
+     "element_id": "p7_e93"
+    },
+    {
+     "reading_order": 94,
+     "page": 7,
+     "label": "list_item",
+     "bbox": {
+      "l": 300.47,
+      "t": 185.18,
+      "r": 552.0,
+      "b": 138.73,
+      "w": 251.53,
+      "h": 46.45,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50476,
+      "t": 0.23669,
+      "r": 0.9273,
+      "b": 0.17732
+     },
+     "text": "Hinton, G. et al. Deep neural networks for acoustic modeling in speech recognition. IEEE Signal Processing Magazine 29, 82-97 (2012). This joint paper from the major speech recognition laboratories, summarizing the breakthrough achieved with deep learning on the task of phonetic classification for automatic speech recognition, was the first major industrial application of deep learning.",
+     "text_len": 389,
+     "level": 2,
+     "element_id": "p7_e94"
+    },
+    {
+     "reading_order": 95,
+     "page": 7,
+     "label": "list_item",
+     "bbox": {
+      "l": 300.47,
+      "t": 137.18,
+      "r": 546.88,
+      "b": 114.76,
+      "w": 246.4,
+      "h": 22.42,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50476,
+      "t": 0.17534,
+      "r": 0.9187,
+      "b": 0.14668
+     },
+     "text": "Sainath, T., Mohamed, A.-R., Kingsbury, B. & Ramabhadran, B. Deep convolutional neural networks for LVCSR. In Proc. Acoustics, Speech and Signal Processing 8614-8618 (2013).",
+     "text_len": 173,
+     "level": 2,
+     "element_id": "p7_e95"
+    },
+    {
+     "reading_order": 96,
+     "page": 7,
+     "label": "list_item",
+     "bbox": {
+      "l": 300.47,
+      "t": 113.18,
+      "r": 549.11,
+      "b": 90.76,
+      "w": 248.64,
+      "h": 22.42,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50476,
+      "t": 0.14466,
+      "r": 0.92245,
+      "b": 0.11601
+     },
+     "text": "Ma, J., Sheridan, R. P., Liaw, A., Dahl, G. E. & Svetnik, V. Deep neural nets as a method for quantitative structure-activity relationships. J. Chem. Inf. Model. 55, 263-274 (2015).",
+     "text_len": 181,
+     "level": 2,
+     "element_id": "p7_e96"
+    },
+    {
+     "reading_order": 97,
+     "page": 7,
+     "label": "list_item",
+     "bbox": {
+      "l": 300.47,
+      "t": 89.18,
+      "r": 544.83,
+      "b": 66.73,
+      "w": 244.36,
+      "h": 22.45,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50476,
+      "t": 0.11399,
+      "r": 0.91526,
+      "b": 0.08529
+     },
+     "text": "Ciodaro, T., Deva, D., de Seixas, J. & Damazio, D. Online particle detection with neural networks based on topological calorimetry information. J. Phys. Conf. Series 368, 012030 (2012).",
+     "text_len": 185,
+     "level": 2,
+     "element_id": "p7_e97"
+    },
+    {
+     "reading_order": 98,
+     "page": 7,
+     "label": "list_item",
+     "bbox": {
+      "l": 300.47,
+      "t": 65.18,
+      "r": 544.61,
+      "b": 50.76,
+      "w": 244.14,
+      "h": 14.42,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50476,
+      "t": 0.08331,
+      "r": 0.91489,
+      "b": 0.06488
+     },
+     "text": "Kaggle. Higgs boson machine learning challenge. Kaggle https://www.kaggle. com/c/higgs-boson (2014).",
+     "text_len": 100,
+     "level": 2,
+     "element_id": "p7_e98"
+    },
+    {
+     "reading_order": 99,
+     "page": 7,
+     "label": "list_item",
+     "bbox": {
+      "l": 300.47,
+      "t": 49.18,
+      "r": 550.18,
+      "b": 34.73,
+      "w": 249.71,
+      "h": 14.45,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50476,
+      "t": 0.06286,
+      "r": 0.92424,
+      "b": 0.04439
+     },
+     "text": "Helmstaedter, M. et al. Connectomic reconstruction of the inner plexiform layer in the mouse retina. Nature 500, 168-174 (2013).",
+     "text_len": 128,
+     "level": 2,
+     "element_id": "p7_e99"
+    }
+   ]
+  },
+  {
+   "page_no": 8,
+   "width_pt": 595.276,
+   "height_pt": 782.362,
+   "png": "pages/page_0008.png",
+   "elements": [
+    {
+     "reading_order": 100,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 42.52,
+      "t": 725.47,
+      "r": 275.59,
+      "b": 711.02,
+      "w": 233.07,
+      "h": 14.45,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.92728,
+      "r": 0.46296,
+      "b": 0.90881
+     },
+     "text": "Leung, M. K., Xiong, H. Y., Lee, L. J. & Frey, B. J. Deep learning of the tissueregulated splicing code. Bioinformatics 30, i121-i129 (2014).",
+     "text_len": 141,
+     "level": 2,
+     "element_id": "p8_e100"
+    },
+    {
+     "reading_order": 101,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 42.52,
+      "t": 709.37,
+      "r": 291.34,
+      "b": 694.82,
+      "w": 248.82,
+      "h": 14.55,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.9067,
+      "r": 0.48942,
+      "b": 0.88811
+     },
+     "text": "Xiong, H. Y. et al. The human splicing code reveals new insights into the genetic determinants of disease. Science 347, 6218 (2015).",
+     "text_len": 132,
+     "level": 2,
+     "element_id": "p8_e101"
+    },
+    {
+     "reading_order": 102,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 42.52,
+      "t": 693.17,
+      "r": 289.99,
+      "b": 678.62,
+      "w": 247.47,
+      "h": 14.55,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.886,
+      "r": 0.48715,
+      "b": 0.8674
+     },
+     "text": "Collobert, R., et al. Natural language processing (almost) from scratch. J. Mach. Learn. Res. 12, 2493-2537 (2011).",
+     "text_len": 115,
+     "level": 2,
+     "element_id": "p8_e102"
+    },
+    {
+     "reading_order": 103,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 42.52,
+      "t": 677.07,
+      "r": 289.95,
+      "b": 654.65,
+      "w": 247.44,
+      "h": 22.42,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.86542,
+      "r": 0.48708,
+      "b": 0.83676
+     },
+     "text": "Bordes, A., Chopra, S. & Weston, J. Question answering with subgraph embeddings. In Proc. Empirical Methods in Natural Language Processing http:// arxiv.org/abs/1406.3676v3 (2014).",
+     "text_len": 180,
+     "level": 2,
+     "element_id": "p8_e103"
+    },
+    {
+     "reading_order": 104,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 42.52,
+      "t": 652.97,
+      "r": 294.34,
+      "b": 630.35,
+      "w": 251.82,
+      "h": 22.62,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.83461,
+      "r": 0.49446,
+      "b": 0.8057
+     },
+     "text": "Jean, S., Cho, K., Memisevic, R. & Bengio, Y. On using very large target vocabulary for neural machine translation. In Proc. ACL-IJCNLP http://arxiv.org/ abs/1412.2007 (2015).",
+     "text_len": 175,
+     "level": 2,
+     "element_id": "p8_e104"
+    },
+    {
+     "reading_order": 105,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 42.52,
+      "t": 628.67,
+      "r": 285.76,
+      "b": 606.05,
+      "w": 243.24,
+      "h": 22.62,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.80355,
+      "r": 0.48005,
+      "b": 0.77464
+     },
+     "text": "Sutskever, I. Vinyals, O. & Le. Q. V. Sequence to sequence learning with neural networks. In Proc. Advances in Neural Information Processing Systems 27 3104-3112 (2014).",
+     "text_len": 169,
+     "level": 2,
+     "element_id": "p8_e105"
+    },
+    {
+     "reading_order": 106,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 56.69,
+      "t": 604.42,
+      "r": 292.16,
+      "b": 573.62,
+      "w": 235.47,
+      "h": 30.8,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.09523,
+      "t": 0.77256,
+      "r": 0.4908,
+      "b": 0.73319
+     },
+     "text": "This paper showed state-of-the-art machine translation results with the architecture introduced in ref. 72, with a recurrent network trained to read a sentence in one language, produce a semantic representation of its meaning, and generate a translation in another language.",
+     "text_len": 274,
+     "level": 1,
+     "element_id": "p8_e106"
+    },
+    {
+     "reading_order": 107,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 42.52,
+      "t": 571.97,
+      "r": 293.91,
+      "b": 557.45,
+      "w": 251.39,
+      "h": 14.52,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.73108,
+      "r": 0.49374,
+      "b": 0.71252
+     },
+     "text": "Bottou, L. & Bousquet, O. The tradeoffs of large scale learning. In Proc. Advances in Neural Information Processing Systems 20 161-168 (2007).",
+     "text_len": 142,
+     "level": 2,
+     "element_id": "p8_e107"
+    },
+    {
+     "reading_order": 108,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 42.52,
+      "t": 555.77,
+      "r": 287.44,
+      "b": 549.35,
+      "w": 244.92,
+      "h": 6.42,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.71037,
+      "r": 0.48287,
+      "b": 0.70217
+     },
+     "text": "Duda, R. O. & Hart, P. E. Pattern Classification and Scene Analysis (Wiley, 1973).",
+     "text_len": 82,
+     "level": 2,
+     "element_id": "p8_e108"
+    },
+    {
+     "reading_order": 109,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 42.52,
+      "t": 547.67,
+      "r": 251.46,
+      "b": 541.25,
+      "w": 208.94,
+      "h": 6.42,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.70002,
+      "r": 0.42243,
+      "b": 0.69182
+     },
+     "text": "Schölkopf, B. & Smola, A. Learning with Kernels (MIT Press, 2002).",
+     "text_len": 66,
+     "level": 2,
+     "element_id": "p8_e109"
+    },
+    {
+     "reading_order": 110,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 42.52,
+      "t": 539.57,
+      "r": 282.04,
+      "b": 516.95,
+      "w": 239.52,
+      "h": 22.62,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.68967,
+      "r": 0.4738,
+      "b": 0.66076
+     },
+     "text": "Bengio, Y., Delalleau, O. & Le Roux, N. The curse of highly variable functions for local kernel machines. In Proc. Advances in Neural Information Processing Systems 18 107-114 (2005).",
+     "text_len": 183,
+     "level": 2,
+     "element_id": "p8_e110"
+    },
+    {
+     "reading_order": 111,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 42.52,
+      "t": 515.37,
+      "r": 288.71,
+      "b": 492.95,
+      "w": 246.19,
+      "h": 22.42,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.65874,
+      "r": 0.485,
+      "b": 0.63008
+     },
+     "text": "Selfridge, O. G. Pandemonium: a paradigm for learning in mechanisation of thought processes. In Proc. Symposium on Mechanisation of Thought Processes 513-526 (1958).",
+     "text_len": 165,
+     "level": 2,
+     "element_id": "p8_e111"
+    },
+    {
+     "reading_order": 112,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 42.52,
+      "t": 491.37,
+      "r": 290.1,
+      "b": 476.95,
+      "w": 247.58,
+      "h": 14.42,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.62806,
+      "r": 0.48734,
+      "b": 0.60963
+     },
+     "text": "Rosenblatt, F. The Perceptron - A Perceiving and Recognizing Automaton. Tech. Rep. 85-460-1 (Cornell Aeronautical Laboratory, 1957).",
+     "text_len": 132,
+     "level": 2,
+     "element_id": "p8_e112"
+    },
+    {
+     "reading_order": 113,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 42.52,
+      "t": 475.37,
+      "r": 272.5,
+      "b": 460.95,
+      "w": 229.98,
+      "h": 14.42,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.60761,
+      "r": 0.45777,
+      "b": 0.58918
+     },
+     "text": "Werbos, P. Beyond Regression: New Tools for Prediction and Analysis in the Behavioral Sciences. PhD thesis, Harvard Univ. (1974).",
+     "text_len": 129,
+     "level": 2,
+     "element_id": "p8_e113"
+    },
+    {
+     "reading_order": 114,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 42.52,
+      "t": 459.37,
+      "r": 236.36,
+      "b": 452.95,
+      "w": 193.84,
+      "h": 6.42,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.58716,
+      "r": 0.39706,
+      "b": 0.57895
+     },
+     "text": "Parker, D. B. Learning Logic Report TR-47 (MIT Press, 1985).",
+     "text_len": 60,
+     "level": 2,
+     "element_id": "p8_e114"
+    },
+    {
+     "reading_order": 115,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 42.52,
+      "t": 451.37,
+      "r": 283.18,
+      "b": 428.95,
+      "w": 240.66,
+      "h": 22.42,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.57693,
+      "r": 0.47571,
+      "b": 0.54828
+     },
+     "text": "LeCun, Y. Une procédure d'apprentissage pour Réseau à seuil assymétrique in Cognitiva 85: a la Frontière de l'Intelligence Artificielle, des Sciences de la Connaissance et des Neurosciences [in French] 599-604 (1985).",
+     "text_len": 217,
+     "level": 2,
+     "element_id": "p8_e115"
+    },
+    {
+     "reading_order": 116,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 42.52,
+      "t": 427.37,
+      "r": 278.49,
+      "b": 412.92,
+      "w": 235.98,
+      "h": 14.45,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.54626,
+      "r": 0.46783,
+      "b": 0.52779
+     },
+     "text": "Rumelhart, D. E., Hinton, G. E. & Williams, R. J. Learning representations by back-propagating errors. Nature 323, 533-536 (1986).",
+     "text_len": 130,
+     "level": 2,
+     "element_id": "p8_e116"
+    },
+    {
+     "reading_order": 117,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 42.52,
+      "t": 411.37,
+      "r": 291.8,
+      "b": 388.95,
+      "w": 249.28,
+      "h": 22.42,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.52581,
+      "r": 0.49019,
+      "b": 0.49715
+     },
+     "text": "Glorot, X., Bordes, A. & Bengio. Y. Deep sparse rectifier neural networks. In Proc. 14th International Conference on Artificial Intelligence and Statistics 315-323 (2011).",
+     "text_len": 171,
+     "level": 2,
+     "element_id": "p8_e117"
+    },
+    {
+     "reading_order": 118,
+     "page": 8,
+     "label": "section_header",
+     "bbox": {
+      "l": 56.69,
+      "t": 387.42,
+      "r": 285.68,
+      "b": 372.92,
+      "w": 228.99,
+      "h": 14.5,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.09523,
+      "t": 0.49519,
+      "r": 0.47991,
+      "b": 0.47666
+     },
+     "text": "This paper showed that supervised training of very deep neural networks is much faster if the hidden layers are composed of ReLU.",
+     "text_len": 129,
+     "level": 1,
+     "element_id": "p8_e118"
+    },
+    {
+     "reading_order": 119,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 42.52,
+      "t": 371.27,
+      "r": 286.97,
+      "b": 348.65,
+      "w": 244.45,
+      "h": 22.62,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.47455,
+      "r": 0.48208,
+      "b": 0.44564
+     },
+     "text": "Dauphin, Y. et al. Identifying and attacking the saddle point problem in highdimensional non-convex optimization. In Proc. Advances in Neural Information Processing Systems 27 2933-2941 (2014).",
+     "text_len": 193,
+     "level": 2,
+     "element_id": "p8_e119"
+    },
+    {
+     "reading_order": 120,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 42.52,
+      "t": 346.97,
+      "r": 285.05,
+      "b": 324.35,
+      "w": 242.53,
+      "h": 22.62,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.44349,
+      "r": 0.47885,
+      "b": 0.41458
+     },
+     "text": "Choromanska, A., Henaff, M., Mathieu, M., Arous, G. B. & LeCun, Y. The loss surface of multilayer networks. In Proc. Conference on AI and Statistics http:// arxiv.org/abs/1412.0233 (2014).",
+     "text_len": 188,
+     "level": 2,
+     "element_id": "p8_e120"
+    },
+    {
+     "reading_order": 121,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 42.52,
+      "t": 322.77,
+      "r": 274.03,
+      "b": 308.35,
+      "w": 231.51,
+      "h": 14.42,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.41256,
+      "r": 0.46034,
+      "b": 0.39413
+     },
+     "text": "Hinton, G. E. What kind of graphical model is the brain? In Proc. 19th International Joint Conference on Artificial intelligence 1765-1775 (2005).",
+     "text_len": 146,
+     "level": 2,
+     "element_id": "p8_e121"
+    },
+    {
+     "reading_order": 122,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 42.52,
+      "t": 306.77,
+      "r": 287.59,
+      "b": 300.35,
+      "w": 245.07,
+      "h": 6.42,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.39211,
+      "r": 0.48312,
+      "b": 0.3839
+     },
+     "text": "Hinton, G. E., Osindero, S. & Teh, Y.-W. A fast learning algorithm for deep belief",
+     "text_len": 82,
+     "level": 2,
+     "element_id": "p8_e122"
+    },
+    {
+     "reading_order": 123,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 56.69,
+      "t": 298.82,
+      "r": 287.72,
+      "b": 268.32,
+      "w": 231.03,
+      "h": 30.5,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.09523,
+      "t": 0.38195,
+      "r": 0.48334,
+      "b": 0.34296
+     },
+     "text": "nets. Neural Comp. 18, 1527-1554 (2006). This paper introduced a novel and effective way of training very deep neural networks by pre-training one hidden layer at a time using the unsupervised learning procedure for restricted Boltzmann machines.",
+     "text_len": 246,
+     "level": 2,
+     "element_id": "p8_e123"
+    },
+    {
+     "reading_order": 124,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 42.52,
+      "t": 266.77,
+      "r": 293.61,
+      "b": 244.35,
+      "w": 251.09,
+      "h": 22.42,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.34098,
+      "r": 0.49323,
+      "b": 0.31232
+     },
+     "text": "Bengio, Y., Lamblin, P., Popovici, D. & Larochelle, H. Greedy layer-wise training of deep networks. In Proc. Advances in Neural Information Processing Systems 19 153-160 (2006).",
+     "text_len": 177,
+     "level": 2,
+     "element_id": "p8_e124"
+    },
+    {
+     "reading_order": 125,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 56.69,
+      "t": 242.82,
+      "r": 280.01,
+      "b": 212.32,
+      "w": 223.32,
+      "h": 30.5,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.09523,
+      "t": 0.31037,
+      "r": 0.47039,
+      "b": 0.27138
+     },
+     "text": "This report demonstrated that the unsupervised pre-training method introduced in ref. 32 significantly improves performance on test data and generalizes the method to other unsupervised representation-learning techniques, such as auto-encoders.",
+     "text_len": 244,
+     "level": 1,
+     "element_id": "p8_e125"
+    },
+    {
+     "reading_order": 126,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 42.52,
+      "t": 210.67,
+      "r": 279.53,
+      "b": 188.05,
+      "w": 237.01,
+      "h": 22.62,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.26927,
+      "r": 0.46958,
+      "b": 0.24036
+     },
+     "text": "Ranzato, M., Poultney, C., Chopra, S. & LeCun, Y. Efficient learning of sparse representations with an energy-based model. In Proc. Advances in Neural Information Processing Systems 19 1137-1144 (2006).",
+     "text_len": 202,
+     "level": 2,
+     "element_id": "p8_e126"
+    },
+    {
+     "reading_order": 127,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 42.52,
+      "t": 186.37,
+      "r": 276.82,
+      "b": 171.82,
+      "w": 234.3,
+      "h": 14.55,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.23821,
+      "r": 0.46503,
+      "b": 0.21962
+     },
+     "text": "Hinton, G. E. & Salakhutdinov, R. Reducing the dimensionality of data with neural networks. Science 313, 504-507 (2006).",
+     "text_len": 120,
+     "level": 2,
+     "element_id": "p8_e127"
+    },
+    {
+     "reading_order": 128,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 42.52,
+      "t": 170.17,
+      "r": 294.14,
+      "b": 139.45,
+      "w": 251.62,
+      "h": 30.72,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.21751,
+      "r": 0.49412,
+      "b": 0.17824
+     },
+     "text": "Sermanet, P., Kavukcuoglu, K., Chintala, S. & LeCun, Y. Pedestrian detection with unsupervised multi-stage feature learning. In Proc. International Conference on Computer Vision and Pattern Recognition http://arxiv.org/abs/1212.0142 (2013).",
+     "text_len": 240,
+     "level": 2,
+     "element_id": "p8_e128"
+    },
+    {
+     "reading_order": 129,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 42.52,
+      "t": 137.77,
+      "r": 279.37,
+      "b": 115.15,
+      "w": 236.85,
+      "h": 22.62,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.17609,
+      "r": 0.46931,
+      "b": 0.14718
+     },
+     "text": "Raina, R., Madhavan, A. & Ng, A. Y. Large-scale deep unsupervised learning using graphics processors. In Proc. 26th Annual International Conference on Machine Learning 873-880 (2009).",
+     "text_len": 183,
+     "level": 2,
+     "element_id": "p8_e129"
+    },
+    {
+     "reading_order": 130,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 42.52,
+      "t": 113.47,
+      "r": 284.68,
+      "b": 98.92,
+      "w": 242.16,
+      "h": 14.55,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.14504,
+      "r": 0.47823,
+      "b": 0.12644
+     },
+     "text": "Mohamed, A.-R., Dahl, G. E. & Hinton, G. Acoustic modeling using deep belief networks. IEEE Trans. Audio Speech Lang. Process. 20, 14-22 (2012).",
+     "text_len": 144,
+     "level": 2,
+     "element_id": "p8_e130"
+    },
+    {
+     "reading_order": 131,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 42.52,
+      "t": 97.27,
+      "r": 278.5,
+      "b": 74.62,
+      "w": 235.98,
+      "h": 22.65,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.12433,
+      "r": 0.46785,
+      "b": 0.09538
+     },
+     "text": "Dahl, G. E., Yu, D., Deng, L. & Acero, A. Context-dependent pre-trained deep neural networks for large vocabulary speech recognition. IEEE Trans. Audio Speech Lang. Process. 20, 33-42 (2012).",
+     "text_len": 191,
+     "level": 2,
+     "element_id": "p8_e131"
+    },
+    {
+     "reading_order": 132,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 42.52,
+      "t": 72.97,
+      "r": 290.5,
+      "b": 58.42,
+      "w": 247.99,
+      "h": 14.55,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.09327,
+      "r": 0.48801,
+      "b": 0.07467
+     },
+     "text": "Bengio, Y., Courville, A. & Vincent, P. Representation learning: a review and new perspectives. IEEE Trans. Pattern Anal. Machine Intell. 35, 1798-1828 (2013).",
+     "text_len": 159,
+     "level": 2,
+     "element_id": "p8_e132"
+    },
+    {
+     "reading_order": 133,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 42.52,
+      "t": 56.77,
+      "r": 290.01,
+      "b": 34.12,
+      "w": 247.49,
+      "h": 22.65,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.07256,
+      "r": 0.48719,
+      "b": 0.04361
+     },
+     "text": "LeCun, Y. et al. Handwritten digit recognition with a back-propagation network. In Proc. Advances in Neural Information Processing Systems 396-404 (1990). This is the first paper on convolutional networks trained by backpropagation",
+     "text_len": 231,
+     "level": 2,
+     "element_id": "p8_e133"
+    },
+    {
+     "reading_order": 134,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 320.31,
+      "t": 725.52,
+      "r": 532.7,
+      "b": 719.02,
+      "w": 212.39,
+      "h": 6.5,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.53809,
+      "t": 0.92735,
+      "r": 0.89488,
+      "b": 0.91904
+     },
+     "text": "for the task of classifying low-resolution images of handwritten digits.",
+     "text_len": 72,
+     "level": 2,
+     "element_id": "p8_e134"
+    },
+    {
+     "reading_order": 135,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 717.37,
+      "r": 554.28,
+      "b": 702.82,
+      "w": 248.14,
+      "h": 14.55,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.91693,
+      "r": 0.93113,
+      "b": 0.89833
+     },
+     "text": "LeCun, Y., Bottou, L., Bengio, Y. & Haffner, P. Gradient-based learning applied to document recognition. Proc. IEEE 86, 2278-2324 (1998).",
+     "text_len": 137,
+     "level": 2,
+     "element_id": "p8_e135"
+    },
+    {
+     "reading_order": 136,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 320.31,
+      "t": 701.22,
+      "r": 556.22,
+      "b": 654.22,
+      "w": 235.91,
+      "h": 47.0,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.53809,
+      "t": 0.89629,
+      "r": 0.93439,
+      "b": 0.83621
+     },
+     "text": "This overview paper on the principles of end-to-end training of modular systems such as deep neural networks using gradient-based optimization showed how neural networks (and in particular convolutional nets) can be combined with search or inference mechanisms to model complex outputs that are interdependent, such as sequences of characters associated with the content of a document.",
+     "text_len": 385,
+     "level": 2,
+     "element_id": "p8_e136"
+    },
+    {
+     "reading_order": 137,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 652.57,
+      "r": 558.43,
+      "b": 638.02,
+      "w": 252.29,
+      "h": 14.55,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.8341,
+      "r": 0.9381,
+      "b": 0.8155
+     },
+     "text": "Hubel, D. H. & Wiesel, T. N. Receptive fields, binocular interaction, and functional architecture in the cat's visual cortex. J. Physiol. 160, 106-154 (1962).",
+     "text_len": 158,
+     "level": 2,
+     "element_id": "p8_e137"
+    },
+    {
+     "reading_order": 138,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 636.37,
+      "r": 536.5,
+      "b": 621.82,
+      "w": 230.36,
+      "h": 14.55,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.8134,
+      "r": 0.90126,
+      "b": 0.7948
+     },
+     "text": "Felleman, D. J. & Essen, D. C. V. Distributed hierarchical processing in the primate cerebral cortex. Cereb. Cortex 1, 1-47 (1991).",
+     "text_len": 131,
+     "level": 2,
+     "element_id": "p8_e138"
+    },
+    {
+     "reading_order": 139,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 620.17,
+      "r": 542.21,
+      "b": 597.55,
+      "w": 236.06,
+      "h": 22.62,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.79269,
+      "r": 0.91085,
+      "b": 0.76378
+     },
+     "text": "Cadieu, C. F. et al. Deep neural networks rival the representation of primate it cortex for core visual object recognition. PLoS Comp. Biol. 10, e1003963 (2014).",
+     "text_len": 161,
+     "level": 2,
+     "element_id": "p8_e139"
+    },
+    {
+     "reading_order": 140,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 595.97,
+      "r": 552.77,
+      "b": 573.52,
+      "w": 246.63,
+      "h": 22.45,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.76176,
+      "r": 0.92859,
+      "b": 0.73306
+     },
+     "text": "Fukushima, K. & Miyake, S. Neocognitron: a new algorithm for pattern recognition tolerant of deformations and shifts in position. Pattern Recognition 15, 455-469 (1982).",
+     "text_len": 169,
+     "level": 2,
+     "element_id": "p8_e140"
+    },
+    {
+     "reading_order": 141,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 571.97,
+      "r": 542.21,
+      "b": 549.52,
+      "w": 236.06,
+      "h": 22.45,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.73108,
+      "r": 0.91085,
+      "b": 0.70239
+     },
+     "text": "Waibel, A., Hanazawa, T., Hinton, G. E., Shikano, K. & Lang, K. Phoneme recognition using time-delay neural networks. IEEE Trans. Acoustics Speech Signal Process. 37, 328-339 (1989).",
+     "text_len": 182,
+     "level": 2,
+     "element_id": "p8_e141"
+    },
+    {
+     "reading_order": 142,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 547.97,
+      "r": 554.27,
+      "b": 525.55,
+      "w": 248.13,
+      "h": 22.42,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.7004,
+      "r": 0.93111,
+      "b": 0.67175
+     },
+     "text": "Bottou, L., Fogelman-Soulié, F., Blanchet, P. & Lienard, J. Experiments with time delay networks and dynamic time warping for speaker independent isolated digit recognition. In Proc. EuroSpeech 89 537-540 (1989).",
+     "text_len": 212,
+     "level": 2,
+     "element_id": "p8_e142"
+    },
+    {
+     "reading_order": 143,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 523.97,
+      "r": 553.73,
+      "b": 509.55,
+      "w": 247.59,
+      "h": 14.42,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.66973,
+      "r": 0.93021,
+      "b": 0.6513
+     },
+     "text": "Simard, D., Steinkraus, P. Y. & Platt, J. C. Best practices for convolutional neural networks. In Proc. Document Analysis and Recognition 958-963 (2003).",
+     "text_len": 153,
+     "level": 2,
+     "element_id": "p8_e143"
+    },
+    {
+     "reading_order": 144,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 507.97,
+      "r": 549.27,
+      "b": 485.55,
+      "w": 243.13,
+      "h": 22.42,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.64928,
+      "r": 0.92271,
+      "b": 0.62062
+     },
+     "text": "Vaillant, R., Monrocq, C. & LeCun, Y. Original approach for the localisation of objects in images. In Proc. Vision, Image, and Signal Processing 141, 245-250 (1994).",
+     "text_len": 165,
+     "level": 2,
+     "element_id": "p8_e144"
+    },
+    {
+     "reading_order": 145,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 483.97,
+      "r": 555.91,
+      "b": 477.55,
+      "w": 249.76,
+      "h": 6.42,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.6186,
+      "r": 0.93387,
+      "b": 0.6104
+     },
+     "text": "Nowlan, S. & Platt, J. in Neural Information Processing Systems 901-908 (1995).",
+     "text_len": 79,
+     "level": 2,
+     "element_id": "p8_e145"
+    },
+    {
+     "reading_order": 146,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 475.97,
+      "r": 554.73,
+      "b": 453.55,
+      "w": 248.59,
+      "h": 22.42,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.60838,
+      "r": 0.93189,
+      "b": 0.57972
+     },
+     "text": "Lawrence, S., Giles, C. L., Tsoi, A. C. & Back, A. D. Face recognition: a convolutional neural-network approach. IEEE Trans. Neural Networks 8, 98-113 (1997).",
+     "text_len": 158,
+     "level": 2,
+     "element_id": "p8_e146"
+    },
+    {
+     "reading_order": 147,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 451.97,
+      "r": 543.76,
+      "b": 437.52,
+      "w": 237.62,
+      "h": 14.45,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.5777,
+      "r": 0.91346,
+      "b": 0.55923
+     },
+     "text": "Ciresan, D., Meier, U. Masci, J. & Schmidhuber, J. Multi-column deep neural network for traffic sign classification. Neural Networks 32, 333-338 (2012).",
+     "text_len": 152,
+     "level": 2,
+     "element_id": "p8_e147"
+    },
+    {
+     "reading_order": 148,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 435.97,
+      "r": 538.51,
+      "b": 421.52,
+      "w": 232.36,
+      "h": 14.45,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.55725,
+      "r": 0.90464,
+      "b": 0.53878
+     },
+     "text": "Ning, F. et al. Toward automatic phenotyping of developing embryos from videos. IEEE Trans. Image Process. 14, 1360-1371 (2005).",
+     "text_len": 128,
+     "level": 2,
+     "element_id": "p8_e148"
+    },
+    {
+     "reading_order": 149,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 419.97,
+      "r": 553.41,
+      "b": 405.52,
+      "w": 247.27,
+      "h": 14.45,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.5368,
+      "r": 0.92967,
+      "b": 0.51833
+     },
+     "text": "Turaga, S. C. et al. Convolutional networks can learn to generate affinity graphs for image segmentation. Neural Comput. 22, 511-538 (2010).",
+     "text_len": 140,
+     "level": 2,
+     "element_id": "p8_e149"
+    },
+    {
+     "reading_order": 150,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 403.97,
+      "r": 540.59,
+      "b": 381.55,
+      "w": 234.45,
+      "h": 22.42,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.51635,
+      "r": 0.90813,
+      "b": 0.48769
+     },
+     "text": "Garcia, C. & Delakis, M. Convolutional face finder: a neural architecture for fast and robust face detection. IEEE Trans. Pattern Anal. Machine Intell. 26, 1408-1423 (2004).",
+     "text_len": 173,
+     "level": 2,
+     "element_id": "p8_e150"
+    },
+    {
+     "reading_order": 151,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 379.97,
+      "r": 537.58,
+      "b": 357.55,
+      "w": 231.44,
+      "h": 22.42,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.48567,
+      "r": 0.90308,
+      "b": 0.45701
+     },
+     "text": "Osadchy, M., LeCun, Y. & Miller, M. Synergistic face detection and pose estimation with energy-based models. J. Mach. Learn. Res. 8, 1197-1215 (2007).",
+     "text_len": 150,
+     "level": 2,
+     "element_id": "p8_e151"
+    },
+    {
+     "reading_order": 152,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 355.97,
+      "r": 554.1,
+      "b": 333.55,
+      "w": 247.96,
+      "h": 22.42,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.45499,
+      "r": 0.93083,
+      "b": 0.42634
+     },
+     "text": "Tompson, J., Goroshin, R. R., Jain, A., LeCun, Y. Y. & Bregler, C. C. Efficient object localization using convolutional networks. In Proc. Conference on Computer Vision and Pattern Recognition http://arxiv.org/abs/1411.4280 (2014).",
+     "text_len": 231,
+     "level": 2,
+     "element_id": "p8_e152"
+    },
+    {
+     "reading_order": 153,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 332.07,
+      "r": 553.77,
+      "b": 309.85,
+      "w": 247.63,
+      "h": 22.22,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.42445,
+      "r": 0.93027,
+      "b": 0.39604
+     },
+     "text": "Taigman, Y., Yang, M., Ranzato, M. & Wolf, L. Deepface: closing the gap to human-level performance in face verification. In Proc. Conference on Computer Vision and Pattern Recognition 1701-1708 (2014).",
+     "text_len": 201,
+     "level": 2,
+     "element_id": "p8_e153"
+    },
+    {
+     "reading_order": 154,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 308.37,
+      "r": 547.12,
+      "b": 294.02,
+      "w": 240.98,
+      "h": 14.36,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.39415,
+      "r": 0.9191,
+      "b": 0.37581
+     },
+     "text": "Hadsell, R. et al. Learning long-range vision for autonomous off-road driving. J. Field Robot. 26, 120-144 (2009).",
+     "text_len": 114,
+     "level": 2,
+     "element_id": "p8_e154"
+    },
+    {
+     "reading_order": 155,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 292.57,
+      "r": 548.42,
+      "b": 270.35,
+      "w": 242.28,
+      "h": 22.22,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.37396,
+      "r": 0.92129,
+      "b": 0.34556
+     },
+     "text": "Farabet, C., Couprie, C., Najman, L. & LeCun, Y. Scene parsing with multiscale feature learning, purity trees, and optimal covers. In Proc. International Conference on Machine Learning http://arxiv.org/abs/1202.2160 (2012).",
+     "text_len": 223,
+     "level": 2,
+     "element_id": "p8_e155"
+    },
+    {
+     "reading_order": 156,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 268.87,
+      "r": 551.11,
+      "b": 246.62,
+      "w": 244.97,
+      "h": 22.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.34366,
+      "r": 0.92581,
+      "b": 0.31522
+     },
+     "text": "Srivastava, N., Hinton, G., Krizhevsky, A., Sutskever, I. & Salakhutdinov, R. Dropout: a simple way to prevent neural networks from overfitting. J. Machine Learning Res. 15, 1929-1958 (2014).",
+     "text_len": 191,
+     "level": 2,
+     "element_id": "p8_e156"
+    },
+    {
+     "reading_order": 157,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 245.17,
+      "r": 549.88,
+      "b": 222.94,
+      "w": 243.74,
+      "h": 22.23,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.31337,
+      "r": 0.92374,
+      "b": 0.28496
+     },
+     "text": "Sermanet, P. et al. Overfeat: integrated recognition, localization and detection using convolutional networks. In Proc. International Conference on Learning Representations http://arxiv.org/abs/1312.6229 (2014).",
+     "text_len": 211,
+     "level": 2,
+     "element_id": "p8_e157"
+    },
+    {
+     "reading_order": 158,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 221.47,
+      "r": 550.32,
+      "b": 199.25,
+      "w": 244.18,
+      "h": 22.22,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.28308,
+      "r": 0.92448,
+      "b": 0.25468
+     },
+     "text": "Girshick, R., Donahue, J., Darrell, T. & Malik, J. Rich feature hierarchies for accurate object detection and semantic segmentation. In Proc. Conference on Computer Vision and Pattern Recognition 580-587 (2014).",
+     "text_len": 211,
+     "level": 2,
+     "element_id": "p8_e158"
+    },
+    {
+     "reading_order": 159,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 197.77,
+      "r": 556.42,
+      "b": 175.55,
+      "w": 250.27,
+      "h": 22.22,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.25279,
+      "r": 0.93473,
+      "b": 0.22438
+     },
+     "text": "Simonyan, K. & Zisserman, A. Very deep convolutional networks for large-scale image recognition. In Proc. International Conference on Learning Representations http://arxiv.org/abs/1409.1556 (2014).",
+     "text_len": 197,
+     "level": 2,
+     "element_id": "p8_e159"
+    },
+    {
+     "reading_order": 160,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 174.07,
+      "r": 539.59,
+      "b": 151.85,
+      "w": 233.45,
+      "h": 22.22,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.22249,
+      "r": 0.90645,
+      "b": 0.19409
+     },
+     "text": "Boser, B., Sackinger, E., Bromley, J., LeCun, Y. & Jackel, L. An analog neural network processor with programmable topology. J. Solid State Circuits 26, 2017-2025 (1991).",
+     "text_len": 170,
+     "level": 2,
+     "element_id": "p8_e160"
+    },
+    {
+     "reading_order": 161,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 150.37,
+      "r": 548.99,
+      "b": 128.14,
+      "w": 242.84,
+      "h": 22.23,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.1922,
+      "r": 0.92224,
+      "b": 0.16379
+     },
+     "text": "Farabet, C. et al. Large-scale FPGA-based convolutional networks. In Scaling up Machine Learning: Parallel and Distributed Approaches (eds Bekkerman, R., Bilenko, M. & Langford, J.) 399-419 (Cambridge Univ. Press, 2011).",
+     "text_len": 220,
+     "level": 2,
+     "element_id": "p8_e161"
+    },
+    {
+     "reading_order": 162,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 126.67,
+      "r": 489.71,
+      "b": 120.25,
+      "w": 183.57,
+      "h": 6.42,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.16191,
+      "r": 0.82266,
+      "b": 0.1537
+     },
+     "text": "Bengio, Y. Learning Deep Architectures for AI (Now, 2009).",
+     "text_len": 58,
+     "level": 2,
+     "element_id": "p8_e162"
+    },
+    {
+     "reading_order": 163,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 118.77,
+      "r": 557.04,
+      "b": 104.42,
+      "w": 250.9,
+      "h": 14.35,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.15181,
+      "r": 0.93577,
+      "b": 0.13347
+     },
+     "text": "Montufar, G. & Morton, J. When does a mixture of products contain a product of mixtures? J. Discrete Math. 29, 321-347 (2014).",
+     "text_len": 126,
+     "level": 2,
+     "element_id": "p8_e163"
+    },
+    {
+     "reading_order": 164,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 102.97,
+      "r": 557.87,
+      "b": 80.75,
+      "w": 251.73,
+      "h": 22.22,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.13161,
+      "r": 0.93716,
+      "b": 0.10321
+     },
+     "text": "Montufar, G. F., Pascanu, R., Cho, K. & Bengio, Y. On the number of linear regions of deep neural networks. In Proc. Advances in Neural Information Processing Systems 27 2924-2932 (2014).",
+     "text_len": 187,
+     "level": 2,
+     "element_id": "p8_e164"
+    },
+    {
+     "reading_order": 165,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 79.27,
+      "r": 556.31,
+      "b": 41.22,
+      "w": 250.17,
+      "h": 38.06,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.10132,
+      "r": 0.93454,
+      "b": 0.05269
+     },
+     "text": "Bengio, Y., Ducharme, R. & Vincent, P. A neural probabilistic language model. In Proc. Advances in Neural Information Processing Systems 13 932-938 (2001). This paper introduced neural language models, which learn to convert a word symbol into a word vector or word embedding composed of learned semantic features in order to predict the next word in a sequence.",
+     "text_len": 362,
+     "level": 2,
+     "element_id": "p8_e165"
+    },
+    {
+     "reading_order": 166,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.14,
+      "t": 39.77,
+      "r": 542.53,
+      "b": 33.35,
+      "w": 236.39,
+      "h": 6.42,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.05083,
+      "r": 0.91139,
+      "b": 0.04263
+     },
+     "text": "Cho, K. et al. Learning phrase representations using RNN encoder-decoder",
+     "text_len": 72,
+     "level": 2,
+     "element_id": "p8_e166"
+    },
+    {
+     "reading_order": 167,
+     "page": 8,
+     "label": "picture",
+     "bbox": {
+      "l": 478.06,
+      "t": 762.0,
+      "r": 558.8,
+      "b": 742.62,
+      "w": 80.74,
+      "h": 19.38,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.80309,
+      "t": 0.97397,
+      "r": 0.93872,
+      "b": 0.9492
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p8_e167"
+    }
+   ]
+  },
+  {
+   "page_no": 9,
+   "width_pt": 595.276,
+   "height_pt": 782.362,
+   "png": "pages/page_0009.png",
+   "elements": [
+    {
+     "reading_order": 168,
+     "page": 9,
+     "label": "picture",
+     "bbox": {
+      "l": 35.62,
+      "t": 762.25,
+      "r": 117.05,
+      "b": 742.58,
+      "w": 81.42,
+      "h": 19.67,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.05984,
+      "t": 0.97429,
+      "r": 0.19663,
+      "b": 0.94915
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p9_e168"
+    },
+    {
+     "reading_order": 169,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 51.02,
+      "t": 725.47,
+      "r": 282.08,
+      "b": 711.15,
+      "w": 231.06,
+      "h": 14.32,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.08571,
+      "t": 0.92728,
+      "r": 0.47386,
+      "b": 0.90898
+     },
+     "text": "for statistical machine translation. In Proc. Conference on Empirical Methods in Natural Language Processing 1724-1734 (2014).",
+     "text_len": 126,
+     "level": 2,
+     "element_id": "p9_e169"
+    },
+    {
+     "reading_order": 170,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 36.85,
+      "t": 709.62,
+      "r": 280.48,
+      "b": 695.15,
+      "w": 243.63,
+      "h": 14.47,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.90702,
+      "r": 0.47118,
+      "b": 0.88853
+     },
+     "text": "Schwenk, H. Continuous space language models. Computer Speech Lang. 21, 492-518 (2007).",
+     "text_len": 87,
+     "level": 2,
+     "element_id": "p9_e170"
+    },
+    {
+     "reading_order": 171,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 36.85,
+      "t": 693.57,
+      "r": 267.13,
+      "b": 671.15,
+      "w": 230.28,
+      "h": 22.42,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.88651,
+      "r": 0.44875,
+      "b": 0.85785
+     },
+     "text": "Socher, R., Lin, C. C-Y., Manning, C. & Ng, A. Y. Parsing natural scenes and natural language with recursive neural networks. In Proc. International Conference on Machine Learning 129-136 (2011).",
+     "text_len": 195,
+     "level": 2,
+     "element_id": "p9_e171"
+    },
+    {
+     "reading_order": 172,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 36.85,
+      "t": 669.57,
+      "r": 271.42,
+      "b": 647.15,
+      "w": 234.57,
+      "h": 22.42,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.85583,
+      "r": 0.45596,
+      "b": 0.82717
+     },
+     "text": "Mikolov, T., Sutskever, I., Chen, K., Corrado, G. & Dean, J. Distributed representations of words and phrases and their compositionality. In Proc. Advances in Neural Information Processing Systems 26 3111-3119 (2013).",
+     "text_len": 217,
+     "level": 2,
+     "element_id": "p9_e172"
+    },
+    {
+     "reading_order": 173,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 36.85,
+      "t": 645.57,
+      "r": 273.92,
+      "b": 623.15,
+      "w": 237.07,
+      "h": 22.42,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.82516,
+      "r": 0.46016,
+      "b": 0.7965
+     },
+     "text": "Bahdanau, D., Cho, K. & Bengio, Y. Neural machine translation by jointly learning to align and translate. In Proc. International Conference on Learning Representations http://arxiv.org/abs/1409.0473 (2015).",
+     "text_len": 206,
+     "level": 2,
+     "element_id": "p9_e173"
+    },
+    {
+     "reading_order": 174,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 36.85,
+      "t": 621.67,
+      "r": 263.09,
+      "b": 607.25,
+      "w": 226.24,
+      "h": 14.42,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.79461,
+      "r": 0.44196,
+      "b": 0.77618
+     },
+     "text": "Hochreiter, S. Untersuchungen zu dynamischen neuronalen Netzen [in German] Diploma thesis, T.U. Münich (1991).",
+     "text_len": 110,
+     "level": 2,
+     "element_id": "p9_e174"
+    },
+    {
+     "reading_order": 175,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 36.85,
+      "t": 605.57,
+      "r": 276.48,
+      "b": 591.02,
+      "w": 239.63,
+      "h": 14.55,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.77403,
+      "r": 0.46446,
+      "b": 0.75543
+     },
+     "text": "Bengio, Y., Simard, P. & Frasconi, P. Learning long-term dependencies with gradient descent is difficult. IEEE Trans. Neural Networks 5, 157-166 (1994).",
+     "text_len": 152,
+     "level": 2,
+     "element_id": "p9_e175"
+    },
+    {
+     "reading_order": 176,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 36.85,
+      "t": 589.42,
+      "r": 280.67,
+      "b": 574.85,
+      "w": 243.81,
+      "h": 14.57,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.75339,
+      "r": 0.4715,
+      "b": 0.73476
+     },
+     "text": "Hochreiter, S. & Schmidhuber, J. Long short-term memory. Neural Comput. 9, 1735-1780 (1997).",
+     "text_len": 92,
+     "level": 2,
+     "element_id": "p9_e176"
+    },
+    {
+     "reading_order": 177,
+     "page": 9,
+     "label": "text",
+     "bbox": {
+      "l": 51.02,
+      "t": 573.22,
+      "r": 288.64,
+      "b": 550.52,
+      "w": 237.62,
+      "h": 22.7,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.08571,
+      "t": 0.73268,
+      "r": 0.48488,
+      "b": 0.70366
+     },
+     "text": "This paper introduced LSTM recurrent networks, which have become a crucial ingredient in recent advances with recurrent networks because they are good at learning long-range dependencies.",
+     "text_len": 187,
+     "level": 1,
+     "element_id": "p9_e177"
+    },
+    {
+     "reading_order": 178,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 36.85,
+      "t": 548.87,
+      "r": 285.83,
+      "b": 518.15,
+      "w": 248.98,
+      "h": 30.72,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.70156,
+      "r": 0.48016,
+      "b": 0.66229
+     },
+     "text": "ElHihi, S. & Bengio, Y. Hierarchical recurrent neural networks for long-term dependencies. In Proc. Advances in Neural Information Processing Systems 8 http://papers.nips.cc/paper/1102-hierarchical-recurrent-neural-networks-forlong-term-dependencies (1995).",
+     "text_len": 257,
+     "level": 2,
+     "element_id": "p9_e178"
+    },
+    {
+     "reading_order": 179,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 36.85,
+      "t": 516.57,
+      "r": 267.87,
+      "b": 502.15,
+      "w": 231.02,
+      "h": 14.42,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.66027,
+      "r": 0.44999,
+      "b": 0.64184
+     },
+     "text": "Sutskever, I. Training Recurrent Neural Networks. PhD thesis, Univ. Toronto (2012).",
+     "text_len": 83,
+     "level": 2,
+     "element_id": "p9_e179"
+    },
+    {
+     "reading_order": 180,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 36.85,
+      "t": 500.57,
+      "r": 287.3,
+      "b": 478.15,
+      "w": 250.45,
+      "h": 22.42,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.63982,
+      "r": 0.48263,
+      "b": 0.61116
+     },
+     "text": "Pascanu, R., Mikolov, T. & Bengio, Y. On the difficulty of training recurrent neural networks. In Proc. 30th International Conference on Machine Learning 13101318 (2013).",
+     "text_len": 170,
+     "level": 2,
+     "element_id": "p9_e180"
+    },
+    {
+     "reading_order": 181,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 36.85,
+      "t": 476.57,
+      "r": 277.83,
+      "b": 454.15,
+      "w": 240.98,
+      "h": 22.42,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.60914,
+      "r": 0.46672,
+      "b": 0.58049
+     },
+     "text": "Sutskever, I., Martens, J. & Hinton, G. E. Generating text with recurrent neural networks. In Proc. 28th International Conference on Machine Learning 10171024 (2011).",
+     "text_len": 166,
+     "level": 2,
+     "element_id": "p9_e181"
+    },
+    {
+     "reading_order": 182,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 36.85,
+      "t": 452.47,
+      "r": 272.94,
+      "b": 446.05,
+      "w": 236.09,
+      "h": 6.42,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.57834,
+      "r": 0.45851,
+      "b": 0.57013
+     },
+     "text": "Lakoff, G. & Johnson, M. Metaphors We Live By (Univ. Chicago Press, 2008).",
+     "text_len": 74,
+     "level": 2,
+     "element_id": "p9_e182"
+    },
+    {
+     "reading_order": 183,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 36.85,
+      "t": 444.37,
+      "r": 263.68,
+      "b": 429.85,
+      "w": 226.83,
+      "h": 14.52,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.56799,
+      "r": 0.44295,
+      "b": 0.54943
+     },
+     "text": "Rogers, T. T. & McClelland, J. L. Semantic Cognition: A Parallel Distributed Processing Approach (MIT Press, 2004).",
+     "text_len": 115,
+     "level": 2,
+     "element_id": "p9_e183"
+    },
+    {
+     "reading_order": 184,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 36.85,
+      "t": 428.27,
+      "r": 282.32,
+      "b": 405.85,
+      "w": 245.47,
+      "h": 22.42,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.54741,
+      "r": 0.47427,
+      "b": 0.51875
+     },
+     "text": "Xu, K. et al. Show, attend and tell: Neural image caption generation with visual attention. In Proc. International Conference on Learning Representations http:// arxiv.org/abs/1502.03044 (2015).",
+     "text_len": 194,
+     "level": 2,
+     "element_id": "p9_e184"
+    },
+    {
+     "reading_order": 185,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 36.85,
+      "t": 404.27,
+      "r": 288.33,
+      "b": 381.85,
+      "w": 251.48,
+      "h": 22.42,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.51673,
+      "r": 0.48436,
+      "b": 0.48807
+     },
+     "text": "Graves, A., Mohamed, A.-R. & Hinton, G. Speech recognition with deep recurrent neural networks. In Proc. International Conference on Acoustics, Speech and Signal Processing 6645-6649 (2013).",
+     "text_len": 190,
+     "level": 2,
+     "element_id": "p9_e185"
+    },
+    {
+     "reading_order": 186,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 36.85,
+      "t": 380.27,
+      "r": 281.66,
+      "b": 365.85,
+      "w": 244.81,
+      "h": 14.42,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.48605,
+      "r": 0.47316,
+      "b": 0.46762
+     },
+     "text": "Graves, A., Wayne, G. & Danihelka, I. Neural Turing machines. http://arxiv.org/ abs/1410.5401 (2014).",
+     "text_len": 101,
+     "level": 2,
+     "element_id": "p9_e186"
+    },
+    {
+     "reading_order": 187,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 36.85,
+      "t": 364.17,
+      "r": 258.31,
+      "b": 349.65,
+      "w": 221.46,
+      "h": 14.52,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.46548,
+      "r": 0.43393,
+      "b": 0.44692
+     },
+     "text": "Weston, J. Chopra, S. & Bordes, A. Memory networks. http://arxiv.org/ abs/1410.3916 (2014).",
+     "text_len": 91,
+     "level": 2,
+     "element_id": "p9_e187"
+    },
+    {
+     "reading_order": 188,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 300.47,
+      "t": 725.47,
+      "r": 541.49,
+      "b": 702.85,
+      "w": 241.02,
+      "h": 22.62,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50476,
+      "t": 0.92728,
+      "r": 0.90965,
+      "b": 0.89837
+     },
+     "text": "Weston, J., Bordes, A., Chopra, S. & Mikolov, T. Towards AI-complete question answering: a set of prerequisite toy tasks. http://arxiv.org/abs/1502.05698 (2015).",
+     "text_len": 161,
+     "level": 2,
+     "element_id": "p9_e188"
+    },
+    {
+     "reading_order": 189,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 300.47,
+      "t": 701.17,
+      "r": 539.69,
+      "b": 686.62,
+      "w": 239.21,
+      "h": 14.55,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50476,
+      "t": 0.89622,
+      "r": 0.90662,
+      "b": 0.87762
+     },
+     "text": "Hinton, G. E., Dayan, P., Frey, B. J. & Neal, R. M. The wake-sleep algorithm for unsupervised neural networks. Science 268, 1558-1161 (1995).",
+     "text_len": 141,
+     "level": 2,
+     "element_id": "p9_e189"
+    },
+    {
+     "reading_order": 190,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 300.47,
+      "t": 684.97,
+      "r": 550.08,
+      "b": 670.45,
+      "w": 249.61,
+      "h": 14.52,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50476,
+      "t": 0.87552,
+      "r": 0.92408,
+      "b": 0.85696
+     },
+     "text": "Salakhutdinov, R. & Hinton, G. Deep Boltzmann machines. In Proc. International Conference on Artificial Intelligence and Statistics 448-455 (2009).",
+     "text_len": 147,
+     "level": 2,
+     "element_id": "p9_e190"
+    },
+    {
+     "reading_order": 191,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 300.47,
+      "t": 669.07,
+      "r": 552.73,
+      "b": 647.05,
+      "w": 252.26,
+      "h": 22.02,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50476,
+      "t": 0.85519,
+      "r": 0.92853,
+      "b": 0.82705
+     },
+     "text": "Vincent, P., Larochelle, H., Bengio, Y. & Manzagol, P.-A. Extracting and composing robust features with denoising autoencoders. In Proc. 25th International Conference on Machine Learning 1096-1103 (2008).",
+     "text_len": 204,
+     "level": 2,
+     "element_id": "p9_e191"
+    },
+    {
+     "reading_order": 192,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 300.47,
+      "t": 645.47,
+      "r": 534.11,
+      "b": 623.05,
+      "w": 233.63,
+      "h": 22.42,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50476,
+      "t": 0.82503,
+      "r": 0.89725,
+      "b": 0.79637
+     },
+     "text": "Kavukcuoglu, K. et al. Learning convolutional feature hierarchies for visual recognition. In Proc. Advances in Neural Information Processing Systems 23 1090-1098 (2010).",
+     "text_len": 169,
+     "level": 2,
+     "element_id": "p9_e192"
+    },
+    {
+     "reading_order": 193,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 300.47,
+      "t": 621.47,
+      "r": 544.07,
+      "b": 607.05,
+      "w": 243.6,
+      "h": 14.42,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50476,
+      "t": 0.79435,
+      "r": 0.91398,
+      "b": 0.77592
+     },
+     "text": "Gregor, K. & LeCun, Y. Learning fast approximations of sparse coding. In Proc. International Conference on Machine Learning 399-406 (2010).",
+     "text_len": 139,
+     "level": 2,
+     "element_id": "p9_e193"
+    },
+    {
+     "reading_order": 194,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 300.47,
+      "t": 605.47,
+      "r": 543.0,
+      "b": 583.05,
+      "w": 242.53,
+      "h": 22.42,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50476,
+      "t": 0.7739,
+      "r": 0.91218,
+      "b": 0.74524
+     },
+     "text": "Ranzato, M., Mnih, V., Susskind, J. M. & Hinton, G. E. Modeling natural images using gated MRFs. IEEE Trans. Pattern Anal. Machine Intell. 35, 2206-2222 (2013).",
+     "text_len": 160,
+     "level": 2,
+     "element_id": "p9_e194"
+    },
+    {
+     "reading_order": 195,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 300.47,
+      "t": 581.47,
+      "r": 525.0,
+      "b": 559.05,
+      "w": 224.53,
+      "h": 22.42,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50476,
+      "t": 0.74322,
+      "r": 0.88194,
+      "b": 0.71457
+     },
+     "text": "Bengio, Y., Thibodeau-Laufer, E., Alain, G. & Yosinski, J. Deep generative stochastic networks trainable by backprop. In Proc. 31st International Conference on Machine Learning 226-234 (2014).",
+     "text_len": 192,
+     "level": 2,
+     "element_id": "p9_e195"
+    },
+    {
+     "reading_order": 196,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 300.47,
+      "t": 557.37,
+      "r": 550.91,
+      "b": 534.75,
+      "w": 250.43,
+      "h": 22.62,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50476,
+      "t": 0.71242,
+      "r": 0.92547,
+      "b": 0.68351
+     },
+     "text": "Kingma, D., Rezende, D., Mohamed, S. & Welling, M. Semi-supervised learning with deep generative models. In Proc. Advances in Neural Information Processing Systems 27 3581-3589 (2014).",
+     "text_len": 184,
+     "level": 2,
+     "element_id": "p9_e196"
+    },
+    {
+     "reading_order": 197,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 300.47,
+      "t": 533.07,
+      "r": 545.35,
+      "b": 510.45,
+      "w": 244.88,
+      "h": 22.62,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50476,
+      "t": 0.68136,
+      "r": 0.91613,
+      "b": 0.65245
+     },
+     "text": "Ba, J., Mnih, V. & Kavukcuoglu, K. Multiple object recognition with visual attention. In Proc. International Conference on Learning Representations http:// arxiv.org/abs/1412.7755 (2014).",
+     "text_len": 187,
+     "level": 2,
+     "element_id": "p9_e197"
+    },
+    {
+     "reading_order": 198,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 300.47,
+      "t": 508.87,
+      "r": 551.57,
+      "b": 494.42,
+      "w": 251.1,
+      "h": 14.45,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50476,
+      "t": 0.65043,
+      "r": 0.92658,
+      "b": 0.63196
+     },
+     "text": "Mnih, V. et al. Human-level control through deep reinforcement learning. Nature 518, 529-533 (2015).",
+     "text_len": 100,
+     "level": 2,
+     "element_id": "p9_e198"
+    },
+    {
+     "reading_order": 199,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 300.47,
+      "t": 492.82,
+      "r": 533.1,
+      "b": 478.25,
+      "w": 232.63,
+      "h": 14.57,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50476,
+      "t": 0.62991,
+      "r": 0.89555,
+      "b": 0.61129
+     },
+     "text": "Bottou, L. From machine learning to machine reasoning. Mach. Learn. 94, 133-149 (2014).",
+     "text_len": 87,
+     "level": 2,
+     "element_id": "p9_e199"
+    },
+    {
+     "reading_order": 200,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 300.47,
+      "t": 476.57,
+      "r": 549.49,
+      "b": 453.95,
+      "w": 249.02,
+      "h": 22.62,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50476,
+      "t": 0.60914,
+      "r": 0.92308,
+      "b": 0.58023
+     },
+     "text": "Vinyals, O., Toshev, A., Bengio, S. & Erhan, D. Show and tell: a neural image caption generator. In Proc. International Conference on Machine Learning http:// arxiv.org/abs/1502.03044 (2014).",
+     "text_len": 191,
+     "level": 2,
+     "element_id": "p9_e200"
+    },
+    {
+     "reading_order": 201,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 300.47,
+      "t": 452.27,
+      "r": 545.06,
+      "b": 437.72,
+      "w": 244.58,
+      "h": 14.55,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50476,
+      "t": 0.57808,
+      "r": 0.91564,
+      "b": 0.55949
+     },
+     "text": "van der Maaten, L. & Hinton, G. E. Visualizing data using t-SNE. J. Mach. Learn. Research 9, 2579-2605 (2008).",
+     "text_len": 110,
+     "level": 2,
+     "element_id": "p9_e201"
+    },
+    {
+     "reading_order": 202,
+     "page": 9,
+     "label": "text",
+     "bbox": {
+      "l": 300.47,
+      "t": 428.22,
+      "r": 542.92,
+      "b": 397.75,
+      "w": 242.45,
+      "h": 30.47,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50476,
+      "t": 0.54734,
+      "r": 0.91205,
+      "b": 0.5084
+     },
+     "text": "Acknowledgements The authors would like to thank the Natural Sciences and Engineering Research Council of Canada, the Canadian Institute For Advanced Research (CIFAR), the National Science Foundation and Office of Naval Research for support. Y.L. and Y.B. are CIFAR fellows.",
+     "text_len": 274,
+     "level": 1,
+     "element_id": "p9_e202"
+    },
+    {
+     "reading_order": 203,
+     "page": 9,
+     "label": "text",
+     "bbox": {
+      "l": 300.47,
+      "t": 388.22,
+      "r": 532.35,
+      "b": 349.74,
+      "w": 231.89,
+      "h": 38.47,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50476,
+      "t": 0.49622,
+      "r": 0.89429,
+      "b": 0.44703
+     },
+     "text": "Author Information Reprints and permissions information is available at www.nature.com/reprints. The authors declare no competing financial interests. Readers are welcome to comment on the online version of this paper at go.nature.com/7cjbaa. Correspondence should be addressed to Y.L. (yann@cs.nyu.edu).",
+     "text_len": 304,
+     "level": 1,
+     "element_id": "p9_e203"
+    }
+   ]
+  }
+ ],
+ "caption_blocks": [
+  {
+   "page": 2,
+   "blocks": [
+    {
+     "text": "Figure 1 | Multilayer neural networks and backpropagation. a, A multilayer neural network (shown by the connected dots) can distort the input space to make the classes of data (examples of which are on the red and blue lines) linearly separable. Note how a regular grid (shown on the left) in input space is also transformed (shown in the middle panel) by hidden units. This is an illustrative example with only two input units, two hidden units and one output unit, but the networks used for object recognition or natural language processing contain tens or hundreds of thousands of units. Reproduced with permission from C. Olah (http://colah.github.io/). b, The chain rule of derivatives tells us how two small effects (that of a small change of x on y, and that of y on z) are composed. A small change Δx in x gets transformed first into a small change Δy in y by getting multiplied by ∂y/∂x (that is, the definition of partial derivative). Similarly, the change Δy creates a change Δz in z. Substituting one equation into the other gives the chain rule of derivatives - how Δx gets turned into Δz through multiplication by the product of ∂y/∂x and ∂z/∂x. It also works when x, y and z are vectors (and the derivatives are Jacobian matrices). c, The equations used for computing the forward pass in a neural net with two hidden layers and one output layer, each constituting a module through",
+     "bbox": {
+      "l": 42.5,
+      "t": 211.26,
+      "r": 294.79,
+      "b": 32.83,
+      "w": 252.29,
+      "h": 178.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "element_ids": [
+      "p2_e19"
+     ]
+    }
+   ]
+  },
+  {
+   "page": 3,
+   "blocks": [
+    {
+     "text": "Figure 2 | Inside a convolutional network. The outputs (not the filters) of each layer (horizontally) of a typical convolutional network architecture applied to the image of a Samoyed dog (bottom left; and RGB (red, green, blue) inputs, bottom right). Each rectangular image is a feature map",
+     "bbox": {
+      "l": 36.85,
+      "t": 501.57,
+      "r": 275.81,
+      "b": 465.69,
+      "w": 238.96,
+      "h": 35.88,
+      "coord": "pdf_points_bottomleft"
+     },
+     "element_ids": [
+      "p3_e24"
+     ]
+    }
+   ]
+  },
+  {
+   "page": 5,
+   "blocks": [
+    {
+     "text": "A little girl sitting on a bed with a teddy bear.",
+     "bbox": {
+      "l": 53.18,
+      "t": 384.12,
+      "r": 190.1,
+      "b": 378.08,
+      "w": 136.92,
+      "h": 6.04,
+      "coord": "pdf_points_bottomleft"
+     },
+     "element_ids": [
+      "p5_e50"
+     ]
+    },
+    {
+     "text": "A group of people sitting on a boat in the water.",
+     "bbox": {
+      "l": 223.02,
+      "t": 384.12,
+      "r": 368.26,
+      "b": 378.08,
+      "w": 145.24,
+      "h": 6.04,
+      "coord": "pdf_points_bottomleft"
+     },
+     "element_ids": [
+      "p5_e51"
+     ]
+    },
+    {
+     "text": "A giraffe standing in a forest with trees in the background.",
+     "bbox": {
+      "l": 417.57,
+      "t": 384.07,
+      "r": 517.71,
+      "b": 370.28,
+      "w": 100.15,
+      "h": 13.79,
+      "coord": "pdf_points_bottomleft"
+     },
+     "element_ids": [
+      "p5_e53"
+     ]
+    },
+    {
+     "text": "Figure 3 | From image to text. Captions generated by a recurrent neural network (RNN) taking, as extra input, the representation extracted by a deep convolution neural network (CNN) from a test image, with the RNN trained to 'translate' high-level representations of images into captions (top). Reproduced",
+     "bbox": {
+      "l": 36.85,
+      "t": 355.97,
+      "r": 284.77,
+      "b": 320.09,
+      "w": 247.92,
+      "h": 35.88,
+      "coord": "pdf_points_bottomleft"
+     },
+     "element_ids": [
+      "p5_e52"
+     ]
+    }
+   ]
+  },
+  {
+   "page": 6,
+   "blocks": [
+    {
+     "text": "Figure 4 | Visualizing the learned word vectors. On the left is an illustration of word representations learned for modelling language, non-linearly projected to 2D for visualization using the t-SNE algorithm 103 . On the right is a 2D representation of phrases learned by an English-to-French encoder-decoder recurrent neural network 75 . One can observe that semantically similar words",
+     "bbox": {
+      "l": 42.52,
+      "t": 79.2,
+      "r": 294.28,
+      "b": 33.82,
+      "w": 251.76,
+      "h": 45.38,
+      "coord": "pdf_points_bottomleft"
+     },
+     "element_ids": [
+      "p6_e71"
+     ]
+    },
+    {
+     "text": "or sequences of words are mapped to nearby representations. The distributed representations of words are obtained by using backpropagation to jointly learn a representation for each word and a function that predicts a target quantity such as the next word in a sequence (for language modelling) or a whole sequence of translated words (for machine translation) 18,75 .",
+     "bbox": {
+      "l": 306.14,
+      "t": 79.19,
+      "r": 557.94,
+      "b": 33.81,
+      "w": 251.79,
+      "h": 45.38,
+      "coord": "pdf_points_bottomleft"
+     },
+     "element_ids": [
+      "p6_e72"
+     ]
+    }
+   ]
+  },
+  {
+   "page": 7,
+   "blocks": [
+    {
+     "text": "Figure 5 | A recurrent neural network and the unfolding in time of the computation involved in its forward computation. The artificial neurons (for example, hidden units grouped under node s with values st at time t) get inputs from other neurons at previous time steps (this is represented with the black square, representing a delay of one time step, on the left). In this way, a recurrent neural network can map an input sequence with elements xt into an output sequence with elements ot, with each ot depending on all the previous xtʹ (for tʹ ≤ t). The same parameters (matrices U,V,W ) are used at each time step. Many other architectures are possible, including a variant in which the network can generate a sequence of outputs (for example, words), each of which is used as inputs for the next time step. The backpropagation algorithm (Fig. 1) can be directly applied to the computational graph of the unfolded network on the right, to compute the derivative of a total error (for example, the log-probability of generating the right sequence of outputs) with respect to all the states st and all the parameters.",
+     "bbox": {
+      "l": 36.85,
+      "t": 639.72,
+      "r": 288.37,
+      "b": 498.38,
+      "w": 251.52,
+      "h": 141.33,
+      "coord": "pdf_points_bottomleft"
+     },
+     "element_ids": [
+      "p7_e75"
+     ]
+    }
+   ]
+  }
+ ],
+ "uncaptioned_pictures": [
+  {
+   "page": 1,
+   "bbox": {
+    "l": 36.71,
+    "t": 746.66,
+    "r": 178.14,
+    "b": 717.69,
+    "w": 141.43,
+    "h": 28.97,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": true,
+   "element_id": "p1_e0"
+  },
+  {
+   "page": 2,
+   "bbox": {
+    "l": 478.37,
+    "t": 761.88,
+    "r": 558.82,
+    "b": 742.6,
+    "w": 80.45,
+    "h": 19.28,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": false,
+   "element_id": "p2_e15"
+  },
+  {
+   "page": 3,
+   "bbox": {
+    "l": 35.8,
+    "t": 761.56,
+    "r": 117.01,
+    "b": 742.78,
+    "w": 81.21,
+    "h": 18.78,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": false,
+   "reason": "below minimum figure size",
+   "element_id": "p3_e21"
+  },
+  {
+   "page": 3,
+   "bbox": {
+    "l": 35.58,
+    "t": 704.75,
+    "r": 548.03,
+    "b": 507.96,
+    "w": 512.46,
+    "h": 196.79,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": true,
+   "element_id": "p3_e23"
+  },
+  {
+   "page": 4,
+   "bbox": {
+    "l": 478.01,
+    "t": 762.0,
+    "r": 558.9,
+    "b": 742.24,
+    "w": 80.89,
+    "h": 19.76,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": false,
+   "element_id": "p4_e40"
+  },
+  {
+   "page": 5,
+   "bbox": {
+    "l": 36.05,
+    "t": 761.76,
+    "r": 116.95,
+    "b": 742.56,
+    "w": 80.9,
+    "h": 19.2,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": false,
+   "element_id": "p5_e48"
+  },
+  {
+   "page": 6,
+   "bbox": {
+    "l": 478.16,
+    "t": 762.04,
+    "r": 558.96,
+    "b": 742.44,
+    "w": 80.8,
+    "h": 19.61,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": false,
+   "element_id": "p6_e65"
+  },
+  {
+   "page": 7,
+   "bbox": {
+    "l": 35.84,
+    "t": 762.31,
+    "r": 117.1,
+    "b": 742.4,
+    "w": 81.25,
+    "h": 19.91,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": false,
+   "reason": "below minimum figure size",
+   "element_id": "p7_e73"
+  },
+  {
+   "page": 7,
+   "bbox": {
+    "l": 70.46,
+    "t": 722.03,
+    "r": 256.85,
+    "b": 651.27,
+    "w": 186.39,
+    "h": 70.76,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": true,
+   "element_id": "p7_e74"
+  },
+  {
+   "page": 8,
+   "bbox": {
+    "l": 478.06,
+    "t": 762.0,
+    "r": 558.8,
+    "b": 742.62,
+    "w": 80.74,
+    "h": 19.38,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": false,
+   "element_id": "p8_e167"
+  },
+  {
+   "page": 9,
+   "bbox": {
+    "l": 35.62,
+    "t": 762.25,
+    "r": 117.05,
+    "b": 742.58,
+    "w": 81.42,
+    "h": 19.67,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": false,
+   "element_id": "p9_e168"
+  }
+ ]
+}

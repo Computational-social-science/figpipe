@@ -1,0 +1,45 @@
+{
+ "paper_id": "1968_nature_virology_coronaviruses_7757b56e",
+ "source_pdf": "D:\\2024-Origin and evolution of virus genera\\2020-2024-Coronavirus\\!Origional historical materials\\! 1968-Nature_Virology_Coronaviruses.pdf",
+ "source_sha256": "2593e5af711be42f90534ddd049b224c0233664b0513fbe39bf7cacd6f22eeb2",
+ "source_name": "! 1968-Nature_Virology_Coronaviruses.pdf",
+ "n_pages": 1,
+ "generated_at": "2026-10-18T11:23:44",
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "n_figures": 0,
+ "n_tables": 1,
+ "n_pictures_detected": 0,
+ "n_uncaptioned_pictures": 0,
+ "figures": [],
+ "tables": [
+  {
+   "table_id": "table_001",
+   "page": 1,
+   "bbox": {
+    "l": 294.35,
+    "t": 365.95,
+    "r": 527.62,
+    "b": 265.49,
+    "w": 233.27,
+    "h": 100.46,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p1_e69"
+  }
+ ]
+}

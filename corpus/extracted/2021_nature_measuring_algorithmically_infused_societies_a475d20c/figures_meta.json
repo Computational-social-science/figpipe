@@ -1,0 +1,74 @@
+{
+ "paper_id": "2021_nature_measuring_algorithmically_infused_societies_a475d20c",
+ "source_pdf": "D:\\2024-Matthew effects deepen the cognitive gap\\Abductive reasoning\\! 2021-Nature_Measuring algorithmically infused societies.pdf",
+ "source_sha256": "25a149a6c6bacd458fd921fb2c359b8cf7c7744a28cc4f33fcc872a6f33de00e",
+ "source_name": "! 2021-Nature_Measuring algorithmically infused societies.pdf",
+ "n_pages": 8,
+ "generated_at": "2026-10-18T11:24:42",
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "n_figures": 1,
+ "n_tables": 0,
+ "n_pictures_detected": 2,
+ "n_uncaptioned_pictures": 1,
+ "figures": [
+  {
+   "figure_id": "fig_001",
+   "kind": "figure",
+   "label_form": "Fig. 1",
+   "figure_number": 1,
+   "page": 3,
+   "bbox": {
+    "l": 33.41,
+    "t": 744.77,
+    "r": 556.68,
+    "b": 534.3,
+    "w": 523.27,
+    "h": 210.47,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 67,
+    "y0": 92,
+    "x1": 1113,
+    "y1": 513,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_001.png",
+   "image_size_px": [
+    1046,
+    421
+   ],
+   "caption": "Fig. 1 | Measuring algorithmically infused societies. a, b, In algorithmically infused societies, not only do social, economic, political and scientific processes impact each other (a), but algorithms also operate at different levels-shaping and being shaped by their environment. Scientific processes can shape algorithmic platforms when newly developed algorithms also lead to new measurements, hypotheses and theories. For example, neural language models may enable new measurements of similarity between users, impacting homophily measurements and theories about user interactions. At the same time, platforms determine what can be observed; as data are often collected 'under the algorithm' and platforms decide what can be collected, and who and what type of access they have to the data and the underlying systems. For example, hate speech detection algorithms on social media platforms may impact measures of civility. Organizational models such as Social Science One (https://socialscience.one) support collaborations between industry and academic partners, but still define who has access to what data and for which",
+   "caption_page": 3,
+   "caption_text": "Fig. 1 | Measuring algorithmically infused societies. a, b, In algorithmically infused societies, not only do social, economic, political and scientific processes impact each other (a), but algorithms also operate at different levels-shaping and being shaped by their environment. Scientific processes can shape algorithmic platforms when newly developed algorithms also lead to new measurements, hypotheses and theories. For example, neural language models may enable new measurements of similarity between users, impacting homophily measurements and theories about user interactions. At the same time, platforms determine what can be observed; as data are often collected 'under the algorithm' and platforms decide what can be collected, and who and what type of access they have to the data and the underlying systems. For example, hate speech detection algorithms on social media platforms may impact measures of civility. Organizational models such as Social Science One (https://socialscience.one) support collaborations between industry and academic partners, but still define who has access to what data and for which",
+   "caption_bbox": {
+    "l": 39.4,
+    "t": 525.75,
+    "r": 293.69,
+    "b": 379.21,
+    "w": 254.29,
+    "h": 146.54,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p3_e35"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 8.55
+   },
+   "element_id": "p3_e34",
+   "reading_order": 34
+  }
+ ],
+ "tables": []
+}

@@ -1,0 +1,227 @@
+{
+ "paper_id": "2015_nature_deep_learning_7cdc278d",
+ "source_pdf": "D:\\2025-Skew-Pair fusion\\! 2015-Nature-Deep learning.pdf",
+ "source_sha256": "aba45635c480e9dd9984e22980f530735e79f83d3319e6587df88d9d5bf9d8e3",
+ "source_name": "! 2015-Nature-Deep learning.pdf",
+ "n_pages": 9,
+ "generated_at": "2026-10-18T11:24:12",
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "n_figures": 4,
+ "n_tables": 0,
+ "n_pictures_detected": 15,
+ "n_uncaptioned_pictures": 11,
+ "figures": [
+  {
+   "figure_id": "fig_001",
+   "kind": "figure",
+   "label_form": "Figure 1",
+   "figure_number": 1,
+   "page": 2,
+   "bbox": {
+    "l": 78.18,
+    "t": 523.05,
+    "r": 508.25,
+    "b": 224.14,
+    "w": 430.07,
+    "h": 298.91,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 156,
+    "y0": 519,
+    "x1": 1016,
+    "y1": 1116,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_001.png",
+   "image_size_px": [
+    860,
+    597
+   ],
+   "caption": "Figure 1 | Multilayer neural networks and backpropagation. a, A multilayer neural network (shown by the connected dots) can distort the input space to make the classes of data (examples of which are on the red and blue lines) linearly separable. Note how a regular grid (shown on the left) in input space is also transformed (shown in the middle panel) by hidden units. This is an illustrative example with only two input units, two hidden units and one output unit, but the networks used for object recognition or natural language processing contain tens or hundreds of thousands of units. Reproduced with permission from C. Olah (http://colah.github.io/). b, The chain rule of derivatives tells us how two small effects (that of a small change of x on y, and that of y on z) are composed. A small change Δx in x gets transformed first into a small change Δy in y by getting multiplied by ∂y/∂x (that is, the definition of partial derivative). Similarly, the change Δy creates a change Δz in z. Substituting one equation into the other gives the chain rule of derivatives - how Δx gets turned into Δz through multiplication by the product of ∂y/∂x and ∂z/∂x. It also works when x, y and z are vectors (and the derivatives are Jacobian matrices). c, The equations used for computing the forward pass in a neural net with two hidden layers and one output layer, each constituting a module through",
+   "caption_page": 2,
+   "caption_text": "Figure 1 | Multilayer neural networks and backpropagation. a, A multilayer neural network (shown by the connected dots) can distort the input space to make the classes of data (examples of which are on the red and blue lines) linearly separable. Note how a regular grid (shown on the left) in input space is also transformed (shown in the middle panel) by hidden units. This is an illustrative example with only two input units, two hidden units and one output unit, but the networks used for object recognition or natural language processing contain tens or hundreds of thousands of units. Reproduced with permission from C. Olah (http://colah.github.io/). b, The chain rule of derivatives tells us how two small effects (that of a small change of x on y, and that of y on z) are composed. A small change Δx in x gets transformed first into a small change Δy in y by getting multiplied by ∂y/∂x (that is, the definition of partial derivative). Similarly, the change Δy creates a change Δz in z. Substituting one equation into the other gives the chain rule of derivatives - how Δx gets turned into Δz through multiplication by the product of ∂y/∂x and ∂z/∂x. It also works when x, y and z are vectors (and the derivatives are Jacobian matrices). c, The equations used for computing the forward pass in a neural net with two hidden layers and one output layer, each constituting a module through",
+   "caption_bbox": {
+    "l": 42.52,
+    "t": 211.26,
+    "r": 294.78,
+    "b": 32.89,
+    "w": 252.26,
+    "h": 178.37,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p2_e19"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 12.88
+   },
+   "element_id": "p2_e18",
+   "reading_order": 18
+  },
+  {
+   "figure_id": "fig_002",
+   "kind": "figure",
+   "label_form": "",
+   "figure_number": null,
+   "page": 5,
+   "bbox": {
+    "l": 42.06,
+    "t": 722.74,
+    "r": 553.28,
+    "b": 380.81,
+    "w": 511.22,
+    "h": 341.93,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 84,
+    "y0": 119,
+    "x1": 1107,
+    "y1": 803,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_002.png",
+   "image_size_px": [
+    1023,
+    684
+   ],
+   "caption": "A little girl sitting on a bed with a teddy bear.",
+   "caption_page": 5,
+   "caption_text": "A little girl sitting on a bed with a teddy bear.",
+   "caption_bbox": {
+    "l": 53.18,
+    "t": 384.12,
+    "r": 190.1,
+    "b": 378.08,
+    "w": 136.92,
+    "h": 6.04,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p5_e50"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": -3.31
+   },
+   "element_id": "p5_e49",
+   "reading_order": 49
+  },
+  {
+   "figure_id": "fig_003",
+   "kind": "figure",
+   "label_form": "Figure 4",
+   "figure_number": 4,
+   "page": 6,
+   "bbox": {
+    "l": 45.33,
+    "t": 259.53,
+    "r": 275.8,
+    "b": 89.79,
+    "w": 230.47,
+    "h": 169.74,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 91,
+    "y0": 1046,
+    "x1": 552,
+    "y1": 1385,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_003.png",
+   "image_size_px": [
+    461,
+    339
+   ],
+   "caption": "Figure 4 | Visualizing the learned word vectors. On the left is an illustration of word representations learned for modelling language, non-linearly projected to 2D for visualization using the t-SNE algorithm 103 . On the right is a 2D representation of phrases learned by an English-to-French encoder-decoder recurrent neural network 75 . One can observe that semantically similar words",
+   "caption_page": 6,
+   "caption_text": "Figure 4 | Visualizing the learned word vectors. On the left is an illustration of word representations learned for modelling language, non-linearly projected to 2D for visualization using the t-SNE algorithm 103 . On the right is a 2D representation of phrases learned by an English-to-French encoder-decoder recurrent neural network 75 . One can observe that semantically similar words",
+   "caption_bbox": {
+    "l": 42.52,
+    "t": 79.2,
+    "r": 294.28,
+    "b": 33.83,
+    "w": 251.76,
+    "h": 45.37,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p6_e71"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 10.59
+   },
+   "element_id": "p6_e64",
+   "reading_order": 64
+  },
+  {
+   "figure_id": "fig_004",
+   "kind": "figure",
+   "label_form": "",
+   "figure_number": null,
+   "page": 6,
+   "bbox": {
+    "l": 303.73,
+    "t": 256.88,
+    "r": 546.52,
+    "b": 89.96,
+    "w": 242.78,
+    "h": 166.93,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 607,
+    "y0": 1051,
+    "x1": 1093,
+    "y1": 1385,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_004.png",
+   "image_size_px": [
+    486,
+    334
+   ],
+   "caption": "or sequences of words are mapped to nearby representations. The distributed representations of words are obtained by using backpropagation to jointly learn a representation for each word and a function that predicts a target quantity such as the next word in a sequence (for language modelling) or a whole sequence of translated words (for machine translation) 18,75 .",
+   "caption_page": 6,
+   "caption_text": "or sequences of words are mapped to nearby representations. The distributed representations of words are obtained by using backpropagation to jointly learn a representation for each word and a function that predicts a target quantity such as the next word in a sequence (for language modelling) or a whole sequence of translated words (for machine translation) 18,75 .",
+   "caption_bbox": {
+    "l": 306.14,
+    "t": 79.2,
+    "r": 557.94,
+    "b": 33.83,
+    "w": 251.79,
+    "h": 45.37,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p6_e72"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 10.76
+   },
+   "element_id": "p6_e70",
+   "reading_order": 70
+  }
+ ],
+ "tables": []
+}

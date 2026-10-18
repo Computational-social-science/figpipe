@@ -1,0 +1,2472 @@
+{
+ "paper_id": "2023_nature_chatgpt_broke_the_turing_test_the_race_is_on_for_b3a044cf",
+ "source_pdf": "D:\\2026-Metacognition\\! 2023-Nature-ChatGPT broke the Turing test — the race is on for new ways to assess AI.pdf",
+ "source_sha256": "abb9af0c4d207194d1aaec3e0706438055787f38e4a53cd91dad1bec62df2b62",
+ "source_name": "! 2023-Nature-ChatGPT broke the Turing test — the race is on for new ways to assess AI.pdf",
+ "n_pages": 4,
+ "page_size_pt": [
+  595.28,
+  790.87
+ ],
+ "coordinate_note": "bbox is PDF points with origin at the BOTTOM-LEFT, y increasing upward; bbox_norm divides by page size.",
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "generated_at": "2026-10-18T11:25:04",
+ "pages": [
+  {
+   "page_no": 1,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0001.png",
+   "elements": [
+    {
+     "reading_order": 0,
+     "page": 1,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.86,
+      "t": 741.65,
+      "r": 377.19,
+      "b": 461.38,
+      "w": 337.33,
+      "h": 280.27,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06696,
+      "t": 0.93777,
+      "r": 0.63364,
+      "b": 0.58339
+     },
+     "text": "THE EASY INTELLIGENCE TESTS THAT AI CHATBOTS FAIL",
+     "text_len": 49,
+     "level": 1,
+     "element_id": "p1_e0"
+    },
+    {
+     "reading_order": 1,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 456.53,
+      "r": 383.22,
+      "b": 404.46,
+      "w": 343.54,
+      "h": 52.07,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.57725,
+      "r": 0.64377,
+      "b": 0.51141
+     },
+     "text": "Scientists are racing to find new ways to clarify the differences between the capabilities of humans and of large language models. By Celeste Biever",
+     "text_len": 148,
+     "level": 1,
+     "element_id": "p1_e1"
+    },
+    {
+     "reading_order": 2,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 38.32,
+      "t": 332.81,
+      "r": 206.05,
+      "b": 236.72,
+      "w": 167.73,
+      "h": 96.09,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06437,
+      "t": 0.42082,
+      "r": 0.34614,
+      "b": 0.29932
+     },
+     "text": "T he world's best artificial intelligence (AI) systems can pass tough exams, write convincingly human essays and chat so fluently that many find their output indistinguishable from people's. What can't they do? Solve simple visual logic puzzles.",
+     "text_len": 245,
+     "level": 1,
+     "element_id": "p1_e2"
+    },
+    {
+     "reading_order": 3,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 257.56,
+      "r": 206.06,
+      "b": 163.9,
+      "w": 166.38,
+      "h": 93.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.32567,
+      "r": 0.34616,
+      "b": 0.20724
+     },
+     "text": "In a test consisting of a series of brightly coloured blocks arranged on a screen, most people can spot the connecting patterns. But GPT-4, the most advanced version of the AI system behind the chatbot ChatGPT and the search engine Bing, gets barely one-third of the puzzles right in one category of patterns and as little as 3% correct in another, according to a report by researchers this May 1 .",
+     "text_len": 398,
+     "level": 1,
+     "element_id": "p1_e3"
+    },
+    {
+     "reading_order": 4,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 39.68,
+      "t": 160.81,
+      "r": 206.04,
+      "b": 45.65,
+      "w": 166.36,
+      "h": 115.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06666,
+      "t": 0.20333,
+      "r": 0.34613,
+      "b": 0.05772
+     },
+     "text": "The team behind the logic puzzles aims to provide a better benchmark for testing the capabilities of AI systems - and to help address a conundrum about large language models (LLMs) such as GPT-4. Tested in one way, they breeze through what once were considered landmark feats of machine intelligence. Tested another way, they seem less impressive, exhibiting glaring blind spots and an inability to reason about abstract concepts. \"People in the field of AI are struggling with how to assess these systems,\" says Melanie Mitchell, a computer scientist at the Santa Fe Institute in New Mexico whose team created the logic puzzles.",
+     "text_len": 629,
+     "level": 1,
+     "element_id": "p1_e4"
+    },
+    {
+     "reading_order": 5,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 289.81,
+      "r": 383.68,
+      "b": 185.4,
+      "w": 166.36,
+      "h": 104.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.36645,
+      "r": 0.64454,
+      "b": 0.23443
+     },
+     "text": "In the past two to three years, LLMs have blown previous AI systems out of the water in terms of their ability across multiple tasks. They work simply by generating plausible next words when given an input text, based on the statistical correlations between words in billions of online sentences they are trained on. For chatbots built on LLMs, there is an extra element: human trainers have provided extensive feedback to tune how the bots respond.",
+     "text_len": 449,
+     "level": 1,
+     "element_id": "p1_e5"
+    },
+    {
+     "reading_order": 6,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 182.31,
+      "r": 383.69,
+      "b": 110.15,
+      "w": 166.36,
+      "h": 72.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.23052,
+      "r": 0.64456,
+      "b": 0.13928
+     },
+     "text": "What's striking is the breadth of capabilities that emerges from this autocomplete-like algorithm trained on vast stores of human language. Other AI systems might beat the LLMs at any one task, but they have to be trained on data relevant to a specific problem, and cannot generalize from one task to another.",
+     "text_len": 309,
+     "level": 1,
+     "element_id": "p1_e6"
+    },
+    {
+     "reading_order": 7,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 107.06,
+      "r": 383.69,
+      "b": 45.65,
+      "w": 166.37,
+      "h": 61.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.13537,
+      "r": 0.64456,
+      "b": 0.05772
+     },
+     "text": "Broadly speaking, two camps of researchers have opposing views about what is going on under the hood of LLMs, says Tomer Ullman, a cognitive scientist at Harvard University in Cambridge, Massachusetts. Some attribute the algorithms' achievements to glimmers of reasoning, or understanding, he says. Others (including himself and researchers such as Mitchell) are much more cautious.",
+     "text_len": 382,
+     "level": 1,
+     "element_id": "p1_e7"
+    },
+    {
+     "reading_order": 8,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 709.06,
+      "r": 561.34,
+      "b": 636.9,
+      "w": 166.38,
+      "h": 72.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.89656,
+      "r": 0.94299,
+      "b": 0.80532
+     },
+     "text": "\"There's very good smart people on all sides of this debate,\" says Ullman. The reason for the split, he says, is a lack of conclusive evidence supporting either opinion. \"There's no Geiger counter we can point at something and say 'beep beep beep - yes, intelligent',\" Ullman adds.",
+     "text_len": 281,
+     "level": 1,
+     "element_id": "p1_e8"
+    },
+    {
+     "reading_order": 9,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 633.81,
+      "r": 561.36,
+      "b": 529.4,
+      "w": 166.4,
+      "h": 104.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.80141,
+      "r": 0.94302,
+      "b": 0.66939
+     },
+     "text": "Tests such as the logic puzzles that reveal differences between the capabilities of people and AI systems are a step in the right direction, say researchers from both sides of the discussion. Such benchmarks could also help to show what is missing in today's machine-learning systems, and untangle the ingredients of human intelligence, says Brenden Lake, a cognitive computational scientist at New York University.",
+     "text_len": 415,
+     "level": 1,
+     "element_id": "p1_e9"
+    },
+    {
+     "reading_order": 10,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 526.31,
+      "r": 561.3,
+      "b": 443.4,
+      "w": 166.34,
+      "h": 82.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.66549,
+      "r": 0.94292,
+      "b": 0.56065
+     },
+     "text": "Research on how best to test LLMs and what those tests show also has a practical point. If LLMs are going to be applied in real-world domains - from medicine to law - it's important to understand the limits of their capabilities, Mitchell says. \"We have to understand what they can do and where they fail, so that we can know how to use them in a safe manner.\"",
+     "text_len": 360,
+     "level": 1,
+     "element_id": "p1_e10"
+    },
+    {
+     "reading_order": 11,
+     "page": 1,
+     "label": "section_header",
+     "bbox": {
+      "l": 394.96,
+      "t": 432.64,
+      "r": 503.0,
+      "b": 423.62,
+      "w": 108.04,
+      "h": 9.02,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.54705,
+      "r": 0.84499,
+      "b": 0.53564
+     },
+     "text": "Is the Turing test dead?",
+     "text_len": 24,
+     "level": 1,
+     "element_id": "p1_e11"
+    },
+    {
+     "reading_order": 12,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 418.81,
+      "r": 561.37,
+      "b": 292.9,
+      "w": 166.41,
+      "h": 125.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.52956,
+      "r": 0.94304,
+      "b": 0.37035
+     },
+     "text": "The most famous test of machine intelligence has long been the Turing test, proposed by the British mathematician and computing luminary Alan Turing in 1950, when computers were still in their infancy. Turing suggested an assessment that he called the imitation game 2 . This was a scenario in which human judges hold short, text-based conversations with a hidden computer and an unseen person. Could the judge reliably detect which was the computer? That was a question equivalent to 'Can machines think?', Turing suggested.",
+     "text_len": 525,
+     "level": 1,
+     "element_id": "p1_e12"
+    },
+    {
+     "reading_order": 13,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 289.81,
+      "r": 561.32,
+      "b": 206.9,
+      "w": 166.36,
+      "h": 82.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.36645,
+      "r": 0.94296,
+      "b": 0.26161
+     },
+     "text": "Turing did not specify many details about the scenario, notes Mitchell, so there is no exact rubric to follow. \"It was not meant as a literal test that you would actually run on the machine - it was more like a thought experiment,\" says François Chollet, a software engineer at Google who is based in Seattle, Washington.",
+     "text_len": 321,
+     "level": 1,
+     "element_id": "p1_e13"
+    },
+    {
+     "reading_order": 14,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 203.81,
+      "r": 561.34,
+      "b": 45.65,
+      "w": 166.38,
+      "h": 158.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.2577,
+      "r": 0.94299,
+      "b": 0.05772
+     },
+     "text": "But the idea of leveraging language to detect whether a machine is capable of thought endured. For several decades, the businessman and philanthropist Hugh Loebner funded an annual Turing test event known as the Loebner Prize. Human judges engaged in text-based dialogues with both machines and people, and tried to guess which was which. But these annual gatherings stopped after 2019, because Loebner had died and the money to do it ran out, says computer scientist Rob Wortham. He is co-director of the UK Society for the Study of Artificial Intelligence and Simulation of Behaviour, which hosted the competition on Loebner's behalf, starting for two minutes, either to another player or to an LLM-powered bot that the researchers had prompted to behave like a person. The players correctly identified bots just 60% of the time, which the researchers note is not much better than chance 3 .",
+     "text_len": 893,
+     "level": 1,
+     "element_id": "p1_e14"
+    }
+   ]
+  },
+  {
+   "page_no": 2,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0002.png",
+   "elements": [
+    {
+     "reading_order": 15,
+     "page": 2,
+     "label": "picture",
+     "bbox": {
+      "l": 36.82,
+      "t": 744.0,
+      "r": 561.66,
+      "b": 336.7,
+      "w": 524.83,
+      "h": 407.3,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06185,
+      "t": 0.94074,
+      "r": 0.94353,
+      "b": 0.42574
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p2_e15"
+    },
+    {
+     "reading_order": 16,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 268.31,
+      "r": 383.72,
+      "b": 185.4,
+      "w": 166.39,
+      "h": 82.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.33926,
+      "r": 0.64461,
+      "b": 0.23443
+     },
+     "text": "It's the kind of game that researchers familiar with LLMs could probably still win, however. Chollet says he'd find it easy to detect an LLM - by taking advantage of known weaknesses of the systems. \"If you put me in a situation where you asked me, 'Am I chatting to an LLM right now?' I would definitely be able to tell you,\" says Chollet.",
+     "text_len": 340,
+     "level": 1,
+     "element_id": "p2_e16"
+    },
+    {
+     "reading_order": 17,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 182.31,
+      "r": 383.72,
+      "b": 88.65,
+      "w": 166.4,
+      "h": 93.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.23052,
+      "r": 0.64461,
+      "b": 0.11209
+     },
+     "text": "The key, he says, is to take the LLM outside of its comfort zone. He suggests presenting it with scenarios that are variations on ones the LLM will have seen a lot in its training data. In many cases, the LLM answers by spitting out words that are most likely to be associated with the original question in its training data, rather than by giving the correct answer to the new scenario.",
+     "text_len": 387,
+     "level": 1,
+     "element_id": "p2_e17"
+    },
+    {
+     "reading_order": 18,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 85.56,
+      "r": 383.63,
+      "b": 45.65,
+      "w": 166.31,
+      "h": 39.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.10819,
+      "r": 0.64446,
+      "b": 0.05772
+     },
+     "text": "Chollet and others, however, are sceptical about using a test centred around deceit as a goal for computer science. \"It's all about trying to deceive the jury,\" says Chollet. The test incentivizes chatbot developers to get an AI to perform tricks, instead of developing useful or interesting capabilities.",
+     "text_len": 305,
+     "level": 1,
+     "element_id": "p2_e18"
+    },
+    {
+     "reading_order": 19,
+     "page": 2,
+     "label": "section_header",
+     "bbox": {
+      "l": 394.96,
+      "t": 292.89,
+      "r": 523.43,
+      "b": 283.87,
+      "w": 128.47,
+      "h": 9.02,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.37034,
+      "r": 0.87931,
+      "b": 0.35894
+     },
+     "text": "The perils of benchmarking",
+     "text_len": 26,
+     "level": 1,
+     "element_id": "p2_e19"
+    },
+    {
+     "reading_order": 20,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 279.06,
+      "r": 561.32,
+      "b": 196.15,
+      "w": 166.36,
+      "h": 82.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.35285,
+      "r": 0.94296,
+      "b": 0.24802
+     },
+     "text": "Rather than the Turing test, researchers instead typically assess AI systems using benchmarks intended to evaluate performance on specific capabilities, such as language ability, common-sense reasoning and mathematical capacity. Increasingly, teams are also turning to academic and professional examinations designed for people.",
+     "text_len": 328,
+     "level": 1,
+     "element_id": "p2_e20"
+    },
+    {
+     "reading_order": 21,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 193.06,
+      "r": 561.37,
+      "b": 45.65,
+      "w": 166.41,
+      "h": 147.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.24411,
+      "r": 0.94304,
+      "b": 0.05772
+     },
+     "text": "When GPT-4 was released in March this year, the firm behind it - OpenAI in San Francisco, California - tested its performance on a series of benchmarks designed for machines, including reading comprehension, mathematics and coding. GPT-4 aced most of them, OpenAI reported 4 . The company also set GPT-4 around 30 exams, including: various subject-specific tests designed for US high-school students, known as Advanced Placement; an exam to assess the current state of US physicians' clinical knowledge; and a standard test used in the selection process for US graduate studies, called the GRE. In the Uniform Bar Exam,",
+     "text_len": 619,
+     "level": 1,
+     "element_id": "p2_e21"
+    },
+    {
+     "reading_order": 22,
+     "page": 2,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.74,
+      "t": 297.18,
+      "r": 172.46,
+      "b": 215.2,
+      "w": 132.73,
+      "h": 81.98,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06676,
+      "t": 0.37577,
+      "r": 0.28971,
+      "b": 0.27211
+     },
+     "text": "WE HAVE TO UNDERSTAND WHAT THEY CAN DO AND WHERE THEY FAIL.\"",
+     "text_len": 60,
+     "level": 1,
+     "element_id": "p2_e22"
+    },
+    {
+     "reading_order": 23,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 182.31,
+      "r": 206.0,
+      "b": 142.4,
+      "w": 166.31,
+      "h": 39.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.23052,
+      "r": 0.34606,
+      "b": 0.18006
+     },
+     "text": "in 2014. He says that LLMs would now stand a good chance of fooling humans in such a contest; it's a coincidence that the events ended shortly before LLMs really took off.",
+     "text_len": 171,
+     "level": 1,
+     "element_id": "p2_e23"
+    },
+    {
+     "reading_order": 24,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 39.68,
+      "t": 139.31,
+      "r": 206.07,
+      "b": 45.65,
+      "w": 166.39,
+      "h": 93.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06666,
+      "t": 0.17615,
+      "r": 0.34618,
+      "b": 0.05772
+     },
+     "text": "Other researchers agree that GPT-4 and other LLMs would probably now pass the popular conception of the Turing test, in that they can fool a lot of people, at least for short conversations. In May, researchers at the company AI21 Labs in Tel Aviv, Israel, reported that more than 1.5 million people had played their online game based on the Turing test. Players were assigned to chat",
+     "text_len": 383,
+     "level": 1,
+     "element_id": "p2_e24"
+    }
+   ]
+  },
+  {
+   "page_no": 3,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0003.png",
+   "elements": [
+    {
+     "reading_order": 25,
+     "page": 3,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 761.54,
+      "r": 91.01,
+      "b": 748.57,
+      "w": 51.32,
+      "h": 12.97,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.96292,
+      "r": 0.15289,
+      "b": 0.94652
+     },
+     "text": "Feature",
+     "text_len": 7,
+     "level": 1,
+     "element_id": "p3_e25"
+    },
+    {
+     "reading_order": 26,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 741.31,
+      "r": 206.0,
+      "b": 701.4,
+      "w": 166.32,
+      "h": 39.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.93734,
+      "r": 0.34606,
+      "b": 0.88688
+     },
+     "text": "which forms part of the qualification process for lawyers in many US states, GPT-4 attained a score that would place it in the top 10% of people, OpenAI reported.",
+     "text_len": 162,
+     "level": 1,
+     "element_id": "p3_e26"
+    },
+    {
+     "reading_order": 27,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 698.31,
+      "r": 206.06,
+      "b": 583.15,
+      "w": 166.37,
+      "h": 115.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.88297,
+      "r": 0.34616,
+      "b": 0.73736
+     },
+     "text": "\"A lot of these language models can do really well on these benchmarks,\" says Mitchell . \"But often, the conclusion is not that they have surpassed humans in these general capacities, but that the benchmarks are limited.\" One challenge that researchers mention is that the models are trained on so much text that they could already have seen similar questions in their training data, and so might, in effect, be looking up the answer. This issue is known as contamination.",
+     "text_len": 472,
+     "level": 1,
+     "element_id": "p3_e27"
+    },
+    {
+     "reading_order": 28,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 580.06,
+      "r": 206.06,
+      "b": 486.4,
+      "w": 166.37,
+      "h": 93.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.73345,
+      "r": 0.34616,
+      "b": 0.61502
+     },
+     "text": "OpenAI says it checked for this by looking for similar strings of words in the questions and training data. When it tested the LLMs before and after removing the similar strings, there was little difference in performance, suggesting that successes couldn't be attributed largely to contamination. However, some researchers have questioned whether this test is stringent enough.",
+     "text_len": 378,
+     "level": 1,
+     "element_id": "p3_e28"
+    },
+    {
+     "reading_order": 29,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 483.31,
+      "r": 206.04,
+      "b": 400.4,
+      "w": 166.36,
+      "h": 82.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.61111,
+      "r": 0.34613,
+      "b": 0.50628
+     },
+     "text": "Sam Bowman, a language-technology scientist at New York University, who also works for the AI firm Anthropic in San Francisco, cautions against writing off GPT-4's abilities by dismissing its exam scores as merely the result of memorization. Contamination \"complicates the claims a little bit, but I don't think it really changes the big picture that much\", he says.",
+     "text_len": 366,
+     "level": 1,
+     "element_id": "p3_e29"
+    },
+    {
+     "reading_order": 30,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 397.31,
+      "r": 206.07,
+      "b": 271.4,
+      "w": 166.38,
+      "h": 125.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.50237,
+      "r": 0.34618,
+      "b": 0.34317
+     },
+     "text": "Researchers also note that LLMs' success on exam questions can be brittle and might not translate into the robust capability needed to get examples right in the real world. It's possible to change the exam questions slightly and get them to fail, says Mitchell. She took a question from an exam given to master's students in business administration that ChatGPT had passed, for instance, and rephrased it slightly. A person who could answer this question would be able to answer the rephrased version. But ChatGPT flunked it.",
+     "text_len": 525,
+     "level": 1,
+     "element_id": "p3_e30"
+    },
+    {
+     "reading_order": 31,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 268.31,
+      "r": 206.06,
+      "b": 110.15,
+      "w": 166.37,
+      "h": 158.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.33926,
+      "r": 0.34616,
+      "b": 0.13928
+     },
+     "text": "And there is a deeper problem in interpreting what the benchmarks mean. For a person, high scores across these exams would reliably indicate general intelligence - a fuzzy concept, but, according to one definition, one that refers to the ability to perform well across a range of tasks and adapt to different contexts. That is, someone who could do well at the exams can generally be assumed to do well at other cognitive tests and to have grasped certain abstract concepts. But that is not at all the case for LLMs, says Mitchell; these work in a very different way from people. \"Extrapolating in the way that we extrapolate for humans won't always work for AI systems,\" she says.",
+     "text_len": 681,
+     "level": 1,
+     "element_id": "p3_e31"
+    },
+    {
+     "reading_order": 32,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 39.68,
+      "t": 107.06,
+      "r": 206.07,
+      "b": 45.65,
+      "w": 166.39,
+      "h": 61.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06666,
+      "t": 0.13537,
+      "r": 0.34618,
+      "b": 0.05772
+     },
+     "text": "This might be because LLMs learn only from language; without being embodied in the physical world, they do not experience language's connection to objects, properties and feelings, as a person does. \"It's clear that they're not understanding words in the same way that people do,\" Lake says. In his opinion, LLMs currently demonstrate \"that you can have very fluent language without genuine understanding\".",
+     "text_len": 406,
+     "level": 1,
+     "element_id": "p3_e32"
+    },
+    {
+     "reading_order": 33,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 698.31,
+      "r": 383.7,
+      "b": 615.4,
+      "w": 166.37,
+      "h": 82.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.88297,
+      "r": 0.64457,
+      "b": 0.77813
+     },
+     "text": "On the flip side, LLMs also have capabilities that people don't - such as the ability to know the connections between almost every word humans have ever written. This might allow the models to solve problems by relying on quirks of language or other indicators, without necessarily generalizing to wider performance, says Mitchell.",
+     "text_len": 331,
+     "level": 1,
+     "element_id": "p3_e33"
+    },
+    {
+     "reading_order": 34,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 612.31,
+      "r": 383.66,
+      "b": 583.15,
+      "w": 166.33,
+      "h": 29.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.77423,
+      "r": 0.64451,
+      "b": 0.73736
+     },
+     "text": "Nick Ryder, a researcher at OpenAI, agrees that performance on one test might not generalize in the way it does for a person who gets the",
+     "text_len": 137,
+     "level": 1,
+     "element_id": "p3_e34"
+    },
+    {
+     "reading_order": 35,
+     "page": 3,
+     "label": "picture",
+     "bbox": {
+      "l": 216.48,
+      "t": 571.48,
+      "r": 252.21,
+      "b": 544.87,
+      "w": 35.73,
+      "h": 26.61,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36366,
+      "t": 0.7226,
+      "r": 0.42369,
+      "b": 0.68895
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p3_e35"
+    },
+    {
+     "reading_order": 36,
+     "page": 3,
+     "label": "section_header",
+     "bbox": {
+      "l": 217.37,
+      "t": 533.96,
+      "r": 334.92,
+      "b": 471.98,
+      "w": 117.54,
+      "h": 61.99,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36516,
+      "t": 0.67516,
+      "r": 0.56263,
+      "b": 0.59679
+     },
+     "text": "GPT-4 CERTAINLY DOES NOT THINK LIKE A PERSON.\"",
+     "text_len": 46,
+     "level": 1,
+     "element_id": "p3_e36"
+    },
+    {
+     "reading_order": 37,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 418.81,
+      "r": 383.72,
+      "b": 346.65,
+      "w": 166.39,
+      "h": 72.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.52956,
+      "r": 0.64461,
+      "b": 0.43832
+     },
+     "text": "same score. \"I don't think that one should look at an evaluation of a human and a large language model and derive any amount of equivalence,\" he says. The OpenAI scores are \"not meant to be a statement of human-like capability or humanlike reasoning. It's meant to be a statement of how the model performs on that task.\"",
+     "text_len": 320,
+     "level": 1,
+     "element_id": "p3_e37"
+    },
+    {
+     "reading_order": 38,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 343.56,
+      "r": 383.71,
+      "b": 131.65,
+      "w": 166.39,
+      "h": 211.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.43441,
+      "r": 0.64459,
+      "b": 0.16646
+     },
+     "text": "Researchers have also probed LLMs more broadly than through conventional machine benchmarks and human exams. In March, Sébastien Bubeck at Microsoft Research in Redmond, Washington, and his colleagues created waves with a preprint 5 entitled 'Sparks of Artificial General Intelligence: Early experiments with GPT-4'. Using an early version of GPT-4, they documented a range of surprising capabilities - many of which were not directly or obviously connected to language. A notable feat was that it could pass tests used by psychologists to assess theory of mind, a core human ability that allows people to predict and reason about the mental states of others. \"Given the breadth and depth of GPT-4's capabilities, we believe that it could reasonably be viewed as an early (yet still incomplete) version of an artificial general intelligence (AGI) system,\" they wrote.",
+     "text_len": 867,
+     "level": 1,
+     "element_id": "p3_e38"
+    },
+    {
+     "reading_order": 39,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 128.56,
+      "r": 383.64,
+      "b": 88.65,
+      "w": 166.32,
+      "h": 39.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.16256,
+      "r": 0.64447,
+      "b": 0.11209
+     },
+     "text": "Still, as Bubeck clarifies to Nature, \"GPT-4 certainly does not think like a person, and for any capability that it displays, it achieves it in its own way\".",
+     "text_len": 157,
+     "level": 1,
+     "element_id": "p3_e39"
+    },
+    {
+     "reading_order": 40,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 85.56,
+      "r": 383.69,
+      "b": 45.65,
+      "w": 166.37,
+      "h": 39.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.10819,
+      "r": 0.64456,
+      "b": 0.05772
+     },
+     "text": "Although provocative, the report does not probe the LLM's capabilities in a systematic way, says Mitchell. \"It's more like anthropology,\" she says. Ullman says that to be convinced that a machine has theory of mind, he would need to see evidence of an underlying cognitive process corresponding to human-like theory of mind, and not just that the machine can output the same answers as a person.",
+     "text_len": 395,
+     "level": 1,
+     "element_id": "p3_e40"
+    },
+    {
+     "reading_order": 41,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 687.56,
+      "r": 561.27,
+      "b": 647.65,
+      "w": 166.31,
+      "h": 39.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.86938,
+      "r": 0.94287,
+      "b": 0.81891
+     },
+     "text": "To work out LLMs' strengths and weaknesses, more extensive and stringent audits are needed, say AI researchers. The colourful logic puzzles might be one candidate.",
+     "text_len": 163,
+     "level": 1,
+     "element_id": "p3_e41"
+    },
+    {
+     "reading_order": 42,
+     "page": 3,
+     "label": "section_header",
+     "bbox": {
+      "l": 394.96,
+      "t": 636.89,
+      "r": 458.14,
+      "b": 627.87,
+      "w": 63.18,
+      "h": 9.02,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.80531,
+      "r": 0.76963,
+      "b": 0.7939
+     },
+     "text": "Fresh puzzles",
+     "text_len": 13,
+     "level": 1,
+     "element_id": "p3_e42"
+    },
+    {
+     "reading_order": 43,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 623.06,
+      "r": 561.29,
+      "b": 497.15,
+      "w": 166.33,
+      "h": 125.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.78782,
+      "r": 0.94291,
+      "b": 0.62861
+     },
+     "text": "In 2019, before LLMs exploded onto the scene, Chollet posted online a new kind of logic test for AI systems that he had created, called the Abstraction and Reasoning Corpus (ARC) 6 . Solvers look at several visual demonstrations of a grid of squares changing to another pattern, and show they have grasped the underlying rule for the change by indicating how the next grid would transform. \"It is supposed to test for your ability to adapt to things you have not seen before,\" says Chollet, who argues that this is the essence of intelligence.",
+     "text_len": 543,
+     "level": 1,
+     "element_id": "p3_e43"
+    },
+    {
+     "reading_order": 44,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 494.06,
+      "r": 561.28,
+      "b": 454.15,
+      "w": 166.32,
+      "h": 39.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.62471,
+      "r": 0.94289,
+      "b": 0.57424
+     },
+     "text": "ARC captures a \"hallmark of human intelligence\", says Lake: the ability to make abstractions from everyday knowledge, and apply those to previously unseen problems.",
+     "text_len": 164,
+     "level": 1,
+     "element_id": "p3_e44"
+    },
+    {
+     "reading_order": 45,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 451.06,
+      "r": 561.34,
+      "b": 335.9,
+      "w": 166.38,
+      "h": 115.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.57034,
+      "r": 0.94299,
+      "b": 0.42472
+     },
+     "text": "Chollet organized an ARC competition for bots in 2020, before LLMs had gained much traction. The winning bot was an AI system that was specifically trained to solve ARC-like tasks but, unlike LLMs, had no general capabilities; it got only 21% of the problems right. People, by contrast, solve ARC problems correctly 80% of the time 7 . Several teams of researchers have now used the ARC to test the capabilities of LLMs; none has come close to human performance.",
+     "text_len": 462,
+     "level": 1,
+     "element_id": "p3_e45"
+    },
+    {
+     "reading_order": 46,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 332.81,
+      "r": 561.32,
+      "b": 228.4,
+      "w": 166.36,
+      "h": 104.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.42082,
+      "r": 0.94296,
+      "b": 0.2888
+     },
+     "text": "Mitchell and her colleagues made a set of fresh puzzles - known as ConceptARC - that were inspired by ARC, but differed in two key ways 1 . The ConceptARC tests are easier: Mitchell's team wanted to ensure the benchmark would not miss progress in machines' capabilities, even if small. The other difference was that the team chose specific concepts to test and then created a series of puzzles for each concept that are variations on a theme.",
+     "text_len": 442,
+     "level": 1,
+     "element_id": "p3_e46"
+    },
+    {
+     "reading_order": 47,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 225.31,
+      "r": 561.32,
+      "b": 131.65,
+      "w": 166.36,
+      "h": 93.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.28489,
+      "r": 0.94296,
+      "b": 0.16646
+     },
+     "text": "For example, to test the concept of sameness, one puzzle requires the solver to keep objects in the pattern that have the same shapes; another to keep objects that are aligned along the same axis. The goal of this was to reduce the chances that an AI system could pass the test without grasping the concepts (see 'An abstract-thinking test that defeats machines').",
+     "text_len": 364,
+     "level": 1,
+     "element_id": "p3_e47"
+    },
+    {
+     "reading_order": 48,
+     "page": 3,
+     "label": "section_header",
+     "bbox": {
+      "l": 394.96,
+      "t": 120.89,
+      "r": 540.29,
+      "b": 111.87,
+      "w": 145.33,
+      "h": 9.02,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.15286,
+      "r": 0.90763,
+      "b": 0.14145
+     },
+     "text": "What poor performance means",
+     "text_len": 27,
+     "level": 1,
+     "element_id": "p3_e48"
+    },
+    {
+     "reading_order": 49,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 107.06,
+      "r": 561.27,
+      "b": 56.4,
+      "w": 166.31,
+      "h": 50.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.13537,
+      "r": 0.94287,
+      "b": 0.07131
+     },
+     "text": "The researchers fed the ConceptARC tasks to GPT-4 and to 400 people enlisted online. The humans scored, on average, 91% on all concept groups (and 97% on one); GPT-4 got 33% on one group and less than 30% on all the rest.",
+     "text_len": 221,
+     "level": 1,
+     "element_id": "p3_e49"
+    },
+    {
+     "reading_order": 50,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 403.46,
+      "t": 53.31,
+      "r": 561.24,
+      "b": 45.65,
+      "w": 157.78,
+      "h": 7.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.67777,
+      "t": 0.06741,
+      "r": 0.94282,
+      "b": 0.05772
+     },
+     "text": "\"We showed that the machines are still not",
+     "text_len": 42,
+     "level": 1,
+     "element_id": "p3_e50"
+    }
+   ]
+  },
+  {
+   "page_no": 4,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0004.png",
+   "elements": [
+    {
+     "reading_order": 51,
+     "page": 4,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 741.49,
+      "r": 363.08,
+      "b": 726.98,
+      "w": 323.39,
+      "h": 14.51,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.93757,
+      "r": 0.60994,
+      "b": 0.91922
+     },
+     "text": "AN ABSTRACT-THINKING TEST THAT DEFEATS MACHINES",
+     "text_len": 47,
+     "level": 1,
+     "element_id": "p4_e51"
+    },
+    {
+     "reading_order": 52,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 726.18,
+      "r": 379.99,
+      "b": 697.08,
+      "w": 340.3,
+      "h": 29.1,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.91821,
+      "r": 0.63834,
+      "b": 0.88141
+     },
+     "text": "Artificial-intelligence systems have so far been unable to achieve human-level performance on the ConceptARC test. This logic puzzle asks solvers to show how grid patterns will change after the solver has seen multiple demonstrations of an underlying abstract concept. Here are two sample tasks based on the concept of 'sameness' - between shapes in Task A and between orientations in Task B. See go.nature.com/43v6fzk for the answers.",
+     "text_len": 435,
+     "level": 1,
+     "element_id": "p4_e52"
+    },
+    {
+     "reading_order": 53,
+     "page": 4,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.62,
+      "t": 682.14,
+      "r": 66.64,
+      "b": 675.59,
+      "w": 27.01,
+      "h": 6.55,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06656,
+      "t": 0.86252,
+      "r": 0.11195,
+      "b": 0.85424
+     },
+     "text": "TASK A",
+     "text_len": 6,
+     "level": 1,
+     "element_id": "p4_e53"
+    },
+    {
+     "reading_order": 54,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 39.63,
+      "t": 671.87,
+      "r": 89.72,
+      "b": 666.17,
+      "w": 50.09,
+      "h": 5.7,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06657,
+      "t": 0.84954,
+      "r": 0.15072,
+      "b": 0.84233
+     },
+     "text": "Demonstrations:",
+     "text_len": 15,
+     "level": 1,
+     "element_id": "p4_e54"
+    },
+    {
+     "reading_order": 55,
+     "page": 4,
+     "label": "picture",
+     "bbox": {
+      "l": 39.87,
+      "t": 664.43,
+      "r": 144.95,
+      "b": 615.08,
+      "w": 105.08,
+      "h": 49.35,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06698,
+      "t": 0.84013,
+      "r": 0.2435,
+      "b": 0.77773
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p4_e55"
+    },
+    {
+     "reading_order": 56,
+     "page": 4,
+     "label": "picture",
+     "bbox": {
+      "l": 158.55,
+      "t": 664.21,
+      "r": 264.75,
+      "b": 615.38,
+      "w": 106.2,
+      "h": 48.83,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.26635,
+      "t": 0.83985,
+      "r": 0.44475,
+      "b": 0.77811
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p4_e56"
+    },
+    {
+     "reading_order": 57,
+     "page": 4,
+     "label": "picture",
+     "bbox": {
+      "l": 277.97,
+      "t": 664.02,
+      "r": 383.19,
+      "b": 615.18,
+      "w": 105.22,
+      "h": 48.84,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.46696,
+      "t": 0.83961,
+      "r": 0.64372,
+      "b": 0.77786
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p4_e57"
+    },
+    {
+     "reading_order": 58,
+     "page": 4,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.63,
+      "t": 606.74,
+      "r": 53.84,
+      "b": 601.04,
+      "w": 14.21,
+      "h": 5.7,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06657,
+      "t": 0.76718,
+      "r": 0.09045,
+      "b": 0.75998
+     },
+     "text": "Test:",
+     "text_len": 5,
+     "level": 1,
+     "element_id": "p4_e58"
+    },
+    {
+     "reading_order": 59,
+     "page": 4,
+     "label": "picture",
+     "bbox": {
+      "l": 39.49,
+      "t": 599.19,
+      "r": 144.71,
+      "b": 550.0,
+      "w": 105.22,
+      "h": 49.19,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06634,
+      "t": 0.75764,
+      "r": 0.2431,
+      "b": 0.69544
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p4_e59"
+    },
+    {
+     "reading_order": 60,
+     "page": 4,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 534.24,
+      "r": 66.19,
+      "b": 527.68,
+      "w": 26.51,
+      "h": 6.55,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.67551,
+      "r": 0.11119,
+      "b": 0.66722
+     },
+     "text": "TASK B",
+     "text_len": 6,
+     "level": 1,
+     "element_id": "p4_e60"
+    },
+    {
+     "reading_order": 61,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 39.62,
+      "t": 523.97,
+      "r": 89.71,
+      "b": 518.27,
+      "w": 50.09,
+      "h": 5.7,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06656,
+      "t": 0.66253,
+      "r": 0.1507,
+      "b": 0.65532
+     },
+     "text": "Demonstrations:",
+     "text_len": 15,
+     "level": 1,
+     "element_id": "p4_e61"
+    },
+    {
+     "reading_order": 62,
+     "page": 4,
+     "label": "picture",
+     "bbox": {
+      "l": 40.04,
+      "t": 516.25,
+      "r": 144.75,
+      "b": 467.35,
+      "w": 104.71,
+      "h": 48.9,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06726,
+      "t": 0.65277,
+      "r": 0.24316,
+      "b": 0.59093
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p4_e62"
+    },
+    {
+     "reading_order": 63,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 39.62,
+      "t": 458.83,
+      "r": 53.83,
+      "b": 453.13,
+      "w": 14.21,
+      "h": 5.7,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06656,
+      "t": 0.58016,
+      "r": 0.09043,
+      "b": 0.57295
+     },
+     "text": "Test:",
+     "text_len": 5,
+     "level": 1,
+     "element_id": "p4_e63"
+    },
+    {
+     "reading_order": 64,
+     "page": 4,
+     "label": "picture",
+     "bbox": {
+      "l": 39.74,
+      "t": 451.4,
+      "r": 145.08,
+      "b": 402.36,
+      "w": 105.33,
+      "h": 49.04,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06676,
+      "t": 0.57077,
+      "r": 0.24372,
+      "b": 0.50876
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p4_e64"
+    },
+    {
+     "reading_order": 65,
+     "page": 4,
+     "label": "picture",
+     "bbox": {
+      "l": 158.37,
+      "t": 599.63,
+      "r": 264.55,
+      "b": 550.16,
+      "w": 106.18,
+      "h": 49.46,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.26604,
+      "t": 0.75819,
+      "r": 0.44442,
+      "b": 0.69564
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p4_e65"
+    },
+    {
+     "reading_order": 66,
+     "page": 4,
+     "label": "picture",
+     "bbox": {
+      "l": 158.27,
+      "t": 516.42,
+      "r": 265.04,
+      "b": 467.19,
+      "w": 106.77,
+      "h": 49.23,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.26588,
+      "t": 0.65298,
+      "r": 0.44524,
+      "b": 0.59073
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p4_e66"
+    },
+    {
+     "reading_order": 67,
+     "page": 4,
+     "label": "picture",
+     "bbox": {
+      "l": 158.24,
+      "t": 451.47,
+      "r": 264.87,
+      "b": 402.52,
+      "w": 106.63,
+      "h": 48.95,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.26583,
+      "t": 0.57086,
+      "r": 0.44495,
+      "b": 0.50896
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p4_e67"
+    },
+    {
+     "reading_order": 68,
+     "page": 4,
+     "label": "picture",
+     "bbox": {
+      "l": 277.89,
+      "t": 599.78,
+      "r": 383.68,
+      "b": 550.3,
+      "w": 105.8,
+      "h": 49.47,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.46683,
+      "t": 0.75838,
+      "r": 0.64454,
+      "b": 0.69582
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p4_e68"
+    },
+    {
+     "reading_order": 69,
+     "page": 4,
+     "label": "picture",
+     "bbox": {
+      "l": 278.14,
+      "t": 451.47,
+      "r": 383.46,
+      "b": 402.22,
+      "w": 105.32,
+      "h": 49.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.46725,
+      "t": 0.57086,
+      "r": 0.64417,
+      "b": 0.50858
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p4_e69"
+    },
+    {
+     "reading_order": 70,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 386.56,
+      "r": 206.02,
+      "b": 346.65,
+      "w": 166.34,
+      "h": 39.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.48878,
+      "r": 0.34609,
+      "b": 0.43832
+     },
+     "text": "able to get anywhere near the level of humans,\" says Mitchell. \"It was surprising that it could solve some of the problems, because it had never been trained on them,\" she adds.",
+     "text_len": 177,
+     "level": 1,
+     "element_id": "p4_e70"
+    },
+    {
+     "reading_order": 71,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 343.56,
+      "r": 206.09,
+      "b": 271.4,
+      "w": 166.4,
+      "h": 72.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.43441,
+      "r": 0.34621,
+      "b": 0.34317
+     },
+     "text": "The team also tested the leading bots from Chollet's contest, which were not general-ability systems like LLMs, but were designed to solve visual puzzles such as ARC. Overall, they did better than GPT-4, but performed worse than people, with the best scoring 77% in one category but less than 60% in most 1 .",
+     "text_len": 308,
+     "level": 1,
+     "element_id": "p4_e71"
+    },
+    {
+     "reading_order": 72,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 39.68,
+      "t": 268.31,
+      "r": 206.01,
+      "b": 174.65,
+      "w": 166.33,
+      "h": 93.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06666,
+      "t": 0.33926,
+      "r": 0.34607,
+      "b": 0.22083
+     },
+     "text": "Bowman, however, says GPT-4's struggles with ConceptARC don't prove that it lacks underlying capabilities in abstract reasoning. He says ConceptARC is skewed against GPT-4 - among other things, because it is a visual test. \"Even if you suppose that these models are very good at this kind of reasoning, I don't think you'd really expect this experiment to have worked,\" he says.",
+     "text_len": 378,
+     "level": 1,
+     "element_id": "p4_e72"
+    },
+    {
+     "reading_order": 73,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 171.56,
+      "r": 206.08,
+      "b": 45.65,
+      "w": 166.4,
+      "h": 125.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.21693,
+      "r": 0.34619,
+      "b": 0.05772
+     },
+     "text": "Limitations to the way the test is done probably made it harder for GPT-4. The publicly available version of the LLM can accept only text as an input, so the researchers gave GPT-4 arrays of numbers that represented the images. (A blank pixel might be 0, and a colourful square a number, for instance.) By contrast, the human participants simply saw the images. \"We are comparing a language-only system with humans, who have a highly developed visual system,\" says Mitchell. \"So it might not be a totally fair comparison.\"",
+     "text_len": 522,
+     "level": 1,
+     "element_id": "p4_e73"
+    },
+    {
+     "reading_order": 74,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 386.56,
+      "r": 383.67,
+      "b": 292.9,
+      "w": 166.35,
+      "h": 93.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.48878,
+      "r": 0.64452,
+      "b": 0.37035
+     },
+     "text": "OpenAI has created a 'multimodal' version of GPT-4 that can accept images as input. Mitchell and her team are waiting for that to become publicly available so they can test ConceptARC on it, although she doesn't think the multimodal GPT-4 will do much better. \"I don't think these systems have the same kind of abstract concepts and reasoning abilities that people have,\" she says.",
+     "text_len": 381,
+     "level": 1,
+     "element_id": "p4_e74"
+    },
+    {
+     "reading_order": 75,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 289.81,
+      "r": 383.73,
+      "b": 153.15,
+      "w": 166.4,
+      "h": 136.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.36645,
+      "r": 0.64463,
+      "b": 0.19365
+     },
+     "text": "Sam Acquaviva, a computational cognitive scientist at the Massachusetts Institute of Technology in Cambridge, agrees. \"I would be shocked,\" he says. He notes that another team of researchers has tested GPT-4 on a benchmark called 1D-ARC, in which patterns are confined to a single row rather than being in a grid 8 . That should erase some of the unfairness, he says. Even though GPT-4's performance improved, it was not enough of a gain to suggest that the LLM was reliably grasping the underlying rule and reasoning about it, says Acquaviva.",
+     "text_len": 543,
+     "level": 1,
+     "element_id": "p4_e75"
+    },
+    {
+     "reading_order": 76,
+     "page": 4,
+     "label": "section_header",
+     "bbox": {
+      "l": 217.32,
+      "t": 142.39,
+      "r": 330.21,
+      "b": 133.37,
+      "w": 112.89,
+      "h": 9.02,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.18004,
+      "r": 0.55472,
+      "b": 0.16864
+     },
+     "text": "Argument for reasoning",
+     "text_len": 22,
+     "level": 1,
+     "element_id": "p4_e76"
+    },
+    {
+     "reading_order": 77,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 128.56,
+      "r": 383.7,
+      "b": 45.65,
+      "w": 166.37,
+      "h": 82.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.16256,
+      "r": 0.64457,
+      "b": 0.05772
+     },
+     "text": "Bowman points to other experiments that, taken together, suggest to him that LLMs have acquired at least a rudimentary ability to reason about abstract concepts. In one example, computer scientist Kenneth Li at Harvard University and his colleagues used a digital version of the board game Othello, in which two players compete by placing black and white discs on a 8 × 8 grid. Their aim was to examine whether LLMs rely on the memorized surface statistics of language to generate text, or if they might be building internal representations of the world, as people do.",
+     "text_len": 568,
+     "level": 1,
+     "element_id": "p4_e77"
+    },
+    {
+     "reading_order": 78,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 687.56,
+      "r": 561.35,
+      "b": 604.65,
+      "w": 166.39,
+      "h": 82.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.86938,
+      "r": 0.94301,
+      "b": 0.76454
+     },
+     "text": "When they trained an LLM by feeding it lists of moves made by players, it became very good at spitting out accurate suggestions for next legal moves. The researchers argued that they had evidence that the LLM was keeping track of the state of the board - and that it was using this representation to suggest moves, rather than just coming up with textual suggestions 9 .",
+     "text_len": 370,
+     "level": 1,
+     "element_id": "p4_e78"
+    },
+    {
+     "reading_order": 79,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 601.56,
+      "r": 561.38,
+      "b": 486.4,
+      "w": 166.42,
+      "h": 115.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.76063,
+      "r": 0.94306,
+      "b": 0.61502
+     },
+     "text": "Bowman acknowledges that the reasoning capabilities of LLMs in general are \"spotty\" and more limited than in people - but he says that they are there, and seem to improve with model size, which indicates to him that future LLMs will be even better. \"These systems are definitely not anywhere near as reliable or as general as we want, and there probably are some particular abstract reasoning skills that they're still entirely failing at,\" he says. \"But I think the basic capacity is there.\"",
+     "text_len": 492,
+     "level": 1,
+     "element_id": "p4_e79"
+    },
+    {
+     "reading_order": 80,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 483.31,
+      "r": 561.35,
+      "b": 325.15,
+      "w": 166.39,
+      "h": 158.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.61111,
+      "r": 0.94301,
+      "b": 0.41113
+     },
+     "text": "One thing Bowman, Mitchell and others agree on is that the best way to test LLMs for abstract reasoning abilities and other signs of intelligence remains an open, unsolved problem. Michael Frank, a cognitive scientist at Stanford University in Palo Alto, California, does not expect a single, catch-all test to emerge as a successor to the Turing test. \"There's no Rubicon, no one line,\" he says. Rather, he thinks that researchers need lots of tests to quantify the strengths and weaknesses of various systems. \"These agents are great, but they break in many, many ways and probing them systematically is absolutely critical,\" he says.",
+     "text_len": 636,
+     "level": 1,
+     "element_id": "p4_e80"
+    },
+    {
+     "reading_order": 81,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 322.06,
+      "r": 561.34,
+      "b": 271.4,
+      "w": 166.38,
+      "h": 50.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.40722,
+      "r": 0.94299,
+      "b": 0.34317
+     },
+     "text": "Wortham offers advice to anyone trying to understand AI systems - avoid what he calls the curse of anthropomorphization. \"We anthropomorphize anything which appears to demonstrate intelligence,\" he says.",
+     "text_len": 203,
+     "level": 1,
+     "element_id": "p4_e81"
+    },
+    {
+     "reading_order": 82,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 268.31,
+      "r": 561.34,
+      "b": 206.9,
+      "w": 166.38,
+      "h": 61.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.33926,
+      "r": 0.94299,
+      "b": 0.26161
+     },
+     "text": "\"It is a curse, because we can't think of things which display goal-oriented behaviour in any way other than using human models,\" he says. \"And we're imagining that the reason it's doing that is because it's thinking like us, under the covers.\"",
+     "text_len": 244,
+     "level": 1,
+     "element_id": "p4_e82"
+    },
+    {
+     "reading_order": 83,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 192.68,
+      "r": 541.51,
+      "b": 175.09,
+      "w": 146.55,
+      "h": 17.59,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.24363,
+      "r": 0.90968,
+      "b": 0.22139
+     },
+     "text": "Celeste Biever is Nature's chief news and features editor, based in London.",
+     "text_len": 75,
+     "level": 1,
+     "element_id": "p4_e83"
+    },
+    {
+     "reading_order": 84,
+     "page": 4,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.96,
+      "t": 163.64,
+      "r": 554.13,
+      "b": 150.38,
+      "w": 159.17,
+      "h": 13.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.20691,
+      "r": 0.93088,
+      "b": 0.19015
+     },
+     "text": "Moskvichev, A., Odouard, V. V. & Mitchell, M. Preprint at https://arxiv.org/abs/2305.07141 (2023).",
+     "text_len": 98,
+     "level": 2,
+     "element_id": "p4_e84"
+    },
+    {
+     "reading_order": 85,
+     "page": 4,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.96,
+      "t": 147.65,
+      "r": 510.99,
+      "b": 142.38,
+      "w": 116.03,
+      "h": 5.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.18669,
+      "r": 0.85841,
+      "b": 0.18003
+     },
+     "text": "Turing, A. M. Mind LIX, 433-460 (1950).",
+     "text_len": 39,
+     "level": 2,
+     "element_id": "p4_e85"
+    },
+    {
+     "reading_order": 86,
+     "page": 4,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.96,
+      "t": 139.65,
+      "r": 547.91,
+      "b": 126.39,
+      "w": 152.95,
+      "h": 13.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.17658,
+      "r": 0.92043,
+      "b": 0.15981
+     },
+     "text": "Jannai, D., Meron, A., Lenz, B., Levine, Y. & Shoham, Y. Preprint at https://arxiv.org/abs/2305.20010 (2023).",
+     "text_len": 109,
+     "level": 2,
+     "element_id": "p4_e86"
+    },
+    {
+     "reading_order": 87,
+     "page": 4,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.96,
+      "t": 123.65,
+      "r": 561.14,
+      "b": 118.39,
+      "w": 166.18,
+      "h": 5.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.15635,
+      "r": 0.94266,
+      "b": 0.1497
+     },
+     "text": "OpenAI. Preprint at https://arxiv.org/abs/2303.08774 (2023).",
+     "text_len": 60,
+     "level": 2,
+     "element_id": "p4_e87"
+    },
+    {
+     "reading_order": 88,
+     "page": 4,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.96,
+      "t": 115.65,
+      "r": 523.6,
+      "b": 102.39,
+      "w": 128.64,
+      "h": 13.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.14623,
+      "r": 0.87959,
+      "b": 0.12947
+     },
+     "text": "Bubeck, S. et al. Preprint at https://arxiv.org/ abs/2303.12712 (2023).",
+     "text_len": 71,
+     "level": 2,
+     "element_id": "p4_e88"
+    },
+    {
+     "reading_order": 89,
+     "page": 4,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.96,
+      "t": 99.66,
+      "r": 560.85,
+      "b": 94.4,
+      "w": 165.89,
+      "h": 5.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.12601,
+      "r": 0.94217,
+      "b": 0.11936
+     },
+     "text": "Chollet, F. Preprint at https://arxiv.org/abs/1911.01547 (2019).",
+     "text_len": 64,
+     "level": 2,
+     "element_id": "p4_e89"
+    },
+    {
+     "reading_order": 90,
+     "page": 4,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.96,
+      "t": 91.66,
+      "r": 546.84,
+      "b": 78.4,
+      "w": 151.88,
+      "h": 13.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.1159,
+      "r": 0.91863,
+      "b": 0.09913
+     },
+     "text": "Johnson, A., Vong, W. K., Lake, B. M. & Gureckis, T. M. Preprint at https://arxiv.org/abs/2103.05823 (2021).",
+     "text_len": 108,
+     "level": 2,
+     "element_id": "p4_e90"
+    },
+    {
+     "reading_order": 91,
+     "page": 4,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.96,
+      "t": 75.66,
+      "r": 541.85,
+      "b": 62.4,
+      "w": 146.89,
+      "h": 13.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.09567,
+      "r": 0.91025,
+      "b": 0.0789
+     },
+     "text": "Xu, Y., Li, W., Vaezipoor, P., Sanner. S. & Khalil, E. B. Preprint at https://arxiv.org/abs/2305.18354 (2023).",
+     "text_len": 110,
+     "level": 2,
+     "element_id": "p4_e91"
+    },
+    {
+     "reading_order": 92,
+     "page": 4,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.96,
+      "t": 59.67,
+      "r": 552.37,
+      "b": 46.41,
+      "w": 157.41,
+      "h": 13.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.07545,
+      "r": 0.92792,
+      "b": 0.05868
+     },
+     "text": "Li, K. et al. Proc. Eleventh Int. Conf. Learn. Represent. https://openreview.net/forum?id=DeG07_TcZvT (2023).",
+     "text_len": 109,
+     "level": 2,
+     "element_id": "p4_e92"
+    }
+   ]
+  }
+ ],
+ "caption_blocks": [],
+ "uncaptioned_pictures": [
+  {
+   "page": 2,
+   "bbox": {
+    "l": 36.82,
+    "t": 744.0,
+    "r": 561.66,
+    "b": 336.7,
+    "w": 524.83,
+    "h": 407.3,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": true,
+   "element_id": "p2_e15"
+  },
+  {
+   "page": 3,
+   "bbox": {
+    "l": 216.48,
+    "t": 571.48,
+    "r": 252.21,
+    "b": 544.87,
+    "w": 35.73,
+    "h": 26.61,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": false,
+   "element_id": "p3_e35"
+  },
+  {
+   "page": 4,
+   "bbox": {
+    "l": 39.87,
+    "t": 664.43,
+    "r": 144.95,
+    "b": 615.08,
+    "w": 105.08,
+    "h": 49.35,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": true,
+   "element_id": "p4_e55"
+  },
+  {
+   "page": 4,
+   "bbox": {
+    "l": 158.55,
+    "t": 664.21,
+    "r": 264.75,
+    "b": 615.38,
+    "w": 106.2,
+    "h": 48.83,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": true,
+   "element_id": "p4_e56"
+  },
+  {
+   "page": 4,
+   "bbox": {
+    "l": 277.97,
+    "t": 664.02,
+    "r": 383.19,
+    "b": 615.18,
+    "w": 105.22,
+    "h": 48.84,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": true,
+   "element_id": "p4_e57"
+  },
+  {
+   "page": 4,
+   "bbox": {
+    "l": 39.49,
+    "t": 599.19,
+    "r": 144.71,
+    "b": 550.0,
+    "w": 105.22,
+    "h": 49.19,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": true,
+   "element_id": "p4_e59"
+  },
+  {
+   "page": 4,
+   "bbox": {
+    "l": 40.04,
+    "t": 516.25,
+    "r": 144.75,
+    "b": 467.35,
+    "w": 104.71,
+    "h": 48.9,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": true,
+   "element_id": "p4_e62"
+  },
+  {
+   "page": 4,
+   "bbox": {
+    "l": 39.74,
+    "t": 451.4,
+    "r": 145.08,
+    "b": 402.36,
+    "w": 105.33,
+    "h": 49.04,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": true,
+   "element_id": "p4_e64"
+  },
+  {
+   "page": 4,
+   "bbox": {
+    "l": 158.37,
+    "t": 599.63,
+    "r": 264.55,
+    "b": 550.16,
+    "w": 106.18,
+    "h": 49.46,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": true,
+   "element_id": "p4_e65"
+  },
+  {
+   "page": 4,
+   "bbox": {
+    "l": 158.27,
+    "t": 516.42,
+    "r": 265.04,
+    "b": 467.19,
+    "w": 106.77,
+    "h": 49.23,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": true,
+   "element_id": "p4_e66"
+  },
+  {
+   "page": 4,
+   "bbox": {
+    "l": 158.24,
+    "t": 451.47,
+    "r": 264.87,
+    "b": 402.52,
+    "w": 106.63,
+    "h": 48.95,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": true,
+   "element_id": "p4_e67"
+  },
+  {
+   "page": 4,
+   "bbox": {
+    "l": 277.89,
+    "t": 599.78,
+    "r": 383.68,
+    "b": 550.3,
+    "w": 105.8,
+    "h": 49.47,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": true,
+   "element_id": "p4_e68"
+  },
+  {
+   "page": 4,
+   "bbox": {
+    "l": 278.14,
+    "t": 451.47,
+    "r": 383.46,
+    "b": 402.22,
+    "w": 105.32,
+    "h": 49.26,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": true,
+   "element_id": "p4_e69"
+  }
+ ]
+}

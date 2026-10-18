@@ -1,0 +1,34 @@
+{
+ "paper_id": "2015_nature_defining_the_anthropocene_6c66351f",
+ "source_name": "!2015-Nature-Defining the Anthropocene.pdf",
+ "source_pdf": "D:\\2026-MisspellingsMemory\\Anthropocene\\!2015-Nature-Defining the Anthropocene.pdf",
+ "source_sha256": "350236d696974fa24c5138b353c623f7a033211597b967960185f55c9e9abb91",
+ "source_md5": "6c66351f4cf90a2f92ffa5680e135b42",
+ "journal_doi": null,
+ "n_pages": 10,
+ "n_elements": 254,
+ "n_figures": 1,
+ "n_tables": 1,
+ "n_pictures_detected": 11,
+ "n_uncaptioned_pictures": 10,
+ "n_caption_blocks": 2,
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "elapsed_s": 7.9,
+ "artefacts": {
+  "pages_dir": "pages/",
+  "n_page_pngs": 10,
+  "figures_dir": "figures/",
+  "layout": "layout.json",
+  "content": "content.md",
+  "figures_meta": "figures_meta.json"
+ },
+ "status": "ok",
+ "generated_at": "2026-10-18T11:27:37"
+}

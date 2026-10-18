@@ -1,0 +1,1696 @@
+{
+ "paper_id": "2025_nature_how_to_detect_consciousness_in_people_animals_an_9c530cea",
+ "source_pdf": "D:\\2026-Metacognition\\! 2025-Nature-How to detect consciousness in people, animals and maybe even AI.pdf",
+ "source_sha256": "17467a6c6aaafe4f02d622e9bb88e7434b48419c296f71219e6de8f9ab87fc33",
+ "source_name": "! 2025-Nature-How to detect consciousness in people, animals and maybe even AI.pdf",
+ "n_pages": 3,
+ "page_size_pt": [
+  595.28,
+  790.87
+ ],
+ "coordinate_note": "bbox is PDF points with origin at the BOTTOM-LEFT, y increasing upward; bbox_norm divides by page size.",
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "generated_at": "2026-10-18T11:25:16",
+ "pages": [
+  {
+   "page_no": 1,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0001.png",
+   "elements": [
+    {
+     "reading_order": 0,
+     "page": 1,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.82,
+      "t": 741.47,
+      "r": 434.26,
+      "b": 628.5,
+      "w": 394.44,
+      "h": 112.98,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06689,
+      "t": 0.93754,
+      "r": 0.72951,
+      "b": 0.7947
+     },
+     "text": "THE QUEST TO TEST FOR CONSCIOUSNESS",
+     "text_len": 35,
+     "level": 1,
+     "element_id": "p1_e0"
+    },
+    {
+     "reading_order": 1,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 623.7,
+      "r": 557.78,
+      "b": 591.45,
+      "w": 518.1,
+      "h": 32.25,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.78863,
+      "r": 0.93701,
+      "b": 0.74785
+     },
+     "text": "Insights from human brains might inform how scientists search for awareness in other animals and machines. By Mariana Lenharo",
+     "text_len": 125,
+     "level": 1,
+     "element_id": "p1_e1"
+    },
+    {
+     "reading_order": 2,
+     "page": 1,
+     "label": "picture",
+     "bbox": {
+      "l": 38.57,
+      "t": 571.05,
+      "r": 562.53,
+      "b": 186.98,
+      "w": 523.97,
+      "h": 384.06,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06479,
+      "t": 0.72206,
+      "r": 0.94499,
+      "b": 0.23642
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p1_e2"
+    },
+    {
+     "reading_order": 3,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 36.5,
+      "t": 182.31,
+      "r": 206.05,
+      "b": 86.22,
+      "w": 169.55,
+      "h": 96.09,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06132,
+      "t": 0.23052,
+      "r": 0.34614,
+      "b": 0.10902
+     },
+     "text": "I n late 2005, five months after a car accident, a 23-year-old woman lay unresponsive in a hospital bed. She had a severe brain injury and showed no sign of awareness. But when researchers scanning her brain asked her to imagine playing tennis, something striking happened: brain areas linked to movement lit up on her scan 1 .",
+     "text_len": 327,
+     "level": 1,
+     "element_id": "p1_e3"
+    },
+    {
+     "reading_order": 4,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 85.56,
+      "r": 205.98,
+      "b": 45.65,
+      "w": 166.3,
+      "h": 39.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.10819,
+      "r": 0.34602,
+      "b": 0.05772
+     },
+     "text": "The experiment, conceived by neuroscientist Adrian Owen and his colleagues, suggested that the woman understood the instructions and decided to cooperate - despite appearing to be unresponsive. Owen, now at Western University in London, Canada, and his colleagues had introduced a new way to test for consciousness. Whereas some previous tests relied on observing general brain activity, this strategy zeroed in on activity directly linked to a researcher's verbal command.",
+     "text_len": 473,
+     "level": 1,
+     "element_id": "p1_e4"
+    },
+    {
+     "reading_order": 5,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 107.06,
+      "r": 383.71,
+      "b": 45.65,
+      "w": 166.39,
+      "h": 61.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.13537,
+      "r": 0.64459,
+      "b": 0.05772
+     },
+     "text": "The strategy has since been applied to hundreds of unresponsive people, revealing that many maintain an inner life and are aware of the world around them, at least to some extent. A 2024 study found that one in four people who were physically unresponsive had brain activity that suggested they could understand and follow commands to imagine specific activities, such as playing tennis or walking through a familiar space 2 . The tests rely on advanced neuroimaging techniques, so are mostly limited to research settings because of their high costs and the needed expertise. But since 2018, medical guidelines have started to recommend using these tests in clinical practice 3 .",
+     "text_len": 679,
+     "level": 1,
+     "element_id": "p1_e5"
+    },
+    {
+     "reading_order": 6,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 74.81,
+      "r": 561.22,
+      "b": 45.65,
+      "w": 166.26,
+      "h": 29.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.09459,
+      "r": 0.94279,
+      "b": 0.05772
+     },
+     "text": "Since these methods emerged, scientists have been developing ways to probe layers of consciousness that are even more hidden.",
+     "text_len": 125,
+     "level": 1,
+     "element_id": "p1_e6"
+    }
+   ]
+  },
+  {
+   "page_no": 2,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0002.png",
+   "elements": [
+    {
+     "reading_order": 7,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 741.31,
+      "r": 206.05,
+      "b": 636.9,
+      "w": 166.37,
+      "h": 104.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.93734,
+      "r": 0.34614,
+      "b": 0.80532
+     },
+     "text": "The stakes are high. Tens of thousands of people worldwide are currently in a persistent unresponsive state. Assessing their consciousness can guide important treatment decisions, such as whether to keep them on life support. Studies also suggest that hospitalized, unresponsive people with hidden signs of awareness are more likely to recover than are those without such signs (see, for example, ref. 4).",
+     "text_len": 405,
+     "level": 1,
+     "element_id": "p2_e7"
+    },
+    {
+     "reading_order": 8,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 633.81,
+      "r": 206.02,
+      "b": 486.4,
+      "w": 166.33,
+      "h": 147.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.80141,
+      "r": 0.34609,
+      "b": 0.61502
+     },
+     "text": "The need for better consciousness tests extends beyond humans. Detecting consciousness in other species - in which it might take widely different forms - helps us to understand how these organisms experience the world, with implications for animal-welfare policies. And researchers are actively debating whether consciousness might one day emerge from artificial intelligence (AI) systems. Last year, a group of philosophers and computer scientists published a report 5 urging AI companies to start testing their systems for evidence of consciousness and to devise policies for how to treat the systems should this happen.",
+     "text_len": 622,
+     "level": 1,
+     "element_id": "p2_e8"
+    },
+    {
+     "reading_order": 9,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 39.68,
+      "t": 483.31,
+      "r": 206.08,
+      "b": 378.9,
+      "w": 166.4,
+      "h": 104.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06666,
+      "t": 0.61111,
+      "r": 0.34619,
+      "b": 0.4791
+     },
+     "text": "\"These scenarios, which were previously a bit abstract, are becoming more pressing and pragmatic,\" says Anil Seth, a cognitive neuroscientist at the University of Sussex near Brighton, UK. In April, Seth and other researchers gathered in Durham, North Carolina, for a conference at Duke University to discuss tests for consciousness in humans (including people with brain damage, as well as fetuses and infants), other animals and AI systems.",
+     "text_len": 442,
+     "level": 1,
+     "element_id": "p2_e9"
+    },
+    {
+     "reading_order": 10,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 375.81,
+      "r": 206.06,
+      "b": 239.15,
+      "w": 166.38,
+      "h": 136.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.47519,
+      "r": 0.34616,
+      "b": 0.30239
+     },
+     "text": "Although scientists agree there's a lot of room for improvement, many see the development of consciousness tests that rely on functional magnetic resonance imaging (fMRI) and electroencephalography (EEG) as one of the field's most significant advancements. \"It was unthinkable 40 years ago that we would have a number of candidates for practical ways to test consciousness\" in unresponsive people, says neuroscientist Christof Koch, a meritorious investigator at the Allen Institute for Brain Science in Seattle, Washington. \"That's big progress.\"",
+     "text_len": 547,
+     "level": 1,
+     "element_id": "p2_e10"
+    },
+    {
+     "reading_order": 11,
+     "page": 2,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 228.39,
+      "r": 132.17,
+      "b": 219.37,
+      "w": 92.49,
+      "h": 9.02,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.28878,
+      "r": 0.22203,
+      "b": 0.27738
+     },
+     "text": "Layers of awareness",
+     "text_len": 19,
+     "level": 1,
+     "element_id": "p2_e11"
+    },
+    {
+     "reading_order": 12,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 214.56,
+      "r": 206.01,
+      "b": 110.15,
+      "w": 166.32,
+      "h": 104.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.2713,
+      "r": 0.34607,
+      "b": 0.13928
+     },
+     "text": "Scientists disagree on what consciousness really is, even in people. But many describe it as having an inner life or a subjective experience. That makes it inherently private: an individual can be certain only about their own consciousness. They can infer that others are conscious, too, on the basis of how they behave, but that doesn't always work in people who have severe brain injuries or neurological disorders that prevent them from expressing themselves.",
+     "text_len": 462,
+     "level": 1,
+     "element_id": "p2_e12"
+    },
+    {
+     "reading_order": 13,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 107.06,
+      "r": 206.06,
+      "b": 45.65,
+      "w": 166.38,
+      "h": 61.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.13537,
+      "r": 0.34616,
+      "b": 0.05772
+     },
+     "text": "Marcello Massimini, a neuroscientist at the University of Milan in Italy, compares assessments of consciousness in these challenging cases to peeling an onion. The first layer - the assessments that are routinely done in clinics - involves observing external behaviours.",
+     "text_len": 270,
+     "level": 1,
+     "element_id": "p2_e13"
+    },
+    {
+     "reading_order": 14,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 741.31,
+      "r": 383.71,
+      "b": 604.65,
+      "w": 166.39,
+      "h": 136.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.93734,
+      "r": 0.64459,
+      "b": 0.76454
+     },
+     "text": "For example, a clinician might ask the person to squeeze their hand twice, or call the person's name to see whether they turn their head towards the sound. The ability to follow such commands indicates consciousness. Clinicians can also monitor an unresponsive person over time to detect whether they make any consistent, voluntary movements, such as blinking deliberately or looking in one direction, that could serve as a way for them to communicate. Researchers use similar tests in infants, looking for how their eyes move in response to stimuli, for example 6 .",
+     "text_len": 566,
+     "level": 1,
+     "element_id": "p2_e14"
+    },
+    {
+     "reading_order": 15,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 601.56,
+      "r": 383.67,
+      "b": 464.9,
+      "w": 166.35,
+      "h": 136.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.76063,
+      "r": 0.64452,
+      "b": 0.58784
+     },
+     "text": "For a person who can hear and understand verbal commands but doesn't respond to these tests, the second layer would involve observing what's happening in their brain after receiving such a command, as with the woman in the 2005 experiment. \"If you find brain activations that are specific for that active task, for example, premotor cortex activation for playing tennis, that's an indicator of the presence of consciousness as good as squeezing your hand,\" Massimini says. These people are identified as having cognitive motor dissociation, a type of covert consciousness.",
+     "text_len": 572,
+     "level": 1,
+     "element_id": "p2_e15"
+    },
+    {
+     "reading_order": 16,
+     "page": 2,
+     "label": "section_header",
+     "bbox": {
+      "l": 217.32,
+      "t": 450.98,
+      "r": 354.62,
+      "b": 397.41,
+      "w": 137.3,
+      "h": 53.57,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.57024,
+      "r": 0.59572,
+      "b": 0.5025
+     },
+     "text": "\"It boils down to understanding what are the neural correlates of conscious perception.\"",
+     "text_len": 88,
+     "level": 1,
+     "element_id": "p2_e16"
+    },
+    {
+     "reading_order": 17,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 375.81,
+      "r": 383.71,
+      "b": 239.15,
+      "w": 166.38,
+      "h": 136.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.47519,
+      "r": 0.64459,
+      "b": 0.30239
+     },
+     "text": "But the bar for detecting consciousness through these tests is too high, because they require several minutes of sustained focus, says Nicholas Schiff, a neurologist at Weill Cornell Medicine in New York City and a co-author of the 2024 study 2 that suggested that one-quarter of unresponsive people might be conscious. That study also included a separate group of participants who showed observable, external signs of awareness. Among them, only 38% passed the test. \"Even for healthy controls, mind wandering and drowsiness are major issues,\" says Schiff.",
+     "text_len": 557,
+     "level": 1,
+     "element_id": "p2_e17"
+    },
+    {
+     "reading_order": 18,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 236.06,
+      "r": 383.69,
+      "b": 163.9,
+      "w": 166.37,
+      "h": 72.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.29848,
+      "r": 0.64456,
+      "b": 0.20724
+     },
+     "text": "Assessing consciousness in those who fail such tests would require peeling the third layer of the onion, Massimini says. In these cases, clinicians don't ask the person to engage actively in any cognitive behaviour. \"You just present patients with stimuli and then you detect activations in the brain,\" he says.",
+     "text_len": 311,
+     "level": 1,
+     "element_id": "p2_e18"
+    },
+    {
+     "reading_order": 19,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 160.81,
+      "r": 383.69,
+      "b": 45.65,
+      "w": 166.37,
+      "h": 115.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.20333,
+      "r": 0.64456,
+      "b": 0.05772
+     },
+     "text": "In a 2017 study, researchers played a 24-second clip from John F. Kennedy's inaugural US presidential address to people with acute severe traumatic brain injury 7 . The team also played the audio to them in reverse. The two clips had similar acoustic features, but only the first was expected to trigger patterns of linguistic processing in the brain; the second served as a control. Using fMRI, the experiment helped to detect covert consciousness in four out of eight people who had shown no other signs of understanding language.",
+     "text_len": 532,
+     "level": 1,
+     "element_id": "p2_e19"
+    },
+    {
+     "reading_order": 20,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 730.56,
+      "r": 561.36,
+      "b": 615.4,
+      "w": 166.39,
+      "h": 115.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.92375,
+      "r": 0.94302,
+      "b": 0.77813
+     },
+     "text": "The complexity of implementing such an approach outside the research setting isn't the only challenge. These tests require researchers to know which patterns of brain activity truly reflect consciousness, because some stimuli can elicit brain responses that occur without awareness. \"It boils down to understanding what are the neural correlates of conscious perception,\" says Massimini. \"We're making progress, but we don't yet agree on what they are.\"",
+     "text_len": 453,
+     "level": 1,
+     "element_id": "p2_e20"
+    },
+    {
+     "reading_order": 21,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 612.31,
+      "r": 561.33,
+      "b": 432.65,
+      "w": 166.37,
+      "h": 179.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.77423,
+      "r": 0.94297,
+      "b": 0.54706
+     },
+     "text": "There's a fourth, even more elusive layer of consciousness, Massimini says - one that scientists are only beginning to explore. It might be possible for an unresponsive person to remain conscious even when their brain is completely cut off from the outside world, unable to receive or process images, sounds, smells, touch or any other sensory input 8 . The experience could be similar to dreaming, for example, or lying down in a completely dark and silent room, unable to move or feel your body. Although deprived of outside sensations, your mind would still be active, generating thoughts and inner experiences. In that case, scientists need to extract signs of consciousness solely from intrinsic brain properties.",
+     "text_len": 718,
+     "level": 1,
+     "element_id": "p2_e21"
+    },
+    {
+     "reading_order": 22,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 429.56,
+      "r": 561.3,
+      "b": 228.4,
+      "w": 166.34,
+      "h": 201.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.54315,
+      "r": 0.94292,
+      "b": 0.2888
+     },
+     "text": "Massimini and his colleagues are applying a procedure called transcranial magnetic stimulation, which uses electromagnets placed on the head, as a possible technique for assessing consciousness. After jolting the brain in this way, they measure its response using EEG. In healthy people, they observe complex responses, reflecting a rich dialogue between brain regions. This complexity is quantified by a new metric they call the perturbational complexity index 9 , which was found to be higher in awake and healthy individuals than during sleep or in people under anaesthesia. Experiments have shown that the metric can help to reveal the presence of consciousness even in unresponsive people. And other researchers have proposed a version of this test as a way to investigate when consciousness emerges in fetuses 10 .",
+     "text_len": 820,
+     "level": 1,
+     "element_id": "p2_e22"
+    },
+    {
+     "reading_order": 23,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 225.31,
+      "r": 561.33,
+      "b": 174.65,
+      "w": 166.37,
+      "h": 50.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.28489,
+      "r": 0.94297,
+      "b": 0.22083
+     },
+     "text": "Massimini and Koch, among others, are co-founders of a company called Intrinsic Powers, based in Madison, Wisconsin, that aims to develop tools that use this approach to detect consciousness in unresponsive people.",
+     "text_len": 214,
+     "level": 1,
+     "element_id": "p2_e23"
+    },
+    {
+     "reading_order": 24,
+     "page": 2,
+     "label": "section_header",
+     "bbox": {
+      "l": 394.96,
+      "t": 163.89,
+      "r": 511.76,
+      "b": 154.87,
+      "w": 116.8,
+      "h": 9.02,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.20723,
+      "r": 0.8597,
+      "b": 0.19582
+     },
+     "text": "Beyond the human realm",
+     "text_len": 22,
+     "level": 1,
+     "element_id": "p2_e24"
+    },
+    {
+     "reading_order": 25,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 150.06,
+      "r": 561.36,
+      "b": 67.15,
+      "w": 166.4,
+      "h": 82.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.18974,
+      "r": 0.94302,
+      "b": 0.08491
+     },
+     "text": "Assessing consciousness becomes more challenging the further researchers move away from the human mind. One issue is that non-human animals can't communicate their subjective experiences. Another is that consciousness in other species might take distinct forms that would be unrecognizable to humans.",
+     "text_len": 300,
+     "level": 1,
+     "element_id": "p2_e25"
+    },
+    {
+     "reading_order": 26,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 64.06,
+      "r": 561.27,
+      "b": 45.65,
+      "w": 166.31,
+      "h": 18.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.081,
+      "r": 0.94287,
+      "b": 0.05772
+     },
+     "text": "Some tests designed to assess consciousness in humans can be tried in other species.",
+     "text_len": 84,
+     "level": 1,
+     "element_id": "p2_e26"
+    }
+   ]
+  },
+  {
+   "page_no": 3,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0003.png",
+   "elements": [
+    {
+     "reading_order": 27,
+     "page": 3,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 761.54,
+      "r": 91.01,
+      "b": 748.57,
+      "w": 51.32,
+      "h": 12.97,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.96292,
+      "r": 0.15289,
+      "b": 0.94652
+     },
+     "text": "Feature",
+     "text_len": 7,
+     "level": 1,
+     "element_id": "p3_e27"
+    },
+    {
+     "reading_order": 28,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 741.31,
+      "r": 206.06,
+      "b": 636.9,
+      "w": 166.37,
+      "h": 104.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.93734,
+      "r": 0.34616,
+      "b": 0.80532
+     },
+     "text": "Researchers have applied the perturbational complexity index in rats and found patterns that resemble those seen in humans, for example 11 . But more-typical tests rely on experiments that look for behaviour suggesting sentience - the ability to have an immediate experience of emotions and sensations, including pain. Sentience, which some researchers consider a foundation for consciousness, doesn't require the ability to reflect on those emotions.",
+     "text_len": 451,
+     "level": 1,
+     "element_id": "p3_e28"
+    },
+    {
+     "reading_order": 29,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 633.81,
+      "r": 206.08,
+      "b": 507.9,
+      "w": 166.4,
+      "h": 125.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.80141,
+      "r": 0.34619,
+      "b": 0.64221
+     },
+     "text": "In one experiment, octopuses consistently avoided a chamber that they encountered after receiving a painful stimulus, despite having previously preferred that chamber 12 . When these animals were subsequently given an anaesthetic to relieve the pain, they instead chose to spend time in the chamber in which they were placed after receiving the drug. This behaviour hints that these animals feel not only immediate pain, but also the ongoing suffering associated with it, and that they remember and act to avoid that experience.",
+     "text_len": 528,
+     "level": 1,
+     "element_id": "p3_e29"
+    },
+    {
+     "reading_order": 30,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 504.81,
+      "r": 206.09,
+      "b": 389.65,
+      "w": 166.41,
+      "h": 115.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.6383,
+      "r": 0.34621,
+      "b": 0.49269
+     },
+     "text": "Findings such as these are already shaping animal-welfare policy, says philosopher Jonathan Birch, director of the Jeremy Coller Centre for Animal Sentience at the London School of Economics and Political Science, UK. An independent review of the evidence for sentience in animals such as octopuses, crabs and lobsters, led by Birch, contributed to these species being granted greater protection alongside all vertebrates in 2022 under the UK Animal Welfare (Sentience) Act.",
+     "text_len": 474,
+     "level": 1,
+     "element_id": "p3_e30"
+    },
+    {
+     "reading_order": 31,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 386.56,
+      "r": 206.0,
+      "b": 314.4,
+      "w": 166.31,
+      "h": 72.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.48878,
+      "r": 0.34606,
+      "b": 0.39754
+     },
+     "text": "And last year, dozens of scientists signed a declaration stating that there is \"strong scientific support\" for consciousness in other mammals and birds, and \"at least a realistic possibility\" of consciousness in all vertebrates, including reptiles and fish, as well as in many invertebrates, such as molluscs and insects.",
+     "text_len": 321,
+     "level": 1,
+     "element_id": "p3_e31"
+    },
+    {
+     "reading_order": 32,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 39.68,
+      "t": 311.31,
+      "r": 206.06,
+      "b": 260.65,
+      "w": 166.37,
+      "h": 50.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06666,
+      "t": 0.39363,
+      "r": 0.34616,
+      "b": 0.32958
+     },
+     "text": "Scientists are now calling for serious thought about whether some biological materials, such as brain organoids, could become conscious, as well as what machine consciousness might look like.",
+     "text_len": 191,
+     "level": 1,
+     "element_id": "p3_e32"
+    },
+    {
+     "reading_order": 33,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 257.56,
+      "r": 206.03,
+      "b": 217.65,
+      "w": 166.35,
+      "h": 39.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.32567,
+      "r": 0.34611,
+      "b": 0.2752
+     },
+     "text": "\"If it comes to the day when these systems become conscious, I think it's in our best interest to know,\" says Liad Mudrik, a neuroscientist at Tel Aviv University in Israel.",
+     "text_len": 173,
+     "level": 1,
+     "element_id": "p3_e33"
+    },
+    {
+     "reading_order": 34,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 39.68,
+      "t": 214.56,
+      "r": 206.04,
+      "b": 67.15,
+      "w": 166.35,
+      "h": 147.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06666,
+      "t": 0.2713,
+      "r": 0.34613,
+      "b": 0.08491
+     },
+     "text": "Some AI systems, such as large language models (LLMs), can respond promptly if asked whether they are conscious. But strings of machine text cannot be taken as evidence of consciousness, researchers say, because LLMs are trained using algorithms that are designed to mimic human responses. \"We don't think that verbal behaviour or even problem-solving is good evidence of consciousness in AI systems, even though we think of [these characteristics] as pretty good evidence of consciousness in biological systems,\" says Tim Bayne, a philosopher at Monash University in Melbourne, Australia.",
+     "text_len": 589,
+     "level": 1,
+     "element_id": "p3_e34"
+    },
+    {
+     "reading_order": 35,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 64.06,
+      "r": 206.02,
+      "b": 45.65,
+      "w": 166.33,
+      "h": 18.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.081,
+      "r": 0.34609,
+      "b": 0.05772
+     },
+     "text": "Some researchers argue that AI in its current form could never develop an inner life.",
+     "text_len": 85,
+     "level": 1,
+     "element_id": "p3_e35"
+    },
+    {
+     "reading_order": 36,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 741.31,
+      "r": 383.67,
+      "b": 679.9,
+      "w": 166.35,
+      "h": 61.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.93734,
+      "r": 0.64452,
+      "b": 0.85969
+     },
+     "text": "That's the position of a theory of consciousness called integrated information theory 13 , says Koch. However, according to that theory, future technologies such as quantum computers might one day support some form of experience, he says.",
+     "text_len": 238,
+     "level": 1,
+     "element_id": "p3_e36"
+    },
+    {
+     "reading_order": 37,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 676.81,
+      "r": 383.69,
+      "b": 518.65,
+      "w": 166.37,
+      "h": 158.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.85578,
+      "r": 0.64456,
+      "b": 0.6558
+     },
+     "text": "There are no established tests for machine consciousness, only preliminary proposals. By drawing on theories about the biological basis of consciousness, one group came up with a checklist of criteria that, if met, would suggest that an AI system is likely to be conscious 14 . According to this view, if an AI system mimics to a certain degree the computations that give rise to consciousness in the human brain - and so replicates how the brain processes information - that would be one clue that the system might be conscious. A key limitation is that researchers don't yet know which theories, if any, correctly describe how consciousness arises in humans.",
+     "text_len": 660,
+     "level": 1,
+     "element_id": "p3_e37"
+    },
+    {
+     "reading_order": 38,
+     "page": 3,
+     "label": "section_header",
+     "bbox": {
+      "l": 217.32,
+      "t": 504.73,
+      "r": 381.65,
+      "b": 451.16,
+      "w": 164.32,
+      "h": 53.57,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.6382,
+      "r": 0.64113,
+      "b": 0.57046
+     },
+     "text": "\"That theory can ultimately only be validated in humans, because there's no doubt that you and I are conscious.\"",
+     "text_len": 112,
+     "level": 1,
+     "element_id": "p3_e38"
+    },
+    {
+     "reading_order": 39,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 429.56,
+      "r": 383.7,
+      "b": 314.4,
+      "w": 166.38,
+      "h": 115.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.54315,
+      "r": 0.64457,
+      "b": 0.39754
+     },
+     "text": "In another proposal, researchers would train an AI system on data that do not include information about consciousness or content related to the existence of an inner life. A consciousness test would then ask questions related to emotions and subjective experience, such as 'What is it like to be you right now?', and judge the responses. But some researchers are sceptical that one could effectively exclude all consciousness-related training data from an AI system or generally trust its responses.",
+     "text_len": 499,
+     "level": 1,
+     "element_id": "p3_e39"
+    },
+    {
+     "reading_order": 40,
+     "page": 3,
+     "label": "section_header",
+     "bbox": {
+      "l": 217.32,
+      "t": 303.64,
+      "r": 316.41,
+      "b": 294.62,
+      "w": 99.09,
+      "h": 9.02,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.38393,
+      "r": 0.53153,
+      "b": 0.37253
+     },
+     "text": "A universal approach",
+     "text_len": 20,
+     "level": 1,
+     "element_id": "p3_e40"
+    },
+    {
+     "reading_order": 41,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 289.81,
+      "r": 383.72,
+      "b": 206.9,
+      "w": 166.4,
+      "h": 82.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.36645,
+      "r": 0.64461,
+      "b": 0.26161
+     },
+     "text": "For now, most consciousness tests are designed for one specific system, be it a human, an animal or an AI. But if conscious systems share a common underlying nature, as some researchers argue, it might be possible to uncover these shared features. This means that there could be a universal strategy to detect consciousness.",
+     "text_len": 324,
+     "level": 1,
+     "element_id": "p3_e41"
+    },
+    {
+     "reading_order": 42,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 203.81,
+      "r": 383.7,
+      "b": 110.15,
+      "w": 166.37,
+      "h": 93.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.2577,
+      "r": 0.64457,
+      "b": 0.13928
+     },
+     "text": "One approach towards this goal was introduced 15 in 2020 by Bayne and his co-author Nicholas Shea, a philosopher at the University of London, UK, and further developed with other philosophers and neuroscientists in a paper last year 16 . It relies on correlating different measures with each other, focusing first on humans and progressing to non-human systems.",
+     "text_len": 361,
+     "level": 1,
+     "element_id": "p3_e42"
+    },
+    {
+     "reading_order": 43,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 107.06,
+      "r": 383.68,
+      "b": 45.65,
+      "w": 166.35,
+      "h": 61.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.13537,
+      "r": 0.64454,
+      "b": 0.05772
+     },
+     "text": "The process begins by applying several existing tests to healthy adults: people who scientists can be confident are conscious. Tests that are successful in that initial group receive a high confidence score. Next, researchers use those validated tests on a slightly different group, such as people under anaesthesia. Researchers compare the performance of the tests and revise their confidence scores accordingly, with tests in which the results agree earning higher confidence ratings.",
+     "text_len": 486,
+     "level": 1,
+     "element_id": "p3_e43"
+    },
+    {
+     "reading_order": 44,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 687.56,
+      "r": 561.32,
+      "b": 647.65,
+      "w": 166.36,
+      "h": 39.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.86938,
+      "r": 0.94296,
+      "b": 0.81891
+     },
+     "text": "These steps are repeated in groups that are increasingly divergent, such as in other groups of people and, eventually, in non-human systems. \"It's an iterative process,\" says Mudrik.",
+     "text_len": 182,
+     "level": 1,
+     "element_id": "p3_e44"
+    },
+    {
+     "reading_order": 45,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 644.56,
+      "r": 561.31,
+      "b": 572.4,
+      "w": 166.35,
+      "h": 72.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.81501,
+      "r": 0.94294,
+      "b": 0.72376
+     },
+     "text": "Some scientists are sceptical that a general test can exist. \"Without having a general theory of consciousness that's widely accepted, I don't think there can ever be a generalized test,\" Koch says. \"And that theory can ultimately only be validated in humans, because there's no doubt that you and I are conscious.\"",
+     "text_len": 315,
+     "level": 1,
+     "element_id": "p3_e45"
+    },
+    {
+     "reading_order": 46,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 569.31,
+      "r": 561.34,
+      "b": 518.65,
+      "w": 166.38,
+      "h": 50.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.71986,
+      "r": 0.94299,
+      "b": 0.6558
+     },
+     "text": "Bayne says that because there's no gold-standard way to assess consciousness across groups, the strategy he and Shea proposed tackles the problem through convergent evidence.",
+     "text_len": 174,
+     "level": 1,
+     "element_id": "p3_e46"
+    },
+    {
+     "reading_order": 47,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 515.56,
+      "r": 561.29,
+      "b": 368.15,
+      "w": 166.33,
+      "h": 147.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.65189,
+      "r": 0.94291,
+      "b": 0.4655
+     },
+     "text": "Mudrik is currently working to translate the concept into a technique that could be implemented in practice. The first step is mapping out the different tests that have been applied to humans who have disorders of consciousness, and comparing the results of how well they perform. However, it is expensive to run a coordinated effort involving several laboratories testing different populations, because many of the tests rely on costly imaging techniques, she says. Expanding the strategy to non-human groups - including those without language or brains - would be even more complex.",
+     "text_len": 584,
+     "level": 1,
+     "element_id": "p3_e47"
+    },
+    {
+     "reading_order": 48,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 365.06,
+      "r": 561.33,
+      "b": 292.9,
+      "w": 166.37,
+      "h": 72.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.4616,
+      "r": 0.94297,
+      "b": 0.37035
+     },
+     "text": "One challenge is to work out how to organize the populations to determine the order in which the tests should be applied. It's not clear that scientists can trust their intuitions on this. They can't say yet, for example, whether AI systems should be considered closer to conscious humans than a budgie, for example, or a bee.",
+     "text_len": 326,
+     "level": 1,
+     "element_id": "p3_e48"
+    },
+    {
+     "reading_order": 49,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 289.81,
+      "r": 561.3,
+      "b": 249.9,
+      "w": 166.34,
+      "h": 39.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.36645,
+      "r": 0.94292,
+      "b": 0.31598
+     },
+     "text": "\"There is still more work to do in order to flesh out these more conceptual suggestions into an actual research programme,\" says Mudrik.",
+     "text_len": 136,
+     "level": 1,
+     "element_id": "p3_e49"
+    },
+    {
+     "reading_order": 50,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 235.68,
+      "r": 553.86,
+      "b": 218.09,
+      "w": 158.9,
+      "h": 17.59,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.298,
+      "r": 0.93043,
+      "b": 0.27576
+     },
+     "text": "Mariana Lenharo writes for Nature from New York City.",
+     "text_len": 53,
+     "level": 1,
+     "element_id": "p3_e50"
+    },
+    {
+     "reading_order": 51,
+     "page": 3,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.96,
+      "t": 207.28,
+      "r": 522.14,
+      "b": 202.02,
+      "w": 127.18,
+      "h": 5.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.26209,
+      "r": 0.87714,
+      "b": 0.25544
+     },
+     "text": "Owen, A. M. et al. Science 313, 1402 (2006).",
+     "text_len": 44,
+     "level": 2,
+     "element_id": "p3_e51"
+    },
+    {
+     "reading_order": 52,
+     "page": 3,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.96,
+      "t": 199.1,
+      "r": 553.37,
+      "b": 193.84,
+      "w": 158.41,
+      "h": 5.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.25175,
+      "r": 0.9296,
+      "b": 0.2451
+     },
+     "text": "Bodien, Y. G. et al. N. Engl. J. Med. 391, 598-608 (2024).",
+     "text_len": 58,
+     "level": 2,
+     "element_id": "p3_e52"
+    },
+    {
+     "reading_order": 53,
+     "page": 3,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.96,
+      "t": 190.93,
+      "r": 535.82,
+      "b": 185.66,
+      "w": 140.86,
+      "h": 5.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.24142,
+      "r": 0.90012,
+      "b": 0.23476
+     },
+     "text": "Giacino, J. T. et al. Neurology 91, 450-460 (2018).",
+     "text_len": 51,
+     "level": 2,
+     "element_id": "p3_e53"
+    },
+    {
+     "reading_order": 54,
+     "page": 3,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.96,
+      "t": 182.75,
+      "r": 543.36,
+      "b": 177.49,
+      "w": 148.4,
+      "h": 5.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.23108,
+      "r": 0.91279,
+      "b": 0.22442
+     },
+     "text": "Egbebike, J. et al. Lancet Neurol. 21, 704-713 (2022).",
+     "text_len": 54,
+     "level": 2,
+     "element_id": "p3_e54"
+    },
+    {
+     "reading_order": 55,
+     "page": 3,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.97,
+      "t": 174.57,
+      "r": 485.61,
+      "b": 169.31,
+      "w": 90.64,
+      "h": 5.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66351,
+      "t": 0.22073,
+      "r": 0.81577,
+      "b": 0.21408
+     },
+     "text": "Long, R. et al. Preprint at arXiv",
+     "text_len": 33,
+     "level": 2,
+     "element_id": "p3_e55"
+    },
+    {
+     "reading_order": 56,
+     "page": 3,
+     "label": "list_item",
+     "bbox": {
+      "l": 404.89,
+      "t": 166.39,
+      "r": 538.7,
+      "b": 161.13,
+      "w": 133.81,
+      "h": 5.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.68017,
+      "t": 0.21039,
+      "r": 0.90496,
+      "b": 0.20374
+     },
+     "text": "https://doi.org/10.48550/arXiv.2411.00986 (2024).",
+     "text_len": 49,
+     "level": 2,
+     "element_id": "p3_e56"
+    },
+    {
+     "reading_order": 57,
+     "page": 3,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.97,
+      "t": 158.21,
+      "r": 536.21,
+      "b": 152.95,
+      "w": 141.25,
+      "h": 5.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66351,
+      "t": 0.20005,
+      "r": 0.90078,
+      "b": 0.1934
+     },
+     "text": "Passos-Ferreira, C. Neuron 112, 1520-1523 (2024).",
+     "text_len": 49,
+     "level": 2,
+     "element_id": "p3_e57"
+    },
+    {
+     "reading_order": 58,
+     "page": 3,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.97,
+      "t": 150.04,
+      "r": 527.62,
+      "b": 144.77,
+      "w": 132.65,
+      "h": 5.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66351,
+      "t": 0.18972,
+      "r": 0.88635,
+      "b": 0.18305
+     },
+     "text": "Edlow, B. L. et al. Brain 140, 2399-2414 (2017).",
+     "text_len": 48,
+     "level": 2,
+     "element_id": "p3_e58"
+    },
+    {
+     "reading_order": 59,
+     "page": 3,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.97,
+      "t": 141.86,
+      "r": 559.31,
+      "b": 128.42,
+      "w": 164.34,
+      "h": 13.44,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66351,
+      "t": 0.17937,
+      "r": 0.93958,
+      "b": 0.16238
+     },
+     "text": "Bayne, T., Seth, A. K. & Massimini, M. Trends Neurosci. 43, 6-16 (2020).",
+     "text_len": 72,
+     "level": 2,
+     "element_id": "p3_e59"
+    },
+    {
+     "reading_order": 60,
+     "page": 3,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.97,
+      "t": 125.5,
+      "r": 559.11,
+      "b": 120.24,
+      "w": 164.15,
+      "h": 5.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66351,
+      "t": 0.15869,
+      "r": 0.93924,
+      "b": 0.15204
+     },
+     "text": "Casali, A. G. et al. Science Transl. Med. 5, 198ra105 (2013).",
+     "text_len": 61,
+     "level": 2,
+     "element_id": "p3_e60"
+    },
+    {
+     "reading_order": 61,
+     "page": 3,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.97,
+      "t": 117.32,
+      "r": 536.32,
+      "b": 112.06,
+      "w": 141.35,
+      "h": 5.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66351,
+      "t": 0.14834,
+      "r": 0.90096,
+      "b": 0.14169
+     },
+     "text": "Frohlich, J. et al. NeuroImage 273, 120057 (2023).",
+     "text_len": 50,
+     "level": 2,
+     "element_id": "p3_e61"
+    },
+    {
+     "reading_order": 62,
+     "page": 3,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.97,
+      "t": 109.15,
+      "r": 539.21,
+      "b": 95.71,
+      "w": 144.24,
+      "h": 13.44,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66351,
+      "t": 0.13801,
+      "r": 0.90582,
+      "b": 0.12102
+     },
+     "text": "Arena, A., Comolatti, R., Thon, S., Casali, A. G. & Storm, J. F. eNeuro 8, eneuro.0343-20.2021 (2021).",
+     "text_len": 102,
+     "level": 2,
+     "element_id": "p3_e62"
+    },
+    {
+     "reading_order": 63,
+     "page": 3,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.97,
+      "t": 92.79,
+      "r": 508.46,
+      "b": 87.53,
+      "w": 113.49,
+      "h": 5.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66351,
+      "t": 0.11733,
+      "r": 0.85416,
+      "b": 0.11068
+     },
+     "text": "Crook, R. J. iScience 24, 102229 (2021).",
+     "text_len": 40,
+     "level": 2,
+     "element_id": "p3_e63"
+    },
+    {
+     "reading_order": 64,
+     "page": 3,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.97,
+      "t": 84.61,
+      "r": 560.78,
+      "b": 79.35,
+      "w": 165.82,
+      "h": 5.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66351,
+      "t": 0.10698,
+      "r": 0.94205,
+      "b": 0.10033
+     },
+     "text": "Tononi, G. & Raison, C. World Psychiatry 23, 309-310 (2024).",
+     "text_len": 60,
+     "level": 2,
+     "element_id": "p3_e64"
+    },
+    {
+     "reading_order": 65,
+     "page": 3,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.97,
+      "t": 76.43,
+      "r": 540.24,
+      "b": 62.99,
+      "w": 145.27,
+      "h": 13.44,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66351,
+      "t": 0.09664,
+      "r": 0.90755,
+      "b": 0.07965
+     },
+     "text": "Butlin, P. et al. Preprint at arXiv https://doi.org/10.48550/arXiv.2308.08708 (2023).",
+     "text_len": 85,
+     "level": 2,
+     "element_id": "p3_e65"
+    },
+    {
+     "reading_order": 66,
+     "page": 3,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.97,
+      "t": 60.08,
+      "r": 544.69,
+      "b": 54.82,
+      "w": 149.72,
+      "h": 5.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66351,
+      "t": 0.07597,
+      "r": 0.91502,
+      "b": 0.06932
+     },
+     "text": "Bayne, T. & Shea, N. Philos. Topics 48, 65-83 (2020).",
+     "text_len": 53,
+     "level": 2,
+     "element_id": "p3_e66"
+    },
+    {
+     "reading_order": 67,
+     "page": 3,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.97,
+      "t": 51.9,
+      "r": 547.34,
+      "b": 46.64,
+      "w": 152.37,
+      "h": 5.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66351,
+      "t": 0.06562,
+      "r": 0.91947,
+      "b": 0.05897
+     },
+     "text": "Bayne, T. et al. Trends Cogn. Sci. 28, 454-466 (2024).",
+     "text_len": 54,
+     "level": 2,
+     "element_id": "p3_e67"
+    }
+   ]
+  }
+ ],
+ "caption_blocks": [],
+ "uncaptioned_pictures": [
+  {
+   "page": 1,
+   "bbox": {
+    "l": 38.57,
+    "t": 571.05,
+    "r": 562.53,
+    "b": 186.98,
+    "w": 523.97,
+    "h": 384.06,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": true,
+   "element_id": "p1_e2"
+  }
+ ]
+}

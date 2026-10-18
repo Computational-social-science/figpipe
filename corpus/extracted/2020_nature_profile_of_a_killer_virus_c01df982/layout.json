@@ -1,0 +1,2084 @@
+{
+ "paper_id": "2020_nature_profile_of_a_killer_virus_c01df982",
+ "source_pdf": "D:\\2024-Origin and evolution of virus genera\\2020-Submission\\Science-Submit\\!2020-Nature_Profile of a killer virus_反例.pdf",
+ "source_sha256": "bf6c5a9bc138dbda53b8825fe7c137abcd103c5d163ffa2c1bdf775c6b12d374",
+ "source_name": "!2020-Nature_Profile of a killer virus_反例.pdf",
+ "n_pages": 5,
+ "page_size_pt": [
+  595.28,
+  790.87
+ ],
+ "coordinate_note": "bbox is PDF points with origin at the BOTTOM-LEFT, y increasing upward; bbox_norm divides by page size.",
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "generated_at": "2026-10-18T11:28:24",
+ "pages": [
+  {
+   "page_no": 1,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0001.png",
+   "elements": [
+    {
+     "reading_order": 0,
+     "page": 1,
+     "label": "section_header",
+     "bbox": {
+      "l": 35.62,
+      "t": 738.72,
+      "r": 561.47,
+      "b": 597.49,
+      "w": 525.84,
+      "h": 141.23,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.05984,
+      "t": 0.93406,
+      "r": 0.94321,
+      "b": 0.75549
+     },
+     "text": "PROFILE OF A",
+     "text_len": 12,
+     "level": 1,
+     "element_id": "p1_e0"
+    },
+    {
+     "reading_order": 1,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 600.83,
+      "r": 559.45,
+      "b": 537.04,
+      "w": 519.76,
+      "h": 63.79,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.75971,
+      "r": 0.93982,
+      "b": 0.67905
+     },
+     "text": "Scientists are quickly piecing together how the new coronavirus operates, where it came from and what it might do next - but pressing questions remain. By David Cyranoski",
+     "text_len": 170,
+     "level": 1,
+     "element_id": "p1_e1"
+    },
+    {
+     "reading_order": 2,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 36.5,
+      "t": 343.56,
+      "r": 206.07,
+      "b": 239.15,
+      "w": 169.57,
+      "h": 104.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06132,
+      "t": 0.43441,
+      "r": 0.34618,
+      "b": 0.30239
+     },
+     "text": "I n 1912, German veterinarians puzzled over the case of a feverish cat with an enormously swollen belly. That is now thought to be the first reported example of the debilitating power of a coronavirus. Veterinarians didn't know it at the time, but coronaviruses were also giving chickens bronchitis, and pigs an intestinal disease that killed almost every piglet under two weeks old.",
+     "text_len": 383,
+     "level": 1,
+     "element_id": "p1_e2"
+    },
+    {
+     "reading_order": 3,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 236.06,
+      "r": 206.04,
+      "b": 120.9,
+      "w": 166.35,
+      "h": 115.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.29848,
+      "r": 0.34613,
+      "b": 0.15287
+     },
+     "text": "The link between these pathogens remained hidden until the 1960s, when researchers in the United Kingdom and the United States isolated two viruses with crown-like structures causing common colds in humans. Scientists soon noticed that the viruses identified in sick animals had the same bristly structure, studded with spiky protein protrusions. Under electron microscopes, these viruses resembled the solar corona, which led researchers in 1968 to coin the term coronaviruses for the entire group.",
+     "text_len": 499,
+     "level": 1,
+     "element_id": "p1_e3"
+    },
+    {
+     "reading_order": 4,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 117.81,
+      "r": 206.06,
+      "b": 45.65,
+      "w": 166.38,
+      "h": 72.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.14896,
+      "r": 0.34616,
+      "b": 0.05772
+     },
+     "text": "It was a family of dynamic killers: dog coronaviruses could harm cats, the cat coronavirus could ravage pig intestines. Researchers thought that coronaviruses caused only mild symptoms in humans, until the outbreak of severe acute respiratory syndrome (SARS) in 2003 revealed how easily these versatile viruses could kill people.",
+     "text_len": 329,
+     "level": 1,
+     "element_id": "p1_e4"
+    },
+    {
+     "reading_order": 5,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 332.81,
+      "r": 383.71,
+      "b": 163.9,
+      "w": 166.39,
+      "h": 168.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.42082,
+      "r": 0.64459,
+      "b": 0.20724
+     },
+     "text": "Now, as the death toll from the COVID-19 pandemic surges, researchers are scrambling to uncover as much as possible about the biology of the latest coronavirus, named SARS-CoV-2. A profile of the killer is already emerging. Scientists are learning that the virus has evolved an array of adaptations that make it much more lethal than the other coronaviruses humanity has met so far. Unlike close relatives, SARS-CoV-2 can readily attack human cells at multiple points, with the lungs and the throat being the main targets. Once inside the body, the virus makes use of a diverse arsenal of dangerous molecules. And genetic evidence suggests that it has been hiding out in nature possibly for decades.",
+     "text_len": 699,
+     "level": 1,
+     "element_id": "p1_e5"
+    },
+    {
+     "reading_order": 6,
+     "page": 1,
+     "label": "section_header",
+     "bbox": {
+      "l": 217.32,
+      "t": 153.14,
+      "r": 267.21,
+      "b": 144.12,
+      "w": 49.89,
+      "h": 9.02,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.19364,
+      "r": 0.44888,
+      "b": 0.18223
+     },
+     "text": "Bad family",
+     "text_len": 10,
+     "level": 1,
+     "element_id": "p1_e6"
+    },
+    {
+     "reading_order": 7,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 139.31,
+      "r": 383.68,
+      "b": 88.65,
+      "w": 166.35,
+      "h": 50.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.17615,
+      "r": 0.64454,
+      "b": 0.11209
+     },
+     "text": "But there are many crucial unknowns about this virus, including how exactly it kills, whether it will evolve into something more - or less - lethal and what it can reveal about the next outbreak from the coronavirus family.",
+     "text_len": 223,
+     "level": 1,
+     "element_id": "p1_e7"
+    },
+    {
+     "reading_order": 8,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 85.56,
+      "r": 383.72,
+      "b": 45.65,
+      "w": 166.4,
+      "h": 39.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.10819,
+      "r": 0.64461,
+      "b": 0.05772
+     },
+     "text": "\"There will be more, either out there already or in the making,\" says Andrew Rambaut, who studies viral evolution at the University of Edinburgh, UK.",
+     "text_len": 149,
+     "level": 1,
+     "element_id": "p1_e8"
+    },
+    {
+     "reading_order": 9,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 343.56,
+      "r": 561.34,
+      "b": 228.4,
+      "w": 166.38,
+      "h": 115.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.43441,
+      "r": 0.94299,
+      "b": 0.2888
+     },
+     "text": "Of the viruses that attack humans, coronaviruses are big. At 125 nanometres in diameter, they are also relatively large for the viruses that use RNA to replicate, the group that accounts for most newly emerging diseases. But coronaviruses really stand out for their genomes. With 30,000 genetic bases, coronaviruses have the largest genomes of all RNA viruses. Their genomes are more than three times as big as those of HIV and hepatitis C, and more than twice influenza's.",
+     "text_len": 473,
+     "level": 1,
+     "element_id": "p1_e9"
+    },
+    {
+     "reading_order": 10,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 225.31,
+      "r": 561.33,
+      "b": 120.9,
+      "w": 166.37,
+      "h": 104.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.28489,
+      "r": 0.94297,
+      "b": 0.15287
+     },
+     "text": "Coronaviruses are also one of the few RNA viruses with a genomic proofreading mechanism - which keeps the virus from accumulating mutations that could weaken it. That ability might be why common anti­ virals such as ribavirin, which can thwart viruses such as hepatitis C, have failed to subdue SARS-CoV-2. The drugs weaken viruses by inducing mutations. But in the coronaviruses, the proofreader can weed out those changes.",
+     "text_len": 424,
+     "level": 1,
+     "element_id": "p1_e10"
+    },
+    {
+     "reading_order": 11,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 117.81,
+      "r": 561.34,
+      "b": 45.65,
+      "w": 166.38,
+      "h": 72.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.14896,
+      "r": 0.94299,
+      "b": 0.05772
+     },
+     "text": "Mutations can have their advantages for viruses. Influenza mutates up to three times more often than coronaviruses do, a pace that enables it to evolve quickly and sidestep vaccines. But coronaviruses have a special trick that gives them a deadly dynamism: they frequently recombine, swapping chunks of their",
+     "text_len": 308,
+     "level": 1,
+     "element_id": "p1_e11"
+    }
+   ]
+  },
+  {
+   "page_no": 2,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0002.png",
+   "elements": [
+    {
+     "reading_order": 12,
+     "page": 2,
+     "label": "picture",
+     "bbox": {
+      "l": 31.49,
+      "t": 743.79,
+      "r": 562.23,
+      "b": 48.45,
+      "w": 530.74,
+      "h": 695.34,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0529,
+      "t": 0.94048,
+      "r": 0.94449,
+      "b": 0.06126
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p2_e12"
+    }
+   ]
+  },
+  {
+   "page_no": 3,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0003.png",
+   "elements": [
+    {
+     "reading_order": 13,
+     "page": 3,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 761.54,
+      "r": 91.01,
+      "b": 748.57,
+      "w": 51.32,
+      "h": 12.97,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.96292,
+      "r": 0.15289,
+      "b": 0.94652
+     },
+     "text": "Feature",
+     "text_len": 7,
+     "level": 1,
+     "element_id": "p3_e13"
+    },
+    {
+     "reading_order": 14,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 741.31,
+      "r": 206.06,
+      "b": 669.15,
+      "w": 166.37,
+      "h": 72.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.93734,
+      "r": 0.34616,
+      "b": 0.8461
+     },
+     "text": "RNA with other coronaviruses. Typically, this is a meaningless trading of like parts between like viruses. But when two distant coronavirus relatives end up in the same cell, recombination can lead to formidable versions that infect new cell types and jump to other species, says Rambaut.",
+     "text_len": 288,
+     "level": 1,
+     "element_id": "p3_e14"
+    },
+    {
+     "reading_order": 15,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 666.06,
+      "r": 206.08,
+      "b": 561.65,
+      "w": 166.4,
+      "h": 104.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.84219,
+      "r": 0.34619,
+      "b": 0.71017
+     },
+     "text": "Recombination happens often in bats, which carry 61 viruses known to infect humans; some species harbour as many as 12 (ref. 1). In most cases, the viruses don't harm the bats, and there are several theories about why bats' immune systems can cope with these invaders. A paper published in February argues that bat cells infected by viruses rapidly release a signal that makes them able to host the virus without killing it 2 .",
+     "text_len": 427,
+     "level": 1,
+     "element_id": "p3_e15"
+    },
+    {
+     "reading_order": 16,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 558.56,
+      "r": 206.08,
+      "b": 389.65,
+      "w": 166.39,
+      "h": 168.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.70626,
+      "r": 0.34619,
+      "b": 0.49269
+     },
+     "text": "Estimates for the birth of the first coronavirus vary widely, from 10,000 years ago to 300 million years ago. Scientists are now aware of dozens of strains 3 , seven of which infect humans. Among the four that cause common colds, two (OC43 and HKU1) came from rodents, and the other two (229E and NL63) from bats. The three that cause severe disease - SARS-CoV (the cause of SARS), Middle East respiratory syndrome MERS-CoV and SARSCoV-2 - all came from bats. But scientists think there is usually an intermediary - an animal infected by the bats that carries the virus into humans. With SARS, the intermediary is thought to be civet cats, which are sold in live-animal markets in China.",
+     "text_len": 687,
+     "level": 1,
+     "element_id": "p3_e16"
+    },
+    {
+     "reading_order": 17,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 386.56,
+      "r": 206.07,
+      "b": 346.65,
+      "w": 166.38,
+      "h": 39.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.48878,
+      "r": 0.34618,
+      "b": 0.43832
+     },
+     "text": "The origin of SARS-CoV-2 is still an open question. The virus shares 96% of its genetic material with a virus found in a bat in a cave in Yunnan, China 4 - a convincing argument that it came from bats, say researchers. But there's a crucial difference. The spike proteins of coronaviruses have a unit called a receptor-binding domain, which is central to their success in entering human cells. The SARS-CoV-2 binding domain is particularly efficient, and it differs in important ways from that of the Yunnan bat virus, which seems not to infect people 5 .",
+     "text_len": 555,
+     "level": 1,
+     "element_id": "p3_e17"
+    },
+    {
+     "reading_order": 18,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 655.31,
+      "r": 383.7,
+      "b": 561.65,
+      "w": 166.38,
+      "h": 93.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.8286,
+      "r": 0.64457,
+      "b": 0.71017
+     },
+     "text": "Complicating matters, a scaly anteater called the pangolin showed up with a coronavirus that had a receptor-binding domain almost identical to the human version. But the rest of the coronavirus was only 90% genetically similar, so some researchers suspect the pangolin was not the intermediary 5 . The fact that both mutations and recombinations are at work complicates efforts to draw a family tree.",
+     "text_len": 400,
+     "level": 1,
+     "element_id": "p3_e18"
+    },
+    {
+     "reading_order": 19,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 558.56,
+      "r": 383.7,
+      "b": 400.4,
+      "w": 166.38,
+      "h": 158.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.70626,
+      "r": 0.64457,
+      "b": 0.50628
+     },
+     "text": "But studies released over the past few months, which have yet to be peer-reviewed, suggest that SARS-CoV-2 - or a very similar ancestor - has been hiding in some animal for decades. According to a paper posted online in March 6 , the coronavirus lineage leading to SARS-CoV-2 split more than 140 years ago from the closely related one seen today in pangolins. Then, sometime in the past 40-70 years, the ancestors of SARS-CoV-2 separated from the bat version, which subsequently lost the effective receptor binding domain that was present in its ancestors (and remains in SARS-CoV-2). A study published on 21 April came up with very similar findings using a different dating method 7 .",
+     "text_len": 685,
+     "level": 1,
+     "element_id": "p3_e19"
+    },
+    {
+     "reading_order": 20,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 397.31,
+      "r": 383.66,
+      "b": 346.65,
+      "w": 166.34,
+      "h": 50.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.50237,
+      "r": 0.64451,
+      "b": 0.43832
+     },
+     "text": "These results suggest a long family history, with many coronavirus branches in bats and possibly pangolins carrying the same deadly receptor binding domain as SARS-CoV-2, including some that might have similar abilities to cause a pandemic, says Rasmus Nielsen, an evolutionary biologist at the University of California, Berkeley, and co-author of the second study. \"There is a need for continued surveillance and increased vigilance towards the emergence of new viral strains by zoonotic transfer,\" he says.",
+     "text_len": 508,
+     "level": 1,
+     "element_id": "p3_e20"
+    },
+    {
+     "reading_order": 21,
+     "page": 3,
+     "label": "section_header",
+     "bbox": {
+      "l": 394.96,
+      "t": 658.39,
+      "r": 469.12,
+      "b": 649.37,
+      "w": 74.16,
+      "h": 9.02,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.83249,
+      "r": 0.78807,
+      "b": 0.82109
+     },
+     "text": "Two open doors",
+     "text_len": 14,
+     "level": 1,
+     "element_id": "p3_e21"
+    },
+    {
+     "reading_order": 22,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 644.56,
+      "r": 561.33,
+      "b": 561.65,
+      "w": 166.37,
+      "h": 82.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.81501,
+      "r": 0.94297,
+      "b": 0.71017
+     },
+     "text": "Although the known human coronaviruses can infect many cell types, they all mainly cause respiratory infections. The difference is that the four that cause common colds easily attack the upper respiratory tract, whereas MERS-CoV and SARS-CoV have more difficulty gaining a hold there, but are more successful at infecting cells in the lungs.",
+     "text_len": 341,
+     "level": 1,
+     "element_id": "p3_e22"
+    },
+    {
+     "reading_order": 23,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 558.56,
+      "r": 561.36,
+      "b": 443.4,
+      "w": 166.4,
+      "h": 115.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.70626,
+      "r": 0.94302,
+      "b": 0.56065
+     },
+     "text": "SARS-CoV-2, unfortunately, can do both very efficiently. That gives it two places to get a foothold, says Shu-Yuan Xiao, a pathologist at the University of Chicago, Illinois. A neighbour's cough that sends ten viral particles your way might be enough to start an infection in your throat, but the hair-like cilia found there are likely to do their job and clear the invaders. If the neighbour is closer and coughs 100 particles towards you, the virus might be able get all the way down to the lungs, says Xiao.",
+     "text_len": 510,
+     "level": 1,
+     "element_id": "p3_e23"
+    },
+    {
+     "reading_order": 24,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 440.31,
+      "r": 561.35,
+      "b": 346.65,
+      "w": 166.39,
+      "h": 93.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.55674,
+      "r": 0.94301,
+      "b": 0.43832
+     },
+     "text": "These varying capacities might explain why people with COVID-19 have such different experiences. The virus can start in the throat or nose, producing a cough and disrupting taste and smell, and then end there. Or it might work its way down to the lungs and debilitate that organ. How it gets down there, whether it moves cell by cell or somehow gets washed down, is not known, says Stanley Perlman, an",
+     "text_len": 401,
+     "level": 1,
+     "element_id": "p3_e24"
+    },
+    {
+     "reading_order": 25,
+     "page": 3,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.74,
+      "t": 332.23,
+      "r": 126.92,
+      "b": 283.62,
+      "w": 87.18,
+      "h": 48.61,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06676,
+      "t": 0.42008,
+      "r": 0.21321,
+      "b": 0.35862
+     },
+     "text": "DEADLY INVADER",
+     "text_len": 14,
+     "level": 1,
+     "element_id": "p3_e25"
+    },
+    {
+     "reading_order": 26,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 39.74,
+      "t": 284.38,
+      "r": 138.1,
+      "b": 227.85,
+      "w": 98.36,
+      "h": 56.54,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06676,
+      "t": 0.35958,
+      "r": 0.23199,
+      "b": 0.2881
+     },
+     "text": "Research suggests the SARS-CoV-2 virus has an array of adaptations that help it break into human cells - the first step in causing COVID-19 disease. Scientists are still debating many of the details.",
+     "text_len": 199,
+     "level": 1,
+     "element_id": "p3_e26"
+    },
+    {
+     "reading_order": 27,
+     "page": 3,
+     "label": "picture",
+     "bbox": {
+      "l": 131.95,
+      "t": 324.37,
+      "r": 541.62,
+      "b": 189.64,
+      "w": 409.67,
+      "h": 134.72,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.22166,
+      "t": 0.41015,
+      "r": 0.90986,
+      "b": 0.23979
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p3_e27"
+    },
+    {
+     "reading_order": 28,
+     "page": 3,
+     "label": "list_item",
+     "bbox": {
+      "l": 128.57,
+      "t": 173.91,
+      "r": 200.39,
+      "b": 112.89,
+      "w": 71.82,
+      "h": 61.01,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.21598,
+      "t": 0.2199,
+      "r": 0.33663,
+      "b": 0.14274
+     },
+     "text": "The spike proteins that stud the exterior of the virus have receptor binding domains that are extremely efficient at latching onto ACE2 receptors on human cells.",
+     "text_len": 161,
+     "level": 2,
+     "element_id": "p3_e28"
+    },
+    {
+     "reading_order": 29,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 215.81,
+      "t": 194.04,
+      "r": 231.96,
+      "b": 188.34,
+      "w": 16.15,
+      "h": 5.7,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36254,
+      "t": 0.24535,
+      "r": 0.38967,
+      "b": 0.23814
+     },
+     "text": "ACE2",
+     "text_len": 4,
+     "level": 1,
+     "element_id": "p3_e29"
+    },
+    {
+     "reading_order": 30,
+     "page": 3,
+     "label": "section_header",
+     "bbox": {
+      "l": 209.81,
+      "t": 173.52,
+      "r": 252.23,
+      "b": 167.85,
+      "w": 42.42,
+      "h": 5.68,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.35246,
+      "t": 0.21941,
+      "r": 0.42372,
+      "b": 0.21224
+     },
+     "text": "Spike protein",
+     "text_len": 13,
+     "level": 1,
+     "element_id": "p3_e30"
+    },
+    {
+     "reading_order": 31,
+     "page": 3,
+     "label": "picture",
+     "bbox": {
+      "l": 208.19,
+      "t": 165.26,
+      "r": 283.43,
+      "b": 63.28,
+      "w": 75.24,
+      "h": 101.98,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.34974,
+      "t": 0.20896,
+      "r": 0.47613,
+      "b": 0.08001
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p3_e31"
+    },
+    {
+     "reading_order": 32,
+     "page": 3,
+     "label": "list_item",
+     "bbox": {
+      "l": 311.19,
+      "t": 173.91,
+      "r": 381.46,
+      "b": 120.69,
+      "w": 70.27,
+      "h": 53.21,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.52277,
+      "t": 0.2199,
+      "r": 0.64081,
+      "b": 0.1526
+     },
+     "text": "Furin or another enzyme, such as TMPRSS2, on the exterior of the host cell are thought to break the spike protein at one or more cleavage sites.",
+     "text_len": 144,
+     "level": 2,
+     "element_id": "p3_e32"
+    },
+    {
+     "reading_order": 33,
+     "page": 3,
+     "label": "list_item",
+     "bbox": {
+      "l": 409.04,
+      "t": 173.91,
+      "r": 476.4,
+      "b": 120.69,
+      "w": 67.37,
+      "h": 53.21,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.68714,
+      "t": 0.2199,
+      "r": 0.8003,
+      "b": 0.1526
+     },
+     "text": "That exposes fusion peptides - small chains of amino acids - that fuse the viral membrane with the membrane of the host cell.",
+     "text_len": 125,
+     "level": 2,
+     "element_id": "p3_e33"
+    },
+    {
+     "reading_order": 34,
+     "page": 3,
+     "label": "section_header",
+     "bbox": {
+      "l": 487.51,
+      "t": 173.52,
+      "r": 556.95,
+      "b": 167.85,
+      "w": 69.44,
+      "h": 5.68,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.81896,
+      "t": 0.21941,
+      "r": 0.93562,
+      "b": 0.21224
+     },
+     "text": "Snipped spike protein",
+     "text_len": 21,
+     "level": 1,
+     "element_id": "p3_e34"
+    },
+    {
+     "reading_order": 35,
+     "page": 3,
+     "label": "picture",
+     "bbox": {
+      "l": 485.76,
+      "t": 165.05,
+      "r": 561.16,
+      "b": 63.75,
+      "w": 75.41,
+      "h": 101.3,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.81602,
+      "t": 0.2087,
+      "r": 0.94269,
+      "b": 0.08061
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p3_e35"
+    }
+   ]
+  },
+  {
+   "page_no": 4,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0004.png",
+   "elements": [
+    {
+     "reading_order": 36,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 741.31,
+      "r": 206.0,
+      "b": 722.9,
+      "w": 166.32,
+      "h": 18.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.93734,
+      "r": 0.34606,
+      "b": 0.91406
+     },
+     "text": "immunologist at the University of Iowa in Iowa City who studies coronaviruses.",
+     "text_len": 78,
+     "level": 1,
+     "element_id": "p4_e36"
+    },
+    {
+     "reading_order": 37,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 719.81,
+      "r": 206.05,
+      "b": 475.65,
+      "w": 166.36,
+      "h": 244.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.91015,
+      "r": 0.34614,
+      "b": 0.60143
+     },
+     "text": "Clemens-Martin Wendtner, an infectious-disease physician at the Munich Clinic Schwabing in Germany, says it could be a problem with the immune system that lets the virus sneak down into the lungs. Most infected people create neutralizing antibodies that are tailored by the immune system to bind with the virus and block it from entering a cell. But some people seem unable to make them, says Wendtner. That might be why some recover after a week of mild symptoms, whereas others get hit with late-onset lung disease. But the virus can also bypass the throat cells and go straight down into the lungs. Then patients might get pneumonia without the usual mild symptoms such as a cough or low-grade fever that would otherwise come first, says Wendtner. Having these two infection points means that SARS-CoV-2 can mix the transmissibility of the common cold coronaviruses with the lethality of MERS-CoV and SARS-CoV. \"It is an unfortunate and dangerous combination of this coronavirus strain,\" he says.",
+     "text_len": 999,
+     "level": 1,
+     "element_id": "p4_e37"
+    },
+    {
+     "reading_order": 38,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 472.56,
+      "r": 206.06,
+      "b": 346.65,
+      "w": 166.37,
+      "h": 125.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.59752,
+      "r": 0.34616,
+      "b": 0.43832
+     },
+     "text": "The virus's ability to infect and actively reproduce in the upper respiratory tract was something of a surprise, given that its close genetic relative, SARS-CoV, lacks that ability. Last month, Wendtner published results 8 of experiments in which his team was able to culture virus from the throats of nine people with COVID-19, showing that the virus is actively reproducing and infectious there. That explains a crucial difference between the close relatives. SARS-CoV-2 can shed viral particles from the throat into saliva even before",
+     "text_len": 537,
+     "level": 1,
+     "element_id": "p4_e38"
+    },
+    {
+     "reading_order": 39,
+     "page": 4,
+     "label": "picture",
+     "bbox": {
+      "l": 216.67,
+      "t": 742.53,
+      "r": 252.43,
+      "b": 718.54,
+      "w": 35.76,
+      "h": 24.0,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36398,
+      "t": 0.93888,
+      "r": 0.42406,
+      "b": 0.90855
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p4_e39"
+    },
+    {
+     "reading_order": 40,
+     "page": 4,
+     "label": "section_header",
+     "bbox": {
+      "l": 217.37,
+      "t": 708.25,
+      "r": 383.59,
+      "b": 626.27,
+      "w": 166.22,
+      "h": 81.98,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36516,
+      "t": 0.89554,
+      "r": 0.64439,
+      "b": 0.79188
+     },
+     "text": "WHEN I SAW SARS-COV-2 HAD THAT CLEAVAGE SITE, I DID NOT SLEEP VERY WELL THAT NIGHT.\"",
+     "text_len": 84,
+     "level": 1,
+     "element_id": "p4_e40"
+    },
+    {
+     "reading_order": 41,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 601.56,
+      "r": 383.67,
+      "b": 550.9,
+      "w": 166.35,
+      "h": 50.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.76063,
+      "r": 0.64452,
+      "b": 0.69658
+     },
+     "text": "symptoms start, and these can then pass easily from person to person. SARS-CoV was much less effective at making that jump, passing only when symptoms were full-blown, making it easier to contain.",
+     "text_len": 196,
+     "level": 1,
+     "element_id": "p4_e41"
+    },
+    {
+     "reading_order": 42,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 547.81,
+      "r": 383.71,
+      "b": 432.65,
+      "w": 166.39,
+      "h": 115.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.69267,
+      "r": 0.64459,
+      "b": 0.54706
+     },
+     "text": "These differences have led to some confusion about the lethality of SARS-CoV-2. Some experts and media reports describe it as less deadly than SARS-CoV because it kills about 1% of the people it infects, whereas SARS-CoV killed at roughly ten times that rate. But Perlman says that's the wrong way to look at it. SARS-CoV-2 is much better at infecting people, but many of the infections don't progress to the lungs. \"Once it gets down in the lungs, it's probably just as deadly,\" he says.",
+     "text_len": 488,
+     "level": 1,
+     "element_id": "p4_e42"
+    },
+    {
+     "reading_order": 43,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 429.56,
+      "r": 383.7,
+      "b": 346.65,
+      "w": 166.38,
+      "h": 82.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.54315,
+      "r": 0.64457,
+      "b": 0.43832
+     },
+     "text": "What it does when it gets down to the lungs is similar in some respects to what respiratory viruses do, although much remains unknown. Like SARS-CoV and influenza, it infects and destroys the alveoli, the tiny sacs in the lungs that shuttle oxygen into the bloodstream. As the cellular barrier dividing these sacs from blood vessels break down, liquid from the vessels leaks in, blocking oxygen from getting to the blood. Other cells, including white blood cells, plug up the airway further. A robust immune response will clear all this out in some patients, but overreaction of the immune system can make the tissue damage worse. If the inflammation and tissue damage are too severe, the lungs never recover and the person dies or is left with scarred lungs, says Xiao. \"From a pathological point of view, we don't see a lot of uniqueness here.\"",
+     "text_len": 846,
+     "level": 1,
+     "element_id": "p4_e43"
+    },
+    {
+     "reading_order": 44,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 623.06,
+      "r": 561.34,
+      "b": 421.9,
+      "w": 166.38,
+      "h": 201.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.78782,
+      "r": 0.94299,
+      "b": 0.53347
+     },
+     "text": "And as with SARS-CoV, MERS-CoV and animal coronaviruses, the damage doesn't stop with the lungs. A SARS-CoV-2 infection can trigger an excessive immune response known as a cytokine storm, which can lead to multiple organ failure and death. The virus can also infect the intestines, the heart, the blood, sperm (as can MERS-CoV), the eye and possibly the brain. Damage to the kidney, liver and spleen observed in people with COVID-19 suggests that the virus can be carried in the blood and infect various organs or tissues, says Guan Wei-jie, a pulmonologist at the Guangzhou Institute of Respiratory Health at Guangzhou Medical University, China, an institution lauded for its role in combating SARS and COVID-19. The virus might be able to infect various organs or tissues wherever the blood supply reaches, says Guan.",
+     "text_len": 819,
+     "level": 1,
+     "element_id": "p4_e44"
+    },
+    {
+     "reading_order": 45,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 418.81,
+      "r": 561.33,
+      "b": 346.65,
+      "w": 166.37,
+      "h": 72.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.52956,
+      "r": 0.94297,
+      "b": 0.43832
+     },
+     "text": "But although genetic material from the virus is showing up in these various tissues, it is not yet clear whether the damage there is being done by the virus or by a cytokine storm, says Wendtner. \"Autopsies are under way in our centre. More data will come soon,\" he says. Whether it infects the throat or the lungs,",
+     "text_len": 315,
+     "level": 1,
+     "element_id": "p4_e45"
+    },
+    {
+     "reading_order": 46,
+     "page": 4,
+     "label": "picture",
+     "bbox": {
+      "l": 37.57,
+      "t": 295.84,
+      "r": 561.13,
+      "b": 51.36,
+      "w": 523.56,
+      "h": 244.48,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06311,
+      "t": 0.37407,
+      "r": 0.94264,
+      "b": 0.06494
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p4_e46"
+    }
+   ]
+  },
+  {
+   "page_no": 5,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0005.png",
+   "elements": [
+    {
+     "reading_order": 47,
+     "page": 5,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 761.54,
+      "r": 91.01,
+      "b": 748.57,
+      "w": 51.32,
+      "h": 12.97,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.96292,
+      "r": 0.15289,
+      "b": 0.94652
+     },
+     "text": "Feature",
+     "text_len": 7,
+     "level": 1,
+     "element_id": "p5_e47"
+    },
+    {
+     "reading_order": 48,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 741.31,
+      "r": 206.05,
+      "b": 636.9,
+      "w": 166.36,
+      "h": 104.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.93734,
+      "r": 0.34614,
+      "b": 0.80532
+     },
+     "text": "SARS-Cov-2 breaches the protective membrane of host cells using its spike proteins (see 'Deadly invader'). First, the protein's receptor-binding domain latches on to a receptor called ACE2, which sits on the surface of the host cell. ACE2 is expressed throughout the body on the lining of the arteries and veins that course through all organs, but it is particularly dense on the cells lining the alveoli and small intestines.",
+     "text_len": 426,
+     "level": 1,
+     "element_id": "p5_e48"
+    },
+    {
+     "reading_order": 49,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 39.68,
+      "t": 633.81,
+      "r": 206.06,
+      "b": 507.9,
+      "w": 166.38,
+      "h": 125.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06666,
+      "t": 0.80141,
+      "r": 0.34616,
+      "b": 0.64221
+     },
+     "text": "Although the exact mechanisms remain unknown, evidence suggests that after the virus attaches itself, the host cell snips the spike protein at one of its dedicated 'cleavage sites', exposing fusion peptides - small chains of amino acids that help to pry open the host cell's membrane so that the virus's membrane can merge with it. Once the invader's genetic material gets inside the cell, the virus commandeers the host's molecular machinery to produce new viral particles. Then, those progeny exit the cell to go and infect others.",
+     "text_len": 533,
+     "level": 1,
+     "element_id": "p5_e49"
+    },
+    {
+     "reading_order": 50,
+     "page": 5,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.69,
+      "t": 497.14,
+      "r": 100.06,
+      "b": 488.12,
+      "w": 60.37,
+      "h": 9.02,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.6286,
+      "r": 0.16809,
+      "b": 0.6172
+     },
+     "text": "Power spikes",
+     "text_len": 12,
+     "level": 1,
+     "element_id": "p5_e50"
+    },
+    {
+     "reading_order": 51,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 483.31,
+      "r": 206.06,
+      "b": 378.9,
+      "w": 166.38,
+      "h": 104.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.61111,
+      "r": 0.34616,
+      "b": 0.4791
+     },
+     "text": "SARS-CoV-2 is uniquely equipped for forcing entry into cells. Both SARS-CoV and SARS-CoV-2 bind with ACE2, but the receptor-binding domain of SARS-CoV-2 is a particularly snug fit. It is 10-20 times more likely to bind ACE2 than is SARS-CoV 9 . Wendtner says that SARS-CoV-2 is so good at infecting the upper respiratory tract that there might even be a second receptor that the virus could use to launch its attack.",
+     "text_len": 416,
+     "level": 1,
+     "element_id": "p5_e51"
+    },
+    {
+     "reading_order": 52,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 375.81,
+      "r": 206.07,
+      "b": 271.4,
+      "w": 166.38,
+      "h": 104.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.47519,
+      "r": 0.34618,
+      "b": 0.34317
+     },
+     "text": "Even more troubling is the fact that SARS-COV-2 seems to make use of the enzyme furin from the host to cleave the viral spike protein. This is worrying, researchers say, because furin is abundant in the respiratory tract and found throughout the body. It is used by other formidable viruses, including HIV, influenza, dengue and Ebola to enter cells. By contrast, the cleavage molecules used by SARS-CoV are much less common and not as effective.",
+     "text_len": 446,
+     "level": 1,
+     "element_id": "p5_e52"
+    },
+    {
+     "reading_order": 53,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 39.68,
+      "t": 268.31,
+      "r": 206.06,
+      "b": 163.9,
+      "w": 166.37,
+      "h": 104.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06666,
+      "t": 0.33926,
+      "r": 0.34616,
+      "b": 0.20724
+     },
+     "text": "Scientists think that the involvement of furin could explain why SARS-CoV-2 is so good at jumping from cell to cell, person to person and possibly animal to human. Robert Garry, a virologist at Tulane University in New Orleans, Louisiana, estimates that it gives SARS-CoV-2 a 100-1,000 times greater chance than SARS-CoV of getting deep into the lungs. \"When I saw SARS-CoV-2 had that cleavage site, I did not sleep very well that night,\" he says.",
+     "text_len": 447,
+     "level": 1,
+     "element_id": "p5_e53"
+    },
+    {
+     "reading_order": 54,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 39.69,
+      "t": 160.81,
+      "r": 206.07,
+      "b": 67.15,
+      "w": 166.39,
+      "h": 93.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06667,
+      "t": 0.20333,
+      "r": 0.34618,
+      "b": 0.08491
+     },
+     "text": "The mystery is where the genetic instructions for this particular cleavage site came from. Although the virus probably gained them through recombination, this particular set-up has never been found in any other coronavirus in any species. Pinning down its origin might be the last piece in the puzzle that will determine which animal was the stepping stone that allowed the virus to reach humans.",
+     "text_len": 396,
+     "level": 1,
+     "element_id": "p5_e54"
+    },
+    {
+     "reading_order": 55,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 39.68,
+      "t": 64.06,
+      "r": 205.98,
+      "b": 45.65,
+      "w": 166.3,
+      "h": 18.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06666,
+      "t": 0.081,
+      "r": 0.34602,
+      "b": 0.05772
+     },
+     "text": "Some researchers hope that the virus will weaken over time through a series of mutations that adapt it to persist in humans. By this logic, it would become less deadly and have more chances to spread. But researchers have not yet found any sign of such weakening, probably because of the virus's efficient genetic repair mechanism. \"The genome of COVID-19 virus is very stable, and I don't see any change of pathogenicity that is caused by virus mutation,\" says Guo Deyin, who researches coronaviruses at Sun Yat-sen University in Guangzhou.",
+     "text_len": 541,
+     "level": 1,
+     "element_id": "p5_e55"
+    },
+    {
+     "reading_order": 56,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 623.06,
+      "r": 383.71,
+      "b": 561.65,
+      "w": 166.39,
+      "h": 61.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.78782,
+      "r": 0.64459,
+      "b": 0.71017
+     },
+     "text": "Rambaut, too, doubts that the virus will become milder over time and spare its host. \"It doesn't work that way,\" he says. As long as it can successfully infect new cells, reproduce and transmit to new ones, it doesn't matter whether it harms the host, he says.",
+     "text_len": 260,
+     "level": 1,
+     "element_id": "p5_e56"
+    },
+    {
+     "reading_order": 57,
+     "page": 5,
+     "label": "picture",
+     "bbox": {
+      "l": 216.57,
+      "t": 556.55,
+      "r": 252.23,
+      "b": 530.02,
+      "w": 35.66,
+      "h": 26.52,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36381,
+      "t": 0.70372,
+      "r": 0.42372,
+      "b": 0.67018
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p5_e57"
+    },
+    {
+     "reading_order": 58,
+     "page": 5,
+     "label": "section_header",
+     "bbox": {
+      "l": 217.37,
+      "t": 519.64,
+      "r": 372.33,
+      "b": 437.66,
+      "w": 154.96,
+      "h": 81.98,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36516,
+      "t": 0.65705,
+      "r": 0.62547,
+      "b": 0.55339
+     },
+     "text": "BY FAR THE MOST LIKELY SCENARIO IS THAT THE VIRUS WILL CONTINUE TO SPREAD.\"",
+     "text_len": 75,
+     "level": 1,
+     "element_id": "p5_e58"
+    },
+    {
+     "reading_order": 59,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 418.81,
+      "r": 383.68,
+      "b": 282.15,
+      "w": 166.36,
+      "h": 136.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.52956,
+      "r": 0.64454,
+      "b": 0.35676
+     },
+     "text": "But others think there is a chance for a better outcome. It might give people antibodies that will offer at least partial protection, says Klaus Stöhr, who headed the World Health Organization's SARS research and epidemiology division. Stöhr says that immunity will not be perfect - people who are reinfected will still develop minor symptoms, the way they do now from the common cold, and there will be rare examples of severe disease. But the virus's proofreading mechanism means it will not mutate quickly, and people who were infected will retain robust protection, he says.",
+     "text_len": 578,
+     "level": 1,
+     "element_id": "p5_e59"
+    },
+    {
+     "reading_order": 60,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 279.06,
+      "r": 383.71,
+      "b": 153.15,
+      "w": 166.39,
+      "h": 125.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.35285,
+      "r": 0.64459,
+      "b": 0.19365
+     },
+     "text": "\"By far the most likely scenario is that the virus will continue to spread and infect most of the world population in a relatively short period of time,\" says Stöhr, meaning one to two years. \"Afterwards, the virus will continue to spread in the human population, likely forever.\" Like the four generally mild human coronaviruses, SARS-CoV-2 would then circulate constantly and cause mainly mild upper respiratory tract infections, says Stöhr. For that reason, he adds, vaccines won't be necessary.",
+     "text_len": 498,
+     "level": 1,
+     "element_id": "p5_e60"
+    },
+    {
+     "reading_order": 61,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 217.32,
+      "t": 150.06,
+      "r": 383.72,
+      "b": 56.4,
+      "w": 166.4,
+      "h": 93.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36507,
+      "t": 0.18974,
+      "r": 0.64461,
+      "b": 0.07131
+     },
+     "text": "Some previous studies support this argument. One 10 showed that when people were inoculated with the common-cold coronavirus 229E, their antibody levels peaked two weeks later and were only slightly raised after a year. That did not prevent infections a year later, but subsequent infections led to few, if any, symptoms and a shorter period of viral shedding.",
+     "text_len": 360,
+     "level": 1,
+     "element_id": "p5_e61"
+    },
+    {
+     "reading_order": 62,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 225.83,
+      "t": 53.31,
+      "r": 383.64,
+      "b": 45.65,
+      "w": 157.81,
+      "h": 7.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.37937,
+      "t": 0.06741,
+      "r": 0.64447,
+      "b": 0.05772
+     },
+     "text": "The OC43 coronavirus offers a model for where this pandemic might go. That virus also gives humans common colds, but genetic research from the University of Leuven in Belgium suggests that OC43 might have been a killer in the past 11 . That study indicates that OC43 spilled over to humans in around 1890 from cows, which got it from mice. The scientists suggest that OC43 was responsible for a pandemic that killed more than one million people worldwide in 1889-90 - an outbreak previously blamed on influenza. Today, OC43 continues to circulate widely and it might be that continual exposure to the virus keeps the great majority of people immune to it.",
+     "text_len": 655,
+     "level": 1,
+     "element_id": "p5_e62"
+    },
+    {
+     "reading_order": 63,
+     "page": 5,
+     "label": "section_header",
+     "bbox": {
+      "l": 394.96,
+      "t": 583.14,
+      "r": 440.43,
+      "b": 574.12,
+      "w": 45.47,
+      "h": 9.02,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.73734,
+      "r": 0.73988,
+      "b": 0.72594
+     },
+     "text": "End game",
+     "text_len": 8,
+     "level": 1,
+     "element_id": "p5_e63"
+    },
+    {
+     "reading_order": 64,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 569.31,
+      "r": 561.34,
+      "b": 335.9,
+      "w": 166.38,
+      "h": 233.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.71986,
+      "r": 0.94299,
+      "b": 0.42472
+     },
+     "text": "But even if that process made OC43 less deadly, it is not yet clear whether something similar would happen with SARS-CoV-2. A study in monkeys showed that they retained antibodies to SARS-CoV-2, but the researchers only reported on the first 28 days after infection, so it is unclear how long the immunity lasted 12 . Concentrations of antibodies against SARS-CoV also dropped significantly over a two- to three-year period 13 . Whether those lowered levels would be enough to prevent infection or reduce severity has not been tested. Cats, cows, dogs and chickens do not seem to become immune to the sometimes deadly coronaviruses that infect them, leaving veterinarians over the years to scramble for vaccines. Despite all the questions about whether people retain any immunity to SARS-CoV-2, some countries are promoting the idea of giving survivors 'immunity passports' to allow them to venture out without fear of being infected or infecting others.",
+     "text_len": 954,
+     "level": 1,
+     "element_id": "p5_e64"
+    },
+    {
+     "reading_order": 65,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 332.81,
+      "r": 561.32,
+      "b": 260.65,
+      "w": 166.36,
+      "h": 72.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.42082,
+      "r": 0.94296,
+      "b": 0.32958
+     },
+     "text": "Many scientists are reserving judgement on whether the tamer coronaviruses were once as virulent as SARS-CoV-2. People like to think that \"the other coronaviruses were terrible and became mild\", says Perlman. \"That's an optimistic way to think about what's going on now, but we don't have evidence.\"",
+     "text_len": 299,
+     "level": 1,
+     "element_id": "p5_e65"
+    },
+    {
+     "reading_order": 66,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 394.96,
+      "t": 246.43,
+      "r": 538.39,
+      "b": 228.84,
+      "w": 143.43,
+      "h": 17.59,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.3116,
+      "r": 0.90444,
+      "b": 0.28935
+     },
+     "text": "David Cyranoski reports for Nature from Shanghai, China.",
+     "text_len": 56,
+     "level": 1,
+     "element_id": "p5_e66"
+    },
+    {
+     "reading_order": 67,
+     "page": 5,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.96,
+      "t": 211.99,
+      "r": 561.26,
+      "b": 206.73,
+      "w": 166.3,
+      "h": 5.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.26805,
+      "r": 0.94286,
+      "b": 0.2614
+     },
+     "text": "Luis, A. D. et al. Proc. R. Soc. Lond. B 280, 20122753 (2013).",
+     "text_len": 62,
+     "level": 2,
+     "element_id": "p5_e67"
+    },
+    {
+     "reading_order": 68,
+     "page": 5,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.96,
+      "t": 203.99,
+      "r": 512.59,
+      "b": 198.73,
+      "w": 117.63,
+      "h": 5.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.25793,
+      "r": 0.8611,
+      "b": 0.25128
+     },
+     "text": "Brook, C. E. et al. eLife 9, e48401 (2020).",
+     "text_len": 43,
+     "level": 2,
+     "element_id": "p5_e68"
+    },
+    {
+     "reading_order": 69,
+     "page": 5,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.96,
+      "t": 196.0,
+      "r": 553.87,
+      "b": 182.74,
+      "w": 158.91,
+      "h": 13.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.24783,
+      "r": 0.93044,
+      "b": 0.23106
+     },
+     "text": "Graham, R. L., Donaldson, E. F. & Baric, R. S. Nature Rev. Microbiol. 11, 836-848 (2013).",
+     "text_len": 89,
+     "level": 2,
+     "element_id": "p5_e69"
+    },
+    {
+     "reading_order": 70,
+     "page": 5,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.96,
+      "t": 180.0,
+      "r": 515.58,
+      "b": 174.74,
+      "w": 120.62,
+      "h": 5.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.2276,
+      "r": 0.86612,
+      "b": 0.22095
+     },
+     "text": "Zhou, P. et al Nature 579, 270-273 (2020).",
+     "text_len": 42,
+     "level": 2,
+     "element_id": "p5_e70"
+    },
+    {
+     "reading_order": 71,
+     "page": 5,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.96,
+      "t": 172.0,
+      "r": 548.74,
+      "b": 158.74,
+      "w": 153.78,
+      "h": 13.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.21748,
+      "r": 0.92182,
+      "b": 0.20072
+     },
+     "text": "Zhang, T., Wu, Q. & Zhang, Z. Curr. Biol. 30, 1346-1351 (2020).",
+     "text_len": 63,
+     "level": 2,
+     "element_id": "p5_e71"
+    },
+    {
+     "reading_order": 72,
+     "page": 5,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.96,
+      "t": 156.01,
+      "r": 528.31,
+      "b": 142.75,
+      "w": 133.35,
+      "h": 13.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.19726,
+      "r": 0.8875,
+      "b": 0.1805
+     },
+     "text": "Boni, M. F. et al. Preprint at bioRxiv https://doi. org/10.1101/2020.03.30.015008 (2020).",
+     "text_len": 89,
+     "level": 2,
+     "element_id": "p5_e72"
+    },
+    {
+     "reading_order": 73,
+     "page": 5,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.96,
+      "t": 140.01,
+      "r": 540.76,
+      "b": 126.75,
+      "w": 145.8,
+      "h": 13.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.17703,
+      "r": 0.90842,
+      "b": 0.16027
+     },
+     "text": "Wang, H., Pipes, L. & Nielsen, R. Preprint at bioRxiv https://doi.org/10.1101/2020.04.20.052019 (2020).",
+     "text_len": 103,
+     "level": 2,
+     "element_id": "p5_e73"
+    },
+    {
+     "reading_order": 74,
+     "page": 5,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.96,
+      "t": 124.01,
+      "r": 549.16,
+      "b": 110.75,
+      "w": 154.2,
+      "h": 13.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.1568,
+      "r": 0.92253,
+      "b": 0.14004
+     },
+     "text": "Wölfel, R. et al. Nature https://doi.org/10.1038/s41586020-2196-x (2020).",
+     "text_len": 73,
+     "level": 2,
+     "element_id": "p5_e74"
+    },
+    {
+     "reading_order": 75,
+     "page": 5,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.96,
+      "t": 108.02,
+      "r": 531.45,
+      "b": 102.76,
+      "w": 136.49,
+      "h": 5.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.13658,
+      "r": 0.89278,
+      "b": 0.12993
+     },
+     "text": "Wrapp, D. et al. Science 367, 1260-1263 (2020).",
+     "text_len": 47,
+     "level": 2,
+     "element_id": "p5_e75"
+    },
+    {
+     "reading_order": 76,
+     "page": 5,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.96,
+      "t": 100.02,
+      "r": 550.83,
+      "b": 86.76,
+      "w": 155.87,
+      "h": 13.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66349,
+      "t": 0.12647,
+      "r": 0.92534,
+      "b": 0.1097
+     },
+     "text": "Callow, K. A., Parry, H. F., Sergeant, M. & Tyrrell, D. A. J. Epidemiol. Infect. 105, 435-446 (1990).",
+     "text_len": 101,
+     "level": 2,
+     "element_id": "p5_e76"
+    },
+    {
+     "reading_order": 77,
+     "page": 5,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.97,
+      "t": 84.02,
+      "r": 524.78,
+      "b": 78.76,
+      "w": 129.81,
+      "h": 5.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66351,
+      "t": 0.10624,
+      "r": 0.88157,
+      "b": 0.09959
+     },
+     "text": "Vijgen, L. et al. J. Virol. 79, 1595-1604 (2005).",
+     "text_len": 49,
+     "level": 2,
+     "element_id": "p5_e77"
+    },
+    {
+     "reading_order": 78,
+     "page": 5,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.97,
+      "t": 76.03,
+      "r": 519.02,
+      "b": 62.77,
+      "w": 124.05,
+      "h": 13.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66351,
+      "t": 0.09614,
+      "r": 0.8719,
+      "b": 0.07937
+     },
+     "text": "Bao, L. et al. Preprint at bioRxiv https://doi. org/10.1101/2020.03.13.990226 (2020).",
+     "text_len": 85,
+     "level": 2,
+     "element_id": "p5_e78"
+    },
+    {
+     "reading_order": 79,
+     "page": 5,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.97,
+      "t": 60.03,
+      "r": 558.93,
+      "b": 46.77,
+      "w": 163.95,
+      "h": 13.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66351,
+      "t": 0.0759,
+      "r": 0.93894,
+      "b": 0.05914
+     },
+     "text": "Cao, W.-C., Liu, W., Zhang, P.-H. & Richardus. J. H. N. Engl. J. Med. 357, 1162-1163 (2007).",
+     "text_len": 92,
+     "level": 2,
+     "element_id": "p5_e79"
+    }
+   ]
+  }
+ ],
+ "caption_blocks": [],
+ "uncaptioned_pictures": [
+  {
+   "page": 2,
+   "bbox": {
+    "l": 31.49,
+    "t": 743.79,
+    "r": 562.23,
+    "b": 48.45,
+    "w": 530.74,
+    "h": 695.34,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": true,
+   "element_id": "p2_e12"
+  },
+  {
+   "page": 3,
+   "bbox": {
+    "l": 131.95,
+    "t": 324.37,
+    "r": 541.62,
+    "b": 189.64,
+    "w": 409.67,
+    "h": 134.72,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": true,
+   "element_id": "p3_e27"
+  },
+  {
+   "page": 3,
+   "bbox": {
+    "l": 208.19,
+    "t": 165.26,
+    "r": 283.43,
+    "b": 63.28,
+    "w": 75.24,
+    "h": 101.98,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": true,
+   "element_id": "p3_e31"
+  },
+  {
+   "page": 3,
+   "bbox": {
+    "l": 485.76,
+    "t": 165.05,
+    "r": 561.16,
+    "b": 63.75,
+    "w": 75.41,
+    "h": 101.3,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": true,
+   "element_id": "p3_e35"
+  },
+  {
+   "page": 4,
+   "bbox": {
+    "l": 216.67,
+    "t": 742.53,
+    "r": 252.43,
+    "b": 718.54,
+    "w": 35.76,
+    "h": 24.0,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": false,
+   "element_id": "p4_e39"
+  },
+  {
+   "page": 4,
+   "bbox": {
+    "l": 37.57,
+    "t": 295.84,
+    "r": 561.13,
+    "b": 51.36,
+    "w": 523.56,
+    "h": 244.48,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": true,
+   "element_id": "p4_e46"
+  },
+  {
+   "page": 5,
+   "bbox": {
+    "l": 216.57,
+    "t": 556.55,
+    "r": 252.23,
+    "b": 530.02,
+    "w": 35.66,
+    "h": 26.52,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": false,
+   "element_id": "p5_e57"
+  }
+ ]
+}

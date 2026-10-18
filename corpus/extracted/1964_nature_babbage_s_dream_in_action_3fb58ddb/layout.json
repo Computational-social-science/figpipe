@@ -1,0 +1,64 @@
+{
+ "paper_id": "1964_nature_babbage_s_dream_in_action_3fb58ddb",
+ "source_pdf": "D:\\2026讲座\\Computational social science\\Charles Babbage (1791 – 1871)\\! 1964-Nature-Babbage's Dream in Action.pdf",
+ "source_sha256": "1dc1f7fc4cfcee282535c5305bed79fc01f5c4c932920bab4b54288edc77d0c5",
+ "source_name": "! 1964-Nature-Babbage's Dream in Action.pdf",
+ "n_pages": 2,
+ "page_size_pt": [
+  581.1,
+  793.7
+ ],
+ "coordinate_note": "bbox is PDF points with origin at the BOTTOM-LEFT, y increasing upward; bbox_norm divides by page size.",
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "generated_at": "2026-10-18T11:23:32",
+ "pages": [
+  {
+   "page_no": 1,
+   "width_pt": 581.1024,
+   "height_pt": 793.7008,
+   "png": "pages/page_0001.png",
+   "elements": []
+  },
+  {
+   "page_no": 2,
+   "width_pt": 581.1024,
+   "height_pt": 793.7008,
+   "png": "pages/page_0002.png",
+   "elements": [
+    {
+     "reading_order": 0,
+     "page": 2,
+     "label": "formula",
+     "bbox": {
+      "l": 141.5,
+      "t": 315.28,
+      "r": 188.54,
+      "b": 295.59,
+      "w": 47.04,
+      "h": 19.69,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.2435,
+      "t": 0.39723,
+      "r": 0.32445,
+      "b": 0.37242
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p2_e0"
+    }
+   ]
+  }
+ ],
+ "caption_blocks": [],
+ "uncaptioned_pictures": []
+}

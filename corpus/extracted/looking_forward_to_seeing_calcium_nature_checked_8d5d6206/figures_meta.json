@@ -1,0 +1,250 @@
+{
+ "paper_id": "looking_forward_to_seeing_calcium_nature_checked_8d5d6206",
+ "source_pdf": "D:\\个人简历及资质材料\\博士期间资料\\学位论文研究资料\\Ratio imaging microscope system(历史)\\!   Looking forward to seeing calcium(Nature)(checked).pdf",
+ "source_sha256": "0b8d1fe64acc341b907863c627dcb6633517867f7340fd833b82c21bbcdb5ac2",
+ "source_name": "!   Looking forward to seeing calcium(Nature)(checked).pdf",
+ "n_pages": 8,
+ "generated_at": "2026-10-18T11:21:16",
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "n_figures": 4,
+ "n_tables": 1,
+ "n_pictures_detected": 11,
+ "n_uncaptioned_pictures": 7,
+ "figures": [
+  {
+   "figure_id": "fig_001",
+   "kind": "figure",
+   "label_form": "Figure 1",
+   "figure_number": 1,
+   "page": 2,
+   "bbox": {
+    "l": 44.34,
+    "t": 749.4,
+    "r": 205.46,
+    "b": 642.55,
+    "w": 161.12,
+    "h": 106.85,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 89,
+    "y0": 185,
+    "x1": 411,
+    "y1": 399,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_001.png",
+   "image_size_px": [
+    322,
+    214
+   ],
+   "caption": "Figure 1 | Procedure of a typical Ca 2+ measurement experiment. a | The",
+   "caption_page": 2,
+   "caption_text": "Figure 1 | Procedure of a typical Ca 2+ measurement experiment. a | The",
+   "caption_bbox": {
+    "l": 42.97,
+    "t": 456.03,
+    "r": 171.83,
+    "b": 439.41,
+    "w": 128.86,
+    "h": 16.62,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p2_e25"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 186.52
+   },
+   "element_id": "p2_e21",
+   "reading_order": 21
+  },
+  {
+   "figure_id": "fig_002",
+   "kind": "figure",
+   "label_form": "Figure 2",
+   "figure_number": 2,
+   "page": 4,
+   "bbox": {
+    "l": 42.27,
+    "t": 750.9,
+    "r": 379.11,
+    "b": 388.98,
+    "w": 336.84,
+    "h": 361.92,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 85,
+    "y0": 182,
+    "x1": 758,
+    "y1": 906,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_002.png",
+   "image_size_px": [
+    673,
+    724
+   ],
+   "caption": "Figure 2 | Fluorescence resonance energy transfer. Fluorescence resonance energy transfer (FRET) is the physicochemical phenomenon that is characterized by the transfer of energy from an excited donor chromophore to an acceptor chromophore, without associated radiation release. FRET occurs when the donor emission and acceptor excitation spectra overlap considerably (not shown) and the two dipoles are very close to each other (2-7 nm). FRET is proportional to the 6 th power of the distance between the chromophores and, therefore, even minor conformational changes can induce considerable FRET changes. At the Förster radius, R 0 , 50% of the energy is transmitted to the acceptor. The occurrence of FRET results in the change of several fluorescence parameters - two used in the measurement of Ca 2+ concentration are changes in the emission spectrum at constant excitation and in the fluorescence decay time. The former has been used the most because of the simplicity of its use, the relatively limited cost and the high velocity of image acquisition, which mainly depends on the speed of the imaging system and the dissociation time constant of Ca 2+ from the probe. Fluorescence decay or lifetime imaging microscopy (FLIM), however, requires a dedicated apparatus and is slow, but it offers the advantage of being relatively insensitive to other environmental parameters, such as pH changes and unequal loading of the probe. τ1 and τ2 indicate the time constants of fluorescence decay in the absence or the presence of FRET, respectively.",
+   "caption_page": 4,
+   "caption_text": "Figure 2 | Fluorescence resonance energy transfer. Fluorescence resonance energy transfer (FRET) is the physicochemical phenomenon that is characterized by the transfer of energy from an excited donor chromophore to an acceptor chromophore, without associated radiation release. FRET occurs when the donor emission and acceptor excitation spectra overlap considerably (not shown) and the two dipoles are very close to each other (2-7 nm). FRET is proportional to the 6 th power of the distance between the chromophores and, therefore, even minor conformational changes can induce considerable FRET changes. At the Förster radius, R 0 , 50% of the energy is transmitted to the acceptor. The occurrence of FRET results in the change of several fluorescence parameters - two used in the measurement of Ca 2+ concentration are changes in the emission spectrum at constant excitation and in the fluorescence decay time. The former has been used the most because of the simplicity of its use, the relatively limited cost and the high velocity of image acquisition, which mainly depends on the speed of the imaging system and the dissociation time constant of Ca 2+ from the probe. Fluorescence decay or lifetime imaging microscopy (FLIM), however, requires a dedicated apparatus and is slow, but it offers the advantage of being relatively insensitive to other environmental parameters, such as pH changes and unequal loading of the probe. τ1 and τ2 indicate the time constants of fluorescence decay in the absence or the presence of FRET, respectively.",
+   "caption_bbox": {
+    "l": 42.97,
+    "t": 381.15,
+    "r": 376.5,
+    "b": 231.87,
+    "w": 333.54,
+    "h": 149.29,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p4_e51"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 7.83
+   },
+   "element_id": "p4_e48",
+   "reading_order": 48
+  },
+  {
+   "figure_id": "fig_003",
+   "kind": "figure",
+   "label_form": "Figure 3",
+   "figure_number": 3,
+   "page": 5,
+   "bbox": {
+    "l": 218.78,
+    "t": 400.01,
+    "r": 554.19,
+    "b": 243.76,
+    "w": 335.41,
+    "h": 156.24,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 438,
+    "y0": 884,
+    "x1": 1108,
+    "y1": 1196,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_003.png",
+   "image_size_px": [
+    670,
+    312
+   ],
+   "caption": "Figure 3 | Examples of Ca 2+ -concentration signalling in living cells. a | Pseudo-colour-coded ratioimages obtained by conventional epifluorescence micrographs of a HeLa cell transfected with ratiometric pericam. Ca 2+ concentrations are colour coded with a basal Ca 2+ concentration in blue and a high Ca 2+ concentration in yellow and red. Note the strong increase in mitochondrial Ca 2+ concentration on histamine-induced release from the endoplasmic reticulum (see also Online Video 1). b | The pseudocolour-coded ratio-images (as in FIG. 3a) of indo-1-loaded acute brain slices were obtained by confocal microscopy and show the Ca 2+ waves in astrocytes that were induced by stimulation of the CA1 nerve fibres that contact the CA3 region of the hippocampus (known as the 'Schaffer collateral pathway') with an extracellular electrode, which results in the depolarization of the nerve terminals and the release of neurotransmitter. The panels show sequential frames of Online Video 2. Note that the waves are sweeping from one process to another, traversing the whole cell. The numbers indicate the time after stimulation. c | Two-photon confocal micrographs of a muscle fibre from tibialis anterior muscle transfected with cytoplasmic cameleon in live mouse. The upper four panels show the yellow (YFP) and cyan fluorescence channel micrographs (CFP) from the cameleon probe that are responsible for the pseudo-colour-coded ratio-images (lower 2 panels) as in FIG. 3a. Note the increase in the intracellular Ca 2+ concentration in the muscle on stimulation of the sciatic nerve.",
+   "caption_page": 5,
+   "caption_text": "Figure 3 | Examples of Ca 2+ -concentration signalling in living cells. a | Pseudo-colour-coded ratioimages obtained by conventional epifluorescence micrographs of a HeLa cell transfected with ratiometric pericam. Ca 2+ concentrations are colour coded with a basal Ca 2+ concentration in blue and a high Ca 2+ concentration in yellow and red. Note the strong increase in mitochondrial Ca 2+ concentration on histamine-induced release from the endoplasmic reticulum (see also Online Video 1). b | The pseudocolour-coded ratio-images (as in FIG. 3a) of indo-1-loaded acute brain slices were obtained by confocal microscopy and show the Ca 2+ waves in astrocytes that were induced by stimulation of the CA1 nerve fibres that contact the CA3 region of the hippocampus (known as the 'Schaffer collateral pathway') with an extracellular electrode, which results in the depolarization of the nerve terminals and the release of neurotransmitter. The panels show sequential frames of Online Video 2. Note that the waves are sweeping from one process to another, traversing the whole cell. The numbers indicate the time after stimulation. c | Two-photon confocal micrographs of a muscle fibre from tibialis anterior muscle transfected with cytoplasmic cameleon in live mouse. The upper four panels show the yellow (YFP) and cyan fluorescence channel micrographs (CFP) from the cameleon probe that are responsible for the pseudo-colour-coded ratio-images (lower 2 panels) as in FIG. 3a. Note the increase in the intracellular Ca 2+ concentration in the muscle on stimulation of the sciatic nerve.",
+   "caption_bbox": {
+    "l": 218.99,
+    "t": 230.91,
+    "r": 553.65,
+    "b": 81.29,
+    "w": 334.66,
+    "h": 149.62,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p5_e64"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 12.85
+   },
+   "element_id": "p5_e62",
+   "reading_order": 62
+  },
+  {
+   "figure_id": "fig_004",
+   "kind": "figure",
+   "label_form": "Figure 4",
+   "figure_number": 4,
+   "page": 6,
+   "bbox": {
+    "l": 41.75,
+    "t": 751.45,
+    "r": 551.24,
+    "b": 559.74,
+    "w": 509.49,
+    "h": 191.71,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 84,
+    "y0": 181,
+    "x1": 1102,
+    "y1": 565,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_004.png",
+   "image_size_px": [
+    1019,
+    384
+   ],
+   "caption": "Figure 4 | Description of major decisions for the planning of a Ca 2+ -concentration imaging experiment. The flow chart summarizes the main decisions to be made in a typical Ca 2+ -concentration imaging experiment (left column, green) and the corresponding hardware that is available at present for each of these steps (right columns, blue and yellow). At certain points, according to the experimental approach, there are several choices of hardware, which are indicated by forked lines. *The use of a monochromator increases the time resolution considerably when compared with filter wheel-equipped microscopes. While the costs associated with confocal laser scanning microscopy are considerably higher than those associated with conventional microscopy, the costs associated with multiphoton microscopy are even greater. ‡ Note that targeted chemical probes are only available in the form of rhod2 for mitochondria. Low-affinity dyes could be used under certain instances for Ca 2+ -concentration measurements in the endoplasmic reticulum. FW, filter wheel; INT, intensity measurement; MC, monochromator; MR, emission ratioing; XR, excitation ratioing.",
+   "caption_page": 6,
+   "caption_text": "Figure 4 | Description of major decisions for the planning of a Ca 2+ -concentration imaging experiment. The flow chart summarizes the main decisions to be made in a typical Ca 2+ -concentration imaging experiment (left column, green) and the corresponding hardware that is available at present for each of these steps (right columns, blue and yellow). At certain points, according to the experimental approach, there are several choices of hardware, which are indicated by forked lines. *The use of a monochromator increases the time resolution considerably when compared with filter wheel-equipped microscopes. While the costs associated with confocal laser scanning microscopy are considerably higher than those associated with conventional microscopy, the costs associated with multiphoton microscopy are even greater. ‡ Note that targeted chemical probes are only available in the form of rhod2 for mitochondria. Low-affinity dyes could be used under certain instances for Ca 2+ -concentration measurements in the endoplasmic reticulum. FW, filter wheel; INT, intensity measurement; MC, monochromator; MR, emission ratioing; XR, excitation ratioing.",
+   "caption_bbox": {
+    "l": 42.97,
+    "t": 551.05,
+    "r": 552.67,
+    "b": 477.43,
+    "w": 509.7,
+    "h": 73.62,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p6_e67"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 8.69
+   },
+   "element_id": "p6_e66",
+   "reading_order": 66
+  }
+ ],
+ "tables": [
+  {
+   "table_id": "table_001",
+   "page": 5,
+   "bbox": {
+    "l": 43.28,
+    "t": 750.16,
+    "r": 554.0,
+    "b": 641.74,
+    "w": 510.72,
+    "h": 108.42,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p5_e56"
+  }
+ ]
+}

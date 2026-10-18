@@ -1,0 +1,53 @@
+{
+ "paper_id": "1974_nature_on_the_origins_of_molecular_biology_1c452d56",
+ "source_pdf": "D:\\2026-CSS2020\\Refs\\2019-Origin of the Term Molecular Biology\\!  1974-Nature_On the origins of molecular biology.pdf",
+ "source_sha256": "e705c9e319d8cf33d880d3df9a64fedd8ff2eec847e158e9bd90413412eecbe3",
+ "source_name": "!  1974-Nature_On the origins of molecular biology.pdf",
+ "n_pages": 2,
+ "generated_at": "2026-10-18T11:21:37",
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "n_figures": 0,
+ "n_tables": 1,
+ "n_pictures_detected": 0,
+ "n_uncaptioned_pictures": 0,
+ "figures": [],
+ "tables": [
+  {
+   "table_id": "table_001",
+   "page": 1,
+   "bbox": {
+    "l": 34.16,
+    "t": 250.93,
+    "r": 545.51,
+    "b": 103.19,
+    "w": 511.35,
+    "h": 147.74,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": "Table 1 Results of the one-way M LR",
+   "caption_bbox": {
+    "l": 220.64,
+    "t": 253.45,
+    "r": 358.3,
+    "b": 246.03,
+    "w": 137.65,
+    "h": 7.41,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_page": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": -4.9,
+    "paired": true
+   },
+   "element_id": "p1_e24"
+  }
+ ]
+}

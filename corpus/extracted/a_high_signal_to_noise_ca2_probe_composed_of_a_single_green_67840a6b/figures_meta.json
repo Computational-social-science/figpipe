@@ -1,0 +1,199 @@
+{
+ "paper_id": "a_high_signal_to_noise_ca2_probe_composed_of_a_single_green_67840a6b",
+ "source_pdf": "D:\\个人简历及资质材料\\博士期间资料\\学位论文研究资料\\GFP\\! A high signal-to-noise Ca2+ probe composed of a single green fluorescent protein(Nature).pdf",
+ "source_sha256": "9c92e69235c52ea1179bf5807d06c567e315a871a2d9e58923ccb5ddce981cec",
+ "source_name": "! A high signal-to-noise Ca2+ probe composed of a single green fluorescent protein(Nature).pdf",
+ "n_pages": 5,
+ "generated_at": "2026-10-18T11:25:39",
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "n_figures": 3,
+ "n_tables": 1,
+ "n_pictures_detected": 20,
+ "n_uncaptioned_pictures": 17,
+ "figures": [
+  {
+   "figure_id": "fig_001",
+   "kind": "figure",
+   "label_form": "Figure 2",
+   "figure_number": 2,
+   "page": 2,
+   "bbox": {
+    "l": 71.77,
+    "t": 160.17,
+    "r": 149.09,
+    "b": 82.7,
+    "w": 77.32,
+    "h": 77.46,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 144,
+    "y0": 1264,
+    "x1": 298,
+    "y1": 1419,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_001.png",
+   "image_size_px": [
+    154,
+    155
+   ],
+   "caption": "Figure 2. Expression of GFP-based Ca 2+ probes in HEK-293 cells. (A) HEK-293 cell expressing cytosolic G3. (B, C) Fluorescent changes in response to drugs for cells expressing G3 (B) and G-CaMP (C). Applications of 100 µM ATP, 100 µM carbachol (CCH), or 10 µM ionomycin (Iono) with and without Ca 2+ are indicated by shaded bars.",
+   "caption_page": 2,
+   "caption_text": "Figure 2. Expression of GFP-based Ca 2+ probes in HEK-293 cells. (A) HEK-293 cell expressing cytosolic G3. (B, C) Fluorescent changes in response to drugs for cells expressing G3 (B) and G-CaMP (C). Applications of 100 µM ATP, 100 µM carbachol (CCH), or 10 µM ionomycin (Iono) with and without Ca 2+ are indicated by shaded bars.",
+   "caption_bbox": {
+    "l": 52.39,
+    "t": 65.0,
+    "r": 561.28,
+    "b": 40.64,
+    "w": 508.88,
+    "h": 24.36,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p2_e33"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 17.7
+   },
+   "element_id": "p2_e26",
+   "reading_order": 26
+  },
+  {
+   "figure_id": "fig_002",
+   "kind": "table",
+   "label_form": "Table 1",
+   "figure_number": 1,
+   "page": 3,
+   "bbox": {
+    "l": 54.21,
+    "t": 616.99,
+    "r": 195.05,
+    "b": 520.58,
+    "w": 140.84,
+    "h": 96.4,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 108,
+    "y0": 350,
+    "x1": 390,
+    "y1": 543,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_002.png",
+   "image_size_px": [
+    282,
+    193
+   ],
+   "caption": "Table 1. Identity and fluorescent responses for GFP-based Ca 2+ probes a",
+   "caption_page": 3,
+   "caption_text": "Table 1. Identity and fluorescent responses for GFP-based Ca 2+ probes a",
+   "caption_bbox": {
+    "l": 53.5,
+    "t": 367.81,
+    "r": 324.41,
+    "b": 359.96,
+    "w": 270.91,
+    "h": 7.85,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p3_e46"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 152.77
+   },
+   "element_id": "p3_e39",
+   "reading_order": 39
+  },
+  {
+   "figure_id": "fig_003",
+   "kind": "figure",
+   "label_form": "Figure 4",
+   "figure_number": 4,
+   "page": 4,
+   "bbox": {
+    "l": 316.47,
+    "t": 726.81,
+    "r": 534.36,
+    "b": 572.64,
+    "w": 217.88,
+    "h": 154.17,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 633,
+    "y0": 130,
+    "x1": 1069,
+    "y1": 439,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_003.png",
+   "image_size_px": [
+    436,
+    309
+   ],
+   "caption": "Figure 4. Expression of G-CaMP in myotubes. (A and B) Lower panels show the time course of fluorescent signal from a region indicated by a black oval in each image 1. Images were taken at the indicated time. Scale bars indicate 100 µm. (A) Extracellular electrical stimulation (st) induced an increase in [Ca 2+ ]i. The stimulation electrode was placed in the right side of the middle portion of the cell. Interval time between frames was 0.5 s. (B) 100 µM carbachol (CCH)- and 10 mM caffeine-induced increases in [Ca 2+ ]i monitored with G-CaMP. The relatively slow onset of the responses was due to the big chamber and slow perfusion rate of the system. (C) The upper panel shows a confocal line-scan image of depolarization-induced [Ca 2+ ]i increase. The lower panel shows the time course of the change in fluorescence of the above image. Extracellular electrical stimulation (st) was delivered at the indicated time.",
+   "caption_page": 4,
+   "caption_text": "Figure 4. Expression of G-CaMP in myotubes. (A and B) Lower panels show the time course of fluorescent signal from a region indicated by a black oval in each image 1. Images were taken at the indicated time. Scale bars indicate 100 µm. (A) Extracellular electrical stimulation (st) induced an increase in [Ca 2+ ]i. The stimulation electrode was placed in the right side of the middle portion of the cell. Interval time between frames was 0.5 s. (B) 100 µM carbachol (CCH)- and 10 mM caffeine-induced increases in [Ca 2+ ]i monitored with G-CaMP. The relatively slow onset of the responses was due to the big chamber and slow perfusion rate of the system. (C) The upper panel shows a confocal line-scan image of depolarization-induced [Ca 2+ ]i increase. The lower panel shows the time course of the change in fluorescence of the above image. Extracellular electrical stimulation (st) was delivered at the indicated time.",
+   "caption_bbox": {
+    "l": 315.82,
+    "t": 555.0,
+    "r": 560.57,
+    "b": 437.78,
+    "w": 244.76,
+    "h": 117.22,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p4_e59"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 17.64
+   },
+   "element_id": "p4_e58",
+   "reading_order": 58
+  }
+ ],
+ "tables": [
+  {
+   "table_id": "table_001",
+   "page": 3,
+   "bbox": {
+    "l": 52.4,
+    "t": 359.31,
+    "r": 561.19,
+    "b": 70.72,
+    "w": 508.78,
+    "h": 288.59,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": 0.65,
+    "paired": false
+   },
+   "element_id": "p3_e45"
+  }
+ ]
+}

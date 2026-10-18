@@ -1,0 +1,67 @@
+{
+ "paper_id": "1976_nature_hearing_lips_and_seeing_voices_dcc07797",
+ "source_pdf": "D:\\2025-Skew-Pair fusion\\McGurk effect\\! 1976-Nature-Hearing lips and seeing voices.pdf",
+ "source_sha256": "0c9e361427738140e8f22f21a58ba60823d9d08e8a556bce312efac5a3a7c025",
+ "source_name": "! 1976-Nature-Hearing lips and seeing voices.pdf",
+ "n_pages": 3,
+ "generated_at": "2026-10-18T11:23:57",
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "n_figures": 0,
+ "n_tables": 2,
+ "n_pictures_detected": 0,
+ "n_uncaptioned_pictures": 0,
+ "figures": [],
+ "tables": [
+  {
+   "table_id": "table_001",
+   "page": 2,
+   "bbox": {
+    "l": 35.83,
+    "t": 740.02,
+    "r": 547.09,
+    "b": 553.82,
+    "w": 511.26,
+    "h": 186.2,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p2_e105"
+  },
+  {
+   "table_id": "table_002",
+   "page": 2,
+   "bbox": {
+    "l": 33.86,
+    "t": 201.06,
+    "r": 544.4,
+    "b": 30.6,
+    "w": 510.54,
+    "h": 170.47,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p2_e114"
+  }
+ ]
+}

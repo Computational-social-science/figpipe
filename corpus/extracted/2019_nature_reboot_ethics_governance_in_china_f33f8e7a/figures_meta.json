@@ -1,0 +1,125 @@
+{
+ "paper_id": "2019_nature_reboot_ethics_governance_in_china_f33f8e7a",
+ "source_pdf": "D:\\2026讲座\\Computational social science\\!  2019-Nature_Reboot ethics governance in China.pdf",
+ "source_sha256": "a66420ca3d6619999b6f44716d9117f69f57c283f44c3afcfac3b102fffefe84",
+ "source_name": "!  2019-Nature_Reboot ethics governance in China.pdf",
+ "n_pages": 3,
+ "generated_at": "2026-10-18T11:22:07",
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "n_figures": 2,
+ "n_tables": 0,
+ "n_pictures_detected": 3,
+ "n_uncaptioned_pictures": 1,
+ "figures": [
+  {
+   "figure_id": "fig_001",
+   "kind": "figure",
+   "label_form": "",
+   "figure_number": null,
+   "page": 1,
+   "bbox": {
+    "l": 35.95,
+    "t": 732.11,
+    "r": 554.12,
+    "b": 411.17,
+    "w": 518.17,
+    "h": 320.95,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 72,
+    "y0": 118,
+    "x1": 1108,
+    "y1": 759,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_001.png",
+   "image_size_px": [
+    1036,
+    641
+   ],
+   "caption": "China has hundreds of clinics offering in vitro fertilization, and some practitioners lack awareness of the importance of ethics training.",
+   "caption_page": 1,
+   "caption_text": "China has hundreds of clinics offering in vitro fertilization, and some practitioners lack awareness of the importance of ethics training.",
+   "caption_bbox": {
+    "l": 36.85,
+    "t": 406.39,
+    "r": 467.97,
+    "b": 399.7,
+    "w": 431.12,
+    "h": 6.69,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p1_e2"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 4.78
+   },
+   "element_id": "p1_e1",
+   "reading_order": 1
+  },
+  {
+   "figure_id": "fig_002",
+   "kind": "figure",
+   "label_form": "",
+   "figure_number": null,
+   "page": 3,
+   "bbox": {
+    "l": 35.99,
+    "t": 269.48,
+    "r": 373.63,
+    "b": 43.98,
+    "w": 337.64,
+    "h": 225.5,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 72,
+    "y0": 1043,
+    "x1": 747,
+    "y1": 1494,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_002.png",
+   "image_size_px": [
+    675,
+    451
+   ],
+   "caption": "A spokesperson at the Hong Kong genome-editing summit in November, at which He Jiankui gave results.",
+   "caption_page": 3,
+   "caption_text": "A spokesperson at the Hong Kong genome-editing summit in November, at which He Jiankui gave results.",
+   "caption_bbox": {
+    "l": 36.83,
+    "t": 38.89,
+    "r": 372.17,
+    "b": 32.2,
+    "w": 335.34,
+    "h": 6.69,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p3_e42"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 5.09
+   },
+   "element_id": "p3_e41",
+   "reading_order": 41
+  }
+ ],
+ "tables": []
+}

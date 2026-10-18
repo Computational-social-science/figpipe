@@ -1,0 +1,105 @@
+{
+ "paper_id": "2010_nature_rethinking_schizophrenia_23393356",
+ "source_pdf": "D:\\2024-Matthew effects deepen the cognitive gap\\schizophrenia\\!2010-Nature_Rethinking schizophrenia.pdf",
+ "source_sha256": "09614abf9e6a51263c5a852713cc0b2e09eb1df8c2587abd91bcc4484b3e8c9d",
+ "source_name": "!2010-Nature_Rethinking schizophrenia.pdf",
+ "n_pages": 7,
+ "generated_at": "2026-10-18T11:27:23",
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "n_figures": 1,
+ "n_tables": 1,
+ "n_pictures_detected": 10,
+ "n_uncaptioned_pictures": 9,
+ "figures": [
+  {
+   "figure_id": "fig_001",
+   "kind": "figure",
+   "label_form": "Figure 1",
+   "figure_number": 1,
+   "page": 3,
+   "bbox": {
+    "l": 130.34,
+    "t": 724.36,
+    "r": 468.93,
+    "b": 388.06,
+    "w": 338.59,
+    "h": 336.3,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 261,
+    "y0": 116,
+    "x1": 938,
+    "y1": 788,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_001.png",
+   "image_size_px": [
+    677,
+    672
+   ],
+   "caption": "Figure 1 | Neurodevelopmental model of schizophrenia. a, Normal cortical development involves proliferation, migration, arborization (circuit formation) and myelination, with the first two processes occurring mostly during prenatal life and the latter two continuing through the first two post-natal decades. The combined effects of pruning of the neuronal arbor and myelin deposition are thought to account for the progressive reduction of grey-matter volume observed with longitudinal neuroimaging. Beneath this observed overall reduction, local changes are far more complex. Data from human and nonhuman primate brain indicate increases in inhibitory and decreases in excitatory synaptic strength occurring in prefrontal cortex throughout",
+   "caption_page": 3,
+   "caption_text": "Figure 1 | Neurodevelopmental model of schizophrenia. a, Normal cortical development involves proliferation, migration, arborization (circuit formation) and myelination, with the first two processes occurring mostly during prenatal life and the latter two continuing through the first two post-natal decades. The combined effects of pruning of the neuronal arbor and myelin deposition are thought to account for the progressive reduction of grey-matter volume observed with longitudinal neuroimaging. Beneath this observed overall reduction, local changes are far more complex. Data from human and nonhuman primate brain indicate increases in inhibitory and decreases in excitatory synaptic strength occurring in prefrontal cortex throughout",
+   "caption_bbox": {
+    "l": 42.52,
+    "t": 381.42,
+    "r": 294.83,
+    "b": 288.14,
+    "w": 252.31,
+    "h": 93.28,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p3_e29"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 6.64
+   },
+   "element_id": "p3_e28",
+   "reading_order": 28
+  }
+ ],
+ "tables": [
+  {
+   "table_id": "table_001",
+   "page": 4,
+   "bbox": {
+    "l": 35.49,
+    "t": 161.84,
+    "r": 553.29,
+    "b": 41.24,
+    "w": 517.8,
+    "h": 120.6,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": "Table 1 | Stages of schizophrenia",
+   "caption_bbox": {
+    "l": 36.85,
+    "t": 170.14,
+    "r": 161.19,
+    "b": 161.55,
+    "w": 124.34,
+    "h": 8.59,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_page": 4,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": -0.29,
+    "paired": true
+   },
+   "element_id": "p4_e44"
+  }
+ ]
+}

@@ -1,0 +1,4532 @@
+{
+ "paper_id": "2019_nature_scalable_energy_efficient_magnetoelectric_spin_o_1e731f2e",
+ "source_pdf": "D:\\2026-MisspellingsMemory\\artificial intelligence vs. artifical intelligence\\! 2019-Nature-Scalable energy-efficient magnetoelectric spin–orbit logic.pdf",
+ "source_sha256": "ccb0f6881d5d8b812d1a6726e07c568bbadf41a533430ac9b59db9f165f6ca60",
+ "source_name": "! 2019-Nature-Scalable energy-efficient magnetoelectric spin–orbit logic.pdf",
+ "n_pages": 9,
+ "page_size_pt": [
+  595.28,
+  790.87
+ ],
+ "coordinate_note": "bbox is PDF points with origin at the BOTTOM-LEFT, y increasing upward; bbox_norm divides by page size.",
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "generated_at": "2026-10-18T11:24:29",
+ "pages": [
+  {
+   "page_no": 1,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0001.png",
+   "elements": [
+    {
+     "reading_order": 0,
+     "page": 1,
+     "label": "picture",
+     "bbox": {
+      "l": 42.27,
+      "t": 754.37,
+      "r": 191.12,
+      "b": 726.19,
+      "w": 148.84,
+      "h": 28.18,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07101,
+      "t": 0.95385,
+      "r": 0.32106,
+      "b": 0.91822
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p1_e0"
+    },
+    {
+     "reading_order": 1,
+     "page": 1,
+     "label": "section_header",
+     "bbox": {
+      "l": 42.52,
+      "t": 683.11,
+      "r": 452.19,
+      "b": 627.85,
+      "w": 409.67,
+      "h": 55.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.86375,
+      "r": 0.75963,
+      "b": 0.79388
+     },
+     "text": "Scalable energy-efficient magnetoelectric spin-orbit logic",
+     "text_len": 58,
+     "level": 1,
+     "element_id": "p1_e1"
+    },
+    {
+     "reading_order": 2,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 624.38,
+      "r": 495.42,
+      "b": 604.05,
+      "w": 452.9,
+      "h": 20.32,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.78949,
+      "r": 0.83225,
+      "b": 0.76378
+     },
+     "text": "Sasikanth Manipatruni1*, Dmitri E. Nikonov1, Chia-Ching Lin1, Tanay A. Gosavi1, Huichu Liu2, Bhagwati Prasad3, Yen-Lin Huang3,4, Everton Bonturim3, Ramamoorthy Ramesh3,4,5 & Ian A. Young1",
+     "text_len": 187,
+     "level": 1,
+     "element_id": "p1_e2"
+    },
+    {
+     "reading_order": 3,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 51.02,
+      "t": 563.2,
+      "r": 550.11,
+      "b": 407.48,
+      "w": 499.09,
+      "h": 155.72,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.08571,
+      "t": 0.71213,
+      "r": 0.92413,
+      "b": 0.51523
+     },
+     "text": "Since the early 1980s, most electronics have relied on the use of complementary metal-oxide-semiconductor (CMOS) transistors. However, the principles of CMOS operation, involving a switchable semiconductor conductance controlled by an insulating gate, have remained largely unchanged, even as transistors are miniaturized to sizes of 10 nanometres. We investigated what dimensionally scalable logic technology beyond CMOS could provide improvements in efficiency and performance for von Neumann architectures and enable growth in emerging computing such as artifical intelligence. Such a computing technology needs to allow progressive miniaturization, reduce switching energy, improve device interconnection and provide a complete logic and memory family. Here we propose a scalable spintronic logic device that operates via spin-orbit transduction (the coupling of an electron's angular momentum with its linear momentum) combined with magnetoelectric switching. The device uses advanced quantum materials, especially correlated oxides and topological states of matter, for collective switching and detection. We describe progress in magnetoelectric switching and spin-orbit detection of state, and show that in comparison with CMOS technology our device has superior switching energy (by a factor of 10 to 30), lower switching voltage (by a factor of 5) and enhanced logic density (by a factor of 5). In addition, its non-volatility enables ultralow standby power, which is critical to modern computing. The properties of our device indicate that the proposed technology could enable the development of multigenerational computing.",
+     "text_len": 1634,
+     "level": 1,
+     "element_id": "p1_e3"
+    },
+    {
+     "reading_order": 4,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 378.46,
+      "r": 294.91,
+      "b": 64.07,
+      "w": 252.39,
+      "h": 314.38,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.47854,
+      "r": 0.49542,
+      "b": 0.08101
+     },
+     "text": "Transistor technology scaling 1-3 has been enabled by controlling the conductivity of a semiconductor using an electric field applied across a high-quality insulating gate dielectric. This fundamental principle has remained largely unchanged since the seminal observations of Moore and Dennard et al. 4,5 . Yet in the past decade, transistor scaling has been enabled by direct improvements to the carrier transport 1,6,7 , combined with superior electrostatic control 1-3,8 . In contrast to pure dimensional scaling 5 , new transistor technologies have necessitated the use of strain 6 , three-dimensional electrostatic gate control 2,8 , manipulation of the effective carrier mass and band structure, and the gradual introduction of new materials for interface and work function control 9 . Despite the successful scaling in the size of transistors, voltage and frequency scaling have slowed 10 . Further decrease of voltage has been hampered by the Boltzmann limit of current control (60 mV for every change in current by a factor of 10 at room temperature). In response, a considerable effort to invent, demonstrate and benchmark beyond-CMOS devices got underway 11-13 . This effort includes alternative computing devices based on electron spin, electron tunnelling, ferroelectrics, strain and phase change 12,13 (see Methods for beyondCMOS logic device options). However, a technologically suitable computational logic device that has superior energy efficiency, high logic density (that is, computed functions per unit area), non-volatility (to counteract leakage power) and efficient interconnects has remained elusive. The importance of these considerations has become evident during extensive modelling, benchmarking and evaluation of more than 25 beyond-CMOS device proposals 12,13 . With these considerations in view, we propose and demonstrate the building blocks for a new logic device that enables (1) voltage scaling, (2) scalable interconnects, (3) energy scaling and (4) the potential for multi-generational dimensional scaling.",
+     "text_len": 2044,
+     "level": 1,
+     "element_id": "p1_e4"
+    },
+    {
+     "reading_order": 5,
+     "page": 1,
+     "label": "section_header",
+     "bbox": {
+      "l": 306.14,
+      "t": 377.78,
+      "r": 546.99,
+      "b": 357.9,
+      "w": 240.85,
+      "h": 19.88,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.47768,
+      "r": 0.91888,
+      "b": 0.45254
+     },
+     "text": "Beyond-CMOS devices for replacing or enhancing the electronic transistor",
+     "text_len": 72,
+     "level": 1,
+     "element_id": "p1_e5"
+    },
+    {
+     "reading_order": 6,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 355.83,
+      "r": 558.51,
+      "b": 179.57,
+      "w": 252.37,
+      "h": 176.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.44992,
+      "r": 0.93824,
+      "b": 0.22705
+     },
+     "text": "Collective state switching devices are potential candidates for replacing or enhancing transistors. A collective state switch operates by the reversal of the material's order parameter (such as ferromagnetism, ferroelectricity and ferrotorodicity) 13 from ϴ to -ϴ. It addresses sub10-nm miniaturization by using collective order parameter dynamics, overcoming the 'Boltzmann tyranny', which is inherent to conductivity modulation, and providing a non-volatile nature to the computer. It is well documented that the 'Boltzmann tyranny' and leakage are the central challenges in traditional CMOS devices 1,2 . Logic based on collective state switching devices is a leading option for computational advances beyond the modern CMOS era owing to its (1) potential for superior energy per operation, (2) higher computational logical density and efficiency (that is, fewer devices required per combinatorial logic function) owing to the use of majority gates 14 , (3) non-volatile memoryin-logic and logic-in-memory capability 15 and (4) amenability to traditional and emerging architectures (for example, neuromorphic 16 and stochastic computing 17 ).",
+     "text_len": 1145,
+     "level": 1,
+     "element_id": "p1_e6"
+    },
+    {
+     "reading_order": 7,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 177.33,
+      "r": 558.48,
+      "b": 85.07,
+      "w": 252.34,
+      "h": 92.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.22422,
+      "r": 0.93819,
+      "b": 0.10757
+     },
+     "text": "Among these possible collective state order parameters, ferroelectricity and multiferroicity are the preferred collective states for computing 13 owing to (1) the presence of a controllable, localized and phenomenologically strong carrier, the spontaneous dipole; (2) the switching efficiency of a ferroelectric with respect to the stability of the switch is given by the energy barrier per unit volume, λ = Esw/ΔE(Θ), where ΔE(Θ) is the energy barrier relative to the stable state and Esw is the total energy dissipated in switching; lower values of λ enable computing switches to operate at lower energies for a given energy barrier.",
+     "text_len": 635,
+     "level": 1,
+     "element_id": "p1_e7"
+    },
+    {
+     "reading_order": 8,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 82.83,
+      "r": 558.49,
+      "b": 64.07,
+      "w": 252.35,
+      "h": 18.76,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.10473,
+      "r": 0.9382,
+      "b": 0.08101
+     },
+     "text": "A vital consideration for a new technology is the need for highly compact nanoscale interconnects. While ferroelectric switching and the accompanying magnetoelectric switching of ferromagnets are perhaps the most energy-efficient charge-driven switching phenomena at the nanoscale and at room temperature, an efficient way to read out the state has been lacking. The discovery of strong spin-charge coupling in topological matter via a Rashba-Edelstein or topological twodimensional electron gas 18-25 enables this proposal for a charge-driven, scalable logic computing device.",
+     "text_len": 577,
+     "level": 1,
+     "element_id": "p1_e8"
+    }
+   ]
+  },
+  {
+   "page_no": 2,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0002.png",
+   "elements": [
+    {
+     "reading_order": 9,
+     "page": 2,
+     "label": "picture",
+     "bbox": {
+      "l": 36.15,
+      "t": 770.4,
+      "r": 129.25,
+      "b": 750.9,
+      "w": 93.1,
+      "h": 19.49,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06073,
+      "t": 0.97412,
+      "r": 0.21713,
+      "b": 0.94947
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p2_e9"
+    },
+    {
+     "reading_order": 10,
+     "page": 2,
+     "label": "picture",
+     "bbox": {
+      "l": 36.76,
+      "t": 732.51,
+      "r": 287.66,
+      "b": 485.36,
+      "w": 250.9,
+      "h": 247.15,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06175,
+      "t": 0.92621,
+      "r": 0.48324,
+      "b": 0.61371
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p2_e10"
+    },
+    {
+     "reading_order": 11,
+     "page": 2,
+     "label": "caption",
+     "bbox": {
+      "l": 36.85,
+      "t": 478.95,
+      "r": 289.07,
+      "b": 253.0,
+      "w": 252.22,
+      "h": 225.95,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.6056,
+      "r": 0.48561,
+      "b": 0.3199
+     },
+     "text": "Fig. 1 | MESO logic transduction and device operation. a, Transduction of state variables for a cascadable charge-input and charge-output logic device. The magnetoelectric effect transduces the input information to magnetism, and the spin-orbit effect in a topological material transduces the magnetic state variable back to charge. b, MESO device formed with a magnetoelectric capacitor and a topological material. The device comprises a spin-injection layer for spin injection from the ferromagnet to the topological material, an interconnect made of a conductive material, and contacts to the power supply and ground. The logical state of the charge input (current in the +x direction) is inverted by the operation shown to charge output (current in the -x direction). Power for energy gain is injected from the power supply (arrows). Transduction mechanisms are calculated with magnetoelectric-vector SPICE models (see Methods and Supplementary Information). The white arrow represents the magnetization direction of the ferromagnet. Grey arrows represent electric currents at the input and output, power supply and ground. Injection of the power supply current allows for energy gain, large signal gain and the ability to drive larger output devices. c, Magnetoelectric transfer function, showing conversion of the charge input to ferromagnetic magnetization. d, Spin-orbit transfer function, showing conversion of a state to charge output. The response of the device is indicated for small signal gain (black line) and the full signal range (-15 μA to 15 μA; blue arrow). See Supplementary Fig. 1 for the two operating states of the MESO inverter device.",
+     "text_len": 1660,
+     "level": 2,
+     "element_id": "p2_e11"
+    },
+    {
+     "reading_order": 12,
+     "page": 2,
+     "label": "section_header",
+     "bbox": {
+      "l": 36.85,
+      "t": 156.01,
+      "r": 265.07,
+      "b": 136.13,
+      "w": 228.22,
+      "h": 19.88,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.19726,
+      "r": 0.44529,
+      "b": 0.17213
+     },
+     "text": "Spin-orbit logic device with magnetoelectric input signal nodes",
+     "text_len": 63,
+     "level": 1,
+     "element_id": "p2_e12"
+    },
+    {
+     "reading_order": 13,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 36.85,
+      "t": 134.06,
+      "r": 289.18,
+      "b": 31.3,
+      "w": 252.33,
+      "h": 102.76,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.16951,
+      "r": 0.48579,
+      "b": 0.03958
+     },
+     "text": "We propose a logic computing device with magnetoelectric switching nodes and spin-orbit-effect readout operating at 100 mV, with an electrical interconnect. The magnetoelectric spin-orbit (MESO) device comprises two technologically scalable transduction mechanisms: ferroelectric/magnetoelectric switching 26-30 and topological conversion of spin to charge 19-24 . The device interfaces with electrical interconnects and is therefore charge-/voltage-driven and produces a charge/voltage output (Fig. 1a). The MESO device (Fig. 1b) comprises a magnetoelectric switching capacitor, a ferromagnet and a spin-to-charge conversion module (see 'Material requirements for",
+     "text_len": 664,
+     "level": 1,
+     "element_id": "p2_e13"
+    },
+    {
+     "reading_order": 14,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 300.47,
+      "t": 732.56,
+      "r": 552.81,
+      "b": 650.8,
+      "w": 252.34,
+      "h": 81.76,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50476,
+      "t": 0.92628,
+      "r": 0.92866,
+      "b": 0.8229
+     },
+     "text": "1-10-aJ-class MESO logic'). In Fig. 1b, when the input interconnect carries a positive current (current flowing in the +x direction), an electric field is set up in the magnetoelectric capacitor in the -z direction (into the plane). The resulting magnetoelectricity (represented as an effective field HME), which may be comprised of an electrically controlled exchange bias or exchange anisotropy, switches the nanomagnet to the -y direction 27-30 (see Supplementary Information section A for details).",
+     "text_len": 502,
+     "level": 1,
+     "element_id": "p2_e14"
+    },
+    {
+     "reading_order": 15,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 300.47,
+      "t": 648.56,
+      "r": 552.82,
+      "b": 556.3,
+      "w": 252.35,
+      "h": 92.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50476,
+      "t": 0.82006,
+      "r": 0.92868,
+      "b": 0.70341
+     },
+     "text": "The readout (detection) of the state of the switch is enabled by the ongoing advances in spin-to-charge conversion using topological or high-spin-orbit-coupling (SOC) materials. A supply current is injected into the device, causing a flow of spin-polarized electrons from the ferromagnet into the SOC material. Owing to SOC spinto-charge transduction (Fig. 1b), a charge current is generated at the output, in this case in the -x direction. Hence, the input charge state (positive voltage and current) is inverted by the MESO logic gate at the output.",
+     "text_len": 551,
+     "level": 1,
+     "element_id": "p2_e15"
+    },
+    {
+     "reading_order": 16,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 300.47,
+      "t": 555.69,
+      "r": 552.84,
+      "b": 241.3,
+      "w": 252.37,
+      "h": 314.38,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50476,
+      "t": 0.70263,
+      "r": 0.92871,
+      "b": 0.30511
+     },
+     "text": "We applied spin/magnetoelectric circuit theory 31,32 (see Supplementary Information section B) combined with stochastic magnetization dynamics solvers 32 (see Supplementary Information sections C and D) to obtain the transfer characteristics of the MESO logic device. We further used rigorous integrated-circuit solvers to validate and benchmark against spin-logic examples (Supplementary Information sections E and F). SPICE (simulation program with integrated circuit emphasis) circuit solvers were developed to incorporate the effects of: (1) magnetoelectric switching, (2) all the energy sources and dissipation elements (Supplementary Information sections G and H), (3) Landau-Khalatnikov dynamics of ferroelectric switching (Supplementary Information section I) and (4) peripheral charge circuitry (Supplementary Information section J). Details on simulations of energy scaling to <10 aJ (1 aJ = 10-18 J) using the power boundary method and component-level energy calculations are presented in Supplementary Information section K. The MESO inverter transfer functions, with magnetic and electric hysteresis, are shown in Fig. 1c, d. The input current Iin of the magnetization transfer function (Fig. 1c) relates the magnetoelectric stimulus with magnetization switching. It shows a small-signal gain ( / circumflexnospm I d d in , where circumflexnospm is the magnetic moment unit vector for the nanomagnet's magnetization), which is advantageous for noise rejection. A large-signal gain of the output current, Iout (ratio Iout/Iin) is generated and controlled by the supply current (Isupply). A small-signal gain (dIout/dIin) of the device during switching can be seen in Fig. 1d. We show a scheme of the proposed short-/long-range interconnect in Fig. 2a, where the charge output of one MESO stage drives a charge current to switch the input of the next MESO stage 32,33 . Bidirectional logic switching of a cascaded six-stage MESO inverter chain is described in Supplementary Information section L.",
+     "text_len": 2007,
+     "level": 1,
+     "element_id": "p2_e16"
+    },
+    {
+     "reading_order": 17,
+     "page": 2,
+     "label": "section_header",
+     "bbox": {
+      "l": 300.47,
+      "t": 229.51,
+      "r": 512.04,
+      "b": 220.13,
+      "w": 211.57,
+      "h": 9.38,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50476,
+      "t": 0.2902,
+      "r": 0.86017,
+      "b": 0.27834
+     },
+     "text": "Transduction mechanisms for the MESO device",
+     "text_len": 43,
+     "level": 1,
+     "element_id": "p2_e17"
+    },
+    {
+     "reading_order": 18,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 300.47,
+      "t": 218.06,
+      "r": 552.79,
+      "b": 31.3,
+      "w": 252.32,
+      "h": 186.76,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50476,
+      "t": 0.27572,
+      "r": 0.92863,
+      "b": 0.03958
+     },
+     "text": "We identified a scalable way to transduce the spin state of a nanomagnet to a charge state via spin-orbit effects 19-26,33-36 , such as the interface Rashba-Edelstein effect (IREE) and spin-momentum locking in topological insulators. It has recently been shown that spin currents can be converted to charge currents that preserve the information encoded in spin polarization 34-37 (using resonant spin pumping in the quasi-static non-local spin-valve configuration 33 ). Figure 2b shows how a current through a nanomagnet produces injection of spin-polarized electrons into a stack composed of materials with a high SOC coefficient (for example, Bi/Ag 22,37 , topological insulators 21,24,34,35 , oxides and two-dimensional materials 25,36 ). In Fig. 2b, when mˆ is pointing in the yˆ direction and the flow of the injected spin current is = J z J ˆ s s , with injected spin polarization along the +y direction, charge current Ic is generated in the xˆ direction. When the nanomagnet reverses to the -yˆ direction and the flow of injected spin current is still = J z J ˆ s s , but with injected spin polarization along the -y direction, a charge current Ic is generated in the -xˆ direction. Hence, the magnetization direction of the nanomagnet is transduced into the direction of the electric current.",
+     "text_len": 1302,
+     "level": 1,
+     "element_id": "p2_e18"
+    }
+   ]
+  },
+  {
+   "page_no": 3,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0003.png",
+   "elements": [
+    {
+     "reading_order": 19,
+     "page": 3,
+     "label": "picture",
+     "bbox": {
+      "l": 48.94,
+      "t": 733.68,
+      "r": 289.71,
+      "b": 447.97,
+      "w": 240.77,
+      "h": 285.71,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.08221,
+      "t": 0.92769,
+      "r": 0.48668,
+      "b": 0.56643
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p3_e19"
+    },
+    {
+     "reading_order": 20,
+     "page": 3,
+     "label": "caption",
+     "bbox": {
+      "l": 42.51,
+      "t": 440.73,
+      "r": 293.41,
+      "b": 99.33,
+      "w": 250.9,
+      "h": 341.4,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07141,
+      "t": 0.55728,
+      "r": 0.4929,
+      "b": 0.1256
+     },
+     "text": "Fig. 2 | Operating mechanisms for MESO logic. a, A low-voltage-chargebased MESO interconnect with cascaded logic gates. Two inverters are chained together to form an interconnect. Arrows show the directions of the input and output currents of the device. Materials are as in Fig. 1. b, Operating mechanism for spin-to-charge conversion using a high-SOC material (SOC). A spin injection layer (SIL) is used where needed by the materials' interfaces. Spins injected from the ferromagnet (FM) in the +z direction with spin polarization along the +y (in-plane) direction cause a topologically generated charge current in the SOC layer. Small red and blue arrows indicate up and down spins, respectively, injected from the magnet. The large red arrows show the directions of the charge (Ic) and injected spin (Is) currents. c, Schematic of the k-space for spin-to-charge conversion at a two-dimensional electron gas with high SOC. Injecting a spin current polarized along the +y direction overpopulates the Fermi surface on one side of the topological material compared to the other side. This generates a net charge current in the x direction. The conversion has the right symmetry to convert the information of the ferromagnet to the charge current output. The dashed and solid lines depict the Fermi surface of the material before and after spin injection, respectively. Injected spin density 〈δs〉 along the +y direction leads to charge current Jcs > 0. d, Operating mechanism for a magnetoelectric (ME) material. A ferromagnet is coupled via exchange/strain to the magnetoelectric material. HEB and HEC are the exchange bias and the exchange coupling from the magnetoelectric material to the ferromagnet, respectively, and m is the magnetization of the ferromagnet. e, A classic multiferroicmagnetoelectric material, BiFeO3, is shown with the order parameters: polarization (P), antiferromagnetism (L) and weak canted magnetization (Mc). The electric-field setup in a generic magnetoelectric/ferroelectric material produces exchange bias, coupling and anisotropy modulation for magnetostrictive effects. Yellow and blue spheres depict Bi and Fe atoms in a canonic room-temperature multiferroic BiFeO3. mˆ FM , mˆ c and lˆ represent the unit vectors of magnetization of the coupled layer, the magnetization of the canted spins and the antiferromagnetic axis, respectively. In general, the magneto-electric field generates an exchange coupling along the axial direction of 1ˆ, the AFM axial direction and exchange bias, the direction of weak ferromagnetism mˆ c .",
+     "text_len": 2560,
+     "level": 2,
+     "element_id": "p3_e20"
+    },
+    {
+     "reading_order": 21,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 77.39,
+      "r": 294.79,
+      "b": 58.63,
+      "w": 252.27,
+      "h": 18.76,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.09785,
+      "r": 0.49522,
+      "b": 0.07413
+     },
+     "text": "The spin-orbit mechanism responsible for spin-to-charge conversion at the interface is described by the Hamiltonian",
+     "text_len": 115,
+     "level": 1,
+     "element_id": "p3_e21"
+    },
+    {
+     "reading_order": 22,
+     "page": 3,
+     "label": "formula",
+     "bbox": {
+      "l": 126.61,
+      "t": 49.42,
+      "r": 294.24,
+      "b": 39.04,
+      "w": 167.63,
+      "h": 10.38,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.21269,
+      "t": 0.06249,
+      "r": 0.49429,
+      "b": 0.04936
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p3_e22"
+    },
+    {
+     "reading_order": 23,
+     "page": 3,
+     "label": "picture",
+     "bbox": {
+      "l": 466.26,
+      "t": 770.41,
+      "r": 558.72,
+      "b": 750.99,
+      "w": 92.45,
+      "h": 19.42,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.78327,
+      "t": 0.97413,
+      "r": 0.93859,
+      "b": 0.94958
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p3_e23"
+    },
+    {
+     "reading_order": 24,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 734.19,
+      "r": 558.49,
+      "b": 650.8,
+      "w": 252.34,
+      "h": 83.38,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.92834,
+      "r": 0.9382,
+      "b": 0.8229
+     },
+     "text": "where αR = (kF+ - kF-)ħ 2 /2m is the Rashba coefficient (ħ is the Planck constant), kF+ and kF- are the Fermi vectors of the two spin-split bands, zˆ is the unit vector normal to the interface, σˆ is the vector of the Pauli spin matrices and k is the momentum of the electrons. In a simple model based on two Fermi contours in the Rashba electron gas (Fig. 2c), the density of spin polarization along the y axis, δsy± (Fig. 2b, c), and the charge current density along the x axis, jcx±, can be related as 20,23",
+     "text_len": 510,
+     "level": 1,
+     "element_id": "p3_e24"
+    },
+    {
+     "reading_order": 25,
+     "page": 3,
+     "label": "formula",
+     "bbox": {
+      "l": 387.64,
+      "t": 643.9,
+      "r": 557.86,
+      "b": 621.14,
+      "w": 170.22,
+      "h": 22.77,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.65119,
+      "t": 0.81417,
+      "r": 0.93715,
+      "b": 0.78539
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p3_e25"
+    },
+    {
+     "reading_order": 26,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 612.52,
+      "r": 558.52,
+      "b": 583.26,
+      "w": 252.37,
+      "h": 29.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.77449,
+      "r": 0.93825,
+      "b": 0.7375
+     },
+     "text": "which yields the relation between spin density (per unit area) and charge current (per unit width) in a two-dimensional Rashba electron gas:",
+     "text_len": 140,
+     "level": 1,
+     "element_id": "p3_e26"
+    },
+    {
+     "reading_order": 27,
+     "page": 3,
+     "label": "formula",
+     "bbox": {
+      "l": 360.43,
+      "t": 576.81,
+      "r": 558.02,
+      "b": 554.38,
+      "w": 197.59,
+      "h": 22.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.60548,
+      "t": 0.72934,
+      "r": 0.93741,
+      "b": 0.70098
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p3_e27"
+    },
+    {
+     "reading_order": 28,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 546.42,
+      "r": 558.5,
+      "b": 422.66,
+      "w": 252.35,
+      "h": 123.76,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.69091,
+      "r": 0.93822,
+      "b": 0.53443
+     },
+     "text": "where the relation between spin current and spin polarization is determined by the spin relaxation time τs as js = eδs/τs, where e is the electron charge. For a pure helical ground state in topological systems, λIREE = VFτ, where VF is the Fermi velocity and τ is the relaxation time for the spin distribution at an out-of-equilibrium interface. This results in the generation of a charge current in the interconnect that is proportional to the spin current (Fig. 2c). The transduction relates the linear charge current density jcx (in units of ampere per metre) and the areal spin current density jsy (spin current flowing along the z direction, comprised of spins oriented along the y direction; in units of ampere per square metre); see Supplementary Information section M and Supplementary Fig. 16.",
+     "text_len": 802,
+     "level": 1,
+     "element_id": "p3_e28"
+    },
+    {
+     "reading_order": 29,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 420.42,
+      "r": 558.5,
+      "b": 401.66,
+      "w": 252.35,
+      "h": 18.76,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.53159,
+      "r": 0.93822,
+      "b": 0.50787
+     },
+     "text": "Magnetoelectricity provides a highly energy-efficient mechanism for logic switching with intrinsic switching energy given by",
+     "text_len": 124,
+     "level": 1,
+     "element_id": "p3_e29"
+    },
+    {
+     "reading_order": 30,
+     "page": 3,
+     "label": "formula",
+     "bbox": {
+      "l": 403.63,
+      "t": 393.2,
+      "r": 558.02,
+      "b": 382.94,
+      "w": 154.39,
+      "h": 10.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.67806,
+      "t": 0.49718,
+      "r": 0.93741,
+      "b": 0.4842
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p3_e30"
+    },
+    {
+     "reading_order": 31,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 374.33,
+      "r": 558.57,
+      "b": 198.07,
+      "w": 252.42,
+      "h": 176.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.47332,
+      "r": 0.93834,
+      "b": 0.25045
+     },
+     "text": "where Ps is the switched polarization and Vc the critical voltage for switching. To the best of our knowledge, magnetoelectric/ferroelectric switching is the most energy-efficient mechanism at room temperature that scales to lateral dimensions of 10 nm and retains a stable collective order parameter. The switching mechanism for magnetoelectric switching of a ferromagnet is shown Fig. 2d, and a canonical room-temperature multiferroic magnetoelectric (BiFeO3) is illustrated in Fig. 2e. In general, magnetoelectric switching can be accomplished by coupling the ferroelectricity/ferroelasticity to antiferromagnetism and/or a weak canted magnetic moment. The intrinsic switching energy for ferroelectric/magnetoelectric switching can approach 1 aJ per bit (about 30 times lower than the switching energy of advanced CMOS devices) by scaling the switched polarization to about 10 µC cm-2 and switching voltages to 100 mV (Please see Supplementary Fig. 24 for lowvoltage ferroelectric characterization of SRO/20 nm LBFO/SRO heterostructure). Both of these metrics are within the reach of experimental room-temperature materials (as shown in Table 1).",
+     "text_len": 1149,
+     "level": 1,
+     "element_id": "p3_e31"
+    },
+    {
+     "reading_order": 32,
+     "page": 3,
+     "label": "section_header",
+     "bbox": {
+      "l": 306.14,
+      "t": 186.27,
+      "r": 520.68,
+      "b": 176.9,
+      "w": 214.54,
+      "h": 9.38,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.23553,
+      "r": 0.87469,
+      "b": 0.22368
+     },
+     "text": "Miniaturization and scaling laws for MESO logic",
+     "text_len": 47,
+     "level": 1,
+     "element_id": "p3_e32"
+    },
+    {
+     "reading_order": 33,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 174.83,
+      "r": 558.5,
+      "b": 124.57,
+      "w": 252.35,
+      "h": 50.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.22106,
+      "r": 0.93822,
+      "b": 0.15751
+     },
+     "text": "We now derive and apply the scaling laws for magnetoelectric and spinorbit transductions. For spin-to-charge conversion using inverse SOC (ISOC), the efficiency improves with reducing the width of the magnet, a highly desirable scaling feature. In the presence of topological coupling between spin and charge states in a Rashba system, we can write",
+     "text_len": 348,
+     "level": 1,
+     "element_id": "p3_e33"
+    },
+    {
+     "reading_order": 34,
+     "page": 3,
+     "label": "formula",
+     "bbox": {
+      "l": 385.76,
+      "t": 115.94,
+      "r": 558.02,
+      "b": 94.82,
+      "w": 172.25,
+      "h": 21.11,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.64804,
+      "t": 0.1466,
+      "r": 0.93741,
+      "b": 0.11989
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p3_e34"
+    },
+    {
+     "reading_order": 35,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 87.57,
+      "r": 558.46,
+      "b": 36.58,
+      "w": 252.32,
+      "h": 50.99,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.11073,
+      "r": 0.93815,
+      "b": 0.04625
+     },
+     "text": "where w is the width of the magnet (the minimum feature size for the device), where λ′ISOC is the effective SOC conversion length. The recent discovery of two-dimensional high-SOC systems indicates that the effective λIREE can be as high as 6 nm in Bi2Se3 34,35 and LaAlO3/ SrTiO3 25,36,38 . To assess the suitability of spin-orbit logic for progressive miniaturization (Moore's law), we show that the energy required to switch the device decreases with dimensional scaling of the device. This can be attributed to an improvement in the spin-to-charge conversion efficiency, ηSOC, with a reduction in the width WFM of the nanomagnet (ηSOC ∝ 1/WFM) and a reduction in the switched charge of the magnetoelectric/ferroelectric node, Q, with areal scaling ∝ Q W ( ) FM 2 . The energy required to switch a single MESO logic unit is given by",
+     "text_len": 835,
+     "level": 1,
+     "element_id": "p3_e35"
+    }
+   ]
+  },
+  {
+   "page_no": 4,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0004.png",
+   "elements": [
+    {
+     "reading_order": 36,
+     "page": 4,
+     "label": "picture",
+     "bbox": {
+      "l": 37.14,
+      "t": 769.98,
+      "r": 127.75,
+      "b": 751.34,
+      "w": 90.62,
+      "h": 18.64,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06239,
+      "t": 0.97359,
+      "r": 0.21461,
+      "b": 0.95002
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p4_e36"
+    },
+    {
+     "reading_order": 37,
+     "page": 4,
+     "label": "table",
+     "bbox": {
+      "l": 36.04,
+      "t": 724.27,
+      "r": 553.33,
+      "b": 552.08,
+      "w": 517.29,
+      "h": 172.19,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06054,
+      "t": 0.91579,
+      "r": 0.92954,
+      "b": 0.69807
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p4_e37"
+    },
+    {
+     "reading_order": 38,
+     "page": 4,
+     "label": "caption",
+     "bbox": {
+      "l": 36.85,
+      "t": 733.21,
+      "r": 307.58,
+      "b": 725.88,
+      "w": 270.73,
+      "h": 7.33,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.9271,
+      "r": 0.5167,
+      "b": 0.91783
+     },
+     "text": "Table 1 | Device and material targets to enable 1-10-aJ-class MESO logic",
+     "text_len": 72,
+     "level": 2,
+     "element_id": "p4_e38"
+    },
+    {
+     "reading_order": 39,
+     "page": 4,
+     "label": "formula",
+     "bbox": {
+      "l": 81.18,
+      "t": 438.28,
+      "r": 288.56,
+      "b": 398.93,
+      "w": 207.38,
+      "h": 39.35,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.13637,
+      "t": 0.55418,
+      "r": 0.48475,
+      "b": 0.50442
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p4_e39"
+    },
+    {
+     "reading_order": 40,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 36.85,
+      "t": 393.46,
+      "r": 289.17,
+      "b": 248.24,
+      "w": 252.32,
+      "h": 145.21,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.49751,
+      "r": 0.48577,
+      "b": 0.31388
+     },
+     "text": "Cme is the equivalent capacitance, Vme is the switching voltage and α is the conversion factor. (see Supplementary Information sections G-K for detailed analytical and numerical energy calculations of the intrinsic magnetoelectric energy, ECME, interconnect losses, EIC, and losses in the spin-to-charge conversion layer, EISOC, in the driving electronics, ERT, and in the supply-ground path, ESG). Figure 3a shows the strong, cubic scaling of the MESO energy (EMESO), where the energy is reduced by a factor of 8 for every reduction by a factor of 2 in feature size. The excellent scalability of MESO logic allows the switching energy of the MESO logic to approach 1 aJ per bit. Magnetoelectric switching also allows strong voltage scaling in energy per bit, where progressive voltage reduction enables lowering of the switching energy. Figure 3c shows a combination of scaling in energy/switching via voltage and effective IREE length towards the 0.1-10 aJ range.",
+     "text_len": 965,
+     "level": 1,
+     "element_id": "p4_e40"
+    },
+    {
+     "reading_order": 41,
+     "page": 4,
+     "label": "section_header",
+     "bbox": {
+      "l": 36.85,
+      "t": 236.45,
+      "r": 284.2,
+      "b": 216.57,
+      "w": 247.35,
+      "h": 19.88,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.29898,
+      "r": 0.47743,
+      "b": 0.27384
+     },
+     "text": "Low-voltage (100 mV) charge interconnects for scaling below 10 nm",
+     "text_len": 65,
+     "level": 1,
+     "element_id": "p4_e41"
+    },
+    {
+     "reading_order": 42,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 36.85,
+      "t": 214.5,
+      "r": 289.21,
+      "b": 143.24,
+      "w": 252.36,
+      "h": 71.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.27122,
+      "r": 0.48584,
+      "b": 0.18112
+     },
+     "text": "We now address one of the most demanding aspects of new computing technology: the interconnects that connect the devices at the nanoscale 39,40 . MESO logic can address the interconnect scaling problem, which has emerged as a major limitation when the width of the electrical wires reached <20 nm. Experimental data for highly scaled interconnects show that the resistivity of electrical wires increases according to the Mayadas-Shatzkes scaling law 41",
+     "text_len": 452,
+     "level": 1,
+     "element_id": "p4_e42"
+    },
+    {
+     "reading_order": 43,
+     "page": 4,
+     "label": "formula",
+     "bbox": {
+      "l": 72.42,
+      "t": 133.91,
+      "r": 288.72,
+      "b": 109.61,
+      "w": 216.31,
+      "h": 24.3,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.12166,
+      "t": 0.16932,
+      "r": 0.48502,
+      "b": 0.13859
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p4_e43"
+    },
+    {
+     "reading_order": 44,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 36.85,
+      "t": 105.22,
+      "r": 289.21,
+      "b": 33.5,
+      "w": 252.36,
+      "h": 71.71,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.13304,
+      "r": 0.48584,
+      "b": 0.04236
+     },
+     "text": "(where ρ0 is the bulk resistivity, λebulk is the electron mean free path, p is the specularity, r is the reflection parameter from grain boundaries, t is the thickness of the film and D the grain size) as the critical interconnect dimensions approach the electron mean free path. A second scaling issue with electrical interconnects is the high capacitance per unit length. Hence, it is of great interest to demonstrate a logic technology compatible with high-resistivity and high-capacitance interconnects.",
+     "text_len": 507,
+     "level": 1,
+     "element_id": "p4_e44"
+    },
+    {
+     "reading_order": 45,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 300.47,
+      "t": 526.64,
+      "r": 552.79,
+      "b": 318.89,
+      "w": 252.32,
+      "h": 207.76,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50476,
+      "t": 0.6659,
+      "r": 0.92863,
+      "b": 0.40322
+     },
+     "text": "MESO logic enables the development of a low-voltage charge interconnect that is amenable to highly scaled integrated circuits that comprise wires of 10-30 nm width. We show that MESO logic can tolerate the use of nanometallic interconnects with high resistivity (>1 mΩ cm; a 20-100-times less stringent requirement for the conductance of smallwidth interconnect material) and capacitance (>10 fF μm-1 ; a 100-times less stringent requirement for the capacitance of the interconnects); see Supplementary Information section N. Figure 3b shows the dependence of switching time on the interconnect length at a metal resistivity of 100 µΩ cm and an effective 30 nm × 30 nm cross-sectional area of 900 nm 2 . The switching speed of the MESO device scales linearly with interconnect length up to 1,000 nm at a line resistance of 100 Ω μm-1 and a capacitance of 100 aF μm-1 (see Supplementary Information section N). This would represent a substantial relaxation in the requirements placed on nanometallic interconnects compared to CMOS devices. This is in contrast to spin interconnects, where the signal, and thus the switching speed, degrade as exp(-x/Lsf), where Lsf is the spin-flip length and x is the direction of transport. Hence, MESO logic alleviates the traditional problem of interconnects used for spin logic and allows continued scaling of metallic and semiconducting wires.",
+     "text_len": 1381,
+     "level": 1,
+     "element_id": "p4_e45"
+    },
+    {
+     "reading_order": 46,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 300.47,
+      "t": 316.64,
+      "r": 552.87,
+      "b": 35.39,
+      "w": 252.4,
+      "h": 281.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50476,
+      "t": 0.40037,
+      "r": 0.92876,
+      "b": 0.04475
+     },
+     "text": "When compared with the leading beyond-CMOS and highly scaled advanced CMOS technologies, the MESO device provides sizeable gains in areal logic density, energy of operation and computational throughput. In Fig. 4a, we compare the energy delay and the logic density (area per function) of MESO logic with leading beyond-CMOS transistor technologies and highly scaled advanced CMOS devices. The majority logic gate, a universal gate that (together with NOT) can implement all Boolean logic functions, is used to build complex spinlogic functions, such as a 32-bit adder or a 32-bit arithmetic logic unit (ALU) 12 , with the results shown in Fig. 4b (also see Supplementary Information section F). The proposed MESO logic device enables competitive energy delay performance compared to leading beyondCMOS devices, while also allowing non-volatility. The MESO logic device enables considerable improvement compared to other spintronic devices owing to magnetoelectric switching. Gains in the delay are due to the use of electrical (rather than spin-based) interconnects and very compact majority-gate circuits (see Fig. 4c). The MESO device also enables energy reduction compared to CMOS logic operating at very low (0.3 V) supply voltages, owing to its ability to switch at even lower supply voltages (0.1 V). The speed of MESO logic units is comparable to that of low-power, low-leakage CMOS devices (0.3 V supply voltage). We note that at a low logic activity factor and intermittent usage, the non-volatility of the MESO device can offer further advantages compared to CMOS devices by eliminating standby power dissipation and enabling instant operation from standby. Figure 4c shows the advantage of the MESO device in terms of areal logic density compared to advanced CMOS technology.",
+     "text_len": 1786,
+     "level": 1,
+     "element_id": "p4_e46"
+    }
+   ]
+  },
+  {
+   "page_no": 5,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0005.png",
+   "elements": [
+    {
+     "reading_order": 47,
+     "page": 5,
+     "label": "picture",
+     "bbox": {
+      "l": 49.98,
+      "t": 732.98,
+      "r": 285.06,
+      "b": 245.28,
+      "w": 235.08,
+      "h": 487.7,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.08396,
+      "t": 0.92681,
+      "r": 0.47887,
+      "b": 0.31014
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p5_e47"
+    },
+    {
+     "reading_order": 48,
+     "page": 5,
+     "label": "caption",
+     "bbox": {
+      "l": 42.51,
+      "t": 239.43,
+      "r": 289.76,
+      "b": 146.56,
+      "w": 247.25,
+      "h": 92.87,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07141,
+      "t": 0.30274,
+      "r": 0.48677,
+      "b": 0.18532
+     },
+     "text": "Fig. 3 | Energy and delay of the MESO device. Dimensional scaling of MESO logic shows improvement in switching energy as the devices get smaller. a, Cubic scaling with magnet width. b, Effect of the length of the interconnect (30 nm × 30 nm cross-section) on the (inverter) device performance, obtained from interconnect modelling of the MESO device. See Supplementary Information for the effects of the capacitance and length on device performance. We simulated the interconnect with 100 Ω μm -1 resistance and 100 aF μm -1 capacitance per unit length. c, Intrinsic switching energy of MESO (colour bar) with improvements in switching voltage and SOC strength (effective IREE length).",
+     "text_len": 685,
+     "level": 2,
+     "element_id": "p5_e48"
+    },
+    {
+     "reading_order": 49,
+     "page": 5,
+     "label": "section_header",
+     "bbox": {
+      "l": 42.52,
+      "t": 124.51,
+      "r": 289.26,
+      "b": 104.63,
+      "w": 246.74,
+      "h": 19.88,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.15744,
+      "r": 0.48593,
+      "b": 0.1323
+     },
+     "text": "Experimental progress on magneto-electrics and spinorbit transduction",
+     "text_len": 69,
+     "level": 1,
+     "element_id": "p5_e49"
+    },
+    {
+     "reading_order": 50,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 102.56,
+      "r": 294.87,
+      "b": 31.3,
+      "w": 252.35,
+      "h": 71.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.12968,
+      "r": 0.49535,
+      "b": 0.03958
+     },
+     "text": "We now turn to the initial experimental manifestations of the two central concepts of the MESO device and conclude with a summary of innovations required to meet the MESO target of 100 mV and 1 aJ per bit. First we demonstrate a local-spin-injection device in which spin-polarized charge current Is is injected from the ferromagnet (CoFe) into a spin-orbit material (Pt) (see Supplementary Information section P for the fabrication method and the device cross-section).",
+     "text_len": 469,
+     "level": 1,
+     "element_id": "p5_e50"
+    },
+    {
+     "reading_order": 51,
+     "page": 5,
+     "label": "picture",
+     "bbox": {
+      "l": 466.11,
+      "t": 770.55,
+      "r": 558.72,
+      "b": 750.9,
+      "w": 92.61,
+      "h": 19.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.78301,
+      "t": 0.97431,
+      "r": 0.93859,
+      "b": 0.94947
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p5_e51"
+    },
+    {
+     "reading_order": 52,
+     "page": 5,
+     "label": "picture",
+     "bbox": {
+      "l": 309.48,
+      "t": 732.07,
+      "r": 539.41,
+      "b": 644.81,
+      "w": 229.93,
+      "h": 87.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51989,
+      "t": 0.92566,
+      "r": 0.90615,
+      "b": 0.81532
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p5_e52"
+    },
+    {
+     "reading_order": 53,
+     "page": 5,
+     "label": "picture",
+     "bbox": {
+      "l": 310.15,
+      "t": 625.96,
+      "r": 549.53,
+      "b": 443.25,
+      "w": 239.38,
+      "h": 182.71,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.52102,
+      "t": 0.79149,
+      "r": 0.92315,
+      "b": 0.56046
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p5_e53"
+    },
+    {
+     "reading_order": 54,
+     "page": 5,
+     "label": "picture",
+     "bbox": {
+      "l": 310.11,
+      "t": 431.01,
+      "r": 555.05,
+      "b": 238.33,
+      "w": 244.94,
+      "h": 192.68,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.52095,
+      "t": 0.54498,
+      "r": 0.93242,
+      "b": 0.30135
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p5_e54"
+    },
+    {
+     "reading_order": 55,
+     "page": 5,
+     "label": "caption",
+     "bbox": {
+      "l": 306.14,
+      "t": 231.56,
+      "r": 558.43,
+      "b": 72.17,
+      "w": 252.29,
+      "h": 159.39,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.29279,
+      "r": 0.9381,
+      "b": 0.09125
+     },
+     "text": "Fig. 4 | Performance and area of MESO device in comparison with advanced CMOS and leading beyond-CMOS devices. a, Scheme of a MESO majority logic gate used for benchmarking. b, Power per unit area versus throughput (that is, number of 32-bit ALU operations per unit time and unit area, in units of tera-integer operations per second; TIOPS) for CMOS and beyond-CMOS devices. The constraint of a power density not higher than 10 W cm-2 is implemented, when necessary, by inserting an empty area into the optimally laid out circuits. c, Delay of 32-bit ALU operation versus the power-limited area for CMOS and beyond-CMOS devices. Power-limited area comprehends the increase in area of the computational logic to meet the power density contraint of 10 W cm -2 in b. STT-DW, spin-transfer-torque domain-wall device; ASL, all-spin-logic device; CSL, charge spin logic; NML, nanomagnetic logic; SMG, spin majority gate; SWD, spin wave device; CMOS HP, high-performance CMOS at 0.73 V supply; CMOS LV, low-power CMOS operating at 0.3 V supply; FEFET, ferroelectric FET; Thin TFET, 2D-material vertical tunnel FET; TMDTFET, transition-metal dichalcogenide tunnel FET; see Methods.",
+     "text_len": 1173,
+     "level": 2,
+     "element_id": "p5_e55"
+    },
+    {
+     "reading_order": 56,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 60.71,
+      "r": 558.45,
+      "b": 30.72,
+      "w": 252.31,
+      "h": 29.99,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.07676,
+      "r": 0.93814,
+      "b": 0.03884
+     },
+     "text": "An open-circuit charge voltage Voc that depends on the spin polarization of the injected spin current is measured across the Pt wire. The equivalent spin-to-charge-conversion resistance (RSCC = Voc/Is) is plotted in Fig. 5b. To study the dimensional scaling of the device, we measured RSCC with two sets of test devices. Figure 5b shows measured data from devices with various CoFe widths WFM. Test chip A (dark-blue line with Pt width 100 nm) comprises five different device geometries with dimensions WFM = 100 nm, 100 nm, 400 nm, 1,000 nm and 1,000 nm and test chip B (light-blue line with Pt width is 400 nm) has five different device geometries with dimensions WFM = 100 nm, 100 nm, 200 nm, 200 nm, 500 nm and 500 nm. We observe a dimensional scaling law, in accordance with the above expression for SOC spin-tocharge conversion; see inset for a linear fit to 1/WFM. The equivalent spin-to-charge conversion resistance scales favourably for highresistivity topological materials as RSCC ∝ λIREE/ρ. For high-resistivity spin-orbit systems (see Table 1) we expect that RSCC can be enhanced considerably. Combined with the areal scaling of the magnetoelectric capacitor, this provides a total device energy scaling of W FM 3 .",
+     "text_len": 1228,
+     "level": 1,
+     "element_id": "p5_e56"
+    }
+   ]
+  },
+  {
+   "page_no": 6,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0006.png",
+   "elements": [
+    {
+     "reading_order": 57,
+     "page": 6,
+     "label": "picture",
+     "bbox": {
+      "l": 38.34,
+      "t": 770.16,
+      "r": 127.3,
+      "b": 751.24,
+      "w": 88.96,
+      "h": 18.92,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06441,
+      "t": 0.97382,
+      "r": 0.21385,
+      "b": 0.9499
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p6_e57"
+    },
+    {
+     "reading_order": 58,
+     "page": 6,
+     "label": "picture",
+     "bbox": {
+      "l": 38.96,
+      "t": 733.8,
+      "r": 283.62,
+      "b": 343.16,
+      "w": 244.66,
+      "h": 390.64,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06545,
+      "t": 0.92784,
+      "r": 0.47645,
+      "b": 0.4339
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p6_e58"
+    },
+    {
+     "reading_order": 59,
+     "page": 6,
+     "label": "caption",
+     "bbox": {
+      "l": 36.85,
+      "t": 336.0,
+      "r": 289.14,
+      "b": 232.98,
+      "w": 252.29,
+      "h": 103.03,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.42485,
+      "r": 0.48572,
+      "b": 0.29459
+     },
+     "text": "Fig. 5 | Spin-orbit readout for the MESO device. a, A proof-of-concept device for a spin-orbit readout mechanism in which a spin in a polarized charge current is passed into a spin-orbit material (Pt) from a CoFe ferromagnet. The inset shows a microscope image of the device. b, Charge readout of the spin state of the ferromagnet, measured using a non-local resistance (lateral voltage divided by vertical current). Shown are measured data from devices with various CoFe width and fixed Pt width of 100 nm (dark blue) and 400 nm (light blue). The inset shows linear fits to 1/WFM. c, Projected improvement in the spin-orbit readout through the use of topological insulators with low conductivity and high spin-orbit effects. Vso and σxx are the generated voltage and conductivity, respectively.",
+     "text_len": 795,
+     "level": 2,
+     "element_id": "p6_e59"
+    },
+    {
+     "reading_order": 60,
+     "page": 6,
+     "label": "text",
+     "bbox": {
+      "l": 36.85,
+      "t": 60.56,
+      "r": 289.15,
+      "b": 31.3,
+      "w": 252.3,
+      "h": 29.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.07657,
+      "r": 0.48574,
+      "b": 0.03958
+     },
+     "text": "To illustrate the past year's remarkable progress in magnetoelectric transduction, we present in Fig. 6a-c representative magnetoelectric switching data of a CoFe/Cu/CoFe spin valve that is exchange-coupled to a 45-nm-thick La0.1Bi0.9FeO3 (LBFO) layer using an applied voltage of only 1-2 V-although quasi-static ferroelectric switching has been achieved down to about 150 mV using LBFO as the magnetoelectric layer (see Supplementary Information section Q for details). Figure 6a shows the change in the resistance of the CoFe/Cu/CoFe spin valve as a function of voltage applied across the multiferroic LBFO thin film, along with the piezoelectric loop of the (CoFe/Cu/CoFe)/LBFO/LSMO capacitor structure. It is clear that both ferroelectric and concurrent magnetoelectric switching occur at about 1.0 V. This is enabled by the strong exchange coupling of the bottom CoFe layer of the CoFe/Cu/ CoFe spin valve to the canted antiferromagnetic LBFO surface, which is evident from the magnetic hysteresis loop in Fig. 6b. Such an exchangebias coupling can be reversed by an out-of-plane electric field. Figure 6c shows how rapidly this switching voltage has been decreasing over the past year, primarily through materials engineering of the switching behaviour of the BiFeO3 layer, as well as through systematic thickness reductions. The ferroelectric saturation polarization and the switching voltage of BiFeO3 can be tuned by the doping level of the rare-earth element, such as La or Sm 42 . The potential for further reductions in the switching voltage is illustrated through the quasi-static piezoelectric switching loop of a 20-nm-thick LBFO layer in contact with symmetric SrRuO3 top and bottom electrodes, demonstrating a switching voltage of 130-150 mV (see details in Supplementary Information section Q). Further reductions in the switching voltage, which is the immediate focus of our research, should be possible through reduction of the LBFO film thickness and further careful tuning of the composition such that the polar distortion is delicately tuned to be as low as possible. Independent work by our group and others has shown that both the ferroelectric and antiferromagnetic orders are stable down to at least a few nanometres (see Supplementary Information). A proof of concept for an ultralow-switching-voltage ferroelectric (LaxBi1-xFeO3)",
+     "text_len": 2358,
+     "level": 1,
+     "element_id": "p6_e60"
+    },
+    {
+     "reading_order": 61,
+     "page": 6,
+     "label": "picture",
+     "bbox": {
+      "l": 301.54,
+      "t": 732.86,
+      "r": 551.56,
+      "b": 552.95,
+      "w": 250.02,
+      "h": 179.91,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50655,
+      "t": 0.92666,
+      "r": 0.92656,
+      "b": 0.69917
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p6_e61"
+    },
+    {
+     "reading_order": 62,
+     "page": 6,
+     "label": "caption",
+     "bbox": {
+      "l": 300.47,
+      "t": 547.06,
+      "r": 552.75,
+      "b": 368.68,
+      "w": 252.28,
+      "h": 178.38,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50476,
+      "t": 0.69172,
+      "r": 0.92856,
+      "b": 0.46617
+     },
+     "text": "Fig. 6 | Progress of magnetoelectric transduction via MESO towards a voltage of 100 mV. a, Piezoelectric loop (blue) and applied-voltagedependent resistance modulation (ΔR; red) of a Pt/CoFe/Cu/CoFe/LBFO/ LSMO magnetoelectric spin-valve device depict 1 V magnetoelectric switching. The vertical axis shows the phase of the ferro-electric polarization response signal with respect to the input voltage. Purple arrows indicate the sweep direction in the measurement. b, Magnetization Ms of a giant magnetoresistive stack, normalized with the magnetization M of a thin film, as a function of magnetic field strength H. The bottom CoFe electrode of the giant magnetoresistive stack is exchange-coupled to LaBiFeO3, showing exchange-induced anisotropy enhancement and exchange bias. c, Voltage scaling of magnetoelectric switching as a function of multiferroic film thickness. Data points A-D correspond to BiFeO3 films of varying thickness with a SrRuO3 bottom electrode. The switching voltage of the MESO device Vc(ME) is lowered down to 1.0 V using partial chemical substitution of Bi 3+ (with La 3+), interface engineering (electrodes formed with La0.7Sr0.3MnO3) and thickness scaling down to 40 nm. The ultimate goal of the MESO project is to be able to switch magnetoelectrically at 100 mV.",
+     "text_len": 1291,
+     "level": 2,
+     "element_id": "p6_e62"
+    }
+   ]
+  },
+  {
+   "page_no": 7,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0007.png",
+   "elements": [
+    {
+     "reading_order": 63,
+     "page": 7,
+     "label": "table",
+     "bbox": {
+      "l": 41.74,
+      "t": 724.73,
+      "r": 560.0,
+      "b": 585.34,
+      "w": 518.26,
+      "h": 139.39,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07012,
+      "t": 0.91638,
+      "r": 0.94074,
+      "b": 0.74013
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p7_e63"
+    },
+    {
+     "reading_order": 64,
+     "page": 7,
+     "label": "caption",
+     "bbox": {
+      "l": 42.52,
+      "t": 733.22,
+      "r": 194.15,
+      "b": 725.89,
+      "w": 151.63,
+      "h": 7.33,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.92711,
+      "r": 0.32615,
+      "b": 0.91784
+     },
+     "text": "Table 2 | Material options for MESO logic",
+     "text_len": 41,
+     "level": 2,
+     "element_id": "p7_e64"
+    },
+    {
+     "reading_order": 65,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 582.71,
+      "r": 554.77,
+      "b": 539.69,
+      "w": 512.25,
+      "h": 43.02,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.7368,
+      "r": 0.93195,
+      "b": 0.6824
+     },
+     "text": "Three classes of materials (high-SOC oxides, topological materials and superlattices, and two-dimensional transition-metal dichalcogenides) are suitable for SOC-based spin-to-charge conversion. Magnetoelectrics belong to three classes: (1) multiferroics with magnetic (antiferromagnetic/ferromagnetic) and electric (ferroelectric) order parameters, (2) magnetostrictive, that is, one ferromagnetic-order-parameter material combined with a strain/piezoelectric material, and (3) exchange-bias materials, that is, one magnetic-order parameter with no ferroelectric/antiferroelectric order. Magnetostrictive materials are not directly suitable (because only 90° switching is feasible), but can be used to enhance magnetoelectric switching. Interconnect options comprise noble metals, metal-semiconductors (which exhibit excellent gap fill for interconnect processing and have short electron mean free paths) and interlayer dielectrics chosen for their low dielectric constant. Nanomagnets should be conductive to allow spin injection with the applied bias. Co-, Fe- and Ni-based ferromagnets or Heusler alloys are potential candidates, with low Ms and high spin polarization.",
+     "text_len": 1172,
+     "level": 1,
+     "element_id": "p7_e65"
+    },
+    {
+     "reading_order": 66,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 512.06,
+      "r": 294.83,
+      "b": 482.8,
+      "w": 252.31,
+      "h": 29.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.64747,
+      "r": 0.49528,
+      "b": 0.61047
+     },
+     "text": "was obtained using symmetric conductive-oxide electrodes (SrRuO3), from which the switching energy was estimated to be about1 aJ per bit for a contact area of 10 nm × 10 nm.",
+     "text_len": 173,
+     "level": 1,
+     "element_id": "p7_e66"
+    },
+    {
+     "reading_order": 67,
+     "page": 7,
+     "label": "section_header",
+     "bbox": {
+      "l": 42.52,
+      "t": 471.01,
+      "r": 274.71,
+      "b": 461.63,
+      "w": 232.19,
+      "h": 9.38,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.59556,
+      "r": 0.46148,
+      "b": 0.5837
+     },
+     "text": "Material requirements for 1-10-aJ-class MESO logic",
+     "text_len": 50,
+     "level": 1,
+     "element_id": "p7_e67"
+    },
+    {
+     "reading_order": 68,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 459.56,
+      "r": 294.87,
+      "b": 209.8,
+      "w": 252.35,
+      "h": 249.76,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.58108,
+      "r": 0.49535,
+      "b": 0.26528
+     },
+     "text": "We describe the material scaling requirements for 1-10-aJ-class MESO logic scalable to critical dimensions of <10 nm or device density beyond 10 10 cm-2 . In Table 1 we summarize the material scaling requirements for four classes of materials: a) SOC materials for spin-to-charge conversion, (2) magnetoelectrics for chargeto-spin conversion, (3) interconnects scalable to nanoscale widths and (4) nanomagnets. We considered the experimental values shown for the inverse Rashba-Edelstein parameters. A large-signal magnetoelectric coefficient of 10c-1 (c, speed of light) from magnetoelectric switching and low coercive voltages were obtained via rhombohedral distortion tuning and chemical substitution of multiferroics 42 with thickness scalability to 5-20 nm. The output resistance of the ISOC spin current source is a critical parameter that affects the driving ability of the MESO logic device (high source resistance is preferred for a current source; see Supplementary Information section H and Supplementary Fig. 9.) The requirement of low interconnect resistivity is considerably relaxed owing to the low-voltage, low-current operation of chargemediated magnetoelectric logic. This is reflected in the resistivity target of 4-200 μΩ cm, which is comparable to the resistivity of scaled metal wires. Electromigration of the metal interconnect imposes a challenging limit on the switching speed by limiting the peak current in wires. MESO logic relaxes the electromigration requirements to 25 MA cm-2 , appreciably below the Belch limit for electromigration of interconnect metal candidates 43 .",
+     "text_len": 1602,
+     "level": 1,
+     "element_id": "p7_e68"
+    },
+    {
+     "reading_order": 69,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 207.56,
+      "r": 294.85,
+      "b": 31.3,
+      "w": 252.33,
+      "h": 176.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.26245,
+      "r": 0.49532,
+      "b": 0.03958
+     },
+     "text": "A focused effort using quantum materials can enable logic technology operating at 100 mV and 1 aJ per bit. The details of four fundamental material classes are presented in Table 2. SOC materials can be comprised of (1) high-SOC oxides (for example, W(O) and Bi2O3 44 ) and oxides with strong topological effects (SrIrO3 45 and SrTiO3/LaAlO3 25,36,38 ), (2) topological materials (Bi1.5Sb0.5Te1.7Se1.3 24 , Sn-Bi2Te2Se, Bi2Se3 34,35 , α-Sn 46 , BiSb 47 ) and their superlattices and (3) transition-metal dichalcogenides with large spin-orbit effects (MoS2 48 , MX2 49 ). The magnetoelectric materials can be comprised of (1) multiferroics with coupling of the antiferromagnetic and ferroelectric orders (type -1 multiferroics BiFeO3 27,30 and LaBiFeO3 42 ; type-2 multiferroics, such as TbMnO3 50 ; and improper multiferroics, such as LuFeO3/ LuFe2O4 51 ), (2) magnetostrictive materials (Fe3Ga 52 , TbxDy1-xFe2 53 , FeRh 18 ) and (3) electrically tuned exchange-mediated magnetoelectrics (Cr2O3 29,54 or Fe2TeO6 55 ). The interconnect options scalable to dimensions smaller than the 10 nm critical width can be based on transition metals (Cu, Ag, Co, Al, Ru) or their semiconductor alloys (poly-Si, NiSi, CoSi, NiGe, TiSi), combined with low-interconnect-capacitance materials (SiO2, SiN, SiCOH, polymers). The nanomagnetic materials can be ferromagnets/ferrimagnets (Co, Fe, Ni, CoFe, NiFe, and X2YZ and XYZ alloys, such as Co2FeAl, Mn3Ga), in which a wide range of saturation magnetization and magnetic anisotropy are feasible to meet the dimensionality and retention requirements. In each of these four classes of materials, considerable development is required to improve the material interfaces for integrated devices, the operating temperature range, the processing temperature compatibility and, most importantly, the performance metrics.",
+     "text_len": 1846,
+     "level": 1,
+     "element_id": "p7_e69"
+    },
+    {
+     "reading_order": 70,
+     "page": 7,
+     "label": "section_header",
+     "bbox": {
+      "l": 306.14,
+      "t": 397.51,
+      "r": 356.39,
+      "b": 388.13,
+      "w": 50.25,
+      "h": 9.38,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.50263,
+      "r": 0.5987,
+      "b": 0.49077
+     },
+     "text": "Conclusion",
+     "text_len": 10,
+     "level": 1,
+     "element_id": "p7_e70"
+    },
+    {
+     "reading_order": 71,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 386.06,
+      "r": 558.5,
+      "b": 167.8,
+      "w": 252.35,
+      "h": 218.26,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.48815,
+      "r": 0.93822,
+      "b": 0.21217
+     },
+     "text": "In conclusion, we propose a scalable beyond-CMOS spintronic logic device with non-volatility and an energy-efficient charge-based interconnect. The proposed device allows (a) continued scaling in energy per operation towards attojoule-level switching energy (about 30 times below that of advanced CMOS devices) at 100 mV (more than 5 times below the operating voltage of advanced CMOS devices), (2) substantial improvement in logic density (about 5 times compared to advanced CMOS devices), enabled by majority-gate circuits implemented with a collective switching device, (3) improved scalability for interconnects due to the small impact of the resistivity, which is up to 1 mΩ cm, and (4) a path to seamless monolithic integration with CMOS technology (see Supplementary Fig. 19). The development of a beyond-CMOS device with an advantageous scaling method using quantum materials, highly compact majority logic 14 and non-volatile logic 15 can open up a potentially new technology paradigm for improving energy efficiency in beyond-CMOS computing devices. Combined with non-volatility and ultra-low energy, MESO logic may enable entirely new computer architectures that may avoid the trade-offs of the Turing and von Neumann architectures and of Amdahl's law. A combination of quantum materials, novel integration and new logic architectures may thus enable computing beyond advanced CMOS technology.",
+     "text_len": 1404,
+     "level": 1,
+     "element_id": "p7_e71"
+    },
+    {
+     "reading_order": 72,
+     "page": 7,
+     "label": "section_header",
+     "bbox": {
+      "l": 306.14,
+      "t": 156.01,
+      "r": 373.76,
+      "b": 146.63,
+      "w": 67.62,
+      "h": 9.38,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.19726,
+      "r": 0.62788,
+      "b": 0.1854
+     },
+     "text": "Online content",
+     "text_len": 14,
+     "level": 1,
+     "element_id": "p7_e72"
+    },
+    {
+     "reading_order": 73,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 144.72,
+      "r": 558.49,
+      "b": 118.61,
+      "w": 252.35,
+      "h": 26.1,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.18299,
+      "r": 0.9382,
+      "b": 0.14997
+     },
+     "text": "Any methods, additional references, Nature Research reporting summaries, source data, statements of data availability and associated accession codes are available at https://doi.org/10.1038/s41586-018-0770-2.",
+     "text_len": 208,
+     "level": 1,
+     "element_id": "p7_e73"
+    },
+    {
+     "reading_order": 74,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 108.97,
+      "r": 490.51,
+      "b": 90.69,
+      "w": 184.37,
+      "h": 18.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.13779,
+      "r": 0.824,
+      "b": 0.11467
+     },
+     "text": "Received: 24 April 2016; Accepted: 7 October 2018; Published online 3 December 2018.",
+     "text_len": 84,
+     "level": 1,
+     "element_id": "p7_e74"
+    },
+    {
+     "reading_order": 75,
+     "page": 7,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.24,
+      "t": 71.69,
+      "r": 550.94,
+      "b": 57.33,
+      "w": 244.69,
+      "h": 14.36,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51445,
+      "t": 0.09065,
+      "r": 0.92552,
+      "b": 0.07249
+     },
+     "text": "Kuhn, K. J. Considerations for ultimate CMOS scaling. IEEE Trans. Electron Dev. 59, 1813-1828 (2012).",
+     "text_len": 101,
+     "level": 2,
+     "element_id": "p7_e75"
+    },
+    {
+     "reading_order": 76,
+     "page": 7,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.24,
+      "t": 55.69,
+      "r": 541.06,
+      "b": 33.37,
+      "w": 234.82,
+      "h": 22.32,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51445,
+      "t": 0.07042,
+      "r": 0.90892,
+      "b": 0.04219
+     },
+     "text": "Ferain, I., Colinge, C. A. & Colinge, J.-P. Multigate transistors as the future of classical metal-oxide-semiconductor field-effect transistors. Nature 479, 310-316 (2011).",
+     "text_len": 172,
+     "level": 2,
+     "element_id": "p7_e76"
+    },
+    {
+     "reading_order": 77,
+     "page": 7,
+     "label": "picture",
+     "bbox": {
+      "l": 466.13,
+      "t": 770.36,
+      "r": 558.81,
+      "b": 750.97,
+      "w": 92.67,
+      "h": 19.39,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.78305,
+      "t": 0.97407,
+      "r": 0.93874,
+      "b": 0.94955
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p7_e77"
+    }
+   ]
+  },
+  {
+   "page_no": 8,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0008.png",
+   "elements": [
+    {
+     "reading_order": 78,
+     "page": 8,
+     "label": "picture",
+     "bbox": {
+      "l": 35.9,
+      "t": 770.36,
+      "r": 128.75,
+      "b": 751.03,
+      "w": 92.85,
+      "h": 19.32,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06031,
+      "t": 0.97407,
+      "r": 0.21629,
+      "b": 0.94963
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p8_e78"
+    },
+    {
+     "reading_order": 79,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 36.95,
+      "t": 734.19,
+      "r": 273.69,
+      "b": 703.81,
+      "w": 236.74,
+      "h": 30.38,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06207,
+      "t": 0.92834,
+      "r": 0.45977,
+      "b": 0.88992
+     },
+     "text": "Auth, C. et al. A 10 nm high performance and low-power CMOS technology featuring 3rd generation FinFET transistors, self-aligned quad patterning, contact over active gate and cobalt local interconnects. In Electron Devices Meeting 2017, 29.1.1-29.1.4 (IEEE, 2017).",
+     "text_len": 264,
+     "level": 2,
+     "element_id": "p8_e79"
+    },
+    {
+     "reading_order": 80,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 36.95,
+      "t": 702.18,
+      "r": 280.0,
+      "b": 687.82,
+      "w": 243.05,
+      "h": 14.36,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06207,
+      "t": 0.88786,
+      "r": 0.47037,
+      "b": 0.8697
+     },
+     "text": "Moore, G. E. Cramming more components onto integrated circuits. Proc. IEEE 86, 82-85 (1998).",
+     "text_len": 92,
+     "level": 2,
+     "element_id": "p8_e80"
+    },
+    {
+     "reading_order": 81,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 36.95,
+      "t": 686.18,
+      "r": 288.79,
+      "b": 663.81,
+      "w": 251.84,
+      "h": 22.38,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06207,
+      "t": 0.86763,
+      "r": 0.48514,
+      "b": 0.83935
+     },
+     "text": "Dennard, R. H., Gaensslen, F. H., Yu, H. N., Rideout, V. L., Bassous, E. & Leblanc, A. R. Design of ion-implanted MOSFET's with very small physical dimensions. IEEE J. Solid St. Circ. 9, 256-268 (1974).",
+     "text_len": 202,
+     "level": 2,
+     "element_id": "p8_e81"
+    },
+    {
+     "reading_order": 82,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 36.94,
+      "t": 662.18,
+      "r": 283.35,
+      "b": 639.8,
+      "w": 246.41,
+      "h": 22.38,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06206,
+      "t": 0.83728,
+      "r": 0.476,
+      "b": 0.80899
+     },
+     "text": "Ghani, T. et al. A 90 nm high volume manufacturing logic technology featuring novel 45nm gate length strained silicon CMOS transistors. In Electron Devices Meeting 2003, 11.6.1-11.6.3 (IEEE, 2003).",
+     "text_len": 197,
+     "level": 2,
+     "element_id": "p8_e82"
+    },
+    {
+     "reading_order": 83,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 36.94,
+      "t": 638.18,
+      "r": 285.14,
+      "b": 607.8,
+      "w": 248.2,
+      "h": 30.38,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06206,
+      "t": 0.80694,
+      "r": 0.479,
+      "b": 0.76852
+     },
+     "text": "Krishnamohan, T. et al. Comparison of (001), (110) and (111) uniaxial- and biaxial- strained-Ge and strained-Si PMOS DGFETs for all channel orientations: mobility enhancement, drive current, delay and off-state leakage. In Electron Devices Meeting 2008, 1-4 (IEEE, 2008).",
+     "text_len": 271,
+     "level": 2,
+     "element_id": "p8_e83"
+    },
+    {
+     "reading_order": 84,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 36.94,
+      "t": 606.17,
+      "r": 277.49,
+      "b": 591.86,
+      "w": 240.54,
+      "h": 14.32,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06206,
+      "t": 0.76646,
+      "r": 0.46615,
+      "b": 0.74837
+     },
+     "text": "Huang, X. et al. Sub 50-nm FinFET: PMOS. In Electron Devices Meeting 1998, 67-70 (IEEE, 1999).",
+     "text_len": 94,
+     "level": 2,
+     "element_id": "p8_e84"
+    },
+    {
+     "reading_order": 85,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 36.94,
+      "t": 590.17,
+      "r": 262.8,
+      "b": 567.79,
+      "w": 225.86,
+      "h": 22.38,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06206,
+      "t": 0.74623,
+      "r": 0.44148,
+      "b": 0.71793
+     },
+     "text": "Schumacher, M., Baumann, P. K. & Seidel, T. AVD and ALD as two complementary technology solutions for next generation dielectric and conductive thin-film processing. Chem. Vap. Depos. 12, 99-108 (2006).",
+     "text_len": 202,
+     "level": 2,
+     "element_id": "p8_e85"
+    },
+    {
+     "reading_order": 86,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 36.94,
+      "t": 566.17,
+      "r": 276.16,
+      "b": 543.85,
+      "w": 239.22,
+      "h": 22.32,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06206,
+      "t": 0.71589,
+      "r": 0.46392,
+      "b": 0.68766
+     },
+     "text": "Horowitz, M. Computing's energy problem (and what we can do about it). In Solid-State Circuits Conference Digest of Technical Papers 2014 10-14 (IEEE, 2014).",
+     "text_len": 157,
+     "level": 2,
+     "element_id": "p8_e86"
+    },
+    {
+     "reading_order": 87,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 36.94,
+      "t": 542.21,
+      "r": 276.83,
+      "b": 527.85,
+      "w": 239.89,
+      "h": 14.37,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06206,
+      "t": 0.68559,
+      "r": 0.46504,
+      "b": 0.66743
+     },
+     "text": "Theis, T. N. & Solomon, P. M. It's time to reinvent the transistor! Science 327, 1600-1601 (2010).",
+     "text_len": 98,
+     "level": 2,
+     "element_id": "p8_e87"
+    },
+    {
+     "reading_order": 88,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 36.94,
+      "t": 526.16,
+      "r": 285.25,
+      "b": 503.79,
+      "w": 248.31,
+      "h": 22.38,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06206,
+      "t": 0.6653,
+      "r": 0.47919,
+      "b": 0.63701
+     },
+     "text": "Nikonov, D. E. & Young, I. A., Benchmarking of beyond-CMOS exploratory devices for logic integrated circuits. IEEE J. Explor. Solid-State Computat. Devices Circuits 1, 3-11 (2015).",
+     "text_len": 180,
+     "level": 2,
+     "element_id": "p8_e88"
+    },
+    {
+     "reading_order": 89,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 36.94,
+      "t": 502.16,
+      "r": 288.33,
+      "b": 487.78,
+      "w": 251.4,
+      "h": 14.37,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06206,
+      "t": 0.63495,
+      "r": 0.48436,
+      "b": 0.61677
+     },
+     "text": "Manipatruni, S., Nikonov, D. E. & Young, I. A. Beyond CMOS computing with spin and polarization. Nat. Phys. 14, 338 (2018).",
+     "text_len": 123,
+     "level": 2,
+     "element_id": "p8_e89"
+    },
+    {
+     "reading_order": 90,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 36.93,
+      "t": 486.16,
+      "r": 284.57,
+      "b": 463.78,
+      "w": 247.64,
+      "h": 22.38,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06204,
+      "t": 0.61472,
+      "r": 0.47805,
+      "b": 0.58642
+     },
+     "text": "Zografos, O. et al. Design and benchmarking of hybrid CMOS-spin wave device circuits compared to 10 nm CMOS. In 2015 IEEE 15th International Conference on Nanotechnology (IEEE-NANO), 686-689 (IEEE, 2015).",
+     "text_len": 204,
+     "level": 2,
+     "element_id": "p8_e90"
+    },
+    {
+     "reading_order": 91,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 36.93,
+      "t": 462.15,
+      "r": 258.75,
+      "b": 447.78,
+      "w": 221.82,
+      "h": 14.37,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06204,
+      "t": 0.58436,
+      "r": 0.43467,
+      "b": 0.56619
+     },
+     "text": "Ma, K. et al. Nonvolatile processor architecture exploration for energyharvesting applications. IEEE Micro 35, 32-40 (2015).",
+     "text_len": 124,
+     "level": 2,
+     "element_id": "p8_e91"
+    },
+    {
+     "reading_order": 92,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 36.93,
+      "t": 446.2,
+      "r": 260.78,
+      "b": 431.87,
+      "w": 223.85,
+      "h": 14.33,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06204,
+      "t": 0.56419,
+      "r": 0.43808,
+      "b": 0.54607
+     },
+     "text": "Mead, C. Neuromorphic electronic systems. Proc. IEEE 78, 1629-1636 (1990).",
+     "text_len": 74,
+     "level": 2,
+     "element_id": "p8_e92"
+    },
+    {
+     "reading_order": 93,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 36.95,
+      "t": 430.19,
+      "r": 275.57,
+      "b": 407.87,
+      "w": 238.62,
+      "h": 22.32,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06207,
+      "t": 0.54395,
+      "r": 0.46293,
+      "b": 0.51573
+     },
+     "text": "Patil, A. D., Manipatruni, S., Nikonov, D., Young, I. A. & Shanbhag, N. R. 2017. Shannon-inspired statistical computing to enable spintronics. Preprint at https://arxiv.org/abs/1702.06119 (2017).",
+     "text_len": 195,
+     "level": 2,
+     "element_id": "p8_e93"
+    },
+    {
+     "reading_order": 94,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 36.95,
+      "t": 406.18,
+      "r": 274.99,
+      "b": 391.81,
+      "w": 238.04,
+      "h": 14.37,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06207,
+      "t": 0.51359,
+      "r": 0.46195,
+      "b": 0.49542
+     },
+     "text": "Dyakonov, M. I. & Perel, V. I. Current-induced spin orientation of electrons in semiconductors. Phys. Lett. A 35, 459 (1971).",
+     "text_len": 125,
+     "level": 2,
+     "element_id": "p8_e94"
+    },
+    {
+     "reading_order": 95,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 36.95,
+      "t": 390.18,
+      "r": 285.42,
+      "b": 367.82,
+      "w": 248.48,
+      "h": 22.36,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06207,
+      "t": 0.49336,
+      "r": 0.47948,
+      "b": 0.46509
+     },
+     "text": "Edelstein, V. M. Spin polarization of conduction electrons induced by electric current in two-dimensional asymmetric electron systems. Solid State Commun. 73, 233-235 (1990).",
+     "text_len": 174,
+     "level": 2,
+     "element_id": "p8_e95"
+    },
+    {
+     "reading_order": 96,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 36.95,
+      "t": 366.18,
+      "r": 283.29,
+      "b": 343.82,
+      "w": 246.34,
+      "h": 22.36,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06207,
+      "t": 0.46301,
+      "r": 0.4759,
+      "b": 0.43474
+     },
+     "text": "Soumyanarayanan, A., Reyren, N., Fert, A. & Panagopoulos, C. Emergent phenomena induced by spin-orbit coupling at surfaces and interfaces. Nature 539, 509 (2016).",
+     "text_len": 162,
+     "level": 2,
+     "element_id": "p8_e96"
+    },
+    {
+     "reading_order": 97,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 36.95,
+      "t": 342.18,
+      "r": 286.35,
+      "b": 327.8,
+      "w": 249.4,
+      "h": 14.37,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06207,
+      "t": 0.43266,
+      "r": 0.48104,
+      "b": 0.41448
+     },
+     "text": "Hsieh, D. et al. A tunable topological insulator in the spin helical Dirac transport regime. Nature 460, 1101 (2009).",
+     "text_len": 117,
+     "level": 2,
+     "element_id": "p8_e97"
+    },
+    {
+     "reading_order": 98,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 36.94,
+      "t": 326.17,
+      "r": 276.09,
+      "b": 303.87,
+      "w": 239.15,
+      "h": 22.3,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06206,
+      "t": 0.41242,
+      "r": 0.4638,
+      "b": 0.38422
+     },
+     "text": "Rojas Sánchez, J. C. et al. Spin-to-charge conversion using Rashba coupling at the interface between non-magnetic materials. Nat. Commun. 4, 2944 (2013).",
+     "text_len": 153,
+     "level": 2,
+     "element_id": "p8_e98"
+    },
+    {
+     "reading_order": 99,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 36.95,
+      "t": 302.19,
+      "r": 285.14,
+      "b": 287.81,
+      "w": 248.18,
+      "h": 14.37,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06207,
+      "t": 0.3821,
+      "r": 0.479,
+      "b": 0.36392
+     },
+     "text": "Shen, K., Vignale, G. & Raimondi, R. Microscopic theory of the inverse Edelstein effect. Phys. Rev. Lett. 112, 096601 (2014).",
+     "text_len": 125,
+     "level": 2,
+     "element_id": "p8_e99"
+    },
+    {
+     "reading_order": 100,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 36.95,
+      "t": 286.18,
+      "r": 267.59,
+      "b": 271.81,
+      "w": 230.65,
+      "h": 14.37,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06207,
+      "t": 0.36186,
+      "r": 0.44952,
+      "b": 0.34369
+     },
+     "text": "Shiomi, Y. et al. Spin-electricity conversion induced by spin injection into topological insulators. Phys. Rev. Lett. 113, 196601 (2014).",
+     "text_len": 137,
+     "level": 2,
+     "element_id": "p8_e100"
+    },
+    {
+     "reading_order": 101,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 36.95,
+      "t": 270.18,
+      "r": 282.66,
+      "b": 255.81,
+      "w": 245.71,
+      "h": 14.37,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06207,
+      "t": 0.34163,
+      "r": 0.47484,
+      "b": 0.32346
+     },
+     "text": "Varignon, J., Vila, L., Barthelemy, A. & Bibes, M. A new spin for oxide interfaces. Nat. Phys. 14, 322 (2018).",
+     "text_len": 110,
+     "level": 2,
+     "element_id": "p8_e101"
+    },
+    {
+     "reading_order": 102,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 36.95,
+      "t": 254.18,
+      "r": 276.18,
+      "b": 239.81,
+      "w": 239.23,
+      "h": 14.37,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06207,
+      "t": 0.32139,
+      "r": 0.46395,
+      "b": 0.30322
+     },
+     "text": "Spaldin, N. A. & Fiebig, M. The renaissance of magnetoelectric multiferroics. Science 309, 391-392 (2005).",
+     "text_len": 106,
+     "level": 2,
+     "element_id": "p8_e102"
+    },
+    {
+     "reading_order": 103,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 36.94,
+      "t": 238.18,
+      "r": 253.12,
+      "b": 223.8,
+      "w": 216.18,
+      "h": 14.37,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06206,
+      "t": 0.30116,
+      "r": 0.42521,
+      "b": 0.28298
+     },
+     "text": "Heron, J. T. et al. Deterministic switching of ferromagnetism at room temperature using an electric field. Nature 516, 370-373 (2014).",
+     "text_len": 134,
+     "level": 2,
+     "element_id": "p8_e103"
+    },
+    {
+     "reading_order": 104,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 36.94,
+      "t": 222.18,
+      "r": 257.07,
+      "b": 207.8,
+      "w": 220.13,
+      "h": 14.37,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06206,
+      "t": 0.28093,
+      "r": 0.43185,
+      "b": 0.26275
+     },
+     "text": "Cherifi, R. O. et al. Electric-field control of magnetic order above room temperature. Nat. Mater. 13, 345-351 (2014).",
+     "text_len": 118,
+     "level": 2,
+     "element_id": "p8_e104"
+    },
+    {
+     "reading_order": 105,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 36.94,
+      "t": 206.17,
+      "r": 262.97,
+      "b": 191.8,
+      "w": 226.03,
+      "h": 14.37,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06206,
+      "t": 0.26069,
+      "r": 0.44176,
+      "b": 0.24252
+     },
+     "text": "He, X. et al. Robust isothermal electric control of exchange bias at room temperature. Nat. Mater. 9, 579-585 (2010).",
+     "text_len": 117,
+     "level": 2,
+     "element_id": "p8_e105"
+    },
+    {
+     "reading_order": 106,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 36.94,
+      "t": 190.17,
+      "r": 251.82,
+      "b": 167.87,
+      "w": 214.88,
+      "h": 22.3,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06206,
+      "t": 0.24046,
+      "r": 0.42303,
+      "b": 0.21226
+     },
+     "text": "Manipatruni, S. et al. Voltage control of uni-directional anisotropy in ferromagnet-multiferroic system. Preprint at https://arxiv.org/abs/ 1801.08280 (2018).",
+     "text_len": 158,
+     "level": 2,
+     "element_id": "p8_e106"
+    },
+    {
+     "reading_order": 107,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 36.95,
+      "t": 166.19,
+      "r": 276.69,
+      "b": 151.81,
+      "w": 239.74,
+      "h": 14.37,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06207,
+      "t": 0.21014,
+      "r": 0.46481,
+      "b": 0.19195
+     },
+     "text": "Brataas, A., Bauer, G. E. & Kelly, P. J. Non-collinear magnetoelectronics. Phys. Rep. 427, 157-255 (2006).",
+     "text_len": 106,
+     "level": 2,
+     "element_id": "p8_e107"
+    },
+    {
+     "reading_order": 108,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 36.95,
+      "t": 150.18,
+      "r": 283.45,
+      "b": 135.81,
+      "w": 246.5,
+      "h": 14.37,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06207,
+      "t": 0.18989,
+      "r": 0.47617,
+      "b": 0.17172
+     },
+     "text": "Manipatruni, S., Nikonov, D. E. & Young, I. A. Modeling and design of spintronic integrated circuits. IEEE Trans. Circuits Syst. 59, 2801-2814 (2012).",
+     "text_len": 150,
+     "level": 2,
+     "element_id": "p8_e108"
+    },
+    {
+     "reading_order": 109,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 36.95,
+      "t": 134.18,
+      "r": 279.26,
+      "b": 119.82,
+      "w": 242.32,
+      "h": 14.36,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06207,
+      "t": 0.16966,
+      "r": 0.46913,
+      "b": 0.1515
+     },
+     "text": "Omori, Y. et al. Inverse spin Hall effect in a closed loop circuit. Appl. Phys. Lett. 104, 242415 (2014).",
+     "text_len": 105,
+     "level": 2,
+     "element_id": "p8_e109"
+    },
+    {
+     "reading_order": 110,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 36.95,
+      "t": 118.18,
+      "r": 281.22,
+      "b": 95.86,
+      "w": 244.27,
+      "h": 22.32,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06207,
+      "t": 0.14943,
+      "r": 0.47242,
+      "b": 0.12121
+     },
+     "text": "Fan, Y. et al. Magnetization switching through giant spin-orbit torque in a magnetically doped topological insulator heterostructure. Nat. Mater. 13, 699 (2014).",
+     "text_len": 161,
+     "level": 2,
+     "element_id": "p8_e110"
+    },
+    {
+     "reading_order": 111,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 36.95,
+      "t": 94.18,
+      "r": 289.14,
+      "b": 71.87,
+      "w": 252.19,
+      "h": 22.31,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06207,
+      "t": 0.11908,
+      "r": 0.48572,
+      "b": 0.09088
+     },
+     "text": "Mahendra, D. C. et al. Room-temperature perpendicular magnetization switching through giant spin-orbit torque from sputtered BixSe(1-x) topological insulator material. Preprint at https://arxiv.org/abs/1703.03822 (2017).",
+     "text_len": 220,
+     "level": 2,
+     "element_id": "p8_e111"
+    },
+    {
+     "reading_order": 112,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 36.95,
+      "t": 70.19,
+      "r": 281.96,
+      "b": 55.81,
+      "w": 245.01,
+      "h": 14.37,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06207,
+      "t": 0.08875,
+      "r": 0.47366,
+      "b": 0.07057
+     },
+     "text": "Lesne, E. et al. Highly efficient and tunable spin-to-charge conversion through Rashba coupling at oxide interfaces. Nat. Mater. 15, 1261-1266 (2016).",
+     "text_len": 150,
+     "level": 2,
+     "element_id": "p8_e112"
+    },
+    {
+     "reading_order": 113,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 36.94,
+      "t": 54.23,
+      "r": 281.19,
+      "b": 39.87,
+      "w": 244.25,
+      "h": 14.37,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06206,
+      "t": 0.06857,
+      "r": 0.47237,
+      "b": 0.05041
+     },
+     "text": "Ast, C. R. et al. Giant spin splitting through surface alloying. Phys. Rev. Lett. 98, 186807 (2007).",
+     "text_len": 100,
+     "level": 2,
+     "element_id": "p8_e113"
+    },
+    {
+     "reading_order": 114,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 300.56,
+      "t": 734.18,
+      "r": 549.32,
+      "b": 711.16,
+      "w": 248.76,
+      "h": 23.02,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50491,
+      "t": 0.92832,
+      "r": 0.9228,
+      "b": 0.89922
+     },
+     "text": "Veit, M. J., Arras, R., Ramshaw, B. J., Pentcheva, R. & Suzuki, Y. Nonzero Berry phase in quantum oscillations from giant Rashba-type spin splitting in LaTiO3/ SrTiO3 heterostructures. Nat. Commun. 9, 1458 (2018).",
+     "text_len": 213,
+     "level": 2,
+     "element_id": "p8_e114"
+    },
+    {
+     "reading_order": 115,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 300.57,
+      "t": 710.19,
+      "r": 526.67,
+      "b": 695.81,
+      "w": 226.1,
+      "h": 14.37,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50493,
+      "t": 0.89799,
+      "r": 0.88475,
+      "b": 0.87981
+     },
+     "text": "Meindl, J. D., Chen, Q. & Davis, J. A. Limits on silicon nanoelectronics for terascale integration. Science 293, 2044-2049 (2001).",
+     "text_len": 130,
+     "level": 2,
+     "element_id": "p8_e115"
+    },
+    {
+     "reading_order": 116,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 300.57,
+      "t": 694.18,
+      "r": 548.65,
+      "b": 671.82,
+      "w": 248.08,
+      "h": 22.36,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50493,
+      "t": 0.87775,
+      "r": 0.92167,
+      "b": 0.84947
+     },
+     "text": "Manipatruni, S., Lipson, M. & Young, I. A. Device scaling considerations for nanophotonic CMOS global interconnects. IEEE J. Sel. Topics Quantum Electron. 19, 8200109 (2013).",
+     "text_len": 174,
+     "level": 2,
+     "element_id": "p8_e116"
+    },
+    {
+     "reading_order": 117,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 300.57,
+      "t": 670.18,
+      "r": 545.04,
+      "b": 647.81,
+      "w": 244.47,
+      "h": 22.38,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50493,
+      "t": 0.8474,
+      "r": 0.91561,
+      "b": 0.81911
+     },
+     "text": "Mayadas, A. F., Shatzkes, M. & Janak, J. F. Electrical resistivity model for polycrystalline films: the case of specular reflection at external surfaces. Appl. Phys. Lett. 14, 345-347 (1969).",
+     "text_len": 191,
+     "level": 2,
+     "element_id": "p8_e117"
+    },
+    {
+     "reading_order": 118,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 300.57,
+      "t": 646.19,
+      "r": 529.51,
+      "b": 623.87,
+      "w": 228.94,
+      "h": 22.32,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50493,
+      "t": 0.81707,
+      "r": 0.88952,
+      "b": 0.78884
+     },
+     "text": "Chu, Y. H. et al. Low voltage performance of epitaxial BiFeO3 films on Si substrates through lanthanum substitution. Appl. Phys. Lett. 92, 102909 (2008).",
+     "text_len": 153,
+     "level": 2,
+     "element_id": "p8_e118"
+    },
+    {
+     "reading_order": 119,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 300.57,
+      "t": 622.18,
+      "r": 529.63,
+      "b": 607.81,
+      "w": 229.05,
+      "h": 14.37,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50493,
+      "t": 0.78671,
+      "r": 0.88972,
+      "b": 0.76854
+     },
+     "text": "Gardner, D. S., Meindl, J. D. & Saraswat, K. C. Interconnection and electro migration scaling theory. IEEE Trans. Electron Dev. 34, 633-643 (1987).",
+     "text_len": 147,
+     "level": 2,
+     "element_id": "p8_e119"
+    },
+    {
+     "reading_order": 120,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 300.57,
+      "t": 606.18,
+      "r": 548.74,
+      "b": 583.87,
+      "w": 248.17,
+      "h": 22.31,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50493,
+      "t": 0.76648,
+      "r": 0.92182,
+      "b": 0.73827
+     },
+     "text": "Karube, S., Kondou, K. & Otani, Y. 2016. Experimental observation of spin to charge current conversion at non-magnetic metal/Bi2O3 interfaces. Preprint at https://arxiv.org/abs/1601.04292 (2016).",
+     "text_len": 195,
+     "level": 2,
+     "element_id": "p8_e120"
+    },
+    {
+     "reading_order": 121,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 300.58,
+      "t": 582.19,
+      "r": 548.65,
+      "b": 567.81,
+      "w": 248.07,
+      "h": 14.37,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50494,
+      "t": 0.73614,
+      "r": 0.92167,
+      "b": 0.71796
+     },
+     "text": "Pesin, D. & Balents, L. Mott physics and band topology in materials with strong spin-orbit interaction. Nat. Phys. 6, 376 (2010).",
+     "text_len": 129,
+     "level": 2,
+     "element_id": "p8_e121"
+    },
+    {
+     "reading_order": 122,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 300.58,
+      "t": 566.18,
+      "r": 543.04,
+      "b": 543.81,
+      "w": 242.46,
+      "h": 22.38,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50494,
+      "t": 0.7159,
+      "r": 0.91225,
+      "b": 0.68761
+     },
+     "text": "Rojas-Sánchez, J.-C. et al. Spin to charge conversion at room temperature by spin pumping into a new type of topological insulator: α-Sn films. Phys. Rev. Lett. 116, 096602 (2016).",
+     "text_len": 180,
+     "level": 2,
+     "element_id": "p8_e122"
+    },
+    {
+     "reading_order": 123,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 300.57,
+      "t": 542.18,
+      "r": 549.32,
+      "b": 519.82,
+      "w": 248.75,
+      "h": 22.36,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50493,
+      "t": 0.68555,
+      "r": 0.9228,
+      "b": 0.65728
+     },
+     "text": "Khang, N. H. D., Ueda, Y. & Hai, P. N. A conductive topological insulator with large spin Hall effect for ultralow power spin-orbit torque switching. Nat. Mater. 17, 808-813 (2018).",
+     "text_len": 181,
+     "level": 2,
+     "element_id": "p8_e123"
+    },
+    {
+     "reading_order": 124,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 300.57,
+      "t": 518.18,
+      "r": 544.97,
+      "b": 495.87,
+      "w": 244.4,
+      "h": 22.31,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50493,
+      "t": 0.65521,
+      "r": 0.91549,
+      "b": 0.627
+     },
+     "text": "Cheng, C. et al. Direct observation of spin-to-charge conversion in MoS2 monolayer with spin pumping. Preprint at https://arxiv.org/abs/1510.03451 (2015).",
+     "text_len": 154,
+     "level": 2,
+     "element_id": "p8_e124"
+    },
+    {
+     "reading_order": 125,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 300.57,
+      "t": 494.18,
+      "r": 545.29,
+      "b": 479.81,
+      "w": 244.72,
+      "h": 14.37,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50493,
+      "t": 0.62486,
+      "r": 0.91603,
+      "b": 0.60669
+     },
+     "text": "Wang, G. et al. Spin-orbit engineering in transition metal dichalcogenide alloy monolayers. Nat. Commun. 6, 10110 (2015).",
+     "text_len": 121,
+     "level": 2,
+     "element_id": "p8_e125"
+    },
+    {
+     "reading_order": 126,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 300.57,
+      "t": 478.18,
+      "r": 536.14,
+      "b": 463.81,
+      "w": 235.57,
+      "h": 14.37,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50493,
+      "t": 0.60463,
+      "r": 0.90066,
+      "b": 0.58646
+     },
+     "text": "Kimura, T., Goto, T., Shintani, H., Ishizaka, K., Arima, T. & Tokura, Y. Magnetic control of ferroelectric polarization. Nature 426, 55-58 (2003).",
+     "text_len": 146,
+     "level": 2,
+     "element_id": "p8_e126"
+    },
+    {
+     "reading_order": 127,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 300.57,
+      "t": 462.18,
+      "r": 515.62,
+      "b": 447.81,
+      "w": 215.05,
+      "h": 14.37,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50493,
+      "t": 0.5844,
+      "r": 0.86619,
+      "b": 0.56623
+     },
+     "text": "Mundy, J. A. et al. Atomically engineered ferroic layers yield a roomtemperature magnetoelectric multiferroic. Nature 537, 523 (2016).",
+     "text_len": 134,
+     "level": 2,
+     "element_id": "p8_e127"
+    },
+    {
+     "reading_order": 128,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 300.57,
+      "t": 446.18,
+      "r": 540.48,
+      "b": 423.86,
+      "w": 239.91,
+      "h": 22.32,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50493,
+      "t": 0.56417,
+      "r": 0.90795,
+      "b": 0.53594
+     },
+     "text": "Srisukhumbowornchai, N. & Guruswamy, S. Large magnetostriction in directionally solidified FeGa and FeGaAl alloys. J. Appl. Phys. 90, 5680-5688 (2001).",
+     "text_len": 151,
+     "level": 2,
+     "element_id": "p8_e128"
+    },
+    {
+     "reading_order": 129,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 300.57,
+      "t": 422.18,
+      "r": 544.9,
+      "b": 407.8,
+      "w": 244.33,
+      "h": 14.37,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50493,
+      "t": 0.53382,
+      "r": 0.91537,
+      "b": 0.51564
+     },
+     "text": "Ryu, J., et al. Magnetoelectric properties in piezoelectric and magnetostrictive laminate composites. Jpn J. Appl. Phys. 40, 4948 -4951 (2001).",
+     "text_len": 143,
+     "level": 2,
+     "element_id": "p8_e129"
+    },
+    {
+     "reading_order": 130,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 300.57,
+      "t": 406.17,
+      "r": 550.91,
+      "b": 391.8,
+      "w": 250.34,
+      "h": 14.37,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50493,
+      "t": 0.51358,
+      "r": 0.92547,
+      "b": 0.49541
+     },
+     "text": "Street, M. et al. Increasing the Néel temperature of magnetoelectric chromia for voltage-controlled spintronics. Appl. Phys. Lett. 104, 222402 (2014).",
+     "text_len": 150,
+     "level": 2,
+     "element_id": "p8_e130"
+    },
+    {
+     "reading_order": 131,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 300.57,
+      "t": 390.24,
+      "r": 543.62,
+      "b": 375.87,
+      "w": 243.05,
+      "h": 14.37,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50493,
+      "t": 0.49343,
+      "r": 0.91322,
+      "b": 0.47526
+     },
+     "text": "Wang, J. et al. Magnetoelectric Fe2TeO6 thin films. J. Phys. Condens. Matter 26, 055012 (2014).",
+     "text_len": 95,
+     "level": 2,
+     "element_id": "p8_e131"
+    },
+    {
+     "reading_order": 132,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 300.47,
+      "t": 361.24,
+      "r": 544.35,
+      "b": 290.86,
+      "w": 243.88,
+      "h": 70.37,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50476,
+      "t": 0.45677,
+      "r": 0.91445,
+      "b": 0.36777
+     },
+     "text": "Acknowledgements We are grateful to A. Fert and J.-P. Wang for discussions. We acknowledge F. Rana, D. Schlom and F. Casanova for insights shared with us. We also acknowledge the support of K. Oguz and B. Buford of Intel Corporation for discussions on device integration and metrology. R.R. acknowledges the long-term support of the Quantum Materials programme funded by the US Department of Energy, Office of Basic Energy Sciences, which laid the foundation for the key elements of the work reported in this paper. B.P., Y.-L.H. and R.R. acknowledge support from Semiconductor Research Corporation within the JUMP program.",
+     "text_len": 623,
+     "level": 1,
+     "element_id": "p8_e132"
+    },
+    {
+     "reading_order": 133,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 300.47,
+      "t": 280.23,
+      "r": 539.05,
+      "b": 265.86,
+      "w": 238.58,
+      "h": 14.37,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50476,
+      "t": 0.35433,
+      "r": 0.90555,
+      "b": 0.33616
+     },
+     "text": "Reviewer information Nature thanks V. Bertacco, Y. Otani and the other anonymous reviewer(s) for their contribution to the peer review of this work.",
+     "text_len": 148,
+     "level": 1,
+     "element_id": "p8_e133"
+    },
+    {
+     "reading_order": 134,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 300.47,
+      "t": 255.22,
+      "r": 552.75,
+      "b": 128.84,
+      "w": 252.28,
+      "h": 126.38,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50476,
+      "t": 0.32271,
+      "r": 0.92856,
+      "b": 0.16291
+     },
+     "text": "Author contributions S.M. identified the use of the inverse spin-orbit effect for electrically transduced spin-logic devices. S.M., D.E.N. and I.A.Y. developed the logic circuits. S.M. developed the scaling laws, physical macro models and interconnect estimates. H.L. developed circuit design techniques and performed the logic-circuit simulations with the physical macro models. S.M. and R.R. developed the material scaling options and coordinated the material growth. S.M. conceptualized the test devices and designed the experiments and measurements for the magnetoelectric and spin-orbit devices. D.E.N. benchmarked the performance of the circuits. C.-C.L., B.P. and T.G. performed the layout of the test devices, processed the devices and identified processing methods for sub-micron-sized magnetoelectric and spin-orbit devices. S.M. and E.B. measured the magnetoelectric devices. S.M. and T.G. measured the spin-orbit devices. B.P., Y.-L.H. and E.B. deposited the samples and performed material characterization under the supervision of R.R. S.M. wrote the manuscript and D.E.N., I.A.Y. and R.R. edited the manuscript. All authors reviewed the manuscript and interpreted the data.",
+     "text_len": 1187,
+     "level": 1,
+     "element_id": "p8_e134"
+    },
+    {
+     "reading_order": 135,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 300.47,
+      "t": 119.2,
+      "r": 507.01,
+      "b": 112.79,
+      "w": 206.54,
+      "h": 6.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50476,
+      "t": 0.15072,
+      "r": 0.85172,
+      "b": 0.14262
+     },
+     "text": "Competing interests The authors declare no competing interests.",
+     "text_len": 63,
+     "level": 1,
+     "element_id": "p8_e135"
+    },
+    {
+     "reading_order": 136,
+     "page": 8,
+     "label": "section_header",
+     "bbox": {
+      "l": 300.47,
+      "t": 103.2,
+      "r": 373.84,
+      "b": 96.79,
+      "w": 73.37,
+      "h": 6.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50476,
+      "t": 0.13049,
+      "r": 0.62801,
+      "b": 0.12238
+     },
+     "text": "Additional information",
+     "text_len": 22,
+     "level": 1,
+     "element_id": "p8_e136"
+    },
+    {
+     "reading_order": 137,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 300.47,
+      "t": 95.2,
+      "r": 529.57,
+      "b": 80.84,
+      "w": 229.1,
+      "h": 14.37,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50476,
+      "t": 0.12037,
+      "r": 0.88962,
+      "b": 0.10222
+     },
+     "text": "Supplementary information is available for this paper at https://doi.org/ 10.1038/s41586-018-0770-2.",
+     "text_len": 100,
+     "level": 1,
+     "element_id": "p8_e137"
+    },
+    {
+     "reading_order": 138,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 300.47,
+      "t": 79.2,
+      "r": 545.85,
+      "b": 64.83,
+      "w": 245.38,
+      "h": 14.37,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50476,
+      "t": 0.10014,
+      "r": 0.91697,
+      "b": 0.08197
+     },
+     "text": "Reprints and permissions information is available at http://www.nature.com/ reprints.",
+     "text_len": 85,
+     "level": 1,
+     "element_id": "p8_e138"
+    },
+    {
+     "reading_order": 139,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 300.47,
+      "t": 63.2,
+      "r": 548.44,
+      "b": 40.83,
+      "w": 247.97,
+      "h": 22.37,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50476,
+      "t": 0.07991,
+      "r": 0.92132,
+      "b": 0.05163
+     },
+     "text": "Correspondence and requests for materials should be addressed to S.M. Publisher's note: Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.",
+     "text_len": 206,
+     "level": 1,
+     "element_id": "p8_e139"
+    }
+   ]
+  },
+  {
+   "page_no": 9,
+   "width_pt": 595.276,
+   "height_pt": 790.866,
+   "png": "pages/page_0009.png",
+   "elements": [
+    {
+     "reading_order": 140,
+     "page": 9,
+     "label": "section_header",
+     "bbox": {
+      "l": 42.52,
+      "t": 734.98,
+      "r": 93.4,
+      "b": 725.82,
+      "w": 50.88,
+      "h": 9.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.92934,
+      "r": 0.1569,
+      "b": 0.91775
+     },
+     "text": "Methods",
+     "text_len": 7,
+     "level": 1,
+     "element_id": "p9_e140"
+    },
+    {
+     "reading_order": 141,
+     "page": 9,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 723.22,
+      "r": 294.87,
+      "b": 592.61,
+      "w": 252.35,
+      "h": 130.6,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.91447,
+      "r": 0.49535,
+      "b": 0.74932
+     },
+     "text": "Uniform benchmarking to beyond-CMOS logic options. We adopted the uniform, beyond-CMOS benchmarking method 12 to compare beyond-CMOS options. This method describes the impact of material improvements, device parameters, circuit topology and interconnects on the performance of computing devices. The model is adopted in beyond-CMOS research and includes the following spin-logic devices: (1) spin-torque devices 32,56-58 (spin-transfer-torque domain-wall device, all-spin-logic device, charge spin logic, spin-torque oscillator logic), (2) dipolefield devices (nanomagnetic logic) 59 , and (3) magnetoelectric devices (MESO, spin majority gate, spin-wave device 60 ). We evaluated several digital logic circuits 12 (a fanout-4 inverter, a two-input NAND adder, a 32-bit ripple-carry adder and a 32-bit ALU) to compare the MESO logic with leading beyond-CMOS logic options. We also considered tunnelling field-effect transistors 61,62 , ferroelectric and piezoelectric integration in transistors 63,64 and Mott transistors 65 . See Supplementary Information section F, for a detailed explanation of the benchmarking.",
+     "text_len": 1115,
+     "level": 1,
+     "element_id": "p9_e141"
+    },
+    {
+     "reading_order": 142,
+     "page": 9,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 590.22,
+      "r": 294.82,
+      "b": 535.61,
+      "w": 252.3,
+      "h": 54.6,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.7463,
+      "r": 0.49527,
+      "b": 0.67724
+     },
+     "text": "Vector spin circuit modelling of MESO logic. We verify the functionality of MESO spin logic using an equivalent spin circuit model that describes the magnetization dynamics of the nanomagnet, vector spin injection, spin-to-charge transduction and magnetoelectric switching. The equivalent circuit model is based on vector spin circuit theory (magnetoelectric circuit analysis); see Supplementary Information section B.",
+     "text_len": 418,
+     "level": 1,
+     "element_id": "p9_e142"
+    },
+    {
+     "reading_order": 143,
+     "page": 9,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 533.22,
+      "r": 294.8,
+      "b": 459.62,
+      "w": 252.28,
+      "h": 73.6,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.67422,
+      "r": 0.49523,
+      "b": 0.58116
+     },
+     "text": "The intrinsic resistance of the ISOC current source is derived from the conductivity of the interconnect and the ISOC conversion layers. The nanomagnet is connected to a control transistor operating as a power supply and shared among several MESO devices. We have also included the resistance and capacitance parasitics of the ground contact. The conductance across the magnet to the spin injection layer is modelled as a 4 × 4 matrix that relates the four-component charge and spin voltages to the injected four-component charge and spin currents 31,32,66 . The current injected at the nanomagnet-ferromagnet interface is given by",
+     "text_len": 631,
+     "level": 1,
+     "element_id": "p9_e143"
+    },
+    {
+     "reading_order": 144,
+     "page": 9,
+     "label": "formula",
+     "bbox": {
+      "l": 73.91,
+      "t": 450.54,
+      "r": 294.43,
+      "b": 402.78,
+      "w": 220.52,
+      "h": 47.76,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.12416,
+      "t": 0.56968,
+      "r": 0.49461,
+      "b": 0.50929
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p9_e144"
+    },
+    {
+     "reading_order": 145,
+     "page": 9,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 395.97,
+      "r": 294.88,
+      "b": 341.36,
+      "w": 252.36,
+      "h": 54.6,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.50068,
+      "r": 0.49537,
+      "b": 0.43163
+     },
+     "text": "where R is the rotation matrix that accounts for the magnetization direction of the nanomagnet, and Isi and Vsi, i = {x, y, z}, are the components of the spin current and voltage, respectively. GSL, GFL, G11, VN and VF are the conductance elements for the Slonczewski torque, field-like torque, conductance, voltage at the normal metal and voltage at the ferromagnet, correspondingly. See Supplementary Information sections B and C for a detailed explanation of the model.",
+     "text_len": 472,
+     "level": 1,
+     "element_id": "p9_e145"
+    },
+    {
+     "reading_order": 146,
+     "page": 9,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 338.97,
+      "r": 294.88,
+      "b": 246.36,
+      "w": 252.36,
+      "h": 92.6,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.42861,
+      "r": 0.49537,
+      "b": 0.31151
+     },
+     "text": "Stochastic behaviour of magnetoelectric switching versus spin-torque switching. We modelled the magnetization dynamics of the nanomagnet using the LandauLifshitz-Gilbert equation 50 and the Fokker-Planck equation 67,68 . The modified Landau-Lifshitz-Gilbert equation, a phenomenological equation that describes the dynamics of a nanomagnet with magnetic moment unit vector mˆ , was used for Monte Carlo simulations (see Supplementary Table 1 for parameters). We used the Fokker-Planck equation for uniaxial anisotropy parameterized with the angle of the magnetization, which was validated versus the Monte Carlo simulations of the nanomagnets. See Supplementary Information sections C and O for a detailed explanation of the stochastic modelling.",
+     "text_len": 746,
+     "level": 1,
+     "element_id": "p9_e146"
+    },
+    {
+     "reading_order": 147,
+     "page": 9,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 243.97,
+      "r": 294.87,
+      "b": 179.86,
+      "w": 252.35,
+      "h": 64.1,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.30848,
+      "r": 0.49535,
+      "b": 0.22742
+     },
+     "text": "Complete logic family and state elements. The proposed device family is readily extended to a general-purpose computing state machine. A state machine and complete Boolean logic family are the prerequisites for a Turing machine 69 . Majority logic operation can be readily demonstrated because the input of a capacitive node is added to the charge currents converging at the node via the Kirchhoff law. Spin-logic devices with multiple switching inputs (domain-wall, spin-wave or spin-current) have been shown to facilitate the development of majority logic 70",
+     "text_len": 560,
+     "level": 1,
+     "element_id": "p9_e147"
+    },
+    {
+     "reading_order": 148,
+     "page": 9,
+     "label": "picture",
+     "bbox": {
+      "l": 465.95,
+      "t": 770.49,
+      "r": 558.72,
+      "b": 750.91,
+      "w": 92.77,
+      "h": 19.58,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.78275,
+      "t": 0.97424,
+      "r": 0.93859,
+      "b": 0.94948
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p9_e148"
+    },
+    {
+     "reading_order": 149,
+     "page": 9,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 734.11,
+      "r": 558.37,
+      "b": 716.11,
+      "w": 252.22,
+      "h": 18.0,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.92824,
+      "r": 0.938,
+      "b": 0.90548
+     },
+     "text": "and spin state machines 71 . Combined with a random access memory (RAM), a state machine enables general-purpose computing.",
+     "text_len": 123,
+     "level": 1,
+     "element_id": "p9_e149"
+    },
+    {
+     "reading_order": 150,
+     "page": 9,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 713.72,
+      "r": 558.49,
+      "b": 582.72,
+      "w": 252.34,
+      "h": 130.99,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.90245,
+      "r": 0.9382,
+      "b": 0.73681
+     },
+     "text": "CMOS compatibility, memory and control logic. The proposed magnetoelectriclogic scalable spintronic logic device has several desirable features that are com­ patible with CMOS nanoelectronics. First, the MESO device can be integrated in the backend of the CMOS process (that is, between the interconnect layers), allowing CMOS devices to be used for clocking, control and power supply (Supplementary Fig. 19). Second, MESO devices can serve as elements of an embedded memory with 'logic-compatible speed' (known as large-signal memory, commonly implemented with a static RAM), making them usable as on-chip non-volatile memories. Third, the MESO device allows stacking of several layers of magnetic logic in a three-dimensional architecture. Fourth, because the state variable of the interconnect between MESO gates is the charge, MESO logic can be readily interfaced with CMOS circuitry to implement clocking control and power delivery. Owing to its low supply voltage, the MESO device is efficient even with interconnects with high metal resistivity of >100 µΩ cm 72,73 .",
+     "text_len": 1073,
+     "level": 1,
+     "element_id": "p9_e150"
+    },
+    {
+     "reading_order": 151,
+     "page": 9,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 580.72,
+      "r": 558.43,
+      "b": 554.61,
+      "w": 252.28,
+      "h": 26.1,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.73428,
+      "r": 0.9381,
+      "b": 0.70127
+     },
+     "text": "Code availability. The MATLAB codes used to benchmark the circuit performance are available under 'Benchmarking of devices' from the Nanoelectronics Research Initiative, at https://nanohub.org/tools/nribench/browser/trunk/src.",
+     "text_len": 226,
+     "level": 1,
+     "element_id": "p9_e151"
+    },
+    {
+     "reading_order": 152,
+     "page": 9,
+     "label": "section_header",
+     "bbox": {
+      "l": 306.14,
+      "t": 541.01,
+      "r": 379.21,
+      "b": 531.63,
+      "w": 73.07,
+      "h": 9.38,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.68407,
+      "r": 0.63703,
+      "b": 0.67221
+     },
+     "text": "Data availability",
+     "text_len": 17,
+     "level": 1,
+     "element_id": "p9_e152"
+    },
+    {
+     "reading_order": 153,
+     "page": 9,
+     "label": "text",
+     "bbox": {
+      "l": 306.14,
+      "t": 529.72,
+      "r": 558.43,
+      "b": 513.11,
+      "w": 252.28,
+      "h": 16.6,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51428,
+      "t": 0.6698,
+      "r": 0.9381,
+      "b": 0.6488
+     },
+     "text": "The data that support the findings of this study are available from the corresponding author on reasonable request.",
+     "text_len": 115,
+     "level": 1,
+     "element_id": "p9_e153"
+    },
+    {
+     "reading_order": 154,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.24,
+      "t": 499.69,
+      "r": 556.18,
+      "b": 485.31,
+      "w": 249.94,
+      "h": 14.37,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51445,
+      "t": 0.63183,
+      "r": 0.93432,
+      "b": 0.61364
+     },
+     "text": "Behin-Aein, B., Datta, D., Salahuddin, S. & Datta, S. Proposal for an all-spin logic device with built-in memory. Nat. Nanotechnol. 5, 266-270 (2010).",
+     "text_len": 150,
+     "level": 2,
+     "element_id": "p9_e154"
+    },
+    {
+     "reading_order": 155,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.24,
+      "t": 483.69,
+      "r": 545.85,
+      "b": 469.31,
+      "w": 239.61,
+      "h": 14.37,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51445,
+      "t": 0.6116,
+      "r": 0.91697,
+      "b": 0.59341
+     },
+     "text": "Nikonov, D. E., Bourianoff, G. I. & Ghani, T. Proposal of a spin torque majority gate logic. IEEE Electron Device Lett. 32, 1128-1130 (2011).",
+     "text_len": 141,
+     "level": 2,
+     "element_id": "p9_e155"
+    },
+    {
+     "reading_order": 156,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.24,
+      "t": 467.68,
+      "r": 553.9,
+      "b": 453.31,
+      "w": 247.66,
+      "h": 14.37,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51445,
+      "t": 0.59135,
+      "r": 0.93049,
+      "b": 0.57318
+     },
+     "text": "Manipatruni, S., Nikonov, D. E. & Young, I. A. Material targets for scaling all-spin logic. Phys. Rev. Appl. 5, 014002 (2016).",
+     "text_len": 126,
+     "level": 2,
+     "element_id": "p9_e156"
+    },
+    {
+     "reading_order": 157,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.24,
+      "t": 451.68,
+      "r": 551.82,
+      "b": 437.31,
+      "w": 245.58,
+      "h": 14.37,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51445,
+      "t": 0.57112,
+      "r": 0.927,
+      "b": 0.55295
+     },
+     "text": "Imre, A. et al. Majority logic gate for magnetic quantum-dot cellular automata. Science 311, 205-208 (2006).",
+     "text_len": 108,
+     "level": 2,
+     "element_id": "p9_e157"
+    },
+    {
+     "reading_order": 158,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.23,
+      "t": 435.68,
+      "r": 550.69,
+      "b": 421.31,
+      "w": 244.46,
+      "h": 14.37,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51443,
+      "t": 0.55089,
+      "r": 0.9251,
+      "b": 0.53272
+     },
+     "text": "Chumak, A. V., Serga, A. A. & Hillebrands, B. Magnon transistor for all-magnon data processing. Nat. Commun. 5, 4700 (2014).",
+     "text_len": 124,
+     "level": 2,
+     "element_id": "p9_e158"
+    },
+    {
+     "reading_order": 159,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.23,
+      "t": 419.68,
+      "r": 534.58,
+      "b": 405.3,
+      "w": 228.35,
+      "h": 14.37,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51443,
+      "t": 0.53066,
+      "r": 0.89804,
+      "b": 0.51248
+     },
+     "text": "Ionescu, A. M. & Riel, H. Tunnel field-effect transistors as energy-efficient electronic switches. Nature 479, 329-337 (2011).",
+     "text_len": 126,
+     "level": 2,
+     "element_id": "p9_e159"
+    },
+    {
+     "reading_order": 160,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.23,
+      "t": 403.68,
+      "r": 542.79,
+      "b": 389.3,
+      "w": 236.56,
+      "h": 14.37,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51443,
+      "t": 0.51043,
+      "r": 0.91183,
+      "b": 0.49225
+     },
+     "text": "Lu, H. & Seabaugh, A. Tunnel field-effect transistors: state-of-the-art. IEEE J. Electron Devices Soc. 2, 44-49 (2014).",
+     "text_len": 119,
+     "level": 2,
+     "element_id": "p9_e160"
+    },
+    {
+     "reading_order": 161,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.23,
+      "t": 387.67,
+      "r": 535.93,
+      "b": 365.37,
+      "w": 229.7,
+      "h": 22.3,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51443,
+      "t": 0.49018,
+      "r": 0.90031,
+      "b": 0.46199
+     },
+     "text": "Salahuddin, S. & Datta, S. Use of negative capacitance to provide voltage amplification for low power nanoscale devices. Nano Lett. 8, 405-410 (2008).",
+     "text_len": 150,
+     "level": 2,
+     "element_id": "p9_e161"
+    },
+    {
+     "reading_order": 162,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.24,
+      "t": 363.69,
+      "r": 541.53,
+      "b": 341.37,
+      "w": 235.28,
+      "h": 22.32,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51445,
+      "t": 0.45986,
+      "r": 0.90971,
+      "b": 0.43164
+     },
+     "text": "Newns, D., Elmegreen, B., Liu, X. H. & Martyna, G. A low-voltage high-speed electronic switch based on piezoelectric transduction. J. Appl. Phys. 111, 084509 (2012).",
+     "text_len": 165,
+     "level": 2,
+     "element_id": "p9_e162"
+    },
+    {
+     "reading_order": 163,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.24,
+      "t": 339.68,
+      "r": 554.21,
+      "b": 325.31,
+      "w": 247.97,
+      "h": 14.37,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51445,
+      "t": 0.4295,
+      "r": 0.93101,
+      "b": 0.41133
+     },
+     "text": "Son, J., Rajan, S., Stemmer, S. & Allen, S. J. A heterojunction modulation-doped Mott transistor. J. Appl. Phys. 110, 084503 (2011).",
+     "text_len": 132,
+     "level": 2,
+     "element_id": "p9_e163"
+    },
+    {
+     "reading_order": 164,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.24,
+      "t": 323.68,
+      "r": 556.2,
+      "b": 301.36,
+      "w": 249.95,
+      "h": 22.32,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51445,
+      "t": 0.40927,
+      "r": 0.93436,
+      "b": 0.38105
+     },
+     "text": "Srinivasan, S., Diep, V., Behin-Aein, B., Sarkar, A. & Datta, S. Modeling multi-magnet networks interacting via spin currents. In Handbook of Spintronics 1281-1335 (2016).",
+     "text_len": 171,
+     "level": 2,
+     "element_id": "p9_e164"
+    },
+    {
+     "reading_order": 165,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.24,
+      "t": 299.68,
+      "r": 537.58,
+      "b": 285.3,
+      "w": 231.33,
+      "h": 14.37,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51445,
+      "t": 0.37893,
+      "r": 0.90308,
+      "b": 0.36074
+     },
+     "text": "Apalkov, D. M. & Visscher, P. B. Spin-torque switching: Fokker-Planck rate calculation. Phys. Rev. B 72, 180405 (2005).",
+     "text_len": 119,
+     "level": 2,
+     "element_id": "p9_e165"
+    },
+    {
+     "reading_order": 166,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.24,
+      "t": 283.68,
+      "r": 557.13,
+      "b": 261.36,
+      "w": 250.9,
+      "h": 22.32,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51445,
+      "t": 0.3587,
+      "r": 0.93592,
+      "b": 0.33047
+     },
+     "text": "Butler, W. H. et al. Switching distributions for perpendicular spin-torque devices within the macrospin approximation. IEEE Trans. Magnet. 48, 4684-4700 (2012).",
+     "text_len": 160,
+     "level": 2,
+     "element_id": "p9_e166"
+    },
+    {
+     "reading_order": 167,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.24,
+      "t": 259.67,
+      "r": 547.98,
+      "b": 245.3,
+      "w": 241.74,
+      "h": 14.37,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51445,
+      "t": 0.32834,
+      "r": 0.92055,
+      "b": 0.31017
+     },
+     "text": "Shannon, C. E. A universal Turing machine with two internal states. Automata Stud. 34, 157-165 (1957).",
+     "text_len": 102,
+     "level": 2,
+     "element_id": "p9_e167"
+    },
+    {
+     "reading_order": 168,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.23,
+      "t": 243.67,
+      "r": 542.47,
+      "b": 229.3,
+      "w": 236.24,
+      "h": 14.37,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51443,
+      "t": 0.30811,
+      "r": 0.91129,
+      "b": 0.28994
+     },
+     "text": "Amarù, L. et al. Majority logic synthesis. In Proc. International Conference on Computer-Aided Design 79 (ACM, 2018).",
+     "text_len": 117,
+     "level": 2,
+     "element_id": "p9_e168"
+    },
+    {
+     "reading_order": 169,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.23,
+      "t": 227.67,
+      "r": 534.49,
+      "b": 213.3,
+      "w": 228.26,
+      "h": 14.37,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51443,
+      "t": 0.28787,
+      "r": 0.89789,
+      "b": 0.2697
+     },
+     "text": "Manipatruni, S., Nikonov, D. E. & Young, I. A. All-spin nanomagnetic state elements. Appl. Phys. Lett. 103, 063503 (2013).",
+     "text_len": 122,
+     "level": 2,
+     "element_id": "p9_e169"
+    },
+    {
+     "reading_order": 170,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.22,
+      "t": 211.67,
+      "r": 547.8,
+      "b": 197.31,
+      "w": 241.58,
+      "h": 14.36,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51442,
+      "t": 0.26764,
+      "r": 0.92025,
+      "b": 0.24949
+     },
+     "text": "Dutta, S. et al. Highly scaled ruthenium interconnects. IEEE Electron Dev. Lett. 38, 949-951 (2017).",
+     "text_len": 100,
+     "level": 2,
+     "element_id": "p9_e170"
+    },
+    {
+     "reading_order": 171,
+     "page": 9,
+     "label": "list_item",
+     "bbox": {
+      "l": 306.22,
+      "t": 196.72,
+      "r": 546.86,
+      "b": 181.37,
+      "w": 240.64,
+      "h": 15.35,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51442,
+      "t": 0.24874,
+      "r": 0.91867,
+      "b": 0.22933
+     },
+     "text": "Dutta, S. et al. Sub-100 nm 2 cobalt interconnects. IEEE Electron Dev. Lett. 39, 731-734 (2018).",
+     "text_len": 96,
+     "level": 2,
+     "element_id": "p9_e171"
+    }
+   ]
+  }
+ ],
+ "caption_blocks": [
+  {
+   "page": 2,
+   "blocks": [
+    {
+     "text": "Fig. 1 | MESO logic transduction and device operation. a, Transduction of state variables for a cascadable charge-input and charge-output logic device. The magnetoelectric effect transduces the input information to magnetism, and the spin-orbit effect in a topological material transduces the magnetic state variable back to charge. b, MESO device formed with a magnetoelectric capacitor and a topological material. The device comprises a spin-injection layer for spin injection from the ferromagnet to the topological material, an interconnect made of a conductive material, and contacts to the power supply and ground. The logical state of the charge input (current in the +x direction) is inverted by the operation shown to charge output (current in the -x direction). Power for energy gain is injected from the power supply (arrows). Transduction mechanisms are calculated with magnetoelectric-vector SPICE models (see Methods and Supplementary Information). The white arrow represents the magnetization direction of the ferromagnet. Grey arrows represent electric currents at the input and output, power supply and ground. Injection of the power supply current allows for energy gain, large signal gain and the ability to drive larger output devices. c, Magnetoelectric transfer function, showing conversion of the charge input to ferromagnetic magnetization. d, Spin-orbit transfer function, showing conversion of a state to charge output. The response of the device is indicated for small signal gain (black line) and the full signal range (-15 μA to 15 μA; blue arrow). See Supplementary Fig. 1 for the two operating states of the MESO inverter device.",
+     "bbox": {
+      "l": 36.85,
+      "t": 478.95,
+      "r": 289.07,
+      "b": 253.0,
+      "w": 252.22,
+      "h": 225.95,
+      "coord": "pdf_points_bottomleft"
+     },
+     "element_ids": [
+      "p2_e11"
+     ]
+    }
+   ]
+  },
+  {
+   "page": 3,
+   "blocks": [
+    {
+     "text": "Fig. 2 | Operating mechanisms for MESO logic. a, A low-voltage-chargebased MESO interconnect with cascaded logic gates. Two inverters are chained together to form an interconnect. Arrows show the directions of the input and output currents of the device. Materials are as in Fig. 1. b, Operating mechanism for spin-to-charge conversion using a high-SOC material (SOC). A spin injection layer (SIL) is used where needed by the materials' interfaces. Spins injected from the ferromagnet (FM) in the +z direction with spin polarization along the +y (in-plane) direction cause a topologically generated charge current in the SOC layer. Small red and blue arrows indicate up and down spins, respectively, injected from the magnet. The large red arrows show the directions of the charge (Ic) and injected spin (Is) currents. c, Schematic of the k-space for spin-to-charge conversion at a two-dimensional electron gas with high SOC. Injecting a spin current polarized along the +y direction overpopulates the Fermi surface on one side of the topological material compared to the other side. This generates a net charge current in the x direction. The conversion has the right symmetry to convert the information of the ferromagnet to the charge current output. The dashed and solid lines depict the Fermi surface of the material before and after spin injection, respectively. Injected spin density 〈δs〉 along the +y direction leads to charge current Jcs > 0. d, Operating mechanism for a magnetoelectric (ME) material. A ferromagnet is coupled via exchange/strain to the magnetoelectric material. HEB and HEC are the exchange bias and the exchange coupling from the magnetoelectric material to the ferromagnet, respectively, and m is the magnetization of the ferromagnet. e, A classic multiferroicmagnetoelectric material, BiFeO3, is shown with the order parameters: polarization (P), antiferromagnetism (L) and weak canted magnetization (Mc). The electric-field setup in a generic magnetoelectric/ferroelectric material produces exchange bias, coupling and anisotropy modulation for magnetostrictive effects. Yellow and blue spheres depict Bi and Fe atoms in a canonic room-temperature multiferroic BiFeO3. mˆ FM , mˆ c and lˆ represent the unit vectors of magnetization of the coupled layer, the magnetization of the canted spins and the antiferromagnetic axis, respectively. In general, the magneto-electric field generates an exchange coupling along the axial direction of 1ˆ, the AFM axial direction and exchange bias, the direction of weak ferromagnetism mˆ c .",
+     "bbox": {
+      "l": 42.51,
+      "t": 440.73,
+      "r": 293.41,
+      "b": 99.33,
+      "w": 250.9,
+      "h": 341.4,
+      "coord": "pdf_points_bottomleft"
+     },
+     "element_ids": [
+      "p3_e20"
+     ]
+    }
+   ]
+  },
+  {
+   "page": 4,
+   "blocks": [
+    {
+     "text": "Table 1 | Device and material targets to enable 1-10-aJ-class MESO logic",
+     "bbox": {
+      "l": 36.85,
+      "t": 733.21,
+      "r": 307.58,
+      "b": 725.88,
+      "w": 270.73,
+      "h": 7.33,
+      "coord": "pdf_points_bottomleft"
+     },
+     "element_ids": [
+      "p4_e38"
+     ]
+    }
+   ]
+  },
+  {
+   "page": 5,
+   "blocks": [
+    {
+     "text": "Fig. 3 | Energy and delay of the MESO device. Dimensional scaling of MESO logic shows improvement in switching energy as the devices get smaller. a, Cubic scaling with magnet width. b, Effect of the length of the interconnect (30 nm × 30 nm cross-section) on the (inverter) device performance, obtained from interconnect modelling of the MESO device. See Supplementary Information for the effects of the capacitance and length on device performance. We simulated the interconnect with 100 Ω μm -1 resistance and 100 aF μm -1 capacitance per unit length. c, Intrinsic switching energy of MESO (colour bar) with improvements in switching voltage and SOC strength (effective IREE length).",
+     "bbox": {
+      "l": 42.51,
+      "t": 239.43,
+      "r": 289.76,
+      "b": 146.56,
+      "w": 247.25,
+      "h": 92.87,
+      "coord": "pdf_points_bottomleft"
+     },
+     "element_ids": [
+      "p5_e48"
+     ]
+    },
+    {
+     "text": "Fig. 4 | Performance and area of MESO device in comparison with advanced CMOS and leading beyond-CMOS devices. a, Scheme of a MESO majority logic gate used for benchmarking. b, Power per unit area versus throughput (that is, number of 32-bit ALU operations per unit time and unit area, in units of tera-integer operations per second; TIOPS) for CMOS and beyond-CMOS devices. The constraint of a power density not higher than 10 W cm-2 is implemented, when necessary, by inserting an empty area into the optimally laid out circuits. c, Delay of 32-bit ALU operation versus the power-limited area for CMOS and beyond-CMOS devices. Power-limited area comprehends the increase in area of the computational logic to meet the power density contraint of 10 W cm -2 in b. STT-DW, spin-transfer-torque domain-wall device; ASL, all-spin-logic device; CSL, charge spin logic; NML, nanomagnetic logic; SMG, spin majority gate; SWD, spin wave device; CMOS HP, high-performance CMOS at 0.73 V supply; CMOS LV, low-power CMOS operating at 0.3 V supply; FEFET, ferroelectric FET; Thin TFET, 2D-material vertical tunnel FET; TMDTFET, transition-metal dichalcogenide tunnel FET; see Methods.",
+     "bbox": {
+      "l": 306.14,
+      "t": 231.56,
+      "r": 558.43,
+      "b": 72.17,
+      "w": 252.29,
+      "h": 159.39,
+      "coord": "pdf_points_bottomleft"
+     },
+     "element_ids": [
+      "p5_e55"
+     ]
+    }
+   ]
+  },
+  {
+   "page": 6,
+   "blocks": [
+    {
+     "text": "Fig. 6 | Progress of magnetoelectric transduction via MESO towards a voltage of 100 mV. a, Piezoelectric loop (blue) and applied-voltagedependent resistance modulation (ΔR; red) of a Pt/CoFe/Cu/CoFe/LBFO/ LSMO magnetoelectric spin-valve device depict 1 V magnetoelectric switching. The vertical axis shows the phase of the ferro-electric polarization response signal with respect to the input voltage. Purple arrows indicate the sweep direction in the measurement. b, Magnetization Ms of a giant magnetoresistive stack, normalized with the magnetization M of a thin film, as a function of magnetic field strength H. The bottom CoFe electrode of the giant magnetoresistive stack is exchange-coupled to LaBiFeO3, showing exchange-induced anisotropy enhancement and exchange bias. c, Voltage scaling of magnetoelectric switching as a function of multiferroic film thickness. Data points A-D correspond to BiFeO3 films of varying thickness with a SrRuO3 bottom electrode. The switching voltage of the MESO device Vc(ME) is lowered down to 1.0 V using partial chemical substitution of Bi 3+ (with La 3+), interface engineering (electrodes formed with La0.7Sr0.3MnO3) and thickness scaling down to 40 nm. The ultimate goal of the MESO project is to be able to switch magnetoelectrically at 100 mV.",
+     "bbox": {
+      "l": 300.47,
+      "t": 547.06,
+      "r": 552.75,
+      "b": 368.68,
+      "w": 252.28,
+      "h": 178.38,
+      "coord": "pdf_points_bottomleft"
+     },
+     "element_ids": [
+      "p6_e62"
+     ]
+    },
+    {
+     "text": "Fig. 5 | Spin-orbit readout for the MESO device. a, A proof-of-concept device for a spin-orbit readout mechanism in which a spin in a polarized charge current is passed into a spin-orbit material (Pt) from a CoFe ferromagnet. The inset shows a microscope image of the device. b, Charge readout of the spin state of the ferromagnet, measured using a non-local resistance (lateral voltage divided by vertical current). Shown are measured data from devices with various CoFe width and fixed Pt width of 100 nm (dark blue) and 400 nm (light blue). The inset shows linear fits to 1/WFM. c, Projected improvement in the spin-orbit readout through the use of topological insulators with low conductivity and high spin-orbit effects. Vso and σxx are the generated voltage and conductivity, respectively.",
+     "bbox": {
+      "l": 36.85,
+      "t": 336.0,
+      "r": 289.14,
+      "b": 232.98,
+      "w": 252.29,
+      "h": 103.03,
+      "coord": "pdf_points_bottomleft"
+     },
+     "element_ids": [
+      "p6_e59"
+     ]
+    }
+   ]
+  },
+  {
+   "page": 7,
+   "blocks": [
+    {
+     "text": "Table 2 | Material options for MESO logic",
+     "bbox": {
+      "l": 42.52,
+      "t": 733.22,
+      "r": 194.15,
+      "b": 725.89,
+      "w": 151.63,
+      "h": 7.33,
+      "coord": "pdf_points_bottomleft"
+     },
+     "element_ids": [
+      "p7_e64"
+     ]
+    }
+   ]
+  }
+ ],
+ "uncaptioned_pictures": [
+  {
+   "page": 1,
+   "bbox": {
+    "l": 42.27,
+    "t": 754.37,
+    "r": 191.12,
+    "b": 726.19,
+    "w": 148.84,
+    "h": 28.18,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": true,
+   "element_id": "p1_e0"
+  },
+  {
+   "page": 2,
+   "bbox": {
+    "l": 36.15,
+    "t": 770.4,
+    "r": 129.25,
+    "b": 750.9,
+    "w": 93.1,
+    "h": 19.49,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": false,
+   "element_id": "p2_e9"
+  },
+  {
+   "page": 3,
+   "bbox": {
+    "l": 466.26,
+    "t": 770.41,
+    "r": 558.72,
+    "b": 750.99,
+    "w": 92.45,
+    "h": 19.42,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": false,
+   "element_id": "p3_e23"
+  },
+  {
+   "page": 4,
+   "bbox": {
+    "l": 37.14,
+    "t": 769.98,
+    "r": 127.75,
+    "b": 751.34,
+    "w": 90.62,
+    "h": 18.64,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": false,
+   "reason": "below minimum figure size",
+   "element_id": "p4_e36"
+  },
+  {
+   "page": 5,
+   "bbox": {
+    "l": 466.11,
+    "t": 770.55,
+    "r": 558.72,
+    "b": 750.9,
+    "w": 92.61,
+    "h": 19.66,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": false,
+   "element_id": "p5_e51"
+  },
+  {
+   "page": 5,
+   "bbox": {
+    "l": 309.48,
+    "t": 732.07,
+    "r": 539.41,
+    "b": 644.81,
+    "w": 229.93,
+    "h": 87.26,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": true,
+   "element_id": "p5_e52"
+  },
+  {
+   "page": 5,
+   "bbox": {
+    "l": 310.11,
+    "t": 431.01,
+    "r": 555.05,
+    "b": 238.33,
+    "w": 244.94,
+    "h": 192.68,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": true,
+   "element_id": "p5_e54"
+  },
+  {
+   "page": 6,
+   "bbox": {
+    "l": 38.34,
+    "t": 770.16,
+    "r": 127.3,
+    "b": 751.24,
+    "w": 88.96,
+    "h": 18.92,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": false,
+   "element_id": "p6_e57"
+  },
+  {
+   "page": 7,
+   "bbox": {
+    "l": 466.13,
+    "t": 770.36,
+    "r": 558.81,
+    "b": 750.97,
+    "w": 92.67,
+    "h": 19.39,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": false,
+   "element_id": "p7_e77"
+  },
+  {
+   "page": 8,
+   "bbox": {
+    "l": 35.9,
+    "t": 770.36,
+    "r": 128.75,
+    "b": 751.03,
+    "w": 92.85,
+    "h": 19.32,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": false,
+   "element_id": "p8_e78"
+  },
+  {
+   "page": 9,
+   "bbox": {
+    "l": 465.95,
+    "t": 770.49,
+    "r": 558.72,
+    "b": 750.91,
+    "w": 92.77,
+    "h": 19.58,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": false,
+   "element_id": "p9_e148"
+  }
+ ]
+}

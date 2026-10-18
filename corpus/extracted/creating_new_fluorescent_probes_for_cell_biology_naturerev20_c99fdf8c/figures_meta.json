@@ -1,0 +1,301 @@
+{
+ "paper_id": "creating_new_fluorescent_probes_for_cell_biology_naturerev20_c99fdf8c",
+ "source_pdf": "D:\\个人简历及资质材料\\博士期间资料\\学位论文研究资料\\GFP\\! Creating new fluorescent probes for cell biology(NatureRev2002).pdf",
+ "source_sha256": "87c201310cea1413847c60c77b800c501ee4adfa7eda7880648f0b9b7be473cc",
+ "source_name": "! Creating new fluorescent probes for cell biology(NatureRev2002).pdf",
+ "n_pages": 13,
+ "generated_at": "2026-10-18T11:25:52",
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "n_figures": 5,
+ "n_tables": 1,
+ "n_pictures_detected": 5,
+ "n_uncaptioned_pictures": 0,
+ "figures": [
+  {
+   "figure_id": "fig_001",
+   "kind": "figure",
+   "label_form": "Figure 1",
+   "figure_number": 1,
+   "page": 3,
+   "bbox": {
+    "l": 40.2,
+    "t": 747.27,
+    "r": 338.5,
+    "b": 453.41,
+    "w": 298.3,
+    "h": 293.86,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 80,
+    "y0": 189,
+    "x1": 677,
+    "y1": 777,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_001.png",
+   "image_size_px": [
+    597,
+    588
+   ],
+   "caption": "Figure 1 | Recent advances in fluorescent proteins. a | Introduction of the A206K mutant in Aequorea fluorescent proteins (AFPs) suppresses their tendency to dimerize. b | Several rounds of directed evolution and a total of 33 mutations were required to rescue the red fluorescence of a Discosoma red fluorescent protein (RFP) (DsRed or drFP583)-derived monomer following the introduction of interface-disrupting mutations.",
+   "caption_page": 3,
+   "caption_text": "Figure 1 | Recent advances in fluorescent proteins. a | Introduction of the A206K mutant in Aequorea fluorescent proteins (AFPs) suppresses their tendency to dimerize. b | Several rounds of directed evolution and a total of 33 mutations were required to rescue the red fluorescence of a Discosoma red fluorescent protein (RFP) (DsRed or drFP583)-derived monomer following the introduction of interface-disrupting mutations.",
+   "caption_bbox": {
+    "l": 41.97,
+    "t": 443.03,
+    "r": 339.62,
+    "b": 398.25,
+    "w": 297.65,
+    "h": 44.79,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p3_e34"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 10.38
+   },
+   "element_id": "p3_e33",
+   "reading_order": 33
+  },
+  {
+   "figure_id": "fig_002",
+   "kind": "figure",
+   "label_form": "Figure 2",
+   "figure_number": 2,
+   "page": 4,
+   "bbox": {
+    "l": 40.98,
+    "t": 751.8,
+    "r": 341.19,
+    "b": 390.45,
+    "w": 300.22,
+    "h": 361.35,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 82,
+    "y0": 180,
+    "x1": 682,
+    "y1": 903,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_002.png",
+   "image_size_px": [
+    600,
+    723
+   ],
+   "caption": "Figure 2 | The biarsenical-tetracysteine system. a | A non-fluorescent membrane-permeable biarsenical dye (ReAsH shown) forms specifically a fluorescent covalent complex with any intracellular protein to which a short tetracysteine-containing peptide (CCPGCC) has been genetically fused. The small size of the biarsenical dyes might be advantageous in those cases where a bulky Aequorea fluorescent protein (AFP) fusion disrupts normal protein function. The arsenical antidote ethanedithiol (EDT) is used to minimize the toxicity of any unbound biarsenical-dye. b | A comparison of the to-scale images of the green fluorescent protein (GFP) and biarsenical-tetracysteine complex. c | Fluorescent biarsenical labels that span the visible spectrum have been synthesized.",
+   "caption_page": 4,
+   "caption_text": "Figure 2 | The biarsenical-tetracysteine system. a | A non-fluorescent membrane-permeable biarsenical dye (ReAsH shown) forms specifically a fluorescent covalent complex with any intracellular protein to which a short tetracysteine-containing peptide (CCPGCC) has been genetically fused. The small size of the biarsenical dyes might be advantageous in those cases where a bulky Aequorea fluorescent protein (AFP) fusion disrupts normal protein function. The arsenical antidote ethanedithiol (EDT) is used to minimize the toxicity of any unbound biarsenical-dye. b | A comparison of the to-scale images of the green fluorescent protein (GFP) and biarsenical-tetracysteine complex. c | Fluorescent biarsenical labels that span the visible spectrum have been synthesized.",
+   "caption_bbox": {
+    "l": 42.84,
+    "t": 380.28,
+    "r": 339.67,
+    "b": 297.49,
+    "w": 296.82,
+    "h": 82.79,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p4_e42"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 10.17
+   },
+   "element_id": "p4_e41",
+   "reading_order": 41
+  },
+  {
+   "figure_id": "fig_003",
+   "kind": "figure",
+   "label_form": "Figure 3",
+   "figure_number": 3,
+   "page": 5,
+   "bbox": {
+    "l": 146.65,
+    "t": 748.38,
+    "r": 550.12,
+    "b": 593.02,
+    "w": 403.47,
+    "h": 155.36,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 293,
+    "y0": 187,
+    "x1": 1100,
+    "y1": 498,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_003.png",
+   "image_size_px": [
+    807,
+    311
+   ],
+   "caption": "Figure 3 | Multicolour pulse-chase biarsenical staining of gap juctions. FlAsH and ReAsH were used to label two temporally separated pools of connexin-43 that had been fused to a tetracysteine-containing peptide (Cx43-4Cys) and then junctional plaque renewal was recorded over time 38 . HeLa cells that were expressing Cx43-4Cys were stained with FlAsH, incubated for 4 h (a,b) or 8 h (c,d), and then stained with ReAsH. Panels a to d show junctional plaques at different stages of renewal, as indicated by the different ratios of FlAsH (green) and ReAsH (red) stains. The green central zones diminish as the time interval between FlAsH and ReAsH staining increases from 4 to 8 h. Scale bar represents 1 µm. Adapted with permission from REF. 38 © 2002 American Association for the Advancement of Science.",
+   "caption_page": 5,
+   "caption_text": "Figure 3 | Multicolour pulse-chase biarsenical staining of gap juctions. FlAsH and ReAsH were used to label two temporally separated pools of connexin-43 that had been fused to a tetracysteine-containing peptide (Cx43-4Cys) and then junctional plaque renewal was recorded over time 38 . HeLa cells that were expressing Cx43-4Cys were stained with FlAsH, incubated for 4 h (a,b) or 8 h (c,d), and then stained with ReAsH. Panels a to d show junctional plaques at different stages of renewal, as indicated by the different ratios of FlAsH (green) and ReAsH (red) stains. The green central zones diminish as the time interval between FlAsH and ReAsH staining increases from 4 to 8 h. Scale bar represents 1 µm. Adapted with permission from REF. 38 © 2002 American Association for the Advancement of Science.",
+   "caption_bbox": {
+    "l": 147.42,
+    "t": 587.73,
+    "r": 551.35,
+    "b": 523.84,
+    "w": 403.93,
+    "h": 63.89,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p5_e50"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 5.29
+   },
+   "element_id": "p5_e49",
+   "reading_order": 49
+  },
+  {
+   "figure_id": "fig_004",
+   "kind": "figure",
+   "label_form": "Figure 4",
+   "figure_number": 4,
+   "page": 7,
+   "bbox": {
+    "l": 146.47,
+    "t": 750.89,
+    "r": 341.46,
+    "b": 455.61,
+    "w": 194.99,
+    "h": 295.28,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 293,
+    "y0": 182,
+    "x1": 683,
+    "y1": 773,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_004.png",
+   "image_size_px": [
+    390,
+    591
+   ],
+   "caption": "Figure 4 | Biochemical modulation of AFP fluorescence. a | Aequorea fluorescent protein (AFP) can be engineered to be directly sensitive to a small molecule of interest. b | Insertion of a conformationally responsive domain into AFP can result in a chimaera in which fluorescence is modulated by the conformational change. c | Alternatively, interacting proteins (or peptides) can be fused to the amino and carboxyl termini of circularly permuted AFP.",
+   "caption_page": 7,
+   "caption_text": "Figure 4 | Biochemical modulation of AFP fluorescence. a | Aequorea fluorescent protein (AFP) can be engineered to be directly sensitive to a small molecule of interest. b | Insertion of a conformationally responsive domain into AFP can result in a chimaera in which fluorescence is modulated by the conformational change. c | Alternatively, interacting proteins (or peptides) can be fused to the amino and carboxyl termini of circularly permuted AFP.",
+   "caption_bbox": {
+    "l": 147.42,
+    "t": 445.95,
+    "r": 340.42,
+    "b": 372.66,
+    "w": 193.0,
+    "h": 73.29,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p7_e72"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 9.66
+   },
+   "element_id": "p7_e71",
+   "reading_order": 71
+  },
+  {
+   "figure_id": "fig_005",
+   "kind": "figure",
+   "label_form": "Figure 5",
+   "figure_number": 5,
+   "page": 8,
+   "bbox": {
+    "l": 146.85,
+    "t": 748.28,
+    "r": 551.29,
+    "b": 505.1,
+    "w": 404.44,
+    "h": 243.18,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 294,
+    "y0": 187,
+    "x1": 1103,
+    "y1": 674,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_005.png",
+   "image_size_px": [
+    809,
+    487
+   ],
+   "caption": "Figure 5 | The general design of FRET-based fluorescent probes. a | An intermolecular fluorescence resonance energy transfer (FRET)-based probe consists of two different proteins (X and Y) that are labelled with cyan fluorescent protein (CFP) and yellow fluorescent protein (YFP), respectively, which interact and bring the fluorophores into close proximity, thereby increasing the FRET efficiency. b | An intramolecular FRET-based probe consists of either a cleavable linker or a conformationally responsive region sandwiched between a FRET pair. c | Cameleon is an intramolecular FRET-based probe that is used to measure intracellular Ca 2+ . d | Intramolecular phosphorylation-sensitive FRET probes have been constructed with specificities for various different kinases. Arg, arginine; CaM, calmodulin; Lys, lysine; pS, phosphoserine; pT, phosphothreonine; pY, phosphotyrosine. Figure 5, part c is reprinted with permission from REF. 105 Nature© (1997) Macmillan Magazines Ltd. Figure 5, part d is reproduced with permission from REFS 116,118© 2002, National Academy of Sciences.",
+   "caption_page": 8,
+   "caption_text": "Figure 5 | The general design of FRET-based fluorescent probes. a | An intermolecular fluorescence resonance energy transfer (FRET)-based probe consists of two different proteins (X and Y) that are labelled with cyan fluorescent protein (CFP) and yellow fluorescent protein (YFP), respectively, which interact and bring the fluorophores into close proximity, thereby increasing the FRET efficiency. b | An intramolecular FRET-based probe consists of either a cleavable linker or a conformationally responsive region sandwiched between a FRET pair. c | Cameleon is an intramolecular FRET-based probe that is used to measure intracellular Ca 2+ . d | Intramolecular phosphorylation-sensitive FRET probes have been constructed with specificities for various different kinases. Arg, arginine; CaM, calmodulin; Lys, lysine; pS, phosphoserine; pT, phosphothreonine; pY, phosphotyrosine. Figure 5, part c is reprinted with permission from REF. 105 Nature© (1997) Macmillan Magazines Ltd. Figure 5, part d is reproduced with permission from REFS 116,118© 2002, National Academy of Sciences.",
+   "caption_bbox": {
+    "l": 147.69,
+    "t": 496.93,
+    "r": 551.3,
+    "b": 414.04,
+    "w": 403.61,
+    "h": 82.89,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p8_e82"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 8.17
+   },
+   "element_id": "p8_e81",
+   "reading_order": 81
+  }
+ ],
+ "tables": [
+  {
+   "table_id": "table_001",
+   "page": 6,
+   "bbox": {
+    "l": 146.61,
+    "t": 750.82,
+    "r": 553.17,
+    "b": 650.34,
+    "w": 406.56,
+    "h": 100.48,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p6_e61"
+  }
+ ]
+}

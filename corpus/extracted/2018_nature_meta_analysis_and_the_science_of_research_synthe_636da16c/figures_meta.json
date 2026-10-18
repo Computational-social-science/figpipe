@@ -1,0 +1,156 @@
+{
+ "paper_id": "2018_nature_meta_analysis_and_the_science_of_research_synthe_636da16c",
+ "source_pdf": "D:\\2025-Computational Social Science\\!  2018-Nature-Meta-analysis and the science of research synthesis.pdf",
+ "source_sha256": "64e46310ca77cae479584b6364c402ceded3eed8f705399922838728f228e4c7",
+ "source_name": "!  2018-Nature-Meta-analysis and the science of research synthesis.pdf",
+ "n_pages": 8,
+ "generated_at": "2026-10-18T11:21:47",
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "n_figures": 2,
+ "n_tables": 1,
+ "n_pictures_detected": 10,
+ "n_uncaptioned_pictures": 8,
+ "figures": [
+  {
+   "figure_id": "fig_001",
+   "kind": "box",
+   "label_form": "Box 1",
+   "figure_number": 1,
+   "page": 2,
+   "bbox": {
+    "l": 299.4,
+    "t": 687.91,
+    "r": 545.07,
+    "b": 543.14,
+    "w": 245.66,
+    "h": 144.77,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 599,
+    "y0": 189,
+    "x1": 1090,
+    "y1": 478,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_001.png",
+   "image_size_px": [
+    491,
+    289
+   ],
+   "caption": "Box 1 Figure | Milestones in the history of meta-analysis. The red line shows the number of papers from a Scopus search; the dashed component indicates the expected future trajectory. The milestone publications 12,16,17,19,74,83,86,87,95-100 are chosen on the basis of two main criteria-precedence and influence (for these criteria, we relied heavily on refs 93 and 94).",
+   "caption_page": 2,
+   "caption_text": "Box 1 Figure | Milestones in the history of meta-analysis. The red line shows the number of papers from a Scopus search; the dashed component indicates the expected future trajectory. The milestone publications 12,16,17,19,74,83,86,87,95-100 are chosen on the basis of two main criteria-precedence and influence (for these criteria, we relied heavily on refs 93 and 94).",
+   "caption_bbox": {
+    "l": 300.8,
+    "t": 366.85,
+    "r": 536.29,
+    "b": 307.24,
+    "w": 235.48,
+    "h": 59.61,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p2_e18"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 176.29
+   },
+   "element_id": "p2_e17",
+   "reading_order": 17
+  },
+  {
+   "figure_id": "fig_002",
+   "kind": "figure",
+   "label_form": "Figure 1",
+   "figure_number": 1,
+   "page": 3,
+   "bbox": {
+    "l": 43.92,
+    "t": 727.67,
+    "r": 557.57,
+    "b": 453.53,
+    "w": 513.65,
+    "h": 274.14,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 88,
+    "y0": 109,
+    "x1": 1115,
+    "y1": 658,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_002.png",
+   "image_size_px": [
+    1027,
+    549
+   ],
+   "caption": "Figure 1 | Various charts and plots common to meta-analysis.",
+   "caption_page": 3,
+   "caption_text": "Figure 1 | Various charts and plots common to meta-analysis.",
+   "caption_bbox": {
+    "l": 42.52,
+    "t": 447.71,
+    "r": 256.95,
+    "b": 440.34,
+    "w": 214.43,
+    "h": 7.37,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p3_e26"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 5.82
+   },
+   "element_id": "p3_e25",
+   "reading_order": 25
+  }
+ ],
+ "tables": [
+  {
+   "table_id": "table_001",
+   "page": 4,
+   "bbox": {
+    "l": 299.36,
+    "t": 705.08,
+    "r": 552.99,
+    "b": 459.99,
+    "w": 253.62,
+    "h": 245.09,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": "Table 1 | Development of systematic reviews and meta-analyses in EEC",
+   "caption_bbox": {
+    "l": 300.48,
+    "t": 724.63,
+    "r": 538.03,
+    "b": 707.31,
+    "w": 237.55,
+    "h": 17.33,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_page": 4,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": 2.23,
+    "paired": true
+   },
+   "element_id": "p4_e38"
+  }
+ ]
+}

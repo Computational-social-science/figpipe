@@ -1,0 +1,99 @@
+{
+  "about": "Which figpipe decisions are genuinely judgemental, and which are exact. Only the judgemental ones are candidates for a decision model.",
+  "n_total": 10,
+  "n_deterministic": 5,
+  "n_candidate_for_model": 4,
+  "judgements": [
+    {
+      "id": "J01",
+      "where": "figpipe/figdetect.py",
+      "question": "Which page region is a figure?",
+      "mechanism": "caption-anchored: find 'Fig. N |' then take the contiguous ink block above",
+      "deterministic": false,
+      "accuracy_known": "partially -- 5/5 visually verified on one paper; 2 known mis-pairs enumerated in tests/test_extraction.py",
+      "candidate_for_model": true
+    },
+    {
+      "id": "J02",
+      "where": "scripts/extract_corpus.py",
+      "question": "Which caption belongs to which figure?",
+      "mechanism": "nearest caption below with horizontal overlap, plus a gap bound per kind",
+      "deterministic": false,
+      "accuracy_known": "no -- 196/196 paired but only spot-checked; 2 known mis-pairs",
+      "candidate_for_model": true
+    },
+    {
+      "id": "J03",
+      "where": "scripts/caption_features.py",
+      "question": "Is the opening sentence an overview or the start of a panel walk?",
+      "mechanism": "regex: not-a-panel-marker AND not-a-statistic",
+      "deterministic": false,
+      "accuracy_known": "no -- rules pinned by tests, accuracy against human labels unmeasured",
+      "candidate_for_model": true
+    },
+    {
+      "id": "J04",
+      "where": "figpipe/figuretypes.py",
+      "question": "What TYPE of figure is this?",
+      "mechanism": "ordered regex rules over the caption, then aspect ratio",
+      "deterministic": false,
+      "accuracy_known": "no -- 105/275 (38 %) land in 'unclassified'",
+      "candidate_for_model": true
+    },
+    {
+      "id": "J05",
+      "where": "scripts/derive_rules.py",
+      "question": "Is this measured value physically impossible?",
+      "mechanism": "hard bounds: width <= page width, font >= 2 pt",
+      "deterministic": true,
+      "accuracy_known": "exact -- it is a physical constraint",
+      "candidate_for_model": false
+    },
+    {
+      "id": "J06",
+      "where": "figpipe/qc.py",
+      "question": "Is a truncated axis a FAIL or a WARN?",
+      "mechanism": "categorical (barh + explicit ticks) -> WARN, else FAIL",
+      "deterministic": true,
+      "accuracy_known": "exact -- structural test on the source",
+      "candidate_for_model": false
+    },
+    {
+      "id": "J07",
+      "where": "figpipe/colourcheck.py",
+      "question": "Is this colour map a rainbow?",
+      "mechanism": "hue bins plus lightness direction reversals from the rendered pixels",
+      "deterministic": true,
+      "accuracy_known": "measured -- jet=True, viridis/cividis=False, pinned by test",
+      "candidate_for_model": false
+    },
+    {
+      "id": "J08",
+      "where": "figpipe/style.py",
+      "question": "Are the rcParams compliant?",
+      "mechanism": "equality against the specification",
+      "deterministic": true,
+      "accuracy_known": "exact",
+      "candidate_for_model": false
+    },
+    {
+      "id": "J09",
+      "where": "scripts/slim.py",
+      "question": "Is this path regenerable?",
+      "mechanism": "explicit allow-list of paths, guarded by figpipe/sources.py",
+      "deterministic": true,
+      "accuracy_known": "exact -- a path either matches the list or does not",
+      "candidate_for_model": false
+    },
+    {
+      "id": "J10",
+      "where": "knowledge/layout_rules.json",
+      "question": "Should this rule be enforced, or only observed?",
+      "mechanism": "human classification: specification vs observed practice",
+      "deterministic": false,
+      "accuracy_known": "no -- this is a scientific judgement about what a rule MEANS",
+      "candidate_for_model": false,
+      "why_not": "A model must not decide which of its own findings counts as a requirement. That is the H02 mistake with extra steps."
+    }
+  ]
+}

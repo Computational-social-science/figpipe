@@ -1,0 +1,6640 @@
+{
+ "paper_id": "2016_nature_misspent_youth_vol_538_pp_427_455_144de5d1",
+ "source_pdf": "D:\\云同步备份\\human hyper-cooperation\\! 2016-Nature_Misspent youth_vol. 538_pp. 427-455.pdf",
+ "source_sha256": "22494ebd3c1143abce5de2ae0948bb8126614785ba8929eb6889cd3e466bec4c",
+ "source_name": "! 2016-Nature_Misspent youth_vol. 538_pp. 427-455.pdf",
+ "n_pages": 14,
+ "page_size_pt": [
+  595.28,
+  782.36
+ ],
+ "coordinate_note": "bbox is PDF points with origin at the BOTTOM-LEFT, y increasing upward; bbox_norm divides by page size.",
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "generated_at": "2026-10-18T11:24:21",
+ "pages": [
+  {
+   "page_no": 1,
+   "width_pt": 595.276,
+   "height_pt": 782.362,
+   "png": "pages/page_0001.png",
+   "elements": [
+    {
+     "reading_order": 0,
+     "page": 1,
+     "label": "section_header",
+     "bbox": {
+      "l": 117.05,
+      "t": 741.62,
+      "r": 483.9,
+      "b": 675.5,
+      "w": 366.86,
+      "h": 66.12,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.19663,
+      "t": 0.94792,
+      "r": 0.8129,
+      "b": 0.86341
+     },
+     "text": "THIS WEEK",
+     "text_len": 9,
+     "level": 1,
+     "element_id": "p1_e0"
+    },
+    {
+     "reading_order": 1,
+     "page": 1,
+     "label": "picture",
+     "bbox": {
+      "l": 42.13,
+      "t": 679.98,
+      "r": 164.02,
+      "b": 631.41,
+      "w": 121.9,
+      "h": 48.57,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07077,
+      "t": 0.86914,
+      "r": 0.27554,
+      "b": 0.80706
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p1_e1"
+    },
+    {
+     "reading_order": 2,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 174.22,
+      "t": 671.8,
+      "r": 265.63,
+      "b": 642.42,
+      "w": 91.41,
+      "h": 29.38,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.29267,
+      "t": 0.85868,
+      "r": 0.44623,
+      "b": 0.82113
+     },
+     "text": "HIV Virus analysis clears name of so-called Patient Zero p.428",
+     "text_len": 62,
+     "level": 1,
+     "element_id": "p1_e2"
+    },
+    {
+     "reading_order": 3,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 308.86,
+      "t": 671.8,
+      "r": 380.95,
+      "b": 642.42,
+      "w": 72.09,
+      "h": 29.38,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51885,
+      "t": 0.85868,
+      "r": 0.63996,
+      "b": 0.82113
+     },
+     "text": "WORLD VIEW Election fever points to trouble ahead p.429",
+     "text_len": 55,
+     "level": 1,
+     "element_id": "p1_e3"
+    },
+    {
+     "reading_order": 4,
+     "page": 1,
+     "label": "section_header",
+     "bbox": {
+      "l": 42.52,
+      "t": 616.5,
+      "r": 279.4,
+      "b": 583.69,
+      "w": 236.88,
+      "h": 32.81,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.788,
+      "r": 0.46936,
+      "b": 0.74606
+     },
+     "text": "Misspent youth",
+     "text_len": 14,
+     "level": 1,
+     "element_id": "p1_e4"
+    },
+    {
+     "reading_order": 5,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 579.75,
+      "r": 542.71,
+      "b": 552.36,
+      "w": 500.19,
+      "h": 27.39,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.74103,
+      "r": 0.91169,
+      "b": 0.70602
+     },
+     "text": "It is bad for science when early-career researchers have to work harder, for less reward. Funders and institutions should make fewer demands on them, and provide more support.",
+     "text_len": 175,
+     "level": 1,
+     "element_id": "p1_e5"
+    },
+    {
+     "reading_order": 6,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 33.78,
+      "t": 535.09,
+      "r": 289.18,
+      "b": 432.13,
+      "w": 255.4,
+      "h": 102.96,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.05675,
+      "t": 0.68394,
+      "r": 0.48579,
+      "b": 0.55234
+     },
+     "text": "'T hings are not what they used to be.' How often those in the older generation use this phrase to scold the morals, attitudes and behaviour of younger rivals. And yet, how often do the same people, often in positions of power and responsibility, deny the changes in circumstance that newer generations complain about with justification. So, let's be clear: young scientists today face a harsher, more competitive, stricter, more dispiriting workplace than their bosses and senior colleagues did at the same stages of their own careers. Things are simply not the same as they were back in the day. They are more difficult. In a special issue, Nature examines the problems and the possible fixes.",
+     "text_len": 695,
+     "level": 1,
+     "element_id": "p1_e6"
+    },
+    {
+     "reading_order": 7,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 430.06,
+      "r": 289.22,
+      "b": 327.13,
+      "w": 246.7,
+      "h": 102.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.54969,
+      "r": 0.48586,
+      "b": 0.41813
+     },
+     "text": "The research community - from individual scientists to institutions and funders - must respond. Much has been written, in these pages and elsewhere, about the glut of PhD students and the insecurity of the postdoc years. It is hard, and getting harder, to get a foot in the research door. Which makes it all the more galling that those who rise to the level of principal investigator, perhaps with an opportunity to build their own lab or group, do not receive the focused support they need to flourish, to sustain their hard-won position and convert it to career success. Universities, funders, senior figures: your principal investigators need you to recognize their struggle and introduce concrete changes to help them.",
+     "text_len": 722,
+     "level": 1,
+     "element_id": "p1_e7"
+    },
+    {
+     "reading_order": 8,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 325.06,
+      "r": 289.18,
+      "b": 211.63,
+      "w": 246.66,
+      "h": 113.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.41549,
+      "r": 0.48579,
+      "b": 0.2705
+     },
+     "text": "In the United States, for example, funding success rates for all age brackets are less than half what they were in 1980, so researchers have to spend more time seeking funds. That burden falls most heavily on new faculty members, as our feature on page 446 shows. Young investigators are still learning an onslaught of professional skills - budgeting, grant-writing, managing personnel. They are less likely than their senior colleagues to have support staff, and more likely to have young children, as well as spouses with their own professional obligations. They have less time than ever to do research or ponder big ideas. And all the while, the responsibilities - some unavoidable, some desirable - that are piled onto them, and by delegation onto their postdocs, mount up.",
+     "text_len": 777,
+     "level": 1,
+     "element_id": "p1_e8"
+    },
+    {
+     "reading_order": 9,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 209.56,
+      "r": 289.17,
+      "b": 106.63,
+      "w": 246.65,
+      "h": 102.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.26786,
+      "r": 0.48577,
+      "b": 0.13629
+     },
+     "text": "New faculty members need more flexibility and support than established investigators with smoothly running groups, often staffed by long-term scientists and technicians. Too often, however, these young researchers must address urgent needs - to secure funding and publications - by sacrificing more important goals, such as learning how to run a lab and explore new questions. In Britain, the universities of Nottingham and Birmingham run a joint competitive programme to teach early-career researchers essential leadership skills. Yet one of the applicants' frequently asked questions on the website is, 'How can researchers justify spending five days away from the lab?'.",
+     "text_len": 673,
+     "level": 1,
+     "element_id": "p1_e9"
+    },
+    {
+     "reading_order": 10,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 104.56,
+      "r": 289.18,
+      "b": 85.63,
+      "w": 246.66,
+      "h": 18.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.13365,
+      "r": 0.48579,
+      "b": 0.10945
+     },
+     "text": "Extreme competition means that researchers have little time for anything not tied directly to getting ahead. This makes them conservative,",
+     "text_len": 138,
+     "level": 1,
+     "element_id": "p1_e10"
+    },
+    {
+     "reading_order": 11,
+     "page": 1,
+     "label": "picture",
+     "bbox": {
+      "l": 41.39,
+      "t": 78.41,
+      "r": 165.71,
+      "b": 35.39,
+      "w": 124.33,
+      "h": 43.02,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06953,
+      "t": 0.10022,
+      "r": 0.27838,
+      "b": 0.04523
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p1_e11"
+    },
+    {
+     "reading_order": 12,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 209.37,
+      "t": 83.56,
+      "r": 289.13,
+      "b": 33.13,
+      "w": 79.76,
+      "h": 50.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.35172,
+      "t": 0.1068,
+      "r": 0.48571,
+      "b": 0.04235
+     },
+     "text": "rather than ambitious. Scientific assessment often comes down to totting up publications and citations, which are most easily gained by forging deeply into a narrow field of research. This steers researchers into the projects most likely to produce scientific papers, often making tidy incremental advances; those who embark on open questions risk stepping off the track to tenure. That is not how science should work.",
+     "text_len": 418,
+     "level": 1,
+     "element_id": "p1_e12"
+    },
+    {
+     "reading_order": 13,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 311.81,
+      "t": 482.56,
+      "r": 558.52,
+      "b": 463.63,
+      "w": 246.71,
+      "h": 18.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.52381,
+      "t": 0.6168,
+      "r": 0.93825,
+      "b": 0.5926
+     },
+     "text": "Efforts are under way to fix the problem. The Global Young Academy, founded in 2010, aims to give young scientists a voice in policy, and to",
+     "text_len": 140,
+     "level": 1,
+     "element_id": "p1_e13"
+    },
+    {
+     "reading_order": 14,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 311.81,
+      "t": 453.28,
+      "r": 385.11,
+      "b": 399.4,
+      "w": 73.3,
+      "h": 53.88,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.52381,
+      "t": 0.57937,
+      "r": 0.64694,
+      "b": 0.51051
+     },
+     "text": "\"Researchers have little time for anything not tied directly to getting ahead.\"",
+     "text_len": 79,
+     "level": 1,
+     "element_id": "p1_e14"
+    },
+    {
+     "reading_order": 15,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 399.69,
+      "t": 461.56,
+      "r": 558.47,
+      "b": 390.13,
+      "w": 158.78,
+      "h": 71.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.67144,
+      "t": 0.58996,
+      "r": 0.93817,
+      "b": 0.49866
+     },
+     "text": "assess opportunities and challenges for career development. A Careers Feature on page 543 interviews leaders from three even newer non-profit groups created to improve the environment for junior researchers. New faculty members and junior researchers every­where must find ways to stand firm and speak out.",
+     "text_len": 306,
+     "level": 1,
+     "element_id": "p1_e15"
+    },
+    {
+     "reading_order": 16,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 311.81,
+      "t": 388.06,
+      "r": 558.49,
+      "b": 285.13,
+      "w": 246.68,
+      "h": 102.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.52381,
+      "t": 0.49601,
+      "r": 0.9382,
+      "b": 0.36445
+     },
+     "text": "Those with power to make changes must do so. First, they must provide embedded support for young scientists - improved training and shared access to technical help, administrative assistance, data management and grant-writing resources. Such support is expensive, so it is currently most evident at well-endowed institutions such as the Howard Hughes Medical Institute's Janelia Research Campus in Virginia. More funders and institutions must recognize that this support is not gold plating or paying lip service to grumbles about workload. It is an essential part of modern research, and necessary compensation for the demands that institutions place on modern researchers.",
+     "text_len": 674,
+     "level": 1,
+     "element_id": "p1_e16"
+    },
+    {
+     "reading_order": 17,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 311.81,
+      "t": 283.06,
+      "r": 558.5,
+      "b": 201.13,
+      "w": 246.69,
+      "h": 81.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.52381,
+      "t": 0.3618,
+      "r": 0.93822,
+      "b": 0.25708
+     },
+     "text": "Second, those demands must change. Comment pieces on pages 451 and 453 address how to give academic researchers the freedom to pursue discoveries that matter over work that mostly lengthens publication lists. Funders and institutions should challenge the tyranny of metrics - such as the misapplied impact factor and the pressure to publish. They should develop alternatives to recognize and reward the unquestioned talent in a generation of scientists betrayed by a system no longer fit for purpose. ■",
+     "text_len": 502,
+     "level": 1,
+     "element_id": "p1_e17"
+    },
+    {
+     "reading_order": 18,
+     "page": 1,
+     "label": "section_header",
+     "bbox": {
+      "l": 311.81,
+      "t": 172.0,
+      "r": 537.29,
+      "b": 143.88,
+      "w": 225.47,
+      "h": 28.13,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.52381,
+      "t": 0.21985,
+      "r": 0.90259,
+      "b": 0.1839
+     },
+     "text": "Crashing success",
+     "text_len": 16,
+     "level": 1,
+     "element_id": "p1_e18"
+    },
+    {
+     "reading_order": 19,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 311.81,
+      "t": 138.75,
+      "r": 510.86,
+      "b": 111.36,
+      "w": 199.05,
+      "h": 27.39,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.52381,
+      "t": 0.17735,
+      "r": 0.85819,
+      "b": 0.14234
+     },
+     "text": "The loss of the ExoMars lander is not a disaster, but a chance to learn.",
+     "text_len": 72,
+     "level": 1,
+     "element_id": "p1_e19"
+    },
+    {
+     "reading_order": 20,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 310.31,
+      "t": 94.09,
+      "r": 558.46,
+      "b": 33.13,
+      "w": 248.15,
+      "h": 60.96,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.52129,
+      "t": 0.12026,
+      "r": 0.93815,
+      "b": 0.04235
+     },
+     "text": "L anding a space probe on another planet could never be described as routine, but the mood at the European Space Agency (ESA) ahead of its Mars-landing attempt last week did seem unusually calm. Despite the mission being explicitly labelled a test of Europe's ability to master some complex technologies (or perhaps because it was only a test), there was little of the anxiety that often accompanies",
+     "text_len": 399,
+     "level": 1,
+     "element_id": "p1_e20"
+    },
+    {
+     "reading_order": 21,
+     "page": 1,
+     "label": "picture",
+     "bbox": {
+      "l": 412.23,
+      "t": 678.02,
+      "r": 550.3,
+      "b": 636.23,
+      "w": 138.07,
+      "h": 41.79,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.6925,
+      "t": 0.86663,
+      "r": 0.92445,
+      "b": 0.81322
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p1_e21"
+    }
+   ]
+  },
+  {
+   "page_no": 2,
+   "width_pt": 595.276,
+   "height_pt": 782.362,
+   "png": "pages/page_0002.png",
+   "elements": [
+    {
+     "reading_order": 22,
+     "page": 2,
+     "label": "picture",
+     "bbox": {
+      "l": 0.49,
+      "t": 780.92,
+      "r": 595.28,
+      "b": 349.33,
+      "w": 594.78,
+      "h": 431.58,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.00082,
+      "t": 0.99816,
+      "r": 1.00001,
+      "b": 0.44651
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p2_e22"
+    },
+    {
+     "reading_order": 23,
+     "page": 2,
+     "label": "picture",
+     "bbox": {
+      "l": 7.08,
+      "t": 290.64,
+      "r": 36.78,
+      "b": 265.61,
+      "w": 29.69,
+      "h": 25.02,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.01189,
+      "t": 0.37149,
+      "r": 0.06179,
+      "b": 0.3395
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p2_e23"
+    },
+    {
+     "reading_order": 24,
+     "page": 2,
+     "label": "section_header",
+     "bbox": {
+      "l": 76.99,
+      "t": 330.5,
+      "r": 523.99,
+      "b": 258.86,
+      "w": 447.0,
+      "h": 71.64,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.12933,
+      "t": 0.42244,
+      "r": 0.88025,
+      "b": 0.33087
+     },
+     "text": "THE PLIGHT OF YOUNG SCIENTISTS",
+     "text_len": 30,
+     "level": 1,
+     "element_id": "p2_e24"
+    },
+    {
+     "reading_order": 25,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 53.7,
+      "t": 255.32,
+      "r": 547.26,
+      "b": 226.86,
+      "w": 493.56,
+      "h": 28.45,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.09021,
+      "t": 0.32635,
+      "r": 0.91934,
+      "b": 0.28997
+     },
+     "text": "A special issue explores how the research enterprise keeps early-career scientists from pursuing the most important work, and what can be done to help.",
+     "text_len": 151,
+     "level": 1,
+     "element_id": "p2_e25"
+    },
+    {
+     "reading_order": 26,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 42.31,
+      "t": 199.2,
+      "r": 206.97,
+      "b": 75.13,
+      "w": 164.66,
+      "h": 124.07,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07108,
+      "t": 0.25461,
+      "r": 0.34769,
+      "b": 0.09603
+     },
+     "text": "Y oung researchers aspire to explain the world and fix its problems - but they are increasingly finding their ambitions thwarted. The challenge comes from the scientific enterprise itself. Grants and permanent positions are scarce, and administrative burdens can be crushing. Scientists, when judged on steady funding or publication streams, pursue projects that are certain to produce a 'publishable unit' even if they do not address big questions. Ultimately, this is bad for science and scientists alike.",
+     "text_len": 507,
+     "level": 1,
+     "element_id": "p2_e26"
+    },
+    {
+     "reading_order": 27,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 73.06,
+      "r": 206.93,
+      "b": 33.13,
+      "w": 164.41,
+      "h": 39.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.09338,
+      "r": 0.34762,
+      "b": 0.04235
+     },
+     "text": "This issue attempts to give young scientists a voice. An infographic on page 444 helps to explain the pressures: funding for basic science has been level or is declining in most countries, but the number of scientists seeking funds has grown. This means that scientists are putting time into preparing grant applications with a lower chance of pay-off. That burden is felt most acutely by young scientists, who often lack administrative experience and resources. A News Feature on page 446 tells the stories of three researchers as they have fought to establish their labs, highlighting the relentless struggle to secure grants and publish more papers.",
+     "text_len": 652,
+     "level": 1,
+     "element_id": "p2_e27"
+    },
+    {
+     "reading_order": 28,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 226.77,
+      "t": 94.06,
+      "r": 382.67,
+      "b": 85.63,
+      "w": 155.9,
+      "h": 8.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.38095,
+      "t": 0.12023,
+      "r": 0.64284,
+      "b": 0.10945
+     },
+     "text": "What's to be done? In a Comment on page 451, four researchers recognized for their innovation propose ways of enabling scientists to pursue promising ideas. They recommend accommodating shifts in research focus, and accepting the temporary interruption in research outputs that such pivots entail. On page 453, two sets of academic administrators describe efforts to wean promotion committees away from an undue focus on paper counts.",
+     "text_len": 434,
+     "level": 1,
+     "element_id": "p2_e28"
+    },
+    {
+     "reading_order": 29,
+     "page": 2,
+     "label": "picture",
+     "bbox": {
+      "l": 216.74,
+      "t": 78.06,
+      "r": 341.17,
+      "b": 35.38,
+      "w": 124.44,
+      "h": 42.69,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.3641,
+      "t": 0.09977,
+      "r": 0.57313,
+      "b": 0.04522
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p2_e29"
+    },
+    {
+     "reading_order": 30,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 394.02,
+      "t": 104.56,
+      "r": 558.45,
+      "b": 33.13,
+      "w": 164.44,
+      "h": 71.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66191,
+      "t": 0.13365,
+      "r": 0.93814,
+      "b": 0.04235
+     },
+     "text": "On page 543, the Careers section presents voices from three erstwhile researchers who have each left the bench to fix the scientific enterprise. But as the Editorial on page 427 argues, it is up to everyone - young and old - to ensure that the next generation of scientists is not lost. ■",
+     "text_len": 288,
+     "level": 1,
+     "element_id": "p2_e30"
+    }
+   ]
+  },
+  {
+   "page_no": 3,
+   "width_pt": 595.276,
+   "height_pt": 782.362,
+   "png": "pages/page_0003.png",
+   "elements": [
+    {
+     "reading_order": 31,
+     "page": 3,
+     "label": "section_header",
+     "bbox": {
+      "l": 33.31,
+      "t": 725.8,
+      "r": 554.11,
+      "b": 580.14,
+      "w": 520.8,
+      "h": 145.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.05596,
+      "t": 0.9277,
+      "r": 0.93085,
+      "b": 0.74152
+     },
+     "text": "UNDER PRESSURE",
+     "text_len": 14,
+     "level": 1,
+     "element_id": "p3_e31"
+    },
+    {
+     "reading_order": 32,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 216.56,
+      "t": 596.65,
+      "r": 371.14,
+      "b": 567.46,
+      "w": 154.58,
+      "h": 29.19,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.3638,
+      "t": 0.76263,
+      "r": 0.62348,
+      "b": 0.72532
+     },
+     "text": "BY BRENDAN MAHER AND MIQUEL SUREDA ANFRES DESIGN BY JASIEK KRZYSZTOFIAK",
+     "text_len": 71,
+     "level": 1,
+     "element_id": "p3_e32"
+    },
+    {
+     "reading_order": 33,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 216.56,
+      "t": 554.41,
+      "r": 366.16,
+      "b": 504.1,
+      "w": 149.6,
+      "h": 50.31,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.3638,
+      "t": 0.70864,
+      "r": 0.61511,
+      "b": 0.64433
+     },
+     "text": "Scientists and policymakers around the world increasingly worry about the plight of young researchers in academia, and for good reason. Competition for tenure-track",
+     "text_len": 164,
+     "level": 1,
+     "element_id": "p3_e33"
+    },
+    {
+     "reading_order": 34,
+     "page": 3,
+     "label": "section_header",
+     "bbox": {
+      "l": 215.8,
+      "t": 470.68,
+      "r": 312.9,
+      "b": 390.72,
+      "w": 97.1,
+      "h": 79.95,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36252,
+      "t": 0.60161,
+      "r": 0.52564,
+      "b": 0.49941
+     },
+     "text": "FUNDING FALTERS",
+     "text_len": 15,
+     "level": 1,
+     "element_id": "p3_e34"
+    },
+    {
+     "reading_order": 35,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 216.87,
+      "t": 390.39,
+      "r": 372.22,
+      "b": 361.03,
+      "w": 155.35,
+      "h": 29.36,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36432,
+      "t": 0.49899,
+      "r": 0.62529,
+      "b": 0.46146
+     },
+     "text": "Government funding for research has plateaued or declined in many countries, and success rates for grants is now below 20% for some of the most important funders.",
+     "text_len": 162,
+     "level": 1,
+     "element_id": "p3_e35"
+    },
+    {
+     "reading_order": 36,
+     "page": 3,
+     "label": "picture",
+     "bbox": {
+      "l": 213.12,
+      "t": 353.75,
+      "r": 380.05,
+      "b": 32.16,
+      "w": 166.93,
+      "h": 321.58,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.35802,
+      "t": 0.45216,
+      "r": 0.63844,
+      "b": 0.04111
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p3_e36"
+    },
+    {
+     "reading_order": 37,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 37.14,
+      "t": 596.65,
+      "r": 190.2,
+      "b": 502.37,
+      "w": 153.06,
+      "h": 94.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06239,
+      "t": 0.76263,
+      "r": 0.31952,
+      "b": 0.64212
+     },
+     "text": "YOUNG RESEARCHERS ARE HAVING TO FIGHT HARDER THAN PAST GENERATIONS FOR A SMALLER SHARE OF THE ACADEMIC PIE.",
+     "text_len": 107,
+     "level": 1,
+     "element_id": "p3_e37"
+    },
+    {
+     "reading_order": 38,
+     "page": 3,
+     "label": "section_header",
+     "bbox": {
+      "l": 36.85,
+      "t": 470.68,
+      "r": 183.1,
+      "b": 390.72,
+      "w": 146.25,
+      "h": 79.95,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.60161,
+      "r": 0.30759,
+      "b": 0.49941
+     },
+     "text": "PHDS RISING, JOBS FLAT",
+     "text_len": 22,
+     "level": 1,
+     "element_id": "p3_e38"
+    },
+    {
+     "reading_order": 39,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 36.85,
+      "t": 390.39,
+      "r": 191.65,
+      "b": 337.63,
+      "w": 154.8,
+      "h": 52.76,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.49899,
+      "r": 0.32195,
+      "b": 0.43155
+     },
+     "text": "The number of graduates with advanced science and engineering degrees has been rising around the world. The Organisation for Economic Co-operation and Development (OECD) has recorded an increase in the number of science-related doctorates that would typically funnel into academic positions. The leading OECD nations in 2014 were:",
+     "text_len": 330,
+     "level": 1,
+     "element_id": "p3_e39"
+    },
+    {
+     "reading_order": 40,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 149.75,
+      "t": 333.3,
+      "r": 196.39,
+      "b": 319.54,
+      "w": 46.63,
+      "h": 13.76,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.25156,
+      "t": 0.42602,
+      "r": 0.32991,
+      "b": 0.40843
+     },
+     "text": "Average annual increase",
+     "text_len": 23,
+     "level": 1,
+     "element_id": "p3_e40"
+    },
+    {
+     "reading_order": 41,
+     "page": 3,
+     "label": "picture",
+     "bbox": {
+      "l": 35.39,
+      "t": 328.67,
+      "r": 195.17,
+      "b": 195.93,
+      "w": 159.78,
+      "h": 132.74,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.05945,
+      "t": 0.4201,
+      "r": 0.32786,
+      "b": 0.25043
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p3_e41"
+    },
+    {
+     "reading_order": 42,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 37.05,
+      "t": 179.92,
+      "r": 75.26,
+      "b": 143.19,
+      "w": 38.21,
+      "h": 36.74,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06224,
+      "t": 0.22997,
+      "r": 0.12643,
+      "b": 0.18302
+     },
+     "text": "1.6%",
+     "text_len": 4,
+     "level": 1,
+     "element_id": "p3_e42"
+    },
+    {
+     "reading_order": 43,
+     "page": 3,
+     "label": "picture",
+     "bbox": {
+      "l": 36.91,
+      "t": 127.26,
+      "r": 82.64,
+      "b": 92.72,
+      "w": 45.73,
+      "h": 34.54,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.062,
+      "t": 0.16266,
+      "r": 0.13883,
+      "b": 0.11851
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p3_e43"
+    },
+    {
+     "reading_order": 44,
+     "page": 3,
+     "label": "picture",
+     "bbox": {
+      "l": 35.83,
+      "t": 76.85,
+      "r": 79.9,
+      "b": 35.02,
+      "w": 44.07,
+      "h": 41.83,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06019,
+      "t": 0.09823,
+      "r": 0.13422,
+      "b": 0.04476
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p3_e44"
+    },
+    {
+     "reading_order": 45,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 92.19,
+      "t": 179.68,
+      "r": 190.4,
+      "b": 142.52,
+      "w": 98.22,
+      "h": 37.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.15487,
+      "t": 0.22966,
+      "r": 0.31985,
+      "b": 0.18217
+     },
+     "text": "The proportion of young people completing a doctorate of any kind in OECD member countries has doubled from 0.8% less than two decades ago.",
+     "text_len": 139,
+     "level": 1,
+     "element_id": "p3_e45"
+    },
+    {
+     "reading_order": 46,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 92.26,
+      "t": 126.87,
+      "r": 192.41,
+      "b": 89.71,
+      "w": 100.15,
+      "h": 37.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.15499,
+      "t": 0.16216,
+      "r": 0.32323,
+      "b": 0.11467
+     },
+     "text": "In most countries, however, the growth in academic jobs has not kept pace. US universities, for example, create only about 3,000 new full-time positions annually.",
+     "text_len": 162,
+     "level": 1,
+     "element_id": "p3_e46"
+    },
+    {
+     "reading_order": 47,
+     "page": 3,
+     "label": "section_header",
+     "bbox": {
+      "l": 83.69,
+      "t": 72.11,
+      "r": 155.87,
+      "b": 58.03,
+      "w": 72.18,
+      "h": 14.08,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.14059,
+      "t": 0.09217,
+      "r": 0.26184,
+      "b": 0.07417
+     },
+     "text": "YOUNG SCIENTISTS",
+     "text_len": 16,
+     "level": 1,
+     "element_id": "p3_e47"
+    },
+    {
+     "reading_order": 48,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 83.69,
+      "t": 56.63,
+      "r": 158.9,
+      "b": 38.1,
+      "w": 75.21,
+      "h": 18.54,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.14059,
+      "t": 0.07238,
+      "r": 0.26694,
+      "b": 0.0487
+     },
+     "text": "A special issue nature.com/youngscientists Nature positions has surged, and some early-career researchers face tough odds in the quest for funding. As a result, many see lower pay-offs for their efforts in preparing and writing grant applications. Although everyone is under pressure, those just starting out seem to feel the impacts more acutely.",
+     "text_len": 347,
+     "level": 1,
+     "element_id": "p3_e48"
+    },
+    {
+     "reading_order": 49,
+     "page": 3,
+     "label": "section_header",
+     "bbox": {
+      "l": 396.32,
+      "t": 470.68,
+      "r": 546.57,
+      "b": 390.72,
+      "w": 150.25,
+      "h": 79.95,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66578,
+      "t": 0.60161,
+      "r": 0.91818,
+      "b": 0.49941
+     },
+     "text": "TOUGH COMPETITION",
+     "text_len": 17,
+     "level": 1,
+     "element_id": "p3_e49"
+    },
+    {
+     "reading_order": 50,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 397.39,
+      "t": 390.39,
+      "r": 548.17,
+      "b": 337.63,
+      "w": 150.77,
+      "h": 52.76,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66757,
+      "t": 0.49899,
+      "r": 0.92087,
+      "b": 0.43155
+     },
+     "text": "Early-career scientists struggle to compete for grants against researchers who have a better knowledge of the system, more academic and administrative resources and richer publication lists. The Medical Research Council (MRC) - part of Research Councils UK - for example, shows lower success rates for younger scientists.",
+     "text_len": 321,
+     "level": 1,
+     "element_id": "p3_e50"
+    },
+    {
+     "reading_order": 51,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 400.26,
+      "t": 327.69,
+      "r": 518.85,
+      "b": 320.73,
+      "w": 118.59,
+      "h": 6.96,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.67239,
+      "t": 0.41885,
+      "r": 0.87161,
+      "b": 0.40995
+     },
+     "text": "SUCCESS RATE FOR MRC GRANTS (%)",
+     "text_len": 31,
+     "level": 1,
+     "element_id": "p3_e51"
+    },
+    {
+     "reading_order": 52,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 400.4,
+      "t": 315.6,
+      "r": 414.99,
+      "b": 309.64,
+      "w": 14.59,
+      "h": 5.96,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.67263,
+      "t": 0.40339,
+      "r": 0.69714,
+      "b": 0.39578
+     },
+     "text": "AGE:",
+     "text_len": 4,
+     "level": 1,
+     "element_id": "p3_e52"
+    },
+    {
+     "reading_order": 53,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 421.76,
+      "t": 315.64,
+      "r": 441.52,
+      "b": 309.61,
+      "w": 19.76,
+      "h": 6.04,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.70851,
+      "t": 0.40344,
+      "r": 0.74171,
+      "b": 0.39574
+     },
+     "text": "20-39",
+     "text_len": 5,
+     "level": 1,
+     "element_id": "p3_e53"
+    },
+    {
+     "reading_order": 54,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 448.12,
+      "t": 315.64,
+      "r": 487.25,
+      "b": 309.61,
+      "w": 39.14,
+      "h": 6.04,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.75279,
+      "t": 0.40344,
+      "r": 0.81853,
+      "b": 0.39574
+     },
+     "text": "40-49 >50",
+     "text_len": 9,
+     "level": 1,
+     "element_id": "p3_e54"
+    },
+    {
+     "reading_order": 55,
+     "page": 3,
+     "label": "picture",
+     "bbox": {
+      "l": 395.82,
+      "t": 272.95,
+      "r": 563.07,
+      "b": 34.19,
+      "w": 167.25,
+      "h": 238.76,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66494,
+      "t": 0.34888,
+      "r": 0.9459,
+      "b": 0.0437
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p3_e55"
+    },
+    {
+     "reading_order": 56,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 562.17,
+      "t": 263.98,
+      "r": 572.29,
+      "b": 35.5,
+      "w": 10.12,
+      "h": 228.48,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.94439,
+      "t": 0.33741,
+      "r": 0.96139,
+      "b": 0.04538
+     },
+     "text": "SOURCES: OECD; NATURE BIOTECHNOL. 31, 938-941 (2013); GERMAN RESEARCH FOUNDATION; RESEARCH COUNCILS UK; NIH; EUROPEAN RESEARCH COUNCIL; MRC",
+     "text_len": 139,
+     "level": 1,
+     "element_id": "p3_e56"
+    }
+   ]
+  },
+  {
+   "page_no": 4,
+   "width_pt": 595.276,
+   "height_pt": 782.362,
+   "png": "pages/page_0004.png",
+   "elements": [
+    {
+     "reading_order": 57,
+     "page": 4,
+     "label": "picture",
+     "bbox": {
+      "l": 481.77,
+      "t": 762.2,
+      "r": 558.7,
+      "b": 742.79,
+      "w": 76.93,
+      "h": 19.4,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.80932,
+      "t": 0.97423,
+      "r": 0.93856,
+      "b": 0.94942
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p4_e57"
+    },
+    {
+     "reading_order": 58,
+     "page": 4,
+     "label": "picture",
+     "bbox": {
+      "l": 31.66,
+      "t": 727.85,
+      "r": 558.82,
+      "b": 33.64,
+      "w": 527.16,
+      "h": 694.22,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.05319,
+      "t": 0.93032,
+      "r": 0.93876,
+      "b": 0.043
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p4_e58"
+    }
+   ]
+  },
+  {
+   "page_no": 5,
+   "width_pt": 595.276,
+   "height_pt": 782.362,
+   "png": "pages/page_0005.png",
+   "elements": [
+    {
+     "reading_order": 59,
+     "page": 5,
+     "label": "picture",
+     "bbox": {
+      "l": 36.05,
+      "t": 762.2,
+      "r": 113.14,
+      "b": 742.77,
+      "w": 77.09,
+      "h": 19.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06056,
+      "t": 0.97423,
+      "r": 0.19006,
+      "b": 0.94939
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p5_e59"
+    },
+    {
+     "reading_order": 60,
+     "page": 5,
+     "label": "section_header",
+     "bbox": {
+      "l": 111.36,
+      "t": 703.18,
+      "r": 478.24,
+      "b": 680.76,
+      "w": 366.88,
+      "h": 22.42,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.18707,
+      "t": 0.89879,
+      "r": 0.80339,
+      "b": 0.87013
+     },
+     "text": "YOUNG, TALENTED AND",
+     "text_len": 19,
+     "level": 1,
+     "element_id": "p5_e60"
+    },
+    {
+     "reading_order": 61,
+     "page": 5,
+     "label": "section_header",
+     "bbox": {
+      "l": 57.48,
+      "t": 673.8,
+      "r": 540.34,
+      "b": 581.77,
+      "w": 482.86,
+      "h": 92.03,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.09656,
+      "t": 0.86124,
+      "r": 0.90771,
+      "b": 0.74361
+     },
+     "text": "FED-UP",
+     "text_len": 6,
+     "level": 1,
+     "element_id": "p5_e61"
+    },
+    {
+     "reading_order": 62,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 36.85,
+      "t": 556.2,
+      "r": 201.31,
+      "b": 453.13,
+      "w": 164.46,
+      "h": 103.07,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.71092,
+      "r": 0.33818,
+      "b": 0.57918
+     },
+     "text": "M artin Tingley was coming undone. It was late autumn 2014, just over a year into his assistant-professor job at Pennsylvania State University in State College, and he was on an eight-hour drive home after visiting his wife in Boston. He was stressed, exhausted and close to tears. As the traffic zipped past in the dark hours of the early morning, the headlights gave him the surreal feeling that he was inside a video game.",
+     "text_len": 425,
+     "level": 1,
+     "element_id": "p5_e62"
+    },
+    {
+     "reading_order": 63,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 36.85,
+      "t": 451.06,
+      "r": 201.29,
+      "b": 337.63,
+      "w": 164.44,
+      "h": 113.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.57654,
+      "r": 0.33815,
+      "b": 0.43155
+     },
+     "text": "Usually, Tingley thought of himself as a \"pretty stoic guy\" - and on paper, his career was going well. He'd completed a master's degree in statistics and a PhD in Earth science, both at Harvard University. With these, and four years of postdoctoral experience, he had landed a rare tenure-track faculty position. He thought he would soon be successfully combining statistics and climate science to produce the type of interdisciplinary research that funding agencies say they want.",
+     "text_len": 481,
+     "level": 1,
+     "element_id": "p5_e63"
+    },
+    {
+     "reading_order": 64,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 36.85,
+      "t": 335.56,
+      "r": 201.3,
+      "b": 222.13,
+      "w": 164.45,
+      "h": 113.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.42891,
+      "r": 0.33816,
+      "b": 0.28392
+     },
+     "text": "In fact, scientific life was proving tough. He found himself working 60-80 hours per week doing teaching and research. His startup funding had run out, he had yet to secure a major grant and, according to a practice common in US academia, he would not be paid by his university for three summer months. His wife had not been able to move with him, so he was making tiring weekend commutes. It seemed that the pressures had reached unsustainable levels. Something had to give.",
+     "text_len": 475,
+     "level": 1,
+     "element_id": "p5_e64"
+    },
+    {
+     "reading_order": 65,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 36.85,
+      "t": 220.06,
+      "r": 201.3,
+      "b": 64.63,
+      "w": 164.45,
+      "h": 155.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.28128,
+      "r": 0.33816,
+      "b": 0.08261
+     },
+     "text": "Tingley is one of many young scientists who are deeply frustrated with life in research. In September, Nature put a post on Facebook asking scientists who were starting their first independent position to tell us about the challenges that they faced. What followed was a major outpouring of grief. Within a week, nearly 300 scientists from around the world had responded with a candid catalogue of concerns. \"I see many colleagues divorcing, getting burnt out, moving out of science, and I am so tired now,\" wrote one biomedical researcher from Belgium (see 'Suffering in science'). Nature selected three young investigators who voiced the most common frustrations; here, we tell their stories.",
+     "text_len": 694,
+     "level": 1,
+     "element_id": "p5_e65"
+    },
+    {
+     "reading_order": 66,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 36.85,
+      "t": 62.56,
+      "r": 201.28,
+      "b": 33.13,
+      "w": 164.43,
+      "h": 29.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.07996,
+      "r": 0.33813,
+      "b": 0.04235
+     },
+     "text": "But are young scientists whining - or drowning? Our interviewees acknowledge that they are extremely fortunate to have BY KENDALL POWELL",
+     "text_len": 136,
+     "level": 1,
+     "element_id": "p5_e66"
+    },
+    {
+     "reading_order": 67,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 212.6,
+      "t": 556.18,
+      "r": 377.01,
+      "b": 320.47,
+      "w": 164.41,
+      "h": 235.71,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.35715,
+      "t": 0.7109,
+      "r": 0.63334,
+      "b": 0.40962
+     },
+     "text": "Scientists starting labs say that they are under historically high pressure to publish, secure funding and earn permanent positions - leaving precious little time for actual research.",
+     "text_len": 183,
+     "level": 1,
+     "element_id": "p5_e67"
+    },
+    {
+     "reading_order": 68,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 212.6,
+      "t": 293.56,
+      "r": 377.06,
+      "b": 232.63,
+      "w": 164.46,
+      "h": 60.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.35715,
+      "t": 0.37522,
+      "r": 0.63342,
+      "b": 0.29734
+     },
+     "text": "an opportunity to direct their own creative, stimulating careers, and they are hardly the only professionals who are expected to work hard. It's easy for each generation to imagine that things are more difficult for them than they were in the past.",
+     "text_len": 248,
+     "level": 1,
+     "element_id": "p5_e68"
+    },
+    {
+     "reading_order": 69,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 212.6,
+      "t": 230.56,
+      "r": 377.03,
+      "b": 85.63,
+      "w": 164.43,
+      "h": 144.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.35715,
+      "t": 0.2947,
+      "r": 0.63337,
+      "b": 0.10945
+     },
+     "text": "But some data and anecdotal evidence suggest that scientists do face more hurdles in starting research groups now than did many of their senior colleagues 20-30 years ago (see page 444). Chief among those challenges is the unprecedented number competing for funding pools that have remained stagnant or shrunk in the past decade. \"The number of people is at an all-time high, but the number of awards hasn't changed,\" says Jon Lorsch, director of the US National Institute of General Medical Sciences (NIGMS) in Bethesda, Maryland. \"A lot of people with influence on the system recognize this is a serious problem and are trying to fix it.\"",
+     "text_len": 640,
+     "level": 1,
+     "element_id": "p5_e69"
+    },
+    {
+     "reading_order": 70,
+     "page": 5,
+     "label": "picture",
+     "bbox": {
+      "l": 211.34,
+      "t": 78.36,
+      "r": 335.35,
+      "b": 35.68,
+      "w": 124.01,
+      "h": 42.69,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.35503,
+      "t": 0.10016,
+      "r": 0.56335,
+      "b": 0.04561
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p5_e70"
+    },
+    {
+     "reading_order": 71,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 388.35,
+      "t": 556.06,
+      "r": 552.82,
+      "b": 379.63,
+      "w": 164.47,
+      "h": 176.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.65239,
+      "t": 0.71075,
+      "r": 0.92868,
+      "b": 0.48524
+     },
+     "text": "Young scientists and senior scientists alike feel an acute pressure to publish and are weighed down by a growing bureaucratic burden, with little administrative support. They are largely judged on their record of publishing and of winning grants - but without clear targets, they find themselves endlessly churning out paper after paper. The crucial question is whether this is harming science and scientists. Bruce Alberts, a prominent biochemist at the University of California, San Francisco, and former president of the US National Academy of Sciences, says that it is. The current hyper-competitive atmosphere is stifling creativity and pushing scientists \"to do mediocre science\", he says - work that is safe and uninteresting. \"We've got to reward people who do something differently.\"",
+     "text_len": 792,
+     "level": 1,
+     "element_id": "p5_e71"
+    },
+    {
+     "reading_order": 72,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 388.35,
+      "t": 377.56,
+      "r": 552.79,
+      "b": 316.63,
+      "w": 164.45,
+      "h": 60.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.65239,
+      "t": 0.48259,
+      "r": 0.92863,
+      "b": 0.40471
+     },
+     "text": "Our informal survey suggests that the situation is already making research an unwelcoming career. \"Frankly, the job of being a principal investigator and running a lab just looks horrible,\" wrote one neuroscientist from the United States. Tingley wouldn't disagree.",
+     "text_len": 265,
+     "level": 1,
+     "element_id": "p5_e72"
+    },
+    {
+     "reading_order": 73,
+     "page": 5,
+     "label": "section_header",
+     "bbox": {
+      "l": 388.35,
+      "t": 304.66,
+      "r": 487.28,
+      "b": 296.04,
+      "w": 98.93,
+      "h": 8.62,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.65239,
+      "t": 0.38941,
+      "r": 0.81858,
+      "b": 0.37839
+     },
+     "text": "FUNDING FIGHT",
+     "text_len": 13,
+     "level": 1,
+     "element_id": "p5_e73"
+    },
+    {
+     "reading_order": 74,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 388.35,
+      "t": 293.56,
+      "r": 552.8,
+      "b": 211.63,
+      "w": 164.45,
+      "h": 81.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.65239,
+      "t": 0.37522,
+      "r": 0.92864,
+      "b": 0.2705
+     },
+     "text": "Tingley has always had broad interests. At university in Canada, he switched from art history to physics. For his graduate studies, he was drawn to the vibrant research environment at Harvard, in Cambridge, Massachusetts, where he built statistical methods that helped to make sense of data on past climate gathered from sources such as tree rings and ice cores.",
+     "text_len": 362,
+     "level": 1,
+     "element_id": "p5_e74"
+    },
+    {
+     "reading_order": 75,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 388.35,
+      "t": 209.56,
+      "r": 552.8,
+      "b": 117.13,
+      "w": 164.46,
+      "h": 92.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.65239,
+      "t": 0.26786,
+      "r": 0.92864,
+      "b": 0.14971
+     },
+     "text": "By the time he was searching for academic positions, he was already working 60-hour weeks, he says: he would be at work by 8 a.m., go home for dinner, and then pull out his laptop again at night. But by 2013, his research was hitting a high: he had published a statistical analysis in Nature 1 and, after applying for jobs worldwide, was offered a joint appointment in meteorology and statistics at Penn State.",
+     "text_len": 410,
+     "level": 1,
+     "element_id": "p5_e75"
+    },
+    {
+     "reading_order": 76,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 388.35,
+      "t": 115.06,
+      "r": 552.76,
+      "b": 33.13,
+      "w": 164.41,
+      "h": 81.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.65239,
+      "t": 0.14707,
+      "r": 0.92858,
+      "b": 0.04235
+     },
+     "text": "By this point, his wife, Gabrielle, ran the communications programme for Harvard's Research Computing centre in Cambridge. Positions offered to her at Penn State fell far short of her qualifications, and she opted to stay where she was. They were facing the 'twobody problem' - a long-standing stress point for scientists.",
+     "text_len": 322,
+     "level": 1,
+     "element_id": "p5_e76"
+    }
+   ]
+  },
+  {
+   "page_no": 6,
+   "width_pt": 595.276,
+   "height_pt": 782.362,
+   "png": "pages/page_0006.png",
+   "elements": [
+    {
+     "reading_order": 77,
+     "page": 6,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 724.06,
+      "r": 206.98,
+      "b": 621.13,
+      "w": 164.46,
+      "h": 102.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.92548,
+      "r": 0.3477,
+      "b": 0.79392
+     },
+     "text": "Like many first-year assistant professors, Tingley immediately felt pressure to publish in top journals, attract funding and students, and innovate in the classroom. He also knew that his roughly US$200,000 in start-up funding from the university - to cover his summer salary, computing access and more - wouldn't last long, and he applied to the US National Science Foundation for grants. That process was \"heartbreaking\", he says.",
+     "text_len": 432,
+     "level": 1,
+     "element_id": "p6_e77"
+    },
+    {
+     "reading_order": 78,
+     "page": 6,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 619.06,
+      "r": 206.98,
+      "b": 453.13,
+      "w": 164.46,
+      "h": 165.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.79127,
+      "r": 0.3477,
+      "b": 0.57918
+     },
+     "text": "In one instance, he put in a proposal with his collaborator, organic geochemist Jessica Tierney at the University of Arizona in Tucson, for work on proxies for past sea surface temperatures. On the first round of review, the application got two scores of \"excellent\" and two of \"very good\", yet it still fell short of being funded. The two were encouraged to resubmit, which they did. On the next round, the proposal scored worse. \"Part of it is on me, I was unsuccessful,\" Tingley says - but the anecdote shows the frustration that young scientists face when trying to get a research programme off the ground. \"The funding cycle is brutal.\" In the meantime, the pair published the initial stages of the work 2 in an article that has been cited 40 times.",
+     "text_len": 754,
+     "level": 1,
+     "element_id": "p6_e78"
+    },
+    {
+     "reading_order": 79,
+     "page": 6,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 451.06,
+      "r": 206.97,
+      "b": 337.63,
+      "w": 164.45,
+      "h": 113.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.57654,
+      "r": 0.34769,
+      "b": 0.43155
+     },
+     "text": "The views of scientists who responded to Nature revealed a generational divide: many feel that today's senior investigators experienced a more comfortable trajectory in science and now have a competitive advantage. The 'baby boom' scientists, who have longer track records and well-established labs, are in a stronger position to win funds. (In September, Nature asked on Twitter: \"What are the challenges facing young scientists?\" \"Old scientists,\" one respondent shot right back.)",
+     "text_len": 482,
+     "level": 1,
+     "element_id": "p6_e79"
+    },
+    {
+     "reading_order": 80,
+     "page": 6,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 335.56,
+      "r": 206.95,
+      "b": 180.13,
+      "w": 164.43,
+      "h": 155.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.42891,
+      "r": 0.34765,
+      "b": 0.23024
+     },
+     "text": "In December 2014, shortly after his low point in the car, Tingley and his wife took a month-long trip to Australia and Indonesia for some much-needed time together. The next month, Tingley returned to the winter chill at State College and walked across campus feeling as if his head was scraping against the low-hanging clouds. He knew that much of his time was about to be sucked up teaching two advanced courses, leaving little time for research, and he would be back to the tiring commute to see his wife at the weekends. If he didn't get a grant soon, he would have no summer salary. \"My wife and I knew this wasn't a sustainable way for us to live our lives.\"",
+     "text_len": 664,
+     "level": 1,
+     "element_id": "p6_e80"
+    },
+    {
+     "reading_order": 81,
+     "page": 6,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 178.06,
+      "r": 206.98,
+      "b": 33.13,
+      "w": 164.46,
+      "h": 144.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.22759,
+      "r": 0.3477,
+      "b": 0.04235
+     },
+     "text": "Tingley started googling around late at night, and in March, he spied the perfect job posting. Insurance Australia Group in Sydney was looking for someone with experience in meteorology, statistics and climate. He started there two months later, and his wife easily found a position in communications with the University of New South Wales. Now a senior research analyst, Tingley models and quantifies risks from bush fires, cyclones and other storms. The transcontinental move was not without its difficulties, of course - and as a young researcher moving to the private sector, he's had to prove himself all over again.",
+     "text_len": 621,
+     "level": 1,
+     "element_id": "p6_e81"
+    },
+    {
+     "reading_order": 82,
+     "page": 6,
+     "label": "picture",
+     "bbox": {
+      "l": 481.8,
+      "t": 762.04,
+      "r": 558.61,
+      "b": 742.8,
+      "w": 76.81,
+      "h": 19.23,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.80937,
+      "t": 0.97402,
+      "r": 0.93841,
+      "b": 0.94943
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p6_e82"
+    },
+    {
+     "reading_order": 83,
+     "page": 6,
+     "label": "picture",
+     "bbox": {
+      "l": 216.93,
+      "t": 723.84,
+      "r": 558.58,
+      "b": 390.69,
+      "w": 341.65,
+      "h": 333.15,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36442,
+      "t": 0.9252,
+      "r": 0.93835,
+      "b": 0.49937
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p6_e83"
+    },
+    {
+     "reading_order": 84,
+     "page": 6,
+     "label": "section_header",
+     "bbox": {
+      "l": 261.41,
+      "t": 381.03,
+      "r": 515.28,
+      "b": 362.82,
+      "w": 253.87,
+      "h": 18.21,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.43914,
+      "t": 0.48703,
+      "r": 0.86562,
+      "b": 0.46375
+     },
+     "text": "\"The funding cycle is brutal.\"",
+     "text_len": 30,
+     "level": 1,
+     "element_id": "p6_e84"
+    },
+    {
+     "reading_order": 85,
+     "page": 6,
+     "label": "text",
+     "bbox": {
+      "l": 344.8,
+      "t": 357.91,
+      "r": 431.89,
+      "b": 351.17,
+      "w": 87.1,
+      "h": 6.73,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.57923,
+      "t": 0.45747,
+      "r": 0.72553,
+      "b": 0.44886
+     },
+     "text": "MARTIN TINGLEY",
+     "text_len": 14,
+     "level": 1,
+     "element_id": "p6_e85"
+    },
+    {
+     "reading_order": 86,
+     "page": 6,
+     "label": "text",
+     "bbox": {
+      "l": 218.27,
+      "t": 335.56,
+      "r": 382.69,
+      "b": 232.63,
+      "w": 164.43,
+      "h": 102.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36667,
+      "t": 0.42891,
+      "r": 0.64288,
+      "b": 0.29734
+     },
+     "text": "Tingley now advises others to recognize that there are various paths to a successful career. \"It's perfectly legitimate to use your training and skill set in the private sector.\" He isn't missing the stress and high expectations placed on young investigators' shoulders, he says. On a sunny spring Saturday in September, he and his wife head out for a walk on their neighbourhood beach. \"It turns out that weekends are fantastic,\" he says.",
+     "text_len": 439,
+     "level": 1,
+     "element_id": "p6_e86"
+    },
+    {
+     "reading_order": 87,
+     "page": 6,
+     "label": "section_header",
+     "bbox": {
+      "l": 218.27,
+      "t": 220.66,
+      "r": 356.22,
+      "b": 212.04,
+      "w": 137.95,
+      "h": 8.62,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36667,
+      "t": 0.28204,
+      "r": 0.59841,
+      "b": 0.27103
+     },
+     "text": "NEVER GOOD ENOUGH",
+     "text_len": 17,
+     "level": 1,
+     "element_id": "p6_e87"
+    },
+    {
+     "reading_order": 88,
+     "page": 6,
+     "label": "text",
+     "bbox": {
+      "l": 218.27,
+      "t": 209.56,
+      "r": 382.72,
+      "b": 138.13,
+      "w": 164.45,
+      "h": 71.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36667,
+      "t": 0.26786,
+      "r": 0.64293,
+      "b": 0.17656
+     },
+     "text": "Sometimes, pressures come not from chasing funding or tenure, but from chasing an ideal of what makes a good scientist. Young researchers from all disciplines told Nature that they wrestle with the lack of clear expectations for success - and materials scientist Eddie LópezHonorato is one.",
+     "text_len": 290,
+     "level": 1,
+     "element_id": "p6_e88"
+    },
+    {
+     "reading_order": 89,
+     "page": 6,
+     "label": "text",
+     "bbox": {
+      "l": 218.27,
+      "t": 136.06,
+      "r": 382.7,
+      "b": 33.13,
+      "w": 164.43,
+      "h": 102.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36667,
+      "t": 0.17391,
+      "r": 0.6429,
+      "b": 0.04235
+     },
+     "text": "He grew up in Mexico City and studied chemistry there, at the National Autonomous University of Mexico, but for his PhD, he struck out for the University of Manchester, UK. He worked at night and at weekends to complete his experiments, he says, which became more difficult after his son was born. He found it stressful, but his time at Manchester gave him high working standards that he now tries to emulate. Next, he did a postdoctoral fellowship at the Institute for Transuranium Elements in Karlsruhe, Germany, where he worked on developing safer coatings for nuclear fuels used in reactors.",
+     "text_len": 595,
+     "level": 1,
+     "element_id": "p6_e89"
+    },
+    {
+     "reading_order": 90,
+     "page": 6,
+     "label": "text",
+     "bbox": {
+      "l": 394.02,
+      "t": 293.56,
+      "r": 558.45,
+      "b": 159.13,
+      "w": 164.44,
+      "h": 134.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66191,
+      "t": 0.37522,
+      "r": 0.93814,
+      "b": 0.2034
+     },
+     "text": "At the end of his postdoc, he had the opportunity to return to the United Kingdom as a lecturer at the University of Sheffield, but he and his wife, Paola, yearned to go back to Mexico. They weighed up the pros and cons. López-Honorato knew that he would need to build up his professional reputation in Mexico and that the science infrastructure there was less developed than in Europe. But he thought that working in the United Kingdom would be harder for his family, because they faced constant changes in language and culture. The family chose Mexico.",
+     "text_len": 554,
+     "level": 1,
+     "element_id": "p6_e90"
+    },
+    {
+     "reading_order": 91,
+     "page": 6,
+     "label": "text",
+     "bbox": {
+      "l": 394.02,
+      "t": 157.06,
+      "r": 558.48,
+      "b": 33.13,
+      "w": 164.46,
+      "h": 123.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66191,
+      "t": 0.20075,
+      "r": 0.93819,
+      "b": 0.04235
+     },
+     "text": "In March 2012, López-Honorato started at the Center for Research and Advanced Studies of the National Polytechnic Institute (CINVESTAV) in Ramos Arizpe. He felt an amazing sense of independence and potential on standing in front of his brand new empty lab space. \"You know that you have to get some students and money fast, really fast, and that's when the urge to work kicks in,\" he says. Although the government paid his and his students' salaries, he still needed to secure funds to support his research. He sent out a flurry of grant",
+     "text_len": 537,
+     "level": 1,
+     "element_id": "p6_e91"
+    }
+   ]
+  },
+  {
+   "page_no": 7,
+   "width_pt": 595.276,
+   "height_pt": 782.362,
+   "png": "pages/page_0007.png",
+   "elements": [
+    {
+     "reading_order": 92,
+     "page": 7,
+     "label": "picture",
+     "bbox": {
+      "l": 36.51,
+      "t": 761.87,
+      "r": 113.63,
+      "b": 743.08,
+      "w": 77.12,
+      "h": 18.79,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06133,
+      "t": 0.97381,
+      "r": 0.19089,
+      "b": 0.94979
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p7_e92"
+    },
+    {
+     "reading_order": 93,
+     "page": 7,
+     "label": "picture",
+     "bbox": {
+      "l": 36.27,
+      "t": 722.91,
+      "r": 375.96,
+      "b": 495.1,
+      "w": 339.69,
+      "h": 227.81,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06093,
+      "t": 0.92401,
+      "r": 0.63157,
+      "b": 0.63283
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p7_e93"
+    },
+    {
+     "reading_order": 94,
+     "page": 7,
+     "label": "section_header",
+     "bbox": {
+      "l": 53.54,
+      "t": 484.74,
+      "r": 359.32,
+      "b": 443.13,
+      "w": 305.78,
+      "h": 41.61,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.08994,
+      "t": 0.61959,
+      "r": 0.60362,
+      "b": 0.5664
+     },
+     "text": "\"It's stressful when you don't have money, and stressful when you do.\"",
+     "text_len": 70,
+     "level": 1,
+     "element_id": "p7_e94"
+    },
+    {
+     "reading_order": 95,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 142.03,
+      "t": 437.02,
+      "r": 270.83,
+      "b": 430.29,
+      "w": 128.81,
+      "h": 6.73,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.2386,
+      "t": 0.55859,
+      "r": 0.45497,
+      "b": 0.54999
+     },
+     "text": "EDDIE LÓPEZ-HONORATO",
+     "text_len": 20,
+     "level": 1,
+     "element_id": "p7_e95"
+    },
+    {
+     "reading_order": 96,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 36.85,
+      "t": 419.56,
+      "r": 201.26,
+      "b": 400.63,
+      "w": 164.41,
+      "h": 18.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.53627,
+      "r": 0.3381,
+      "b": 0.51208
+     },
+     "text": "proposals for government funding, without success.",
+     "text_len": 50,
+     "level": 1,
+     "element_id": "p7_e96"
+    },
+    {
+     "reading_order": 97,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 36.85,
+      "t": 398.56,
+      "r": 201.28,
+      "b": 264.13,
+      "w": 164.43,
+      "h": 134.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.50943,
+      "r": 0.33813,
+      "b": 0.33761
+     },
+     "text": "López-Honorato spent 2012 travelling around Mexico and the United States to build collaborations. He cold e-mailed other scientists to explain his work. The grants started trickling in. By 2014, he had secured enough to cover most of his research expenses and had established a second arm to his lab's work: developing adsorptive materials to remove arsenic from drinking water, a problem that affected nearly half of all wells in certain parts of Mexico 3 . Since starting at CINVESTAV, he has published 20 research papers and has built up a lab group of 15 people.",
+     "text_len": 566,
+     "level": 1,
+     "element_id": "p7_e97"
+    },
+    {
+     "reading_order": 98,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 36.85,
+      "t": 262.06,
+      "r": 201.23,
+      "b": 243.13,
+      "w": 164.38,
+      "h": 18.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.33496,
+      "r": 0.33804,
+      "b": 0.31076
+     },
+     "text": "Like many of those interviewed, he says that the work to sustain funding is as tough as winning the first grants. Even though his position is secure, he feels the pressure of maintaining his research projects and launching the careers of younger scientists. \"It's stressful when you don't have money, and stressful when you do have money, because then you have to deliver. It's my fault if anything goes wrong.\" He points to a recent eight-month bureaucratic delay in purchasing a coating machine that is essential to his nuclear-fuel work; it put the project a year behind schedule, and he feels that he is to blame.",
+     "text_len": 617,
+     "level": 1,
+     "element_id": "p7_e98"
+    },
+    {
+     "reading_order": 99,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 212.6,
+      "t": 293.56,
+      "r": 377.02,
+      "b": 243.13,
+      "w": 164.42,
+      "h": 50.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.35715,
+      "t": 0.37522,
+      "r": 0.63335,
+      "b": 0.31076
+     },
+     "text": "Many scientists, like other professionals, say that there aren't enough hours in the day. (\"My cohort, we feel exhausted,\" said one Generation X scientist, who asked to remain anonymous to protect his career.) In the past two months, López-Honorato says, he has averaged four hours of sleep per night. He and other earlycareer researchers are \"in a stage where our kids and partners need us the most at home\", he says. His second son is now eight months old.",
+     "text_len": 458,
+     "level": 1,
+     "element_id": "p7_e99"
+    },
+    {
+     "reading_order": 100,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 388.35,
+      "t": 671.56,
+      "r": 552.8,
+      "b": 421.63,
+      "w": 164.45,
+      "h": 249.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.65239,
+      "t": 0.85838,
+      "r": 0.92864,
+      "b": 0.53892
+     },
+     "text": "He wrestles with whether he has valid reasons to complain, and knows the pressures are largely self-generated. \"It's a problem of saying, 'That's enough',\" he says. It's an issue that many young investigators struggle with - when you're the one setting the goals, when do you have enough money, students or publications? Philip Guo, a cognitive scientist at the University of California, San Diego, described in a 2014 blogpost how academics often feel as if they are on an accelerating treadmill. In his previous work as a software engineer at Google, Guo wrote, he had \"tremendous clarity about what and how much I was expected to do\". Academics, however, have obligations to teach, advise, do research, write grants and support departments, universities and the academic community - and \"none of these sources of work know of or care about one another\". Alberts highlights the young investigators who need two major grants, one to supply their salary and one for their research programme. \"It's horrible pressure on young people. How are they going to be excellent at anything? The incentives are all wrong.\"",
+     "text_len": 1111,
+     "level": 1,
+     "element_id": "p7_e100"
+    },
+    {
+     "reading_order": 101,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 388.35,
+      "t": 419.56,
+      "r": 552.81,
+      "b": 327.13,
+      "w": 164.46,
+      "h": 92.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.65239,
+      "t": 0.53627,
+      "r": 0.92866,
+      "b": 0.41813
+     },
+     "text": "This year, López-Honorato is trying to lower his own expectations, applying for only one industry grant - compared with the seven he applied for in 2012 - in the hope that he'll get home in time to play with his boys. But that internal pressure is hardest to quell. \"We want to be the best - that's how we got to the job we have right now. It's a personal pressure. But that's even more difficult to get rid of.\"",
+     "text_len": 412,
+     "level": 1,
+     "element_id": "p7_e101"
+    },
+    {
+     "reading_order": 102,
+     "page": 7,
+     "label": "section_header",
+     "bbox": {
+      "l": 388.35,
+      "t": 315.16,
+      "r": 504.2,
+      "b": 306.54,
+      "w": 115.85,
+      "h": 8.62,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.65239,
+      "t": 0.40283,
+      "r": 0.847,
+      "b": 0.39181
+     },
+     "text": "NO TIME TO THINK",
+     "text_len": 16,
+     "level": 1,
+     "element_id": "p7_e102"
+    },
+    {
+     "reading_order": 103,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 388.35,
+      "t": 304.06,
+      "r": 552.79,
+      "b": 243.13,
+      "w": 164.45,
+      "h": 60.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.65239,
+      "t": 0.38864,
+      "r": 0.92863,
+      "b": 0.31076
+     },
+     "text": "Computing always attracted Felienne Hermans, who taught herself programming at age 10. She specialized in computer science at university and pursued a PhD at Delft University of Technology in the Netherlands. There, she applied methods of software engineering to",
+     "text_len": 262,
+     "level": 1,
+     "element_id": "p7_e103"
+    },
+    {
+     "reading_order": 104,
+     "page": 7,
+     "label": "section_header",
+     "bbox": {
+      "l": 190.03,
+      "t": 223.62,
+      "r": 399.58,
+      "b": 212.55,
+      "w": 209.55,
+      "h": 11.08,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.31923,
+      "t": 0.28583,
+      "r": 0.67125,
+      "b": 0.27168
+     },
+     "text": "SUFFERING IN SCIENCE",
+     "text_len": 20,
+     "level": 1,
+     "element_id": "p7_e104"
+    },
+    {
+     "reading_order": 105,
+     "page": 7,
+     "label": "section_header",
+     "bbox": {
+      "l": 80.77,
+      "t": 202.1,
+      "r": 508.84,
+      "b": 189.96,
+      "w": 428.06,
+      "h": 12.14,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.13568,
+      "t": 0.25832,
+      "r": 0.8548,
+      "b": 0.2428
+     },
+     "text": "We asked young scientists to tell us their concerns. This is what they said.",
+     "text_len": 76,
+     "level": 1,
+     "element_id": "p7_e105"
+    },
+    {
+     "reading_order": 106,
+     "page": 7,
+     "label": "section_header",
+     "bbox": {
+      "l": 48.19,
+      "t": 177.33,
+      "r": 132.21,
+      "b": 149.43,
+      "w": 84.02,
+      "h": 27.9,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.08095,
+      "t": 0.22666,
+      "r": 0.2221,
+      "b": 0.191
+     },
+     "text": "Desperate pursuit of grants leaves no time for science",
+     "text_len": 54,
+     "level": 1,
+     "element_id": "p7_e106"
+    },
+    {
+     "reading_order": 107,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 48.19,
+      "t": 146.28,
+      "r": 155.67,
+      "b": 107.62,
+      "w": 107.48,
+      "h": 38.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.08095,
+      "t": 0.18697,
+      "r": 0.26151,
+      "b": 0.13756
+     },
+     "text": "\"I spent almost all of my time fundraising, and the time spent on executing research was less than 5%.\"",
+     "text_len": 103,
+     "level": 1,
+     "element_id": "p7_e107"
+    },
+    {
+     "reading_order": 108,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 48.19,
+      "t": 93.2,
+      "r": 134.32,
+      "b": 65.47,
+      "w": 86.13,
+      "h": 27.73,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.08095,
+      "t": 0.11913,
+      "r": 0.22564,
+      "b": 0.08368
+     },
+     "text": "Extreme competition drives many scientists to cut corners",
+     "text_len": 57,
+     "level": 1,
+     "element_id": "p7_e108"
+    },
+    {
+     "reading_order": 109,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 48.19,
+      "t": 62.28,
+      "r": 144.44,
+      "b": 44.62,
+      "w": 96.25,
+      "h": 17.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.08095,
+      "t": 0.07961,
+      "r": 0.24264,
+      "b": 0.05703
+     },
+     "text": "\"There's work that is clearly beautifully done, but there's also work that is done sloppily, overhyped, even fabricated. Current pressures and incentives mean that being first but wrong pays off better than being second and right.\"",
+     "text_len": 231,
+     "level": 1,
+     "element_id": "p7_e109"
+    },
+    {
+     "reading_order": 110,
+     "page": 7,
+     "label": "section_header",
+     "bbox": {
+      "l": 174.21,
+      "t": 103.7,
+      "r": 238.13,
+      "b": 75.97,
+      "w": 63.93,
+      "h": 27.73,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.29265,
+      "t": 0.13255,
+      "r": 0.40003,
+      "b": 0.0971
+     },
+     "text": "Dependence on senior scientists to advance",
+     "text_len": 42,
+     "level": 1,
+     "element_id": "p7_e110"
+    },
+    {
+     "reading_order": 111,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 174.21,
+      "t": 72.78,
+      "r": 276.03,
+      "b": 44.62,
+      "w": 101.82,
+      "h": 28.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.29265,
+      "t": 0.09303,
+      "r": 0.4637,
+      "b": 0.05703
+     },
+     "text": "\"If you're not lucky, if your [senior] professor isn't good at getting research funding or",
+     "text_len": 90,
+     "level": 1,
+     "element_id": "p7_e111"
+    },
+    {
+     "reading_order": 112,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 36.85,
+      "t": 19.89,
+      "r": 224.65,
+      "b": 14.31,
+      "w": 187.8,
+      "h": 5.59,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.02542,
+      "r": 0.37739,
+      "b": 0.01829
+     },
+     "text": "4 4 8 | N AT U R E | VO L 5 3 8 | 2 7 O C T O B E R 2 0 1 6",
+     "text_len": 59,
+     "level": 1,
+     "element_id": "p7_e112"
+    },
+    {
+     "reading_order": 113,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 300.22,
+      "t": 177.78,
+      "r": 403.19,
+      "b": 139.12,
+      "w": 102.97,
+      "h": 38.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50434,
+      "t": 0.22723,
+      "r": 0.67732,
+      "b": 0.17782
+     },
+     "text": "doesn't have much weight or is not supportive of you in any way, then you are completely screwed.\"",
+     "text_len": 98,
+     "level": 1,
+     "element_id": "p7_e113"
+    },
+    {
+     "reading_order": 114,
+     "page": 7,
+     "label": "section_header",
+     "bbox": {
+      "l": 300.22,
+      "t": 124.7,
+      "r": 394.39,
+      "b": 107.47,
+      "w": 94.17,
+      "h": 17.23,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50434,
+      "t": 0.15939,
+      "r": 0.66253,
+      "b": 0.13737
+     },
+     "text": "Administrative overload with no help",
+     "text_len": 36,
+     "level": 1,
+     "element_id": "p7_e114"
+    },
+    {
+     "reading_order": 115,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 300.22,
+      "t": 104.28,
+      "r": 407.05,
+      "b": 44.62,
+      "w": 106.83,
+      "h": 59.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50434,
+      "t": 0.13329,
+      "r": 0.6838,
+      "b": 0.05703
+     },
+     "text": "\"If I asked for an administrative assistant, it would probably double my research time … and my department would probably have a good laugh.\"",
+     "text_len": 141,
+     "level": 1,
+     "element_id": "p7_e115"
+    },
+    {
+     "reading_order": 116,
+     "page": 7,
+     "label": "section_header",
+     "bbox": {
+      "l": 426.24,
+      "t": 177.2,
+      "r": 470.18,
+      "b": 170.47,
+      "w": 43.95,
+      "h": 6.73,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.71604,
+      "t": 0.22649,
+      "r": 0.78985,
+      "b": 0.21789
+     },
+     "text": "Long hours",
+     "text_len": 10,
+     "level": 1,
+     "element_id": "p7_e116"
+    },
+    {
+     "reading_order": 117,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 426.24,
+      "t": 167.28,
+      "r": 539.21,
+      "b": 86.62,
+      "w": 112.97,
+      "h": 80.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.71604,
+      "t": 0.21381,
+      "r": 0.90582,
+      "b": 0.11072
+     },
+     "text": "\"The kind of culture we have is that you can't be a successful academic on 40 hours a week. I struggle with how I really don't want to open my laptop again at 9 p.m. when I sit down on the couch. But I want that Nature paper, I want that big grant.\"",
+     "text_len": 249,
+     "level": 1,
+     "element_id": "p7_e117"
+    },
+    {
+     "reading_order": 118,
+     "page": 7,
+     "label": "text",
+     "bbox": {
+      "l": 426.49,
+      "t": 72.33,
+      "r": 520.01,
+      "b": 44.49,
+      "w": 93.52,
+      "h": 27.84,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.71646,
+      "t": 0.09245,
+      "r": 0.87356,
+      "b": 0.05687
+     },
+     "text": "HAVE YOUR SAY Share your #researchrealities r e s e a r chr e a l i t i e s . t umb l r. com spreadsheets, so that end users such as accountants or biologists would have better ways of maintaining and annotating their data 4 . The creative work won her top conference papers, which are key for advancement in this field. When a tenure-track position opened up in her research group of four professors, she asked whether she could apply. She beat internal and external candidates and started as an independent professor in March 2013, at the age of just 28.",
+     "text_len": 556,
+     "level": 1,
+     "element_id": "p7_e118"
+    }
+   ]
+  },
+  {
+   "page_no": 8,
+   "width_pt": 595.276,
+   "height_pt": 782.362,
+   "png": "pages/page_0008.png",
+   "elements": [
+    {
+     "reading_order": 119,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 619.06,
+      "r": 206.98,
+      "b": 463.63,
+      "w": 164.46,
+      "h": 155.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.79127,
+      "r": 0.3477,
+      "b": 0.5926
+     },
+     "text": "Two years into the position, Hermans was feeling overwhelmed. She was grappling with the responsibilities of managing her two graduate students and one postdoc, prepping for teaching courses, and what felt like endless 'service' requests to review papers for journals and colleagues. The spreadsheet work had in some ways run its course, and she wanted to pivot to a more stimulating research area. But the pressure to publish continuously and copiously dogged her. Her job is formally split between 40% teaching, 40% research and 20% academic service, but the message is that research should trump everything else. \"Four papers are better than three. And five are better than four,\" she says.",
+     "text_len": 693,
+     "level": 1,
+     "element_id": "p8_e119"
+    },
+    {
+     "reading_order": 120,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 461.56,
+      "r": 206.94,
+      "b": 400.63,
+      "w": 164.42,
+      "h": 60.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.58996,
+      "r": 0.34764,
+      "b": 0.51208
+     },
+     "text": "Like Alberts, she says the idea that research output is now synonymous with publication quashes all creativity. \"Papers are just one form of communicating ideas and experiments.\" She yearns \"for an afternoon of looking out the window and thinking, 'What will I do next?'\".",
+     "text_len": 272,
+     "level": 1,
+     "element_id": "p8_e120"
+    },
+    {
+     "reading_order": 121,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 398.56,
+      "r": 206.98,
+      "b": 243.13,
+      "w": 164.46,
+      "h": 155.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.50943,
+      "r": 0.3477,
+      "b": 0.31076
+     },
+     "text": "Another barrier has been constant throughout her career: being a woman in an overwhelmingly male-dominated field. In 2014, she attended the Code Generation hands-on programming conference in Cambridge, UK, and found herself 1 of only 2 women among roughly 100 attendees. She spent the three days speaking to colleagues about this sad statistic, rather than about her programming, as she would have preferred. \"It drags you down and drains your energies,\" she says. In the survey, Nature received roughly a dozen comments from young scientists who indicated that sexism, gender bias or lack of support for women held back their careers.",
+     "text_len": 635,
+     "level": 1,
+     "element_id": "p8_e121"
+    },
+    {
+     "reading_order": 122,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 241.06,
+      "r": 206.96,
+      "b": 85.63,
+      "w": 164.44,
+      "h": 155.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.30812,
+      "r": 0.34767,
+      "b": 0.10945
+     },
+     "text": "Hermans eventually developed a fresh research focus through her Saturday volunteer work at a community centre, where she taught programming to inner-city kids. She and a colleague began thinking about how best to teach the children. Rather than just explaining how to make a robot move forward, say, they wanted to communicate how to maintain code quality through properly naming program features and avoiding 'code smells', or poorly designed program sections. The pivot wasn't totally smooth - her first conference paper about a generic theory for code smells was rejected for not having enough supporting evidence, but now she is hitting her stride.",
+     "text_len": 652,
+     "level": 1,
+     "element_id": "p8_e122"
+    },
+    {
+     "reading_order": 123,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 83.56,
+      "r": 206.97,
+      "b": 33.13,
+      "w": 164.45,
+      "h": 50.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.1068,
+      "r": 0.34769,
+      "b": 0.04235
+     },
+     "text": "Looking back, Hermans says that she probably should have ignored the pressure to publish, and ruminated more. \"But I was new in the tenure track and super scared about not being able to pay my mortgage in two",
+     "text_len": 208,
+     "level": 1,
+     "element_id": "p8_e123"
+    },
+    {
+     "reading_order": 124,
+     "page": 8,
+     "label": "picture",
+     "bbox": {
+      "l": 482.25,
+      "t": 761.68,
+      "r": 557.94,
+      "b": 742.92,
+      "w": 75.69,
+      "h": 18.76,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.81013,
+      "t": 0.97356,
+      "r": 0.93728,
+      "b": 0.94959
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p8_e124"
+    },
+    {
+     "reading_order": 125,
+     "page": 8,
+     "label": "picture",
+     "bbox": {
+      "l": 217.19,
+      "t": 723.68,
+      "r": 558.68,
+      "b": 495.9,
+      "w": 341.49,
+      "h": 227.78,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36486,
+      "t": 0.92499,
+      "r": 0.93852,
+      "b": 0.63385
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p8_e125"
+    },
+    {
+     "reading_order": 126,
+     "page": 8,
+     "label": "section_header",
+     "bbox": {
+      "l": 248.31,
+      "t": 482.9,
+      "r": 530.09,
+      "b": 417.89,
+      "w": 281.78,
+      "h": 65.01,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.41713,
+      "t": 0.61723,
+      "r": 0.89049,
+      "b": 0.53414
+     },
+     "text": "\"If people are complaining about an injustice, it's easy to say they are just moaning.\"",
+     "text_len": 87,
+     "level": 1,
+     "element_id": "p8_e126"
+    },
+    {
+     "reading_order": 127,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 337.48,
+      "t": 411.78,
+      "r": 440.91,
+      "b": 405.04,
+      "w": 103.43,
+      "h": 6.73,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.56693,
+      "t": 0.52633,
+      "r": 0.74068,
+      "b": 0.51771
+     },
+     "text": "FELIENNE HERMANS",
+     "text_len": 16,
+     "level": 1,
+     "element_id": "p8_e127"
+    },
+    {
+     "reading_order": 128,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 218.27,
+      "t": 388.06,
+      "r": 382.72,
+      "b": 306.13,
+      "w": 164.45,
+      "h": 81.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36667,
+      "t": 0.49601,
+      "r": 0.64293,
+      "b": 0.39129
+     },
+     "text": "years.\" Now, she keeps more careful track of her time. If a colleague knocks on her door for help with a student's paper, she can turn them down: \"I've already done my 20% to service.\" She's rearranged her week, cramming teaching, grant writing and service into Monday to Thursday so that she can spend Fridays with her lab group, which now comprises six people.",
+     "text_len": 362,
+     "level": 1,
+     "element_id": "p8_e128"
+    },
+    {
+     "reading_order": 129,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 218.27,
+      "t": 304.06,
+      "r": 382.71,
+      "b": 54.13,
+      "w": 164.44,
+      "h": 249.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36667,
+      "t": 0.38864,
+      "r": 0.64291,
+      "b": 0.06919
+     },
+     "text": "There are more-organized moves to help young investigators - to win grants, for example. Alberts says that \"there has to be a shift of resources to the younger people\". He points to the European Research Council grant programme that divides applicants into three career stages - Starter (2-7 years post-PhD), Consolidator (7-12 years post-PhD) and Advanced (more than 12 years post-PhD) - so that applicants from each career stage compete with their peers. In the same vein, this year the NIGMS piloted a grant called Maximizing Investigators' Research Award, which separates early-stage investigators from established ones, and offers five years of guaranteed funding. That's an innovation in the US funding system, says Lorsch, because it means no longer \"comparing apples and oranges\". And Lorsch says that older investigators should be encouraged to move into alternative stages of their career - working in teaching, mentoring and science advocacy - that don't require research funds. This could help younger researchers to break in.",
+     "text_len": 1038,
+     "level": 1,
+     "element_id": "p8_e129"
+    },
+    {
+     "reading_order": 130,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 218.27,
+      "t": 52.06,
+      "r": 382.73,
+      "b": 33.13,
+      "w": 164.46,
+      "h": 18.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36667,
+      "t": 0.06654,
+      "r": 0.64295,
+      "b": 0.04235
+     },
+     "text": "Other scientists vehemently oppose such ideas. And Alberts, like many senior scientists, doesn't see the problem as solely based on age. \"It's not about fairness. It's about how to get the best science for the dollar. We'll get much better science by funding young or old people to do innovative things.\"",
+     "text_len": 304,
+     "level": 1,
+     "element_id": "p8_e130"
+    },
+    {
+     "reading_order": 131,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 394.02,
+      "t": 335.56,
+      "r": 558.47,
+      "b": 232.63,
+      "w": 164.45,
+      "h": 102.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66191,
+      "t": 0.42891,
+      "r": 0.93817,
+      "b": 0.29734
+     },
+     "text": "Hermans is acutely aware that the grumbles of young scientists can be brushed away. \"If people are complaining about an injustice, it's easy to say they are just moaning,\" she says. \"But these are not imaginary problems.\" She feels it's her duty to be vocal about the challenges facing young investigators. \"Experienced researchers should be observing if a young scientist is failing and asking, 'Are you overwhelmed? Why aren't you inspired?'\"",
+     "text_len": 444,
+     "level": 1,
+     "element_id": "p8_e131"
+    },
+    {
+     "reading_order": 132,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 394.02,
+      "t": 230.56,
+      "r": 558.45,
+      "b": 148.63,
+      "w": 164.43,
+      "h": 81.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66191,
+      "t": 0.2947,
+      "r": 0.93814,
+      "b": 0.18998
+     },
+     "text": "Lorsch says that he knows first-hand that Generation X scientists are not whiners: \"I do not hear complaining from the people who are trying to get their first grant or renew their first grant, the people trying to get a lab running,\" he says. \"It's the really well-funded people who've lost one of their grants - that's who call me and scream.\" ■",
+     "text_len": 347,
+     "level": 1,
+     "element_id": "p8_e132"
+    },
+    {
+     "reading_order": 133,
+     "page": 8,
+     "label": "text",
+     "bbox": {
+      "l": 394.02,
+      "t": 136.06,
+      "r": 551.97,
+      "b": 117.13,
+      "w": 157.95,
+      "h": 18.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66191,
+      "t": 0.17391,
+      "r": 0.92725,
+      "b": 0.14971
+     },
+     "text": "Kendall Powell is a freelance writer based in Lafayette, Colorado.",
+     "text_len": 66,
+     "level": 1,
+     "element_id": "p8_e133"
+    },
+    {
+     "reading_order": 134,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.02,
+      "t": 109.45,
+      "r": 549.9,
+      "b": 95.34,
+      "w": 155.88,
+      "h": 14.11,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66191,
+      "t": 0.1399,
+      "r": 0.92377,
+      "b": 0.12186
+     },
+     "text": "Tingley, M. P. & Huybers, P. Nature 496, 201-205 (2013).",
+     "text_len": 56,
+     "level": 2,
+     "element_id": "p8_e134"
+    },
+    {
+     "reading_order": 135,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.02,
+      "t": 94.12,
+      "r": 553.39,
+      "b": 80.03,
+      "w": 159.38,
+      "h": 14.09,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66191,
+      "t": 0.1203,
+      "r": 0.92964,
+      "b": 0.10229
+     },
+     "text": "Tierney, J. E. & Tingley, M. P. Geochim. Cosmochim. Acta 127, 83-106 (2014).",
+     "text_len": 76,
+     "level": 2,
+     "element_id": "p8_e135"
+    },
+    {
+     "reading_order": 136,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.02,
+      "t": 78.84,
+      "r": 557.67,
+      "b": 57.11,
+      "w": 163.66,
+      "h": 21.73,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66191,
+      "t": 0.10077,
+      "r": 0.93683,
+      "b": 0.073
+     },
+     "text": "Mondragón-Solórzano, G., Sierra-Álvarez, R., LópezHonorato, E. & Barroso-Flores, J. J. Incl. Phenom. Macrocycl. Chem. 85, 169-174 (2016).",
+     "text_len": 137,
+     "level": 2,
+     "element_id": "p8_e136"
+    },
+    {
+     "reading_order": 137,
+     "page": 8,
+     "label": "list_item",
+     "bbox": {
+      "l": 394.02,
+      "t": 55.92,
+      "r": 539.93,
+      "b": 34.22,
+      "w": 145.92,
+      "h": 21.7,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66191,
+      "t": 0.07148,
+      "r": 0.90702,
+      "b": 0.04374
+     },
+     "text": "Hermans, F., Sedee, B., Pinzger, M. & van Deursen, A. Proc. 2013 Int. Conf. Software Eng. 292-301 (2013).",
+     "text_len": 105,
+     "level": 2,
+     "element_id": "p8_e137"
+    }
+   ]
+  },
+  {
+   "page_no": 9,
+   "width_pt": 595.276,
+   "height_pt": 782.362,
+   "png": "pages/page_0009.png",
+   "elements": [
+    {
+     "reading_order": 138,
+     "page": 9,
+     "label": "section_header",
+     "bbox": {
+      "l": 124.96,
+      "t": 741.62,
+      "r": 475.99,
+      "b": 675.5,
+      "w": 351.02,
+      "h": 66.12,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.20992,
+      "t": 0.94792,
+      "r": 0.79961,
+      "b": 0.86341
+     },
+     "text": "COMMENT",
+     "text_len": 7,
+     "level": 1,
+     "element_id": "p9_e138"
+    },
+    {
+     "reading_order": 139,
+     "page": 9,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 671.8,
+      "r": 150.67,
+      "b": 642.42,
+      "w": 108.15,
+      "h": 29.38,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.85868,
+      "r": 0.25311,
+      "b": 0.82113
+     },
+     "text": "EVALUATION Experiments in moving beyond metrics are hard but worthwhile p.453",
+     "text_len": 77,
+     "level": 1,
+     "element_id": "p9_e139"
+    },
+    {
+     "reading_order": 140,
+     "page": 9,
+     "label": "text",
+     "bbox": {
+      "l": 175.75,
+      "t": 671.8,
+      "r": 283.16,
+      "b": 642.42,
+      "w": 107.41,
+      "h": 29.38,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.29524,
+      "t": 0.85868,
+      "r": 0.47568,
+      "b": 0.82113
+     },
+     "text": "HISTORY What was the role of the Republic of Letters in economic growth? p.456",
+     "text_len": 78,
+     "level": 1,
+     "element_id": "p9_e140"
+    },
+    {
+     "reading_order": 141,
+     "page": 9,
+     "label": "text",
+     "bbox": {
+      "l": 308.98,
+      "t": 671.8,
+      "r": 398.18,
+      "b": 642.42,
+      "w": 89.2,
+      "h": 29.38,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51905,
+      "t": 0.85868,
+      "r": 0.6689,
+      "b": 0.82113
+     },
+     "text": "MICROBIOLOGY A life in search of our last common ancestor p.457",
+     "text_len": 63,
+     "level": 1,
+     "element_id": "p9_e141"
+    },
+    {
+     "reading_order": 142,
+     "page": 9,
+     "label": "text",
+     "bbox": {
+      "l": 455.2,
+      "t": 671.8,
+      "r": 554.6,
+      "b": 642.42,
+      "w": 99.4,
+      "h": 29.38,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.76469,
+      "t": 0.85868,
+      "r": 0.93167,
+      "b": 0.82113
+     },
+     "text": "BREXIT Royal Society president on UK highereducation bill p.459",
+     "text_len": 63,
+     "level": 1,
+     "element_id": "p9_e142"
+    },
+    {
+     "reading_order": 143,
+     "page": 9,
+     "label": "picture",
+     "bbox": {
+      "l": 403.35,
+      "t": 692.99,
+      "r": 456.87,
+      "b": 636.59,
+      "w": 53.52,
+      "h": 56.4,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.67758,
+      "t": 0.88577,
+      "r": 0.76749,
+      "b": 0.81368
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p9_e143"
+    },
+    {
+     "reading_order": 144,
+     "page": 9,
+     "label": "picture",
+     "bbox": {
+      "l": 40.22,
+      "t": 611.5,
+      "r": 559.07,
+      "b": 265.97,
+      "w": 518.84,
+      "h": 345.53,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06757,
+      "t": 0.78161,
+      "r": 0.93918,
+      "b": 0.33996
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p9_e144"
+    },
+    {
+     "reading_order": 145,
+     "page": 9,
+     "label": "section_header",
+     "bbox": {
+      "l": 39.74,
+      "t": 245.67,
+      "r": 561.2,
+      "b": 206.56,
+      "w": 521.46,
+      "h": 39.11,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06676,
+      "t": 0.31401,
+      "r": 0.94276,
+      "b": 0.26402
+     },
+     "text": "Let researchers try new paths",
+     "text_len": 29,
+     "level": 1,
+     "element_id": "p9_e145"
+    },
+    {
+     "reading_order": 146,
+     "page": 9,
+     "label": "text",
+     "bbox": {
+      "l": 42.36,
+      "t": 199.77,
+      "r": 558.59,
+      "b": 171.36,
+      "w": 516.23,
+      "h": 28.41,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07116,
+      "t": 0.25534,
+      "r": 0.93837,
+      "b": 0.21903
+     },
+     "text": "Demand for steady output stymies discovery. To pursue the most important research, scientists must be allowed to shift their focus, say Tolu Oni and colleagues.",
+     "text_len": 160,
+     "level": 1,
+     "element_id": "p9_e146"
+    },
+    {
+     "reading_order": 147,
+     "page": 9,
+     "label": "text",
+     "bbox": {
+      "l": 41.35,
+      "t": 146.59,
+      "r": 199.39,
+      "b": 96.13,
+      "w": 158.04,
+      "h": 50.46,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06946,
+      "t": 0.18737,
+      "r": 0.33495,
+      "b": 0.12287
+     },
+     "text": "T he scientific enterprise is stuck in a catch-22. Researchers are charged with advancing promising new questions, but receive support and credit only for revisiting their past work.",
+     "text_len": 182,
+     "level": 1,
+     "element_id": "p9_e147"
+    },
+    {
+     "reading_order": 148,
+     "page": 9,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 94.06,
+      "r": 199.4,
+      "b": 33.13,
+      "w": 156.88,
+      "h": 60.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.12023,
+      "r": 0.33497,
+      "b": 0.04235
+     },
+     "text": "For example, while studying the epi­ demiology of HIV and tuberculosis, one of us (T.O.) realized that many people with these infectious diseases in urban areas also have non-infectious conditions, including hypertension and obesity. Hardly anyone was examining how and why, or investigating strategies for integrated prevention and management. Her proposals to research these topics were not well received by peer reviewers, who commented that she had not asked such questions before.",
+     "text_len": 485,
+     "level": 1,
+     "element_id": "p9_e148"
+    },
+    {
+     "reading_order": 149,
+     "page": 9,
+     "label": "picture",
+     "bbox": {
+      "l": 220.93,
+      "t": 78.21,
+      "r": 344.93,
+      "b": 35.69,
+      "w": 123.99,
+      "h": 42.52,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.37114,
+      "t": 0.09997,
+      "r": 0.57945,
+      "b": 0.04562
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p9_e149"
+    },
+    {
+     "reading_order": 150,
+     "page": 9,
+     "label": "text",
+     "bbox": {
+      "l": 401.57,
+      "t": 146.56,
+      "r": 558.48,
+      "b": 33.13,
+      "w": 156.9,
+      "h": 113.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.67459,
+      "t": 0.18733,
+      "r": 0.93819,
+      "b": 0.04235
+     },
+     "text": "We, the authors of this Comment, met earlier this year, having been selected by the World Economic Forum as part of a group of scientists under the age of 40 who \"play a transformational role in integrating scientific knowledge into society for the public good\". Through hours of discussion, we realized that we share many challenges, despite the recognition we have achieved and the diverse disciplines and geographical regions we represent. Most striking are the barriers to achieving impact. Our research often led us to questions that had greater potential than our original focus, typically because these new directions encompassed the complexities of society. We realized that changing tack could lead to more important work, but the policies of research funders and institutions consistently discourage such pivots.",
+     "text_len": 822,
+     "level": 1,
+     "element_id": "p9_e150"
+    }
+   ]
+  },
+  {
+   "page_no": 10,
+   "width_pt": 595.276,
+   "height_pt": 782.362,
+   "png": "pages/page_0010.png",
+   "elements": [
+    {
+     "reading_order": 151,
+     "page": 10,
+     "label": "section_header",
+     "bbox": {
+      "l": 36.85,
+      "t": 630.16,
+      "r": 117.16,
+      "b": 621.9,
+      "w": 80.31,
+      "h": 8.27,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.80546,
+      "r": 0.19682,
+      "b": 0.7949
+     },
+     "text": "SHACKLED TO THE PAST",
+     "text_len": 20,
+     "level": 1,
+     "element_id": "p10_e151"
+    },
+    {
+     "reading_order": 152,
+     "page": 10,
+     "label": "text",
+     "bbox": {
+      "l": 36.85,
+      "t": 619.06,
+      "r": 193.75,
+      "b": 526.63,
+      "w": 156.9,
+      "h": 92.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.79127,
+      "r": 0.32548,
+      "b": 0.67313
+     },
+     "text": "When reviewers assess grants or academic performance, they focus largely on track records in a particular field. Young scientists, who must focus on developing their careers, are thus discouraged from exploration. Our own experiences provide a glimpse of the well-intentioned forces that can keep researchers from trying other paths (see 'Four tales of turning').",
+     "text_len": 363,
+     "level": 1,
+     "element_id": "p10_e152"
+    },
+    {
+     "reading_order": 153,
+     "page": 10,
+     "label": "text",
+     "bbox": {
+      "l": 36.85,
+      "t": 524.56,
+      "r": 193.75,
+      "b": 369.13,
+      "w": 156.9,
+      "h": 155.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.67048,
+      "r": 0.32548,
+      "b": 0.47181
+     },
+     "text": "This challenge is not new. Physicistturned-structural biologist Venkatraman Ramakrishnan, who is president of the Royal Society, worked for several years in a job with funding that was contingent on a steady stream of publications. This forced him to ask safe but incremental questions. To pursue what became his Nobel-prizewinning work (on the structure of the ribosome), he moved to another institution where he could ask the questions that interested him, irrespective of the chances for publication. As he describes in his Nobel biography, the decision required an international move and a large pay cut.",
+     "text_len": 608,
+     "level": 1,
+     "element_id": "p10_e153"
+    },
+    {
+     "reading_order": 154,
+     "page": 10,
+     "label": "text",
+     "bbox": {
+      "l": 36.85,
+      "t": 367.06,
+      "r": 193.74,
+      "b": 337.63,
+      "w": 156.89,
+      "h": 29.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.46917,
+      "r": 0.32546,
+      "b": 0.43155
+     },
+     "text": "For every story like this, there are too many where investigators have made a rational choice not to pursue areas outside",
+     "text_len": 121,
+     "level": 1,
+     "element_id": "p10_e154"
+    },
+    {
+     "reading_order": 155,
+     "page": 10,
+     "label": "text",
+     "bbox": {
+      "l": 48.09,
+      "t": 272.28,
+      "r": 204.96,
+      "b": 244.12,
+      "w": 156.87,
+      "h": 28.16,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.08079,
+      "t": 0.34802,
+      "r": 0.34431,
+      "b": 0.31203
+     },
+     "text": "Young scientists are warned that exploring new ideas could endanger their careers. Here, the authors share the challenges they faced.",
+     "text_len": 133,
+     "level": 1,
+     "element_id": "p10_e155"
+    },
+    {
+     "reading_order": 156,
+     "page": 10,
+     "label": "text",
+     "bbox": {
+      "l": 48.09,
+      "t": 230.33,
+      "r": 204.98,
+      "b": 86.62,
+      "w": 156.89,
+      "h": 143.71,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.08079,
+      "t": 0.2944,
+      "r": 0.34434,
+      "b": 0.11072
+     },
+     "text": "Gerardo Adesso: I had expertise in quantum information theory, but was attracted to broader and more fundamental questions at the border between classical and quantum mechanics. These interests got a lukewarm reception in a national funding landscape biased towards applied research. I got funding only from unconventional organizations, such as the Foundational Questions Institute (www.fqxi.org). Soon, I had a series of highimpact publications and was rewarded with a substantial follow-up grant from the European Research Council, along the lines I had previously struggled to find support for.",
+     "text_len": 598,
+     "level": 1,
+     "element_id": "p10_e156"
+    },
+    {
+     "reading_order": 157,
+     "page": 10,
+     "label": "text",
+     "bbox": {
+      "l": 48.09,
+      "t": 72.83,
+      "r": 190.52,
+      "b": 44.62,
+      "w": 142.43,
+      "h": 28.21,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.08079,
+      "t": 0.09309,
+      "r": 0.32005,
+      "b": 0.05703
+     },
+     "text": "Rob Knight: When setting up my lab, colleagues advised me to focus on one microbe rather than the ecosystem of gut their core expertise. We spend so much effort trying to find our way that we risk losing the drive to apply skills to the broader world, and stick instead to the less-fulfilling security of 'productivity'.",
+     "text_len": 320,
+     "level": 1,
+     "element_id": "p10_e157"
+    },
+    {
+     "reading_order": 158,
+     "page": 10,
+     "label": "picture",
+     "bbox": {
+      "l": 214.48,
+      "t": 723.63,
+      "r": 375.6,
+      "b": 507.34,
+      "w": 161.12,
+      "h": 216.29,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.3603,
+      "t": 0.92493,
+      "r": 0.63097,
+      "b": 0.64847
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p10_e158"
+    },
+    {
+     "reading_order": 159,
+     "page": 10,
+     "label": "text",
+     "bbox": {
+      "l": 216.38,
+      "t": 440.56,
+      "r": 373.27,
+      "b": 337.63,
+      "w": 156.9,
+      "h": 102.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.3635,
+      "t": 0.56312,
+      "r": 0.62705,
+      "b": 0.43155
+     },
+     "text": "More bold is Eva Alisic, a psychologist and senior research fellow at Monash University Accident Research Centre in Victoria, Australia. Earlier this year, Alisic began studying how refugee children from places such as Syria cope with trauma. Her institute has supported her so far, but this research is not the safest choice for a conventional career trajectory. She told us that she would rather give up an academic",
+     "text_len": 417,
+     "level": 1,
+     "element_id": "p10_e159"
+    },
+    {
+     "reading_order": 160,
+     "page": 10,
+     "label": "section_header",
+     "bbox": {
+      "l": 250.9,
+      "t": 313.61,
+      "r": 338.61,
+      "b": 302.88,
+      "w": 87.71,
+      "h": 10.74,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.42149,
+      "t": 0.40085,
+      "r": 0.56883,
+      "b": 0.38714
+     },
+     "text": "NEW DIRECTIONS",
+     "text_len": 14,
+     "level": 1,
+     "element_id": "p10_e160"
+    },
+    {
+     "reading_order": 161,
+     "page": 10,
+     "label": "section_header",
+     "bbox": {
+      "l": 237.88,
+      "t": 296.6,
+      "r": 351.63,
+      "b": 284.5,
+      "w": 113.75,
+      "h": 12.11,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.39961,
+      "t": 0.37911,
+      "r": 0.5907,
+      "b": 0.36364
+     },
+     "text": "Four tales of turning",
+     "text_len": 21,
+     "level": 1,
+     "element_id": "p10_e161"
+    },
+    {
+     "reading_order": 162,
+     "page": 10,
+     "label": "text",
+     "bbox": {
+      "l": 216.31,
+      "t": 272.28,
+      "r": 372.87,
+      "b": 128.62,
+      "w": 156.55,
+      "h": 143.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36338,
+      "t": 0.34802,
+      "r": 0.62638,
+      "b": 0.1644
+     },
+     "text": "flora. My work on Salmonella was topical and thought to have excellent potential for federal funding - a sound investment of my start-up funds. One of my first graduate students, Cathy Lozupone, cemented my decision to pivot, against the advice of evaluation committees and senior colleagues. We both knew it was a gamble, but she opted to work on bioinformatics and phylogeny despite having no training in computer science. Her software, UniFrac, has now been cited more than 2,000 times, and microbiome research has become one of the fastest expanding areas of biomedical research.",
+     "text_len": 583,
+     "level": 1,
+     "element_id": "p10_e162"
+    },
+    {
+     "reading_order": 163,
+     "page": 10,
+     "label": "text",
+     "bbox": {
+      "l": 216.31,
+      "t": 114.83,
+      "r": 367.71,
+      "b": 44.62,
+      "w": 151.4,
+      "h": 70.21,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36338,
+      "t": 0.14677,
+      "r": 0.61771,
+      "b": 0.05703
+     },
+     "text": "Tolu Oni: To do urban health research, I needed to explore the field and engage with new sectors of academia, society and policy. I also needed training in spatial analytical tools to better investigate health inequalities and their urban determinants. But my lack of publications in the field made me less career than end this line of study. If we feel that we must leave academia to better contribute to society, the scholarly endeavour is compromised.",
+     "text_len": 454,
+     "level": 1,
+     "element_id": "p10_e163"
+    },
+    {
+     "reading_order": 164,
+     "page": 10,
+     "label": "section_header",
+     "bbox": {
+      "l": 395.91,
+      "t": 672.16,
+      "r": 459.19,
+      "b": 663.9,
+      "w": 63.28,
+      "h": 8.27,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66509,
+      "t": 0.85914,
+      "r": 0.77139,
+      "b": 0.84858
+     },
+     "text": "GAINING FREEDOM",
+     "text_len": 15,
+     "level": 1,
+     "element_id": "p10_e164"
+    },
+    {
+     "reading_order": 165,
+     "page": 10,
+     "label": "text",
+     "bbox": {
+      "l": 395.91,
+      "t": 661.06,
+      "r": 552.78,
+      "b": 526.63,
+      "w": 156.87,
+      "h": 134.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66509,
+      "t": 0.84495,
+      "r": 0.92861,
+      "b": 0.67313
+     },
+     "text": "We are not saying that scientists should dabble. Executing a pivot should still require conviction and risk, but the current strictures are too tight. Enabling early-career researchers to change trajectories is necessary to encourage the highest-impact research. Theories of brain plasticity and team productivity support this. Alongside specialization, diverse and varied experiences foster discoveries and promote the decision-making skills that are needed to lead research (C. S. Green & D. Bavelier Psychol. Aging 23, 692-701; 2008).",
+     "text_len": 537,
+     "level": 1,
+     "element_id": "p10_e165"
+    },
+    {
+     "reading_order": 166,
+     "page": 10,
+     "label": "text",
+     "bbox": {
+      "l": 395.91,
+      "t": 524.56,
+      "r": 552.78,
+      "b": 411.13,
+      "w": 156.87,
+      "h": 113.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66509,
+      "t": 0.67048,
+      "r": 0.92861,
+      "b": 0.5255
+     },
+     "text": "Grant programmes do exist in some parts of the world to promote highly innovative projects for promising early- and mid-career researchers. Examples include the European Research Council's Starting and Consolidator grants and the International Research Scholars programme, which is jointly funded by the Howard Hughes Medical Institute, the Bill & Melinda Gates Foundation, the Wellcome Trust and the Calouste Gulbenkian Foundation.",
+     "text_len": 432,
+     "level": 1,
+     "element_id": "p10_e166"
+    },
+    {
+     "reading_order": 167,
+     "page": 10,
+     "label": "text",
+     "bbox": {
+      "l": 395.91,
+      "t": 409.06,
+      "r": 552.82,
+      "b": 337.63,
+      "w": 156.91,
+      "h": 71.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66509,
+      "t": 0.52285,
+      "r": 0.92868,
+      "b": 0.43155
+     },
+     "text": "These pockets of funding are not enough. In 2015, the US National Institutes of Health (NIH) awarded 78 grants specifically for high-risk research. That same year, it gave out more than 15,000 conventional awards. These are typically granted to applicants with strong preliminary data in fields",
+     "text_len": 294,
+     "level": 1,
+     "element_id": "p10_e167"
+    },
+    {
+     "reading_order": 168,
+     "page": 10,
+     "label": "text",
+     "bbox": {
+      "l": 384.53,
+      "t": 272.28,
+      "r": 540.58,
+      "b": 212.62,
+      "w": 156.05,
+      "h": 59.66,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.64597,
+      "t": 0.34802,
+      "r": 0.90812,
+      "b": 0.27177
+     },
+     "text": "competitive for grants. I continued publishing on my infectious-diseases work amid criticism that my new focus was diluting my research record. A faculty position has offered support and flexibility to pursue this chosen focus, but work is slow.",
+     "text_len": 245,
+     "level": 1,
+     "element_id": "p10_e168"
+    },
+    {
+     "reading_order": 169,
+     "page": 10,
+     "label": "text",
+     "bbox": {
+      "l": 384.53,
+      "t": 198.83,
+      "r": 541.39,
+      "b": 44.62,
+      "w": 156.85,
+      "h": 154.21,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.64597,
+      "t": 0.25414,
+      "r": 0.90948,
+      "b": 0.05703
+     },
+     "text": "Fabio Sciarrino: Since my PhD, I have worked on the foundations of quantum mechanics and experimental quantum optics. When I sought to use my expertise to develop technology, it was difficult. My goal was to design circuits based on light rather than on electricity; my grant applications on this idea were not funded. Reviewers doubted that the project was feasible. A new PhD student and I took a risk: we conducted a proof-ofprinciple demonstration of a quantum chip. This was key to the award of a grant from the European Research Council that allowed me to achieve breakthroughs in an area now considered a hot topic (see www.3dquest.eu).",
+     "text_len": 643,
+     "level": 1,
+     "element_id": "p10_e169"
+    }
+   ]
+  },
+  {
+   "page_no": 11,
+   "width_pt": 595.276,
+   "height_pt": 782.362,
+   "png": "pages/page_0011.png",
+   "elements": [
+    {
+     "reading_order": 170,
+     "page": 11,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 724.06,
+      "r": 188.08,
+      "b": 621.13,
+      "w": 145.56,
+      "h": 102.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.92548,
+      "r": 0.31595,
+      "b": 0.79392
+     },
+     "text": "where they are already recognized as experts. Although it is logical to assess a researcher's body of work over time, universities, research councils and other funding bodies should create a formal mechanism that explicitly accommodates pivots. If candidates can provide a convincing case for their own credibility and for studying new questions, they should be able to get support.",
+     "text_len": 382,
+     "level": 1,
+     "element_id": "p11_e170"
+    },
+    {
+     "reading_order": 171,
+     "page": 11,
+     "label": "section_header",
+     "bbox": {
+      "l": 42.52,
+      "t": 609.16,
+      "r": 106.46,
+      "b": 600.9,
+      "w": 63.94,
+      "h": 8.27,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.77862,
+      "r": 0.17884,
+      "b": 0.76806
+     },
+     "text": "PIVOT TO SUCCEED",
+     "text_len": 16,
+     "level": 1,
+     "element_id": "p11_e171"
+    },
+    {
+     "reading_order": 172,
+     "page": 11,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 598.06,
+      "r": 188.08,
+      "b": 579.13,
+      "w": 145.56,
+      "h": 18.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.76443,
+      "r": 0.31595,
+      "b": 0.74023
+     },
+     "text": "Two simple changes could make a big difference.",
+     "text_len": 47,
+     "level": 1,
+     "element_id": "p11_e172"
+    },
+    {
+     "reading_order": 173,
+     "page": 11,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 577.06,
+      "r": 188.08,
+      "b": 453.13,
+      "w": 145.56,
+      "h": 123.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.73759,
+      "r": 0.31595,
+      "b": 0.57918
+     },
+     "text": "Create a 'pivot narrative'. Funding applications should give researchers who are in the midst of a shift an opportunity to describe their rationale. The significance and potential of the proposed work should be assessed alongside the researcher's proven abilities for research in other fields. Alisic, for example, could explain how her work with young people sensitized her to a growing need for evidence-based interventions to treat trauma in children fleeing conflict.",
+     "text_len": 471,
+     "level": 1,
+     "element_id": "p11_e173"
+    },
+    {
+     "reading_order": 174,
+     "page": 11,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 442.65,
+      "r": 105.8,
+      "b": 377.77,
+      "w": 63.28,
+      "h": 64.88,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.56579,
+      "r": 0.17773,
+      "b": 0.48286
+     },
+     "text": "\"Innovation will be stifled by failing to invest in the best emerging scientists.\"",
+     "text_len": 82,
+     "level": 1,
+     "element_id": "p11_e174"
+    },
+    {
+     "reading_order": 175,
+     "page": 11,
+     "label": "text",
+     "bbox": {
+      "l": 120.94,
+      "t": 451.06,
+      "r": 188.04,
+      "b": 369.13,
+      "w": 67.1,
+      "h": 81.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.20317,
+      "t": 0.57654,
+      "r": 0.31589,
+      "b": 0.47181
+     },
+     "text": "A 'pivot narrative' would also explain dry spel ls and the lack of a track record in the proposed area. The simple step of adding a text box to an",
+     "text_len": 146,
+     "level": 1,
+     "element_id": "p11_e175"
+    },
+    {
+     "reading_order": 176,
+     "page": 11,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 367.06,
+      "r": 188.04,
+      "b": 337.63,
+      "w": 145.52,
+      "h": 29.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.46917,
+      "r": 0.31589,
+      "b": 0.43155
+     },
+     "text": "application form could expand scientists' willingness to explore, and help assessors to support such exploration.",
+     "text_len": 113,
+     "level": 1,
+     "element_id": "p11_e176"
+    },
+    {
+     "reading_order": 177,
+     "page": 11,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 335.56,
+      "r": 188.04,
+      "b": 243.13,
+      "w": 145.52,
+      "h": 92.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.42891,
+      "r": 0.31589,
+      "b": 0.31076
+     },
+     "text": "Revise peer review. There is little to no emphasis on peer-review training. Equipping scientists with skills for more nuanced appraisal will help them to consider varied attributes, particularly how to address complex societal challenges and to evaluate broader interdisciplinary questions. This could eventually change institutional cultures.",
+     "text_len": 343,
+     "level": 1,
+     "element_id": "p11_e177"
+    },
+    {
+     "reading_order": 178,
+     "page": 11,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 241.06,
+      "r": 188.06,
+      "b": 201.13,
+      "w": 145.54,
+      "h": 39.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.30812,
+      "r": 0.31592,
+      "b": 0.25708
+     },
+     "text": "The greatest risk is that innovation will be stifled by failing to invest in the best emerging scientists, who are approaching the peak of their creativity. ■",
+     "text_len": 158,
+     "level": 1,
+     "element_id": "p11_e178"
+    },
+    {
+     "reading_order": 179,
+     "page": 11,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 188.56,
+      "r": 186.81,
+      "b": 33.13,
+      "w": 144.29,
+      "h": 155.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.24101,
+      "r": 0.31382,
+      "b": 0.04235
+     },
+     "text": "Tolu Oni is a public-health physician scientist at the University of Cape Town, Cape Town, South Africa. Fabio Sciarrino is associate professor of physics at the Sapienza University of Rome, and junior fellow at the International School for Advanced Studies Sapienza, Rome, Italy. Gerardo Adesso is professor of mathematical physics at the University of Nottingham, Nottingham, UK. Rob Knight is professor of paediatrics and of computer science and engineering at the University of California San Diego, La Jolla, California, USA. e-mail: tolullah.oni@uct.ac.za",
+     "text_len": 561,
+     "level": 1,
+     "element_id": "p11_e179"
+    },
+    {
+     "reading_order": 180,
+     "page": 11,
+     "label": "picture",
+     "bbox": {
+      "l": 220.86,
+      "t": 782.36,
+      "r": 559.02,
+      "b": 393.13,
+      "w": 338.16,
+      "h": 389.23,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.37102,
+      "t": 1.0,
+      "r": 0.93909,
+      "b": 0.50249
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p11_e180"
+    },
+    {
+     "reading_order": 181,
+     "page": 11,
+     "label": "section_header",
+     "bbox": {
+      "l": 242.16,
+      "t": 374.83,
+      "r": 539.8,
+      "b": 293.71,
+      "w": 297.65,
+      "h": 81.11,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.4068,
+      "t": 0.4791,
+      "r": 0.90681,
+      "b": 0.37541
+     },
+     "text": "Fewer numbers, better science",
+     "text_len": 29,
+     "level": 1,
+     "element_id": "p11_e181"
+    },
+    {
+     "reading_order": 182,
+     "page": 11,
+     "label": "text",
+     "bbox": {
+      "l": 243.44,
+      "t": 286.92,
+      "r": 538.51,
+      "b": 211.35,
+      "w": 295.07,
+      "h": 75.57,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.40895,
+      "t": 0.36674,
+      "r": 0.90464,
+      "b": 0.27014
+     },
+     "text": "Scientific quality is hard to define, and numbers are easy to look at. But bibliometrics are warping science - encouraging quantity over quality. Leaders at two research institutions describe how they do things differently.",
+     "text_len": 223,
+     "level": 1,
+     "element_id": "p11_e182"
+    },
+    {
+     "reading_order": 183,
+     "page": 11,
+     "label": "section_header",
+     "bbox": {
+      "l": 222.12,
+      "t": 179.96,
+      "r": 356.36,
+      "b": 124.79,
+      "w": 134.24,
+      "h": 55.17,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.37314,
+      "t": 0.23002,
+      "r": 0.59865,
+      "b": 0.1595
+     },
+     "text": "REDEFINE EXCELLENCE Fix incentives to fix science",
+     "text_len": 49,
+     "level": 1,
+     "element_id": "p11_e183"
+    },
+    {
+     "reading_order": 184,
+     "page": 11,
+     "label": "text",
+     "bbox": {
+      "l": 222.12,
+      "t": 116.0,
+      "r": 310.77,
+      "b": 96.19,
+      "w": 88.65,
+      "h": 19.81,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.37314,
+      "t": 0.14827,
+      "r": 0.52206,
+      "b": 0.12295
+     },
+     "text": "Rinze Benedictus and Frank Miedema",
+     "text_len": 34,
+     "level": 1,
+     "element_id": "p11_e184"
+    },
+    {
+     "reading_order": 185,
+     "page": 11,
+     "label": "text",
+     "bbox": {
+      "l": 221.29,
+      "t": 83.59,
+      "r": 379.0,
+      "b": 33.13,
+      "w": 157.71,
+      "h": 50.46,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.37174,
+      "t": 0.10684,
+      "r": 0.63668,
+      "b": 0.04235
+     },
+     "text": "A n obsession with metrics pervades science. Our institution, the University Medical Center Utrecht in the Netherlands, is not exempt. On our website, we proudly declare that we publish about 2,500 peer-reviewed scientific publications per year, with higher than average citation rates.",
+     "text_len": 286,
+     "level": 1,
+     "element_id": "p11_e185"
+    },
+    {
+     "reading_order": 186,
+     "page": 11,
+     "label": "text",
+     "bbox": {
+      "l": 401.57,
+      "t": 157.06,
+      "r": 558.53,
+      "b": 64.63,
+      "w": 156.95,
+      "h": 92.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.67459,
+      "t": 0.20075,
+      "r": 0.93827,
+      "b": 0.08261
+     },
+     "text": "A few years ago, an evaluation committee spent hours discussing which of several faculty members to promote, only to settle on the two who had already been awarded particularly prestigious grants. Meanwhile, faculty members who spent time crafting policy advice had a hard time explaining how this added to their scientific output, even when it affected clinical decisions across the country.",
+     "text_len": 392,
+     "level": 1,
+     "element_id": "p11_e186"
+    },
+    {
+     "reading_order": 187,
+     "page": 11,
+     "label": "text",
+     "bbox": {
+      "l": 401.57,
+      "t": 62.56,
+      "r": 558.53,
+      "b": 33.13,
+      "w": 156.95,
+      "h": 29.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.67459,
+      "t": 0.07996,
+      "r": 0.93827,
+      "b": 0.04235
+     },
+     "text": "Publications that directly influenced patient care were weighted no higher in evaluations than any other paper, and where they are already recognized as experts. Although it is logical to assess a researcher's body of work over time, universities, research councils and other funding bodies should create a formal mechanism that explicitly accommodates pivots. If candidates can provide a convincing case for their own credibility and for studying new questions, they should be able to get support.",
+     "text_len": 498,
+     "level": 1,
+     "element_id": "p11_e187"
+    }
+   ]
+  },
+  {
+   "page_no": 12,
+   "width_pt": 595.276,
+   "height_pt": 782.362,
+   "png": "pages/page_0012.png",
+   "elements": [
+    {
+     "reading_order": 188,
+     "page": 12,
+     "label": "section_header",
+     "bbox": {
+      "l": 42.52,
+      "t": 609.16,
+      "r": 106.46,
+      "b": 600.9,
+      "w": 63.94,
+      "h": 8.27,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.77862,
+      "r": 0.17884,
+      "b": 0.76806
+     },
+     "text": "PIVOT TO SUCCEED",
+     "text_len": 16,
+     "level": 1,
+     "element_id": "p12_e188"
+    },
+    {
+     "reading_order": 189,
+     "page": 12,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 598.06,
+      "r": 188.08,
+      "b": 579.13,
+      "w": 145.56,
+      "h": 18.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.76443,
+      "r": 0.31595,
+      "b": 0.74023
+     },
+     "text": "Two simple changes could make a big difference.",
+     "text_len": 47,
+     "level": 1,
+     "element_id": "p12_e189"
+    },
+    {
+     "reading_order": 190,
+     "page": 12,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 577.06,
+      "r": 188.08,
+      "b": 453.13,
+      "w": 145.56,
+      "h": 123.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.73759,
+      "r": 0.31595,
+      "b": 0.57918
+     },
+     "text": "Create a 'pivot narrative'. Funding applications should give researchers who are in the midst of a shift an opportunity to describe their rationale. The significance and potential of the proposed work should be assessed alongside the researcher's proven abilities for research in other fields. Alisic, for example, could explain how her work with young people sensitized her to a growing need for evidence-based interventions to treat trauma in children fleeing conflict.",
+     "text_len": 471,
+     "level": 1,
+     "element_id": "p12_e190"
+    },
+    {
+     "reading_order": 191,
+     "page": 12,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 442.65,
+      "r": 105.8,
+      "b": 377.77,
+      "w": 63.28,
+      "h": 64.88,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.56579,
+      "r": 0.17773,
+      "b": 0.48286
+     },
+     "text": "\"Innovation will be stifled by failing to invest in the best emerging scientists.\"",
+     "text_len": 82,
+     "level": 1,
+     "element_id": "p12_e191"
+    },
+    {
+     "reading_order": 192,
+     "page": 12,
+     "label": "text",
+     "bbox": {
+      "l": 120.94,
+      "t": 451.06,
+      "r": 188.04,
+      "b": 369.13,
+      "w": 67.1,
+      "h": 81.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.20317,
+      "t": 0.57654,
+      "r": 0.31589,
+      "b": 0.47181
+     },
+     "text": "A 'pivot narrative' would also explain dry spel ls and the lack of a track record in the proposed area. The simple step of adding a text box to an",
+     "text_len": 146,
+     "level": 1,
+     "element_id": "p12_e192"
+    },
+    {
+     "reading_order": 193,
+     "page": 12,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 367.06,
+      "r": 188.04,
+      "b": 337.63,
+      "w": 145.52,
+      "h": 29.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.46917,
+      "r": 0.31589,
+      "b": 0.43155
+     },
+     "text": "application form could expand scientists' willingness to explore, and help assessors to support such exploration.",
+     "text_len": 113,
+     "level": 1,
+     "element_id": "p12_e193"
+    },
+    {
+     "reading_order": 194,
+     "page": 12,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 335.56,
+      "r": 188.04,
+      "b": 243.13,
+      "w": 145.52,
+      "h": 92.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.42891,
+      "r": 0.31589,
+      "b": 0.31076
+     },
+     "text": "Revise peer review. There is little to no emphasis on peer-review training. Equipping scientists with skills for more nuanced appraisal will help them to consider varied attributes, particularly how to address complex societal challenges and to evaluate broader interdisciplinary questions. This could eventually change institutional cultures.",
+     "text_len": 343,
+     "level": 1,
+     "element_id": "p12_e194"
+    },
+    {
+     "reading_order": 195,
+     "page": 12,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 241.06,
+      "r": 188.06,
+      "b": 201.13,
+      "w": 145.54,
+      "h": 39.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.30812,
+      "r": 0.31592,
+      "b": 0.25708
+     },
+     "text": "The greatest risk is that innovation will be stifled by failing to invest in the best emerging scientists, who are approaching the peak of their creativity. ■",
+     "text_len": 158,
+     "level": 1,
+     "element_id": "p12_e195"
+    },
+    {
+     "reading_order": 196,
+     "page": 12,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 188.56,
+      "r": 186.81,
+      "b": 33.13,
+      "w": 144.29,
+      "h": 155.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.24101,
+      "r": 0.31382,
+      "b": 0.04235
+     },
+     "text": "Tolu Oni is a public-health physician scientist at the University of Cape Town, Cape Town, South Africa. Fabio Sciarrino is associate professor of physics at the Sapienza University of Rome, and junior fellow at the International School for Advanced Studies Sapienza, Rome, Italy. Gerardo Adesso is professor of mathematical physics at the University of Nottingham, Nottingham, UK. Rob Knight is professor of paediatrics and of computer science and engineering at the University of California San Diego, La Jolla, California, USA. e-mail: tolullah.oni@uct.ac.za",
+     "text_len": 561,
+     "level": 1,
+     "element_id": "p12_e196"
+    },
+    {
+     "reading_order": 197,
+     "page": 12,
+     "label": "picture",
+     "bbox": {
+      "l": 220.86,
+      "t": 782.36,
+      "r": 559.02,
+      "b": 393.13,
+      "w": 338.16,
+      "h": 389.23,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.37102,
+      "t": 1.0,
+      "r": 0.93909,
+      "b": 0.50249
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p12_e197"
+    },
+    {
+     "reading_order": 198,
+     "page": 12,
+     "label": "section_header",
+     "bbox": {
+      "l": 242.16,
+      "t": 374.83,
+      "r": 539.8,
+      "b": 293.71,
+      "w": 297.65,
+      "h": 81.11,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.4068,
+      "t": 0.4791,
+      "r": 0.90681,
+      "b": 0.37541
+     },
+     "text": "Fewer numbers, better science",
+     "text_len": 29,
+     "level": 1,
+     "element_id": "p12_e198"
+    },
+    {
+     "reading_order": 199,
+     "page": 12,
+     "label": "text",
+     "bbox": {
+      "l": 243.44,
+      "t": 286.92,
+      "r": 538.51,
+      "b": 211.35,
+      "w": 295.07,
+      "h": 75.57,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.40895,
+      "t": 0.36674,
+      "r": 0.90464,
+      "b": 0.27014
+     },
+     "text": "Scientific quality is hard to define, and numbers are easy to look at. But bibliometrics are warping science - encouraging quantity over quality. Leaders at two research institutions describe how they do things differently.",
+     "text_len": 223,
+     "level": 1,
+     "element_id": "p12_e199"
+    },
+    {
+     "reading_order": 200,
+     "page": 12,
+     "label": "section_header",
+     "bbox": {
+      "l": 222.12,
+      "t": 179.96,
+      "r": 356.36,
+      "b": 124.79,
+      "w": 134.24,
+      "h": 55.17,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.37314,
+      "t": 0.23002,
+      "r": 0.59865,
+      "b": 0.1595
+     },
+     "text": "REDEFINE EXCELLENCE Fix incentives to fix science",
+     "text_len": 49,
+     "level": 1,
+     "element_id": "p12_e200"
+    },
+    {
+     "reading_order": 201,
+     "page": 12,
+     "label": "text",
+     "bbox": {
+      "l": 222.12,
+      "t": 116.0,
+      "r": 310.77,
+      "b": 96.19,
+      "w": 88.65,
+      "h": 19.81,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.37314,
+      "t": 0.14827,
+      "r": 0.52206,
+      "b": 0.12295
+     },
+     "text": "Rinze Benedictus and Frank Miedema",
+     "text_len": 34,
+     "level": 1,
+     "element_id": "p12_e201"
+    },
+    {
+     "reading_order": 202,
+     "page": 12,
+     "label": "text",
+     "bbox": {
+      "l": 221.29,
+      "t": 83.59,
+      "r": 379.0,
+      "b": 33.13,
+      "w": 157.71,
+      "h": 50.46,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.37174,
+      "t": 0.10684,
+      "r": 0.63668,
+      "b": 0.04235
+     },
+     "text": "A n obsession with metrics pervades science. Our institution, the University Medical Center Utrecht in the Netherlands, is not exempt. On our website, we proudly declare that we publish about 2,500 peer-reviewed scientific publications per year, with higher than average citation rates.",
+     "text_len": 286,
+     "level": 1,
+     "element_id": "p12_e202"
+    },
+    {
+     "reading_order": 203,
+     "page": 12,
+     "label": "text",
+     "bbox": {
+      "l": 401.57,
+      "t": 157.06,
+      "r": 558.53,
+      "b": 64.63,
+      "w": 156.95,
+      "h": 92.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.67459,
+      "t": 0.20075,
+      "r": 0.93827,
+      "b": 0.08261
+     },
+     "text": "A few years ago, an evaluation committee spent hours discussing which of several faculty members to promote, only to settle on the two who had already been awarded particularly prestigious grants. Meanwhile, faculty members who spent time crafting policy advice had a hard time explaining how this added to their scientific output, even when it affected clinical decisions across the country.",
+     "text_len": 392,
+     "level": 1,
+     "element_id": "p12_e203"
+    },
+    {
+     "reading_order": 204,
+     "page": 12,
+     "label": "text",
+     "bbox": {
+      "l": 401.57,
+      "t": 62.56,
+      "r": 558.53,
+      "b": 33.13,
+      "w": 156.95,
+      "h": 29.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.67459,
+      "t": 0.07996,
+      "r": 0.93827,
+      "b": 0.04235
+     },
+     "text": "Publications that directly influenced patient care were weighted no higher in evaluations than any other paper, and less if that work appeared in the grey literature - that is, in official reports rather than in scientific journals. Some researchers were actively discouraged from pursuing publications that might improve medicine but would garner few citations. All of this led many faculty members, especially younger ones, to complain that publication pressure kept them from doing what really mattered, such as strengthening contacts with patient organizations or trying to make promising treatments work in the real world.",
+     "text_len": 627,
+     "level": 1,
+     "element_id": "p12_e204"
+    }
+   ]
+  },
+  {
+   "page_no": 13,
+   "width_pt": 595.276,
+   "height_pt": 782.362,
+   "png": "pages/page_0013.png",
+   "elements": [
+    {
+     "reading_order": 205,
+     "page": 13,
+     "label": "text",
+     "bbox": {
+      "l": 36.85,
+      "t": 598.06,
+      "r": 193.74,
+      "b": 516.13,
+      "w": 156.89,
+      "h": 81.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.76443,
+      "r": 0.32546,
+      "b": 0.65971
+     },
+     "text": "The institution decided to break free of this mindset. Our university medical centre has just completed its first round of professorial appointments using a different approach, which will continue to be used for the roughly 20 professors appointed each year. The institution is evaluating research programmes in a new way.",
+     "text_len": 322,
+     "level": 1,
+     "element_id": "p13_e205"
+    },
+    {
+     "reading_order": 206,
+     "page": 13,
+     "label": "section_header",
+     "bbox": {
+      "l": 36.85,
+      "t": 504.16,
+      "r": 126.37,
+      "b": 495.9,
+      "w": 89.52,
+      "h": 8.27,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.64441,
+      "r": 0.21229,
+      "b": 0.63385
+     },
+     "text": "MOVING BEYOND METRICS",
+     "text_len": 21,
+     "level": 1,
+     "element_id": "p13_e206"
+    },
+    {
+     "reading_order": 207,
+     "page": 13,
+     "label": "text",
+     "bbox": {
+      "l": 36.85,
+      "t": 493.06,
+      "r": 193.75,
+      "b": 274.63,
+      "w": 156.9,
+      "h": 218.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.63022,
+      "r": 0.32548,
+      "b": 0.35103
+     },
+     "text": "In 2013, senior faculty members and administrators (including F.M.) at the University Medical Center (UMC) Utrecht, Utrecht University and the University of Amsterdam hosted workshops and published a position paper concluding that bibliometric parameters were overemphasized and societal relevance was undervalued 1 . This led to extensive media attention, with newspapers and television shows devoting sections to the 'crisis' in science. Other efforts have come to similar conclusions 2-4 . In the wake of this public discussion, we launched our own internal debates. We had two goals. We wanted to create policies that ensured individual researchers would be judged on their actual contributions and not the counts of their publications. And we wanted our research programmes to be geared towards creating societal impact and not just scientific excellence.",
+     "text_len": 860,
+     "level": 1,
+     "element_id": "p13_e207"
+    },
+    {
+     "reading_order": 208,
+     "page": 13,
+     "label": "text",
+     "bbox": {
+      "l": 36.85,
+      "t": 272.56,
+      "r": 193.74,
+      "b": 180.13,
+      "w": 156.89,
+      "h": 92.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.34838,
+      "r": 0.32546,
+      "b": 0.23024
+     },
+     "text": "Every meeting was attended by 20-60 UMC Utrecht researchers, many explicitly invited for their candour. They ranged from PhD students and young principal investigators to professors and department heads. The executive board, especially F.M., prepared the ground for frank criticism by publicly acknowledging publication pressure, perverse incentives and systemic flaws in science 5,6 .",
+     "text_len": 385,
+     "level": 1,
+     "element_id": "p13_e208"
+    },
+    {
+     "reading_order": 209,
+     "page": 13,
+     "label": "text",
+     "bbox": {
+      "l": 36.85,
+      "t": 178.06,
+      "r": 193.76,
+      "b": 85.63,
+      "w": 156.91,
+      "h": 92.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.22759,
+      "r": 0.3255,
+      "b": 0.10945
+     },
+     "text": "Attendees debated the right balance between research driven by curiosity and research inspired by clinical needs. They considered the role of patients' advice in setting research priorities, the definition of a good PhD trajectory and how to weigh up scientific novelty and societal relevance. We published interviews and reports from these meetings on our internal website and in our magazine.",
+     "text_len": 394,
+     "level": 1,
+     "element_id": "p13_e209"
+    },
+    {
+     "reading_order": 210,
+     "page": 13,
+     "label": "text",
+     "bbox": {
+      "l": 36.85,
+      "t": 83.56,
+      "r": 193.75,
+      "b": 33.13,
+      "w": 156.9,
+      "h": 50.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.1068,
+      "r": 0.32548,
+      "b": 0.04235
+     },
+     "text": "We spent the next year redefining the portfolio that applicants seeking academic promotions are asked to submit. There were few examples to guide us, but we took inspiration from the approach used at the Karolinska Institute in Stockholm, which asks candidates for a package of scientific, teaching and other achievements.",
+     "text_len": 322,
+     "level": 1,
+     "element_id": "p13_e210"
+    },
+    {
+     "reading_order": 211,
+     "page": 13,
+     "label": "picture",
+     "bbox": {
+      "l": 215.19,
+      "t": 723.24,
+      "r": 553.7,
+      "b": 465.92,
+      "w": 338.52,
+      "h": 257.32,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.3615,
+      "t": 0.92443,
+      "r": 0.93016,
+      "b": 0.59553
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p13_e211"
+    },
+    {
+     "reading_order": 212,
+     "page": 13,
+     "label": "text",
+     "bbox": {
+      "l": 216.38,
+      "t": 419.56,
+      "r": 373.28,
+      "b": 222.13,
+      "w": 156.9,
+      "h": 197.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.3635,
+      "t": 0.53627,
+      "r": 0.62707,
+      "b": 0.28392
+     },
+     "text": "Along with other elements, Utrecht candidates now provide a short essay about who they are and what their plans are as faculty members. They must discuss achievements in terms of five domains, only one of which is scientific publications and grants. First, candidates describe their managerial responsibilities and academic duties, such as reviewing for journals and contributing to internal and external committees. Second, they explain how much time they devote to students, what courses they have developed and what other responsibilities they have taken on. Then, if applicable, they describe their clinical work as well as their participation in organizing clinical trials and research into new treatments and diagnostics. Finally, the portfolio covers entrepreneurship and community outreach.",
+     "text_len": 798,
+     "level": 1,
+     "element_id": "p13_e212"
+    },
+    {
+     "reading_order": 213,
+     "page": 13,
+     "label": "text",
+     "bbox": {
+      "l": 216.38,
+      "t": 220.06,
+      "r": 373.28,
+      "b": 127.63,
+      "w": 156.9,
+      "h": 92.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.3635,
+      "t": 0.28128,
+      "r": 0.62707,
+      "b": 0.16313
+     },
+     "text": "We also revamped the applicant-evaluation procedure. The chair of the committee is formally tasked with assuring that all domains are discussed for each candidate. This keeps us from overlooking someone who has hardto-quantify qualities, such as their motivation to turn 'promising' results into something that really matters for patients, or to seek out nonobvious collaborations.",
+     "text_len": 381,
+     "level": 1,
+     "element_id": "p13_e213"
+    },
+    {
+     "reading_order": 214,
+     "page": 13,
+     "label": "text",
+     "bbox": {
+      "l": 216.38,
+      "t": 125.56,
+      "r": 373.24,
+      "b": 85.63,
+      "w": 156.86,
+      "h": 39.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.3635,
+      "t": 0.16049,
+      "r": 0.627,
+      "b": 0.10945
+     },
+     "text": "Another aspect of breaking free of the 'bibliometric mindset' came in how we assess our multidisciplinary research programmes, each of which has on average 80 principal",
+     "text_len": 168,
+     "level": 1,
+     "element_id": "p13_e214"
+    },
+    {
+     "reading_order": 215,
+     "page": 13,
+     "label": "picture",
+     "bbox": {
+      "l": 215.32,
+      "t": 78.0,
+      "r": 259.36,
+      "b": 35.89,
+      "w": 44.04,
+      "h": 42.11,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36171,
+      "t": 0.0997,
+      "r": 0.4357,
+      "b": 0.04587
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p13_e215"
+    },
+    {
+     "reading_order": 216,
+     "page": 13,
+     "label": "section_header",
+     "bbox": {
+      "l": 263.05,
+      "t": 73.09,
+      "r": 335.23,
+      "b": 59.01,
+      "w": 72.18,
+      "h": 14.08,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.4419,
+      "t": 0.09342,
+      "r": 0.56315,
+      "b": 0.07543
+     },
+     "text": "YOUNG SCIENTISTS",
+     "text_len": 16,
+     "level": 1,
+     "element_id": "p13_e216"
+    },
+    {
+     "reading_order": 217,
+     "page": 13,
+     "label": "text",
+     "bbox": {
+      "l": 263.05,
+      "t": 57.62,
+      "r": 338.26,
+      "b": 39.08,
+      "w": 75.21,
+      "h": 18.54,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.4419,
+      "t": 0.07365,
+      "r": 0.56824,
+      "b": 0.04995
+     },
+     "text": "A special issue nature.com/youngscientists Nature investigators. The evaluation method was developed by a committee of faculty members mostly in the early stages of their careers. Following processes outlined by the UK Research Excellence Framework, which audits the output of UK institutions, committee members drew on case studies and published literature to define properties that could be used in broad assessments. This led to a suite of semiqualitative indicators that include conventional outcome measurements, evaluations of leadership and citizenship across UMC Utrecht and other communities, as well as assessments of structure and process, such as how research questions are formed and results disseminated. We think that these shifts will reduce waste 7,8 , increase impact, and attract researchers geared for collaborations with each other and with society at large.",
+     "text_len": 879,
+     "level": 1,
+     "element_id": "p13_e217"
+    },
+    {
+     "reading_order": 218,
+     "page": 13,
+     "label": "section_header",
+     "bbox": {
+      "l": 395.91,
+      "t": 241.66,
+      "r": 454.62,
+      "b": 233.4,
+      "w": 58.71,
+      "h": 8.27,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66509,
+      "t": 0.30889,
+      "r": 0.76371,
+      "b": 0.29833
+     },
+     "text": "LASTING CHANGE",
+     "text_len": 14,
+     "level": 1,
+     "element_id": "p13_e218"
+    },
+    {
+     "reading_order": 219,
+     "page": 13,
+     "label": "text",
+     "bbox": {
+      "l": 395.91,
+      "t": 230.56,
+      "r": 552.78,
+      "b": 180.13,
+      "w": 156.87,
+      "h": 50.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66509,
+      "t": 0.2947,
+      "r": 0.92861,
+      "b": 0.23024
+     },
+     "text": "Researchers at UMC Utrecht are already accustomed to national reviews, so our proposal to revamp evaluations fell on fertile ground. However, crafting these new policies took commitment and patience.",
+     "text_len": 199,
+     "level": 1,
+     "element_id": "p13_e219"
+    },
+    {
+     "reading_order": 220,
+     "page": 13,
+     "label": "text",
+     "bbox": {
+      "l": 395.91,
+      "t": 178.06,
+      "r": 552.81,
+      "b": 33.13,
+      "w": 156.9,
+      "h": 144.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66509,
+      "t": 0.22759,
+      "r": 0.92866,
+      "b": 0.04235
+     },
+     "text": "Two aspects of our approach were crucial. First, we did not let ourselves become paralysed by the belief that only joint action along with funders and journals would bring real change. We were willing to move forward on our own as an institution. Second, we ensured that although change was stimulated from the top, the criteria were set by the faculty members who expect to be judged by those standards. Indeed, after ample debate fuelled by continuing international criticism of biblio­ metric indicators, the first wave of group leaders has embraced the new system, which will permeate the institute in the years to come.",
+     "text_len": 624,
+     "level": 1,
+     "element_id": "p13_e220"
+    }
+   ]
+  },
+  {
+   "page_no": 14,
+   "width_pt": 595.276,
+   "height_pt": 782.362,
+   "png": "pages/page_0014.png",
+   "elements": [
+    {
+     "reading_order": 221,
+     "page": 14,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 724.06,
+      "r": 199.42,
+      "b": 558.13,
+      "w": 156.9,
+      "h": 165.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.92548,
+      "r": 0.335,
+      "b": 0.71339
+     },
+     "text": "During the past few years of lectures and workshops, we were initially struck by how little early- and mid-career researchers knew about the 'business model' of modern science and about how science really works. But they were engaged, quick to learn and quick to identify forward-looking ideas to improve science. Students organized a brainstorming session with high-level faculty members about how to change the medical and lifesciences curriculum to incorporate rewardand-incentive structures. The PhD council chose a 'supervisor of the year' on the basis of the quality of supervision, and not just by the highest number of PhD students supervised, as was the custom before.",
+     "text_len": 677,
+     "level": 1,
+     "element_id": "p14_e221"
+    },
+    {
+     "reading_order": 222,
+     "page": 14,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 556.06,
+      "r": 199.39,
+      "b": 453.13,
+      "w": 156.87,
+      "h": 102.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.71075,
+      "r": 0.33495,
+      "b": 0.57918
+     },
+     "text": "Extended community discussions pay off. We believe that selection and evaluation committees are well aware that bibliometrics can be a reductive force, but that assessors may lack the vocabulary to discuss less-quantifiable dimensions. By formally requiring qualitative indicators and a descriptive portfolio, we broaden what can be talked about 9 . We shape the structures that shape science - we can make sure that they do not warp it.",
+     "text_len": 437,
+     "level": 1,
+     "element_id": "p14_e222"
+    },
+    {
+     "reading_order": 223,
+     "page": 14,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 440.56,
+      "r": 199.24,
+      "b": 327.13,
+      "w": 156.72,
+      "h": 113.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.56312,
+      "r": 0.3347,
+      "b": 0.41813
+     },
+     "text": "Rinze Benedictus is staff adviser at the University Medical Center Utrecht, Utrecht, the Netherlands, and a PhD candidate at the Centre for Science and Technology Studies, Leiden University, Leiden, the Netherlands. Frank Miedema is professor of immunology, and dean and vice-chairman of the executive board of the University Medical Center Utrecht, Utrecht, the Netherlands. He is one of the founders of Science in Transition.",
+     "text_len": 427,
+     "level": 1,
+     "element_id": "p14_e223"
+    },
+    {
+     "reading_order": 224,
+     "page": 14,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 325.06,
+      "r": 163.54,
+      "b": 316.63,
+      "w": 121.02,
+      "h": 8.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.41549,
+      "r": 0.27473,
+      "b": 0.40471
+     },
+     "text": "e-mail: f.miedema@umcutrecht.nl",
+     "text_len": 31,
+     "level": 1,
+     "element_id": "p14_e224"
+    },
+    {
+     "reading_order": 225,
+     "page": 14,
+     "label": "section_header",
+     "bbox": {
+      "l": 42.52,
+      "t": 295.46,
+      "r": 101.61,
+      "b": 279.77,
+      "w": 59.09,
+      "h": 15.69,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.37765,
+      "r": 0.17069,
+      "b": 0.3576
+     },
+     "text": "DO JUDGE",
+     "text_len": 8,
+     "level": 1,
+     "element_id": "p14_e225"
+    },
+    {
+     "reading_order": 226,
+     "page": 14,
+     "label": "section_header",
+     "bbox": {
+      "l": 42.52,
+      "t": 277.1,
+      "r": 198.32,
+      "b": 240.29,
+      "w": 155.8,
+      "h": 36.81,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.35418,
+      "r": 0.33316,
+      "b": 0.30713
+     },
+     "text": "Treat metrics only as surrogates",
+     "text_len": 32,
+     "level": 1,
+     "element_id": "p14_e226"
+    },
+    {
+     "reading_order": 227,
+     "page": 14,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 231.5,
+      "r": 125.57,
+      "b": 222.19,
+      "w": 83.05,
+      "h": 9.31,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.2959,
+      "r": 0.21094,
+      "b": 0.284
+     },
+     "text": "Mark W. J. Ferguson",
+     "text_len": 19,
+     "level": 1,
+     "element_id": "p14_e227"
+    },
+    {
+     "reading_order": 228,
+     "page": 14,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 209.56,
+      "r": 199.4,
+      "b": 138.13,
+      "w": 156.88,
+      "h": 71.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.26786,
+      "r": 0.33497,
+      "b": 0.17656
+     },
+     "text": "Some 20 years ago, when I was dean of biological sciences at the University of Manchester, UK, I tried an experiment. At the time, we assessed candidates applying for appointments and promotions using conventional measures: number of publications, quality of journal, h-index and so on.",
+     "text_len": 286,
+     "level": 1,
+     "element_id": "p14_e228"
+    },
+    {
+     "reading_order": 229,
+     "page": 14,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 136.06,
+      "r": 199.41,
+      "b": 33.13,
+      "w": 156.89,
+      "h": 102.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.17391,
+      "r": 0.33499,
+      "b": 0.04235
+     },
+     "text": "Instead, we decided to ask applicants to tell us what they considered to be their three most important publications and why, and to submit a copy of each. We asked simple, direct questions: what have you discovered? Why is it important? What have you done about your discovery? To make applicants feel more comfortable with this peculiar assessment, we also indicated that they could submit, if they wished, a list of all of their other scientific publications - everyone did.",
+     "text_len": 476,
+     "level": 1,
+     "element_id": "p14_e229"
+    },
+    {
+     "reading_order": 230,
+     "page": 14,
+     "label": "text",
+     "bbox": {
+      "l": 222.05,
+      "t": 713.56,
+      "r": 378.93,
+      "b": 642.13,
+      "w": 156.89,
+      "h": 71.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.37302,
+      "t": 0.91206,
+      "r": 0.63656,
+      "b": 0.82076
+     },
+     "text": "That experience has influenced the work I do now, as director-general of the main science-funding agency in Ireland. The three publications chosen by the applicant told me a lot about their achievements and judgement. Often, they highlighted unconventional impacts of their work.",
+     "text_len": 279,
+     "level": 1,
+     "element_id": "p14_e230"
+    },
+    {
+     "reading_order": 231,
+     "page": 14,
+     "label": "text",
+     "bbox": {
+      "l": 222.05,
+      "t": 640.06,
+      "r": 378.94,
+      "b": 526.63,
+      "w": 156.89,
+      "h": 113.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.37302,
+      "t": 0.81811,
+      "r": 0.63658,
+      "b": 0.67313
+     },
+     "text": "For example, a would-be professor of medicine whose research concerned safely shortening hospital stays selected an article that he had written in the free, unrefereed magazine, Hospital Doctor. Asked why, he replied that hospital managers and most doctors actually read that magazine, so that the piece had facilitated rapid adoption of his findings; he later detailed the impactful results of this in an eminent medical journal (a paper he chose not to submit).",
+     "text_len": 463,
+     "level": 1,
+     "element_id": "p14_e231"
+    },
+    {
+     "reading_order": 232,
+     "page": 14,
+     "label": "text",
+     "bbox": {
+      "l": 222.05,
+      "t": 524.56,
+      "r": 378.95,
+      "b": 390.13,
+      "w": 156.9,
+      "h": 134.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.37302,
+      "t": 0.67048,
+      "r": 0.6366,
+      "b": 0.49866
+     },
+     "text": "I believe most committee members actually read the papers submitted, unlike in other evaluations, where panellists have time only to scan exhaustive lists of publications. This approach may not have changed committee decisions, but it did change incentives of both the candidates and the panellists. The focus was on work that was important and meaningful. When counts of papers or citations become the dominant assessment criteria, people often overlook the basics: what did this scientist do and why does it matter?",
+     "text_len": 517,
+     "level": 1,
+     "element_id": "p14_e232"
+    },
+    {
+     "reading_order": 233,
+     "page": 14,
+     "label": "text",
+     "bbox": {
+      "l": 222.05,
+      "t": 388.06,
+      "r": 378.94,
+      "b": 222.13,
+      "w": 156.89,
+      "h": 165.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.37302,
+      "t": 0.49601,
+      "r": 0.63658,
+      "b": 0.28392
+     },
+     "text": "But committee members often felt uncomfortable; they thought their selection was subjective, and they felt more secure with the numbers. After all, the biologicalsciences faculty had just been through a major reform to prioritize research activity. The committee members had a point - biblio­metric methods do bring some objectivity and may help to avoid biases and prejudices. Still, such approaches do not necessarily help minorities, young people or those working on particularly difficult problems; nor do they encourage reproducibility (see go.nature.com/2dyn0sq). Exercising judgement is what people making important decisions are supposed to do.",
+     "text_len": 652,
+     "level": 1,
+     "element_id": "p14_e233"
+    },
+    {
+     "reading_order": 234,
+     "page": 14,
+     "label": "text",
+     "bbox": {
+      "l": 222.05,
+      "t": 220.06,
+      "r": 378.94,
+      "b": 117.13,
+      "w": 156.89,
+      "h": 102.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.37302,
+      "t": 0.28128,
+      "r": 0.63658,
+      "b": 0.14971
+     },
+     "text": "When I moved on from my position as dean, the system reverted to its conventional form. Changes that result in differences from a cultural norm are difficult to sustain, particularly when they rely on the passion of a small number of people. In the years since, bibliometric assessments have become ever more embedded in evaluations across the world. Lately, rumblings against their influence have grown louder 3 .",
+     "text_len": 414,
+     "level": 1,
+     "element_id": "p14_e234"
+    },
+    {
+     "reading_order": 235,
+     "page": 14,
+     "label": "text",
+     "bbox": {
+      "l": 222.05,
+      "t": 115.06,
+      "r": 378.94,
+      "b": 33.13,
+      "w": 156.89,
+      "h": 81.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.37302,
+      "t": 0.14707,
+      "r": 0.63658,
+      "b": 0.04235
+     },
+     "text": "To move the scientific enterprise towards better measures of quality, perhaps we need a collective effort by a group of leading international universities and research funders. What you measure is what you get: so if funders focus on assessing solid research advances (with potential economic and social impact) then this may encourage reliable, important work and discourage bibliometric gaming.",
+     "text_len": 396,
+     "level": 1,
+     "element_id": "p14_e235"
+    },
+    {
+     "reading_order": 236,
+     "page": 14,
+     "label": "text",
+     "bbox": {
+      "l": 401.57,
+      "t": 703.06,
+      "r": 558.44,
+      "b": 652.63,
+      "w": 156.87,
+      "h": 50.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.67459,
+      "t": 0.89864,
+      "r": 0.93812,
+      "b": 0.83418
+     },
+     "text": "What can funders do? By tweaking rewards, these bodies can shape researchers' choices profoundly. The UK government has commissioned two reports 2,10 on how bibliometrics can be gamed, and is mull-",
+     "text_len": 197,
+     "level": 1,
+     "element_id": "p14_e236"
+    },
+    {
+     "reading_order": 237,
+     "page": 14,
+     "label": "text",
+     "bbox": {
+      "l": 401.57,
+      "t": 642.28,
+      "r": 470.34,
+      "b": 599.4,
+      "w": 68.77,
+      "h": 42.88,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.67459,
+      "t": 0.82095,
+      "r": 0.79012,
+      "b": 0.76614
+     },
+     "text": "\"What did this scientist do and why does it matter?\"",
+     "text_len": 52,
+     "level": 1,
+     "element_id": "p14_e237"
+    },
+    {
+     "reading_order": 238,
+     "page": 14,
+     "label": "text",
+     "bbox": {
+      "l": 486.8,
+      "t": 650.56,
+      "r": 558.43,
+      "b": 589.63,
+      "w": 71.63,
+      "h": 60.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.81777,
+      "t": 0.83153,
+      "r": 0.9381,
+      "b": 0.75365
+     },
+     "text": "ing ways to improve nationwide evaluations. Already we have seen a higher value placed on reproducibility by",
+     "text_len": 108,
+     "level": 1,
+     "element_id": "p14_e238"
+    },
+    {
+     "reading_order": 239,
+     "page": 14,
+     "label": "text",
+     "bbox": {
+      "l": 401.57,
+      "t": 587.56,
+      "r": 558.45,
+      "b": 505.63,
+      "w": 156.88,
+      "h": 81.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.67459,
+      "t": 0.75101,
+      "r": 0.93814,
+      "b": 0.64629
+     },
+     "text": "the US National Institutes of Health, with an increased focus on methodology, and a policy not to release funds until concerns raised by grant reviewers are explicitly addressed. The Netherlands Organisation for Scientific Research, the country's main funding body, has allocated funding for repeat experiments.",
+     "text_len": 311,
+     "level": 1,
+     "element_id": "p14_e239"
+    },
+    {
+     "reading_order": 240,
+     "page": 14,
+     "label": "text",
+     "bbox": {
+      "l": 401.57,
+      "t": 503.56,
+      "r": 558.47,
+      "b": 379.63,
+      "w": 156.89,
+      "h": 123.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.67459,
+      "t": 0.64364,
+      "r": 0.93817,
+      "b": 0.48524
+     },
+     "text": "Research funders should also explicitly encourage important research, even at the expense of publication rate. To this end, at Science Foundation Ireland, we will experiment with changes to the grant application form that are similar to my Manchester pilot. We will also introduce prizes, for example, for mentorship. We believe that such concrete steps will incentivize high-quality research over the long term, counterbalance some of the distortions in the current system, and help institutions to follow suit.",
+     "text_len": 512,
+     "level": 1,
+     "element_id": "p14_e240"
+    },
+    {
+     "reading_order": 241,
+     "page": 14,
+     "label": "text",
+     "bbox": {
+      "l": 401.57,
+      "t": 377.56,
+      "r": 558.46,
+      "b": 316.63,
+      "w": 156.89,
+      "h": 60.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.67459,
+      "t": 0.48259,
+      "r": 0.93815,
+      "b": 0.40471
+     },
+     "text": "If enough international research organizations and funders return to basic principles in promotions, appointments and evaluations, then perhaps the surrogates can be used properly - as supporting information. They are not endpoints in themselves. ■",
+     "text_len": 248,
+     "level": 1,
+     "element_id": "p14_e241"
+    },
+    {
+     "reading_order": 242,
+     "page": 14,
+     "label": "text",
+     "bbox": {
+      "l": 401.57,
+      "t": 304.06,
+      "r": 543.67,
+      "b": 264.13,
+      "w": 142.09,
+      "h": 39.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.67459,
+      "t": 0.38864,
+      "r": 0.91331,
+      "b": 0.33761
+     },
+     "text": "Mark W. J. Ferguson is director-general of Science Foundation Ireland, and chief scientific adviser to the Government of Ireland.",
+     "text_len": 129,
+     "level": 1,
+     "element_id": "p14_e242"
+    },
+    {
+     "reading_order": 243,
+     "page": 14,
+     "label": "text",
+     "bbox": {
+      "l": 401.57,
+      "t": 262.06,
+      "r": 503.36,
+      "b": 253.63,
+      "w": 101.79,
+      "h": 8.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.67459,
+      "t": 0.33496,
+      "r": 0.84559,
+      "b": 0.32418
+     },
+     "text": "e-mail: mark.ferguson@sfi.ie",
+     "text_len": 28,
+     "level": 2,
+     "element_id": "p14_e243"
+    },
+    {
+     "reading_order": 244,
+     "page": 14,
+     "label": "list_item",
+     "bbox": {
+      "l": 401.57,
+      "t": 249.18,
+      "r": 549.57,
+      "b": 218.76,
+      "w": 147.99,
+      "h": 30.42,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.67459,
+      "t": 0.3185,
+      "r": 0.92322,
+      "b": 0.27961
+     },
+     "text": "Dijstelbloem, H., Huisman, F., Mijnhardt, W. & Miedema, F. Science in Transition (2013); available at http://www.scienceintransition.nl/ english",
+     "text_len": 144,
+     "level": 2,
+     "element_id": "p14_e244"
+    },
+    {
+     "reading_order": 245,
+     "page": 14,
+     "label": "list_item",
+     "bbox": {
+      "l": 401.57,
+      "t": 217.18,
+      "r": 545.15,
+      "b": 178.76,
+      "w": 143.57,
+      "h": 38.42,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.67459,
+      "t": 0.2776,
+      "r": 0.91579,
+      "b": 0.22849
+     },
+     "text": "Wilsdon, J. et al. The Metric Tide: Report of the Independent Review of the Role of Metrics in Research Assessment and Management (HEFCE, 2015); available at http://go.nature. com/2da5khq",
+     "text_len": 187,
+     "level": 2,
+     "element_id": "p14_e245"
+    },
+    {
+     "reading_order": 246,
+     "page": 14,
+     "label": "list_item",
+     "bbox": {
+      "l": 401.57,
+      "t": 177.18,
+      "r": 555.54,
+      "b": 162.73,
+      "w": 153.97,
+      "h": 14.45,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.67459,
+      "t": 0.22647,
+      "r": 0.93325,
+      "b": 0.208
+     },
+     "text": "Hicks, D., Wouters, P., Waltman, L., de Rijcke, S. & Rafols, I. Nature 520, 429-431 (2015).",
+     "text_len": 91,
+     "level": 2,
+     "element_id": "p14_e246"
+    },
+    {
+     "reading_order": 247,
+     "page": 14,
+     "label": "list_item",
+     "bbox": {
+      "l": 401.57,
+      "t": 161.18,
+      "r": 548.2,
+      "b": 138.76,
+      "w": 146.62,
+      "h": 22.42,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.67459,
+      "t": 0.20602,
+      "r": 0.92092,
+      "b": 0.17736
+     },
+     "text": "EU2016.nl. Amsterdam Call for Action on Open Science (2016); available at http://go.nature. com/2dnqmsv",
+     "text_len": 103,
+     "level": 2,
+     "element_id": "p14_e247"
+    },
+    {
+     "reading_order": 248,
+     "page": 14,
+     "label": "list_item",
+     "bbox": {
+      "l": 401.57,
+      "t": 137.18,
+      "r": 539.03,
+      "b": 114.76,
+      "w": 137.46,
+      "h": 22.42,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.67459,
+      "t": 0.17534,
+      "r": 0.90551,
+      "b": 0.14668
+     },
+     "text": "Alberts, B., Kirschner, M. W., Tilghman, S. & Varmus, H. Proc. Natl Acad. Sci. USA 111, 5773-5777 (2014).",
+     "text_len": 105,
+     "level": 2,
+     "element_id": "p14_e248"
+    },
+    {
+     "reading_order": 249,
+     "page": 14,
+     "label": "list_item",
+     "bbox": {
+      "l": 401.57,
+      "t": 113.23,
+      "r": 557.44,
+      "b": 98.76,
+      "w": 155.87,
+      "h": 14.47,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.67459,
+      "t": 0.14473,
+      "r": 0.93644,
+      "b": 0.12623
+     },
+     "text": "Schatz, G. Nature Rev. Mol. Cell Biol. 15, 423-426 (2014).",
+     "text_len": 58,
+     "level": 2,
+     "element_id": "p14_e249"
+    },
+    {
+     "reading_order": 250,
+     "page": 14,
+     "label": "list_item",
+     "bbox": {
+      "l": 401.57,
+      "t": 97.23,
+      "r": 541.31,
+      "b": 90.73,
+      "w": 139.74,
+      "h": 6.5,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.67459,
+      "t": 0.12428,
+      "r": 0.90934,
+      "b": 0.11597
+     },
+     "text": "Ioannidis, J. P. A. PLoS Med. 2, e124 (2005).",
+     "text_len": 45,
+     "level": 2,
+     "element_id": "p14_e250"
+    },
+    {
+     "reading_order": 251,
+     "page": 14,
+     "label": "list_item",
+     "bbox": {
+      "l": 401.57,
+      "t": 89.23,
+      "r": 557.34,
+      "b": 82.73,
+      "w": 155.76,
+      "h": 6.5,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.67459,
+      "t": 0.11405,
+      "r": 0.93627,
+      "b": 0.10574
+     },
+     "text": "Macleod, M. R. et al. Lancet 383, 101-104 (2014).",
+     "text_len": 49,
+     "level": 2,
+     "element_id": "p14_e251"
+    },
+    {
+     "reading_order": 252,
+     "page": 14,
+     "label": "list_item",
+     "bbox": {
+      "l": 401.57,
+      "t": 81.18,
+      "r": 546.1,
+      "b": 66.73,
+      "w": 144.52,
+      "h": 14.45,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.67459,
+      "t": 0.10376,
+      "r": 0.91739,
+      "b": 0.08529
+     },
+     "text": "De Rijcke, S., Wouters, P. F., Rushforth, A. D. & Franssen, T. P. Res. Eval. 25, 161-169 (2015).",
+     "text_len": 96,
+     "level": 2,
+     "element_id": "p14_e252"
+    },
+    {
+     "reading_order": 253,
+     "page": 14,
+     "label": "list_item",
+     "bbox": {
+      "l": 401.57,
+      "t": 65.18,
+      "r": 557.64,
+      "b": 34.76,
+      "w": 156.07,
+      "h": 30.42,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.67459,
+      "t": 0.08331,
+      "r": 0.93678,
+      "b": 0.04443
+     },
+     "text": "Building on Success and Learning from Experience: An Independent Review of the Research Excellence Framework (UK Government, 2016); available at http://go.nature.com/2e692uc",
+     "text_len": 173,
+     "level": 2,
+     "element_id": "p14_e253"
+    }
+   ]
+  }
+ ],
+ "caption_blocks": [],
+ "uncaptioned_pictures": [
+  {
+   "page": 1,
+   "bbox": {
+    "l": 42.13,
+    "t": 679.98,
+    "r": 164.02,
+    "b": 631.41,
+    "w": 121.9,
+    "h": 48.57,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": true,
+   "element_id": "p1_e1"
+  },
+  {
+   "page": 1,
+   "bbox": {
+    "l": 41.39,
+    "t": 78.41,
+    "r": 165.71,
+    "b": 35.39,
+    "w": 124.33,
+    "h": 43.02,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": true,
+   "element_id": "p1_e11"
+  },
+  {
+   "page": 1,
+   "bbox": {
+    "l": 412.23,
+    "t": 678.02,
+    "r": 550.3,
+    "b": 636.23,
+    "w": 138.07,
+    "h": 41.79,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": true,
+   "element_id": "p1_e21"
+  },
+  {
+   "page": 2,
+   "bbox": {
+    "l": 0.49,
+    "t": 780.92,
+    "r": 595.28,
+    "b": 349.33,
+    "w": 594.78,
+    "h": 431.58,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": true,
+   "element_id": "p2_e22"
+  },
+  {
+   "page": 2,
+   "bbox": {
+    "l": 7.08,
+    "t": 290.64,
+    "r": 36.78,
+    "b": 265.61,
+    "w": 29.69,
+    "h": 25.02,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": false,
+   "element_id": "p2_e23"
+  },
+  {
+   "page": 2,
+   "bbox": {
+    "l": 216.74,
+    "t": 78.06,
+    "r": 341.17,
+    "b": 35.38,
+    "w": 124.44,
+    "h": 42.69,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": true,
+   "element_id": "p2_e29"
+  },
+  {
+   "page": 3,
+   "bbox": {
+    "l": 213.12,
+    "t": 353.75,
+    "r": 380.05,
+    "b": 32.16,
+    "w": 166.93,
+    "h": 321.58,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": true,
+   "element_id": "p3_e36"
+  },
+  {
+   "page": 3,
+   "bbox": {
+    "l": 35.39,
+    "t": 328.67,
+    "r": 195.17,
+    "b": 195.93,
+    "w": 159.78,
+    "h": 132.74,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": true,
+   "element_id": "p3_e41"
+  },
+  {
+   "page": 3,
+   "bbox": {
+    "l": 36.91,
+    "t": 127.26,
+    "r": 82.64,
+    "b": 92.72,
+    "w": 45.73,
+    "h": 34.54,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": false,
+   "element_id": "p3_e43"
+  },
+  {
+   "page": 3,
+   "bbox": {
+    "l": 35.83,
+    "t": 76.85,
+    "r": 79.9,
+    "b": 35.02,
+    "w": 44.07,
+    "h": 41.83,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": true,
+   "element_id": "p3_e44"
+  },
+  {
+   "page": 3,
+   "bbox": {
+    "l": 395.82,
+    "t": 272.95,
+    "r": 563.07,
+    "b": 34.19,
+    "w": 167.25,
+    "h": 238.76,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": true,
+   "element_id": "p3_e55"
+  },
+  {
+   "page": 4,
+   "bbox": {
+    "l": 481.77,
+    "t": 762.2,
+    "r": 558.7,
+    "b": 742.79,
+    "w": 76.93,
+    "h": 19.4,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": false,
+   "element_id": "p4_e57"
+  },
+  {
+   "page": 4,
+   "bbox": {
+    "l": 31.66,
+    "t": 727.85,
+    "r": 558.82,
+    "b": 33.64,
+    "w": 527.16,
+    "h": 694.22,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": true,
+   "element_id": "p4_e58"
+  },
+  {
+   "page": 5,
+   "bbox": {
+    "l": 36.05,
+    "t": 762.2,
+    "r": 113.14,
+    "b": 742.77,
+    "w": 77.09,
+    "h": 19.43,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": false,
+   "element_id": "p5_e59"
+  },
+  {
+   "page": 5,
+   "bbox": {
+    "l": 211.34,
+    "t": 78.36,
+    "r": 335.35,
+    "b": 35.68,
+    "w": 124.01,
+    "h": 42.69,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": true,
+   "element_id": "p5_e70"
+  },
+  {
+   "page": 6,
+   "bbox": {
+    "l": 481.8,
+    "t": 762.04,
+    "r": 558.61,
+    "b": 742.8,
+    "w": 76.81,
+    "h": 19.23,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": false,
+   "element_id": "p6_e82"
+  },
+  {
+   "page": 6,
+   "bbox": {
+    "l": 216.93,
+    "t": 723.84,
+    "r": 558.58,
+    "b": 390.69,
+    "w": 341.65,
+    "h": 333.15,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": true,
+   "element_id": "p6_e83"
+  },
+  {
+   "page": 7,
+   "bbox": {
+    "l": 36.51,
+    "t": 761.87,
+    "r": 113.63,
+    "b": 743.08,
+    "w": 77.12,
+    "h": 18.79,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": false,
+   "element_id": "p7_e92"
+  },
+  {
+   "page": 7,
+   "bbox": {
+    "l": 36.27,
+    "t": 722.91,
+    "r": 375.96,
+    "b": 495.1,
+    "w": 339.69,
+    "h": 227.81,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": true,
+   "element_id": "p7_e93"
+  },
+  {
+   "page": 8,
+   "bbox": {
+    "l": 482.25,
+    "t": 761.68,
+    "r": 557.94,
+    "b": 742.92,
+    "w": 75.69,
+    "h": 18.76,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": false,
+   "element_id": "p8_e124"
+  },
+  {
+   "page": 8,
+   "bbox": {
+    "l": 217.19,
+    "t": 723.68,
+    "r": 558.68,
+    "b": 495.9,
+    "w": 341.49,
+    "h": 227.78,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": true,
+   "element_id": "p8_e125"
+  },
+  {
+   "page": 9,
+   "bbox": {
+    "l": 403.35,
+    "t": 692.99,
+    "r": 456.87,
+    "b": 636.59,
+    "w": 53.52,
+    "h": 56.4,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": true,
+   "element_id": "p9_e143"
+  },
+  {
+   "page": 9,
+   "bbox": {
+    "l": 40.22,
+    "t": 611.5,
+    "r": 559.07,
+    "b": 265.97,
+    "w": 518.84,
+    "h": 345.53,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": true,
+   "element_id": "p9_e144"
+  },
+  {
+   "page": 9,
+   "bbox": {
+    "l": 220.93,
+    "t": 78.21,
+    "r": 344.93,
+    "b": 35.69,
+    "w": 123.99,
+    "h": 42.52,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": true,
+   "element_id": "p9_e149"
+  },
+  {
+   "page": 10,
+   "bbox": {
+    "l": 214.48,
+    "t": 723.63,
+    "r": 375.6,
+    "b": 507.34,
+    "w": 161.12,
+    "h": 216.29,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": true,
+   "element_id": "p10_e158"
+  },
+  {
+   "page": 11,
+   "bbox": {
+    "l": 220.86,
+    "t": 782.36,
+    "r": 559.02,
+    "b": 393.13,
+    "w": 338.16,
+    "h": 389.23,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": true,
+   "element_id": "p11_e180"
+  },
+  {
+   "page": 12,
+   "bbox": {
+    "l": 220.86,
+    "t": 782.36,
+    "r": 559.02,
+    "b": 393.13,
+    "w": 338.16,
+    "h": 389.23,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": true,
+   "element_id": "p12_e197"
+  },
+  {
+   "page": 13,
+   "bbox": {
+    "l": 215.19,
+    "t": 723.24,
+    "r": 553.7,
+    "b": 465.92,
+    "w": 338.52,
+    "h": 257.32,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": true,
+   "element_id": "p13_e211"
+  },
+  {
+   "page": 13,
+   "bbox": {
+    "l": 215.32,
+    "t": 78.0,
+    "r": 259.36,
+    "b": 35.89,
+    "w": 44.04,
+    "h": 42.11,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": true,
+   "element_id": "p13_e215"
+  }
+ ]
+}

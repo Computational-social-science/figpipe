@@ -1,0 +1,97 @@
+{
+ "paper_id": "1974_nature_molecular_biologists_come_of_age_in_aries_c8c8e684",
+ "source_pdf": "D:\\2026-CSS2020\\Refs\\2019-Origin of the Term Molecular Biology\\!  1974-Nature_Molecular biologists come of age in Aries.pdf",
+ "source_sha256": "e550dd68bf7cd7d7d574a083e15a543444d063248c2364bf2afdb71e9378cc37",
+ "source_name": "!  1974-Nature_Molecular biologists come of age in Aries.pdf",
+ "n_pages": 1,
+ "generated_at": "2026-10-18T11:21:27",
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "n_figures": 1,
+ "n_tables": 1,
+ "n_pictures_detected": 1,
+ "n_uncaptioned_pictures": 0,
+ "figures": [
+  {
+   "figure_id": "fig_001",
+   "kind": "figure",
+   "label_form": "",
+   "figure_number": null,
+   "page": 1,
+   "bbox": {
+    "l": 57.86,
+    "t": 353.28,
+    "r": 257.61,
+    "b": 70.57,
+    "w": 199.75,
+    "h": 282.71,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 116,
+    "y0": 881,
+    "x1": 515,
+    "y1": 1446,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_001.png",
+   "image_size_px": [
+    399,
+    565
+   ],
+   "caption": "Fw. 1 Relative frequencies of births, expressed as index values, under the different Sun signs for taxonomists (-- -) and molecular biologists (--) ; also shown are monthly birth data for the United States in 1934 (. .. ) .",
+   "caption_page": 1,
+   "caption_text": "Fw. 1 Relative frequencies of births, expressed as index values, under the different Sun signs for taxonomists (-- -) and molecular biologists (--) ; also shown are monthly birth data for the United States in 1934 (. .. ) .",
+   "caption_bbox": {
+    "l": 42.28,
+    "t": 66.89,
+    "r": 272.15,
+    "b": 34.76,
+    "w": 229.87,
+    "h": 32.13,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p1_e13"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 3.68
+   },
+   "element_id": "p1_e12",
+   "reading_order": 12
+  }
+ ],
+ "tables": [
+  {
+   "table_id": "table_001",
+   "page": 1,
+   "bbox": {
+    "l": 33.06,
+    "t": 507.27,
+    "r": 544.3,
+    "b": 365.71,
+    "w": 511.24,
+    "h": 141.56,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p1_e10"
+  }
+ ]
+}

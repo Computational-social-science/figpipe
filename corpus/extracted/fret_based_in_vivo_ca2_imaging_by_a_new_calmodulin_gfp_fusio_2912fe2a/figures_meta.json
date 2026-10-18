@@ -1,0 +1,125 @@
+{
+ "paper_id": "fret_based_in_vivo_ca2_imaging_by_a_new_calmodulin_gfp_fusio_2912fe2a",
+ "source_pdf": "D:\\个人简历及资质材料\\博士期间资料\\学位论文研究资料\\GFP\\! FRET-based in vivo Ca2+ imaging by a new calmodulin-GFP fusion molecule(Nature).pdf",
+ "source_sha256": "c5b61cd9f309ab14157ab02b086654359b55db6b834dea911034e63b7895137d",
+ "source_name": "! FRET-based in vivo Ca2+ imaging by a new calmodulin-GFP fusion molecule(Nature).pdf",
+ "n_pages": 5,
+ "generated_at": "2026-10-18T11:25:59",
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "n_figures": 2,
+ "n_tables": 0,
+ "n_pictures_detected": 15,
+ "n_uncaptioned_pictures": 13,
+ "figures": [
+  {
+   "figure_id": "fig_001",
+   "kind": "figure",
+   "label_form": "Fig. 1",
+   "figure_number": 1,
+   "page": 1,
+   "bbox": {
+    "l": 309.04,
+    "t": 708.51,
+    "r": 541.62,
+    "b": 387.12,
+    "w": 232.58,
+    "h": 321.39,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 618,
+    "y0": 167,
+    "x1": 1083,
+    "y1": 810,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_001.png",
+   "image_size_px": [
+    465,
+    643
+   ],
+   "caption": "Fig. 1 Design of YC6.1. a, The ribbon diagram of CaM (blue) bound to CKKp (orange) shows that the CaM domain linker region (red) is near the N- and C-termini of CKKp. The CaM domain linker (residues 75-82) connects the N-terminal EF-hand Ca 2+ -binding domain (N-CaM) and the C-terminal EF-hand Ca 2+ -binding domain (C-CaM) of CaM. b, CKKp was inserted between CaM residues 79 and 80 and was connected to CaM via two Gly-Gly linkers (black). Consequently, two separate segments (75-79 and 80-82; red) of the original CaM linker remain in the fusion construct. The (N-CaM)-GG-CKKp-GG-(C-CaM) hybrid protein structure was modeled using MODELLER 33 and agrees with the experimentally solved CaMCKKp complex in (a). c, A cartoon diagram illustrates how the conformation of YC6.1 might change from the Ca 2+ -free to Ca 2+ -saturated state. The GFP mutants are closer in the Ca 2+ -saturated state, thereby allowing FRET. d, Schematic diagram of YC6.1, YC6.1nu and YC6.2er. YC6.1 is a tandem fusion of CFP, N-CaM, CKKp, C-CaM and YFP. The gene can be excised using HindIII or NotI for the 5′ end and EcoRI, NotI, XhoI, XbaI or ApaI for the 3′ end. In addition to this cytoplasmic version of YC6.1, nucleus- and endoplasmic reticulum-targeting versions of YC6.1 (YC6.1nu and YC6.2er, respectively) have been constructed.",
+   "caption_page": 1,
+   "caption_text": "Fig. 1 Design of YC6.1. a, The ribbon diagram of CaM (blue) bound to CKKp (orange) shows that the CaM domain linker region (red) is near the N- and C-termini of CKKp. The CaM domain linker (residues 75-82) connects the N-terminal EF-hand Ca 2+ -binding domain (N-CaM) and the C-terminal EF-hand Ca 2+ -binding domain (C-CaM) of CaM. b, CKKp was inserted between CaM residues 79 and 80 and was connected to CaM via two Gly-Gly linkers (black). Consequently, two separate segments (75-79 and 80-82; red) of the original CaM linker remain in the fusion construct. The (N-CaM)-GG-CKKp-GG-(C-CaM) hybrid protein structure was modeled using MODELLER 33 and agrees with the experimentally solved CaMCKKp complex in (a). c, A cartoon diagram illustrates how the conformation of YC6.1 might change from the Ca 2+ -free to Ca 2+ -saturated state. The GFP mutants are closer in the Ca 2+ -saturated state, thereby allowing FRET. d, Schematic diagram of YC6.1, YC6.1nu and YC6.2er. YC6.1 is a tandem fusion of CFP, N-CaM, CKKp, C-CaM and YFP. The gene can be excised using HindIII or NotI for the 5′ end and EcoRI, NotI, XhoI, XbaI or ApaI for the 3′ end. In addition to this cytoplasmic version of YC6.1, nucleus- and endoplasmic reticulum-targeting versions of YC6.1 (YC6.1nu and YC6.2er, respectively) have been constructed.",
+   "caption_bbox": {
+    "l": 310.25,
+    "t": 379.9,
+    "r": 546.31,
+    "b": 229.65,
+    "w": 236.06,
+    "h": 150.25,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p1_e11"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 7.22
+   },
+   "element_id": "p1_e10",
+   "reading_order": 10
+  },
+  {
+   "figure_id": "fig_002",
+   "kind": "figure",
+   "label_form": "Fig. 4",
+   "figure_number": 4,
+   "page": 3,
+   "bbox": {
+    "l": 83.58,
+    "t": 709.44,
+    "r": 533.02,
+    "b": 394.91,
+    "w": 449.44,
+    "h": 314.54,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 167,
+    "y0": 165,
+    "x1": 1066,
+    "y1": 794,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_002.png",
+   "image_size_px": [
+    899,
+    629
+   ],
+   "caption": "Fig. 4 Ca 2+ imaging of HeLa cells using YC2.1 and YC6.1. a,b, The fluorescence image (440 ± 10 nm excitation, 535 ± 12.5 nm emission) in HeLa cells show cytoplasmic localization of YC6.1 and YC2.1, respectively. c,d, The HeLa cells were stimulated with 10 µM histamine. The emission ratios (from 535 ± 12.5 nm to 480 ± 12.5 nm) and intensities (535 ± 12.5 nm and 480 ± 12.5 nm) of the cells were measured every 5 s by digital imaging microscopy for both YC6.1 and YC2.1, respectively. The right-hand axes of the top graphs are labeled with Rmin and Rmax.",
+   "caption_page": 3,
+   "caption_text": "Fig. 4 Ca 2+ imaging of HeLa cells using YC2.1 and YC6.1. a,b, The fluorescence image (440 ± 10 nm excitation, 535 ± 12.5 nm emission) in HeLa cells show cytoplasmic localization of YC6.1 and YC2.1, respectively. c,d, The HeLa cells were stimulated with 10 µM histamine. The emission ratios (from 535 ± 12.5 nm to 480 ± 12.5 nm) and intensities (535 ± 12.5 nm and 480 ± 12.5 nm) of the cells were measured every 5 s by digital imaging microscopy for both YC6.1 and YC2.1, respectively. The right-hand axes of the top graphs are labeled with Rmin and Rmax.",
+   "caption_bbox": {
+    "l": 65.69,
+    "t": 391.82,
+    "r": 546.31,
+    "b": 358.71,
+    "w": 480.61,
+    "h": 33.11,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p3_e27"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 3.09
+   },
+   "element_id": "p3_e26",
+   "reading_order": 26
+  }
+ ],
+ "tables": []
+}

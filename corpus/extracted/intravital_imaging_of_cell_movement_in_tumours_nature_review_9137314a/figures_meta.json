@@ -1,0 +1,352 @@
+{
+ "paper_id": "intravital_imaging_of_cell_movement_in_tumours_nature_review_9137314a",
+ "source_pdf": "D:\\个人简历及资质材料\\博士期间资料\\学位论文研究资料\\2004 ANNUAL REPORT(Columbia)\\!  Multiphoton Microscopy\\! Intravital imaging of cell movement in tumours(Nature Review Cancer).pdf",
+ "source_sha256": "3c42d887f1d833ae3330305435ebd4835e4ab62431804fb6d546879d9dda97a5",
+ "source_name": "! Intravital imaging of cell movement in tumours(Nature Review Cancer).pdf",
+ "n_pages": 10,
+ "generated_at": "2026-10-18T11:26:20",
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "n_figures": 6,
+ "n_tables": 1,
+ "n_pictures_detected": 7,
+ "n_uncaptioned_pictures": 1,
+ "figures": [
+  {
+   "figure_id": "fig_001",
+   "kind": "figure",
+   "label_form": "Figure 1",
+   "figure_number": 1,
+   "page": 3,
+   "bbox": {
+    "l": 42.34,
+    "t": 720.69,
+    "r": 343.04,
+    "b": 329.27,
+    "w": 300.7,
+    "h": 391.42,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 85,
+    "y0": 123,
+    "x1": 686,
+    "y1": 905,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_001.png",
+   "image_size_px": [
+    601,
+    782
+   ],
+   "caption": "Figure 1 | Definitions of types of cell movement. During the epithelial-mesenchymal transition (EMT), tumour cells undergo a loss of intrinsic polarity and lose cell-cell junctions that are required for the integrity of the epithelium. These events require extensive reorganization of the cytoskeleton and initiation of actin-based cell motility 92 . Cells that partially retain their polarity still have a tail that contains retraction fibres and a front that contains stress fibres and can form focal adhesions. They can still attach to the extracellular matrix (ECM). Conversely, cells that lose all polarity are characterized as 'amoeboid'. These cells can chemotax towards stimuli and are only loosely attached to the ECM, allowing for rapid migration. The RHO family of small GTPases is known to be involved in EMT through its effects on junction stability 93 , messenger RNA targeting to promote cell polarity 94 and actin dynamics that support cell motility 66 . We propose that as EMT progresses, the complete loss of intrinsic epithelial-cell polarity and the acquisition of random amoeboid locomotion is achieved, resulting in the extreme de-differentiated amoeboid phenotype of the invasive carcinoma cell.",
+   "caption_page": 3,
+   "caption_text": "Figure 1 | Definitions of types of cell movement. During the epithelial-mesenchymal transition (EMT), tumour cells undergo a loss of intrinsic polarity and lose cell-cell junctions that are required for the integrity of the epithelium. These events require extensive reorganization of the cytoskeleton and initiation of actin-based cell motility 92 . Cells that partially retain their polarity still have a tail that contains retraction fibres and a front that contains stress fibres and can form focal adhesions. They can still attach to the extracellular matrix (ECM). Conversely, cells that lose all polarity are characterized as 'amoeboid'. These cells can chemotax towards stimuli and are only loosely attached to the ECM, allowing for rapid migration. The RHO family of small GTPases is known to be involved in EMT through its effects on junction stability 93 , messenger RNA targeting to promote cell polarity 94 and actin dynamics that support cell motility 66 . We propose that as EMT progresses, the complete loss of intrinsic epithelial-cell polarity and the acquisition of random amoeboid locomotion is achieved, resulting in the extreme de-differentiated amoeboid phenotype of the invasive carcinoma cell.",
+   "caption_bbox": {
+    "l": 43.71,
+    "t": 320.71,
+    "r": 342.67,
+    "b": 199.93,
+    "w": 298.96,
+    "h": 120.79,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p3_e39"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 8.56
+   },
+   "element_id": "p3_e38",
+   "reading_order": 38
+  },
+  {
+   "figure_id": "fig_002",
+   "kind": "figure",
+   "label_form": "Figure 2",
+   "figure_number": 2,
+   "page": 4,
+   "bbox": {
+    "l": 42.9,
+    "t": 713.69,
+    "r": 342.61,
+    "b": 408.1,
+    "w": 299.71,
+    "h": 305.59,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 86,
+    "y0": 137,
+    "x1": 685,
+    "y1": 748,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_002.png",
+   "image_size_px": [
+    599,
+    611
+   ],
+   "caption": "Figure 2 | Carcinoma cells in primary mammary tumours move along ECM fibres. Multiphoton microscopy shows that carcinoma cells (green) move on extracellular-matrix (ECM) fibres (purple) and do not seem to be constrained by the ECM networks. a | A low-magnification image that shows, in the lower third of the image, single carcinoma cells (arrows) invading away from the central tumour mass and accompanying ECM fibres (arrowheads). b | A highermagnification image - visualized by second-harmonic generation - that shows carcinoma cells (arrows) in a tumour contacting collagen-containing fibres. Arrowheads point to cell-matrix interactions. Scale bar = 25 µm. From REF. 24.",
+   "caption_page": 4,
+   "caption_text": "Figure 2 | Carcinoma cells in primary mammary tumours move along ECM fibres. Multiphoton microscopy shows that carcinoma cells (green) move on extracellular-matrix (ECM) fibres (purple) and do not seem to be constrained by the ECM networks. a | A low-magnification image that shows, in the lower third of the image, single carcinoma cells (arrows) invading away from the central tumour mass and accompanying ECM fibres (arrowheads). b | A highermagnification image - visualized by second-harmonic generation - that shows carcinoma cells (arrows) in a tumour contacting collagen-containing fibres. Arrowheads point to cell-matrix interactions. Scale bar = 25 µm. From REF. 24.",
+   "caption_bbox": {
+    "l": 43.27,
+    "t": 402.16,
+    "r": 340.04,
+    "b": 328.11,
+    "w": 296.77,
+    "h": 74.05,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p4_e46"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 5.94
+   },
+   "element_id": "p4_e45",
+   "reading_order": 45
+  },
+  {
+   "figure_id": "fig_003",
+   "kind": "figure",
+   "label_form": "Figure 3",
+   "figure_number": 3,
+   "page": 5,
+   "bbox": {
+    "l": 44.27,
+    "t": 720.6,
+    "r": 341.32,
+    "b": 543.22,
+    "w": 297.05,
+    "h": 177.38,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 89,
+    "y0": 123,
+    "x1": 683,
+    "y1": 478,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_003.png",
+   "image_size_px": [
+    594,
+    355
+   ],
+   "caption": "Figure 3 | ECM fibres converge on blood vessels in mammary tumours.Multiphoton microscopy shows that carcinoma cells (green) move on extracellular-matrix fibres (purple), some of which converge on blood vessels (arrow).",
+   "caption_page": 5,
+   "caption_text": "Figure 3 | ECM fibres converge on blood vessels in mammary tumours.Multiphoton microscopy shows that carcinoma cells (green) move on extracellular-matrix fibres (purple), some of which converge on blood vessels (arrow).",
+   "caption_bbox": {
+    "l": 43.54,
+    "t": 536.45,
+    "r": 331.93,
+    "b": 510.66,
+    "w": 288.39,
+    "h": 25.79,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p5_e55"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 6.77
+   },
+   "element_id": "p5_e54",
+   "reading_order": 54
+  },
+  {
+   "figure_id": "fig_004",
+   "kind": "figure",
+   "label_form": "Figure 4",
+   "figure_number": 4,
+   "page": 6,
+   "bbox": {
+    "l": 43.08,
+    "t": 716.61,
+    "r": 343.22,
+    "b": 419.36,
+    "w": 300.14,
+    "h": 297.25,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 86,
+    "y0": 131,
+    "x1": 686,
+    "y1": 725,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_004.png",
+   "image_size_px": [
+    600,
+    594
+   ],
+   "caption": "Figure 4 | Intravasation in primary mammary tumours. a | Blood vessels are seen as nonfluorescent regions. Extracellular-matrix (ECM) fibres (purple) line the border of the vessels and extend through the green fluorescent protein (GFP)-labelled tumour (green). The ECM of the vessels, as imaged here by second-harmonic generation, is believed to be associated with the basement membrane of the vessels. b | Intravasation of carcinoma cells in metastatic primary tumour as shown in a projected z-series that is ~180 µm thick. Rhodamine dextran was injected intravenously to image the blood vessel (red). GFP-labelled tumour cells are green, whereas portions of cells that have crossed into the blood space are yellow. Arrows indicate cells that are crossing or have crossed into the blood vessel. Cells 1 and 2 have yellow pseudopods but the cell body is green, indicating that these cells are still crossing the basement membrane/ endothelium barrier. Cell 3 is uniformly yellow, indicating that it is entirely within the blood-vessel space. From REF. 24.",
+   "caption_page": 6,
+   "caption_text": "Figure 4 | Intravasation in primary mammary tumours. a | Blood vessels are seen as nonfluorescent regions. Extracellular-matrix (ECM) fibres (purple) line the border of the vessels and extend through the green fluorescent protein (GFP)-labelled tumour (green). The ECM of the vessels, as imaged here by second-harmonic generation, is believed to be associated with the basement membrane of the vessels. b | Intravasation of carcinoma cells in metastatic primary tumour as shown in a projected z-series that is ~180 µm thick. Rhodamine dextran was injected intravenously to image the blood vessel (red). GFP-labelled tumour cells are green, whereas portions of cells that have crossed into the blood space are yellow. Arrows indicate cells that are crossing or have crossed into the blood vessel. Cells 1 and 2 have yellow pseudopods but the cell body is green, indicating that these cells are still crossing the basement membrane/ endothelium barrier. Cell 3 is uniformly yellow, indicating that it is entirely within the blood-vessel space. From REF. 24.",
+   "caption_bbox": {
+    "l": 43.63,
+    "t": 409.13,
+    "r": 338.05,
+    "b": 297.75,
+    "w": 294.42,
+    "h": 111.39,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p6_e67"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 10.23
+   },
+   "element_id": "p6_e65",
+   "reading_order": 65
+  },
+  {
+   "figure_id": "fig_005",
+   "kind": "figure",
+   "label_form": "Figure 5",
+   "figure_number": 5,
+   "page": 7,
+   "bbox": {
+    "l": 359.52,
+    "t": 357.0,
+    "r": 553.81,
+    "b": 148.77,
+    "w": 194.28,
+    "h": 208.23,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 719,
+    "y0": 850,
+    "x1": 1108,
+    "y1": 1266,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_005.png",
+   "image_size_px": [
+    389,
+    416
+   ],
+   "caption": "Figure 5 |Metastatic cells orient towards blood vessels, whereas non-metastatic cells do not. a | MTLn3-green fluorescent protein (GFP) carcinoma cells (green) near the vessel (red) are seen to orient towards the vessel by elongating pseudopods (arrows to single cells) compared with cells at a distance from the vessel which are rounded (arrowheads). b | MTC-GFP cells (green) do not orient towards the vessel (red), but remain elongated in random directions whether near or at a distance away from the vessel. Scale bar = 25 µm, which is close to the diameter of a single rounded cell of 20 µm. FromREF.45.",
+   "caption_page": 7,
+   "caption_text": "Figure 5 |Metastatic cells orient towards blood vessels, whereas non-metastatic cells do not. a | MTLn3-green fluorescent protein (GFP) carcinoma cells (green) near the vessel (red) are seen to orient towards the vessel by elongating pseudopods (arrows to single cells) compared with cells at a distance from the vessel which are rounded (arrowheads). b | MTC-GFP cells (green) do not orient towards the vessel (red), but remain elongated in random directions whether near or at a distance away from the vessel. Scale bar = 25 µm, which is close to the diameter of a single rounded cell of 20 µm. FromREF.45.",
+   "caption_bbox": {
+    "l": 359.59,
+    "t": 143.41,
+    "r": 553.29,
+    "b": 50.35,
+    "w": 193.7,
+    "h": 93.05,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p7_e88"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 5.36
+   },
+   "element_id": "p7_e87",
+   "reading_order": 87
+  },
+  {
+   "figure_id": "fig_006",
+   "kind": "figure",
+   "label_form": "Figure 6",
+   "figure_number": 6,
+   "page": 8,
+   "bbox": {
+    "l": 27.67,
+    "t": 719.43,
+    "r": 354.65,
+    "b": 447.61,
+    "w": 326.98,
+    "h": 271.82,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 55,
+    "y0": 125,
+    "x1": 709,
+    "y1": 669,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_006.png",
+   "image_size_px": [
+    654,
+    544
+   ],
+   "caption": "Figure 6 | Model for intravasation of metastatic tumour cells. An illustration that summarizes the interactions of carcinoma cells with blood vessels as seen by multiphotonbased intravital imaging. Carcinoma cells (green) of metastatic tumours collect near blood vessels as a polarized cell layer, which is a result of chemotaxis to the blood vessel in response to chemoattractants such as epidermal growth factor (EGF). Cancer cells express the EGF receptor (EGFR). Macrophages (purple) collect near the vessel in response to colonystimulating factor-1 (CSF1), which is produced by tumour cells. Macrophages express the CSF1 receptor (CSF1R) and might be the source of EGF. The polarity of carcinoma cells is correlated with increased intravasation and metastasis.",
+   "caption_page": 8,
+   "caption_text": "Figure 6 | Model for intravasation of metastatic tumour cells. An illustration that summarizes the interactions of carcinoma cells with blood vessels as seen by multiphotonbased intravital imaging. Carcinoma cells (green) of metastatic tumours collect near blood vessels as a polarized cell layer, which is a result of chemotaxis to the blood vessel in response to chemoattractants such as epidermal growth factor (EGF). Cancer cells express the EGF receptor (EGFR). Macrophages (purple) collect near the vessel in response to colonystimulating factor-1 (CSF1), which is produced by tumour cells. Macrophages express the CSF1 receptor (CSF1R) and might be the source of EGF. The polarity of carcinoma cells is correlated with increased intravasation and metastasis.",
+   "caption_bbox": {
+    "l": 43.27,
+    "t": 444.68,
+    "r": 339.74,
+    "b": 361.89,
+    "w": 296.47,
+    "h": 82.79,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p8_e90"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 2.93
+   },
+   "element_id": "p8_e89",
+   "reading_order": 89
+  }
+ ],
+ "tables": [
+  {
+   "table_id": "table_001",
+   "page": 7,
+   "bbox": {
+    "l": 147.6,
+    "t": 720.49,
+    "r": 554.15,
+    "b": 645.66,
+    "w": 406.55,
+    "h": 74.83,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p7_e78"
+  }
+ ]
+}

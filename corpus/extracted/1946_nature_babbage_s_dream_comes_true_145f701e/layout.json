@@ -1,0 +1,112 @@
+{
+ "paper_id": "1946_nature_babbage_s_dream_comes_true_145f701e",
+ "source_pdf": "D:\\2026讲座\\Computational social science\\Charles Babbage (1791 – 1871)\\! 1946-Nature_Babbage’s Dream Comes True.pdf",
+ "source_sha256": "26a8b2ec32ad421e049aaf68f29f4d36691b979c9a553b98c81e85a00a5c416c",
+ "source_name": "! 1946-Nature_Babbage’s Dream Comes True.pdf",
+ "n_pages": 2,
+ "page_size_pt": [
+  538.58,
+  751.18
+ ],
+ "coordinate_note": "bbox is PDF points with origin at the BOTTOM-LEFT, y increasing upward; bbox_norm divides by page size.",
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "generated_at": "2026-10-18T11:23:22",
+ "pages": [
+  {
+   "page_no": 1,
+   "width_pt": 538.5827,
+   "height_pt": 751.1811,
+   "png": "pages/page_0001.png",
+   "elements": []
+  },
+  {
+   "page_no": 2,
+   "width_pt": 538.5827,
+   "height_pt": 751.1811,
+   "png": "pages/page_0002.png",
+   "elements": [
+    {
+     "reading_order": 0,
+     "page": 2,
+     "label": "formula",
+     "bbox": {
+      "l": 50.58,
+      "t": 631.67,
+      "r": 261.69,
+      "b": 590.55,
+      "w": 211.11,
+      "h": 41.13,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.09391,
+      "t": 0.8409,
+      "r": 0.48589,
+      "b": 0.78616
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p2_e0"
+    },
+    {
+     "reading_order": 1,
+     "page": 2,
+     "label": "formula",
+     "bbox": {
+      "l": 85.15,
+      "t": 547.67,
+      "r": 199.67,
+      "b": 538.45,
+      "w": 114.52,
+      "h": 9.22,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.1581,
+      "t": 0.72908,
+      "r": 0.37073,
+      "b": 0.7168
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p2_e1"
+    },
+    {
+     "reading_order": 2,
+     "page": 2,
+     "label": "formula",
+     "bbox": {
+      "l": 49.1,
+      "t": 505.22,
+      "r": 264.93,
+      "b": 485.85,
+      "w": 215.83,
+      "h": 19.37,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.09117,
+      "t": 0.67257,
+      "r": 0.4919,
+      "b": 0.64678
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p2_e2"
+    }
+   ]
+  }
+ ],
+ "caption_blocks": [],
+ "uncaptioned_pictures": []
+}

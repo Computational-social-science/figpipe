@@ -1,0 +1,998 @@
+{
+ "paper_id": "2014_nature_language_lost_in_translation_12d8a5f7",
+ "source_pdf": "D:\\2024-Matthew effects deepen the cognitive gap\\schizophrenia\\!2014-Nature_Language_Lost in translation.pdf",
+ "source_sha256": "9b0005eb5a08e573df8beda72242f395b08f2cef752aa0af3b3b794e3f4c9d05",
+ "source_name": "!2014-Nature_Language_Lost in translation.pdf",
+ "n_pages": 2,
+ "page_size_pt": [
+  595.28,
+  782.36
+ ],
+ "coordinate_note": "bbox is PDF points with origin at the BOTTOM-LEFT, y increasing upward; bbox_norm divides by page size.",
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "generated_at": "2026-10-18T11:27:29",
+ "pages": [
+  {
+   "page_no": 1,
+   "width_pt": 595.2759,
+   "height_pt": 782.362,
+   "png": "pages/page_0001.png",
+   "elements": [
+    {
+     "reading_order": 0,
+     "page": 1,
+     "label": "picture",
+     "bbox": {
+      "l": 36.16,
+      "t": 723.04,
+      "r": 377.33,
+      "b": 297.91,
+      "w": 341.17,
+      "h": 425.13,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06074,
+      "t": 0.92418,
+      "r": 0.63387,
+      "b": 0.38078
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p1_e0"
+    },
+    {
+     "reading_order": 1,
+     "page": 1,
+     "label": "caption",
+     "bbox": {
+      "l": 36.85,
+      "t": 292.88,
+      "r": 345.95,
+      "b": 286.2,
+      "w": 309.1,
+      "h": 6.69,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.37435,
+      "r": 0.58116,
+      "b": 0.36582
+     },
+     "text": "Gina Kuperberg (right) studies language processing by recording brain activity in reading tasks.",
+     "text_len": 96,
+     "level": 2,
+     "element_id": "p1_e1"
+    },
+    {
+     "reading_order": 2,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 271.83,
+      "r": 75.22,
+      "b": 265.22,
+      "w": 32.7,
+      "h": 6.61,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.34745,
+      "r": 0.12636,
+      "b": 0.339
+     },
+     "text": "L ANGUAGE",
+     "text_len": 9,
+     "level": 1,
+     "element_id": "p1_e2"
+    },
+    {
+     "reading_order": 3,
+     "page": 1,
+     "label": "section_header",
+     "bbox": {
+      "l": 36.85,
+      "t": 255.1,
+      "r": 372.14,
+      "b": 215.58,
+      "w": 335.29,
+      "h": 39.52,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.32606,
+      "r": 0.62516,
+      "b": 0.27555
+     },
+     "text": "Lost in translation",
+     "text_len": 19,
+     "level": 1,
+     "element_id": "p1_e3"
+    },
+    {
+     "reading_order": 4,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 36.85,
+      "t": 206.58,
+      "r": 366.18,
+      "b": 178.26,
+      "w": 329.33,
+      "h": 28.32,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.26405,
+      "r": 0.61514,
+      "b": 0.22785
+     },
+     "text": "Unravelling the mystery of verbal dysfunction in schizophrenia could yield clues to the nature of the disease.",
+     "text_len": 110,
+     "level": 1,
+     "element_id": "p1_e4"
+    },
+    {
+     "reading_order": 5,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 36.85,
+      "t": 157.0,
+      "r": 103.51,
+      "b": 149.56,
+      "w": 66.66,
+      "h": 7.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0619,
+      "t": 0.20067,
+      "r": 0.17389,
+      "b": 0.19116
+     },
+     "text": "BY DAV I D NOONAN",
+     "text_len": 17,
+     "level": 1,
+     "element_id": "p1_e5"
+    },
+    {
+     "reading_order": 6,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 35.68,
+      "t": 136.09,
+      "r": 201.38,
+      "b": 33.13,
+      "w": 165.7,
+      "h": 102.96,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.05994,
+      "t": 0.17395,
+      "r": 0.3383,
+      "b": 0.04235
+     },
+     "text": "T he Swiss psychiatrist Eugen Bleuler is perhaps best known for coining the term 'schizophrenia' more than a century ago. But he also paved the way to understanding the disordered language that characterizes schizophrenia. Certain quotes from patients have since been enshrined in the medical literature as classic examples of the types of language dysfunction that typify schizophrenia. Two quotes continue to echo through time decades after being uttered by patients. The first is from a 1911 book by Bleuler:",
+     "text_len": 511,
+     "level": 1,
+     "element_id": "p1_e6"
+    },
+    {
+     "reading_order": 7,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 223.94,
+      "t": 124.91,
+      "r": 361.37,
+      "b": 64.89,
+      "w": 137.44,
+      "h": 60.02,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.3762,
+      "t": 0.15966,
+      "r": 0.60706,
+      "b": 0.08294
+     },
+     "text": "\"I always liked geography. My last teacher in that subject was Professor August A. He was a man with black eyes. I also like black eyes. There are also blue eyes and gray eyes and other sorts, too. I have heard it said that snakes have green eyes. All people have eyes.\"",
+     "text_len": 270,
+     "level": 1,
+     "element_id": "p1_e7"
+    },
+    {
+     "reading_order": 8,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 212.6,
+      "t": 52.06,
+      "r": 377.15,
+      "b": 33.13,
+      "w": 164.55,
+      "h": 18.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.35715,
+      "t": 0.06654,
+      "r": 0.63357,
+      "b": 0.04235
+     },
+     "text": "The second, which came in response to a question about \"current political issues, like the energy crisis\", is from a 1986 paper by Nancy C. Andreasen:",
+     "text_len": 150,
+     "level": 1,
+     "element_id": "p1_e8"
+    },
+    {
+     "reading_order": 9,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 399.69,
+      "t": 691.91,
+      "r": 540.44,
+      "b": 631.89,
+      "w": 140.75,
+      "h": 60.02,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.67144,
+      "t": 0.88439,
+      "r": 0.90788,
+      "b": 0.80767
+     },
+     "text": "\"They're destroying too many cattle and oil just to make soap. If we need soap when you can jump into a pool of water, and then when you go to buy your gasoline, my folks always thought they should, get pop but the best thing to get, is motor oil, and, money.\"",
+     "text_len": 260,
+     "level": 1,
+     "element_id": "p1_e9"
+    },
+    {
+     "reading_order": 10,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 388.35,
+      "t": 619.06,
+      "r": 552.87,
+      "b": 516.13,
+      "w": 164.52,
+      "h": 102.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.65239,
+      "t": 0.79127,
+      "r": 0.92876,
+      "b": 0.65971
+     },
+     "text": "In the first quote, Bleuler's patient demonstrates 'derailment', in which the speaker loses focus and slides off topic - in this case he was suddenly distracted by the more intriguing subject of eyes. Andreasen's patient exhibits a more profound disconnect: the inability to produce intelligible speech when prompted, instead tossing together a word salad that includes a few potentially relevant terms but carries no meaning.",
+     "text_len": 426,
+     "level": 1,
+     "element_id": "p1_e10"
+    },
+    {
+     "reading_order": 11,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 388.35,
+      "t": 514.06,
+      "r": 552.8,
+      "b": 432.13,
+      "w": 164.45,
+      "h": 81.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.65239,
+      "t": 0.65706,
+      "r": 0.92865,
+      "b": 0.55234
+     },
+     "text": "Both these haunting passages are manifestations of thought disorder, and both have been evoked again and again by generations of researchers seeking to better understand the central role that language plays in schizophrenia. They endure because, in a strange and compelling way, they embody the entwined mysteries of language and thought.",
+     "text_len": 338,
+     "level": 1,
+     "element_id": "p1_e11"
+    },
+    {
+     "reading_order": 12,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 388.35,
+      "t": 430.06,
+      "r": 552.86,
+      "b": 316.63,
+      "w": 164.51,
+      "h": 113.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.65239,
+      "t": 0.54969,
+      "r": 0.92875,
+      "b": 0.40471
+     },
+     "text": "\"Language is like a window into the mind,\" says cognitive neuroscientist Debra Titone at McGill University in Montreal, Canada. After decades of study, the rules and mechanisms of normal language function are well understood. We don't know everything, but we know enough - and have developed enough research tools - to track the flow of language through the normal brain as words are chosen and arranged in sentences that make sense and carry meaning.",
+     "text_len": 451,
+     "level": 1,
+     "element_id": "p1_e12"
+    },
+    {
+     "reading_order": 13,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 388.35,
+      "t": 314.56,
+      "r": 552.92,
+      "b": 190.63,
+      "w": 164.57,
+      "h": 123.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.65239,
+      "t": 0.40206,
+      "r": 0.92885,
+      "b": 0.24366
+     },
+     "text": "Investigators such as Titone use language to explore the brains and disordered minds of people with schizophrenia. Their goal is to identify and understand the underlying causes of the language dysfunction in schizophrenia, and to help determine the neural basis of this devastating mental illness. For patients, there is hope that this work will ultimately lead to earlier diagnosis, better treatments, and interventions that target specific brain functions and cognitive behaviours to improve language and quality of life.",
+     "text_len": 524,
+     "level": 1,
+     "element_id": "p1_e13"
+    },
+    {
+     "reading_order": 14,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 388.35,
+      "t": 188.56,
+      "r": 552.76,
+      "b": 96.13,
+      "w": 164.41,
+      "h": 92.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.65239,
+      "t": 0.24101,
+      "r": 0.92858,
+      "b": 0.12287
+     },
+     "text": "Titone and others who study the language pathology associated with mental disorders make no distinction between language and thought. The once robust debate over that issue is long over. \"Many of the stored representations that you are drawing on in thought are exactly the same as those that you are drawing on in language,\" says Gina Kuperberg, a cognitive neuroscientist at Tufts University in",
+     "text_len": 396,
+     "level": 1,
+     "element_id": "p1_e14"
+    },
+    {
+     "reading_order": 15,
+     "page": 1,
+     "label": "section_header",
+     "bbox": {
+      "l": 396.93,
+      "t": 84.5,
+      "r": 440.78,
+      "b": 75.82,
+      "w": 43.85,
+      "h": 8.68,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.6668,
+      "t": 0.10801,
+      "r": 0.74046,
+      "b": 0.09691
+     },
+     "text": "NATURE.COM",
+     "text_len": 10,
+     "level": 1,
+     "element_id": "p1_e15"
+    },
+    {
+     "reading_order": 16,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 388.35,
+      "t": 74.0,
+      "r": 448.69,
+      "b": 44.35,
+      "w": 60.34,
+      "h": 29.65,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.65239,
+      "t": 0.09459,
+      "r": 0.75375,
+      "b": 0.05669
+     },
+     "text": "For recent research on language dysfunction:",
+     "text_len": 44,
+     "level": 1,
+     "element_id": "p1_e16"
+    },
+    {
+     "reading_order": 17,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 388.35,
+      "t": 42.16,
+      "r": 448.3,
+      "b": 33.96,
+      "w": 59.95,
+      "h": 8.21,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.65239,
+      "t": 0.05389,
+      "r": 0.7531,
+      "b": 0.04341
+     },
+     "text": "go.nature.com/xhrVg5",
+     "text_len": 20,
+     "level": 1,
+     "element_id": "p1_e17"
+    },
+    {
+     "reading_order": 18,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 464.88,
+      "t": 94.06,
+      "r": 552.82,
+      "b": 33.13,
+      "w": 87.94,
+      "h": 60.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.78095,
+      "t": 0.12023,
+      "r": 0.92868,
+      "b": 0.04235
+     },
+     "text": "Medford, Massachusetts, who has applied psycholinguistics to the study of schizophrenia. Titone concurs: \"If you look at what the brain is doing when it's doing language, it's not as if there's some language organ that lights up.\"",
+     "text_len": 230,
+     "level": 1,
+     "element_id": "p1_e18"
+    }
+   ]
+  },
+  {
+   "page_no": 2,
+   "width_pt": 595.2759,
+   "height_pt": 782.362,
+   "png": "pages/page_0002.png",
+   "elements": [
+    {
+     "reading_order": 19,
+     "page": 2,
+     "label": "section_header",
+     "bbox": {
+      "l": 42.52,
+      "t": 693.16,
+      "r": 113.97,
+      "b": 684.9,
+      "w": 71.45,
+      "h": 8.27,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.88598,
+      "r": 0.19146,
+      "b": 0.87543
+     },
+     "text": "MUDDLING THROUGH",
+     "text_len": 16,
+     "level": 1,
+     "element_id": "p2_e19"
+    },
+    {
+     "reading_order": 20,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 682.06,
+      "r": 207.05,
+      "b": 547.63,
+      "w": 164.53,
+      "h": 134.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.8718,
+      "r": 0.34782,
+      "b": 0.69997
+     },
+     "text": "Like the Bleuler and Andreasen examples (both cited by Kuperberg in a 2010 paper), schizophrenic discourse often retains the normal structure of language. It generally follows the rules of grammar: the basics are there, the phonology and even some of the syntax, but it is disjointed and hard to follow. Titone attributes this phenomenon to the fact that the structural properties of language are \"drilled into our brains\" from the moment we are born. By late adolescence or early adulthood, the typical age of onset for schizophrenia, it's already locked in.",
+     "text_len": 559,
+     "level": 1,
+     "element_id": "p2_e20"
+    },
+    {
+     "reading_order": 21,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 545.56,
+      "r": 207.01,
+      "b": 411.13,
+      "w": 164.49,
+      "h": 134.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.69732,
+      "r": 0.34775,
+      "b": 0.5255
+     },
+     "text": "In the disrupted communication that is a hallmark of schizophrenia, the main problem is how words are combined to produce overall meaning. The underlying issues involve the storage of meaning in the brain and the way individuals mobilize and update that information. \"Meaning is the brain,\" says Kuperberg, who is also a psychiatrist at Harvard Medical School. \"It is stored and represented extraordinarily widely throughout the brain.\" These mental representations of our external and internal worlds exist in complex neural networks that we draw on when we use language.",
+     "text_len": 572,
+     "level": 1,
+     "element_id": "p2_e21"
+    },
+    {
+     "reading_order": 22,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 409.06,
+      "r": 207.08,
+      "b": 201.13,
+      "w": 164.56,
+      "h": 207.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.52285,
+      "r": 0.34787,
+      "b": 0.25708
+     },
+     "text": "During conversation, mentally healthy people sort through this massive store of everchanging information to produce comprehensible language. But in some people with schizophrenia this basic ability is impaired. The problem is often described as a \"loosening of associations\" in which, for example, words are chosen not because they make sense, but because the patient simply associates them with other words. When the man who professed his fondness for geography as it was taught by Professor A accessed his stored knowledge of the experience, he quickly veered off track and abandoned the professor altogether for a string of loosely connected references to eyes. For Andreasen's more severely impaired patient, the question about the energy crisis sent him bouncing around his brain like a pinball, lighting up stored networks that, when transmitted as language, amounted to gibberish.",
+     "text_len": 887,
+     "level": 1,
+     "element_id": "p2_e22"
+    },
+    {
+     "reading_order": 23,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 42.52,
+      "t": 199.06,
+      "r": 207.06,
+      "b": 33.13,
+      "w": 164.54,
+      "h": 165.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07143,
+      "t": 0.25443,
+      "r": 0.34784,
+      "b": 0.04235
+     },
+     "text": "People without schizophrenia update and reorganize this stored information from moment to moment as they interact with others and the external world. As they navigate through their day, they process everything from the identity of the person they are talking to (their boss, perhaps) to changes in the tone of voice. But Kuperberg's research suggests that people with schizophrenia have difficulty performing this moment-to-moment updating, limiting their ability to revise their stored knowledge and adjust to the flow of everyday communication. Such abnormalities have been linked to a breakdown in the fast, continuous interaction between prefrontal and temporal areas of the brain. Among other problems, this can result in a kind of cognitive rigidity, sticking to a topic at the expense of coherence - for example, talking about the weather when the pharmacist asks about a prescription because someone on the bus talked about the weather a few minutes before. Kuperberg adds that people with schizophrenia are often unaware of their difficulties with communication.",
+     "text_len": 1071,
+     "level": 1,
+     "element_id": "p2_e23"
+    },
+    {
+     "reading_order": 24,
+     "page": 2,
+     "label": "section_header",
+     "bbox": {
+      "l": 218.27,
+      "t": 630.16,
+      "r": 269.67,
+      "b": 621.9,
+      "w": 51.4,
+      "h": 8.27,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36667,
+      "t": 0.80546,
+      "r": 0.45302,
+      "b": 0.7949
+     },
+     "text": "MAKING SENSE",
+     "text_len": 12,
+     "level": 1,
+     "element_id": "p2_e24"
+    },
+    {
+     "reading_order": 25,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 218.27,
+      "t": 619.06,
+      "r": 382.81,
+      "b": 516.13,
+      "w": 164.54,
+      "h": 102.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36667,
+      "t": 0.79127,
+      "r": 0.64308,
+      "b": 0.65971
+     },
+     "text": "It is generally thought that people with schizophrenia have problems in the way they access and mobilize stored meaning, and not in the way the meaning is stored in the first place, but Titone raises another possibility. Stored meaning is based on experience of the real world, she says, and \"people with schizophrenia have a different experience with the world\", so perhaps the way meaning is stored - the structure of it - might play a contributing role.",
+     "text_len": 456,
+     "level": 1,
+     "element_id": "p2_e25"
+    },
+    {
+     "reading_order": 26,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 218.27,
+      "t": 514.06,
+      "r": 382.79,
+      "b": 306.13,
+      "w": 164.52,
+      "h": 207.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36667,
+      "t": 0.65706,
+      "r": 0.64305,
+      "b": 0.39129
+     },
+     "text": "We know that the supple nature of language itself, with its many nuances and ambiguities, can cause problems for people with schizophrenia. In one study, Kuperberg, who uses functional magnetic resonance imaging, electroencephalography and other methods to study language function in normal and abnormal subjects, presented her subjects with the following sentence: \"Every morning at breakfast the eggs would eat.\" It's a crafty little construction in which the individual words are semantically related but the whole doesn't add up. During experiments that measured the brain's electrical activity, it fooled even healthy brains for a few hundredths of a second before the conflict with stored knowledge (the implausibility of the sentence) was recognized and resolved by additional processing. Unlike the control subjects, however, those with schizophrenia did not do the extra processing and",
+     "text_len": 894,
+     "level": 1,
+     "element_id": "p2_e26"
+    },
+    {
+     "reading_order": 27,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 218.27,
+      "t": 285.0,
+      "r": 291.58,
+      "b": 231.12,
+      "w": 73.32,
+      "h": 53.88,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36667,
+      "t": 0.36428,
+      "r": 0.48982,
+      "b": 0.29541
+     },
+     "text": "Language dysfunction in schizophrenia is a perfect storm of complexity.",
+     "text_len": 71,
+     "level": 1,
+     "element_id": "p2_e27"
+    },
+    {
+     "reading_order": 28,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 304.8,
+      "t": 304.06,
+      "r": 382.75,
+      "b": 211.63,
+      "w": 77.95,
+      "h": 92.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51203,
+      "t": 0.38864,
+      "r": 0.64298,
+      "b": 0.2705
+     },
+     "text": "did not register the sentence as implausible. Their ability to do the extra work to recognize and resolve the conflict was impaired. The patterns of two brain waves measured and recorded during",
+     "text_len": 193,
+     "level": 1,
+     "element_id": "p2_e28"
+    },
+    {
+     "reading_order": 29,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 218.27,
+      "t": 209.56,
+      "r": 382.73,
+      "b": 169.63,
+      "w": 164.46,
+      "h": 39.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36667,
+      "t": 0.26786,
+      "r": 0.64295,
+      "b": 0.21682
+     },
+     "text": "the experiment - one sensitive to syntax and one to stored knowledge - suggested that, in the schizophrenia patients, an over-reliance on stored knowledge trumped the rules.",
+     "text_len": 173,
+     "level": 1,
+     "element_id": "p2_e29"
+    },
+    {
+     "reading_order": 30,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 218.27,
+      "t": 167.56,
+      "r": 382.78,
+      "b": 85.63,
+      "w": 164.51,
+      "h": 81.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36667,
+      "t": 0.21417,
+      "r": 0.64303,
+      "b": 0.10945
+     },
+     "text": "\"Language is inherently ambiguous,\" says Titone. \"Words point to two different meanings all the time. It takes a lot more cognitive machinery to be able to reduce that kind of ambiguity in the moment as we're processing or producing language.\" People with schizophrenia, she says, find it particularly difficult to cope with this.",
+     "text_len": 330,
+     "level": 1,
+     "element_id": "p2_e30"
+    },
+    {
+     "reading_order": 31,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 218.27,
+      "t": 83.56,
+      "r": 382.8,
+      "b": 33.13,
+      "w": 164.53,
+      "h": 50.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.36667,
+      "t": 0.1068,
+      "r": 0.64306,
+      "b": 0.04235
+     },
+     "text": "Insensitivity to context (\"the eggs would eat\") is a factor not only in comprehension, but also in the way language is produced. In normal subjects, context serves as a guide when recruiting neural networks - it's how you distinguish between various meanings of the word 'bear', for example. In people with schizophrenia, a reduced ability to use context helps foster loose associations. \"If you have an incoming signal that triggers, in some very knee-jerk, reflexive way, some thought, it's going to be really hard for context to trump that,\" she says.",
+     "text_len": 554,
+     "level": 1,
+     "element_id": "p2_e31"
+    },
+    {
+     "reading_order": 32,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 394.02,
+      "t": 650.56,
+      "r": 558.51,
+      "b": 474.13,
+      "w": 164.5,
+      "h": 176.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66191,
+      "t": 0.83153,
+      "r": 0.93824,
+      "b": 0.60602
+     },
+     "text": "Another complication for some people with schizophrenia, especially with respect to comprehension, is the fact that humans process language word-by-word. This incremental processing is very fast, of course, and the normal brain must use the context it has already built up to process each new word it encounters in real time. \"To do that,\" says Kuperberg, \"we need to mobilize all our stored world knowledge really quickly, use it to combine individual words together to generate new meaning, and then update our real-world knowledge memory stores with this new meaning.\" In other words, it's the sort of higher-order language function that flummoxes people with the impaired semantic memory, working memory and context insensitivity found in schizophrenia.",
+     "text_len": 757,
+     "level": 1,
+     "element_id": "p2_e32"
+    },
+    {
+     "reading_order": 33,
+     "page": 2,
+     "label": "section_header",
+     "bbox": {
+      "l": 394.02,
+      "t": 462.16,
+      "r": 471.31,
+      "b": 453.9,
+      "w": 77.29,
+      "h": 8.27,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66191,
+      "t": 0.59072,
+      "r": 0.79175,
+      "b": 0.58017
+     },
+     "text": "LINGUISTIC ISOLATION",
+     "text_len": 20,
+     "level": 1,
+     "element_id": "p2_e33"
+    },
+    {
+     "reading_order": 34,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 394.02,
+      "t": 451.06,
+      "r": 558.52,
+      "b": 337.63,
+      "w": 164.51,
+      "h": 113.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66191,
+      "t": 0.57654,
+      "r": 0.93825,
+      "b": 0.43155
+     },
+     "text": "Kim Mueser, a psychologist at Boston University in Massachusetts who studies social skills in people with schizophrenia, points out yet another problem facing the sub-group of people with schizophrenia who demonstrate 'blunted affect'. These individuals seem emotionally flat but actually experience a full range of emotions - it's their ability to communicate them that is impaired. \"When you talk about social skills,\" says Mueser, \"90 per cent of what people are usually talking about are the verbal skills.\"",
+     "text_len": 511,
+     "level": 1,
+     "element_id": "p2_e34"
+    },
+    {
+     "reading_order": 35,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 394.02,
+      "t": 335.56,
+      "r": 558.43,
+      "b": 243.13,
+      "w": 164.41,
+      "h": 92.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66191,
+      "t": 0.42891,
+      "r": 0.9381,
+      "b": 0.31076
+     },
+     "text": "So, language dysfunction in schizophrenia is a perfect storm of complexity, bringing together a dauntingly complicated mental illness and an equally complicated higher cortical function. There is something especially cruel in the way schizophrenia cuts people off from the simple pleasures of conversation and denies them the comfort of sharing their thoughts and feelings with others.",
+     "text_len": 385,
+     "level": 1,
+     "element_id": "p2_e35"
+    },
+    {
+     "reading_order": 36,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 394.02,
+      "t": 241.06,
+      "r": 558.46,
+      "b": 127.63,
+      "w": 164.45,
+      "h": 113.43,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66191,
+      "t": 0.30812,
+      "r": 0.93815,
+      "b": 0.16313
+     },
+     "text": "Kuperberg hints at this idea when she departs from her scientific discourse to expound excitedly on the everyday miracle of two people talking. \"You have your world and your agenda and your goals,\" she says, \"and I have my world and my agenda and my goals, and we don't know each other, and yet, somehow, through this magical thing, this sequence of words, these syllables, somehow you are communicating to me through this code to somehow update my brain with your thoughts. Isn't that cool?\"",
+     "text_len": 492,
+     "level": 1,
+     "element_id": "p2_e36"
+    },
+    {
+     "reading_order": 37,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 394.02,
+      "t": 125.56,
+      "r": 558.45,
+      "b": 64.63,
+      "w": 164.43,
+      "h": 60.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66191,
+      "t": 0.16049,
+      "r": 0.93814,
+      "b": 0.08261
+     },
+     "text": "Ordered thought, manifest in the beauty and wonder of language, is cool indeed. So too is the continuing effort of scientists to understand how that precious gift is lost in people with schizophrenia - and maybe one day to give it back to them. ■",
+     "text_len": 246,
+     "level": 1,
+     "element_id": "p2_e37"
+    },
+    {
+     "reading_order": 38,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 394.02,
+      "t": 52.06,
+      "r": 546.36,
+      "b": 33.13,
+      "w": 152.34,
+      "h": 18.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.66191,
+      "t": 0.06654,
+      "r": 0.91783,
+      "b": 0.04235
+     },
+     "text": "David Noonan is a freelance science writer based in New Jersey.",
+     "text_len": 63,
+     "level": 1,
+     "element_id": "p2_e38"
+    }
+   ]
+  }
+ ],
+ "caption_blocks": [
+  {
+   "page": 1,
+   "blocks": [
+    {
+     "text": "Gina Kuperberg (right) studies language processing by recording brain activity in reading tasks.",
+     "bbox": {
+      "l": 36.85,
+      "t": 292.88,
+      "r": 345.95,
+      "b": 286.2,
+      "w": 309.1,
+      "h": 6.69,
+      "coord": "pdf_points_bottomleft"
+     },
+     "element_ids": [
+      "p1_e1"
+     ]
+    }
+   ]
+  }
+ ],
+ "uncaptioned_pictures": []
+}

@@ -1,0 +1,2446 @@
+{
+ "paper_id": "fret_based_in_vivo_ca2_imaging_by_a_new_calmodulin_gfp_fusio_2912fe2a",
+ "source_pdf": "D:\\个人简历及资质材料\\博士期间资料\\学位论文研究资料\\GFP\\! FRET-based in vivo Ca2+ imaging by a new calmodulin-GFP fusion molecule(Nature).pdf",
+ "source_sha256": "c5b61cd9f309ab14157ab02b086654359b55db6b834dea911034e63b7895137d",
+ "source_name": "! FRET-based in vivo Ca2+ imaging by a new calmodulin-GFP fusion molecule(Nature).pdf",
+ "n_pages": 5,
+ "page_size_pt": [
+  612.0,
+  792.0
+ ],
+ "coordinate_note": "bbox is PDF points with origin at the BOTTOM-LEFT, y increasing upward; bbox_norm divides by page size.",
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "generated_at": "2026-10-18T11:25:59",
+ "pages": [
+  {
+   "page_no": 1,
+   "width_pt": 612.0,
+   "height_pt": 792.0,
+   "png": "pages/page_0001.png",
+   "elements": [
+    {
+     "reading_order": 0,
+     "page": 1,
+     "label": "picture",
+     "bbox": {
+      "l": 22.17,
+      "t": 360.95,
+      "r": 35.54,
+      "b": 343.77,
+      "w": 13.36,
+      "h": 17.17,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.03623,
+      "t": 0.45574,
+      "r": 0.05807,
+      "b": 0.43405
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p1_e0"
+    },
+    {
+     "reading_order": 1,
+     "page": 1,
+     "label": "picture",
+     "bbox": {
+      "l": 212.11,
+      "t": 774.72,
+      "r": 229.35,
+      "b": 762.17,
+      "w": 17.24,
+      "h": 12.55,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.34658,
+      "t": 0.97818,
+      "r": 0.37475,
+      "b": 0.96234
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p1_e1"
+    },
+    {
+     "reading_order": 2,
+     "page": 1,
+     "label": "section_header",
+     "bbox": {
+      "l": 491.82,
+      "t": 754.19,
+      "r": 546.31,
+      "b": 737.63,
+      "w": 54.48,
+      "h": 16.56,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.80363,
+      "t": 0.95226,
+      "r": 0.89266,
+      "b": 0.93135
+     },
+     "text": "letters",
+     "text_len": 7,
+     "level": 1,
+     "element_id": "p1_e2"
+    },
+    {
+     "reading_order": 3,
+     "page": 1,
+     "label": "section_header",
+     "bbox": {
+      "l": 65.69,
+      "t": 707.96,
+      "r": 260.62,
+      "b": 631.61,
+      "w": 194.93,
+      "h": 76.35,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.10734,
+      "t": 0.89389,
+      "r": 0.42585,
+      "b": 0.79749
+     },
+     "text": "FRET-based in vivo Ca 2+ imaging by a new calmodulin-GFP fusion molecule",
+     "text_len": 72,
+     "level": 1,
+     "element_id": "p1_e3"
+    },
+    {
+     "reading_order": 4,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 65.69,
+      "t": 623.25,
+      "r": 275.96,
+      "b": 593.17,
+      "w": 210.26,
+      "h": 30.08,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.10734,
+      "t": 0.78693,
+      "r": 0.45092,
+      "b": 0.74895
+     },
+     "text": "Kevin Truong 1 , Asako Sawano 2,3 , Hideaki Mizuno 2 , Hiroshi Hama 2 , Kit I. Tong 1 , Tapas Kumar Mal 1 , Atsushi Miyawaki 2 and Mitsuhiko Ikura 1",
+     "text_len": 148,
+     "level": 1,
+     "element_id": "p1_e4"
+    },
+    {
+     "reading_order": 5,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 65.69,
+      "t": 579.44,
+      "r": 301.78,
+      "b": 498.5,
+      "w": 236.08,
+      "h": 80.93,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.10734,
+      "t": 0.73162,
+      "r": 0.4931,
+      "b": 0.62942
+     },
+     "text": "1 Division of Molecular and Structural Biology, Ontario Cancer Institute and Department of Medical Biophysics, University of Toronto, Toronto, Ontario M5G 2M9, Canada. 2 Laboratory for Cell Function and Dynamics, Advanced Technology Development Center, Brain Science Institute, The Institute of Physical and Chemical Science (RIKEN), 2-1 Hirosawa, Wako-city, Saitama 351-0198, Japan. 3 Brain Science Research Division, Brain Science and Life Technology Research Foundation, 1-28-12 Narimasu, Itabashi, Tokyo 175-0094, Japan.",
+     "text_len": 524,
+     "level": 1,
+     "element_id": "p1_e5"
+    },
+    {
+     "reading_order": 6,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 65.69,
+      "t": 486.89,
+      "r": 270.68,
+      "b": 479.74,
+      "w": 204.99,
+      "h": 7.15,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.10734,
+      "t": 0.61476,
+      "r": 0.44229,
+      "b": 0.60573
+     },
+     "text": "Published online: 12 November 2001, DOI: 10.1038/nsb728",
+     "text_len": 55,
+     "level": 2,
+     "element_id": "p1_e6"
+    },
+    {
+     "reading_order": 7,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 65.69,
+      "t": 464.59,
+      "r": 301.76,
+      "b": 298.11,
+      "w": 236.07,
+      "h": 166.48,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.10734,
+      "t": 0.5866,
+      "r": 0.49307,
+      "b": 0.3764
+     },
+     "text": "Intracellular Ca 2+ acts as a second messenger that regulates numerous physiological cellular phenomena including development, differentiation and apoptosis. Cameleons, a class of fluorescent indicators for Ca 2+ based on green fluorescent proteins (GFPs) and calmodulin (CaM), have proven to be a useful tool in measuring free Ca 2+ concentrations in living cells. Traditional cameleons, however, have a small dynamic range of fluorescence resonance energy transfer (FRET), making subtle changes in Ca 2+ concentrations difficult to detect and study in some cells and organelles. Using the NMR structure of CaM bound to the CaM binding peptide derived from CaM-dependent kinase kinase (CKKp), we have rationally designed a new cameleon that displays a twofold increase in the FRET dynamic range within the physiologically significant range of cytoplasmic Ca 2+ concentration of 0.05-1 µM.",
+     "text_len": 889,
+     "level": 1,
+     "element_id": "p1_e7"
+    },
+    {
+     "reading_order": 8,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 65.69,
+      "t": 296.78,
+      "r": 301.79,
+      "b": 129.91,
+      "w": 236.1,
+      "h": 166.87,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.10734,
+      "t": 0.37472,
+      "r": 0.49312,
+      "b": 0.16403
+     },
+     "text": "The traditional yellow cameleon (YC) 1 consists of a tandem fusion of a cyan fluorescent protein (CFP) 2,3 , CaM 4 , the CaMbinding peptide of myosin light chain kinase (MLCKp) 5 and a yellow fluorescent protein (YFP) 6-8 . Upon increasing the free Ca 2+ concentration in solution, the CaM module of the cameleon binds Ca 2+ and wraps around the fused MLCKp. This conformational change leads to a decrease in the distance between the two GFP variants and, therefore, an increase in FRET 1,9 . By observing the change in the ratio of the fluorescence intensities of acceptor and the donor (R) in living cells, the onset and termination of Ca 2+ signaling can be observed in a specific cellular compartment, such as the cytoplasm, nucleus or endoplasmic reticulum 1,10 . One useful measure of the quality of an indicator is the dynamic range of the emission ratio, where dynamic range is defined as the maximum ratio, Rmax, divided by the minimum ratio, Rmin.",
+     "text_len": 957,
+     "level": 1,
+     "element_id": "p1_e8"
+    },
+    {
+     "reading_order": 9,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 65.69,
+      "t": 128.78,
+      "r": 301.78,
+      "b": 46.73,
+      "w": 236.08,
+      "h": 82.05,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.10734,
+      "t": 0.1626,
+      "r": 0.4931,
+      "b": 0.059
+     },
+     "text": "CaM-GFP-based Ca 2+ indicators, such as cameleons and other engineered molecules 11,12 , have many advantages over synthetic fluorescent dyes 13-15 . Cameleons have been successfully expressed in certain cell types 1,10 and can be targeted to specific organelles or sites for observation of local Ca 2+ concentration changes. YC2.1 is a yellow cameleon 1 constructed from a YFP variant that is less sensitive to pH than the enhanced YFP (EYFP) in the original version of the Ca 2+ indicator. Although YC2.1 has a reported dynamic range of about two between zero and saturating Ca 2+ concentrations in vitro, the change in the emission ratio is only 1.6-fold in vivo 9 . A more effective in vivo Ca 2+ indicator would have a larger dynamic range so that signal and noise can be easily distinguished, but still maintain the advantages of cameleons.",
+     "text_len": 846,
+     "level": 1,
+     "element_id": "p1_e9"
+    },
+    {
+     "reading_order": 10,
+     "page": 1,
+     "label": "picture",
+     "bbox": {
+      "l": 309.04,
+      "t": 708.51,
+      "r": 541.62,
+      "b": 387.12,
+      "w": 232.58,
+      "h": 321.39,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50497,
+      "t": 0.89458,
+      "r": 0.885,
+      "b": 0.48879
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p1_e10"
+    },
+    {
+     "reading_order": 11,
+     "page": 1,
+     "label": "caption",
+     "bbox": {
+      "l": 310.25,
+      "t": 379.9,
+      "r": 546.31,
+      "b": 229.65,
+      "w": 236.06,
+      "h": 150.25,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50694,
+      "t": 0.47967,
+      "r": 0.89266,
+      "b": 0.28996
+     },
+     "text": "Fig. 1 Design of YC6.1. a, The ribbon diagram of CaM (blue) bound to CKKp (orange) shows that the CaM domain linker region (red) is near the N- and C-termini of CKKp. The CaM domain linker (residues 75-82) connects the N-terminal EF-hand Ca 2+ -binding domain (N-CaM) and the C-terminal EF-hand Ca 2+ -binding domain (C-CaM) of CaM. b, CKKp was inserted between CaM residues 79 and 80 and was connected to CaM via two Gly-Gly linkers (black). Consequently, two separate segments (75-79 and 80-82; red) of the original CaM linker remain in the fusion construct. The (N-CaM)-GG-CKKp-GG-(C-CaM) hybrid protein structure was modeled using MODELLER 33 and agrees with the experimentally solved CaMCKKp complex in (a). c, A cartoon diagram illustrates how the conformation of YC6.1 might change from the Ca 2+ -free to Ca 2+ -saturated state. The GFP mutants are closer in the Ca 2+ -saturated state, thereby allowing FRET. d, Schematic diagram of YC6.1, YC6.1nu and YC6.2er. YC6.1 is a tandem fusion of CFP, N-CaM, CKKp, C-CaM and YFP. The gene can be excised using HindIII or NotI for the 5′ end and EcoRI, NotI, XhoI, XbaI or ApaI for the 3′ end. In addition to this cytoplasmic version of YC6.1, nucleus- and endoplasmic reticulum-targeting versions of YC6.1 (YC6.1nu and YC6.2er, respectively) have been constructed.",
+     "text_len": 1315,
+     "level": 2,
+     "element_id": "p1_e11"
+    },
+    {
+     "reading_order": 12,
+     "page": 1,
+     "label": "section_header",
+     "bbox": {
+      "l": 310.89,
+      "t": 128.78,
+      "r": 491.45,
+      "b": 120.5,
+      "w": 180.56,
+      "h": 8.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50799,
+      "t": 0.1626,
+      "r": 0.80302,
+      "b": 0.15215
+     },
+     "text": "Structure-based design of a new cameleon",
+     "text_len": 40,
+     "level": 1,
+     "element_id": "p1_e12"
+    },
+    {
+     "reading_order": 13,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 310.89,
+      "t": 117.97,
+      "r": 546.31,
+      "b": 46.73,
+      "w": 235.42,
+      "h": 71.24,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50799,
+      "t": 0.14895,
+      "r": 0.89266,
+      "b": 0.059
+     },
+     "text": "In order to improve the dynamic range of cameleons, we constructed a new yellow cameleon, YC6.1, based on the structure of CaM in complex with CKKp 16 . In contrast to the design of YC2.1, which was based on the structure of CaM bound to MLCKp where CaM is fused to MLCKp at the C-terminus 17 , our structural studies on the CaM-CKKp complex 16 suggested that the CaM binding peptide could be fused at the linker region between the N- and C-terminal domains of CaM (Fig. 1a,b). This construction was possible given the unique CaM-binding mode of CKKp, which differs from that observed in MLCKs 5,18 and CaMKII 19 . Whereas the MLCK and CaMKII peptides adopt α-helical conformations only in the CaM-binding region, CKKp assumes a fold comprising an α-helix and a hairpin-like loop, both of which are essential for the intimate interaction with CaM. In this complex, both the N- and C-termini of CKKp are oriented toward the linker region that connects the two EF-hand domains (Fig. 1a). Furthermore, the binding orientation of CKKp with respect to the two CaM domains is opposite to that of the MLCK and CaMKII peptides; thus, the N-terminus is also near the linker region of CaM. This analysis suggests that CKKp could replace the CaM linker region. We have constructed YC6.1 by a tandem fusion of CFP, the N-terminal fragment of CaM (N-CaM), Gly-Gly, CKKp, Gly-Gly, the C-terminal fragment of CaM (C-CaM) and YFP (Fig. 1d).",
+     "text_len": 1424,
+     "level": 1,
+     "element_id": "p1_e13"
+    }
+   ]
+  },
+  {
+   "page_no": 2,
+   "width_pt": 612.0,
+   "height_pt": 792.0,
+   "png": "pages/page_0002.png",
+   "elements": [
+    {
+     "reading_order": 14,
+     "page": 2,
+     "label": "picture",
+     "bbox": {
+      "l": 22.23,
+      "t": 360.99,
+      "r": 35.5,
+      "b": 343.77,
+      "w": 13.27,
+      "h": 17.22,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.03632,
+      "t": 0.4558,
+      "r": 0.05801,
+      "b": 0.43405
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p2_e14"
+    },
+    {
+     "reading_order": 15,
+     "page": 2,
+     "label": "picture",
+     "bbox": {
+      "l": 211.98,
+      "t": 774.8,
+      "r": 229.5,
+      "b": 762.11,
+      "w": 17.53,
+      "h": 12.7,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.34637,
+      "t": 0.97828,
+      "r": 0.375,
+      "b": 0.96226
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p2_e15"
+    },
+    {
+     "reading_order": 16,
+     "page": 2,
+     "label": "picture",
+     "bbox": {
+      "l": 71.66,
+      "t": 708.05,
+      "r": 532.41,
+      "b": 531.49,
+      "w": 460.75,
+      "h": 176.56,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.11709,
+      "t": 0.894,
+      "r": 0.86995,
+      "b": 0.67107
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p2_e16"
+    },
+    {
+     "reading_order": 17,
+     "page": 2,
+     "label": "caption",
+     "bbox": {
+      "l": 65.69,
+      "t": 523.74,
+      "r": 546.31,
+      "b": 477.39,
+      "w": 480.62,
+      "h": 46.36,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.10734,
+      "t": 0.66129,
+      "r": 0.89266,
+      "b": 0.60277
+     },
+     "text": "Fig. 2 1 H- 15 N HSQC NMR spectra of 15 N labeled CaM in complex with CKKp and 15 N labeled (N-CaM)-CKKp-(C-CaM). Portion of the 1 H- 15 N HSQC spectrum of a, 15 N-uniformly-labeled CaM complex with CKKp; b, 15 N-uniformly-labeled (N-CaM)-CKKp-(C-CaM); and c, 15 N-uniformly-labeled CaM, all in the presence of 10 mM CaCl2. For clarity, only part of the spectrum is shown, including the most downfield shifted glycine region of the spectrum (in the inset box). The resonances labeled with an asterisk in spectrum (b) represent the backbone amides from the CKKp portion of the hybrid. Note that residue Glu 82 is missing from spectrum (b) due to its close proximity to the fusion site. (b) is similar to (a) and different from (c), as is expected for a hybrid construct folding in to a CaM-CKKp-like complex.",
+     "text_len": 807,
+     "level": 2,
+     "element_id": "p2_e17"
+    },
+    {
+     "reading_order": 18,
+     "page": 2,
+     "label": "picture",
+     "bbox": {
+      "l": 66.04,
+      "t": 305.26,
+      "r": 285.27,
+      "b": 47.96,
+      "w": 219.24,
+      "h": 257.3,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.10791,
+      "t": 0.38543,
+      "r": 0.46613,
+      "b": 0.06056
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p2_e18"
+    },
+    {
+     "reading_order": 19,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 310.88,
+      "t": 411.97,
+      "r": 546.33,
+      "b": 255.91,
+      "w": 235.45,
+      "h": 156.06,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50797,
+      "t": 0.52016,
+      "r": 0.8927,
+      "b": 0.32312
+     },
+     "text": "To increase the dynamic range, the change in the distance between fluorophores must be large between the Ca 2+ -free and the Ca 2+ -bound states. For the CaM-MLCKp hybrid 17 used in YC2.1 and YC3.1 (refs 1,10), the distance from the amino group of the N-terminus residue of CaM to the carboxyl group of the C-terminus of MLCKp is 50-60 Å, an estimate of the distance between the fused GFP variants. In contrast, in the structure of CaM bound to CKKp 16 , the distance between the N- and C-termini of CaM is significantly shorter than 40 Å. Assuming that, in the absence of Ca 2+ , the fluorescent protein modules are separated by a similar distance in these two constructs and FRET efficiency is inversely proportional to the sixth power of the separation distance 20,21 , a 20 Å or larger difference could, in principle, produce a marked increase in FRET for the Ca 2+ -bound state (high Rmax)",
+     "text_len": 894,
+     "level": 1,
+     "element_id": "p2_e19"
+    },
+    {
+     "reading_order": 20,
+     "page": 2,
+     "label": "section_header",
+     "bbox": {
+      "l": 310.88,
+      "t": 244.28,
+      "r": 398.82,
+      "b": 236.0,
+      "w": 87.94,
+      "h": 8.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50797,
+      "t": 0.30843,
+      "r": 0.65167,
+      "b": 0.29798
+     },
+     "text": "Global conformation",
+     "text_len": 19,
+     "level": 1,
+     "element_id": "p2_e20"
+    },
+    {
+     "reading_order": 21,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 310.88,
+      "t": 233.47,
+      "r": 546.31,
+      "b": 120.23,
+      "w": 235.43,
+      "h": 113.24,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50797,
+      "t": 0.29479,
+      "r": 0.89266,
+      "b": 0.15181
+     },
+     "text": "To test whether our design was successful, we studied the (N-CaM)-CKKp-(C-CaM) fusion protein by NMR spectroscopy. 1 H- 15 N heteronuclear single quantum coherence (HSQC) spectra (Fig. 2) provide evidence that the Ca 2+ -loaded (N-CaM)-CKKp-(C-CaM) hybrid forms the compact global conformation similar to that observed in the solution structure of the Ca 2+ -CaM-CKKp complex 16 . In the presence of Ca 2+ , the two spectra are nearly identical, except that in the HSQC spectrum of the 15 N-labeled hybrid molecule, the crosspeaks from the CKKp portion, as well as the Gly-Gly linkers, are clearly observed. In the CaM-CKKp complex, the peptide was not",
+     "text_len": 652,
+     "level": 1,
+     "element_id": "p2_e21"
+    },
+    {
+     "reading_order": 22,
+     "page": 2,
+     "label": "text",
+     "bbox": {
+      "l": 310.25,
+      "t": 101.87,
+      "r": 546.31,
+      "b": 46.85,
+      "w": 236.05,
+      "h": 55.03,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50694,
+      "t": 0.12862,
+      "r": 0.89266,
+      "b": 0.05915
+     },
+     "text": "Fig. 3 Fluorescence properties of YC6.1 in vitro. a, The Ca 2+ titration curve of YC6.1 was acquired using Ca 2+ /EGTA and Ca 2+ /EGTA-OH systems 30 below 10 -5 M free Ca 2+ in a 50 mM HEPES/KOH, pH 7.4, and 100 mM KCl buffer . The changes in emission ratio (530-480 nm) were normalized to the effects of full Ca 2+ saturation. b, Emission spectrum of YC6.1 in vitro was acquired at an excitation wavelength of 432 nm for zero (1 mM EGTA) and saturating Ca 2+ concentrations (5 mM CaCl2).",
+     "text_len": 488,
+     "level": 1,
+     "element_id": "p2_e22"
+    }
+   ]
+  },
+  {
+   "page_no": 3,
+   "width_pt": 612.0,
+   "height_pt": 792.0,
+   "png": "pages/page_0003.png",
+   "elements": [
+    {
+     "reading_order": 23,
+     "page": 3,
+     "label": "picture",
+     "bbox": {
+      "l": 22.21,
+      "t": 360.83,
+      "r": 35.51,
+      "b": 343.78,
+      "w": 13.31,
+      "h": 17.05,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.03629,
+      "t": 0.45559,
+      "r": 0.05802,
+      "b": 0.43407
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p3_e23"
+    },
+    {
+     "reading_order": 24,
+     "page": 3,
+     "label": "picture",
+     "bbox": {
+      "l": 212.04,
+      "t": 774.77,
+      "r": 229.38,
+      "b": 762.1,
+      "w": 17.34,
+      "h": 12.67,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.34647,
+      "t": 0.97824,
+      "r": 0.3748,
+      "b": 0.96225
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p3_e24"
+    },
+    {
+     "reading_order": 25,
+     "page": 3,
+     "label": "section_header",
+     "bbox": {
+      "l": 491.82,
+      "t": 754.19,
+      "r": 546.31,
+      "b": 737.63,
+      "w": 54.48,
+      "h": 16.56,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.80363,
+      "t": 0.95226,
+      "r": 0.89266,
+      "b": 0.93135
+     },
+     "text": "letters",
+     "text_len": 7,
+     "level": 1,
+     "element_id": "p3_e25"
+    },
+    {
+     "reading_order": 26,
+     "page": 3,
+     "label": "picture",
+     "bbox": {
+      "l": 83.58,
+      "t": 709.44,
+      "r": 533.02,
+      "b": 394.91,
+      "w": 449.44,
+      "h": 314.54,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.13657,
+      "t": 0.89576,
+      "r": 0.87095,
+      "b": 0.49862
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p3_e26"
+    },
+    {
+     "reading_order": 27,
+     "page": 3,
+     "label": "caption",
+     "bbox": {
+      "l": 65.69,
+      "t": 391.82,
+      "r": 546.31,
+      "b": 358.71,
+      "w": 480.61,
+      "h": 33.11,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.10734,
+      "t": 0.49472,
+      "r": 0.89266,
+      "b": 0.45292
+     },
+     "text": "Fig. 4 Ca 2+ imaging of HeLa cells using YC2.1 and YC6.1. a,b, The fluorescence image (440 ± 10 nm excitation, 535 ± 12.5 nm emission) in HeLa cells show cytoplasmic localization of YC6.1 and YC2.1, respectively. c,d, The HeLa cells were stimulated with 10 µM histamine. The emission ratios (from 535 ± 12.5 nm to 480 ± 12.5 nm) and intensities (535 ± 12.5 nm and 480 ± 12.5 nm) of the cells were measured every 5 s by digital imaging microscopy for both YC6.1 and YC2.1, respectively. The right-hand axes of the top graphs are labeled with Rmin and Rmax.",
+     "text_len": 555,
+     "level": 2,
+     "element_id": "p3_e27"
+    },
+    {
+     "reading_order": 28,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 65.69,
+      "t": 328.28,
+      "r": 301.78,
+      "b": 309.23,
+      "w": 236.09,
+      "h": 19.05,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.10734,
+      "t": 0.41449,
+      "r": 0.4931,
+      "b": 0.39044
+     },
+     "text": "labeled with 15 N and, thus, no signal from the peptide is detected in the HSQC spectrum.",
+     "text_len": 89,
+     "level": 1,
+     "element_id": "p3_e28"
+    },
+    {
+     "reading_order": 29,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 65.69,
+      "t": 307.28,
+      "r": 301.79,
+      "b": 141.23,
+      "w": 236.1,
+      "h": 166.05,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.10734,
+      "t": 0.38798,
+      "r": 0.49312,
+      "b": 0.17832
+     },
+     "text": "In the absence of Ca 2+ , the HSQC spectra of the CaM-MLCKp hybrid display a broadening of some peaks 17 , suggesting that the MLCKp interacts with CaM under this condition. A similar phenomenon was observed when CKKp was fused to the N-terminus of CaM (K.I.T.& M.I., unpublished results). This interaction is undesirable for our FRET applications, because it would increase Rmin, thereby reducing the dynamic range. The spectra of the Ca 2+ -free (N-CaM)-CKKp-(C-CaM) hybrid, however, showed no significant broadening (data not shown), suggesting that two CaM domains have little interaction with CKKp. These NMR data strongly support the idea that the (N-CaM)-CKKp(C-CaM) hybrid has a greater separation distance in the Ca 2+ - free state than the CaM-MLCKp, and that Ca 2+ binding to the hybrid induces a large conformational change resulting in the compact global conformation, bringing CFP and YFP spatially close together within YC6.1 (Fig. 1c).",
+     "text_len": 951,
+     "level": 1,
+     "element_id": "p3_e29"
+    },
+    {
+     "reading_order": 30,
+     "page": 3,
+     "label": "section_header",
+     "bbox": {
+      "l": 65.69,
+      "t": 128.92,
+      "r": 163.79,
+      "b": 120.5,
+      "w": 98.1,
+      "h": 8.42,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.10734,
+      "t": 0.16278,
+      "r": 0.26763,
+      "b": 0.15215
+     },
+     "text": "Ca 2+ binding properties",
+     "text_len": 24,
+     "level": 1,
+     "element_id": "p3_e30"
+    },
+    {
+     "reading_order": 31,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 65.69,
+      "t": 118.28,
+      "r": 301.78,
+      "b": 46.73,
+      "w": 236.09,
+      "h": 71.55,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.10734,
+      "t": 0.14934,
+      "r": 0.4931,
+      "b": 0.059
+     },
+     "text": "YC2.1 displayed a biphasic Ca 2+ binding curve with two apparent dissociation constants (100 nM and 4.3 µM) 10 due to the two conformational states of the construct 17 . This property has been considered to be one of the desired characteristics of YC2.1 (ref. 1) because it can respond to a wide range of free Ca 2+ concentrations from 0.01 to 100 µM. In contrast, YC6.1 possesses a monophasic Ca 2+ binding curve with a single apparent dissociation constant of 110 ± 6 nM and, therefore, responds to free Ca 2+ concentrations ranging from 0.05 to 1 µM in a more linear manner than YC2.1 (Fig. 3a).",
+     "text_len": 598,
+     "level": 1,
+     "element_id": "p3_e31"
+    },
+    {
+     "reading_order": 32,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 310.89,
+      "t": 296.47,
+      "r": 546.34,
+      "b": 162.23,
+      "w": 235.45,
+      "h": 134.24,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50799,
+      "t": 0.37433,
+      "r": 0.89271,
+      "b": 0.20484
+     },
+     "text": "In an unstimulated eukaryotic cell, the concentration of free Ca 2+ ions in the cytoplasm ([Ca 2+ ]c) is approximately 0.1 µM and rises to 1 µM following stimulation 22 . It is, therefore, advantageous to have an indicator with enhanced coverage in this physiologically relevant range of [Ca 2+ ]c. Although YC2.1 covers a larger range of free Ca 2+ concentration than YC6.1, the emission ratio change of YC2.1 is distributed across this entire Ca 2+ range; therefore, a smaller dynamic range is available for applications focused on specific Ca 2+ concentrations. In contrast, the dynamic range of YC6.1 applies to the cytoplasmic free Ca 2+ concentrations. Thus, both its Ca 2+ binding and fluorescence characteristics should make YC6.1 a more suitable indicator than YC2.1 in some in vivo imaging applications.",
+     "text_len": 813,
+     "level": 1,
+     "element_id": "p3_e32"
+    },
+    {
+     "reading_order": 33,
+     "page": 3,
+     "label": "section_header",
+     "bbox": {
+      "l": 310.89,
+      "t": 149.92,
+      "r": 419.24,
+      "b": 141.5,
+      "w": 108.35,
+      "h": 8.42,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50799,
+      "t": 0.18929,
+      "r": 0.68503,
+      "b": 0.17866
+     },
+     "text": "Ca 2+ imaging in HeLa cells",
+     "text_len": 27,
+     "level": 1,
+     "element_id": "p3_e33"
+    },
+    {
+     "reading_order": 34,
+     "page": 3,
+     "label": "text",
+     "bbox": {
+      "l": 310.89,
+      "t": 138.97,
+      "r": 546.35,
+      "b": 46.73,
+      "w": 235.46,
+      "h": 92.24,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50799,
+      "t": 0.17547,
+      "r": 0.89273,
+      "b": 0.059
+     },
+     "text": "To characterize the performance of YC6.1 in vivo and to compare it with that of YC2.1, we imaged HeLa cells transfected with the cameleons. In the cells expressing either YC6.1 or YC2.1, the fluorescence from the cameleons was uniformly distributed in the cytoplasm but excluded from the nucleus (Fig. 4a,b), as expected for a 72.6 kDa protein without targeting signals. After histamine stimulus, the time course of the spatially-averaged emission fluorescence intensities was measured in single HeLa cells expressing YC6.1 (Fig. 4c) and YC2.1 (Fig. 4d). The binding of histamine to its receptors on the plasma membrane sets off a signaling cascade, resulting in Ca 2+ release from the endoplasmic reticulum through the inositol-1,4,5-triphosphate receptor (InsP3R). Prior to stimulus, the emission ratio was constant (signifying a steady state of [Ca 2+ ]c); however, upon addition of 10 µM histamine, there was a sharp rise in emission ratio (signifying an increase in [Ca 2+ ]c) 23,24 . The increase of YFP and the decrease of CFP fluorescence intensities indicate an increase in FRET resulting from a conformational change. YC6.1 displayed a slower increase in emission ratio following stimulation when compared to YC2.1, suggesting that YC6.1 may have slower activation kinetics. After ∼30 min, the histamine response dissipated and both [Ca 2+ ]c and emission ratio returned to their steady state levels. To obtain Rmin, the emission ratio was measured after adding 1 µM Ca 2+ ionophore ionomycin and 1 mM EGTA; to obtain Rmax, another measurement was made after adding 5 mM CaCl2 to the same sample. Under these experimental conditions, the emission ratio of YC2.1 changed from 1.17 ± 0.01 (Rmin) to 1.66 ± 0.01 (Rmax), whereas the ratio of YC6.1 doubled from 1.18 ± 0.01 (Rmin) to 2.50 ± 0.02 (Rmax). Given this enhanced FRET dynamic range, the [Ca 2+ ]c before and after histamine addition were estimated to be ∼43 nM and ∼1 µM, respectively, by mapping the change in emission ratio to Fig. 3a.",
+     "text_len": 2003,
+     "level": 1,
+     "element_id": "p3_e34"
+    }
+   ]
+  },
+  {
+   "page_no": 4,
+   "width_pt": 612.0,
+   "height_pt": 792.0,
+   "png": "pages/page_0004.png",
+   "elements": [
+    {
+     "reading_order": 35,
+     "page": 4,
+     "label": "picture",
+     "bbox": {
+      "l": 22.18,
+      "t": 360.97,
+      "r": 35.58,
+      "b": 343.77,
+      "w": 13.4,
+      "h": 17.21,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.03624,
+      "t": 0.45577,
+      "r": 0.05814,
+      "b": 0.43405
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p4_e35"
+    },
+    {
+     "reading_order": 36,
+     "page": 4,
+     "label": "picture",
+     "bbox": {
+      "l": 212.05,
+      "t": 774.75,
+      "r": 229.44,
+      "b": 762.11,
+      "w": 17.39,
+      "h": 12.64,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.34649,
+      "t": 0.97822,
+      "r": 0.3749,
+      "b": 0.96226
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p4_e36"
+    },
+    {
+     "reading_order": 37,
+     "page": 4,
+     "label": "picture",
+     "bbox": {
+      "l": 66.3,
+      "t": 710.67,
+      "r": 546.78,
+      "b": 438.17,
+      "w": 480.48,
+      "h": 272.49,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.10833,
+      "t": 0.89731,
+      "r": 0.89343,
+      "b": 0.55324
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p4_e37"
+    },
+    {
+     "reading_order": 38,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 65.69,
+      "t": 180.97,
+      "r": 301.82,
+      "b": 46.73,
+      "w": 236.12,
+      "h": 134.24,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.10734,
+      "t": 0.2285,
+      "r": 0.49317,
+      "b": 0.059
+     },
+     "text": "The increase in the FRET dynamic range of YC6.1 over YC2.1 is somewhat lower than anticipated based on the shorter distance between the CFP and YFP chromophores originally predicted from the structure-based design of YC6.1. This is not surprising because the intrinsic FRET efficiency also depends on the relative orientation of the donor and acceptor chromophores 25 , which is difficult to predict from the available structural data. Other factors influencing the observed emission ratio between 485 and 535 nm include folding and chromophore maturation efficiency of the GFP fusion constructs 26 as well as the pH sensitivity of the GFP emission intensity 9 ; these often differ from one construct to another. Nevertheless, YC6.1 consistently displayed a two-fold increase in the FRET dynamic range within the physiologically significant range of cytoplasmic Ca 2+ concentration (0.05-1 µM).",
+     "text_len": 894,
+     "level": 1,
+     "element_id": "p4_e38"
+    },
+    {
+     "reading_order": 39,
+     "page": 4,
+     "label": "section_header",
+     "bbox": {
+      "l": 310.88,
+      "t": 391.42,
+      "r": 469.42,
+      "b": 383.0,
+      "w": 158.54,
+      "h": 8.42,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50797,
+      "t": 0.49422,
+      "r": 0.76703,
+      "b": 0.48359
+     },
+     "text": "Ca 2+ imaging in hippocampal neurons",
+     "text_len": 36,
+     "level": 1,
+     "element_id": "p4_e39"
+    },
+    {
+     "reading_order": 40,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 310.88,
+      "t": 380.78,
+      "r": 546.33,
+      "b": 204.23,
+      "w": 235.45,
+      "h": 176.55,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50797,
+      "t": 0.48078,
+      "r": 0.8927,
+      "b": 0.25787
+     },
+     "text": "Ca 2+ signaling was also tested in rat hippocampal neurons, where it has been shown that glutamate stimulates an increase of [Ca 2+ ]c through the N-methyl-D-aspartate (NMDA) receptor 27 . YC2.1 and YC6.1 were expressed in isolated rat hippocampal neurons where transient changes in [Ca 2+ ]c were induced by application of 10 µM glutamate (Fig. 5). Following stimulation, a post-synaptic Ca 2+ spike lasting ∼3 min was observed in both YC6.1- and YC2.1-expressing neurons. The dynamic range of the Ca 2+ -dependent emission ratio change of cameleons were compared in the YC6.1- and YC2.1-expressing neurons (Fig. 5a,b). Whereas the dynamic range was ∼1.6 for YC2.1, YC6.1 reproducibly exhibited an almost two-fold emission ratio change. The pre- and post-glutamate [Ca 2+ ]c in hippocampal cells was estimated, in a similar way as in the HeLa cells, to be ∼28 nM and ∼550 nM, respectively. The improved dynamic range allows us to better distinguish between signal and noise from intracellular [Ca 2+ ] changes.",
+     "text_len": 1011,
+     "level": 1,
+     "element_id": "p4_e40"
+    },
+    {
+     "reading_order": 41,
+     "page": 4,
+     "label": "section_header",
+     "bbox": {
+      "l": 310.88,
+      "t": 191.78,
+      "r": 361.25,
+      "b": 183.5,
+      "w": 50.37,
+      "h": 8.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50797,
+      "t": 0.24215,
+      "r": 0.59028,
+      "b": 0.23169
+     },
+     "text": "Conclusions",
+     "text_len": 11,
+     "level": 1,
+     "element_id": "p4_e41"
+    },
+    {
+     "reading_order": 42,
+     "page": 4,
+     "label": "text",
+     "bbox": {
+      "l": 310.88,
+      "t": 180.97,
+      "r": 546.32,
+      "b": 46.73,
+      "w": 235.44,
+      "h": 134.24,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50797,
+      "t": 0.2285,
+      "r": 0.89268,
+      "b": 0.059
+     },
+     "text": "The three-dimensional structure of CaM in complex with MLCKp has previously provided a template for constructing original cameleons such as YC2.1 and YC3.1 (refs 1,10). Here we present a second generation of the cameleon family of Ca 2+ indicators designed using the CaM-CKKp structure 16 as a new template. The unique CaM binding mode of CKKp suggests that it could replace the CaM domain linker region without significantly affecting the overall conformation of the CaM-CKKp complex. As a result, the distance between CFP and YFP chromophores attached to the N- and C-termini of the CaM-CKKp fusion protein is reduced by ∼20 Å relative to that of the CaM-MLCKp version. In in vivo imaging, this new design results in a two-fold enhancement in the FRET efficiency, thereby",
+     "text_len": 773,
+     "level": 1,
+     "element_id": "p4_e42"
+    }
+   ]
+  },
+  {
+   "page_no": 5,
+   "width_pt": 612.0,
+   "height_pt": 792.0,
+   "png": "pages/page_0005.png",
+   "elements": [
+    {
+     "reading_order": 43,
+     "page": 5,
+     "label": "picture",
+     "bbox": {
+      "l": 22.21,
+      "t": 360.7,
+      "r": 35.52,
+      "b": 343.72,
+      "w": 13.31,
+      "h": 16.98,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.03629,
+      "t": 0.45543,
+      "r": 0.05804,
+      "b": 0.43399
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p5_e43"
+    },
+    {
+     "reading_order": 44,
+     "page": 5,
+     "label": "picture",
+     "bbox": {
+      "l": 212.15,
+      "t": 774.69,
+      "r": 229.31,
+      "b": 762.07,
+      "w": 17.16,
+      "h": 12.62,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.34665,
+      "t": 0.97814,
+      "r": 0.37469,
+      "b": 0.96221
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p5_e44"
+    },
+    {
+     "reading_order": 45,
+     "page": 5,
+     "label": "section_header",
+     "bbox": {
+      "l": 491.82,
+      "t": 754.19,
+      "r": 546.31,
+      "b": 737.63,
+      "w": 54.48,
+      "h": 16.56,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.80363,
+      "t": 0.95226,
+      "r": 0.89266,
+      "b": 0.93135
+     },
+     "text": "letters",
+     "text_len": 7,
+     "level": 1,
+     "element_id": "p5_e45"
+    },
+    {
+     "reading_order": 46,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 65.69,
+      "t": 706.28,
+      "r": 301.78,
+      "b": 655.73,
+      "w": 236.08,
+      "h": 50.55,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.10734,
+      "t": 0.89177,
+      "r": 0.4931,
+      "b": 0.82794
+     },
+     "text": "expanding the ability of cameleons to visualize Ca 2+ mobilization in living cells where a high sensitivity is required for detection. Clearly, the structural diversity in CaM-target recognition 28 offers a variety of design opportunities in CaM-based protein engineering aimed at improved in vivo Ca 2+ indicators.",
+     "text_len": 315,
+     "level": 1,
+     "element_id": "p5_e46"
+    },
+    {
+     "reading_order": 47,
+     "page": 5,
+     "label": "section_header",
+     "bbox": {
+      "l": 65.69,
+      "t": 643.28,
+      "r": 103.42,
+      "b": 635.0,
+      "w": 37.73,
+      "h": 8.28,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.10734,
+      "t": 0.81222,
+      "r": 0.16899,
+      "b": 0.80177
+     },
+     "text": "Methods",
+     "text_len": 7,
+     "level": 1,
+     "element_id": "p5_e47"
+    },
+    {
+     "reading_order": 48,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 65.69,
+      "t": 633.2,
+      "r": 301.75,
+      "b": 482.3,
+      "w": 236.06,
+      "h": 150.9,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.10734,
+      "t": 0.79949,
+      "r": 0.49306,
+      "b": 0.60896
+     },
+     "text": "Gene construction. A DNA fragment (fragment A) encoding Xenopus laevis CaM (xCaM) Glu 7-Thr 79 (N-CaM) fused to rat calmodulin dependent protein kinase kinase (rCKK) Val 438Phe 463 (ref. 16) and xCaM Asp 80-Lys 148 (C-CaM) was generated by gene splicing using PCR techniques 29 . Two short segments encoding Gly-Gly linkers were inserted between N-CaM and the rCKK peptide (CKKp), and between CKKp and C-CaM (Fig. 1d). Two restriction sites, SphI and SacI, were introduced by standard PCR method into the 5′ and 3′ ends, respectively, of fragment A. To construct YC6.1, the BamHI/EcoRI or the HindIII/EcoRI gene fragments encoding YC2.1 in the expression vectors of pRSETb or pcDNA3 (refs 1,10), respectively, were spliced into pUC19 via the corresponding restriction sites. Using these pUC19 intermediate constructs, the fragment encoding CaM-MLCKp of YC2.1 was replaced by fragment A via the SphI/SacI sites. This recombinant gene was then transferred back to pRSETb or pcDNA3 expression vectors via BamHI/EcoRI or HindIII/EcoRI sites, respectively.",
+     "text_len": 1051,
+     "level": 1,
+     "element_id": "p5_e48"
+    },
+    {
+     "reading_order": 49,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 65.69,
+      "t": 468.97,
+      "r": 301.75,
+      "b": 425.96,
+      "w": 236.06,
+      "h": 43.02,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.10734,
+      "t": 0.59213,
+      "r": 0.49306,
+      "b": 0.53783
+     },
+     "text": "Protein expression, in vitro spectroscopy and Ca 2+ titrations. Chimeric proteins were expressed in Escherichia coli, purified and spectroscopically characterized as described 3 . Ca 2+ titrations were performed by reciprocal dilution of Ca 2+ -free and Ca 2+ -saturated buffers 30 .",
+     "text_len": 283,
+     "level": 1,
+     "element_id": "p5_e49"
+    },
+    {
+     "reading_order": 50,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 65.69,
+      "t": 412.64,
+      "r": 301.75,
+      "b": 324.62,
+      "w": 236.06,
+      "h": 88.02,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.10734,
+      "t": 0.52101,
+      "r": 0.49306,
+      "b": 0.40987
+     },
+     "text": "NMR Measurements. 1 H- 15 N HSQC spectra were recorded on a Varian INOVA Unity-plus 600 MHz spectrometer equipped with a triple-resonance, pulse field gradient probe with an actively shielded z-gradient and a gradient amplifier unit, using the pulse scheme described elsewhere 31 . All spectra were recorded with 256 complex t1 increments of 1K complex data points and 16 transients. Spectral widths were 30 ppm and 15 ppm for the 15 N (F1) and 1 H (F2) dimensions. The spectra were recorded at pH 6.8, 32 °C, in 90/10% (v/v) H2O/D2O. The sample concentration is approximately 1.2 mM. The data were processed using NMRPipe.",
+     "text_len": 623,
+     "level": 1,
+     "element_id": "p5_e50"
+    },
+    {
+     "reading_order": 51,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 65.69,
+      "t": 311.18,
+      "r": 301.75,
+      "b": 250.28,
+      "w": 236.06,
+      "h": 60.9,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.10734,
+      "t": 0.3929,
+      "r": 0.49306,
+      "b": 0.31601
+     },
+     "text": "Imaging. HeLa cells were transfected with lipofectin (Gibco BRL), whereas hippocampus neurons were transfected with a Ca 2+ phosphate procedure 32 . Between two and five days after transfection, cells were imaged at 22 °C on an Olympus IX70 microscope with a CCD camera (MicroMax 1300YHS) controlled by MetaFluor 4.5r2 software (Universal Imaging). Dual-emission ratio imaging of yellow cameleons used a 440DF20 excitation filter, a 455DRLP dichroic mirror and two emission filters (480DF30 for CFP, 535DF25 for YFP) alternated by a filter changer (Lambda 10-2, Sutter Instruments). Interference filters were obtained from Omega Optical (Brattleboro).",
+     "text_len": 651,
+     "level": 1,
+     "element_id": "p5_e51"
+    },
+    {
+     "reading_order": 52,
+     "page": 5,
+     "label": "section_header",
+     "bbox": {
+      "l": 310.89,
+      "t": 652.77,
+      "r": 369.49,
+      "b": 645.8,
+      "w": 58.6,
+      "h": 6.97,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50799,
+      "t": 0.8242,
+      "r": 0.60374,
+      "b": 0.8154
+     },
+     "text": "Acknowledgments",
+     "text_len": 15,
+     "level": 1,
+     "element_id": "p5_e52"
+    },
+    {
+     "reading_order": 53,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 310.89,
+      "t": 643.91,
+      "r": 540.56,
+      "b": 591.76,
+      "w": 229.67,
+      "h": 52.15,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50799,
+      "t": 0.81302,
+      "r": 0.88327,
+      "b": 0.74717
+     },
+     "text": "This work was supported in part by a grant from Howard Hughes Medical Institute (HHMI) to M.I., CREST (Core Research for Evolutional Science and Technology) and an NCIC Fellowship to T.K.M.. M.I. is an HHMI International Scholar and a Canadian Institutes of Health Research Scientist. We thank J. Gooding for her excellent assistance in manuscript editing. The YC6 vectors are available from the authors upon request.",
+     "text_len": 417,
+     "level": 1,
+     "element_id": "p5_e53"
+    },
+    {
+     "reading_order": 54,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 310.89,
+      "t": 580.91,
+      "r": 540.8,
+      "b": 573.76,
+      "w": 229.91,
+      "h": 7.15,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50799,
+      "t": 0.73347,
+      "r": 0.88366,
+      "b": 0.72444
+     },
+     "text": "Correspondence should be addressed to M.I. email: mikura@uhnres.utoronto.ca",
+     "text_len": 75,
+     "level": 1,
+     "element_id": "p5_e54"
+    },
+    {
+     "reading_order": 55,
+     "page": 5,
+     "label": "text",
+     "bbox": {
+      "l": 310.89,
+      "t": 560.91,
+      "r": 474.72,
+      "b": 554.66,
+      "w": 163.83,
+      "h": 6.25,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50799,
+      "t": 0.70822,
+      "r": 0.77569,
+      "b": 0.70033
+     },
+     "text": "Received 24 July, 2001; accepted 10 October, 2001.",
+     "text_len": 50,
+     "level": 1,
+     "element_id": "p5_e55"
+    },
+    {
+     "reading_order": 56,
+     "page": 5,
+     "label": "list_item",
+     "bbox": {
+      "l": 313.92,
+      "t": 546.09,
+      "r": 454.93,
+      "b": 540.57,
+      "w": 141.0,
+      "h": 5.52,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51294,
+      "t": 0.68951,
+      "r": 0.74335,
+      "b": 0.68254
+     },
+     "text": "Miyawaki, A. et al. Nature 388, 882-887 (1997).",
+     "text_len": 47,
+     "level": 2,
+     "element_id": "p5_e56"
+    },
+    {
+     "reading_order": 57,
+     "page": 5,
+     "label": "list_item",
+     "bbox": {
+      "l": 313.92,
+      "t": 538.84,
+      "r": 546.3,
+      "b": 526.07,
+      "w": 232.38,
+      "h": 12.77,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51294,
+      "t": 0.68035,
+      "r": 0.89265,
+      "b": 0.66423
+     },
+     "text": "Heim, R., Prasher, D.C. & Tsien, R.Y. Proc. Natl. Acad. Sci. USA 91, 12501-12504 (1994).",
+     "text_len": 88,
+     "level": 2,
+     "element_id": "p5_e57"
+    },
+    {
+     "reading_order": 58,
+     "page": 5,
+     "label": "list_item",
+     "bbox": {
+      "l": 313.92,
+      "t": 524.34,
+      "r": 461.61,
+      "b": 518.82,
+      "w": 147.69,
+      "h": 5.52,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51294,
+      "t": 0.66205,
+      "r": 0.75426,
+      "b": 0.65508
+     },
+     "text": "Heim, R. & Tsien, R.Y. Curr. Biol. 6, 178-182 (1996).",
+     "text_len": 53,
+     "level": 2,
+     "element_id": "p5_e58"
+    },
+    {
+     "reading_order": 59,
+     "page": 5,
+     "label": "list_item",
+     "bbox": {
+      "l": 313.92,
+      "t": 517.09,
+      "r": 532.72,
+      "b": 511.57,
+      "w": 218.8,
+      "h": 5.52,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51294,
+      "t": 0.65289,
+      "r": 0.87046,
+      "b": 0.64592
+     },
+     "text": "Crivici, A. & Ikura, M. Annu. Rev. Biophys. Biomol. Struct. 24, 85-116 (1995).",
+     "text_len": 78,
+     "level": 2,
+     "element_id": "p5_e59"
+    },
+    {
+     "reading_order": 60,
+     "page": 5,
+     "label": "list_item",
+     "bbox": {
+      "l": 313.92,
+      "t": 509.84,
+      "r": 444.53,
+      "b": 504.32,
+      "w": 130.61,
+      "h": 5.52,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51294,
+      "t": 0.64374,
+      "r": 0.72636,
+      "b": 0.63677
+     },
+     "text": "Ikura, M. et al. Science 256, 632-638 (1992).",
+     "text_len": 45,
+     "level": 2,
+     "element_id": "p5_e60"
+    },
+    {
+     "reading_order": 61,
+     "page": 5,
+     "label": "list_item",
+     "bbox": {
+      "l": 313.92,
+      "t": 502.59,
+      "r": 496.62,
+      "b": 497.07,
+      "w": 182.7,
+      "h": 5.52,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51294,
+      "t": 0.63458,
+      "r": 0.81147,
+      "b": 0.62761
+     },
+     "text": "Heim, R., Cubitt, A.B. & Tsien, R.Y. Nature 373, 663-664 (1995).",
+     "text_len": 64,
+     "level": 2,
+     "element_id": "p5_e61"
+    },
+    {
+     "reading_order": 62,
+     "page": 5,
+     "label": "list_item",
+     "bbox": {
+      "l": 313.92,
+      "t": 495.34,
+      "r": 504.17,
+      "b": 489.82,
+      "w": 190.25,
+      "h": 5.52,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51294,
+      "t": 0.62543,
+      "r": 0.82381,
+      "b": 0.61846
+     },
+     "text": "Cormack, B.P., Valdivia, R.H. & Falkow, S. Gene 173, 33-38 (1996).",
+     "text_len": 66,
+     "level": 2,
+     "element_id": "p5_e62"
+    },
+    {
+     "reading_order": 63,
+     "page": 5,
+     "label": "list_item",
+     "bbox": {
+      "l": 313.92,
+      "t": 488.09,
+      "r": 452.89,
+      "b": 482.57,
+      "w": 138.97,
+      "h": 5.52,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51294,
+      "t": 0.61628,
+      "r": 0.74002,
+      "b": 0.60931
+     },
+     "text": "Ormo, M. et al. Science 273, 1392-1395 (1996).",
+     "text_len": 46,
+     "level": 2,
+     "element_id": "p5_e63"
+    },
+    {
+     "reading_order": 64,
+     "page": 5,
+     "label": "list_item",
+     "bbox": {
+      "l": 313.92,
+      "t": 480.84,
+      "r": 508.49,
+      "b": 475.32,
+      "w": 194.57,
+      "h": 5.52,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51294,
+      "t": 0.60712,
+      "r": 0.83087,
+      "b": 0.60015
+     },
+     "text": "Miyawaki, A. & Tsien, R.Y. Methods. Enzymol. 327, 472-500 (2000).",
+     "text_len": 65,
+     "level": 2,
+     "element_id": "p5_e64"
+    },
+    {
+     "reading_order": 65,
+     "page": 5,
+     "label": "list_item",
+     "bbox": {
+      "l": 310.89,
+      "t": 473.59,
+      "r": 546.31,
+      "b": 460.82,
+      "w": 235.42,
+      "h": 12.77,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50799,
+      "t": 0.59797,
+      "r": 0.89266,
+      "b": 0.58184
+     },
+     "text": "Miyawaki, A., Griesbeck, O., Heim, R. & Tsien, R.Y. Proc. Natl. Acad. Sci. USA 96, 2135-2140 (1999).",
+     "text_len": 100,
+     "level": 2,
+     "element_id": "p5_e65"
+    },
+    {
+     "reading_order": 66,
+     "page": 5,
+     "label": "list_item",
+     "bbox": {
+      "l": 310.89,
+      "t": 459.09,
+      "r": 546.3,
+      "b": 446.32,
+      "w": 235.42,
+      "h": 12.77,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50799,
+      "t": 0.57966,
+      "r": 0.89265,
+      "b": 0.56354
+     },
+     "text": "Nagai, T., Sawano, A., Park, E.S. & Miyawaki, Proc. Natl. Acad. Sci. USA 98, 3197-3202 (2001).",
+     "text_len": 94,
+     "level": 2,
+     "element_id": "p5_e66"
+    },
+    {
+     "reading_order": 67,
+     "page": 5,
+     "label": "list_item",
+     "bbox": {
+      "l": 310.89,
+      "t": 444.6,
+      "r": 546.3,
+      "b": 431.82,
+      "w": 235.42,
+      "h": 12.77,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50799,
+      "t": 0.56136,
+      "r": 0.89265,
+      "b": 0.54523
+     },
+     "text": "Baird, G.S., Zacharias, D.A. & Tsien, R.Y. Proc. Natl. Acad. Sci. USA 96, 11241-11246 (1999).",
+     "text_len": 93,
+     "level": 2,
+     "element_id": "p5_e67"
+    },
+    {
+     "reading_order": 68,
+     "page": 5,
+     "label": "list_item",
+     "bbox": {
+      "l": 310.89,
+      "t": 430.1,
+      "r": 494.94,
+      "b": 424.57,
+      "w": 184.06,
+      "h": 5.52,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50799,
+      "t": 0.54306,
+      "r": 0.80873,
+      "b": 0.53607
+     },
+     "text": "Tsien, R. & Pozzan, T. Methods. Enzymol. 172, 230-262 (1989).",
+     "text_len": 61,
+     "level": 2,
+     "element_id": "p5_e68"
+    },
+    {
+     "reading_order": 69,
+     "page": 5,
+     "label": "list_item",
+     "bbox": {
+      "l": 310.89,
+      "t": 422.85,
+      "r": 502.33,
+      "b": 417.32,
+      "w": 191.44,
+      "h": 5.52,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50799,
+      "t": 0.5339,
+      "r": 0.8208,
+      "b": 0.52692
+     },
+     "text": "Tsien, R.Y., Rink, T.J. & Poenie, M. Cell Calcium6, 145-157 (1985).",
+     "text_len": 67,
+     "level": 2,
+     "element_id": "p5_e69"
+    },
+    {
+     "reading_order": 70,
+     "page": 5,
+     "label": "list_item",
+     "bbox": {
+      "l": 310.89,
+      "t": 415.6,
+      "r": 529.5,
+      "b": 410.07,
+      "w": 218.61,
+      "h": 5.52,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50799,
+      "t": 0.52475,
+      "r": 0.8652,
+      "b": 0.51777
+     },
+     "text": "Wahl, M., Lucherini, M.J. & Gruenstein, E. Cell Calcium11, 487-500 (1990).",
+     "text_len": 74,
+     "level": 2,
+     "element_id": "p5_e70"
+    },
+    {
+     "reading_order": 71,
+     "page": 5,
+     "label": "list_item",
+     "bbox": {
+      "l": 310.89,
+      "t": 408.35,
+      "r": 474.12,
+      "b": 402.83,
+      "w": 163.24,
+      "h": 5.52,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50799,
+      "t": 0.51559,
+      "r": 0.77471,
+      "b": 0.50862
+     },
+     "text": "Osawa, M. et al. Nature Struct. Biol. 6, 819-824 (1999).",
+     "text_len": 56,
+     "level": 2,
+     "element_id": "p5_e71"
+    },
+    {
+     "reading_order": 72,
+     "page": 5,
+     "label": "list_item",
+     "bbox": {
+      "l": 310.89,
+      "t": 401.1,
+      "r": 528.89,
+      "b": 395.58,
+      "w": 218.01,
+      "h": 5.52,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50799,
+      "t": 0.50644,
+      "r": 0.8642,
+      "b": 0.49947
+     },
+     "text": "Porumb, T., Yau, P., Harvey, T.S. & Ikura, M. Protein Eng. 7, 109-115 (1994).",
+     "text_len": 77,
+     "level": 2,
+     "element_id": "p5_e72"
+    },
+    {
+     "reading_order": 73,
+     "page": 5,
+     "label": "list_item",
+     "bbox": {
+      "l": 310.88,
+      "t": 393.85,
+      "r": 528.72,
+      "b": 388.33,
+      "w": 217.83,
+      "h": 5.52,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50797,
+      "t": 0.49729,
+      "r": 0.86392,
+      "b": 0.49032
+     },
+     "text": "Meador, W.E., Means, A.R. & Quiocho, F.A. Science 257, 1251-1255 (1992).",
+     "text_len": 72,
+     "level": 2,
+     "element_id": "p5_e73"
+    },
+    {
+     "reading_order": 74,
+     "page": 5,
+     "label": "list_item",
+     "bbox": {
+      "l": 310.88,
+      "t": 386.6,
+      "r": 528.72,
+      "b": 381.08,
+      "w": 217.83,
+      "h": 5.52,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50797,
+      "t": 0.48813,
+      "r": 0.86392,
+      "b": 0.48116
+     },
+     "text": "Meador, W.E., Means, A.R. & Quiocho, F.A. Science 262, 1718-1721 (1993).",
+     "text_len": 72,
+     "level": 2,
+     "element_id": "p5_e74"
+    },
+    {
+     "reading_order": 75,
+     "page": 5,
+     "label": "list_item",
+     "bbox": {
+      "l": 310.88,
+      "t": 379.35,
+      "r": 460.99,
+      "b": 373.83,
+      "w": 150.1,
+      "h": 5.52,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50797,
+      "t": 0.47898,
+      "r": 0.75325,
+      "b": 0.47201
+     },
+     "text": "Stryer, L. Annu. Rev. Biochem. 47, 819-846 (1978).",
+     "text_len": 50,
+     "level": 2,
+     "element_id": "p5_e75"
+    },
+    {
+     "reading_order": 76,
+     "page": 5,
+     "label": "list_item",
+     "bbox": {
+      "l": 310.88,
+      "t": 372.1,
+      "r": 505.09,
+      "b": 366.58,
+      "w": 194.2,
+      "h": 5.52,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50797,
+      "t": 0.46982,
+      "r": 0.82531,
+      "b": 0.46285
+     },
+     "text": "Truong, K. & Ikura, M. Curr. Opin. Struct. Biol. 11, 573-578 (2001).",
+     "text_len": 68,
+     "level": 2,
+     "element_id": "p5_e76"
+    },
+    {
+     "reading_order": 77,
+     "page": 5,
+     "label": "list_item",
+     "bbox": {
+      "l": 310.88,
+      "t": 364.85,
+      "r": 546.3,
+      "b": 352.08,
+      "w": 235.42,
+      "h": 12.77,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50797,
+      "t": 0.46067,
+      "r": 0.89265,
+      "b": 0.44455
+     },
+     "text": "Berridge, M.J., Lipp, P. & Bootman, M.D. Nature Rev. Mol. Cell Bio. 1, 11-21 (2000).",
+     "text_len": 84,
+     "level": 2,
+     "element_id": "p5_e77"
+    },
+    {
+     "reading_order": 78,
+     "page": 5,
+     "label": "list_item",
+     "bbox": {
+      "l": 310.88,
+      "t": 350.35,
+      "r": 520.03,
+      "b": 344.83,
+      "w": 209.14,
+      "h": 5.52,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50797,
+      "t": 0.44236,
+      "r": 0.84972,
+      "b": 0.43539
+     },
+     "text": "Zamani, M.R. & Bristow, D.R. Brit. J. Pharmacol. 118, 1119-1126 (1996).",
+     "text_len": 71,
+     "level": 2,
+     "element_id": "p5_e78"
+    },
+    {
+     "reading_order": 79,
+     "page": 5,
+     "label": "list_item",
+     "bbox": {
+      "l": 310.88,
+      "t": 343.1,
+      "r": 546.3,
+      "b": 330.33,
+      "w": 235.42,
+      "h": 12.77,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50797,
+      "t": 0.43321,
+      "r": 0.89265,
+      "b": 0.41708
+     },
+     "text": "Bootman, M.D., Cheek, T.R., Moreton, R.B., Bennett, D.L. & Berridge, M.J. J. Biol. Chem. 269, 24783-24791 (1994).",
+     "text_len": 113,
+     "level": 2,
+     "element_id": "p5_e79"
+    },
+    {
+     "reading_order": 80,
+     "page": 5,
+     "label": "list_item",
+     "bbox": {
+      "l": 310.88,
+      "t": 328.6,
+      "r": 429.01,
+      "b": 323.08,
+      "w": 118.12,
+      "h": 5.52,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50797,
+      "t": 0.4149,
+      "r": 0.701,
+      "b": 0.40793
+     },
+     "text": "Forster T. Ann. Physik. 2, 55-75 (1948).",
+     "text_len": 40,
+     "level": 2,
+     "element_id": "p5_e80"
+    },
+    {
+     "reading_order": 81,
+     "page": 5,
+     "label": "list_item",
+     "bbox": {
+      "l": 310.88,
+      "t": 321.35,
+      "r": 546.3,
+      "b": 308.58,
+      "w": 235.42,
+      "h": 12.77,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50797,
+      "t": 0.40574,
+      "r": 0.89265,
+      "b": 0.38962
+     },
+     "text": "Waldo, G.S., Standish, B.M., Berendzen, J. & Terwilliger, T.C. Nature Biotech. 17, 691-695 (1999).",
+     "text_len": 98,
+     "level": 2,
+     "element_id": "p5_e81"
+    },
+    {
+     "reading_order": 82,
+     "page": 5,
+     "label": "list_item",
+     "bbox": {
+      "l": 310.88,
+      "t": 306.85,
+      "r": 488.2,
+      "b": 301.33,
+      "w": 177.31,
+      "h": 5.52,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50797,
+      "t": 0.38744,
+      "r": 0.79771,
+      "b": 0.38047
+     },
+     "text": "Blackstone, C. & Sheng, M. Cell Calcium26, 181-192 (1999).",
+     "text_len": 58,
+     "level": 2,
+     "element_id": "p5_e82"
+    },
+    {
+     "reading_order": 83,
+     "page": 5,
+     "label": "list_item",
+     "bbox": {
+      "l": 310.88,
+      "t": 299.6,
+      "r": 472.18,
+      "b": 294.08,
+      "w": 161.3,
+      "h": 5.52,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50797,
+      "t": 0.37828,
+      "r": 0.77154,
+      "b": 0.37131
+     },
+     "text": "Yap, K. et al. J. Struct. Funct. Genomics 1, 8-14 (2000).",
+     "text_len": 57,
+     "level": 2,
+     "element_id": "p5_e83"
+    },
+    {
+     "reading_order": 84,
+     "page": 5,
+     "label": "list_item",
+     "bbox": {
+      "l": 310.88,
+      "t": 292.35,
+      "r": 546.3,
+      "b": 279.58,
+      "w": 235.42,
+      "h": 12.77,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50797,
+      "t": 0.36913,
+      "r": 0.89265,
+      "b": 0.35301
+     },
+     "text": "Horton, R.M., Hunt, H.D., Ho, S.N., Pullen, J.K. & Pease, L.R. Gene 77, 61-68 (1989).",
+     "text_len": 85,
+     "level": 2,
+     "element_id": "p5_e84"
+    },
+    {
+     "reading_order": 85,
+     "page": 5,
+     "label": "list_item",
+     "bbox": {
+      "l": 310.88,
+      "t": 277.85,
+      "r": 539.0,
+      "b": 272.33,
+      "w": 228.12,
+      "h": 5.52,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50797,
+      "t": 0.35082,
+      "r": 0.88072,
+      "b": 0.34385
+     },
+     "text": "Grynkiewicz, G., Poenie, M. & Tsien, R.Y. J. Biol. Chem. 260, 3440-3450 (1985).",
+     "text_len": 79,
+     "level": 2,
+     "element_id": "p5_e85"
+    },
+    {
+     "reading_order": 86,
+     "page": 5,
+     "label": "list_item",
+     "bbox": {
+      "l": 310.88,
+      "t": 270.6,
+      "r": 535.75,
+      "b": 265.08,
+      "w": 224.86,
+      "h": 5.52,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50797,
+      "t": 0.34167,
+      "r": 0.87541,
+      "b": 0.3347
+     },
+     "text": "Kay, L.E., Keifer, P. & Saarinen, T. J. Am. Chem. Soc. 114, 10663-10665 (1992).",
+     "text_len": 79,
+     "level": 2,
+     "element_id": "p5_e86"
+    },
+    {
+     "reading_order": 87,
+     "page": 5,
+     "label": "list_item",
+     "bbox": {
+      "l": 310.88,
+      "t": 263.35,
+      "r": 519.4,
+      "b": 257.83,
+      "w": 208.51,
+      "h": 5.52,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50797,
+      "t": 0.33251,
+      "r": 0.84869,
+      "b": 0.32554
+     },
+     "text": "Wigler, M., Pellicer, A., Silverstein, S. & Axel, R. Cell 14, 725-731 (1978).",
+     "text_len": 77,
+     "level": 2,
+     "element_id": "p5_e87"
+    },
+    {
+     "reading_order": 88,
+     "page": 5,
+     "label": "list_item",
+     "bbox": {
+      "l": 310.88,
+      "t": 256.1,
+      "r": 491.07,
+      "b": 250.58,
+      "w": 180.19,
+      "h": 5.52,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.50797,
+      "t": 0.32336,
+      "r": 0.8024,
+      "b": 0.31639
+     },
+     "text": "Sanchez, R. & Sali, A. Methods Mol. Biol. 143, 97-129 (2000).",
+     "text_len": 61,
+     "level": 2,
+     "element_id": "p5_e88"
+    }
+   ]
+  }
+ ],
+ "caption_blocks": [
+  {
+   "page": 1,
+   "blocks": [
+    {
+     "text": "Fig. 1 Design of YC6.1. a, The ribbon diagram of CaM (blue) bound to CKKp (orange) shows that the CaM domain linker region (red) is near the N- and C-termini of CKKp. The CaM domain linker (residues 75-82) connects the N-terminal EF-hand Ca 2+ -binding domain (N-CaM) and the C-terminal EF-hand Ca 2+ -binding domain (C-CaM) of CaM. b, CKKp was inserted between CaM residues 79 and 80 and was connected to CaM via two Gly-Gly linkers (black). Consequently, two separate segments (75-79 and 80-82; red) of the original CaM linker remain in the fusion construct. The (N-CaM)-GG-CKKp-GG-(C-CaM) hybrid protein structure was modeled using MODELLER 33 and agrees with the experimentally solved CaMCKKp complex in (a). c, A cartoon diagram illustrates how the conformation of YC6.1 might change from the Ca 2+ -free to Ca 2+ -saturated state. The GFP mutants are closer in the Ca 2+ -saturated state, thereby allowing FRET. d, Schematic diagram of YC6.1, YC6.1nu and YC6.2er. YC6.1 is a tandem fusion of CFP, N-CaM, CKKp, C-CaM and YFP. The gene can be excised using HindIII or NotI for the 5′ end and EcoRI, NotI, XhoI, XbaI or ApaI for the 3′ end. In addition to this cytoplasmic version of YC6.1, nucleus- and endoplasmic reticulum-targeting versions of YC6.1 (YC6.1nu and YC6.2er, respectively) have been constructed.",
+     "bbox": {
+      "l": 310.25,
+      "t": 379.9,
+      "r": 546.31,
+      "b": 229.65,
+      "w": 236.06,
+      "h": 150.25,
+      "coord": "pdf_points_bottomleft"
+     },
+     "element_ids": [
+      "p1_e11"
+     ]
+    }
+   ]
+  },
+  {
+   "page": 2,
+   "blocks": [
+    {
+     "text": "Fig. 2 1 H- 15 N HSQC NMR spectra of 15 N labeled CaM in complex with CKKp and 15 N labeled (N-CaM)-CKKp-(C-CaM). Portion of the 1 H- 15 N HSQC spectrum of a, 15 N-uniformly-labeled CaM complex with CKKp; b, 15 N-uniformly-labeled (N-CaM)-CKKp-(C-CaM); and c, 15 N-uniformly-labeled CaM, all in the presence of 10 mM CaCl2. For clarity, only part of the spectrum is shown, including the most downfield shifted glycine region of the spectrum (in the inset box). The resonances labeled with an asterisk in spectrum (b) represent the backbone amides from the CKKp portion of the hybrid. Note that residue Glu 82 is missing from spectrum (b) due to its close proximity to the fusion site. (b) is similar to (a) and different from (c), as is expected for a hybrid construct folding in to a CaM-CKKp-like complex.",
+     "bbox": {
+      "l": 65.69,
+      "t": 523.74,
+      "r": 546.31,
+      "b": 477.39,
+      "w": 480.62,
+      "h": 46.36,
+      "coord": "pdf_points_bottomleft"
+     },
+     "element_ids": [
+      "p2_e17"
+     ]
+    }
+   ]
+  },
+  {
+   "page": 3,
+   "blocks": [
+    {
+     "text": "Fig. 4 Ca 2+ imaging of HeLa cells using YC2.1 and YC6.1. a,b, The fluorescence image (440 ± 10 nm excitation, 535 ± 12.5 nm emission) in HeLa cells show cytoplasmic localization of YC6.1 and YC2.1, respectively. c,d, The HeLa cells were stimulated with 10 µM histamine. The emission ratios (from 535 ± 12.5 nm to 480 ± 12.5 nm) and intensities (535 ± 12.5 nm and 480 ± 12.5 nm) of the cells were measured every 5 s by digital imaging microscopy for both YC6.1 and YC2.1, respectively. The right-hand axes of the top graphs are labeled with Rmin and Rmax.",
+     "bbox": {
+      "l": 65.69,
+      "t": 391.82,
+      "r": 546.31,
+      "b": 358.71,
+      "w": 480.61,
+      "h": 33.11,
+      "coord": "pdf_points_bottomleft"
+     },
+     "element_ids": [
+      "p3_e27"
+     ]
+    }
+   ]
+  }
+ ],
+ "uncaptioned_pictures": [
+  {
+   "page": 1,
+   "bbox": {
+    "l": 22.17,
+    "t": 360.95,
+    "r": 35.54,
+    "b": 343.77,
+    "w": 13.36,
+    "h": 17.17,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": false,
+   "element_id": "p1_e0"
+  },
+  {
+   "page": 1,
+   "bbox": {
+    "l": 212.11,
+    "t": 774.72,
+    "r": 229.35,
+    "b": 762.17,
+    "w": 17.24,
+    "h": 12.55,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": false,
+   "element_id": "p1_e1"
+  },
+  {
+   "page": 2,
+   "bbox": {
+    "l": 22.23,
+    "t": 360.99,
+    "r": 35.5,
+    "b": 343.77,
+    "w": 13.27,
+    "h": 17.22,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": false,
+   "element_id": "p2_e14"
+  },
+  {
+   "page": 2,
+   "bbox": {
+    "l": 211.98,
+    "t": 774.8,
+    "r": 229.5,
+    "b": 762.11,
+    "w": 17.53,
+    "h": 12.7,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": false,
+   "reason": "below minimum figure size",
+   "element_id": "p2_e15"
+  },
+  {
+   "page": 2,
+   "bbox": {
+    "l": 71.66,
+    "t": 708.05,
+    "r": 532.41,
+    "b": 531.49,
+    "w": 460.75,
+    "h": 176.56,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": true,
+   "element_id": "p2_e16"
+  },
+  {
+   "page": 2,
+   "bbox": {
+    "l": 66.04,
+    "t": 305.26,
+    "r": 285.27,
+    "b": 47.96,
+    "w": 219.24,
+    "h": 257.3,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": true,
+   "element_id": "p2_e18"
+  },
+  {
+   "page": 3,
+   "bbox": {
+    "l": 22.21,
+    "t": 360.83,
+    "r": 35.51,
+    "b": 343.78,
+    "w": 13.31,
+    "h": 17.05,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": false,
+   "element_id": "p3_e23"
+  },
+  {
+   "page": 3,
+   "bbox": {
+    "l": 212.04,
+    "t": 774.77,
+    "r": 229.38,
+    "b": 762.1,
+    "w": 17.34,
+    "h": 12.67,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": false,
+   "element_id": "p3_e24"
+  },
+  {
+   "page": 4,
+   "bbox": {
+    "l": 22.18,
+    "t": 360.97,
+    "r": 35.58,
+    "b": 343.77,
+    "w": 13.4,
+    "h": 17.21,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": false,
+   "element_id": "p4_e35"
+  },
+  {
+   "page": 4,
+   "bbox": {
+    "l": 212.05,
+    "t": 774.75,
+    "r": 229.44,
+    "b": 762.11,
+    "w": 17.39,
+    "h": 12.64,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": false,
+   "element_id": "p4_e36"
+  },
+  {
+   "page": 4,
+   "bbox": {
+    "l": 66.3,
+    "t": 710.67,
+    "r": 546.78,
+    "b": 438.17,
+    "w": 480.48,
+    "h": 272.49,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": true,
+   "element_id": "p4_e37"
+  },
+  {
+   "page": 5,
+   "bbox": {
+    "l": 22.21,
+    "t": 360.7,
+    "r": 35.52,
+    "b": 343.72,
+    "w": 13.31,
+    "h": 16.98,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": false,
+   "element_id": "p5_e43"
+  },
+  {
+   "page": 5,
+   "bbox": {
+    "l": 212.15,
+    "t": 774.69,
+    "r": 229.31,
+    "b": 762.07,
+    "w": 17.16,
+    "h": 12.62,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": false,
+   "element_id": "p5_e44"
+  }
+ ]
+}

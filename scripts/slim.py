@@ -30,6 +30,14 @@ import shutil
 import subprocess
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
+import sys as _sys
+_sys.path.insert(0, str(ROOT))
+try:
+    from figpipe.sources import assert_writable as _assert_writable
+except Exception:                                    # pragma: no cover
+    def _assert_writable(p):                         # fallback: refuse nothing, but refuse to
+        return p                                     # crash the loop if the module is missing
+
 
 #: Path prefixes that must never be tracked because a script regenerates them.
 #: (glob, why). git is consulted for what is ACTUALLY tracked, so this list is a rule, not a
@@ -39,7 +47,10 @@ REGENERABLE = [
     ("corpus/pages_for_vlm/*", "VLM page renders, rebuilt on demand"),
     ("corpus/raw/*", "raw downloads, re-fetchable"),
     ("_qc_negative/*", "negative-control fixtures, rebuilt by every test run"),
-    ("_qc_tools_attempt/*", "one-off tool clones"),
+    ("_qc_tools_attempt/*", "one-off tool clones -- vendored copies of upstream tools, kept"),
+    # NOTE: these vendored clones ARE valuable (they are what figpipe/_qc_vendor also carries),
+    # but the scratch directory is a working copy. The canonical copies live under
+    # figpipe/_qc_vendor/ and are tracked there.
     ("qc_artifacts/*", "QC outputs"),
     ("corpus/qc_r3/*", "QC round-3 outputs"),
 ]
@@ -86,6 +97,10 @@ def purge_disk(apply: bool) -> list[str]:
         freed.append(f"{why}: {len(files)} files, {size / 1_000_000:.1f} MB")
         if apply:
             for t in targets:
+                # Refuse to delete anything inside a read-only source root. This project
+                # learns from published PDFs on D:/ -- they are the INPUT and are not
+                # recoverable from git.
+                _assert_writable(t)
                 shutil.rmtree(t, ignore_errors=True)
     return freed
 
@@ -134,6 +149,7 @@ def prune_scratch(apply: bool) -> list[str]:
             size = sum(f.stat().st_size for f in d.rglob("*") if f.is_file())
             gone.append(f"{name} ({size / 1_000_000:.1f} MB)")
             if apply:
+                _assert_writable(d)
                 shutil.rmtree(d, ignore_errors=True)
     return gone
 

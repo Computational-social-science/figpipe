@@ -1,0 +1,382 @@
+{
+ "paper_id": "2019_nature_scalable_energy_efficient_magnetoelectric_spin_o_1e731f2e",
+ "source_pdf": "D:\\2026-MisspellingsMemory\\artificial intelligence vs. artifical intelligence\\! 2019-Nature-Scalable energy-efficient magnetoelectric spin–orbit logic.pdf",
+ "source_sha256": "ccb0f6881d5d8b812d1a6726e07c568bbadf41a533430ac9b59db9f165f6ca60",
+ "source_name": "! 2019-Nature-Scalable energy-efficient magnetoelectric spin–orbit logic.pdf",
+ "n_pages": 9,
+ "generated_at": "2026-10-18T11:24:29",
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "n_figures": 6,
+ "n_tables": 2,
+ "n_pictures_detected": 17,
+ "n_uncaptioned_pictures": 11,
+ "figures": [
+  {
+   "figure_id": "fig_001",
+   "kind": "figure",
+   "label_form": "Fig. 1",
+   "figure_number": 1,
+   "page": 2,
+   "bbox": {
+    "l": 36.76,
+    "t": 732.51,
+    "r": 287.66,
+    "b": 485.36,
+    "w": 250.9,
+    "h": 247.15,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 74,
+    "y0": 117,
+    "x1": 575,
+    "y1": 611,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_001.png",
+   "image_size_px": [
+    501,
+    494
+   ],
+   "caption": "Fig. 1 | MESO logic transduction and device operation. a, Transduction of state variables for a cascadable charge-input and charge-output logic device. The magnetoelectric effect transduces the input information to magnetism, and the spin-orbit effect in a topological material transduces the magnetic state variable back to charge. b, MESO device formed with a magnetoelectric capacitor and a topological material. The device comprises a spin-injection layer for spin injection from the ferromagnet to the topological material, an interconnect made of a conductive material, and contacts to the power supply and ground. The logical state of the charge input (current in the +x direction) is inverted by the operation shown to charge output (current in the -x direction). Power for energy gain is injected from the power supply (arrows). Transduction mechanisms are calculated with magnetoelectric-vector SPICE models (see Methods and Supplementary Information). The white arrow represents the magnetization direction of the ferromagnet. Grey arrows represent electric currents at the input and output, power supply and ground. Injection of the power supply current allows for energy gain, large signal gain and the ability to drive larger output devices. c, Magnetoelectric transfer function, showing conversion of the charge input to ferromagnetic magnetization. d, Spin-orbit transfer function, showing conversion of a state to charge output. The response of the device is indicated for small signal gain (black line) and the full signal range (-15 μA to 15 μA; blue arrow). See Supplementary Fig. 1 for the two operating states of the MESO inverter device.",
+   "caption_page": 2,
+   "caption_text": "Fig. 1 | MESO logic transduction and device operation. a, Transduction of state variables for a cascadable charge-input and charge-output logic device. The magnetoelectric effect transduces the input information to magnetism, and the spin-orbit effect in a topological material transduces the magnetic state variable back to charge. b, MESO device formed with a magnetoelectric capacitor and a topological material. The device comprises a spin-injection layer for spin injection from the ferromagnet to the topological material, an interconnect made of a conductive material, and contacts to the power supply and ground. The logical state of the charge input (current in the +x direction) is inverted by the operation shown to charge output (current in the -x direction). Power for energy gain is injected from the power supply (arrows). Transduction mechanisms are calculated with magnetoelectric-vector SPICE models (see Methods and Supplementary Information). The white arrow represents the magnetization direction of the ferromagnet. Grey arrows represent electric currents at the input and output, power supply and ground. Injection of the power supply current allows for energy gain, large signal gain and the ability to drive larger output devices. c, Magnetoelectric transfer function, showing conversion of the charge input to ferromagnetic magnetization. d, Spin-orbit transfer function, showing conversion of a state to charge output. The response of the device is indicated for small signal gain (black line) and the full signal range (-15 μA to 15 μA; blue arrow). See Supplementary Fig. 1 for the two operating states of the MESO inverter device.",
+   "caption_bbox": {
+    "l": 36.85,
+    "t": 478.95,
+    "r": 289.07,
+    "b": 253.0,
+    "w": 252.22,
+    "h": 225.95,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p2_e11"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 6.41
+   },
+   "element_id": "p2_e10",
+   "reading_order": 10
+  },
+  {
+   "figure_id": "fig_002",
+   "kind": "figure",
+   "label_form": "Fig. 2",
+   "figure_number": 2,
+   "page": 3,
+   "bbox": {
+    "l": 48.94,
+    "t": 733.68,
+    "r": 289.71,
+    "b": 447.97,
+    "w": 240.77,
+    "h": 285.71,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 98,
+    "y0": 114,
+    "x1": 579,
+    "y1": 686,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_002.png",
+   "image_size_px": [
+    481,
+    572
+   ],
+   "caption": "Fig. 2 | Operating mechanisms for MESO logic. a, A low-voltage-chargebased MESO interconnect with cascaded logic gates. Two inverters are chained together to form an interconnect. Arrows show the directions of the input and output currents of the device. Materials are as in Fig. 1. b, Operating mechanism for spin-to-charge conversion using a high-SOC material (SOC). A spin injection layer (SIL) is used where needed by the materials' interfaces. Spins injected from the ferromagnet (FM) in the +z direction with spin polarization along the +y (in-plane) direction cause a topologically generated charge current in the SOC layer. Small red and blue arrows indicate up and down spins, respectively, injected from the magnet. The large red arrows show the directions of the charge (Ic) and injected spin (Is) currents. c, Schematic of the k-space for spin-to-charge conversion at a two-dimensional electron gas with high SOC. Injecting a spin current polarized along the +y direction overpopulates the Fermi surface on one side of the topological material compared to the other side. This generates a net charge current in the x direction. The conversion has the right symmetry to convert the information of the ferromagnet to the charge current output. The dashed and solid lines depict the Fermi surface of the material before and after spin injection, respectively. Injected spin density 〈δs〉 along the +y direction leads to charge current Jcs > 0. d, Operating mechanism for a magnetoelectric (ME) material. A ferromagnet is coupled via exchange/strain to the magnetoelectric material. HEB and HEC are the exchange bias and the exchange coupling from the magnetoelectric material to the ferromagnet, respectively, and m is the magnetization of the ferromagnet. e, A classic multiferroicmagnetoelectric material, BiFeO3, is shown with the order parameters: polarization (P), antiferromagnetism (L) and weak canted magnetization (Mc). The electric-field setup in a generic magnetoelectric/ferroelectric material produces exchange bias, coupling and anisotropy modulation for magnetostrictive effects. Yellow and blue spheres depict Bi and Fe atoms in a canonic room-temperature multiferroic BiFeO3. mˆ FM , mˆ c and lˆ represent the unit vectors of magnetization of the coupled layer, the magnetization of the canted spins and the antiferromagnetic axis, respectively. In general, the magneto-electric field generates an exchange coupling along the axial direction of 1ˆ, the AFM axial direction and exchange bias, the direction of weak ferromagnetism mˆ c .",
+   "caption_page": 3,
+   "caption_text": "Fig. 2 | Operating mechanisms for MESO logic. a, A low-voltage-chargebased MESO interconnect with cascaded logic gates. Two inverters are chained together to form an interconnect. Arrows show the directions of the input and output currents of the device. Materials are as in Fig. 1. b, Operating mechanism for spin-to-charge conversion using a high-SOC material (SOC). A spin injection layer (SIL) is used where needed by the materials' interfaces. Spins injected from the ferromagnet (FM) in the +z direction with spin polarization along the +y (in-plane) direction cause a topologically generated charge current in the SOC layer. Small red and blue arrows indicate up and down spins, respectively, injected from the magnet. The large red arrows show the directions of the charge (Ic) and injected spin (Is) currents. c, Schematic of the k-space for spin-to-charge conversion at a two-dimensional electron gas with high SOC. Injecting a spin current polarized along the +y direction overpopulates the Fermi surface on one side of the topological material compared to the other side. This generates a net charge current in the x direction. The conversion has the right symmetry to convert the information of the ferromagnet to the charge current output. The dashed and solid lines depict the Fermi surface of the material before and after spin injection, respectively. Injected spin density 〈δs〉 along the +y direction leads to charge current Jcs > 0. d, Operating mechanism for a magnetoelectric (ME) material. A ferromagnet is coupled via exchange/strain to the magnetoelectric material. HEB and HEC are the exchange bias and the exchange coupling from the magnetoelectric material to the ferromagnet, respectively, and m is the magnetization of the ferromagnet. e, A classic multiferroicmagnetoelectric material, BiFeO3, is shown with the order parameters: polarization (P), antiferromagnetism (L) and weak canted magnetization (Mc). The electric-field setup in a generic magnetoelectric/ferroelectric material produces exchange bias, coupling and anisotropy modulation for magnetostrictive effects. Yellow and blue spheres depict Bi and Fe atoms in a canonic room-temperature multiferroic BiFeO3. mˆ FM , mˆ c and lˆ represent the unit vectors of magnetization of the coupled layer, the magnetization of the canted spins and the antiferromagnetic axis, respectively. In general, the magneto-electric field generates an exchange coupling along the axial direction of 1ˆ, the AFM axial direction and exchange bias, the direction of weak ferromagnetism mˆ c .",
+   "caption_bbox": {
+    "l": 42.51,
+    "t": 440.73,
+    "r": 293.41,
+    "b": 99.33,
+    "w": 250.9,
+    "h": 341.4,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p3_e20"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 7.24
+   },
+   "element_id": "p3_e19",
+   "reading_order": 19
+  },
+  {
+   "figure_id": "fig_003",
+   "kind": "figure",
+   "label_form": "Fig. 3",
+   "figure_number": 3,
+   "page": 5,
+   "bbox": {
+    "l": 49.98,
+    "t": 732.98,
+    "r": 285.06,
+    "b": 245.28,
+    "w": 235.08,
+    "h": 487.7,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 100,
+    "y0": 116,
+    "x1": 570,
+    "y1": 1091,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_003.png",
+   "image_size_px": [
+    470,
+    975
+   ],
+   "caption": "Fig. 3 | Energy and delay of the MESO device. Dimensional scaling of MESO logic shows improvement in switching energy as the devices get smaller. a, Cubic scaling with magnet width. b, Effect of the length of the interconnect (30 nm × 30 nm cross-section) on the (inverter) device performance, obtained from interconnect modelling of the MESO device. See Supplementary Information for the effects of the capacitance and length on device performance. We simulated the interconnect with 100 Ω μm -1 resistance and 100 aF μm -1 capacitance per unit length. c, Intrinsic switching energy of MESO (colour bar) with improvements in switching voltage and SOC strength (effective IREE length).",
+   "caption_page": 5,
+   "caption_text": "Fig. 3 | Energy and delay of the MESO device. Dimensional scaling of MESO logic shows improvement in switching energy as the devices get smaller. a, Cubic scaling with magnet width. b, Effect of the length of the interconnect (30 nm × 30 nm cross-section) on the (inverter) device performance, obtained from interconnect modelling of the MESO device. See Supplementary Information for the effects of the capacitance and length on device performance. We simulated the interconnect with 100 Ω μm -1 resistance and 100 aF μm -1 capacitance per unit length. c, Intrinsic switching energy of MESO (colour bar) with improvements in switching voltage and SOC strength (effective IREE length).",
+   "caption_bbox": {
+    "l": 42.51,
+    "t": 239.43,
+    "r": 289.76,
+    "b": 146.56,
+    "w": 247.25,
+    "h": 92.87,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p5_e48"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 5.85
+   },
+   "element_id": "p5_e47",
+   "reading_order": 47
+  },
+  {
+   "figure_id": "fig_004",
+   "kind": "figure",
+   "label_form": "Fig. 4",
+   "figure_number": 4,
+   "page": 5,
+   "bbox": {
+    "l": 310.15,
+    "t": 625.96,
+    "r": 549.53,
+    "b": 443.25,
+    "w": 239.38,
+    "h": 182.71,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 620,
+    "y0": 330,
+    "x1": 1099,
+    "y1": 695,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_004.png",
+   "image_size_px": [
+    479,
+    365
+   ],
+   "caption": "Fig. 4 | Performance and area of MESO device in comparison with advanced CMOS and leading beyond-CMOS devices. a, Scheme of a MESO majority logic gate used for benchmarking. b, Power per unit area versus throughput (that is, number of 32-bit ALU operations per unit time and unit area, in units of tera-integer operations per second; TIOPS) for CMOS and beyond-CMOS devices. The constraint of a power density not higher than 10 W cm-2 is implemented, when necessary, by inserting an empty area into the optimally laid out circuits. c, Delay of 32-bit ALU operation versus the power-limited area for CMOS and beyond-CMOS devices. Power-limited area comprehends the increase in area of the computational logic to meet the power density contraint of 10 W cm -2 in b. STT-DW, spin-transfer-torque domain-wall device; ASL, all-spin-logic device; CSL, charge spin logic; NML, nanomagnetic logic; SMG, spin majority gate; SWD, spin wave device; CMOS HP, high-performance CMOS at 0.73 V supply; CMOS LV, low-power CMOS operating at 0.3 V supply; FEFET, ferroelectric FET; Thin TFET, 2D-material vertical tunnel FET; TMDTFET, transition-metal dichalcogenide tunnel FET; see Methods.",
+   "caption_page": 5,
+   "caption_text": "Fig. 4 | Performance and area of MESO device in comparison with advanced CMOS and leading beyond-CMOS devices. a, Scheme of a MESO majority logic gate used for benchmarking. b, Power per unit area versus throughput (that is, number of 32-bit ALU operations per unit time and unit area, in units of tera-integer operations per second; TIOPS) for CMOS and beyond-CMOS devices. The constraint of a power density not higher than 10 W cm-2 is implemented, when necessary, by inserting an empty area into the optimally laid out circuits. c, Delay of 32-bit ALU operation versus the power-limited area for CMOS and beyond-CMOS devices. Power-limited area comprehends the increase in area of the computational logic to meet the power density contraint of 10 W cm -2 in b. STT-DW, spin-transfer-torque domain-wall device; ASL, all-spin-logic device; CSL, charge spin logic; NML, nanomagnetic logic; SMG, spin majority gate; SWD, spin wave device; CMOS HP, high-performance CMOS at 0.73 V supply; CMOS LV, low-power CMOS operating at 0.3 V supply; FEFET, ferroelectric FET; Thin TFET, 2D-material vertical tunnel FET; TMDTFET, transition-metal dichalcogenide tunnel FET; see Methods.",
+   "caption_bbox": {
+    "l": 306.14,
+    "t": 231.56,
+    "r": 558.43,
+    "b": 72.17,
+    "w": 252.29,
+    "h": 159.39,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p5_e55"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 211.69
+   },
+   "element_id": "p5_e53",
+   "reading_order": 53
+  },
+  {
+   "figure_id": "fig_005",
+   "kind": "figure",
+   "label_form": "Fig. 5",
+   "figure_number": 5,
+   "page": 6,
+   "bbox": {
+    "l": 38.96,
+    "t": 733.8,
+    "r": 283.62,
+    "b": 343.16,
+    "w": 244.66,
+    "h": 390.64,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 78,
+    "y0": 114,
+    "x1": 567,
+    "y1": 895,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_005.png",
+   "image_size_px": [
+    489,
+    781
+   ],
+   "caption": "Fig. 5 | Spin-orbit readout for the MESO device. a, A proof-of-concept device for a spin-orbit readout mechanism in which a spin in a polarized charge current is passed into a spin-orbit material (Pt) from a CoFe ferromagnet. The inset shows a microscope image of the device. b, Charge readout of the spin state of the ferromagnet, measured using a non-local resistance (lateral voltage divided by vertical current). Shown are measured data from devices with various CoFe width and fixed Pt width of 100 nm (dark blue) and 400 nm (light blue). The inset shows linear fits to 1/WFM. c, Projected improvement in the spin-orbit readout through the use of topological insulators with low conductivity and high spin-orbit effects. Vso and σxx are the generated voltage and conductivity, respectively.",
+   "caption_page": 6,
+   "caption_text": "Fig. 5 | Spin-orbit readout for the MESO device. a, A proof-of-concept device for a spin-orbit readout mechanism in which a spin in a polarized charge current is passed into a spin-orbit material (Pt) from a CoFe ferromagnet. The inset shows a microscope image of the device. b, Charge readout of the spin state of the ferromagnet, measured using a non-local resistance (lateral voltage divided by vertical current). Shown are measured data from devices with various CoFe width and fixed Pt width of 100 nm (dark blue) and 400 nm (light blue). The inset shows linear fits to 1/WFM. c, Projected improvement in the spin-orbit readout through the use of topological insulators with low conductivity and high spin-orbit effects. Vso and σxx are the generated voltage and conductivity, respectively.",
+   "caption_bbox": {
+    "l": 36.85,
+    "t": 336.0,
+    "r": 289.14,
+    "b": 232.98,
+    "w": 252.29,
+    "h": 103.03,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p6_e59"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 7.16
+   },
+   "element_id": "p6_e58",
+   "reading_order": 58
+  },
+  {
+   "figure_id": "fig_006",
+   "kind": "figure",
+   "label_form": "Fig. 6",
+   "figure_number": 6,
+   "page": 6,
+   "bbox": {
+    "l": 301.54,
+    "t": 732.86,
+    "r": 551.56,
+    "b": 552.95,
+    "w": 250.02,
+    "h": 179.91,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 603,
+    "y0": 116,
+    "x1": 1103,
+    "y1": 476,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_006.png",
+   "image_size_px": [
+    500,
+    360
+   ],
+   "caption": "Fig. 6 | Progress of magnetoelectric transduction via MESO towards a voltage of 100 mV. a, Piezoelectric loop (blue) and applied-voltagedependent resistance modulation (ΔR; red) of a Pt/CoFe/Cu/CoFe/LBFO/ LSMO magnetoelectric spin-valve device depict 1 V magnetoelectric switching. The vertical axis shows the phase of the ferro-electric polarization response signal with respect to the input voltage. Purple arrows indicate the sweep direction in the measurement. b, Magnetization Ms of a giant magnetoresistive stack, normalized with the magnetization M of a thin film, as a function of magnetic field strength H. The bottom CoFe electrode of the giant magnetoresistive stack is exchange-coupled to LaBiFeO3, showing exchange-induced anisotropy enhancement and exchange bias. c, Voltage scaling of magnetoelectric switching as a function of multiferroic film thickness. Data points A-D correspond to BiFeO3 films of varying thickness with a SrRuO3 bottom electrode. The switching voltage of the MESO device Vc(ME) is lowered down to 1.0 V using partial chemical substitution of Bi 3+ (with La 3+), interface engineering (electrodes formed with La0.7Sr0.3MnO3) and thickness scaling down to 40 nm. The ultimate goal of the MESO project is to be able to switch magnetoelectrically at 100 mV.",
+   "caption_page": 6,
+   "caption_text": "Fig. 6 | Progress of magnetoelectric transduction via MESO towards a voltage of 100 mV. a, Piezoelectric loop (blue) and applied-voltagedependent resistance modulation (ΔR; red) of a Pt/CoFe/Cu/CoFe/LBFO/ LSMO magnetoelectric spin-valve device depict 1 V magnetoelectric switching. The vertical axis shows the phase of the ferro-electric polarization response signal with respect to the input voltage. Purple arrows indicate the sweep direction in the measurement. b, Magnetization Ms of a giant magnetoresistive stack, normalized with the magnetization M of a thin film, as a function of magnetic field strength H. The bottom CoFe electrode of the giant magnetoresistive stack is exchange-coupled to LaBiFeO3, showing exchange-induced anisotropy enhancement and exchange bias. c, Voltage scaling of magnetoelectric switching as a function of multiferroic film thickness. Data points A-D correspond to BiFeO3 films of varying thickness with a SrRuO3 bottom electrode. The switching voltage of the MESO device Vc(ME) is lowered down to 1.0 V using partial chemical substitution of Bi 3+ (with La 3+), interface engineering (electrodes formed with La0.7Sr0.3MnO3) and thickness scaling down to 40 nm. The ultimate goal of the MESO project is to be able to switch magnetoelectrically at 100 mV.",
+   "caption_bbox": {
+    "l": 300.47,
+    "t": 547.06,
+    "r": 552.75,
+    "b": 368.68,
+    "w": 252.28,
+    "h": 178.38,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p6_e62"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 5.89
+   },
+   "element_id": "p6_e61",
+   "reading_order": 61
+  }
+ ],
+ "tables": [
+  {
+   "table_id": "table_001",
+   "page": 4,
+   "bbox": {
+    "l": 36.04,
+    "t": 724.27,
+    "r": 553.33,
+    "b": 552.08,
+    "w": 517.29,
+    "h": 172.19,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": 1.61,
+    "paired": false
+   },
+   "element_id": "p4_e37"
+  },
+  {
+   "table_id": "table_002",
+   "page": 7,
+   "bbox": {
+    "l": 41.74,
+    "t": 724.73,
+    "r": 560.0,
+    "b": 585.34,
+    "w": 518.26,
+    "h": 139.39,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": "Table 2 | Material options for MESO logic",
+   "caption_bbox": {
+    "l": 42.52,
+    "t": 733.22,
+    "r": 194.15,
+    "b": 725.89,
+    "w": 151.63,
+    "h": 7.33,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_page": 7,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": 1.16,
+    "paired": true
+   },
+   "element_id": "p7_e63"
+  }
+ ]
+}

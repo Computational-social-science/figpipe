@@ -1,0 +1,264 @@
+{
+ "paper_id": "worming_your_way_to_cell_death_nature_2008_ca49d531",
+ "source_pdf": "D:\\我的文章\\学术会议\\会议\\09meeting\\! Worming your way to cell death(Nature 2008).pdf",
+ "source_sha256": "088c7d6fcdfdf5604bd7972190adb2e09cd7c506dc3abe18d7ea8d8480610958",
+ "source_name": "! Worming your way to cell death(Nature 2008).pdf",
+ "n_pages": 1,
+ "page_size_pt": [
+  595.28,
+  782.36
+ ],
+ "coordinate_note": "bbox is PDF points with origin at the BOTTOM-LEFT, y increasing upward; bbox_norm divides by page size.",
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "generated_at": "2026-10-18T11:26:32",
+ "pages": [
+  {
+   "page_no": 1,
+   "width_pt": 595.276,
+   "height_pt": 782.362,
+   "png": "pages/page_0001.png",
+   "elements": [
+    {
+     "reading_order": 0,
+     "page": 1,
+     "label": "section_header",
+     "bbox": {
+      "l": 143.77,
+      "t": 628.78,
+      "r": 220.09,
+      "b": 621.56,
+      "w": 76.31,
+      "h": 7.23,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.24152,
+      "t": 0.80369,
+      "r": 0.36973,
+      "b": 0.79447
+     },
+     "text": "RAD I OTHERAPY",
+     "text_len": 14,
+     "level": 1,
+     "element_id": "p1_e0"
+    },
+    {
+     "reading_order": 1,
+     "page": 1,
+     "label": "section_header",
+     "bbox": {
+      "l": 130.39,
+      "t": 607.01,
+      "r": 468.16,
+      "b": 585.06,
+      "w": 337.77,
+      "h": 21.95,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.21904,
+      "t": 0.77587,
+      "r": 0.78646,
+      "b": 0.74781
+     },
+     "text": "Worming your way to cell death",
+     "text_len": 30,
+     "level": 1,
+     "element_id": "p1_e1"
+    },
+    {
+     "reading_order": 2,
+     "page": 1,
+     "label": "picture",
+     "bbox": {
+      "l": 0.0,
+      "t": 577.75,
+      "r": 265.46,
+      "b": 160.54,
+      "w": 265.46,
+      "h": 417.21,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0,
+      "t": 0.73847,
+      "r": 0.44594,
+      "b": 0.2052
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p1_e2"
+    },
+    {
+     "reading_order": 3,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 274.96,
+      "t": 576.11,
+      "r": 408.19,
+      "b": 326.12,
+      "w": 133.23,
+      "h": 249.99,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.4619,
+      "t": 0.73637,
+      "r": 0.68572,
+      "b": 0.41684
+     },
+     "text": "somatic cell death was unaffected by these mutants (hyl-1(ok976) and lagr-1(gk327)), radiation-induced germ cell apoptosis was almost completely abrogated in both single and double mutants, reiterating the role for ceramide synthesis specifically in radiation-induced apoptosis. Microinjection of C 16 - ceramide - the species thought to be involved in apoptosis transduction according to work in mammalian models - qualitatively and quantitatively mimicked radiationinduced germ cell apoptosis in non-irradiated wild-type worms. Moreover, microinjection of lowdose C 16 -ceramide restored radiationinduced germ cell apoptosis in hyl-1(ok976);lagr-1(gk327) double mutants, showing that ceramide is a crucial effector of radiation-induced apoptosis.",
+     "text_len": 748,
+     "level": 1,
+     "element_id": "p1_e3"
+    },
+    {
+     "reading_order": 4,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 274.96,
+      "t": 323.11,
+      "r": 408.21,
+      "b": 161.12,
+      "w": 133.24,
+      "h": 161.99,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.4619,
+      "t": 0.41299,
+      "r": 0.68575,
+      "b": 0.20594
+     },
+     "text": "So, how does ceramide mediate these effects? In the worm, radiationinduced DNA damage activates a transcriptional response that is dependent on CEP-1 (the homologue of p53), increasing the expression of the BH3-only proteins EGL-1 and CED-13. These in turn activate the core apoptotic machinery in the mito chondria. Surprisingly, the authors found that egl-1 and ced-13 transcripts were increased as normal after hyl-1(ok976);lagr-1(gk327) mutants were irradiated. Further, they showed that ceramide acts in parallel to the BH3-only proteins, upstream of the mitochondrial core apoptotic machinery, to mediate radiation-induced apoptosis. Consistently, they saw ceramide accumulation in the mitochondria after irradiation, which was not detectable in the hyl-1(ok976); lagr-1(gk327) mutant. In addition, they showed that CED-4 (a member of the core apoptotic machinery) was no longer relocalized to the nuclear membrane by EGL-1 in the hyl-1(ok976);lagr-1(gk327) mutant, and proposed that ceramide might create a permissive environment for CED-4 trafficking from the mitochondria. Therefore, the CEP-1dependent and ceramide synthesis pathways coordinately activate the core apoptotic machinery in the mitochondria to commit germ cells to apoptosis after exposure to ionizing radiation.",
+     "text_len": 1286,
+     "level": 1,
+     "element_id": "p1_e4"
+    },
+    {
+     "reading_order": 5,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 419.53,
+      "t": 312.11,
+      "r": 551.9,
+      "b": 227.12,
+      "w": 132.37,
+      "h": 84.99,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.70477,
+      "t": 0.39893,
+      "r": 0.92713,
+      "b": 0.2903
+     },
+     "text": "Together, these data characterize a crucial cell death signalling pathway that is specific to responses to ionizing radiation exposure and is probably conserved in mammals. Further understanding of this process might lead to improvements in the efficacy of radiotherapy.",
+     "text_len": 270,
+     "level": 1,
+     "element_id": "p1_e5"
+    },
+    {
+     "reading_order": 6,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 490.45,
+      "t": 223.46,
+      "r": 552.76,
+      "b": 216.38,
+      "w": 62.31,
+      "h": 7.08,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.8239,
+      "t": 0.28562,
+      "r": 0.92858,
+      "b": 0.27657
+     },
+     "text": "Gemma K. Alderton",
+     "text_len": 17,
+     "level": 1,
+     "element_id": "p1_e6"
+    },
+    {
+     "reading_order": 7,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 426.2,
+      "t": 200.44,
+      "r": 542.55,
+      "b": 171.36,
+      "w": 116.35,
+      "h": 29.08,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.71597,
+      "t": 0.2562,
+      "r": 0.91143,
+      "b": 0.21903
+     },
+     "text": "ORIGINAL RESEARCH PAPER Deng, X. et al. Ceramide biogenesis is required for radiationinduced apoptosis in the germ line of C. elegans. Science 322, 110-115 (2008)",
+     "text_len": 162,
+     "level": 1,
+     "element_id": "p1_e7"
+    },
+    {
+     "reading_order": 8,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 342.97,
+      "t": 762.3,
+      "r": 552.79,
+      "b": 748.77,
+      "w": 209.82,
+      "h": 13.53,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.57615,
+      "t": 0.97436,
+      "r": 0.92863,
+      "b": 0.95706
+     },
+     "text": "ReseaRch highl ights",
+     "text_len": 20,
+     "level": 1,
+     "element_id": "p1_e8"
+    }
+   ]
+  }
+ ],
+ "caption_blocks": [],
+ "uncaptioned_pictures": [
+  {
+   "page": 1,
+   "bbox": {
+    "l": 0.0,
+    "t": 577.75,
+    "r": 265.46,
+    "b": 160.54,
+    "w": 265.46,
+    "h": 417.21,
+    "coord": "pdf_points_bottomleft"
+   },
+   "real_figure_size": true,
+   "element_id": "p1_e2"
+  }
+ ]
+}

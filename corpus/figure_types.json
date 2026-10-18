@@ -1,0 +1,2531 @@
+{
+  "summary": {
+    "n": 275,
+    "by_type": {
+      "unclassified": 105,
+      "supplementary_data": 71,
+      "panel_row": 32,
+      "schematic": 28,
+      "time_series": 15,
+      "micrograph": 12,
+      "bar": 6,
+      "scatter": 3,
+      "heatmap": 2,
+      "network": 1
+    },
+    "by_confidence": {
+      "caption": 138,
+      "none": 105,
+      "geometry": 32
+    },
+    "by_kind": {
+      "figure": {
+        "unclassified": 102,
+        "panel_row": 32,
+        "schematic": 23,
+        "micrograph": 12,
+        "supplementary_data": 10,
+        "time_series": 9,
+        "bar": 2,
+        "heatmap": 2,
+        "network": 1,
+        "scatter": 1
+      },
+      "extended_data_figure": {
+        "supplementary_data": 37,
+        "time_series": 5,
+        "bar": 4,
+        "schematic": 3,
+        "scatter": 2,
+        "unclassified": 2
+      },
+      "box": {
+        "time_series": 1
+      },
+      "supplementary_figure": {
+        "supplementary_data": 24,
+        "schematic": 2
+      },
+      "table": {
+        "unclassified": 1
+      }
+    }
+  },
+  "assignments": [
+    {
+      "paper": "1974_nature_molecular_biologists_come_of_age_in_aries_c8c8e684",
+      "figure_id": "fig_001",
+      "page": 1,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "1997_nature_a_novel_paradigm_1cf8ba19",
+      "figure_id": "fig_001",
+      "page": 1,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2002_nature_the_birth_of_molecular_biology_272b9975",
+      "figure_id": "fig_001",
+      "page": 1,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2010_nature_rethinking_schizophrenia_23393356",
+      "figure_id": "fig_001",
+      "page": 3,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2012_nature_in_retrospect_the_structure_of_scientific_revolu_e46e2a8c",
+      "figure_id": "fig_001",
+      "page": 1,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2012_nature_in_retrospect_the_structure_of_scientific_revolu_e46e2a8c",
+      "figure_id": "fig_002",
+      "page": 3,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2014_nature_language_lost_in_translation_12d8a5f7",
+      "figure_id": "fig_001",
+      "page": 1,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2015_nature_deep_learning_7cdc278d",
+      "figure_id": "fig_001",
+      "page": 2,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2015_nature_deep_learning_7cdc278d",
+      "figure_id": "fig_002",
+      "page": 5,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2015_nature_deep_learning_7cdc278d",
+      "figure_id": "fig_003",
+      "page": 6,
+      "figure_type": "schematic",
+      "confidence": "caption",
+      "evidence": "illustration",
+      "kind": "figure"
+    },
+    {
+      "paper": "2015_nature_deep_learning_7cdc278d",
+      "figure_id": "fig_004",
+      "page": 6,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2015_nature_deep_learning_aee96f20",
+      "figure_id": "fig_001",
+      "page": 2,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2015_nature_deep_learning_aee96f20",
+      "figure_id": "fig_002",
+      "page": 5,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2015_nature_deep_learning_aee96f20",
+      "figure_id": "fig_003",
+      "page": 6,
+      "figure_type": "schematic",
+      "confidence": "caption",
+      "evidence": "illustration",
+      "kind": "figure"
+    },
+    {
+      "paper": "2015_nature_deep_learning_aee96f20",
+      "figure_id": "fig_004",
+      "page": 6,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2015_nature_defining_the_anthropocene_6c66351f",
+      "figure_id": "fig_001",
+      "page": 4,
+      "figure_type": "time_series",
+      "confidence": "caption",
+      "evidence": "annual",
+      "kind": "figure"
+    },
+    {
+      "paper": "2016_nature_multimodal_learning_with_next_token_prediction_f_9eabd33e",
+      "figure_id": "fig_001",
+      "page": 2,
+      "figure_type": "schematic",
+      "confidence": "caption",
+      "evidence": "framework",
+      "kind": "figure"
+    },
+    {
+      "paper": "2016_nature_multimodal_learning_with_next_token_prediction_f_9eabd33e",
+      "figure_id": "fig_002",
+      "page": 3,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2016_nature_multimodal_learning_with_next_token_prediction_f_9eabd33e",
+      "figure_id": "fig_003",
+      "page": 4,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2016_nature_multimodal_learning_with_next_token_prediction_f_9eabd33e",
+      "figure_id": "fig_004",
+      "page": 5,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2016_nature_multimodal_learning_with_next_token_prediction_f_9eabd33e",
+      "figure_id": "fig_005",
+      "page": 6,
+      "figure_type": "panel_row",
+      "confidence": "geometry",
+      "evidence": "aspect 3.40 >= 2.5",
+      "kind": "figure"
+    },
+    {
+      "paper": "2016_nature_multimodal_learning_with_next_token_prediction_f_9eabd33e",
+      "figure_id": "fig_006",
+      "page": 11,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Extended Data",
+      "kind": "extended_data_figure"
+    },
+    {
+      "paper": "2016_nature_multimodal_learning_with_next_token_prediction_f_9eabd33e",
+      "figure_id": "fig_007",
+      "page": 12,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Extended Data",
+      "kind": "extended_data_figure"
+    },
+    {
+      "paper": "2018_nature_meta_analysis_and_the_science_of_research_synthe_636da16c",
+      "figure_id": "fig_001",
+      "page": 2,
+      "figure_type": "time_series",
+      "confidence": "caption",
+      "evidence": "trajectory",
+      "kind": "box"
+    },
+    {
+      "paper": "2018_nature_meta_analysis_and_the_science_of_research_synthe_636da16c",
+      "figure_id": "fig_002",
+      "page": 3,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2019_nature_immunization_vital_progress_unfinished_agenda_f6489ba2",
+      "figure_id": "fig_001",
+      "page": 6,
+      "figure_type": "time_series",
+      "confidence": "caption",
+      "evidence": "over time",
+      "kind": "figure"
+    },
+    {
+      "paper": "2019_nature_immunization_vital_progress_unfinished_agenda_f6489ba2",
+      "figure_id": "fig_002",
+      "page": 8,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2019_nature_immunization_vital_progress_unfinished_agenda_f6489ba2",
+      "figure_id": "fig_003",
+      "page": 9,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2019_nature_reboot_ethics_governance_in_china_f33f8e7a",
+      "figure_id": "fig_001",
+      "page": 1,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2019_nature_reboot_ethics_governance_in_china_f33f8e7a",
+      "figure_id": "fig_002",
+      "page": 3,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2019_nature_scalable_energy_efficient_magnetoelectric_spin_o_1e731f2e",
+      "figure_id": "fig_001",
+      "page": 2,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2019_nature_scalable_energy_efficient_magnetoelectric_spin_o_1e731f2e",
+      "figure_id": "fig_002",
+      "page": 3,
+      "figure_type": "schematic",
+      "confidence": "caption",
+      "evidence": "Schematic",
+      "kind": "figure"
+    },
+    {
+      "paper": "2019_nature_scalable_energy_efficient_magnetoelectric_spin_o_1e731f2e",
+      "figure_id": "fig_003",
+      "page": 5,
+      "figure_type": "micrograph",
+      "confidence": "caption",
+      "evidence": "μm",
+      "kind": "figure"
+    },
+    {
+      "paper": "2019_nature_scalable_energy_efficient_magnetoelectric_spin_o_1e731f2e",
+      "figure_id": "fig_004",
+      "page": 5,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2019_nature_scalable_energy_efficient_magnetoelectric_spin_o_1e731f2e",
+      "figure_id": "fig_005",
+      "page": 6,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2019_nature_scalable_energy_efficient_magnetoelectric_spin_o_1e731f2e",
+      "figure_id": "fig_006",
+      "page": 6,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2020_nature_milestones_in_vaccines_86c3571b",
+      "figure_id": "fig_001",
+      "page": 7,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2020_nature_milestones_in_vaccines_86c3571b",
+      "figure_id": "fig_002",
+      "page": 13,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2020_nature_milestones_in_vaccines_86c3571b",
+      "figure_id": "fig_003",
+      "page": 23,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2020_nature_milestones_in_vaccines_afe696f0",
+      "figure_id": "fig_001",
+      "page": 7,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2020_nature_milestones_in_vaccines_afe696f0",
+      "figure_id": "fig_002",
+      "page": 13,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2020_nature_milestones_in_vaccines_afe696f0",
+      "figure_id": "fig_003",
+      "page": 23,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2021_nature_measuring_algorithmically_infused_societies_4aa948de",
+      "figure_id": "fig_001",
+      "page": 3,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2021_nature_measuring_algorithmically_infused_societies_89926c04",
+      "figure_id": "fig_001",
+      "page": 3,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2021_nature_measuring_algorithmically_infused_societies_a475d20c",
+      "figure_id": "fig_001",
+      "page": 3,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2023_nature_papers_and_patents_are_becoming_less_disruptive_e2bc44ca",
+      "figure_id": "fig_001",
+      "page": 2,
+      "figure_type": "schematic",
+      "confidence": "caption",
+      "evidence": "schematic",
+      "kind": "figure"
+    },
+    {
+      "paper": "2023_nature_papers_and_patents_are_becoming_less_disruptive_e2bc44ca",
+      "figure_id": "fig_002",
+      "page": 3,
+      "figure_type": "time_series",
+      "confidence": "caption",
+      "evidence": "over time",
+      "kind": "figure"
+    },
+    {
+      "paper": "2023_nature_papers_and_patents_are_becoming_less_disruptive_e2bc44ca",
+      "figure_id": "fig_003",
+      "page": 4,
+      "figure_type": "time_series",
+      "confidence": "caption",
+      "evidence": "from 1980 to 2010",
+      "kind": "figure"
+    },
+    {
+      "paper": "2023_nature_papers_and_patents_are_becoming_less_disruptive_e2bc44ca",
+      "figure_id": "fig_004",
+      "page": 4,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2023_nature_papers_and_patents_are_becoming_less_disruptive_e2bc44ca",
+      "figure_id": "fig_005",
+      "page": 5,
+      "figure_type": "time_series",
+      "confidence": "caption",
+      "evidence": "over time",
+      "kind": "figure"
+    },
+    {
+      "paper": "2023_nature_papers_and_patents_are_becoming_less_disruptive_e2bc44ca",
+      "figure_id": "fig_006",
+      "page": 6,
+      "figure_type": "time_series",
+      "confidence": "caption",
+      "evidence": "over time",
+      "kind": "figure"
+    },
+    {
+      "paper": "2023_nature_papers_and_patents_are_becoming_less_disruptive_e2bc44ca",
+      "figure_id": "fig_007",
+      "page": 12,
+      "figure_type": "time_series",
+      "confidence": "caption",
+      "evidence": "over time",
+      "kind": "extended_data_figure"
+    },
+    {
+      "paper": "2023_nature_papers_and_patents_are_becoming_less_disruptive_e2bc44ca",
+      "figure_id": "fig_008",
+      "page": 13,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Extended Data",
+      "kind": "extended_data_figure"
+    },
+    {
+      "paper": "2023_nature_papers_and_patents_are_becoming_less_disruptive_e2bc44ca",
+      "figure_id": "fig_009",
+      "page": 13,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2023_nature_papers_and_patents_are_becoming_less_disruptive_e2bc44ca",
+      "figure_id": "fig_010",
+      "page": 14,
+      "figure_type": "time_series",
+      "confidence": "caption",
+      "evidence": "over time",
+      "kind": "extended_data_figure"
+    },
+    {
+      "paper": "2023_nature_papers_and_patents_are_becoming_less_disruptive_e2bc44ca",
+      "figure_id": "fig_011",
+      "page": 15,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Extended Data",
+      "kind": "extended_data_figure"
+    },
+    {
+      "paper": "2023_nature_papers_and_patents_are_becoming_less_disruptive_e2bc44ca",
+      "figure_id": "fig_012",
+      "page": 17,
+      "figure_type": "time_series",
+      "confidence": "caption",
+      "evidence": "over time",
+      "kind": "extended_data_figure"
+    },
+    {
+      "paper": "2023_nature_papers_and_patents_are_becoming_less_disruptive_e2bc44ca",
+      "figure_id": "fig_013",
+      "page": 18,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Extended Data",
+      "kind": "extended_data_figure"
+    },
+    {
+      "paper": "2023_nature_papers_and_patents_are_becoming_less_disruptive_e2bc44ca",
+      "figure_id": "fig_014",
+      "page": 19,
+      "figure_type": "time_series",
+      "confidence": "caption",
+      "evidence": "over time",
+      "kind": "extended_data_figure"
+    },
+    {
+      "paper": "2023_nature_papers_and_patents_are_becoming_less_disruptive_e2bc44ca",
+      "figure_id": "fig_015",
+      "page": 20,
+      "figure_type": "time_series",
+      "confidence": "caption",
+      "evidence": "over time",
+      "kind": "extended_data_figure"
+    },
+    {
+      "paper": "2024_nature_detecting_hallucinations_in_large_language_model_2da17701",
+      "figure_id": "fig_001",
+      "page": 2,
+      "figure_type": "panel_row",
+      "confidence": "geometry",
+      "evidence": "aspect 3.39 >= 2.5",
+      "kind": "figure"
+    },
+    {
+      "paper": "2024_nature_detecting_hallucinations_in_large_language_model_2da17701",
+      "figure_id": "fig_002",
+      "page": 4,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2024_nature_detecting_hallucinations_in_large_language_model_2da17701",
+      "figure_id": "fig_003",
+      "page": 5,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2024_nature_detecting_hallucinations_in_large_language_model_2da17701",
+      "figure_id": "fig_004",
+      "page": 7,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2024_nature_detecting_hallucinations_in_large_language_model_2da17701",
+      "figure_id": "fig_005",
+      "page": 20,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Supplementary",
+      "kind": "supplementary_figure"
+    },
+    {
+      "paper": "2024_nature_detecting_hallucinations_in_large_language_model_2da17701",
+      "figure_id": "fig_006",
+      "page": 22,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Supplementary",
+      "kind": "supplementary_figure"
+    },
+    {
+      "paper": "2024_nature_detecting_hallucinations_in_large_language_model_2da17701",
+      "figure_id": "fig_007",
+      "page": 23,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Supplementary",
+      "kind": "supplementary_figure"
+    },
+    {
+      "paper": "2024_nature_detecting_hallucinations_in_large_language_model_2da17701",
+      "figure_id": "fig_008",
+      "page": 24,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Supplementary",
+      "kind": "supplementary_figure"
+    },
+    {
+      "paper": "2024_nature_detecting_hallucinations_in_large_language_model_2da17701",
+      "figure_id": "fig_009",
+      "page": 25,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Supplementary",
+      "kind": "supplementary_figure"
+    },
+    {
+      "paper": "2024_nature_detecting_hallucinations_in_large_language_model_2da17701",
+      "figure_id": "fig_010",
+      "page": 26,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Supplementary",
+      "kind": "supplementary_figure"
+    },
+    {
+      "paper": "2024_nature_detecting_hallucinations_in_large_language_model_2da17701",
+      "figure_id": "fig_011",
+      "page": 27,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Supplementary",
+      "kind": "supplementary_figure"
+    },
+    {
+      "paper": "2024_nature_detecting_hallucinations_in_large_language_model_2da17701",
+      "figure_id": "fig_012",
+      "page": 28,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Supplementary",
+      "kind": "supplementary_figure"
+    },
+    {
+      "paper": "2024_nature_detecting_hallucinations_in_large_language_model_2da17701",
+      "figure_id": "fig_013",
+      "page": 29,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Supplementary",
+      "kind": "supplementary_figure"
+    },
+    {
+      "paper": "2024_nature_detecting_hallucinations_in_large_language_model_2da17701",
+      "figure_id": "fig_014",
+      "page": 30,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Supplementary",
+      "kind": "supplementary_figure"
+    },
+    {
+      "paper": "2024_nature_scaling_neural_machine_translation_to_200_langua_46658cce",
+      "figure_id": "fig_001",
+      "page": 3,
+      "figure_type": "schematic",
+      "confidence": "caption",
+      "evidence": "architecture",
+      "kind": "figure"
+    },
+    {
+      "paper": "2024_nature_scaling_neural_machine_translation_to_200_langua_46658cce",
+      "figure_id": "fig_002",
+      "page": 4,
+      "figure_type": "panel_row",
+      "confidence": "geometry",
+      "evidence": "aspect 3.16 >= 2.5",
+      "kind": "figure"
+    },
+    {
+      "paper": "2024_nature_scaling_neural_machine_translation_to_200_langua_46658cce",
+      "figure_id": "fig_003",
+      "page": 5,
+      "figure_type": "panel_row",
+      "confidence": "geometry",
+      "evidence": "aspect 3.56 >= 2.5",
+      "kind": "figure"
+    },
+    {
+      "paper": "2024_nature_scaling_neural_machine_translation_to_200_langua_46658cce",
+      "figure_id": "fig_004",
+      "page": 11,
+      "figure_type": "schematic",
+      "confidence": "caption",
+      "evidence": "Architecture",
+      "kind": "extended_data_figure"
+    },
+    {
+      "paper": "2024_nature_scaling_neural_machine_translation_to_200_langua_6d110a48",
+      "figure_id": "fig_001",
+      "page": 9,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2024_nature_scaling_neural_machine_translation_to_200_langua_6d110a48",
+      "figure_id": "fig_002",
+      "page": 10,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2024_nature_scaling_neural_machine_translation_to_200_langua_6d110a48",
+      "figure_id": "fig_003",
+      "page": 12,
+      "figure_type": "schematic",
+      "confidence": "caption",
+      "evidence": "Illustration",
+      "kind": "figure"
+    },
+    {
+      "paper": "2024_nature_scaling_neural_machine_translation_to_200_langua_6d110a48",
+      "figure_id": "fig_004",
+      "page": 14,
+      "figure_type": "panel_row",
+      "confidence": "geometry",
+      "evidence": "aspect 3.27 >= 2.5",
+      "kind": "figure"
+    },
+    {
+      "paper": "2024_nature_scaling_neural_machine_translation_to_200_langua_6d110a48",
+      "figure_id": "fig_005",
+      "page": 14,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2024_nature_scaling_neural_machine_translation_to_200_langua_7209237b",
+      "figure_id": "fig_001",
+      "page": 3,
+      "figure_type": "schematic",
+      "confidence": "caption",
+      "evidence": "architecture",
+      "kind": "figure"
+    },
+    {
+      "paper": "2024_nature_scaling_neural_machine_translation_to_200_langua_7209237b",
+      "figure_id": "fig_002",
+      "page": 4,
+      "figure_type": "panel_row",
+      "confidence": "geometry",
+      "evidence": "aspect 3.15 >= 2.5",
+      "kind": "figure"
+    },
+    {
+      "paper": "2024_nature_scaling_neural_machine_translation_to_200_langua_7209237b",
+      "figure_id": "fig_003",
+      "page": 5,
+      "figure_type": "panel_row",
+      "confidence": "geometry",
+      "evidence": "aspect 3.56 >= 2.5",
+      "kind": "figure"
+    },
+    {
+      "paper": "2024_nature_scaling_neural_machine_translation_to_200_langua_7209237b",
+      "figure_id": "fig_004",
+      "page": 11,
+      "figure_type": "schematic",
+      "confidence": "caption",
+      "evidence": "Architecture",
+      "kind": "extended_data_figure"
+    },
+    {
+      "paper": "2024_nature_scaling_neural_machine_translation_to_200_langua_7209237b",
+      "figure_id": "fig_005",
+      "page": 21,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2024_nature_scaling_neural_machine_translation_to_200_langua_7209237b",
+      "figure_id": "fig_006",
+      "page": 22,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2024_nature_scaling_neural_machine_translation_to_200_langua_7209237b",
+      "figure_id": "fig_007",
+      "page": 24,
+      "figure_type": "schematic",
+      "confidence": "caption",
+      "evidence": "Illustration",
+      "kind": "figure"
+    },
+    {
+      "paper": "2024_nature_scaling_neural_machine_translation_to_200_langua_7209237b",
+      "figure_id": "fig_008",
+      "page": 26,
+      "figure_type": "panel_row",
+      "confidence": "geometry",
+      "evidence": "aspect 3.27 >= 2.5",
+      "kind": "figure"
+    },
+    {
+      "paper": "2024_nature_scaling_neural_machine_translation_to_200_langua_7209237b",
+      "figure_id": "fig_009",
+      "page": 26,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2024_nature_scaling_neural_machine_translation_to_200_langua_7209237b",
+      "figure_id": "fig_010",
+      "page": 46,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2024_nature_scaling_neural_machine_translation_to_200_langua_7209237b",
+      "figure_id": "fig_011",
+      "page": 47,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2024_nature_scaling_neural_machine_translation_to_200_langua_7209237b",
+      "figure_id": "fig_012",
+      "page": 49,
+      "figure_type": "schematic",
+      "confidence": "caption",
+      "evidence": "Illustration",
+      "kind": "figure"
+    },
+    {
+      "paper": "2024_nature_scaling_neural_machine_translation_to_200_langua_7209237b",
+      "figure_id": "fig_013",
+      "page": 51,
+      "figure_type": "panel_row",
+      "confidence": "geometry",
+      "evidence": "aspect 3.27 >= 2.5",
+      "kind": "figure"
+    },
+    {
+      "paper": "2024_nature_scaling_neural_machine_translation_to_200_langua_7209237b",
+      "figure_id": "fig_014",
+      "page": 51,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2025_nature_a_foundation_model_to_predict_and_capture_human_86b1c290",
+      "figure_id": "fig_001",
+      "page": 2,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2025_nature_a_foundation_model_to_predict_and_capture_human_86b1c290",
+      "figure_id": "fig_002",
+      "page": 3,
+      "figure_type": "bar",
+      "confidence": "caption",
+      "evidence": "Error bars",
+      "kind": "figure"
+    },
+    {
+      "paper": "2025_nature_a_foundation_model_to_predict_and_capture_human_86b1c290",
+      "figure_id": "fig_003",
+      "page": 4,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2025_nature_a_foundation_model_to_predict_and_capture_human_86b1c290",
+      "figure_id": "fig_004",
+      "page": 5,
+      "figure_type": "schematic",
+      "confidence": "caption",
+      "evidence": "architecture",
+      "kind": "figure"
+    },
+    {
+      "paper": "2025_nature_a_foundation_model_to_predict_and_capture_human_86b1c290",
+      "figure_id": "fig_005",
+      "page": 6,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2025_nature_a_foundation_model_to_predict_and_capture_human_86b1c290",
+      "figure_id": "fig_006",
+      "page": 13,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Extended Data",
+      "kind": "extended_data_figure"
+    },
+    {
+      "paper": "2025_nature_a_foundation_model_to_predict_and_capture_human_86b1c290",
+      "figure_id": "fig_007",
+      "page": 14,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2025_nature_a_foundation_model_to_predict_and_capture_human_86b1c290",
+      "figure_id": "fig_008",
+      "page": 15,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Extended Data",
+      "kind": "extended_data_figure"
+    },
+    {
+      "paper": "2025_nature_a_foundation_model_to_predict_and_capture_human_86b1c290",
+      "figure_id": "fig_009",
+      "page": 17,
+      "figure_type": "bar",
+      "confidence": "caption",
+      "evidence": "Error bars",
+      "kind": "extended_data_figure"
+    },
+    {
+      "paper": "2025_nature_accurate_predictions_on_small_data_with_a_tabula_7fc09483",
+      "figure_id": "fig_001",
+      "page": 2,
+      "figure_type": "panel_row",
+      "confidence": "geometry",
+      "evidence": "aspect 2.95 >= 2.5",
+      "kind": "figure"
+    },
+    {
+      "paper": "2025_nature_accurate_predictions_on_small_data_with_a_tabula_7fc09483",
+      "figure_id": "fig_002",
+      "page": 4,
+      "figure_type": "schematic",
+      "confidence": "caption",
+      "evidence": "architecture",
+      "kind": "figure"
+    },
+    {
+      "paper": "2025_nature_accurate_predictions_on_small_data_with_a_tabula_7fc09483",
+      "figure_id": "fig_003",
+      "page": 5,
+      "figure_type": "network",
+      "confidence": "caption",
+      "evidence": "node",
+      "kind": "figure"
+    },
+    {
+      "paper": "2025_nature_accurate_predictions_on_small_data_with_a_tabula_7fc09483",
+      "figure_id": "fig_004",
+      "page": 6,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2025_nature_accurate_predictions_on_small_data_with_a_tabula_7fc09483",
+      "figure_id": "fig_005",
+      "page": 7,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2025_nature_accurate_predictions_on_small_data_with_a_tabula_7fc09483",
+      "figure_id": "fig_006",
+      "page": 8,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2025_nature_accurate_predictions_on_small_data_with_a_tabula_7fc09483",
+      "figure_id": "fig_007",
+      "page": 9,
+      "figure_type": "panel_row",
+      "confidence": "geometry",
+      "evidence": "aspect 3.80 >= 2.5",
+      "kind": "figure"
+    },
+    {
+      "paper": "2025_nature_accurate_predictions_on_small_data_with_a_tabula_7fc09483",
+      "figure_id": "fig_008",
+      "page": 17,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Extended Data",
+      "kind": "extended_data_figure"
+    },
+    {
+      "paper": "2025_nature_accurate_predictions_on_small_data_with_a_tabula_7fc09483",
+      "figure_id": "fig_009",
+      "page": 17,
+      "figure_type": "time_series",
+      "confidence": "caption",
+      "evidence": "Over Time",
+      "kind": "figure"
+    },
+    {
+      "paper": "2025_nature_accurate_predictions_on_small_data_with_a_tabula_7fc09483",
+      "figure_id": "fig_010",
+      "page": 18,
+      "figure_type": "scatter",
+      "confidence": "caption",
+      "evidence": "Each point",
+      "kind": "extended_data_figure"
+    },
+    {
+      "paper": "2025_nature_accurate_predictions_on_small_data_with_a_tabula_7fc09483",
+      "figure_id": "fig_011",
+      "page": 19,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Extended Data",
+      "kind": "extended_data_figure"
+    },
+    {
+      "paper": "2025_nature_comprehensive_echocardiogram_evaluation_with_vie_0050ec77",
+      "figure_id": "fig_001",
+      "page": 3,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2025_nature_comprehensive_echocardiogram_evaluation_with_vie_0050ec77",
+      "figure_id": "fig_002",
+      "page": 5,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2025_nature_comprehensive_echocardiogram_evaluation_with_vie_0050ec77",
+      "figure_id": "fig_003",
+      "page": 7,
+      "figure_type": "heatmap",
+      "confidence": "caption",
+      "evidence": "heatmap",
+      "kind": "figure"
+    },
+    {
+      "paper": "2025_nature_comprehensive_echocardiogram_evaluation_with_vie_0050ec77",
+      "figure_id": "fig_004",
+      "page": 13,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Extended Data",
+      "kind": "extended_data_figure"
+    },
+    {
+      "paper": "2025_nature_comprehensive_echocardiogram_evaluation_with_vie_0050ec77",
+      "figure_id": "fig_005",
+      "page": 14,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Extended Data",
+      "kind": "extended_data_figure"
+    },
+    {
+      "paper": "2025_nature_discovering_state_of_the_art_reinforcement_learn_d089008a",
+      "figure_id": "fig_001",
+      "page": 2,
+      "figure_type": "time_series",
+      "confidence": "caption",
+      "evidence": "trajectory",
+      "kind": "figure"
+    },
+    {
+      "paper": "2025_nature_discovering_state_of_the_art_reinforcement_learn_d089008a",
+      "figure_id": "fig_002",
+      "page": 4,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2025_nature_discovering_state_of_the_art_reinforcement_learn_d089008a",
+      "figure_id": "fig_003",
+      "page": 5,
+      "figure_type": "panel_row",
+      "confidence": "geometry",
+      "evidence": "aspect 3.31 >= 2.5",
+      "kind": "figure"
+    },
+    {
+      "paper": "2025_nature_discovering_state_of_the_art_reinforcement_learn_d089008a",
+      "figure_id": "fig_004",
+      "page": 6,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2025_nature_discovering_state_of_the_art_reinforcement_learn_d089008a",
+      "figure_id": "fig_005",
+      "page": 11,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Extended Data",
+      "kind": "extended_data_figure"
+    },
+    {
+      "paper": "2025_nature_discovering_state_of_the_art_reinforcement_learn_d089008a",
+      "figure_id": "fig_006",
+      "page": 13,
+      "figure_type": "schematic",
+      "confidence": "caption",
+      "evidence": "architecture",
+      "kind": "extended_data_figure"
+    },
+    {
+      "paper": "2025_nature_discovering_state_of_the_art_reinforcement_learn_d089008a",
+      "figure_id": "fig_007",
+      "page": 24,
+      "figure_type": "panel_row",
+      "confidence": "geometry",
+      "evidence": "aspect 3.70 >= 2.5",
+      "kind": "figure"
+    },
+    {
+      "paper": "2025_nature_discovering_state_of_the_art_reinforcement_learn_d089008a",
+      "figure_id": "fig_008",
+      "page": 24,
+      "figure_type": "panel_row",
+      "confidence": "geometry",
+      "evidence": "aspect 2.54 >= 2.5",
+      "kind": "figure"
+    },
+    {
+      "paper": "2025_nature_discovering_state_of_the_art_reinforcement_learn_d089008a",
+      "figure_id": "fig_009",
+      "page": 26,
+      "figure_type": "panel_row",
+      "confidence": "geometry",
+      "evidence": "aspect 4.63 >= 2.5",
+      "kind": "figure"
+    },
+    {
+      "paper": "2025_nature_discovering_state_of_the_art_reinforcement_learn_d089008a",
+      "figure_id": "fig_010",
+      "page": 26,
+      "figure_type": "schematic",
+      "confidence": "caption",
+      "evidence": "illustration",
+      "kind": "figure"
+    },
+    {
+      "paper": "2025_nature_joint_speech_and_text_machine_translation_for_up_45680c29",
+      "figure_id": "fig_001",
+      "page": 2,
+      "figure_type": "schematic",
+      "confidence": "caption",
+      "evidence": "Schematic",
+      "kind": "figure"
+    },
+    {
+      "paper": "2025_nature_joint_speech_and_text_machine_translation_for_up_45680c29",
+      "figure_id": "fig_002",
+      "page": 27,
+      "figure_type": "schematic",
+      "confidence": "caption",
+      "evidence": "architecture",
+      "kind": "supplementary_figure"
+    },
+    {
+      "paper": "2025_nature_joint_speech_and_text_machine_translation_for_up_45680c29",
+      "figure_id": "fig_003",
+      "page": 28,
+      "figure_type": "schematic",
+      "confidence": "caption",
+      "evidence": "Workflow",
+      "kind": "supplementary_figure"
+    },
+    {
+      "paper": "2025_nature_joint_speech_and_text_machine_translation_for_up_45680c29",
+      "figure_id": "fig_004",
+      "page": 28,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Supplementary",
+      "kind": "supplementary_figure"
+    },
+    {
+      "paper": "2025_nature_joint_speech_and_text_machine_translation_for_up_45680c29",
+      "figure_id": "fig_005",
+      "page": 38,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Supplementary",
+      "kind": "supplementary_figure"
+    },
+    {
+      "paper": "2025_nature_joint_speech_and_text_machine_translation_for_up_45680c29",
+      "figure_id": "fig_006",
+      "page": 38,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Supplementary",
+      "kind": "supplementary_figure"
+    },
+    {
+      "paper": "2025_nature_joint_speech_and_text_machine_translation_for_up_45680c29",
+      "figure_id": "fig_007",
+      "page": 39,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Supplementary",
+      "kind": "supplementary_figure"
+    },
+    {
+      "paper": "2025_nature_joint_speech_and_text_machine_translation_for_up_45680c29",
+      "figure_id": "fig_008",
+      "page": 58,
+      "figure_type": "panel_row",
+      "confidence": "geometry",
+      "evidence": "aspect 3.40 >= 2.5",
+      "kind": "figure"
+    },
+    {
+      "paper": "2025_nature_joint_speech_and_text_machine_translation_for_up_45680c29",
+      "figure_id": "fig_009",
+      "page": 60,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Supplementary",
+      "kind": "supplementary_figure"
+    },
+    {
+      "paper": "2025_nature_joint_speech_and_text_machine_translation_for_up_45680c29",
+      "figure_id": "fig_010",
+      "page": 60,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Supplementary",
+      "kind": "supplementary_figure"
+    },
+    {
+      "paper": "2025_nature_joint_speech_and_text_machine_translation_for_up_45680c29",
+      "figure_id": "fig_011",
+      "page": 61,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Supplementary",
+      "kind": "supplementary_figure"
+    },
+    {
+      "paper": "2025_nature_joint_speech_and_text_machine_translation_for_up_45680c29",
+      "figure_id": "fig_012",
+      "page": 61,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Supplementary",
+      "kind": "supplementary_figure"
+    },
+    {
+      "paper": "2025_nature_joint_speech_and_text_machine_translation_for_up_45680c29",
+      "figure_id": "fig_013",
+      "page": 62,
+      "figure_type": "panel_row",
+      "confidence": "geometry",
+      "evidence": "aspect 3.04 >= 2.5",
+      "kind": "figure"
+    },
+    {
+      "paper": "2025_nature_joint_speech_and_text_machine_translation_for_up_45680c29",
+      "figure_id": "fig_014",
+      "page": 63,
+      "figure_type": "panel_row",
+      "confidence": "geometry",
+      "evidence": "aspect 3.08 >= 2.5",
+      "kind": "figure"
+    },
+    {
+      "paper": "2025_nature_learning_the_natural_history_of_human_disease_wi_64144624",
+      "figure_id": "fig_001",
+      "page": 3,
+      "figure_type": "schematic",
+      "confidence": "caption",
+      "evidence": "architecture",
+      "kind": "figure"
+    },
+    {
+      "paper": "2025_nature_learning_the_natural_history_of_human_disease_wi_64144624",
+      "figure_id": "fig_002",
+      "page": 4,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2025_nature_learning_the_natural_history_of_human_disease_wi_64144624",
+      "figure_id": "fig_003",
+      "page": 5,
+      "figure_type": "time_series",
+      "confidence": "caption",
+      "evidence": "trajectory",
+      "kind": "figure"
+    },
+    {
+      "paper": "2025_nature_learning_the_natural_history_of_human_disease_wi_64144624",
+      "figure_id": "fig_004",
+      "page": 6,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2025_nature_learning_the_natural_history_of_human_disease_wi_64144624",
+      "figure_id": "fig_005",
+      "page": 7,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2025_nature_learning_the_natural_history_of_human_disease_wi_64144624",
+      "figure_id": "fig_006",
+      "page": 16,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Extended Data",
+      "kind": "extended_data_figure"
+    },
+    {
+      "paper": "2025_nature_learning_the_natural_history_of_human_disease_wi_64144624",
+      "figure_id": "fig_007",
+      "page": 17,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2025_nature_learning_the_natural_history_of_human_disease_wi_64144624",
+      "figure_id": "fig_008",
+      "page": 18,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Extended Data",
+      "kind": "extended_data_figure"
+    },
+    {
+      "paper": "2025_nature_learning_the_natural_history_of_human_disease_wi_64144624",
+      "figure_id": "fig_009",
+      "page": 19,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Extended Data",
+      "kind": "extended_data_figure"
+    },
+    {
+      "paper": "2025_nature_learning_the_natural_history_of_human_disease_wi_64144624",
+      "figure_id": "fig_010",
+      "page": 20,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Extended Data",
+      "kind": "extended_data_figure"
+    },
+    {
+      "paper": "2025_nature_learning_the_natural_history_of_human_disease_wi_64144624",
+      "figure_id": "fig_011",
+      "page": 22,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Extended Data",
+      "kind": "extended_data_figure"
+    },
+    {
+      "paper": "2025_nature_learning_the_natural_history_of_human_disease_wi_64144624",
+      "figure_id": "fig_012",
+      "page": 23,
+      "figure_type": "scatter",
+      "confidence": "caption",
+      "evidence": "scatter",
+      "kind": "extended_data_figure"
+    },
+    {
+      "paper": "2025_nature_learning_the_natural_history_of_human_disease_wi_64144624",
+      "figure_id": "fig_013",
+      "page": 24,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Extended Data",
+      "kind": "extended_data_figure"
+    },
+    {
+      "paper": "2025_nature_optimizing_generative_ai_by_backpropagating_lang_ff98bab1",
+      "figure_id": "fig_001",
+      "page": 3,
+      "figure_type": "panel_row",
+      "confidence": "geometry",
+      "evidence": "aspect 2.50 >= 2.5",
+      "kind": "figure"
+    },
+    {
+      "paper": "2025_nature_optimizing_generative_ai_by_backpropagating_lang_ff98bab1",
+      "figure_id": "fig_002",
+      "page": 6,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2025_nature_optimizing_generative_ai_by_backpropagating_lang_ff98bab1",
+      "figure_id": "fig_003",
+      "page": 7,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2025_nature_optimizing_generative_ai_by_backpropagating_lang_ff98bab1",
+      "figure_id": "fig_004",
+      "page": 14,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Extended Data",
+      "kind": "extended_data_figure"
+    },
+    {
+      "paper": "2025_nature_optimizing_generative_ai_by_backpropagating_lang_ff98bab1",
+      "figure_id": "fig_005",
+      "page": 38,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Supplementary",
+      "kind": "supplementary_figure"
+    },
+    {
+      "paper": "2025_nature_optimizing_generative_ai_by_backpropagating_lang_ff98bab1",
+      "figure_id": "fig_006",
+      "page": 45,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Supplementary",
+      "kind": "supplementary_figure"
+    },
+    {
+      "paper": "2025_nature_optimizing_generative_ai_by_backpropagating_lang_ff98bab1",
+      "figure_id": "fig_007",
+      "page": 46,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Supplementary",
+      "kind": "supplementary_figure"
+    },
+    {
+      "paper": "2025_nature_optimizing_generative_ai_by_backpropagating_lang_ff98bab1",
+      "figure_id": "fig_008",
+      "page": 48,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Supplementary",
+      "kind": "supplementary_figure"
+    },
+    {
+      "paper": "2025_nature_optimizing_generative_ai_by_backpropagating_lang_ff98bab1",
+      "figure_id": "fig_009",
+      "page": 49,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Supplementary",
+      "kind": "supplementary_figure"
+    },
+    {
+      "paper": "2025_nature_optimizing_generative_ai_by_backpropagating_lang_ff98bab1",
+      "figure_id": "fig_010",
+      "page": 51,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Supplementary",
+      "kind": "supplementary_figure"
+    },
+    {
+      "paper": "2025_nature_towards_multimodal_foundation_models_in_molecula_039ef430",
+      "figure_id": "fig_001",
+      "page": 2,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2025_nature_towards_multimodal_foundation_models_in_molecula_039ef430",
+      "figure_id": "fig_002",
+      "page": 4,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2025_nature_towards_multimodal_foundation_models_in_molecula_039ef430",
+      "figure_id": "fig_003",
+      "page": 6,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2026_nature_a_critical_initialization_for_biological_neural_433a1306",
+      "figure_id": "fig_001",
+      "page": 2,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2026_nature_a_critical_initialization_for_biological_neural_433a1306",
+      "figure_id": "fig_002",
+      "page": 3,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2026_nature_a_critical_initialization_for_biological_neural_433a1306",
+      "figure_id": "fig_003",
+      "page": 4,
+      "figure_type": "scatter",
+      "confidence": "caption",
+      "evidence": "Pearson",
+      "kind": "figure"
+    },
+    {
+      "paper": "2026_nature_a_critical_initialization_for_biological_neural_433a1306",
+      "figure_id": "fig_004",
+      "page": 5,
+      "figure_type": "bar",
+      "confidence": "caption",
+      "evidence": "error bars",
+      "kind": "figure"
+    },
+    {
+      "paper": "2026_nature_a_critical_initialization_for_biological_neural_433a1306",
+      "figure_id": "fig_005",
+      "page": 6,
+      "figure_type": "schematic",
+      "confidence": "caption",
+      "evidence": "schematic",
+      "kind": "figure"
+    },
+    {
+      "paper": "2026_nature_a_critical_initialization_for_biological_neural_433a1306",
+      "figure_id": "fig_006",
+      "page": 13,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Extended Data",
+      "kind": "extended_data_figure"
+    },
+    {
+      "paper": "2026_nature_a_critical_initialization_for_biological_neural_433a1306",
+      "figure_id": "fig_007",
+      "page": 15,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Extended Data",
+      "kind": "extended_data_figure"
+    },
+    {
+      "paper": "2026_nature_a_critical_initialization_for_biological_neural_433a1306",
+      "figure_id": "fig_008",
+      "page": 16,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Extended Data",
+      "kind": "extended_data_figure"
+    },
+    {
+      "paper": "2026_nature_a_critical_initialization_for_biological_neural_433a1306",
+      "figure_id": "fig_009",
+      "page": 17,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Extended Data",
+      "kind": "extended_data_figure"
+    },
+    {
+      "paper": "2026_nature_a_critical_initialization_for_biological_neural_433a1306",
+      "figure_id": "fig_010",
+      "page": 18,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Extended Data",
+      "kind": "extended_data_figure"
+    },
+    {
+      "paper": "2026_nature_a_critical_initialization_for_biological_neural_433a1306",
+      "figure_id": "fig_011",
+      "page": 19,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Extended Data",
+      "kind": "extended_data_figure"
+    },
+    {
+      "paper": "2026_nature_accelerating_scientific_discovery_with_co_scient_2db009d3",
+      "figure_id": "fig_001",
+      "page": 48,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Extended Data",
+      "kind": "extended_data_figure"
+    },
+    {
+      "paper": "2026_nature_evaluating_large_language_models_for_accuracy_in_0abea042",
+      "figure_id": "fig_001",
+      "page": 2,
+      "figure_type": "panel_row",
+      "confidence": "geometry",
+      "evidence": "aspect 3.01 >= 2.5",
+      "kind": "figure"
+    },
+    {
+      "paper": "2026_nature_evaluating_large_language_models_for_accuracy_in_0abea042",
+      "figure_id": "fig_002",
+      "page": 3,
+      "figure_type": "panel_row",
+      "confidence": "geometry",
+      "evidence": "aspect 3.34 >= 2.5",
+      "kind": "figure"
+    },
+    {
+      "paper": "2026_nature_evaluating_large_language_models_for_accuracy_in_0abea042",
+      "figure_id": "fig_003",
+      "page": 4,
+      "figure_type": "panel_row",
+      "confidence": "geometry",
+      "evidence": "aspect 2.65 >= 2.5",
+      "kind": "figure"
+    },
+    {
+      "paper": "2026_nature_evaluating_large_language_models_for_accuracy_in_0abea042",
+      "figure_id": "fig_004",
+      "page": 12,
+      "figure_type": "bar",
+      "confidence": "caption",
+      "evidence": "Error bars",
+      "kind": "extended_data_figure"
+    },
+    {
+      "paper": "2026_nature_evaluating_large_language_models_for_accuracy_in_22f6d29e",
+      "figure_id": "fig_001",
+      "page": 2,
+      "figure_type": "panel_row",
+      "confidence": "geometry",
+      "evidence": "aspect 3.01 >= 2.5",
+      "kind": "figure"
+    },
+    {
+      "paper": "2026_nature_evaluating_large_language_models_for_accuracy_in_22f6d29e",
+      "figure_id": "fig_002",
+      "page": 3,
+      "figure_type": "panel_row",
+      "confidence": "geometry",
+      "evidence": "aspect 3.34 >= 2.5",
+      "kind": "figure"
+    },
+    {
+      "paper": "2026_nature_evaluating_large_language_models_for_accuracy_in_22f6d29e",
+      "figure_id": "fig_003",
+      "page": 4,
+      "figure_type": "panel_row",
+      "confidence": "geometry",
+      "evidence": "aspect 2.65 >= 2.5",
+      "kind": "figure"
+    },
+    {
+      "paper": "2026_nature_evaluating_large_language_models_for_accuracy_in_22f6d29e",
+      "figure_id": "fig_004",
+      "page": 12,
+      "figure_type": "bar",
+      "confidence": "caption",
+      "evidence": "Error bars",
+      "kind": "extended_data_figure"
+    },
+    {
+      "paper": "2026_nature_evaluating_large_language_models_for_accuracy_in_463035fc",
+      "figure_id": "fig_001",
+      "page": 2,
+      "figure_type": "panel_row",
+      "confidence": "geometry",
+      "evidence": "aspect 3.01 >= 2.5",
+      "kind": "figure"
+    },
+    {
+      "paper": "2026_nature_evaluating_large_language_models_for_accuracy_in_463035fc",
+      "figure_id": "fig_002",
+      "page": 3,
+      "figure_type": "panel_row",
+      "confidence": "geometry",
+      "evidence": "aspect 3.34 >= 2.5",
+      "kind": "figure"
+    },
+    {
+      "paper": "2026_nature_evaluating_large_language_models_for_accuracy_in_463035fc",
+      "figure_id": "fig_003",
+      "page": 4,
+      "figure_type": "panel_row",
+      "confidence": "geometry",
+      "evidence": "aspect 2.65 >= 2.5",
+      "kind": "figure"
+    },
+    {
+      "paper": "2026_nature_evaluating_large_language_models_for_accuracy_in_463035fc",
+      "figure_id": "fig_004",
+      "page": 12,
+      "figure_type": "bar",
+      "confidence": "caption",
+      "evidence": "Error bars",
+      "kind": "extended_data_figure"
+    },
+    {
+      "paper": "2026_nature_mapping_the_neuronal_building_blocks_of_human_la_2248c823",
+      "figure_id": "fig_001",
+      "page": 2,
+      "figure_type": "panel_row",
+      "confidence": "geometry",
+      "evidence": "aspect 2.55 >= 2.5",
+      "kind": "figure"
+    },
+    {
+      "paper": "2026_nature_mapping_the_neuronal_building_blocks_of_human_la_2248c823",
+      "figure_id": "fig_002",
+      "page": 4,
+      "figure_type": "heatmap",
+      "confidence": "caption",
+      "evidence": "matrix of",
+      "kind": "figure"
+    },
+    {
+      "paper": "2026_nature_mapping_the_neuronal_building_blocks_of_human_la_2248c823",
+      "figure_id": "fig_003",
+      "page": 5,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2026_nature_mapping_the_neuronal_building_blocks_of_human_la_2248c823",
+      "figure_id": "fig_004",
+      "page": 7,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "extended_data_figure"
+    },
+    {
+      "paper": "2026_nature_mapping_the_neuronal_building_blocks_of_human_la_2248c823",
+      "figure_id": "fig_005",
+      "page": 8,
+      "figure_type": "micrograph",
+      "confidence": "caption",
+      "evidence": "µm",
+      "kind": "figure"
+    },
+    {
+      "paper": "2026_nature_mapping_the_neuronal_building_blocks_of_human_la_2248c823",
+      "figure_id": "fig_006",
+      "page": 18,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Extended Data",
+      "kind": "extended_data_figure"
+    },
+    {
+      "paper": "2026_nature_mapping_the_neuronal_building_blocks_of_human_la_2248c823",
+      "figure_id": "fig_007",
+      "page": 21,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Extended Data",
+      "kind": "extended_data_figure"
+    },
+    {
+      "paper": "2026_nature_mapping_the_neuronal_building_blocks_of_human_la_2248c823",
+      "figure_id": "fig_008",
+      "page": 22,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Extended Data",
+      "kind": "extended_data_figure"
+    },
+    {
+      "paper": "2026_nature_mapping_the_neuronal_building_blocks_of_human_la_2248c823",
+      "figure_id": "fig_009",
+      "page": 23,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Extended Data",
+      "kind": "extended_data_figure"
+    },
+    {
+      "paper": "2026_nature_synthesizing_scientific_literature_with_retrieva_3f36e53a",
+      "figure_id": "fig_001",
+      "page": 2,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2026_nature_synthesizing_scientific_literature_with_retrieva_3f36e53a",
+      "figure_id": "fig_002",
+      "page": 16,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Extended Data",
+      "kind": "extended_data_figure"
+    },
+    {
+      "paper": "2026_nature_synthesizing_scientific_literature_with_retrieva_3f36e53a",
+      "figure_id": "fig_003",
+      "page": 17,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Extended Data",
+      "kind": "extended_data_figure"
+    },
+    {
+      "paper": "2026_nature_synthesizing_scientific_literature_with_retrieva_3f36e53a",
+      "figure_id": "fig_004",
+      "page": 18,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Extended Data",
+      "kind": "extended_data_figure"
+    },
+    {
+      "paper": "2026_nature_synthesizing_scientific_literature_with_retrieva_3f36e53a",
+      "figure_id": "fig_005",
+      "page": 57,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2026_nature_synthesizing_scientific_literature_with_retrieva_3f36e53a",
+      "figure_id": "fig_006",
+      "page": 57,
+      "figure_type": "panel_row",
+      "confidence": "geometry",
+      "evidence": "aspect 2.52 >= 2.5",
+      "kind": "figure"
+    },
+    {
+      "paper": "2026_nature_synthesizing_scientific_literature_with_retrieva_3f36e53a",
+      "figure_id": "fig_007",
+      "page": 58,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Supplementary",
+      "kind": "figure"
+    },
+    {
+      "paper": "2026_nature_synthesizing_scientific_literature_with_retrieva_3f36e53a",
+      "figure_id": "fig_008",
+      "page": 58,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Supplementary",
+      "kind": "figure"
+    },
+    {
+      "paper": "2026_nature_synthesizing_scientific_literature_with_retrieva_3f36e53a",
+      "figure_id": "fig_009",
+      "page": 59,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Supplementary",
+      "kind": "figure"
+    },
+    {
+      "paper": "2026_nature_synthesizing_scientific_literature_with_retrieva_3f36e53a",
+      "figure_id": "fig_010",
+      "page": 59,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Supplementary",
+      "kind": "figure"
+    },
+    {
+      "paper": "2026_nature_synthesizing_scientific_literature_with_retrieva_3f36e53a",
+      "figure_id": "fig_011",
+      "page": 59,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Supplementary",
+      "kind": "figure"
+    },
+    {
+      "paper": "2026_nature_synthesizing_scientific_literature_with_retrieva_69eba01c",
+      "figure_id": "fig_001",
+      "page": 2,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2026_nature_synthesizing_scientific_literature_with_retrieva_69eba01c",
+      "figure_id": "fig_002",
+      "page": 16,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Extended Data",
+      "kind": "extended_data_figure"
+    },
+    {
+      "paper": "2026_nature_synthesizing_scientific_literature_with_retrieva_69eba01c",
+      "figure_id": "fig_003",
+      "page": 17,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Extended Data",
+      "kind": "extended_data_figure"
+    },
+    {
+      "paper": "2026_nature_synthesizing_scientific_literature_with_retrieva_69eba01c",
+      "figure_id": "fig_004",
+      "page": 18,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Extended Data",
+      "kind": "extended_data_figure"
+    },
+    {
+      "paper": "2026_nature_synthesizing_scientific_literature_with_retrieva_69eba01c",
+      "figure_id": "fig_005",
+      "page": 57,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2026_nature_synthesizing_scientific_literature_with_retrieva_69eba01c",
+      "figure_id": "fig_006",
+      "page": 57,
+      "figure_type": "panel_row",
+      "confidence": "geometry",
+      "evidence": "aspect 2.52 >= 2.5",
+      "kind": "figure"
+    },
+    {
+      "paper": "2026_nature_synthesizing_scientific_literature_with_retrieva_69eba01c",
+      "figure_id": "fig_007",
+      "page": 58,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Supplementary",
+      "kind": "figure"
+    },
+    {
+      "paper": "2026_nature_synthesizing_scientific_literature_with_retrieva_69eba01c",
+      "figure_id": "fig_008",
+      "page": 58,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Supplementary",
+      "kind": "figure"
+    },
+    {
+      "paper": "2026_nature_synthesizing_scientific_literature_with_retrieva_69eba01c",
+      "figure_id": "fig_009",
+      "page": 59,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Supplementary",
+      "kind": "figure"
+    },
+    {
+      "paper": "2026_nature_synthesizing_scientific_literature_with_retrieva_69eba01c",
+      "figure_id": "fig_010",
+      "page": 59,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Supplementary",
+      "kind": "figure"
+    },
+    {
+      "paper": "2026_nature_synthesizing_scientific_literature_with_retrieva_69eba01c",
+      "figure_id": "fig_011",
+      "page": 59,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Supplementary",
+      "kind": "figure"
+    },
+    {
+      "paper": "2026_nature_the_einstein_test_what_happens_when_ai_tries_to_532e45f5",
+      "figure_id": "fig_001",
+      "page": 2,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2026_nature_training_large_language_models_on_narrow_tasks_c_780921b4",
+      "figure_id": "fig_001",
+      "page": 2,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2026_nature_training_large_language_models_on_narrow_tasks_c_780921b4",
+      "figure_id": "fig_002",
+      "page": 3,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2026_nature_training_large_language_models_on_narrow_tasks_c_780921b4",
+      "figure_id": "fig_003",
+      "page": 4,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2026_nature_training_large_language_models_on_narrow_tasks_c_780921b4",
+      "figure_id": "fig_004",
+      "page": 4,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2026_nature_training_large_language_models_on_narrow_tasks_c_780921b4",
+      "figure_id": "fig_005",
+      "page": 4,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2026_nature_training_large_language_models_on_narrow_tasks_c_780921b4",
+      "figure_id": "fig_006",
+      "page": 4,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "2026_nature_training_large_language_models_on_narrow_tasks_c_780921b4",
+      "figure_id": "fig_007",
+      "page": 5,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "extended_data_figure"
+    },
+    {
+      "paper": "2026_nature_training_large_language_models_on_narrow_tasks_c_780921b4",
+      "figure_id": "fig_008",
+      "page": 10,
+      "figure_type": "supplementary_data",
+      "confidence": "caption",
+      "evidence": "Extended Data",
+      "kind": "extended_data_figure"
+    },
+    {
+      "paper": "a_high_signal_to_noise_ca2_probe_composed_of_a_single_green_67840a6b",
+      "figure_id": "fig_001",
+      "page": 2,
+      "figure_type": "micrograph",
+      "confidence": "caption",
+      "evidence": "µM",
+      "kind": "figure"
+    },
+    {
+      "paper": "a_high_signal_to_noise_ca2_probe_composed_of_a_single_green_67840a6b",
+      "figure_id": "fig_002",
+      "page": 3,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "table"
+    },
+    {
+      "paper": "a_high_signal_to_noise_ca2_probe_composed_of_a_single_green_67840a6b",
+      "figure_id": "fig_003",
+      "page": 4,
+      "figure_type": "micrograph",
+      "confidence": "caption",
+      "evidence": "µm",
+      "kind": "figure"
+    },
+    {
+      "paper": "creating_new_fluorescent_probes_for_cell_biology_naturerev20_c99fdf8c",
+      "figure_id": "fig_001",
+      "page": 3,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "creating_new_fluorescent_probes_for_cell_biology_naturerev20_c99fdf8c",
+      "figure_id": "fig_002",
+      "page": 4,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "creating_new_fluorescent_probes_for_cell_biology_naturerev20_c99fdf8c",
+      "figure_id": "fig_003",
+      "page": 5,
+      "figure_type": "micrograph",
+      "confidence": "caption",
+      "evidence": "staining",
+      "kind": "figure"
+    },
+    {
+      "paper": "creating_new_fluorescent_probes_for_cell_biology_naturerev20_c99fdf8c",
+      "figure_id": "fig_004",
+      "page": 7,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "creating_new_fluorescent_probes_for_cell_biology_naturerev20_c99fdf8c",
+      "figure_id": "fig_005",
+      "page": 8,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "fluorescent_indicators_for_ca2_based_on_green_fluorescent_pr_031b0bd7",
+      "figure_id": "fig_001",
+      "page": 1,
+      "figure_type": "schematic",
+      "confidence": "caption",
+      "evidence": "Schematic",
+      "kind": "figure"
+    },
+    {
+      "paper": "fluorescent_indicators_for_ca2_based_on_green_fluorescent_pr_031b0bd7",
+      "figure_id": "fig_002",
+      "page": 2,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "fluorescent_indicators_for_ca2_based_on_green_fluorescent_pr_460760de",
+      "figure_id": "fig_001",
+      "page": 1,
+      "figure_type": "schematic",
+      "confidence": "caption",
+      "evidence": "Schematic",
+      "kind": "figure"
+    },
+    {
+      "paper": "fluorescent_indicators_for_ca2_based_on_green_fluorescent_pr_460760de",
+      "figure_id": "fig_002",
+      "page": 2,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "fret_based_in_vivo_ca2_imaging_by_a_new_calmodulin_gfp_fusio_2912fe2a",
+      "figure_id": "fig_001",
+      "page": 1,
+      "figure_type": "schematic",
+      "confidence": "caption",
+      "evidence": "diagram of",
+      "kind": "figure"
+    },
+    {
+      "paper": "fret_based_in_vivo_ca2_imaging_by_a_new_calmodulin_gfp_fusio_2912fe2a",
+      "figure_id": "fig_002",
+      "page": 3,
+      "figure_type": "micrograph",
+      "confidence": "caption",
+      "evidence": "fluorescence image",
+      "kind": "figure"
+    },
+    {
+      "paper": "intravital_imaging_of_cell_movement_in_tumours_nature_review_9137314a",
+      "figure_id": "fig_001",
+      "page": 3,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "intravital_imaging_of_cell_movement_in_tumours_nature_review_9137314a",
+      "figure_id": "fig_002",
+      "page": 4,
+      "figure_type": "micrograph",
+      "confidence": "caption",
+      "evidence": "Scale bar",
+      "kind": "figure"
+    },
+    {
+      "paper": "intravital_imaging_of_cell_movement_in_tumours_nature_review_9137314a",
+      "figure_id": "fig_003",
+      "page": 5,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "intravital_imaging_of_cell_movement_in_tumours_nature_review_9137314a",
+      "figure_id": "fig_004",
+      "page": 6,
+      "figure_type": "micrograph",
+      "confidence": "caption",
+      "evidence": "µm",
+      "kind": "figure"
+    },
+    {
+      "paper": "intravital_imaging_of_cell_movement_in_tumours_nature_review_9137314a",
+      "figure_id": "fig_005",
+      "page": 7,
+      "figure_type": "micrograph",
+      "confidence": "caption",
+      "evidence": "Scale bar",
+      "kind": "figure"
+    },
+    {
+      "paper": "intravital_imaging_of_cell_movement_in_tumours_nature_review_9137314a",
+      "figure_id": "fig_006",
+      "page": 8,
+      "figure_type": "schematic",
+      "confidence": "caption",
+      "evidence": "illustration",
+      "kind": "figure"
+    },
+    {
+      "paper": "looking_forward_to_seeing_calcium_nature_checked_8d5d6206",
+      "figure_id": "fig_001",
+      "page": 2,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "looking_forward_to_seeing_calcium_nature_checked_8d5d6206",
+      "figure_id": "fig_002",
+      "page": 4,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "looking_forward_to_seeing_calcium_nature_checked_8d5d6206",
+      "figure_id": "fig_003",
+      "page": 5,
+      "figure_type": "micrograph",
+      "confidence": "caption",
+      "evidence": "confocal",
+      "kind": "figure"
+    },
+    {
+      "paper": "looking_forward_to_seeing_calcium_nature_checked_8d5d6206",
+      "figure_id": "fig_004",
+      "page": 6,
+      "figure_type": "micrograph",
+      "confidence": "caption",
+      "evidence": "confocal",
+      "kind": "figure"
+    },
+    {
+      "paper": "nature_history_scaling_up_music_scale_of_ancient_china_81648318",
+      "figure_id": "fig_001",
+      "page": 2,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "s001_2026_nature_reimagining_research_papers_as_inter_d0299284",
+      "figure_id": "fig_001",
+      "page": 5,
+      "figure_type": "schematic",
+      "confidence": "caption",
+      "evidence": "Workflow",
+      "kind": "figure"
+    },
+    {
+      "paper": "s001_2026_nature_reimagining_research_papers_as_inter_d0299284",
+      "figure_id": "fig_002",
+      "page": 6,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "s001_2026_nature_reimagining_research_papers_as_inter_d0299284",
+      "figure_id": "fig_003",
+      "page": 8,
+      "figure_type": "schematic",
+      "confidence": "caption",
+      "evidence": "pipeline",
+      "kind": "figure"
+    },
+    {
+      "paper": "s001_2026_nature_reimagining_research_papers_as_inter_d0299284",
+      "figure_id": "fig_004",
+      "page": 10,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "s001_2026_nature_reimagining_research_papers_as_inter_d0299284",
+      "figure_id": "fig_005",
+      "page": 77,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "studying_protein_dynamics_in_living_cells_nature_review_c8b41a8e",
+      "figure_id": "fig_001",
+      "page": 3,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "studying_protein_dynamics_in_living_cells_nature_review_c8b41a8e",
+      "figure_id": "fig_002",
+      "page": 5,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "studying_protein_dynamics_in_living_cells_nature_review_c8b41a8e",
+      "figure_id": "fig_003",
+      "page": 7,
+      "figure_type": "panel_row",
+      "confidence": "geometry",
+      "evidence": "aspect 3.99 >= 2.5",
+      "kind": "figure"
+    },
+    {
+      "paper": "studying_protein_dynamics_in_living_cells_nature_review_c8b41a8e",
+      "figure_id": "fig_004",
+      "page": 7,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "studying_protein_dynamics_in_living_cells_nature_review_c8b41a8e",
+      "figure_id": "fig_005",
+      "page": 9,
+      "figure_type": "micrograph",
+      "confidence": "caption",
+      "evidence": "confocal",
+      "kind": "figure"
+    },
+    {
+      "paper": "who_s_on_first_in_the_cellular_response_to_dna_damage_nature_553d3e66",
+      "figure_id": "fig_001",
+      "page": 3,
+      "figure_type": "schematic",
+      "confidence": "caption",
+      "evidence": "schematic",
+      "kind": "figure"
+    },
+    {
+      "paper": "who_s_on_first_in_the_cellular_response_to_dna_damage_nature_553d3e66",
+      "figure_id": "fig_002",
+      "page": 4,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "who_s_on_first_in_the_cellular_response_to_dna_damage_nature_553d3e66",
+      "figure_id": "fig_003",
+      "page": 5,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    },
+    {
+      "paper": "who_s_on_first_in_the_cellular_response_to_dna_damage_nature_553d3e66",
+      "figure_id": "fig_004",
+      "page": 6,
+      "figure_type": "unclassified",
+      "confidence": "none",
+      "evidence": "no caption rule fired and geometry is unremarkable",
+      "kind": "figure"
+    }
+  ]
+}

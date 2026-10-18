@@ -1,0 +1,74 @@
+{
+ "paper_id": "2014_nature_language_lost_in_translation_12d8a5f7",
+ "source_pdf": "D:\\2024-Matthew effects deepen the cognitive gap\\schizophrenia\\!2014-Nature_Language_Lost in translation.pdf",
+ "source_sha256": "9b0005eb5a08e573df8beda72242f395b08f2cef752aa0af3b3b794e3f4c9d05",
+ "source_name": "!2014-Nature_Language_Lost in translation.pdf",
+ "n_pages": 2,
+ "generated_at": "2026-10-18T11:27:29",
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "n_figures": 1,
+ "n_tables": 0,
+ "n_pictures_detected": 1,
+ "n_uncaptioned_pictures": 0,
+ "figures": [
+  {
+   "figure_id": "fig_001",
+   "kind": "figure",
+   "label_form": "",
+   "figure_number": null,
+   "page": 1,
+   "bbox": {
+    "l": 36.16,
+    "t": 723.04,
+    "r": 377.33,
+    "b": 297.91,
+    "w": 341.17,
+    "h": 425.13,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 72,
+    "y0": 119,
+    "x1": 755,
+    "y1": 969,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_001.png",
+   "image_size_px": [
+    683,
+    850
+   ],
+   "caption": "Gina Kuperberg (right) studies language processing by recording brain activity in reading tasks.",
+   "caption_page": 1,
+   "caption_text": "Gina Kuperberg (right) studies language processing by recording brain activity in reading tasks.",
+   "caption_bbox": {
+    "l": 36.85,
+    "t": 292.88,
+    "r": 345.95,
+    "b": 286.2,
+    "w": 309.1,
+    "h": 6.69,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p1_e1"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 5.03
+   },
+   "element_id": "p1_e0",
+   "reading_order": 0
+  }
+ ],
+ "tables": []
+}

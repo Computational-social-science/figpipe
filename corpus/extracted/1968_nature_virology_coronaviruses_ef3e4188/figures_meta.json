@@ -1,0 +1,45 @@
+{
+ "paper_id": "1968_nature_virology_coronaviruses_ef3e4188",
+ "source_pdf": "D:\\2026讲座\\COVID-19 Infodemic\\! 1968-Nature_Virology_Coronaviruses.pdf",
+ "source_sha256": "7ff7896d22e144f963450d58bc953abd68b9690d27d0539800d54d8c112c28b1",
+ "source_name": "! 1968-Nature_Virology_Coronaviruses.pdf",
+ "n_pages": 1,
+ "generated_at": "2026-10-18T11:23:50",
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "n_figures": 0,
+ "n_tables": 1,
+ "n_pictures_detected": 0,
+ "n_uncaptioned_pictures": 0,
+ "figures": [],
+ "tables": [
+  {
+   "table_id": "table_001",
+   "page": 1,
+   "bbox": {
+    "l": 294.35,
+    "t": 365.95,
+    "r": 527.62,
+    "b": 265.49,
+    "w": 233.27,
+    "h": 100.46,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p1_e69"
+  }
+ ]
+}

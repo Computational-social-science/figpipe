@@ -1,0 +1,74 @@
+{
+ "paper_id": "2002_nature_the_birth_of_molecular_biology_272b9975",
+ "source_pdf": "D:\\2026-CSS2020\\Refs\\2019-Origin of the Term Molecular Biology\\!   2002-Nature-The birth of molecular biology.pdf",
+ "source_sha256": "7c8979194387670a2ddbfa58b4a84367fe8f8c08eef9328b5fae0e040117e736",
+ "source_name": "!   2002-Nature-The birth of molecular biology.pdf",
+ "n_pages": 2,
+ "generated_at": "2026-10-18T11:21:02",
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "n_figures": 1,
+ "n_tables": 0,
+ "n_pictures_detected": 1,
+ "n_uncaptioned_pictures": 0,
+ "figures": [
+  {
+   "figure_id": "fig_001",
+   "kind": "figure",
+   "label_form": "",
+   "figure_number": null,
+   "page": 1,
+   "bbox": {
+    "l": 213.47,
+    "t": 634.35,
+    "r": 531.58,
+    "b": 398.9,
+    "w": 318.11,
+    "h": 235.46,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 427,
+    "y0": 217,
+    "x1": 1063,
+    "y1": 688,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_001.png",
+   "image_size_px": [
+    636,
+    471
+   ],
+   "caption": "Protein pioneers: (from left) Hugh Huxley, John Kendrew, Max Perutz, Francis Crick, Fred Sanger and Sydney Brenner were the driving force behind the Laboratory of Molecular Biology in Cambridge.",
+   "caption_page": 1,
+   "caption_text": "Protein pioneers: (from left) Hugh Huxley, John Kendrew, Max Perutz, Francis Crick, Fred Sanger and Sydney Brenner were the driving force behind the Laboratory of Molecular Biology in Cambridge.",
+   "caption_bbox": {
+    "l": 214.01,
+    "t": 393.96,
+    "r": 528.12,
+    "b": 377.38,
+    "w": 314.12,
+    "h": 16.58,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p1_e10"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 4.94
+   },
+   "element_id": "p1_e9",
+   "reading_order": 9
+  }
+ ],
+ "tables": []
+}

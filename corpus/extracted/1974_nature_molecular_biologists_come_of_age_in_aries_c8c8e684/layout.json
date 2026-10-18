@@ -1,0 +1,534 @@
+{
+ "paper_id": "1974_nature_molecular_biologists_come_of_age_in_aries_c8c8e684",
+ "source_pdf": "D:\\2026-CSS2020\\Refs\\2019-Origin of the Term Molecular Biology\\!  1974-Nature_Molecular biologists come of age in Aries.pdf",
+ "source_sha256": "e550dd68bf7cd7d7d574a083e15a543444d063248c2364bf2afdb71e9378cc37",
+ "source_name": "!  1974-Nature_Molecular biologists come of age in Aries.pdf",
+ "n_pages": 1,
+ "page_size_pt": [
+  581.1,
+  793.7
+ ],
+ "coordinate_note": "bbox is PDF points with origin at the BOTTOM-LEFT, y increasing upward; bbox_norm divides by page size.",
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "generated_at": "2026-10-18T11:21:27",
+ "pages": [
+  {
+   "page_no": 1,
+   "width_pt": 581.102,
+   "height_pt": 793.701,
+   "png": "pages/page_0001.png",
+   "elements": [
+    {
+     "reading_order": 0,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 34.45,
+      "t": 747.09,
+      "r": 280.35,
+      "b": 688.49,
+      "w": 245.9,
+      "h": 58.6,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.05928,
+      "t": 0.94127,
+      "r": 0.48245,
+      "b": 0.86744
+     },
+     "text": "to show that she knew the correct tautomeric forms of the bases. The step from base interchangeability to base pairing is a large one, but the idea would have been essential to fitting the variable parts of the structure, the bases, in to the regularly repeating part, the double helix of phosphate­ sugar chains at which she had arrived by March 1953.",
+     "text_len": 352,
+     "level": 1,
+     "element_id": "p1_e0"
+    },
+    {
+     "reading_order": 1,
+     "page": 1,
+     "label": "list_item",
+     "bbox": {
+      "l": 303.33,
+      "t": 747.8,
+      "r": 530.17,
+      "b": 740.12,
+      "w": 226.84,
+      "h": 7.68,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.52199,
+      "t": 0.94217,
+      "r": 0.91235,
+      "b": 0.93249
+     },
+     "text": "1 Klug, A., Nature, 219, 808-810, 843-844; also 880 (1968) .",
+     "text_len": 60,
+     "level": 2,
+     "element_id": "p1_e1"
+    },
+    {
+     "reading_order": 2,
+     "page": 1,
+     "label": "list_item",
+     "bbox": {
+      "l": 303.24,
+      "t": 739.05,
+      "r": 545.06,
+      "b": 723.94,
+      "w": 241.82,
+      "h": 15.11,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.52184,
+      "t": 0.93114,
+      "r": 0.93798,
+      "b": 0.91211
+     },
+     "text": "2 Franklin, R. E., and Gosling, R. G., Nature, 171, 740-741 (1953) .",
+     "text_len": 68,
+     "level": 2,
+     "element_id": "p1_e2"
+    },
+    {
+     "reading_order": 3,
+     "page": 1,
+     "label": "list_item",
+     "bbox": {
+      "l": 303.69,
+      "t": 722.81,
+      "r": 545.54,
+      "b": 706.68,
+      "w": 241.85,
+      "h": 16.13,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.52261,
+      "t": 0.91068,
+      "r": 0.9388,
+      "b": 0.89036
+     },
+     "text": "3 Franklin, R. E., and Gosling, R. G., Acta Crystallogr. 6, 673-rm (1953) . '",
+     "text_len": 77,
+     "level": 2,
+     "element_id": "p1_e3"
+    },
+    {
+     "reading_order": 4,
+     "page": 1,
+     "label": "list_item",
+     "bbox": {
+      "l": 303.73,
+      "t": 705.22,
+      "r": 546.83,
+      "b": 689.48,
+      "w": 243.09,
+      "h": 15.74,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.52268,
+      "t": 0.88852,
+      "r": 0.94102,
+      "b": 0.86869
+     },
+     "text": "4 Olby, R. C., The Path to the Double Helix (Macmillan London, in the press). '",
+     "text_len": 79,
+     "level": 2,
+     "element_id": "p1_e4"
+    },
+    {
+     "reading_order": 5,
+     "page": 1,
+     "label": "section_header",
+     "bbox": {
+      "l": 34.59,
+      "t": 655.71,
+      "r": 410.45,
+      "b": 637.18,
+      "w": 375.86,
+      "h": 18.53,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.05952,
+      "t": 0.82614,
+      "r": 0.70633,
+      "b": 0.8028
+     },
+     "text": "Molecular biologists come of age in Aries",
+     "text_len": 41,
+     "level": 1,
+     "element_id": "p1_e5"
+    },
+    {
+     "reading_order": 6,
+     "page": 1,
+     "label": "section_header",
+     "bbox": {
+      "l": 33.93,
+      "t": 629.49,
+      "r": 142.78,
+      "b": 619.28,
+      "w": 108.85,
+      "h": 10.21,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.05839,
+      "t": 0.79311,
+      "r": 0.24571,
+      "b": 0.78024
+     },
+     "text": "Donald A. Windsor",
+     "text_len": 17,
+     "level": 1,
+     "element_id": "p1_e6"
+    },
+    {
+     "reading_order": 7,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 35.15,
+      "t": 611.48,
+      "r": 211.17,
+      "b": 603.8,
+      "w": 176.02,
+      "h": 7.68,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.06049,
+      "t": 0.77042,
+      "r": 0.3634,
+      "b": 0.76074
+     },
+     "text": "Post Office Box 604, Norwich, New York 13815",
+     "text_len": 44,
+     "level": 1,
+     "element_id": "p1_e7"
+    },
+    {
+     "reading_order": 8,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 34.25,
+      "t": 585.66,
+      "r": 280.77,
+      "b": 565.34,
+      "w": 246.52,
+      "h": 20.32,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.05894,
+      "t": 0.73788,
+      "r": 0.48317,
+      "b": 0.71228
+     },
+     "text": "It seems that more molecular biologists are born under Aries than any other sign.",
+     "text_len": 81,
+     "level": 1,
+     "element_id": "p1_e8"
+    },
+    {
+     "reading_order": 9,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 34.69,
+      "t": 545.24,
+      "r": 280.55,
+      "b": 517.41,
+      "w": 245.86,
+      "h": 27.83,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.0597,
+      "t": 0.68696,
+      "r": 0.48279,
+      "b": 0.6519
+     },
+     "text": "ONE major tenet of astrology is that the 'Sun sign' (the constellation of the zodiac in which the Sun was located at the moment of a person's birth) has a powerful influence on personality 1 . I have compared the birthdays of two very different kinds of biologists-taxonomists and molecular biologists. All names listed under all of the taxonomy terms ( cyto-, insect, and plant taxonomy; systematic botany, entomology, icthyology, and zoology; systematics; taxonomic botany, and taxonomy) and all of the molecular biology terms (molecular biology, biophysics, genetics, pharmacology)",
+     "text_len": 584,
+     "level": 1,
+     "element_id": "p1_e9"
+    },
+    {
+     "reading_order": 10,
+     "page": 1,
+     "label": "table",
+     "bbox": {
+      "l": 33.06,
+      "t": 507.27,
+      "r": 544.3,
+      "b": 365.71,
+      "w": 511.24,
+      "h": 141.56,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.05689,
+      "t": 0.63912,
+      "r": 0.93667,
+      "b": 0.46077
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p1_e10"
+    },
+    {
+     "reading_order": 11,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 150.04,
+      "t": 354.19,
+      "r": 169.42,
+      "b": 349.66,
+      "w": 19.38,
+      "h": 4.53,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.2582,
+      "t": 0.44625,
+      "r": 0.29155,
+      "b": 0.44054
+     },
+     "text": "Monlh'\\",
+     "text_len": 7,
+     "level": 1,
+     "element_id": "p1_e11"
+    },
+    {
+     "reading_order": 12,
+     "page": 1,
+     "label": "picture",
+     "bbox": {
+      "l": 57.86,
+      "t": 353.28,
+      "r": 257.61,
+      "b": 70.57,
+      "w": 199.75,
+      "h": 282.71,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.09957,
+      "t": 0.4451,
+      "r": 0.44331,
+      "b": 0.08891
+     },
+     "text": "",
+     "text_len": 0,
+     "level": 1,
+     "element_id": "p1_e12"
+    },
+    {
+     "reading_order": 13,
+     "page": 1,
+     "label": "caption",
+     "bbox": {
+      "l": 42.28,
+      "t": 66.89,
+      "r": 272.15,
+      "b": 34.76,
+      "w": 229.87,
+      "h": 32.13,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.07276,
+      "t": 0.08428,
+      "r": 0.46833,
+      "b": 0.04379
+     },
+     "text": "Fw. 1 Relative frequencies of births, expressed as index values, under the different Sun signs for taxonomists (-- -) and molecular biologists (--) ; also shown are monthly birth data for the United States in 1934 (. .. ) .",
+     "text_len": 223,
+     "level": 2,
+     "element_id": "p1_e13"
+    },
+    {
+     "reading_order": 14,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 299.83,
+      "t": 355.17,
+      "r": 545.89,
+      "b": 207.41,
+      "w": 246.06,
+      "h": 147.76,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51597,
+      "t": 0.44749,
+      "r": 0.9394,
+      "b": 0.26132
+     },
+     "text": "were taken from the Discipline Index\" of the twelfth edition of American Men and Women of Science 3 · The birthdays were obtained from the main reference portion and the appropriate sun signs were assigned. Names appearing more than once were only counted once. A great deal of variation occurs in the dates for these signs because the sun does not always change signs at midnight, so I used the dates given by Goodman'. Not all scientists listed had birthdays given. The numbers of persons born under each sign were tallied and the relative frequencies were expressed as an index (each value divided by the average, times 100) 4 (Table 1, Fig. 1) . The monthly birth data for the general population of the United States for 19:34 are given for comparison : this is the year closest to the births of most of the scientists now re­ corded, for which good data. are a vailablc.",
+     "text_len": 875,
+     "level": 1,
+     "element_id": "p1_e14"
+    },
+    {
+     "reading_order": 15,
+     "page": 1,
+     "label": "text",
+     "bbox": {
+      "l": 299.89,
+      "t": 204.68,
+      "r": 545.89,
+      "b": 146.85,
+      "w": 246.0,
+      "h": 57.83,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.51607,
+      "t": 0.25788,
+      "r": 0.9394,
+      "b": 0.18502
+     },
+     "text": "More molecular biologisb were born under the sign of Aries than any other sign. More taxonomists were born under the sign of Cancer than any other sign and relativcl~' few were born under Scorpio. Since these peaks do not coincide with the peaks for the general population and arc somPt imes contrary to them, they are even more remarkab!P.",
+     "text_len": 340,
+     "level": 1,
+     "element_id": "p1_e15"
+    },
+    {
+     "reading_order": 16,
+     "page": 1,
+     "label": "list_item",
+     "bbox": {
+      "l": 303.33,
+      "t": 133.81,
+      "r": 546.05,
+      "b": 117.32,
+      "w": 242.72,
+      "h": 16.49,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.52199,
+      "t": 0.16859,
+      "r": 0.93968,
+      "b": 0.14781
+     },
+     "text": "1 Goodman, L., Linda �oodman'.~ Sun Sigus (Bantam Books, Taplinger Publishing Co., New York, 1968).",
+     "text_len": 99,
+     "level": 2,
+     "element_id": "p1_e16"
+    },
+    {
+     "reading_order": 17,
+     "page": 1,
+     "label": "list_item",
+     "bbox": {
+      "l": 303.11,
+      "t": 116.21,
+      "r": 546.11,
+      "b": 84.45,
+      "w": 243.0,
+      "h": 31.76,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.52161,
+      "t": 0.14642,
+      "r": 0.93978,
+      "b": 0.1064
+     },
+     "text": "z Discipline Index. AmeTican Men and Women of Science. 1'h.e Physical and Biological Sciences, twelfth cd. (edit. by Jaques Cat.t.ell Press), 135, 231, 304-306, 469, 511-512 (Bowkr>r, New York, 1973).",
+     "text_len": 200,
+     "level": 2,
+     "element_id": "p1_e17"
+    },
+    {
+     "reading_order": 18,
+     "page": 1,
+     "label": "list_item",
+     "bbox": {
+      "l": 302.92,
+      "t": 83.81,
+      "r": 545.21,
+      "b": 43.89,
+      "w": 242.29,
+      "h": 39.92,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.52129,
+      "t": 0.10559,
+      "r": 0.93823,
+      "b": 0.0553
+     },
+     "text": "R American Men and W amen of Science. 1'he Physical and Biological Sciences, twelfth ed. (edit. by Jaques Cat,t,ell Press) (Bowker, New York; A-C 1:1-1288 (1971), D-C 2:1289-2392 (1972), H-K 3:2399-3496 (1972), L-0 4:3497-4730 (1972), P-Sr 5:4731-13044 (1972) , St-Z 6:6045-7184 (1973).",
+     "text_len": 286,
+     "level": 2,
+     "element_id": "p1_e18"
+    },
+    {
+     "reading_order": 19,
+     "page": 1,
+     "label": "list_item",
+     "bbox": {
+      "l": 302.77,
+      "t": 43.57,
+      "r": 544.78,
+      "b": 35.24,
+      "w": 242.0,
+      "h": 8.33,
+      "coord": "pdf_points_bottomleft"
+     },
+     "bbox_norm": {
+      "l": 0.52103,
+      "t": 0.05489,
+      "r": 0.93749,
+      "b": 0.0444
+     },
+     "text": "4 Rosenberg, H. M., Vital Health Stati.~tics, 21(9), 1-59 (1966).",
+     "text_len": 65,
+     "level": 2,
+     "element_id": "p1_e19"
+    }
+   ]
+  }
+ ],
+ "caption_blocks": [
+  {
+   "page": 1,
+   "blocks": [
+    {
+     "text": "Fw. 1 Relative frequencies of births, expressed as index values, under the different Sun signs for taxonomists (-- -) and molecular biologists (--) ; also shown are monthly birth data for the United States in 1934 (. .. ) .",
+     "bbox": {
+      "l": 42.28,
+      "t": 66.89,
+      "r": 272.15,
+      "b": 34.76,
+      "w": 229.87,
+      "h": 32.13,
+      "coord": "pdf_points_bottomleft"
+     },
+     "element_ids": [
+      "p1_e13"
+     ]
+    }
+   ]
+  }
+ ],
+ "uncaptioned_pictures": []
+}

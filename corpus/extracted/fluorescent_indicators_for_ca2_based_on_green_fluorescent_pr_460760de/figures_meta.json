@@ -1,0 +1,125 @@
+{
+ "paper_id": "fluorescent_indicators_for_ca2_based_on_green_fluorescent_pr_460760de",
+ "source_pdf": "D:\\个人简历及资质材料\\博士期间资料\\学位论文研究资料\\GFP\\! Fluorescent indicators for Ca2+ based on green fluorescent proteins and calmodulin(Nature).pdf",
+ "source_sha256": "1e9ec04b6f47d93a4a01c94fc7db45ad67ed81049dcb21d9aaa2cf414fcff6c0",
+ "source_name": "! Fluorescent indicators for Ca2+ based on green fluorescent proteins and calmodulin(Nature).pdf",
+ "n_pages": 6,
+ "generated_at": "2026-10-18T11:26:12",
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "n_figures": 2,
+ "n_tables": 0,
+ "n_pictures_detected": 5,
+ "n_uncaptioned_pictures": 3,
+ "figures": [
+  {
+   "figure_id": "fig_001",
+   "kind": "figure",
+   "label_form": "Figure 1",
+   "figure_number": 1,
+   "page": 1,
+   "bbox": {
+    "l": 294.85,
+    "t": 378.72,
+    "r": 544.29,
+    "b": 253.8,
+    "w": 249.43,
+    "h": 124.93,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 590,
+    "y0": 809,
+    "x1": 1089,
+    "y1": 1058,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_001.png",
+   "image_size_px": [
+    499,
+    249
+   ],
+   "caption": "Figure 1 Schematic structures and sequences of cameleons. a, Scheme showing how FRET between GFPs can measure Ca 2+ . The GFPs are drawn as simple rigid cylinders, reflecting their crystal structures 9 . Schematic structures of calmodulin (CaM) without Ca 2+ , disordered unbound M13, and the Ca 2+ -calmodulin-M13 complex are derived from crystallography 4 , NMR 6 and modelling 16 , but the relative orientations of the GFPs are unknown. b, Domain structure of cameleons expressed in bacteria for in vitro characterization, showing sequences of the boundaries between the donor GFP and Xenopus calmodulin (XCaM) and between M13 and the acceptor GFP. c, Consitition of cameleons for expression and imaging in mammalian cells. CRsig, calreticulin signal sequence, MLLSVPLLLGLLGLAAAD 24 ; nls, nuclear localizaiton signal, PKKKRKVEDA; KDEL, ER retention signal 24 ; kz, Kozak consensus sequence for optimal translational iniitation in mammalian cells 28 . The significant mutations in the four GFPs are: EBFP, F64L/Y66H/Y145 2 ; EGFP, F64L/S65T 8 ; ECFP, F64L/S65T/Y66W/N146I/ M153T/V163A/N212K 2 ; and EYFP, S65G/S72A/T203Y 9 .",
+   "caption_page": 1,
+   "caption_text": "Figure 1 Schematic structures and sequences of cameleons. a, Scheme showing how FRET between GFPs can measure Ca 2+ . The GFPs are drawn as simple rigid cylinders, reflecting their crystal structures 9 . Schematic structures of calmodulin (CaM) without Ca 2+ , disordered unbound M13, and the Ca 2+ -calmodulin-M13 complex are derived from crystallography 4 , NMR 6 and modelling 16 , but the relative orientations of the GFPs are unknown. b, Domain structure of cameleons expressed in bacteria for in vitro characterization, showing sequences of the boundaries between the donor GFP and Xenopus calmodulin (XCaM) and between M13 and the acceptor GFP. c, Consitition of cameleons for expression and imaging in mammalian cells. CRsig, calreticulin signal sequence, MLLSVPLLLGLLGLAAAD 24 ; nls, nuclear localizaiton signal, PKKKRKVEDA; KDEL, ER retention signal 24 ; kz, Kozak consensus sequence for optimal translational iniitation in mammalian cells 28 . The significant mutations in the four GFPs are: EBFP, F64L/Y66H/Y145 2 ; EGFP, F64L/S65T 8 ; ECFP, F64L/S65T/Y66W/N146I/ M153T/V163A/N212K 2 ; and EYFP, S65G/S72A/T203Y 9 .",
+   "caption_bbox": {
+    "l": 300.0,
+    "t": 196.78,
+    "r": 548.16,
+    "b": 43.68,
+    "w": 248.16,
+    "h": 153.1,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p1_e12"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 57.02
+   },
+   "element_id": "p1_e11",
+   "reading_order": 11
+  },
+  {
+   "figure_id": "fig_002",
+   "kind": "figure",
+   "label_form": "Figure 2",
+   "figure_number": 2,
+   "page": 2,
+   "bbox": {
+    "l": 39.87,
+    "t": 415.5,
+    "r": 504.53,
+    "b": 112.42,
+    "w": 464.65,
+    "h": 303.08,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 80,
+    "y0": 735,
+    "x1": 1009,
+    "y1": 1341,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_002.png",
+   "image_size_px": [
+    929,
+    606
+   ],
+   "caption": "Figure 2 Properties of cameleons in vitro. a, Emission spectra of cameleon-1 (excited at 380nm) at the indicated free Ca 2+ values at pH 7.47. b, Ca 2+ titration curves of cameleon-1 (open circles), cameleon-1/E104Q (filled circles), and cameleon-1/E31Q (open triangles), combining 5 independent experiments using Ca 2+ /EGTA and Ca 2+ /HEEDTA systems 10 below 10 -5 M free Ca 2+ and unbuffered Ca 2+ above. The changes in emission ratio (510 to 445 nm) were normalized to the",
+   "caption_page": 2,
+   "caption_text": "Figure 2 Properties of cameleons in vitro. a, Emission spectra of cameleon-1 (excited at 380nm) at the indicated free Ca 2+ values at pH 7.47. b, Ca 2+ titration curves of cameleon-1 (open circles), cameleon-1/E104Q (filled circles), and cameleon-1/E31Q (open triangles), combining 5 independent experiments using Ca 2+ /EGTA and Ca 2+ /HEEDTA systems 10 below 10 -5 M free Ca 2+ and unbuffered Ca 2+ above. The changes in emission ratio (510 to 445 nm) were normalized to the",
+   "caption_bbox": {
+    "l": 45.63,
+    "t": 92.81,
+    "r": 293.79,
+    "b": 33.87,
+    "w": 248.16,
+    "h": 58.94,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p2_e18"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 19.61
+   },
+   "element_id": "p2_e17",
+   "reading_order": 17
+  }
+ ],
+ "tables": []
+}

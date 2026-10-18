@@ -1,0 +1,367 @@
+{
+ "paper_id": "studying_protein_dynamics_in_living_cells_nature_review_c8b41a8e",
+ "source_pdf": "D:\\个人简历及资质材料\\博士期间资料\\学位论文研究资料\\FRAP\\!!!!!Studying protein dynamics in living cells(Nature Review).pdf",
+ "source_sha256": "676bdadeac508faf3b1013a9fb468ff460c7fe5733c68e963293fd8ca9a94ce7",
+ "source_name": "!!!!!Studying protein dynamics in living cells(Nature Review).pdf",
+ "n_pages": 13,
+ "generated_at": "2026-10-18T11:26:52",
+ "tool": {
+  "name": "docling",
+  "version": "2.140.0",
+  "do_ocr": false,
+  "do_table_structure": true,
+  "images_scale": 2.0,
+  "pages_dpi": 200
+ },
+ "n_figures": 5,
+ "n_tables": 4,
+ "n_pictures_detected": 21,
+ "n_uncaptioned_pictures": 16,
+ "figures": [
+  {
+   "figure_id": "fig_001",
+   "kind": "figure",
+   "label_form": "Figure 1",
+   "figure_number": 1,
+   "page": 3,
+   "bbox": {
+    "l": 186.19,
+    "t": 757.21,
+    "r": 589.09,
+    "b": 592.05,
+    "w": 402.9,
+    "h": 165.16,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 372,
+    "y0": 198,
+    "x1": 1178,
+    "y1": 528,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_001.png",
+   "image_size_px": [
+    806,
+    330
+   ],
+   "caption": "Figure 1 | Fluorescence recovery after photobleaching. a | Plot of fluorescence intensity in a region of interest versus time after photobleaching a fluorescent protein. The prebleach (F i ) is compared with the asymptote of the recovery (F∞ ) to calculate the mobile and immobile fractions. Information from the recovery curve (from F o to F∞ ) can be used to determine the diffusion constant of the fluorescent protein. b | Cells expressing VSVG-GFP were incubated at 40 °C to retain VSVG-GFP in the endoplasmic reticulum (ER) under control conditions (top panel) or in the presence of tunicamycin (bottom panel). Fluorescence recovery after photobleaching (FRAP) revealed that VSVG-GFP was highly mobile in ER membranes at 40 °C but was immobilized in the presence of tunicamycin. Adapted with permission from REF. 32 © (2000) Macmillan Magazines Ltd.",
+   "caption_page": 3,
+   "caption_text": "Figure 1 | Fluorescence recovery after photobleaching. a | Plot of fluorescence intensity in a region of interest versus time after photobleaching a fluorescent protein. The prebleach (F i ) is compared with the asymptote of the recovery (F∞ ) to calculate the mobile and immobile fractions. Information from the recovery curve (from F o to F∞ ) can be used to determine the diffusion constant of the fluorescent protein. b | Cells expressing VSVG-GFP were incubated at 40 °C to retain VSVG-GFP in the endoplasmic reticulum (ER) under control conditions (top panel) or in the presence of tunicamycin (bottom panel). Fluorescence recovery after photobleaching (FRAP) revealed that VSVG-GFP was highly mobile in ER membranes at 40 °C but was immobilized in the presence of tunicamycin. Adapted with permission from REF. 32 © (2000) Macmillan Magazines Ltd.",
+   "caption_bbox": {
+    "l": 184.61,
+    "t": 583.96,
+    "r": 584.4,
+    "b": 520.07,
+    "w": 399.79,
+    "h": 63.89,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p3_e38"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 8.09
+   },
+   "element_id": "p3_e37",
+   "reading_order": 37
+  },
+  {
+   "figure_id": "fig_002",
+   "kind": "figure",
+   "label_form": "Figure 2",
+   "figure_number": 2,
+   "page": 5,
+   "bbox": {
+    "l": 96.41,
+    "t": 301.53,
+    "r": 383.19,
+    "b": 174.46,
+    "w": 286.78,
+    "h": 127.08,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 193,
+    "y0": 1109,
+    "x1": 766,
+    "y1": 1363,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_002.png",
+   "image_size_px": [
+    573,
+    254
+   ],
+   "caption": "Figure 2 | Mechanisms that reduce the mobility of membrane proteins. a | An unrestricted membrane protein freely diffuses in the lipid bilayer of the membrane, as is seen with VSVG-GFP in the endoplasmic reticulum and galactosyltransferase-GFP in the Golgi complex 15,32 . b | Membrane proteins bound to an immobile matrix, such as the extracellular matrix or chromosomes, become immobilized. c | Large multimeric complexes of proteins, such as the TAP complex (10 6 kDa), diffuse at significantly reduced rates within the bilayer compared with monomeric proteins with small transmembrane radii. d | Corralling of a membrane protein by aggregated or matrixbound membrane proteins effectively reduces the mobility of the protein.",
+   "caption_page": 5,
+   "caption_text": "Figure 2 | Mechanisms that reduce the mobility of membrane proteins. a | An unrestricted membrane protein freely diffuses in the lipid bilayer of the membrane, as is seen with VSVG-GFP in the endoplasmic reticulum and galactosyltransferase-GFP in the Golgi complex 15,32 . b | Membrane proteins bound to an immobile matrix, such as the extracellular matrix or chromosomes, become immobilized. c | Large multimeric complexes of proteins, such as the TAP complex (10 6 kDa), diffuse at significantly reduced rates within the bilayer compared with monomeric proteins with small transmembrane radii. d | Corralling of a membrane protein by aggregated or matrixbound membrane proteins effectively reduces the mobility of the protein.",
+   "caption_bbox": {
+    "l": 96.93,
+    "t": 171.34,
+    "r": 377.61,
+    "b": 88.55,
+    "w": 280.68,
+    "h": 82.79,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p5_e85"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 3.12
+   },
+   "element_id": "p5_e84",
+   "reading_order": 84
+  },
+  {
+   "figure_id": "fig_003",
+   "kind": "figure",
+   "label_form": "Figure 3",
+   "figure_number": 3,
+   "page": 7,
+   "bbox": {
+    "l": 78.89,
+    "t": 756.57,
+    "r": 377.85,
+    "b": 681.65,
+    "w": 298.96,
+    "h": 74.92,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 158,
+    "y0": 199,
+    "x1": 756,
+    "y1": 349,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_003.png",
+   "image_size_px": [
+    598,
+    150
+   ],
+   "caption": "Figure 3 | Fluorescence loss in photobleaching. Protein fluorescence in a small area of the cell (box) is bleached repetitively. Loss of fluorescence in areas outside the box indicates that the fluorescent protein diffuses between the bleached and unbleached areas. Repetitive photobleaching of an endoplasmic reticulum (ER) GFP-tagged membrane protein reveals the continuity of the ER in a COS-7 cell. Image times are indicated in the lower right corners. The postbleach image was obtained immediately after the first photobleach. The cell was repeatedly photobleached in the same box every 40 s. After 18 min, the entire ER fluorescence was depleted, indicating that all of the GFP-tagged protein was highly mobile and that the entire ER was continuous with the region in the bleach box. Adapted with permission from REF. 32 © (2000) Macmillan Magazines Ltd.",
+   "caption_page": 7,
+   "caption_text": "Figure 3 | Fluorescence loss in photobleaching. Protein fluorescence in a small area of the cell (box) is bleached repetitively. Loss of fluorescence in areas outside the box indicates that the fluorescent protein diffuses between the bleached and unbleached areas. Repetitive photobleaching of an endoplasmic reticulum (ER) GFP-tagged membrane protein reveals the continuity of the ER in a COS-7 cell. Image times are indicated in the lower right corners. The postbleach image was obtained immediately after the first photobleach. The cell was repeatedly photobleached in the same box every 40 s. After 18 min, the entire ER fluorescence was depleted, indicating that all of the GFP-tagged protein was highly mobile and that the entire ER was continuous with the region in the bleach box. Adapted with permission from REF. 32 © (2000) Macmillan Magazines Ltd.",
+   "caption_bbox": {
+    "l": 80.1,
+    "t": 676.25,
+    "r": 377.16,
+    "b": 583.96,
+    "w": 297.06,
+    "h": 92.29,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p7_e98"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 5.4
+   },
+   "element_id": "p7_e97",
+   "reading_order": 97
+  },
+  {
+   "figure_id": "fig_004",
+   "kind": "figure",
+   "label_form": "Figure 4",
+   "figure_number": 4,
+   "page": 7,
+   "bbox": {
+    "l": 395.27,
+    "t": 576.32,
+    "r": 591.91,
+    "b": 231.01,
+    "w": 196.64,
+    "h": 345.31,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 791,
+    "y0": 559,
+    "x1": 1184,
+    "y1": 1250,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_004.png",
+   "image_size_px": [
+    393,
+    691
+   ],
+   "caption": "Figure 4 | Principles of FRET. a | No FRET is detected between two fluorescently tagged soluble proteins (blue and red) that co-localize, but do not undergo specific protein-protein interactions. Here, excitation of the donor fluorophore (CFP) results in the emission of donor fluorescence. b | FRET occurs between two fluorescently tagged soluble proteins (blue and green) that bind one another. Here, when the donor fluorophore is excited, 'sensitized' acceptor fluorescence is observed. c | Dependence of energy transfer efficiency E on the distance r between the donor and acceptor for proteins in solution. Plots are shown for three values of R 0 , 30 Å (blue), 50 Å (red) and 70 Å (green). Note that E drops off to zero at separations of > 100 Å (>2R 0 ) for R 0 = 50 Å.",
+   "caption_page": 7,
+   "caption_text": "Figure 4 | Principles of FRET. a | No FRET is detected between two fluorescently tagged soluble proteins (blue and red) that co-localize, but do not undergo specific protein-protein interactions. Here, excitation of the donor fluorophore (CFP) results in the emission of donor fluorescence. b | FRET occurs between two fluorescently tagged soluble proteins (blue and green) that bind one another. Here, when the donor fluorophore is excited, 'sensitized' acceptor fluorescence is observed. c | Dependence of energy transfer efficiency E on the distance r between the donor and acceptor for proteins in solution. Plots are shown for three values of R 0 , 30 Å (blue), 50 Å (red) and 70 Å (green). Note that E drops off to zero at separations of > 100 Å (>2R 0 ) for R 0 = 50 Å.",
+   "caption_bbox": {
+    "l": 396.68,
+    "t": 218.12,
+    "r": 591.77,
+    "b": 85.93,
+    "w": 195.09,
+    "h": 132.19,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p7_e110"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 12.89
+   },
+   "element_id": "p7_e107",
+   "reading_order": 107
+  },
+  {
+   "figure_id": "fig_005",
+   "kind": "figure",
+   "label_form": "Figure 6",
+   "figure_number": 6,
+   "page": 9,
+   "bbox": {
+    "l": 79.09,
+    "t": 414.84,
+    "r": 377.88,
+    "b": 195.82,
+    "w": 298.79,
+    "h": 219.02,
+    "coord": "pdf_points_bottomleft"
+   },
+   "bbox_px": {
+    "x0": 158,
+    "y0": 882,
+    "x1": 756,
+    "y1": 1320,
+    "scale": 2.0,
+    "coord": "pixels_topleft"
+   },
+   "image_path": "figures/fig_005.png",
+   "image_size_px": [
+    598,
+    438
+   ],
+   "caption": "Figure 6 | Principles of fluorescence correlation spectroscopy. a | As a fluorescently tagged protein diffuses through the confocal volume, the attached fluorophore (here, GFP) emits photons. Individual proteins (left) diffuse faster and thus reside in the volume for less time than proteins that are bound in a complex (right). b | From measurements of the corresponding fluctuations in fluorescence intensity over time, an autocorrelation curve can be calculated. Each autocorrelation curve contains information about the average number of particles, N, diffusing through the volume (G 0 = 1/N), as well as the characteristic correlation time τD for this process. If several components are present, this analysis can also resolve the fraction of each (right). The correlation time τD is related to the diffusion constant D and the width of the confocal volume ω1 by D = ω1 2 /4τD . So, a shorter correlation time corresponds to a protein with faster diffusion (larger D).",
+   "caption_page": 9,
+   "caption_text": "Figure 6 | Principles of fluorescence correlation spectroscopy. a | As a fluorescently tagged protein diffuses through the confocal volume, the attached fluorophore (here, GFP) emits photons. Individual proteins (left) diffuse faster and thus reside in the volume for less time than proteins that are bound in a complex (right). b | From measurements of the corresponding fluctuations in fluorescence intensity over time, an autocorrelation curve can be calculated. Each autocorrelation curve contains information about the average number of particles, N, diffusing through the volume (G 0 = 1/N), as well as the characteristic correlation time τD for this process. If several components are present, this analysis can also resolve the fraction of each (right). The correlation time τD is related to the diffusion constant D and the width of the confocal volume ω1 by D = ω1 2 /4τD . So, a shorter correlation time corresponds to a protein with faster diffusion (larger D).",
+   "caption_bbox": {
+    "l": 81.24,
+    "t": 189.68,
+    "r": 375.6,
+    "b": 87.89,
+    "w": 294.36,
+    "h": 101.79,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption_element_ids": [
+    "p9_e131"
+   ],
+   "caption_n_items": 1,
+   "pairing": {
+    "rule": "nearest_caption_block_below",
+    "gap_pt": 6.14
+   },
+   "element_id": "p9_e130",
+   "reading_order": 130
+  }
+ ],
+ "tables": [
+  {
+   "table_id": "table_001",
+   "page": 5,
+   "bbox": {
+    "l": 78.28,
+    "t": 756.95,
+    "r": 378.99,
+    "b": 563.69,
+    "w": 300.71,
+    "h": 193.26,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p5_e79"
+  },
+  {
+   "table_id": "table_002",
+   "page": 6,
+   "bbox": {
+    "l": 77.97,
+    "t": 756.56,
+    "r": 590.2,
+    "b": 338.63,
+    "w": 512.23,
+    "h": 417.93,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p6_e89"
+  },
+  {
+   "table_id": "table_003",
+   "page": 9,
+   "bbox": {
+    "l": 395.18,
+    "t": 505.99,
+    "r": 589.81,
+    "b": 138.37,
+    "w": 194.63,
+    "h": 367.62,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p9_e133"
+  },
+  {
+   "table_id": "table_004",
+   "page": 10,
+   "bbox": {
+    "l": 395.34,
+    "t": 757.35,
+    "r": 590.08,
+    "b": 571.79,
+    "w": 194.74,
+    "h": 185.56,
+    "coord": "pdf_points_bottomleft"
+   },
+   "caption": null,
+   "caption_bbox": null,
+   "caption_page": null,
+   "pairing": {
+    "rule": "nearest_caption_block_above",
+    "gap_pt": null,
+    "paired": false
+   },
+   "element_id": "p10_e148"
+  }
+ ]
+}
