@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-19T08:16:50",
+  "run_at": "2026-10-19T08:22:05",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -9,37 +9,16 @@
     "  passed 8, failed 0",
     "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
     "  wrote knowledge\\evolution_report.json",
-    "  lean: tracked 75.1 -> 75.1 MB, worktree 118.1 -> 118.0 MB"
+    "  lean: tracked 75.1 -> 75.1 MB, worktree 120.3 -> 120.3 MB"
   ],
   "tests_ok": true,
-  "tests_summary": "285 passed, 2 skipped, 1 warning in 56.49s",
+  "tests_summary": "285 passed, 2 skipped, 1 warning in 58.13s",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
   "published": {
-    "pushed": true,
-    "steps": [
-      {
-        "cmd": "git add -A",
-        "code": 0,
-        "tail": []
-      },
-      {
-        "cmd": "git -c user.name=figpipe-bot",
-        "code": 0,
-        "tail": [
-          " create mode 100644 knowledge/runs/2026-10-19T081650.json"
-        ]
-      },
-      {
-        "cmd": "git push origin",
-        "code": 0,
-        "tail": [
-          "   6a7c55d..e3ad5f9  main -> main"
-        ]
-      }
-    ],
-    "withheld": []
+    "pushed": false,
+    "reason": "not yet published"
   },
   "check_results": {
     "L01": {
@@ -150,8 +129,16 @@
     "regressed": 0
   },
   "benchmark_slice": {
-    "ran": false,
-    "reason": "dry run"
+    "ran": true,
+    "offset": 0,
+    "tasks": 6,
+    "code": 0,
+    "tail": [
+      "    type Box/Violin     ok 1/1   d=0.197 base=0.441 delta=0.244 errors=0",
+      "    type Distribution   ok 4/4   d=0.247 base=0.289 delta=0.042 errors=0",
+      "    type Heatmap        ok 1/1   d=0.288 base=0.426 delta=0.138 errors=0",
+      "  wrote E:\\2026-AI4S\\figpipe\\corpus\\e2e\\plottwin_report.json"
+    ]
   },
   "capabilities": {
     "skills": 16,
@@ -169,21 +156,10 @@
     "tests": 285
   },
   "capabilities_delta": {
-    "changed": true,
-    "delta": {
-      "tests": {
-        "before": 284,
-        "after": 285
-      }
-    },
+    "changed": false,
+    "delta": {},
     "verdict": {
-      "gains": [
-        {
-          "field": "tests",
-          "before": 284,
-          "after": 285
-        }
-      ],
+      "gains": [],
       "regressions": [],
       "corrections": [],
       "ok": true,
@@ -202,6 +178,5 @@
   },
   "ok": true,
   "capability_ok": true,
-  "capability_regressions": [],
-  "publish_note": "The publish outcome is recorded after the commit that carries this run, so it describes the push triggered by this run; the file's own commit is made by the next scheduled run."
+  "capability_regressions": []
 }
