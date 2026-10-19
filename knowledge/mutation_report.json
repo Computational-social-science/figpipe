@@ -47,11 +47,11 @@
   ],
   "min_margin": 0.1,
   "probed": true,
-  "baseline_mean": 0.857143,
+  "baseline_mean": 1.0,
   "mean_score": {
-    "baseline": 0.857143,
-    "split-max-bars-24": 0.721429,
-    "split-max-bars-13": 0.857143,
+    "baseline": 1.0,
+    "split-max-bars-24": 0.864286,
+    "split-max-bars-13": 1.0,
     "matrix-max-rows-41": 1.0,
     "matrix-max-rows-42": 1.0,
     "matrix-max-rows-60": 0.859564
@@ -117,16 +117,15 @@
     ]
   },
   "budget": 42,
-  "selected": [
-    "matrix-max-rows-41",
-    "matrix-max-rows-42"
-  ],
+  "selected": [],
   "rejected": [
     "split-max-bars-24",
     "matrix-max-rows-60"
   ],
   "ties": [
-    "split-max-bars-13"
+    "split-max-bars-13",
+    "matrix-max-rows-41",
+    "matrix-max-rows-42"
   ],
   "decisions": [
     {
@@ -135,8 +134,8 @@
       "parameter": "max_bars",
       "value": 24,
       "baseline_value": 12,
-      "score": 0.721429,
-      "baseline_score": 0.857143,
+      "score": 0.864286,
+      "baseline_score": 1.0,
       "delta": -0.135714,
       "verdict": "rejected",
       "reason": "regresses 1 task(s) on the fixed set, worst 'split-many-bars' by -0.950 (>= margin 0.1); a task that gets worse is a regression whatever the mean says; changed tasks: ['split-many-bars']",
@@ -179,8 +178,8 @@
         },
         "matrix-41-rows": {
           "outcome": "refused",
-          "score": 0.0,
-          "expected": "clean",
+          "score": 1.0,
+          "expected": "refused",
           "detail": "encode.matrix: 41 rows have no 2-D reading (no column pair varies enough to pivot) and exceed the 40-row budget; use field_map or pass a wide frame"
         },
         "matrix-42-rows": {
@@ -203,8 +202,8 @@
       "parameter": "max_bars",
       "value": 13,
       "baseline_value": 12,
-      "score": 0.857143,
-      "baseline_score": 0.857143,
+      "score": 1.0,
+      "baseline_score": 1.0,
       "delta": 0.0,
       "verdict": "tie",
       "reason": "no measurable difference on the fixed task set (+0.000); the task set cannot distinguish this edit from the baseline, so it is reported as a tie",
@@ -237,8 +236,8 @@
         },
         "matrix-41-rows": {
           "outcome": "refused",
-          "score": 0.0,
-          "expected": "clean",
+          "score": 1.0,
+          "expected": "refused",
           "detail": "encode.matrix: 41 rows have no 2-D reading (no column pair varies enough to pivot) and exceed the 40-row budget; use field_map or pass a wide frame"
         },
         "matrix-42-rows": {
@@ -262,10 +261,10 @@
       "value": 41,
       "baseline_value": 40,
       "score": 1.0,
-      "baseline_score": 0.857143,
-      "delta": 0.142857,
-      "verdict": "selected",
-      "reason": "improves the fixed task set by +0.143 (>= margin 0.1) with no task regressing; changed tasks: ['matrix-41-rows']",
+      "baseline_score": 1.0,
+      "delta": 0.0,
+      "verdict": "tie",
+      "reason": "no measurable difference on the fixed task set (+0.000); the task set cannot distinguish this edit from the baseline, so it is reported as a tie",
       "changed_tasks": [
         "matrix-41-rows"
       ],
@@ -298,7 +297,7 @@
         "matrix-41-rows": {
           "outcome": "rendered",
           "score": 1.0,
-          "expected": "clean",
+          "expected": "refused",
           "detail": ""
         },
         "matrix-42-rows": {
@@ -322,10 +321,10 @@
       "value": 42,
       "baseline_value": 40,
       "score": 1.0,
-      "baseline_score": 0.857143,
-      "delta": 0.142857,
-      "verdict": "selected",
-      "reason": "improves the fixed task set by +0.143 (>= margin 0.1) with no task regressing; changed tasks: ['matrix-41-rows', 'matrix-42-rows']",
+      "baseline_score": 1.0,
+      "delta": 0.0,
+      "verdict": "tie",
+      "reason": "no measurable difference on the fixed task set (+0.000); the task set cannot distinguish this edit from the baseline, so it is reported as a tie",
       "changed_tasks": [
         "matrix-41-rows",
         "matrix-42-rows"
@@ -359,7 +358,7 @@
         "matrix-41-rows": {
           "outcome": "rendered",
           "score": 1.0,
-          "expected": "clean",
+          "expected": "refused",
           "detail": ""
         },
         "matrix-42-rows": {
@@ -383,8 +382,8 @@
       "value": 60,
       "baseline_value": 40,
       "score": 0.859564,
-      "baseline_score": 0.857143,
-      "delta": 0.002421,
+      "baseline_score": 1.0,
+      "delta": -0.140436,
       "verdict": "rejected",
       "reason": "regresses 1 task(s) on the fixed set, worst 'matrix-48-rows' by -0.983 (>= margin 0.1); a task that gets worse is a regression whatever the mean says; changed tasks: ['matrix-41-rows', 'matrix-42-rows', 'matrix-48-rows']",
       "changed_tasks": [
@@ -429,7 +428,7 @@
         "matrix-41-rows": {
           "outcome": "rendered",
           "score": 1.0,
-          "expected": "clean",
+          "expected": "refused",
           "detail": ""
         },
         "matrix-42-rows": {
@@ -447,7 +446,7 @@
       }
     }
   ],
-  "verdict": "selected",
+  "verdict": "tie",
   "applied": false,
   "why_not_applied": "a selected edit measured on six tasks is a finding, not a change; applying it requires a pool re-measure (LEARNINGS ##47)"
 }

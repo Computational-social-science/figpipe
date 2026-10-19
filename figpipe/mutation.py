@@ -604,10 +604,14 @@ def default_space() -> MutationSpace:
         Task("matrix-wide", "matrix_plate", {}, _wide_matrix,
              "clean",
              "a genuine 6x5 matrix: renders, so the row budget must not start refusing it"),
+        # EXPECT CORRECTED. This table has two numeric columns and no 2-D reading, so the drawer
+        # refuses it for THAT reason -- not because it has 41 rows. The earlier "clean" expectation
+        # was written when the row COUNT was believed to be the constraint. Measuring the real
+        # boundary showed it never was: 40..48 rows all render with 0 collisions once the axis has a
+        # LABEL budget. A probe scored against a stale spec "selects" edits that fix nothing.
         Task("matrix-41-rows", "matrix_plate", {}, _unpivotable(41),
-             "clean",
-             "41 unpivotable rows: forced open it renders with 0 collisions, so the correct "
-             "outcome is a render and the 40-row budget refuses one row too early"),
+             "refused",
+             "two numeric columns with no 2-D reading: refused on structure, not on row count"),
         Task("matrix-42-rows", "matrix_plate", {}, _unpivotable(42),
              "refused",
              "42 unpivotable rows: forced open it renders with 41 collisions, so refusing is "

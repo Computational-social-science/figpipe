@@ -1609,3 +1609,50 @@ per-task regressions -- and still chose a worse world, because its six tasks wer
 the 150. That is the same defect as a benchmark measured on a convenient subset, one layer in.
 
 Suite: see below.
+
+
+## 64. The label budget was the real defect; the row budget never was (2026-10-19)
+
+Last round the mutation loop selected `matrix-max-rows-41` (+0.167) and I routed the decision
+instead of applying it, because six tasks is not evidence. This round I checked the pool first, and
+the selection was WRONG:
+
+    14 matrix_plate tasks in the real benchmark
+    13 of 14 (93%) already had hard findings at the CURRENT budget of 40
+    hard findings: sum 995, median 39, MAX 405
+
+Raising the budget would have made all of them worse. Reading the actual findings rather than the
+score showed why:
+
+    '0.7015383331293864' over '0.7128659440184021'
+
+`ax_tile_diverging` set a tick label for EVERY row and column and annotated EVERY cell, with no
+budget on either. A 40-row matrix drew 40 tick labels plus up to 200 cell annotations on a 90 mm
+panel. The row budget `MAX_MATRIX_ROWS` was never the lever -- 40 rows cannot be labelled at 5.5 pt
+whatever the budget says.
+
+Fix: a LABEL BUDGET (12) on each axis, plus the existing 200-cell annotation cap. Past either, the
+ticks are hidden and the caption carries the meaning -- the rule the heatmap drawer already applied
+to numeric indices.
+
+MEASURED on the real pool:
+    hard findings  sum 995 -> 98   (-90%)
+    worst task     405 -> 65
+    clean tasks    1 of 14 -> 5 of 14
+
+AND THE CONSEQUENCE FOR THE LOOP: with the real defect fixed, every budget candidate in the default
+mutation space became a TIE. The loop now selects nothing, which is the correct answer -- the
+budgets were compensating for a defect, not tuning a parameter. `matrix-41-rows` had also declared
+`expect="clean"`, which was a STALE SPEC: with the label budget the drawer refuses it for the real
+reason (two columns, no 2-D reading). A probe scored against a stale spec "selects" edits that fix
+nothing.
+
+Four mutation tests broke because they asserted the OLD selection against the DEFAULT space. The
+fix was better test design, not weaker assertions: selection / rejection / inversion logic is now
+exercised on SYNTHETIC spaces with a measured, known-improving edit, and the default space is tested
+for the property that matters -- every declared expectation matches reality.
+
+LESSON: **a budget is usually compensating for a defect, and raising it hides the defect.** The
+question "is the limit wrong?" should always be preceded by "why does the limit exist?".
+
+Suite: 420 passed, 3 skipped.

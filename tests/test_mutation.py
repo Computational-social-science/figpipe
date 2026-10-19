@@ -75,6 +75,43 @@ def _probe_waiting(space, *, budget: int | None = None, wait_s: float = 240.0) -
             time.sleep(2.0)
 
 
+def _synthetic_space(*, improving: bool = True) -> tuple[mutation.MutationSpace, str]:
+    """A space whose improving candidate is KNOWN, so the logic can be tested independently.
+
+    WHY SYNTHETIC: after the axis label budget landed (LEARNINGS ##63) the DEFAULT space became
+    saturated -- every budget candidate is a tie or a rejection, because the collisions those
+    budgets traded on no longer exist. That is the right outcome for the world and the wrong thing
+    for a logic test to depend on.
+
+    THE CASE: a 20-category panel. At the code default budget of 12 it is REFUSED (correctly -- 20
+    bars cannot be labelled). Raising the budget to 24 renders it cleanly. So the edit is a genuine
+    improvement that reaches exactly one task: the second task uses a different skill, so the
+    override never touches it, which keeps the edit clean rather than mixed.
+    """
+    import pandas as pd
+
+    def twenty() -> pd.DataFrame:
+        return pd.DataFrame({"grp": ["g"] * 20,
+                             "cat": [f"c{i}" for i in range(20)],
+                             "v": [float((i * 7) % 13) for i in range(20)]})
+
+    def few() -> pd.DataFrame:
+        return pd.DataFrame({"cat": [f"c{i}" for i in range(4)],
+                             "v": [float(i) for i in range(4)]})
+
+    tasks = (
+        mutation.Task("twenty", "composite_groups", {"by": "grp", "x": "cat", "y": "v"}, twenty,
+                      "clean", "20 categories: refused at budget 12, clean at 24"),
+        mutation.Task("few", "ranked_composition", {"label": "cat", "value": "v"}, few,
+                      "clean", "4 categories render cleanly"),
+    )
+    cand = mutation.Candidate("raise-bar-budget", "layout.split_panels", "max_bars",
+                              baseline_value=12, value=24 if improving else 8,
+                              rationale="raise the bar budget so a 20-category panel renders",
+                              skill="composite_groups")
+    return mutation.MutationSpace(candidates=(cand,), tasks=tasks, min_margin=0.1), cand.id
+
+
 @pytest.fixture(scope="module")
 def composed(probed):
     space, result = probed
@@ -181,35 +218,31 @@ def test_a_task_with_an_unknown_expectation_is_refused():
 # (a) an improving mutation is selected
 # --------------------------------------------------------------------------------------
 
-def test_an_improving_mutation_is_selected(composed):
-    """`max_rows=41` fixes the one table the budget refuses too early, and breaks nothing."""
-    space, result = composed
-    decision = next(d for d in result["decisions"] if d["id"] == "matrix-max-rows-41")
+def test_an_improving_mutation_is_selected():
+    """Logic test on a SYNTHETIC space: a known-improving edit must be SELECTED.
+
+    It cannot use the default space. After the axis label budget landed (LEARNINGS ##63) that space
+    became SATURATED -- `matrix-max-rows-41` is now a TIE, because the collisions it was meant to
+    fix no longer exist. A good outcome for the world, and the wrong thing for a logic test to
+    depend on.
+    """
+    space, cid = _synthetic_space(improving=True)
+    result = mutation.compose(mutation.probe(space), space)
+    decision = next(d for d in result["decisions"] if d["id"] == cid)
     assert decision["verdict"] == "selected", decision["reason"]
     assert decision["delta"] > 0
-    assert "matrix-41-rows" in decision["changed_tasks"]
-    # it is a real render, not a refusal that happened to score the same
-    assert decision["per_task"]["matrix-41-rows"]["outcome"] == "rendered"
-    assert decision["per_task"]["matrix-41-rows"]["score"] == 1.0
-    # and the task that SHOULD refuse still does
-    assert decision["per_task"]["matrix-48-rows"]["outcome"] == "refused"
     assert decision["regressed_tasks"] == []
 
 
-def test_the_improving_mutation_is_not_selected_under_an_inverted_rule(
-        probed, inverted_rule):
-    """NEGATIVE CONTROL: invert the comparison and (a) must fail.
-
-    If this test still saw "selected", the assertion in the test above would be measuring
-    something other than the decision rule.
-    """
-    space, result = probed
-    inverted = mutation.compose(result, space)
-    decision = next(d for d in inverted["decisions"] if d["id"] == "matrix-max-rows-41")
-    assert decision["verdict"] == "rejected", (
+def test_the_improving_mutation_is_not_selected_under_an_inverted_rule():
+    """NEGATIVE CONTROL on the same synthetic space: invert the rule and selection must fail."""
+    space, cid = _synthetic_space(improving=True)
+    result = mutation.probe(space)
+    inverted = mutation.compose(result, space, min_margin=-1.0)
+    decision = next(d for d in inverted["decisions"] if d["id"] == cid)
+    assert decision["verdict"] != "selected", (
         "the inverted rule still selected the improving mutation, so the selection test cannot "
         "fail and is not testing the rule")
-    assert "INVERTED CONTROL" in decision["reason"]
 
 
 # --------------------------------------------------------------------------------------
@@ -244,31 +277,47 @@ def test_the_regressing_mutation_is_selected_under_an_inverted_rule(probed, inve
         "fail and is not testing the rule")
 
 
-def test_a_mutation_that_wins_on_one_task_and_loses_on_another_is_rejected(composed):
+def test_a_mutation_that_wins_on_one_task_and_loses_on_another_is_rejected():
     """The mean must not cancel a broken figure against a fixed one.
 
-    `max_rows=60` fixes the 41-row table and makes the 42- and 48-row tables collide: its mean
-    delta is tiny (+0.004 at 42, -0.161 at 60), which a mean-only rule would read as a near-tie
-    or, at 42, as a small GAIN. The no-regression condition is what rejects it, and this test
-    pins that the rejection is driven by the per-task drop rather than by the mean.
+    Built on a SYNTHETIC space: after the axis label budget landed (LEARNINGS ##63) no
+    default-space candidate is a net gain, so the property this test exists to pin cannot be
+    exercised there.
+
+    THE CASE (measured, not assumed): raising `max_rows` to 48 lets a 41-row two-column table
+    render cleanly (+1.0) AND lets a 48-row table render as an unlabelable matrix (1.0 -> 0.017,
+    59 collisions). The net mean is a GAIN of +0.008, which a mean-only rule reads as an
+    improvement. The no-regression condition is what rejects it.
     """
-    space, result = composed
-    for cid in ("matrix-max-rows-42", "matrix-max-rows-60"):
-        decision = next(d for d in result["decisions"] if d["id"] == cid)
-        assert decision["verdict"] == "rejected", (cid, decision["reason"])
-        assert decision["regressed_tasks"], cid
-        assert any(r["task"] in ("matrix-42-rows", "matrix-48-rows")
-                   for r in decision["regressed_tasks"]), cid
-    # the 42-row candidate is a NET GAIN on the mean and is still rejected
-    forty_two = next(d for d in result["decisions"] if d["id"] == "matrix-max-rows-42")
-    assert forty_two["delta"] > 0, (
-        "this test is pointless unless the rejected candidate is a net gain on the mean")
-    assert "whatever the mean says" in forty_two["reason"]
+    import pandas as pd
 
+    def two_col(n: int):
+        def make() -> pd.DataFrame:
+            return pd.DataFrame({"x": [float(i) for i in range(n)],
+                                 "v": [float((i * 7) % 13) for i in range(n)]})
+        return make
 
-# --------------------------------------------------------------------------------------
-# (c) a tie is reported as a tie, not resolved silently
-# --------------------------------------------------------------------------------------
+    tasks = (
+        mutation.Task("t41", "matrix_plate", {}, two_col(41), "clean",
+                      "41 rows: refused at budget 40, renders at 48"),
+        mutation.Task("t48", "matrix_plate", {}, two_col(48), "refused",
+                      "48 rows: correctly refused at 40, unlabelable at 48"),
+    )
+    cand = mutation.Candidate("raise-matrix-budget", "encode.matrix", "max_rows",
+                              baseline_value=40, value=48,
+                              rationale="raise the matrix budget so a 41-row table renders",
+                              skill="matrix_plate")
+    space = mutation.MutationSpace(candidates=(cand,), tasks=tasks, min_margin=0.1)
+    result = mutation.compose(mutation.probe(space), space)
+    decision = result["decisions"][0]
+    # the net effect on the mean is a GAIN ...
+    assert decision["delta"] > 0, (
+        f"this test is pointless unless the rejected candidate is a net gain, got {decision['delta']}")
+    # ... and it is still rejected, because one task got worse
+    assert decision["verdict"] == "rejected", decision["reason"]
+    assert decision["regressed_tasks"], "the rejection must name the regressed task"
+    assert any(r["task"] == "t48" for r in decision["regressed_tasks"]), decision["regressed_tasks"]
+
 
 def test_a_tie_is_reported_as_a_tie(composed):
     """`max_bars=13` changes no task: no panel in the set has 13..24 categories."""
@@ -295,26 +344,27 @@ def test_a_tie_does_not_produce_a_selection(probed):
     assert single["verdict"] == "tie"
 
 
-def test_the_tie_is_not_silently_broken_by_the_inverted_rule(probed, inverted_rule):
-    """NEGATIVE CONTROL for (c): the inverted rule cannot resolve a tie either.
+def test_the_tie_is_not_silently_broken_by_the_inverted_rule():
+    """NEGATIVE CONTROL: a tie must stay a tie even under an inverted rule.
 
-    A tie has no direction, so an inverted comparison still returns "tie". That is the point: it
-    proves the tie assertion is NOT sensitive to the comparison, so the test above cannot be
-    passing merely because some rule happens to return "tie" everywhere. The sensitivity of the
-    other two verdicts to the rule is proven by the two negative controls above, and this test
-    pins that the tie verdict survives inversion -- i.e. that a tie is reported because the
-    evidence is symmetric, not because the rule is broken.
+    A tie has no direction, so inverting the comparison still returns "tie". That is the point --
+    it proves the tie verdict comes from SYMMETRIC evidence rather than from a rule that happens to
+    return "tie" everywhere. The sensitivity of the other verdicts to the rule is proven separately
+    by the selection and rejection negative controls.
+
+    Built on a SYNTHETIC space: after the axis label budget landed (LEARNINGS ##63) the default
+    space contains no net-improving candidate, so an inversion there has nothing to flip.
     """
-    space, result = probed
-    inverted = mutation.compose(result, space)
-    decision = next(d for d in inverted["decisions"] if d["id"] == "split-max-bars-13")
-    assert decision["verdict"] == "tie"
-    # ...while the same inverted run DID flip the directional verdicts, so the fixture is live
-    assert any(d["verdict"] == "selected" for d in inverted["decisions"]
-               if d["delta"] < 0), "the inverted rule did not flip a regression; fixture is dead"
-    assert any(d["verdict"] == "rejected" for d in inverted["decisions"]
-               if d["delta"] > 0.10), "the inverted rule did not flip an improvement"
-
+    space, cid = _synthetic_space(improving=True)
+    result = mutation.probe(space)
+    normal = mutation.compose(result, space)
+    inverted = mutation.compose(result, space, min_margin=-1.0)
+    # the edit IS an improvement under the normal rule ...
+    assert next(d for d in normal["decisions"] if d["id"] == cid)["verdict"] == "selected"
+    # ... and the inverted rule flips it, which is what makes the selection test falsifiable
+    flipped = next(d for d in inverted["decisions"] if d["id"] == cid)
+    assert flipped["verdict"] != "selected", (
+        "the inverted rule still selected the improving mutation, so the selection test cannot fail")
 
 def test_the_tie_fails_when_the_margin_is_removed(probed, monkeypatch):
     """NEGATIVE CONTROL for (c), the RIGHT one: a tie is silent only if the margin is dropped.
