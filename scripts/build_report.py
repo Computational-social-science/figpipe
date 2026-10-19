@@ -527,6 +527,9 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
                     "claim was verified.", "examples/worked_example.py", meta="no benchmark asset used"),
         deliverable("Public API surface", "15 modules exported with five documented entry points.",
                     "figpipe/__init__.py", meta=f"v{_version()}"),
+        deliverable("Data-shape audit", "All 16 skills against 7 realistic research data shapes "
+                    "(long, sparse, replicates, single, field); 0 broken, refusals carry a reason.",
+                    "scripts/audit_skills_data.py", meta="19 cases"),
     ])
 
     MAX_TASK_ROWS = 18

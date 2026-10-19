@@ -159,6 +159,23 @@ def op_encode_matrix(ctx: SkillContext, columns: str | None = None,
         data = ctx.data.select_dtypes("number")
     if data.shape[1] < 2 or data.shape[0] < 2:
         raise SkillError("encode.matrix needs at least 2x2 numeric data")
+    # A LONG table is not a matrix. A field table of 48 (x, y, value) rows passed straight to a
+    # tile drawer becomes a 48-row matrix whose tick labels all collide -- the data-shape audit
+    # found exactly that. Pivot onto the first two numeric columns when the table looks like a
+    # field, and record the pivot so the figure can be rebuilt.
+    if data.shape[0] > 24:
+        keys = list(data.columns[:2])
+        val = data.columns[-1]
+        pivoted = data.pivot_table(index=keys[1], columns=keys[0], values=val,
+                                   aggfunc="mean")
+        if pivoted.shape[0] >= 2 and pivoted.shape[1] >= 2:
+            ctx.trace.append(f"encode.matrix.pivot({keys[0]} x {keys[1]} of {val}: "
+                             f"{data.shape[0]} rows -> {pivoted.shape[0]}x{pivoted.shape[1]})")
+            data = pivoted
+        else:
+            raise SkillError(
+                f"encode.matrix: {data.shape[0]} rows cannot be shown as a matrix "
+                f"(pivot of {keys} gives {pivoted.shape}); pass a wide frame or use field_map")
     ctx.add_panel(grammar.panel("signed_matrix", data, colorbar=colorbar,
                                 cbar_label=""))
     ctx.trace.append("encode.matrix")
@@ -344,6 +361,17 @@ def op_layout_split_panels(ctx: SkillContext, by: str, of: str = "error_bars",
     if of != "error_bars":
         raise SkillError(f"layout.split_panels: unsupported encoder {of!r}")
     label = x or _first_categorical(ctx)
+    #: How many bars an axis can carry with readable tick labels at 6 pt on a ~85 mm panel.
+    #: Past this the labels collide whatever the rotation, so a bar panel is the wrong encoding:
+    #: a line/trend panel is the right one. Refusing names the fix; drawing it hides the problem.
+    MAX_BARS = 12
+    for level in levels:
+        n_levels = ctx.data.loc[ctx.data[by].astype(str) == level, label].nunique()
+        if n_levels > MAX_BARS:
+            raise SkillError(
+                f"layout.split_panels: {level!r} has {n_levels} distinct {label!r} values; a bar "
+                f"panel can carry at most {MAX_BARS} with readable labels. Use the trend encoder "
+                f"for an ordered axis, or pass of='error_bars' with a coarser label.")
     aggregated: list[str] = []
     for level in levels:
         sub = ctx.data[ctx.data[by].astype(str) == level].reset_index(drop=True)
@@ -359,9 +387,18 @@ def op_layout_split_panels(ctx: SkillContext, by: str, of: str = "error_bars",
             else:
                 aggregated.append(f"{level}: {len(sub)} rows -> mean per {label}")
             sub = grouped
+        # ONE bar per axis level, not one per row: a long table gives 20 rows per level, and
+        # drawing them all stacks the tick labels into collisions (found by the data-shape audit).
+        value_col = y or _first_numeric(child_placeholder :=
+                                        SkillContext(data=sub, params={}))
+        if sub[label].astype(str).duplicated().any():
+            agg = (sub.groupby(sub[label].astype(str), observed=True)[value_col]
+                   .mean().reset_index())
+            aggregated.append(f"{level}: {len(sub)} rows -> mean per {label}")
+            sub = agg
         child = SkillContext(data=sub, params=dict(ctx.params), layout=dict(ctx.layout),
                              meta=dict(ctx.meta), rc=ctx.rc)
-        op_encode_error_bars(child, x=label, y=y or _first_numeric(child),
+        op_encode_error_bars(child, x=label, y=value_col,
                              err=err, title=level, xtick_rotation=xtick_rotation)
         ctx.panels.extend(child.panels)
     ctx.layout["columns"] = columns

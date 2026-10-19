@@ -1059,3 +1059,38 @@ Two lessons:
    grouped bars) that the benchmark's aggregated data never produced.
 
 Suite: 294 passed, 2 skipped.
+
+
+## 46. The grouped-bars bug was a CLASS of defect, not an incident (2026-10-19)
+
+The worked example found that `encode.bars` drew one bar per ROW. The obvious response was to fix
+that function. The correct response was to ask what else had never been fed real research data --
+every internal test used already-aggregated frames, so the path "long table -> any drawer" was
+untested for EVERY skill.
+
+`scripts/audit_skills_data.py` runs all 16 skills over 7 realistic data shapes (long format, wide
+one-row-per-category, time series, replicates, sparse with missing values, single observation per
+level, a genuine 2-D field) -- 19 cases -- and classifies each as ok / refused / BROKEN / CRASHED.
+A skill that renders the wrong thing is worse than one that refuses.
+
+IT FOUND TWO MORE REAL DEFECTS:
+
+1. `matrix_plate` on a 48-row field table. The drawer received the long table directly and drew a
+   48-row matrix, whose tick labels all collided ("'41' over '42'"). A long table is not a matrix;
+   it is now pivoted onto its first two numeric columns, with the pivot written into the trace, and
+   an unpivotable table is refused with a pointer to `field_map`.
+
+2. `composite_groups` drawing 20 year-bars on one axis. My first fix looked for DUPLICATE labels --
+   but `year` is unique per panel, so nothing was aggregated and 19 collisions remained. The actual
+   defect is TOO MANY bars: an axis cannot carry 20 readable tick labels at 6 pt in an 85 mm panel
+   whatever the rotation. A category budget (12) now REFUSES with the better encoding named
+   (a trend panel), because drawing it hides the problem.
+
+Final state of the audit: 18 ok, 1 refused, 0 BROKEN, 0 CRASHED. The refusal is the correct
+outcome for a bar panel asked to show 20 ordered years.
+
+LESSON, and it generalises past this project: **fixing the instance is not fixing the class.** One
+example-driven bug should trigger a systematic sweep over the input space, not a single patch. The
+sweep is now a test, so the surface cannot silently rot again.
+
+Suite: 295 passed, 2 skipped.

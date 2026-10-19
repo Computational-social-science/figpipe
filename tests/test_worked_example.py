@@ -62,3 +62,24 @@ def test_grouped_bars_aggregate_to_one_bar_per_level():
     res = skills.run("grouped_measures", df, out_stem=None, x="group", ycols=["m1", "m2"])
     assert res["hard_failures"] == 0, res["findings"]
     assert any("aggregate" in step for step in res["trace"]), res["trace"]
+
+
+def test_every_skill_survives_real_long_format_data():
+    """The data-shape audit must stay clean.
+
+    The worked example found one skill that drew one bar per ROW; a systematic pass over real
+    research data shapes then found two more: matrix_plate fed a 48-row field table (labels
+    collided) and composite_groups drawing 20 year-bars on one axis. Both are now either fixed or
+    REFUSED with a reason. This test pins the whole surface.
+    """
+    import subprocess
+    import sys
+    script = ROOT / "scripts" / "audit_skills_data.py"
+    if not script.is_file():
+        pytest.skip("audit script absent")
+    cp = subprocess.run([sys.executable, str(script)], cwd=ROOT, capture_output=True,
+                        text=True, timeout=900)
+    assert cp.returncode == 0, cp.stderr[-2000:]
+    assert "BROKEN" not in cp.stdout, (
+        "a skill renders a figure with hard findings on real data shapes:\n" + cp.stdout[-2500:])
+    assert "CRASHED" not in cp.stdout, cp.stdout[-2500:]
