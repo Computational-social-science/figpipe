@@ -113,31 +113,16 @@ def test_a_missing_file_is_reported_not_crashed(tmp_path):
     assert "Traceback" not in combined, "a missing input must not produce a traceback"
 
 
-def test_the_intent_map_covers_every_intent_spec_can_emit():
-    """THE BUG: the map used invented names, so a real table was refused for a missing recipe.
+def test_the_intent_map_is_the_one_shared_map():
+    """THE BUG: the CLI used to keep its own map, built from a hand-picked sample.
 
-    This test drives `spec.infer_spec` over several shapes and asserts every intent it emits has a
-    recipe in the CLI. A future intent with no recipe fails here rather than in a user's hands.
+    It missed `trend_with_uncertainty`, which a dated time series produces, and the refusal looked
+    deliberate. There is now ONE map (`spec.INTENT_RECIPES`) and the CLI calls it.
     """
     sys.path.insert(0, str(ROOT))
-    from figpipe import spec
-    rng = np.random.default_rng(1)
-    cases = [
-        pd.DataFrame({"g": ["a", "b"] * 10, "m1": rng.random(20), "m2": rng.random(20)}),
-        pd.DataFrame({"t": range(20), "v": np.linspace(0, 1, 20)}),
-        pd.DataFrame({"c": ["a"] * 10 + ["b"] * 10, "v": rng.random(20)}),
-        pd.DataFrame({"lab": [f"r{i}" for i in range(5)], "val": [1, 2, 3, 4, 5]}),
-        pd.DataFrame({"x": rng.random(30), "y": rng.random(30)}),
-    ]
-    emitted = set()
-    for df in cases:
-        try:
-            emitted.add(spec.infer_spec(df).panels[0].intent)
-        except spec.SpecError:
-            continue
-    assert emitted, "infer_spec emitted no intents; the test is looking at the wrong thing"
+    from figpipe import grammar, spec
     src = CLI.read_text(encoding="utf-8")
-    missing = [i for i in sorted(emitted) if f'"{i}":' not in src]
-    assert not missing, (
-        f"infer_spec can emit {missing} but the CLI has no recipe for them; a real table would be "
-        f"refused as though the intent were unsupported")
+    assert "spec.recipe_for" in src, (
+        "the CLI keeps its own intent map; a second copy is a second chance to diverge")
+    missing = sorted(set(grammar.INTENTS) - set(spec.INTENT_RECIPES))
+    assert not missing, f"the shared map has no recipe for {missing}"

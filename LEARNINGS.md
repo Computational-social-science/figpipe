@@ -1966,3 +1966,45 @@ intent map covers EVERY intent `infer_spec` can emit -- so bug 2 cannot come bac
 LESSON: **an API is not a product.** Five documented entry points and a worked example on invented
 data still left the actual first step -- "I have a CSV" -- unaddressed. The gap was invisible from
 inside because every test already had a DataFrame in hand.
+
+
+## 75. The declaring layer and the drawing layer spoke different vocabularies (2026-10-20)
+
+Testing the CLI on more real table shapes exposed an architectural break, not a CLI bug:
+
+    spec.infer_spec EMITTED:   grouped_bars, boxplot, scatter_fit,
+                               trend_with_uncertainty, density_relationship, ranked_composition
+    grammar.INTENTS DECLARED:  comparison_with_error, distribution, signed_matrix,
+                               trend_with_uncertainty, density_relationship, ranked_composition
+
+    emitted but NOT declared: grouped_bars, boxplot, scatter_fit
+    declared but NEVER emitted: comparison_with_error, distribution, signed_matrix
+
+`grammar.INTENTS` is the DRAWING CONTRACT -- its names are what every drawer, skill and recipe
+uses. So `grammar.panel(spec.infer_spec(df).panels[0].intent, df)` raised KeyError on **three of six**
+real table shapes. The declaring layer and the drawing layer had silently drifted apart.
+
+I had already worked around this in the CLI with a hand-written map. **A hand-written map was the
+symptom, not the fix**: it hid the break from the one place that would have hit it.
+
+Fixed by renaming in `spec` (the declaring layer should speak the drawing contract's language):
+    grouped_bars -> comparison_with_error
+    boxplot      -> distribution
+    scatter_fit  -> density_relationship
+
+AND the deeper fix: there were THREE hard-coded copies of the intent -> recipe map (CLI, worked
+example, and my earlier test's expectations). Three copies is three chances to diverge, and they
+did. There is now ONE: `spec.INTENT_RECIPES`, with `spec.recipe_for()`, imported by both.
+
+Three new contract tests:
+  * every intent spec emits is declared in grammar.INTENTS
+  * every emitted intent is accepted by grammar.intent() (the stronger form)
+  * the shared map covers every declared intent AND names only real skills
+  * there is exactly ONE map (the test looks for a second dict literal)
+
+A related lesson about the tests themselves: my first completeness test drove `infer_spec` over
+FIVE hand-picked shapes and asserted the map covered what it saw. That tests the SAMPLE, not the
+contract -- and it missed `trend_with_uncertainty`, which a dated time series produces. The test now
+enumerates from `grammar.INTENTS`, the registry, which is what "complete" actually means.
+
+Suite: 462 passed, 3 skipped.

@@ -51,7 +51,7 @@ def test_repeated_category_becomes_a_distribution():
     df = pd.DataFrame({"g": ["a"] * 4 + ["b"] * 4 + ["c"] * 4,
                        "v": list(range(12))})
     s = spec.infer_spec(df)
-    assert s.panels[0].intent == "boxplot"
+    assert s.panels[0].intent == "distribution"
     assert s.panels[0].kwargs == {"group": "g", "value": "v",
                                   "xlabel": "g", "ylabel": "v"}
 
@@ -74,7 +74,7 @@ def test_two_categorical_measures_become_grouped_bars():
     df = pd.DataFrame({"model": ["a", "b", "c", "d"], "m1": [1.0, 2, 3, 4],
                        "m2": [4.0, 3, 2, 1]})
     s = spec.infer_spec(df)
-    assert s.panels[0].intent == "grouped_bars"
+    assert s.panels[0].intent == "comparison_with_error"
     assert s.panels[0].kwargs["ycols"] == ["m1", "m2"]
 
 

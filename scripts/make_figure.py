@@ -146,13 +146,8 @@ def main(argv=None) -> int:
     # real table shapes -- NOT invented names. An invented key turns a valid table into
     # "no skill implements intent", which looks like a deliberate refusal and is a missing entry.
     # `tests/test_make_figure.py` fails if this map and the reachable set ever diverge.
-    recipe = {
-        "grouped_bars": "grouped_measures",
-        "scatter_fit": "scatter_relationship",
-        "boxplot": "distribution_comparison",
-        "ranked_composition": "ranked_composition",
-        "density_relationship": "density_relationship",
-    }.get(intent_name)
+    # ONE map, exported by spec: three copies is three chances to diverge (and they did).
+    recipe = spec.recipe_for(intent_name)
     if recipe is None:
         print(f"  REFUSED: no skill implements intent {intent_name!r}")
         print(f"  available recipes: {', '.join(sorted(skills.SKILLS))}")
@@ -178,6 +173,12 @@ def main(argv=None) -> int:
                             height_mm=height_mm, **style_kw, **usable)
     except skills.SkillError as exc:
         print(f"  REFUSED: {exc}")
+        return 2
+    except ValueError as exc:
+        # A ValueError from a drawer means the DATA cannot support this encoding (a hexbin needs
+        # 10+ pairs, a matrix needs 2+ columns). That is a refusal, not a crash -- and the user
+        # acts on the wording, so it must not say "FAILED".
+        print(f"  REFUSED: this table cannot be drawn as {intent_name!r}: {exc}")
         return 2
     except Exception as exc:                       # noqa: BLE001 - surfaced
         print(f"  FAILED: {type(exc).__name__}: {exc}")

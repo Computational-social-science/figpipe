@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-20T04:22:27",
+  "run_at": "2026-10-20T04:38:03",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -9,10 +9,10 @@
     "  passed 8, failed 0",
     "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
     "  wrote knowledge\\evolution_report.json",
-    "  lean: tracked 76.3 -> 76.3 MB, worktree 131.0 -> 128.8 MB"
+    "  lean: tracked 76.4 -> 76.4 MB, worktree 128.1 -> 126.6 MB"
   ],
   "tests_ok": true,
-  "tests_summary": "448 passed, 3 skipped, 1 warning in 213.03s (0:03:33)",
+  "tests_summary": "455 passed, 3 skipped, 1 warning in 229.25s (0:03:49)",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
@@ -609,18 +609,24 @@
     "benchmark_official_improvement": 37.25,
     "statistics_reproduced": 15,
     "knowledge_version": 16,
-    "tests": 448
+    "tests": 455
   },
   "capabilities_delta": {
     "changed": true,
     "delta": {
       "tests": {
-        "before": null,
-        "after": 448
+        "before": 448,
+        "after": 455
       }
     },
     "verdict": {
-      "gains": [],
+      "gains": [
+        {
+          "field": "tests",
+          "before": 448,
+          "after": 455
+        }
+      ],
       "regressions": [],
       "corrections": [],
       "ok": true,

@@ -77,12 +77,8 @@ def main(argv=None) -> int:
     # ---- 2. draw through a named recipe (the global floor runs automatically) -----------
     # The recipe is chosen FROM the spec: drawing something the spec did not declare would make
     # the declaration decorative. The spec's own rationale names the intent it inferred.
-    recipe = {"trend_with_uncertainty": "trend_with_uncertainty",
-              "grouped_bars": "grouped_measures",
-              "boxplot": "distribution_comparison",
-              "ranked_composition": "ranked_composition",
-              "density_relationship": "density_relationship",
-              "heatmap": "matrix_plate"}.get(declared.intent)
+    # ONE map, exported by spec -- a second copy is a second chance to diverge.
+    recipe = spec.recipe_for(declared.intent)
     if recipe is None:
         print(f"2b. RECIPE   no recipe implements intent {declared.intent!r}; stopping")
         return 0

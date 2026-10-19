@@ -143,14 +143,14 @@ def infer_spec(df: pd.DataFrame, *, intent: str | None = None,
                       "ylabel": str(num[0])}
             rationales.append(f"{c!r} groups {len(counts)} levels and {num[:3]} are parallel "
                               f"measures; grouped bars keep them all")
-            return FigureSpec([PanelSpec("grouped_bars", df, kwargs, rationales[-1])],
+            return FigureSpec([PanelSpec("comparison_with_error", df, kwargs, rationales[-1])],
                               columns=columns, height_mm=height_mm, roles=roles,
                               rationale=rationales)
         if len(counts) >= 2 and counts.min() >= 2 and len(counts) <= 30:
             kwargs = {"group": c, "value": v, "xlabel": str(c), "ylabel": str(v)}
             rationales.append(f"{c!r} has >=2 observations per level ({len(counts)} levels), "
                               f"so {v!r} is shown as a distribution")
-            return FigureSpec([PanelSpec("boxplot", df, kwargs, rationales[-1])],
+            return FigureSpec([PanelSpec("distribution", df, kwargs, rationales[-1])],
                               columns=columns, height_mm=height_mm, roles=roles,
                               rationale=rationales)
         if len(counts) >= 2:
@@ -170,7 +170,7 @@ def infer_spec(df: pd.DataFrame, *, intent: str | None = None,
                               columns=columns, height_mm=height_mm, roles=roles,
                               rationale=rationales)
         rationales.append(f"{num[0]!r} vs {num[1]!r} is the only relationship the data offer")
-        return FigureSpec([PanelSpec("scatter_fit", df, kwargs, rationales[-1])],
+        return FigureSpec([PanelSpec("density_relationship", df, kwargs, rationales[-1])],
                           columns=columns, height_mm=height_mm, roles=roles,
                           rationale=rationales)
 
@@ -205,3 +205,29 @@ def build(spec: FigureSpec, reference_profile=None):
     return grammar.plate(panels, columns=spec.columns, height_mm=height,
                          sharex=spec.sharex, sharey=spec.sharey,
                          letters=spec.letters, rc=rc)
+
+
+#: The intent -> skill recipe map, in ONE place.
+#:
+#: WHY HERE: the CLI, the worked example and any future caller each used to hard-code their own
+#: copy. Three copies of a mapping is three chances to diverge, and they did -- the CLI's copy was
+#: built from a hand-picked sample and missed an intent the registry declares. A single exported
+#: map means a new intent is added in one place, and `tests/test_intent_contract.py` fails if it
+#: is missing.
+INTENT_RECIPES: dict[str, str] = {
+    "comparison_with_error": "grouped_measures",
+    "trend_with_uncertainty": "trend_with_uncertainty",
+    "distribution": "distribution_comparison",
+    "ranked_composition": "ranked_composition",
+    "density_relationship": "density_relationship",
+    "signed_matrix": "matrix_plate",
+}
+
+
+def recipe_for(intent: str) -> str | None:
+    """The skill that draws `intent`, or None when there is none.
+
+    Returning None rather than raising lets a caller REFUSE with its own message -- which is what
+    both the CLI and the worked example want.
+    """
+    return INTENT_RECIPES.get(intent)
