@@ -1129,3 +1129,35 @@ benchmark 141/150 with 0 errors; official 75.41 vs baseline 38.16 (+37.25). Suit
 The pattern across the last four rounds is consistent and worth naming: **every defect since the
 official-scorer work has been in the verification or healing machinery, not in the drawing code.**
 The pipeline draws correctly; what keeps breaking is how the project decides whether it does.
+
+
+## 48. Adversarial sweep of the modules every recent fix touched (2026-10-19)
+
+The data-shape audit covered the SKILL layer. Every fix of the last four rounds landed in
+`styleprofile`, `codegen` or `select` -- none of which had been run against inputs that are not the
+benchmark's. `scripts/audit_robustness.py` is the systematic version: 26 adversarial cases over
+degenerate images (blank, solid, pure noise, 1-pixel dimensions), malformed styles (NaN/inf/zero/
+negative aspect, a string where a number belongs), missing files, empty candidate sets and
+single-candidate selections. Each case must be HANDLED (with the value checked) or REFUSED with a
+specific message -- never silently wrong.
+
+IT FOUND TWO FABRICATED CLAIMS:
+
+1. **A blank and a noise image reported FOUR SPINES.** `np.convolve(mode="same")` divides by the
+   full kernel even where it runs off the ends, so the first and last entries of a UNIFORM signal
+   come out as high "contrast" (measured 0.444 on a solid black image). The profiler claimed
+   structure that does not exist. Fixed by recomputing the edges with the truncated window that
+   actually applies there: blank/solid/noise now report 0 rules, 0 spines, no tick direction.
+
+2. **A non-finite `figure_aspect` emitted `figsize=(7.2047, nan)`** -- a script matplotlib cannot
+   render, reported as a success. Now refused for NaN, inf, zero, negative and non-numeric values.
+
+AND ONE TEST BUG, which is its own lesson: the "normal figure" fixture drew its grid line at grey
+200 while the ink threshold is `< 200`, so the fixture silently tested nothing. A test that cannot
+fail is not a test -- the same rule this project applies to knowledge rules, applied to fixtures.
+
+Final state: 26 cases, 16 HANDLED (values checked), 10 REFUSED (specific messages), **0 BROKEN**.
+The sweep is now a test, so the surface cannot silently rot.
+
+This is the third layer swept systematically (skills -> benchmark -> robustness). The order was not
+planned; it followed the evidence of where the defects actually were.

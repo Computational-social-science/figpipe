@@ -530,6 +530,9 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
         deliverable("Data-shape audit", "All 16 skills against 7 realistic research data shapes "
                     "(long, sparse, replicates, single, field); 0 broken, refusals carry a reason.",
                     "scripts/audit_skills_data.py", meta="19 cases"),
+        deliverable("Robustness audit", "26 adversarial cases over styleprofile / codegen / "
+                    "select: degenerate images, malformed styles, missing files. 0 broken.",
+                    "scripts/audit_robustness.py", meta="26 cases"),
     ])
 
     MAX_TASK_ROWS = 18

@@ -314,8 +314,25 @@ class StyleProfile:
         # NEIGHBOURS are not -- local contrast. Measured on real references: a dense field gives
         # 2 rows / 0 cols above 0.25 contrast, a sparse line figure gives 0.40 / 0.36.
         def _rules(profile_1d, min_contrast: float = 0.25) -> list[int]:
+            """Rows/columns that are locally denser than their neighbourhood.
+
+            EDGE CORRECTION IS MANDATORY. `np.convolve(mode="same")` divides by the FULL kernel
+            even where it runs off the ends, so the first and last few entries of a UNIFORM signal
+            come out as large "contrast" (measured: 0.444 on a solid black image). Without this
+            correction a blank or noisy image reports edge "rules", and therefore four spines it
+            does not have -- a fabricated structural claim.
+            """
+            n = len(profile_1d)
+            if n < 9:
+                return []
             kernel = np.ones(9) / 9.0
             local = np.convolve(profile_1d, kernel, mode="same")
+            # recompute the edges with the truncated window that actually applies there
+            half = 4
+            for i in range(min(half, n)):
+                local[i] = profile_1d[max(0, i - half):i + half + 1].mean()
+                local[n - 1 - i] = profile_1d[n - 1 - i - half:
+                                              min(n, n - i + half)].mean()
             contrast = profile_1d - local
             return [int(i) for i in np.where(contrast > min_contrast)[0]]
 

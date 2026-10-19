@@ -22,6 +22,7 @@ WHAT IT IS NOT
 """
 from __future__ import annotations
 
+import math
 import pathlib
 
 import pandas as pd
@@ -270,9 +271,20 @@ def emit(panels, *, columns: float = 2.0, height_mm: float = 120.0,
     if not panels:
         raise CodegenError("no panels to emit")
     width_mm = 183.0 if columns == 2.0 else 89.0
-    if style and style.get("figure_aspect"):
-        # match the reference's own aspect exactly: the official extractor reads figsize
-        height_mm = round(width_mm / float(style["figure_aspect"]), 2)
+    aspect = (style or {}).get("figure_aspect")
+    if aspect is not None:
+        # match the reference's own aspect exactly: the official extractor reads figsize.
+        # A non-finite or non-positive aspect would emit `figsize=(w, nan)` -- a script that cannot
+        # render, reported as a success. Refuse it instead of writing it.
+        try:
+            aspect_f = float(aspect)
+        except (TypeError, ValueError) as exc:
+            raise CodegenError(f"figure_aspect must be numeric, got {aspect!r}") from exc
+        if not math.isfinite(aspect_f) or aspect_f <= 0:
+            raise CodegenError(
+                f"figure_aspect must be finite and positive, got {aspect!r}; a non-finite aspect "
+                f"would emit a figsize matplotlib cannot render")
+        height_mm = round(width_mm / aspect_f, 2)
     head = [
         "import matplotlib",
         "matplotlib.use('Agg')",
