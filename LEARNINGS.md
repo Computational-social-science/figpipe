@@ -1304,3 +1304,27 @@ The residual risk is unchanged and is stated: these negative controls were writt
 author as the checks. A sweep cannot find a blind spot it shares. That is why the earlier
 independent `CRITICAL_AUDIT` rounds mattered, and why an external review is still the only real
 mitigation for shared blind spots.
+
+
+## 54. A scheduled failure that cannot be diagnosed (2026-10-19)
+
+The run exited 1 with `tests_ok: false` and `tests_summary: "1 failed, 310 passed"`. That is all it
+said. The identity of the failing test was LOST, because `run_tests()` kept only the last line of
+pytest's output -- so the only way to find out was to re-run the whole 80-second suite by hand.
+
+That is a diagnosability defect, and it is worse in a scheduled context than an interactive one: an
+unattended loop that reports "something failed" without saying what is a loop nobody can repair.
+`run_tests()` now captures the FAILED/ERROR lines and records them alongside the summary:
+
+    1 failed in 0.37s | FAILED ...::test_this_must_fail
+
+Proven with a deliberately failing test, and pinned by a test so the capture cannot regress.
+
+THE FAILURE ITSELF was contention, not a defect: I had a full 150-task benchmark running
+concurrently with the loop, and the suite's timing-sensitive tests failed once under load. Running
+the suite twice in isolation: 312 passed both times. The loop then passed with `ok: true`.
+
+Worth recording as a standing hazard: **this machine runs one measurement at a time.** Two heavy
+runs sharing it produce results that are neither reproducible nor trustworthy, and the loop cannot
+distinguish that from a real regression. The mitigation is procedural (do not start a pool-wide
+re-measure while the loop is due), not code -- stated rather than silently tolerated.
