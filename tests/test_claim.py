@@ -84,3 +84,22 @@ def test_the_claim_does_not_claim_a_combined_score():
             f"a sentence asserts a combined-score result: {sentence.strip()!r}")
     # and the disclaimer must be present somewhere
     assert "no combined-score claim" in text or "not a combined-score" in text
+
+
+def test_a_skip_is_not_counted_as_a_pass():
+    """The loop reported 303 -> 302 passed and flagged it a regression.
+
+    A test that turns into a skip has stopped checking something. This test makes the skip COUNT
+    visible as its own number, so a shrinking suite cannot hide behind "still green".
+    """
+    import subprocess
+    import sys
+    cp = subprocess.run([sys.executable, "-m", "pytest", "tests", "-q", "--collect-only"],
+                        cwd=ROOT, capture_output=True, text=True, timeout=600)
+    assert cp.returncode == 0, cp.stderr[-1500:]
+    import re
+    m = re.search(r"(\d+) tests? collected", cp.stdout)
+    assert m, cp.stdout[-800:]
+    collected = int(m.group(1))
+    # the suite is large; a sudden drop means tests were deleted or renamed
+    assert collected >= 300, f"only {collected} tests collected; expected >= 300"

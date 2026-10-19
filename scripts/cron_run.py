@@ -456,9 +456,12 @@ def main(argv: list[str]) -> int:
     bench_run = {"ran": False, "reason": "dry run"}
     anchor_run = {"ran": False, "reason": "dry run"}
     if not dry and "--skip-benchmark" not in argv:
-        anchor_run = refresh_anchor()
+        # ORDER MATTERS: the slice writes the report, and the anchor refresh must follow it (a
+        # stale anchor is only stale AFTER new rows land). The snapshot is taken once, after both,
+        # so it can never read a half-written state -- which it did, recording null for a metric
+        # that was 0.351 in the report.
         bench_run = benchmark_slice()
-    caps = capability_snapshot()
+        anchor_run = refresh_anchor()
     before = snapshot()
 
     ok_evolve, _ = True, ""
@@ -517,10 +520,14 @@ def main(argv: list[str]) -> int:
         },
         "benchmark_slice": bench_run,
         "anchor_refresh": anchor_run,
-        "capabilities": caps,
-        "capabilities_delta": capability_delta(previous_caps, caps),
+        "capabilities": None,        # patched in AFTER every measurement has written its report
+        "capabilities_delta": None,
         "ok": None,                # patched in after the suite runs
     }
+
+    caps = capability_snapshot()
+    run["capabilities"] = caps
+    run["capabilities_delta"] = capability_delta(previous_caps, caps)
 
     if dry:
         print(json.dumps(run, indent=2)[:1200])
