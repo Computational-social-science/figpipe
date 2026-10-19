@@ -869,3 +869,31 @@ Lessons, in order:
 
 Benchmark state: 141/150 executed, no negative chart type, styled anchor 0.305, shipped 0.252,
 official code channel (image-inferred) 70.59, official code channel (code-copied ceiling) 100.00.
+
+
+## 40. Two numbers for one concept, and a correction that looked like a regression (2026-10-19)
+
+The loop failed after the official-scorer work, and both causes were instrument defects:
+
+1. **The capability read a different number than the report.** `cron_run` took the official score from
+   the harness's in-run aggregate (93.53 -- it scores only tasks whose cache entry currently carries
+   reference_code), while the honest pool-wide pass said 70.59. Two numbers for one concept is how a
+   metric stops being trusted. The capability now reads the dedicated pass, and a test asserts they
+   match.
+
+2. **The correction tripped the regression guard.** 93.53 -> 70.59 is not a capability loss: the
+   first number was the tautology (copying the reference's own code features) and the second infers
+   style from the picture. The guard was right to fire and wrong to fail the run.
+
+   Fix: `KNOWN_CORRECTIONS` records a documented correction WITH its reason, and the verdict reports
+   it under `corrections` rather than `regressions`. It is not a mute switch: a field without a
+   documented reason still fails, and a test pins both halves.
+
+Also fixed this round, from a REAL budget failure (tracked 80.04 MB > 80 MB limit):
+  6 duplicate ingests of the same paper were found by comparing FIGURE SIGNATURES (content.md
+  differed only in the source-path header, so hashing it missed them). Removing them recovered
+  4.98 MB and brought tracked size to **75.05 MB** -- under budget by real cleanup, not by raising
+  the limit.
+
+Final state: 285 passed / 2 skipped, official code channel (image-inferred) 70.59 over 149 tasks,
+ceiling (code-copied) 100.00, styled anchor 0.305, shipped 0.252, tracked 75.05 MB.
