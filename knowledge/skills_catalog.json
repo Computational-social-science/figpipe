@@ -748,18 +748,20 @@
     {
       "name": "faceted_distribution",
       "version": 1,
-      "description": "The same distribution encoder repeated over a facet column.",
+      "description": "One classic encoder repeated over a facet column: hist, trend or scatter.",
       "required": [
-        "value",
         "by"
       ],
       "optional": [
+        "value",
         "bins",
         "group",
         "columns",
         "height_mm",
         "of",
-        "max_panels"
+        "max_panels",
+        "x",
+        "y"
       ],
       "build": [
         {
@@ -785,6 +787,13 @@
         {
           "value": "score",
           "by": "condition"
+        },
+        {
+          "value": "response",
+          "by": "condition",
+          "of": "trend",
+          "x": "time",
+          "y": "response"
         }
       ]
     }

@@ -2089,3 +2089,42 @@ LESSON: after adding a flag, ask "where does this value GO?" An argument that is
 is worse than one that is missing -- the missing one fails loudly, the dropped one lies.
 
 Suite: 472 passed, 3 skipped.
+
+
+## 78. The skill declaration and the skill signature disagreed (2026-10-20)
+
+Generalising the "declared but unused" check to EVERY script found no unread arguments left -- the
+previous round's fix was complete. But turning it on `faceted_distribution` found a different
+disagreement between what a skill SAYS and what it DOES:
+
+    of="hist" | "trend" | "scatter"      <- the operator accepts all three
+    required = ("value", "by")           <- value is only needed for hist
+    optional = (..., "of", "max_panels") <- x and y are MISSING
+
+So a caller asking for a faceted TREND was refused:
+
+    skill 'faceted_distribution' does not understand parameters ['x', 'y']
+
+...for passing exactly the parameters the recipe demands. The declaration said one thing and the
+signature another, and the signature won.
+
+Fixed:
+  * `x` and `y` added to `optional`
+  * `value` moved from `required` to `optional`, because a flat tuple cannot express "value for
+    hist, x+y for trend" -- the OPERATOR enforces the real condition and raises with a clear reason
+  * `--facet-of` in the CLI now builds the right parameter set per encoder and refuses a trend
+    facet without a y
+
+VERIFIED all three from the CLI:
+
+    --facet-of hist     -> 4 panels, 0 hard findings, compliant
+    --facet-of trend    -> 4 panels, 0 hard findings, compliant
+    --facet-of scatter  -> 4 panels, 0 hard findings, compliant
+
+Also: the argument scanner needed three read forms to be correct (direct `args.x`, guarded
+`getattr(args, "x", ...)`, and bulk `vars(args)`), or it reported `--fresh` and ten of
+`run_skill.py`'s arguments as unread when they are read fine. A detector with false positives gets
+ignored, which is worse than no detector -- so `tests/test_cli_arguments.py` has a NEGATIVE CONTROL
+that a synthetic unread argument IS caught, plus tests that each read form is accepted.
+
+Suite: 476 passed, 3 skipped.

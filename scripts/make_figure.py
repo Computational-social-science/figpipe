@@ -137,11 +137,19 @@ def run_facet(df: pd.DataFrame, args, width_mm: float, style_kw: dict | None = N
     if args.facet not in df.columns:
         raise SystemExit(f"  --facet {args.facet!r} is not a column; "
                          f"columns are: {', '.join(df.columns)}")
-    if not args.value:
-        raise SystemExit("  --facet needs --value (the measure to show in each panel)")
-    if args.value not in df.columns:
-        raise SystemExit(f"  --value {args.value!r} is not a column; "
-                         f"columns are: {', '.join(df.columns)}")
+    if args.facet_of == "hist":
+        if not args.value:
+            raise SystemExit("  --facet-of hist needs --value (the measure in each panel)")
+        if args.value not in df.columns:
+            raise SystemExit(f"  --value {args.value!r} is not a column; "
+                             f"columns are: {', '.join(df.columns)}")
+    else:
+        if not (args.x or args.value):
+            raise SystemExit(f"  --facet-of {args.facet_of} needs --x (and --y)")
+        for name in (args.x or args.value, args.y):
+            if name and name not in df.columns:
+                raise SystemExit(f"  {name!r} is not a column; "
+                                 f"columns are: {', '.join(df.columns)}")
     levels = sorted(str(v) for v in pd.unique(df[args.facet]))
     if len(levels) > args.max_panels:
         say(f"  REFUSED: {args.facet!r} has {len(levels)} levels but --max-panels is "
@@ -151,10 +159,20 @@ def run_facet(df: pd.DataFrame, args, width_mm: float, style_kw: dict | None = N
     say(f"  facet: {len(levels)} panels over {args.facet!r} ({args.facet_of} each)")
     height_mm = args.height if args.height is not None else 60.0
     try:
+        facet_params: dict = {"by": args.facet, "of": args.facet_of,
+                              "max_panels": args.max_panels}
+        if args.facet_of == "hist":
+            facet_params["value"] = args.value
+        else:
+            # trend and scatter need an x and a y, not a single value column
+            facet_params["x"] = args.x or args.value
+            facet_params["y"] = args.y
+            if not facet_params["y"]:
+                say(f"  REFUSED: --facet-of {args.facet_of} needs --x and --y")
+                return 2
         result = skills.run("faceted_distribution", df, out_stem=pathlib.Path(args.out),
                             columns=COLUMNS_ENUM[args.columns], height_mm=height_mm,
-                            value=args.value, by=args.facet, of=args.facet_of,
-                            max_panels=args.max_panels, **(style_kw or {}))
+                            **facet_params, **(style_kw or {}))
     except skills.SkillError as exc:
         say(f"  REFUSED: {exc}")
         return 2

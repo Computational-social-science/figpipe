@@ -929,11 +929,18 @@ _SKILLS = [
     ),
     Skill(
         name="faceted_distribution",
-        description="The same distribution encoder repeated over a facet column.",
+        description="One classic encoder repeated over a facet column: hist, trend or scatter.",
         build=(("layout.facets", {"of": "hist"}), ("layout.plate", {"height_mm": 130.0})),
-        required=("value", "by"),
-        optional=("bins", "group", "columns", "height_mm", "of", "max_panels"),
-        examples=({"value": "score", "by": "condition"},),
+        # `of` selects hist / trend / scatter. trend and scatter REQUIRE x and y, so those must be
+        # declared here or a caller asking for a faceted trend is refused for passing exactly the
+        # parameters the recipe demands.
+        # `value` is required for of="hist"; trend/scatter need x and y instead. A flat tuple
+        # cannot say "one of these", so both shapes are accepted here and the OPERATOR enforces
+        # the real condition (`_first_numeric` / `_second_numeric` raise with a clear reason).
+        required=("by",),
+        optional=("value", "bins", "group", "columns", "height_mm", "of", "max_panels", "x", "y"),
+        examples=({"value": "score", "by": "condition"},
+                  {"value": "response", "by": "condition", "of": "trend", "x": "time", "y": "response"}),
         verify=(),
     ),
 ]

@@ -259,3 +259,44 @@ def test_a_drawer_valueerror_is_a_refusal_not_a_crash(tmp_path):
     assert "Traceback" not in combined, "a refusal must not produce a traceback"
     if cp.returncode != 0:
         assert "REFUSED" in combined or "compliant" in combined, combined[-1200:]
+
+
+@pytest.fixture()
+def faceted_trend_csv(tmp_path) -> pathlib.Path:
+    """A faceted table with a numeric x and y -- the shape a trend/scatter facet needs."""
+    rows = []
+    for cond in ("ctrl", "drugA", "drugB", "drugC"):
+        for t in range(25):
+            rows.append({"condition": cond, "time": t, "response": 0.3 + 0.02 * t})
+    path = tmp_path / "faceted_trend.csv"
+    pd.DataFrame(rows).to_csv(path, index=False)
+    return path
+
+
+def test_all_three_facet_encoders_are_reachable(faceted_csv, faceted_trend_csv, tmp_path):
+    """`of` accepts hist / trend / scatter; all three must work from the CLI.
+
+    THE BUG: `faceted_distribution` declared `of` but its `optional` tuple omitted `x` and `y`,
+    and `value` sat in `required`. So a faceted TREND was refused for passing exactly the
+    parameters the recipe demands. The declaration said one thing and the signature another.
+    """
+    cases = [
+        ("hist", faceted_csv, ["--value", "value"]),
+        ("trend", faceted_trend_csv, ["--x", "time", "--y", "response"]),
+        ("scatter", faceted_trend_csv, ["--x", "time", "--y", "response"]),
+    ]
+    for of, csv, extra in cases:
+        out = tmp_path / f"f_{of}"
+        cp = _run([str(csv), "--out", str(out), "--facet", "condition",
+                   "--facet-of", of] + extra)
+        assert cp.returncode == 0, f"{of} failed:\n{cp.stdout[-2500:]}{cp.stderr[-1200:]}"
+        assert "4 panels" in cp.stdout, f"{of}: {cp.stdout[-1200:]}"
+        assert "RESULT: compliant" in cp.stdout
+
+
+def test_a_trend_facet_without_y_is_refused(faceted_trend_csv, tmp_path):
+    cp = _run([str(faceted_trend_csv), "--out", str(tmp_path / "x"),
+               "--facet", "condition", "--facet-of", "trend", "--x", "time"])
+    assert cp.returncode == 2, cp.stdout[-1200:] + cp.stderr[-800:]
+    combined = cp.stdout + cp.stderr
+    assert "needs --x" in combined or "needs --y" in combined, combined[-800:]
