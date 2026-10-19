@@ -1365,3 +1365,30 @@ Nine tests pin it: refusal, release, refusing to release someone else's lock, de
 stale-lock breaking, corrupt-file tolerance, and that all three entry points actually ask.
 
 Suite: 321 passed, 2 skipped.
+
+
+## 56. A diagnostic run destroyed 106 benchmark rows (2026-10-19)
+
+While testing the new lock I ran the benchmark harness twice with `--limit 2`. The harness wrote its
+report UNCONDITIONALLY, so each small run REPLACED the accumulated pool: 141 tasks became 35, and
+the next scheduled run committed the damage. The report is the deliverable and the accumulated
+measurement history -- and a two-task diagnostic run silently overwrote 106 rows of it.
+
+This is the same shape as the seed-package deletion earlier: `git add -A` committed the absence of
+files nobody meant to delete; here an ordinary write committed the absence of measurements nobody
+meant to discard. Both are "a routine operation removed evidence as a side effect".
+
+Fixes:
+  * the harness REFUSES to shrink the report unless `--fresh` is passed explicitly:
+    "refusing to shrink the benchmark report from 150 to 2 tasks without --fresh"
+  * a test runs a 1-task pass against the real report and asserts both the refusal and that the
+    file is unchanged
+  * the report was restored from git (141/150, freshness 141/0/0)
+
+Note what found it: I looked at the round's summary line and saw `35/35` where the previous round
+said `141/150`. Nothing in the loop flagged it, because a smaller report is not an error to any
+existing check -- `n_tasks` is a count, and counts are deliberately not judged (see ##26). That is
+the trade-off of not judging counts: coverage regressions need a different guard, and this
+shrink-refusal is it.
+
+Suite: 322 passed, 2 skipped.

@@ -956,6 +956,8 @@ def main(argv=None) -> int:
     ap.add_argument("--types", default="", help="comma list, e.g. Line,Distribution,Scatter")
     ap.add_argument("--ids", default="",
                     help="comma list of task ids to re-measure (targeted refresh, e.g. an anchor)")
+    ap.add_argument("--fresh", action="store_true",
+                    help="replace the report instead of merging; refuses to shrink it silently")
     ap.add_argument("--scan", action="store_true",
                     help="with --types: walk the WHOLE pool and measure every task of those "
                          "types, so a fixed operator is re-measured everywhere at once")
@@ -1158,6 +1160,21 @@ def _run(args) -> int:
     report.pop("selected_gain", None)
     report.pop("selected_always_styled", None)
     report.pop("selected_always_plain", None)
+    # NEVER SHRINK THE REPORT SILENTLY. A run without --merge replaces the file, so a small
+    # diagnostic run (2 tasks) once destroyed 106 accumulated rows. The merge is now the DEFAULT
+    # when a report already exists; replacing requires --fresh, which is explicit.
+    existing = {}
+    if OUT.is_file():
+        try:
+            existing = json.loads(OUT.read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            existing = {}
+    old_n = len(existing.get("tasks") or [])
+    new_n = len(report["tasks"])
+    if old_n and new_n < old_n and not getattr(args, "fresh", False):
+        raise SystemExit(
+            f"refusing to shrink the benchmark report from {old_n} to {new_n} tasks without "
+            f"--fresh. Use --merge to add rows, or --fresh to replace deliberately.")
     OUT.write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     from figpipe import sources
     sources.assert_writable(out_dir)

@@ -112,3 +112,29 @@ def test_children_of_the_loop_do_not_re_lock():
         pytest.skip("cron_run absent")
     text = path.read_text(encoding="utf-8")
     assert "--no-lock" in text, "the loop must tell its children not to re-lock"
+
+
+def test_the_report_cannot_be_shrunk_silently():
+    """A small diagnostic run once destroyed 106 accumulated benchmark rows.
+
+    The harness wrote its report unconditionally, so any run without --merge REPLACED the pool.
+    A `--limit 2` lock test did exactly that, and a scheduled run then committed the damage. The
+    report is the deliverable and the accumulated measurement history; shrinking it must be
+    deliberate, not a side effect.
+    """
+    import subprocess
+    import sys
+    script = ROOT / "scripts" / "bench_plottwin.py"
+    report = ROOT / "corpus" / "e2e" / "plottwin_report.json"
+    if not (script.is_file() and report.is_file()):
+        pytest.skip("harness or report absent")
+    import json
+    before = len(json.loads(report.read_text(encoding="utf-8")).get("tasks") or [])
+    if before < 10:
+        pytest.skip("report too small to test shrinkage")
+    cp = subprocess.run([sys.executable, str(script), "--limit", "1", "--offset", "0",
+                         "--no-lock"], cwd=ROOT, capture_output=True, text=True, timeout=600)
+    assert cp.returncode != 0, "a 1-task run replaced a large report without complaint"
+    assert "refusing to shrink" in (cp.stdout + cp.stderr), cp.stdout[-500:] + cp.stderr[-500:]
+    after = len(json.loads(report.read_text(encoding="utf-8")).get("tasks") or [])
+    assert after == before, f"the report changed anyway: {before} -> {after}"
