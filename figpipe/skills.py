@@ -333,10 +333,13 @@ def op_layout_facets(ctx: SkillContext, of: str = "hist", by: str = "",
                              layout=dict(ctx.layout), meta=dict(ctx.meta),
                              rc=ctx.rc)
         enc = encoders[of]
-        call = {"hist": dict(value=value or _first_numeric(ctx),
-                             bins=bins, group=group),
-                "trend": dict(x=x or _first_numeric(ctx), y=y or _second_numeric(ctx)),
-                "scatter": dict(x=x or _first_numeric(ctx), y=y or _second_numeric(ctx))}[of]
+        # ONLY the chosen branch is built. A dict literal evaluates every value first, so the
+        # previous form ran _second_numeric() for the trend/scatter branches even when `of` was
+        # "hist" -- and a table with one numeric column failed asking for a histogram.
+        if of == "hist":
+            call = dict(value=value or _first_numeric(ctx), bins=bins, group=group)
+        else:
+            call = dict(x=x or _first_numeric(ctx), y=y or _second_numeric(ctx))
         if of == "hist" and title:
             call["title"] = level
         elif of == "trend" and title:

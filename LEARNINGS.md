@@ -2008,3 +2008,48 @@ contract -- and it missed `trend_with_uncertainty`, which a dated time series pr
 enumerates from `grammar.INTENTS`, the registry, which is what "complete" actually means.
 
 Suite: 462 passed, 3 skipped.
+
+
+## 76. Multi-panel figures were unreachable, and a dict literal hid why (2026-10-20)
+
+A research figure is usually SEVERAL panels. The recipes exist -- `faceted_distribution`,
+`composite_groups`, `dual_measure` -- but nothing could reach them:
+
+  * `spec.infer_spec` always declares exactly ONE panel, so the inferred path never yields a facet
+  * the CLI had no `--facet`, so the multi-panel capability was unreachable from the command line
+  * and when I tried the recipe directly, it FAILED on the commonest faceted table there is
+
+That third failure is the interesting one:
+
+    layout.facets: need two numeric columns for scatter/trend
+
+...raised for a table with ONE numeric column asking for `of="hist"`. The cause is a Python detail
+with real consequences:
+
+    call = {"hist": dict(value=...),
+            "trend": dict(x=..., y=_second_numeric(ctx)),      # <-- evaluated ALWAYS
+            "scatter": dict(x=..., y=_second_numeric(ctx))}[of]
+
+**A dict literal evaluates every value before the key is selected.** So `_second_numeric()` ran for
+the trend and scatter branches even when `of` was `"hist"`. The fix is to build only the chosen
+branch.
+
+This is the same family as the project's recurring defects -- a control that looks present and does
+the wrong thing -- but expressed in the LANGUAGE rather than in a metric: code that appears to select
+one option, and in fact executes all of them.
+
+FIXED, and the CLI now has a real multi-panel path:
+
+    python scripts/make_figure.py data.csv --out fig --facet condition --value score
+
+    facet: 4 panels over 'condition' (hist each)
+    wrote: facet.pdf and its .png preview
+    panels: 4
+    audit: width 183.0 mm, height 60.0 mm, 0 hard finding(s)
+    RESULT: compliant
+
+Faceting past `--max-panels` REFUSES rather than truncating, because dropping panels changes what
+the figure claims. Five new tests cover the multi-panel path, the refusal, the missing-column cases,
+and the single-numeric-column regression above.
+
+Suite: 466 passed, 3 skipped.

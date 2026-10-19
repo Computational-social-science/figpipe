@@ -177,7 +177,11 @@ No Python required. Give it a tidy CSV and a journal column width:
 python scripts/make_figure.py mydata.csv --out figure1
 python scripts/make_figure.py mydata.csv --out figure1 --columns 1     # 89 mm single column
 python scripts/make_figure.py mydata.csv --out figure1 --reference published.pdf
+python scripts/make_figure.py mydata.csv --out figure1 --facet condition --value score
 ```
+
+`--facet` draws one panel per level -- a multi-panel figure -- and REFUSES past `--max-panels`
+rather than silently dropping panels, because dropping them changes what the figure claims.
 
 It infers what to draw from the columns, renders at Nature's width, then **audits the rendered
 PDF** and exits non-zero if it does not comply:

@@ -126,3 +126,65 @@ def test_the_intent_map_is_the_one_shared_map():
         "the CLI keeps its own intent map; a second copy is a second chance to diverge")
     missing = sorted(set(grammar.INTENTS) - set(spec.INTENT_RECIPES))
     assert not missing, f"the shared map has no recipe for {missing}"
+
+
+@pytest.fixture()
+def faceted_csv(tmp_path) -> pathlib.Path:
+    """One measure across four conditions -- the shape a faceted research figure has."""
+    rows = []
+    for cond in ("ctrl", "drugA", "drugB", "drugC"):
+        for i in range(25):
+            rows.append({"condition": cond, "value": 0.3 + (i % 7) * 0.05})
+    path = tmp_path / "faceted.csv"
+    pd.DataFrame(rows).to_csv(path, index=False)
+    return path
+
+
+def test_a_faceted_table_becomes_a_multi_panel_figure(faceted_csv, tmp_path):
+    """A research figure is usually several panels; the CLI must reach that capability."""
+    out = tmp_path / "facet"
+    cp = _run([str(faceted_csv), "--out", str(out), "--facet", "condition", "--value", "value"])
+    assert cp.returncode == 0, cp.stdout[-3000:] + cp.stderr[-2000:]
+    assert "4 panels" in cp.stdout, cp.stdout[-1500:]
+    assert "RESULT: compliant" in cp.stdout
+    assert (tmp_path / "facet.pdf").is_file()
+
+
+def test_faceting_past_the_panel_budget_is_refused(faceted_csv, tmp_path):
+    """Dropping panels changes what the figure claims, so it must refuse, not truncate."""
+    cp = _run([str(faceted_csv), "--out", str(tmp_path / "x"),
+               "--facet", "condition", "--value", "value", "--max-panels", "2"])
+    assert cp.returncode == 2, cp.stdout[-1200:]
+    assert "REFUSED" in cp.stdout
+    assert "changes what the figure claims" in cp.stdout
+
+
+def test_faceting_needs_a_value_column(faceted_csv, tmp_path):
+    cp = _run([str(faceted_csv), "--out", str(tmp_path / "x"), "--facet", "condition"])
+    assert cp.returncode != 0
+    assert "--value" in (cp.stdout + cp.stderr)
+
+
+def test_faceting_a_missing_column_is_reported(faceted_csv, tmp_path):
+    cp = _run([str(faceted_csv), "--out", str(tmp_path / "x"),
+               "--facet", "nope", "--value", "value"])
+    assert cp.returncode != 0
+    # SystemExit writes to stderr; a user reads both streams
+    assert "is not a column" in (cp.stdout + cp.stderr)
+
+
+def test_a_single_numeric_column_can_be_faceted():
+    """THE BUG: `of="hist"` used to fail asking for a SECOND numeric column.
+
+    `op_layout_facets` built all three encoder parameter dicts before selecting one, so the
+    trend/scatter branches called `_second_numeric()` even for a histogram. A table with one
+    numeric column -- the commonest faceted table there is -- failed.
+    """
+    sys.path.insert(0, str(ROOT))
+    from figpipe import skills
+    df = pd.DataFrame({"condition": ["a"] * 20 + ["b"] * 20,
+                       "value": list(range(40))})
+    res = skills.run("faceted_distribution", df, out_stem=None,
+                     value="value", by="condition", of="hist")
+    assert res["panels"] == 2
+    assert res["hard_failures"] == 0, res["findings"]
