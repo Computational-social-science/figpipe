@@ -1855,3 +1855,40 @@ The common shape: **a routine operation produced a diff that did not correspond 
 commit history is a measurement instrument too, and it was reporting motion that was not there.
 
 Suite: 436 passed, 3 skipped.
+
+
+## 72. The unattended loop had no watchdog, and it had already died (2026-10-20)
+
+I had listed "watchdog" as a next step for six consecutive rounds and never done it. This round I
+looked at the evidence instead of the list:
+
+    13 log markers over three days
+    one gap of 10.8 hours against a 6-hour schedule
+    on 2026-10-20 the loop took exit=3 at 01:54 and then slept until 07:54 doing nothing
+
+exit=3 is the MEASUREMENT LOCK refusing because another run held it. My own manual `cron_run` at
+01:52 caused it. The loop treated a transient scheduling accident as a completed cycle and slept six
+hours -- one manual run starved the schedule for a quarter of a day.
+
+TWO DEFECTS, both now fixed:
+1. **No backoff.** A busy lock now retries after 300 s, up to 6 times, before falling back to the
+   full interval. Only a COMPLETED cycle sleeps six hours.
+2. **No liveness check.** Nothing verified the loop was alive. `scripts/watchdog.ps1` checks BOTH
+   the heartbeat age AND whether a process is running loop.ps1 -- either alone is wrong (a fresh
+   file with a dead process, or a live process that is wedged).
+
+THE WATCHDOG DELIBERATELY DOES NOT KILL. A wedged loop may be mid-measurement, and killing it would
+abandon a half-written report -- the exact defect class this project spent rounds fixing. It reports
+WEDGED and lets a human decide; it only relaunches when the process is GONE.
+
+And a limitation stated rather than hidden: registering a Windows scheduled task needs elevation,
+which this unattended account does not have. The watchdog therefore runs as a second Startup
+process. A watchdog loop can itself die; two mitigations (it restarts at login with the loop, and it
+logs its own start) but a genuinely crash-proof watchdog needs a service or elevation. That is
+written in the script, not glossed over.
+
+VERIFIED LIVE: loop pid 43100 + watchdog pid 35912 both running; heartbeat written; the watchdog's
+own verdict went from PROBLEM/WEDGED (when the old script had no heartbeat) to
+"OK: loop alive, heartbeat 0 min old, 1 process(es)".
+
+Suite: 443 passed, 3 skipped.

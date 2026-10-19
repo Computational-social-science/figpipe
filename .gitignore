@@ -70,3 +70,10 @@ knowledge/.measurement.lock
 
 # Mutation-loop probe renders: regenerable intermediates, like templates/skills/.
 templates/mutation/
+
+# Loop liveness + watchdog state: runtime facts, not source.
+knowledge/loop.heartbeat
+knowledge/loop.log
+knowledge/watchdog.log
+knowledge/.watchdog.last-ok
+
