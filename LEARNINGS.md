@@ -933,3 +933,29 @@ property of the INPUT MODALITY, not of the pipeline, and is now stated as such.
 
 State: official code channel (image-inferred) **75.41** over 149 tasks; ceiling (code-copied)
 100.00; benchmark 141/150 executed; styled anchor 0.305; shipped 0.252.
+
+
+## 42. A frozen task set is not enough: the rows must share one instrument (2026-10-19)
+
+The loop reported the shipped anchor improving 0.252 -> 0.243 and called it a gain. It was not.
+
+The anchor is a frozen set of 20 task ids -- but the ROWS inside it had been measured by different
+versions of the measurement code. Only 3 of the 20 had been re-measured after the styleprofile
+palette fix, so the mean moved because the INSTRUMENT changed, not the capability. This is the FIFTH
+variant of the same defect family:
+
+    raw mean over a growing set          -> false regression
+    count over a growing set             -> false gain
+    shipped mean over a growing set      -> false regression
+    "first N sorted ids" anchor          -> false regression when new ids sort earlier
+    frozen ids with MIXED fingerprints   -> false gain
+
+Fix: `_shipped_anchor_single_instrument()` reports the mean over rows measured by the CURRENT
+fingerprint, plus `n_same_instrument` / `n_other_instrument` / `comparable`. When the anchor is not
+fully re-measured the value is **None**, not a small-sample number that reads as a gain. The judged
+capability field is that single-instrument value; the all-rows value is recorded but never judged.
+The report shows "—" with a note explaining exactly why.
+
+Rule, now stated as a general invariant: **a judged metric must be a function of a fixed task set
+AND a single instrument version.** Freezing the set but not the instrument is the same error one
+level down.

@@ -109,6 +109,28 @@ def _selection_text(sel) -> str:
             f"key).")
 
 
+def _comparability_note(bench) -> str:
+    single = bench.get("benchmark_shipped_anchor_single") or {}
+    if not single or single.get("comparable"):
+        return ""
+    return (f'<div class="note"><b>Shipped distance is reported as — because it is not comparable '
+            f'yet.</b> {single.get("n_same_instrument", 0)} of the anchor\'s tasks were measured '
+            f'with the current code and {single.get("n_other_instrument", 0)} with an older '
+            f'fingerprint; averaging across instruments makes the number move when the MEASUREMENT '
+            f'changes rather than when the pipeline does. Re-measure with '
+            f'<code>--types X --scan</code> to make it comparable again.</div>')
+
+
+def _shipped_kpi(bench) -> str:
+    """The shipped anchor, but only when every row came from the current instrument."""
+    single = bench.get("benchmark_shipped_anchor_single") or {}
+    if single.get("mean") is not None:
+        return single["mean"]
+    if single:
+        return "—"
+    return bench.get("benchmark_shipped_anchor_distance") or "—"
+
+
 def _official_pool(source: str = "image") -> dict:
     """The pool-wide official score from the dedicated pass, by style source.
 
@@ -559,8 +581,8 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
 
 <div class="kpis">
   {kpi(f'{n_stats}', 'Published statistics reproduced', f'worst |Δ| = {worst}', '')}
-  {kpi(bench.get("benchmark_shipped_anchor_distance") or "—",
-       'Shipped distance (anchor)', 'fixed 20-task subset; closer of plain/styled per task', '')}
+  {kpi(_shipped_kpi(bench), 'Shipped distance (anchor)',
+       'fixed 20-task subset, ONE instrument; closer of plain/styled per task', '')}
   {kpi(bench.get("benchmark_anchor_distance") or "—", 'Anchor style distance',
        'fixed 20-task subset (comparable across runs)', '')}
   {kpi((_official_pool() or bench.get("official_code_channel") or {}).get("mean_score", "—"),
@@ -633,6 +655,7 @@ imitate.</p>
 </div>
 <div class="okbox" style="margin-top:14px">{_selection_text(bench.get("selection"))}</div>
 {_official_block(_official_pool() or bench.get("official_code_channel"))}
+{_comparability_note(bench)}
 <div class="note"><b>Measurement freshness:</b> {bench.get("n_fresh", 0)} of {n_ok} executed tasks
 were measured with the current rendering code (fingerprint
 <code>{esc(bench.get("code_version", "—"))}</code>), {bench.get("n_stale", 0)} with an earlier
