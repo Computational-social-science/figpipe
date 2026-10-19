@@ -1328,3 +1328,40 @@ Worth recording as a standing hazard: **this machine runs one measurement at a t
 runs sharing it produce results that are neither reproducible nor trustworthy, and the loop cannot
 distinguish that from a real regression. The mitigation is procedural (do not start a pool-wide
 re-measure while the loop is due), not code -- stated rather than silently tolerated.
+
+
+## 55. A procedural rule became an enforced one: one measurement at a time (2026-10-19)
+
+Last round recorded a hazard instead of fixing it: "this machine runs one measurement at a time;
+two heavy runs produce untrustworthy results, and the loop cannot distinguish that from a real
+regression. The mitigation is procedural." A procedural rule that nothing enforces is not a control
+-- that sentence could have been written about any of the eleven defects found before it.
+
+`figpipe/lock.py` now enforces it. The three heavy entry points (`cron_run`, `bench_plottwin`,
+`score_official`) acquire the same file lock; a second run is REFUSED with exit code 3 and the
+holder named:
+
+    refused: another measurement is running: holder (pid 36172, started ...). Overlapping
+    measurements produce numbers that are neither reproducible nor trustworthy
+
+Proven with a genuinely live holder process. The loop tells its own children `--no-lock`, since a
+child deadlocking against its parent's lock would be worse than the hazard it prevents.
+
+TWO WINDOWS-SPECIFIC DEFECTS FOUND WHILE BUILDING IT, both in the liveness probe:
+
+1. `os.kill(dead_pid, 0)` raises a bare `OSError` with **WinError 87** on Windows, not
+   `ProcessLookupError`. The obvious implementation therefore treats every dead pid as ALIVE, so a
+   stale lock blocks the schedule forever. Replaced with `OpenProcess` +
+   `GetExitCodeProcess`.
+2. On this machine's exFAT volume, the exception path of `os.kill` itself raised
+   **KeyboardInterrupt** inside the probe. The new implementation has no signal semantics at all,
+   and its failure mode is "assume alive" rather than "crash a scheduled run".
+
+Plus a third, from the same family as the others: `break_stale()` read the lock file TWICE, and the
+second open raised the same I/O error. It reads once now, and an unreadable lock file is treated as
+"no lock" so a corrupt file cannot wedge the schedule.
+
+Nine tests pin it: refusal, release, refusing to release someone else's lock, dead-pid detection,
+stale-lock breaking, corrupt-file tolerance, and that all three entry points actually ask.
+
+Suite: 321 passed, 2 skipped.

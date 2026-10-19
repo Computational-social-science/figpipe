@@ -83,3 +83,32 @@ def test_an_unreadable_lock_file_means_no_lock():
     lock.LOCK_PATH.write_text("{not json", encoding="utf-8")
     assert lock.holder() is None
     assert lock.break_stale() is False
+
+
+def test_the_heavy_entry_points_acquire_the_lock():
+    """A lock nothing uses is not a control.
+
+    The three entry points that take minutes and touch shared state must ask first: the scheduled
+    loop, the benchmark harness and the official scoring pass.
+    """
+    for rel, marker in (("scripts/cron_run.py", "lock.acquire"),
+                        ("scripts/bench_plottwin.py", "lock.acquire"),
+                        ("scripts/score_official.py", "lock.acquire")):
+        path = ROOT / rel
+        if not path.is_file():
+            pytest.skip(f"{rel} absent")
+        text = path.read_text(encoding="utf-8")
+        assert marker in text, f"{rel} does not acquire the measurement lock"
+        assert "lock.release" in text, f"{rel} never releases the lock"
+
+
+def test_children_of_the_loop_do_not_re_lock():
+    """cron_run launches the benchmark as a subprocess and already holds the lock.
+
+    A child that tries to take it again would deadlock against its own parent.
+    """
+    path = ROOT / "scripts" / "cron_run.py"
+    if not path.is_file():
+        pytest.skip("cron_run absent")
+    text = path.read_text(encoding="utf-8")
+    assert "--no-lock" in text, "the loop must tell its children not to re-lock"
