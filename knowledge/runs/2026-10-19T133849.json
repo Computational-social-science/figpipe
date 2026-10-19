@@ -11,8 +11,8 @@
     "  wrote knowledge\\evolution_report.json",
     "  lean: tracked 75.5 -> 75.5 MB, worktree 120.9 -> 120.9 MB"
   ],
-  "tests_ok": null,
-  "tests_summary": "pending",
+  "tests_ok": false,
+  "tests_summary": "1 failed, 310 passed, 2 skipped, 1 warning in 142.40s (0:02:22)",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
@@ -160,11 +160,16 @@
     "benchmark_official_improvement": 37.25,
     "statistics_reproduced": 15,
     "knowledge_version": 16,
-    "tests": null
+    "tests": 310
   },
   "capabilities_delta": {
-    "changed": false,
-    "delta": {},
+    "changed": true,
+    "delta": {
+      "tests": {
+        "before": null,
+        "after": 310
+      }
+    },
     "verdict": {
       "gains": [],
       "regressions": [],
@@ -184,5 +189,7 @@
       ]
     }
   },
-  "ok": null
+  "ok": false,
+  "capability_ok": true,
+  "capability_regressions": []
 }

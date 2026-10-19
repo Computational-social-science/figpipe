@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-19T13:38:54",
+  "run_at": "2026-10-19T13:38:49",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -12,7 +12,7 @@
     "  lean: tracked 75.5 -> 75.5 MB, worktree 120.9 -> 120.9 MB"
   ],
   "tests_ok": false,
-  "tests_summary": "1 failed, 310 passed, 2 skipped, 1 warning in 80.97s (0:01:20)",
+  "tests_summary": "1 failed, 310 passed, 2 skipped, 1 warning in 142.40s (0:02:22)",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
@@ -166,21 +166,15 @@
     "changed": true,
     "delta": {
       "tests": {
-        "before": 311,
+        "before": null,
         "after": 310
       }
     },
     "verdict": {
       "gains": [],
-      "regressions": [
-        {
-          "field": "tests",
-          "before": 311,
-          "after": 310
-        }
-      ],
+      "regressions": [],
       "corrections": [],
-      "ok": false,
+      "ok": true,
       "judged_fields": [
         "benchmark_anchor_single",
         "benchmark_official_code_score",
@@ -196,13 +190,6 @@
     }
   },
   "ok": false,
-  "capability_ok": false,
-  "capability_regressions": [
-    {
-      "field": "tests",
-      "before": 311,
-      "after": 310
-    }
-  ],
-  "publish_note": "capability regression detected; record kept but the run exits non-zero (re-run with --accept-capability-regression to accept)"
+  "capability_ok": true,
+  "capability_regressions": []
 }
