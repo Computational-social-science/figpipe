@@ -87,6 +87,35 @@ def _record_coverage(offset: int, task_id: str) -> None:
 MAX_CACHE_MB = 24.0
 
 
+def prune_orphan_images() -> int:
+    """Delete reference images whose task is no longer in the cache or the report.
+
+    Images are the larger half of the cache (39 MB of 41 MB) and the pruner walked only the JSON,
+    so they accumulated silently until the worktree budget caught them. A cache that prunes one of
+    its two stores is not a bounded cache.
+    """
+    keep: set[str] = set()
+    for f in CACHE.glob("*.json"):
+        try:
+            keep.add(json.loads(f.read_text(encoding="utf-8")).get("id"))
+        except (OSError, ValueError):
+            continue
+    if OUT.is_file():
+        try:
+            keep.update(t.get("id") for t in
+                        json.loads(OUT.read_text(encoding="utf-8")).get("tasks", []))
+        except (OSError, ValueError):
+            pass
+    keep.discard(None)
+    removed = 0
+    for img in IMAGES.glob("*.png"):
+        task_id = img.stem.replace("_crop", "")
+        if task_id not in keep:
+            img.unlink(missing_ok=True)
+            removed += 1
+    return removed
+
+
 def _cache_bytes() -> int:
     return (sum(f.stat().st_size for f in CACHE.glob("*.json"))
             + sum(f.stat().st_size for f in IMAGES.glob("*.png")))
@@ -117,6 +146,7 @@ def prune_cache() -> int:
                 img.unlink(missing_ok=True)
         total -= size
         removed += 1
+    prune_orphan_images()
     return removed
 OUT = ROOT / "corpus" / "e2e" / "plottwin_report.json"
 

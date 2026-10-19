@@ -160,3 +160,38 @@ def test_the_emitter_reproduces_every_scored_dimension():
         assert res["dimensions"][dim]["score"] == pytest.approx(1.0), (
             f"dimension {dim} scores {res['dimensions'][dim]['score']}, expected 1.0")
     assert res["score"] == pytest.approx(100.0, abs=0.01)
+
+
+def test_the_two_style_sources_cannot_overwrite_each_other():
+    """The honest number and the tautological ceiling are different measurements.
+
+    Writing both to one path silently destroyed the honest result with the ceiling. Output identity
+    must follow input identity.
+    """
+    import sys
+    sys.path.insert(0, str(ROOT / "scripts"))
+    try:
+        import score_official as so
+    except Exception:                    # pragma: no cover
+        pytest.skip("scoring script unavailable")
+    assert so.OUT_IMAGE != so.OUT_CODE
+    assert so.OUT_IMAGE.name == "official_scores.json"
+    assert so.OUT_CODE.name == "official_scores_code.json"
+
+
+def test_an_image_inferred_style_leaves_code_only_dimensions_undetermined():
+    """A raster cannot tell us the tick direction; pretending otherwise would be fabrication."""
+    import sys
+    sys.path.insert(0, str(ROOT))
+    from figpipe import codegen, styleprofile
+    imgs = list((ROOT / "corpus" / "e2e" / "images").glob("*.png"))
+    if not imgs:
+        pytest.skip("no cached reference images")
+    prof = styleprofile.StyleProfile.from_image_detailed(imgs[0])
+    style = codegen.style_from_image_profile(prof)
+    assert style["inferred_from"] == "image"
+    for dim in ("tick_direction", "serif", "legend_frame", "linewidth"):
+        assert style[dim] is None, f"{dim} must be undetermined from pixels"
+        assert dim in style["undetermined_dimensions"]
+    # palette and aspect ARE recoverable
+    assert style["figure_aspect"] is not None

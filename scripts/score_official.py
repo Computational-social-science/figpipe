@@ -43,7 +43,10 @@ except Exception:                                   # noqa: BLE001 - optional, C
 
 import bench_plottwin as bench                       # noqa: E402
 
-OUT = ROOT / "corpus" / "e2e" / "official_scores.json"
+#: One output per style source. Writing both modes to one path silently destroyed the honest
+#: result with the tautological ceiling -- a measurement-instrument defect of the usual kind.
+OUT_IMAGE = ROOT / "corpus" / "e2e" / "official_scores.json"
+OUT_CODE = ROOT / "corpus" / "e2e" / "official_scores_code.json"
 
 
 def score_one(row: dict, *, source: str = "image") -> dict:
@@ -177,8 +180,9 @@ def main(argv=None) -> int:
             print(f"  ... {len(records)} tasks processed")
 
     summary = summarise(records, args.source)
-    OUT.parent.mkdir(parents=True, exist_ok=True)
-    OUT.write_text(json.dumps({"summary": summary, "records": records},
+    out = OUT_IMAGE if args.source == "image" else OUT_CODE
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(json.dumps({"summary": summary, "records": records},
                               indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print()
     print(f"  scored {summary['n_scored']}/{summary['n_tasks']} tasks")
@@ -190,7 +194,7 @@ def main(argv=None) -> int:
         print("  not scored:")
         for reason, n in summary["unscored_reasons"].items():
             print(f"    {n:>3} x {reason}")
-    print(f"  wrote {OUT}")
+    print(f"  wrote {out}")
     return 0
 
 

@@ -1,0 +1,2198 @@
+{
+  "summary": {
+    "channel": "code_deviation",
+    "scorer": "plottwin_scorer deviation-defect-v1 (vendored, unmodified)",
+    "weight_upstream": 0.35,
+    "note": "OFFICIAL deterministic channel only. The 0.65 vision channel is not run, so this is NOT the combined score.",
+    "style_source": "code",
+    "n_tasks": 150,
+    "n_scored": 149,
+    "n_unscored": 0,
+    "n_unavailable": 1,
+    "mean_score": 100.0,
+    "min_score": 99.98,
+    "max_score": 100.0,
+    "by_type": {
+      "3D": {
+        "n": 7,
+        "mean": 100.0
+      },
+      "Bar": {
+        "n": 18,
+        "mean": 100.0
+      },
+      "Box/Violin": {
+        "n": 16,
+        "mean": 100.0
+      },
+      "Composite": {
+        "n": 3,
+        "mean": 100.0
+      },
+      "Distribution": {
+        "n": 17,
+        "mean": 100.0
+      },
+      "Field 2D": {
+        "n": 15,
+        "mean": 100.0
+      },
+      "Heatmap": {
+        "n": 13,
+        "mean": 100.0
+      },
+      "Line": {
+        "n": 20,
+        "mean": 100.0
+      },
+      "Network/Tree": {
+        "n": 2,
+        "mean": 100.0
+      },
+      "Polar/Radial": {
+        "n": 13,
+        "mean": 100.0
+      },
+      "Scatter": {
+        "n": 16,
+        "mean": 100.0
+      },
+      "Std-band": {
+        "n": 9,
+        "mean": 100.0
+      }
+    },
+    "unscored_reasons": {
+      "reference_has_no_activated_dimensions": 1
+    }
+  },
+  "records": [
+    {
+      "id": "PMC11502666",
+      "chart": "Distribution",
+      "status": "scored",
+      "score": 100.0,
+      "n_activated": 2,
+      "scored_dimensions": [
+        "palette",
+        "grid"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "PMC11840003",
+      "chart": "Box/Violin",
+      "status": "scored",
+      "score": 99.99959236362147,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "PMC12000431",
+      "chart": "Distribution",
+      "status": "scored",
+      "score": 100.0,
+      "n_activated": 2,
+      "scored_dimensions": [
+        "palette",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "PMC12354736",
+      "chart": "Distribution",
+      "status": "scored",
+      "score": 99.9988792326005,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "PMC12504421",
+      "chart": "Heatmap",
+      "status": "scored",
+      "score": 99.99984352707062,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "tick_direction"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "PMC12905268",
+      "chart": "Distribution",
+      "status": "scored",
+      "score": 99.99993928740484,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "PMC13009336",
+      "chart": "Box/Violin",
+      "status": "scored",
+      "score": 100.0,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "linewidth",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "PMC13022287",
+      "chart": "Distribution",
+      "status": "scored",
+      "score": 99.99950792549768,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "PMC13079874",
+      "chart": "Box/Violin",
+      "status": "scored",
+      "score": 99.99969000920903,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "PMC13106710",
+      "chart": "Heatmap",
+      "status": "scored",
+      "score": 99.99949247784119,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "PMC13135507",
+      "chart": "Scatter",
+      "status": "scored",
+      "score": 100.0,
+      "n_activated": 3,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "PMC13245775",
+      "chart": "Composite",
+      "status": "scored",
+      "score": 99.99734031600121,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "PMC13252719",
+      "chart": "Composite",
+      "status": "scored",
+      "score": 100.0,
+      "n_activated": 2,
+      "scored_dimensions": [
+        "palette",
+        "linewidth"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "PMC13273070",
+      "chart": "Box/Violin",
+      "status": "scored",
+      "score": 100.0,
+      "n_activated": 3,
+      "scored_dimensions": [
+        "palette",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "PMC13286152",
+      "chart": "Composite",
+      "status": "scored",
+      "score": 99.9982552464772,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "spines_removed"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "PMC13336770",
+      "chart": "Distribution",
+      "status": "scored",
+      "score": 100.0,
+      "n_activated": 3,
+      "scored_dimensions": [
+        "palette",
+        "linewidth",
+        "spines_removed"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "PMC13342296",
+      "chart": "Distribution",
+      "status": "scored",
+      "score": 100.0,
+      "n_activated": 3,
+      "scored_dimensions": [
+        "palette",
+        "linewidth",
+        "spines_removed"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "PMC13343911",
+      "chart": "Line",
+      "status": "scored",
+      "score": 99.99987536023056,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "arxiv-astro-skymap__2412.12637",
+      "chart": "Field 2D",
+      "status": "scored",
+      "score": 99.99394273761624,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "serif"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "arxiv-astro-skymap__2510.17487",
+      "chart": "Std-band",
+      "status": "scored",
+      "score": 100.0,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "grid",
+        "tick_direction",
+        "serif"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "arxiv-ml-3d-trajectory__2511.17399",
+      "chart": "Field 2D",
+      "status": "scored",
+      "score": 100.0,
+      "n_activated": 2,
+      "scored_dimensions": [
+        "palette",
+        "linewidth"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "arxiv-ml-3d-trajectory__2602.22552",
+      "chart": "Field 2D",
+      "status": "scored",
+      "score": 100.0,
+      "n_activated": 2,
+      "scored_dimensions": [
+        "palette",
+        "linewidth"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "arxiv-ml-bar-line-v2__2511.15055",
+      "chart": "Std-band",
+      "status": "scored",
+      "score": 99.99651359395342,
+      "n_activated": 6,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "arxiv-ml-bar-line-v2__2605.21125",
+      "chart": "Polar/Radial",
+      "status": "scored",
+      "score": 100.0,
+      "n_activated": 1,
+      "scored_dimensions": [
+        "palette"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "arxiv-phys-prx-prl__2603.21981",
+      "chart": "Line",
+      "status": "scored",
+      "score": 100.0,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "linewidth",
+        "tick_direction",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "arxiv_2410.15876",
+      "chart": "Std-band",
+      "status": "scored",
+      "score": 99.9988589456204,
+      "n_activated": 3,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "grid"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "arxiv_2502.15132",
+      "chart": "Line",
+      "status": "scored",
+      "score": 99.99852696564803,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "arxiv_2502.17598",
+      "chart": "Heatmap",
+      "status": "scored",
+      "score": 99.9994096611513,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "arxiv_2502.18153",
+      "chart": "3D",
+      "status": "scored",
+      "score": 99.99882708828441,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "arxiv_2505.19527",
+      "chart": "3D",
+      "status": "scored",
+      "score": 100.0,
+      "n_activated": 3,
+      "scored_dimensions": [
+        "palette",
+        "linewidth",
+        "grid"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "arxiv_2506.14951",
+      "chart": "3D",
+      "status": "scored",
+      "score": 100.0,
+      "n_activated": 2,
+      "scored_dimensions": [
+        "palette",
+        "linewidth"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "arxiv_2508.01948",
+      "chart": "3D",
+      "status": "scored",
+      "score": 100.0,
+      "n_activated": 3,
+      "scored_dimensions": [
+        "palette",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "arxiv_2510.17384",
+      "chart": "Scatter",
+      "status": "scored",
+      "score": 99.99815479997227,
+      "n_activated": 6,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed",
+        "serif"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "arxiv_2512.09767",
+      "chart": "Distribution",
+      "status": "scored",
+      "score": 100.0,
+      "n_activated": 3,
+      "scored_dimensions": [
+        "palette",
+        "linewidth",
+        "serif"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "arxiv_2512.25023",
+      "chart": "Std-band",
+      "status": "scored",
+      "score": 99.99981072628398,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "serif"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "arxiv_2603.04948",
+      "chart": "Std-band",
+      "status": "scored",
+      "score": 99.99930271264363,
+      "n_activated": 3,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "spines_removed"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "arxiv_2603.08660",
+      "chart": "Std-band",
+      "status": "scored",
+      "score": 99.99900842916237,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "spines_removed"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "arxiv_2603.17004",
+      "chart": "Line",
+      "status": "scored",
+      "score": 100.0,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "linewidth",
+        "tick_direction",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "arxiv_2603.23889",
+      "chart": "Std-band",
+      "status": "scored",
+      "score": 99.99803595419736,
+      "n_activated": 3,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "grid"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "arxiv_2604.01093",
+      "chart": "Field 2D",
+      "status": "scored",
+      "score": 100.0,
+      "n_activated": 3,
+      "scored_dimensions": [
+        "palette",
+        "linewidth",
+        "grid"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "arxiv_2604.05237",
+      "chart": "Field 2D",
+      "status": "scored",
+      "score": 99.997186027876,
+      "n_activated": 3,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "arxiv_2605.14587",
+      "chart": "Heatmap",
+      "status": "scored",
+      "score": 99.99851973567418,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "arxiv_2605.16790",
+      "chart": "Line",
+      "status": "scored",
+      "score": 99.99568798127957,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "arxiv_2605.22305",
+      "chart": "Distribution",
+      "status": "scored",
+      "score": 99.99126694036786,
+      "n_activated": 2,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "arxiv_2605.22455",
+      "chart": "Scatter",
+      "status": "scored",
+      "score": 99.99828323553989,
+      "n_activated": 6,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "serif",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "local-reuse__local_picks_top_hepfit_wheel",
+      "chart": "Network/Tree",
+      "status": "scored",
+      "score": 100.0,
+      "n_activated": 3,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "local_gallery_hexbin_joint",
+      "chart": "Scatter",
+      "status": "scored",
+      "score": 99.99920738429883,
+      "n_activated": 3,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "local_picks_top_cust_graph__24",
+      "chart": "Network/Tree",
+      "status": "scored",
+      "score": 100.0,
+      "n_activated": 3,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "local_picks_top_scatter__39",
+      "chart": "Scatter",
+      "status": "scored",
+      "score": 100.0,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "local_picks_top_violin__9",
+      "chart": "Box/Violin",
+      "status": "scored",
+      "score": 99.99690958901094,
+      "n_activated": 3,
+      "scored_dimensions": [
+        "background",
+        "figure_aspect",
+        "linewidth"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2Code_level1_direct_HR_5",
+      "chart": "Scatter",
+      "status": "scored",
+      "score": 99.99898801291165,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2Code_level1_direct_combination_57",
+      "chart": "Bar",
+      "status": "scored",
+      "score": 99.99456259958941,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2Code_level1_direct_contour_18",
+      "chart": "Heatmap",
+      "status": "scored",
+      "score": 99.99993137182645,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2Code_level1_direct_density_11",
+      "chart": "Distribution",
+      "status": "scored",
+      "score": 99.99654311018888,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2Code_level1_direct_heatmap_3",
+      "chart": "Heatmap",
+      "status": "scored",
+      "score": 99.99860859381921,
+      "n_activated": 3,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2Code_level1_direct_heatmap_7",
+      "chart": "Heatmap",
+      "status": "scored",
+      "score": 99.99850500165806,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2Code_level1_direct_line_39",
+      "chart": "Line",
+      "status": "scored",
+      "score": 99.9999458019165,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2Code_level1_direct_line_8",
+      "chart": "Line",
+      "status": "scored",
+      "score": 99.9995385569685,
+      "n_activated": 6,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2Code_level2_3d_11_v2",
+      "chart": "Scatter",
+      "status": "scored",
+      "score": 99.99760567180954,
+      "n_activated": 6,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2Code_level2_3d_1_v1__single",
+      "chart": "3D",
+      "status": "scored",
+      "score": 100.0,
+      "n_activated": 3,
+      "scored_dimensions": [
+        "palette",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2Code_level2_3d_2_v3",
+      "chart": "3D",
+      "status": "scored",
+      "score": 99.99777681962247,
+      "n_activated": 6,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2Code_level2_3d_5_v4",
+      "chart": "Bar",
+      "status": "scored",
+      "score": 99.99958532342454,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2Code_level2_area_3_v3",
+      "chart": "Line",
+      "status": "scored",
+      "score": 99.99728664436955,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2Code_level2_bar_10_v4",
+      "chart": "Line",
+      "status": "scored",
+      "score": 99.99957859938168,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2Code_level2_bar_22_v4",
+      "chart": "Bar",
+      "status": "scored",
+      "score": 99.99613725897586,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2Code_level2_bar_25_v4",
+      "chart": "Line",
+      "status": "scored",
+      "score": 99.99873620753452,
+      "n_activated": 6,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2Code_level2_box_1_v5",
+      "chart": "Box/Violin",
+      "status": "scored",
+      "score": 100.0,
+      "n_activated": 3,
+      "scored_dimensions": [
+        "palette",
+        "linewidth",
+        "grid"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2Code_level2_combination_11_v2",
+      "chart": "Std-band",
+      "status": "scored",
+      "score": 99.99901392049395,
+      "n_activated": 6,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2Code_level2_combination_13_v5",
+      "chart": "Line",
+      "status": "scored",
+      "score": 99.99725441500033,
+      "n_activated": 6,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2Code_level2_combination_14_v5",
+      "chart": "Distribution",
+      "status": "scored",
+      "score": 99.99863283940877,
+      "n_activated": 2,
+      "scored_dimensions": [
+        "figure_aspect",
+        "grid"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2Code_level2_combination_16_v5",
+      "chart": "Box/Violin",
+      "status": "scored",
+      "score": 99.99793005710893,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2Code_level2_combination_33_v5",
+      "chart": "Distribution",
+      "status": "scored",
+      "score": 99.9991367540579,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2Code_level2_combination_42_v5",
+      "chart": "Scatter",
+      "status": "scored",
+      "score": 99.99875889927587,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2Code_level2_combination_44_v3",
+      "chart": "Distribution",
+      "status": "scored",
+      "score": 99.99903147099876,
+      "n_activated": 6,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2Code_level2_contour_14_v1",
+      "chart": "Field 2D",
+      "status": "scored",
+      "score": 99.99715545075235,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2Code_level2_contour_23_v4",
+      "chart": "Field 2D",
+      "status": "scored",
+      "score": 99.9966925240501,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2Code_level2_contour_25_v2",
+      "chart": "Field 2D",
+      "status": "scored",
+      "score": 99.99617549671805,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "grid",
+        "spines_removed"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2Code_level2_contour_25_v3",
+      "chart": "Field 2D",
+      "status": "scored",
+      "score": 99.99306352252802,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2Code_level2_contour_5_v5",
+      "chart": "Field 2D",
+      "status": "scored",
+      "score": 99.99803395813572,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2Code_level2_density_12_v3",
+      "chart": "Distribution",
+      "status": "scored",
+      "score": 99.99610946347114,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "grid",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2Code_level2_density_14_v4",
+      "chart": "Line",
+      "status": "scored",
+      "score": 99.99742274117999,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2Code_level2_errorpoint_10_v5",
+      "chart": "Scatter",
+      "status": "scored",
+      "score": 100.0,
+      "n_activated": 3,
+      "scored_dimensions": [
+        "palette",
+        "linewidth",
+        "grid"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2Code_level2_errorpoint_1_v5",
+      "chart": "Scatter",
+      "status": "scored",
+      "score": 99.9978850135911,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2Code_level2_errorpoint_5_v5",
+      "chart": "Std-band",
+      "status": "scored",
+      "score": 99.99707876157878,
+      "n_activated": 6,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2Code_level2_hist_2_v3",
+      "chart": "Distribution",
+      "status": "scored",
+      "score": 99.99850878598447,
+      "n_activated": 6,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2Code_level2_hist_2_v5",
+      "chart": "Distribution",
+      "status": "scored",
+      "score": 100.0,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "linewidth",
+        "grid",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2Code_level2_multidiff_1_v1",
+      "chart": "Distribution",
+      "status": "scored",
+      "score": 99.99962986216293,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2Code_level2_multidiff_2_v2__single",
+      "chart": "Field 2D",
+      "status": "scored",
+      "score": 100.0,
+      "n_activated": 3,
+      "scored_dimensions": [
+        "palette",
+        "linewidth",
+        "grid"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2Code_level2_multidiff_5_v1",
+      "chart": "Line",
+      "status": "scored",
+      "score": 99.99967432552147,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2Code_level2_quiver_10_v5",
+      "chart": "Field 2D",
+      "status": "scored",
+      "score": 99.99954686125436,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2Code_level2_quiver_13_v1",
+      "chart": "Field 2D",
+      "status": "scored",
+      "score": 100.0,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "linewidth",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2Code_level2_quiver_14_v1",
+      "chart": "Field 2D",
+      "status": "scored",
+      "score": 100.0,
+      "n_activated": 3,
+      "scored_dimensions": [
+        "palette",
+        "linewidth",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2Code_level2_quiver_4_v5",
+      "chart": "Field 2D",
+      "status": "scored",
+      "score": 100.0,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "linewidth",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2Code_level2_radar_10_v2",
+      "chart": "Polar/Radial",
+      "status": "scored",
+      "score": 100.0,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "linewidth",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2Code_level2_radar_18_v5",
+      "chart": "Bar",
+      "status": "scored",
+      "score": 100.0,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "linewidth",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2Code_level2_radar_23_v3",
+      "chart": "Polar/Radial",
+      "status": "scored",
+      "score": 99.99723403938354,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2Code_level2_radar_26_v3",
+      "chart": "Polar/Radial",
+      "status": "scored",
+      "score": 99.999858292476,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2Code_level2_radar_35_v4",
+      "chart": "Polar/Radial",
+      "status": "scored",
+      "score": 99.99756797349546,
+      "n_activated": 6,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2Code_level2_radar_3_v1",
+      "chart": "Polar/Radial",
+      "status": "scored",
+      "score": 99.9983109837937,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2Code_level2_radar_3_v3",
+      "chart": "Polar/Radial",
+      "status": "scored",
+      "score": 99.99730267684036,
+      "n_activated": 6,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2Code_level2_radar_40_v5",
+      "chart": "Polar/Radial",
+      "status": "scored",
+      "score": 100.0,
+      "n_activated": 3,
+      "scored_dimensions": [
+        "linewidth",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2Code_level2_radar_4_v3",
+      "chart": "Polar/Radial",
+      "status": "scored",
+      "score": 99.99934510109433,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2Code_level2_radar_7_v3",
+      "chart": "Polar/Radial",
+      "status": "scored",
+      "score": 99.99926131953951,
+      "n_activated": 6,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2Code_level2_radar_9_v4",
+      "chart": "Polar/Radial",
+      "status": "scored",
+      "score": 100.0,
+      "n_activated": 3,
+      "scored_dimensions": [
+        "palette",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2Code_level2_scatter_13_v2",
+      "chart": "Scatter",
+      "status": "scored",
+      "score": 99.99970694581472,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2Code_level2_scatter_1_v2__single",
+      "chart": "Bar",
+      "status": "scored",
+      "score": 99.99873620753452,
+      "n_activated": 6,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2Code_level2_scatter_22_v2__single",
+      "chart": "Scatter",
+      "status": "scored",
+      "score": 99.9993679795637,
+      "n_activated": 3,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2Code_level2_scatter_22_v3",
+      "chart": "Scatter",
+      "status": "scored",
+      "score": 99.99740194854112,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2Code_level2_scatter_27_v5",
+      "chart": "Scatter",
+      "status": "scored",
+      "score": 99.99799279025666,
+      "n_activated": 6,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2Code_level2_scatter_5_v5",
+      "chart": "Scatter",
+      "status": "scored",
+      "score": 99.99690401448939,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2Code_level2_violin_25_v4",
+      "chart": "Box/Violin",
+      "status": "scored",
+      "score": 99.99877071753201,
+      "n_activated": 6,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2Code_level3_table20_3_generate",
+      "chart": "Scatter",
+      "status": "scored",
+      "score": 99.99913228486466,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2NCode_7b87069f5442408286d1a4b0300eae18",
+      "chart": "3D",
+      "status": "scored",
+      "score": 99.99748505000453,
+      "n_activated": 6,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2NCode_ce7b7d946995482f9dd37ddad319cbc2",
+      "chart": "Line",
+      "status": "scored",
+      "score": 99.99993969993176,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "Chart2NCode_f5989e4725654971a32e6c84c0dbdfa5",
+      "chart": "Bar",
+      "status": "scored",
+      "score": 99.99839142126746,
+      "n_activated": 6,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "ChartNet-sample_01541e58b887ce36",
+      "chart": "Bar",
+      "status": "scored",
+      "score": 99.99863339962239,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "ChartNet-sample_11168fb7e30df7c0",
+      "chart": "Box/Violin",
+      "status": "scored",
+      "score": 99.99713413254932,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "ChartNet-sample_12f1182db6964e8c",
+      "chart": "Line",
+      "status": "scored",
+      "score": 99.99759475530347,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "grid",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "ChartNet-sample_1acf825b0429ddfd",
+      "chart": "Heatmap",
+      "status": "scored",
+      "score": 99.97799973798507,
+      "n_activated": 1,
+      "scored_dimensions": [
+        "figure_aspect"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "ChartNet-sample_21db7b1495645e96",
+      "chart": "Bar",
+      "status": "scored",
+      "score": 99.99787260762844,
+      "n_activated": 6,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "ChartNet-sample_251d4b63cae5c39c",
+      "chart": "Box/Violin",
+      "status": "scored",
+      "score": 99.99793626582964,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "ChartNet-sample_27ec276af1be7f88",
+      "chart": "Bar",
+      "status": "scored",
+      "score": 99.9983627837006,
+      "n_activated": 6,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "ChartNet-sample_3a712400d6efe5ca",
+      "chart": "Line",
+      "status": "scored",
+      "score": 99.99723219995839,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "ChartNet-sample_3d0ebd7ea1e10bf3",
+      "chart": "Line",
+      "status": "scored",
+      "score": 99.99739774654421,
+      "n_activated": 6,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "ChartNet-sample_42a8557ef11775e9",
+      "chart": "Bar",
+      "status": "scored",
+      "score": 99.99994933329157,
+      "n_activated": 3,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "grid"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "ChartNet-sample_46826fe4916b7d52",
+      "chart": "Box/Violin",
+      "status": "scored",
+      "score": 99.99630963227158,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "ChartNet-sample_51138e34911000f6",
+      "chart": "Heatmap",
+      "status": "scored",
+      "score": 99.99680989611109,
+      "n_activated": 2,
+      "scored_dimensions": [
+        "figure_aspect",
+        "linewidth"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "ChartNet-sample_55e97056fbbde5b6__single",
+      "chart": "Bar",
+      "status": "scored",
+      "score": 99.99608406846117,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "ChartNet-sample_575be33996f0155c",
+      "chart": "Bar",
+      "status": "scored",
+      "score": 99.99733731433227,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "ChartNet-sample_5781d64aa8377547",
+      "chart": "Box/Violin",
+      "status": "scored",
+      "score": 99.9988553336738,
+      "n_activated": 3,
+      "scored_dimensions": [
+        "figure_aspect",
+        "linewidth",
+        "grid"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "ChartNet-sample_5c19f37c2ecba73b",
+      "chart": "Box/Violin",
+      "status": "scored",
+      "score": 99.9960530465565,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "ChartNet-sample_5cf3859f3ce78167",
+      "chart": "Bar",
+      "status": "scored",
+      "score": 99.999858292476,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "grid",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "ChartNet-sample_5e553d0091325708",
+      "chart": "Polar/Radial",
+      "status": "scored",
+      "score": 99.99946070421079,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "ChartNet-sample_63115ff12f6710a3",
+      "chart": "Heatmap",
+      "status": "scored",
+      "score": 99.99947241165803,
+      "n_activated": 2,
+      "scored_dimensions": [
+        "figure_aspect",
+        "linewidth"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "ChartNet-sample_68d34458d8f08a48",
+      "chart": "Box/Violin",
+      "status": "scored",
+      "score": 99.99715851967493,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "ChartNet-sample_7c69a17fd376e251",
+      "chart": "Heatmap",
+      "status": "unavailable",
+      "score": null,
+      "n_activated": 0,
+      "scored_dimensions": [],
+      "unavailable_dimensions": [],
+      "reason": "reference_has_no_activated_dimensions"
+    },
+    {
+      "id": "ChartNet-sample_82a42a98d7e32b53",
+      "chart": "Heatmap",
+      "status": "scored",
+      "score": 99.99792661712279,
+      "n_activated": 1,
+      "scored_dimensions": [
+        "figure_aspect"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "ChartNet-sample_953bb3ed650d8541",
+      "chart": "Bar",
+      "status": "scored",
+      "score": 99.99797661841838,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "ChartNet-sample_97a7c092bc6a4a6c",
+      "chart": "Heatmap",
+      "status": "scored",
+      "score": 99.9937103902586,
+      "n_activated": 2,
+      "scored_dimensions": [
+        "figure_aspect",
+        "linewidth"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "ChartNet-sample_9fa23898eda05a63",
+      "chart": "Bar",
+      "status": "scored",
+      "score": 100.0,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "linewidth",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "ChartNet-sample_ad3e2f8704f6e1b1__single",
+      "chart": "Bar",
+      "status": "scored",
+      "score": 99.99893367794104,
+      "n_activated": 7,
+      "scored_dimensions": [
+        "palette",
+        "background",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "ChartNet-sample_b07b3f6805a9e3b8",
+      "chart": "Heatmap",
+      "status": "scored",
+      "score": 99.99389276948214,
+      "n_activated": 2,
+      "scored_dimensions": [
+        "figure_aspect",
+        "linewidth"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "ChartNet-sample_b2578adbadc0d71e",
+      "chart": "Box/Violin",
+      "status": "scored",
+      "score": 99.997956904478,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "ChartNet-sample_bbbf530e6aefa314",
+      "chart": "Bar",
+      "status": "scored",
+      "score": 99.99977203886777,
+      "n_activated": 6,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "ChartNet-sample_c1ec6683e1feea7b",
+      "chart": "Line",
+      "status": "scored",
+      "score": 99.99667108207875,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "ChartNet-sample_d1a051ec96a39bf4",
+      "chart": "Box/Violin",
+      "status": "scored",
+      "score": 99.99777521332155,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "ChartNet-sample_d7325ced9dcb3e94",
+      "chart": "Bar",
+      "status": "scored",
+      "score": 99.99533438263202,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "ChartNet-sample_e17ff7b5495b0ee4",
+      "chart": "Polar/Radial",
+      "status": "scored",
+      "score": 99.99848737378345,
+      "n_activated": 6,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "ChartNet-sample_f31f9780b9bd6948",
+      "chart": "Line",
+      "status": "scored",
+      "score": 99.99963640306716,
+      "n_activated": 6,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    },
+    {
+      "id": "ChartNet-sample_f743754444c3a3d9",
+      "chart": "Line",
+      "status": "scored",
+      "score": 99.99996156603471,
+      "n_activated": 6,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": []
+    }
+  ]
+}

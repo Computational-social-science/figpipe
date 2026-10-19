@@ -832,3 +832,40 @@ Verified: the next run recorded `benchmark_official_code_score: 92.68` in the ca
 The general rule, now enforced by test: **every field the system claims to judge must be a field it
 actually measures.** Claiming a capability check without wiring it is worse than not claiming it,
 because it makes the absence invisible.
+
+
+## 39. The 100.0 was a tautology, and catching it mattered more than the number (2026-10-19)
+
+After wiring the official scorer I measured a pool-wide **100.0 / 100** and was one sentence away
+from reporting it as SOTA. It was not a capability:
+
+  the task record ships `reference_code`, so extracting the style from that code and emitting a
+  script with the same style reproduces every scored dimension BY CONSTRUCTION.
+
+Using the reference code is legal -- it is part of the task. But it measures "can the emitter copy
+a spec", not "can the pipeline infer a style from a picture", which is the benchmark's actual
+premise (`reference image + new data -> figure`).
+
+The honest measurement, style inferred from the reference IMAGE only:
+
+    image-inferred  mean 70.59 / 100  over 149 tasks   <- the number worth reporting
+    code-copied     mean 100.00 / 100 over 149 tasks   <- a ceiling, not a capability
+
+Both are now produced by `scripts/score_official.py --source {image,code}` into SEPARATE files, and
+the report states the ceiling beside the honest number with the word "ceiling" attached.
+
+Closing the gap found real, recoverable signal: grid lines and spines ARE visible in a raster as
+long straight runs of ink, so `StyleProfile.from_image_detailed` detects them deterministically
+(interior rules = grid, edge rules = spines). That alone moved the honest score 61.11 -> 71.16 on
+the first 20 tasks. Ticks, serif, legend frame and linewidth remain undetermined from pixels, and
+the scorer penalises them -- that penalty is real and is reported, not hidden.
+
+Lessons, in order:
+1. A number that cannot be wrong is not a measurement. If the answer key is in the input, the score
+   is a tautology.
+2. The gap between the tautology and the honest number IS the capability being measured.
+3. Two modes writing to one output path silently destroyed the honest result once. Output identity
+   follows input identity.
+
+Benchmark state: 141/150 executed, no negative chart type, styled anchor 0.305, shipped 0.252,
+official code channel (image-inferred) 70.59, official code channel (code-copied ceiling) 100.00.
