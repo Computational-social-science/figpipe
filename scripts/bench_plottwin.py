@@ -41,7 +41,7 @@ import pandas as pd
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from figpipe import codegen, decision, select, skills, styleprofile  # noqa: E402
+from figpipe import codegen, decision, lock, select, skills, styleprofile  # noqa: E402
 
 sys.path.insert(0, str(ROOT / "third_party"))
 try:                                            # official scorer is optional and CC BY-NC
@@ -947,6 +947,8 @@ def backfill_coverage() -> int:
 
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    ap.add_argument("--no-lock", action="store_true",
+                    help="skip the measurement lock (only for a test that already holds it)")
     ap.add_argument("--limit", type=int, default=8)
     ap.add_argument("--offset", type=int, default=0)
     ap.add_argument("--merge", action="store_true",
@@ -958,6 +960,22 @@ def main(argv=None) -> int:
                     help="with --types: walk the WHOLE pool and measure every task of those "
                          "types, so a fixed operator is re-measured everywhere at once")
     args = ap.parse_args(argv)
+    if not args.no_lock:
+        # Two measurements sharing this machine produce numbers that are neither reproducible nor
+        # trustworthy. Refuse rather than produce them.
+        try:
+            lock.acquire("bench_plottwin")
+        except lock.MeasurementBusy as exc:
+            print(f"  refused: {exc}")
+            return 3
+    try:
+        return _run(args)
+    finally:
+        if not args.no_lock:
+            lock.release("bench_plottwin")
+
+
+def _run(args) -> int:
     wanted = {t.strip() for t in args.types.split(",") if t.strip()}
     # Rendered candidates are INTERMEDIATES, not artefacts: 30 tasks produce ~600 files and
     # ~60 MB, which alone blew the 150 MB worktree budget. They go to a system temp directory

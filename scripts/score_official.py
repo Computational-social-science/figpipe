@@ -34,7 +34,7 @@ sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "scripts"))
 sys.path.insert(0, str(ROOT / "third_party"))
 
-from figpipe import codegen  # noqa: E402
+from figpipe import codegen, lock  # noqa: E402
 
 try:
     import plottwin_scorer as official
@@ -203,11 +203,27 @@ def main(argv=None) -> int:
     ap.add_argument("--limit", type=int, default=150)
     ap.add_argument("--offset", type=int, default=0)
     ap.add_argument("--types", default="")
+    ap.add_argument("--no-lock", action="store_true",
+                    help="skip the measurement lock (only when the parent already holds it)")
     ap.add_argument("--source", choices=["image", "code", "naive", "ceiling"], default="image",
                     help="where the candidate's style comes from: 'image' (honest, the benchmark "
                          "premise), 'code' (style copied from the reference code -- a ceiling), or "
                          "'naive' (matplotlib defaults -- the BASELINE a claim must beat)")
     args = ap.parse_args(argv)
+    if not args.no_lock:
+        try:
+            lock.acquire("score_official")
+        except lock.MeasurementBusy as exc:
+            print(f"  refused: {exc}")
+            return 3
+    try:
+        return _run(args)
+    finally:
+        if not args.no_lock:
+            lock.release("score_official")
+
+
+def _run(args) -> int:
     wanted = {t.strip() for t in args.types.split(",") if t.strip()}
 
     records: list[dict] = []

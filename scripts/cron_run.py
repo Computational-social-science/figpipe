@@ -32,6 +32,9 @@ import subprocess
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+from figpipe import lock  # noqa: E402
+
 RUNS = ROOT / "knowledge" / "runs"
 KB = ROOT / "knowledge" / "layout_rules.json"
 
@@ -274,7 +277,8 @@ def refresh_anchor() -> dict:
         return {"ran": False, "reason": "no anchor ids readable"}
     script = ROOT / "scripts" / "bench_plottwin.py"
     try:
-        p = subprocess.run([sys.executable, str(script), "--ids", ",".join(ids), "--merge"],
+        p = subprocess.run([sys.executable, str(script), "--ids", ",".join(ids), "--merge",
+                            "--no-lock"],
                            cwd=ROOT, capture_output=True, text=True,
                            encoding="utf-8", errors="replace", timeout=1800)
     except (OSError, subprocess.SubprocessError) as exc:
@@ -308,7 +312,7 @@ def benchmark_slice(tasks: int = 6) -> dict:
         runs = sorted((ROOT / "knowledge" / "runs").glob("*.json"))
         offset = (len(runs) * tasks) % 120
     cmd = [sys.executable, str(script), "--limit", str(tasks), "--offset", str(offset),
-           "--merge"]
+           "--merge", "--no-lock"]      # the parent already holds it
     try:
         p = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True,
                            encoding="utf-8", errors="replace", timeout=1800)
@@ -456,6 +460,22 @@ def git_publish(changed: bool, allow_deletions: bool = False) -> dict:
 
 def main(argv: list[str]) -> int:
     dry = "--dry-run" in argv
+    # ONE MEASUREMENT AT A TIME. A scheduled run and a pool-wide re-measure sharing this machine
+    # produce numbers that are neither reproducible nor trustworthy -- that is exactly what made a
+    # run on 2026-10-19 report a regression that was contention.
+    lock.break_stale()
+    try:
+        lock.acquire("cron_run")
+    except lock.MeasurementBusy as exc:
+        print(f"  refused: {exc}")
+        return 3
+    try:
+        return _main_locked(argv, dry)
+    finally:
+        lock.release("cron_run")
+
+
+def _main_locked(argv: list[str], dry: bool) -> int:
     RUNS.mkdir(parents=True, exist_ok=True)
     previous_caps = {}
     try:
