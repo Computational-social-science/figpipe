@@ -1271,3 +1271,36 @@ The remaining ceiling is unchanged and is a property of the INPUT: tick_directio
 background and linewidth score 0 or unchanged because a raster image does not contain them. The
 honest statement is that the pipeline recovers everything a picture CAN show (palette 0.648,
 grid 0.829, aspect 0.869, spines 0.965, legend 1.0) and nothing a picture cannot.
+
+
+## 53. The verification layer, swept at last (2026-10-19)
+
+LOGICAL_AUDIT.md names the verification layer as the project's highest-risk area, and until now
+`audit` and `composite` had only ever been tested on GOOD figures. A verifier tested only on correct
+input has not been tested at all -- the question is whether it can be fooled.
+
+`scripts/audit_verifiers.py` plants each defect the project exists to catch and asks whether it is
+caught, in both directions:
+
+  FALSE NEGATIVE (certifies broken output):
+    sub-5 pt text ................ CAUGHT (font_size finding)
+    wrong width .................. CAUGHT (width finding)
+    Type-3 fonts ................. CAUGHT (font_type finding)
+    a real glyph collision ....... CAUGHT (1 collision)
+
+  FALSE POSITIVE (teaches users to ignore it):
+    a correct figure ............. PASSES (0 hard findings)
+    rotated tick labels .......... NOT reported as collisions (0)
+
+  composite refuses invalid geometry, each with a message naming the problem:
+    overlapping cells, negative position, half-positioned grid, span collision,
+    empty plate, colour bar on a non-mappable drawer -- 6/6 refused
+    and a correct plate still passes its own geometry check
+
+Result: 13/13 cases ok. The layer the audit flagged as riskiest holds up under the sweep that the
+audit said was missing.
+
+The residual risk is unchanged and is stated: these negative controls were written by the same
+author as the checks. A sweep cannot find a blind spot it shares. That is why the earlier
+independent `CRITICAL_AUDIT` rounds mattered, and why an external review is still the only real
+mitigation for shared blind spots.

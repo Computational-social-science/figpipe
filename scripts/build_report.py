@@ -546,6 +546,10 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
         deliverable("Data-shape audit", "All 16 skills against 7 realistic research data shapes "
                     "(long, sparse, replicates, single, field); 0 broken, refusals carry a reason.",
                     "scripts/audit_skills_data.py", meta="19 cases"),
+        deliverable("Verifier audit", "13 cases that plant each defect the project exists to "
+                    "catch (sub-5pt text, wrong width, Type-3 fonts, real glyph collision) and six "
+                    "invalid geometries: all caught, no false positives.",
+                    "scripts/audit_verifiers.py", meta="13 cases"),
         deliverable("Robustness audit", "26 adversarial cases over styleprofile / codegen / "
                     "select: degenerate images, malformed styles, missing files. 0 broken.",
                     "scripts/audit_robustness.py", meta="26 cases"),

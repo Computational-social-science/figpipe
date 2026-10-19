@@ -64,9 +64,13 @@ cases. Shapes neither sweep imagines remain untested. The sweeps are the mitigat
 | `semantics` re-derives printed claims | It might accept any annotation | Negative controls: a false `r`, a clipped outlier, a wrong label all fail |
 | A test cannot silently disappear | A test could become a skip | **Fixed**: collected count asserted ≥ 300 |
 | The report matches the evidence | Prose could contradict artefacts | **Found and fixed**: the report said "not an SOTA claim" for rounds after that became false. `tests/test_claim.py` now pins it |
+| The VERIFIERS catch planted defects | A verifier tested only on correct input has not been tested | **Swept**: `scripts/audit_verifiers.py` plants sub-5 pt text, a wrong width, Type-3 fonts and a real glyph collision; all four are caught. A correct figure passes, and rotated tick labels are NOT reported as collisions. 13/13 cases ok |
+| `composite` refuses invalid geometry | Overlapping cells, negative positions, span collisions, impossible colour bars could slip through | **Swept**: all six invalid geometries are refused with a message naming the problem; a correct plate still passes |
 
 **Residual risk:** the *checks themselves* are validated by negative controls written by the same
-author who wrote the checks. An independent adversarial review is the only real mitigation, and
+author who wrote the checks. `scripts/audit_verifiers.py` now plants each defect the project exists
+to catch (13 cases, all caught) and confirms no false positives, which closes the mechanical gap —
+but an independent adversarial review remains the only real mitigation for shared blind spots, and
 this project has had two (the earlier `CRITICAL_AUDIT` rounds).
 
 ---
