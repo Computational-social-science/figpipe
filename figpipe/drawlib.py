@@ -210,8 +210,15 @@ def ax_grouped_bars(ax, df: pd.DataFrame, x: str, ycols: list[str], xlabel: str 
         ax.bar(pos + off, vals, width=width * 0.92,
                color=palette[i], edgecolor="black", linewidth=0.35,
                label=(labels or {}).get(col, col))
-    ax.set_xticks(pos)
-    ax.set_xticklabels([str(v) for v in (xtick_labels if xtick_labels is not None
+    # A LABEL BUDGET, the same rule as the matrix, polar and boxplot drawers. Past it the ticks
+    # are hidden and the caption carries the meaning.
+    MAX_AXIS_LABELS = 12
+    _n_groups = len(pos)
+    if _n_groups > MAX_AXIS_LABELS:
+        ax.set_xticks([])
+    else:
+        ax.set_xticks(pos)
+        ax.set_xticklabels([str(v) for v in (xtick_labels if xtick_labels is not None
                                          else df[x])],
                        rotation=xtick_rotation,
                        ha="right" if xtick_rotation else "center")
@@ -301,7 +308,19 @@ def ax_boxplot(ax, df: pd.DataFrame, group: str, value: str, xlabel: str = "",
         patch.set_facecolor(color or style.OKABE_ITO["sky_blue"])
         patch.set_alpha(0.85)
     ax.set_xticks(range(1, len(groups) + 1))
-    ax.set_xticklabels(groups)
+    # A LABEL BUDGET, the same rule the matrix and polar drawers follow. Long category names on a
+    # narrow panel collide: measured on a benchmark task whose groups are 'Outer-Slope Acropora
+    # Belt' and 'Seaward Spur-and-Groove'. Past the budget the ticks are hidden and the caption
+    # carries the meaning; long labels that still fit are ROTATED rather than stacked.
+    MAX_AXIS_LABELS = 12
+    if len(groups) <= MAX_AXIS_LABELS:
+        longest = max(len(g) for g in groups) if groups else 0
+        if longest > 10:
+            ax.set_xticklabels(groups, rotation=30, ha="right")
+        else:
+            ax.set_xticklabels(groups)
+    else:
+        ax.set_xticks([])
     _frame(ax, xlabel or group, ylabel or value)
     return None
 
@@ -630,10 +649,17 @@ def ax_ranked_share(ax, df: pd.DataFrame, label: str, value: str, top: int = 20,
     for i, v in enumerate(shown):
         ax.text(i, v + 0.02 * span, fmt.format(v), ha="center", va="bottom", fontsize=5.5)
     ax.set_ylim(0, span * 1.12)
-    ax.set_xticks(pos)
-    ax.set_xticklabels([str(s) for s in d[label]],
-                       rotation=xtick_rotation,
-                       ha="right" if xtick_rotation else "center")
+    # A LABEL BUDGET, the same rule as the other categorical drawers.
+    MAX_AXIS_LABELS = 12
+    _n_ranked = len(pos)
+    if _n_ranked > MAX_AXIS_LABELS:
+        # too many categories to label: hide the ticks; _frame below still draws the axes
+        ax.set_xticks([])
+    else:
+        ax.set_xticks(pos)
+        ax.set_xticklabels([str(s) for s in d[label]],
+                           rotation=xtick_rotation,
+                           ha="right" if xtick_rotation else "center")
     _frame(ax, xlabel or "", ylabel or "")
     return None
 

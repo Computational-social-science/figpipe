@@ -1800,3 +1800,34 @@ LESSON: when a function rebuilds a derived object, enumerate EVERY derived field
 A partial rebuild is a silent lie about which set the numbers describe.
 
 Suite: see below.
+
+
+## 70. A structural check found two more instances I had missed (2026-10-20)
+
+After the fourth instance of "a categorical axis given every label" I stopped fixing instances and
+wrote the STRUCTURAL check instead: every drawer that calls set_xticklabels/set_yticklabels must
+also bound them. It immediately named four drawers, two of which were genuinely unbounded
+(`ax_grouped_bars`, `ax_ranked_share`) and two of which were already bounded by a `step` slice the
+detector did not recognise.
+
+Both halves of that are the lesson:
+  * the check found real defects I had not found by reading
+  * the check produced FALSE POSITIVES, and a detector that cries wolf is one people learn to ignore
+
+So the detector now accepts every form of bounding (a named constant, a stride, an explicit
+empty-tick branch). Recognising only one spelling would have made the test useless.
+
+AND THE FIX BROKE TWO THINGS, which the data-shape sweep caught within seconds:
+`ax.set_xticks([])` followed by `ax.set_xticklabels([...])` is a length mismatch and RAISES
+("The number of FixedLocator locations (0) ... does not match the number of labels"). Hiding ticks
+must SKIP the labels, not pass an empty locator to a non-empty list. The sweep found it before the
+benchmark did.
+
+MEASURED after the round's fixes:
+    total hard collisions  37 -> 25
+    worst single task       9 ->  3
+
+Everything left is small and idiosyncratic rather than systemic, which is the difference the
+structural check made.
+
+Suite: 435 passed, 3 skipped.

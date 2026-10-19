@@ -238,7 +238,10 @@ def audit(pdf_path, min_pt=MIN_PT_DEFAULT, max_pt=MAX_PT_DEFAULT,
                 "check": "width", "detail":
                 f"expected {expect_width_mm} mm, got {w:.1f} mm"})
             report["ok"] = False
-    if h > MAX_HEIGHT_MM:
+    # A TOLERANCE, for the same reason width has one. Without it a page measured at 170.0000001 mm
+    # against a 170.0 mm maximum fails, and the finding reads "170.0 mm exceeds the 170.0 mm
+    # maximum" -- a message that contradicts itself, which is how this was found.
+    if h > MAX_HEIGHT_MM + TOL_MM:
         report["findings"].append({
             "check": "height", "detail":
             f"{h:.1f} mm exceeds the {MAX_HEIGHT_MM} mm maximum"})
