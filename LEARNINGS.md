@@ -1656,3 +1656,34 @@ LESSON: **a budget is usually compensating for a defect, and raising it hides th
 question "is the limit wrong?" should always be preceded by "why does the limit exist?".
 
 Suite: 420 passed, 3 skipped.
+
+
+## 65. The label-budget fix costs 0.008 on the style anchor, and that is the honest trade (2026-10-19)
+
+After the label budget landed, the styled anchor moved 0.351 -> 0.359 (worse, since distance is a
+cost). I traced every anchor task rather than accepting the number:
+
+    Chart2Code_level1_direct_contour_18   0.268 -> 0.335   (+0.067)
+    Chart2Code_level1_direct_heatmap_3    0.247 -> 0.302   (+0.055)
+    Chart2Code_level1_direct_heatmap_7    0.283 -> 0.320   (+0.037)
+    17 other tasks                        unchanged
+    MEAN                                  0.351 -> 0.359   (+0.008)
+
+Exactly the three matrix tasks moved, and only those. The reason is structural: hiding 40 tick
+labels removes ink that the reference figures HAVE, so the rendered figure is now further from the
+reference on the dimensions that count ink. Meanwhile the hard findings on matrix tasks fell
+995 -> 98 and the official channel stays at ~99.99 per task.
+
+So the project traded 0.008 of style distance for a 90% reduction in collisions. Which is right?
+
+**Style distance is a PROXY; collisions are a DEFECT.** A figure with 405 overlapping labels is not
+a figure, whatever its palette distance says. The trade is correct, and the fact that the metric
+moved in the "wrong" direction is evidence about the METRIC -- it rewards ink density that a reader
+experiences as broken. That is worth recording next to the human-validation result, which already
+found the metric concentrates in `aspect`.
+
+This is also why the anchor is judged as a COST and a regression triggers a report: the loop cannot
+tell "the metric got worse" from "the metric is measuring the wrong thing". A human has to look, and
+this is what looking found.
+
+Suite: 420 passed, 3 skipped.

@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-19T21:40:30",
+  "run_at": "2026-10-19T22:46:45",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -9,37 +9,19 @@
     "  passed 8, failed 0",
     "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
     "  wrote knowledge\\evolution_report.json",
-    "  lean: tracked 75.9 -> 75.9 MB, worktree 131.4 -> 123.6 MB"
+    "  lean: tracked 76.0 -> 76.0 MB, worktree 128.3 -> 125.7 MB"
   ],
-  "tests_ok": false,
-  "tests_summary": "1 failed, 420 passed, 2 skipped, 1 warning in 454.50s (0:07:34) | FAILED tests/test_mutation.py::test_a_mutation_that_wins_on_one_task_and_loses_on_another_is_rejected",
+  "tests_ok": true,
+  "tests_summary": "420 passed, 3 skipped, 1 warning in 490.38s (0:08:10)",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
   "published": {
-    "pushed": true,
-    "steps": [
-      {
-        "cmd": "git add -A",
-        "code": 0,
-        "tail": []
-      },
-      {
-        "cmd": "git -c user.name=figpipe-bot",
-        "code": 0,
-        "tail": [
-          " create mode 100644 knowledge/runs/2026-10-19T214030.json"
-        ]
-      },
-      {
-        "cmd": "git push origin",
-        "code": 0,
-        "tail": [
-          "   6398447..17ce91c  main -> main"
-        ]
-      }
-    ],
-    "withheld": []
+    "pushed": false,
+    "withheld": [],
+    "blocked_deletions": [],
+    "skipped": true,
+    "reason": "no knowledge change: the run record stays uncommitted for the next run"
   },
   "check_results": {
     "L01": {
@@ -215,11 +197,11 @@
     ],
     "min_margin": 0.1,
     "probed": true,
-    "baseline_mean": 0.857143,
+    "baseline_mean": 1.0,
     "mean_score": {
-      "baseline": 0.857143,
-      "split-max-bars-24": 0.721429,
-      "split-max-bars-13": 0.857143,
+      "baseline": 1.0,
+      "split-max-bars-24": 0.864286,
+      "split-max-bars-13": 1.0,
       "matrix-max-rows-41": 1.0,
       "matrix-max-rows-42": 1.0,
       "matrix-max-rows-60": 0.859564
@@ -285,16 +267,15 @@
       ]
     },
     "budget": 42,
-    "selected": [
-      "matrix-max-rows-41",
-      "matrix-max-rows-42"
-    ],
+    "selected": [],
     "rejected": [
       "split-max-bars-24",
       "matrix-max-rows-60"
     ],
     "ties": [
-      "split-max-bars-13"
+      "split-max-bars-13",
+      "matrix-max-rows-41",
+      "matrix-max-rows-42"
     ],
     "decisions": [
       {
@@ -303,8 +284,8 @@
         "parameter": "max_bars",
         "value": 24,
         "baseline_value": 12,
-        "score": 0.721429,
-        "baseline_score": 0.857143,
+        "score": 0.864286,
+        "baseline_score": 1.0,
         "delta": -0.135714,
         "verdict": "rejected",
         "reason": "regresses 1 task(s) on the fixed set, worst 'split-many-bars' by -0.950 (>= margin 0.1); a task that gets worse is a regression whatever the mean says; changed tasks: ['split-many-bars']",
@@ -347,8 +328,8 @@
           },
           "matrix-41-rows": {
             "outcome": "refused",
-            "score": 0.0,
-            "expected": "clean",
+            "score": 1.0,
+            "expected": "refused",
             "detail": "encode.matrix: 41 rows have no 2-D reading (no column pair varies enough to pivot) and exceed the 40-row budget; use field_map or pass a wide frame"
           },
           "matrix-42-rows": {
@@ -371,8 +352,8 @@
         "parameter": "max_bars",
         "value": 13,
         "baseline_value": 12,
-        "score": 0.857143,
-        "baseline_score": 0.857143,
+        "score": 1.0,
+        "baseline_score": 1.0,
         "delta": 0.0,
         "verdict": "tie",
         "reason": "no measurable difference on the fixed task set (+0.000); the task set cannot distinguish this edit from the baseline, so it is reported as a tie",
@@ -405,8 +386,8 @@
           },
           "matrix-41-rows": {
             "outcome": "refused",
-            "score": 0.0,
-            "expected": "clean",
+            "score": 1.0,
+            "expected": "refused",
             "detail": "encode.matrix: 41 rows have no 2-D reading (no column pair varies enough to pivot) and exceed the 40-row budget; use field_map or pass a wide frame"
           },
           "matrix-42-rows": {
@@ -430,10 +411,10 @@
         "value": 41,
         "baseline_value": 40,
         "score": 1.0,
-        "baseline_score": 0.857143,
-        "delta": 0.142857,
-        "verdict": "selected",
-        "reason": "improves the fixed task set by +0.143 (>= margin 0.1) with no task regressing; changed tasks: ['matrix-41-rows']",
+        "baseline_score": 1.0,
+        "delta": 0.0,
+        "verdict": "tie",
+        "reason": "no measurable difference on the fixed task set (+0.000); the task set cannot distinguish this edit from the baseline, so it is reported as a tie",
         "changed_tasks": [
           "matrix-41-rows"
         ],
@@ -466,7 +447,7 @@
           "matrix-41-rows": {
             "outcome": "rendered",
             "score": 1.0,
-            "expected": "clean",
+            "expected": "refused",
             "detail": ""
           },
           "matrix-42-rows": {
@@ -490,10 +471,10 @@
         "value": 42,
         "baseline_value": 40,
         "score": 1.0,
-        "baseline_score": 0.857143,
-        "delta": 0.142857,
-        "verdict": "selected",
-        "reason": "improves the fixed task set by +0.143 (>= margin 0.1) with no task regressing; changed tasks: ['matrix-41-rows', 'matrix-42-rows']",
+        "baseline_score": 1.0,
+        "delta": 0.0,
+        "verdict": "tie",
+        "reason": "no measurable difference on the fixed task set (+0.000); the task set cannot distinguish this edit from the baseline, so it is reported as a tie",
         "changed_tasks": [
           "matrix-41-rows",
           "matrix-42-rows"
@@ -527,7 +508,7 @@
           "matrix-41-rows": {
             "outcome": "rendered",
             "score": 1.0,
-            "expected": "clean",
+            "expected": "refused",
             "detail": ""
           },
           "matrix-42-rows": {
@@ -551,8 +532,8 @@
         "value": 60,
         "baseline_value": 40,
         "score": 0.859564,
-        "baseline_score": 0.857143,
-        "delta": 0.002421,
+        "baseline_score": 1.0,
+        "delta": -0.140436,
         "verdict": "rejected",
         "reason": "regresses 1 task(s) on the fixed set, worst 'matrix-48-rows' by -0.983 (>= margin 0.1); a task that gets worse is a regression whatever the mean says; changed tasks: ['matrix-41-rows', 'matrix-42-rows', 'matrix-48-rows']",
         "changed_tasks": [
@@ -597,7 +578,7 @@
           "matrix-41-rows": {
             "outcome": "rendered",
             "score": 1.0,
-            "expected": "clean",
+            "expected": "refused",
             "detail": ""
           },
           "matrix-42-rows": {
@@ -615,7 +596,7 @@
         }
       }
     ],
-    "verdict": "selected",
+    "verdict": "tie",
     "applied": false,
     "why_not_applied": "a selected edit measured on six tasks is a finding, not a change; applying it requires a pool re-measure (LEARNINGS ##47)"
   },
@@ -623,10 +604,10 @@
     "skills": 16,
     "operators": 21,
     "benchmark_tasks": 150,
-    "benchmark_ok": 116,
-    "benchmark_infrastructure_failures": 25,
+    "benchmark_ok": 141,
+    "benchmark_infrastructure_failures": 0,
     "benchmark_success_rate": 1.0,
-    "benchmark_mean_distance": 0.319,
+    "benchmark_mean_distance": 0.313,
     "benchmark_anchor_single": 0.359,
     "benchmark_anchor_distance": 0.359,
     "benchmark_shipped_anchor_single": 0.296,
@@ -642,30 +623,20 @@
     "changed": true,
     "delta": {
       "benchmark_ok": {
-        "before": 141,
-        "after": 116
+        "before": 116,
+        "after": 141
       },
       "benchmark_infrastructure_failures": {
-        "before": 0,
-        "after": 25
+        "before": 25,
+        "after": 0
       },
       "benchmark_mean_distance": {
-        "before": 0.313,
-        "after": 0.319
-      },
-      "tests": {
-        "before": 419,
-        "after": 420
+        "before": 0.319,
+        "after": 0.313
       }
     },
     "verdict": {
-      "gains": [
-        {
-          "field": "tests",
-          "before": 419,
-          "after": 420
-        }
-      ],
+      "gains": [],
       "regressions": [],
       "corrections": [],
       "ok": true,
@@ -683,7 +654,7 @@
       ]
     }
   },
-  "ok": false,
+  "ok": true,
   "capability_ok": true,
   "capability_regressions": [],
   "publish_note": "The publish outcome is recorded after the commit that carries this run, so it describes the push triggered by this run; the file's own commit is made by the next scheduled run."
