@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-19T10:31:51",
+  "run_at": "2026-10-19T10:40:57",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -9,39 +9,16 @@
     "  passed 8, failed 0",
     "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
     "  wrote knowledge\\evolution_report.json",
-    "  lean: tracked 75.3 -> 75.3 MB, worktree 118.9 -> 118.8 MB"
+    "  lean: tracked 75.3 -> 75.3 MB, worktree 118.4 -> 118.4 MB"
   ],
   "tests_ok": true,
-  "tests_summary": "294 passed, 2 skipped, 1 warning in 58.37s",
+  "tests_summary": "295 passed, 2 skipped, 1 warning in 66.18s (0:01:06)",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
   "published": {
-    "pushed": true,
-    "steps": [
-      {
-        "cmd": "git add -A",
-        "code": 0,
-        "tail": [
-          "warning: in the working copy of 'figpipe/__init__.py', LF will be replaced by CRLF the next time Git touches it"
-        ]
-      },
-      {
-        "cmd": "git -c user.name=figpipe-bot",
-        "code": 0,
-        "tail": [
-          " create mode 100644 tests/test_worked_example.py"
-        ]
-      },
-      {
-        "cmd": "git push origin",
-        "code": 0,
-        "tail": [
-          "   330cabe..fc2046f  main -> main"
-        ]
-      }
-    ],
-    "withheld": []
+    "pushed": false,
+    "reason": "not yet published"
   },
   "check_results": {
     "L01": {
@@ -175,22 +152,22 @@
     "benchmark_official_improvement": 37.25,
     "statistics_reproduced": 15,
     "knowledge_version": 16,
-    "tests": 294
+    "tests": 295
   },
   "capabilities_delta": {
     "changed": true,
     "delta": {
       "tests": {
-        "before": 291,
-        "after": 294
+        "before": 294,
+        "after": 295
       }
     },
     "verdict": {
       "gains": [
         {
           "field": "tests",
-          "before": 291,
-          "after": 294
+          "before": 294,
+          "after": 295
         }
       ],
       "regressions": [],
@@ -212,6 +189,5 @@
   },
   "ok": true,
   "capability_ok": true,
-  "capability_regressions": [],
-  "publish_note": "The publish outcome is recorded after the commit that carries this run, so it describes the push triggered by this run; the file's own commit is made by the next scheduled run."
+  "capability_regressions": []
 }
