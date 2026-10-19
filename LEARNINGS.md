@@ -1428,3 +1428,64 @@ API key, which would make figpipe's mutation loop non-deterministic and therefor
 its own rules. The INTERFACE was adopted; the LLM was not.
 
 Suite: 328 passed, 2 skipped.
+
+
+## 58. A network failure read as a capability regression (2026-10-19)
+
+After the multi-agent round the scheduled loop exited 1:
+
+    benchmark_success_rate 1.0 -> 0.986    (capability regression)
+    benchmark_ok           141 -> 139
+
+Two tasks had returned **HTTP 403 Forbidden** from the dataset host. The pipeline never ran. The
+success-rate metric counted them as capability loss -- the same defect family as counting a skipped
+test as a pass, or a blank image as four spines: the metric stopped measuring what it claims.
+
+Fix: a fetch failure is excluded from the success-rate denominator and reported separately as
+`benchmark_infrastructure_failures`. The exclusion is VISIBLE, because a silent exclusion could be
+tuned whenever the number looked bad -- which would be worse than the defect it fixes. That is why
+the count is a **DIAGNOSTIC_FIELD** (recorded and diffed, judged in neither direction): fewer fetch
+failures is not a better pipeline.
+
+Re-measured the two tasks: both rendered fine, 141/150 with 0 errors. The 403 was transient.
+
+## 59. The mutation loop found that a budget was one row too tight (2026-10-19)
+
+The mutation subagent measured the matrix refusal boundary with budgets forced open:
+
+    41 unpivotable rows -> 0 collisions
+    42 rows             -> 41 collisions
+    48 rows             -> 96 collisions
+
+So `MAX_MATRIX_ROWS = 40` is **one row too tight**: a 41-row table renders cleanly but is refused.
+`matrix-max-rows-41` was the mutation the loop SELECTED (+0.167, no task regressing).
+
+It deliberately did NOT apply the change, and that decision is correct: applying a budget change on
+six tasks is exactly the "a fix is a change, a change needs the same evidence" defect recorded at
+##47. The decision is routed to a round that can re-measure the pool, not silently taken.
+
+Three defects the subagent had to fix before the loop could be honest, all of the same shape --
+a measurement that looks right and cannot fail:
+  * a refusal scored 1.0 unconditionally, so an over-TIGHT budget was invisible forever
+  * a mean hid a regression: `max_rows=60` nets +0.004 while breaking a 48-row figure
+  * its own fixture used 20 SHORT labels that collide ZERO times, so the MAX_BARS refusal it was
+    defending looked arbitrary
+
+## 60. Three defects in my own lock, found by the loop exercising it harder (2026-10-19)
+
+The mutation loop holds the measurement lock for ~30 rollouts per probe, far harder than the
+scheduled run ever did. That exposed three defects in code I had written two rounds earlier:
+
+1. `__exit__` called `release()`, which raised `MeasurementBusy` and **masked the body's exception**,
+   leaving the lock on disk. One failed probe wedged every later probe.
+2. **PID REUSE.** A crashed run's entry can name a pid that is now ALIVE (a different process), so
+   `release()` refused forever -- a permanent denial of service caused by a crash. Ownership is now
+   proven by a **token** we wrote, never inferred from a pid.
+3. `_read()` returning `{}` for an unreadable file was treated as "no lock, nothing to do", so the
+   file stayed. On this exFAT volume a write is not always visible to an immediate read.
+
+Plus a harness defect: test files contended with each other through the machine-global lock,
+producing failures that depended on **test order**. `tests/conftest.py` now points the lock at a
+per-session temp dir and asserts the suite is never using the real one.
+
+Suite: 400 passed, 3 skipped.

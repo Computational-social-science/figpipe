@@ -77,12 +77,20 @@ def capability_snapshot() -> dict:
     n_tasks = bench.get("n_tasks", 0) or 0
     n_ok = bench.get("n_ok", 0) or 0
     n_unsupported = bench.get("n_unsupported", 0) or 0
-    attempted = max(n_tasks - n_unsupported, 1)
+    # tasks that failed to FETCH never exercised the pipeline; counting them as capability loss
+    # would let a network hiccup read as a regression (it did, on 2026-10-19)
+    infra = sum(1 for t in (bench.get("tasks") or bench.get("failures") or [])
+                if (t.get("status") in (None, "error"))
+                and _is_infra(t.get("error")))
+    attempted = max(n_tasks - n_unsupported - infra, 1)
     return {
         "skills": len(skills.get("skills", []) or []),
         "operators": len(skills.get("operators", []) or []),
         "benchmark_tasks": n_tasks,
         "benchmark_ok": n_ok,
+        # VISIBLE, so the exclusion from the success rate is never silent. A fetch failure means
+        # the pipeline never ran, so it is not a capability result either way.
+        "benchmark_infrastructure_failures": infra,   # diagnostic; see DIAGNOSTIC_FIELDS
         # a RATE, not a count: ok-count rises whenever the measured set grows, which is the
         # mirror image of the false regression the raw mean produced. Coverage and success rate
         # are separate facts and only the rate is a capability.
@@ -141,6 +149,13 @@ KNOWN_CORRECTIONS = {
 #: Which direction is "better" for each capability field. +1 = higher is better, -1 = lower is
 #: better. A field that is not listed is reported but never judged: an unjudged field cannot
 #: silently count as an improvement.
+#: Fields that are RECORDED and DIFFED but judged in NEITHER direction. They are diagnostics whose
+#: movement must be visible without ever being scored as a capability gain or loss. The success-rate
+#: denominator depends on `benchmark_infrastructure_failures`, so if that count were invisible the
+#: exclusion could be tuned whenever the number looked bad -- worse than the defect it fixes.
+DIAGNOSTIC_FIELDS = frozenset({"benchmark_infrastructure_failures"})
+
+
 CAPABILITY_DIRECTION = {
     "skills": +1,
     "operators": +1,
@@ -165,6 +180,13 @@ CAPABILITY_DIRECTION = {
     "tests": +1,
     "knowledge_version": +1,
 }
+
+
+def _is_infra(error) -> bool:
+    """A fetch failure means the pipeline never ran, so it is not a capability result."""
+    text = str(error or "")
+    return any(p in text[:80] for p in
+               ("HTTPError", "URLError", "ConnectionError", "TimeoutError", "SSLError"))
 
 
 def _official_pass_score():

@@ -7,18 +7,18 @@
     "note": "deterministic metrics only; official combined score requires the benchmark's VLM scorer and is NOT claimed here"
   },
   "n_tasks": 150,
-  "n_ok": 139,
+  "n_ok": 141,
   "n_unsupported": 9,
-  "n_error": 2,
+  "n_error": 0,
   "unsupported_types": {},
-  "mean_distance": 0.308,
-  "mean_baseline": 0.376,
-  "mean_improvement": 0.068,
-  "improved": 125,
+  "mean_distance": 0.309,
+  "mean_baseline": 0.377,
+  "mean_improvement": 0.069,
+  "improved": 127,
   "worse": 10,
   "ties": 4,
   "mean_best_of_two": 0.302,
-  "semantic_violations": 3,
+  "semantic_violations": 0,
   "decision_service": {
     "up": false,
     "url": "http://127.0.0.1:8090",
@@ -72,12 +72,12 @@
     },
     "Field 2D": {
       "n": 15,
-      "ok": 13,
-      "errors": 2,
-      "mean_distance": 0.327,
-      "mean_baseline": 0.423,
-      "mean_delta": 0.097,
-      "mean_shipped": 0.319
+      "ok": 15,
+      "errors": 0,
+      "mean_distance": 0.33,
+      "mean_baseline": 0.429,
+      "mean_delta": 0.099,
+      "mean_shipped": 0.325
     },
     "Heatmap": {
       "n": 14,
@@ -134,18 +134,7 @@
       "mean_shipped": 0.401
     }
   },
-  "failures": [
-    {
-      "id": "Chart2Code_level2_contour_23_v4",
-      "chart": "Field 2D",
-      "error": "HTTPError: HTTP Error 403: Forbidden"
-    },
-    {
-      "id": "Chart2Code_level2_contour_25_v2",
-      "chart": "Field 2D",
-      "error": "HTTPError: HTTP Error 403: Forbidden"
-    }
-  ],
+  "failures": [],
   "tasks": [
     {
       "id": "PMC13009336",
@@ -5819,22 +5808,6 @@
       "semantic_findings": []
     },
     {
-      "id": "Chart2Code_level2_contour_23_v4",
-      "chart": "Field 2D",
-      "panel_mode": "multi",
-      "code_version": "5ec3cea3953c",
-      "status": "error",
-      "error": "HTTPError: HTTP Error 403: Forbidden"
-    },
-    {
-      "id": "Chart2Code_level2_contour_25_v2",
-      "chart": "Field 2D",
-      "panel_mode": "multi",
-      "code_version": "5ec3cea3953c",
-      "status": "error",
-      "error": "HTTPError: HTTP Error 403: Forbidden"
-    },
-    {
       "id": "Chart2Code_level2_contour_25_v3",
       "chart": "Field 2D",
       "panel_mode": "multi",
@@ -6217,6 +6190,64 @@
         "note": "code channel only; the 0.65 vision channel is not run"
       },
       "semantic_findings": []
+    },
+    {
+      "id": "Chart2Code_level2_contour_23_v4",
+      "chart": "Field 2D",
+      "panel_mode": "multi",
+      "code_version": "5ec3cea3953c",
+      "skill": "field_map",
+      "rationale": "field panel_row over biochar_amendment_percent x porewater_salinity_psu",
+      "rows_used": 1310,
+      "status": "ok",
+      "distance": 0.392,
+      "baseline_distance": 0.507,
+      "delta": 0.115,
+      "selected": "styled",
+      "selected_distance": 0.411,
+      "selected_gain": 0.096,
+      "selection_margin": 0.103,
+      "components": {
+        "palette": 0.454,
+        "aspect": 0.269,
+        "ink": 0.362
+      },
+      "hard_failures": 0,
+      "findings": [],
+      "official_code_score": {
+        "available": false,
+        "reason": "CodegenError: skill 'field_map' has no code emitter yet"
+      },
+      "semantic_findings": []
+    },
+    {
+      "id": "Chart2Code_level2_contour_25_v2",
+      "chart": "Field 2D",
+      "panel_mode": "multi",
+      "code_version": "5ec3cea3953c",
+      "skill": "field_map",
+      "rationale": "field panel_row over time_hours x cross_wound_position_fraction",
+      "rows_used": 11112,
+      "status": "ok",
+      "distance": 0.301,
+      "baseline_distance": 0.418,
+      "delta": 0.117,
+      "selected": "styled",
+      "selected_distance": 0.312,
+      "selected_gain": 0.106,
+      "selection_margin": 0.107,
+      "components": {
+        "palette": 0.342,
+        "aspect": 0.11,
+        "ink": 0.39
+      },
+      "hard_failures": 0,
+      "findings": [],
+      "official_code_score": {
+        "available": false,
+        "reason": "CodegenError: skill 'field_map' has no code emitter yet"
+      },
+      "semantic_findings": []
     }
   ],
   "benchmark_anchor_distance": 0.351,
@@ -6228,11 +6259,11 @@
     "comparable": true,
     "note": "comparable"
   },
-  "benchmark_shipped_anchor_distance": 0.289,
+  "benchmark_shipped_anchor_distance": 0.296,
   "benchmark_shipped_anchor_single": {
-    "mean": 0.289,
-    "partial_mean": 0.289,
-    "n_same_instrument": 18,
+    "mean": 0.296,
+    "partial_mean": 0.296,
+    "n_same_instrument": 20,
     "n_other_instrument": 0,
     "comparable": true,
     "note": "comparable"
@@ -6242,7 +6273,7 @@
     "weight_upstream": 0.35,
     "note": "official deterministic channel only; the 0.65 vision channel is NOT run, so this is not the combined score",
     "n_scored": 109,
-    "n_unavailable": 30,
+    "n_unavailable": 32,
     "mean_score": 95.54,
     "min_score": 66.67,
     "max_score": 100.0
@@ -6285,7 +6316,9 @@
       "Chart2Code_level2_radar_23_v3",
       "PMC11502666",
       "PMC11840003",
-      "PMC12000431"
+      "PMC12000431",
+      "Chart2Code_level2_contour_23_v4",
+      "Chart2Code_level2_contour_25_v2"
     ],
     "stale": [
       "PMC13009336",
@@ -6393,7 +6426,7 @@
       "ChartNet-sample_f743754444c3a3d9"
     ],
     "unknown": [],
-    "n_fresh": 36,
+    "n_fresh": 38,
     "n_stale": 103,
     "n_unknown": 0
   },
@@ -6504,15 +6537,15 @@
   ],
   "n_stale": 103,
   "n_unknown": 0,
-  "n_fresh": 36,
+  "n_fresh": 38,
   "selection": {
-    "n": 139,
-    "shipped_mean": 0.291,
-    "always_styled_mean": 0.308,
-    "plain_mean": 0.376,
+    "n": 141,
+    "shipped_mean": 0.292,
+    "always_styled_mean": 0.309,
+    "plain_mean": 0.377,
     "gain_vs_always_styled": 0.017,
     "gain_vs_plain": 0.085,
-    "picked_styled": 130,
+    "picked_styled": 132,
     "picked_plain": 9,
     "rule": "closer of plain/styled to the reference; the reference is an input"
   }

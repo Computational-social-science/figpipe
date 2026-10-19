@@ -541,6 +541,11 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
         deliverable("Write guard", "Refuses to shrink an accumulated artefact unless the override "
                     "is explicit. One implementation for every writer.",
                     "figpipe/guard.py", meta="11 tests"),
+        deliverable("Mutation finding: matrix budget one row too tight", "Measured with budgets "
+                    "forced open: 41 unpivotable rows render with 0 collisions, 42 produce 41. So "
+                    "MAX_MATRIX_ROWS=40 refuses a table that would draw cleanly. SELECTED by the "
+                    "loop, deliberately NOT applied pending a pool re-measure.",
+                    "figpipe/mutation.py", status="Finding routed, not applied", meta="41 vs 42 rows"),
         deliverable("Style-metric validation", "Discrimination experiment over 30 real published "
                     "figures: 0.9333 accuracy, 95% CI 0.787-0.982, p=4.3e-7, with a negative "
                     "control and a leave-one-out showing the result concentrates in figure aspect.",

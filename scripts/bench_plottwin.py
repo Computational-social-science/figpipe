@@ -534,6 +534,22 @@ def _code_version() -> str:
 CODE_VERSION = _code_version()
 
 
+#: Error prefixes that mean the measurement COULD NOT RUN, not that the pipeline failed.
+#: Such a task must be excluded from the success rate and reported separately, or a network hiccup
+#: reads as a capability regression.
+INFRASTRUCTURE_ERRORS = (
+    "HTTPError", "URLError", "ConnectionError", "TimeoutError", "SSLError",
+    "socket.timeout", "RemoteDisconnected",
+)
+
+
+def is_infrastructure_error(error: str | None) -> bool:
+    """True when the task failed to FETCH, so no capability was exercised."""
+    text = str(error or "")
+    return any(text.startswith(prefix) or prefix in text[:80]
+               for prefix in INFRASTRUCTURE_ERRORS)
+
+
 def freshness(tasks) -> dict:
     """Three-valued freshness: fresh / stale / unknown.
 
