@@ -182,6 +182,29 @@ CAPABILITY_DIRECTION = {
 }
 
 
+def mutation_step() -> dict:
+    """Run the mutation loop and return its record.
+
+    Deliberately AFTER the benchmark slice and anchor refresh, so the probe runs on current code.
+    A failure here must not fail the whole run: a mutation step that cannot measure is a finding
+    about the machine, not a capability regression.
+    """
+    script = ROOT / "scripts" / "mutate.py"
+    if not script.is_file():
+        return {"ran": False, "reason": "scripts/mutate.py absent"}
+    p = subprocess.run([sys.executable, str(script), "--quiet", "--no-lock"],
+                       cwd=ROOT, capture_output=True, text=True, encoding="utf-8",
+                       errors="replace")
+    if p.returncode != 0:
+        return {"ran": False, "code": p.returncode,
+                "reason": ((p.stdout or "") + (p.stderr or "")).strip()[-300:]}
+    try:
+        return {"ran": True, **json.loads(
+            (ROOT / "knowledge" / "mutation_report.json").read_text(encoding="utf-8"))}
+    except (OSError, json.JSONDecodeError) as exc:
+        return {"ran": False, "reason": f"report unreadable: {exc}"}
+
+
 def _is_infra(error) -> bool:
     """A fetch failure means the pipeline never ran, so it is not a capability result."""
     text = str(error or "")
@@ -434,17 +457,19 @@ def staged_problems(cwd=None) -> list[dict]:
     return out
 
 
-def git_publish(changed: bool, allow_deletions: bool = False) -> dict:
+def git_publish(changed: bool, allow_deletions: bool = False,
+                run_ok: bool | None = None) -> dict:
     """Commit and push the knowledge base when a rule changed state.
 
     Only on change: a 6-hourly schedule that commits unconditionally would fill the history
     with empty commits. A failure here is reported but does not fail the run -- the evolution
     itself succeeded, and a network problem should not look like a rule regression.
     """
-    # The run record is an audit trail and always lands; only the commit MESSAGE distinguishes
-    # a knowledge update from a routine run. Gating the record on `changed` meant the history
-    # was never committed at all.
-    pass
+    # DO NOT COMMIT A RUN THAT CHANGED NOTHING. 49 of 80 commits once read "no knowledge change";
+    # a history where 61% of entries say nothing happened hides the entries that did. The run
+    # record still lands in the worktree every time -- it is overwritten by the next run and read
+    # by the report -- but it is only COMMITTED when something actually changed, or when the run
+    # failed (a failure is evidence and must be preserved).
     steps = []
     msg = ("knowledge: autonomous evolution update" if changed
            else "run: record scheduled evolution run (no knowledge change)")
@@ -470,6 +495,12 @@ def git_publish(changed: bool, allow_deletions: bool = False) -> dict:
     if problems:
         steps.append({"cmd": "budget guard", "code": 1, "withheld": problems,
                       "tail": [f"refused to stage {len(problems)} over-budget addition(s)"]})
+    # a failed run is evidence and must be preserved even when nothing changed
+    if not changed and run_ok is not False:
+        # nothing to say; do not say it 49 times
+        return {"pushed": False, "withheld": [], "blocked_deletions": [],
+                "skipped": True,
+                "reason": "no knowledge change: the run record stays uncommitted for the next run"}
     for cmd in (["git", "-c", "user.name=figpipe-bot",
                  "-c", "user.email=bot@figpipe.local",
                  "commit", "--no-verify", "-m", msg],
@@ -507,6 +538,7 @@ def _main_locked(argv: list[str], dry: bool) -> int:
         previous_caps = {}
     bench_run = {"ran": False, "reason": "dry run"}
     anchor_run = {"ran": False, "reason": "dry run"}
+    mutation_run = {"ran": False, "reason": "dry run"}
     if not dry and "--skip-benchmark" not in argv:
         # ORDER MATTERS: the slice writes the report, and the anchor refresh must follow it (a
         # stale anchor is only stale AFTER new rows land). The snapshot is taken once, after both,
@@ -514,6 +546,9 @@ def _main_locked(argv: list[str], dry: bool) -> int:
         # that was 0.351 in the report.
         bench_run = benchmark_slice()
         anchor_run = refresh_anchor()
+        # PROPOSE -> PROBE -> COMPOSE. Without this the loop can only report that numbers moved; it
+        # cannot choose an edit. 91 runs produced 0 knowledge changes for exactly that reason.
+        mutation_run = mutation_step()
     before = snapshot()
 
     ok_evolve, _ = True, ""
@@ -572,6 +607,7 @@ def _main_locked(argv: list[str], dry: bool) -> int:
         },
         "benchmark_slice": bench_run,
         "anchor_refresh": anchor_run,
+        "mutation": mutation_run,
         "capabilities": None,        # patched in AFTER every measurement has written its report
         "capabilities_delta": None,
         "ok": None,                # patched in after the suite runs
@@ -620,7 +656,8 @@ def _main_locked(argv: list[str], dry: bool) -> int:
         # itself committed by the NEXT run's publish -- which is stated explicitly rather than
         # left for a reader to discover from `git status`.
         publish = git_publish(changed,
-                              allow_deletions="--allow-deletions" in argv)
+                              allow_deletions="--allow-deletions" in argv,
+                              run_ok=run.get("ok"))
         run["published"] = publish
         run["publish_note"] = (
             "The publish outcome is recorded after the commit that carries this run, so it "

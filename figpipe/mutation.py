@@ -89,6 +89,8 @@ sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "third_party"))     # vendored harness2 ledger (Apache 2.0)
 
 from harness2_ledger import Ledger  # noqa: E402
+from contextlib import nullcontext as _nullcontext
+
 from figpipe import lock, skills   # noqa: E402
 
 
@@ -299,7 +301,8 @@ def _charge(ledger: Ledger, label: str, budget: int) -> None:
     ledger.rollout(label)
 
 
-def probe(space: MutationSpace, *, budget: int | None = None, out_dir=None) -> dict:
+def probe(space: MutationSpace, *, budget: int | None = None, out_dir=None,
+          lock_held: bool = False) -> dict:
     """Run the baseline and every candidate over the fixed task set, one rollout at a time.
 
     The whole loop holds `figpipe.lock.measure("mutation")`. If the lock refuses, that is the
@@ -321,7 +324,11 @@ def probe(space: MutationSpace, *, budget: int | None = None, out_dir=None) -> d
     budget = need if budget is None else int(budget)
     ledger = Ledger(mode="mutation", task_id=",".join(t.id for t in space.tasks), k=0)
     rows: dict[str, dict] = {}
-    with lock.measure("mutation"):
+    # `lock_held=True` means the CALLER already holds the measurement lock (cron_run runs this as a
+    # child process). Re-acquiring would deadlock against our own parent -- the same defect already
+    # fixed for the benchmark harness.
+    ctx = _nullcontext() if lock_held else lock.measure("mutation")
+    with ctx:
         for task in space.tasks:
             _charge(ledger, f"baseline:{task.id}", budget)
             rows.setdefault("baseline", {})[task.id] = run_task(task)
