@@ -99,8 +99,11 @@ def capability_snapshot() -> dict:
         # external measure this project has. It was added to CAPABILITY_DIRECTION without being
         # added HERE -- a judged field the snapshot never returns is never judged, which is the
         # "control that looks present and does nothing" defect this project keeps finding.
-        "benchmark_official_code_score": (bench.get("official_code_channel") or {}).get(
-            "mean_score"),
+        # READ FROM THE DEDICATED PASS, not the in-harness aggregate. The harness only scores
+        # tasks whose cache entry currently carries reference_code, so its mean drifts with cache
+        # contents (93.53) while the dedicated pass measures the whole pool honestly (70.59).
+        # Two numbers for one concept is how a metric stops being trusted.
+        "benchmark_official_code_score": _official_pass_score(),
         "statistics_reproduced": (seed.get("self_check") or {}).get("statistics_recorded"),
         "knowledge_version": kb.get("version"),
         "tests": None,             # patched in after the suite runs
@@ -128,6 +131,19 @@ CAPABILITY_DIRECTION = {
     "tests": +1,
     "knowledge_version": +1,
 }
+
+
+def _official_pass_score():
+    """The pool-wide honest official score, from the dedicated scoring pass."""
+    try:
+        data = json.loads((ROOT / "corpus" / "e2e" / "official_scores.json")
+                          .read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return None
+    summary = data.get("summary") or {}
+    if summary.get("style_source") != "image":
+        return None
+    return summary.get("mean_score")
 
 
 def capability_delta(previous: dict, current: dict) -> dict:

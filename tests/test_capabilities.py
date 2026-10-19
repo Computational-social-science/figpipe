@@ -317,3 +317,27 @@ def test_the_official_score_is_recorded_and_judged():
     worse = cron.capability_delta({"benchmark_official_code_score": 92.68},
                                   {"benchmark_official_code_score": 80.0})
     assert worse["verdict"]["ok"] is False
+
+
+def test_the_capability_uses_the_honest_official_pass_not_the_harness_aggregate():
+    """One concept, one number.
+
+    The harness computes its own official mean over whichever tasks happen to carry reference_code
+    in the current cache (it read 93.53), while the dedicated pass measures the whole pool with
+    image-inferred style (70.59). The capability must read the honest pass, or the loop tracks a
+    number that drifts with cache contents.
+    """
+    if cron is None:
+        import pytest
+        pytest.skip("cron_run unavailable")
+    import json
+    path = ROOT / "corpus" / "e2e" / "official_scores.json"
+    if not path.is_file():
+        import pytest
+        pytest.skip("official pass absent")
+    summary = json.loads(path.read_text(encoding="utf-8")).get("summary", {})
+    if summary.get("style_source") != "image":
+        import pytest
+        pytest.skip("official pass is not the image-inferred one")
+    snap = cron.capability_snapshot()
+    assert snap["benchmark_official_code_score"] == summary["mean_score"]

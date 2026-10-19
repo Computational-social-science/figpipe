@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-19T08:07:12",
+  "run_at": "2026-10-19T08:13:46",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -9,10 +9,10 @@
     "  passed 8, failed 0",
     "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
     "  wrote knowledge\\evolution_report.json",
-    "  lean: tracked 80.0 -> 80.0 MB, worktree 122.9 -> 122.9 MB"
+    "  lean: tracked 75.1 -> 75.1 MB, worktree 118.1 -> 118.0 MB"
   ],
-  "tests_ok": false,
-  "tests_summary": "1 failed, 282 passed, 2 skipped, 1 warning in 59.99s",
+  "tests_ok": true,
+  "tests_summary": "284 passed, 2 skipped, 1 warning in 56.30s",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
@@ -142,29 +142,39 @@
     "benchmark_anchor_distance": 0.305,
     "benchmark_shipped_anchor_distance": 0.252,
     "benchmark_unsupported": 9,
-    "benchmark_official_code_score": 93.53,
+    "benchmark_official_code_score": 70.59,
     "statistics_reproduced": 15,
     "knowledge_version": 16,
-    "tests": 282
+    "tests": 284
   },
   "capabilities_delta": {
     "changed": true,
     "delta": {
+      "benchmark_official_code_score": {
+        "before": 93.53,
+        "after": 70.59
+      },
       "tests": {
-        "before": 281,
-        "after": 282
+        "before": 282,
+        "after": 284
       }
     },
     "verdict": {
       "gains": [
         {
           "field": "tests",
-          "before": 281,
-          "after": 282
+          "before": 282,
+          "after": 284
         }
       ],
-      "regressions": [],
-      "ok": true,
+      "regressions": [
+        {
+          "field": "benchmark_official_code_score",
+          "before": 93.53,
+          "after": 70.59
+        }
+      ],
+      "ok": false,
       "judged_fields": [
         "benchmark_anchor_distance",
         "benchmark_official_code_score",
@@ -179,6 +189,13 @@
     }
   },
   "ok": false,
-  "capability_ok": true,
-  "capability_regressions": []
+  "capability_ok": false,
+  "capability_regressions": [
+    {
+      "field": "benchmark_official_code_score",
+      "before": 93.53,
+      "after": 70.59
+    }
+  ],
+  "publish_note": "capability regression detected; record kept but the run exits non-zero (re-run with --accept-capability-regression to accept)"
 }
