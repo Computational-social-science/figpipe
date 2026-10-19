@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-19T10:40:57",
+  "run_at": "2026-10-19T10:46:34",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -9,10 +9,10 @@
     "  passed 8, failed 0",
     "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
     "  wrote knowledge\\evolution_report.json",
-    "  lean: tracked 75.3 -> 75.3 MB, worktree 118.4 -> 118.4 MB"
+    "  lean: tracked 75.3 -> 75.3 MB, worktree 122.5 -> 122.3 MB"
   ],
-  "tests_ok": true,
-  "tests_summary": "295 passed, 2 skipped, 1 warning in 66.18s (0:01:06)",
+  "tests_ok": false,
+  "tests_summary": "1 failed, 294 passed, 2 skipped, 1 warning in 68.51s (0:01:08)",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
@@ -129,12 +129,20 @@
     "regressed": 0
   },
   "benchmark_slice": {
-    "ran": false,
-    "reason": "dry run"
+    "ran": true,
+    "offset": 0,
+    "tasks": 6,
+    "code": 0,
+    "tail": [
+      "    type Box/Violin     ok 1/1   d=0.169 base=0.446 delta=0.277 errors=0",
+      "    type Distribution   ok 4/4   d=0.225 base=0.248 delta=0.024 errors=0",
+      "    type Heatmap        ok 1/1   d=0.428 base=0.547 delta=0.119 errors=0",
+      "  wrote E:\\2026-AI4S\\figpipe\\corpus\\e2e\\plottwin_report.json"
+    ]
   },
   "anchor_refresh": {
     "ran": false,
-    "reason": "dry run"
+    "reason": "already comparable"
   },
   "capabilities": {
     "skills": 16,
@@ -143,36 +151,44 @@
     "benchmark_ok": 141,
     "benchmark_success_rate": 1.0,
     "benchmark_mean_distance": 0.274,
-    "benchmark_anchor_single": 0.329,
+    "benchmark_anchor_single": null,
     "benchmark_anchor_distance": 0.329,
-    "benchmark_shipped_anchor_single": 0.293,
+    "benchmark_shipped_anchor_single": null,
     "benchmark_shipped_anchor_distance": 0.293,
     "benchmark_unsupported": 9,
     "benchmark_official_code_score": 75.41,
     "benchmark_official_improvement": 37.25,
     "statistics_reproduced": 15,
     "knowledge_version": 16,
-    "tests": 295
+    "tests": 294
   },
   "capabilities_delta": {
     "changed": true,
     "delta": {
+      "benchmark_anchor_single": {
+        "before": 0.329,
+        "after": null
+      },
+      "benchmark_shipped_anchor_single": {
+        "before": 0.293,
+        "after": null
+      },
       "tests": {
-        "before": 294,
-        "after": 295
+        "before": 295,
+        "after": 294
       }
     },
     "verdict": {
-      "gains": [
+      "gains": [],
+      "regressions": [
         {
           "field": "tests",
-          "before": 294,
-          "after": 295
+          "before": 295,
+          "after": 294
         }
       ],
-      "regressions": [],
       "corrections": [],
-      "ok": true,
+      "ok": false,
       "judged_fields": [
         "benchmark_anchor_single",
         "benchmark_official_code_score",
@@ -187,7 +203,14 @@
       ]
     }
   },
-  "ok": true,
-  "capability_ok": true,
-  "capability_regressions": []
+  "ok": false,
+  "capability_ok": false,
+  "capability_regressions": [
+    {
+      "field": "tests",
+      "before": 295,
+      "after": 294
+    }
+  ],
+  "publish_note": "capability regression detected; record kept but the run exits non-zero (re-run with --accept-capability-regression to accept)"
 }
