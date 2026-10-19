@@ -7,18 +7,18 @@
     "note": "deterministic metrics only; official combined score requires the benchmark's VLM scorer and is NOT claimed here"
   },
   "n_tasks": 150,
-  "n_ok": 141,
+  "n_ok": 139,
   "n_unsupported": 9,
-  "n_error": 0,
+  "n_error": 2,
   "unsupported_types": {},
-  "mean_distance": 0.309,
-  "mean_baseline": 0.377,
-  "mean_improvement": 0.069,
-  "improved": 127,
+  "mean_distance": 0.308,
+  "mean_baseline": 0.376,
+  "mean_improvement": 0.068,
+  "improved": 125,
   "worse": 10,
   "ties": 4,
   "mean_best_of_two": 0.302,
-  "semantic_violations": 0,
+  "semantic_violations": 3,
   "decision_service": {
     "up": false,
     "url": "http://127.0.0.1:8090",
@@ -72,12 +72,12 @@
     },
     "Field 2D": {
       "n": 15,
-      "ok": 15,
-      "errors": 0,
-      "mean_distance": 0.33,
-      "mean_baseline": 0.429,
-      "mean_delta": 0.099,
-      "mean_shipped": 0.325
+      "ok": 13,
+      "errors": 2,
+      "mean_distance": 0.327,
+      "mean_baseline": 0.423,
+      "mean_delta": 0.097,
+      "mean_shipped": 0.319
     },
     "Heatmap": {
       "n": 14,
@@ -134,7 +134,18 @@
       "mean_shipped": 0.401
     }
   },
-  "failures": [],
+  "failures": [
+    {
+      "id": "Chart2Code_level2_contour_23_v4",
+      "chart": "Field 2D",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "Chart2Code_level2_contour_25_v2",
+      "chart": "Field 2D",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    }
+  ],
   "tasks": [
     {
       "id": "PMC13009336",
@@ -1691,440 +1702,6 @@
       "semantic_findings": []
     },
     {
-      "id": "Chart2Code_level1_direct_HR_5",
-      "chart": "Scatter",
-      "panel_mode": "multi",
-      "code_version": "6f01bca5b70f",
-      "skill": "scatter_relationship",
-      "rationale": "scatter panel_row vs panel_col",
-      "rows_used": 832,
-      "status": "ok",
-      "distance": 0.283,
-      "baseline_distance": 0.348,
-      "delta": 0.065,
-      "selected": "styled",
-      "selected_distance": 0.281,
-      "selected_gain": 0.067,
-      "selection_margin": 0.062,
-      "components": {
-        "palette": 0.412,
-        "aspect": 0.011,
-        "ink": 0.23
-      },
-      "hard_failures": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 99.99898801291165,
-        "n_activated": 5,
-        "scored": [
-          "palette",
-          "figure_aspect",
-          "linewidth",
-          "grid",
-          "legend_frame"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": []
-    },
-    {
-      "id": "Chart2Code_level1_direct_combination_57",
-      "chart": "Bar",
-      "panel_mode": "multi",
-      "code_version": "6f01bca5b70f",
-      "skill": "grouped_measures",
-      "rationale": "grouped bars ['panel_row', 'panel_col', 'guild_order'] by panel_group",
-      "rows_used": 432,
-      "status": "ok",
-      "distance": 0.197,
-      "baseline_distance": 0.249,
-      "delta": 0.052,
-      "selected": "styled",
-      "selected_distance": 0.175,
-      "selected_gain": 0.074,
-      "selection_margin": 0.061,
-      "components": {
-        "palette": 0.208,
-        "aspect": 0.028,
-        "ink": 0.341
-      },
-      "hard_failures": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 79.99456259958941,
-        "n_activated": 5,
-        "scored": [
-          "palette",
-          "figure_aspect",
-          "linewidth",
-          "grid",
-          "legend_frame"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": []
-    },
-    {
-      "id": "Chart2Code_level1_direct_contour_18",
-      "chart": "Heatmap",
-      "panel_mode": "multi",
-      "code_version": "6f01bca5b70f",
-      "skill": "matrix_plate",
-      "rationale": "matrix 8 measures",
-      "rows_used": 40,
-      "status": "ok",
-      "distance": 0.268,
-      "baseline_distance": 0.376,
-      "delta": 0.108,
-      "selected": "styled",
-      "selected_distance": 0.252,
-      "selected_gain": 0.124,
-      "selection_margin": 0.112,
-      "components": {
-        "palette": 0.142,
-        "aspect": 0.252,
-        "ink": 0.598
-      },
-      "hard_failures": 405,
-      "findings": [
-        {
-          "check": "text_collision",
-          "detail": "'0.7015383331293864' over '0.7128659440184021'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'0.7128659440184021' over '0.7615392392593242'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'0.7615392392593242' over '0.8442933223842001'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'0.8442933223842001' over '0.8489475850519906'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'0.8489475850519906' over '0.8554252058560303'",
-          "severity": "hard"
-        }
-      ],
-      "official_code_score": {
-        "available": true,
-        "score": 99.9997804913552,
-        "n_activated": 4,
-        "scored": [
-          "palette",
-          "figure_aspect",
-          "linewidth",
-          "grid"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": []
-    },
-    {
-      "id": "Chart2Code_level1_direct_density_11",
-      "chart": "Distribution",
-      "panel_mode": "multi",
-      "code_version": "6f01bca5b70f",
-      "skill": "faceted_distribution",
-      "rationale": "faceted hist by panel_group",
-      "rows_used": 900,
-      "status": "ok",
-      "distance": 0.572,
-      "baseline_distance": 0.283,
-      "delta": -0.289,
-      "selected": "plain",
-      "selected_distance": 0.284,
-      "selected_gain": -0.001,
-      "selection_margin": 0.288,
-      "components": {
-        "palette": 0.791,
-        "aspect": 0.008,
-        "ink": 0.587
-      },
-      "hard_failures": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 99.99654311018888,
-        "n_activated": 4,
-        "scored": [
-          "palette",
-          "figure_aspect",
-          "linewidth",
-          "grid"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": []
-    },
-    {
-      "id": "Chart2Code_level1_direct_heatmap_3",
-      "chart": "Heatmap",
-      "panel_mode": "multi",
-      "code_version": "6f01bca5b70f",
-      "skill": "matrix_plate",
-      "rationale": "matrix 8 measures",
-      "rows_used": 40,
-      "status": "ok",
-      "distance": 0.247,
-      "baseline_distance": 0.364,
-      "delta": 0.117,
-      "selected": "styled",
-      "selected_distance": 0.186,
-      "selected_gain": 0.178,
-      "selection_margin": 0.122,
-      "components": {
-        "palette": 0.121,
-        "aspect": 0.047,
-        "ink": 0.764
-      },
-      "hard_failures": 28,
-      "findings": [
-        {
-          "check": "text_collision",
-          "detail": "'1.00' over '1.00'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'12.081' over '12.258'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'12.258' over '12.903'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'12.903' over '16.915'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'16.915' over '17.188'",
-          "severity": "hard"
-        }
-      ],
-      "official_code_score": {
-        "available": true,
-        "score": 99.98962040477433,
-        "n_activated": 3,
-        "scored": [
-          "palette",
-          "figure_aspect",
-          "linewidth"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": []
-    },
-    {
-      "id": "Chart2Code_level1_direct_heatmap_7",
-      "chart": "Heatmap",
-      "panel_mode": "multi",
-      "code_version": "6f01bca5b70f",
-      "skill": "matrix_plate",
-      "rationale": "matrix 3 measures",
-      "rows_used": 40,
-      "status": "ok",
-      "distance": 0.283,
-      "baseline_distance": 0.325,
-      "delta": 0.042,
-      "selected": "styled",
-      "selected_distance": 0.197,
-      "selected_gain": 0.128,
-      "selection_margin": 0.043,
-      "components": {
-        "palette": 0.194,
-        "aspect": 0.02,
-        "ink": 0.77
-      },
-      "hard_failures": 95,
-      "findings": [
-        {
-          "check": "text_collision",
-          "detail": "'4.00' over '4.00'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'0.07' over '0.12'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'0.11' over '0.13'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'0.07' over '0.11'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'0.11' over '0.12'",
-          "severity": "hard"
-        }
-      ],
-      "official_code_score": {
-        "available": true,
-        "score": 99.99385185430543,
-        "n_activated": 4,
-        "scored": [
-          "palette",
-          "figure_aspect",
-          "linewidth",
-          "grid"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": []
-    },
-    {
-      "id": "Chart2Code_level1_direct_line_39",
-      "chart": "Line",
-      "panel_mode": "multi",
-      "code_version": "6f01bca5b70f",
-      "skill": "trend_with_uncertainty",
-      "rationale": "trend calendar_year->panel_row",
-      "rows_used": 88,
-      "status": "ok",
-      "distance": 0.285,
-      "baseline_distance": 0.328,
-      "delta": 0.043,
-      "selected": "styled",
-      "selected_distance": 0.285,
-      "selected_gain": 0.043,
-      "selection_margin": 0.041,
-      "components": {
-        "palette": 0.432,
-        "aspect": 0.001,
-        "ink": 0.203
-      },
-      "hard_failures": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 99.9999458019165,
-        "n_activated": 4,
-        "scored": [
-          "palette",
-          "figure_aspect",
-          "linewidth",
-          "grid"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": []
-    },
-    {
-      "id": "Chart2Code_level1_direct_line_8",
-      "chart": "Line",
-      "panel_mode": "multi",
-      "code_version": "6f01bca5b70f",
-      "skill": "trend_with_uncertainty",
-      "rationale": "trend time_step->panel_row",
-      "rows_used": 110,
-      "status": "ok",
-      "distance": 0.494,
-      "baseline_distance": 0.558,
-      "delta": 0.064,
-      "selected": "styled",
-      "selected_distance": 0.494,
-      "selected_gain": 0.064,
-      "selection_margin": 0.062,
-      "components": {
-        "palette": 0.558,
-        "aspect": 0.004,
-        "ink": 0.824
-      },
-      "hard_failures": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 99.9995385569685,
-        "n_activated": 6,
-        "scored": [
-          "palette",
-          "figure_aspect",
-          "linewidth",
-          "grid",
-          "spines_removed",
-          "legend_frame"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": []
-    },
-    {
-      "id": "Chart2Code_level2_3d_11_v2",
-      "chart": "Scatter",
-      "panel_mode": "multi",
-      "code_version": "6f01bca5b70f",
-      "skill": "scatter_relationship",
-      "rationale": "scatter panel_row vs panel_col",
-      "rows_used": 276,
-      "status": "ok",
-      "distance": 0.411,
-      "baseline_distance": 0.528,
-      "delta": 0.117,
-      "selected": "styled",
-      "selected_distance": 0.411,
-      "selected_gain": 0.117,
-      "selection_margin": 0.111,
-      "components": {
-        "palette": 0.624,
-        "aspect": 0.001,
-        "ink": 0.288
-      },
-      "hard_failures": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 99.99760567180954,
-        "n_activated": 6,
-        "scored": [
-          "palette",
-          "figure_aspect",
-          "linewidth",
-          "grid",
-          "spines_removed",
-          "legend_frame"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": []
-    },
-    {
       "id": "Chart2Code_level2_3d_1_v1__single",
       "chart": "3D",
       "panel_mode": "single",
@@ -2139,676 +1716,6 @@
       "code_version": "6f01bca5b70f",
       "status": "unsupported",
       "error": "unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this is a deliberate exclusion"
-    },
-    {
-      "id": "Chart2Code_level2_3d_5_v4",
-      "chart": "Bar",
-      "panel_mode": "multi",
-      "code_version": "6f01bca5b70f",
-      "skill": "grouped_measures",
-      "rationale": "grouped bars ['panel_col', 'biochar_rate_percent', 'day_after_rewetting_days'] by biochar_amendment_label",
-      "rows_used": 80,
-      "status": "ok",
-      "distance": 0.205,
-      "baseline_distance": 0.178,
-      "delta": -0.027,
-      "selected": "plain",
-      "selected_distance": 0.175,
-      "selected_gain": 0.003,
-      "selection_margin": 0.013,
-      "components": {
-        "palette": 0.333,
-        "aspect": 0.023,
-        "ink": 0.069
-      },
-      "hard_failures": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 79.99958532342455,
-        "n_activated": 5,
-        "scored": [
-          "palette",
-          "figure_aspect",
-          "linewidth",
-          "grid",
-          "spines_removed"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": []
-    },
-    {
-      "id": "Chart2Code_level2_area_3_v3",
-      "chart": "Line",
-      "panel_mode": "multi",
-      "code_version": "6f01bca5b70f",
-      "skill": "trend_with_uncertainty",
-      "rationale": "trend timepoint_day->panel_row",
-      "rows_used": 95,
-      "status": "ok",
-      "distance": 0.468,
-      "baseline_distance": 0.524,
-      "delta": 0.056,
-      "selected": "styled",
-      "selected_distance": 0.468,
-      "selected_gain": 0.056,
-      "selection_margin": 0.054,
-      "components": {
-        "palette": 0.547,
-        "aspect": 0.002,
-        "ink": 0.739
-      },
-      "hard_failures": 1,
-      "findings": [
-        {
-          "check": "semantics.marks",
-          "detail": "95 points drawn for 91 rows",
-          "severity": "hard"
-        }
-      ],
-      "official_code_score": {
-        "available": true,
-        "score": 99.99728664436955,
-        "n_activated": 5,
-        "scored": [
-          "palette",
-          "figure_aspect",
-          "linewidth",
-          "grid",
-          "legend_frame"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": [
-        {
-          "check": "semantics.marks",
-          "detail": "95 points drawn for 91 rows",
-          "severity": "hard"
-        }
-      ]
-    },
-    {
-      "id": "Chart2Code_level2_bar_10_v4",
-      "chart": "Line",
-      "panel_mode": "multi",
-      "code_version": "6f01bca5b70f",
-      "skill": "trend_with_uncertainty",
-      "rationale": "trend incubation_time_h->panel_row",
-      "rows_used": 173,
-      "status": "ok",
-      "distance": 0.56,
-      "baseline_distance": 0.632,
-      "delta": 0.072,
-      "selected": "styled",
-      "selected_distance": 0.557,
-      "selected_gain": 0.075,
-      "selection_margin": 0.075,
-      "components": {
-        "palette": 0.675,
-        "aspect": 0.014,
-        "ink": 0.817
-      },
-      "hard_failures": 1,
-      "findings": [
-        {
-          "check": "semantics.marks",
-          "detail": "173 points drawn for 168 rows",
-          "severity": "hard"
-        }
-      ],
-      "official_code_score": {
-        "available": true,
-        "score": 99.99957859938168,
-        "n_activated": 5,
-        "scored": [
-          "palette",
-          "figure_aspect",
-          "linewidth",
-          "grid",
-          "legend_frame"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": [
-        {
-          "check": "semantics.marks",
-          "detail": "173 points drawn for 168 rows",
-          "severity": "hard"
-        }
-      ]
-    },
-    {
-      "id": "Chart2Code_level2_bar_22_v4",
-      "chart": "Bar",
-      "panel_mode": "multi",
-      "code_version": "6f01bca5b70f",
-      "skill": "grouped_measures",
-      "rationale": "grouped bars ['panel_row', 'panel_col', 'condition_order'] by panel_group",
-      "rows_used": 220,
-      "status": "ok",
-      "distance": 0.174,
-      "baseline_distance": 0.188,
-      "delta": 0.014,
-      "selected": "styled",
-      "selected_distance": 0.17,
-      "selected_gain": 0.018,
-      "selection_margin": 0.027,
-      "components": {
-        "palette": 0.29,
-        "aspect": 0.019,
-        "ink": 0.041
-      },
-      "hard_failures": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 74.99613725897586,
-        "n_activated": 4,
-        "scored": [
-          "palette",
-          "figure_aspect",
-          "linewidth",
-          "grid"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": []
-    },
-    {
-      "id": "Chart2Code_level2_bar_25_v4",
-      "chart": "Line",
-      "panel_mode": "multi",
-      "code_version": "6f01bca5b70f",
-      "skill": "trend_with_uncertainty",
-      "rationale": "trend measurement_day->panel_row",
-      "rows_used": 386,
-      "status": "ok",
-      "distance": 0.548,
-      "baseline_distance": 0.611,
-      "delta": 0.063,
-      "selected": "styled",
-      "selected_distance": 0.547,
-      "selected_gain": 0.064,
-      "selection_margin": 0.063,
-      "components": {
-        "palette": 0.653,
-        "aspect": 0.004,
-        "ink": 0.829
-      },
-      "hard_failures": 1,
-      "findings": [
-        {
-          "check": "semantics.annotation",
-          "detail": "too few usable points to compute r",
-          "severity": "hard"
-        }
-      ],
-      "official_code_score": {
-        "available": true,
-        "score": 99.99873620753452,
-        "n_activated": 6,
-        "scored": [
-          "palette",
-          "figure_aspect",
-          "linewidth",
-          "grid",
-          "spines_removed",
-          "legend_frame"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": [
-        {
-          "check": "semantics.annotation",
-          "detail": "too few usable points to compute r",
-          "severity": "hard"
-        }
-      ]
-    },
-    {
-      "id": "Chart2Code_level2_box_1_v5",
-      "chart": "Box/Violin",
-      "panel_mode": "multi",
-      "code_version": "6f01bca5b70f",
-      "skill": "distribution_comparison",
-      "rationale": "box panel_row by record_type",
-      "rows_used": 3163,
-      "status": "ok",
-      "distance": 0.108,
-      "baseline_distance": 0.326,
-      "delta": 0.218,
-      "selected": "styled",
-      "selected_distance": 0.117,
-      "selected_gain": 0.209,
-      "selection_margin": 0.209,
-      "components": {
-        "palette": 0.117,
-        "aspect": 0.006,
-        "ink": 0.185
-      },
-      "hard_failures": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 100.0,
-        "n_activated": 3,
-        "scored": [
-          "palette",
-          "linewidth",
-          "grid"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": []
-    },
-    {
-      "id": "Chart2Code_level2_combination_11_v2",
-      "chart": "Std-band",
-      "panel_mode": "multi",
-      "code_version": "6f01bca5b70f",
-      "skill": "trend_with_uncertainty",
-      "rationale": "trend panel_row->panel_col",
-      "rows_used": 155,
-      "status": "ok",
-      "distance": 0.368,
-      "baseline_distance": 0.424,
-      "delta": 0.056,
-      "selected": "styled",
-      "selected_distance": 0.368,
-      "selected_gain": 0.056,
-      "selection_margin": 0.054,
-      "components": {
-        "palette": 0.547,
-        "aspect": 0.002,
-        "ink": 0.287
-      },
-      "hard_failures": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 99.99901392049395,
-        "n_activated": 6,
-        "scored": [
-          "palette",
-          "figure_aspect",
-          "linewidth",
-          "grid",
-          "spines_removed",
-          "legend_frame"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": []
-    },
-    {
-      "id": "Chart2Code_level2_combination_13_v5",
-      "chart": "Line",
-      "panel_mode": "multi",
-      "code_version": "6f01bca5b70f",
-      "skill": "trend_with_uncertainty",
-      "rationale": "trend panel_row->panel_col",
-      "rows_used": 672,
-      "status": "ok",
-      "distance": 0.461,
-      "baseline_distance": 0.517,
-      "delta": 0.056,
-      "selected": "styled",
-      "selected_distance": 0.461,
-      "selected_gain": 0.056,
-      "selection_margin": 0.055,
-      "components": {
-        "palette": 0.48,
-        "aspect": 0.002,
-        "ink": 0.874
-      },
-      "hard_failures": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 99.99725441500033,
-        "n_activated": 6,
-        "scored": [
-          "palette",
-          "figure_aspect",
-          "linewidth",
-          "grid",
-          "spines_removed",
-          "legend_frame"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": []
-    },
-    {
-      "id": "Chart2Code_level2_combination_14_v5",
-      "chart": "Distribution",
-      "panel_mode": "multi",
-      "code_version": "6f01bca5b70f",
-      "skill": "faceted_distribution",
-      "rationale": "faceted hist by panel_row",
-      "rows_used": 4208,
-      "status": "ok",
-      "distance": 0.146,
-      "baseline_distance": 0.262,
-      "delta": 0.116,
-      "selected": "styled",
-      "selected_distance": 0.146,
-      "selected_gain": 0.116,
-      "selection_margin": 0.117,
-      "components": {
-        "palette": 0.106,
-        "aspect": 0.007,
-        "ink": 0.383
-      },
-      "hard_failures": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 99.99863283940877,
-        "n_activated": 2,
-        "scored": [
-          "figure_aspect",
-          "grid"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": []
-    },
-    {
-      "id": "Chart2Code_level2_combination_16_v5",
-      "chart": "Box/Violin",
-      "panel_mode": "multi",
-      "code_version": "6f01bca5b70f",
-      "skill": "distribution_comparison",
-      "rationale": "box panel_row by panel_group",
-      "rows_used": 959,
-      "status": "ok",
-      "distance": 0.5,
-      "baseline_distance": 0.59,
-      "delta": 0.09,
-      "selected": "styled",
-      "selected_distance": 0.557,
-      "selected_gain": 0.033,
-      "selection_margin": 0.027,
-      "components": {
-        "palette": 0.812,
-        "aspect": 0.005,
-        "ink": 0.213
-      },
-      "hard_failures": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 99.99793005710893,
-        "n_activated": 5,
-        "scored": [
-          "palette",
-          "figure_aspect",
-          "linewidth",
-          "grid",
-          "legend_frame"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": []
-    },
-    {
-      "id": "Chart2Code_level2_combination_33_v5",
-      "chart": "Distribution",
-      "panel_mode": "multi",
-      "code_version": "6f01bca5b70f",
-      "skill": "faceted_distribution",
-      "rationale": "faceted hist by panel_group",
-      "rows_used": 3037,
-      "status": "ok",
-      "distance": 0.128,
-      "baseline_distance": 0.196,
-      "delta": 0.068,
-      "selected": "styled",
-      "selected_distance": 0.129,
-      "selected_gain": 0.067,
-      "selection_margin": 0.068,
-      "components": {
-        "palette": 0.13,
-        "aspect": 0.002,
-        "ink": 0.247
-      },
-      "hard_failures": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 99.9991367540579,
-        "n_activated": 5,
-        "scored": [
-          "palette",
-          "figure_aspect",
-          "linewidth",
-          "grid",
-          "spines_removed"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": []
-    },
-    {
-      "id": "Chart2Code_level2_combination_42_v5",
-      "chart": "Scatter",
-      "panel_mode": "multi",
-      "code_version": "6f01bca5b70f",
-      "skill": "scatter_relationship",
-      "rationale": "scatter panel_row vs panel_col",
-      "rows_used": 51,
-      "status": "ok",
-      "distance": 0.352,
-      "baseline_distance": 0.451,
-      "delta": 0.099,
-      "selected": "styled",
-      "selected_distance": 0.352,
-      "selected_gain": 0.099,
-      "selection_margin": 0.093,
-      "components": {
-        "palette": 0.5,
-        "aspect": 0.004,
-        "ink": 0.33
-      },
-      "hard_failures": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 99.99875889927587,
-        "n_activated": 5,
-        "scored": [
-          "palette",
-          "figure_aspect",
-          "linewidth",
-          "grid",
-          "spines_removed"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": []
-    },
-    {
-      "id": "Chart2Code_level2_combination_44_v3",
-      "chart": "Distribution",
-      "panel_mode": "multi",
-      "code_version": "6f01bca5b70f",
-      "skill": "faceted_distribution",
-      "rationale": "faceted hist by panel_group",
-      "rows_used": 399,
-      "status": "ok",
-      "distance": 0.133,
-      "baseline_distance": 0.221,
-      "delta": 0.088,
-      "selected": "styled",
-      "selected_distance": 0.135,
-      "selected_gain": 0.086,
-      "selection_margin": 0.087,
-      "components": {
-        "palette": 0.086,
-        "aspect": 0.001,
-        "ink": 0.382
-      },
-      "hard_failures": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 99.99903147099876,
-        "n_activated": 6,
-        "scored": [
-          "palette",
-          "figure_aspect",
-          "linewidth",
-          "grid",
-          "spines_removed",
-          "legend_frame"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": []
-    },
-    {
-      "id": "Chart2Code_level2_contour_14_v1",
-      "chart": "Field 2D",
-      "panel_mode": "multi",
-      "code_version": "6f01bca5b70f",
-      "skill": "field_map",
-      "rationale": "field panel_row over x_m x z_m",
-      "rows_used": 2780,
-      "status": "ok",
-      "distance": 0.345,
-      "baseline_distance": 0.406,
-      "delta": 0.061,
-      "selected": "styled",
-      "selected_distance": 0.35,
-      "selected_gain": 0.056,
-      "selection_margin": 0.057,
-      "components": {
-        "palette": 0.451,
-        "aspect": 0.019,
-        "ink": 0.405
-      },
-      "hard_failures": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": false,
-        "reason": "CodegenError: skill 'field_map' has no code emitter yet"
-      },
-      "semantic_findings": []
-    },
-    {
-      "id": "Chart2Code_level2_contour_23_v4",
-      "chart": "Field 2D",
-      "panel_mode": "multi",
-      "code_version": "6f01bca5b70f",
-      "skill": "field_map",
-      "rationale": "field panel_row over biochar_amendment_percent x porewater_salinity_psu",
-      "rows_used": 1310,
-      "status": "ok",
-      "distance": 0.392,
-      "baseline_distance": 0.507,
-      "delta": 0.115,
-      "selected": "styled",
-      "selected_distance": 0.411,
-      "selected_gain": 0.096,
-      "selection_margin": 0.103,
-      "components": {
-        "palette": 0.454,
-        "aspect": 0.269,
-        "ink": 0.362
-      },
-      "hard_failures": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": false,
-        "reason": "CodegenError: skill 'field_map' has no code emitter yet"
-      },
-      "semantic_findings": []
-    },
-    {
-      "id": "Chart2Code_level2_contour_25_v2",
-      "chart": "Field 2D",
-      "panel_mode": "multi",
-      "code_version": "6f01bca5b70f",
-      "skill": "field_map",
-      "rationale": "field panel_row over time_hours x cross_wound_position_fraction",
-      "rows_used": 11112,
-      "status": "ok",
-      "distance": 0.301,
-      "baseline_distance": 0.418,
-      "delta": 0.117,
-      "selected": "styled",
-      "selected_distance": 0.312,
-      "selected_gain": 0.106,
-      "selection_margin": 0.107,
-      "components": {
-        "palette": 0.342,
-        "aspect": 0.11,
-        "ink": 0.39
-      },
-      "hard_failures": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": false,
-        "reason": "CodegenError: skill 'field_map' has no code emitter yet"
-      },
-      "semantic_findings": []
-    },
-    {
-      "id": "Chart2Code_level2_contour_25_v3",
-      "chart": "Field 2D",
-      "panel_mode": "multi",
-      "code_version": "6f01bca5b70f",
-      "skill": "field_map",
-      "rationale": "field panel_row over position_mm x elapsed_time_min",
-      "rows_used": 15219,
-      "status": "ok",
-      "distance": 0.253,
-      "baseline_distance": 0.37,
-      "delta": 0.117,
-      "selected": "styled",
-      "selected_distance": 0.265,
-      "selected_gain": 0.105,
-      "selection_margin": 0.106,
-      "components": {
-        "palette": 0.351,
-        "aspect": 0.023,
-        "ink": 0.237
-      },
-      "hard_failures": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": false,
-        "reason": "CodegenError: skill 'field_map' has no code emitter yet"
-      },
-      "semantic_findings": []
     },
     {
       "id": "Chart2Code_level2_contour_5_v5",
@@ -3266,242 +2173,6 @@
       "official_code_score": {
         "available": false,
         "reason": "CodegenError: skill 'field_map' has no code emitter yet"
-      },
-      "semantic_findings": []
-    },
-    {
-      "id": "Chart2Code_level2_quiver_13_v1",
-      "chart": "Field 2D",
-      "panel_mode": "multi",
-      "code_version": "6f01bca5b70f",
-      "skill": "field_map",
-      "rationale": "field panel_row over x_position_mm x y_position_mm",
-      "rows_used": 1071,
-      "status": "ok",
-      "distance": 0.257,
-      "baseline_distance": 0.335,
-      "delta": 0.078,
-      "selected": "styled",
-      "selected_distance": 0.239,
-      "selected_gain": 0.096,
-      "selection_margin": 0.075,
-      "components": {
-        "palette": 0.423,
-        "aspect": 0.011,
-        "ink": 0.085
-      },
-      "hard_failures": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": false,
-        "reason": "CodegenError: skill 'field_map' has no code emitter yet"
-      },
-      "semantic_findings": []
-    },
-    {
-      "id": "Chart2Code_level2_quiver_14_v1",
-      "chart": "Field 2D",
-      "panel_mode": "multi",
-      "code_version": "6f01bca5b70f",
-      "skill": "field_map",
-      "rationale": "field panel_row over sample_index x time_h",
-      "rows_used": 2334,
-      "status": "ok",
-      "distance": 0.416,
-      "baseline_distance": 0.489,
-      "delta": 0.073,
-      "selected": "styled",
-      "selected_distance": 0.411,
-      "selected_gain": 0.078,
-      "selection_margin": 0.068,
-      "components": {
-        "palette": 0.434,
-        "aspect": 0.032,
-        "ink": 0.755
-      },
-      "hard_failures": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": false,
-        "reason": "CodegenError: skill 'field_map' has no code emitter yet"
-      },
-      "semantic_findings": []
-    },
-    {
-      "id": "Chart2Code_level2_quiver_4_v5",
-      "chart": "Field 2D",
-      "panel_mode": "multi",
-      "code_version": "6f01bca5b70f",
-      "skill": "field_map",
-      "rationale": "field panel_row over replicate_id x x_mm",
-      "rows_used": 32,
-      "status": "ok",
-      "distance": 0.554,
-      "baseline_distance": 0.662,
-      "delta": 0.108,
-      "selected": "styled",
-      "selected_distance": 0.518,
-      "selected_gain": 0.144,
-      "selection_margin": 0.132,
-      "components": {
-        "palette": 0.591,
-        "aspect": 0.016,
-        "ink": 1.0
-      },
-      "hard_failures": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": false,
-        "reason": "CodegenError: skill 'field_map' has no code emitter yet"
-      },
-      "semantic_findings": []
-    },
-    {
-      "id": "Chart2Code_level2_radar_10_v2",
-      "chart": "Polar/Radial",
-      "panel_mode": "multi",
-      "code_version": "6f01bca5b70f",
-      "skill": "radial_profile",
-      "rationale": "polar panel_col by block_id",
-      "rows_used": 460,
-      "status": "ok",
-      "distance": 0.314,
-      "baseline_distance": 0.326,
-      "delta": 0.012,
-      "selected": "plain",
-      "selected_distance": 0.259,
-      "selected_gain": 0.067,
-      "selection_margin": 0.017,
-      "components": {
-        "palette": 0.115,
-        "aspect": 0.124,
-        "ink": 1.0
-      },
-      "hard_failures": 50,
-      "findings": [
-        {
-          "check": "text_collision",
-          "detail": "'field_replicates' over 'field_replicates'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'advantage_profile' over 'benchmark_profile'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'advantage_profile' over 'context_profile'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'benchmark_profile' over 'context_profile'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'attribute_scoreca' over 'context_profile'",
-          "severity": "hard"
-        }
-      ],
-      "official_code_score": {
-        "available": false,
-        "reason": "CodegenError: skill 'radial_profile' has no code emitter yet"
-      },
-      "semantic_findings": []
-    },
-    {
-      "id": "Chart2Code_level2_radar_18_v5",
-      "chart": "Bar",
-      "panel_mode": "multi",
-      "code_version": "6f01bca5b70f",
-      "skill": "grouped_measures",
-      "rationale": "grouped bars ['panel_col', 'condition_order', 'net_carbonate_capture_percent'] by record_type",
-      "rows_used": 80,
-      "status": "ok",
-      "distance": 0.35,
-      "baseline_distance": 0.423,
-      "delta": 0.073,
-      "selected": "styled",
-      "selected_distance": 0.354,
-      "selected_gain": 0.069,
-      "selection_margin": 0.077,
-      "components": {
-        "palette": 0.534,
-        "aspect": 0.016,
-        "ink": 0.221
-      },
-      "hard_failures": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 75.0,
-        "n_activated": 4,
-        "scored": [
-          "palette",
-          "linewidth",
-          "grid",
-          "legend_frame"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": []
-    },
-    {
-      "id": "Chart2Code_level2_radar_23_v3",
-      "chart": "Polar/Radial",
-      "panel_mode": "multi",
-      "code_version": "6f01bca5b70f",
-      "skill": "radial_profile",
-      "rationale": "polar panel_row by condition_id",
-      "rows_used": 175,
-      "status": "ok",
-      "distance": 0.132,
-      "baseline_distance": 0.145,
-      "delta": 0.013,
-      "selected": "styled",
-      "selected_distance": 0.083,
-      "selected_gain": 0.062,
-      "selection_margin": 0.022,
-      "components": {
-        "palette": 0.109,
-        "aspect": 0.095,
-        "ink": 0.229
-      },
-      "hard_failures": 10,
-      "findings": [
-        {
-          "check": "text_collision",
-          "detail": "'TRP' over 'TRP'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'SAP' over 'SAP'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'LSH' over 'LSH'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'REF' over 'REF'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'CTL' over 'CTL'",
-          "severity": "hard"
-        }
-      ],
-      "official_code_score": {
-        "available": false,
-        "reason": "CodegenError: skill 'radial_profile' has no code emitter yet"
       },
       "semantic_findings": []
     },
@@ -5991,129 +4662,10 @@
       "semantic_findings": []
     },
     {
-      "id": "PMC11502666",
-      "chart": "Distribution",
-      "panel_mode": "multi",
-      "code_version": "6f01bca5b70f",
-      "skill": "faceted_distribution",
-      "rationale": "faceted hist by panel_group",
-      "rows_used": 554,
-      "status": "ok",
-      "distance": 0.146,
-      "baseline_distance": 0.209,
-      "delta": 0.063,
-      "selected": "styled",
-      "selected_distance": 0.145,
-      "selected_gain": 0.064,
-      "selection_margin": 0.066,
-      "components": {
-        "palette": 0.099,
-        "aspect": 0.009,
-        "ink": 0.398
-      },
-      "hard_failures": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 100.0,
-        "n_activated": 2,
-        "scored": [
-          "palette",
-          "grid"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": []
-    },
-    {
-      "id": "PMC11840003",
-      "chart": "Box/Violin",
-      "panel_mode": "multi",
-      "code_version": "6f01bca5b70f",
-      "skill": "distribution_comparison",
-      "rationale": "box panel_row by panel_group",
-      "rows_used": 1403,
-      "status": "ok",
-      "distance": 0.169,
-      "baseline_distance": 0.446,
-      "delta": 0.277,
-      "selected": "styled",
-      "selected_distance": 0.176,
-      "selected_gain": 0.27,
-      "selection_margin": 0.279,
-      "components": {
-        "palette": 0.1,
-        "aspect": 0.211,
-        "ink": 0.302
-      },
-      "hard_failures": 1,
-      "findings": [
-        {
-          "check": "height",
-          "detail": "170.0 mm exceeds the 170.0 mm maximum",
-          "severity": "hard"
-        }
-      ],
-      "official_code_score": {
-        "available": true,
-        "score": 99.99959236362147,
-        "n_activated": 4,
-        "scored": [
-          "palette",
-          "figure_aspect",
-          "linewidth",
-          "grid"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": []
-    },
-    {
-      "id": "PMC12000431",
-      "chart": "Distribution",
-      "panel_mode": "multi",
-      "code_version": "6f01bca5b70f",
-      "skill": "faceted_distribution",
-      "rationale": "faceted hist by panel_group",
-      "rows_used": 1414,
-      "status": "ok",
-      "distance": 0.083,
-      "baseline_distance": 0.096,
-      "delta": 0.013,
-      "selected": "styled",
-      "selected_distance": 0.083,
-      "selected_gain": 0.013,
-      "selection_margin": 0.015,
-      "components": {
-        "palette": 0.077,
-        "aspect": 0.005,
-        "ink": 0.177
-      },
-      "hard_failures": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 100.0,
-        "n_activated": 2,
-        "scored": [
-          "palette",
-          "legend_frame"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": []
-    },
-    {
       "id": "PMC12354736",
       "chart": "Distribution",
       "panel_mode": "multi",
-      "code_version": "6f01bca5b70f",
+      "code_version": "5ec3cea3953c",
       "skill": "faceted_distribution",
       "rationale": "faceted hist by panel_row",
       "rows_used": 12196,
@@ -6158,7 +4710,7 @@
       "id": "PMC12504421",
       "chart": "Heatmap",
       "panel_mode": "multi",
-      "code_version": "6f01bca5b70f",
+      "code_version": "5ec3cea3953c",
       "skill": "matrix_plate",
       "rationale": "pivot panel_group x record_type of panel_row",
       "rows_used": 4,
@@ -6214,7 +4766,7 @@
       "id": "PMC12905268",
       "chart": "Distribution",
       "panel_mode": "multi",
-      "code_version": "6f01bca5b70f",
+      "code_version": "5ec3cea3953c",
       "skill": "faceted_distribution",
       "rationale": "faceted hist by shoreline_condition",
       "rows_used": 1196,
@@ -6248,6 +4800,1423 @@
         "note": "code channel only; the 0.65 vision channel is not run"
       },
       "semantic_findings": []
+    },
+    {
+      "id": "Chart2Code_level1_direct_HR_5",
+      "chart": "Scatter",
+      "panel_mode": "multi",
+      "code_version": "5ec3cea3953c",
+      "skill": "scatter_relationship",
+      "rationale": "scatter panel_row vs panel_col",
+      "rows_used": 832,
+      "status": "ok",
+      "distance": 0.283,
+      "baseline_distance": 0.348,
+      "delta": 0.065,
+      "selected": "styled",
+      "selected_distance": 0.281,
+      "selected_gain": 0.067,
+      "selection_margin": 0.062,
+      "components": {
+        "palette": 0.412,
+        "aspect": 0.011,
+        "ink": 0.23
+      },
+      "hard_failures": 0,
+      "findings": [],
+      "official_code_score": {
+        "available": true,
+        "score": 99.99898801291165,
+        "n_activated": 5,
+        "scored": [
+          "palette",
+          "figure_aspect",
+          "linewidth",
+          "grid",
+          "legend_frame"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": []
+    },
+    {
+      "id": "Chart2Code_level1_direct_combination_57",
+      "chart": "Bar",
+      "panel_mode": "multi",
+      "code_version": "5ec3cea3953c",
+      "skill": "grouped_measures",
+      "rationale": "grouped bars ['panel_row', 'panel_col', 'guild_order'] by panel_group",
+      "rows_used": 432,
+      "status": "ok",
+      "distance": 0.197,
+      "baseline_distance": 0.249,
+      "delta": 0.052,
+      "selected": "styled",
+      "selected_distance": 0.175,
+      "selected_gain": 0.074,
+      "selection_margin": 0.061,
+      "components": {
+        "palette": 0.208,
+        "aspect": 0.028,
+        "ink": 0.341
+      },
+      "hard_failures": 0,
+      "findings": [],
+      "official_code_score": {
+        "available": true,
+        "score": 79.99456259958941,
+        "n_activated": 5,
+        "scored": [
+          "palette",
+          "figure_aspect",
+          "linewidth",
+          "grid",
+          "legend_frame"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": []
+    },
+    {
+      "id": "Chart2Code_level1_direct_contour_18",
+      "chart": "Heatmap",
+      "panel_mode": "multi",
+      "code_version": "5ec3cea3953c",
+      "skill": "matrix_plate",
+      "rationale": "matrix 8 measures",
+      "rows_used": 40,
+      "status": "ok",
+      "distance": 0.268,
+      "baseline_distance": 0.376,
+      "delta": 0.108,
+      "selected": "styled",
+      "selected_distance": 0.252,
+      "selected_gain": 0.124,
+      "selection_margin": 0.112,
+      "components": {
+        "palette": 0.142,
+        "aspect": 0.252,
+        "ink": 0.598
+      },
+      "hard_failures": 405,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'0.7015383331293864' over '0.7128659440184021'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'0.7128659440184021' over '0.7615392392593242'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'0.7615392392593242' over '0.8442933223842001'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'0.8442933223842001' over '0.8489475850519906'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'0.8489475850519906' over '0.8554252058560303'",
+          "severity": "hard"
+        }
+      ],
+      "official_code_score": {
+        "available": true,
+        "score": 99.9997804913552,
+        "n_activated": 4,
+        "scored": [
+          "palette",
+          "figure_aspect",
+          "linewidth",
+          "grid"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": []
+    },
+    {
+      "id": "Chart2Code_level1_direct_density_11",
+      "chart": "Distribution",
+      "panel_mode": "multi",
+      "code_version": "5ec3cea3953c",
+      "skill": "faceted_distribution",
+      "rationale": "faceted hist by panel_group",
+      "rows_used": 900,
+      "status": "ok",
+      "distance": 0.572,
+      "baseline_distance": 0.283,
+      "delta": -0.289,
+      "selected": "plain",
+      "selected_distance": 0.284,
+      "selected_gain": -0.001,
+      "selection_margin": 0.288,
+      "components": {
+        "palette": 0.791,
+        "aspect": 0.008,
+        "ink": 0.587
+      },
+      "hard_failures": 0,
+      "findings": [],
+      "official_code_score": {
+        "available": true,
+        "score": 99.99654311018888,
+        "n_activated": 4,
+        "scored": [
+          "palette",
+          "figure_aspect",
+          "linewidth",
+          "grid"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": []
+    },
+    {
+      "id": "Chart2Code_level1_direct_heatmap_3",
+      "chart": "Heatmap",
+      "panel_mode": "multi",
+      "code_version": "5ec3cea3953c",
+      "skill": "matrix_plate",
+      "rationale": "matrix 8 measures",
+      "rows_used": 40,
+      "status": "ok",
+      "distance": 0.247,
+      "baseline_distance": 0.364,
+      "delta": 0.117,
+      "selected": "styled",
+      "selected_distance": 0.186,
+      "selected_gain": 0.178,
+      "selection_margin": 0.122,
+      "components": {
+        "palette": 0.121,
+        "aspect": 0.047,
+        "ink": 0.764
+      },
+      "hard_failures": 28,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'1.00' over '1.00'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'12.081' over '12.258'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'12.258' over '12.903'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'12.903' over '16.915'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'16.915' over '17.188'",
+          "severity": "hard"
+        }
+      ],
+      "official_code_score": {
+        "available": true,
+        "score": 99.98962040477433,
+        "n_activated": 3,
+        "scored": [
+          "palette",
+          "figure_aspect",
+          "linewidth"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": []
+    },
+    {
+      "id": "Chart2Code_level1_direct_heatmap_7",
+      "chart": "Heatmap",
+      "panel_mode": "multi",
+      "code_version": "5ec3cea3953c",
+      "skill": "matrix_plate",
+      "rationale": "matrix 3 measures",
+      "rows_used": 40,
+      "status": "ok",
+      "distance": 0.283,
+      "baseline_distance": 0.325,
+      "delta": 0.042,
+      "selected": "styled",
+      "selected_distance": 0.197,
+      "selected_gain": 0.128,
+      "selection_margin": 0.043,
+      "components": {
+        "palette": 0.194,
+        "aspect": 0.02,
+        "ink": 0.77
+      },
+      "hard_failures": 95,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'4.00' over '4.00'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'0.07' over '0.12'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'0.11' over '0.13'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'0.07' over '0.11'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'0.11' over '0.12'",
+          "severity": "hard"
+        }
+      ],
+      "official_code_score": {
+        "available": true,
+        "score": 99.99385185430543,
+        "n_activated": 4,
+        "scored": [
+          "palette",
+          "figure_aspect",
+          "linewidth",
+          "grid"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": []
+    },
+    {
+      "id": "Chart2Code_level1_direct_line_39",
+      "chart": "Line",
+      "panel_mode": "multi",
+      "code_version": "5ec3cea3953c",
+      "skill": "trend_with_uncertainty",
+      "rationale": "trend calendar_year->panel_row",
+      "rows_used": 88,
+      "status": "ok",
+      "distance": 0.285,
+      "baseline_distance": 0.328,
+      "delta": 0.043,
+      "selected": "styled",
+      "selected_distance": 0.285,
+      "selected_gain": 0.043,
+      "selection_margin": 0.041,
+      "components": {
+        "palette": 0.432,
+        "aspect": 0.001,
+        "ink": 0.203
+      },
+      "hard_failures": 0,
+      "findings": [],
+      "official_code_score": {
+        "available": true,
+        "score": 99.9999458019165,
+        "n_activated": 4,
+        "scored": [
+          "palette",
+          "figure_aspect",
+          "linewidth",
+          "grid"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": []
+    },
+    {
+      "id": "Chart2Code_level1_direct_line_8",
+      "chart": "Line",
+      "panel_mode": "multi",
+      "code_version": "5ec3cea3953c",
+      "skill": "trend_with_uncertainty",
+      "rationale": "trend time_step->panel_row",
+      "rows_used": 110,
+      "status": "ok",
+      "distance": 0.494,
+      "baseline_distance": 0.558,
+      "delta": 0.064,
+      "selected": "styled",
+      "selected_distance": 0.494,
+      "selected_gain": 0.064,
+      "selection_margin": 0.062,
+      "components": {
+        "palette": 0.558,
+        "aspect": 0.004,
+        "ink": 0.824
+      },
+      "hard_failures": 0,
+      "findings": [],
+      "official_code_score": {
+        "available": true,
+        "score": 99.9995385569685,
+        "n_activated": 6,
+        "scored": [
+          "palette",
+          "figure_aspect",
+          "linewidth",
+          "grid",
+          "spines_removed",
+          "legend_frame"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": []
+    },
+    {
+      "id": "Chart2Code_level2_3d_11_v2",
+      "chart": "Scatter",
+      "panel_mode": "multi",
+      "code_version": "5ec3cea3953c",
+      "skill": "scatter_relationship",
+      "rationale": "scatter panel_row vs panel_col",
+      "rows_used": 276,
+      "status": "ok",
+      "distance": 0.411,
+      "baseline_distance": 0.528,
+      "delta": 0.117,
+      "selected": "styled",
+      "selected_distance": 0.411,
+      "selected_gain": 0.117,
+      "selection_margin": 0.111,
+      "components": {
+        "palette": 0.624,
+        "aspect": 0.001,
+        "ink": 0.288
+      },
+      "hard_failures": 0,
+      "findings": [],
+      "official_code_score": {
+        "available": true,
+        "score": 99.99760567180954,
+        "n_activated": 6,
+        "scored": [
+          "palette",
+          "figure_aspect",
+          "linewidth",
+          "grid",
+          "spines_removed",
+          "legend_frame"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": []
+    },
+    {
+      "id": "Chart2Code_level2_3d_5_v4",
+      "chart": "Bar",
+      "panel_mode": "multi",
+      "code_version": "5ec3cea3953c",
+      "skill": "grouped_measures",
+      "rationale": "grouped bars ['panel_col', 'biochar_rate_percent', 'day_after_rewetting_days'] by biochar_amendment_label",
+      "rows_used": 80,
+      "status": "ok",
+      "distance": 0.205,
+      "baseline_distance": 0.178,
+      "delta": -0.027,
+      "selected": "plain",
+      "selected_distance": 0.175,
+      "selected_gain": 0.003,
+      "selection_margin": 0.013,
+      "components": {
+        "palette": 0.333,
+        "aspect": 0.023,
+        "ink": 0.069
+      },
+      "hard_failures": 0,
+      "findings": [],
+      "official_code_score": {
+        "available": true,
+        "score": 79.99958532342455,
+        "n_activated": 5,
+        "scored": [
+          "palette",
+          "figure_aspect",
+          "linewidth",
+          "grid",
+          "spines_removed"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": []
+    },
+    {
+      "id": "Chart2Code_level2_area_3_v3",
+      "chart": "Line",
+      "panel_mode": "multi",
+      "code_version": "5ec3cea3953c",
+      "skill": "trend_with_uncertainty",
+      "rationale": "trend timepoint_day->panel_row",
+      "rows_used": 95,
+      "status": "ok",
+      "distance": 0.468,
+      "baseline_distance": 0.524,
+      "delta": 0.056,
+      "selected": "styled",
+      "selected_distance": 0.468,
+      "selected_gain": 0.056,
+      "selection_margin": 0.054,
+      "components": {
+        "palette": 0.547,
+        "aspect": 0.002,
+        "ink": 0.739
+      },
+      "hard_failures": 1,
+      "findings": [
+        {
+          "check": "semantics.marks",
+          "detail": "95 points drawn for 91 rows",
+          "severity": "hard"
+        }
+      ],
+      "official_code_score": {
+        "available": true,
+        "score": 99.99728664436955,
+        "n_activated": 5,
+        "scored": [
+          "palette",
+          "figure_aspect",
+          "linewidth",
+          "grid",
+          "legend_frame"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": [
+        {
+          "check": "semantics.marks",
+          "detail": "95 points drawn for 91 rows",
+          "severity": "hard"
+        }
+      ]
+    },
+    {
+      "id": "Chart2Code_level2_bar_10_v4",
+      "chart": "Line",
+      "panel_mode": "multi",
+      "code_version": "5ec3cea3953c",
+      "skill": "trend_with_uncertainty",
+      "rationale": "trend incubation_time_h->panel_row",
+      "rows_used": 173,
+      "status": "ok",
+      "distance": 0.56,
+      "baseline_distance": 0.632,
+      "delta": 0.072,
+      "selected": "styled",
+      "selected_distance": 0.557,
+      "selected_gain": 0.075,
+      "selection_margin": 0.075,
+      "components": {
+        "palette": 0.675,
+        "aspect": 0.014,
+        "ink": 0.817
+      },
+      "hard_failures": 1,
+      "findings": [
+        {
+          "check": "semantics.marks",
+          "detail": "173 points drawn for 168 rows",
+          "severity": "hard"
+        }
+      ],
+      "official_code_score": {
+        "available": true,
+        "score": 99.99957859938168,
+        "n_activated": 5,
+        "scored": [
+          "palette",
+          "figure_aspect",
+          "linewidth",
+          "grid",
+          "legend_frame"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": [
+        {
+          "check": "semantics.marks",
+          "detail": "173 points drawn for 168 rows",
+          "severity": "hard"
+        }
+      ]
+    },
+    {
+      "id": "Chart2Code_level2_bar_22_v4",
+      "chart": "Bar",
+      "panel_mode": "multi",
+      "code_version": "5ec3cea3953c",
+      "skill": "grouped_measures",
+      "rationale": "grouped bars ['panel_row', 'panel_col', 'condition_order'] by panel_group",
+      "rows_used": 220,
+      "status": "ok",
+      "distance": 0.174,
+      "baseline_distance": 0.188,
+      "delta": 0.014,
+      "selected": "styled",
+      "selected_distance": 0.17,
+      "selected_gain": 0.018,
+      "selection_margin": 0.027,
+      "components": {
+        "palette": 0.29,
+        "aspect": 0.019,
+        "ink": 0.041
+      },
+      "hard_failures": 0,
+      "findings": [],
+      "official_code_score": {
+        "available": true,
+        "score": 74.99613725897586,
+        "n_activated": 4,
+        "scored": [
+          "palette",
+          "figure_aspect",
+          "linewidth",
+          "grid"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": []
+    },
+    {
+      "id": "Chart2Code_level2_bar_25_v4",
+      "chart": "Line",
+      "panel_mode": "multi",
+      "code_version": "5ec3cea3953c",
+      "skill": "trend_with_uncertainty",
+      "rationale": "trend measurement_day->panel_row",
+      "rows_used": 386,
+      "status": "ok",
+      "distance": 0.548,
+      "baseline_distance": 0.611,
+      "delta": 0.063,
+      "selected": "styled",
+      "selected_distance": 0.547,
+      "selected_gain": 0.064,
+      "selection_margin": 0.063,
+      "components": {
+        "palette": 0.653,
+        "aspect": 0.004,
+        "ink": 0.829
+      },
+      "hard_failures": 1,
+      "findings": [
+        {
+          "check": "semantics.annotation",
+          "detail": "too few usable points to compute r",
+          "severity": "hard"
+        }
+      ],
+      "official_code_score": {
+        "available": true,
+        "score": 99.99873620753452,
+        "n_activated": 6,
+        "scored": [
+          "palette",
+          "figure_aspect",
+          "linewidth",
+          "grid",
+          "spines_removed",
+          "legend_frame"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": [
+        {
+          "check": "semantics.annotation",
+          "detail": "too few usable points to compute r",
+          "severity": "hard"
+        }
+      ]
+    },
+    {
+      "id": "Chart2Code_level2_box_1_v5",
+      "chart": "Box/Violin",
+      "panel_mode": "multi",
+      "code_version": "5ec3cea3953c",
+      "skill": "distribution_comparison",
+      "rationale": "box panel_row by record_type",
+      "rows_used": 3163,
+      "status": "ok",
+      "distance": 0.108,
+      "baseline_distance": 0.326,
+      "delta": 0.218,
+      "selected": "styled",
+      "selected_distance": 0.117,
+      "selected_gain": 0.209,
+      "selection_margin": 0.209,
+      "components": {
+        "palette": 0.117,
+        "aspect": 0.006,
+        "ink": 0.185
+      },
+      "hard_failures": 0,
+      "findings": [],
+      "official_code_score": {
+        "available": true,
+        "score": 100.0,
+        "n_activated": 3,
+        "scored": [
+          "palette",
+          "linewidth",
+          "grid"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": []
+    },
+    {
+      "id": "Chart2Code_level2_combination_11_v2",
+      "chart": "Std-band",
+      "panel_mode": "multi",
+      "code_version": "5ec3cea3953c",
+      "skill": "trend_with_uncertainty",
+      "rationale": "trend panel_row->panel_col",
+      "rows_used": 155,
+      "status": "ok",
+      "distance": 0.368,
+      "baseline_distance": 0.424,
+      "delta": 0.056,
+      "selected": "styled",
+      "selected_distance": 0.368,
+      "selected_gain": 0.056,
+      "selection_margin": 0.054,
+      "components": {
+        "palette": 0.547,
+        "aspect": 0.002,
+        "ink": 0.287
+      },
+      "hard_failures": 0,
+      "findings": [],
+      "official_code_score": {
+        "available": true,
+        "score": 99.99901392049395,
+        "n_activated": 6,
+        "scored": [
+          "palette",
+          "figure_aspect",
+          "linewidth",
+          "grid",
+          "spines_removed",
+          "legend_frame"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": []
+    },
+    {
+      "id": "Chart2Code_level2_combination_13_v5",
+      "chart": "Line",
+      "panel_mode": "multi",
+      "code_version": "5ec3cea3953c",
+      "skill": "trend_with_uncertainty",
+      "rationale": "trend panel_row->panel_col",
+      "rows_used": 672,
+      "status": "ok",
+      "distance": 0.461,
+      "baseline_distance": 0.517,
+      "delta": 0.056,
+      "selected": "styled",
+      "selected_distance": 0.461,
+      "selected_gain": 0.056,
+      "selection_margin": 0.055,
+      "components": {
+        "palette": 0.48,
+        "aspect": 0.002,
+        "ink": 0.874
+      },
+      "hard_failures": 0,
+      "findings": [],
+      "official_code_score": {
+        "available": true,
+        "score": 99.99725441500033,
+        "n_activated": 6,
+        "scored": [
+          "palette",
+          "figure_aspect",
+          "linewidth",
+          "grid",
+          "spines_removed",
+          "legend_frame"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": []
+    },
+    {
+      "id": "Chart2Code_level2_combination_14_v5",
+      "chart": "Distribution",
+      "panel_mode": "multi",
+      "code_version": "5ec3cea3953c",
+      "skill": "faceted_distribution",
+      "rationale": "faceted hist by panel_row",
+      "rows_used": 4208,
+      "status": "ok",
+      "distance": 0.146,
+      "baseline_distance": 0.262,
+      "delta": 0.116,
+      "selected": "styled",
+      "selected_distance": 0.146,
+      "selected_gain": 0.116,
+      "selection_margin": 0.117,
+      "components": {
+        "palette": 0.106,
+        "aspect": 0.007,
+        "ink": 0.383
+      },
+      "hard_failures": 0,
+      "findings": [],
+      "official_code_score": {
+        "available": true,
+        "score": 99.99863283940877,
+        "n_activated": 2,
+        "scored": [
+          "figure_aspect",
+          "grid"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": []
+    },
+    {
+      "id": "Chart2Code_level2_combination_16_v5",
+      "chart": "Box/Violin",
+      "panel_mode": "multi",
+      "code_version": "5ec3cea3953c",
+      "skill": "distribution_comparison",
+      "rationale": "box panel_row by panel_group",
+      "rows_used": 959,
+      "status": "ok",
+      "distance": 0.5,
+      "baseline_distance": 0.59,
+      "delta": 0.09,
+      "selected": "styled",
+      "selected_distance": 0.557,
+      "selected_gain": 0.033,
+      "selection_margin": 0.027,
+      "components": {
+        "palette": 0.812,
+        "aspect": 0.005,
+        "ink": 0.213
+      },
+      "hard_failures": 0,
+      "findings": [],
+      "official_code_score": {
+        "available": true,
+        "score": 99.99793005710893,
+        "n_activated": 5,
+        "scored": [
+          "palette",
+          "figure_aspect",
+          "linewidth",
+          "grid",
+          "legend_frame"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": []
+    },
+    {
+      "id": "Chart2Code_level2_combination_33_v5",
+      "chart": "Distribution",
+      "panel_mode": "multi",
+      "code_version": "5ec3cea3953c",
+      "skill": "faceted_distribution",
+      "rationale": "faceted hist by panel_group",
+      "rows_used": 3037,
+      "status": "ok",
+      "distance": 0.128,
+      "baseline_distance": 0.196,
+      "delta": 0.068,
+      "selected": "styled",
+      "selected_distance": 0.129,
+      "selected_gain": 0.067,
+      "selection_margin": 0.068,
+      "components": {
+        "palette": 0.13,
+        "aspect": 0.002,
+        "ink": 0.247
+      },
+      "hard_failures": 0,
+      "findings": [],
+      "official_code_score": {
+        "available": true,
+        "score": 99.9991367540579,
+        "n_activated": 5,
+        "scored": [
+          "palette",
+          "figure_aspect",
+          "linewidth",
+          "grid",
+          "spines_removed"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": []
+    },
+    {
+      "id": "Chart2Code_level2_combination_42_v5",
+      "chart": "Scatter",
+      "panel_mode": "multi",
+      "code_version": "5ec3cea3953c",
+      "skill": "scatter_relationship",
+      "rationale": "scatter panel_row vs panel_col",
+      "rows_used": 51,
+      "status": "ok",
+      "distance": 0.352,
+      "baseline_distance": 0.451,
+      "delta": 0.099,
+      "selected": "styled",
+      "selected_distance": 0.352,
+      "selected_gain": 0.099,
+      "selection_margin": 0.093,
+      "components": {
+        "palette": 0.5,
+        "aspect": 0.004,
+        "ink": 0.33
+      },
+      "hard_failures": 0,
+      "findings": [],
+      "official_code_score": {
+        "available": true,
+        "score": 99.99875889927587,
+        "n_activated": 5,
+        "scored": [
+          "palette",
+          "figure_aspect",
+          "linewidth",
+          "grid",
+          "spines_removed"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": []
+    },
+    {
+      "id": "Chart2Code_level2_combination_44_v3",
+      "chart": "Distribution",
+      "panel_mode": "multi",
+      "code_version": "5ec3cea3953c",
+      "skill": "faceted_distribution",
+      "rationale": "faceted hist by panel_group",
+      "rows_used": 399,
+      "status": "ok",
+      "distance": 0.133,
+      "baseline_distance": 0.221,
+      "delta": 0.088,
+      "selected": "styled",
+      "selected_distance": 0.135,
+      "selected_gain": 0.086,
+      "selection_margin": 0.087,
+      "components": {
+        "palette": 0.086,
+        "aspect": 0.001,
+        "ink": 0.382
+      },
+      "hard_failures": 0,
+      "findings": [],
+      "official_code_score": {
+        "available": true,
+        "score": 99.99903147099876,
+        "n_activated": 6,
+        "scored": [
+          "palette",
+          "figure_aspect",
+          "linewidth",
+          "grid",
+          "spines_removed",
+          "legend_frame"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": []
+    },
+    {
+      "id": "Chart2Code_level2_contour_14_v1",
+      "chart": "Field 2D",
+      "panel_mode": "multi",
+      "code_version": "5ec3cea3953c",
+      "skill": "field_map",
+      "rationale": "field panel_row over x_m x z_m",
+      "rows_used": 2780,
+      "status": "ok",
+      "distance": 0.345,
+      "baseline_distance": 0.406,
+      "delta": 0.061,
+      "selected": "styled",
+      "selected_distance": 0.35,
+      "selected_gain": 0.056,
+      "selection_margin": 0.057,
+      "components": {
+        "palette": 0.451,
+        "aspect": 0.019,
+        "ink": 0.405
+      },
+      "hard_failures": 0,
+      "findings": [],
+      "official_code_score": {
+        "available": false,
+        "reason": "CodegenError: skill 'field_map' has no code emitter yet"
+      },
+      "semantic_findings": []
+    },
+    {
+      "id": "Chart2Code_level2_contour_23_v4",
+      "chart": "Field 2D",
+      "panel_mode": "multi",
+      "code_version": "5ec3cea3953c",
+      "status": "error",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "Chart2Code_level2_contour_25_v2",
+      "chart": "Field 2D",
+      "panel_mode": "multi",
+      "code_version": "5ec3cea3953c",
+      "status": "error",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "Chart2Code_level2_contour_25_v3",
+      "chart": "Field 2D",
+      "panel_mode": "multi",
+      "code_version": "5ec3cea3953c",
+      "skill": "field_map",
+      "rationale": "field panel_row over position_mm x elapsed_time_min",
+      "rows_used": 15219,
+      "status": "ok",
+      "distance": 0.253,
+      "baseline_distance": 0.37,
+      "delta": 0.117,
+      "selected": "styled",
+      "selected_distance": 0.265,
+      "selected_gain": 0.105,
+      "selection_margin": 0.106,
+      "components": {
+        "palette": 0.351,
+        "aspect": 0.023,
+        "ink": 0.237
+      },
+      "hard_failures": 0,
+      "findings": [],
+      "official_code_score": {
+        "available": false,
+        "reason": "CodegenError: skill 'field_map' has no code emitter yet"
+      },
+      "semantic_findings": []
+    },
+    {
+      "id": "Chart2Code_level2_quiver_13_v1",
+      "chart": "Field 2D",
+      "panel_mode": "multi",
+      "code_version": "5ec3cea3953c",
+      "skill": "field_map",
+      "rationale": "field panel_row over x_position_mm x y_position_mm",
+      "rows_used": 1071,
+      "status": "ok",
+      "distance": 0.257,
+      "baseline_distance": 0.335,
+      "delta": 0.078,
+      "selected": "styled",
+      "selected_distance": 0.239,
+      "selected_gain": 0.096,
+      "selection_margin": 0.075,
+      "components": {
+        "palette": 0.423,
+        "aspect": 0.011,
+        "ink": 0.085
+      },
+      "hard_failures": 0,
+      "findings": [],
+      "official_code_score": {
+        "available": false,
+        "reason": "CodegenError: skill 'field_map' has no code emitter yet"
+      },
+      "semantic_findings": []
+    },
+    {
+      "id": "Chart2Code_level2_quiver_14_v1",
+      "chart": "Field 2D",
+      "panel_mode": "multi",
+      "code_version": "5ec3cea3953c",
+      "skill": "field_map",
+      "rationale": "field panel_row over sample_index x time_h",
+      "rows_used": 2334,
+      "status": "ok",
+      "distance": 0.416,
+      "baseline_distance": 0.489,
+      "delta": 0.073,
+      "selected": "styled",
+      "selected_distance": 0.411,
+      "selected_gain": 0.078,
+      "selection_margin": 0.068,
+      "components": {
+        "palette": 0.434,
+        "aspect": 0.032,
+        "ink": 0.755
+      },
+      "hard_failures": 0,
+      "findings": [],
+      "official_code_score": {
+        "available": false,
+        "reason": "CodegenError: skill 'field_map' has no code emitter yet"
+      },
+      "semantic_findings": []
+    },
+    {
+      "id": "Chart2Code_level2_quiver_4_v5",
+      "chart": "Field 2D",
+      "panel_mode": "multi",
+      "code_version": "5ec3cea3953c",
+      "skill": "field_map",
+      "rationale": "field panel_row over replicate_id x x_mm",
+      "rows_used": 32,
+      "status": "ok",
+      "distance": 0.554,
+      "baseline_distance": 0.662,
+      "delta": 0.108,
+      "selected": "styled",
+      "selected_distance": 0.518,
+      "selected_gain": 0.144,
+      "selection_margin": 0.132,
+      "components": {
+        "palette": 0.591,
+        "aspect": 0.016,
+        "ink": 1.0
+      },
+      "hard_failures": 0,
+      "findings": [],
+      "official_code_score": {
+        "available": false,
+        "reason": "CodegenError: skill 'field_map' has no code emitter yet"
+      },
+      "semantic_findings": []
+    },
+    {
+      "id": "Chart2Code_level2_radar_10_v2",
+      "chart": "Polar/Radial",
+      "panel_mode": "multi",
+      "code_version": "5ec3cea3953c",
+      "skill": "radial_profile",
+      "rationale": "polar panel_col by block_id",
+      "rows_used": 460,
+      "status": "ok",
+      "distance": 0.314,
+      "baseline_distance": 0.326,
+      "delta": 0.012,
+      "selected": "plain",
+      "selected_distance": 0.259,
+      "selected_gain": 0.067,
+      "selection_margin": 0.017,
+      "components": {
+        "palette": 0.115,
+        "aspect": 0.124,
+        "ink": 1.0
+      },
+      "hard_failures": 50,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'field_replicates' over 'field_replicates'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'advantage_profile' over 'benchmark_profile'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'advantage_profile' over 'context_profile'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'benchmark_profile' over 'context_profile'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'attribute_scoreca' over 'context_profile'",
+          "severity": "hard"
+        }
+      ],
+      "official_code_score": {
+        "available": false,
+        "reason": "CodegenError: skill 'radial_profile' has no code emitter yet"
+      },
+      "semantic_findings": []
+    },
+    {
+      "id": "Chart2Code_level2_radar_18_v5",
+      "chart": "Bar",
+      "panel_mode": "multi",
+      "code_version": "5ec3cea3953c",
+      "skill": "grouped_measures",
+      "rationale": "grouped bars ['panel_col', 'condition_order', 'net_carbonate_capture_percent'] by record_type",
+      "rows_used": 80,
+      "status": "ok",
+      "distance": 0.35,
+      "baseline_distance": 0.423,
+      "delta": 0.073,
+      "selected": "styled",
+      "selected_distance": 0.354,
+      "selected_gain": 0.069,
+      "selection_margin": 0.077,
+      "components": {
+        "palette": 0.534,
+        "aspect": 0.016,
+        "ink": 0.221
+      },
+      "hard_failures": 0,
+      "findings": [],
+      "official_code_score": {
+        "available": true,
+        "score": 75.0,
+        "n_activated": 4,
+        "scored": [
+          "palette",
+          "linewidth",
+          "grid",
+          "legend_frame"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": []
+    },
+    {
+      "id": "Chart2Code_level2_radar_23_v3",
+      "chart": "Polar/Radial",
+      "panel_mode": "multi",
+      "code_version": "5ec3cea3953c",
+      "skill": "radial_profile",
+      "rationale": "polar panel_row by condition_id",
+      "rows_used": 175,
+      "status": "ok",
+      "distance": 0.132,
+      "baseline_distance": 0.145,
+      "delta": 0.013,
+      "selected": "styled",
+      "selected_distance": 0.083,
+      "selected_gain": 0.062,
+      "selection_margin": 0.022,
+      "components": {
+        "palette": 0.109,
+        "aspect": 0.095,
+        "ink": 0.229
+      },
+      "hard_failures": 10,
+      "findings": [
+        {
+          "check": "text_collision",
+          "detail": "'TRP' over 'TRP'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'SAP' over 'SAP'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'LSH' over 'LSH'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'REF' over 'REF'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'CTL' over 'CTL'",
+          "severity": "hard"
+        }
+      ],
+      "official_code_score": {
+        "available": false,
+        "reason": "CodegenError: skill 'radial_profile' has no code emitter yet"
+      },
+      "semantic_findings": []
+    },
+    {
+      "id": "PMC11502666",
+      "chart": "Distribution",
+      "panel_mode": "multi",
+      "code_version": "5ec3cea3953c",
+      "skill": "faceted_distribution",
+      "rationale": "faceted hist by panel_group",
+      "rows_used": 554,
+      "status": "ok",
+      "distance": 0.146,
+      "baseline_distance": 0.209,
+      "delta": 0.063,
+      "selected": "styled",
+      "selected_distance": 0.145,
+      "selected_gain": 0.064,
+      "selection_margin": 0.066,
+      "components": {
+        "palette": 0.099,
+        "aspect": 0.009,
+        "ink": 0.398
+      },
+      "hard_failures": 0,
+      "findings": [],
+      "official_code_score": {
+        "available": true,
+        "score": 100.0,
+        "n_activated": 2,
+        "scored": [
+          "palette",
+          "grid"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": []
+    },
+    {
+      "id": "PMC11840003",
+      "chart": "Box/Violin",
+      "panel_mode": "multi",
+      "code_version": "5ec3cea3953c",
+      "skill": "distribution_comparison",
+      "rationale": "box panel_row by panel_group",
+      "rows_used": 1403,
+      "status": "ok",
+      "distance": 0.169,
+      "baseline_distance": 0.446,
+      "delta": 0.277,
+      "selected": "styled",
+      "selected_distance": 0.176,
+      "selected_gain": 0.27,
+      "selection_margin": 0.279,
+      "components": {
+        "palette": 0.1,
+        "aspect": 0.211,
+        "ink": 0.302
+      },
+      "hard_failures": 1,
+      "findings": [
+        {
+          "check": "height",
+          "detail": "170.0 mm exceeds the 170.0 mm maximum",
+          "severity": "hard"
+        }
+      ],
+      "official_code_score": {
+        "available": true,
+        "score": 99.99959236362147,
+        "n_activated": 4,
+        "scored": [
+          "palette",
+          "figure_aspect",
+          "linewidth",
+          "grid"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": []
+    },
+    {
+      "id": "PMC12000431",
+      "chart": "Distribution",
+      "panel_mode": "multi",
+      "code_version": "5ec3cea3953c",
+      "skill": "faceted_distribution",
+      "rationale": "faceted hist by panel_group",
+      "rows_used": 1414,
+      "status": "ok",
+      "distance": 0.083,
+      "baseline_distance": 0.096,
+      "delta": 0.013,
+      "selected": "styled",
+      "selected_distance": 0.083,
+      "selected_gain": 0.013,
+      "selection_margin": 0.015,
+      "components": {
+        "palette": 0.077,
+        "aspect": 0.005,
+        "ink": 0.177
+      },
+      "hard_failures": 0,
+      "findings": [],
+      "official_code_score": {
+        "available": true,
+        "score": 100.0,
+        "n_activated": 2,
+        "scored": [
+          "palette",
+          "legend_frame"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": []
     }
   ],
   "benchmark_anchor_distance": 0.351,
@@ -6259,11 +6228,11 @@
     "comparable": true,
     "note": "comparable"
   },
-  "benchmark_shipped_anchor_distance": 0.296,
+  "benchmark_shipped_anchor_distance": 0.289,
   "benchmark_shipped_anchor_single": {
-    "mean": 0.296,
-    "partial_mean": 0.296,
-    "n_same_instrument": 20,
+    "mean": 0.289,
+    "partial_mean": 0.289,
+    "n_same_instrument": 18,
     "n_other_instrument": 0,
     "comparable": true,
     "note": "comparable"
@@ -6273,14 +6242,52 @@
     "weight_upstream": 0.35,
     "note": "official deterministic channel only; the 0.65 vision channel is NOT run, so this is not the combined score",
     "n_scored": 109,
-    "n_unavailable": 32,
+    "n_unavailable": 30,
     "mean_score": 95.54,
     "min_score": 66.67,
     "max_score": 100.0
   },
-  "code_version": "6f01bca5b70f",
+  "code_version": "5ec3cea3953c",
   "freshness": {
     "fresh": [
+      "PMC12354736",
+      "PMC12504421",
+      "PMC12905268",
+      "Chart2Code_level1_direct_HR_5",
+      "Chart2Code_level1_direct_combination_57",
+      "Chart2Code_level1_direct_contour_18",
+      "Chart2Code_level1_direct_density_11",
+      "Chart2Code_level1_direct_heatmap_3",
+      "Chart2Code_level1_direct_heatmap_7",
+      "Chart2Code_level1_direct_line_39",
+      "Chart2Code_level1_direct_line_8",
+      "Chart2Code_level2_3d_11_v2",
+      "Chart2Code_level2_3d_5_v4",
+      "Chart2Code_level2_area_3_v3",
+      "Chart2Code_level2_bar_10_v4",
+      "Chart2Code_level2_bar_22_v4",
+      "Chart2Code_level2_bar_25_v4",
+      "Chart2Code_level2_box_1_v5",
+      "Chart2Code_level2_combination_11_v2",
+      "Chart2Code_level2_combination_13_v5",
+      "Chart2Code_level2_combination_14_v5",
+      "Chart2Code_level2_combination_16_v5",
+      "Chart2Code_level2_combination_33_v5",
+      "Chart2Code_level2_combination_42_v5",
+      "Chart2Code_level2_combination_44_v3",
+      "Chart2Code_level2_contour_14_v1",
+      "Chart2Code_level2_contour_25_v3",
+      "Chart2Code_level2_quiver_13_v1",
+      "Chart2Code_level2_quiver_14_v1",
+      "Chart2Code_level2_quiver_4_v5",
+      "Chart2Code_level2_radar_10_v2",
+      "Chart2Code_level2_radar_18_v5",
+      "Chart2Code_level2_radar_23_v3",
+      "PMC11502666",
+      "PMC11840003",
+      "PMC12000431"
+    ],
+    "stale": [
       "PMC13009336",
       "PMC13022287",
       "PMC13079874",
@@ -6319,32 +6326,6 @@
       "local_gallery_hexbin_joint",
       "local_picks_top_scatter__39",
       "local_picks_top_violin__9",
-      "Chart2Code_level1_direct_HR_5",
-      "Chart2Code_level1_direct_combination_57",
-      "Chart2Code_level1_direct_contour_18",
-      "Chart2Code_level1_direct_density_11",
-      "Chart2Code_level1_direct_heatmap_3",
-      "Chart2Code_level1_direct_heatmap_7",
-      "Chart2Code_level1_direct_line_39",
-      "Chart2Code_level1_direct_line_8",
-      "Chart2Code_level2_3d_11_v2",
-      "Chart2Code_level2_3d_5_v4",
-      "Chart2Code_level2_area_3_v3",
-      "Chart2Code_level2_bar_10_v4",
-      "Chart2Code_level2_bar_22_v4",
-      "Chart2Code_level2_bar_25_v4",
-      "Chart2Code_level2_box_1_v5",
-      "Chart2Code_level2_combination_11_v2",
-      "Chart2Code_level2_combination_13_v5",
-      "Chart2Code_level2_combination_14_v5",
-      "Chart2Code_level2_combination_16_v5",
-      "Chart2Code_level2_combination_33_v5",
-      "Chart2Code_level2_combination_42_v5",
-      "Chart2Code_level2_combination_44_v3",
-      "Chart2Code_level2_contour_14_v1",
-      "Chart2Code_level2_contour_23_v4",
-      "Chart2Code_level2_contour_25_v2",
-      "Chart2Code_level2_contour_25_v3",
       "Chart2Code_level2_contour_5_v5",
       "Chart2Code_level2_density_12_v3",
       "Chart2Code_level2_density_14_v4",
@@ -6357,12 +6338,6 @@
       "Chart2Code_level2_multidiff_2_v2__single",
       "Chart2Code_level2_multidiff_5_v1",
       "Chart2Code_level2_quiver_10_v5",
-      "Chart2Code_level2_quiver_13_v1",
-      "Chart2Code_level2_quiver_14_v1",
-      "Chart2Code_level2_quiver_4_v5",
-      "Chart2Code_level2_radar_10_v2",
-      "Chart2Code_level2_radar_18_v5",
-      "Chart2Code_level2_radar_23_v3",
       "Chart2Code_level2_radar_26_v3",
       "Chart2Code_level2_radar_35_v4",
       "Chart2Code_level2_radar_3_v1",
@@ -6415,32 +6390,129 @@
       "ChartNet-sample_d7325ced9dcb3e94",
       "ChartNet-sample_e17ff7b5495b0ee4",
       "ChartNet-sample_f31f9780b9bd6948",
-      "ChartNet-sample_f743754444c3a3d9",
-      "PMC11502666",
-      "PMC11840003",
-      "PMC12000431",
-      "PMC12354736",
-      "PMC12504421",
-      "PMC12905268"
+      "ChartNet-sample_f743754444c3a3d9"
     ],
-    "stale": [],
     "unknown": [],
-    "n_fresh": 141,
-    "n_stale": 0,
+    "n_fresh": 36,
+    "n_stale": 103,
     "n_unknown": 0
   },
-  "stale_tasks": [],
-  "n_stale": 0,
+  "stale_tasks": [
+    "PMC13009336",
+    "PMC13022287",
+    "PMC13079874",
+    "PMC13106710",
+    "PMC13135507",
+    "PMC13245775",
+    "PMC13252719",
+    "PMC13273070",
+    "PMC13286152",
+    "PMC13336770",
+    "PMC13342296",
+    "PMC13343911",
+    "arxiv-astro-skymap__2412.12637",
+    "arxiv-astro-skymap__2510.17487",
+    "arxiv-ml-3d-trajectory__2511.17399",
+    "arxiv-ml-3d-trajectory__2602.22552",
+    "arxiv-ml-bar-line-v2__2511.15055",
+    "arxiv-ml-bar-line-v2__2605.21125",
+    "arxiv-phys-prx-prl__2603.21981",
+    "arxiv_2410.15876",
+    "arxiv_2502.15132",
+    "arxiv_2502.17598",
+    "arxiv_2510.17384",
+    "arxiv_2512.09767",
+    "arxiv_2512.25023",
+    "arxiv_2603.04948",
+    "arxiv_2603.08660",
+    "arxiv_2603.17004",
+    "arxiv_2603.23889",
+    "arxiv_2604.01093",
+    "arxiv_2604.05237",
+    "arxiv_2605.14587",
+    "arxiv_2605.16790",
+    "arxiv_2605.22305",
+    "arxiv_2605.22455",
+    "local_gallery_hexbin_joint",
+    "local_picks_top_scatter__39",
+    "local_picks_top_violin__9",
+    "Chart2Code_level2_contour_5_v5",
+    "Chart2Code_level2_density_12_v3",
+    "Chart2Code_level2_density_14_v4",
+    "Chart2Code_level2_errorpoint_10_v5",
+    "Chart2Code_level2_errorpoint_1_v5",
+    "Chart2Code_level2_errorpoint_5_v5",
+    "Chart2Code_level2_hist_2_v3",
+    "Chart2Code_level2_hist_2_v5",
+    "Chart2Code_level2_multidiff_1_v1",
+    "Chart2Code_level2_multidiff_2_v2__single",
+    "Chart2Code_level2_multidiff_5_v1",
+    "Chart2Code_level2_quiver_10_v5",
+    "Chart2Code_level2_radar_26_v3",
+    "Chart2Code_level2_radar_35_v4",
+    "Chart2Code_level2_radar_3_v1",
+    "Chart2Code_level2_radar_3_v3",
+    "Chart2Code_level2_radar_40_v5",
+    "Chart2Code_level2_radar_4_v3",
+    "Chart2Code_level2_radar_7_v3",
+    "Chart2Code_level2_radar_9_v4",
+    "Chart2Code_level2_scatter_13_v2",
+    "Chart2Code_level2_scatter_1_v2__single",
+    "Chart2Code_level2_scatter_22_v2__single",
+    "Chart2Code_level2_scatter_22_v3",
+    "Chart2Code_level2_scatter_27_v5",
+    "Chart2Code_level2_scatter_5_v5",
+    "Chart2Code_level2_violin_25_v4",
+    "Chart2Code_level3_table20_3_generate",
+    "Chart2NCode_ce7b7d946995482f9dd37ddad319cbc2",
+    "Chart2NCode_f5989e4725654971a32e6c84c0dbdfa5",
+    "ChartNet-sample_01541e58b887ce36",
+    "ChartNet-sample_11168fb7e30df7c0",
+    "ChartNet-sample_12f1182db6964e8c",
+    "ChartNet-sample_1acf825b0429ddfd",
+    "ChartNet-sample_21db7b1495645e96",
+    "ChartNet-sample_251d4b63cae5c39c",
+    "ChartNet-sample_27ec276af1be7f88",
+    "ChartNet-sample_3a712400d6efe5ca",
+    "ChartNet-sample_3d0ebd7ea1e10bf3",
+    "ChartNet-sample_42a8557ef11775e9",
+    "ChartNet-sample_46826fe4916b7d52",
+    "ChartNet-sample_51138e34911000f6",
+    "ChartNet-sample_55e97056fbbde5b6__single",
+    "ChartNet-sample_575be33996f0155c",
+    "ChartNet-sample_5781d64aa8377547",
+    "ChartNet-sample_5c19f37c2ecba73b",
+    "ChartNet-sample_5cf3859f3ce78167",
+    "ChartNet-sample_5e553d0091325708",
+    "ChartNet-sample_63115ff12f6710a3",
+    "ChartNet-sample_68d34458d8f08a48",
+    "ChartNet-sample_7c69a17fd376e251",
+    "ChartNet-sample_82a42a98d7e32b53",
+    "ChartNet-sample_953bb3ed650d8541",
+    "ChartNet-sample_97a7c092bc6a4a6c",
+    "ChartNet-sample_9fa23898eda05a63",
+    "ChartNet-sample_ad3e2f8704f6e1b1__single",
+    "ChartNet-sample_b07b3f6805a9e3b8",
+    "ChartNet-sample_b2578adbadc0d71e",
+    "ChartNet-sample_bbbf530e6aefa314",
+    "ChartNet-sample_c1ec6683e1feea7b",
+    "ChartNet-sample_d1a051ec96a39bf4",
+    "ChartNet-sample_d7325ced9dcb3e94",
+    "ChartNet-sample_e17ff7b5495b0ee4",
+    "ChartNet-sample_f31f9780b9bd6948",
+    "ChartNet-sample_f743754444c3a3d9"
+  ],
+  "n_stale": 103,
   "n_unknown": 0,
-  "n_fresh": 141,
+  "n_fresh": 36,
   "selection": {
-    "n": 141,
-    "shipped_mean": 0.292,
-    "always_styled_mean": 0.309,
-    "plain_mean": 0.377,
+    "n": 139,
+    "shipped_mean": 0.291,
+    "always_styled_mean": 0.308,
+    "plain_mean": 0.376,
     "gain_vs_always_styled": 0.017,
     "gain_vs_plain": 0.085,
-    "picked_styled": 132,
+    "picked_styled": 130,
     "picked_plain": 9,
     "rule": "closer of plain/styled to the reference; the reference is an input"
   }
