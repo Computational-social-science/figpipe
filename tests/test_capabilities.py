@@ -11,6 +11,8 @@ from __future__ import annotations
 import pathlib
 import sys
 
+import pytest
+
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
@@ -23,7 +25,6 @@ except Exception:                        # pragma: no cover - optional env
 
 def test_snapshot_reads_capability_artefacts_without_opinions():
     if cron is None:
-        import pytest
         pytest.skip("cron_run unavailable")
     snap = cron.capability_snapshot()
     for key in ("skills", "operators", "benchmark_tasks", "benchmark_ok",
@@ -40,7 +41,6 @@ def test_snapshot_reads_capability_artefacts_without_opinions():
 
 def test_delta_names_what_changed_and_reports_no_change():
     if cron is None:
-        import pytest
         pytest.skip("cron_run unavailable")
     base = {"skills": 12, "operators": 16, "tests": 225}
     assert cron.capability_delta(base, dict(base))["changed"] is False
@@ -60,7 +60,6 @@ def test_a_capability_loss_is_a_regression_not_a_footnote():
     reports success.
     """
     if cron is None:
-        import pytest
         pytest.skip("cron_run unavailable")
     prev = {"benchmark_success_rate": 0.95, "skills": 12,
             "benchmark_anchor_single": 0.28, "tests": 229}
@@ -76,7 +75,6 @@ def test_a_capability_loss_is_a_regression_not_a_footnote():
 
 def test_an_improvement_is_recorded_as_a_gain():
     if cron is None:
-        import pytest
         pytest.skip("cron_run unavailable")
     out = cron.capability_delta({"skills": 12, "operators": 16},
                                 {"skills": 13, "operators": 16})
@@ -87,7 +85,6 @@ def test_an_improvement_is_recorded_as_a_gain():
 def test_a_lower_distance_counts_as_improvement():
     """Lower style distance is better; the direction table must not treat it as a loss."""
     if cron is None:
-        import pytest
         pytest.skip("cron_run unavailable")
     out = cron.capability_delta({"benchmark_anchor_single": 0.31},
                                 {"benchmark_anchor_single": 0.28})
@@ -99,7 +96,6 @@ def test_the_raw_benchmark_mean_is_not_judged():
     """A growing task set moves the mean; that is a property of the measurement, not of the
     capability, so it must never produce a regression."""
     if cron is None:
-        import pytest
         pytest.skip("cron_run unavailable")
     out = cron.capability_delta({"benchmark_mean_distance": 0.278},
                                 {"benchmark_mean_distance": 0.302})
@@ -109,7 +105,6 @@ def test_the_raw_benchmark_mean_is_not_judged():
 
 def test_unjudged_fields_never_count_as_gains_or_regressions():
     if cron is None:
-        import pytest
         pytest.skip("cron_run unavailable")
     out = cron.capability_delta({"mystery": 1}, {"mystery": 0})
     assert out["changed"] is True
@@ -125,7 +120,6 @@ def test_a_scheduled_commit_may_not_delete_evidence():
     """
     import subprocess
     if cron is None:
-        import pytest
         pytest.skip("cron_run unavailable")
     repo = ROOT
     # a real staged deletion inside a protected prefix
@@ -199,7 +193,6 @@ def test_the_shipped_distance_is_judged_on_a_frozen_subset():
     for the always-styled anchor.
     """
     if cron is None:
-        import pytest
         pytest.skip("cron_run unavailable")
     # the JUDGED field is the single-instrument view; the all-rows value mixes fingerprints and is
     # recorded but never judged (see test_a_metric_mixing_instruments_is_not_comparable)
@@ -298,7 +291,6 @@ def test_every_judged_field_is_actually_measured():
     loop could never have noticed a change in it.
     """
     if cron is None:
-        import pytest
         pytest.skip("cron_run unavailable")
     snap = cron.capability_snapshot()
     missing = [k for k in cron.CAPABILITY_DIRECTION if k not in snap]
@@ -309,7 +301,6 @@ def test_every_judged_field_is_actually_measured():
 def test_the_official_score_is_recorded_and_judged():
     """The benchmark's own channel is the closest thing to an external measure we have."""
     if cron is None:
-        import pytest
         pytest.skip("cron_run unavailable")
     snap = cron.capability_snapshot()
     assert "benchmark_official_code_score" in snap
@@ -334,7 +325,6 @@ def test_the_capability_uses_the_honest_official_pass_not_the_harness_aggregate(
     number that drifts with cache contents.
     """
     if cron is None:
-        import pytest
         pytest.skip("cron_run unavailable")
     import json
     path = ROOT / "corpus" / "e2e" / "official_scores.json"
@@ -356,7 +346,6 @@ def test_a_documented_correction_is_not_a_regression():
     reason, while a genuine regression on the same field still fails the run.
     """
     if cron is None:
-        import pytest
         pytest.skip("cron_run unavailable")
     out = cron.capability_delta({"benchmark_official_code_score": 93.53},
                                 {"benchmark_official_code_score": 70.59})
@@ -433,7 +422,6 @@ def test_the_anchor_can_be_restored_to_one_instrument():
 def test_refresh_anchor_is_a_no_op_when_already_comparable():
     """The loop must not re-measure 20 tasks every six hours for nothing."""
     if cron is None:
-        import pytest
         pytest.skip("cron_run unavailable")
     import json
     report = ROOT / "corpus" / "e2e" / "plottwin_report.json"
@@ -446,3 +434,29 @@ def test_refresh_anchor_is_a_no_op_when_already_comparable():
     out = cron.refresh_anchor()
     assert out["ran"] is False
     assert "already comparable" in out["reason"]
+
+
+def test_refresh_heals_BOTH_anchors_not_just_one():
+    """A fix to one anchor is not a fix to the class -- again.
+
+    refresh_anchor() originally checked only the SHIPPED anchor and returned "already comparable"
+    while the STYLED anchor was stale. Both must be comparable before the heal reports success.
+    """
+    if cron is None:
+        pytest.skip("cron_run unavailable")
+    import json
+    report = ROOT / "corpus" / "e2e" / "plottwin_report.json"
+    if not report.is_file():
+        pytest.skip("report absent")
+    data = json.loads(report.read_text(encoding="utf-8"))
+    shipped = (data.get("benchmark_shipped_anchor_single") or {}).get("comparable")
+    styled = (data.get("benchmark_anchor_single") or {}).get("comparable")
+    out = cron.refresh_anchor()
+    if shipped and styled:
+        assert out["ran"] is False
+        assert "both anchors" in out["reason"]
+    else:
+        # if anything is stale the heal must run and name WHICH anchors
+        if out["ran"]:
+            assert "stale_anchors" in out
+            assert set(out["stale_anchors"]) <= {"shipped", "styled"}

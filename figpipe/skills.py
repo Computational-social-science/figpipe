@@ -164,18 +164,34 @@ def op_encode_matrix(ctx: SkillContext, columns: str | None = None,
     # found exactly that. Pivot onto the first two numeric columns when the table looks like a
     # field, and record the pivot so the figure can be rebuilt.
     if data.shape[0] > 24:
-        keys = list(data.columns[:2])
-        val = data.columns[-1]
-        pivoted = data.pivot_table(index=keys[1], columns=keys[0], values=val,
-                                   aggfunc="mean")
-        if pivoted.shape[0] >= 2 and pivoted.shape[1] >= 2:
-            ctx.trace.append(f"encode.matrix.pivot({keys[0]} x {keys[1]} of {val}: "
+        # A pivot needs two columns that VARY (bookkeeping such as panel_row has one value) and a
+        # value column distinct from both. Guessing "the first two columns" produced a 1x1 pivot
+        # and refused a task that previously rendered -- a regression this project's own loop
+        # caught within one cycle.
+        varying = [c for c in data.columns if data[c].nunique() >= 2]
+        best = None
+        for i, a in enumerate(varying):
+            for bcol in varying[i + 1:]:
+                for val in varying:
+                    if val in (a, bcol):
+                        continue
+                    piv = data.pivot_table(index=bcol, columns=a, values=val,
+                                           aggfunc="mean")
+                    if piv.shape[0] >= 2 and piv.shape[1] >= 2:
+                        score = piv.shape[0] * piv.shape[1]
+                        if best is None or score > best[0]:
+                            best = (score, a, bcol, val, piv)
+        if best is not None:
+            _, a, bcol, val, pivoted = best
+            ctx.trace.append(f"encode.matrix.pivot({a} x {bcol} of {val}: "
                              f"{data.shape[0]} rows -> {pivoted.shape[0]}x{pivoted.shape[1]})")
             data = pivoted
-        else:
+        elif data.shape[0] > 40:
+            # no 2-D reading exists AND the table is too long to label: refuse, naming the fix
             raise SkillError(
-                f"encode.matrix: {data.shape[0]} rows cannot be shown as a matrix "
-                f"(pivot of {keys} gives {pivoted.shape}); pass a wide frame or use field_map")
+                f"encode.matrix: {data.shape[0]} rows have no 2-D reading "
+                f"(no column pair varies enough to pivot); use field_map or pass a wide frame")
+        # otherwise fall through: a 25-40 row frame is drawable as-is and was before this change
     ctx.add_panel(grammar.panel("signed_matrix", data, colorbar=colorbar,
                                 cbar_label=""))
     ctx.trace.append("encode.matrix")

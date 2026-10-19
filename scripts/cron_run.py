@@ -251,14 +251,27 @@ def refresh_anchor() -> dict:
         data = _json.loads(report.read_text(encoding="utf-8"))
     except (OSError, _json.JSONDecodeError):
         return {"ran": False, "reason": "report unreadable"}
-    single = data.get("benchmark_shipped_anchor_single") or {}
-    if single.get("comparable"):
-        return {"ran": False, "reason": "already comparable"}
-    anchor_file = ROOT / "knowledge" / "benchmark_shipped_anchor.json"
-    try:
-        ids = _json.loads(anchor_file.read_text(encoding="utf-8"))["ids"]
-    except (OSError, KeyError, _json.JSONDecodeError):
-        return {"ran": False, "reason": "anchor file unreadable"}
+    # BOTH anchors must be comparable. Checking only one is how a stale metric survives a heal.
+    shipped = data.get("benchmark_shipped_anchor_single") or {}
+    styled = data.get("benchmark_anchor_single") or {}
+    if shipped.get("comparable") and styled.get("comparable"):
+        return {"ran": False, "reason": "both anchors already comparable"}
+    stale = [name for name, info in (("shipped", shipped), ("styled", styled))
+             if not info.get("comparable")]
+    ids: list[str] = []
+    for name in (("benchmark_shipped_anchor.json" if "shipped" in stale
+                  else None),
+                 ("benchmark_anchor.json" if "styled" in stale else None)):
+        if name is None:
+            continue
+        try:
+            ids.extend(_json.loads((ROOT / "knowledge" / name)
+                                   .read_text(encoding="utf-8"))["ids"])
+        except (OSError, KeyError, _json.JSONDecodeError):
+            continue
+    ids = sorted(set(ids))
+    if not ids:
+        return {"ran": False, "reason": "no anchor ids readable"}
     script = ROOT / "scripts" / "bench_plottwin.py"
     try:
         p = subprocess.run([sys.executable, str(script), "--ids", ",".join(ids), "--merge"],
@@ -267,7 +280,8 @@ def refresh_anchor() -> dict:
     except (OSError, subprocess.SubprocessError) as exc:
         return {"ran": False, "reason": f"{type(exc).__name__}: {exc}"}
     tail = (p.stdout or p.stderr or "").strip().splitlines()
-    return {"ran": True, "tasks": len(ids), "code": p.returncode, "tail": tail[-3:]}
+    return {"ran": True, "stale_anchors": stale, "tasks": len(ids),
+            "code": p.returncode, "tail": tail[-3:]}
 
 
 def benchmark_slice(tasks: int = 6) -> dict:
