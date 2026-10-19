@@ -77,3 +77,6 @@ knowledge/loop.log
 knowledge/watchdog.log
 knowledge/.watchdog.last-ok
 
+
+# Watchdog single-instance lock: runtime state, never committed.
+knowledge/.watchdog-loop.lock

@@ -161,3 +161,45 @@ def test_the_launcher_is_idempotent():
     # each start must be guarded by a zero-count check
     assert src.count("= 0 Then") >= 2, (
         "both the loop and the watchdog start must be conditional on nothing running")
+
+
+def test_the_watchdog_loop_is_single_instance():
+    """THE DEFECT: 190 "watchdog loop started" lines against ONE live process.
+
+    The launcher is idempotent, but a script started DIRECTLY bypasses that check. Instances
+    accumulated and each ran its own watchdog every 30 minutes -- which is why the log shows
+    repeated PROBLEM reports while the loop was alive.
+
+    A MUTEX WAS TRIED AND DID NOT WORK: `New-Object Mutex($true, name, [ref]$new)` reports
+    createdNew only for the first creator and the handle is released on collection, so two
+    processes both saw "created". The fix is an exclusive-share FILE HANDLE, held for the process
+    lifetime, which a second opener cannot acquire.
+    """
+    script = ROOT / "scripts" / "watchdog_loop.ps1"
+    if not script.is_file():
+        pytest.skip("watchdog_loop.ps1 absent")
+    src = script.read_text(encoding="utf-8")
+    assert "System.IO.File]::Open" in src, (
+        "the watchdog loop has no exclusive file lock; instances will accumulate")
+    assert "'None'" in src or '"None"' in src, (
+        "the file is opened with a sharing mode that allows a second opener")
+    assert "another watchdog loop holds the lock" in src
+    # and the mutex approach must NOT be the MECHANISM. It appears in the comment explaining why
+    # it does not work, so check the executable lines only.
+    code_lines = [ln for ln in src.splitlines()
+                  if ln.strip() and not ln.lstrip().startswith("#")]
+    code = "\n".join(code_lines)
+    assert "Threading.Mutex" not in code, (
+        "the mutex form does not exclude across processes; use the file handle")
+
+
+def test_the_watchdog_loop_holds_the_lock_for_its_lifetime():
+    """The handle must not be closed or disposed inside the loop, or the lock lapses."""
+    script = ROOT / "scripts" / "watchdog_loop.ps1"
+    if not script.is_file():
+        pytest.skip("watchdog_loop.ps1 absent")
+    src = script.read_text(encoding="utf-8")
+    after_open = src[src.find("$lockHandle"):]
+    assert ".Dispose()" not in after_open, (
+        "the lock handle is disposed, so the single-instance guarantee lapses")
+    assert ".Close()" not in after_open

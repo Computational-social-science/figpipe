@@ -2128,3 +2128,37 @@ ignored, which is worse than no detector -- so `tests/test_cli_arguments.py` has
 that a synthetic unread argument IS caught, plus tests that each read form is accepted.
 
 Suite: 476 passed, 3 skipped.
+
+
+## 79. The watchdog accumulated 190 instances, and a mutex did not fix it (2026-10-20)
+
+The scheduled run's watchdog log showed repeated failures while the loop was demonstrably alive:
+
+    [05:49:45] PROBLEM: no powershell process is running loop.ps1
+    [05:49:45] RESTARTING: launching ...figpipe-evolve.vbs
+    [05:49:50] RESTART FAILED: launcher returned but no loop process appeared
+    ... and the same four lines every 30 minutes until 07:20
+
+The loop (pid 66104) had been alive since 04:19. The cause was in the log's own history:
+
+    "watchdog loop started" appears 190 TIMES against ONE live process
+
+The launcher is idempotent -- round 22 fixed that -- but the SCRIPT is not. Anything starting
+`watchdog_loop.ps1` directly (a manual run, a stale Startup entry, a restart during the fork-bomb
+window) bypasses the launcher's check, so instances accumulated. Each then ran its own watchdog
+every 30 minutes, and the interleaved reports looked like a broken guard.
+
+TWO ATTEMPTS, the first WRONG:
+
+  * `New-Object System.Threading.Mutex($true, name, [ref]$createdNew)` -- createdNew is reported
+    only for the first creator IN A PROCESS'S LIFETIME and the handle is released when the object
+    is collected, so two processes both saw "created" and both ran. Verified: two instances
+    survived.
+  * an EXCLUSIVE-SHARE FILE HANDLE -- held for the process lifetime, and a second opener fails.
+    Verified: "after A: 1 / after B: 1", with the log line
+    "another watchdog loop holds the lock; exiting".
+
+That is the same primitive `figpipe/lock.py` already uses for measurements, which should have been
+the first guess: this project had already learned that a pid or a mutex name is not ownership.
+
+Suite: 479 passed, 3 skipped.
