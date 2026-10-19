@@ -80,3 +80,6 @@ knowledge/.watchdog.last-ok
 
 # Watchdog single-instance lock: runtime state, never committed.
 knowledge/.watchdog-loop.lock
+
+# Evolution-loop single-instance lock: runtime state, never committed.
+knowledge/.loop.lock

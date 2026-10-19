@@ -13,6 +13,17 @@
 ' 2026-10-20 a restart drill produced 76 processes in ten seconds -- two watchdogs each restarting
 ' a loop the other had just restarted. A launcher must be idempotent, or the thing it guards
 ' becomes a fork bomb.
+'
+' WHY THE MATCH IS ANCHORED TO THE SCRIPT NAME, NOT A SUBSTRING:
+'   The first version asked whether a process command line CONTAINS "loop.ps1". But
+'   "watchdog_loop.ps1" contains "loop.ps1" as a substring, so once the watchdog was running the
+'   launcher believed a loop was running too and NEVER started the evolution loop. Observed
+'   2026-10-20 07:47: the watchdog alive, the loop dead, and every launcher call a silent no-op.
+'   A guard whose test cannot distinguish the thing it guards from a DIFFERENT thing is worse than
+'   no guard, because it reports success while doing nothing.
+'
+'   The match now looks for the script filename preceded by a path separator: "\loop.ps1" or
+'   "/loop.ps1". "watchdog_loop.ps1" ends in "_loop.ps1", so it does not match.
 Set WshShell = CreateObject("WScript.Shell")
 Set Svc = GetObject("winmgmts:\\.\root\cimv2")
 
@@ -28,10 +39,11 @@ Function CountMatching(needle)
     CountMatching = n
 End Function
 
-If CountMatching("loop.ps1") = 0 Then
+' Anchored needles: a path separator before the filename, so watchdog_loop.ps1 cannot match.
+If CountMatching("\loop.ps1") = 0 And CountMatching("/loop.ps1") = 0 Then
     WshShell.Run "powershell.exe -NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File ""E:\2026-AI4S\figpipe\scripts\loop.ps1""", 0, False
 End If
 
-If CountMatching("watchdog_loop.ps1") = 0 Then
+If CountMatching("\watchdog_loop.ps1") = 0 And CountMatching("/watchdog_loop.ps1") = 0 Then
     WshShell.Run "powershell.exe -NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File ""E:\2026-AI4S\figpipe\scripts\watchdog_loop.ps1""", 0, False
 End If

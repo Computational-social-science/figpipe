@@ -203,3 +203,76 @@ def test_the_watchdog_loop_holds_the_lock_for_its_lifetime():
     assert ".Dispose()" not in after_open, (
         "the lock handle is disposed, so the single-instance guarantee lapses")
     assert ".Close()" not in after_open
+
+
+def test_the_evolution_loop_is_single_instance():
+    """THE DEFECT: `loop started` appears 197 times in loop.log.
+
+    The last cluster is one per SECOND during the fork-bomb window. The launcher is idempotent,
+    but anything starting loop.ps1 DIRECTLY bypasses that check. Two loops then run the same
+    six-hourly cycle and fight over the measurement lock -- the backoff hides it by retrying, so
+    the symptom is a drifting schedule rather than an error anyone notices.
+
+    Fixed with the same primitive that worked for watchdog_loop: an exclusive-share file handle,
+    not a mutex (a mutex reports createdNew only for the first creator in a process's lifetime).
+    """
+    script = ROOT / "scripts" / "loop.ps1"
+    if not script.is_file():
+        pytest.skip("loop.ps1 absent")
+    src = script.read_text(encoding="utf-8")
+    assert "System.IO.File]::Open" in src, (
+        "the evolution loop has no single-instance guard; instances will accumulate")
+    assert "'None'" in src or '"None"' in src
+    assert "another evolution loop holds the lock" in src
+    code_lines = [ln for ln in src.splitlines()
+                  if ln.strip() and not ln.lstrip().startswith("#")]
+    code = "\n".join(code_lines)
+    assert "Threading.Mutex" not in code, (
+        "a mutex does not exclude across processes here; use the file handle")
+
+
+def test_both_persistent_loops_use_the_same_lock_primitive():
+    """Two loops, two chances to get it wrong differently. They must use the same primitive."""
+    files = [ROOT / "scripts" / "loop.ps1", ROOT / "scripts" / "watchdog_loop.ps1"]
+    for f in files:
+        if not f.is_file():
+            pytest.skip(f"{f.name} absent")
+        src = f.read_text(encoding="utf-8")
+        assert "System.IO.File]::Open" in src, (
+            f"{f.name} does not use the exclusive file handle the other loop uses")
+
+
+def test_the_launcher_does_not_confuse_the_watchdog_with_the_loop():
+    """THE BUG: `CountMatching("loop.ps1")` also matched `watchdog_loop.ps1`.
+
+    "watchdog_loop.ps1" CONTAINS "loop.ps1" as a substring, so once the watchdog was running the
+    launcher believed a loop was running too and NEVER started the evolution loop. Observed
+    2026-10-20 07:47: watchdog alive, loop dead, every launcher call a silent no-op.
+
+    A guard whose test cannot distinguish the thing it guards from a DIFFERENT thing is worse than
+    no guard, because it reports success while doing nothing.
+    """
+    launcher = ROOT / "scripts" / "figpipe-evolve.vbs"
+    if not launcher.is_file():
+        pytest.skip("launcher absent")
+    src = launcher.read_text(encoding="utf-8", errors="replace")
+    # the anchored form must be used
+    assert '"\\loop.ps1"' in src or "'\\loop.ps1'" in src, (
+        "the launcher does not anchor the loop match to a path separator; "
+        "watchdog_loop.ps1 will match it and the loop will never start")
+    # and the bare substring form must NOT be the check for the loop
+    code_lines = [ln for ln in src.splitlines() if not ln.lstrip().startswith("'")]
+    code = "\n".join(code_lines)
+    assert 'CountMatching("loop.ps1")' not in code, (
+        "the launcher still uses the unanchored substring, which collides with watchdog_loop.ps1")
+
+
+def test_the_substring_collision_is_real():
+    """NEGATIVE CONTROL: prove the naive form really does collide, so the fix is justified."""
+    watchdog_cmd = r"C:\x\scripts\watchdog_loop.ps1"
+    loop_cmd = r"C:\x\scripts\loop.ps1"
+    # naive substring
+    assert "loop.ps1" in watchdog_cmd.lower(), "the naive form WOULD match the watchdog"
+    # anchored
+    assert "\\loop.ps1" not in watchdog_cmd.lower()
+    assert "\\loop.ps1" in loop_cmd.lower()

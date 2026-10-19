@@ -2162,3 +2162,39 @@ That is the same primitive `figpipe/lock.py` already uses for measurements, whic
 the first guess: this project had already learned that a pid or a mutex name is not ownership.
 
 Suite: 479 passed, 3 skipped.
+
+
+## 80. The launcher could not tell the loop from its own watchdog (2026-10-20)
+
+Checking whether `loop.ps1` needed the same single-instance guard the watchdog just got, I found
+two defects, and the second is the serious one.
+
+**1. `loop.ps1` had no guard.** `loop started` appears 197 times in loop.log, the last cluster one
+per SECOND during the fork-bomb window. Fixed with the same primitive that worked for the watchdog:
+an exclusive-share file handle (not a mutex).
+
+**2. THE LAUNCHER'S IDEMPOTENCE CHECK WAS A SUBSTRING MATCH.**
+
+    CountMatching("loop.ps1")   ->  matches "...\scripts\watchdog_loop.ps1"
+
+`watchdog_loop.ps1` CONTAINS `loop.ps1`. So once the watchdog was running, the launcher believed a
+loop was running too and NEVER started the evolution loop. Observed at 07:47: watchdog alive, loop
+dead, and every launcher call a silent no-op.
+
+This is the same defect family the project keeps finding, in its purest form: **a guard whose test
+cannot distinguish the thing it guards from a DIFFERENT thing**. It reported success while doing
+nothing -- and it did so precisely when the watchdog was healthy, which is the condition under which
+nobody would look.
+
+Fixed by anchoring the needle to a path separator: `\loop.ps1` / `/loop.ps1`. `watchdog_loop.ps1`
+ends in `_loop.ps1`, so it does not match. A NEGATIVE CONTROL test proves the naive form really does
+collide, so the fix is justified rather than superstitious.
+
+VERIFIED: after the fix the launcher started the loop (pid 60108), the loop lock is held, the
+watchdog stayed single-instance, and the heartbeat moved to `running`.
+
+LESSON: when a guard asks "is X running?", it must answer about X. A substring, a prefix, or a pid
+is not an identity. This project has now learned that three times: pid reuse in the measurement
+lock, mutex names in the watchdog loop, and now a filename inside another filename.
+
+Suite: 481 passed, 3 skipped.

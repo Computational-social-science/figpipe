@@ -20,6 +20,27 @@
 #   loop.log grows without bound and a watchdog should not have to parse it to answer "is this
 #   alive?". knowledge/loop.heartbeat is one line: timestamp | state | pid. A watchdog compares its
 #   mtime against a threshold and restarts the loop when it is too old.
+# WHY THE SINGLE-INSTANCE LOCK EXISTS
+#   `loop started` appears 197 times in loop.log; the last cluster is one per SECOND during the
+#   fork-bomb window on 2026-10-20. The launcher is idempotent, but anything that starts this
+#   script DIRECTLY -- a manual run, a stale Startup entry, a restart while another is coming up --
+#   bypasses that check. Two loops then run the same six-hourly cycle and fight over the
+#   measurement lock; the backoff handles that by retrying, so the symptom is a schedule that
+#   drifts rather than an error anyone notices.
+#
+#   An exclusive-share FILE HANDLE, held for the process lifetime: a second opener FAILS. The same
+#   primitive figpipe/lock.py uses for measurements, and the one that worked for watchdog_loop
+#   after a mutex did not (a mutex reports createdNew only for the first creator in a process's
+#   lifetime and the handle is released on collection).
+$lockFile = 'E:\2026-AI4S\figpipe\knowledge\.loop.lock'
+try {
+    $loopLock = [System.IO.File]::Open($lockFile, 'OpenOrCreate', 'ReadWrite', 'None')
+} catch {
+    "[$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')] another evolution loop holds the lock; exiting" |
+        Out-File -FilePath 'E:\2026-AI4S\figpipe\knowledge\loop.log' -Append -Encoding utf8
+    exit 0
+}
+
 $py     = 'C:\Users\Administrator\AppData\Local\hermes\tools\python-3.14.7+20260901-win32-x64\python.exe'
 $script = 'E:\2026-AI4S\figpipe\scripts\cron_run.py'
 $log    = 'E:\2026-AI4S\figpipe\knowledge\loop.log'
