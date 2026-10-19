@@ -141,6 +141,43 @@ def _baseline_number() -> str:
     return str(base.get("mean_score", "—"))
 
 
+def _mutation_pool() -> dict:
+    """The latest mutation-loop record, or {} when it has not run."""
+    path = ROOT / "knowledge" / "mutation_report.json"
+    if not path.is_file():
+        return {}
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}
+
+
+def _mutation_section() -> str:
+    """What the loop proposed, probed and selected -- the self-evolution evidence."""
+    rec = _mutation_pool()
+    if not rec.get("probed"):
+        return ""
+    rows = "".join(
+        f'<tr><td>{esc(d.get("id"))}</td><td>{esc(d.get("verdict"))}</td>'
+        f'<td class="num">{esc(round(d.get("delta", 0.0), 3))}</td>'
+        f'<td class="tag">{esc(str(d.get("reason", ""))[:90])}</td></tr>'
+        for d in rec.get("decisions", []))
+    selected = ", ".join(rec.get("selected") or []) or "(none)"
+    ties = ", ".join(rec.get("ties") or []) or "(none)"
+    ledger = rec.get("ledger") or {}
+    return (
+        '<h3 style="margin-top:20px">Self-evolution: what the loop proposed and selected</h3>'
+        f'<p>The evolution loop now runs Propose–Probe–Compose every cycle over '
+        f'{len(rec.get("tasks") or [])} fixed tasks and {len(rec.get("proposed") or [])} candidate '
+        f'operator-budget edits. Each rollout is charged to the vendored Harness² ledger '
+        f'({esc(ledger.get("R"))} of {esc(rec.get("budget"))} spent).</p>'
+        f'<table><thead><tr><th>Candidate</th><th>Verdict</th><th>Δ</th><th>Reason</th></tr>'
+        f'</thead><tbody>{rows}</tbody></table>'
+        f'<div class="okbox"><b>Selected: {esc(selected)}</b> · ties: {esc(ties)}. '
+        f'<b>Not applied</b> — {esc(rec.get("why_not_applied", ""))}. A selection measured on six '
+        f'tasks is a finding, not a change.</div>')
+
+
 def _version() -> str:
     try:
         import figpipe
@@ -784,6 +821,7 @@ by <code>figpipe/semantics.py</code>: the printed r must match the data's r, no 
 outside the axes, and the axis labels must be the ones the panel claims. Semantic violations in this
 run: <b>{bench.get("semantic_violations", 0)}</b>.</div>
 {_three_point_table()}
+{_mutation_section()}
 {_dimension_table(_official_pool())}
 {_official_type_table(_official_pool())}
 <h3 style="margin-top:20px">By chart type</h3>

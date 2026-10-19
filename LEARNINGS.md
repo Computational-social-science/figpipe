@@ -1522,3 +1522,48 @@ infrastructure rather than capability. Both fixes are needed -- one stops the fa
 the other stops the set being SHRUNK.
 
 Suite: 407 passed, 3 skipped.
+
+
+## 62. The self-evolution loop never evolved, and 61% of its commits said so (2026-10-19)
+
+I audited my own project instead of trusting it, and the audit was unflattering:
+
+    91 scheduled runs
+     4 knowledge_changed: true
+     1 hypothesis promoted
+    60 commits touched knowledge/layout_rules.json
+     0 commits changed a RULE (only `last_check.at` moved)
+    49 of the last 80 commits read "no knowledge change"
+
+And the decisive one: `figpipe/mutation.py` -- the Propose-Probe-Compose loop I built last round,
+which passed 30 tests and which the REPORT listed as a deliverable -- was imported by **nothing**.
+AST-level scan: zero imports, zero call sites. `cron_run.py` did not contain the strings `mutation`,
+`propose`, `probe`, `compose` or `candidate` even once.
+
+So the honest statement was: **the project had a capability of its TEST SUITE, not of the system.**
+"Self-evolution" was a word in a document. The loop could re-verify and record; it could not choose
+an edit. That is why 91 runs changed nothing.
+
+Three fixes:
+1. `scripts/mutate.py` -- a real entry point that proposes, probes and composes, writing
+   `knowledge/mutation_report.json`. It does NOT apply the selection (six tasks is a finding, not a
+   change; ##47).
+2. `cron_run.py` now calls `mutation_step()` after the benchmark slice and records the result in the
+   run. First real run: 5 candidates, `matrix-max-rows-41` SELECTED (+0.167), one tie, three
+   rejected with reasons, ledger 36/36.
+3. **No-op commits suppressed.** A run that changed nothing no longer commits its own record; the
+   record still lands in the worktree and is overwritten next run. A FAILED run still commits,
+   because a failure is evidence.
+
+Two bugs found while wiring it, both already-known shapes:
+  * the child `mutate.py` tried to take the lock its parent held -- the same deadlock already fixed
+    for the benchmark harness. `probe(lock_held=True)` makes ownership explicit instead of relying
+    on a flag at the CLI boundary.
+  * a test caught my new `contextlib` import because its allow-list was exact. That test was doing
+    its job: an import allow-list that silently widens is not a control.
+
+LESSON: **"we built X" and "X runs" are different claims.** The gap between them is not paperwork --
+it is the difference between a test suite passing and a system changing. Every artefact in this
+project should be asked which of the two it is.
+
+Suite: 411 passed, 3 skipped.

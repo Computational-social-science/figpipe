@@ -586,8 +586,10 @@ def test_the_mutation_module_uses_no_model_and_no_network():
         f"mutation.py imports {sorted(imported & forbidden_modules)}; the loop must be "
         f"deterministic and offline")
     # and the allowed imports are exactly the ones the module documents
-    assert imported <= {"__future__", "dataclasses", "json", "os", "pathlib", "sys", "pandas",
-                        "harness2_ledger", "figpipe"}, sorted(imported)
+    # `contextlib.nullcontext` lets probe() run under a lock the CALLER already holds (cron_run
+    # launches this as a child). It is stdlib, has no I/O, and keeps the loop deterministic.
+    assert imported <= {"__future__", "contextlib", "dataclasses", "json", "os", "pathlib", "sys",
+                        "pandas", "harness2_ledger", "figpipe"}, sorted(imported)
     # `os` is imported for os.getpid() only -- the probe path must be private per process. If it
     # ever grows into something that reads the environment or spawns a process, that shows up as
     # an attribute access this asserts against.
