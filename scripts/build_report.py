@@ -131,6 +131,16 @@ def _shipped_kpi(bench) -> str:
     return bench.get("benchmark_shipped_anchor_distance") or "—"
 
 
+def _claim_number() -> str:
+    pool = _official_pool("image")
+    return str(pool.get("mean_score", "—"))
+
+
+def _baseline_number() -> str:
+    base = _baseline_pool()
+    return str(base.get("mean_score", "—"))
+
+
 def _version() -> str:
     try:
         import figpipe
@@ -520,6 +530,8 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
                     "knowledge/skills_catalog.json", meta=f"{n_skills} skills / {n_ops} operators"),
         deliverable("Architecture and priority plan", "Entry layer, reference understanding, evaluation layer and the per-metric SOTA definition.",
                     "PIPELINE_V3.md", meta="v3"),
+        deliverable("The claim, stated precisely", "What is claimed (official code channel, with baseline and ceiling), what is NOT claimed (combined score, head-to-head, human validation), and how to reproduce it.",
+                    "CLAIM.md", meta="referents + limits"),
         deliverable("Skills-layer design note", "Global SKILLS + classic operators + the rule for extending recipes.",
                     "SKILLS.md", status="Design note"),
         deliverable("Runnable worked example", "The whole pipeline on invented data: spec -> recipe -> "
@@ -746,11 +758,12 @@ run: <b>{bench.get("semantic_violations", 0)}</b>.</div>
 <h3 style="margin-top:20px">By chart type</h3>
 <table><thead><tr><th>Chart type</th><th>OK / tasks</th><th>Always styled</th><th>Plain</th>
 <th>Δ</th><th>Shipped</th></tr></thead><tbody>{''.join(type_rows)}</tbody></table>
-<div class="warnbox"><b>Stated plainly:</b> this is not an SOTA claim. One of the ten tasks got
-worse (PMC13106710), so style transfer is not always beneficial. A formal claim requires all 150
-tasks, the official scorer (at least its non-VLM subset), a frozen protocol and a comparison with
-public baselines. What can be claimed today is only <b>deterministic style distance and execution
-compliance</b>.</div>
+<div class="okbox"><b>What can be claimed, precisely:</b> on the official PlotTwin-Bench
+<code>deviation-defect-v1</code> <b>code channel</b> (35 % of their combined score, 149 tasks), the
+pipeline scores <b>{_claim_number()}</b> against a matplotlib-default baseline of
+<b>{_baseline_number()}</b>. That is a measured improvement on the benchmark's OWN scorer, with the
+baseline and the ceiling both shown above so the claim has referents. It is <b>not</b> a
+combined-score claim: the 0.65 vision channel is not run, and this project does not imitate it.</div>
 
 <h2><span class="n">05</span>Skills and operators (for demands without a single standard)</h2>
 <div class="two-col">
@@ -786,9 +799,11 @@ The next step is to write benchmark pass rates and distances into the run record
 <div class="panel">
 <h3>Remaining risks</h3>
 <ul style="font-size:12.5px;color:#40506a;margin:8px 0 0;padding-left:18px">
-<li><b>Official scorer not integrated:</b> no combined-score SOTA claim is possible.</li>
+<li><b>Vision channel not run:</b> the official 0.65 vision half is out of scope, so no
+combined-score claim is made — the code-channel claim is stated with its baseline instead.</li>
 <li><b>Decision service offline:</b> {esc(decision_note)}.</li>
-<li><b>Benchmark coverage incomplete:</b> chart types for 110/150 tasks are mapped; Polar/Network/3D still lack operators.</li>
+<li><b>Benchmark coverage:</b> 141/150 tasks execute; 9 are classified unsupported by design
+(3D, Network/Tree), not silently skipped.</li>
 <li><b>Style weights not human-validated:</b> hand-set; a 30-figure annotation study is needed.</li>
 <li><b>One benchmark task got worse:</b> reference-conditioned candidate selection is required.</li>
 <li><b>Estimator substitution remains possible:</b> the raw/log discrepancy in Fig. 1b is unresolved.</li>
@@ -808,10 +823,12 @@ recorded as such; the loop fails when a judged capability field gets worse.</p>
              "knowledge/benchmark_skill_map.json", status="In progress", meta=f"{n_tasks}/{BENCH_TOTAL} now")}
 {deliverable("P0 · Start the decision service", "Start the shared StartLux-Decision and exercise the rule-failure → model-choice fallback.",
              "figpipe/decision.py", status="Pending", meta="6 tests")}
-{deliverable("P1 · Integrate the non-VLM scorer subset", "Compare with public baselines under a frozen protocol; no combined SOTA claim before that.",
-             "corpus/e2e/plottwin_report.json", status="Planned", meta="protocol TBD")}
+{deliverable("DONE · Official non-VLM scorer integrated", "The benchmark's own deviation-defect-v1 code channel, vendored unmodified and measured on 149 tasks with a baseline and a ceiling.",
+             "corpus/e2e/official_scores.json", status="Delivered", meta=f"{_claim_number()} vs {_baseline_number()}")}
 {deliverable("P1 · Validate the metric", "Annotate 30 figures and test the correlation between style distance and expert ranking.",
              "templates/transfer/style_transfer_report.json", status="Planned", meta="Spearman ≥ 0.7")}
+{deliverable("P1 · Re-measure stale rows", "41 of 141 benchmark rows predate the current rendering fingerprint; a --scan pass makes every number comparable.",
+             "corpus/e2e/plottwin_report.json", status="Planned", meta=f"stale {bench.get('n_stale', 0)}")}
 </div>
 
 <footer>

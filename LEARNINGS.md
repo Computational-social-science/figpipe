@@ -1161,3 +1161,37 @@ The sweep is now a test, so the surface cannot silently rot.
 
 This is the third layer swept systematically (skills -> benchmark -> robustness). The order was not
 planned; it followed the evidence of where the defects actually were.
+
+
+## 49. The report contradicted the evidence for several rounds (2026-10-19)
+
+The official scorer was integrated, measured, and given a baseline two rounds ago. The report was
+still saying:
+
+    "Stated plainly: this is not an SOTA claim ... a formal claim requires ... the official scorer
+     (at least its non-VLM subset) ..."
+    "Official scorer not integrated: no combined-score SOTA claim is possible."
+    "chart types for 110/150 tasks are mapped"
+
+All three were FALSE. The scorer is vendored and measured on 149 tasks; 141/150 tasks execute; and
+a claim with a baseline and a ceiling now exists. Nothing noticed, because no test compared the
+report's prose against the artefacts.
+
+Fixed:
+  * the stale warning became a precise statement: the official code channel scores X against a
+    baseline of Y, with the ceiling shown, and no combined-score claim
+  * the obsolete "not integrated" risk became the real remaining limit (vision channel out of
+    scope)
+  * the next-steps card "P1 · Integrate the non-VLM scorer subset — Planned" became
+    "DONE · Official non-VLM scorer integrated — Delivered"
+  * `CLAIM.md` now holds the claim, its referents and its LIMITS in one place
+  * `tests/test_claim.py` pins both halves: the numbers in CLAIM.md must match the measured
+    artefacts, the limits must be stated, and the report must not carry the stale phrases again
+
+The general lesson, and it is the same one as the metrics: **a document is a derived artefact and
+must be tested against its source, or it becomes a fossil that contradicts the system it
+describes.** The report is generated, but its PROSE was hand-written and hand-written prose does
+not update itself.
+
+State: 303 passed / 2 skipped; official code channel 75.41 vs baseline 38.16 (+37.25, 97.6%);
+ceiling 100.00; benchmark 141/150.
