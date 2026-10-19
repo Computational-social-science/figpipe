@@ -201,15 +201,18 @@ def test_the_shipped_distance_is_judged_on_a_frozen_subset():
     if cron is None:
         import pytest
         pytest.skip("cron_run unavailable")
-    assert cron.CAPABILITY_DIRECTION.get("benchmark_shipped_anchor_distance") == -1
+    # the JUDGED field is the single-instrument view; the all-rows value mixes fingerprints and is
+    # recorded but never judged (see test_a_metric_mixing_instruments_is_not_comparable)
+    assert cron.CAPABILITY_DIRECTION.get("benchmark_shipped_anchor_single") == -1
+    assert "benchmark_shipped_anchor_distance" not in cron.CAPABILITY_DIRECTION
     assert "benchmark_shipped_distance" not in cron.CAPABILITY_DIRECTION
     snap = cron.capability_snapshot()
-    assert "benchmark_shipped_anchor_distance" in snap
-    better = cron.capability_delta({"benchmark_shipped_anchor_distance": 0.278},
-                                   {"benchmark_shipped_anchor_distance": 0.259})
+    assert "benchmark_shipped_anchor_single" in snap
+    better = cron.capability_delta({"benchmark_shipped_anchor_single": 0.278},
+                                   {"benchmark_shipped_anchor_single": 0.259})
     assert better["verdict"]["ok"] is True
-    worse = cron.capability_delta({"benchmark_shipped_anchor_distance": 0.259},
-                                  {"benchmark_shipped_anchor_distance": 0.300})
+    worse = cron.capability_delta({"benchmark_shipped_anchor_single": 0.259},
+                                  {"benchmark_shipped_anchor_single": 0.300})
     assert worse["verdict"]["ok"] is False
 
 
@@ -366,3 +369,35 @@ def test_a_documented_correction_is_not_a_regression():
     bad = cron.capability_delta({"benchmark_success_rate": 0.95},
                                 {"benchmark_success_rate": 0.80})
     assert bad["verdict"]["ok"] is False
+
+
+def test_a_metric_mixing_instruments_is_not_comparable():
+    """A frozen task set is not enough -- the rows inside it must come from ONE instrument.
+
+    The shipped anchor moved 0.252 -> 0.243 when only 3 of its 20 tasks had been re-measured after
+    a styleprofile fix. The mean moved because the INSTRUMENT changed, not the capability. The
+    single-instrument view must report non-comparable rather than a small-sample number.
+    """
+    import sys
+    sys.path.insert(0, str(ROOT / "scripts"))
+    try:
+        import bench_plottwin as bench
+    except Exception:                    # pragma: no cover
+        pytest.skip("benchmark harness unavailable")
+    import json
+    path = ROOT / "corpus" / "e2e" / "plottwin_report.json"
+    if not path.is_file():
+        pytest.skip("report absent")
+    tasks = json.loads(path.read_text(encoding="utf-8"))["tasks"]
+    info = bench._shipped_anchor_single_instrument(tasks)
+    for key in ("mean", "partial_mean", "n_same_instrument", "n_other_instrument",
+                "comparable", "note"):
+        assert key in info
+    if not info["comparable"]:
+        assert info["mean"] is None, (
+            "a non-comparable metric must be None, not a small-sample number that reads as a gain")
+        assert "not comparable" in info["note"]
+    if cron is not None:
+        assert "benchmark_shipped_anchor_single" in cron.CAPABILITY_DIRECTION
+        # the mixed all-rows value must never be judged
+        assert "benchmark_shipped_anchor_distance" not in cron.CAPABILITY_DIRECTION

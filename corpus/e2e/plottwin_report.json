@@ -5025,5 +5025,13 @@
     "picked_styled": 109,
     "picked_plain": 3,
     "rule": "closer of plain/styled to the reference; the reference is an input"
+  },
+  "benchmark_shipped_anchor_single": {
+    "mean": null,
+    "partial_mean": 0.135,
+    "n_same_instrument": 3,
+    "n_other_instrument": 17,
+    "comparable": false,
+    "note": "not comparable yet: anchor tasks are still measured by an older fingerprint; re-measure them with --scan"
   }
 }

@@ -92,6 +92,12 @@ def capability_snapshot() -> dict:
         # this is the capability the selection step added, so it is judged
         # JUDGED: the frozen-subset version. The full-set shipped mean moves whenever a task is
         # added (0.257 -> 0.258 on a coverage-only run), which is the same defect as the raw mean.
+        # JUDGED value is the single-instrument one: the all-rows anchor mixes rows measured by
+        # different versions of the measurement code, so it moves when the INSTRUMENT changes
+        # (0.252 -> 0.243 when only 3 of 20 anchor tasks had been re-measured after a styleprofile
+        # fix). The mixed value is kept below as a reported fact, never judged.
+        "benchmark_shipped_anchor_single": (
+            (bench.get("benchmark_shipped_anchor_single") or {}).get("mean")),
         "benchmark_shipped_anchor_distance": bench.get("benchmark_shipped_anchor_distance"),
         "benchmark_unsupported": bench.get("n_unsupported"),
         # The benchmark's OWN deterministic channel (deviation-defect-v1, 35% weight upstream).
@@ -135,7 +141,10 @@ CAPABILITY_DIRECTION = {
     # measured set grows. They are recorded for coverage and are deliberately NOT judged.
     "benchmark_anchor_distance": -1,
     "benchmark_official_code_score": +1,
-    "benchmark_shipped_anchor_distance": -1,
+    "benchmark_shipped_anchor_single": -1,
+    # NOTE: benchmark_shipped_anchor_distance (all rows) is recorded but NOT judged: it can mix
+    # rows measured by different fingerprints, so a code change moves it without a capability
+    # change. This project has now produced four variants of this same defect.
     # NOTE: benchmark_shipped_distance (full-set) is recorded but NOT judged, for the same reason
     # as benchmark_mean_distance: its value depends on which tasks are in the set.
     # NOTE: benchmark_mean_distance is deliberately NOT judged. It is a mean over a growing task
