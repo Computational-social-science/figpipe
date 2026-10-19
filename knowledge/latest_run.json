@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-19T11:21:33",
+  "run_at": "2026-10-19T11:31:25",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -9,37 +9,16 @@
     "  passed 8, failed 0",
     "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
     "  wrote knowledge\\evolution_report.json",
-    "  lean: tracked 75.3 -> 75.3 MB, worktree 133.0 -> 132.9 MB"
+    "  lean: tracked 75.4 -> 75.4 MB, worktree 131.2 -> 131.2 MB"
   ],
   "tests_ok": true,
-  "tests_summary": "296 passed, 2 skipped, 1 warning in 65.47s (0:01:05)",
+  "tests_summary": "299 passed, 2 skipped, 1 warning in 71.41s (0:01:11)",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
   "published": {
-    "pushed": true,
-    "steps": [
-      {
-        "cmd": "git add -A",
-        "code": 0,
-        "tail": []
-      },
-      {
-        "cmd": "git -c user.name=figpipe-bot",
-        "code": 0,
-        "tail": [
-          " create mode 100644 knowledge/runs/2026-10-19T112133.json"
-        ]
-      },
-      {
-        "cmd": "git push origin",
-        "code": 0,
-        "tail": [
-          "   c8413da..01ab7b0  main -> main"
-        ]
-      }
-    ],
-    "withheld": []
+    "pushed": false,
+    "reason": "not yet published"
   },
   "check_results": {
     "L01": {
@@ -173,42 +152,22 @@
     "benchmark_official_improvement": 37.25,
     "statistics_reproduced": 15,
     "knowledge_version": 16,
-    "tests": 296
+    "tests": 299
   },
   "capabilities_delta": {
     "changed": true,
     "delta": {
-      "benchmark_mean_distance": {
-        "before": 0.274,
-        "after": 0.278
-      },
-      "benchmark_anchor_single": {
-        "before": null,
-        "after": 0.351
-      },
-      "benchmark_anchor_distance": {
-        "before": 0.329,
-        "after": 0.351
-      },
-      "benchmark_shipped_anchor_single": {
-        "before": null,
-        "after": 0.296
-      },
-      "benchmark_shipped_anchor_distance": {
-        "before": 0.293,
-        "after": 0.296
-      },
       "tests": {
-        "before": 294,
-        "after": 296
+        "before": 296,
+        "after": 299
       }
     },
     "verdict": {
       "gains": [
         {
           "field": "tests",
-          "before": 294,
-          "after": 296
+          "before": 296,
+          "after": 299
         }
       ],
       "regressions": [],
@@ -230,6 +189,5 @@
   },
   "ok": true,
   "capability_ok": true,
-  "capability_regressions": [],
-  "publish_note": "The publish outcome is recorded after the commit that carries this run, so it describes the push triggered by this run; the file's own commit is made by the next scheduled run."
+  "capability_regressions": []
 }
