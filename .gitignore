@@ -67,3 +67,6 @@ examples/output/
 # The measurement lock is transient state, never committed.
 knowledge/.measurement.lock
 
+
+# Mutation-loop probe renders: regenerable intermediates, like templates/skills/.
+templates/mutation/

@@ -18,11 +18,27 @@ pipeline could be systematically wrong while looking right. Only the second kind
 | A frozen subset is enough | The rows inside it could come from different code versions | **Found and fixed 2×**: both anchors now use a single-instrument view |
 | The official score is comparable | It could be a tautology | **Found**: copying style from the shipped `reference_code` scores 100 by construction. Reported only as a ceiling; the claim uses image-inferred style |
 | A score supports a claim | It could have no referent | **Found and fixed**: 75.41 meant nothing until measured against a 38.16 baseline |
+| The answer key stays out of the input | The target could be reachable from the style source | **Found and now GUARDED**: the 100.0 ceiling came from copying `reference_code`. `figpipe/tripwire.py` refuses a path whose name or content carries the target, with an explicit `allow=` where reading it IS the measurement. Harness² (google-research) reached the same rule independently |
 | Freshness is a binary | "Unknown" could be reported as "stale" | **Found and fixed**: three-valued freshness |
+| A style metric is valid | It could be blind, or rank a wrong transfer above a right one, and nobody would know | **Measured**: a discrimination experiment on 30 real corpus figures scores **0.933 (95 % CI 0.787–0.982)**, inverted control 0.033, official scorer agrees 27/27 decisive. See below |
 
-**Residual risk:** the style-distance weights are hand-set. Nothing validates that a smaller
-distance corresponds to a figure an expert prefers. This is a genuine open question, not a bug —
-it is listed in `CLAIM.md` as unvalidated.
+**Residual risk (narrowed, not closed):** the style-distance weights are still hand-set, and
+the discrimination experiment tests **ordering, not preference**. Two limits are measured and
+stated rather than assumed away:
+
+1. **The result is concentrated in one component.** Leave-one-out shows that withholding
+   `aspect` alone drops accuracy from 0.933 to **0.700**; withholding any other single component
+   leaves it at 0.933. Most of the discrimination therefore comes from figure aspect — the
+   easiest property to reproduce — not from palette or typography. A metric whose accuracy is
+   carried by one cheap dimension is weaker than its aggregate suggests, and `CLAIM.md` says so.
+2. **No human judgement was collected.** The experiment can refute a blind or inverted metric
+   (that is what the inverted control is for); it cannot establish that the closer figure is the
+   figure an expert would prefer. That remains open, and remains listed in `CLAIM.md`.
+
+What changed is that the residual risk is now **bounded by a measurement** instead of being an
+untested assertion. This section previously named "nothing validates that a smaller distance
+corresponds to a figure an expert prefers" as a genuine open question; the ordering half of that
+question is now answered, and the preference half is stated as the remaining limit.
 
 ---
 

@@ -530,6 +530,24 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
                     "knowledge/skills_catalog.json", meta=f"{n_skills} skills / {n_ops} operators"),
         deliverable("Architecture and priority plan", "Entry layer, reference understanding, evaluation layer and the per-metric SOTA definition.",
                     "PIPELINE_V3.md", meta="v3"),
+        deliverable("Mutation loop (Propose–Probe–Compose)", "Deterministic candidate edits "
+                    "probed on a fixed task set and composed by behavioural contrast; the vendored "
+                    "Harness² ledger enforces the rollout budget.",
+                    "figpipe/mutation.py", meta="30 tests, negative controls"),
+        deliverable("Answer-key tripwire", "Refuses a path whose name or content carries the "
+                    "target, so a measurement can never read its own answer. Confirmed "
+                    "independently by Harness².",
+                    "figpipe/tripwire.py", meta="6 tests"),
+        deliverable("Write guard", "Refuses to shrink an accumulated artefact unless the override "
+                    "is explicit. One implementation for every writer.",
+                    "figpipe/guard.py", meta="11 tests"),
+        deliverable("Style-metric validation", "Discrimination experiment over 30 real published "
+                    "figures: 0.9333 accuracy, 95% CI 0.787-0.982, p=4.3e-7, with a negative "
+                    "control and a leave-one-out showing the result concentrates in figure aspect.",
+                    "corpus/e2e/style_validation.json", meta="proxy, not a reader study"),
+        deliverable("Peer integration: Harness²", "What was absorbed (Propose–Probe–Compose, the "
+                    "budget identity, the answer-key tripwire), what was NOT and why, and the "
+                    "licence position.", "PEER_HARNESS2.md", meta="Apache 2.0, one file vendored"),
         deliverable("Logical audit", "Six classes of logical defect (measurement validity, "
                     "reference class, input assumptions, verification completeness, state/timing, "
                     "scope), each with the failure mode, the evidence, and the residual risk.",

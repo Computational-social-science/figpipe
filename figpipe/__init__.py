@@ -40,13 +40,14 @@ Core      style, layout, audit, composite, grammar, drawlib
 Declare   spec
 Recipes   skills
 Style     styleprofile, select
-Verify    audit, semantics, score
+Verify    audit, semantics, score, tripwire
 Benchmark codegen, decision
 """
 from . import (audit, codegen, composite, decision, drawlib, grammar, layout,  # noqa: F401
-               score, select, semantics, skills, sources, spec, style, styleprofile)
+               score, select, semantics, skills, sources, spec, style, styleprofile,
+               tripwire)
 
 __all__ = ["audit", "codegen", "composite", "decision", "drawlib", "grammar", "layout",
            "score", "select", "semantics", "skills", "sources", "spec", "style",
-           "styleprofile"]
+           "styleprofile", "tripwire"]
 __version__ = "0.2.0"

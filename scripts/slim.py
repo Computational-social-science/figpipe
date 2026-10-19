@@ -33,6 +33,10 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 import sys as _sys
 _sys.path.insert(0, str(ROOT))
 try:
+    from figpipe import guard
+except Exception:                                    # pragma: no cover
+    guard = None                                     # reported, never fatal
+try:
     from figpipe.sources import assert_writable as _assert_writable
 except Exception:                                    # pragma: no cover
     def _assert_writable(p):                         # fallback: refuse nothing, but refuse to
@@ -56,11 +60,19 @@ REGENERABLE = [
 ]
 
 #: Directories deleted outright when present -- one-off jobs already finished.
-SCRATCH_DIRS = ["_qc_tools_attempt", "_qc_negative", ".pytest_cache"]
+SCRATCH_DIRS = ["_qc_tools_attempt", "_qc_negative", ".pytest_cache",
+                # every mutation probe writes a PDF here; regenerable by re-running
+                "templates/mutation"]
 
 #: How many run records to keep. Six-hourly runs make 4/day = 1460/year; the newest 200 covers
 #: ~50 days, which is enough to see a regression, and older ones are recoverable from git.
 KEEP_RUNS = 200
+
+#: The FLOOR the window may never go below, whatever KEEP_RUNS is set to. The window exists to bound
+#: a growing directory, not to empty the audit trail: a mistyped or mis-defaulted KEEP_RUNS once
+#: would delete the history silently, which is the seed-deletion shape (routine operation removes
+#: evidence). `trim_run_records` refuses to cross this line without an explicit override.
+MIN_RUN_RECORDS = 20
 
 
 
@@ -125,19 +137,32 @@ def tracked_regenerable() -> dict[str, list[str]]:
     return out
 
 
-def trim_run_records() -> list[str]:
-    """Keep the newest KEEP_RUNS run records; return the ones removed."""
+def trim_run_records(*, allow_shrink: bool = False) -> list[str]:
+    """Keep the newest KEEP_RUNS run records; return the ones removed.
+
+    THE WINDOW IS EVIDENCE, SO IT GOES THROUGH THE SHARED GUARD. `knowledge/runs/*.json` is the
+    audit trail of what each scheduled run found; trimming it is a routine operation that REMOVES
+    FILES, which is exactly the shape of the seed-package deletion (a routine `git add -A` committed
+    the absence of files nobody meant to delete). Trimming is legitimate and must keep working, but
+    a trim that would take the trail below `MIN_RUN_RECORDS` is refused with both counts named, and
+    nothing is unlinked. The decision itself is `figpipe.guard.retain_or_refuse`, not a local copy
+    of the idea.
+
+    A refusal is RAISED, not swallowed: `evolve.py` already records an exception from this call in
+    `report["lean"]["error"]`, so the run record shows that the window policy fired instead of
+    reporting "trimmed 0" -- a control that looks present and does nothing is the defect this
+    project keeps finding.
+    """
     runs = ROOT / "knowledge" / "runs"
     if not runs.is_dir():
         return []
     files = sorted(runs.glob("*.json"))
     if len(files) <= KEEP_RUNS:
         return []
-    removed = []
-    for f in files[: len(files) - KEEP_RUNS]:
-        f.unlink()
-        removed.append(f.name)
-    return removed
+    result = guard.retain_or_refuse(files, KEEP_RUNS, allow_shrink=allow_shrink,
+                                    minimum=MIN_RUN_RECORDS, unit="run records",
+                                    override="--allow-shrink")
+    return result["removed"]
 
 
 def prune_scratch(apply: bool) -> list[str]:
@@ -163,10 +188,10 @@ def measure() -> dict:
             "worktree_mb": round(wt / 1e6, 1)}
 
 
-def main(apply: bool = True) -> int:
+def main(apply: bool = True, *, allow_shrink: bool = False) -> int:
     before = measure()
     fat = tracked_regenerable()
-    removed_runs = trim_run_records()
+    removed_runs = trim_run_records(allow_shrink=allow_shrink)
     gone = prune_scratch(apply)
     freed = purge_disk(apply)
 
@@ -196,4 +221,5 @@ def main(apply: bool = True) -> int:
 
 if __name__ == "__main__":
     import sys
-    raise SystemExit(main(apply="--dry-run" not in sys.argv))
+    raise SystemExit(main(apply="--dry-run" not in sys.argv,
+                          allow_shrink="--allow-shrink" in sys.argv))

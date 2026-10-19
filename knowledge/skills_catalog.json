@@ -339,7 +339,8 @@
       "optional": [
         "columns",
         "colorbar",
-        "height_mm"
+        "height_mm",
+        "max_rows"
       ],
       "build": [
         {
@@ -632,6 +633,7 @@
         "columns",
         "height_mm",
         "max_panels",
+        "max_bars",
         "xtick_rotation"
       ],
       "build": [

@@ -46,6 +46,17 @@ class SkillError(RuntimeError):
     """A skill or operator was invoked with a contract violation."""
 
 
+#: How many bars one axis can carry with readable tick labels at 6 pt on a ~85 mm panel.
+#: Past this the labels collide whatever the rotation, so a bar panel is the wrong encoding:
+#: a line/trend panel is the right one. Refusing names the fix; drawing it hides the problem.
+#: `layout.split_panels(max_bars=...)` may override it for probing; this is the audited default.
+MAX_BARS = 12
+
+#: How many rows a table with NO 2-D reading may have before `encode.matrix` refuses instead of
+#: drawing unlabelable tiles. `encode.matrix(max_rows=...)` may override it for probing.
+MAX_MATRIX_ROWS = 40
+
+
 # --------------------------------------------------------------------------------------
 # Context and operators
 # --------------------------------------------------------------------------------------
@@ -150,8 +161,15 @@ def op_encode_density(ctx: SkillContext, x: str, y: str, marginals=False,
 
 @operator("encode.matrix", "build")
 def op_encode_matrix(ctx: SkillContext, columns: str | None = None,
-                     colorbar: bool = True):
-    """Encode a numeric matrix (all numeric columns, or a comma list) as signed tiles."""
+                     colorbar: bool = True, max_rows: int | None = None):
+    """Encode a numeric matrix (all numeric columns, or a comma list) as signed tiles.
+
+    `max_rows` is the refusal budget for a table with NO 2-D reading: past it the tiles cannot
+    be labelled, so the operator refuses and names `field_map` instead. It is a parameter rather
+    than a literal so the mutation loop (`figpipe/mutation.py`) can probe whether the budget is
+    set where the evidence puts it. The default is the value the data-shape audit chose, so
+    behaviour is unchanged for every existing caller.
+    """
     if columns:
         cols = [c.strip() for c in columns.split(",") if c.strip()]
         data = ctx.data[cols]
@@ -164,6 +182,7 @@ def op_encode_matrix(ctx: SkillContext, columns: str | None = None,
     # found exactly that. Pivot onto the first two numeric columns when the table looks like a
     # field, and record the pivot so the figure can be rebuilt.
     if data.shape[0] > 24:
+        budget = MAX_MATRIX_ROWS if max_rows is None else int(max_rows)
         # A pivot needs two columns that VARY (bookkeeping such as panel_row has one value) and a
         # value column distinct from both. Guessing "the first two columns" produced a 1x1 pivot
         # and refused a task that previously rendered -- a regression this project's own loop
@@ -186,11 +205,12 @@ def op_encode_matrix(ctx: SkillContext, columns: str | None = None,
             ctx.trace.append(f"encode.matrix.pivot({a} x {bcol} of {val}: "
                              f"{data.shape[0]} rows -> {pivoted.shape[0]}x{pivoted.shape[1]})")
             data = pivoted
-        elif data.shape[0] > 40:
+        elif data.shape[0] > budget:
             # no 2-D reading exists AND the table is too long to label: refuse, naming the fix
             raise SkillError(
                 f"encode.matrix: {data.shape[0]} rows have no 2-D reading "
-                f"(no column pair varies enough to pivot); use field_map or pass a wide frame")
+                f"(no column pair varies enough to pivot) and exceed the {budget}-row "
+                f"budget; use field_map or pass a wide frame")
         # otherwise fall through: a 25-40 row frame is drawable as-is and was before this change
     ctx.add_panel(grammar.panel("signed_matrix", data, colorbar=colorbar,
                                 cbar_label=""))
@@ -360,6 +380,7 @@ def op_layout_split_panels(ctx: SkillContext, by: str, of: str = "error_bars",
                            x: str | None = None, y: str | None = None,
                            err: str | None = None, columns: float = 2.0,
                            max_panels: int = 4, max_rows: int = 200,
+                           max_bars: int | None = None,
                            xtick_rotation: float = 30.0, **kwargs):
     """Build one panel per level of a grouping column from a long table.
 
@@ -367,6 +388,11 @@ def op_layout_split_panels(ctx: SkillContext, by: str, of: str = "error_bars",
     sub-figures distinguished by a group column (panel_group / panel_block), and the honest
     reading is one panel per group. More levels than `max_panels` is an error, because silently
     dropping a panel changes what the figure claims.
+
+    `max_bars` is the category budget for one axis: past it the tick labels collide whatever the
+    rotation, so a bar panel is the wrong encoding. It is a parameter rather than a literal so
+    the mutation loop (`figpipe/mutation.py`) can probe where the budget belongs. `None` keeps
+    the audited default, so behaviour is unchanged for every existing caller.
     """
     if not by or by not in ctx.data.columns:
         raise SkillError(f"layout.split_panels needs a grouping column; got {by!r}")
@@ -380,13 +406,16 @@ def op_layout_split_panels(ctx: SkillContext, by: str, of: str = "error_bars",
     #: How many bars an axis can carry with readable tick labels at 6 pt on a ~85 mm panel.
     #: Past this the labels collide whatever the rotation, so a bar panel is the wrong encoding:
     #: a line/trend panel is the right one. Refusing names the fix; drawing it hides the problem.
-    MAX_BARS = 12
+    #: The operator's `max_bars` parameter overrides it for probing; `None` means "use this".
+    budget = MAX_BARS if max_bars is None else int(max_bars)
+    if budget < 2:
+        raise SkillError(f"layout.split_panels: max_bars={budget} cannot carry a comparison")
     for level in levels:
         n_levels = ctx.data.loc[ctx.data[by].astype(str) == level, label].nunique()
-        if n_levels > MAX_BARS:
+        if n_levels > budget:
             raise SkillError(
                 f"layout.split_panels: {level!r} has {n_levels} distinct {label!r} values; a bar "
-                f"panel can carry at most {MAX_BARS} with readable labels. Use the trend encoder "
+                f"panel can carry at most {budget} with readable labels. Use the trend encoder "
                 f"for an ordered axis, or pass of='error_bars' with a coarser label.")
     aggregated: list[str] = []
     for level in levels:
@@ -766,7 +795,7 @@ _SKILLS = [
         build=(("encode.matrix", {}), ("layout.plate", {"columns": 1.0,
                                                         "height_mm": 90.0})),
         required=(),
-        optional=("columns", "colorbar", "height_mm"),
+        optional=("columns", "colorbar", "height_mm", "max_rows"),
         examples=({},),
         verify=(),
     ),
@@ -830,7 +859,8 @@ _SKILLS = [
         description="One panel per level of a grouping column, drawn from a long table.",
         build=(("layout.split_panels", {}), ("layout.plate", {"height_mm": 140.0})),
         required=("by", "x", "y"),
-        optional=("err", "columns", "height_mm", "max_panels", "xtick_rotation"),
+        optional=("err", "columns", "height_mm", "max_panels", "max_bars",
+                  "xtick_rotation"),
         examples=({"by": "panel_group", "x": "outcome_name", "y": "estimate",
                    "err": "se"},),
         verify=(),

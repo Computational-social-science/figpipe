@@ -1392,3 +1392,39 @@ the trade-off of not judging counts: coverage regressions need a different guard
 shrink-refusal is it.
 
 Suite: 322 passed, 2 skipped.
+
+
+## 57. A peer project reached the same rule independently, and gave it a mechanism (2026-10-19)
+
+Absorbed Harness² (google-research/harness2, Apache 2.0) this round. The full account is in
+`PEER_HARNESS2.md`; the part that belongs in the defect log is this.
+
+**The one mechanism figpipe actually lacked was a mutation loop.** Its evolution loop re-verified
+rules, measured artefacts and recorded deltas -- but it never PROPOSED a change, PROBED it, and KEPT
+it on evidence. It could report that a number moved; it could not choose an edit. Harness²'s
+task-level recursion is exactly that loop with no ground truth: propose edits, probe them on the
+same task, compose from the behavioural contrast.
+
+**The convergence is the important finding.** Harness² refuses to serve any harness file whose name
+or body carries a grader verdict, because such a file "cannot be served as evidence to later tasks".
+figpipe learned the same rule the hard way: it once reported an official score of 100.0 that came
+entirely from copying the reference figure's own code. Two projects, independent methods, the same
+conclusion -- which is the strongest evidence either could have that the rule is real. The
+difference is that Harness² had a MECHANISM and figpipe had a lesson. `figpipe/tripwire.py` is now
+the mechanism: `assert_no_answer_key()` refuses a path whose name or content carries the target,
+with an explicit `allow=(...)` for the one case where reading the answer key IS the measurement.
+
+**Two details from their ledger worth stealing outright** (vendored unmodified at
+`third_party/harness2_ledger/`):
+  * duplicate labels are checked BEFORE the counts, "because a duplicate can satisfy them" -- a
+    repeated label means two stages wrote the same id and one silently overwrote the other, so a
+    candidate the ledger counts was never produced. This project has fixed the same family of
+    defect four times (mixed instruments, mixed task sets); the ledger's phrasing is sharper.
+  * `BudgetError` subclasses `AssertionError`: a budget violation is a programming error, not a
+    runtime condition to be tolerated.
+
+WHAT WAS NOT ABSORBED, and the reason is in PEER_HARNESS2.md: their proposer needs an LLM CLI and an
+API key, which would make figpipe's mutation loop non-deterministic and therefore unvalidatable by
+its own rules. The INTERFACE was adopted; the LLM was not.
+
+Suite: 328 passed, 2 skipped.

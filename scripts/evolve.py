@@ -40,6 +40,8 @@ import sys
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
+from figpipe import guard  # noqa: E402
+
 KB = ROOT / "knowledge" / "layout_rules.json"
 REPORT = ROOT / "knowledge" / "evolution_report.json"
 FIGS = ROOT.parent / "keystroke-observatory" / "docs"
@@ -204,7 +206,25 @@ def main() -> int:
         "at": datetime.datetime.now().isoformat(timespec="seconds"),
         "summary": summary,
     }
-    _atomic_write(KB, json.dumps(kb, indent=2))
+    # THE KNOWLEDGE BASE IS ACCUMULATED EVIDENCE. Rewriting it to update one derived field can drop
+    # rules exactly as the benchmark report dropped 106 rows, so the write goes through the same
+    # shared guard every other accumulating writer uses. It compares the `rules` collection; a
+    # refusal here is a HARD ERROR (the run must not report success while the KB was not written),
+    # and the file on disk is left exactly as it was.
+    try:
+        guard.write_or_refuse(KB, kb, key="rules", unit="rules",
+                              dumps=lambda p: json.dumps(p, indent=2))
+    except guard.ShrinkRefused as exc:
+        hard_errors.append(f"knowledge base not written: {exc}")
+        print(f"  !! {exc}")
+        _atomic_write(REPORT, json.dumps({
+            "run_at": datetime.datetime.now().isoformat(timespec="seconds"),
+            "knowledge_base_version": kb["version"],
+            "results": results, "demoted": demoted, "summary": summary,
+            "hard_errors": hard_errors, "ok": False,
+            "note": "the knowledge base write was REFUSED by figpipe.guard; nothing was written",
+        }, indent=2))
+        return 1
 
     report = {
         "run_at": datetime.datetime.now().isoformat(timespec="seconds"),

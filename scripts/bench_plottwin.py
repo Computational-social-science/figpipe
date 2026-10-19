@@ -41,7 +41,7 @@ import pandas as pd
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from figpipe import codegen, decision, lock, select, skills, styleprofile  # noqa: E402
+from figpipe import codegen, decision, guard, lock, select, skills, styleprofile  # noqa: E402
 
 sys.path.insert(0, str(ROOT / "third_party"))
 try:                                            # official scorer is optional and CC BY-NC
@@ -60,23 +60,77 @@ COVERAGE_FILE = ROOT / "corpus" / "e2e" / "coverage.json"
 
 
 def _read_coverage() -> dict:
-    if not COVERAGE_FILE.is_file():
+    raw, _state = guard.read_json(COVERAGE_FILE)
+    if not isinstance(raw, dict):
         return {}
     try:
-        return {int(k): v for k, v in json.loads(
-            COVERAGE_FILE.read_text(encoding="utf-8")).items()}
-    except (OSError, ValueError):
+        return {int(k): v for k, v in raw.items()}
+    except (TypeError, ValueError):
         return {}
+
+
+def write_coverage(cov: dict, *, allow_shrink: bool = False) -> dict:
+    """Write the offset -> task id index through the shared shrink guard.
+
+    The index is DURABLE COVERAGE, not a cache: when it was pruned once, the loop restarted the
+    benchmark from offset 0. It is only ever built by merging, so a rewrite that drops entries is
+    the same evidence loss as the benchmark report losing 106 rows -- and it is refused here for
+    the same reason, by the same code. `allow_shrink` exists for the targeted rebuild path, where
+    replacing the index with a smaller, VERIFIED one is the intent.
+    """
+    payload = {str(k): v for k, v in sorted(cov.items())}
+    return guard.write_or_refuse(COVERAGE_FILE, payload, unit="coverage entries",
+                                 allow_shrink=allow_shrink, override="allow_shrink=True")
+
+
+def ensure_coverage_index() -> int:
+    """Rebuild the id -> offset index if it is missing or incomplete.
+
+    WHY: the index is derived from the report and the pool, and it is cheap (a few KB). When it was
+    pruned along with the data cache, `--ids` could not locate a single anchor task. Coverage is a
+    durable fact and must not depend on a prunable store.
+
+    Every entry this rebuilds is written by `_record_coverage`, which merges over the file already
+    on disk and goes through the shared guard, so a rebuild can only grow the index. The rebuild
+    therefore needs no shrink override of its own.
+    """
+    report_ids = measured_ids()
+    if not report_ids:
+        return 0
+    have = {v for v in _read_coverage().values()}
+    missing = report_ids - have
+    if not missing:
+        return 0
+    added = 0
+    for off in range(POOL):
+        try:
+            row = fetch_row(off)
+        except Exception:                       # noqa: BLE001 - offline is not fatal
+            continue
+        if row.get("id") in missing:
+            added += 1
+        if len(have) + added >= len(report_ids):
+            break
+    return added
 
 
 def _record_coverage(offset: int, task_id: str) -> None:
-    cov = _read_coverage()
-    if cov.get(offset) == task_id:
+    """Add ONE entry, merging over whatever is on disk so this write can only grow the index.
+
+    The index is read here in its RAW form (string keys, exactly as stored) rather than through
+    `_read_coverage`, so a write can never be smaller than the file it replaces even if a key is
+    malformed. A refusal must be impossible on this path: recording a fetched task is not a
+    decision, and a guard that fired on an append would take the benchmark offline.
+    """
+    raw, _state = guard.read_json(COVERAGE_FILE)
+    cov = dict(raw) if isinstance(raw, dict) else {}
+    if cov.get(str(offset)) == task_id:
         return
-    cov[offset] = task_id
-    COVERAGE_FILE.parent.mkdir(parents=True, exist_ok=True)
-    COVERAGE_FILE.write_text(json.dumps({str(k): v for k, v in sorted(cov.items())},
-                                        indent=2) + "\n", encoding="utf-8")
+    cov[str(offset)] = task_id
+    guard.write_or_refuse(COVERAGE_FILE, cov, unit="coverage entries",
+                          override="allow_shrink=True")
+
+
 #: The task cache is an INTERMEDIATE (the licence forbids redistributing the data anyway), but it
 #: lives in the worktree, which has a size budget. Keeping it bounded is the difference between a
 #: cache and a leak: 60 tasks already cost 38 MB.
@@ -788,6 +842,17 @@ def _shipped_anchor_single_instrument(tasks) -> dict:
                      "fingerprint; re-measure them with --scan")}
 
 
+def write_report(report: dict, *, allow_shrink: bool = False) -> dict:
+    """Write the benchmark report through the shared shrink guard.
+
+    A two-task diagnostic run once destroyed 106 accumulated rows because this write was
+    unconditional. The rule now lives in ONE place (`figpipe.guard.write_or_refuse`) instead of
+    being re-implemented here, so every writer that can lose accumulated data behaves the same way.
+    """
+    return guard.write_or_refuse(OUT, report, allow_shrink=allow_shrink, key="tasks",
+                                 unit="tasks", override="--fresh")
+
+
 def _anchor_distance(tasks) -> float | None:
     """Mean style distance over the FROZEN anchor subset, ALL rows.
 
@@ -888,33 +953,6 @@ def next_uncovered_offset(tasks: int, report_path=None) -> int:
         if missing:
             return off
     return 0
-
-
-def ensure_coverage_index() -> int:
-    """Rebuild the id -> offset index if it is missing or incomplete.
-
-    WHY: the index is derived from the report and the pool, and it is cheap (a few KB). When it was
-    pruned along with the data cache, `--ids` could not locate a single anchor task. Coverage is a
-    durable fact and must not depend on a prunable store.
-    """
-    report_ids = measured_ids()
-    if not report_ids:
-        return 0
-    have = {v for v in _read_coverage().values()}
-    missing = report_ids - have
-    if not missing:
-        return 0
-    added = 0
-    for off in range(POOL):
-        try:
-            row = fetch_row(off)
-        except Exception:                       # noqa: BLE001 - offline is not fatal
-            continue
-        if row.get("id") in missing:
-            added += 1
-        if len(have) + added >= len(report_ids):
-            break
-    return added
 
 
 def backfill_coverage() -> int:
@@ -1070,12 +1108,13 @@ def _run(args) -> int:
         "tasks": results,
     }
     if args.merge and OUT.is_file():
-        try:
-            old = json.loads(OUT.read_text(encoding="utf-8"))
-        except (OSError, ValueError):
+        # read the old report through the SAME tolerant reader the guard uses, so a corrupt file
+        # is one decision (empty) rather than two different ones in one function
+        old, _state = guard.read_json(OUT)
+        if not isinstance(old, dict):
             old = {}
         seen = {t["id"] for t in report["tasks"]}
-        old_tasks = old.get("tasks", [])
+        old_tasks = old.get("tasks") or []
         merged = [t for t in old_tasks if t.get("id") not in seen] + report["tasks"]
         ok_all = [t for t in merged if t.get("status") == "ok"]
         uns = [t for t in merged if t.get("status") == "unsupported"]
@@ -1163,19 +1202,20 @@ def _run(args) -> int:
     # NEVER SHRINK THE REPORT SILENTLY. A run without --merge replaces the file, so a small
     # diagnostic run (2 tasks) once destroyed 106 accumulated rows. The merge is now the DEFAULT
     # when a report already exists; replacing requires --fresh, which is explicit.
-    existing = {}
-    if OUT.is_file():
-        try:
-            existing = json.loads(OUT.read_text(encoding="utf-8"))
-        except (OSError, ValueError):
-            existing = {}
-    old_n = len(existing.get("tasks") or [])
-    new_n = len(report["tasks"])
-    if old_n and new_n < old_n and not getattr(args, "fresh", False):
-        raise SystemExit(
-            f"refusing to shrink the benchmark report from {old_n} to {new_n} tasks without "
-            f"--fresh. Use --merge to add rows, or --fresh to replace deliberately.")
-    OUT.write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    #
+    # The concept is GENERAL, so the decision is delegated to `figpipe.guard`: the same refusal
+    # (and the same tolerant reader) protects the official scores, the coverage index and the run
+    # window. What stays here is only the harness's own policy: `--merge` composes the payload,
+    # `--fresh` is the override, and the refusal is reported as a clean message plus exit code 4
+    # rather than a traceback, because a scheduled run has to be able to read it.
+    try:
+        write_report(report, allow_shrink=bool(getattr(args, "fresh", False)))
+    except guard.ShrinkRefused as exc:
+        print(f"  refused: {exc}")
+        print("  the report on disk is unchanged; use --merge to add rows, or --fresh to "
+              "replace it deliberately")
+        shutil.rmtree(out_dir, ignore_errors=True)
+        return 4
     from figpipe import sources
     sources.assert_writable(out_dir)
     shutil.rmtree(out_dir, ignore_errors=True)

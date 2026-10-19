@@ -34,7 +34,7 @@ sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "scripts"))
 sys.path.insert(0, str(ROOT / "third_party"))
 
-from figpipe import codegen, lock  # noqa: E402
+from figpipe import codegen, guard, lock  # noqa: E402
 
 try:
     import plottwin_scorer as official
@@ -205,6 +205,10 @@ def main(argv=None) -> int:
     ap.add_argument("--types", default="")
     ap.add_argument("--no-lock", action="store_true",
                     help="skip the measurement lock (only when the parent already holds it)")
+    ap.add_argument("--allow-shrink", action="store_true",
+                    help="permit this pass to write FEWER records than the existing file holds. "
+                         "Refused by default: the score file is the accumulated measurement, and a "
+                         "short --limit run once destroyed a full pool of them.")
     ap.add_argument("--source", choices=["image", "code", "naive", "ceiling"], default="image",
                     help="where the candidate's style comes from: 'image' (honest, the benchmark "
                          "premise), 'code' (style copied from the reference code -- a ceiling), or "
@@ -244,8 +248,19 @@ def _run(args) -> int:
     out = {"image": OUT_IMAGE, "code": OUT_CODE, "naive": OUT_NAIVE,
            "ceiling": OUT_CODE}[args.source]
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(json.dumps({"summary": summary, "records": records},
-                              indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    # NEVER REPLACE A FULL POOL WITH A SHORT RUN. `--limit 20` is a diagnostic, and it used to
+    # overwrite 150 scored tasks without a word -- the same shape as the benchmark report that lost
+    # 106 rows. The guard is shared, so the refusal message and the tolerance for a corrupt
+    # existing file are identical everywhere.
+    try:
+        guard.write_or_refuse(out, {"summary": summary, "records": records}, key="records",
+                              unit="scored tasks", allow_shrink=args.allow_shrink,
+                              override="--allow-shrink")
+    except guard.ShrinkRefused as exc:
+        print(f"  refused: {exc}")
+        print(f"  {out.name} is unchanged; a targeted pass cannot stand in for the pool it "
+              f"replaces")
+        return 4
     print()
     print(f"  scored {summary['n_scored']}/{summary['n_tasks']} tasks")
     print(f"  official code-channel mean: {summary['mean_score']} "

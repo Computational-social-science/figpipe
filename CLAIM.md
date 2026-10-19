@@ -42,8 +42,73 @@ ceiling so the remaining gap is visible.
 - **Not** a claim of beating any named paper. No head-to-head run against FigMirror,
   NaturePanelForge or DeTi*k*Zify was performed, and none is implied. The comparison here is
   against a **baseline configuration of this same pipeline**, not against another system.
-- **Not** validated by human judgement. The style distance and the official channel are
-  deterministic metrics; whether they track expert preference has not been measured yet.
+- **Human preference is still unmeasured — but the metric is no longer untested.** A
+  discrimination experiment (`scripts/validate_style_metric.py`, artefact
+  `corpus/e2e/style_validation.json`) measured whether the style distance ranks a transfer from
+  the **matched** reference above a transfer from a **sibling figure in the same paper**:
+  **28 of 30 pairs correct, accuracy 0.933, 95 % CI 0.787–0.982**, one-sided binomial
+  p = 4.3 × 10⁻⁷ against chance. The deliberately inverted ranking scored 0.033, so the harness
+  can fail. The official scorer agreed on **27 of 27 decisive pairs** (3 ties). This is a
+  **proxy for ordering, not a reader study**: it shows the metric is not blind or inverted, and
+  says nothing about whether an expert would prefer the closer figure. See "The measurement that
+  replaced 'pending'" below.
+
+## The measurement that replaced "pending"
+
+`CLAIM.md` used to say that whether the style metric tracks expert preference "has not been
+measured yet", and `LOGICAL_AUDIT.md` §1 named the same sentence as the project's residual risk.
+A reader study is still not possible here. A **discrimination experiment** is, and it closes the
+part of that gap that can be closed deterministically.
+
+**Design.** For each of 30 real published figures in `corpus/extracted/` (vector PDF regions, so
+the profile is measured from the PDF's own objects rather than guessed from pixels), figpipe
+renders two candidates from **identical data** and the **same grammar**:
+
+| | style source |
+|---|---|
+| **A** | a MISMATCHED figure — another figure **in the same paper**, so the house style is held constant |
+| **B** | the MATCHED reference itself |
+
+The only difference between A and B is the style source, so the question is exactly the one the
+metric claims to answer: does `styleprofile.compare` put B closer to the reference than A?
+
+**Result.**
+
+| quantity | measured |
+|---|---|
+| pairs | 30 |
+| B ranked closer (hard, same-paper contrast) | **28 / 30** |
+| **discrimination accuracy** | **0.933** (95 % CI 0.787–0.982) |
+| one-sided binomial p vs chance (0.5) | 4.3 × 10⁻⁷ |
+| negative control — inverted ranking | 0.033 (passes: a harness that cannot fail proves nothing) |
+| easy contrast (different paper), for reference | 30 / 30 = 1.000 |
+| official scorer (`deviation-defect-v1`) agreement | 27 / 27 decisive (3 ties) |
+
+**What this does and does not establish.**
+
+- It **does** establish that the metric is not blind and not inverted: every one of the six
+  components ranks the matched transfer closer more often than not
+  (`aspect` 1.00, `letters` 1.00, `lines` 0.77, `sizes` 0.75, `palette` 0.73, `rules` 0.71),
+  and the aggregate is 28/30.
+- It **does not** establish that the closer figure is the better figure. A metric can
+  discriminate perfectly and still disagree with an expert about which of two close candidates
+  is preferable. No human judgement was collected, and none is implied.
+- **It is substantially an aspect check.** Leave-one-out: withholding `aspect` alone drops
+  accuracy to **0.700** (Δ −0.233); withholding any other single component leaves it at 0.933.
+  Most of the discrimination therefore comes from **figure aspect** — the easiest property to
+  reproduce — not from palette or typography. `letters` is decisive on only 1 of 30 pairs, so
+  its 1.00 is not evidence of anything. A metric whose accuracy is carried by one cheap
+  dimension is weaker than its aggregate suggests, and that is the honest reading here.
+- The **easy** contrast (mismatch from a different paper) is 30/30, which is a ceiling rather
+  than a sensitivity result: two unrelated papers differ in palette, type and layout at once.
+  The headline above is deliberately the **hard** arm.
+
+**Why the official scorer is run on the same pairs.** Two independent deterministic instruments
+agreeing is evidence about which is measuring style. The official channel is a *deviation*
+score (100 = the candidate's style calls match the reference's), run on code emitted from the
+**rendered** candidates' own measured profiles — so it describes what actually came out rather
+than what the transfer intended, and it is not true by construction. It agreed on every pair
+where it expressed a preference.
 
 ## The dimensions that cap the number
 
