@@ -87,6 +87,9 @@ def capability_snapshot() -> dict:
         "benchmark_mean_distance": bench.get("mean_distance"),
         # judged instead of the raw mean: the mean moves when the task SET changes, which is a
         # property of the measurement, not of the capability
+        # JUDGED: single-instrument view. The all-rows value mixes fingerprints and moves when the
+        # MEASUREMENT changes (0.305 -> 0.316 when only 5 of 20 anchor tasks were on current code).
+        "benchmark_anchor_single": (bench.get("benchmark_anchor_single") or {}).get("mean"),
         "benchmark_anchor_distance": bench.get("benchmark_anchor_distance"),
         # the distance of the figures the pipeline would actually SHIP (closer of plain/styled);
         # this is the capability the selection step added, so it is judged
@@ -139,7 +142,9 @@ CAPABILITY_DIRECTION = {
     "benchmark_success_rate": +1,
     # NOTE: benchmark_tasks and benchmark_ok are counts, not capabilities: they rise whenever the
     # measured set grows. They are recorded for coverage and are deliberately NOT judged.
-    "benchmark_anchor_distance": -1,
+    "benchmark_anchor_single": -1,
+    # NOTE: benchmark_anchor_distance (all rows) is recorded but NOT judged, for the same reason as
+    # the shipped anchor: it can mix rows measured by different fingerprints.
     "benchmark_official_code_score": +1,
     "benchmark_shipped_anchor_single": -1,
     # NOTE: benchmark_shipped_anchor_distance (all rows) is recorded but NOT judged: it can mix

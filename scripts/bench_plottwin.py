@@ -785,7 +785,12 @@ def _shipped_anchor_single_instrument(tasks) -> dict:
 
 
 def _anchor_distance(tasks) -> float | None:
-    """Mean style distance over the FROZEN anchor subset -- comparable across runs."""
+    """Mean style distance over the FROZEN anchor subset, ALL rows.
+
+    Reported for continuity only; like the shipped anchor it can mix rows measured by different
+    fingerprints, so it is not safe to compare across a change to the measurement code. The judged
+    value is `_anchor_single_instrument()`.
+    """
     ids = set(anchor_ids(tasks))
     ok = [t for t in tasks
           if t.get("status") == "ok" and t.get("distance") is not None
@@ -793,6 +798,26 @@ def _anchor_distance(tasks) -> float | None:
     if len(ok) < 5:
         return None
     return round(float(np.mean([t["distance"] for t in ok])), 3)
+
+
+def _anchor_single_instrument(tasks) -> dict:
+    """The styled-anchor mean restricted to rows measured by the CURRENT fingerprint."""
+    ids = set(anchor_ids(tasks))
+    same, other = [], 0
+    for t in tasks:
+        if t.get("id") not in ids or t.get("status") != "ok" or t.get("distance") is None:
+            continue
+        if t.get("code_version") == CODE_VERSION:
+            same.append(t["distance"])
+        else:
+            other += 1
+    comparable = other == 0 and len(same) >= 5
+    return {"mean": round(float(np.mean(same)), 3) if (same and comparable) else None,
+            "partial_mean": round(float(np.mean(same)), 3) if same else None,
+            "n_same_instrument": len(same), "n_other_instrument": other,
+            "comparable": comparable,
+            "note": ("comparable" if comparable else
+                     "not comparable yet: anchor tasks are still measured by an older fingerprint")}
 
 
 #: The benchmark pool size, used to walk every window before repeating one.
@@ -1071,6 +1096,7 @@ def main(argv=None) -> int:
     # The anchor is the mean over the FIRST `ANCHOR_N` task ids in sorted order, which is stable
     # as long as those tasks stay in the report.
     report["benchmark_anchor_distance"] = _anchor_distance(report["tasks"])
+    report["benchmark_anchor_single"] = _anchor_single_instrument(report["tasks"])
     report["benchmark_shipped_anchor_distance"] = _shipped_anchor_distance(report["tasks"])
     report["benchmark_shipped_anchor_single"] = _shipped_anchor_single_instrument(report["tasks"])
     # computed AFTER the merge, over every task in the report -- a per-slice aggregate would
