@@ -195,3 +195,59 @@ def test_an_image_inferred_style_leaves_code_only_dimensions_undetermined():
         assert dim in style["undetermined_dimensions"]
     # palette and aspect ARE recoverable
     assert style["figure_aspect"] is not None
+
+
+def test_the_palette_estimate_comes_from_real_pixels():
+    """Adaptive quantisation reported light blues for a figure whose ink is near-black.
+
+    The official palette dimension is a directed nearest-distance over the REFERENCE's colours, so
+    an estimate that misses them scores ~0 while looking like a measurement. This pins the fix:
+    the dominant colours must be actual pixel values, and the cap must be large enough to cover
+    references that carry up to 28 colours.
+    """
+    import sys
+    sys.path.insert(0, str(ROOT))
+    sys.path.insert(0, str(ROOT / "scripts"))
+    from figpipe import styleprofile
+    try:
+        import bench_plottwin as bench
+    except Exception:                    # pragma: no cover
+        pytest.skip("benchmark harness unavailable")
+    imgs = list(bench.IMAGES.glob("*.png"))
+    if not imgs:
+        pytest.skip("no cached reference images")
+    prof = styleprofile.StyleProfile.from_image_detailed(imgs[0])
+    hexes = [c["hex"] for c in prof.colours]
+    assert hexes, "no colours extracted"
+    assert len(hexes) <= 24
+    # every reported colour must be a real colour in the image
+    from PIL import Image
+    import numpy as np
+    arr = np.asarray(Image.open(imgs[0]).convert("RGB")).reshape(-1, 3)
+    present = {f"#{int(r):02x}{int(g):02x}{int(b):02x}" for r, g, b in arr[::37]}
+    hits = sum(1 for h in hexes if h in present)
+    assert hits >= len(hexes) // 2, (
+        f"only {hits}/{len(hexes)} reported colours occur in the image: {hexes}")
+
+
+def test_an_undetermined_linewidth_is_not_guessed():
+    """Stroke width is not recoverable: the reference renders carry no dpi and vary 104-343 dpi.
+
+    A fixed conversion produced 0.36 pt against true widths of 0.42-1.38 pt and made the official
+    linewidth dimension WORSE (0.432 -> 0.244). Undetermined must stay undetermined.
+    """
+    import sys
+    sys.path.insert(0, str(ROOT))
+    sys.path.insert(0, str(ROOT / "scripts"))
+    from figpipe import codegen, styleprofile
+    try:
+        import bench_plottwin as bench
+    except Exception:                    # pragma: no cover
+        pytest.skip("benchmark harness unavailable")
+    imgs = list(bench.IMAGES.glob("*.png"))
+    if not imgs:
+        pytest.skip("no cached reference images")
+    prof = styleprofile.StyleProfile.from_image_detailed(imgs[0])
+    style = codegen.style_from_image_profile(prof)
+    assert style["linewidth"] is None
+    assert "linewidth" in style["undetermined_dimensions"]

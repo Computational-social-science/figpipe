@@ -108,12 +108,17 @@ def score_one(row: dict, *, source: str = "image") -> dict:
     except Exception as exc:                        # noqa: BLE001
         rec.update({"status": "unscored", "reason": f"scorer failed: {type(exc).__name__}"})
         return rec
+    dims = {name: round(float(info["score"]), 4)
+            for name, info in (res.get("dimensions") or {}).items()
+            if info.get("status") == "scored"}
     rec.update({
         "status": "scored" if res["available"] else "unavailable",
         "score": res["score"],
         "n_activated": res["n_activated"],
         "scored_dimensions": res["scored_dimensions"],
         "unavailable_dimensions": res["unavailable_dimensions"],
+        # per-dimension scores: an aggregate of 70 says nothing about WHICH choice is wrong
+        "dimension_scores": dims,
     })
     if not res["available"]:
         rec["reason"] = res["status"]
@@ -141,8 +146,19 @@ def summarise(records: list[dict], source: str = "image") -> dict:
         "max_score": round(float(np.max([r["score"] for r in scored])), 2) if scored else None,
         "by_type": {k: {"n": len(v), "mean": round(float(np.mean(v)), 2)}
                     for k, v in sorted(by_type.items())},
+        "by_dimension": _by_dimension(scored),
         "unscored_reasons": _reasons(records),
     }
+
+
+def _by_dimension(scored: list[dict]) -> dict:
+    """Mean score per scored dimension -- this is what tells us WHICH choice to fix."""
+    buckets: dict[str, list[float]] = {}
+    for r in scored:
+        for name, value in (r.get("dimension_scores") or {}).items():
+            buckets.setdefault(name, []).append(float(value))
+    return {k: {"n": len(v), "mean": round(float(np.mean(v)), 3)}
+            for k, v in sorted(buckets.items(), key=lambda kv: np.mean(kv[1]))}
 
 
 def _reasons(records: list[dict]) -> dict:

@@ -350,10 +350,41 @@ def style_from_image_profile(profile) -> dict:
         "figure_aspect": aspect,
         "grid": grid,
         "spines_removed": spines_removed,
-        "tick_direction": None,
+        # TICK DIRECTION is recoverable when a left spine is visible; None when it is not.
+        "tick_direction": getattr(profile, "tick_direction", None),
         "serif": None,
         "legend_frame": None,
+        # STROKE WIDTH: NOT recoverable from these images. A pixel run only becomes a width once
+        # the dpi is known, and the benchmark's reference renders carry no dpi metadata and vary
+        # between roughly 104 and 343 dpi (fitted from the shipped reference code). Converting at a
+        # fixed assumption produced estimates of 0.36 pt against true widths of 0.42-1.38 pt, and
+        # made the official linewidth dimension WORSE (0.432 -> 0.244). Reporting an undetermined
+        # dimension as undetermined is the honest choice; guessing it is worse than not trying.
         "linewidth": None,
         "inferred_from": "image",
-        "undetermined_dimensions": ["tick_direction", "serif", "legend_frame", "linewidth"],
+        "undetermined_dimensions": [d for d, v in (
+            ("tick_direction", getattr(profile, "tick_direction", None)),
+            ("serif", None),
+            ("legend_frame", None),
+            ("linewidth", None),
+        ) if v is None],
     }
+
+
+#: Reference images in this benchmark are rendered at 400 dpi (see figpipe.style figure.dpi).
+ASSUMED_IMAGE_DPI = 400.0
+
+
+def _stroke_to_pt(stroke_px, dpi) -> float | None:
+    """Convert a measured stroke thickness in pixels to points.
+
+    A 2 px stroke at 400 dpi is 0.36 pt; at 100 dpi it is 1.44 pt. Reporting the pixel count as a
+    width would be wrong by the dpi factor, so the conversion is explicit and the assumption is
+    named rather than hidden.
+    """
+    if not stroke_px:
+        return None
+    d = float(dpi or ASSUMED_IMAGE_DPI)
+    if d <= 0:
+        return None
+    return round(float(stroke_px) * 72.0 / d, 3)

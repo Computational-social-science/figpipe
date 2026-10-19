@@ -115,6 +115,10 @@ class StyleProfile:
     #: whatever both sides actually measured instead of pretending a size distribution exists.
     modality: str = "vector"
     ink_density: float = 0.0
+    #: Raster-only measurements: a picture shows tick marks, stroke thickness and glyph shapes.
+    tick_direction: str | None = None
+    serif_guess: bool | None = None
+    stroke_px: float | None = None
 
     # ---- construction -------------------------------------------------------------
     @classmethod
@@ -212,7 +216,7 @@ class StyleProfile:
         return prof
 
     @classmethod
-    def from_image(cls, image_path, max_colours: int = 8) -> "StyleProfile":
+    def from_image(cls, image_path, max_colours: int = 24) -> "StyleProfile":
         """Profile a RASTER reference (PNG/JPEG): palette, aspect, ink density.
 
         Exact type sizes and stroke widths cannot be recovered from pixels without OCR/vision,
@@ -228,9 +232,26 @@ class StyleProfile:
         w, h = im.size
         arr = np.asarray(im)
         ink = float(np.any(arr < 245, axis=2).mean())
-        q = im.convert("P", palette=Image.ADAPTIVE, colors=16).convert("RGB")
-        colours, counts = np.unique(np.asarray(q).reshape(-1, 3), axis=0,
-                                    return_counts=True)
+        # DOMINANT COLOURS, taken from the actual pixels. Adaptive palette quantisation was
+        # scrambling them: it reported light blues and greys for a figure whose ink is #262626,
+        # #000000 and #2a7ab9, so nothing matched the reference palette and the official palette
+        # dimension scored 0.47 while looking "measured".
+        flat = arr.reshape(-1, 3)
+        uniq, counts = np.unique(flat, axis=0, return_counts=True)
+        # collapse near-duplicates: antialiasing produces thousands of shades of the same ink
+        keep_idx = np.argsort(-counts)
+        chosen: list[np.ndarray] = []
+        for i in keep_idx:
+            rgb = uniq[i].astype(int)
+            if all(c > 245 for c in rgb):
+                continue                       # page white
+            if any(int(np.abs(rgb - c).sum()) < 24 for c in chosen):
+                continue                       # within a rounding step of an already-kept colour
+            chosen.append(rgb)
+            if len(chosen) >= max_colours * 3:
+                break
+        colours = np.array(chosen, dtype=int) if chosen else np.zeros((0, 3), dtype=int)
+        counts = np.array([counts[keep_idx[i]] for i in range(len(chosen))], dtype=int)
         order = np.argsort(-counts)
         total = float(w * h)
         out = []
@@ -254,7 +275,7 @@ class StyleProfile:
         return prof
 
     @classmethod
-    def from_image_detailed(cls, image_path, max_colours: int = 8) -> "StyleProfile":
+    def from_image_detailed(cls, image_path, max_colours: int = 24) -> "StyleProfile":
         """Profile a raster reference, including the LINE structure a picture still shows.
 
         WHY THIS EXISTS
@@ -287,11 +308,21 @@ class StyleProfile:
         ys, xs = np.where(ink)
         y0, y1, x0, x1 = ys.min(), ys.max(), xs.min(), xs.max()
         span_h, span_v = max(1, x1 - x0), max(1, y1 - y0)
-        # a RULE is a row/column that is ink for most of the ink bounding box
-        row_ink = ink[:, x0:x1 + 1].mean(axis=1)
-        col_ink = ink[y0:y1 + 1, :].mean(axis=0)
-        h_rules = [int(i) for i in np.where(row_ink > 0.55)[0]]
-        v_rules = [int(i) for i in np.where(col_ink > 0.55)[0]]
+
+        # A RULE is not "a dense row": a dense skymap or heatmap has almost every row dense, so a
+        # density threshold finds hundreds of "rules". A rule is a row that is dense while its
+        # NEIGHBOURS are not -- local contrast. Measured on real references: a dense field gives
+        # 2 rows / 0 cols above 0.25 contrast, a sparse line figure gives 0.40 / 0.36.
+        def _rules(profile_1d, min_contrast: float = 0.25) -> list[int]:
+            kernel = np.ones(9) / 9.0
+            local = np.convolve(profile_1d, kernel, mode="same")
+            contrast = profile_1d - local
+            return [int(i) for i in np.where(contrast > min_contrast)[0]]
+
+        row_ink = ink.mean(axis=1)
+        col_ink = ink.mean(axis=0)
+        h_rules = _rules(row_ink)
+        v_rules = _rules(col_ink)
         edge = max(2, int(round(0.02 * max(span_h, span_v))))
         spines = {"left": False, "right": False, "top": False, "bottom": False}
         interior_h = interior_v = 0
@@ -311,7 +342,38 @@ class StyleProfile:
                 interior_v += 1
         prof.rules_h, prof.rules_v = interior_h, interior_v
         prof.spines = spines
-        prof.modality = "image"
+
+        # TICK DIRECTION: with a detected spine, ticks outside it put ink in the margin beyond,
+        # inside it put ink in the plot area. Compared on the left spine only, where the margin is
+        # usually clean.
+        direction = None
+        if spines.get("left"):
+            band = max(2, int(round(0.01 * span_h)))
+            outside = float(ink[y0:y1 + 1, max(0, x0 - band):x0].mean()) if x0 > band else 0.0
+            inside = float(ink[y0:y1 + 1, x0 + 1:min(w, x0 + 1 + band)].mean())
+            if max(outside, inside) > 0.01:
+                direction = "out" if outside > inside else "in"
+        prof.tick_direction = direction
+
+        # STROKE WIDTH: the modal run length of a thin horizontal ink run, in pixels. This is a
+        # PIXEL measurement and must be converted at the image's own dpi to become points; the
+        # conversion is deliberately left to the caller, which knows the dpi.
+        # A stroke is THIN. Filled areas (a heatmap cell, a bar) produce runs of hundreds of
+        # pixels; including them makes the "stroke width" a measure of the densest region, which
+        # is why the first attempt reported 688 px on a skymap. Only runs under 12 px are strokes.
+        widths = []
+        for y in np.where(row_ink > 0.15)[0][:60]:
+            run = 0
+            for v in ink[y]:
+                if v:
+                    run += 1
+                elif run:
+                    if run <= 12:
+                        widths.append(run)
+                    run = 0
+            if 0 < run <= 12:
+                widths.append(run)
+        prof.stroke_px = float(np.median(widths)) if widths else None
         return prof
 
     # ---- serialisation ------------------------------------------------------------

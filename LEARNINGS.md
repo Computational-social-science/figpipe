@@ -897,3 +897,39 @@ Also fixed this round, from a REAL budget failure (tracked 80.04 MB > 80 MB limi
 
 Final state: 285 passed / 2 skipped, official code channel (image-inferred) 70.59 over 149 tasks,
 ceiling (code-copied) 100.00, styled anchor 0.305, shipped 0.252, tracked 75.05 MB.
+
+
+## 41. The official score is measurable, and three of my "fixes" were wrong (2026-10-19)
+
+Started the round at 70.59 and ended at **75.41** over 149 tasks. The +4.82 came from exactly two
+real fixes; three other attempts were wrong and were reverted or corrected. Recording both halves.
+
+WHAT WORKED
+1. **Per-dimension diagnostics.** The records stored dimension NAMES but not their scores, so "70"
+   said nothing about which choice was wrong. Adding `dimension_scores` produced the ranking:
+   tick_direction 0.0, serif 0.0, linewidth 0.43, palette 0.48, aspect 0.85, grid 0.88,
+   spines 0.97, legend 1.0. That single change turned a number into a work queue.
+2. **Palette extraction was broken, not merely lossy.** `from_image` used PIL adaptive
+   quantisation, which reported light blues and greys (#85bbda, #b9d4e5) for a figure whose actual
+   ink is #262626, #000000 and #2a7ab9. Nothing could ever match, so the dimension scored 0.47 while
+   looking measured. Taking dominant colours from the real pixels and raising the cap from 8 to 24
+   (references carry 3-28 colours) moved palette 0.478 -> 0.648 and the mean 70.59 -> 75.41.
+
+WHAT I GOT WRONG (kept in the record on purpose)
+1. **Naive "dense row = rule" detection.** A skymap has almost every row dense, so a density
+   threshold found 683 "rules" in one image. Replaced with LOCAL CONTRAST (a rule is dense while its
+   neighbours are not): the same skymap yields 2, a sparse line figure 0.40/0.36.
+2. **Stroke-width estimation.** I converted pixels to points at an assumed 400 dpi. The reference
+   renders carry no dpi metadata and vary between roughly 104 and 343 dpi, so estimates of 0.36 pt
+   sat against true widths of 0.42-1.38 pt and the dimension got WORSE (0.432 -> 0.244). Reverted:
+   linewidth is now reported as undetermined, with the measurement that justifies it.
+3. **A too-permissive stroke filter.** The first version reported 688 px on a skymap -- that is a
+   filled region, not a line. Only runs under 12 px count as strokes.
+
+Remaining undetermined from a raster: tick_direction (needs a visible spine and clean margin),
+serif, background (a raster's page colour is usually just white), linewidth. Their scores are 0 and
+they are 3-4 of the activated dimensions, so they cap the achievable number. That ceiling is a
+property of the INPUT MODALITY, not of the pipeline, and is now stated as such.
+
+State: official code channel (image-inferred) **75.41** over 149 tasks; ceiling (code-copied)
+100.00; benchmark 141/150 executed; styled anchor 0.305; shipped 0.252.

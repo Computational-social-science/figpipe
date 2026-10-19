@@ -9,57 +9,95 @@
     "n_scored": 149,
     "n_unscored": 0,
     "n_unavailable": 1,
-    "mean_score": 70.59,
+    "mean_score": 75.41,
     "min_score": 0.0,
     "max_score": 100.0,
     "by_type": {
       "3D": {
         "n": 7,
-        "mean": 43.89
+        "mean": 45.52
       },
       "Bar": {
         "n": 18,
-        "mean": 77.26
+        "mean": 81.65
       },
       "Box/Violin": {
         "n": 16,
-        "mean": 74.3
+        "mean": 73.46
       },
       "Composite": {
         "n": 3,
-        "mean": 77.61
+        "mean": 66.11
       },
       "Distribution": {
         "n": 17,
-        "mean": 74.63
+        "mean": 81.93
       },
       "Field 2D": {
         "n": 15,
-        "mean": 66.37
+        "mean": 76.64
       },
       "Heatmap": {
         "n": 13,
-        "mean": 72.19
+        "mean": 80.11
       },
       "Line": {
         "n": 20,
-        "mean": 73.12
+        "mean": 77.93
       },
       "Network/Tree": {
         "n": 2,
-        "mean": 56.8
+        "mean": 57.5
       },
       "Polar/Radial": {
         "n": 13,
-        "mean": 65.77
+        "mean": 70.2
       },
       "Scatter": {
         "n": 16,
-        "mean": 71.75
+        "mean": 74.81
       },
       "Std-band": {
         "n": 9,
-        "mean": 68.48
+        "mean": 78.51
+      }
+    },
+    "by_dimension": {
+      "tick_direction": {
+        "n": 4,
+        "mean": 0.0
+      },
+      "serif": {
+        "n": 6,
+        "mean": 0.0
+      },
+      "background": {
+        "n": 2,
+        "mean": 0.0
+      },
+      "linewidth": {
+        "n": 127,
+        "mean": 0.574
+      },
+      "palette": {
+        "n": 131,
+        "mean": 0.648
+      },
+      "grid": {
+        "n": 111,
+        "mean": 0.829
+      },
+      "figure_aspect": {
+        "n": 118,
+        "mean": 0.869
+      },
+      "spines_removed": {
+        "n": 53,
+        "mean": 0.965
+      },
+      "legend_frame": {
+        "n": 75,
+        "mean": 1.0
       }
     },
     "unscored_reasons": {
@@ -71,19 +109,23 @@
       "id": "PMC11502666",
       "chart": "Distribution",
       "status": "scored",
-      "score": 57.83714575512349,
+      "score": 86.23098857716339,
       "n_activated": 2,
       "scored_dimensions": [
         "palette",
         "grid"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.7246,
+        "grid": 1.0
+      }
     },
     {
       "id": "PMC11840003",
       "chart": "Box/Violin",
       "status": "scored",
-      "score": 72.86941076237514,
+      "score": 73.20078506558335,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -91,7 +133,13 @@
         "linewidth",
         "grid"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.4079,
+        "figure_aspect": 0.998,
+        "linewidth": 0.5221,
+        "grid": 1.0
+      }
     },
     {
       "id": "PMC12000431",
@@ -103,13 +151,17 @@
         "palette",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "PMC12354736",
       "chart": "Distribution",
       "status": "scored",
-      "score": 82.39151959842667,
+      "score": 79.33000751704489,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -117,13 +169,19 @@
         "grid",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.1814,
+        "figure_aspect": 0.9918,
+        "grid": 1.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "PMC12504421",
       "chart": "Heatmap",
       "status": "scored",
-      "score": 49.82753435362412,
+      "score": 54.40485642247761,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -132,13 +190,20 @@
         "grid",
         "tick_direction"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.2289,
+        "figure_aspect": 0.9976,
+        "linewidth": 0.4938,
+        "grid": 1.0,
+        "tick_direction": 0.0
+      }
     },
     {
       "id": "PMC12905268",
       "chart": "Distribution",
       "status": "scored",
-      "score": 90.37237132547638,
+      "score": 92.63152581413163,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -146,13 +211,19 @@
         "linewidth",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.9699,
+        "figure_aspect": 0.9837,
+        "linewidth": 0.7517,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "PMC13009336",
       "chart": "Box/Violin",
       "status": "scored",
-      "score": 87.53763543282264,
+      "score": 87.94154479732283,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -160,13 +231,19 @@
         "spines_removed",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.766,
+        "linewidth": 0.7517,
+        "spines_removed": 1.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "PMC13022287",
       "chart": "Distribution",
       "status": "scored",
-      "score": 83.80273502543128,
+      "score": 85.93644183200072,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -175,13 +252,20 @@
         "grid",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.6727,
+        "figure_aspect": 0.9625,
+        "linewidth": 0.6616,
+        "grid": 1.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "PMC13079874",
       "chart": "Box/Violin",
       "status": "scored",
-      "score": 68.01853320019046,
+      "score": 68.84644242544105,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -189,13 +273,19 @@
         "linewidth",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.1476,
+        "figure_aspect": 0.9825,
+        "linewidth": 0.6238,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "PMC13106710",
       "chart": "Heatmap",
       "status": "scored",
-      "score": 76.86819458987303,
+      "score": 79.8873645898781,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -204,20 +294,32 @@
         "spines_removed",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.6539,
+        "figure_aspect": 0.7139,
+        "linewidth": 0.6265,
+        "spines_removed": 1.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "PMC13135507",
       "chart": "Scatter",
       "status": "scored",
-      "score": 55.582899294546216,
+      "score": 49.57597429241371,
       "n_activated": 3,
       "scored_dimensions": [
         "palette",
         "figure_aspect",
         "linewidth"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.8607,
+        "linewidth": 0.6265
+      }
     },
     {
       "id": "PMC13245775",
@@ -232,38 +334,54 @@
         "spines_removed",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 1.0,
+        "figure_aspect": 0.9904,
+        "linewidth": 0.0,
+        "spines_removed": 1.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "PMC13252719",
       "chart": "Composite",
       "status": "scored",
-      "score": 89.83637723128075,
+      "score": 58.34940772749817,
       "n_activated": 2,
       "scored_dimensions": [
         "palette",
         "linewidth"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.2079,
+        "linewidth": 0.9591
+      }
     },
     {
       "id": "PMC13273070",
       "chart": "Box/Violin",
       "status": "scored",
-      "score": 70.97557193339038,
+      "score": 66.06208542771061,
       "n_activated": 3,
       "scored_dimensions": [
         "palette",
         "spines_removed",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.4819,
+        "spines_removed": 0.5,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "PMC13286152",
       "chart": "Composite",
       "status": "scored",
-      "score": 63.181965943598826,
+      "score": 60.178433093089176,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -271,39 +389,55 @@
         "linewidth",
         "spines_removed"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.5881,
+        "figure_aspect": 0.819,
+        "linewidth": 0.0,
+        "spines_removed": 1.0
+      }
     },
     {
       "id": "PMC13336770",
       "chart": "Distribution",
       "status": "scored",
-      "score": 89.99199955738811,
+      "score": 99.43486907520717,
       "n_activated": 3,
       "scored_dimensions": [
         "palette",
         "linewidth",
         "spines_removed"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.983,
+        "linewidth": 1.0,
+        "spines_removed": 1.0
+      }
     },
     {
       "id": "PMC13342296",
       "chart": "Distribution",
       "status": "scored",
-      "score": 82.73898581112681,
+      "score": 82.18208210071572,
       "n_activated": 3,
       "scored_dimensions": [
         "palette",
         "linewidth",
         "spines_removed"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.5722,
+        "linewidth": 0.8933,
+        "spines_removed": 1.0
+      }
     },
     {
       "id": "PMC13343911",
       "chart": "Line",
       "status": "scored",
-      "score": 75.27584844721144,
+      "score": 58.73217014780388,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -312,13 +446,20 @@
         "spines_removed",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.9366,
+        "linewidth": 0.0,
+        "spines_removed": 1.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "arxiv-astro-skymap__2412.12637",
       "chart": "Field 2D",
       "status": "scored",
-      "score": 50.50361591212407,
+      "score": 50.58617069702157,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -326,13 +467,19 @@
         "linewidth",
         "serif"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.8112,
+        "figure_aspect": 0.5857,
+        "linewidth": 0.6265,
+        "serif": 0.0
+      }
     },
     {
       "id": "arxiv-astro-skymap__2510.17487",
       "chart": "Std-band",
       "status": "scored",
-      "score": 45.85753087106336,
+      "score": 48.69006013069226,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -340,7 +487,13 @@
         "tick_direction",
         "serif"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.9476,
+        "grid": 1.0,
+        "tick_direction": 0.0,
+        "serif": 0.0
+      }
     },
     {
       "id": "arxiv-ml-3d-trajectory__2511.17399",
@@ -352,25 +505,33 @@
         "palette",
         "linewidth"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.5195,
+        "linewidth": 0.0
+      }
     },
     {
       "id": "arxiv-ml-3d-trajectory__2602.22552",
       "chart": "Field 2D",
       "status": "scored",
-      "score": 94.42987432716563,
+      "score": 92.06082508921574,
       "n_activated": 2,
       "scored_dimensions": [
         "palette",
         "linewidth"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.8412,
+        "linewidth": 1.0
+      }
     },
     {
       "id": "arxiv-ml-bar-line-v2__2511.15055",
       "chart": "Std-band",
       "status": "scored",
-      "score": 78.24400514626362,
+      "score": 86.90259303613983,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -380,24 +541,35 @@
         "spines_removed",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.5195,
+        "figure_aspect": 0.6946,
+        "linewidth": 1.0,
+        "grid": 1.0,
+        "spines_removed": 1.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "arxiv-ml-bar-line-v2__2605.21125",
       "chart": "Polar/Radial",
       "status": "scored",
-      "score": 89.28719628618708,
+      "score": 85.58950950008641,
       "n_activated": 1,
       "scored_dimensions": [
         "palette"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.8559
+      }
     },
     {
       "id": "arxiv-phys-prx-prl__2603.21981",
       "chart": "Line",
       "status": "scored",
-      "score": 35.458479699681234,
+      "score": 48.28545411595873,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -405,26 +577,37 @@
         "tick_direction",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.9314,
+        "linewidth": 0.0,
+        "tick_direction": 0.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "arxiv_2410.15876",
       "chart": "Std-band",
       "status": "scored",
-      "score": 63.30323286492387,
+      "score": 78.35645727118724,
       "n_activated": 3,
       "scored_dimensions": [
         "palette",
         "figure_aspect",
         "grid"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.5475,
+        "figure_aspect": 0.8032,
+        "grid": 1.0
+      }
     },
     {
       "id": "arxiv_2502.15132",
       "chart": "Line",
       "status": "scored",
-      "score": 63.965700386489644,
+      "score": 64.03706023571208,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -432,13 +615,19 @@
         "linewidth",
         "grid"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.9604,
+        "figure_aspect": 0.6011,
+        "linewidth": 0.0,
+        "grid": 1.0
+      }
     },
     {
       "id": "arxiv_2502.17598",
       "chart": "Heatmap",
       "status": "scored",
-      "score": 69.72934815331661,
+      "score": 84.53550075180613,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -446,13 +635,19 @@
         "linewidth",
         "grid"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.8933,
+        "figure_aspect": 0.966,
+        "linewidth": 0.5221,
+        "grid": 1.0
+      }
     },
     {
       "id": "arxiv_2502.18153",
       "chart": "3D",
       "status": "scored",
-      "score": 62.25552271655579,
+      "score": 63.0205640742983,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -460,20 +655,31 @@
         "linewidth",
         "grid"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.8928,
+        "figure_aspect": 0.6281,
+        "linewidth": 0.0,
+        "grid": 1.0
+      }
     },
     {
       "id": "arxiv_2505.19527",
       "chart": "3D",
       "status": "scored",
-      "score": 2.9563619985292444,
+      "score": 2.978044469643741,
       "n_activated": 3,
       "scored_dimensions": [
         "palette",
         "linewidth",
         "grid"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0893,
+        "linewidth": 0.0,
+        "grid": 0.0
+      }
     },
     {
       "id": "arxiv_2506.14951",
@@ -485,26 +691,35 @@
         "palette",
         "linewidth"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "linewidth": 0.0
+      }
     },
     {
       "id": "arxiv_2508.01948",
       "chart": "3D",
       "status": "scored",
-      "score": 33.333333333333336,
+      "score": 51.557264499412355,
       "n_activated": 3,
       "scored_dimensions": [
         "palette",
         "grid",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.5467,
+        "grid": 0.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "arxiv_2510.17384",
       "chart": "Scatter",
       "status": "scored",
-      "score": 55.699822969957275,
+      "score": 55.47523594769242,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -514,7 +729,15 @@
         "spines_removed",
         "serif"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.8256,
+        "figure_aspect": 0.5029,
+        "linewidth": 0.0,
+        "grid": 1.0,
+        "spines_removed": 1.0,
+        "serif": 0.0
+      }
     },
     {
       "id": "arxiv_2512.09767",
@@ -527,13 +750,18 @@
         "linewidth",
         "serif"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 1.0,
+        "linewidth": 0.0,
+        "serif": 0.0
+      }
     },
     {
       "id": "arxiv_2512.25023",
       "chart": "Std-band",
       "status": "scored",
-      "score": 38.19825747282829,
+      "score": 55.63090910994818,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -542,7 +770,14 @@
         "grid",
         "serif"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.8716,
+        "figure_aspect": 0.9099,
+        "linewidth": 0.0,
+        "grid": 1.0,
+        "serif": 0.0
+      }
     },
     {
       "id": "arxiv_2603.04948",
@@ -555,7 +790,12 @@
         "figure_aspect",
         "spines_removed"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 1.0,
+        "figure_aspect": 0.9339,
+        "spines_removed": 1.0
+      }
     },
     {
       "id": "arxiv_2603.08660",
@@ -569,13 +809,19 @@
         "linewidth",
         "spines_removed"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.8546,
+        "figure_aspect": 0.92,
+        "linewidth": 1.0,
+        "spines_removed": 0.5
+      }
     },
     {
       "id": "arxiv_2603.17004",
       "chart": "Line",
       "status": "scored",
-      "score": 25.0,
+      "score": 41.19079491712948,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -583,52 +829,73 @@
         "tick_direction",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.6476,
+        "linewidth": 0.0,
+        "tick_direction": 0.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "arxiv_2603.23889",
       "chart": "Std-band",
       "status": "scored",
-      "score": 64.7373108594321,
+      "score": 94.41199626156293,
       "n_activated": 3,
       "scored_dimensions": [
         "palette",
         "figure_aspect",
         "grid"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.8902,
+        "figure_aspect": 0.9421,
+        "grid": 1.0
+      }
     },
     {
       "id": "arxiv_2604.01093",
       "chart": "Field 2D",
       "status": "scored",
-      "score": 66.79755842333316,
+      "score": 95.11637176957282,
       "n_activated": 3,
       "scored_dimensions": [
         "palette",
         "linewidth",
         "grid"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.9602,
+        "linewidth": 0.8933,
+        "grid": 1.0
+      }
     },
     {
       "id": "arxiv_2604.05237",
       "chart": "Field 2D",
       "status": "scored",
-      "score": 31.894144158716273,
+      "score": 50.57166414044071,
       "n_activated": 3,
       "scored_dimensions": [
         "palette",
         "figure_aspect",
         "linewidth"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.5603,
+        "figure_aspect": 0.9568,
+        "linewidth": 0.0
+      }
     },
     {
       "id": "arxiv_2605.14587",
       "chart": "Heatmap",
       "status": "scored",
-      "score": 61.52976267357687,
+      "score": 84.5057207314893,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -636,13 +903,19 @@
         "linewidth",
         "grid"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.9498,
+        "figure_aspect": 0.9549,
+        "linewidth": 0.4756,
+        "grid": 1.0
+      }
     },
     {
       "id": "arxiv_2605.16790",
       "chart": "Line",
       "status": "scored",
-      "score": 49.823463067226875,
+      "score": 74.82346306722687,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -650,25 +923,35 @@
         "linewidth",
         "grid"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 1.0,
+        "figure_aspect": 0.9929,
+        "linewidth": 0.0,
+        "grid": 1.0
+      }
     },
     {
       "id": "arxiv_2605.22305",
       "chart": "Distribution",
       "status": "scored",
-      "score": 49.50920341413313,
+      "score": 99.15401409314131,
       "n_activated": 2,
       "scored_dimensions": [
         "palette",
         "figure_aspect"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.9929,
+        "figure_aspect": 0.9902
+      }
     },
     {
       "id": "arxiv_2605.22455",
       "chart": "Scatter",
       "status": "scored",
-      "score": 72.03856422363094,
+      "score": 73.77228211194401,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -678,46 +961,69 @@
         "serif",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.6075,
+        "figure_aspect": 0.8598,
+        "linewidth": 0.9591,
+        "grid": 1.0,
+        "serif": 0.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "local-reuse__local_picks_top_hepfit_wheel",
       "chart": "Network/Tree",
       "status": "scored",
-      "score": 80.1454924230752,
+      "score": 81.17866668972006,
       "n_activated": 3,
       "scored_dimensions": [
         "palette",
         "figure_aspect",
         "linewidth"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.7755,
+        "figure_aspect": 0.7529,
+        "linewidth": 0.9069
+      }
     },
     {
       "id": "local_gallery_hexbin_joint",
       "chart": "Scatter",
       "status": "scored",
-      "score": 89.80739496492059,
+      "score": 92.05149207250952,
       "n_activated": 3,
       "scored_dimensions": [
         "palette",
         "figure_aspect",
         "linewidth"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.8006,
+        "figure_aspect": 0.9609,
+        "linewidth": 1.0
+      }
     },
     {
       "id": "local_picks_top_cust_graph__24",
       "chart": "Network/Tree",
       "status": "scored",
-      "score": 33.44683876300771,
+      "score": 33.81607340031681,
       "n_activated": 3,
       "scored_dimensions": [
         "palette",
         "figure_aspect",
         "linewidth"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.6734,
+        "figure_aspect": 0.3411,
+        "linewidth": 0.0
+      }
     },
     {
       "id": "local_picks_top_scatter__39",
@@ -731,7 +1037,13 @@
         "linewidth",
         "grid"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 1.0,
+        "figure_aspect": 0.4791,
+        "linewidth": 0.4497,
+        "grid": 1.0
+      }
     },
     {
       "id": "local_picks_top_violin__9",
@@ -744,13 +1056,18 @@
         "figure_aspect",
         "linewidth"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "background": 0.0,
+        "figure_aspect": 0.7587,
+        "linewidth": 0.0
+      }
     },
     {
       "id": "Chart2Code_level1_direct_HR_5",
       "chart": "Scatter",
       "status": "scored",
-      "score": 89.79913067331985,
+      "score": 92.8033664431821,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -759,13 +1076,20 @@
         "grid",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.7211,
+        "figure_aspect": 0.9191,
+        "linewidth": 1.0,
+        "grid": 1.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "Chart2Code_level1_direct_combination_57",
       "chart": "Bar",
       "status": "scored",
-      "score": 75.53496960426187,
+      "score": 80.29576875933114,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -774,13 +1098,20 @@
         "grid",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.4976,
+        "figure_aspect": 0.6103,
+        "linewidth": 0.9069,
+        "grid": 1.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "Chart2Code_level1_direct_contour_18",
       "chart": "Heatmap",
       "status": "scored",
-      "score": 66.19472939820619,
+      "score": 86.72884590076238,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -788,13 +1119,19 @@
         "linewidth",
         "grid"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.8214,
+        "figure_aspect": 0.7409,
+        "linewidth": 0.9069,
+        "grid": 1.0
+      }
     },
     {
       "id": "Chart2Code_level1_direct_density_11",
       "chart": "Distribution",
       "status": "scored",
-      "score": 75.7002797235491,
+      "score": 95.35613838655914,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -802,26 +1139,37 @@
         "linewidth",
         "grid"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.8933,
+        "figure_aspect": 0.9619,
+        "linewidth": 0.9591,
+        "grid": 1.0
+      }
     },
     {
       "id": "Chart2Code_level1_direct_heatmap_3",
       "chart": "Heatmap",
       "status": "scored",
-      "score": 55.772730813354855,
+      "score": 78.3020991110982,
       "n_activated": 3,
       "scored_dimensions": [
         "palette",
         "figure_aspect",
         "linewidth"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.6759,
+        "figure_aspect": 0.9871,
+        "linewidth": 0.686
+      }
     },
     {
       "id": "Chart2Code_level1_direct_heatmap_7",
       "chart": "Heatmap",
       "status": "scored",
-      "score": 74.64155139406424,
+      "score": 89.11837647463015,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -829,13 +1177,19 @@
         "linewidth",
         "grid"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.7097,
+        "figure_aspect": 0.9986,
+        "linewidth": 0.8565,
+        "grid": 1.0
+      }
     },
     {
       "id": "Chart2Code_level1_direct_line_39",
       "chart": "Line",
       "status": "scored",
-      "score": 73.8233892717803,
+      "score": 86.82524545169296,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -843,13 +1197,19 @@
         "linewidth",
         "grid"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.8101,
+        "figure_aspect": 0.7696,
+        "linewidth": 0.8933,
+        "grid": 1.0
+      }
     },
     {
       "id": "Chart2Code_level1_direct_line_8",
       "chart": "Line",
       "status": "scored",
-      "score": 87.2815222057519,
+      "score": 93.53375512419287,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -859,13 +1219,21 @@
         "spines_removed",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.8115,
+        "figure_aspect": 0.9072,
+        "linewidth": 0.8933,
+        "grid": 1.0,
+        "spines_removed": 1.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "Chart2Code_level2_3d_11_v2",
       "chart": "Scatter",
       "status": "scored",
-      "score": 53.91657194955946,
+      "score": 54.41365895550256,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -875,26 +1243,39 @@
         "spines_removed",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.1555,
+        "figure_aspect": 0.8717,
+        "linewidth": 0.2376,
+        "grid": 0.0,
+        "spines_removed": 1.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "Chart2Code_level2_3d_1_v1__single",
       "chart": "3D",
       "status": "scored",
-      "score": 49.64251019369926,
+      "score": 45.27087999184976,
       "n_activated": 3,
       "scored_dimensions": [
         "palette",
         "grid",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.3581,
+        "grid": 0.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "Chart2Code_level2_3d_2_v3",
       "chart": "3D",
       "status": "scored",
-      "score": 78.38550413882906,
+      "score": 68.84994005772661,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -904,13 +1285,21 @@
         "spines_removed",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.1711,
+        "figure_aspect": 0.9599,
+        "linewidth": 0.0,
+        "grid": 1.0,
+        "spines_removed": 1.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "Chart2Code_level2_3d_5_v4",
       "chart": "Bar",
       "status": "scored",
-      "score": 80.30940133765219,
+      "score": 87.35527924149906,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -919,13 +1308,20 @@
         "grid",
         "spines_removed"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.7096,
+        "figure_aspect": 0.9064,
+        "linewidth": 0.7517,
+        "grid": 1.0,
+        "spines_removed": 1.0
+      }
     },
     {
       "id": "Chart2Code_level2_area_3_v3",
       "chart": "Line",
       "status": "scored",
-      "score": 70.88643771748251,
+      "score": 72.55784088114953,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -934,13 +1330,20 @@
         "grid",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.7122,
+        "figure_aspect": 0.9157,
+        "linewidth": 0.0,
+        "grid": 1.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "Chart2Code_level2_bar_10_v4",
       "chart": "Line",
       "status": "scored",
-      "score": 93.16925155611493,
+      "score": 96.25019681745542,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -949,13 +1352,20 @@
         "grid",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.8987,
+        "figure_aspect": 0.9138,
+        "linewidth": 1.0,
+        "grid": 1.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "Chart2Code_level2_bar_22_v4",
       "chart": "Bar",
       "status": "scored",
-      "score": 71.94769378613088,
+      "score": 75.92422743379792,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -963,13 +1373,19 @@
         "linewidth",
         "grid"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.4324,
+        "figure_aspect": 0.8665,
+        "linewidth": 0.738,
+        "grid": 1.0
+      }
     },
     {
       "id": "Chart2Code_level2_bar_25_v4",
       "chart": "Line",
       "status": "scored",
-      "score": 95.63608336688996,
+      "score": 96.68519563511359,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -979,26 +1395,39 @@
         "spines_removed",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.861,
+        "figure_aspect": 0.981,
+        "linewidth": 0.9591,
+        "grid": 1.0,
+        "spines_removed": 1.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "Chart2Code_level2_box_1_v5",
       "chart": "Box/Violin",
       "status": "scored",
-      "score": 69.78666773159979,
+      "score": 74.18557348579303,
       "n_activated": 3,
       "scored_dimensions": [
         "palette",
         "linewidth",
         "grid"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.4561,
+        "linewidth": 0.7694,
+        "grid": 1.0
+      }
     },
     {
       "id": "Chart2Code_level2_combination_11_v2",
       "chart": "Std-band",
       "status": "scored",
-      "score": 67.36641231461023,
+      "score": 70.95984907589312,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -1008,13 +1437,21 @@
         "spines_removed",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.7264,
+        "figure_aspect": 0.9075,
+        "linewidth": 0.6238,
+        "grid": 0.0,
+        "spines_removed": 1.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "Chart2Code_level2_combination_13_v5",
       "chart": "Line",
       "status": "scored",
-      "score": 78.81796633606213,
+      "score": 84.80462797274946,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -1024,7 +1461,15 @@
         "spines_removed",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.8399,
+        "figure_aspect": 0.7988,
+        "linewidth": 0.4497,
+        "grid": 1.0,
+        "spines_removed": 1.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "Chart2Code_level2_combination_14_v5",
@@ -1036,13 +1481,17 @@
         "figure_aspect",
         "grid"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "figure_aspect": 0.9734,
+        "grid": 1.0
+      }
     },
     {
       "id": "Chart2Code_level2_combination_16_v5",
       "chart": "Box/Violin",
       "status": "scored",
-      "score": 84.25144874660286,
+      "score": 87.42701821040208,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -1051,13 +1500,20 @@
         "grid",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.5583,
+        "figure_aspect": 0.9431,
+        "linewidth": 0.87,
+        "grid": 1.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "Chart2Code_level2_combination_33_v5",
       "chart": "Distribution",
       "status": "scored",
-      "score": 70.7416105601066,
+      "score": 70.21987365985379,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -1066,13 +1522,20 @@
         "grid",
         "spines_removed"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.5557,
+        "figure_aspect": 0.9553,
+        "linewidth": 0.0,
+        "grid": 1.0,
+        "spines_removed": 1.0
+      }
     },
     {
       "id": "Chart2Code_level2_combination_42_v5",
       "chart": "Scatter",
       "status": "scored",
-      "score": 82.18648704660293,
+      "score": 85.19835729588041,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -1081,13 +1544,20 @@
         "grid",
         "spines_removed"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.7541,
+        "figure_aspect": 0.8793,
+        "linewidth": 0.6265,
+        "grid": 1.0,
+        "spines_removed": 1.0
+      }
     },
     {
       "id": "Chart2Code_level2_combination_44_v3",
       "chart": "Distribution",
       "status": "scored",
-      "score": 71.20034493679267,
+      "score": 71.89305259980354,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -1097,13 +1567,21 @@
         "spines_removed",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.2162,
+        "figure_aspect": 0.6477,
+        "linewidth": 0.4497,
+        "grid": 1.0,
+        "spines_removed": 1.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "Chart2Code_level2_contour_14_v1",
       "chart": "Field 2D",
       "status": "scored",
-      "score": 80.11178299832544,
+      "score": 93.49467023264589,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -1111,13 +1589,19 @@
         "linewidth",
         "grid"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.782,
+        "figure_aspect": 0.9987,
+        "linewidth": 0.9591,
+        "grid": 1.0
+      }
     },
     {
       "id": "Chart2Code_level2_contour_23_v4",
       "chart": "Field 2D",
       "status": "scored",
-      "score": 76.77312222881231,
+      "score": 90.83740366857118,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -1125,13 +1609,19 @@
         "linewidth",
         "grid"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.6958,
+        "figure_aspect": 0.9786,
+        "linewidth": 0.9591,
+        "grid": 1.0
+      }
     },
     {
       "id": "Chart2Code_level2_contour_25_v2",
       "chart": "Field 2D",
       "status": "scored",
-      "score": 78.00289529018482,
+      "score": 75.86220891501476,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -1139,13 +1629,19 @@
         "grid",
         "spines_removed"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.5986,
+        "figure_aspect": 0.7693,
+        "grid": 1.0,
+        "spines_removed": 0.6667
+      }
     },
     {
       "id": "Chart2Code_level2_contour_25_v3",
       "chart": "Field 2D",
       "status": "scored",
-      "score": 82.70127480166384,
+      "score": 87.25708368719556,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -1153,13 +1649,19 @@
         "linewidth",
         "grid"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.6548,
+        "figure_aspect": 0.9286,
+        "linewidth": 0.9069,
+        "grid": 1.0
+      }
     },
     {
       "id": "Chart2Code_level2_contour_5_v5",
       "chart": "Field 2D",
       "status": "scored",
-      "score": 69.98988770544646,
+      "score": 80.45199374486842,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -1167,13 +1669,19 @@
         "linewidth",
         "grid"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.435,
+        "figure_aspect": 0.8898,
+        "linewidth": 0.8933,
+        "grid": 1.0
+      }
     },
     {
       "id": "Chart2Code_level2_density_12_v3",
       "chart": "Distribution",
       "status": "scored",
-      "score": 89.49738334012974,
+      "score": 95.47759168496577,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -1182,13 +1690,20 @@
         "spines_removed",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.7804,
+        "figure_aspect": 0.9935,
+        "grid": 1.0,
+        "spines_removed": 1.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "Chart2Code_level2_density_14_v4",
       "chart": "Line",
       "status": "scored",
-      "score": 67.46679861770004,
+      "score": 75.2652865100781,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -1197,26 +1712,38 @@
         "grid",
         "spines_removed"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.7908,
+        "figure_aspect": 0.9725,
+        "linewidth": 0.0,
+        "grid": 1.0,
+        "spines_removed": 1.0
+      }
     },
     {
       "id": "Chart2Code_level2_errorpoint_10_v5",
       "chart": "Scatter",
       "status": "scored",
-      "score": 75.47420638470123,
+      "score": 77.1368590507045,
       "n_activated": 3,
       "scored_dimensions": [
         "palette",
         "linewidth",
         "grid"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.5447,
+        "linewidth": 0.7694,
+        "grid": 1.0
+      }
     },
     {
       "id": "Chart2Code_level2_errorpoint_1_v5",
       "chart": "Scatter",
       "status": "scored",
-      "score": 59.15169200052553,
+      "score": 81.92899387818304,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -1225,13 +1752,20 @@
         "grid",
         "spines_removed"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.8084,
+        "figure_aspect": 0.5186,
+        "linewidth": 0.7694,
+        "grid": 1.0,
+        "spines_removed": 1.0
+      }
     },
     {
       "id": "Chart2Code_level2_errorpoint_5_v5",
       "chart": "Std-band",
       "status": "scored",
-      "score": 78.92076044821475,
+      "score": 91.99010127767109,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -1241,13 +1775,21 @@
         "spines_removed",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.7842,
+        "figure_aspect": 0.8284,
+        "linewidth": 0.9069,
+        "grid": 1.0,
+        "spines_removed": 1.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "Chart2Code_level2_hist_2_v3",
       "chart": "Distribution",
       "status": "scored",
-      "score": 89.99346779934007,
+      "score": 96.00851099797713,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -1257,13 +1799,21 @@
         "spines_removed",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.9188,
+        "figure_aspect": 0.9853,
+        "linewidth": 0.8565,
+        "grid": 1.0,
+        "spines_removed": 1.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "Chart2Code_level2_hist_2_v5",
       "chart": "Distribution",
       "status": "scored",
-      "score": 70.03056176790449,
+      "score": 73.71718507983185,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -1272,13 +1822,20 @@
         "spines_removed",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.6859,
+        "linewidth": 0.0,
+        "grid": 1.0,
+        "spines_removed": 1.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "Chart2Code_level2_multidiff_1_v1",
       "chart": "Distribution",
       "status": "scored",
-      "score": 82.93390111680857,
+      "score": 83.25583056850326,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -1287,26 +1844,38 @@
         "grid",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.2897,
+        "figure_aspect": 0.9798,
+        "linewidth": 0.8933,
+        "grid": 1.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "Chart2Code_level2_multidiff_2_v2__single",
       "chart": "Field 2D",
       "status": "scored",
-      "score": 66.28917801970776,
+      "score": 92.12965963577074,
       "n_activated": 3,
       "scored_dimensions": [
         "palette",
         "linewidth",
         "grid"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.8706,
+        "linewidth": 0.8933,
+        "grid": 1.0
+      }
     },
     {
       "id": "Chart2Code_level2_multidiff_5_v1",
       "chart": "Line",
       "status": "scored",
-      "score": 60.459610166383605,
+      "score": 65.23741296211227,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -1315,13 +1884,20 @@
         "grid",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.4285,
+        "figure_aspect": 0.8334,
+        "linewidth": 0.0,
+        "grid": 1.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "Chart2Code_level2_quiver_10_v5",
       "chart": "Field 2D",
       "status": "scored",
-      "score": 66.29032517056153,
+      "score": 80.9941271753429,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -1329,13 +1905,19 @@
         "linewidth",
         "grid"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.5882,
+        "figure_aspect": 0.9901,
+        "linewidth": 0.6616,
+        "grid": 1.0
+      }
     },
     {
       "id": "Chart2Code_level2_quiver_13_v1",
       "chart": "Field 2D",
       "status": "scored",
-      "score": 56.887390638690036,
+      "score": 71.66694973285976,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -1343,26 +1925,37 @@
         "grid",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.8667,
+        "linewidth": 0.0,
+        "grid": 1.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "Chart2Code_level2_quiver_14_v1",
       "chart": "Field 2D",
       "status": "scored",
-      "score": 68.2333279672153,
+      "score": 85.9197484478122,
       "n_activated": 3,
       "scored_dimensions": [
         "palette",
         "linewidth",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.7528,
+        "linewidth": 0.8248,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "Chart2Code_level2_quiver_4_v5",
       "chart": "Field 2D",
       "status": "scored",
-      "score": 80.71684344128818,
+      "score": 76.66802625397513,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -1370,13 +1963,19 @@
         "grid",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.315,
+        "linewidth": 0.7517,
+        "grid": 1.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "Chart2Code_level2_radar_10_v2",
       "chart": "Polar/Radial",
       "status": "scored",
-      "score": 56.45851235860794,
+      "score": 61.76599485706484,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -1384,13 +1983,19 @@
         "grid",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.4706,
+        "linewidth": 0.0,
+        "grid": 1.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "Chart2Code_level2_radar_18_v5",
       "chart": "Bar",
       "status": "scored",
-      "score": 58.87690579914384,
+      "score": 72.04343270944662,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -1398,13 +2003,19 @@
         "grid",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.8817,
+        "linewidth": 0.0,
+        "grid": 1.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "Chart2Code_level2_radar_23_v3",
       "chart": "Polar/Radial",
       "status": "scored",
-      "score": 45.26491580293451,
+      "score": 55.411282609401404,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -1413,13 +2024,20 @@
         "grid",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.5073,
+        "figure_aspect": 0.8136,
+        "linewidth": 0.4497,
+        "grid": 0.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "Chart2Code_level2_radar_26_v3",
       "chart": "Polar/Radial",
       "status": "scored",
-      "score": 38.898209279151686,
+      "score": 42.99657895123359,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -1428,13 +2046,20 @@
         "grid",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.7002,
+        "figure_aspect": 0.0,
+        "linewidth": 0.4497,
+        "grid": 0.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "Chart2Code_level2_radar_35_v4",
       "chart": "Polar/Radial",
       "status": "scored",
-      "score": 51.76937083521427,
+      "score": 61.62012161629824,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -1444,13 +2069,21 @@
         "spines_removed",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.7974,
+        "figure_aspect": 0.8998,
+        "linewidth": 0.0,
+        "grid": 0.0,
+        "spines_removed": 1.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "Chart2Code_level2_radar_3_v1",
       "chart": "Polar/Radial",
       "status": "scored",
-      "score": 54.07977794325507,
+      "score": 63.80167981937814,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -1459,13 +2092,20 @@
         "grid",
         "spines_removed"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.8234,
+        "figure_aspect": 0.917,
+        "linewidth": 0.4497,
+        "grid": 0.0,
+        "spines_removed": 1.0
+      }
     },
     {
       "id": "Chart2Code_level2_radar_3_v3",
       "chart": "Polar/Radial",
       "status": "scored",
-      "score": 71.60832442877411,
+      "score": 76.01749807700223,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -1475,7 +2115,15 @@
         "spines_removed",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.5672,
+        "figure_aspect": 0.9938,
+        "linewidth": 0.0,
+        "grid": 1.0,
+        "spines_removed": 1.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "Chart2Code_level2_radar_40_v5",
@@ -1488,13 +2136,18 @@
         "grid",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "linewidth": 1.0,
+        "grid": 1.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "Chart2Code_level2_radar_4_v3",
       "chart": "Polar/Radial",
       "status": "scored",
-      "score": 76.93770243308914,
+      "score": 88.05288291569678,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -1502,13 +2155,19 @@
         "linewidth",
         "grid"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.7033,
+        "figure_aspect": 0.9119,
+        "linewidth": 0.9069,
+        "grid": 1.0
+      }
     },
     {
       "id": "Chart2Code_level2_radar_7_v3",
       "chart": "Polar/Radial",
       "status": "scored",
-      "score": 79.79914573901713,
+      "score": 69.93845154133271,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -1518,26 +2177,39 @@
         "spines_removed",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.7968,
+        "figure_aspect": 0.7757,
+        "linewidth": 0.6238,
+        "grid": 0.0,
+        "spines_removed": 1.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "Chart2Code_level2_radar_9_v4",
       "chart": "Polar/Radial",
       "status": "scored",
-      "score": 46.58552333456614,
+      "score": 60.39955032315871,
       "n_activated": 3,
       "scored_dimensions": [
         "palette",
         "grid",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.812,
+        "grid": 0.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "Chart2Code_level2_scatter_13_v2",
       "chart": "Scatter",
       "status": "scored",
-      "score": 86.51508476742691,
+      "score": 85.0194035592188,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -1546,13 +2218,20 @@
         "grid",
         "spines_removed"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.4215,
+        "figure_aspect": 0.973,
+        "linewidth": 0.8565,
+        "grid": 1.0,
+        "spines_removed": 1.0
+      }
     },
     {
       "id": "Chart2Code_level2_scatter_1_v2__single",
       "chart": "Bar",
       "status": "scored",
-      "score": 65.05375889496649,
+      "score": 68.29097221580474,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -1562,26 +2241,39 @@
         "spines_removed",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.6844,
+        "figure_aspect": 0.413,
+        "linewidth": 0.0,
+        "grid": 1.0,
+        "spines_removed": 1.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "Chart2Code_level2_scatter_22_v2__single",
       "chart": "Scatter",
       "status": "scored",
-      "score": 66.13552550065624,
+      "score": 68.01016727180195,
       "n_activated": 3,
       "scored_dimensions": [
         "palette",
         "figure_aspect",
         "linewidth"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.6154,
+        "figure_aspect": 0.9752,
+        "linewidth": 0.4497
+      }
     },
     {
       "id": "Chart2Code_level2_scatter_22_v3",
       "chart": "Scatter",
       "status": "scored",
-      "score": 79.53138866645222,
+      "score": 84.03996439337863,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -1589,13 +2281,19 @@
         "linewidth",
         "grid"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.5168,
+        "figure_aspect": 0.9883,
+        "linewidth": 0.8565,
+        "grid": 1.0
+      }
     },
     {
       "id": "Chart2Code_level2_scatter_27_v5",
       "chart": "Scatter",
       "status": "scored",
-      "score": 64.09597823804982,
+      "score": 69.65263338420797,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -1605,13 +2303,21 @@
         "spines_removed",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.3334,
+        "figure_aspect": 0.8458,
+        "linewidth": 0.0,
+        "grid": 1.0,
+        "spines_removed": 1.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "Chart2Code_level2_scatter_5_v5",
       "chart": "Scatter",
       "status": "scored",
-      "score": 59.3075178851994,
+      "score": 66.44185249894497,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -1619,13 +2325,19 @@
         "grid",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.7467,
+        "figure_aspect": 0.911,
+        "grid": 0.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "Chart2Code_level2_violin_25_v4",
       "chart": "Box/Violin",
       "status": "scored",
-      "score": 81.44639448677235,
+      "score": 63.88709140243989,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -1635,13 +2347,21 @@
         "spines_removed",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.535,
+        "figure_aspect": 0.8485,
+        "linewidth": 0.4497,
+        "grid": 0.0,
+        "spines_removed": 1.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "Chart2Code_level3_table20_3_generate",
       "chart": "Scatter",
       "status": "scored",
-      "score": 85.54575212672893,
+      "score": 88.25946690225739,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -1650,13 +2370,20 @@
         "grid",
         "spines_removed"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.5688,
+        "figure_aspect": 0.9373,
+        "linewidth": 0.9069,
+        "grid": 1.0,
+        "spines_removed": 1.0
+      }
     },
     {
       "id": "Chart2NCode_7b87069f5442408286d1a4b0300eae18",
       "chart": "3D",
       "status": "scored",
-      "score": 80.67350398424472,
+      "score": 86.9937536276298,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -1666,13 +2393,21 @@
         "spines_removed",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.4005,
+        "figure_aspect": 0.9259,
+        "linewidth": 0.8933,
+        "grid": 1.0,
+        "spines_removed": 1.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "Chart2NCode_ce7b7d946995482f9dd37ddad319cbc2",
       "chart": "Line",
       "status": "scored",
-      "score": 78.42189918224781,
+      "score": 82.5943113220164,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -1680,13 +2415,19 @@
         "linewidth",
         "grid"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.6818,
+        "figure_aspect": 0.8525,
+        "linewidth": 0.7694,
+        "grid": 1.0
+      }
     },
     {
       "id": "Chart2NCode_f5989e4725654971a32e6c84c0dbdfa5",
       "chart": "Bar",
       "status": "scored",
-      "score": 90.21252001546804,
+      "score": 88.55476043089618,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -1696,13 +2437,21 @@
         "spines_removed",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.8332,
+        "figure_aspect": 0.9801,
+        "linewidth": 1.0,
+        "grid": 1.0,
+        "spines_removed": 0.5,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "ChartNet-sample_01541e58b887ce36",
       "chart": "Bar",
       "status": "scored",
-      "score": 76.97635963947909,
+      "score": 84.99712256392337,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -1711,7 +2460,14 @@
         "grid",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.8129,
+        "figure_aspect": 0.6676,
+        "linewidth": 0.7694,
+        "grid": 1.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "ChartNet-sample_11168fb7e30df7c0",
@@ -1725,13 +2481,19 @@
         "grid",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "figure_aspect": 0.9045,
+        "linewidth": 0.7694,
+        "grid": 1.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "ChartNet-sample_12f1182db6964e8c",
       "chart": "Line",
       "status": "scored",
-      "score": 80.52778990772585,
+      "score": 77.44997708510874,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -1740,7 +2502,14 @@
         "spines_removed",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.8725,
+        "grid": 1.0,
+        "spines_removed": 1.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "ChartNet-sample_1acf825b0429ddfd",
@@ -1751,13 +2520,16 @@
       "scored_dimensions": [
         "figure_aspect"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "figure_aspect": 0.8563
+      }
     },
     {
       "id": "ChartNet-sample_21db7b1495645e96",
       "chart": "Bar",
       "status": "scored",
-      "score": 72.20693160518836,
+      "score": 78.98140124292857,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -1767,7 +2539,15 @@
         "spines_removed",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.5442,
+        "figure_aspect": 0.745,
+        "linewidth": 0.4497,
+        "grid": 1.0,
+        "spines_removed": 1.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "ChartNet-sample_251d4b63cae5c39c",
@@ -1781,13 +2561,19 @@
         "grid",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "figure_aspect": 0.9916,
+        "linewidth": 0.9069,
+        "grid": 0.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "ChartNet-sample_27ec276af1be7f88",
       "chart": "Bar",
       "status": "scored",
-      "score": 91.04763446289998,
+      "score": 89.75281717054429,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -1797,7 +2583,15 @@
         "spines_removed",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.4028,
+        "figure_aspect": 0.9824,
+        "linewidth": 1.0,
+        "grid": 1.0,
+        "spines_removed": 1.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "ChartNet-sample_3a712400d6efe5ca",
@@ -1811,13 +2605,19 @@
         "grid",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "figure_aspect": 0.9944,
+        "linewidth": 0.0,
+        "grid": 1.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "ChartNet-sample_3d0ebd7ea1e10bf3",
       "chart": "Line",
       "status": "scored",
-      "score": 93.42341693678769,
+      "score": 92.00321401587894,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -1827,20 +2627,33 @@
         "spines_removed",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.6828,
+        "figure_aspect": 0.9809,
+        "linewidth": 0.8565,
+        "grid": 1.0,
+        "spines_removed": 1.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "ChartNet-sample_42a8557ef11775e9",
       "chart": "Bar",
       "status": "scored",
-      "score": 36.246350825223686,
+      "score": 68.80530625871488,
       "n_activated": 3,
       "scored_dimensions": [
         "palette",
         "figure_aspect",
         "grid"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.3636,
+        "figure_aspect": 0.7006,
+        "grid": 1.0
+      }
     },
     {
       "id": "ChartNet-sample_46826fe4916b7d52",
@@ -1854,7 +2667,13 @@
         "grid",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "figure_aspect": 0.9968,
+        "linewidth": 0.8933,
+        "grid": 1.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "ChartNet-sample_51138e34911000f6",
@@ -1866,13 +2685,17 @@
         "figure_aspect",
         "linewidth"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "figure_aspect": 0.9454,
+        "linewidth": 0.6238
+      }
     },
     {
       "id": "ChartNet-sample_55e97056fbbde5b6__single",
       "chart": "Bar",
       "status": "scored",
-      "score": 71.81933637368152,
+      "score": 75.3121354031039,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -1881,13 +2704,20 @@
         "grid",
         "spines_removed"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.638,
+        "figure_aspect": 0.89,
+        "linewidth": 0.2376,
+        "grid": 1.0,
+        "spines_removed": 1.0
+      }
     },
     {
       "id": "ChartNet-sample_575be33996f0155c",
       "chart": "Bar",
       "status": "scored",
-      "score": 89.0212526888485,
+      "score": 95.0130113569451,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -1896,7 +2726,14 @@
         "grid",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.9372,
+        "figure_aspect": 0.8134,
+        "linewidth": 1.0,
+        "grid": 1.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "ChartNet-sample_5781d64aa8377547",
@@ -1909,7 +2746,12 @@
         "linewidth",
         "grid"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "figure_aspect": 0.8926,
+        "linewidth": 0.2376,
+        "grid": 1.0
+      }
     },
     {
       "id": "ChartNet-sample_5c19f37c2ecba73b",
@@ -1923,13 +2765,19 @@
         "grid",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "figure_aspect": 0.8903,
+        "linewidth": 0.6238,
+        "grid": 0.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "ChartNet-sample_5cf3859f3ce78167",
       "chart": "Bar",
       "status": "scored",
-      "score": 81.5751046015363,
+      "score": 96.67814235621361,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -1938,13 +2786,20 @@
         "spines_removed",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.8841,
+        "figure_aspect": 0.9498,
+        "grid": 1.0,
+        "spines_removed": 1.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "ChartNet-sample_5e553d0091325708",
       "chart": "Polar/Radial",
       "status": "scored",
-      "score": 71.05939719161805,
+      "score": 69.72118337109825,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -1953,7 +2808,14 @@
         "grid",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.5203,
+        "figure_aspect": 0.9658,
+        "linewidth": 1.0,
+        "grid": 0.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "ChartNet-sample_63115ff12f6710a3",
@@ -1965,7 +2827,11 @@
         "figure_aspect",
         "linewidth"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "figure_aspect": 0.9105,
+        "linewidth": 0.4497
+      }
     },
     {
       "id": "ChartNet-sample_68d34458d8f08a48",
@@ -1979,7 +2845,13 @@
         "grid",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "figure_aspect": 0.9124,
+        "linewidth": 0.0,
+        "grid": 1.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "ChartNet-sample_7c69a17fd376e251",
@@ -1989,6 +2861,7 @@
       "n_activated": 0,
       "scored_dimensions": [],
       "unavailable_dimensions": [],
+      "dimension_scores": {},
       "reason": "reference_has_no_activated_dimensions"
     },
     {
@@ -2000,13 +2873,16 @@
       "scored_dimensions": [
         "figure_aspect"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "figure_aspect": 0.9483
+      }
     },
     {
       "id": "ChartNet-sample_953bb3ed650d8541",
       "chart": "Bar",
       "status": "scored",
-      "score": 84.44334414113035,
+      "score": 86.52939828206901,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -2015,7 +2891,14 @@
         "grid",
         "spines_removed"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.8003,
+        "figure_aspect": 0.9024,
+        "linewidth": 0.6238,
+        "grid": 1.0,
+        "spines_removed": 1.0
+      }
     },
     {
       "id": "ChartNet-sample_97a7c092bc6a4a6c",
@@ -2027,13 +2910,17 @@
         "figure_aspect",
         "linewidth"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "figure_aspect": 0.8535,
+        "linewidth": 0.7517
+      }
     },
     {
       "id": "ChartNet-sample_9fa23898eda05a63",
       "chart": "Bar",
       "status": "scored",
-      "score": 87.46029159004706,
+      "score": 54.01622104503261,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -2041,13 +2928,19 @@
         "grid",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.3912,
+        "linewidth": 0.7694,
+        "grid": 0.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "ChartNet-sample_ad3e2f8704f6e1b1__single",
       "chart": "Bar",
       "status": "scored",
-      "score": 75.60451609894406,
+      "score": 78.83472514019918,
       "n_activated": 7,
       "scored_dimensions": [
         "palette",
@@ -2058,7 +2951,16 @@
         "spines_removed",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.7806,
+        "background": 0.0,
+        "figure_aspect": 0.9684,
+        "linewidth": 0.7694,
+        "grid": 1.0,
+        "spines_removed": 1.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "ChartNet-sample_b07b3f6805a9e3b8",
@@ -2070,7 +2972,11 @@
         "figure_aspect",
         "linewidth"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "figure_aspect": 0.7656,
+        "linewidth": 0.7694
+      }
     },
     {
       "id": "ChartNet-sample_b2578adbadc0d71e",
@@ -2084,13 +2990,19 @@
         "grid",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "figure_aspect": 0.8896,
+        "linewidth": 1.0,
+        "grid": 1.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "ChartNet-sample_bbbf530e6aefa314",
       "chart": "Bar",
       "status": "scored",
-      "score": 84.25547736282577,
+      "score": 89.80611618610767,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -2100,13 +3012,21 @@
         "spines_removed",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.7149,
+        "figure_aspect": 0.904,
+        "linewidth": 0.7694,
+        "grid": 1.0,
+        "spines_removed": 1.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "ChartNet-sample_c1ec6683e1feea7b",
       "chart": "Line",
       "status": "scored",
-      "score": 84.38340802117946,
+      "score": 90.21299921801247,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -2115,7 +3035,14 @@
         "grid",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.7141,
+        "figure_aspect": 0.9033,
+        "linewidth": 0.8933,
+        "grid": 1.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "ChartNet-sample_d1a051ec96a39bf4",
@@ -2129,13 +3056,19 @@
         "grid",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "figure_aspect": 0.9014,
+        "linewidth": 0.6238,
+        "grid": 0.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "ChartNet-sample_d7325ced9dcb3e94",
       "chart": "Bar",
       "status": "scored",
-      "score": 98.02184656733746,
+      "score": 98.4524875864386,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -2144,13 +3077,20 @@
         "grid",
         "spines_removed"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.9434,
+        "figure_aspect": 0.9793,
+        "linewidth": 1.0,
+        "grid": 1.0,
+        "spines_removed": 1.0
+      }
     },
     {
       "id": "ChartNet-sample_e17ff7b5495b0ee4",
       "chart": "Polar/Radial",
       "status": "scored",
-      "score": 73.30522880381217,
+      "score": 77.32687781410546,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -2160,13 +3100,21 @@
         "spines_removed",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.737,
+        "figure_aspect": 0.9957,
+        "linewidth": 0.9069,
+        "grid": 0.0,
+        "spines_removed": 1.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "ChartNet-sample_f31f9780b9bd6948",
       "chart": "Line",
       "status": "scored",
-      "score": 84.55345141655339,
+      "score": 92.00664845557706,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -2176,13 +3124,21 @@
         "spines_removed",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.6652,
+        "figure_aspect": 0.962,
+        "linewidth": 0.8933,
+        "grid": 1.0,
+        "spines_removed": 1.0,
+        "legend_frame": 1.0
+      }
     },
     {
       "id": "ChartNet-sample_f743754444c3a3d9",
       "chart": "Line",
       "status": "scored",
-      "score": 89.22704827723732,
+      "score": 91.31380044591172,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -2192,7 +3148,15 @@
         "spines_removed",
         "legend_frame"
       ],
-      "unavailable_dimensions": []
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.6538,
+        "figure_aspect": 0.9318,
+        "linewidth": 0.8933,
+        "grid": 1.0,
+        "spines_removed": 1.0,
+        "legend_frame": 1.0
+      }
     }
   ]
 }

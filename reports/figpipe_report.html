@@ -79,8 +79,8 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
 <body>
 <div class="top">
   <b>FigPipeline · Research Figure Pipeline</b>
-  <div class="meta"><span>commit e3ad5f9</span><span>branch main</span>
-  <span>knowledge v16</span><span>generated 2026-10-19 08:18</span></div>
+  <div class="meta"><span>commit 4f5d03b</span><span>branch main</span>
+  <span>knowledge v16</span><span>generated 2026-10-19 09:22</span></div>
 </div>
 <div class="wrap">
 
@@ -90,7 +90,7 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
   artefacts: every number can be recomputed by a script, and every deliverable can be opened and
   checked. It tracks progress, exposes the evidence, and records what is not finished yet.</p>
   <div class="pills">
-    <span class="pill">tests 287 passed</span>
+    <span class="pill">tests 289 passed</span>
     <span class="pill">statistics reproduced: 15</span>
     <span class="pill">benchmark tasks 141/150</span>
     <span class="pill">skills 16 · operators 21</span>
@@ -102,10 +102,10 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
   <div class="kpi "><div class="kpi-v">15</div><div class="kpi-l">Published statistics reproduced</div><div class="kpi-s">worst |Δ| = 0.005</div></div>
   <div class="kpi "><div class="kpi-v">0.252</div><div class="kpi-l">Shipped distance (anchor)</div><div class="kpi-s">fixed 20-task subset; closer of plain/styled per task</div></div>
   <div class="kpi "><div class="kpi-v">0.305</div><div class="kpi-l">Anchor style distance</div><div class="kpi-s">fixed 20-task subset (comparable across runs)</div></div>
-  <div class="kpi "><div class="kpi-v">70.59</div><div class="kpi-l">OFFICIAL code channel</div><div class="kpi-s">PlotTwin-Bench deviation-defect-v1 (35% weight); vision not run</div></div>
+  <div class="kpi "><div class="kpi-v">75.41</div><div class="kpi-l">OFFICIAL code channel</div><div class="kpi-s">PlotTwin-Bench deviation-defect-v1 (35% weight); vision not run</div></div>
   <div class="kpi "><div class="kpi-v">0</div><div class="kpi-l">Semantic violations</div><div class="kpi-s">figures whose printed claims contradict their data</div></div>
   <div class="kpi "><div class="kpi-v">16 / 21</div><div class="kpi-l">Skills / classic operators</div><div class="kpi-s">global verification floor on every recipe</div></div>
-  <div class="kpi "><div class="kpi-v">287</div><div class="kpi-l">Automated tests</div><div class="kpi-s">negative controls and contract tests</div></div>
+  <div class="kpi "><div class="kpi-v">289</div><div class="kpi-l">Automated tests</div><div class="kpi-s">negative controls and contract tests</div></div>
   <div class="kpi "><div class="kpi-v">75.1 MB</div><div class="kpi-l">Repository size</div><div class="kpi-s">lean budget ≤ 80 MB</div></div>
 </div>
 
@@ -1023,7 +1023,7 @@ imitate.</p>
   <p class="tag">Showing the 9 tasks where style transfer hurt most, the 9 where it helped most, and 4 classified failures, out of 150 measured; the full per-task table is in <code>corpus/e2e/plottwin_report.json</code>.</p>
 </div>
 <div class="okbox" style="margin-top:14px"><b>Deciding beats always transferring.</b> Over the 112 tasks measured with the decision in place, the shipped figure averages <b>0.24</b> style distance, versus 0.268 for always-styled and 0.355 for never styling. The decision picked the styled candidate 110 times and the plain one 2 times, using only the reference (an input, not the answer key).</div>
-<div class="okbox"><b>Official code channel (style inferred from the reference IMAGE): 70.59 / 100</b> over 149 tasks (min 0.0, max 100.0). This is the benchmark's own deterministic channel <code>deviation-defect-v1</code>, worth 35% of the official score; the remaining 65% is a vision channel this project does not run, so <b>no combined score is claimed</b>. Style is inferred from the reference <b>picture</b> — the benchmark's actual premise — not from its code. For comparison, extracting the style from the shipped <code>reference_code</code> scores 100.0 — that is a <b>ceiling, not a capability</b>: the task record contains the reference code, so copying its features scores 100 by construction.</div>
+<div class="okbox"><b>Official code channel (style inferred from the reference IMAGE): 75.41 / 100</b> over 149 tasks (min 0.0, max 100.0). This is the benchmark's own deterministic channel <code>deviation-defect-v1</code>, worth 35% of the official score; the remaining 65% is a vision channel this project does not run, so <b>no combined score is claimed</b>. Style is inferred from the reference <b>picture</b> — the benchmark's actual premise — not from its code. For comparison, extracting the style from the shipped <code>reference_code</code> scores 100.0 — that is a <b>ceiling, not a capability</b>: the task record contains the reference code, so copying its features scores 100 by construction.</div>
 <div class="note"><b>Measurement freshness:</b> 6 of 141 executed tasks
 were measured with the current rendering code (fingerprint
 <code>bda9d6e8f1ae</code>), 38 with an earlier
@@ -1034,7 +1034,8 @@ to the shared style/layout layer; a stale row can make a fix look like a regress
 by <code>figpipe/semantics.py</code>: the printed r must match the data's r, no drawn point may fall
 outside the axes, and the axis labels must be the ones the panel claims. Semantic violations in this
 run: <b>0</b>.</div>
-<h3 style="margin-top:20px">Official code channel by chart type (image-inferred style)</h3><table><thead><tr><th>Chart type</th><th>Scored tasks</th><th>Official mean / 100</th></tr></thead><tbody><tr><td>3D</td><td class="num">7</td><td class="num">43.89</td></tr><tr><td>Bar</td><td class="num">18</td><td class="num">77.26</td></tr><tr><td>Box/Violin</td><td class="num">16</td><td class="num">74.3</td></tr><tr><td>Composite</td><td class="num">3</td><td class="num">77.61</td></tr><tr><td>Distribution</td><td class="num">17</td><td class="num">74.63</td></tr><tr><td>Field 2D</td><td class="num">15</td><td class="num">66.37</td></tr><tr><td>Heatmap</td><td class="num">13</td><td class="num">72.19</td></tr><tr><td>Line</td><td class="num">20</td><td class="num">73.12</td></tr><tr><td>Network/Tree</td><td class="num">2</td><td class="num">56.8</td></tr><tr><td>Polar/Radial</td><td class="num">13</td><td class="num">65.77</td></tr><tr><td>Scatter</td><td class="num">16</td><td class="num">71.75</td></tr><tr><td>Std-band</td><td class="num">9</td><td class="num">68.48</td></tr></tbody></table>
+<h3 style="margin-top:20px">Official channel by dimension (worst first)</h3><p class="tag">This is the work queue: the official code channel averages the scored dimensions, so a dimension near 0 costs every task that activates it.</p><table><thead><tr><th>Dimension</th><th>Tasks</th><th>Mean / 1</th><th></th></tr></thead><tbody><tr><td><code>tick_direction</code></td><td class="num">4</td><td class="num">0.0</td><td><div class="bar" style="margin:0"><i class="hold" style="width:2%"></i></div></td></tr><tr><td><code>serif</code></td><td class="num">6</td><td class="num">0.0</td><td><div class="bar" style="margin:0"><i class="hold" style="width:2%"></i></div></td></tr><tr><td><code>background</code></td><td class="num">2</td><td class="num">0.0</td><td><div class="bar" style="margin:0"><i class="hold" style="width:2%"></i></div></td></tr><tr><td><code>linewidth</code></td><td class="num">127</td><td class="num">0.574</td><td><div class="bar" style="margin:0"><i class="hold" style="width:57%"></i></div></td></tr><tr><td><code>palette</code></td><td class="num">131</td><td class="num">0.648</td><td><div class="bar" style="margin:0"><i class="hold" style="width:64%"></i></div></td></tr><tr><td><code>grid</code></td><td class="num">111</td><td class="num">0.829</td><td><div class="bar" style="margin:0"><i class="done" style="width:82%"></i></div></td></tr><tr><td><code>figure_aspect</code></td><td class="num">118</td><td class="num">0.869</td><td><div class="bar" style="margin:0"><i class="done" style="width:86%"></i></div></td></tr><tr><td><code>spines_removed</code></td><td class="num">53</td><td class="num">0.965</td><td><div class="bar" style="margin:0"><i class="done" style="width:96%"></i></div></td></tr><tr><td><code>legend_frame</code></td><td class="num">75</td><td class="num">1.0</td><td><div class="bar" style="margin:0"><i class="done" style="width:100%"></i></div></td></tr></tbody></table>
+<h3 style="margin-top:20px">Official code channel by chart type (image-inferred style)</h3><table><thead><tr><th>Chart type</th><th>Scored tasks</th><th>Official mean / 100</th></tr></thead><tbody><tr><td>3D</td><td class="num">7</td><td class="num">45.52</td></tr><tr><td>Bar</td><td class="num">18</td><td class="num">81.65</td></tr><tr><td>Box/Violin</td><td class="num">16</td><td class="num">73.46</td></tr><tr><td>Composite</td><td class="num">3</td><td class="num">66.11</td></tr><tr><td>Distribution</td><td class="num">17</td><td class="num">81.93</td></tr><tr><td>Field 2D</td><td class="num">15</td><td class="num">76.64</td></tr><tr><td>Heatmap</td><td class="num">13</td><td class="num">80.11</td></tr><tr><td>Line</td><td class="num">20</td><td class="num">77.93</td></tr><tr><td>Network/Tree</td><td class="num">2</td><td class="num">57.5</td></tr><tr><td>Polar/Radial</td><td class="num">13</td><td class="num">70.2</td></tr><tr><td>Scatter</td><td class="num">16</td><td class="num">74.81</td></tr><tr><td>Std-band</td><td class="num">9</td><td class="num">78.51</td></tr></tbody></table>
 <h3 style="margin-top:20px">By chart type</h3>
 <table><thead><tr><th>Chart type</th><th>OK / tasks</th><th>Always styled</th><th>Plain</th>
 <th>Δ</th><th>Shipped</th></tr></thead><tbody><tr><td>3D</td><td class="num">0/7</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr><td>Bar</td><td class="num">18/18</td><td class="num">0.305</td><td class="num">0.352</td><td class="num">0.047</td><td class="num">0.296</td></tr><tr><td>Box/Violin</td><td class="num">16/16</td><td class="num">0.233</td><td class="num">0.399</td><td class="num">0.167</td><td class="num">0.162</td></tr><tr><td>Composite</td><td class="num">3/3</td><td class="num">0.25</td><td class="num">0.273</td><td class="num">0.023</td><td class="num">0.242</td></tr><tr><td>Distribution</td><td class="num">17/17</td><td class="num">0.228</td><td class="num">0.275</td><td class="num">0.047</td><td class="num">0.198</td></tr><tr><td>Field 2D</td><td class="num">15/15</td><td class="num">0.343</td><td class="num">0.441</td><td class="num">0.098</td><td class="num">0.343</td></tr><tr><td>Heatmap</td><td class="num">14/14</td><td class="num">0.247</td><td class="num">0.333</td><td class="num">0.086</td><td class="num">0.174</td></tr><tr><td>Line</td><td class="num">20/20</td><td class="num">0.296</td><td class="num">0.391</td><td class="num">0.096</td><td class="num">0.284</td></tr><tr><td>Network/Tree</td><td class="num">0/2</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr><td>Polar/Radial</td><td class="num">13/13</td><td class="num">0.264</td><td class="num">0.27</td><td class="num">0.006</td><td class="num">0.186</td></tr><tr><td>Scatter</td><td class="num">16/16</td><td class="num">0.167</td><td class="num">0.402</td><td class="num">0.235</td><td class="num">0.177</td></tr><tr><td>Std-band</td><td class="num">9/9</td><td class="num">0.37</td><td class="num">0.505</td><td class="num">0.135</td><td class="num">0.332</td></tr></tbody></table>
@@ -1061,15 +1062,15 @@ floor (compliance, glyph collisions, no silently ignored parameters, a reproduci
 <div class="two-col">
 <div class="panel">
 <table><thead><tr><th>Metric</th><th>Value</th><th>Meaning</th></tr></thead><tbody>
-<tr><td>Run records</td><td class="num">61</td><td>six-hour schedule + manual runs</td></tr>
+<tr><td>Run records</td><td class="num">62</td><td>six-hour schedule + manual runs</td></tr>
 <tr><td>Knowledge-changing runs</td><td class="num">4</td><td>all from manual migrations or capability work</td></tr>
 <tr><td>Knowledge-base version</td><td>v16</td><td>16 rules</td></tr>
 <tr><td>Machine-checked rules</td><td class="num">8 / 16</td><td>the rest are hypotheses/refuted/void</td></tr>
 <tr><td>Unchecked rules</td><td>H01, H02, E01, E02, C01, C02, C03, C04</td><td>not counted as passing</td></tr>
-<tr><td>Benchmark slice</td><td>skipped: dry run</td>
+<tr><td>Benchmark slice</td><td>6 tasks from offset 0 (exit 0)</td>
 <td>rotating tasks measured by the loop</td></tr>
 <tr><td>Capability snapshot</td><td>skills 16 · operators 21 · benchmark 141/150 · success 1.0 · anchor 0.305 · tests 285</td><td>recorded by the scheduled run</td></tr>
-<tr><td>Last capability change</td><td>tests: 284 → 285</td><td>explicit delta, not a claim</td></tr>
+<tr><td>Last capability change</td><td>no change since the previous run</td><td>explicit delta, not a claim</td></tr>
 </tbody></table>
 <p class="tag" style="margin-top:10px">Conclusion: the loop currently re-verifies, prevents drift and
 records. It has no capability snapshot, mutation or selection, so it is <b>not self-improvement</b>.
@@ -1090,7 +1091,7 @@ The next step is to write benchmark pass rates and distances into the run record
 
 <h3 style="margin-top:20px">Capability trend (scheduled runs)</h3>
 <table><thead><tr><th>Run</th><th>Skills</th><th>Operators</th><th>Benchmark</th>
-<th>Anchor distance</th><th>Success</th><th>Tests</th></tr></thead><tbody><tr><td>2026-10-19 05:56</td><td class="num">16</td><td class="num">21</td><td class="num">141/150</td><td class="num">0.268</td><td class="num">272</td></tr><tr><td>2026-10-19 06:33</td><td class="num">16</td><td class="num">21</td><td class="num">141/150</td><td class="num">0.268</td><td class="num">277</td></tr><tr><td>2026-10-19 06:40</td><td class="num">16</td><td class="num">21</td><td class="num">141/150</td><td class="num">0.268</td><td class="num">278</td></tr><tr><td>2026-10-19 06:43</td><td class="num">16</td><td class="num">21</td><td class="num">141/150</td><td class="num">0.268</td><td class="num">280</td></tr><tr><td>2026-10-19 07:32</td><td class="num">16</td><td class="num">21</td><td class="num">141/150</td><td class="num">0.268</td><td class="num">281</td></tr><tr><td>2026-10-19 08:07</td><td class="num">16</td><td class="num">21</td><td class="num">141/150</td><td class="num">0.268</td><td class="num">282</td></tr><tr><td>2026-10-19 08:13</td><td class="num">16</td><td class="num">21</td><td class="num">141/150</td><td class="num">0.268</td><td class="num">284</td></tr><tr><td>2026-10-19 08:16</td><td class="num">16</td><td class="num">21</td><td class="num">141/150</td><td class="num">0.268</td><td class="num">285</td></tr></tbody></table>
+<th>Anchor distance</th><th>Success</th><th>Tests</th></tr></thead><tbody><tr><td>2026-10-19 06:33</td><td class="num">16</td><td class="num">21</td><td class="num">141/150</td><td class="num">0.268</td><td class="num">277</td></tr><tr><td>2026-10-19 06:40</td><td class="num">16</td><td class="num">21</td><td class="num">141/150</td><td class="num">0.268</td><td class="num">278</td></tr><tr><td>2026-10-19 06:43</td><td class="num">16</td><td class="num">21</td><td class="num">141/150</td><td class="num">0.268</td><td class="num">280</td></tr><tr><td>2026-10-19 07:32</td><td class="num">16</td><td class="num">21</td><td class="num">141/150</td><td class="num">0.268</td><td class="num">281</td></tr><tr><td>2026-10-19 08:07</td><td class="num">16</td><td class="num">21</td><td class="num">141/150</td><td class="num">0.268</td><td class="num">282</td></tr><tr><td>2026-10-19 08:13</td><td class="num">16</td><td class="num">21</td><td class="num">141/150</td><td class="num">0.268</td><td class="num">284</td></tr><tr><td>2026-10-19 08:16</td><td class="num">16</td><td class="num">21</td><td class="num">141/150</td><td class="num">0.268</td><td class="num">285</td></tr><tr><td>2026-10-19 08:22</td><td class="num">16</td><td class="num">21</td><td class="num">141/150</td><td class="num">0.268</td><td class="num">285</td></tr></tbody></table>
 <p class="tag">Read from <code>knowledge/runs/*.json</code>. A run with no capability change is
 recorded as such; the loop fails when a judged capability field gets worse.</p>
 
@@ -1107,6 +1108,6 @@ recorded as such; the loop fails when a judged capability field gets worse.</p>
   in this repository, with no external dependencies. PlotTwin-Bench reference images and target
   data are cached locally and never redistributed (CC BY-NC 4.0); StartLux-Decision weights are
   CC BY-NC 4.0 and called through a separate service, not vendored into this repository.</div>
-  <div style="margin-top:6px">commit e3ad5f9 · generated 2026-10-19 08:18 · tests 287</div>
+  <div style="margin-top:6px">commit 4f5d03b · generated 2026-10-19 09:22 · tests 289</div>
 </footer>
 </div></body></html>

@@ -127,6 +127,23 @@ def _official_pool(source: str = "image") -> dict:
         return {}
 
 
+def _dimension_table(pool) -> str:
+    dims = (pool or {}).get("by_dimension") or {}
+    if not dims:
+        return ""
+    rows = "".join(
+        f'<tr><td><code>{esc(k)}</code></td><td class="num">{v["n"]}</td>'
+        f'<td class="num">{v["mean"]}</td>'
+        f'<td><div class="bar" style="margin:0"><i class="{"done" if v["mean"] > 0.8 else "hold"}" '
+        f'style="width:{max(2, int(v["mean"] * 100))}%"></i></div></td></tr>'
+        for k, v in dims.items())
+    return ('<h3 style="margin-top:20px">Official channel by dimension (worst first)</h3>'
+            '<p class="tag">This is the work queue: the official code channel averages the scored '
+            'dimensions, so a dimension near 0 costs every task that activates it.</p>'
+            f'<table><thead><tr><th>Dimension</th><th>Tasks</th><th>Mean / 1</th>'
+            f'<th></th></tr></thead><tbody>{rows}</tbody></table>')
+
+
 def _official_type_table(pool) -> str:
     rows = (pool or {}).get("by_type") or {}
     if not rows:
@@ -626,6 +643,7 @@ to the shared style/layout layer; a stale row can make a fix look like a regress
 by <code>figpipe/semantics.py</code>: the printed r must match the data's r, no drawn point may fall
 outside the axes, and the axis labels must be the ones the panel claims. Semantic violations in this
 run: <b>{bench.get("semantic_violations", 0)}</b>.</div>
+{_dimension_table(_official_pool())}
 {_official_type_table(_official_pool())}
 <h3 style="margin-top:20px">By chart type</h3>
 <table><thead><tr><th>Chart type</th><th>OK / tasks</th><th>Always styled</th><th>Plain</th>
