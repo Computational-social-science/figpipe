@@ -169,6 +169,44 @@ Specification sources:
 
 ---
 
+## Five entry points
+
+The package exports fifteen modules; these five cover the whole workflow, in increasing order of
+ambition. Each is verified by the pipeline itself, not merely documented.
+
+```python
+# 1. draw one compliant panel
+from figpipe import grammar
+panel = grammar.panel("trend_with_uncertainty", df, x="year", y="mean", fit="lm")
+
+# 2. compose a plate and verify the RENDERED file
+from figpipe import grammar, layout, audit
+fig = grammar.plate([panel_a, panel_b], columns=2.0, height_mm=140.0)
+pdf = layout.save(fig, "fig2")[0]
+report = audit.audit(pdf, expect_width_mm=183.0)
+assert report["ok"], report["findings"]
+
+# 3. declare the figure from the data instead of by hand (refuses rather than guessing)
+from figpipe import spec
+figure = spec.infer_spec(df)
+
+# 4. run a named recipe over classic operators, with the global verification floor
+from figpipe import skills
+result = skills.run("trend_with_uncertainty", df, x="year", y="mean")
+
+# 5. measure a reference's style, transfer it, ship the closer candidate
+from figpipe import styleprofile, select
+ref = styleprofile.StyleProfile.from_pdf("published.pdf", page=3)
+picked = select.select(ref, {"plain": a_pdf, "styled": b_pdf})
+```
+
+A complete, runnable demonstration on invented data:
+
+    python examples/worked_example.py
+
+It runs spec -> recipe -> render -> audit -> semantics -> codegen -> select and exits non-zero
+unless every claim it prints was verified.
+
 ## Repository map
 
 | file | what it is |

@@ -39,7 +39,7 @@
     {
       "name": "encode.bars",
       "kind": "build",
-      "doc": "Encode parallel measures per category as grouped bars."
+      "doc": "Encode parallel measures per category as grouped bars, ONE bar per category level."
     },
     {
       "name": "encode.scatter",

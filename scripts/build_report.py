@@ -131,6 +131,14 @@ def _shipped_kpi(bench) -> str:
     return bench.get("benchmark_shipped_anchor_distance") or "—"
 
 
+def _version() -> str:
+    try:
+        import figpipe
+        return getattr(figpipe, "__version__", "?")
+    except Exception:                    # noqa: BLE001
+        return "?"
+
+
 def _baseline_pool() -> dict:
     """The naive baseline: matplotlib defaults with figpipe's compliance floor."""
     path = ROOT / "corpus" / "e2e" / "official_scores_naive.json"
@@ -514,6 +522,11 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
                     "PIPELINE_V3.md", meta="v3"),
         deliverable("Skills-layer design note", "Global SKILLS + classic operators + the rule for extending recipes.",
                     "SKILLS.md", status="Design note"),
+        deliverable("Runnable worked example", "The whole pipeline on invented data: spec -> recipe -> "
+                    "render -> audit -> semantics -> codegen -> select, exiting non-zero unless every "
+                    "claim was verified.", "examples/worked_example.py", meta="no benchmark asset used"),
+        deliverable("Public API surface", "15 modules exported with five documented entry points.",
+                    "figpipe/__init__.py", meta=f"v{_version()}"),
     ])
 
     MAX_TASK_ROWS = 18

@@ -172,12 +172,33 @@ def op_encode_box(ctx: SkillContext, group: str, value: str):
 
 
 @operator("encode.bars", "build")
-def op_encode_bars(ctx: SkillContext, x: str, ycols):
-    """Encode parallel measures per category as grouped bars."""
+def op_encode_bars(ctx: SkillContext, x: str, ycols, agg: str = "mean"):
+    """Encode parallel measures per category as grouped bars, ONE bar per category level.
+
+    WHY AGGREGATION IS NOT OPTIONAL: a long table has many rows per category (40 rows over 2
+    groups in the worked example). Drawing one bar per ROW stacks 40 overlapping groups and makes
+    the tick labels collide -- the example caught exactly that as three hard findings while the
+    compliance audit reported zero. A grouped bar encodes a SUMMARY per level, so the summary must
+    be stated: mean by default, and the choice is written into the trace.
+    """
     if isinstance(ycols, str):
         ycols = [c.strip() for c in ycols.split(",") if c.strip()]
-    ctx.add_panel(composite.Panel("grouped_bars", ctx.data,
-                                  {"x": x, "ycols": list(ycols),
+    missing = [c for c in [x] + list(ycols) if c not in ctx.data.columns]
+    if missing:
+        raise SkillError(f"encode.bars: missing columns {missing}")
+    if agg not in ("mean", "median", "sum"):
+        raise SkillError(f"encode.bars: unsupported aggregation {agg!r}")
+    counts = ctx.data[x].astype(str).value_counts()
+    if int(counts.max()) > 1:
+        # more than one row per level: summarise, and say so
+        data = (ctx.data.groupby(ctx.data[x].astype(str), observed=True)[list(ycols)]
+                .agg(agg).reset_index().rename(columns={"index": x}))
+        ctx.trace.append(f"encode.bars.aggregate({x} by {agg}: "
+                         f"{len(ctx.data)} rows -> {len(data)} levels)")
+    else:
+        data = ctx.data
+    ctx.add_panel(composite.Panel("grouped_bars", data,
+                                  {"x": data.columns[0], "ycols": list(ycols),
                                    "labels": {c: c for c in ycols}}))
     ctx.trace.append(f"encode.bars({x},{ycols})")
 

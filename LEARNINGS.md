@@ -1021,3 +1021,41 @@ longer be quoted without its referents.
 
 LESSON: "improved" is a relation, not a property. Every metric in this report now needs a baseline
 in the same table, or it is decoration.
+
+
+## 45. The reusable surface was hidden, and the example found a real bug (2026-10-19)
+
+The project has claimed for many rounds that its capability is "reusable in research scenarios".
+It was not demonstrable:
+
+* `figpipe/__init__.py` exported THREE modules (style, layout, audit) while the package contained
+  twenty-three. `spec`, `skills`, `select`, `semantics`, `codegen` -- the capabilities the last ten
+  rounds were spent building -- were unreachable without knowing internal paths.
+* `examples/` was an empty directory. No one could run the pipeline on their own data.
+
+Both are now fixed: fifteen modules are exported with a docstring that names the five entry points
+in increasing order of ambition, and `examples/worked_example.py` runs the WHOLE pipeline on an
+invented dataset (spec -> recipe -> render -> audit -> semantics -> codegen -> select) and exits
+non-zero unless every claim it prints was verified.
+
+THE EXAMPLE IMMEDIATELY EARNED ITS PLACE by finding a real defect:
+
+    spec.infer_spec declared `grouped_bars`
+    the example drew a TREND panel            <- the declaration was decorative
+    ... after making it follow the spec:
+    grouped_measures produced 3 HARD failures (text collisions)
+    while `audit` reported 0                  <- audit checks typography, not label duplication
+
+Cause: `encode.bars` drew ONE BAR PER ROW. A long table has many rows per category (40 rows over 2
+groups), so it stacked 40 overlapping bar groups and the tick labels collided. A grouped bar
+encodes a SUMMARY per level; the aggregation was missing entirely. Now it aggregates (mean by
+default), refuses an unknown aggregator, and writes the aggregation into the trace.
+
+Two lessons:
+1. **A capability that is not exported and not demonstrated is not reusable, however good it is.**
+   "We built X" and "you can use X" are different claims.
+2. **An executable example is a test, not documentation.** This one found a drawing bug that
+   thirteen rounds of internal tests did not, because it exercised a path (long table ->
+   grouped bars) that the benchmark's aggregated data never produced.
+
+Suite: 294 passed, 2 skipped.
