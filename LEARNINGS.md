@@ -1195,3 +1195,32 @@ not update itself.
 
 State: 303 passed / 2 skipped; official code channel 75.41 vs baseline 38.16 (+37.25, 97.6%);
 ceiling 100.00; benchmark 141/150.
+
+
+## 50. The snapshot read a half-written state (2026-10-19)
+
+The run exited 1 with `benchmark_anchor_single: null` and `benchmark_shipped_anchor_single: null`
+in the capability snapshot, while the report on disk held 0.351 and 0.296. Both anchors were
+comparable; the snapshot simply read the report BEFORE the measurement that writes it had finished.
+
+The loop's order was:
+
+    anchor_run = refresh_anchor()     <- may rewrite the report
+    bench_run  = benchmark_slice()    <- may rewrite the report
+    caps = capability_snapshot()      <- reads the report
+
+...which looks correct until you notice `refresh_anchor()` re-measures the anchor AFTER new rows
+land, so the slice must run FIRST. The snapshot is now taken at the moment the record is written,
+after every measurement, and re-diffed after the test suite so the test count is current too.
+
+Also: the run reported `303 -> 302 passed` and flagged it a regression. That was a genuine
+difference -- one test had turned into a SKIP under the loop's environment. A skip is not a pass,
+and a shrinking suite can hide behind "still green", so `test_a_skip_is_not_counted_as_a_pass`
+now asserts the collected count stays >= 300.
+
+The 14-minute suite runtime was NOT a defect: a background job of mine was competing for the
+machine. Measured clean: 73 s.
+
+Same lesson as the metrics, one layer out: **reading state is a measurement, and a measurement has
+an order.** The snapshot must be taken after every write it depends on, or it reports a state that
+never existed.
