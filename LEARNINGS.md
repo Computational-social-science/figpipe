@@ -1251,3 +1251,23 @@ assumptions, verification completeness, state and timing, scope) rather than by 
 verdict is deliberately not "no defects": the defect rate in the verification layer is higher than
 in the drawing layer, and that is where the remaining risk lives. `tests/test_logical_audit.py`
 checks that each claimed fix is still present in the code, so the audit cannot become a fossil.
+
+
+## 52. The benchmark is now measured entirely on ONE instrument (2026-10-19)
+
+Re-measuring all 150 tasks took ~70 minutes (network fetches dominate; the machine was shared).
+Result:
+
+    report     141/150 executed, 0 errors
+    freshness  141 fresh, 0 stale, 0 unknown      <- the last incomparable metric is gone
+    anchors    styled 0.351, shipped 0.296, both 20/20 on one instrument
+    official   baseline 38.16 -> pipeline 75.41 (+37.25, 97.6%) | ceiling 100.00
+    negative   chart types: none
+
+This closes the last measurement gap named in the previous rounds. Every judged number in the
+project now comes from one code fingerprint, one task set, and one scorer.
+
+The remaining ceiling is unchanged and is a property of the INPUT: tick_direction, serif,
+background and linewidth score 0 or unchanged because a raster image does not contain them. The
+honest statement is that the pipeline recovers everything a picture CAN show (palette 0.648,
+grid 0.829, aspect 0.869, spines 0.965, legend 1.0) and nothing a picture cannot.
