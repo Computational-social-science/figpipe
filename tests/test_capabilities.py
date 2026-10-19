@@ -63,14 +63,14 @@ def test_a_capability_loss_is_a_regression_not_a_footnote():
         import pytest
         pytest.skip("cron_run unavailable")
     prev = {"benchmark_success_rate": 0.95, "skills": 12,
-            "benchmark_anchor_distance": 0.28, "tests": 229}
+            "benchmark_anchor_single": 0.28, "tests": 229}
     cur = {"benchmark_success_rate": 0.80, "skills": 12,
-           "benchmark_anchor_distance": 0.31, "tests": 229}
+           "benchmark_anchor_single": 0.31, "tests": 229}
     out = cron.capability_delta(prev, cur)
     verdict = out["verdict"]
     assert verdict["ok"] is False
     fields = {r["field"] for r in verdict["regressions"]}
-    assert fields == {"benchmark_success_rate", "benchmark_anchor_distance"}
+    assert fields == {"benchmark_success_rate", "benchmark_anchor_single"}
     assert out["changed"] is True
 
 
@@ -89,10 +89,10 @@ def test_a_lower_distance_counts_as_improvement():
     if cron is None:
         import pytest
         pytest.skip("cron_run unavailable")
-    out = cron.capability_delta({"benchmark_anchor_distance": 0.31},
-                                {"benchmark_anchor_distance": 0.28})
+    out = cron.capability_delta({"benchmark_anchor_single": 0.31},
+                                {"benchmark_anchor_single": 0.28})
     assert out["verdict"]["ok"] is True
-    assert [g["field"] for g in out["verdict"]["gains"]] == ["benchmark_anchor_distance"]
+    assert [g["field"] for g in out["verdict"]["gains"]] == ["benchmark_anchor_single"]
 
 
 def test_the_raw_benchmark_mean_is_not_judged():
