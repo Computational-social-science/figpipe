@@ -169,6 +169,30 @@ Specification sources:
 
 ---
 
+## Make a figure from your own CSV
+
+No Python required. Give it a tidy CSV and a journal column width:
+
+```bash
+python scripts/make_figure.py mydata.csv --out figure1
+python scripts/make_figure.py mydata.csv --out figure1 --columns 1     # 89 mm single column
+python scripts/make_figure.py mydata.csv --out figure1 --reference published.pdf
+```
+
+It infers what to draw from the columns, renders at Nature's width, then **audits the rendered
+PDF** and exits non-zero if it does not comply:
+
+```
+  data: 40 rows x 4 columns
+  intent: grouped_bars (inferred)
+  why:    'site' groups 4 levels and ['year','mean_index','se'] are parallel measures
+  wrote: figure1.pdf and its .png preview
+  audit: width 183.0 mm, height 91.5 mm, 0 hard finding(s)
+  RESULT: compliant
+```
+
+An ambiguous table is **refused with a reason** and the column list, not drawn wrongly.
+
 ## Five entry points
 
 The package exports fifteen modules; these five cover the whole workflow, in increasing order of

@@ -1929,3 +1929,40 @@ The project's recurring lesson, one layer out again: a control that is only test
 works is a control that looks present and does nothing.
 
 Suite: 447 passed, 3 skipped.
+
+
+## 74. "Reusable" was a claim with no entry point (2026-10-20)
+
+The objective's third leg is that the capability be "reusable and verifiable in research
+scenarios". The evidence was `examples/worked_example.py`, which runs on INVENTED data -- it proves
+the functions exist, not that a stranger can use them. A researcher has a CSV, a journal width, and
+often a reference figure. There was no command for that path.
+
+`scripts/make_figure.py` is that command. Writing it took four bugs, and every one was found by
+running it ONCE on a real table:
+
+1. the CLI passed an EMPTY parameter dict, so every inferred figure was refused for columns `spec`
+   had already resolved in `panel.kwargs`
+2. the intent -> skill map used INVENTED names. `infer_spec` actually emits
+   `grouped_bars, scatter_fit, boxplot, ranked_composition, density_relationship`; my map contained
+   `trend_with_uncertainty`, `distribution`, `signed_matrix`, `comparison_with_error` -- none of
+   which it ever emits. The result was a refusal that looked deliberate and was a missing entry.
+3. `columns` is an ENUM (1 = 89 mm, 2 = 183 mm) in the layout layer, and I passed a ratio
+   (183/89 = 2.056), which is correctly rejected
+4. `spec` supplies `xlabel`/`ylabel` that some skills do not declare, and the CLI did not filter --
+   but it must not drop them SILENTLY either, so it prints what it omitted
+
+The end state, on a CSV with column names nobody in this repo chose:
+
+    intent: grouped_bars (inferred)
+    wrote: research_fig.pdf and its .png preview
+    audit: width 183.0 mm, height 91.5 mm, 0 hard finding(s)
+    RESULT: compliant
+
+Plus a second shape inferred differently (`ranked_composition` at 89 mm) and a reference-style
+transfer (`style.profile` in the trace). Seven end-to-end tests, one of which asserts that the
+intent map covers EVERY intent `infer_spec` can emit -- so bug 2 cannot come back.
+
+LESSON: **an API is not a product.** Five documented entry points and a worked example on invented
+data still left the actual first step -- "I have a CSV" -- unaddressed. The gap was invisible from
+inside because every test already had a DataFrame in hand.

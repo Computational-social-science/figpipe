@@ -598,6 +598,10 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
                     "CLAIM.md", meta="referents + limits"),
         deliverable("Skills-layer design note", "Global SKILLS + classic operators + the rule for extending recipes.",
                     "SKILLS.md", status="Design note"),
+        deliverable("Researcher CLI: CSV -> journal figure", "One command from a stranger's CSV "
+                    "to an audited 89/183 mm submission PDF, with optional reference-style "
+                    "transfer. Refuses an ambiguous table instead of drawing it wrongly.",
+                    "scripts/make_figure.py", meta="7 end-to-end tests"),
         deliverable("Runnable worked example", "The whole pipeline on invented data: spec -> recipe -> "
                     "render -> audit -> semantics -> codegen -> select, exiting non-zero unless every "
                     "claim was verified.", "examples/worked_example.py", meta="no benchmark asset used"),

@@ -79,8 +79,8 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
 <body>
 <div class="top">
   <b>FigPipeline · Research Figure Pipeline</b>
-  <div class="meta"><span>commit 9dea8cd</span><span>branch main</span>
-  <span>knowledge v16</span><span>generated 2026-10-20 04:13</span></div>
+  <div class="meta"><span>commit 3753fe9</span><span>branch main</span>
+  <span>knowledge v16</span><span>generated 2026-10-20 04:30</span></div>
 </div>
 <div class="wrap">
 
@@ -90,11 +90,11 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
   artefacts: every number can be recomputed by a script, and every deliverable can be opened and
   checked. It tracks progress, exposes the evidence, and records what is not finished yet.</p>
   <div class="pills">
-    <span class="pill">tests 451 passed</span>
+    <span class="pill">tests 458 passed</span>
     <span class="pill">statistics reproduced: 15</span>
     <span class="pill">benchmark tasks 139/150</span>
     <span class="pill">skills 16 · operators 21</span>
-    <span class="pill">tracked 76.3 MB</span>
+    <span class="pill">tracked 76.4 MB</span>
   </div>
 </header>
 
@@ -105,8 +105,8 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
   <div class="kpi "><div class="kpi-v">75.41</div><div class="kpi-l">OFFICIAL code channel</div><div class="kpi-s">PlotTwin-Bench deviation-defect-v1 (35% weight); vision not run</div></div>
   <div class="kpi "><div class="kpi-v">8</div><div class="kpi-l">Semantic violations</div><div class="kpi-s">figures whose printed claims contradict their data</div></div>
   <div class="kpi "><div class="kpi-v">16 / 21</div><div class="kpi-l">Skills / classic operators</div><div class="kpi-s">global verification floor on every recipe</div></div>
-  <div class="kpi "><div class="kpi-v">451</div><div class="kpi-l">Automated tests</div><div class="kpi-s">negative controls and contract tests</div></div>
-  <div class="kpi "><div class="kpi-v">76.3 MB</div><div class="kpi-l">Repository size</div><div class="kpi-s">lean budget ≤ 80 MB</div></div>
+  <div class="kpi "><div class="kpi-v">458</div><div class="kpi-l">Automated tests</div><div class="kpi-s">negative controls and contract tests</div></div>
+  <div class="kpi "><div class="kpi-v">76.4 MB</div><div class="kpi-l">Repository size</div><div class="kpi-s">lean budget ≤ 80 MB</div></div>
 </div>
 
 
@@ -118,7 +118,7 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
   <div class="progress-row"><div class="progress-head"><span>Authoritative benchmark (PlotTwin-Bench)</span><span class="pct">100%</span></div><div class="bar"><i class="hold" style="width:100%"></i></div><div class="evidence">150/150 tasks run; remaining tasks and chart types in the backlog</div></div>
   <div class="progress-row"><div class="progress-head"><span>Decision-model integration</span><span class="pct">60%</span></div><div class="bar"><i class="hold" style="width:60%"></i></div><div class="evidence">bridge and 6 contract tests complete; service offline</div></div>
   <div class="progress-row"><div class="progress-head"><span>Self-evolution</span><span class="pct">40%</span></div><div class="bar"><i class="hold" style="width:40%"></i></div><div class="evidence">8/16 rules have machine checks; no capability snapshot or mutation yet</div></div>
-  <div class="progress-row"><div class="progress-head"><span>Documentation and slimming</span><span class="pct">100%</span></div><div class="bar"><i class="done" style="width:100%"></i></div><div class="evidence">tracked 76.3 MB; redundant audit documents consolidated</div></div>
+  <div class="progress-row"><div class="progress-head"><span>Documentation and slimming</span><span class="pct">100%</span></div><div class="bar"><i class="done" style="width:100%"></i></div><div class="evidence">tracked 76.4 MB; redundant audit documents consolidated</div></div>
 </div>
 
 <h2><span class="n">02</span>Research deliverables</h2>
@@ -137,6 +137,7 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
 <div class="card deliverable"><div class="card-top"><h3>Logical audit</h3><span class="pill ok">Delivered</span></div><p>Six classes of logical defect (measurement validity, reference class, input assumptions, verification completeness, state/timing, scope), each with the failure mode, the evidence, and the residual risk.</p><div class="meta"><code>LOGICAL_AUDIT.md</code> · 6 sections, residual risks named</div><a class="file-link" href="../LOGICAL_AUDIT.md">Open artifact →</a></div>
 <div class="card deliverable"><div class="card-top"><h3>The claim, stated precisely</h3><span class="pill ok">Delivered</span></div><p>What is claimed (official code channel, with baseline and ceiling), what is NOT claimed (combined score, head-to-head, human validation), and how to reproduce it.</p><div class="meta"><code>CLAIM.md</code> · referents + limits</div><a class="file-link" href="../CLAIM.md">Open artifact →</a></div>
 <div class="card deliverable"><div class="card-top"><h3>Skills-layer design note</h3><span class="pill warn">Design note</span></div><p>Global SKILLS + classic operators + the rule for extending recipes.</p><div class="meta"><code>SKILLS.md</code></div><a class="file-link" href="../SKILLS.md">Open artifact →</a></div>
+<div class="card deliverable"><div class="card-top"><h3>Researcher CLI: CSV -&gt; journal figure</h3><span class="pill ok">Delivered</span></div><p>One command from a stranger's CSV to an audited 89/183 mm submission PDF, with optional reference-style transfer. Refuses an ambiguous table instead of drawing it wrongly.</p><div class="meta"><code>scripts/make_figure.py</code> · 7 end-to-end tests</div><a class="file-link" href="../scripts/make_figure.py">Open artifact →</a></div>
 <div class="card deliverable"><div class="card-top"><h3>Runnable worked example</h3><span class="pill ok">Delivered</span></div><p>The whole pipeline on invented data: spec -> recipe -> render -> audit -> semantics -> codegen -> select, exiting non-zero unless every claim was verified.</p><div class="meta"><code>examples/worked_example.py</code> · no benchmark asset used</div><a class="file-link" href="../examples/worked_example.py">Open artifact →</a></div>
 <div class="card deliverable"><div class="card-top"><h3>Public API surface</h3><span class="pill ok">Delivered</span></div><p>15 modules exported with five documented entry points.</p><div class="meta"><code>figpipe/__init__.py</code> · v0.2.0</div><a class="file-link" href="../figpipe/__init__.py">Open artifact →</a></div>
 <div class="card deliverable"><div class="card-top"><h3>Data-shape audit</h3><span class="pill ok">Delivered</span></div><p>All 16 skills against 7 realistic research data shapes (long, sparse, replicates, single, field); 0 broken, refusals carry a reason.</p><div class="meta"><code>scripts/audit_skills_data.py</code> · 19 cases</div><a class="file-link" href="../scripts/audit_skills_data.py">Open artifact →</a></div>
@@ -1067,15 +1068,15 @@ floor (compliance, glyph collisions, no silently ignored parameters, a reproduci
 <div class="two-col">
 <div class="panel">
 <table><thead><tr><th>Metric</th><th>Value</th><th>Meaning</th></tr></thead><tbody>
-<tr><td>Run records</td><td class="num">108</td><td>six-hour schedule + manual runs</td></tr>
+<tr><td>Run records</td><td class="num">111</td><td>six-hour schedule + manual runs</td></tr>
 <tr><td>Knowledge-changing runs</td><td class="num">4</td><td>all from manual migrations or capability work</td></tr>
 <tr><td>Knowledge-base version</td><td>v16</td><td>16 rules</td></tr>
 <tr><td>Machine-checked rules</td><td class="num">8 / 16</td><td>the rest are hypotheses/refuted/void</td></tr>
 <tr><td>Unchecked rules</td><td>H01, H02, E01, E02, C01, C02, C03, C04</td><td>not counted as passing</td></tr>
 <tr><td>Benchmark slice</td><td>6 tasks from offset 0 (exit 0)</td>
 <td>rotating tasks measured by the loop</td></tr>
-<tr><td>Capability snapshot</td><td>skills 16 · operators 21 · benchmark 139/150 · success 1.0 · anchor 0.355 · tests 446</td><td>recorded by the scheduled run</td></tr>
-<tr><td>Last capability change</td><td>tests: 443 → 446</td><td>explicit delta, not a claim</td></tr>
+<tr><td>Capability snapshot</td><td>skills 16 · operators 21 · benchmark 139/150 · success 1.0 · anchor 0.355 · tests 448</td><td>recorded by the scheduled run</td></tr>
+<tr><td>Last capability change</td><td>tests: — → 448</td><td>explicit delta, not a claim</td></tr>
 </tbody></table>
 <p class="tag" style="margin-top:10px">Conclusion: the loop currently re-verifies, prevents drift and
 records. It has no capability snapshot, mutation or selection, so it is <b>not self-improvement</b>.
@@ -1098,7 +1099,7 @@ combined-score claim is made — the code-channel claim is stated with its basel
 
 <h3 style="margin-top:20px">Capability trend (scheduled runs)</h3>
 <table><thead><tr><th>Run</th><th>Skills</th><th>Operators</th><th>Benchmark</th>
-<th>Anchor distance</th><th>Success</th><th>Tests</th></tr></thead><tbody><tr><td>2026-10-20 03:35</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.313</td><td class="num">436</td></tr><tr><td>2026-10-20 03:50</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.313</td><td class="num">438</td></tr><tr><td>2026-10-20 03:59</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.313</td><td class="num">443</td></tr><tr><td>2026-10-20 04:08</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.313</td><td class="num">447</td></tr><tr><td>2026-10-20 04:08</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.313</td><td class="num">446</td></tr><tr><td>2026-10-20 04:10</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.313</td><td class="num">—</td></tr><tr><td>2026-10-20 04:11</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.313</td><td class="num">—</td></tr><tr><td>2026-10-20 04:11</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.313</td><td class="num">—</td></tr></tbody></table>
+<th>Anchor distance</th><th>Success</th><th>Tests</th></tr></thead><tbody><tr><td>2026-10-20 04:08</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.313</td><td class="num">447</td></tr><tr><td>2026-10-20 04:08</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.313</td><td class="num">446</td></tr><tr><td>2026-10-20 04:10</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.313</td><td class="num">447</td></tr><tr><td>2026-10-20 04:11</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.313</td><td class="num">448</td></tr><tr><td>2026-10-20 04:11</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.313</td><td class="num">448</td></tr><tr><td>2026-10-20 04:16</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.313</td><td class="num">448</td></tr><tr><td>2026-10-20 04:21</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.313</td><td class="num">448</td></tr><tr><td>2026-10-20 04:22</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.313</td><td class="num">448</td></tr></tbody></table>
 <p class="tag">Read from <code>knowledge/runs/*.json</code>. A run with no capability change is
 recorded as such; the loop fails when a judged capability field gets worse.</p>
 
@@ -1116,6 +1117,6 @@ recorded as such; the loop fails when a judged capability field gets worse.</p>
   in this repository, with no external dependencies. PlotTwin-Bench reference images and target
   data are cached locally and never redistributed (CC BY-NC 4.0); StartLux-Decision weights are
   CC BY-NC 4.0 and called through a separate service, not vendored into this repository.</div>
-  <div style="margin-top:6px">commit 9dea8cd · generated 2026-10-20 04:13 · tests 451</div>
+  <div style="margin-top:6px">commit 3753fe9 · generated 2026-10-20 04:30 · tests 458</div>
 </footer>
 </div></body></html>
