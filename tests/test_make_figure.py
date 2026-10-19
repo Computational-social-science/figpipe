@@ -188,3 +188,74 @@ def test_a_single_numeric_column_can_be_faceted():
                      value="value", by="condition", of="hist")
     assert res["panels"] == 2
     assert res["hard_failures"] == 0, res["findings"]
+
+
+def test_facet_and_reference_can_be_combined(survey_csv, faceted_csv, tmp_path):
+    """THE BUG: `--facet ... --reference ...` silently produced an UNSTYLED figure.
+
+    The facet path ran before the reference was even loaded, and `run_facet` never accepted style
+    parameters -- so the command reported success while ignoring an argument the user passed. That
+    is this project's class-A defect (a control that looks present and does nothing) in the CLI.
+    """
+    base = tmp_path / "ref"
+    assert _run([str(survey_csv), "--out", str(base), "--columns", "1"]).returncode == 0
+
+    out = tmp_path / "combo"
+    cp = _run([str(faceted_csv), "--out", str(out),
+               "--facet", "condition", "--value", "value",
+               "--reference", str(tmp_path / "ref.pdf")])
+    assert cp.returncode == 0, cp.stdout[-3000:] + cp.stderr[-2000:]
+    # the style step MUST appear in the operator trace, or the argument was ignored
+    assert "style.profile" in cp.stdout, (
+        "the reference was accepted but never applied; the trace shows no style step:\n"
+        + cp.stdout[-2000:])
+    assert "reference style:" in cp.stdout
+    assert "4 panels" in cp.stdout
+    assert "RESULT: compliant" in cp.stdout
+
+
+def test_a_bad_reference_is_reported_not_ignored(survey_csv, tmp_path):
+    """A missing reference must fail loudly, not silently fall back to the default style."""
+    cp = _run([str(survey_csv), "--out", str(tmp_path / "x"),
+               "--reference", str(tmp_path / "nope.pdf")])
+    assert cp.returncode != 0
+    combined = cp.stdout + cp.stderr
+    assert "cannot read reference" in combined, combined[-800:]
+
+
+def test_every_declared_cli_argument_is_actually_read():
+    """A flag that promises something and does nothing is this project's class-A defect.
+
+    Found by asking the question systematically: `--quiet` was declared and never read. Two more
+    were worse -- `--reference` was accepted by the facet path and silently ignored, producing an
+    UNSTYLED figure while reporting success.
+    """
+    import re
+    src = CLI.read_text(encoding="utf-8")
+    declared = set(re.findall(r'ap\.add_argument\("--([\w-]+)"', src))
+    declared |= set(re.findall(r'ap\.add_argument\("(csv)"', src))
+    assert declared, "no arguments found; the scan is looking at the wrong file"
+    unread = []
+    for arg in sorted(declared):
+        attr = arg.replace("-", "_")
+        if f"args.{attr}" not in src:
+            unread.append(arg)
+    assert not unread, (
+        f"these CLI arguments are declared but never read, so they do nothing: {unread}")
+
+
+def test_quiet_actually_suppresses_output(survey_csv, tmp_path):
+    cp = _run([str(survey_csv), "--out", str(tmp_path / "q"), "--quiet"])
+    assert cp.returncode == 0, cp.stdout[-1500:] + cp.stderr[-1000:]
+    assert cp.stdout.strip() == "", f"--quiet still printed:\n{cp.stdout[:600]}"
+
+
+def test_a_drawer_valueerror_is_a_refusal_not_a_crash(tmp_path):
+    """`FAILED` tells a researcher the tool broke; `REFUSED` tells them the table cannot be drawn."""
+    path = tmp_path / "tiny.csv"
+    pd.DataFrame({"a": [1, 2, 3], "b": [4, 5, 6]}).to_csv(path, index=False)
+    cp = _run([str(path), "--out", str(tmp_path / "t")])
+    combined = cp.stdout + cp.stderr
+    assert "Traceback" not in combined, "a refusal must not produce a traceback"
+    if cp.returncode != 0:
+        assert "REFUSED" in combined or "compliant" in combined, combined[-1200:]

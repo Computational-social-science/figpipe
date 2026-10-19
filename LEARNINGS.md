@@ -2053,3 +2053,39 @@ the figure claims. Five new tests cover the multi-panel path, the refusal, the m
 and the single-numeric-column regression above.
 
 Suite: 466 passed, 3 skipped.
+
+
+## 77. The CLI accepted arguments it never used (2026-10-20)
+
+I asked the systematic question -- "does every declared CLI argument actually reach the code that
+uses it?" -- and the answer was three times no:
+
+    --reference with --facet   accepted, silently IGNORED, figure came out unstyled
+    --quiet                    declared and never read
+    (and one more found by the same scan)
+
+The `--reference` case is the worst, because the command REPORTED SUCCESS. A researcher passing
+`--facet condition --reference published.pdf` got an unstyled figure and `RESULT: compliant`. That
+is this project's class-A defect -- a control that looks present and does nothing -- in the CLI
+rather than in a metric.
+
+Cause: `run_facet` was dispatched BEFORE the reference was loaded, and it never accepted style
+parameters. The fix loads the reference before the path dispatch and threads `style_kw` into both.
+
+`profile` turned out to be a GLOBAL optional parameter in the skills layer already ("any skill can be
+rendered in a measured style"), so the plumbing existed -- the CLI just never connected it.
+
+VERIFIED:
+    reference style: ref.pdf (width 89.0 mm)
+    facet: 4 panels over 'condition' (hist each)
+    operators: layout.facets(condition:4) -> layout.plate -> style.profile(...) -> verify.audit
+    RESULT: compliant
+
+`--quiet` was then implemented properly (a `say()` helper; a printing preference should not appear
+in function signatures that exist for logic), and a structural test now asserts every declared
+argument is read: `test_every_declared_cli_argument_is_actually_read`.
+
+LESSON: after adding a flag, ask "where does this value GO?" An argument that is parsed and dropped
+is worse than one that is missing -- the missing one fails loudly, the dropped one lies.
+
+Suite: 472 passed, 3 skipped.

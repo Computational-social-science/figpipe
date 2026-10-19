@@ -55,6 +55,18 @@ COLUMN_WIDTHS = {"1": 89.0, "2": 183.0}
 COLUMNS_ENUM = {"1": 1.0, "2": 2.0}
 
 
+#: Set by --quiet. A module-level flag rather than threading a parameter through every helper:
+#: the flag governs PRINTING only, and a printing preference should not appear in function
+#: signatures that exist for logic.
+QUIET = False
+
+
+def say(*parts) -> None:
+    """Print unless --quiet was passed."""
+    if not QUIET:
+        print(*parts)
+
+
 def read_csv(path: pathlib.Path) -> pd.DataFrame:
     """Read a CSV and report what it found, so a column-name mistake is visible immediately."""
     if not path.is_file():
@@ -65,8 +77,8 @@ def read_csv(path: pathlib.Path) -> pd.DataFrame:
         raise SystemExit(f"  cannot parse {path}: {type(exc).__name__}: {exc}")
     if df.empty:
         raise SystemExit(f"  {path} has no rows")
-    print(f"  data: {len(df)} rows x {len(df.columns)} columns")
-    print(f"  columns: {', '.join(f'{c} ({df[c].dtype})' for c in df.columns)}")
+    say(f"  data: {len(df)} rows x {len(df.columns)} columns")
+    say(f"  columns: {', '.join(f'{c} ({df[c].dtype})' for c in df.columns)}")
     return df
 
 
@@ -82,7 +94,7 @@ def load_reference(path_text: str, page: int):
             prof = styleprofile.StyleProfile.from_image(ref_path)
     except Exception as exc:                       # noqa: BLE001 - surfaced
         raise SystemExit(f"  cannot measure the reference: {type(exc).__name__}: {exc}")
-    print(f"  reference style: {ref_path.name} (width {prof.width_mm} mm)")
+    say(f"  reference style: {ref_path.name} (width {prof.width_mm} mm)")
     return prof
 
 
@@ -93,29 +105,29 @@ def finish(result: dict, width_mm: float) -> int:
     verifying -- and an unverified figure is the defect this project exists to prevent.
     """
     pdf = pathlib.Path(result["pdf"])
-    print(f"  wrote: {pdf.name} and its .png preview")
-    print(f"  panels: {result.get('panels', 1)}")
-    print(f"  operators: {' -> '.join(result['trace'][:6])}")
+    say(f"  wrote: {pdf.name} and its .png preview")
+    say(f"  panels: {result.get('panels', 1)}")
+    say(f"  operators: {' -> '.join(result['trace'][:6])}")
 
     report = audit.audit(str(pdf), expect_width_mm=width_mm, check_overlap=False)
     hard = [f for f in report["findings"]
             if f["check"] in ("font_size", "width", "height", "font_type")]
-    print(f"  audit: width {report.get('width_mm')} mm, "
+    say(f"  audit: width {report.get('width_mm')} mm, "
           f"height {report.get('height_mm')} mm, {len(hard)} hard finding(s)")
     for f in hard:
-        print(f"    ! {f['check']}: {f['detail']}")
+        say(f"    ! {f['check']}: {f['detail']}")
 
     if result.get("hard_failures"):
-        print(f"  the figure has {result['hard_failures']} rendering finding(s):")
+        say(f"  the figure has {result['hard_failures']} rendering finding(s):")
         for f in (result.get("findings") or [])[:5]:
-            print(f"    ! {f.get('check')}: {f.get('detail')}")
+            say(f"    ! {f.get('check')}: {f.get('detail')}")
 
     ok = not hard
-    print(f"  RESULT: {'compliant' if ok else 'NOT compliant'}")
+    say(f"  RESULT: {'compliant' if ok else 'NOT compliant'}")
     return 0 if ok else 1
 
 
-def run_facet(df: pd.DataFrame, args, width_mm: float) -> int:
+def run_facet(df: pd.DataFrame, args, width_mm: float, style_kw: dict | None = None) -> int:
     """One panel per level of a facet column.
 
     This path exists because a research figure is usually several panels and `spec.infer_spec`
@@ -132,22 +144,22 @@ def run_facet(df: pd.DataFrame, args, width_mm: float) -> int:
                          f"columns are: {', '.join(df.columns)}")
     levels = sorted(str(v) for v in pd.unique(df[args.facet]))
     if len(levels) > args.max_panels:
-        print(f"  REFUSED: {args.facet!r} has {len(levels)} levels but --max-panels is "
+        say(f"  REFUSED: {args.facet!r} has {len(levels)} levels but --max-panels is "
               f"{args.max_panels}; raising it deliberately is required because dropping panels "
               f"changes what the figure claims")
         return 2
-    print(f"  facet: {len(levels)} panels over {args.facet!r} ({args.facet_of} each)")
+    say(f"  facet: {len(levels)} panels over {args.facet!r} ({args.facet_of} each)")
     height_mm = args.height if args.height is not None else 60.0
     try:
         result = skills.run("faceted_distribution", df, out_stem=pathlib.Path(args.out),
                             columns=COLUMNS_ENUM[args.columns], height_mm=height_mm,
                             value=args.value, by=args.facet, of=args.facet_of,
-                            max_panels=args.max_panels)
+                            max_panels=args.max_panels, **(style_kw or {}))
     except skills.SkillError as exc:
-        print(f"  REFUSED: {exc}")
+        say(f"  REFUSED: {exc}")
         return 2
     except ValueError as exc:
-        print(f"  REFUSED: this table cannot be faceted this way: {exc}")
+        say(f"  REFUSED: this table cannot be faceted this way: {exc}")
         return 2
     return finish(result, width_mm)
 
@@ -180,17 +192,22 @@ def main(argv=None) -> int:
     ap.add_argument("--quiet", action="store_true")
     args = ap.parse_args(argv)
 
+    global QUIET
+    QUIET = bool(args.quiet)
+
     width_mm = COLUMN_WIDTHS[args.columns]
-    print(f"  target: {width_mm} mm column, Nature submission")
+    say(f"  target: {width_mm} mm column, Nature submission")
 
     df = read_csv(pathlib.Path(args.csv))
 
-    if args.facet:
-        return run_facet(df, args, width_mm)
-
-    style_kw = {}
+    # The reference must be loaded BEFORE the path dispatch, or the facet path cannot see it --
+    # which is how `--facet --reference` once produced an unstyled figure and reported success.
+    style_kw: dict = {}
     if args.reference:
         style_kw["profile"] = load_reference(args.reference, args.page)
+
+    if args.facet:
+        return run_facet(df, args, width_mm, style_kw)
 
     if args.intent:
         if not any([args.label, args.x]):
@@ -201,28 +218,28 @@ def main(argv=None) -> int:
             params.update({"label": args.label, "value": args.value})
         if args.x:
             params.update({"x": args.x, "y": args.y})
-        print(f"  intent: {intent_name} (forced)")
+        say(f"  intent: {intent_name} (forced)")
     else:
         try:
             figure = spec.infer_spec(df)
         except spec.SpecError as exc:
-            print(f"  REFUSED: {exc}")
-            print(f"  the columns are: {', '.join(df.columns)}")
-            print(f"  pass --intent with --label/--value or --x/--y to choose explicitly")
+            say(f"  REFUSED: {exc}")
+            say(f"  the columns are: {', '.join(df.columns)}")
+            say(f"  pass --intent with --label/--value or --x/--y to choose explicitly")
             return 2
         declared = figure.panels[0]
         intent_name = declared.intent
         # `kwargs` IS the column mapping spec resolved -- x/ycols/label/value. Passing an empty
         # dict here once refused every inferred figure for columns spec had already found.
         params = dict(declared.kwargs or {})
-        print(f"  intent: {intent_name} (inferred)")
-        print(f"  why:    {declared.rationale}")
+        say(f"  intent: {intent_name} (inferred)")
+        say(f"  why:    {declared.rationale}")
 
     # ONE map, exported by spec: three copies is three chances to diverge, and they did.
     recipe = spec.recipe_for(intent_name)
     if recipe is None:
-        print(f"  REFUSED: no skill implements intent {intent_name!r}")
-        print(f"  available recipes: {', '.join(sorted(skills.SKILLS))}")
+        say(f"  REFUSED: no skill implements intent {intent_name!r}")
+        say(f"  available recipes: {', '.join(sorted(skills.SKILLS))}")
         return 2
 
     # Pass only the parameters the chosen skill DECLARES. Dropping the rest silently would hide a
@@ -233,7 +250,7 @@ def main(argv=None) -> int:
     dropped = sorted(k for k in params if k not in declared_params)
     usable = {k: v for k, v in params.items() if k in declared_params}
     if dropped:
-        print(f"  note: {recipe} does not take {dropped}; omitted")
+        say(f"  note: {recipe} does not take {dropped}; omitted")
 
     height_mm = args.height if args.height is not None else (width_mm * 0.5)
     stem = pathlib.Path(args.out)
@@ -244,16 +261,16 @@ def main(argv=None) -> int:
                             columns=COLUMNS_ENUM[args.columns],
                             height_mm=height_mm, **style_kw, **usable)
     except skills.SkillError as exc:
-        print(f"  REFUSED: {exc}")
+        say(f"  REFUSED: {exc}")
         return 2
     except ValueError as exc:
         # A ValueError from a drawer means the DATA cannot support this encoding (a hexbin needs
         # 10+ pairs, a matrix needs 2+ columns). That is a refusal, not a crash -- and the user
         # acts on the wording, so it must not say "FAILED".
-        print(f"  REFUSED: this table cannot be drawn as {intent_name!r}: {exc}")
+        say(f"  REFUSED: this table cannot be drawn as {intent_name!r}: {exc}")
         return 2
     except Exception as exc:                       # noqa: BLE001 - surfaced
-        print(f"  FAILED: {type(exc).__name__}: {exc}")
+        say(f"  FAILED: {type(exc).__name__}: {exc}")
         return 2
 
     return finish(result, width_mm)
