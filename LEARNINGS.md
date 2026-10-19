@@ -959,3 +959,33 @@ The report shows "—" with a note explaining exactly why.
 Rule, now stated as a general invariant: **a judged metric must be a function of a fixed task set
 AND a single instrument version.** Freezing the set but not the instrument is the same error one
 level down.
+
+
+## 43. Fixing one metric field left the identical defect one field over (2026-10-19)
+
+Last round I made the SHIPPED anchor single-instrument and left the STYLED anchor untouched. It
+carried the same defect, and it surfaced immediately: after restoring the shipped anchor the loop
+failed with
+
+    regression: benchmark_anchor_distance 0.305 -> 0.316
+
+15 of the styled anchor's 20 tasks were on an older fingerprint. Same family, sixth instance.
+
+Fix, applied symmetrically this time:
+  * `_anchor_single_instrument()` mirrors `_shipped_anchor_single_instrument()`
+  * both all-rows values are recorded but NOT judged; both single-instrument values are judged
+  * `--ids` re-measures exactly the frozen anchor tasks (a targeted refresh), and
+    `ensure_coverage_index()` rebuilds the id -> offset map if it was pruned
+  * `refresh_anchor()` in the loop re-measures the anchor automatically when it is non-comparable,
+    and is a no-op when it is -- so the loop heals itself instead of reporting "—" forever
+
+Both anchors are now comparable: styled 0.329, shipped 0.293, 20/20 rows on one instrument each.
+
+LESSON: when a defect is found in a metric, audit EVERY sibling metric in the same commit. Fixing
+one instance and shipping is how the same bug reaches production twice. The generalised invariant,
+now enforced for both anchors: **a judged metric must be a function of a fixed task set AND a single
+instrument version.**
+
+Also learned: the targeted refresh needs the id -> offset index, which had been pruned with the data
+cache. Coverage is a durable fact; it now has its own few-KB index that the pruner never touches and
+a rebuild path if it is lost.
