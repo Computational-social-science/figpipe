@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-20T04:10:52",
+  "run_at": "2026-10-20T04:22:27",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -9,10 +9,10 @@
     "  passed 8, failed 0",
     "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
     "  wrote knowledge\\evolution_report.json",
-    "  lean: tracked 76.2 -> 76.2 MB, worktree 136.0 -> 128.7 MB"
+    "  lean: tracked 76.3 -> 76.3 MB, worktree 131.0 -> 128.8 MB"
   ],
-  "tests_ok": false,
-  "tests_summary": "1 failed, 447 passed, 3 skipped, 1 warning in 281.12s (0:04:41) | FAILED tests/test_mutation.py::test_the_tie_is_not_silently_broken_by_the_inverted_rule",
+  "tests_ok": null,
+  "tests_summary": "pending",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
@@ -606,24 +606,13 @@
     "benchmark_official_improvement": 37.25,
     "statistics_reproduced": 15,
     "knowledge_version": 16,
-    "tests": 447
+    "tests": null
   },
   "capabilities_delta": {
-    "changed": true,
-    "delta": {
-      "tests": {
-        "before": 443,
-        "after": 447
-      }
-    },
+    "changed": false,
+    "delta": {},
     "verdict": {
-      "gains": [
-        {
-          "field": "tests",
-          "before": 443,
-          "after": 447
-        }
-      ],
+      "gains": [],
       "regressions": [],
       "corrections": [],
       "ok": true,
@@ -641,7 +630,5 @@
       ]
     }
   },
-  "ok": false,
-  "capability_ok": true,
-  "capability_regressions": []
+  "ok": null
 }
