@@ -86,3 +86,30 @@ def test_the_merge_recomputes_every_aggregate():
                 "n_ok", "n_unsupported", "n_error", "by_type"):
         assert f'report["{key}"]' in block, (
             f"the merge does not recompute {key!r}; a slice would overwrite it with the slice's value")
+
+
+def test_the_task_list_is_order_stable():
+    """A merge must not reorder the array, or every slice rewrites the whole file.
+
+    `old_tasks - seen + new` appended freshly measured tasks to the END, so a 6-task slice moved
+    six entries and produced a 150-row diff with ZERO content change. That is noise in a history
+    whose whole value is that a diff means something.
+    """
+    data = _load()
+    ids = [t["id"] for t in (data.get("tasks") or [])]
+    if not ids:
+        pytest.skip("no tasks")
+    assert ids == sorted(ids), (
+        "the task list is not sorted by id; a slice will produce a large diff with no content "
+        "change")
+
+
+def test_a_slice_does_not_move_tasks():
+    """Structural: the merge must sort, so re-measured rows stay in place."""
+    src = (ROOT / "scripts" / "bench_plottwin.py").read_text(encoding="utf-8")
+    i = src.find("merged = [t for t in old_tasks")
+    assert i > 0, "the merge block is gone"
+    window = src[i:i + 400]
+    assert ".sort(" in window, (
+        "the merge does not sort the merged list; re-measured tasks will move to the end and "
+        "rewrite the whole array")

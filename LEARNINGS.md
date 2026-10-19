@@ -1831,3 +1831,27 @@ Everything left is small and idiosyncratic rather than systemic, which is the di
 structural check made.
 
 Suite: 435 passed, 3 skipped.
+
+
+## 71. A merge that reorders is a diff generator (2026-10-20)
+
+The scheduled slice kept staging a modified `plottwin_report.json`. Checking whether the content had
+changed: **zero tasks differed**, the task SET was identical, and only the ARRAY ORDER differed.
+
+    merged = [t for t in old_tasks if id not in seen] + report["tasks"]
+
+Freshly measured tasks were appended to the END, so a 6-task slice moved six entries and produced a
+diff over all 150 rows -- with no content change at all. Every scheduled run therefore staged a
+150-row change that meant nothing, in a history whose entire value is that a diff means something.
+
+Fix: sort the merged list by id. A re-measured task now rewrites six lines in place.
+
+This is the third "noise commit" defect, and the mildest:
+    * 49 of 80 commits said "no knowledge change"          (fixed: no-op commits suppressed)
+    * a 6-task slice erased failures/unsupported_types      (fixed: recompute every aggregate)
+    * a 6-task slice rewrote the array order                (fixed: order-stable merge)
+
+The common shape: **a routine operation produced a diff that did not correspond to a change.** A
+commit history is a measurement instrument too, and it was reporting motion that was not there.
+
+Suite: 436 passed, 3 skipped.

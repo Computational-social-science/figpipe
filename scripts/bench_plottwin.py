@@ -1171,7 +1171,11 @@ def _run(args) -> int:
             old = {}
         seen = {t["id"] for t in report["tasks"]}
         old_tasks = old.get("tasks") or []
+        # ORDER-STABLE MERGE. Sort by id after merging, so a slice that re-measures six tasks
+        # rewrites six entries in place instead of moving them to the end. Verified: before this,
+        # a 6-task slice produced a 150-row diff with zero content change.
         merged = [t for t in old_tasks if t.get("id") not in seen] + report["tasks"]
+        merged.sort(key=lambda t: str(t.get("id")))
         ok_all = [t for t in merged if t.get("status") == "ok"]
         uns = [t for t in merged if t.get("status") == "unsupported"]
         report["tasks"] = merged

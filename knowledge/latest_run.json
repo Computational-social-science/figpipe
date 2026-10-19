@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-20T01:55:47",
+  "run_at": "2026-10-20T03:35:16",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -9,10 +9,10 @@
     "  passed 8, failed 0",
     "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
     "  wrote knowledge\\evolution_report.json",
-    "  lean: tracked 76.0 -> 76.0 MB, worktree 133.1 -> 128.4 MB"
+    "  lean: tracked 76.1 -> 76.1 MB, worktree 130.1 -> 128.6 MB"
   ],
   "tests_ok": true,
-  "tests_summary": "426 passed, 3 skipped, 1 warning in 205.02s (0:03:25)",
+  "tests_summary": "436 passed, 3 skipped, 1 warning in 205.43s (0:03:25)",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
@@ -137,7 +137,7 @@
     "tasks": 6,
     "code": 0,
     "tail": [
-      "    type Box/Violin     ok 1/1   d=0.169 base=0.446 delta=0.277 errors=0",
+      "    type Box/Violin     ok 1/1   d=0.166 base=0.449 delta=0.283 errors=0",
       "    type Distribution   ok 4/4   d=0.225 base=0.248 delta=0.024 errors=0",
       "    type Heatmap        ok 1/1   d=0.428 base=0.547 delta=0.119 errors=0",
       "  wrote E:\\2026-AI4S\\figpipe\\corpus\\e2e\\plottwin_report.json"
@@ -599,7 +599,7 @@
     "benchmark_ok": 139,
     "benchmark_infrastructure_failures": 0,
     "benchmark_success_rate": 1.0,
-    "benchmark_mean_distance": 0.312,
+    "benchmark_mean_distance": 0.313,
     "benchmark_anchor_single": 0.355,
     "benchmark_anchor_distance": 0.355,
     "benchmark_shipped_anchor_single": 0.296,
@@ -609,13 +609,28 @@
     "benchmark_official_improvement": 37.25,
     "statistics_reproduced": 15,
     "knowledge_version": 16,
-    "tests": 426
+    "tests": 436
   },
   "capabilities_delta": {
-    "changed": false,
-    "delta": {},
+    "changed": true,
+    "delta": {
+      "benchmark_mean_distance": {
+        "before": 0.312,
+        "after": 0.313
+      },
+      "tests": {
+        "before": 426,
+        "after": 436
+      }
+    },
     "verdict": {
-      "gains": [],
+      "gains": [
+        {
+          "field": "tests",
+          "before": 426,
+          "after": 436
+        }
+      ],
       "regressions": [],
       "corrections": [],
       "ok": true,
