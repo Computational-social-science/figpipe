@@ -206,6 +206,39 @@ def capability_delta(previous: dict, current: dict) -> dict:
                         "judged_fields": sorted(CAPABILITY_DIRECTION)}}
 
 
+def refresh_anchor() -> dict:
+    """Re-measure the frozen shipped anchor when its rows are on mixed instruments.
+
+    WHY: a judged metric must be a function of a fixed task set AND one instrument version. After a
+    change to the measurement code the anchor becomes non-comparable and reports None, which is
+    correct but leaves the loop blind. Re-measuring just the 20 anchor tasks restores comparability
+    at a bounded cost (20 renders, not a full pool walk).
+    """
+    import json as _json
+    report = ROOT / "corpus" / "e2e" / "plottwin_report.json"
+    try:
+        data = _json.loads(report.read_text(encoding="utf-8"))
+    except (OSError, _json.JSONDecodeError):
+        return {"ran": False, "reason": "report unreadable"}
+    single = data.get("benchmark_shipped_anchor_single") or {}
+    if single.get("comparable"):
+        return {"ran": False, "reason": "already comparable"}
+    anchor_file = ROOT / "knowledge" / "benchmark_shipped_anchor.json"
+    try:
+        ids = _json.loads(anchor_file.read_text(encoding="utf-8"))["ids"]
+    except (OSError, KeyError, _json.JSONDecodeError):
+        return {"ran": False, "reason": "anchor file unreadable"}
+    script = ROOT / "scripts" / "bench_plottwin.py"
+    try:
+        p = subprocess.run([sys.executable, str(script), "--ids", ",".join(ids), "--merge"],
+                           cwd=ROOT, capture_output=True, text=True,
+                           encoding="utf-8", errors="replace", timeout=1800)
+    except (OSError, subprocess.SubprocessError) as exc:
+        return {"ran": False, "reason": f"{type(exc).__name__}: {exc}"}
+    tail = (p.stdout or p.stderr or "").strip().splitlines()
+    return {"ran": True, "tasks": len(ids), "code": p.returncode, "tail": tail[-3:]}
+
+
 def benchmark_slice(tasks: int = 6) -> dict:
     """Run a small, rotating PlotTwin-Bench slice and record the outcome.
 
@@ -376,7 +409,9 @@ def main(argv: list[str]) -> int:
     except (OSError, json.JSONDecodeError):
         previous_caps = {}
     bench_run = {"ran": False, "reason": "dry run"}
+    anchor_run = {"ran": False, "reason": "dry run"}
     if not dry and "--skip-benchmark" not in argv:
+        anchor_run = refresh_anchor()
         bench_run = benchmark_slice()
     caps = capability_snapshot()
     before = snapshot()
@@ -436,6 +471,7 @@ def main(argv: list[str]) -> int:
             "regressed": sum(1 for r in after["rules"] if r["confidence"] == "regressed"),
         },
         "benchmark_slice": bench_run,
+        "anchor_refresh": anchor_run,
         "capabilities": caps,
         "capabilities_delta": capability_delta(previous_caps, caps),
         "ok": None,                # patched in after the suite runs

@@ -401,3 +401,48 @@ def test_a_metric_mixing_instruments_is_not_comparable():
         assert "benchmark_shipped_anchor_single" in cron.CAPABILITY_DIRECTION
         # the mixed all-rows value must never be judged
         assert "benchmark_shipped_anchor_distance" not in cron.CAPABILITY_DIRECTION
+
+
+def test_the_anchor_can_be_restored_to_one_instrument():
+    """A non-comparable anchor must be fixable, not merely reported.
+
+    `--ids` re-measures exactly the frozen anchor tasks. Without it the only options were scanning
+    whole chart types (more work, no guarantee of covering the anchor) or accepting a permanent
+    "—". The coverage index maps id -> offset, and it must survive cache pruning.
+    """
+    import sys
+    sys.path.insert(0, str(ROOT / "scripts"))
+    try:
+        import bench_plottwin as bench
+    except Exception:                    # pragma: no cover
+        pytest.skip("benchmark harness unavailable")
+    cov = bench._read_coverage()
+    if not cov:
+        pytest.skip("coverage index empty in this checkout")
+    assert all(isinstance(k, int) for k in list(cov)[:5])
+    assert all(isinstance(v, str) for v in list(cov.values())[:5])
+    # every anchor id must be locatable, or the targeted refresh cannot work
+    import json
+    anchor = json.loads((ROOT / "knowledge" / "benchmark_shipped_anchor.json")
+                        .read_text(encoding="utf-8"))["ids"]
+    by_id = {task_id: off for off, task_id in cov.items()}
+    missing = [a for a in anchor if a not in by_id]
+    assert not missing, f"anchor tasks not locatable: {missing[:3]}"
+
+
+def test_refresh_anchor_is_a_no_op_when_already_comparable():
+    """The loop must not re-measure 20 tasks every six hours for nothing."""
+    if cron is None:
+        import pytest
+        pytest.skip("cron_run unavailable")
+    import json
+    report = ROOT / "corpus" / "e2e" / "plottwin_report.json"
+    if not report.is_file():
+        pytest.skip("report absent")
+    single = (json.loads(report.read_text(encoding="utf-8"))
+              .get("benchmark_shipped_anchor_single") or {})
+    if not single.get("comparable"):
+        pytest.skip("anchor currently non-comparable; nothing to assert")
+    out = cron.refresh_anchor()
+    assert out["ran"] is False
+    assert "already comparable" in out["reason"]

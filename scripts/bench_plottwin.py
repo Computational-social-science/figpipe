@@ -861,6 +861,33 @@ def next_uncovered_offset(tasks: int, report_path=None) -> int:
     return 0
 
 
+def ensure_coverage_index() -> int:
+    """Rebuild the id -> offset index if it is missing or incomplete.
+
+    WHY: the index is derived from the report and the pool, and it is cheap (a few KB). When it was
+    pruned along with the data cache, `--ids` could not locate a single anchor task. Coverage is a
+    durable fact and must not depend on a prunable store.
+    """
+    report_ids = measured_ids()
+    if not report_ids:
+        return 0
+    have = {v for v in _read_coverage().values()}
+    missing = report_ids - have
+    if not missing:
+        return 0
+    added = 0
+    for off in range(POOL):
+        try:
+            row = fetch_row(off)
+        except Exception:                       # noqa: BLE001 - offline is not fatal
+            continue
+        if row.get("id") in missing:
+            added += 1
+        if len(have) + added >= len(report_ids):
+            break
+    return added
+
+
 def backfill_coverage() -> int:
     """Rebuild the coverage index from the report and whatever cache remains.
 
@@ -896,6 +923,8 @@ def main(argv=None) -> int:
     ap.add_argument("--merge", action="store_true",
                     help="merge into the existing report instead of replacing it")
     ap.add_argument("--types", default="", help="comma list, e.g. Line,Distribution,Scatter")
+    ap.add_argument("--ids", default="",
+                    help="comma list of task ids to re-measure (targeted refresh, e.g. an anchor)")
     ap.add_argument("--scan", action="store_true",
                     help="with --types: walk the WHOLE pool and measure every task of those "
                          "types, so a fixed operator is re-measured everywhere at once")
@@ -906,7 +935,20 @@ def main(argv=None) -> int:
     # that is removed at the end; the metric report (the actual deliverable) stays in the repo.
     out_dir = pathlib.Path(tempfile.mkdtemp(prefix="figpipe-bench-"))
     tasks = []
-    if args.scan and wanted:
+    if args.ids:
+        # TARGETED REFRESH. A frozen anchor needs the SAME tasks re-measured after a change to the
+        # measurement code; scanning whole chart types re-measures far more than necessary and
+        # still may not cover the anchor. The coverage index maps id -> offset, so the exact tasks
+        # can be fetched.
+        wanted_ids = {t.strip() for t in args.ids.split(",") if t.strip()}
+        by_id = {task_id: off for off, task_id in _read_coverage().items()}
+        for task_id in sorted(wanted_ids):
+            off = by_id.get(task_id)
+            if off is None:
+                print(f"  ! no offset recorded for {task_id}; skipping")
+                continue
+            tasks.append(fetch_row(off))
+    elif args.scan and wanted:
         # a type-wide re-measurement: the old rows must be replaced wherever they came from, and
         # --limit now bounds the number of MATCHING tasks rather than a window of offsets
         for off in range(POOL):
