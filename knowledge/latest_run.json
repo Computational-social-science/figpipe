@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-20T03:59:18",
+  "run_at": "2026-10-20T04:08:31",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -9,19 +9,16 @@
     "  passed 8, failed 0",
     "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
     "  wrote knowledge\\evolution_report.json",
-    "  lean: tracked 76.1 -> 76.1 MB, worktree 133.4 -> 128.7 MB"
+    "  lean: tracked 76.2 -> 76.2 MB, worktree 130.6 -> 127.7 MB"
   ],
-  "tests_ok": true,
-  "tests_summary": "443 passed, 3 skipped, 1 warning in 205.97s (0:03:25)",
+  "tests_ok": false,
+  "tests_summary": "1 failed, 447 passed, 3 skipped, 1 warning in 250.32s (0:04:10) | FAILED tests/test_scheduling.py::test_run_history_is_committed_not_just_written",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
   "published": {
     "pushed": false,
-    "withheld": [],
-    "blocked_deletions": [],
-    "skipped": true,
-    "reason": "no knowledge change: the run record stays uncommitted for the next run"
+    "reason": "not yet published"
   },
   "check_results": {
     "L01": {
@@ -609,22 +606,22 @@
     "benchmark_official_improvement": 37.25,
     "statistics_reproduced": 15,
     "knowledge_version": 16,
-    "tests": 443
+    "tests": 447
   },
   "capabilities_delta": {
     "changed": true,
     "delta": {
       "tests": {
-        "before": 438,
-        "after": 443
+        "before": 443,
+        "after": 447
       }
     },
     "verdict": {
       "gains": [
         {
           "field": "tests",
-          "before": 438,
-          "after": 443
+          "before": 443,
+          "after": 447
         }
       ],
       "regressions": [],
@@ -644,8 +641,7 @@
       ]
     }
   },
-  "ok": true,
+  "ok": false,
   "capability_ok": true,
-  "capability_regressions": [],
-  "publish_note": "The publish outcome is recorded after the commit that carries this run, so it describes the push triggered by this run; the file's own commit is made by the next scheduled run."
+  "capability_regressions": []
 }

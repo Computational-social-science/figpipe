@@ -43,9 +43,15 @@ function Write-Log([string]$text) {
         Out-File -FilePath $log -Append -Encoding utf8
 }
 
+#: The pattern that identifies a running evolution loop. Overridable so a TEST can point it at a
+#: script name that is certainly not running, which is the only way to exercise the DEAD branch
+#: while the real loop is alive. Without this the guard's failure path is untestable, and an
+#: untestable failure path is a control that looks present and does nothing.
+$LOOP_PATTERN = if ($env:FIGPIPE_LOOP_PATTERN) { $env:FIGPIPE_LOOP_PATTERN } else { 'loop\.ps1' }
+
 function Get-LoopProcesses {
     Get-CimInstance Win32_Process -Filter "Name='powershell.exe' OR Name='pwsh.exe'" |
-        Where-Object { $_.CommandLine -and $_.CommandLine -match 'loop\.ps1' }
+        Where-Object { $_.CommandLine -and $_.CommandLine -match $LOOP_PATTERN }
 }
 
 $problems = @()

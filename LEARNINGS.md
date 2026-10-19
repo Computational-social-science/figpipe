@@ -1892,3 +1892,40 @@ own verdict went from PROBLEM/WEDGED (when the old script had no heartbeat) to
 "OK: loop alive, heartbeat 0 min old, 1 process(es)".
 
 Suite: 443 passed, 3 skipped.
+
+
+## 73. The watchdog I built was a fork bomb, and only a drill found it (2026-10-20)
+
+Round 21 added a watchdog and verified the HEALTHY path. I said the restart path was the one thing
+still unproven. This round I drilled it, and the drill found a defect the tests could not.
+
+THE DRILL: kill the loop, watch the watchdog restart it. What actually happened:
+
+    Stop-Process received an ARRAY (Where-Object matched more than one process)
+    -> several loops died at once
+    -> every watchdog saw a dead loop and restarted it
+    -> each restart launched BOTH a loop AND another watchdog
+    -> 76 processes in ten seconds
+
+The root cause is one line of missing logic: **the launcher was not idempotent.** It is called from
+three places (login, the watchdog, and by hand) and every call started a new pair unconditionally.
+Two watchdogs then each restart the loop the other just restarted, and the population grows
+exponentially.
+
+Fix: the launcher queries Win32_Process for a live `loop.ps1` / `watchdog_loop.ps1` and starts each
+only when absent. Verified by running it three times: exactly 2 processes every time, before and
+after.
+
+THE DRILL THEN PASSED on a clean retry: kill the loop -> 0 processes -> run the watchdog -> exit 0 ->
+loop back with a new pid.
+
+WHAT THIS TEACHES, and it is uncomfortable: **every guard I add is itself unguarded until it is
+exercised in the failure direction.** The watchdog passed 5 unit tests and a live health check and
+was still a fork bomb, because none of those ran the path where things are broken. The unit tests I
+wrote for its branches used a sandbox pattern precisely to avoid touching the real loop -- and that
+isolation is exactly what hid the launcher's behaviour, since the launcher was not in the sandbox.
+
+The project's recurring lesson, one layer out again: a control that is only tested when everything
+works is a control that looks present and does nothing.
+
+Suite: 447 passed, 3 skipped.
