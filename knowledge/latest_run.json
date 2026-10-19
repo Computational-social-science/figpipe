@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-19T13:33:19",
+  "run_at": "2026-10-19T13:38:54",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -9,39 +9,16 @@
     "  passed 8, failed 0",
     "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
     "  wrote knowledge\\evolution_report.json",
-    "  lean: tracked 75.5 -> 75.5 MB, worktree 123.1 -> 123.0 MB"
+    "  lean: tracked 75.5 -> 75.5 MB, worktree 120.9 -> 120.9 MB"
   ],
-  "tests_ok": true,
-  "tests_summary": "311 passed, 2 skipped, 1 warning in 76.30s (0:01:16)",
+  "tests_ok": false,
+  "tests_summary": "1 failed, 310 passed, 2 skipped, 1 warning in 80.97s (0:01:20)",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
   "published": {
-    "pushed": true,
-    "steps": [
-      {
-        "cmd": "git add -A",
-        "code": 0,
-        "tail": [
-          "warning: in the working copy of 'scripts/audit_verifiers.py', LF will be replaced by CRLF the next time Git touches it"
-        ]
-      },
-      {
-        "cmd": "git -c user.name=figpipe-bot",
-        "code": 0,
-        "tail": [
-          " create mode 100644 tests/test_verifiers.py"
-        ]
-      },
-      {
-        "cmd": "git push origin",
-        "code": 0,
-        "tail": [
-          "   914f7b0..33005a3  main -> main"
-        ]
-      }
-    ],
-    "withheld": []
+    "pushed": false,
+    "reason": "not yet published"
   },
   "check_results": {
     "L01": {
@@ -152,12 +129,20 @@
     "regressed": 0
   },
   "benchmark_slice": {
-    "ran": false,
-    "reason": "dry run"
+    "ran": true,
+    "offset": 0,
+    "tasks": 6,
+    "code": 0,
+    "tail": [
+      "    type Box/Violin     ok 1/1   d=0.169 base=0.446 delta=0.277 errors=0",
+      "    type Distribution   ok 4/4   d=0.225 base=0.248 delta=0.024 errors=0",
+      "    type Heatmap        ok 1/1   d=0.428 base=0.547 delta=0.119 errors=0",
+      "  wrote E:\\2026-AI4S\\figpipe\\corpus\\e2e\\plottwin_report.json"
+    ]
   },
   "anchor_refresh": {
     "ran": false,
-    "reason": "dry run"
+    "reason": "both anchors already comparable"
   },
   "capabilities": {
     "skills": 16,
@@ -175,27 +160,27 @@
     "benchmark_official_improvement": 37.25,
     "statistics_reproduced": 15,
     "knowledge_version": 16,
-    "tests": 311
+    "tests": 310
   },
   "capabilities_delta": {
     "changed": true,
     "delta": {
       "tests": {
-        "before": 308,
-        "after": 311
+        "before": 311,
+        "after": 310
       }
     },
     "verdict": {
-      "gains": [
+      "gains": [],
+      "regressions": [
         {
           "field": "tests",
-          "before": 308,
-          "after": 311
+          "before": 311,
+          "after": 310
         }
       ],
-      "regressions": [],
       "corrections": [],
-      "ok": true,
+      "ok": false,
       "judged_fields": [
         "benchmark_anchor_single",
         "benchmark_official_code_score",
@@ -210,8 +195,14 @@
       ]
     }
   },
-  "ok": true,
-  "capability_ok": true,
-  "capability_regressions": [],
-  "publish_note": "The publish outcome is recorded after the commit that carries this run, so it describes the push triggered by this run; the file's own commit is made by the next scheduled run."
+  "ok": false,
+  "capability_ok": false,
+  "capability_regressions": [
+    {
+      "field": "tests",
+      "before": 311,
+      "after": 310
+    }
+  ],
+  "publish_note": "capability regression detected; record kept but the run exits non-zero (re-run with --accept-capability-regression to accept)"
 }
