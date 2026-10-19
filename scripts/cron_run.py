@@ -332,8 +332,18 @@ def run_tests() -> tuple[bool, str]:
     py = sys.executable
     p = subprocess.run([py, "-m", "pytest", "tests/", "-q"], cwd=ROOT,
                        capture_output=True, text=True, encoding="utf-8", errors="replace")
-    tail = (p.stdout or p.stderr).strip().splitlines()
-    return p.returncode == 0, (tail[-1] if tail else "")
+    out = (p.stdout or "") + (p.stderr or "")
+    tail = out.strip().splitlines()
+    if p.returncode == 0:
+        return True, (tail[-1] if tail else "")
+    # A SCHEDULED FAILURE MUST NAME WHAT FAILED. Keeping only the last line made the run record say
+    # "1 failed, 310 passed" with no way to know which test -- the failure was undiagnosable
+    # without re-running the whole suite. Collect the FAILED/ERROR lines and the short summary.
+    failures = [ln.strip() for ln in tail
+                if ln.startswith("FAILED") or ln.startswith("ERROR")]
+    summary = tail[-1] if tail else ""
+    detail = "; ".join(failures[:6])
+    return False, (f"{summary} | {detail}" if detail else summary)
 
 
 #: Tracked paths a scheduled commit must never DELETE on its own.

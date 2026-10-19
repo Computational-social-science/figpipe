@@ -460,3 +460,21 @@ def test_refresh_heals_BOTH_anchors_not_just_one():
         if out["ran"]:
             assert "stale_anchors" in out
             assert set(out["stale_anchors"]) <= {"shipped", "styled"}
+
+
+def test_a_scheduled_failure_names_the_failing_test():
+    """A run record that says "1 failed" without naming the test is undiagnosable.
+
+    run_tests() kept only the LAST line of pytest output, so the scheduled run on 2026-10-19
+    recorded "1 failed, 310 passed" and the identity of the failing test was lost -- it had to be
+    found by re-running the whole suite by hand. The capture now includes the FAILED lines.
+    """
+    if cron is None:
+        pytest.skip("cron_run unavailable")
+    import inspect
+    src = inspect.getsource(cron.run_tests)
+    assert "FAILED" in src, "run_tests() must capture the FAILED lines"
+    assert "failures" in src
+    # and it must not be the old last-line-only behaviour
+    assert "tail[-1] if tail else \"\"" not in src.replace(" ", ""), (
+        "run_tests() still returns only the last line")
