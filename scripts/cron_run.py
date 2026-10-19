@@ -113,6 +113,8 @@ def capability_snapshot() -> dict:
         # contents (93.53) while the dedicated pass measures the whole pool honestly (70.59).
         # Two numbers for one concept is how a metric stops being trusted.
         "benchmark_official_code_score": _official_pass_score(),
+        # the referent: points above the naive baseline, on the same task count
+        "benchmark_official_improvement": _official_improvement(),
         "statistics_reproduced": (seed.get("self_check") or {}).get("statistics_recorded"),
         "knowledge_version": kb.get("version"),
         "tests": None,             # patched in after the suite runs
@@ -146,6 +148,7 @@ CAPABILITY_DIRECTION = {
     # NOTE: benchmark_anchor_distance (all rows) is recorded but NOT judged, for the same reason as
     # the shipped anchor: it can mix rows measured by different fingerprints.
     "benchmark_official_code_score": +1,
+    "benchmark_official_improvement": +1,
     "benchmark_shipped_anchor_single": -1,
     # NOTE: benchmark_shipped_anchor_distance (all rows) is recorded but NOT judged: it can mix
     # rows measured by different fingerprints, so a code change moves it without a capability
@@ -172,6 +175,29 @@ def _official_pass_score():
     if summary.get("style_source") != "image":
         return None
     return summary.get("mean_score")
+
+
+def _official_improvement():
+    """Points above the naive baseline -- the referent that makes the score a claim.
+
+    A raw score supports no claim on its own. This is the number a report should quote, and it is
+    only defined when BOTH the baseline and the pipeline were measured on the same task count.
+    """
+    def _read(name):
+        try:
+            return json.loads((ROOT / "corpus" / "e2e" / name)
+                              .read_text(encoding="utf-8"))["summary"]
+        except (OSError, json.JSONDecodeError, KeyError):
+            return {}
+
+    base, pipe = _read("official_scores_naive.json"), _read("official_scores.json")
+    if not base or not pipe:
+        return None
+    if base.get("n_scored") != pipe.get("n_scored"):
+        return None
+    if base.get("mean_score") is None or pipe.get("mean_score") is None:
+        return None
+    return round(pipe["mean_score"] - base["mean_score"], 2)
 
 
 def capability_delta(previous: dict, current: dict) -> dict:

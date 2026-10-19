@@ -989,3 +989,35 @@ instrument version.**
 Also learned: the targeted refresh needs the id -> offset index, which had been pruned with the data
 cache. Coverage is a durable fact; it now has its own few-KB index that the pruner never touches and
 a rebuild path if it is lost.
+
+
+## 44. 75.41 was a number without a referent (2026-10-19)
+
+For two rounds the project reported "official code channel 75.41 / 100" and treated it as progress.
+It was not evidence of anything: with no baseline, the number can neither support nor refute a
+claim of beating anyone. A score is only a claim when it is stated against a referent.
+
+Three points are now measured on the SAME 149 tasks with the benchmark's own scorer:
+
+    baseline  38.16   matplotlib defaults + figpipe's compliance floor
+    pipeline  75.41   style inferred from the reference IMAGE (the benchmark's premise)
+    ceiling  100.00   style copied from the reference CODE (a tautology)
+
+**Improvement over baseline: +37.25 points, 97.6% relative.** The remaining 24.59 points to the
+ceiling are the dimensions a raster cannot recover (tick_direction, serif, background, linewidth).
+
+Per dimension (baseline -> pipeline):
+    palette        0.002 -> 0.648   (+0.646)   <- the dominant gain
+    grid           0.000 -> 0.829   (+0.829)   <- the other dominant gain
+    figure_aspect  0.480 -> 0.869   (+0.389)
+    spines_removed 0.874 -> 0.965   (+0.091)
+    linewidth      0.574 -> 0.574   (+0.000)   <- unchanged: undetermined from pixels
+    legend_frame   1.000 -> 1.000   (+0.000)
+    tick_direction / serif / background         <- 0.0 both: not recoverable from a raster
+
+The `comparison()` helper returns all three points together and a test asserts the ordering
+baseline < pipeline < ceiling AND that all three cover the same task count. A single number can no
+longer be quoted without its referents.
+
+LESSON: "improved" is a relation, not a property. Every metric in this report now needs a baseline
+in the same table, or it is decoration.

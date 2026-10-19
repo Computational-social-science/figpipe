@@ -251,3 +251,33 @@ def test_an_undetermined_linewidth_is_not_guessed():
     style = codegen.style_from_image_profile(prof)
     assert style["linewidth"] is None
     assert "linewidth" in style["undetermined_dimensions"]
+
+
+def test_the_claim_has_a_baseline_and_a_ceiling():
+    """A score with no referent supports no claim.
+
+    75.41 alone cannot say whether the pipeline beats anything. The three measured points must
+    exist together: baseline (matplotlib defaults), pipeline (image-inferred), ceiling (code-copied).
+    """
+    import sys
+    sys.path.insert(0, str(ROOT / "scripts"))
+    try:
+        import score_official as so
+    except Exception:                    # pragma: no cover
+        pytest.skip("scoring script unavailable")
+    cmp = so.comparison()
+    for label in ("baseline", "pipeline", "ceiling"):
+        assert label in cmp
+        if cmp[label] is None:
+            pytest.skip(f"{label} not measured yet")
+        assert cmp[label]["mean"] is not None
+        assert cmp[label]["n"] >= 5
+    # the ordering must be baseline < pipeline < ceiling, or the "improvement" is not an improvement
+    assert cmp["baseline"]["mean"] < cmp["pipeline"]["mean"] < cmp["ceiling"]["mean"]
+    assert cmp["improvement"]["absolute"] > 0
+    # the three must be measured on the SAME task count, or the comparison is meaningless
+    assert cmp["baseline"]["n"] == cmp["pipeline"]["n"] == cmp["ceiling"]["n"]
+    # and each must declare where its style came from
+    assert cmp["baseline"]["source"] == "naive"
+    assert cmp["pipeline"]["source"] == "image"
+    assert cmp["ceiling"]["source"] == "code"

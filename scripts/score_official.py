@@ -47,6 +47,7 @@ import bench_plottwin as bench                       # noqa: E402
 #: result with the tautological ceiling -- a measurement-instrument defect of the usual kind.
 OUT_IMAGE = ROOT / "corpus" / "e2e" / "official_scores.json"
 OUT_CODE = ROOT / "corpus" / "e2e" / "official_scores_code.json"
+OUT_NAIVE = ROOT / "corpus" / "e2e" / "official_scores_naive.json"
 
 
 def score_one(row: dict, *, source: str = "image") -> dict:
@@ -59,7 +60,11 @@ def score_one(row: dict, *, source: str = "image") -> dict:
     if not ref_code:
         rec.update({"status": "unscored", "reason": "task carries no reference_code"})
         return rec
-    if source == "code":
+    if source == "naive":
+        # BASELINE: a competent-but-unstyled pipeline -- matplotlib defaults with figpipe's
+        # compliance floor. This is what a claim of "beating the baseline" must be measured against.
+        style = codegen.naive_style()
+    elif source == "code":
         # TAUTOLOGY MODE. The reference code is part of the task record, so reading its style and
         # emitting the same style is legal -- but it measures "can the emitter copy a spec", not
         # "can the pipeline infer a style". Kept only as a ceiling/upper bound.
@@ -170,14 +175,38 @@ def _reasons(records: list[dict]) -> dict:
     return dict(sorted(counts.items(), key=lambda kv: -kv[1]))
 
 
+def comparison() -> dict:
+    """The three measured points: baseline, pipeline, ceiling.
+
+    A score with no referent supports no claim. This function exists so any report can state all
+    three together and the improvement is explicit rather than implied.
+    """
+    out = {}
+    for label, path in (("baseline", OUT_NAIVE), ("pipeline", OUT_IMAGE), ("ceiling", OUT_CODE)):
+        try:
+            summary = json.loads(path.read_text(encoding="utf-8"))["summary"]
+        except (OSError, ValueError, KeyError):
+            out[label] = None
+            continue
+        out[label] = {"mean": summary.get("mean_score"), "n": summary.get("n_scored"),
+                      "source": summary.get("style_source")}
+    base, pipe = out.get("baseline"), out.get("pipeline")
+    if base and pipe and base["mean"] and pipe["mean"] is not None:
+        delta = round(pipe["mean"] - base["mean"], 2)
+        out["improvement"] = {"absolute": delta,
+                              "relative_pct": round(100.0 * delta / base["mean"], 1)}
+    return out
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--limit", type=int, default=150)
     ap.add_argument("--offset", type=int, default=0)
     ap.add_argument("--types", default="")
-    ap.add_argument("--source", choices=["image", "code"], default="image",
+    ap.add_argument("--source", choices=["image", "code", "naive", "ceiling"], default="image",
                     help="where the candidate's style comes from: 'image' (honest, the benchmark "
-                         "premise) or 'code' (tautological ceiling, kept for comparison)")
+                         "premise), 'code' (style copied from the reference code -- a ceiling), or "
+                         "'naive' (matplotlib defaults -- the BASELINE a claim must beat)")
     args = ap.parse_args(argv)
     wanted = {t.strip() for t in args.types.split(",") if t.strip()}
 
@@ -196,7 +225,8 @@ def main(argv=None) -> int:
             print(f"  ... {len(records)} tasks processed")
 
     summary = summarise(records, args.source)
-    out = OUT_IMAGE if args.source == "image" else OUT_CODE
+    out = {"image": OUT_IMAGE, "code": OUT_CODE, "naive": OUT_NAIVE,
+           "ceiling": OUT_CODE}[args.source]
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps({"summary": summary, "records": records},
                               indent=2, ensure_ascii=False) + "\n", encoding="utf-8")

@@ -79,8 +79,8 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
 <body>
 <div class="top">
   <b>FigPipeline · Research Figure Pipeline</b>
-  <div class="meta"><span>commit ba4b8ba</span><span>branch main</span>
-  <span>knowledge v16</span><span>generated 2026-10-19 10:04</span></div>
+  <div class="meta"><span>commit 7b80dea</span><span>branch main</span>
+  <span>knowledge v16</span><span>generated 2026-10-19 10:18</span></div>
 </div>
 <div class="wrap">
 
@@ -90,7 +90,7 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
   artefacts: every number can be recomputed by a script, and every deliverable can be opened and
   checked. It tracks progress, exposes the evidence, and records what is not finished yet.</p>
   <div class="pills">
-    <span class="pill">tests 292 passed</span>
+    <span class="pill">tests 293 passed</span>
     <span class="pill">statistics reproduced: 15</span>
     <span class="pill">benchmark tasks 141/150</span>
     <span class="pill">skills 16 · operators 21</span>
@@ -105,7 +105,7 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
   <div class="kpi "><div class="kpi-v">75.41</div><div class="kpi-l">OFFICIAL code channel</div><div class="kpi-s">PlotTwin-Bench deviation-defect-v1 (35% weight); vision not run</div></div>
   <div class="kpi "><div class="kpi-v">0</div><div class="kpi-l">Semantic violations</div><div class="kpi-s">figures whose printed claims contradict their data</div></div>
   <div class="kpi "><div class="kpi-v">16 / 21</div><div class="kpi-l">Skills / classic operators</div><div class="kpi-s">global verification floor on every recipe</div></div>
-  <div class="kpi "><div class="kpi-v">292</div><div class="kpi-l">Automated tests</div><div class="kpi-s">negative controls and contract tests</div></div>
+  <div class="kpi "><div class="kpi-v">293</div><div class="kpi-l">Automated tests</div><div class="kpi-s">negative controls and contract tests</div></div>
   <div class="kpi "><div class="kpi-v">75.2 MB</div><div class="kpi-l">Repository size</div><div class="kpi-s">lean budget ≤ 80 MB</div></div>
 </div>
 
@@ -1023,7 +1023,7 @@ imitate.</p>
   <p class="tag">Showing the 9 tasks where style transfer hurt most, the 9 where it helped most, and 4 classified failures, out of 150 measured; the full per-task table is in <code>corpus/e2e/plottwin_report.json</code>.</p>
 </div>
 <div class="okbox" style="margin-top:14px"><b>Deciding beats always transferring.</b> Over the 119 tasks measured with the decision in place, the shipped figure averages <b>0.251</b> style distance, versus 0.277 for always-styled and 0.357 for never styling. The decision picked the styled candidate 114 times and the plain one 5 times, using only the reference (an input, not the answer key).</div>
-<div class="okbox"><b>Official code channel (style inferred from the reference IMAGE): 75.41 / 100</b> over 149 tasks (min 0.0, max 100.0). This is the benchmark's own deterministic channel <code>deviation-defect-v1</code>, worth 35% of the official score; the remaining 65% is a vision channel this project does not run, so <b>no combined score is claimed</b>. Style is inferred from the reference <b>picture</b> — the benchmark's actual premise — not from its code. For comparison, extracting the style from the shipped <code>reference_code</code> scores 100.0 — that is a <b>ceiling, not a capability</b>: the task record contains the reference code, so copying its features scores 100 by construction.</div>
+<div class="okbox"><b>Official code channel (style inferred from the reference IMAGE): 75.41 / 100</b> over 149 tasks (min 0.0, max 100.0). This is the benchmark's own deterministic channel <code>deviation-defect-v1</code>, worth 35% of the official score; the remaining 65% is a vision channel this project does not run, so <b>no combined score is claimed</b>. Style is inferred from the reference <b>picture</b> — the benchmark's actual premise — not from its code. <b>Baseline (matplotlib defaults with the compliance floor): 38.16</b>, so the pipeline is <b>+37.25 points</b> (97.6% relative) better than doing nothing beyond compliance. For comparison, extracting the style from the shipped <code>reference_code</code> scores 100.0 — that is a <b>ceiling, not a capability</b>: the task record contains the reference code, so copying its features scores 100 by construction.</div>
 
 <div class="note"><b>Measurement freshness:</b> 38 of 141 executed tasks
 were measured with the current rendering code (fingerprint
@@ -1035,6 +1035,7 @@ to the shared style/layout layer; a stale row can make a fix look like a regress
 by <code>figpipe/semantics.py</code>: the printed r must match the data's r, no drawn point may fall
 outside the axes, and the axis labels must be the ones the panel claims. Semantic violations in this
 run: <b>0</b>.</div>
+<h3 style="margin-top:20px">Official scorer: baseline, pipeline, ceiling</h3><table><thead><tr><th>Configuration</th><th>Mean / 100</th><th>What it means</th></tr></thead><tbody><tr><td>Baseline — matplotlib defaults + compliance floor</td><td class="num"><b>38.16</b></td><td class="tag">what a competent pipeline does without style inference</td></tr><tr><td>figpipe — style inferred from the reference IMAGE</td><td class="num"><b>75.41</b></td><td class="tag">the benchmark&#x27;s premise: a picture, not the code</td></tr><tr><td>Ceiling — style copied from the reference CODE</td><td class="num"><b>100.0</b></td><td class="tag">tautology: the task record ships the code, so this scores 100 by construction</td></tr></tbody></table><div class="okbox"><b>Improvement over baseline: +37.25 points (97.6% relative)</b>, measured on the benchmark's own <code>deviation-defect-v1</code> code channel over 149 tasks. The ceiling is shown so the remaining gap is visible rather than implied.</div>
 <h3 style="margin-top:20px">Official channel by dimension (worst first)</h3><p class="tag">This is the work queue: the official code channel averages the scored dimensions, so a dimension near 0 costs every task that activates it.</p><table><thead><tr><th>Dimension</th><th>Tasks</th><th>Mean / 1</th><th></th></tr></thead><tbody><tr><td><code>tick_direction</code></td><td class="num">4</td><td class="num">0.0</td><td><div class="bar" style="margin:0"><i class="hold" style="width:2%"></i></div></td></tr><tr><td><code>serif</code></td><td class="num">6</td><td class="num">0.0</td><td><div class="bar" style="margin:0"><i class="hold" style="width:2%"></i></div></td></tr><tr><td><code>background</code></td><td class="num">2</td><td class="num">0.0</td><td><div class="bar" style="margin:0"><i class="hold" style="width:2%"></i></div></td></tr><tr><td><code>linewidth</code></td><td class="num">127</td><td class="num">0.574</td><td><div class="bar" style="margin:0"><i class="hold" style="width:57%"></i></div></td></tr><tr><td><code>palette</code></td><td class="num">131</td><td class="num">0.648</td><td><div class="bar" style="margin:0"><i class="hold" style="width:64%"></i></div></td></tr><tr><td><code>grid</code></td><td class="num">111</td><td class="num">0.829</td><td><div class="bar" style="margin:0"><i class="done" style="width:82%"></i></div></td></tr><tr><td><code>figure_aspect</code></td><td class="num">118</td><td class="num">0.869</td><td><div class="bar" style="margin:0"><i class="done" style="width:86%"></i></div></td></tr><tr><td><code>spines_removed</code></td><td class="num">53</td><td class="num">0.965</td><td><div class="bar" style="margin:0"><i class="done" style="width:96%"></i></div></td></tr><tr><td><code>legend_frame</code></td><td class="num">75</td><td class="num">1.0</td><td><div class="bar" style="margin:0"><i class="done" style="width:100%"></i></div></td></tr></tbody></table>
 <h3 style="margin-top:20px">Official code channel by chart type (image-inferred style)</h3><table><thead><tr><th>Chart type</th><th>Scored tasks</th><th>Official mean / 100</th></tr></thead><tbody><tr><td>3D</td><td class="num">7</td><td class="num">45.52</td></tr><tr><td>Bar</td><td class="num">18</td><td class="num">81.65</td></tr><tr><td>Box/Violin</td><td class="num">16</td><td class="num">73.46</td></tr><tr><td>Composite</td><td class="num">3</td><td class="num">66.11</td></tr><tr><td>Distribution</td><td class="num">17</td><td class="num">81.93</td></tr><tr><td>Field 2D</td><td class="num">15</td><td class="num">76.64</td></tr><tr><td>Heatmap</td><td class="num">13</td><td class="num">80.11</td></tr><tr><td>Line</td><td class="num">20</td><td class="num">77.93</td></tr><tr><td>Network/Tree</td><td class="num">2</td><td class="num">57.5</td></tr><tr><td>Polar/Radial</td><td class="num">13</td><td class="num">70.2</td></tr><tr><td>Scatter</td><td class="num">16</td><td class="num">74.81</td></tr><tr><td>Std-band</td><td class="num">9</td><td class="num">78.51</td></tr></tbody></table>
 <h3 style="margin-top:20px">By chart type</h3>
@@ -1109,6 +1110,6 @@ recorded as such; the loop fails when a judged capability field gets worse.</p>
   in this repository, with no external dependencies. PlotTwin-Bench reference images and target
   data are cached locally and never redistributed (CC BY-NC 4.0); StartLux-Decision weights are
   CC BY-NC 4.0 and called through a separate service, not vendored into this repository.</div>
-  <div style="margin-top:6px">commit ba4b8ba · generated 2026-10-19 10:04 · tests 292</div>
+  <div style="margin-top:6px">commit 7b80dea · generated 2026-10-19 10:18 · tests 293</div>
 </footer>
 </div></body></html>

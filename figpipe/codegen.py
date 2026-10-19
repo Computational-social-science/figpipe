@@ -87,6 +87,17 @@ def _style_lines(lw: float = 0.8, *, spines_removed: tuple = ("top", "right"),
     return lines
 
 
+def naive_style() -> dict:
+    """The BASELINE style: matplotlib defaults with figpipe's compliance floor.
+
+    This exists so a score can be stated as an improvement over something. Without a baseline,
+    "75.41" is a number with no referent -- it cannot support or refute a claim of beating anyone.
+    """
+    return {"palette": [], "background": None, "figure_aspect": None, "grid": None,
+            "spines_removed": None, "tick_direction": None, "serif": None,
+            "legend_frame": None, "linewidth": None, "inferred_from": "naive"}
+
+
 def _style_from_rc(rc: dict | None) -> dict:
     """Turn rcParams into the explicit style CALLS the official scorer looks for."""
     if not rc:

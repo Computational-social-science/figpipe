@@ -131,6 +131,51 @@ def _shipped_kpi(bench) -> str:
     return bench.get("benchmark_shipped_anchor_distance") or "—"
 
 
+def _baseline_pool() -> dict:
+    """The naive baseline: matplotlib defaults with figpipe's compliance floor."""
+    path = ROOT / "corpus" / "e2e" / "official_scores_naive.json"
+    if not path.is_file():
+        return {}
+    try:
+        return json.loads(path.read_text(encoding="utf-8")).get("summary", {})
+    except (OSError, ValueError):
+        return {}
+
+
+def _three_point_table() -> str:
+    """Baseline / pipeline / ceiling on the benchmark's own scorer.
+
+    A single number cannot support a claim; this table is the smallest honest presentation.
+    """
+    base, pipe = _baseline_pool(), _official_pool("image")
+    ceil = _official_pool("code")
+    if not (base and pipe):
+        return ""
+    rows = [
+        ("Baseline — matplotlib defaults + compliance floor", base.get("mean_score"),
+         "what a competent pipeline does without style inference"),
+        ("figpipe — style inferred from the reference IMAGE", pipe.get("mean_score"),
+         "the benchmark's premise: a picture, not the code"),
+        ("Ceiling — style copied from the reference CODE", ceil.get("mean_score"),
+         "tautology: the task record ships the code, so this scores 100 by construction"),
+    ]
+    body = "".join(
+        f'<tr><td>{esc(label)}</td><td class="num"><b>{esc(val)}</b></td>'
+        f'<td class="tag">{esc(note)}</td></tr>' for label, val, note in rows)
+    delta = None
+    if base.get("mean_score") is not None and pipe.get("mean_score") is not None:
+        d = round(pipe["mean_score"] - base["mean_score"], 2)
+        rel = round(100.0 * d / base["mean_score"], 1) if base["mean_score"] else None
+        delta = (f'<div class="okbox"><b>Improvement over baseline: +{d} points'
+                 + (f' ({rel}% relative)' if rel is not None else '') +
+                 f'</b>, measured on the benchmark\'s own <code>deviation-defect-v1</code> code '
+                 f'channel over {pipe.get("n_scored")} tasks. The ceiling is shown so the '
+                 f'remaining gap is visible rather than implied.</div>')
+    return ('<h3 style="margin-top:20px">Official scorer: baseline, pipeline, ceiling</h3>'
+            f'<table><thead><tr><th>Configuration</th><th>Mean / 100</th><th>What it means</th>'
+            f'</tr></thead><tbody>{body}</tbody></table>{delta or ""}')
+
+
 def _official_pool(source: str = "image") -> dict:
     """The pool-wide official score from the dedicated pass, by style source.
 
@@ -180,6 +225,16 @@ def _official_type_table(pool) -> str:
 def _official_block(oc) -> str:
     if not oc or not oc.get("n_scored"):
         return ""
+    base = _baseline_pool()
+    base_txt = ""
+    if base.get("mean_score") is not None and oc.get("mean_score") is not None:
+        delta = round(oc["mean_score"] - base["mean_score"], 2)
+        rel = round(100.0 * delta / base["mean_score"], 1) if base["mean_score"] else None
+        base_txt = (f' <b>Baseline (matplotlib defaults with the compliance floor): '
+                    f'{base["mean_score"]}</b>, so the pipeline is '
+                    f'<b>+{delta} points</b>'
+                    + (f' ({rel}% relative)' if rel is not None else '') +
+                    f' better than doing nothing beyond compliance.')
     ceiling = _official_pool("code")
     ceiling_txt = ""
     if ceiling.get("n_scored"):
@@ -194,7 +249,7 @@ def _official_block(oc) -> str:
             f'<code>deviation-defect-v1</code>, worth 35% of the official score; the remaining 65% '
             f'is a vision channel this project does not run, so <b>no combined score is '
             f'claimed</b>. Style is inferred from the reference <b>picture</b> — the benchmark\'s '
-            f'actual premise — not from its code.{ceiling_txt}</div>')
+            f'actual premise — not from its code.{base_txt}{ceiling_txt}</div>')
 
 
 def _regression_banner(latest: dict) -> str:
@@ -666,6 +721,7 @@ to the shared style/layout layer; a stale row can make a fix look like a regress
 by <code>figpipe/semantics.py</code>: the printed r must match the data's r, no drawn point may fall
 outside the axes, and the axis labels must be the ones the panel claims. Semantic violations in this
 run: <b>{bench.get("semantic_violations", 0)}</b>.</div>
+{_three_point_table()}
 {_dimension_table(_official_pool())}
 {_official_type_table(_official_pool())}
 <h3 style="margin-top:20px">By chart type</h3>

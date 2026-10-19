@@ -1,0 +1,3162 @@
+{
+  "summary": {
+    "channel": "code_deviation",
+    "scorer": "plottwin_scorer deviation-defect-v1 (vendored, unmodified)",
+    "weight_upstream": 0.35,
+    "note": "OFFICIAL deterministic channel only. The 0.65 vision channel is not run, so this is NOT the combined score.",
+    "style_source": "naive",
+    "n_tasks": 150,
+    "n_scored": 149,
+    "n_unscored": 0,
+    "n_unavailable": 1,
+    "mean_score": 38.16,
+    "min_score": 0.0,
+    "max_score": 72.97,
+    "by_type": {
+      "3D": {
+        "n": 7,
+        "mean": 25.33
+      },
+      "Bar": {
+        "n": 18,
+        "mean": 43.21
+      },
+      "Box/Violin": {
+        "n": 16,
+        "mean": 46.51
+      },
+      "Composite": {
+        "n": 3,
+        "mean": 38.34
+      },
+      "Distribution": {
+        "n": 17,
+        "mean": 36.33
+      },
+      "Field 2D": {
+        "n": 15,
+        "mean": 29.13
+      },
+      "Heatmap": {
+        "n": 13,
+        "mean": 40.57
+      },
+      "Line": {
+        "n": 20,
+        "mean": 40.02
+      },
+      "Network/Tree": {
+        "n": 2,
+        "mean": 15.11
+      },
+      "Polar/Radial": {
+        "n": 13,
+        "mean": 42.63
+      },
+      "Scatter": {
+        "n": 16,
+        "mean": 38.01
+      },
+      "Std-band": {
+        "n": 9,
+        "mean": 32.99
+      }
+    },
+    "by_dimension": {
+      "grid": {
+        "n": 111,
+        "mean": 0.0
+      },
+      "tick_direction": {
+        "n": 4,
+        "mean": 0.0
+      },
+      "serif": {
+        "n": 6,
+        "mean": 0.0
+      },
+      "background": {
+        "n": 2,
+        "mean": 0.0
+      },
+      "palette": {
+        "n": 131,
+        "mean": 0.002
+      },
+      "figure_aspect": {
+        "n": 118,
+        "mean": 0.48
+      },
+      "linewidth": {
+        "n": 127,
+        "mean": 0.574
+      },
+      "spines_removed": {
+        "n": 53,
+        "mean": 0.874
+      },
+      "legend_frame": {
+        "n": 75,
+        "mean": 1.0
+      }
+    },
+    "unscored_reasons": {
+      "reference_has_no_activated_dimensions": 1
+    }
+  },
+  "records": [
+    {
+      "id": "PMC11502666",
+      "chart": "Distribution",
+      "status": "scored",
+      "score": 0.0,
+      "n_activated": 2,
+      "scored_dimensions": [
+        "palette",
+        "grid"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "grid": 0.0
+      }
+    },
+    {
+      "id": "PMC11840003",
+      "chart": "Box/Violin",
+      "status": "scored",
+      "score": 13.052800220315422,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.0,
+        "linewidth": 0.5221,
+        "grid": 0.0
+      }
+    },
+    {
+      "id": "PMC12000431",
+      "chart": "Distribution",
+      "status": "scored",
+      "score": 50.0,
+      "n_activated": 2,
+      "scored_dimensions": [
+        "palette",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "PMC12354736",
+      "chart": "Distribution",
+      "status": "scored",
+      "score": 25.0,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.0,
+        "grid": 0.0,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "PMC12504421",
+      "chart": "Heatmap",
+      "status": "scored",
+      "score": 9.876286083219936,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "tick_direction"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.0,
+        "linewidth": 0.4938,
+        "grid": 0.0,
+        "tick_direction": 0.0
+      }
+    },
+    {
+      "id": "PMC12905268",
+      "chart": "Distribution",
+      "status": "scored",
+      "score": 43.79253048230727,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.0,
+        "linewidth": 0.7517,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "PMC13009336",
+      "chart": "Box/Violin",
+      "status": "scored",
+      "score": 68.79253048230727,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "linewidth",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "linewidth": 0.7517,
+        "spines_removed": 1.0,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "PMC13022287",
+      "chart": "Distribution",
+      "status": "scored",
+      "score": 33.23118847216789,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.0,
+        "linewidth": 0.6616,
+        "grid": 0.0,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "PMC13079874",
+      "chart": "Box/Violin",
+      "status": "scored",
+      "score": 40.594028703813976,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.0,
+        "linewidth": 0.6238,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "PMC13106710",
+      "chart": "Heatmap",
+      "status": "scored",
+      "score": 52.530795138749546,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.0,
+        "linewidth": 0.6265,
+        "spines_removed": 1.0,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "PMC13135507",
+      "chart": "Scatter",
+      "status": "scored",
+      "score": 20.884658564582576,
+      "n_activated": 3,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.0,
+        "linewidth": 0.6265
+      }
+    },
+    {
+      "id": "PMC13245775",
+      "chart": "Composite",
+      "status": "scored",
+      "score": 40.0,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.0,
+        "linewidth": 0.0,
+        "spines_removed": 1.0,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "PMC13252719",
+      "chart": "Composite",
+      "status": "scored",
+      "score": 58.34940772749817,
+      "n_activated": 2,
+      "scored_dimensions": [
+        "palette",
+        "linewidth"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.2079,
+        "linewidth": 0.9591
+      }
+    },
+    {
+      "id": "PMC13273070",
+      "chart": "Box/Violin",
+      "status": "scored",
+      "score": 66.66666666666667,
+      "n_activated": 3,
+      "scored_dimensions": [
+        "palette",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "spines_removed": 1.0,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "PMC13286152",
+      "chart": "Composite",
+      "status": "scored",
+      "score": 16.666666666666664,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "spines_removed"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.0,
+        "linewidth": 0.0,
+        "spines_removed": 0.6667
+      }
+    },
+    {
+      "id": "PMC13336770",
+      "chart": "Distribution",
+      "status": "scored",
+      "score": 55.55555555555555,
+      "n_activated": 3,
+      "scored_dimensions": [
+        "palette",
+        "linewidth",
+        "spines_removed"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "linewidth": 1.0,
+        "spines_removed": 0.6667
+      }
+    },
+    {
+      "id": "PMC13342296",
+      "chart": "Distribution",
+      "status": "scored",
+      "score": 46.44211704305585,
+      "n_activated": 3,
+      "scored_dimensions": [
+        "palette",
+        "linewidth",
+        "spines_removed"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "linewidth": 0.8933,
+        "spines_removed": 0.5
+      }
+    },
+    {
+      "id": "PMC13343911",
+      "chart": "Line",
+      "status": "scored",
+      "score": 40.0,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.0,
+        "linewidth": 0.0,
+        "spines_removed": 1.0,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "arxiv-astro-skymap__2412.12637",
+      "chart": "Field 2D",
+      "status": "scored",
+      "score": 18.106282146645974,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "serif"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.0977,
+        "linewidth": 0.6265,
+        "serif": 0.0
+      }
+    },
+    {
+      "id": "arxiv-astro-skymap__2510.17487",
+      "chart": "Std-band",
+      "status": "scored",
+      "score": 0.0,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "grid",
+        "tick_direction",
+        "serif"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "grid": 0.0,
+        "tick_direction": 0.0,
+        "serif": 0.0
+      }
+    },
+    {
+      "id": "arxiv-ml-3d-trajectory__2511.17399",
+      "chart": "Field 2D",
+      "status": "scored",
+      "score": 0.0,
+      "n_activated": 2,
+      "scored_dimensions": [
+        "palette",
+        "linewidth"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "linewidth": 0.0
+      }
+    },
+    {
+      "id": "arxiv-ml-3d-trajectory__2602.22552",
+      "chart": "Field 2D",
+      "status": "scored",
+      "score": 50.0,
+      "n_activated": 2,
+      "scored_dimensions": [
+        "palette",
+        "linewidth"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "linewidth": 1.0
+      }
+    },
+    {
+      "id": "arxiv-ml-bar-line-v2__2511.15055",
+      "chart": "Std-band",
+      "status": "scored",
+      "score": 49.507984376033015,
+      "n_activated": 6,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.4705,
+        "linewidth": 1.0,
+        "grid": 0.0,
+        "spines_removed": 0.5,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "arxiv-ml-bar-line-v2__2605.21125",
+      "chart": "Polar/Radial",
+      "status": "scored",
+      "score": 0.0,
+      "n_activated": 1,
+      "scored_dimensions": [
+        "palette"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0
+      }
+    },
+    {
+      "id": "arxiv-phys-prx-prl__2603.21981",
+      "chart": "Line",
+      "status": "scored",
+      "score": 25.0,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "linewidth",
+        "tick_direction",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "linewidth": 0.0,
+        "tick_direction": 0.0,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "arxiv_2410.15876",
+      "chart": "Std-band",
+      "status": "scored",
+      "score": 26.030394896125117,
+      "n_activated": 3,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "grid"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.7809,
+        "grid": 0.0
+      }
+    },
+    {
+      "id": "arxiv_2502.15132",
+      "chart": "Line",
+      "status": "scored",
+      "score": 0.0,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.0,
+        "linewidth": 0.0,
+        "grid": 0.0
+      }
+    },
+    {
+      "id": "arxiv_2502.17598",
+      "chart": "Heatmap",
+      "status": "scored",
+      "score": 26.51995273186459,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.5387,
+        "linewidth": 0.5221,
+        "grid": 0.0
+      }
+    },
+    {
+      "id": "arxiv_2502.18153",
+      "chart": "3D",
+      "status": "scored",
+      "score": 0.0,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.0,
+        "linewidth": 0.0,
+        "grid": 0.0
+      }
+    },
+    {
+      "id": "arxiv_2505.19527",
+      "chart": "3D",
+      "status": "scored",
+      "score": 0.0,
+      "n_activated": 3,
+      "scored_dimensions": [
+        "palette",
+        "linewidth",
+        "grid"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "linewidth": 0.0,
+        "grid": 0.0
+      }
+    },
+    {
+      "id": "arxiv_2506.14951",
+      "chart": "3D",
+      "status": "scored",
+      "score": 0.0,
+      "n_activated": 2,
+      "scored_dimensions": [
+        "palette",
+        "linewidth"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "linewidth": 0.0
+      }
+    },
+    {
+      "id": "arxiv_2508.01948",
+      "chart": "3D",
+      "status": "scored",
+      "score": 33.333333333333336,
+      "n_activated": 3,
+      "scored_dimensions": [
+        "palette",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "grid": 0.0,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "arxiv_2510.17384",
+      "chart": "Scatter",
+      "status": "scored",
+      "score": 24.75293595179906,
+      "n_activated": 6,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed",
+        "serif"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.8185,
+        "linewidth": 0.0,
+        "grid": 0.0,
+        "spines_removed": 0.6667,
+        "serif": 0.0
+      }
+    },
+    {
+      "id": "arxiv_2512.09767",
+      "chart": "Distribution",
+      "status": "scored",
+      "score": 0.0,
+      "n_activated": 3,
+      "scored_dimensions": [
+        "palette",
+        "linewidth",
+        "serif"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "linewidth": 0.0,
+        "serif": 0.0
+      }
+    },
+    {
+      "id": "arxiv_2512.25023",
+      "chart": "Std-band",
+      "status": "scored",
+      "score": 15.903965382080605,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "serif"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.7952,
+        "linewidth": 0.0,
+        "grid": 0.0,
+        "serif": 0.0
+      }
+    },
+    {
+      "id": "arxiv_2603.04948",
+      "chart": "Std-band",
+      "status": "scored",
+      "score": 45.13505235770364,
+      "n_activated": 3,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "spines_removed"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.3541,
+        "spines_removed": 1.0
+      }
+    },
+    {
+      "id": "arxiv_2603.08660",
+      "chart": "Std-band",
+      "status": "scored",
+      "score": 60.87224803838745,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "spines_removed"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.4349,
+        "linewidth": 1.0,
+        "spines_removed": 1.0
+      }
+    },
+    {
+      "id": "arxiv_2603.17004",
+      "chart": "Line",
+      "status": "scored",
+      "score": 25.0,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "linewidth",
+        "tick_direction",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "linewidth": 0.0,
+        "tick_direction": 0.0,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "arxiv_2603.23889",
+      "chart": "Std-band",
+      "status": "scored",
+      "score": 0.0,
+      "n_activated": 3,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "grid"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.0,
+        "grid": 0.0
+      }
+    },
+    {
+      "id": "arxiv_2604.01093",
+      "chart": "Field 2D",
+      "status": "scored",
+      "score": 29.775450376389188,
+      "n_activated": 3,
+      "scored_dimensions": [
+        "palette",
+        "linewidth",
+        "grid"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "linewidth": 0.8933,
+        "grid": 0.0
+      }
+    },
+    {
+      "id": "arxiv_2604.05237",
+      "chart": "Field 2D",
+      "status": "scored",
+      "score": 0.0,
+      "n_activated": 3,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.0,
+        "linewidth": 0.0
+      }
+    },
+    {
+      "id": "arxiv_2605.14587",
+      "chart": "Heatmap",
+      "status": "scored",
+      "score": 11.88965163624287,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.0,
+        "linewidth": 0.4756,
+        "grid": 0.0
+      }
+    },
+    {
+      "id": "arxiv_2605.16790",
+      "chart": "Line",
+      "status": "scored",
+      "score": 8.74839185625026,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.3499,
+        "linewidth": 0.0,
+        "grid": 0.0
+      }
+    },
+    {
+      "id": "arxiv_2605.22305",
+      "chart": "Distribution",
+      "status": "scored",
+      "score": 19.348325883326485,
+      "n_activated": 2,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.387
+      }
+    },
+    {
+      "id": "arxiv_2605.22455",
+      "chart": "Scatter",
+      "status": "scored",
+      "score": 43.53608044318762,
+      "n_activated": 6,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "serif",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.6531,
+        "linewidth": 0.9591,
+        "grid": 0.0,
+        "serif": 0.0,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "local-reuse__local_picks_top_hepfit_wheel",
+      "chart": "Network/Tree",
+      "status": "scored",
+      "score": 30.22968652028395,
+      "n_activated": 3,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.0,
+        "linewidth": 0.9069
+      }
+    },
+    {
+      "id": "local_gallery_hexbin_joint",
+      "chart": "Scatter",
+      "status": "scored",
+      "score": 33.333333333333336,
+      "n_activated": 3,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.0,
+        "linewidth": 1.0
+      }
+    },
+    {
+      "id": "local_picks_top_cust_graph__24",
+      "chart": "Network/Tree",
+      "status": "scored",
+      "score": 0.0,
+      "n_activated": 3,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.0,
+        "linewidth": 0.0
+      }
+    },
+    {
+      "id": "local_picks_top_scatter__39",
+      "chart": "Scatter",
+      "status": "scored",
+      "score": 11.241507169669788,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.0,
+        "linewidth": 0.4497,
+        "grid": 0.0
+      }
+    },
+    {
+      "id": "local_picks_top_violin__9",
+      "chart": "Box/Violin",
+      "status": "scored",
+      "score": 0.0,
+      "n_activated": 3,
+      "scored_dimensions": [
+        "background",
+        "figure_aspect",
+        "linewidth"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "background": 0.0,
+        "figure_aspect": 0.0,
+        "linewidth": 0.0
+      }
+    },
+    {
+      "id": "Chart2Code_level1_direct_HR_5",
+      "chart": "Scatter",
+      "status": "scored",
+      "score": 57.627307455448474,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.8814,
+        "linewidth": 1.0,
+        "grid": 0.0,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "Chart2Code_level1_direct_combination_57",
+      "chart": "Bar",
+      "status": "scored",
+      "score": 46.126557856967864,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.3994,
+        "linewidth": 0.9069,
+        "grid": 0.0,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "Chart2Code_level1_direct_contour_18",
+      "chart": "Heatmap",
+      "status": "scored",
+      "score": 41.98103247574035,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.7724,
+        "linewidth": 0.9069,
+        "grid": 0.0
+      }
+    },
+    {
+      "id": "Chart2Code_level1_direct_density_11",
+      "chart": "Distribution",
+      "status": "scored",
+      "score": 43.276032429629026,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.7719,
+        "linewidth": 0.9591,
+        "grid": 0.0
+      }
+    },
+    {
+      "id": "Chart2Code_level1_direct_heatmap_3",
+      "chart": "Heatmap",
+      "status": "scored",
+      "score": 41.529256414863475,
+      "n_activated": 3,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.5598,
+        "linewidth": 0.686
+      }
+    },
+    {
+      "id": "Chart2Code_level1_direct_heatmap_7",
+      "chart": "Heatmap",
+      "status": "scored",
+      "score": 21.411275867058254,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.0,
+        "linewidth": 0.8565,
+        "grid": 0.0
+      }
+    },
+    {
+      "id": "Chart2Code_level1_direct_line_39",
+      "chart": "Line",
+      "status": "scored",
+      "score": 22.33158778229189,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.0,
+        "linewidth": 0.8933,
+        "grid": 0.0
+      }
+    },
+    {
+      "id": "Chart2Code_level1_direct_line_8",
+      "chart": "Line",
+      "status": "scored",
+      "score": 59.128159285973474,
+      "n_activated": 6,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.6544,
+        "linewidth": 0.8933,
+        "grid": 0.0,
+        "spines_removed": 1.0,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "Chart2Code_level2_3d_11_v2",
+      "chart": "Scatter",
+      "status": "scored",
+      "score": 37.2931119261,
+      "n_activated": 6,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.0,
+        "linewidth": 0.2376,
+        "grid": 0.0,
+        "spines_removed": 1.0,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "Chart2Code_level2_3d_1_v1__single",
+      "chart": "3D",
+      "status": "scored",
+      "score": 33.333333333333336,
+      "n_activated": 3,
+      "scored_dimensions": [
+        "palette",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "grid": 0.0,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "Chart2Code_level2_3d_2_v3",
+      "chart": "3D",
+      "status": "scored",
+      "score": 49.54962103883861,
+      "n_activated": 6,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.973,
+        "linewidth": 0.0,
+        "grid": 0.0,
+        "spines_removed": 1.0,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "Chart2Code_level2_3d_5_v4",
+      "chart": "Bar",
+      "status": "scored",
+      "score": 46.6547587019529,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.581,
+        "linewidth": 0.7517,
+        "grid": 0.0,
+        "spines_removed": 1.0
+      }
+    },
+    {
+      "id": "Chart2Code_level2_area_3_v3",
+      "chart": "Line",
+      "status": "scored",
+      "score": 28.731400377252026,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.4366,
+        "linewidth": 0.0,
+        "grid": 0.0,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "Chart2Code_level2_bar_10_v4",
+      "chart": "Line",
+      "status": "scored",
+      "score": 58.10327098165752,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.9052,
+        "linewidth": 1.0,
+        "grid": 0.0,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "Chart2Code_level2_bar_22_v4",
+      "chart": "Bar",
+      "status": "scored",
+      "score": 39.51178820380035,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.8425,
+        "linewidth": 0.738,
+        "grid": 0.0
+      }
+    },
+    {
+      "id": "Chart2Code_level2_bar_25_v4",
+      "chart": "Line",
+      "status": "scored",
+      "score": 61.830287729049495,
+      "n_activated": 6,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.7507,
+        "linewidth": 0.9591,
+        "grid": 0.0,
+        "spines_removed": 1.0,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "Chart2Code_level2_box_1_v5",
+      "chart": "Box/Violin",
+      "status": "scored",
+      "score": 25.647538013197504,
+      "n_activated": 3,
+      "scored_dimensions": [
+        "palette",
+        "linewidth",
+        "grid"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "linewidth": 0.7694,
+        "grid": 0.0
+      }
+    },
+    {
+      "id": "Chart2Code_level2_combination_11_v2",
+      "chart": "Std-band",
+      "status": "scored",
+      "score": 50.96848976504137,
+      "n_activated": 6,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.4343,
+        "linewidth": 0.6238,
+        "grid": 0.0,
+        "spines_removed": 1.0,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "Chart2Code_level2_combination_13_v5",
+      "chart": "Line",
+      "status": "scored",
+      "score": 45.44657827938846,
+      "n_activated": 6,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.2771,
+        "linewidth": 0.4497,
+        "grid": 0.0,
+        "spines_removed": 1.0,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "Chart2Code_level2_combination_14_v5",
+      "chart": "Distribution",
+      "status": "scored",
+      "score": 37.99948920883177,
+      "n_activated": 2,
+      "scored_dimensions": [
+        "figure_aspect",
+        "grid"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "figure_aspect": 0.76,
+        "grid": 0.0
+      }
+    },
+    {
+      "id": "Chart2Code_level2_combination_16_v5",
+      "chart": "Box/Violin",
+      "status": "scored",
+      "score": 53.431188588838005,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.8016,
+        "linewidth": 0.87,
+        "grid": 0.0,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "Chart2Code_level2_combination_33_v5",
+      "chart": "Distribution",
+      "status": "scored",
+      "score": 21.326187018695695,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.0663,
+        "linewidth": 0.0,
+        "grid": 0.0,
+        "spines_removed": 1.0
+      }
+    },
+    {
+      "id": "Chart2Code_level2_combination_42_v5",
+      "chart": "Scatter",
+      "status": "scored",
+      "score": 43.560047375547065,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.5515,
+        "linewidth": 0.6265,
+        "grid": 0.0,
+        "spines_removed": 1.0
+      }
+    },
+    {
+      "id": "Chart2Code_level2_combination_44_v3",
+      "chart": "Distribution",
+      "status": "scored",
+      "score": 53.00655013658875,
+      "n_activated": 6,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.7307,
+        "linewidth": 0.4497,
+        "grid": 0.0,
+        "spines_removed": 1.0,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "Chart2Code_level2_contour_14_v1",
+      "chart": "Field 2D",
+      "status": "scored",
+      "score": 23.97781269764635,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.0,
+        "linewidth": 0.9591,
+        "grid": 0.0
+      }
+    },
+    {
+      "id": "Chart2Code_level2_contour_23_v4",
+      "chart": "Field 2D",
+      "status": "scored",
+      "score": 46.40102758336001,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.8969,
+        "linewidth": 0.9591,
+        "grid": 0.0
+      }
+    },
+    {
+      "id": "Chart2Code_level2_contour_25_v2",
+      "chart": "Field 2D",
+      "status": "scored",
+      "score": 20.219663649756487,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "grid",
+        "spines_removed"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.1421,
+        "grid": 0.0,
+        "spines_removed": 0.6667
+      }
+    },
+    {
+      "id": "Chart2Code_level2_contour_25_v3",
+      "chart": "Field 2D",
+      "status": "scored",
+      "score": 22.67226489021296,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.0,
+        "linewidth": 0.9069,
+        "grid": 0.0
+      }
+    },
+    {
+      "id": "Chart2Code_level2_contour_5_v5",
+      "chart": "Field 2D",
+      "status": "scored",
+      "score": 36.28703232807649,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.5582,
+        "linewidth": 0.8933,
+        "grid": 0.0
+      }
+    },
+    {
+      "id": "Chart2Code_level2_density_12_v3",
+      "chart": "Distribution",
+      "status": "scored",
+      "score": 40.0,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "grid",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.0,
+        "grid": 0.0,
+        "spines_removed": 1.0,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "Chart2Code_level2_density_14_v4",
+      "chart": "Line",
+      "status": "scored",
+      "score": 33.81424438650127,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.6907,
+        "linewidth": 0.0,
+        "grid": 0.0,
+        "spines_removed": 1.0
+      }
+    },
+    {
+      "id": "Chart2Code_level2_errorpoint_10_v5",
+      "chart": "Scatter",
+      "status": "scored",
+      "score": 25.647538013197504,
+      "n_activated": 3,
+      "scored_dimensions": [
+        "palette",
+        "linewidth",
+        "grid"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "linewidth": 0.7694,
+        "grid": 0.0
+      }
+    },
+    {
+      "id": "Chart2Code_level2_errorpoint_1_v5",
+      "chart": "Scatter",
+      "status": "scored",
+      "score": 46.87102141074389,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.5741,
+        "linewidth": 0.7694,
+        "grid": 0.0,
+        "spines_removed": 1.0
+      }
+    },
+    {
+      "id": "Chart2Code_level2_errorpoint_5_v5",
+      "chart": "Std-band",
+      "status": "scored",
+      "score": 48.44817659347532,
+      "n_activated": 6,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.0,
+        "linewidth": 0.9069,
+        "grid": 0.0,
+        "spines_removed": 1.0,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "Chart2Code_level2_hist_2_v3",
+      "chart": "Distribution",
+      "status": "scored",
+      "score": 57.9981050249629,
+      "n_activated": 6,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.6234,
+        "linewidth": 0.8565,
+        "grid": 0.0,
+        "spines_removed": 1.0,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "Chart2Code_level2_hist_2_v5",
+      "chart": "Distribution",
+      "status": "scored",
+      "score": 40.0,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "linewidth",
+        "grid",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "linewidth": 0.0,
+        "grid": 0.0,
+        "spines_removed": 1.0,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "Chart2Code_level2_multidiff_1_v1",
+      "chart": "Distribution",
+      "status": "scored",
+      "score": 50.65760300149371,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.6396,
+        "linewidth": 0.8933,
+        "grid": 0.0,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "Chart2Code_level2_multidiff_2_v2__single",
+      "chart": "Field 2D",
+      "status": "scored",
+      "score": 29.775450376389188,
+      "n_activated": 3,
+      "scored_dimensions": [
+        "palette",
+        "linewidth",
+        "grid"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "linewidth": 0.8933,
+        "grid": 0.0
+      }
+    },
+    {
+      "id": "Chart2Code_level2_multidiff_5_v1",
+      "chart": "Line",
+      "status": "scored",
+      "score": 30.282253638614737,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.5141,
+        "linewidth": 0.0,
+        "grid": 0.0,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "Chart2Code_level2_quiver_10_v5",
+      "chart": "Field 2D",
+      "status": "scored",
+      "score": 30.08670915556427,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.5419,
+        "linewidth": 0.6616,
+        "grid": 0.0
+      }
+    },
+    {
+      "id": "Chart2Code_level2_quiver_13_v1",
+      "chart": "Field 2D",
+      "status": "scored",
+      "score": 25.0,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "linewidth",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "linewidth": 0.0,
+        "grid": 0.0,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "Chart2Code_level2_quiver_14_v1",
+      "chart": "Field 2D",
+      "status": "scored",
+      "score": 60.82647179846213,
+      "n_activated": 3,
+      "scored_dimensions": [
+        "palette",
+        "linewidth",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "linewidth": 0.8248,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "Chart2Code_level2_quiver_4_v5",
+      "chart": "Field 2D",
+      "status": "scored",
+      "score": 43.79253048230727,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "linewidth",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "linewidth": 0.7517,
+        "grid": 0.0,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "Chart2Code_level2_radar_10_v2",
+      "chart": "Polar/Radial",
+      "status": "scored",
+      "score": 25.0,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "linewidth",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "linewidth": 0.0,
+        "grid": 0.0,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "Chart2Code_level2_radar_18_v5",
+      "chart": "Bar",
+      "status": "scored",
+      "score": 25.0,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "linewidth",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "linewidth": 0.0,
+        "grid": 0.0,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "Chart2Code_level2_radar_23_v3",
+      "chart": "Polar/Radial",
+      "status": "scored",
+      "score": 28.99320573573583,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.0,
+        "linewidth": 0.4497,
+        "grid": 0.0,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "Chart2Code_level2_radar_26_v3",
+      "chart": "Polar/Radial",
+      "status": "scored",
+      "score": 41.19207813122671,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.6099,
+        "linewidth": 0.4497,
+        "grid": 0.0,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "Chart2Code_level2_radar_35_v4",
+      "chart": "Polar/Radial",
+      "status": "scored",
+      "score": 49.85480460844363,
+      "n_activated": 6,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.9913,
+        "linewidth": 0.0,
+        "grid": 0.0,
+        "spines_removed": 1.0,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "Chart2Code_level2_radar_3_v1",
+      "chart": "Polar/Radial",
+      "status": "scored",
+      "score": 47.57163706551849,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.9289,
+        "linewidth": 0.4497,
+        "grid": 0.0,
+        "spines_removed": 1.0
+      }
+    },
+    {
+      "id": "Chart2Code_level2_radar_3_v3",
+      "chart": "Polar/Radial",
+      "status": "scored",
+      "score": 49.1612332192931,
+      "n_activated": 6,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.9497,
+        "linewidth": 0.0,
+        "grid": 0.0,
+        "spines_removed": 1.0,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "Chart2Code_level2_radar_40_v5",
+      "chart": "Polar/Radial",
+      "status": "scored",
+      "score": 66.66666666666667,
+      "n_activated": 3,
+      "scored_dimensions": [
+        "linewidth",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "linewidth": 1.0,
+        "grid": 0.0,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "Chart2Code_level2_radar_4_v3",
+      "chart": "Polar/Radial",
+      "status": "scored",
+      "score": 44.548548693902475,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.8751,
+        "linewidth": 0.9069,
+        "grid": 0.0
+      }
+    },
+    {
+      "id": "Chart2Code_level2_radar_7_v3",
+      "chart": "Polar/Radial",
+      "status": "scored",
+      "score": 50.358563106529694,
+      "n_activated": 6,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.7311,
+        "linewidth": 0.6238,
+        "grid": 0.0,
+        "spines_removed": 0.6667,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "Chart2Code_level2_radar_9_v4",
+      "chart": "Polar/Radial",
+      "status": "scored",
+      "score": 33.333333333333336,
+      "n_activated": 3,
+      "scored_dimensions": [
+        "palette",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "grid": 0.0,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "Chart2Code_level2_scatter_13_v2",
+      "chart": "Scatter",
+      "status": "scored",
+      "score": 49.94227883927332,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.6407,
+        "linewidth": 0.8565,
+        "grid": 0.0,
+        "spines_removed": 1.0
+      }
+    },
+    {
+      "id": "Chart2Code_level2_scatter_1_v2__single",
+      "chart": "Bar",
+      "status": "scored",
+      "score": 45.84507926395193,
+      "n_activated": 6,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.7507,
+        "linewidth": 0.0,
+        "grid": 0.0,
+        "spines_removed": 1.0,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "Chart2Code_level2_scatter_22_v2__single",
+      "chart": "Scatter",
+      "status": "scored",
+      "score": 35.39511202143465,
+      "n_activated": 3,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.6122,
+        "linewidth": 0.4497
+      }
+    },
+    {
+      "id": "Chart2Code_level2_scatter_22_v3",
+      "chart": "Scatter",
+      "status": "scored",
+      "score": 43.89177193915867,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.8992,
+        "linewidth": 0.8565,
+        "grid": 0.0
+      }
+    },
+    {
+      "id": "Chart2Code_level2_scatter_27_v5",
+      "chart": "Scatter",
+      "status": "scored",
+      "score": 30.34144181266419,
+      "n_activated": 6,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.8205,
+        "linewidth": 0.0,
+        "grid": 0.0,
+        "spines_removed": 0.0,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "Chart2Code_level2_scatter_5_v5",
+      "chart": "Scatter",
+      "status": "scored",
+      "score": 47.524217678403616,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.901,
+        "grid": 0.0,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "Chart2Code_level2_violin_25_v4",
+      "chart": "Box/Violin",
+      "status": "scored",
+      "score": 56.777923048090564,
+      "n_activated": 6,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.957,
+        "linewidth": 0.4497,
+        "grid": 0.0,
+        "spines_removed": 1.0,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "Chart2Code_level3_table20_3_generate",
+      "chart": "Scatter",
+      "status": "scored",
+      "score": 56.2479793351621,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.9055,
+        "linewidth": 0.9069,
+        "grid": 0.0,
+        "spines_removed": 1.0
+      }
+    },
+    {
+      "id": "Chart2NCode_7b87069f5442408286d1a4b0300eae18",
+      "chart": "3D",
+      "status": "scored",
+      "score": 61.063957598824324,
+      "n_activated": 6,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.7706,
+        "linewidth": 0.8933,
+        "grid": 0.0,
+        "spines_removed": 1.0,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "Chart2NCode_ce7b7d946995482f9dd37ddad319cbc2",
+      "chart": "Line",
+      "status": "scored",
+      "score": 38.7761374937699,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.7816,
+        "linewidth": 0.7694,
+        "grid": 0.0
+      }
+    },
+    {
+      "id": "Chart2NCode_f5989e4725654971a32e6c84c0dbdfa5",
+      "chart": "Bar",
+      "status": "scored",
+      "score": 56.832252714231565,
+      "n_activated": 6,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.4099,
+        "linewidth": 1.0,
+        "grid": 0.0,
+        "spines_removed": 1.0,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "ChartNet-sample_01541e58b887ce36",
+      "chart": "Bar",
+      "status": "scored",
+      "score": 51.84476836671878,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.8228,
+        "linewidth": 0.7694,
+        "grid": 0.0,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "ChartNet-sample_11168fb7e30df7c0",
+      "chart": "Box/Violin",
+      "status": "scored",
+      "score": 44.23565350989813,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "figure_aspect": 0.0,
+        "linewidth": 0.7694,
+        "grid": 0.0,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "ChartNet-sample_12f1182db6964e8c",
+      "chart": "Line",
+      "status": "scored",
+      "score": 46.70326081596064,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "grid",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.6685,
+        "grid": 0.0,
+        "spines_removed": 0.6667,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "ChartNet-sample_1acf825b0429ddfd",
+      "chart": "Heatmap",
+      "status": "scored",
+      "score": 42.41917962147072,
+      "n_activated": 1,
+      "scored_dimensions": [
+        "figure_aspect"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "figure_aspect": 0.4242
+      }
+    },
+    {
+      "id": "ChartNet-sample_21db7b1495645e96",
+      "chart": "Bar",
+      "status": "scored",
+      "score": 47.05191552177532,
+      "n_activated": 6,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.7068,
+        "linewidth": 0.4497,
+        "grid": 0.0,
+        "spines_removed": 0.6667,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "ChartNet-sample_251d4b63cae5c39c",
+      "chart": "Box/Violin",
+      "status": "scored",
+      "score": 64.33879077678755,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "figure_aspect": 0.6667,
+        "linewidth": 0.9069,
+        "grid": 0.0,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "ChartNet-sample_27ec276af1be7f88",
+      "chart": "Bar",
+      "status": "scored",
+      "score": 64.88918799433013,
+      "n_activated": 6,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.8934,
+        "linewidth": 1.0,
+        "grid": 0.0,
+        "spines_removed": 1.0,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "ChartNet-sample_3a712400d6efe5ca",
+      "chart": "Line",
+      "status": "scored",
+      "score": 45.46273726103191,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "figure_aspect": 0.8185,
+        "linewidth": 0.0,
+        "grid": 0.0,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "ChartNet-sample_3d0ebd7ea1e10bf3",
+      "chart": "Line",
+      "status": "scored",
+      "score": 50.16718043608506,
+      "n_activated": 6,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.4869,
+        "linewidth": 0.8565,
+        "grid": 0.0,
+        "spines_removed": 0.6667,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "ChartNet-sample_42a8557ef11775e9",
+      "chart": "Bar",
+      "status": "scored",
+      "score": 7.719327197062583,
+      "n_activated": 3,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "grid"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.2316,
+        "grid": 0.0
+      }
+    },
+    {
+      "id": "ChartNet-sample_46826fe4916b7d52",
+      "chart": "Box/Violin",
+      "status": "scored",
+      "score": 68.86255596272588,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "figure_aspect": 0.8612,
+        "linewidth": 0.8933,
+        "grid": 0.0,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "ChartNet-sample_51138e34911000f6",
+      "chart": "Heatmap",
+      "status": "scored",
+      "score": 72.96936505891945,
+      "n_activated": 2,
+      "scored_dimensions": [
+        "figure_aspect",
+        "linewidth"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "figure_aspect": 0.8356,
+        "linewidth": 0.6238
+      }
+    },
+    {
+      "id": "ChartNet-sample_55e97056fbbde5b6__single",
+      "chart": "Bar",
+      "status": "scored",
+      "score": 39.138476425445575,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.7193,
+        "linewidth": 0.2376,
+        "grid": 0.0,
+        "spines_removed": 1.0
+      }
+    },
+    {
+      "id": "ChartNet-sample_575be33996f0155c",
+      "chart": "Bar",
+      "status": "scored",
+      "score": 47.199574357840895,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.36,
+        "linewidth": 1.0,
+        "grid": 0.0,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "ChartNet-sample_5781d64aa8377547",
+      "chart": "Box/Violin",
+      "status": "scored",
+      "score": 34.37784986972527,
+      "n_activated": 3,
+      "scored_dimensions": [
+        "figure_aspect",
+        "linewidth",
+        "grid"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "figure_aspect": 0.7937,
+        "linewidth": 0.2376,
+        "grid": 0.0
+      }
+    },
+    {
+      "id": "ChartNet-sample_5c19f37c2ecba73b",
+      "chart": "Box/Violin",
+      "status": "scored",
+      "score": 57.10761397078955,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "figure_aspect": 0.6605,
+        "linewidth": 0.6238,
+        "grid": 0.0,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "ChartNet-sample_5cf3859f3ce78167",
+      "chart": "Bar",
+      "status": "scored",
+      "score": 45.53220572882421,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "grid",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.6099,
+        "grid": 0.0,
+        "spines_removed": 0.6667,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "ChartNet-sample_5e553d0091325708",
+      "chart": "Polar/Radial",
+      "status": "scored",
+      "score": 58.652479952239936,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.9326,
+        "linewidth": 1.0,
+        "grid": 0.0,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "ChartNet-sample_63115ff12f6710a3",
+      "chart": "Heatmap",
+      "status": "scored",
+      "score": 56.45011667806921,
+      "n_activated": 2,
+      "scored_dimensions": [
+        "figure_aspect",
+        "linewidth"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "figure_aspect": 0.6793,
+        "linewidth": 0.4497
+      }
+    },
+    {
+      "id": "ChartNet-sample_68d34458d8f08a48",
+      "chart": "Box/Violin",
+      "status": "scored",
+      "score": 25.0,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "figure_aspect": 0.0,
+        "linewidth": 0.0,
+        "grid": 0.0,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "ChartNet-sample_7c69a17fd376e251",
+      "chart": "Heatmap",
+      "status": "unavailable",
+      "score": null,
+      "n_activated": 0,
+      "scored_dimensions": [],
+      "unavailable_dimensions": [],
+      "dimension_scores": {},
+      "reason": "reference_has_no_activated_dimensions"
+    },
+    {
+      "id": "ChartNet-sample_82a42a98d7e32b53",
+      "chart": "Heatmap",
+      "status": "scored",
+      "score": 58.10367158053551,
+      "n_activated": 1,
+      "scored_dimensions": [
+        "figure_aspect"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "figure_aspect": 0.581
+      }
+    },
+    {
+      "id": "ChartNet-sample_953bb3ed650d8541",
+      "chart": "Bar",
+      "status": "scored",
+      "score": 28.484753680593418,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.1338,
+        "linewidth": 0.6238,
+        "grid": 0.0,
+        "spines_removed": 0.6667
+      }
+    },
+    {
+      "id": "ChartNet-sample_97a7c092bc6a4a6c",
+      "chart": "Heatmap",
+      "status": "scored",
+      "score": 37.585060964614534,
+      "n_activated": 2,
+      "scored_dimensions": [
+        "figure_aspect",
+        "linewidth"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "figure_aspect": 0.0,
+        "linewidth": 0.7517
+      }
+    },
+    {
+      "id": "ChartNet-sample_9fa23898eda05a63",
+      "chart": "Bar",
+      "status": "scored",
+      "score": 44.23565350989813,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "linewidth",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "linewidth": 0.7694,
+        "grid": 0.0,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "ChartNet-sample_ad3e2f8704f6e1b1__single",
+      "chart": "Bar",
+      "status": "scored",
+      "score": 45.46268378010008,
+      "n_activated": 7,
+      "scored_dimensions": [
+        "palette",
+        "background",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "background": 0.0,
+        "figure_aspect": 0.7463,
+        "linewidth": 0.7694,
+        "grid": 0.0,
+        "spines_removed": 0.6667,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "ChartNet-sample_b07b3f6805a9e3b8",
+      "chart": "Heatmap",
+      "status": "scored",
+      "score": 54.14464060734064,
+      "n_activated": 2,
+      "scored_dimensions": [
+        "figure_aspect",
+        "linewidth"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "figure_aspect": 0.3135,
+        "linewidth": 0.7694
+      }
+    },
+    {
+      "id": "ChartNet-sample_b2578adbadc0d71e",
+      "chart": "Box/Violin",
+      "status": "scored",
+      "score": 61.56920050444796,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "figure_aspect": 0.4628,
+        "linewidth": 1.0,
+        "grid": 0.0,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "ChartNet-sample_bbbf530e6aefa314",
+      "chart": "Bar",
+      "status": "scored",
+      "score": 48.72104722333583,
+      "n_activated": 6,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.4872,
+        "linewidth": 0.7694,
+        "grid": 0.0,
+        "spines_removed": 0.6667,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "ChartNet-sample_c1ec6683e1feea7b",
+      "chart": "Line",
+      "status": "scored",
+      "score": 52.4342610990362,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.7284,
+        "linewidth": 0.8933,
+        "grid": 0.0,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "ChartNet-sample_d1a051ec96a39bf4",
+      "chart": "Box/Violin",
+      "status": "scored",
+      "score": 63.72456137245468,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "figure_aspect": 0.9252,
+        "linewidth": 0.6238,
+        "grid": 0.0,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "ChartNet-sample_d7325ced9dcb3e94",
+      "chart": "Bar",
+      "status": "scored",
+      "score": 47.525777471084425,
+      "n_activated": 5,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.7096,
+        "linewidth": 1.0,
+        "grid": 0.0,
+        "spines_removed": 0.6667
+      }
+    },
+    {
+      "id": "ChartNet-sample_e17ff7b5495b0ee4",
+      "chart": "Polar/Radial",
+      "status": "scored",
+      "score": 58.87245838170109,
+      "n_activated": 6,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.9588,
+        "linewidth": 0.9069,
+        "grid": 0.0,
+        "spines_removed": 0.6667,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "ChartNet-sample_f31f9780b9bd6948",
+      "chart": "Line",
+      "status": "scored",
+      "score": 64.61492297958961,
+      "n_activated": 6,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.9836,
+        "linewidth": 0.8933,
+        "grid": 0.0,
+        "spines_removed": 1.0,
+        "legend_frame": 1.0
+      }
+    },
+    {
+      "id": "ChartNet-sample_f743754444c3a3d9",
+      "chart": "Line",
+      "status": "scored",
+      "score": 63.893361295893946,
+      "n_activated": 6,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid",
+        "spines_removed",
+        "legend_frame"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.0,
+        "figure_aspect": 0.9403,
+        "linewidth": 0.8933,
+        "grid": 0.0,
+        "spines_removed": 1.0,
+        "legend_frame": 1.0
+      }
+    }
+  ]
+}
