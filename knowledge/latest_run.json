@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-19T17:31:12",
+  "run_at": "2026-10-19T17:35:27",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -9,10 +9,10 @@
     "  passed 8, failed 0",
     "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
     "  wrote knowledge\\evolution_report.json",
-    "  lean: tracked 75.8 -> 75.8 MB, worktree 128.1 -> 128.1 MB"
+    "  lean: tracked 75.8 -> 75.8 MB, worktree 132.4 -> 127.6 MB"
   ],
   "tests_ok": true,
-  "tests_summary": "400 passed, 3 skipped, 1 warning in 180.55s (0:03:00)",
+  "tests_summary": "400 passed, 3 skipped, 1 warning in 174.88s (0:02:54)",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
@@ -156,59 +156,13 @@
     "tests": 400
   },
   "capabilities_delta": {
-    "changed": true,
-    "delta": {
-      "benchmark_ok": {
-        "before": 139,
-        "after": 141
-      },
-      "benchmark_infrastructure_failures": {
-        "before": null,
-        "after": 0
-      },
-      "benchmark_success_rate": {
-        "before": 0.986,
-        "after": 1.0
-      },
-      "benchmark_mean_distance": {
-        "before": 0.308,
-        "after": 0.309
-      },
-      "benchmark_shipped_anchor_single": {
-        "before": 0.289,
-        "after": 0.296
-      },
-      "benchmark_shipped_anchor_distance": {
-        "before": 0.289,
-        "after": 0.296
-      },
-      "tests": {
-        "before": 390,
-        "after": 400
-      }
-    },
+    "changed": false,
+    "delta": {},
     "verdict": {
-      "gains": [
-        {
-          "field": "benchmark_success_rate",
-          "before": 0.986,
-          "after": 1.0
-        },
-        {
-          "field": "tests",
-          "before": 390,
-          "after": 400
-        }
-      ],
-      "regressions": [
-        {
-          "field": "benchmark_shipped_anchor_single",
-          "before": 0.289,
-          "after": 0.296
-        }
-      ],
+      "gains": [],
+      "regressions": [],
       "corrections": [],
-      "ok": false,
+      "ok": true,
       "judged_fields": [
         "benchmark_anchor_single",
         "benchmark_official_code_score",
@@ -223,14 +177,7 @@
       ]
     }
   },
-  "ok": false,
-  "capability_ok": false,
-  "capability_regressions": [
-    {
-      "field": "benchmark_shipped_anchor_single",
-      "before": 0.289,
-      "after": 0.296
-    }
-  ],
-  "publish_note": "capability regression detected; record kept but the run exits non-zero (re-run with --accept-capability-regression to accept)"
+  "ok": true,
+  "capability_ok": true,
+  "capability_regressions": []
 }

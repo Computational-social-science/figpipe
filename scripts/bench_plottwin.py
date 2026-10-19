@@ -848,14 +848,24 @@ def _shipped_anchor_single_instrument(tasks) -> dict:
             same.append(t["selected_distance"])
         else:
             other += 1
-    comparable = other == 0 and len(same) >= 5
+    # ALL anchor tasks must be present AND on the current instrument. A missing row (a fetch
+    # failure, an unsupported type) changes the membership of a set whose whole purpose is to be
+    # frozen -- so a partial mean is reported but NEVER judged.
+    expected = len(ids)
+    comparable = other == 0 and len(same) == expected
+    if len(same) < expected:
+        note = (f"incomplete: {len(same)} of {expected} anchor tasks measured; a partial mean is "
+                f"not the anchor, so it is not judged")
+    elif other:
+        note = ("not comparable yet: anchor tasks are still measured by an older fingerprint; "
+                "re-measure them with --scan")
+    else:
+        note = "comparable"
     return {"mean": round(float(np.mean(same)), 3) if (same and comparable) else None,
             "partial_mean": round(float(np.mean(same)), 3) if same else None,
             "n_same_instrument": len(same), "n_other_instrument": other,
-            "comparable": comparable,
-            "note": ("comparable" if comparable else
-                     "not comparable yet: anchor tasks are still measured by an older "
-                     "fingerprint; re-measure them with --scan")}
+            "n_expected": expected,
+            "comparable": comparable, "note": note}
 
 
 def write_report(report: dict, *, allow_shrink: bool = False) -> dict:
@@ -896,13 +906,20 @@ def _anchor_single_instrument(tasks) -> dict:
             same.append(t["distance"])
         else:
             other += 1
-    comparable = other == 0 and len(same) >= 5
+    expected = len(ids)
+    comparable = other == 0 and len(same) == expected
+    if len(same) < expected:
+        note = (f"incomplete: {len(same)} of {expected} anchor tasks measured; a partial mean is "
+                f"not the anchor, so it is not judged")
+    elif other:
+        note = "not comparable yet: anchor tasks are still measured by an older fingerprint"
+    else:
+        note = "comparable"
     return {"mean": round(float(np.mean(same)), 3) if (same and comparable) else None,
             "partial_mean": round(float(np.mean(same)), 3) if same else None,
             "n_same_instrument": len(same), "n_other_instrument": other,
-            "comparable": comparable,
-            "note": ("comparable" if comparable else
-                     "not comparable yet: anchor tasks are still measured by an older fingerprint")}
+            "n_expected": expected,
+            "comparable": comparable, "note": note}
 
 
 #: The benchmark pool size, used to walk every window before repeating one.
