@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-19T08:13:46",
+  "run_at": "2026-10-19T08:16:50",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -12,7 +12,7 @@
     "  lean: tracked 75.1 -> 75.1 MB, worktree 118.1 -> 118.0 MB"
   ],
   "tests_ok": true,
-  "tests_summary": "284 passed, 2 skipped, 1 warning in 56.30s",
+  "tests_summary": "285 passed, 2 skipped, 1 warning in 56.49s",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
@@ -145,36 +145,27 @@
     "benchmark_official_code_score": 70.59,
     "statistics_reproduced": 15,
     "knowledge_version": 16,
-    "tests": 284
+    "tests": 285
   },
   "capabilities_delta": {
     "changed": true,
     "delta": {
-      "benchmark_official_code_score": {
-        "before": 93.53,
-        "after": 70.59
-      },
       "tests": {
-        "before": 282,
-        "after": 284
+        "before": 284,
+        "after": 285
       }
     },
     "verdict": {
       "gains": [
         {
           "field": "tests",
-          "before": 282,
-          "after": 284
+          "before": 284,
+          "after": 285
         }
       ],
-      "regressions": [
-        {
-          "field": "benchmark_official_code_score",
-          "before": 93.53,
-          "after": 70.59
-        }
-      ],
-      "ok": false,
+      "regressions": [],
+      "corrections": [],
+      "ok": true,
       "judged_fields": [
         "benchmark_anchor_distance",
         "benchmark_official_code_score",
@@ -188,14 +179,7 @@
       ]
     }
   },
-  "ok": false,
-  "capability_ok": false,
-  "capability_regressions": [
-    {
-      "field": "benchmark_official_code_score",
-      "before": 93.53,
-      "after": 70.59
-    }
-  ],
-  "publish_note": "capability regression detected; record kept but the run exits non-zero (re-run with --accept-capability-regression to accept)"
+  "ok": true,
+  "capability_ok": true,
+  "capability_regressions": []
 }

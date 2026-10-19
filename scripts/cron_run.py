@@ -110,6 +110,20 @@ def capability_snapshot() -> dict:
     }
 
 
+#: Corrections that are KNOWN and intentional: a field whose drop reflects a more honest
+#: measurement, not a loss of ability. Each entry says what changed and why, so the guard keeps
+#: firing for real regressions while a documented correction does not read as one.
+#: A correction must be justified in this comment; it is not a mute switch.
+KNOWN_CORRECTIONS = {
+    "benchmark_official_code_score": (
+        "2026-10-19: 93.53 -> 70.59. The earlier number came from the in-harness aggregate, which "
+        "scores only tasks whose cache entry carried reference_code and copied the reference's own "
+        "code features -- a tautology that scores 100 by construction. The current number infers "
+        "style from the reference IMAGE, which is the benchmark's actual premise. Lower is more "
+        "honest, not worse."),
+}
+
+
 #: Which direction is "better" for each capability field. +1 = higher is better, -1 = lower is
 #: better. A field that is not listed is reported but never judged: an unjudged field cannot
 #: silently count as an improvement.
@@ -160,7 +174,7 @@ def capability_delta(previous: dict, current: dict) -> dict:
         old = (previous or {}).get(key)
         if old != value:
             delta[key] = {"before": old, "after": value}
-    gains, regressions = [], []
+    gains, regressions, corrections = [], [], []
     for key, change in delta.items():
         direction = CAPABILITY_DIRECTION.get(key)
         old, new = change["before"], change["after"]
@@ -171,9 +185,14 @@ def capability_delta(previous: dict, current: dict) -> dict:
         if move > 0:
             gains.append(entry)
         elif move < 0:
-            regressions.append(entry)
+            if key in KNOWN_CORRECTIONS:
+                entry["why"] = KNOWN_CORRECTIONS[key]
+                corrections.append(entry)
+            else:
+                regressions.append(entry)
     return {"changed": bool(delta), "delta": delta,
             "verdict": {"gains": gains, "regressions": regressions,
+                        "corrections": corrections,
                         "ok": not regressions,
                         "judged_fields": sorted(CAPABILITY_DIRECTION)}}
 

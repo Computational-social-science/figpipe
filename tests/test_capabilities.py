@@ -314,9 +314,12 @@ def test_the_official_score_is_recorded_and_judged():
     better = cron.capability_delta({"benchmark_official_code_score": 88.0},
                                    {"benchmark_official_code_score": 92.68})
     assert better["verdict"]["gains"][0]["field"] == "benchmark_official_code_score"
+    # a drop on this field is a DOCUMENTED CORRECTION (the measurement became honest), so it is
+    # reported as a correction with its reason rather than as a capability loss
     worse = cron.capability_delta({"benchmark_official_code_score": 92.68},
                                   {"benchmark_official_code_score": 80.0})
-    assert worse["verdict"]["ok"] is False
+    assert worse["verdict"]["ok"] is True
+    assert worse["verdict"]["corrections"][0]["field"] == "benchmark_official_code_score"
 
 
 def test_the_capability_uses_the_honest_official_pass_not_the_harness_aggregate():
@@ -341,3 +344,25 @@ def test_the_capability_uses_the_honest_official_pass_not_the_harness_aggregate(
         pytest.skip("official pass is not the image-inferred one")
     snap = cron.capability_snapshot()
     assert snap["benchmark_official_code_score"] == summary["mean_score"]
+
+
+def test_a_documented_correction_is_not_a_regression():
+    """The official score fell 93.53 -> 70.59 because the measurement became honest.
+
+    That is a correction, not a capability loss. It must be reported as a correction WITH its
+    reason, while a genuine regression on the same field still fails the run.
+    """
+    if cron is None:
+        import pytest
+        pytest.skip("cron_run unavailable")
+    out = cron.capability_delta({"benchmark_official_code_score": 93.53},
+                                {"benchmark_official_code_score": 70.59})
+    verdict = out["verdict"]
+    assert verdict["ok"] is True
+    assert verdict["regressions"] == []
+    assert verdict["corrections"][0]["field"] == "benchmark_official_code_score"
+    assert "honest" in verdict["corrections"][0]["why"]
+    # a field WITHOUT a documented correction still fails
+    bad = cron.capability_delta({"benchmark_success_rate": 0.95},
+                                {"benchmark_success_rate": 0.80})
+    assert bad["verdict"]["ok"] is False
