@@ -1094,3 +1094,38 @@ example-driven bug should trigger a systematic sweep over the input space, not a
 sweep is now a test, so the surface cannot silently rot again.
 
 Suite: 295 passed, 2 skipped.
+
+
+## 47. My own fix caused a regression the loop caught within one cycle (2026-10-19)
+
+Last round's `matrix_plate` fix refused any table over 24 rows that could not be pivoted. It guessed
+the pivot keys as "the first two numeric columns", which on one benchmark task were
+`panel_row`/`panel_col` -- bookkeeping with ONE distinct value each. The pivot came out 1x1, the
+skill refused, and a task that had rendered for weeks became an error.
+
+The scheduled run caught it in the very next cycle: `benchmark_tasks 141 -> 140`, one task in
+`error`. Two lessons, both already written down and both violated anyway:
+
+1. **A fix is a change; a change needs the same evidence as the original.** The pivot was never
+   run against the tasks that exercise it before being committed.
+2. **Refusing is only correct when refusal is better than the old behaviour.** Here it was worse:
+   the previous output was imperfect but valid.
+
+Fix: the pivot now SEARCHES for a column pair that actually varies (and a value column distinct from
+both), maximising the resulting grid. If no 2-D reading exists it falls through to drawing the frame
+as-is up to 40 rows, and only refuses beyond that. Re-measured: 141/150 with 0 errors restored.
+
+ALSO FIXED IN THE SAME CYCLE
+  * `refresh_anchor()` checked only the SHIPPED anchor and reported "already comparable" while the
+    STYLED anchor was stale -- the identical "fix one, forget the sibling" mistake as last round.
+    It now heals both and names which were stale.
+  * a test had `import pytest` inside a function, shadowing the module-level name (third time this
+    exact bug has appeared in this file). `pytest` is now imported once at module level and the
+    local imports are gone.
+
+State after healing: styled anchor 0.351, shipped anchor 0.296, both 20/20 on one instrument;
+benchmark 141/150 with 0 errors; official 75.41 vs baseline 38.16 (+37.25). Suite: 296 passed.
+
+The pattern across the last four rounds is consistent and worth naming: **every defect since the
+official-scorer work has been in the verification or healing machinery, not in the drawing code.**
+The pipeline draws correctly; what keeps breaking is how the project decides whether it does.
