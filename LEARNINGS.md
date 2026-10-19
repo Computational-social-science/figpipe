@@ -1687,3 +1687,87 @@ tell "the metric got worse" from "the metric is measuring the wrong thing". A hu
 this is what looking found.
 
 Suite: 420 passed, 3 skipped.
+
+
+## 66. The same defect, third instance: a drawer given a long table draws every row (2026-10-19)
+
+After fixing the matrix label budget I asked the obvious follow-up question -- WHERE ELSE? -- instead
+of moving on. The answer was immediate: `radial_profile`.
+
+    13 Polar/Radial benchmark tasks
+    rows_used: 460 and 784 (the WHOLE long table)
+    hard text collisions: 50, 30, 17, 13, 10, 10, 10, 9, 8 ...
+    offending labels: 'advantage_profile' over 'benchmark_profile'
+
+`op_encode_polar` passed `ctx.data` straight to the polar drawer, which drew ONE SPOKE PER ROW. The
+label budget in the drawer only applied to NUMERIC angles; categorical labels had no cap at all.
+Same shape as `encode.bars` (one bar per row) and `ax_tile_diverging` (one tick per row).
+
+Fix, three parts:
+  * aggregate to one value per angle (mean by default), recording the reduction in the trace:
+    "encode.polar.aggregate(theta by mean: 368 rows -> 8 angles)"
+  * a spoke budget (16): past it, REFUSE, because a radar with 40 unreadable spokes is not a radar
+  * below three spokes, a NAMED refusal -- two benchmark tasks reduce to exactly 2 angles, and a
+    polar profile cannot show 2
+
+MEASURED on the real pool:
+    radial hard findings   ~200 -> 4   (max 50 -> 1)
+    TOTAL hard findings      301 -> 129  (-57%)
+
+AND A CLASSIFICATION FIX the refusals forced: a `SkillError` that names a STRUCTURAL reason ("this
+data has no angular reading") is the pipeline WORKING, so it is now classified `unsupported`, not
+`error` -- exactly like 3D and Network/Tree. Classifying a correct refusal as an error would report
+a capability failure for a right decision, and would make the success rate FALL whenever the
+pipeline got more honest.
+
+LESSON: after fixing an instance, ask "where else is this shape?" The three instances here were
+found three different ways -- an example, a sweep, and a score -- and all three were the same bug.
+The question is cheap and the answer keeps being yes.
+
+
+## 67. An absolute cap is the wrong unit for a density problem (2026-10-19)
+
+The first matrix fix capped cell annotations at 200. That looked principled and was wrong: a
+40-row x 4-column matrix has 160 cells, passes the cap, and still collides -- 65 hard findings on
+one benchmark task. What matters is not how many annotations EXIST but how many land on a given
+axis length. Past roughly one label per 4 mm of panel, text overlaps whatever the total is.
+
+So the cap became a DENSITY: annotate only when BOTH dimensions fit the same 12-label axis budget
+that governs the ticks. Measured on the real pool:
+
+    matrix hard findings   98 -> 6   (max 65 -> 3)
+    TOTAL hard findings   129 -> 37  (from 301 at the start of the round)
+
+The general form: **a budget expressed in the wrong unit is a control that looks present and does
+nothing** -- the project's recurring class-A defect, this time in a drawing limit rather than a
+metric.
+
+Progression this round, all from asking "where else is this shape?":
+    301 -> 129   (radial profile: one spoke per row)
+    129 ->  37   (matrix annotations: absolute count -> density)
+
+Suite: 423 passed, 4 skipped.
+
+
+## 68. When the fix makes the test's scenario unreachable (2026-10-19)
+
+One mutation test broke after the annotation DENSITY fix, and the reason is worth recording: it
+constructed a "wins on one task, loses on another" case by raising the matrix row budget, which used
+to break a 48-row table (1.0 -> 0.017). After the label budget and the density cap, a matrix renders
+cleanly at ANY row count, so NO budget edit can produce a mixed effect. The scenario became
+unreachable because the defect it depended on was fixed.
+
+Two wrong responses were available:
+  * delete the test -- then the no-regression RULE loses its coverage, and a future drawer
+    reintroducing the shape would not be caught
+  * keep asserting against the real drawers -- then the test fails forever for a good reason
+
+The right response: test the RULE against a DECLARED probe whose per-task scores are explicit. The
+rule is what is under test, not today's drawers. The test now says so in its docstring, including
+why the real-drawer version stopped working.
+
+This is the mirror image of the earlier lesson about fixtures (##63): a fixture that does not
+resemble production selects the wrong edit; a fixture that CANNOT resemble production because the
+defect is gone must still test the rule. Both are about knowing what a test is for.
+
+Suite: 426 passed, 3 skipped.

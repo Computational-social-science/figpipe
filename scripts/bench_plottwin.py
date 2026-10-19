@@ -543,6 +543,23 @@ INFRASTRUCTURE_ERRORS = (
 )
 
 
+#: SkillError messages that mean "this data cannot carry this encoding" -- a correct refusal, not
+#: a failure. Such a task is UNSUPPORTED by design, exactly like 3D or Network/Tree.
+STRUCTURAL_REFUSALS = (
+    "reduces to",
+    "has no angular reading",
+    "cannot be shown as a matrix",
+    "exceeds the",
+    "no 2-D reading",
+)
+
+
+def is_structural_refusal(error: str | None) -> bool:
+    """True when the pipeline correctly refused because the data cannot carry the encoding."""
+    text = str(error or "")
+    return text.startswith("SkillError") and any(m in text for m in STRUCTURAL_REFUSALS)
+
+
 def is_infrastructure_error(error: str | None) -> bool:
     """True when the task failed to FETCH, so no capability was exercised."""
     text = str(error or "")
@@ -745,7 +762,13 @@ def run_task(row: dict, out_dir: pathlib.Path) -> dict:
                                   if str(f.get("check", "")).startswith("semantics")],
         })
     except Exception as exc:                       # recorded, not hidden
-        result.update({"status": "error", "error": f"{type(exc).__name__}: {exc}"})
+        message = f"{type(exc).__name__}: {exc}"
+        # A STRUCTURAL REFUSAL is the pipeline working: the data cannot carry the requested
+        # encoding, and saying so is the correct outcome. Classifying it as an ERROR would report a
+        # capability failure for a decision that is right -- and would make the success rate fall
+        # whenever the pipeline got MORE honest.
+        status = "unsupported" if is_structural_refusal(message) else "error"
+        result.update({"status": status, "error": message})
     return result
 
 

@@ -720,6 +720,9 @@ def ax_tile_diverging(ax, df: pd.DataFrame, cmap: str = "RdBu_r",
     finite = np.isfinite(data)
     if not finite.any():
         raise ValueError("the matrix has no finite values")
+    # ONE budget for one concept. Tick labels and cell annotations both fill the same panel, so
+    # they must be limited by the same number or the two limits drift apart.
+    MAX_AXIS_LABELS = 12
     lo, hi = float(np.nanmin(data)), float(np.nanmax(data))
     norm = None
     if lo < 0 < hi:
@@ -746,7 +749,12 @@ def ax_tile_diverging(ax, df: pd.DataFrame, cmap: str = "RdBu_r",
         ax.set_yticklabels([str(i) for i in df.index])
     else:
         ax.set_yticks([])
-    if annotate and finite.sum() <= 200:
+    # DENSITY, NOT COUNT. A 200-cell cap let a 40x4 matrix annotate every cell and collide (65
+    # hard findings on one task). What matters is annotations per axis: past roughly one label per
+    # 4 mm of panel the text overlaps whatever the total.
+    rows, cols = data.shape
+    readable = rows <= MAX_AXIS_LABELS and cols <= MAX_AXIS_LABELS
+    if annotate and finite.sum() <= 200 and readable:
         for i in range(data.shape[0]):
             for j in range(data.shape[1]):
                 if np.isfinite(data[i, j]):

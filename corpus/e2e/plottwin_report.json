@@ -7,18 +7,22 @@
     "note": "deterministic metrics only; official combined score requires the benchmark's VLM scorer and is NOT claimed here"
   },
   "n_tasks": 150,
-  "n_ok": 141,
-  "n_unsupported": 9,
+  "n_ok": 139,
+  "n_unsupported": 11,
   "n_error": 0,
-  "unsupported_types": {},
-  "mean_distance": 0.313,
-  "mean_baseline": 0.382,
-  "mean_improvement": 0.069,
+  "unsupported_types": {
+    "Polar/Radial": "SkillError: encode.polar: 'panel_group' reduces to 2 distinct angle(s); a polar profile needs at least 3. This data has no angular reading -- use a bar or trend encoding.",
+    "3D": "unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this is a deliberate exclusion",
+    "Network/Tree": "unsupported chart type: no graph-layout operator yet (backlog: node-link layout, not a chart encoding this library owns)"
+  },
+  "mean_distance": 0.312,
+  "mean_baseline": 0.384,
+  "mean_improvement": 0.072,
   "improved": 127,
-  "worse": 11,
-  "ties": 3,
-  "mean_best_of_two": 0.307,
-  "semantic_violations": 0,
+  "worse": 8,
+  "ties": 4,
+  "mean_best_of_two": 0.306,
+  "semantic_violations": 8,
   "decision_service": {
     "up": false,
     "url": "http://127.0.0.1:8090",
@@ -83,10 +87,10 @@
       "n": 14,
       "ok": 14,
       "errors": 0,
-      "mean_distance": 0.289,
-      "mean_baseline": 0.384,
-      "mean_delta": 0.095,
-      "mean_shipped": 0.192
+      "mean_distance": 0.29,
+      "mean_baseline": 0.391,
+      "mean_delta": 0.101,
+      "mean_shipped": 0.195
     },
     "Line": {
       "n": 20,
@@ -108,12 +112,12 @@
     },
     "Polar/Radial": {
       "n": 13,
-      "ok": 13,
-      "errors": 0,
-      "mean_distance": 0.276,
-      "mean_baseline": 0.276,
-      "mean_delta": 0.0,
-      "mean_shipped": 0.206
+      "ok": 11,
+      "errors": 2,
+      "mean_distance": 0.252,
+      "mean_baseline": 0.266,
+      "mean_delta": 0.014,
+      "mean_shipped": 0.222
     },
     "Scatter": {
       "n": 16,
@@ -134,13 +138,328 @@
       "mean_shipped": 0.401
     }
   },
-  "failures": [],
+  "failures": [
+    {
+      "id": "arxiv-ml-bar-line-v2__2605.21125",
+      "chart": "Polar/Radial",
+      "error": "SkillError: encode.polar: 'record_type' reduces to 2 distinct angle(s); a polar profile needs at least 3. This data has no angular reading -- use a bar or trend encoding."
+    },
+    {
+      "id": "arxiv_2502.18153",
+      "chart": "3D",
+      "error": "unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this is a deliberate exclusion"
+    },
+    {
+      "id": "arxiv_2505.19527",
+      "chart": "3D",
+      "error": "unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this is a deliberate exclusion"
+    },
+    {
+      "id": "arxiv_2506.14951",
+      "chart": "3D",
+      "error": "unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this is a deliberate exclusion"
+    },
+    {
+      "id": "arxiv_2508.01948",
+      "chart": "3D",
+      "error": "unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this is a deliberate exclusion"
+    },
+    {
+      "id": "local-reuse__local_picks_top_hepfit_wheel",
+      "chart": "Network/Tree",
+      "error": "unsupported chart type: no graph-layout operator yet (backlog: node-link layout, not a chart encoding this library owns)"
+    },
+    {
+      "id": "local_picks_top_cust_graph__24",
+      "chart": "Network/Tree",
+      "error": "unsupported chart type: no graph-layout operator yet (backlog: node-link layout, not a chart encoding this library owns)"
+    },
+    {
+      "id": "Chart2Code_level2_3d_1_v1__single",
+      "chart": "3D",
+      "error": "unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this is a deliberate exclusion"
+    },
+    {
+      "id": "Chart2Code_level2_3d_2_v3",
+      "chart": "3D",
+      "error": "unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this is a deliberate exclusion"
+    },
+    {
+      "id": "Chart2Code_level2_radar_3_v1",
+      "chart": "Polar/Radial",
+      "error": "SkillError: encode.polar: 'panel_group' reduces to 2 distinct angle(s); a polar profile needs at least 3. This data has no angular reading -- use a bar or trend encoding."
+    },
+    {
+      "id": "Chart2NCode_7b87069f5442408286d1a4b0300eae18",
+      "chart": "3D",
+      "error": "unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this is a deliberate exclusion"
+    }
+  ],
   "tasks": [
+    {
+      "id": "PMC11502666",
+      "chart": "Distribution",
+      "panel_mode": "multi",
+      "code_version": "221d555c259a",
+      "skill": "faceted_distribution",
+      "rationale": "faceted hist by panel_group",
+      "rows_used": 554,
+      "status": "ok",
+      "distance": 0.146,
+      "baseline_distance": 0.209,
+      "delta": 0.063,
+      "selected": "styled",
+      "selected_distance": 0.145,
+      "selected_gain": 0.064,
+      "selection_margin": 0.066,
+      "components": {
+        "palette": 0.099,
+        "aspect": 0.009,
+        "ink": 0.398
+      },
+      "hard_failures": 0,
+      "findings": [],
+      "official_code_score": {
+        "available": true,
+        "score": 100.0,
+        "n_activated": 2,
+        "scored": [
+          "palette",
+          "grid"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": []
+    },
+    {
+      "id": "PMC11840003",
+      "chart": "Box/Violin",
+      "panel_mode": "multi",
+      "code_version": "221d555c259a",
+      "skill": "distribution_comparison",
+      "rationale": "box panel_row by panel_group",
+      "rows_used": 1403,
+      "status": "ok",
+      "distance": 0.169,
+      "baseline_distance": 0.446,
+      "delta": 0.277,
+      "selected": "styled",
+      "selected_distance": 0.176,
+      "selected_gain": 0.27,
+      "selection_margin": 0.279,
+      "components": {
+        "palette": 0.1,
+        "aspect": 0.211,
+        "ink": 0.302
+      },
+      "hard_failures": 1,
+      "findings": [
+        {
+          "check": "height",
+          "detail": "170.0 mm exceeds the 170.0 mm maximum",
+          "severity": "hard"
+        }
+      ],
+      "official_code_score": {
+        "available": true,
+        "score": 99.99959236362147,
+        "n_activated": 4,
+        "scored": [
+          "palette",
+          "figure_aspect",
+          "linewidth",
+          "grid"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": []
+    },
+    {
+      "id": "PMC12000431",
+      "chart": "Distribution",
+      "panel_mode": "multi",
+      "code_version": "221d555c259a",
+      "skill": "faceted_distribution",
+      "rationale": "faceted hist by panel_group",
+      "rows_used": 1414,
+      "status": "ok",
+      "distance": 0.083,
+      "baseline_distance": 0.096,
+      "delta": 0.013,
+      "selected": "styled",
+      "selected_distance": 0.083,
+      "selected_gain": 0.013,
+      "selection_margin": 0.015,
+      "components": {
+        "palette": 0.077,
+        "aspect": 0.005,
+        "ink": 0.177
+      },
+      "hard_failures": 0,
+      "findings": [],
+      "official_code_score": {
+        "available": true,
+        "score": 100.0,
+        "n_activated": 2,
+        "scored": [
+          "palette",
+          "legend_frame"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": []
+    },
+    {
+      "id": "PMC12354736",
+      "chart": "Distribution",
+      "panel_mode": "multi",
+      "code_version": "221d555c259a",
+      "skill": "faceted_distribution",
+      "rationale": "faceted hist by panel_row",
+      "rows_used": 12196,
+      "status": "ok",
+      "distance": 0.321,
+      "baseline_distance": 0.383,
+      "delta": 0.062,
+      "selected": "styled",
+      "selected_distance": 0.326,
+      "selected_gain": 0.057,
+      "selection_margin": 0.059,
+      "components": {
+        "palette": 0.346,
+        "aspect": 0.183,
+        "ink": 0.399
+      },
+      "hard_failures": 1,
+      "findings": [
+        {
+          "check": "height",
+          "detail": "170.0 mm exceeds the 170.0 mm maximum",
+          "severity": "hard"
+        }
+      ],
+      "official_code_score": {
+        "available": true,
+        "score": 99.9988792326005,
+        "n_activated": 4,
+        "scored": [
+          "palette",
+          "figure_aspect",
+          "grid",
+          "legend_frame"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": []
+    },
+    {
+      "id": "PMC12504421",
+      "chart": "Heatmap",
+      "panel_mode": "multi",
+      "code_version": "221d555c259a",
+      "skill": "matrix_plate",
+      "rationale": "pivot panel_group x record_type of panel_row",
+      "rows_used": 4,
+      "status": "ok",
+      "distance": 0.428,
+      "baseline_distance": 0.547,
+      "delta": 0.119,
+      "selected": "styled",
+      "selected_distance": 0.401,
+      "selected_gain": 0.146,
+      "selection_margin": 0.096,
+      "components": {
+        "palette": 0.364,
+        "aspect": 0.166,
+        "ink": 0.852
+      },
+      "hard_failures": 3,
+      "findings": [
+        {
+          "check": "height",
+          "detail": "170.0 mm exceeds the 170.0 mm maximum",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'site_distribution_observation' over 'trajectory_indicator_score'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'feature_summary overlap_intersection' over 'site_distribution_observation'",
+          "severity": "hard"
+        }
+      ],
+      "official_code_score": {
+        "available": true,
+        "score": 99.99985246351535,
+        "n_activated": 5,
+        "scored": [
+          "palette",
+          "figure_aspect",
+          "linewidth",
+          "grid",
+          "tick_direction"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": []
+    },
+    {
+      "id": "PMC12905268",
+      "chart": "Distribution",
+      "panel_mode": "multi",
+      "code_version": "221d555c259a",
+      "skill": "faceted_distribution",
+      "rationale": "faceted hist by shoreline_condition",
+      "rows_used": 1196,
+      "status": "ok",
+      "distance": 0.349,
+      "baseline_distance": 0.306,
+      "delta": -0.043,
+      "selected": "plain",
+      "selected_distance": 0.301,
+      "selected_gain": 0.005,
+      "selection_margin": 0.044,
+      "components": {
+        "palette": 0.316,
+        "aspect": 0.564,
+        "ink": 0.219
+      },
+      "hard_failures": 0,
+      "findings": [],
+      "official_code_score": {
+        "available": true,
+        "score": 99.99993928740484,
+        "n_activated": 4,
+        "scored": [
+          "palette",
+          "figure_aspect",
+          "linewidth",
+          "legend_frame"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": []
+    },
     {
       "id": "PMC13009336",
       "chart": "Box/Violin",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "distribution_comparison",
       "rationale": "box panel_row by panel_group",
       "rows_used": 4454,
@@ -185,7 +504,7 @@
       "id": "PMC13022287",
       "chart": "Distribution",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "faceted_distribution",
       "rationale": "faceted hist by panel_row",
       "rows_used": 6297,
@@ -225,7 +544,7 @@
       "id": "PMC13079874",
       "chart": "Box/Violin",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "distribution_comparison",
       "rationale": "box panel_row by panel_group",
       "rows_used": 519,
@@ -270,7 +589,7 @@
       "id": "PMC13106710",
       "chart": "Heatmap",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "matrix_plate",
       "rationale": "matrix 7 measures",
       "rows_used": 40,
@@ -310,7 +629,7 @@
       "id": "PMC13135507",
       "chart": "Scatter",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "scatter_relationship",
       "rationale": "scatter panel_row vs panel_col",
       "rows_used": 1248,
@@ -354,7 +673,7 @@
       "id": "PMC13245775",
       "chart": "Composite",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "composite_groups",
       "rationale": "composite block_id x panel_group",
       "rows_used": 33,
@@ -383,7 +702,7 @@
       "id": "PMC13252719",
       "chart": "Composite",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "composite_groups",
       "rationale": "composite block_id x record_type",
       "rows_used": 182,
@@ -412,7 +731,7 @@
       "id": "PMC13273070",
       "chart": "Box/Violin",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "distribution_comparison",
       "rationale": "box panel_row by panel_group",
       "rows_used": 606,
@@ -450,7 +769,7 @@
       "id": "PMC13286152",
       "chart": "Composite",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "composite_groups",
       "rationale": "composite block_id x panel_group",
       "rows_used": 660,
@@ -485,7 +804,7 @@
       "id": "PMC13336770",
       "chart": "Distribution",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "histogram",
       "rationale": "hist panel_col",
       "rows_used": 978,
@@ -523,7 +842,7 @@
       "id": "PMC13342296",
       "chart": "Distribution",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "faceted_distribution",
       "rationale": "faceted hist by panel_group",
       "rows_used": 392,
@@ -561,7 +880,7 @@
       "id": "PMC13343911",
       "chart": "Line",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "trend_with_uncertainty",
       "rationale": "trend time_months->panel_row",
       "rows_used": 387,
@@ -607,7 +926,7 @@
       "id": "arxiv-astro-skymap__2412.12637",
       "chart": "Field 2D",
       "panel_mode": "single",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "field_map",
       "rationale": "field panel_row over coating_batch x longitude_deg",
       "rows_used": 5762,
@@ -636,7 +955,7 @@
       "id": "arxiv-astro-skymap__2510.17487",
       "chart": "Std-band",
       "panel_mode": "single",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "trend_with_uncertainty",
       "rationale": "trend acquisition_frequency_hz->phosphate_detection_limit_mg_per_l",
       "rows_used": 460,
@@ -675,7 +994,7 @@
       "id": "arxiv-ml-3d-trajectory__2511.17399",
       "chart": "Field 2D",
       "panel_mode": "single",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "field_map",
       "rationale": "field mean_log10_particle_deposition_flux_particles_cm2_h over lateral_wind_deflection_normalized x vertical_wind_deflection_normalized",
       "rows_used": 3362,
@@ -704,7 +1023,7 @@
       "id": "arxiv-ml-3d-trajectory__2602.22552",
       "chart": "Field 2D",
       "panel_mode": "single",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "field_map",
       "rationale": "field mean_methane_flux_mg_ch4_m2_h over salinity_anomaly_normalized x inundation_anomaly_normalized",
       "rows_used": 2601,
@@ -733,7 +1052,7 @@
       "id": "arxiv-ml-bar-line-v2__2511.15055",
       "chart": "Std-band",
       "panel_mode": "single",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "trend_with_uncertainty",
       "rationale": "trend survey_day->survey_week",
       "rows_used": 386,
@@ -774,42 +1093,18 @@
       "id": "arxiv-ml-bar-line-v2__2605.21125",
       "chart": "Polar/Radial",
       "panel_mode": "single",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "radial_profile",
       "rationale": "polar component_order by record_type",
       "rows_used": 80,
-      "status": "ok",
-      "distance": 0.097,
-      "baseline_distance": 0.104,
-      "delta": 0.007,
-      "selected": "styled",
-      "selected_distance": 0.089,
-      "selected_gain": 0.015,
-      "selection_margin": 0.013,
-      "components": {
-        "palette": 0.082,
-        "aspect": 0.201,
-        "ink": 0.028
-      },
-      "hard_failures": 1,
-      "findings": [
-        {
-          "check": "text_collision",
-          "detail": "'replicate' over 'replicate'",
-          "severity": "hard"
-        }
-      ],
-      "official_code_score": {
-        "available": false,
-        "reason": "CodegenError: skill 'radial_profile' has no code emitter yet"
-      },
-      "semantic_findings": []
+      "status": "unsupported",
+      "error": "SkillError: encode.polar: 'record_type' reduces to 2 distinct angle(s); a polar profile needs at least 3. This data has no angular reading -- use a bar or trend encoding."
     },
     {
       "id": "arxiv-phys-prx-prl__2603.21981",
       "chart": "Line",
       "panel_mode": "single",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "trend_with_uncertainty",
       "rationale": "trend radial_month->panel_col",
       "rows_used": 1394,
@@ -870,7 +1165,7 @@
       "id": "arxiv_2410.15876",
       "chart": "Std-band",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "trend_with_uncertainty",
       "rationale": "trend panel_row->panel_col",
       "rows_used": 80,
@@ -908,7 +1203,7 @@
       "id": "arxiv_2502.15132",
       "chart": "Line",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "trend_with_uncertainty",
       "rationale": "trend diffraction_patterns_100k->neighboring_grains_in_fit",
       "rows_used": 78,
@@ -947,36 +1242,25 @@
       "id": "arxiv_2502.17598",
       "chart": "Heatmap",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "matrix_plate",
       "rationale": "matrix 8 measures",
       "rows_used": 40,
       "status": "ok",
-      "distance": 0.213,
-      "baseline_distance": 0.343,
-      "delta": 0.13,
+      "distance": 0.22,
+      "baseline_distance": 0.363,
+      "delta": 0.143,
       "selected": "styled",
-      "selected_distance": 0.255,
-      "selected_gain": 0.088,
+      "selected_distance": 0.268,
+      "selected_gain": 0.095,
       "selection_margin": 0.059,
       "components": {
         "palette": 0.103,
-        "aspect": 0.453,
-        "ink": 0.249
+        "aspect": 0.464,
+        "ink": 0.268
       },
-      "hard_failures": 2,
-      "findings": [
-        {
-          "check": "text_collision",
-          "detail": "'0.00' over '0.00'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'0.00' over '0.001.00'",
-          "severity": "hard"
-        }
-      ],
+      "hard_failures": 0,
+      "findings": [],
       "official_code_score": {
         "available": true,
         "score": 99.99538708211239,
@@ -997,7 +1281,7 @@
       "id": "arxiv_2502.18153",
       "chart": "3D",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "status": "unsupported",
       "error": "unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this is a deliberate exclusion"
     },
@@ -1005,7 +1289,7 @@
       "id": "arxiv_2505.19527",
       "chart": "3D",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "status": "unsupported",
       "error": "unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this is a deliberate exclusion"
     },
@@ -1013,7 +1297,7 @@
       "id": "arxiv_2506.14951",
       "chart": "3D",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "status": "unsupported",
       "error": "unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this is a deliberate exclusion"
     },
@@ -1021,7 +1305,7 @@
       "id": "arxiv_2508.01948",
       "chart": "3D",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "status": "unsupported",
       "error": "unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this is a deliberate exclusion"
     },
@@ -1029,7 +1313,7 @@
       "id": "arxiv_2510.17384",
       "chart": "Scatter",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "scatter_relationship",
       "rationale": "scatter panel_col vs independent_value",
       "rows_used": 80,
@@ -1070,7 +1354,7 @@
       "id": "arxiv_2512.09767",
       "chart": "Distribution",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "faceted_distribution",
       "rationale": "faceted hist by study_condition",
       "rows_used": 4402,
@@ -1108,7 +1392,7 @@
       "id": "arxiv_2512.25023",
       "chart": "Std-band",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "trend_with_uncertainty",
       "rationale": "trend maturation_day->panel_row",
       "rows_used": 178,
@@ -1148,7 +1432,7 @@
       "id": "arxiv_2603.04948",
       "chart": "Std-band",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "trend_with_uncertainty",
       "rationale": "trend panel_col->event_order",
       "rows_used": 216,
@@ -1186,7 +1470,7 @@
       "id": "arxiv_2603.08660",
       "chart": "Std-band",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "trend_with_uncertainty",
       "rationale": "trend panel_col->replicate_id",
       "rows_used": 72,
@@ -1225,7 +1509,7 @@
       "id": "arxiv_2603.17004",
       "chart": "Line",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "trend_with_uncertainty",
       "rationale": "trend ammonia_loading_mg_N_L->nitrogen_recovery_shift_mg_N_L",
       "rows_used": 465,
@@ -1264,7 +1548,7 @@
       "id": "arxiv_2603.23889",
       "chart": "Std-band",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "trend_with_uncertainty",
       "rationale": "trend monitoring_day->panel_row",
       "rows_used": 5340,
@@ -1302,7 +1586,7 @@
       "id": "arxiv_2604.01093",
       "chart": "Field 2D",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "field_map",
       "rationale": "field methane_flux_anomaly_umol_m2_h over x_m x y_m",
       "rows_used": 13159,
@@ -1331,7 +1615,7 @@
       "id": "arxiv_2604.05237",
       "chart": "Field 2D",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "field_map",
       "rationale": "field panel_row over log10_ionic_conductivity_S_m x log10_failure_cycle_count",
       "rows_used": 118,
@@ -1360,22 +1644,22 @@
       "id": "arxiv_2605.14587",
       "chart": "Heatmap",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "matrix_plate",
       "rationale": "matrix 8 measures",
       "rows_used": 40,
       "status": "ok",
-      "distance": 0.166,
-      "baseline_distance": 0.197,
+      "distance": 0.172,
+      "baseline_distance": 0.203,
       "delta": 0.031,
       "selected": "styled",
-      "selected_distance": 0.054,
-      "selected_gain": 0.143,
-      "selection_margin": 0.029,
+      "selected_distance": 0.063,
+      "selected_gain": 0.14,
+      "selection_margin": 0.023,
       "components": {
-        "palette": 0.086,
-        "aspect": 0.015,
-        "ink": 0.519
+        "palette": 0.084,
+        "aspect": 0.027,
+        "ink": 0.538
       },
       "hard_failures": 0,
       "findings": [],
@@ -1399,7 +1683,7 @@
       "id": "arxiv_2605.16790",
       "chart": "Line",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "trend_with_uncertainty",
       "rationale": "trend time_after_salinity_shock_hours->mean_ammonia_removal_fraction",
       "rows_used": 1205,
@@ -1438,7 +1722,7 @@
       "id": "arxiv_2605.22305",
       "chart": "Distribution",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "faceted_distribution",
       "rationale": "faceted hist by panel_group",
       "rows_used": 6928,
@@ -1475,7 +1759,7 @@
       "id": "arxiv_2605.22455",
       "chart": "Scatter",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "scatter_relationship",
       "rationale": "scatter panel_col vs survey_day",
       "rows_used": 6302,
@@ -1516,7 +1800,7 @@
       "id": "local-reuse__local_picks_top_hepfit_wheel",
       "chart": "Network/Tree",
       "panel_mode": "single",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "status": "unsupported",
       "error": "unsupported chart type: no graph-layout operator yet (backlog: node-link layout, not a chart encoding this library owns)"
     },
@@ -1524,7 +1808,7 @@
       "id": "local_gallery_hexbin_joint",
       "chart": "Scatter",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "scatter_relationship",
       "rationale": "scatter smoke_exposure_ug_m3 vs recovery_hours",
       "rows_used": 840,
@@ -1568,7 +1852,7 @@
       "id": "local_picks_top_cust_graph__24",
       "chart": "Network/Tree",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "status": "unsupported",
       "error": "unsupported chart type: no graph-layout operator yet (backlog: node-link layout, not a chart encoding this library owns)"
     },
@@ -1576,7 +1860,7 @@
       "id": "local_picks_top_scatter__39",
       "chart": "Scatter",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "scatter_relationship",
       "rationale": "scatter incubation_temperature_C vs methane_oxidation_rate_nmol_g_dry_h",
       "rows_used": 21,
@@ -1615,7 +1899,7 @@
       "id": "local_picks_top_violin__9",
       "chart": "Box/Violin",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "distribution_comparison",
       "rationale": "box panel_row by panel_group",
       "rows_used": 507,
@@ -1653,7 +1937,7 @@
       "id": "Chart2Code_level1_direct_HR_5",
       "chart": "Scatter",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "scatter_relationship",
       "rationale": "scatter panel_row vs panel_col",
       "rows_used": 832,
@@ -1693,7 +1977,7 @@
       "id": "Chart2Code_level1_direct_combination_57",
       "chart": "Bar",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "grouped_measures",
       "rationale": "grouped bars ['panel_row', 'panel_col', 'guild_order'] by panel_group",
       "rows_used": 432,
@@ -1733,41 +2017,25 @@
       "id": "Chart2Code_level1_direct_contour_18",
       "chart": "Heatmap",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "matrix_plate",
       "rationale": "matrix 8 measures",
       "rows_used": 40,
       "status": "ok",
-      "distance": 0.335,
-      "baseline_distance": 0.458,
-      "delta": 0.123,
+      "distance": 0.342,
+      "baseline_distance": 0.468,
+      "delta": 0.126,
       "selected": "styled",
-      "selected_distance": 0.217,
-      "selected_gain": 0.241,
+      "selected_distance": 0.219,
+      "selected_gain": 0.249,
       "selection_margin": 0.121,
       "components": {
         "palette": 0.142,
-        "aspect": 0.36,
-        "ink": 0.794
+        "aspect": 0.372,
+        "ink": 0.815
       },
-      "hard_failures": 3,
-      "findings": [
-        {
-          "check": "text_collision",
-          "detail": "'0.60' over '0.90'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'0.40' over '1.400.90'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'0.90' over '3.202.10'",
-          "severity": "hard"
-        }
-      ],
+      "hard_failures": 0,
+      "findings": [],
       "official_code_score": {
         "available": true,
         "score": 99.9997804913552,
@@ -1788,7 +2056,7 @@
       "id": "Chart2Code_level1_direct_density_11",
       "chart": "Distribution",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "faceted_distribution",
       "rationale": "faceted hist by panel_group",
       "rows_used": 900,
@@ -1827,31 +2095,25 @@
       "id": "Chart2Code_level1_direct_heatmap_3",
       "chart": "Heatmap",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "matrix_plate",
       "rationale": "matrix 8 measures",
       "rows_used": 40,
       "status": "ok",
-      "distance": 0.302,
-      "baseline_distance": 0.417,
-      "delta": 0.115,
+      "distance": 0.306,
+      "baseline_distance": 0.419,
+      "delta": 0.113,
       "selected": "styled",
       "selected_distance": 0.178,
-      "selected_gain": 0.239,
+      "selected_gain": 0.241,
       "selection_margin": 0.121,
       "components": {
         "palette": 0.127,
-        "aspect": 0.072,
-        "ink": 0.967
+        "aspect": 0.079,
+        "ink": 0.979
       },
-      "hard_failures": 1,
-      "findings": [
-        {
-          "check": "text_collision",
-          "detail": "'1.00' over '1.00'",
-          "severity": "hard"
-        }
-      ],
+      "hard_failures": 0,
+      "findings": [],
       "official_code_score": {
         "available": true,
         "score": 99.98962040477433,
@@ -1871,51 +2133,25 @@
       "id": "Chart2Code_level1_direct_heatmap_7",
       "chart": "Heatmap",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "matrix_plate",
       "rationale": "matrix 3 measures",
       "rows_used": 40,
       "status": "ok",
-      "distance": 0.32,
-      "baseline_distance": 0.362,
-      "delta": 0.042,
+      "distance": 0.314,
+      "baseline_distance": 0.367,
+      "delta": 0.053,
       "selected": "styled",
-      "selected_distance": 0.202,
-      "selected_gain": 0.16,
-      "selection_margin": 0.041,
+      "selected_distance": 0.195,
+      "selected_gain": 0.172,
+      "selection_margin": 0.053,
       "components": {
-        "palette": 0.211,
+        "palette": 0.199,
         "aspect": 0.075,
         "ink": 0.838
       },
-      "hard_failures": 65,
-      "findings": [
-        {
-          "check": "text_collision",
-          "detail": "'4.00' over '4.00'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'0.07' over '0.12'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'0.11' over '0.13'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'0.07' over '0.11'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'0.11' over '0.12'",
-          "severity": "hard"
-        }
-      ],
+      "hard_failures": 0,
+      "findings": [],
       "official_code_score": {
         "available": true,
         "score": 99.99385185430543,
@@ -1936,7 +2172,7 @@
       "id": "Chart2Code_level1_direct_line_39",
       "chart": "Line",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "trend_with_uncertainty",
       "rationale": "trend calendar_year->panel_row",
       "rows_used": 88,
@@ -1975,7 +2211,7 @@
       "id": "Chart2Code_level1_direct_line_8",
       "chart": "Line",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "trend_with_uncertainty",
       "rationale": "trend time_step->panel_row",
       "rows_used": 110,
@@ -2016,7 +2252,7 @@
       "id": "Chart2Code_level2_3d_11_v2",
       "chart": "Scatter",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "scatter_relationship",
       "rationale": "scatter panel_row vs panel_col",
       "rows_used": 276,
@@ -2057,7 +2293,7 @@
       "id": "Chart2Code_level2_3d_1_v1__single",
       "chart": "3D",
       "panel_mode": "single",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "status": "unsupported",
       "error": "unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this is a deliberate exclusion"
     },
@@ -2065,7 +2301,7 @@
       "id": "Chart2Code_level2_3d_2_v3",
       "chart": "3D",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "status": "unsupported",
       "error": "unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this is a deliberate exclusion"
     },
@@ -2073,7 +2309,7 @@
       "id": "Chart2Code_level2_3d_5_v4",
       "chart": "Bar",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "grouped_measures",
       "rationale": "grouped bars ['panel_col', 'biochar_rate_percent', 'day_after_rewetting_days'] by biochar_amendment_label",
       "rows_used": 80,
@@ -2113,7 +2349,7 @@
       "id": "Chart2Code_level2_area_3_v3",
       "chart": "Line",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "trend_with_uncertainty",
       "rationale": "trend timepoint_day->panel_row",
       "rows_used": 95,
@@ -2165,7 +2401,7 @@
       "id": "Chart2Code_level2_bar_10_v4",
       "chart": "Line",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "trend_with_uncertainty",
       "rationale": "trend incubation_time_h->panel_row",
       "rows_used": 173,
@@ -2217,7 +2453,7 @@
       "id": "Chart2Code_level2_bar_22_v4",
       "chart": "Bar",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "grouped_measures",
       "rationale": "grouped bars ['panel_row', 'panel_col', 'condition_order'] by panel_group",
       "rows_used": 220,
@@ -2256,7 +2492,7 @@
       "id": "Chart2Code_level2_bar_25_v4",
       "chart": "Line",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "trend_with_uncertainty",
       "rationale": "trend measurement_day->panel_row",
       "rows_used": 386,
@@ -2309,7 +2545,7 @@
       "id": "Chart2Code_level2_box_1_v5",
       "chart": "Box/Violin",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "distribution_comparison",
       "rationale": "box panel_row by record_type",
       "rows_used": 3163,
@@ -2347,7 +2583,7 @@
       "id": "Chart2Code_level2_combination_11_v2",
       "chart": "Std-band",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "trend_with_uncertainty",
       "rationale": "trend panel_row->panel_col",
       "rows_used": 155,
@@ -2388,7 +2624,7 @@
       "id": "Chart2Code_level2_combination_13_v5",
       "chart": "Line",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "trend_with_uncertainty",
       "rationale": "trend panel_row->panel_col",
       "rows_used": 672,
@@ -2429,7 +2665,7 @@
       "id": "Chart2Code_level2_combination_14_v5",
       "chart": "Distribution",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "faceted_distribution",
       "rationale": "faceted hist by panel_row",
       "rows_used": 4208,
@@ -2466,7 +2702,7 @@
       "id": "Chart2Code_level2_combination_16_v5",
       "chart": "Box/Violin",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "distribution_comparison",
       "rationale": "box panel_row by panel_group",
       "rows_used": 959,
@@ -2506,7 +2742,7 @@
       "id": "Chart2Code_level2_combination_33_v5",
       "chart": "Distribution",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "faceted_distribution",
       "rationale": "faceted hist by panel_group",
       "rows_used": 3037,
@@ -2546,7 +2782,7 @@
       "id": "Chart2Code_level2_combination_42_v5",
       "chart": "Scatter",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "scatter_relationship",
       "rationale": "scatter panel_row vs panel_col",
       "rows_used": 51,
@@ -2586,7 +2822,7 @@
       "id": "Chart2Code_level2_combination_44_v3",
       "chart": "Distribution",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "faceted_distribution",
       "rationale": "faceted hist by panel_group",
       "rows_used": 399,
@@ -2627,7 +2863,7 @@
       "id": "Chart2Code_level2_contour_14_v1",
       "chart": "Field 2D",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "field_map",
       "rationale": "field panel_row over x_m x z_m",
       "rows_used": 2780,
@@ -2656,7 +2892,7 @@
       "id": "Chart2Code_level2_contour_23_v4",
       "chart": "Field 2D",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "field_map",
       "rationale": "field panel_row over biochar_amendment_percent x porewater_salinity_psu",
       "rows_used": 1310,
@@ -2685,7 +2921,7 @@
       "id": "Chart2Code_level2_contour_25_v2",
       "chart": "Field 2D",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "field_map",
       "rationale": "field panel_row over time_hours x cross_wound_position_fraction",
       "rows_used": 11112,
@@ -2714,7 +2950,7 @@
       "id": "Chart2Code_level2_contour_25_v3",
       "chart": "Field 2D",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "field_map",
       "rationale": "field panel_row over position_mm x elapsed_time_min",
       "rows_used": 15219,
@@ -2743,7 +2979,7 @@
       "id": "Chart2Code_level2_contour_5_v5",
       "chart": "Field 2D",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "field_map",
       "rationale": "field horizontal_position_mm over panel_row x panel_col",
       "rows_used": 5350,
@@ -2772,7 +3008,7 @@
       "id": "Chart2Code_level2_density_12_v3",
       "chart": "Distribution",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "faceted_distribution",
       "rationale": "faceted hist by panel_group",
       "rows_used": 4305,
@@ -2812,7 +3048,7 @@
       "id": "Chart2Code_level2_density_14_v4",
       "chart": "Line",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "trend_with_uncertainty",
       "rationale": "trend elapsed_days_since_snowmelt->panel_row",
       "rows_used": 2168,
@@ -2852,7 +3088,7 @@
       "id": "Chart2Code_level2_errorpoint_10_v5",
       "chart": "Scatter",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "scatter_relationship",
       "rationale": "scatter panel_row vs panel_col",
       "rows_used": 240,
@@ -2890,7 +3126,7 @@
       "id": "Chart2Code_level2_errorpoint_1_v5",
       "chart": "Scatter",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "scatter_relationship",
       "rationale": "scatter panel_row vs site_id",
       "rows_used": 108,
@@ -2942,7 +3178,7 @@
       "id": "Chart2Code_level2_errorpoint_5_v5",
       "chart": "Std-band",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "trend_with_uncertainty",
       "rationale": "trend panel_row->panel_col",
       "rows_used": 75,
@@ -2983,7 +3219,7 @@
       "id": "Chart2Code_level2_hist_2_v3",
       "chart": "Distribution",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "histogram",
       "rationale": "hist sampling_day by consortium_treatment",
       "rows_used": 315,
@@ -3024,7 +3260,7 @@
       "id": "Chart2Code_level2_hist_2_v5",
       "chart": "Distribution",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "faceted_distribution",
       "rationale": "faceted hist by panel_group",
       "rows_used": 3071,
@@ -3064,7 +3300,7 @@
       "id": "Chart2Code_level2_multidiff_1_v1",
       "chart": "Distribution",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "faceted_distribution",
       "rationale": "faceted hist by panel_group",
       "rows_used": 942,
@@ -3104,7 +3340,7 @@
       "id": "Chart2Code_level2_multidiff_2_v2__single",
       "chart": "Field 2D",
       "panel_mode": "single",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "field_map",
       "rationale": "field larval_recruitment_index_percent over spatial_year_relative_yr x reef_elevation_relative_m",
       "rows_used": 1681,
@@ -3133,7 +3369,7 @@
       "id": "Chart2Code_level2_multidiff_5_v1",
       "chart": "Line",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "trend_with_uncertainty",
       "rationale": "trend panel_row->panel_col",
       "rows_used": 2165,
@@ -3173,7 +3409,7 @@
       "id": "Chart2Code_level2_quiver_10_v5",
       "chart": "Field 2D",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "field_map",
       "rationale": "field panel row over intensity bin lower (umol L-1) x intensity bin upper (umol L-1)",
       "rows_used": 66,
@@ -3202,7 +3438,7 @@
       "id": "Chart2Code_level2_quiver_13_v1",
       "chart": "Field 2D",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "field_map",
       "rationale": "field panel_row over x_position_mm x y_position_mm",
       "rows_used": 1071,
@@ -3231,7 +3467,7 @@
       "id": "Chart2Code_level2_quiver_14_v1",
       "chart": "Field 2D",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "field_map",
       "rationale": "field panel_row over sample_index x time_h",
       "rows_used": 2334,
@@ -3260,7 +3496,7 @@
       "id": "Chart2Code_level2_quiver_4_v5",
       "chart": "Field 2D",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "field_map",
       "rationale": "field panel_row over replicate_id x x_mm",
       "rows_used": 32,
@@ -3289,51 +3525,25 @@
       "id": "Chart2Code_level2_radar_10_v2",
       "chart": "Polar/Radial",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "radial_profile",
       "rationale": "polar panel_col by block_id",
       "rows_used": 460,
       "status": "ok",
-      "distance": 0.314,
-      "baseline_distance": 0.326,
-      "delta": 0.012,
-      "selected": "plain",
-      "selected_distance": 0.259,
-      "selected_gain": 0.067,
-      "selection_margin": 0.017,
+      "distance": 0.201,
+      "baseline_distance": 0.214,
+      "delta": 0.013,
+      "selected": "styled",
+      "selected_distance": 0.178,
+      "selected_gain": 0.036,
+      "selection_margin": 0.022,
       "components": {
-        "palette": 0.115,
-        "aspect": 0.124,
-        "ink": 1.0
+        "palette": 0.207,
+        "aspect": 0.138,
+        "ink": 0.249
       },
-      "hard_failures": 50,
-      "findings": [
-        {
-          "check": "text_collision",
-          "detail": "'field_replicates' over 'field_replicates'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'advantage_profile' over 'benchmark_profile'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'advantage_profile' over 'context_profile'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'benchmark_profile' over 'context_profile'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'attribute_scoreca' over 'context_profile'",
-          "severity": "hard"
-        }
-      ],
+      "hard_failures": 0,
+      "findings": [],
       "official_code_score": {
         "available": false,
         "reason": "CodegenError: skill 'radial_profile' has no code emitter yet"
@@ -3344,7 +3554,7 @@
       "id": "Chart2Code_level2_radar_18_v5",
       "chart": "Bar",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "grouped_measures",
       "rationale": "grouped bars ['panel_col', 'condition_order', 'net_carbonate_capture_percent'] by record_type",
       "rows_used": 80,
@@ -3383,51 +3593,25 @@
       "id": "Chart2Code_level2_radar_23_v3",
       "chart": "Polar/Radial",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "radial_profile",
       "rationale": "polar panel_row by condition_id",
       "rows_used": 175,
       "status": "ok",
-      "distance": 0.132,
-      "baseline_distance": 0.145,
-      "delta": 0.013,
+      "distance": 0.167,
+      "baseline_distance": 0.165,
+      "delta": -0.002,
       "selected": "styled",
-      "selected_distance": 0.083,
-      "selected_gain": 0.062,
-      "selection_margin": 0.022,
+      "selected_distance": 0.144,
+      "selected_gain": 0.021,
+      "selection_margin": 0.024,
       "components": {
-        "palette": 0.109,
-        "aspect": 0.095,
-        "ink": 0.229
+        "palette": 0.134,
+        "aspect": 0.138,
+        "ink": 0.279
       },
-      "hard_failures": 10,
-      "findings": [
-        {
-          "check": "text_collision",
-          "detail": "'TRP' over 'TRP'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'SAP' over 'SAP'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'LSH' over 'LSH'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'REF' over 'REF'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'CTL' over 'CTL'",
-          "severity": "hard"
-        }
-      ],
+      "hard_failures": 0,
+      "findings": [],
       "official_code_score": {
         "available": false,
         "reason": "CodegenError: skill 'radial_profile' has no code emitter yet"
@@ -3438,51 +3622,25 @@
       "id": "Chart2Code_level2_radar_26_v3",
       "chart": "Polar/Radial",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "radial_profile",
       "rationale": "polar panel_row by block_id",
       "rows_used": 164,
       "status": "ok",
-      "distance": 0.316,
-      "baseline_distance": 0.306,
-      "delta": -0.01,
+      "distance": 0.345,
+      "baseline_distance": 0.35,
+      "delta": 0.005,
       "selected": "styled",
-      "selected_distance": 0.191,
-      "selected_gain": 0.115,
-      "selection_margin": 0.038,
+      "selected_distance": 0.289,
+      "selected_gain": 0.061,
+      "selection_margin": 0.034,
       "components": {
-        "palette": 0.162,
-        "aspect": 0.684,
-        "ink": 0.336
+        "palette": 0.196,
+        "aspect": 0.692,
+        "ink": 0.371
       },
-      "hard_failures": 6,
-      "findings": [
-        {
-          "check": "text_collision",
-          "detail": "'trend_C' over 'trend_C'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'radar_A' over 'radar_A'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'coverage_B' over 'radar_A'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'coverage_B' over 'trend_C'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'coverage_B' over 'coverage_B'",
-          "severity": "hard"
-        }
-      ],
+      "hard_failures": 0,
+      "findings": [],
       "official_code_score": {
         "available": false,
         "reason": "CodegenError: skill 'radial_profile' has no code emitter yet"
@@ -3493,51 +3651,25 @@
       "id": "Chart2Code_level2_radar_35_v4",
       "chart": "Polar/Radial",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "radial_profile",
       "rationale": "polar panel_row by block_id",
       "rows_used": 385,
       "status": "ok",
-      "distance": 0.386,
-      "baseline_distance": 0.303,
-      "delta": -0.083,
+      "distance": 0.319,
+      "baseline_distance": 0.328,
+      "delta": 0.009,
       "selected": "styled",
-      "selected_distance": 0.279,
-      "selected_gain": 0.024,
-      "selection_margin": 0.036,
+      "selected_distance": 0.281,
+      "selected_gain": 0.047,
+      "selection_margin": 0.034,
       "components": {
-        "palette": 0.181,
-        "aspect": 0.451,
-        "ink": 0.833
+        "palette": 0.225,
+        "aspect": 0.444,
+        "ink": 0.429
       },
-      "hard_failures": 10,
-      "findings": [
-        {
-          "check": "text_collision",
-          "detail": "'raw_assay' over 'raw_assay'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'metric_traces' over 'profile_overview'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'profile_overview' over 'profile_overview'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'metric_traces' over 'metric_traces'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'profile_overview' over 'raw_assay'",
-          "severity": "hard"
-        }
-      ],
+      "hard_failures": 0,
+      "findings": [],
       "official_code_score": {
         "available": false,
         "reason": "CodegenError: skill 'radial_profile' has no code emitter yet"
@@ -3548,106 +3680,36 @@
       "id": "Chart2Code_level2_radar_3_v1",
       "chart": "Polar/Radial",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "radial_profile",
       "rationale": "polar panel_row by panel_group",
       "rows_used": 260,
-      "status": "ok",
-      "distance": 0.306,
-      "baseline_distance": 0.301,
-      "delta": -0.005,
-      "selected": "styled",
-      "selected_distance": 0.244,
-      "selected_gain": 0.057,
-      "selection_margin": 0.029,
-      "components": {
-        "palette": 0.079,
-        "aspect": 0.237,
-        "ink": 0.944
-      },
-      "hard_failures": 17,
-      "findings": [
-        {
-          "check": "text_collision",
-          "detail": "'shared_condition_measurements' over 'shared_condition_measurements'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'shared_condition_measureme' over 'shared_condition_measureme'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'shared_condition_measurem' over 'shared_condition_measurem'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'shared_condition_measuremen' over 'shared_condition_measuremen'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'shared_condition_measurement' over 'shared_condition_measurements'",
-          "severity": "hard"
-        }
-      ],
-      "official_code_score": {
-        "available": false,
-        "reason": "CodegenError: skill 'radial_profile' has no code emitter yet"
-      },
-      "semantic_findings": []
+      "status": "unsupported",
+      "error": "SkillError: encode.polar: 'panel_group' reduces to 2 distinct angle(s); a polar profile needs at least 3. This data has no angular reading -- use a bar or trend encoding."
     },
     {
       "id": "Chart2Code_level2_radar_3_v3",
       "chart": "Polar/Radial",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "radial_profile",
       "rationale": "polar panel_row by block_id",
       "rows_used": 784,
       "status": "ok",
-      "distance": 0.332,
-      "baseline_distance": 0.353,
-      "delta": 0.021,
+      "distance": 0.241,
+      "baseline_distance": 0.265,
+      "delta": 0.024,
       "selected": "styled",
-      "selected_distance": 0.249,
-      "selected_gain": 0.104,
-      "selection_margin": 0.065,
+      "selected_distance": 0.247,
+      "selected_gain": 0.018,
+      "selection_margin": 0.034,
       "components": {
-        "palette": 0.052,
-        "aspect": 0.361,
-        "ink": 1.0
+        "palette": 0.189,
+        "aspect": 0.285,
+        "ink": 0.326
       },
-      "hard_failures": 30,
-      "findings": [
-        {
-          "check": "text_collision",
-          "detail": "'field_replicates' over 'field_replicates'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'a_polar_function_profile' over 'c_ordered_system_profiles'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'b_ranked_function_comparison' over 'c_ordered_system_profiles'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'a_polar_function_profile' over 'b_ranked_function_comparison'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'b_ranked_function_comparison' over 'field_replicates'",
-          "severity": "hard"
-        }
-      ],
+      "hard_failures": 0,
+      "findings": [],
       "official_code_score": {
         "available": false,
         "reason": "CodegenError: skill 'radial_profile' has no code emitter yet"
@@ -3658,51 +3720,25 @@
       "id": "Chart2Code_level2_radar_40_v5",
       "chart": "Polar/Radial",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "radial_profile",
       "rationale": "polar panel_row by block_id",
       "rows_used": 281,
       "status": "ok",
-      "distance": 0.256,
-      "baseline_distance": 0.223,
-      "delta": -0.033,
+      "distance": 0.236,
+      "baseline_distance": 0.241,
+      "delta": 0.005,
       "selected": "styled",
-      "selected_distance": 0.141,
-      "selected_gain": 0.082,
-      "selection_margin": 0.028,
+      "selected_distance": 0.185,
+      "selected_gain": 0.056,
+      "selection_margin": 0.033,
       "components": {
-        "palette": 0.119,
-        "aspect": 0.264,
-        "ink": 0.59
+        "palette": 0.171,
+        "aspect": 0.29,
+        "ink": 0.344
       },
-      "hard_failures": 8,
-      "findings": [
-        {
-          "check": "text_collision",
-          "detail": "'A_clock' over 'A_raw'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'A_clock' over 'A_clock'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'B_matrix' over 'B_matrix'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'A_raw' over 'A_raw'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'A_clock' over 'B_matrix'",
-          "severity": "hard"
-        }
-      ],
+      "hard_failures": 0,
+      "findings": [],
       "official_code_score": {
         "available": false,
         "reason": "CodegenError: skill 'radial_profile' has no code emitter yet"
@@ -3713,48 +3749,28 @@
       "id": "Chart2Code_level2_radar_4_v3",
       "chart": "Polar/Radial",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "radial_profile",
       "rationale": "polar days_since_fire_d by record_type",
       "rows_used": 1212,
       "status": "ok",
-      "distance": 0.424,
-      "baseline_distance": 0.447,
-      "delta": 0.023,
+      "distance": 0.31,
+      "baseline_distance": 0.341,
+      "delta": 0.031,
       "selected": "styled",
-      "selected_distance": 0.34,
-      "selected_gain": 0.107,
-      "selection_margin": 0.066,
+      "selected_distance": 0.299,
+      "selected_gain": 0.042,
+      "selection_margin": 0.021,
       "components": {
-        "palette": 0.215,
-        "aspect": 0.37,
-        "ink": 1.0
+        "palette": 0.193,
+        "aspect": 0.444,
+        "ink": 0.469
       },
-      "hard_failures": 9,
+      "hard_failures": 1,
       "findings": [
         {
           "check": "text_collision",
-          "detail": "'raw_plot_measurement' over 'raw_plot_measurement'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'radar_profile_summary' over 'radar_profile_summary'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'radar_profile_summary' over 'raw_plot_measurement'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'radar_profile_summary' over 'succession_line_summar'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'raw_plot_measurement' over 'succession_line_summar'",
+          "detail": "'a' over 'raw_plot_measurement'",
           "severity": "hard"
         }
       ],
@@ -3768,48 +3784,28 @@
       "id": "Chart2Code_level2_radar_7_v3",
       "chart": "Polar/Radial",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "radial_profile",
       "rationale": "polar panel_row by block_id",
       "rows_used": 381,
       "status": "ok",
-      "distance": 0.241,
-      "baseline_distance": 0.25,
-      "delta": 0.009,
+      "distance": 0.289,
+      "baseline_distance": 0.304,
+      "delta": 0.015,
       "selected": "styled",
-      "selected_distance": 0.16,
-      "selected_gain": 0.09,
-      "selection_margin": 0.046,
+      "selected_distance": 0.253,
+      "selected_gain": 0.051,
+      "selection_margin": 0.034,
       "components": {
-        "palette": 0.071,
-        "aspect": 0.281,
-        "ink": 0.627
+        "palette": 0.135,
+        "aspect": 0.414,
+        "ink": 0.549
       },
-      "hard_failures": 10,
+      "hard_failures": 1,
       "findings": [
         {
           "check": "text_collision",
-          "detail": "'field_surveys' over 'field_surveys'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'field_surveys' over 'site_design_summaries'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'site_design_summaries' over 'site_design_summaries'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'field_surveys' over 'treatment_range_summari'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'site_design_summaries' over 'treatment_range_summari'",
+          "detail": "'a' over 'site_design_summaries'",
           "severity": "hard"
         }
       ],
@@ -3823,48 +3819,28 @@
       "id": "Chart2Code_level2_radar_9_v4",
       "chart": "Polar/Radial",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "radial_profile",
       "rationale": "polar panel_row by block_id",
       "rows_used": 192,
       "status": "ok",
-      "distance": 0.238,
-      "baseline_distance": 0.243,
-      "delta": 0.005,
+      "distance": 0.179,
+      "baseline_distance": 0.195,
+      "delta": 0.016,
       "selected": "styled",
-      "selected_distance": 0.203,
-      "selected_gain": 0.04,
-      "selection_margin": 0.025,
+      "selected_distance": 0.148,
+      "selected_gain": 0.047,
+      "selection_margin": 0.024,
       "components": {
-        "palette": 0.095,
-        "aspect": 0.059,
-        "ink": 0.773
+        "palette": 0.194,
+        "aspect": 0.184,
+        "ink": 0.138
       },
-      "hard_failures": 13,
+      "hard_failures": 1,
       "findings": [
         {
           "check": "text_collision",
-          "detail": "'condition_measurements' over 'condition_measurements'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'habitat_profile' over 'habitat_profile'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'anchor_overview' over 'anchor_overview'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'anchor_overview' over 'habitat_profile'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'condition_measuremen' over 'condition_measuremen'",
+          "detail": "'a' over 'condition_measurements'",
           "severity": "hard"
         }
       ],
@@ -3878,7 +3854,7 @@
       "id": "Chart2Code_level2_scatter_13_v2",
       "chart": "Scatter",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "scatter_relationship",
       "rationale": "scatter panel_row vs panel_col",
       "rows_used": 56,
@@ -3940,7 +3916,7 @@
       "id": "Chart2Code_level2_scatter_1_v2__single",
       "chart": "Bar",
       "panel_mode": "single",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "grouped_measures",
       "rationale": "grouped bars ['plot_order', 'metric_value', 'uncertainty_se'] by record_type",
       "rows_used": 80,
@@ -3981,7 +3957,7 @@
       "id": "Chart2Code_level2_scatter_22_v2__single",
       "chart": "Scatter",
       "panel_mode": "single",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "scatter_relationship",
       "rationale": "scatter microbiome_divergence_index_unitless vs colonization_resistance_score_percent",
       "rows_used": 80,
@@ -4019,7 +3995,7 @@
       "id": "Chart2Code_level2_scatter_22_v3",
       "chart": "Scatter",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "scatter_relationship",
       "rationale": "scatter replicate_id vs panel_row",
       "rows_used": 106,
@@ -4070,7 +4046,7 @@
       "id": "Chart2Code_level2_scatter_27_v5",
       "chart": "Scatter",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "scatter_relationship",
       "rationale": "scatter panel_row vs panel_col",
       "rows_used": 3310,
@@ -4111,7 +4087,7 @@
       "id": "Chart2Code_level2_scatter_5_v5",
       "chart": "Scatter",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "scatter_relationship",
       "rationale": "scatter panel_row vs panel_col",
       "rows_used": 272,
@@ -4150,7 +4126,7 @@
       "id": "Chart2Code_level2_violin_25_v4",
       "chart": "Box/Violin",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "distribution_comparison",
       "rationale": "box panel_row by panel_group",
       "rows_used": 1775,
@@ -4191,7 +4167,7 @@
       "id": "Chart2Code_level3_table20_3_generate",
       "chart": "Scatter",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "scatter_relationship",
       "rationale": "scatter complexity_band_order vs complexity_index_unitless",
       "rows_used": 584,
@@ -4231,7 +4207,7 @@
       "id": "Chart2NCode_7b87069f5442408286d1a4b0300eae18",
       "chart": "3D",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "status": "unsupported",
       "error": "unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this is a deliberate exclusion"
     },
@@ -4239,7 +4215,7 @@
       "id": "Chart2NCode_ce7b7d946995482f9dd37ddad319cbc2",
       "chart": "Line",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "trend_with_uncertainty",
       "rationale": "trend time_day->panel_row",
       "rows_used": 114,
@@ -4278,7 +4254,7 @@
       "id": "Chart2NCode_f5989e4725654971a32e6c84c0dbdfa5",
       "chart": "Bar",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "grouped_measures",
       "rationale": "grouped bars ['panel_col', 'category_order', 'timepoint'] by panel_group",
       "rows_used": 90,
@@ -4319,7 +4295,7 @@
       "id": "ChartNet-sample_01541e58b887ce36",
       "chart": "Bar",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "grouped_measures",
       "rationale": "grouped bars ['panel_col', 'rank_by_mean', 'porewater_salinity_psu'] by record_type",
       "rows_used": 229,
@@ -4359,7 +4335,7 @@
       "id": "ChartNet-sample_11168fb7e30df7c0",
       "chart": "Box/Violin",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "distribution_comparison",
       "rationale": "box panel_row by panel_group",
       "rows_used": 345,
@@ -4398,7 +4374,7 @@
       "id": "ChartNet-sample_12f1182db6964e8c",
       "chart": "Line",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "trend_with_uncertainty",
       "rationale": "trend year->panel_row",
       "rows_used": 358,
@@ -4438,41 +4414,25 @@
       "id": "ChartNet-sample_1acf825b0429ddfd",
       "chart": "Heatmap",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "matrix_plate",
       "rationale": "matrix 7 measures",
       "rows_used": 40,
       "status": "ok",
-      "distance": 0.298,
-      "baseline_distance": 0.424,
-      "delta": 0.126,
+      "distance": 0.285,
+      "baseline_distance": 0.428,
+      "delta": 0.143,
       "selected": "styled",
       "selected_distance": 0.18,
-      "selected_gain": 0.244,
+      "selected_gain": 0.248,
       "selection_margin": 0.121,
       "components": {
-        "palette": 0.185,
-        "aspect": 0.078,
-        "ink": 0.802
+        "palette": 0.153,
+        "aspect": 0.086,
+        "ink": 0.816
       },
-      "hard_failures": 3,
-      "findings": [
-        {
-          "check": "text_collision",
-          "detail": "'1.00' over '2.00'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'1.00' over '2.00 1.00'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'1.00' over '1.00'",
-          "severity": "hard"
-        }
-      ],
+      "hard_failures": 0,
+      "findings": [],
       "official_code_score": {
         "available": true,
         "score": 99.98973744287922,
@@ -4490,7 +4450,7 @@
       "id": "ChartNet-sample_21db7b1495645e96",
       "chart": "Bar",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "grouped_measures",
       "rationale": "grouped bars ['panel_row', 'panel_col', 'salinity_ppt'] by panel_group",
       "rows_used": 95,
@@ -4531,7 +4491,7 @@
       "id": "ChartNet-sample_251d4b63cae5c39c",
       "chart": "Box/Violin",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "distribution_comparison",
       "rationale": "box observation_year by reef_sector",
       "rows_used": 220,
@@ -4596,7 +4556,7 @@
       "id": "ChartNet-sample_27ec276af1be7f88",
       "chart": "Bar",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "grouped_measures",
       "rationale": "grouped bars ['panel_row', 'panel_col', 'display_order'] by panel_group",
       "rows_used": 28,
@@ -4637,7 +4597,7 @@
       "id": "ChartNet-sample_3a712400d6efe5ca",
       "chart": "Line",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "trend_with_uncertainty",
       "rationale": "trend sampling_year->panel_row",
       "rows_used": 1505,
@@ -4676,7 +4636,7 @@
       "id": "ChartNet-sample_3d0ebd7ea1e10bf3",
       "chart": "Line",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "trend_with_uncertainty",
       "rationale": "trend observation_day->panel_row",
       "rows_used": 956,
@@ -4714,50 +4674,10 @@
       "semantic_findings": []
     },
     {
-      "id": "ChartNet-sample_953bb3ed650d8541",
-      "chart": "Bar",
-      "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
-      "skill": "grouped_measures",
-      "rationale": "grouped bars ['panel_row', 'panel_col', 'year'] by panel_group",
-      "rows_used": 263,
-      "status": "ok",
-      "distance": 0.284,
-      "baseline_distance": 0.336,
-      "delta": 0.052,
-      "selected": "styled",
-      "selected_distance": 0.292,
-      "selected_gain": 0.044,
-      "selection_margin": 0.054,
-      "components": {
-        "palette": 0.487,
-        "aspect": 0.006,
-        "ink": 0.052
-      },
-      "hard_failures": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 79.99797661841838,
-        "n_activated": 5,
-        "scored": [
-          "palette",
-          "figure_aspect",
-          "linewidth",
-          "grid",
-          "spines_removed"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": []
-    },
-    {
       "id": "ChartNet-sample_42a8557ef11775e9",
       "chart": "Bar",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "grouped_measures",
       "rationale": "grouped bars ['panel_row', 'cluster_rank', 'observation_year'] by panel_group",
       "rows_used": 113,
@@ -4795,7 +4715,7 @@
       "id": "ChartNet-sample_46826fe4916b7d52",
       "chart": "Box/Violin",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "distribution_comparison",
       "rationale": "box panel_row by panel_group",
       "rows_used": 1402,
@@ -4834,22 +4754,22 @@
       "id": "ChartNet-sample_51138e34911000f6",
       "chart": "Heatmap",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "matrix_plate",
       "rationale": "matrix 8 measures",
       "rows_used": 40,
       "status": "ok",
-      "distance": 0.289,
-      "baseline_distance": 0.408,
-      "delta": 0.119,
+      "distance": 0.283,
+      "baseline_distance": 0.405,
+      "delta": 0.122,
       "selected": "styled",
-      "selected_distance": 0.163,
-      "selected_gain": 0.245,
+      "selected_distance": 0.161,
+      "selected_gain": 0.244,
       "selection_margin": 0.12,
       "components": {
-        "palette": 0.174,
+        "palette": 0.171,
         "aspect": 0.143,
-        "ink": 0.721
+        "ink": 0.704
       },
       "hard_failures": 0,
       "findings": [],
@@ -4871,7 +4791,7 @@
       "id": "ChartNet-sample_55e97056fbbde5b6__single",
       "chart": "Bar",
       "panel_mode": "single",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "grouped_measures",
       "rationale": "grouped bars ['connectivity_rank', 'year', 'value'] by record_type",
       "rows_used": 88,
@@ -4911,7 +4831,7 @@
       "id": "ChartNet-sample_575be33996f0155c",
       "chart": "Bar",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "grouped_measures",
       "rationale": "grouped bars ['panel_row', 'panel_col', 'observation_order'] by panel_group",
       "rows_used": 59,
@@ -4951,7 +4871,7 @@
       "id": "ChartNet-sample_5781d64aa8377547",
       "chart": "Box/Violin",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "distribution_comparison",
       "rationale": "box lag_start_hours by catchment_substrate",
       "rows_used": 288,
@@ -4989,7 +4909,7 @@
       "id": "ChartNet-sample_5c19f37c2ecba73b",
       "chart": "Box/Violin",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "distribution_comparison",
       "rationale": "box study_year by sampling_campaign",
       "rows_used": 522,
@@ -5028,7 +4948,7 @@
       "id": "ChartNet-sample_5cf3859f3ce78167",
       "chart": "Bar",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "grouped_measures",
       "rationale": "grouped bars ['panel_row', 'panel_col', 'nickel_loading_wt_percent'] by panel_group",
       "rows_used": 91,
@@ -5068,48 +4988,28 @@
       "id": "ChartNet-sample_5e553d0091325708",
       "chart": "Polar/Radial",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "radial_profile",
       "rationale": "polar panel_col by block_id",
       "rows_used": 310,
       "status": "ok",
-      "distance": 0.369,
-      "baseline_distance": 0.386,
-      "delta": 0.017,
+      "distance": 0.258,
+      "baseline_distance": 0.273,
+      "delta": 0.015,
       "selected": "styled",
-      "selected_distance": 0.287,
-      "selected_gain": 0.099,
-      "selection_margin": 0.043,
+      "selected_distance": 0.215,
+      "selected_gain": 0.058,
+      "selection_margin": 0.034,
       "components": {
-        "palette": 0.116,
-        "aspect": 0.371,
-        "ink": 1.0
+        "palette": 0.21,
+        "aspect": 0.492,
+        "ink": 0.141
       },
-      "hard_failures": 8,
+      "hard_failures": 1,
       "findings": [
         {
           "check": "text_collision",
-          "detail": "'anchor_replicates' over 'trajectory_replicates'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'trajectory_replicates' over 'trajectory_replicates'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'anchor_replicates' over 'anchor_replicates'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'trajectory_summary' over 'trajectory_summary'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'anchor_replicates' over 'trajectory_summary'",
+          "detail": "'a' over 'trajectory_replicates'",
           "severity": "hard"
         }
       ],
@@ -5123,7 +5023,7 @@
       "id": "ChartNet-sample_63115ff12f6710a3",
       "chart": "Heatmap",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "matrix_plate",
       "rationale": "matrix 8 measures",
       "rows_used": 40,
@@ -5160,7 +5060,7 @@
       "id": "ChartNet-sample_68d34458d8f08a48",
       "chart": "Box/Violin",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "distribution_comparison",
       "rationale": "box panel_row by panel_group",
       "rows_used": 188,
@@ -5199,7 +5099,7 @@
       "id": "ChartNet-sample_7c69a17fd376e251",
       "chart": "Heatmap",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "matrix_plate",
       "rationale": "pivot block_id x panel_group of panel_row",
       "rows_used": 4,
@@ -5249,22 +5149,22 @@
       "id": "ChartNet-sample_82a42a98d7e32b53",
       "chart": "Heatmap",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "matrix_plate",
       "rationale": "matrix 6 measures",
       "rows_used": 40,
       "status": "ok",
-      "distance": 0.363,
-      "baseline_distance": 0.483,
+      "distance": 0.36,
+      "baseline_distance": 0.48,
       "delta": 0.12,
       "selected": "styled",
-      "selected_distance": 0.237,
-      "selected_gain": 0.246,
+      "selected_distance": 0.235,
+      "selected_gain": 0.245,
       "selection_margin": 0.121,
       "components": {
         "palette": 0.292,
         "aspect": 0.091,
-        "ink": 0.812
+        "ink": 0.797
       },
       "hard_failures": 0,
       "findings": [],
@@ -5282,54 +5182,68 @@
       "semantic_findings": []
     },
     {
+      "id": "ChartNet-sample_953bb3ed650d8541",
+      "chart": "Bar",
+      "panel_mode": "multi",
+      "code_version": "221d555c259a",
+      "skill": "grouped_measures",
+      "rationale": "grouped bars ['panel_row', 'panel_col', 'year'] by panel_group",
+      "rows_used": 263,
+      "status": "ok",
+      "distance": 0.284,
+      "baseline_distance": 0.336,
+      "delta": 0.052,
+      "selected": "styled",
+      "selected_distance": 0.292,
+      "selected_gain": 0.044,
+      "selection_margin": 0.054,
+      "components": {
+        "palette": 0.487,
+        "aspect": 0.006,
+        "ink": 0.052
+      },
+      "hard_failures": 0,
+      "findings": [],
+      "official_code_score": {
+        "available": true,
+        "score": 79.99797661841838,
+        "n_activated": 5,
+        "scored": [
+          "palette",
+          "figure_aspect",
+          "linewidth",
+          "grid",
+          "spines_removed"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": []
+    },
+    {
       "id": "ChartNet-sample_97a7c092bc6a4a6c",
       "chart": "Heatmap",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "matrix_plate",
       "rationale": "matrix 8 measures",
       "rows_used": 40,
       "status": "ok",
-      "distance": 0.326,
-      "baseline_distance": 0.44,
-      "delta": 0.114,
+      "distance": 0.338,
+      "baseline_distance": 0.496,
+      "delta": 0.158,
       "selected": "styled",
-      "selected_distance": 0.212,
-      "selected_gain": 0.228,
+      "selected_distance": 0.248,
+      "selected_gain": 0.248,
       "selection_margin": 0.121,
       "components": {
         "palette": 0.352,
-        "aspect": 0.017,
-        "ink": 0.569
+        "aspect": 0.016,
+        "ink": 0.625
       },
-      "hard_failures": 13,
-      "findings": [
-        {
-          "check": "text_collision",
-          "detail": "'2004.00' over '2005.00'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'2000.00' over '2007.00'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'2010.00' over '2012.00'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'2011.00' over '2011.00'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'2011.00' over '2021.00'",
-          "severity": "hard"
-        }
-      ],
+      "hard_failures": 0,
+      "findings": [],
       "official_code_score": {
         "available": true,
         "score": 99.97617567419262,
@@ -5348,7 +5262,7 @@
       "id": "ChartNet-sample_9fa23898eda05a63",
       "chart": "Bar",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "grouped_measures",
       "rationale": "grouped bars ['panel_row', 'panel_col', 'display_order'] by record_type",
       "rows_used": 385,
@@ -5387,7 +5301,7 @@
       "id": "ChartNet-sample_ad3e2f8704f6e1b1__single",
       "chart": "Bar",
       "panel_mode": "single",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "grouped_measures",
       "rationale": "grouped bars ['recovery_day', 'stack_order', 'gene_copies_per_mg_soil_thousands'] by record_type",
       "rows_used": 504,
@@ -5429,51 +5343,25 @@
       "id": "ChartNet-sample_b07b3f6805a9e3b8",
       "chart": "Heatmap",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "matrix_plate",
       "rationale": "matrix 8 measures",
       "rows_used": 40,
       "status": "ok",
-      "distance": 0.188,
+      "distance": 0.191,
       "baseline_distance": 0.314,
-      "delta": 0.126,
+      "delta": 0.123,
       "selected": "styled",
-      "selected_distance": 0.085,
-      "selected_gain": 0.229,
-      "selection_margin": 0.112,
+      "selected_distance": 0.089,
+      "selected_gain": 0.225,
+      "selection_margin": 0.108,
       "components": {
-        "palette": 0.09,
+        "palette": 0.098,
         "aspect": 0.158,
-        "ink": 0.462
+        "ink": 0.456
       },
-      "hard_failures": 5,
-      "findings": [
-        {
-          "check": "text_collision",
-          "detail": "'3.00' over '3.00'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'5.00' over '5.00'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'0.00' over '0.00'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'1.00' over '1.00'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'4.00' over '4.00'",
-          "severity": "hard"
-        }
-      ],
+      "hard_failures": 0,
+      "findings": [],
       "official_code_score": {
         "available": true,
         "score": 99.9877723897254,
@@ -5492,7 +5380,7 @@
       "id": "ChartNet-sample_b2578adbadc0d71e",
       "chart": "Box/Violin",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "distribution_comparison",
       "rationale": "box panel_row by panel_group",
       "rows_used": 128,
@@ -5531,7 +5419,7 @@
       "id": "ChartNet-sample_bbbf530e6aefa314",
       "chart": "Bar",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "grouped_measures",
       "rationale": "grouped bars ['study_year', 'annual_net_accretion_kg_m2_yr', 'measurement_se_kg_m2_yr'] by reef_complex",
       "rows_used": 384,
@@ -5572,7 +5460,7 @@
       "id": "ChartNet-sample_c1ec6683e1feea7b",
       "chart": "Line",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "trend_with_uncertainty",
       "rationale": "trend year->category_order",
       "rows_used": 365,
@@ -5624,7 +5512,7 @@
       "id": "ChartNet-sample_d1a051ec96a39bf4",
       "chart": "Box/Violin",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "distribution_comparison",
       "rationale": "box panel_row by panel_group",
       "rows_used": 91,
@@ -5663,7 +5551,7 @@
       "id": "ChartNet-sample_d7325ced9dcb3e94",
       "chart": "Bar",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "grouped_measures",
       "rationale": "grouped bars ['reactor_rank_by_methane_productivity', 'biological_replicate', 'replicate_count'] by record_type",
       "rows_used": 171,
@@ -5703,46 +5591,25 @@
       "id": "ChartNet-sample_e17ff7b5495b0ee4",
       "chart": "Polar/Radial",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "radial_profile",
       "rationale": "polar panel_row by block_id",
       "rows_used": 44,
       "status": "ok",
-      "distance": 0.171,
-      "baseline_distance": 0.199,
-      "delta": 0.028,
+      "distance": 0.231,
+      "baseline_distance": 0.251,
+      "delta": 0.02,
       "selected": "styled",
-      "selected_distance": 0.158,
-      "selected_gain": 0.041,
-      "selection_margin": 0.038,
+      "selected_distance": 0.205,
+      "selected_gain": 0.046,
+      "selection_margin": 0.034,
       "components": {
         "palette": 0.133,
-        "aspect": 0.394,
-        "ink": 0.044
+        "aspect": 0.385,
+        "ink": 0.325
       },
-      "hard_failures": 4,
-      "findings": [
-        {
-          "check": "text_collision",
-          "detail": "'station_composition' over 'station_composition'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'reactor_replicates' over 'reactor_replicates'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'1.8' over 'media_composition'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'a' over 'station_composition'",
-          "severity": "hard"
-        }
-      ],
+      "hard_failures": 0,
+      "findings": [],
       "official_code_score": {
         "available": false,
         "reason": "CodegenError: skill 'radial_profile' has no code emitter yet"
@@ -5753,7 +5620,7 @@
       "id": "ChartNet-sample_f31f9780b9bd6948",
       "chart": "Line",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "trend_with_uncertainty",
       "rationale": "trend survey_month->panel_row",
       "rows_used": 72,
@@ -5794,7 +5661,7 @@
       "id": "ChartNet-sample_f743754444c3a3d9",
       "chart": "Line",
       "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
+      "code_version": "221d555c259a",
       "skill": "trend_with_uncertainty",
       "rationale": "trend day_after_heat_shift_days->panel_row",
       "rows_used": 162,
@@ -5830,271 +5697,12 @@
         "note": "code channel only; the 0.65 vision channel is not run"
       },
       "semantic_findings": []
-    },
-    {
-      "id": "PMC11502666",
-      "chart": "Distribution",
-      "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
-      "skill": "faceted_distribution",
-      "rationale": "faceted hist by panel_group",
-      "rows_used": 554,
-      "status": "ok",
-      "distance": 0.146,
-      "baseline_distance": 0.209,
-      "delta": 0.063,
-      "selected": "styled",
-      "selected_distance": 0.145,
-      "selected_gain": 0.064,
-      "selection_margin": 0.066,
-      "components": {
-        "palette": 0.099,
-        "aspect": 0.009,
-        "ink": 0.398
-      },
-      "hard_failures": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 100.0,
-        "n_activated": 2,
-        "scored": [
-          "palette",
-          "grid"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": []
-    },
-    {
-      "id": "PMC11840003",
-      "chart": "Box/Violin",
-      "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
-      "skill": "distribution_comparison",
-      "rationale": "box panel_row by panel_group",
-      "rows_used": 1403,
-      "status": "ok",
-      "distance": 0.169,
-      "baseline_distance": 0.446,
-      "delta": 0.277,
-      "selected": "styled",
-      "selected_distance": 0.176,
-      "selected_gain": 0.27,
-      "selection_margin": 0.279,
-      "components": {
-        "palette": 0.1,
-        "aspect": 0.211,
-        "ink": 0.302
-      },
-      "hard_failures": 1,
-      "findings": [
-        {
-          "check": "height",
-          "detail": "170.0 mm exceeds the 170.0 mm maximum",
-          "severity": "hard"
-        }
-      ],
-      "official_code_score": {
-        "available": true,
-        "score": 99.99959236362147,
-        "n_activated": 4,
-        "scored": [
-          "palette",
-          "figure_aspect",
-          "linewidth",
-          "grid"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": []
-    },
-    {
-      "id": "PMC12000431",
-      "chart": "Distribution",
-      "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
-      "skill": "faceted_distribution",
-      "rationale": "faceted hist by panel_group",
-      "rows_used": 1414,
-      "status": "ok",
-      "distance": 0.083,
-      "baseline_distance": 0.096,
-      "delta": 0.013,
-      "selected": "styled",
-      "selected_distance": 0.083,
-      "selected_gain": 0.013,
-      "selection_margin": 0.015,
-      "components": {
-        "palette": 0.077,
-        "aspect": 0.005,
-        "ink": 0.177
-      },
-      "hard_failures": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 100.0,
-        "n_activated": 2,
-        "scored": [
-          "palette",
-          "legend_frame"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": []
-    },
-    {
-      "id": "PMC12354736",
-      "chart": "Distribution",
-      "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
-      "skill": "faceted_distribution",
-      "rationale": "faceted hist by panel_row",
-      "rows_used": 12196,
-      "status": "ok",
-      "distance": 0.321,
-      "baseline_distance": 0.383,
-      "delta": 0.062,
-      "selected": "styled",
-      "selected_distance": 0.326,
-      "selected_gain": 0.057,
-      "selection_margin": 0.059,
-      "components": {
-        "palette": 0.346,
-        "aspect": 0.183,
-        "ink": 0.399
-      },
-      "hard_failures": 1,
-      "findings": [
-        {
-          "check": "height",
-          "detail": "170.0 mm exceeds the 170.0 mm maximum",
-          "severity": "hard"
-        }
-      ],
-      "official_code_score": {
-        "available": true,
-        "score": 99.9988792326005,
-        "n_activated": 4,
-        "scored": [
-          "palette",
-          "figure_aspect",
-          "grid",
-          "legend_frame"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": []
-    },
-    {
-      "id": "PMC12504421",
-      "chart": "Heatmap",
-      "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
-      "skill": "matrix_plate",
-      "rationale": "pivot panel_group x record_type of panel_row",
-      "rows_used": 4,
-      "status": "ok",
-      "distance": 0.428,
-      "baseline_distance": 0.547,
-      "delta": 0.119,
-      "selected": "styled",
-      "selected_distance": 0.401,
-      "selected_gain": 0.146,
-      "selection_margin": 0.096,
-      "components": {
-        "palette": 0.364,
-        "aspect": 0.166,
-        "ink": 0.852
-      },
-      "hard_failures": 3,
-      "findings": [
-        {
-          "check": "height",
-          "detail": "170.0 mm exceeds the 170.0 mm maximum",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'site_distribution_observation' over 'trajectory_indicator_score'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'feature_summary overlap_intersection' over 'site_distribution_observation'",
-          "severity": "hard"
-        }
-      ],
-      "official_code_score": {
-        "available": true,
-        "score": 99.99985246351535,
-        "n_activated": 5,
-        "scored": [
-          "palette",
-          "figure_aspect",
-          "linewidth",
-          "grid",
-          "tick_direction"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": []
-    },
-    {
-      "id": "PMC12905268",
-      "chart": "Distribution",
-      "panel_mode": "multi",
-      "code_version": "7bd6128172b3",
-      "skill": "faceted_distribution",
-      "rationale": "faceted hist by shoreline_condition",
-      "rows_used": 1196,
-      "status": "ok",
-      "distance": 0.349,
-      "baseline_distance": 0.306,
-      "delta": -0.043,
-      "selected": "plain",
-      "selected_distance": 0.301,
-      "selected_gain": 0.005,
-      "selection_margin": 0.044,
-      "components": {
-        "palette": 0.316,
-        "aspect": 0.564,
-        "ink": 0.219
-      },
-      "hard_failures": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 99.99993928740484,
-        "n_activated": 4,
-        "scored": [
-          "palette",
-          "figure_aspect",
-          "linewidth",
-          "legend_frame"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": []
     }
   ],
-  "benchmark_anchor_distance": 0.359,
+  "benchmark_anchor_distance": 0.355,
   "benchmark_anchor_single": {
-    "mean": 0.359,
-    "partial_mean": 0.359,
+    "mean": 0.355,
+    "partial_mean": 0.355,
     "n_same_instrument": 20,
     "n_other_instrument": 0,
     "n_expected": 20,
@@ -6116,14 +5724,20 @@
     "weight_upstream": 0.35,
     "note": "official deterministic channel only; the 0.65 vision channel is NOT run, so this is not the combined score",
     "n_scored": 109,
-    "n_unavailable": 32,
+    "n_unavailable": 30,
     "mean_score": 95.54,
     "min_score": 66.67,
     "max_score": 100.0
   },
-  "code_version": "7bd6128172b3",
+  "code_version": "221d555c259a",
   "freshness": {
     "fresh": [
+      "PMC11502666",
+      "PMC11840003",
+      "PMC12000431",
+      "PMC12354736",
+      "PMC12504421",
+      "PMC12905268",
       "PMC13009336",
       "PMC13022287",
       "PMC13079874",
@@ -6141,7 +5755,6 @@
       "arxiv-ml-3d-trajectory__2511.17399",
       "arxiv-ml-3d-trajectory__2602.22552",
       "arxiv-ml-bar-line-v2__2511.15055",
-      "arxiv-ml-bar-line-v2__2605.21125",
       "arxiv-phys-prx-prl__2603.21981",
       "arxiv_2410.15876",
       "arxiv_2502.15132",
@@ -6208,7 +5821,6 @@
       "Chart2Code_level2_radar_23_v3",
       "Chart2Code_level2_radar_26_v3",
       "Chart2Code_level2_radar_35_v4",
-      "Chart2Code_level2_radar_3_v1",
       "Chart2Code_level2_radar_3_v3",
       "Chart2Code_level2_radar_40_v5",
       "Chart2Code_level2_radar_4_v3",
@@ -6233,7 +5845,6 @@
       "ChartNet-sample_27ec276af1be7f88",
       "ChartNet-sample_3a712400d6efe5ca",
       "ChartNet-sample_3d0ebd7ea1e10bf3",
-      "ChartNet-sample_953bb3ed650d8541",
       "ChartNet-sample_42a8557ef11775e9",
       "ChartNet-sample_46826fe4916b7d52",
       "ChartNet-sample_51138e34911000f6",
@@ -6247,6 +5858,7 @@
       "ChartNet-sample_68d34458d8f08a48",
       "ChartNet-sample_7c69a17fd376e251",
       "ChartNet-sample_82a42a98d7e32b53",
+      "ChartNet-sample_953bb3ed650d8541",
       "ChartNet-sample_97a7c092bc6a4a6c",
       "ChartNet-sample_9fa23898eda05a63",
       "ChartNet-sample_ad3e2f8704f6e1b1__single",
@@ -6258,33 +5870,27 @@
       "ChartNet-sample_d7325ced9dcb3e94",
       "ChartNet-sample_e17ff7b5495b0ee4",
       "ChartNet-sample_f31f9780b9bd6948",
-      "ChartNet-sample_f743754444c3a3d9",
-      "PMC11502666",
-      "PMC11840003",
-      "PMC12000431",
-      "PMC12354736",
-      "PMC12504421",
-      "PMC12905268"
+      "ChartNet-sample_f743754444c3a3d9"
     ],
     "stale": [],
     "unknown": [],
-    "n_fresh": 141,
+    "n_fresh": 139,
     "n_stale": 0,
     "n_unknown": 0
   },
   "stale_tasks": [],
   "n_stale": 0,
   "n_unknown": 0,
-  "n_fresh": 141,
+  "n_fresh": 139,
   "selection": {
-    "n": 141,
-    "shipped_mean": 0.292,
-    "always_styled_mean": 0.313,
-    "plain_mean": 0.382,
-    "gain_vs_always_styled": 0.021,
-    "gain_vs_plain": 0.09,
-    "picked_styled": 132,
-    "picked_plain": 9,
+    "n": 139,
+    "shipped_mean": 0.295,
+    "always_styled_mean": 0.312,
+    "plain_mean": 0.384,
+    "gain_vs_always_styled": 0.017,
+    "gain_vs_plain": 0.089,
+    "picked_styled": 131,
+    "picked_plain": 8,
     "rule": "closer of plain/styled to the reference; the reference is an input"
   }
 }

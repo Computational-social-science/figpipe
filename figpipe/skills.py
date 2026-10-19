@@ -473,11 +473,50 @@ def op_encode_field(ctx: SkillContext, x: str, y: str, value: str,
     ctx.trace.append(f"encode.field({x},{y},{value})")
 
 
+#: How many spokes a polar axis can carry with readable labels. Past this the labels overlap
+#: whatever the font size, and the profile stops being a profile -- it becomes a ring of text.
+MAX_POLAR_SPOKES = 16
+
+
 @operator("encode.polar", "build")
 def op_encode_polar(ctx: SkillContext, theta: str, value: str,
-                    line: bool = True, title: str | None = None):
-    """Encode a radial profile: one value per angle (category or degrees)."""
-    ctx.add_panel(composite.Panel("polar_profile", ctx.data,
+                    line: bool = True, title: str | None = None,
+                    max_spokes: int | None = None, agg: str = "mean"):
+    """Encode a radial profile: one value per angle (category or degrees).
+
+    ONE SPOKE PER ANGLE, NOT ONE PER ROW. A long table (the benchmark's radar tasks carry 460 and
+    784 rows) passed straight to the polar drawer draws one spoke per row, and every label
+    collides: measured at 50 hard text collisions on a single task. A radial profile encodes a
+    SUMMARY per angle, so the summary must be stated -- mean by default -- and the reduction is
+    written into the trace.
+
+    Past `max_spokes` the operator REFUSES rather than drawing a ring of overlapping text, because
+    a radar with 40 unreadable spokes is not a radar. The budget is a parameter so the mutation loop
+    can probe where it belongs.
+    """
+    budget = MAX_POLAR_SPOKES if max_spokes is None else int(max_spokes)
+    if agg not in ("mean", "median", "sum"):
+        raise SkillError(f"encode.polar: unsupported aggregation {agg!r}")
+    data = ctx.data
+    counts = data[theta].astype(str).value_counts()
+    if int(counts.max()) > 1:
+        data = (data.assign(**{theta: data[theta].astype(str)})
+                .groupby(theta, observed=True)[value].agg(agg).reset_index())
+        ctx.trace.append(f"encode.polar.aggregate({theta} by {agg}: "
+                         f"{len(ctx.data)} rows -> {len(data)} angles)")
+    n = len(data)
+    if n < 3:
+        # a radial profile with fewer than three spokes is not a profile: matplotlib autoscales
+        # theta to a sliver and its locator tries to draw thousands of ticks. Two benchmark tasks
+        # aggregate to exactly this, so it must be a NAMED refusal, not a bare ValueError.
+        raise SkillError(
+            f"encode.polar: {theta!r} reduces to {n} distinct angle(s); a polar profile needs at "
+            f"least 3. This data has no angular reading -- use a bar or trend encoding.")
+    if n > budget:
+        raise SkillError(
+            f"encode.polar: {n} distinct angles exceeds the {budget}-spoke budget; labels overlap "
+            f"past it. Aggregate to fewer angles, or pass max_spokes deliberately.")
+    ctx.add_panel(composite.Panel("polar_profile", data,
                                   {"theta": theta, "value": value, "line": line,
                                    "title": title}))
     ctx.trace.append(f"encode.polar({theta},{value})")

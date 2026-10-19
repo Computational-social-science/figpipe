@@ -382,6 +382,12 @@ def test_a_metric_mixing_instruments_is_not_comparable():
     for key in ("mean", "partial_mean", "n_same_instrument", "n_other_instrument",
                 "comparable", "note"):
         assert key in info
+    # THE INVARIANT THAT HOLDS IN EVERY STATE, however many rows happen to be fresh:
+    # a judged mean implies full membership on one instrument.
+    if info["mean"] is not None:
+        assert info["n_same_instrument"] == info["n_expected"], (
+            "a judged mean requires every anchor task measured by one instrument")
+        assert info["n_other_instrument"] == 0
     if not info["comparable"]:
         assert info["mean"] is None, (
             "a non-comparable metric must be None, not a small-sample number that reads as a gain")

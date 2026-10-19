@@ -280,43 +280,48 @@ def test_the_regressing_mutation_is_selected_under_an_inverted_rule(probed, inve
 def test_a_mutation_that_wins_on_one_task_and_loses_on_another_is_rejected():
     """The mean must not cancel a broken figure against a fixed one.
 
-    Built on a SYNTHETIC space: after the axis label budget landed (LEARNINGS ##63) no
-    default-space candidate is a net gain, so the property this test exists to pin cannot be
-    exercised there.
+    THIS TEST NO LONGER USES A REAL DRAWER, and that is the finding. When it was written, raising
+    `max_rows` to 48 fixed a 41-row table and broke a 48-row one (1.0 -> 0.017), so the mean was a
+    small gain and the no-regression rule was what rejected it. After the axis label budget and the
+    annotation DENSITY cap (LEARNINGS ##63/##67), a matrix renders cleanly at ANY row count -- so no
+    budget edit can produce a mixed effect any more. The scenario is unreachable through the real
+    drawers because the defect it depended on is fixed.
 
-    THE CASE (measured, not assumed): raising `max_rows` to 48 lets a 41-row two-column table
-    render cleanly (+1.0) AND lets a 48-row table render as an unlabelable matrix (1.0 -> 0.017,
-    59 collisions). The net mean is a GAIN of +0.008, which a mean-only rule reads as an
-    improvement. The no-regression condition is what rejects it.
+    That is a good outcome, and it must not be papered over by deleting the test: the RULE still
+    matters (a future drawer will reintroduce the shape), so it is exercised against a declared
+    probe whose per-task scores are explicit. The rule is what is under test, not today's drawers.
     """
-    import pandas as pd
-
-    def two_col(n: int):
-        def make() -> pd.DataFrame:
-            return pd.DataFrame({"x": [float(i) for i in range(n)],
-                                 "v": [float((i * 7) % 13) for i in range(n)]})
-        return make
-
-    tasks = (
-        mutation.Task("t41", "matrix_plate", {}, two_col(41), "clean",
-                      "41 rows: refused at budget 40, renders at 48"),
-        mutation.Task("t48", "matrix_plate", {}, two_col(48), "refused",
-                      "48 rows: correctly refused at 40, unlabelable at 48"),
-    )
-    cand = mutation.Candidate("raise-matrix-budget", "encode.matrix", "max_rows",
-                              baseline_value=40, value=48,
-                              rationale="raise the matrix budget so a 41-row table renders",
-                              skill="matrix_plate")
-    space = mutation.MutationSpace(candidates=(cand,), tasks=tasks, min_margin=0.1)
-    result = mutation.compose(mutation.probe(space), space)
-    decision = result["decisions"][0]
+    # A probe result with a KNOWN mixed effect: the candidate gains 1.0 on one task and loses 0.9
+    # on another, so the mean is a small GAIN and only the per-task rule rejects it.
+    space = mutation.MutationSpace(
+        candidates=(mutation.Candidate("mixed", "encode.matrix", "max_rows",
+                                       baseline_value=40, value=48,
+                                       rationale="fixes one table, breaks another",
+                                       skill="matrix_plate"),),
+        tasks=(mutation.Task("gains", "matrix_plate", {}, lambda: None, "clean", "gains"),
+               mutation.Task("loses", "matrix_plate", {}, lambda: None, "clean", "loses")),
+        min_margin=0.1)
+    synthetic = {
+        "space": {"min_margin": 0.1,
+                  "candidates": ["mixed"],
+                  "tasks": ["gains", "loses"]},
+        "outcomes": {
+            "baseline": {"gains": {"task": "gains", "outcome": "refused", "score": 0.0},
+                         "loses": {"task": "loses", "outcome": "rendered", "score": 1.0}},
+            "mixed": {"gains": {"task": "gains", "outcome": "rendered", "score": 1.0},
+                      "loses": {"task": "loses", "outcome": "rendered", "score": 0.1,
+                                "hard_failures": 9}},
+        },
+        "mean_score": {"baseline": 0.5, "mixed": 0.55},
+    }
+    decision = mutation.compose(synthetic, space)["decisions"][0]
     # the net effect on the mean is a GAIN ...
     assert decision["delta"] > 0, (
         f"this test is pointless unless the rejected candidate is a net gain, got {decision['delta']}")
     # ... and it is still rejected, because one task got worse
     assert decision["verdict"] == "rejected", decision["reason"]
     assert decision["regressed_tasks"], "the rejection must name the regressed task"
-    assert any(r["task"] == "t48" for r in decision["regressed_tasks"]), decision["regressed_tasks"]
+    assert any(r["task"] == "loses" for r in decision["regressed_tasks"]), decision["regressed_tasks"]
 
 
 def test_a_tie_is_reported_as_a_tie(composed):
