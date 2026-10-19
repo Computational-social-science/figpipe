@@ -530,6 +530,10 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
                     "knowledge/skills_catalog.json", meta=f"{n_skills} skills / {n_ops} operators"),
         deliverable("Architecture and priority plan", "Entry layer, reference understanding, evaluation layer and the per-metric SOTA definition.",
                     "PIPELINE_V3.md", meta="v3"),
+        deliverable("Logical audit", "Six classes of logical defect (measurement validity, "
+                    "reference class, input assumptions, verification completeness, state/timing, "
+                    "scope), each with the failure mode, the evidence, and the residual risk.",
+                    "LOGICAL_AUDIT.md", meta="6 sections, residual risks named"),
         deliverable("The claim, stated precisely", "What is claimed (official code channel, with baseline and ceiling), what is NOT claimed (combined score, head-to-head, human validation), and how to reproduce it.",
                     "CLAIM.md", meta="referents + limits"),
         deliverable("Skills-layer design note", "Global SKILLS + classic operators + the rule for extending recipes.",

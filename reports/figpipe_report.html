@@ -79,8 +79,8 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
 <body>
 <div class="top">
   <b>FigPipeline · Research Figure Pipeline</b>
-  <div class="meta"><span>commit dbe9751</span><span>branch main</span>
-  <span>knowledge v16</span><span>generated 2026-10-19 11:35</span></div>
+  <div class="meta"><span>commit 953c128</span><span>branch main</span>
+  <span>knowledge v16</span><span>generated 2026-10-19 12:29</span></div>
 </div>
 <div class="wrap">
 
@@ -90,7 +90,7 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
   artefacts: every number can be recomputed by a script, and every deliverable can be opened and
   checked. It tracks progress, exposes the evidence, and records what is not finished yet.</p>
   <div class="pills">
-    <span class="pill">tests 305 passed</span>
+    <span class="pill">tests 310 passed</span>
     <span class="pill">statistics reproduced: 15</span>
     <span class="pill">benchmark tasks 141/150</span>
     <span class="pill">skills 16 · operators 21</span>
@@ -105,7 +105,7 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
   <div class="kpi "><div class="kpi-v">75.41</div><div class="kpi-l">OFFICIAL code channel</div><div class="kpi-s">PlotTwin-Bench deviation-defect-v1 (35% weight); vision not run</div></div>
   <div class="kpi "><div class="kpi-v">3</div><div class="kpi-l">Semantic violations</div><div class="kpi-s">figures whose printed claims contradict their data</div></div>
   <div class="kpi "><div class="kpi-v">16 / 21</div><div class="kpi-l">Skills / classic operators</div><div class="kpi-s">global verification floor on every recipe</div></div>
-  <div class="kpi "><div class="kpi-v">305</div><div class="kpi-l">Automated tests</div><div class="kpi-s">negative controls and contract tests</div></div>
+  <div class="kpi "><div class="kpi-v">310</div><div class="kpi-l">Automated tests</div><div class="kpi-s">negative controls and contract tests</div></div>
   <div class="kpi "><div class="kpi-v">75.4 MB</div><div class="kpi-l">Repository size</div><div class="kpi-s">lean budget ≤ 80 MB</div></div>
 </div>
 
@@ -128,6 +128,7 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
 <div class="card deliverable"><div class="card-top"><h3>PlotTwin-Bench end-to-end report</h3><span class="pill ok">Delivered</span></div><p>Ten authoritative benchmark tasks: deterministic style distance and execution outcome, default style vs reference style.</p><div class="meta"><code>corpus/e2e/plottwin_report.json</code> · 141/150 ok</div><a class="file-link" href="../corpus/e2e/plottwin_report.json">Open artifact →</a></div>
 <div class="card deliverable"><div class="card-top"><h3>Skills and operators catalogue</h3><span class="pill ok">Delivered</span></div><p>16 named recipes + 21 classic operators + a global verification floor, machine-readable.</p><div class="meta"><code>knowledge/skills_catalog.json</code> · 16 skills / 21 operators</div><a class="file-link" href="../knowledge/skills_catalog.json">Open artifact →</a></div>
 <div class="card deliverable"><div class="card-top"><h3>Architecture and priority plan</h3><span class="pill ok">Delivered</span></div><p>Entry layer, reference understanding, evaluation layer and the per-metric SOTA definition.</p><div class="meta"><code>PIPELINE_V3.md</code> · v3</div><a class="file-link" href="../PIPELINE_V3.md">Open artifact →</a></div>
+<div class="card deliverable"><div class="card-top"><h3>Logical audit</h3><span class="pill ok">Delivered</span></div><p>Six classes of logical defect (measurement validity, reference class, input assumptions, verification completeness, state/timing, scope), each with the failure mode, the evidence, and the residual risk.</p><div class="meta"><code>LOGICAL_AUDIT.md</code> · 6 sections, residual risks named</div><a class="file-link" href="../LOGICAL_AUDIT.md">Open artifact →</a></div>
 <div class="card deliverable"><div class="card-top"><h3>The claim, stated precisely</h3><span class="pill ok">Delivered</span></div><p>What is claimed (official code channel, with baseline and ceiling), what is NOT claimed (combined score, head-to-head, human validation), and how to reproduce it.</p><div class="meta"><code>CLAIM.md</code> · referents + limits</div><a class="file-link" href="../CLAIM.md">Open artifact →</a></div>
 <div class="card deliverable"><div class="card-top"><h3>Skills-layer design note</h3><span class="pill warn">Design note</span></div><p>Global SKILLS + classic operators + the rule for extending recipes.</p><div class="meta"><code>SKILLS.md</code></div><a class="file-link" href="../SKILLS.md">Open artifact →</a></div>
 <div class="card deliverable"><div class="card-top"><h3>Runnable worked example</h3><span class="pill ok">Delivered</span></div><p>The whole pipeline on invented data: spec -> recipe -> render -> audit -> semantics -> codegen -> select, exiting non-zero unless every claim was verified.</p><div class="meta"><code>examples/worked_example.py</code> · no benchmark asset used</div><a class="file-link" href="../examples/worked_example.py">Open artifact →</a></div>
@@ -1030,9 +1031,9 @@ imitate.</p>
 <div class="okbox" style="margin-top:14px"><b>Deciding beats always transferring.</b> Over the 119 tasks measured with the decision in place, the shipped figure averages <b>0.255</b> style distance, versus 0.281 for always-styled and 0.36 for never styling. The decision picked the styled candidate 113 times and the plain one 6 times, using only the reference (an input, not the answer key).</div>
 <div class="okbox"><b>Official code channel (style inferred from the reference IMAGE): 75.41 / 100</b> over 149 tasks (min 0.0, max 100.0). This is the benchmark's own deterministic channel <code>deviation-defect-v1</code>, worth 35% of the official score; the remaining 65% is a vision channel this project does not run, so <b>no combined score is claimed</b>. Style is inferred from the reference <b>picture</b> — the benchmark's actual premise — not from its code. <b>Baseline (matplotlib defaults with the compliance floor): 38.16</b>, so the pipeline is <b>+37.25 points</b> (97.6% relative) better than doing nothing beyond compliance. For comparison, extracting the style from the shipped <code>reference_code</code> scores 100.0 — that is a <b>ceiling, not a capability</b>: the task record contains the reference code, so copying its features scores 100 by construction.</div>
 
-<div class="note"><b>Measurement freshness:</b> 35 of 141 executed tasks
+<div class="note"><b>Measurement freshness:</b> 38 of 141 executed tasks
 were measured with the current rendering code (fingerprint
-<code>ba06bab0be2d</code>), 41 with an earlier
+<code>6f01bca5b70f</code>), 38 with an earlier
 version, and 65 before the fingerprint was recorded — those are
 <b>unknown</b>, not stale. Re-measure a chart type with <code>--types X --scan</code> after a change
 to the shared style/layout layer; a stale row can make a fix look like a regression.</div>
@@ -1070,15 +1071,15 @@ floor (compliance, glyph collisions, no silently ignored parameters, a reproduci
 <div class="two-col">
 <div class="panel">
 <table><thead><tr><th>Metric</th><th>Value</th><th>Meaning</th></tr></thead><tbody>
-<tr><td>Run records</td><td class="num">75</td><td>six-hour schedule + manual runs</td></tr>
+<tr><td>Run records</td><td class="num">78</td><td>six-hour schedule + manual runs</td></tr>
 <tr><td>Knowledge-changing runs</td><td class="num">4</td><td>all from manual migrations or capability work</td></tr>
 <tr><td>Knowledge-base version</td><td>v16</td><td>16 rules</td></tr>
 <tr><td>Machine-checked rules</td><td class="num">8 / 16</td><td>the rest are hypotheses/refuted/void</td></tr>
 <tr><td>Unchecked rules</td><td>H01, H02, E01, E02, C01, C02, C03, C04</td><td>not counted as passing</td></tr>
 <tr><td>Benchmark slice</td><td>skipped: dry run</td>
 <td>rotating tasks measured by the loop</td></tr>
-<tr><td>Capability snapshot</td><td>skills 16 · operators 21 · benchmark 141/150 · success 1.0 · anchor 0.351 · tests 299</td><td>recorded by the scheduled run</td></tr>
-<tr><td>Last capability change</td><td>tests: 296 → 299</td><td>explicit delta, not a claim</td></tr>
+<tr><td>Capability snapshot</td><td>skills 16 · operators 21 · benchmark 141/150 · success 1.0 · anchor 0.351 · tests 304</td><td>recorded by the scheduled run</td></tr>
+<tr><td>Last capability change</td><td>benchmark_anchor_single: — → 0.351; benchmark_shipped_anchor_single: — → 0.296; tests: 302 → 304</td><td>explicit delta, not a claim</td></tr>
 </tbody></table>
 <p class="tag" style="margin-top:10px">Conclusion: the loop currently re-verifies, prevents drift and
 records. It has no capability snapshot, mutation or selection, so it is <b>not self-improvement</b>.
@@ -1101,7 +1102,7 @@ combined-score claim is made — the code-channel claim is stated with its basel
 
 <h3 style="margin-top:20px">Capability trend (scheduled runs)</h3>
 <table><thead><tr><th>Run</th><th>Skills</th><th>Operators</th><th>Benchmark</th>
-<th>Anchor distance</th><th>Success</th><th>Tests</th></tr></thead><tbody><tr><td>2026-10-19 09:58</td><td class="num">16</td><td class="num">21</td><td class="num">141/150</td><td class="num">0.274</td><td class="num">288</td></tr><tr><td>2026-10-19 10:02</td><td class="num">16</td><td class="num">21</td><td class="num">141/150</td><td class="num">0.274</td><td class="num">290</td></tr><tr><td>2026-10-19 10:21</td><td class="num">16</td><td class="num">21</td><td class="num">141/150</td><td class="num">0.274</td><td class="num">291</td></tr><tr><td>2026-10-19 10:31</td><td class="num">16</td><td class="num">21</td><td class="num">141/150</td><td class="num">0.274</td><td class="num">294</td></tr><tr><td>2026-10-19 10:40</td><td class="num">16</td><td class="num">21</td><td class="num">141/150</td><td class="num">0.274</td><td class="num">295</td></tr><tr><td>2026-10-19 10:46</td><td class="num">16</td><td class="num">21</td><td class="num">141/150</td><td class="num">0.274</td><td class="num">294</td></tr><tr><td>2026-10-19 11:21</td><td class="num">16</td><td class="num">21</td><td class="num">141/150</td><td class="num">0.278</td><td class="num">296</td></tr><tr><td>2026-10-19 11:31</td><td class="num">16</td><td class="num">21</td><td class="num">141/150</td><td class="num">0.278</td><td class="num">299</td></tr></tbody></table>
+<th>Anchor distance</th><th>Success</th><th>Tests</th></tr></thead><tbody><tr><td>2026-10-19 10:31</td><td class="num">16</td><td class="num">21</td><td class="num">141/150</td><td class="num">0.274</td><td class="num">294</td></tr><tr><td>2026-10-19 10:40</td><td class="num">16</td><td class="num">21</td><td class="num">141/150</td><td class="num">0.274</td><td class="num">295</td></tr><tr><td>2026-10-19 10:46</td><td class="num">16</td><td class="num">21</td><td class="num">141/150</td><td class="num">0.274</td><td class="num">294</td></tr><tr><td>2026-10-19 11:21</td><td class="num">16</td><td class="num">21</td><td class="num">141/150</td><td class="num">0.278</td><td class="num">296</td></tr><tr><td>2026-10-19 11:31</td><td class="num">16</td><td class="num">21</td><td class="num">141/150</td><td class="num">0.278</td><td class="num">299</td></tr><tr><td>2026-10-19 11:38</td><td class="num">16</td><td class="num">21</td><td class="num">141/150</td><td class="num">0.278</td><td class="num">303</td></tr><tr><td>2026-10-19 11:43</td><td class="num">16</td><td class="num">21</td><td class="num">141/150</td><td class="num">0.278</td><td class="num">302</td></tr><tr><td>2026-10-19 12:04</td><td class="num">16</td><td class="num">21</td><td class="num">141/150</td><td class="num">0.278</td><td class="num">304</td></tr></tbody></table>
 <p class="tag">Read from <code>knowledge/runs/*.json</code>. A run with no capability change is
 recorded as such; the loop fails when a judged capability field gets worse.</p>
 
@@ -1111,7 +1112,7 @@ recorded as such; the loop fails when a judged capability field gets worse.</p>
 <div class="card deliverable"><div class="card-top"><h3>P0 · Start the decision service</h3><span class="pill warn">Pending</span></div><p>Start the shared StartLux-Decision and exercise the rule-failure → model-choice fallback.</p><div class="meta"><code>figpipe/decision.py</code> · 6 tests</div><a class="file-link" href="../figpipe/decision.py">Open artifact →</a></div>
 <div class="card deliverable"><div class="card-top"><h3>DONE · Official non-VLM scorer integrated</h3><span class="pill ok">Delivered</span></div><p>The benchmark's own deviation-defect-v1 code channel, vendored unmodified and measured on 149 tasks with a baseline and a ceiling.</p><div class="meta"><code>corpus/e2e/official_scores.json</code> · 75.41 vs 38.16</div><a class="file-link" href="../corpus/e2e/official_scores.json">Open artifact →</a></div>
 <div class="card deliverable"><div class="card-top"><h3>P1 · Validate the metric</h3><span class="pill warn">Planned</span></div><p>Annotate 30 figures and test the correlation between style distance and expert ranking.</p><div class="meta"><code>templates/transfer/style_transfer_report.json</code> · Spearman ≥ 0.7</div><a class="file-link" href="../templates/transfer/style_transfer_report.json">Open artifact →</a></div>
-<div class="card deliverable"><div class="card-top"><h3>P1 · Re-measure stale rows</h3><span class="pill warn">Planned</span></div><p>41 of 141 benchmark rows predate the current rendering fingerprint; a --scan pass makes every number comparable.</p><div class="meta"><code>corpus/e2e/plottwin_report.json</code> · stale 41</div><a class="file-link" href="../corpus/e2e/plottwin_report.json">Open artifact →</a></div>
+<div class="card deliverable"><div class="card-top"><h3>P1 · Re-measure stale rows</h3><span class="pill warn">Planned</span></div><p>41 of 141 benchmark rows predate the current rendering fingerprint; a --scan pass makes every number comparable.</p><div class="meta"><code>corpus/e2e/plottwin_report.json</code> · stale 38</div><a class="file-link" href="../corpus/e2e/plottwin_report.json">Open artifact →</a></div>
 </div>
 
 <footer>
@@ -1119,6 +1120,6 @@ recorded as such; the loop fails when a judged capability field gets worse.</p>
   in this repository, with no external dependencies. PlotTwin-Bench reference images and target
   data are cached locally and never redistributed (CC BY-NC 4.0); StartLux-Decision weights are
   CC BY-NC 4.0 and called through a separate service, not vendored into this repository.</div>
-  <div style="margin-top:6px">commit dbe9751 · generated 2026-10-19 11:35 · tests 305</div>
+  <div style="margin-top:6px">commit 953c128 · generated 2026-10-19 12:29 · tests 310</div>
 </footer>
 </div></body></html>

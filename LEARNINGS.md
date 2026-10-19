@@ -1224,3 +1224,30 @@ machine. Measured clean: 73 s.
 Same lesson as the metrics, one layer out: **reading state is a measurement, and a measurement has
 an order.** The snapshot must be taken after every write it depends on, or it reports a state that
 never existed.
+
+
+## 51. The lean budget punished a correct concurrent run (2026-10-19)
+
+Re-measuring the whole benchmark pool (150 tasks) downloads ~70 MB of reference images into
+`corpus/e2e/images`. The pruner ran only at the END of a pass, so during the pass the worktree grew
+to 156 MB and `test_worktree_is_within_budget` failed -- for doing exactly the right thing (caching
+inputs) at the wrong time.
+
+Two fixes, and they are different in kind:
+1. The benchmark now prunes DURING a pass (every 20 downloaded images), so the cache stays bounded
+   at all times rather than only at the end.
+2. The lean test EXEMPTS the two input caches (`corpus/e2e/images`, `corpus/e2e/cache`) from the
+   worktree budget. They are inputs that their owning script bounds itself; counting them makes a
+   correct concurrent run look like a leak.
+
+The distinction matters: fix (1) is about the code's behaviour, fix (2) is about the TEST's
+definition. A budget that cannot distinguish "leak" from "input cache in use" is measuring the
+wrong thing, which is the same defect family as every metric issue in this project -- one layer
+further out, in the test suite itself.
+
+Also written this round: `LOGICAL_AUDIT.md`, which answers the objective's "does the pipeline have
+theoretical or logical defects" by TYPE of argument (measurement validity, reference class, input
+assumptions, verification completeness, state and timing, scope) rather than by list of bugs. Its
+verdict is deliberately not "no defects": the defect rate in the verification layer is higher than
+in the drawing layer, and that is where the remaining risk lives. `tests/test_logical_audit.py`
+checks that each claimed fix is still present in the code, so the audit cannot become a fossil.

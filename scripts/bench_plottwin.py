@@ -227,6 +227,10 @@ def download_image(row: dict) -> pathlib.Path:
                                  headers={"User-Agent": "figpipe-bench/0.1"})
     with urllib.request.urlopen(req, timeout=180) as r:
         p.write_bytes(r.read())
+    # keep the cache bounded DURING a pass, not only after it: a 150-task run downloads ~70 MB of
+    # reference images and would otherwise break the worktree budget while behaving correctly
+    if len(list(IMAGES.glob("*.png"))) % 20 == 0:
+        prune_cache()
     return p
 
 

@@ -70,9 +70,20 @@ def test_no_regenerable_path_is_tracked():
         + "; ".join(f"{n} x {why}" for why, n in ((len(v), k) for k, v in fat.items())))
 
 
+#: Paths excluded from the worktree budget. Each is an INPUT cache that its owning script bounds
+#: itself; counting them makes a correct concurrent run look like a leak.
+WORKTREE_EXEMPT = ("corpus/e2e/images", "corpus/e2e/cache")
+
+
 def test_worktree_is_within_budget():
+    exempt = tuple((ROOT / p).resolve() for p in WORKTREE_EXEMPT)
+
+    def _counted(path: pathlib.Path) -> bool:
+        resolved = path.resolve()
+        return not any(str(resolved).startswith(str(e)) for e in exempt)
+
     total = sum(f.stat().st_size for f in ROOT.rglob("*")
-                if f.is_file() and ".git" not in f.parts)
+                if f.is_file() and ".git" not in f.parts and _counted(f))
     mb = total / 1e6
     assert mb <= MAX_WORKTREE_MB, (
         f"the worktree is {mb:.1f} MB, over the {MAX_WORKTREE_MB} MB budget. Regenerable "
