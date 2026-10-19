@@ -16,6 +16,8 @@ pipeline could be systematically wrong while looking right. Only the second kind
 | Style distance orders figures by similarity | The metric could be blind to a change it should see | **Found and fixed**: a 1-pt size histogram could not see 6.0 → 6.5. Replaced with Wasserstein-1 on the CDF |
 | A mean measures capability | The mean could move with the measurement SET rather than the capability | **Found and fixed 3×**: raw mean, task count, shipped mean — all moved when coverage grew. All judged metrics now use frozen task subsets |
 | A frozen subset is enough | The rows inside it could come from different code versions | **Found and fixed 2×**: both anchors now use a single-instrument view |
+| A frozen subset is COMPLETE | A fetch failure could silently shrink the set, moving the mean in both directions | **Found and fixed** (7th variant of this family): both anchors require full membership; a partial mean is reported but never judged |
+| A fetch failure is a capability failure | The pipeline may never have run | **Found and fixed**: infrastructure failures are excluded from the success rate and reported as a diagnostic |
 | The official score is comparable | It could be a tautology | **Found**: copying style from the shipped `reference_code` scores 100 by construction. Reported only as a ceiling; the claim uses image-inferred style |
 | A score supports a claim | It could have no referent | **Found and fixed**: 75.41 meant nothing until measured against a 38.16 baseline |
 | The answer key stays out of the input | The target could be reachable from the style source | **Found and now GUARDED**: the 100.0 ceiling came from copying `reference_code`. `figpipe/tripwire.py` refuses a path whose name or content carries the target, with an explicit `allow=` where reading it IS the measurement. Harness² (google-research) reached the same rule independently |
@@ -102,6 +104,17 @@ this project has had two (the earlier `CRITICAL_AUDIT` rounds).
 | Coverage survives pruning | It could be derived from the prunable cache | **Found and fixed**: derived from the report |
 
 ---
+
+## 5b. The invariant, as it now stands
+
+Two rounds ago this project stated: *a judged metric must be a function of a fixed task set AND a
+single instrument version.* Seven variants of the same defect later, the invariant needs three
+clauses:
+
+> **A judged metric must be a function of a fixed task set, complete membership of that set, and a
+> single instrument version.**
+
+Each clause was added after a false result escaped it. The table in §1 records which round.
 
 ## 6. What is NOT audited, and why
 

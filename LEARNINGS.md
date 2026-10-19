@@ -1489,3 +1489,36 @@ producing failures that depended on **test order**. `tests/conftest.py` now poin
 per-session temp dir and asserts the suite is never using the real one.
 
 Suite: 400 passed, 3 skipped.
+
+
+## 61. A partial anchor is not the anchor (2026-10-19)
+
+The loop reported `benchmark_shipped_anchor_single 0.289 -> 0.296` as a REGRESSION. The numbers were
+right and the interpretation was wrong: at the earlier run two anchor tasks had errored on a
+transient HTTP 403, so only 18 of 20 rows were present and the mean came out 0.289. The loop read
+that as an improvement over 0.296, then read the restoration as a regression. A metric that moves
+with network luck, in both directions, on the same frozen set.
+
+This is the SEVENTH variant of the same defect family:
+    raw mean over a growing set        -> false regression
+    count over a growing set           -> false gain
+    shipped mean over a growing set    -> false regression
+    "first N sorted ids" anchor        -> false regression when new ids sort earlier
+    frozen ids with MIXED fingerprints -> false gain
+    both anchors fixed, one at a time  -> the same defect one field over
+    frozen ids, one instrument, but INCOMPLETE membership -> false regression AND false gain
+
+The invariant was stated two rounds ago as "a judged metric must be a function of a fixed task set
+AND a single instrument version". It needs a third clause: **and complete membership of that set**.
+A fetch failure, an unsupported type, or a crashed task silently shrinks the set.
+
+Fix: both anchors now require `len(same) == len(expected)`. A partial mean is still REPORTED (as
+`partial_mean`, with `n_expected`), but `mean` is None and `comparable` is False, so it is never
+judged. Seven tests pin it: complete -> comparable, partial -> not judged, mixed instrument -> not
+judged, for both anchors, plus a live-report consistency check.
+
+Related: the same round's infrastructure-error fix (`##58`) is what made the two 403s visible as
+infrastructure rather than capability. Both fixes are needed -- one stops the failure being SCORED,
+the other stops the set being SHRUNK.
+
+Suite: 407 passed, 3 skipped.
