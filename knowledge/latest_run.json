@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-19T14:06:10",
+  "run_at": "2026-10-19T14:32:56",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -9,37 +9,16 @@
     "  passed 8, failed 0",
     "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
     "  wrote knowledge\\evolution_report.json",
-    "  lean: tracked 75.3 -> 75.3 MB, worktree 79.0 -> 79.0 MB"
+    "  lean: tracked 75.5 -> 75.5 MB, worktree 99.0 -> 99.0 MB"
   ],
   "tests_ok": true,
-  "tests_summary": "318 passed, 3 skipped, 1 warning in 895.50s (0:14:55)",
+  "tests_summary": "322 passed, 2 skipped, 1 warning in 113.44s (0:01:53)",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
   "published": {
-    "pushed": true,
-    "steps": [
-      {
-        "cmd": "git add -A",
-        "code": 0,
-        "tail": []
-      },
-      {
-        "cmd": "git -c user.name=figpipe-bot",
-        "code": 0,
-        "tail": [
-          " create mode 100644 tests/test_lock.py"
-        ]
-      },
-      {
-        "cmd": "git push origin",
-        "code": 0,
-        "tail": [
-          "   b6adace..9038b5c  main -> main"
-        ]
-      }
-    ],
-    "withheld": []
+    "pushed": false,
+    "reason": "not yet published"
   },
   "check_results": {
     "L01": {
@@ -150,77 +129,85 @@
     "regressed": 0
   },
   "benchmark_slice": {
-    "ran": false,
-    "reason": "dry run"
+    "ran": true,
+    "offset": 0,
+    "tasks": 6,
+    "code": 0,
+    "tail": [
+      "    type Box/Violin     ok 1/1   d=0.169 base=0.446 delta=0.277 errors=0",
+      "    type Distribution   ok 4/4   d=0.225 base=0.248 delta=0.024 errors=0",
+      "    type Heatmap        ok 1/1   d=0.428 base=0.547 delta=0.119 errors=0",
+      "  wrote E:\\2026-AI4S\\figpipe\\corpus\\e2e\\plottwin_report.json"
+    ]
   },
   "anchor_refresh": {
     "ran": false,
-    "reason": "dry run"
+    "reason": "both anchors already comparable"
   },
   "capabilities": {
     "skills": 16,
     "operators": 21,
-    "benchmark_tasks": 2,
-    "benchmark_ok": 2,
+    "benchmark_tasks": 150,
+    "benchmark_ok": 141,
     "benchmark_success_rate": 1.0,
-    "benchmark_mean_distance": 0.158,
-    "benchmark_anchor_single": null,
-    "benchmark_anchor_distance": null,
-    "benchmark_shipped_anchor_single": null,
-    "benchmark_shipped_anchor_distance": null,
-    "benchmark_unsupported": 0,
+    "benchmark_mean_distance": 0.309,
+    "benchmark_anchor_single": 0.351,
+    "benchmark_anchor_distance": 0.351,
+    "benchmark_shipped_anchor_single": 0.296,
+    "benchmark_shipped_anchor_distance": 0.296,
+    "benchmark_unsupported": 9,
     "benchmark_official_code_score": 75.41,
     "benchmark_official_improvement": 37.25,
     "statistics_reproduced": 15,
     "knowledge_version": 16,
-    "tests": 318
+    "tests": 322
   },
   "capabilities_delta": {
     "changed": true,
     "delta": {
       "benchmark_tasks": {
-        "before": 150,
-        "after": 2
+        "before": 2,
+        "after": 150
       },
       "benchmark_ok": {
-        "before": 141,
-        "after": 2
+        "before": 2,
+        "after": 141
       },
       "benchmark_mean_distance": {
-        "before": 0.309,
-        "after": 0.158
+        "before": 0.158,
+        "after": 0.309
       },
       "benchmark_anchor_single": {
-        "before": 0.351,
-        "after": null
+        "before": null,
+        "after": 0.351
       },
       "benchmark_anchor_distance": {
-        "before": 0.351,
-        "after": null
+        "before": null,
+        "after": 0.351
       },
       "benchmark_shipped_anchor_single": {
-        "before": 0.296,
-        "after": null
+        "before": null,
+        "after": 0.296
       },
       "benchmark_shipped_anchor_distance": {
-        "before": 0.296,
-        "after": null
+        "before": null,
+        "after": 0.296
       },
       "benchmark_unsupported": {
-        "before": 9,
-        "after": 0
+        "before": 0,
+        "after": 9
       },
       "tests": {
-        "before": 312,
-        "after": 318
+        "before": 318,
+        "after": 322
       }
     },
     "verdict": {
       "gains": [
         {
           "field": "tests",
-          "before": 312,
-          "after": 318
+          "before": 318,
+          "after": 322
         }
       ],
       "regressions": [],
@@ -242,6 +229,5 @@
   },
   "ok": true,
   "capability_ok": true,
-  "capability_regressions": [],
-  "publish_note": "The publish outcome is recorded after the commit that carries this run, so it describes the push triggered by this run; the file's own commit is made by the next scheduled run."
+  "capability_regressions": []
 }
