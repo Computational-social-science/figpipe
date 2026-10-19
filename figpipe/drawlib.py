@@ -260,15 +260,21 @@ def ax_heatmap(ax, df: pd.DataFrame, xlabel: str = "", ylabel: str = "",
         cb.set_label(label or "value", fontsize=6)
         cb.ax.tick_params(labelsize=5.5)
     if ticklabels:
+        # A LABEL BUDGET, not a row budget. A 40-row matrix with a string index drew 40 tick labels
+        # on a 90 mm panel -- measured at up to 405 text collisions on a single benchmark figure.
+        # No row-count limit fixes that: the axis simply cannot carry that many labels at 5.5 pt.
+        # Past the budget the ticks are hidden and the caption carries the meaning, which is the
+        # same rule this function already applies to numeric indices.
+        MAX_AXIS_LABELS = 12
         cols = [str(c) for c in df.columns]
         idx = [str(i) for i in df.index]
-        if all(not _is_number(c) for c in cols):
+        if all(not _is_number(c) for c in cols) and len(cols) <= MAX_AXIS_LABELS:
             ax.set_xticks(range(len(cols)))
             ax.set_xticklabels(cols)
             ax.tick_params(axis="x", labelrotation=0)
         else:
             ax.set_xticks([])
-        if all(not _is_number(i) for i in idx):
+        if all(not _is_number(i) for i in idx) and len(idx) <= MAX_AXIS_LABELS:
             ax.set_yticks(range(len(idx)))
             ax.set_yticklabels(idx)
         else:
@@ -723,12 +729,23 @@ def ax_tile_diverging(ax, df: pd.DataFrame, cmap: str = "RdBu_r",
     cmap_obj.set_bad(missing_color)
     im = ax.imshow(np.ma.masked_invalid(data), cmap=cmap_obj, norm=norm,
                    aspect="auto", interpolation="nearest")
-    ax.set_xticks(range(data.shape[1]))
-    ax.set_xticklabels([str(c) for c in df.columns],
-                       rotation=tick_rotation,
-                       ha="right" if tick_rotation else "center")
-    ax.set_yticks(range(data.shape[0]))
-    ax.set_yticklabels([str(i) for i in df.index])
+    # A LABEL BUDGET, not a row budget. A 40-row matrix drew 40 tick labels on a 90 mm panel,
+    # which measured at up to 405 text collisions on a single benchmark figure. No row-count limit
+    # fixes that: the axis cannot carry that many labels at 5.5 pt whatever the data. Past the
+    # budget the ticks are hidden and the caption carries the meaning.
+    MAX_AXIS_LABELS = 12
+    if data.shape[1] <= MAX_AXIS_LABELS:
+        ax.set_xticks(range(data.shape[1]))
+        ax.set_xticklabels([str(c) for c in df.columns],
+                           rotation=tick_rotation,
+                           ha="right" if tick_rotation else "center")
+    else:
+        ax.set_xticks([])
+    if data.shape[0] <= MAX_AXIS_LABELS:
+        ax.set_yticks(range(data.shape[0]))
+        ax.set_yticklabels([str(i) for i in df.index])
+    else:
+        ax.set_yticks([])
     if annotate and finite.sum() <= 200:
         for i in range(data.shape[0]):
             for j in range(data.shape[1]):

@@ -39,6 +39,7 @@
   "tasks": [
     "split-many-bars",
     "split-few-bars",
+    "matrix-real-40x10",
     "matrix-wide",
     "matrix-41-rows",
     "matrix-42-rows",
@@ -46,20 +47,20 @@
   ],
   "min_margin": 0.1,
   "probed": true,
-  "baseline_mean": 0.833333,
+  "baseline_mean": 0.857143,
   "mean_score": {
-    "baseline": 0.833333,
-    "split-max-bars-24": 0.675,
-    "split-max-bars-13": 0.833333,
+    "baseline": 0.857143,
+    "split-max-bars-24": 0.721429,
+    "split-max-bars-13": 0.857143,
     "matrix-max-rows-41": 1.0,
-    "matrix-max-rows-42": 0.837302,
-    "matrix-max-rows-60": 0.672353
+    "matrix-max-rows-42": 1.0,
+    "matrix-max-rows-60": 0.859564
   },
   "ledger": {
     "mode": "mutation",
-    "task_id": "split-many-bars,split-few-bars,matrix-wide,matrix-41-rows,matrix-42-rows,matrix-48-rows",
+    "task_id": "split-many-bars,split-few-bars,matrix-real-40x10,matrix-wide,matrix-41-rows,matrix-42-rows,matrix-48-rows",
     "k": 0,
-    "R": 36,
+    "R": 42,
     "expected_R": 0,
     "P": 1,
     "session_attempts": 1,
@@ -70,36 +71,42 @@
     "rollouts": [
       "baseline:split-many-bars",
       "baseline:split-few-bars",
+      "baseline:matrix-real-40x10",
       "baseline:matrix-wide",
       "baseline:matrix-41-rows",
       "baseline:matrix-42-rows",
       "baseline:matrix-48-rows",
       "split-max-bars-24:split-many-bars",
       "split-max-bars-24:split-few-bars",
+      "split-max-bars-24:matrix-real-40x10",
       "split-max-bars-24:matrix-wide",
       "split-max-bars-24:matrix-41-rows",
       "split-max-bars-24:matrix-42-rows",
       "split-max-bars-24:matrix-48-rows",
       "split-max-bars-13:split-many-bars",
       "split-max-bars-13:split-few-bars",
+      "split-max-bars-13:matrix-real-40x10",
       "split-max-bars-13:matrix-wide",
       "split-max-bars-13:matrix-41-rows",
       "split-max-bars-13:matrix-42-rows",
       "split-max-bars-13:matrix-48-rows",
       "matrix-max-rows-41:split-many-bars",
       "matrix-max-rows-41:split-few-bars",
+      "matrix-max-rows-41:matrix-real-40x10",
       "matrix-max-rows-41:matrix-wide",
       "matrix-max-rows-41:matrix-41-rows",
       "matrix-max-rows-41:matrix-42-rows",
       "matrix-max-rows-41:matrix-48-rows",
       "matrix-max-rows-42:split-many-bars",
       "matrix-max-rows-42:split-few-bars",
+      "matrix-max-rows-42:matrix-real-40x10",
       "matrix-max-rows-42:matrix-wide",
       "matrix-max-rows-42:matrix-41-rows",
       "matrix-max-rows-42:matrix-42-rows",
       "matrix-max-rows-42:matrix-48-rows",
       "matrix-max-rows-60:split-many-bars",
       "matrix-max-rows-60:split-few-bars",
+      "matrix-max-rows-60:matrix-real-40x10",
       "matrix-max-rows-60:matrix-wide",
       "matrix-max-rows-60:matrix-41-rows",
       "matrix-max-rows-60:matrix-42-rows",
@@ -109,13 +116,13 @@
       "compose"
     ]
   },
-  "budget": 36,
+  "budget": 42,
   "selected": [
-    "matrix-max-rows-41"
+    "matrix-max-rows-41",
+    "matrix-max-rows-42"
   ],
   "rejected": [
     "split-max-bars-24",
-    "matrix-max-rows-42",
     "matrix-max-rows-60"
   ],
   "ties": [
@@ -128,9 +135,9 @@
       "parameter": "max_bars",
       "value": 24,
       "baseline_value": 12,
-      "score": 0.675,
-      "baseline_score": 0.833333,
-      "delta": -0.158333,
+      "score": 0.721429,
+      "baseline_score": 0.857143,
+      "delta": -0.135714,
       "verdict": "rejected",
       "reason": "regresses 1 task(s) on the fixed set, worst 'split-many-bars' by -0.950 (>= margin 0.1); a task that gets worse is a regression whatever the mean says; changed tasks: ['split-many-bars']",
       "changed_tasks": [
@@ -153,6 +160,12 @@
           "detail": ""
         },
         "split-few-bars": {
+          "outcome": "rendered",
+          "score": 1.0,
+          "expected": "clean",
+          "detail": ""
+        },
+        "matrix-real-40x10": {
           "outcome": "rendered",
           "score": 1.0,
           "expected": "clean",
@@ -190,8 +203,8 @@
       "parameter": "max_bars",
       "value": 13,
       "baseline_value": 12,
-      "score": 0.833333,
-      "baseline_score": 0.833333,
+      "score": 0.857143,
+      "baseline_score": 0.857143,
       "delta": 0.0,
       "verdict": "tie",
       "reason": "no measurable difference on the fixed task set (+0.000); the task set cannot distinguish this edit from the baseline, so it is reported as a tie",
@@ -205,6 +218,12 @@
           "detail": "layout.split_panels: 'A' has 20 distinct 'outcome' values; a bar panel can carry at most 13 with readable labels. Use the trend encoder for an ordered axis, or pass of='error_bars' with a coarser label."
         },
         "split-few-bars": {
+          "outcome": "rendered",
+          "score": 1.0,
+          "expected": "clean",
+          "detail": ""
+        },
+        "matrix-real-40x10": {
           "outcome": "rendered",
           "score": 1.0,
           "expected": "clean",
@@ -243,10 +262,10 @@
       "value": 41,
       "baseline_value": 40,
       "score": 1.0,
-      "baseline_score": 0.833333,
-      "delta": 0.166667,
+      "baseline_score": 0.857143,
+      "delta": 0.142857,
       "verdict": "selected",
-      "reason": "improves the fixed task set by +0.167 (>= margin 0.1) with no task regressing; changed tasks: ['matrix-41-rows']",
+      "reason": "improves the fixed task set by +0.143 (>= margin 0.1) with no task regressing; changed tasks: ['matrix-41-rows']",
       "changed_tasks": [
         "matrix-41-rows"
       ],
@@ -259,6 +278,12 @@
           "detail": "layout.split_panels: 'A' has 20 distinct 'outcome' values; a bar panel can carry at most 12 with readable labels. Use the trend encoder for an ordered axis, or pass of='error_bars' with a coarser label."
         },
         "split-few-bars": {
+          "outcome": "rendered",
+          "score": 1.0,
+          "expected": "clean",
+          "detail": ""
+        },
+        "matrix-real-40x10": {
           "outcome": "rendered",
           "score": 1.0,
           "expected": "clean",
@@ -296,24 +321,16 @@
       "parameter": "max_rows",
       "value": 42,
       "baseline_value": 40,
-      "score": 0.837302,
-      "baseline_score": 0.833333,
-      "delta": 0.003969,
-      "verdict": "rejected",
-      "reason": "regresses 1 task(s) on the fixed set, worst 'matrix-42-rows' by -0.976 (>= margin 0.1); a task that gets worse is a regression whatever the mean says; changed tasks: ['matrix-41-rows', 'matrix-42-rows']",
+      "score": 1.0,
+      "baseline_score": 0.857143,
+      "delta": 0.142857,
+      "verdict": "selected",
+      "reason": "improves the fixed task set by +0.143 (>= margin 0.1) with no task regressing; changed tasks: ['matrix-41-rows', 'matrix-42-rows']",
       "changed_tasks": [
         "matrix-41-rows",
         "matrix-42-rows"
       ],
-      "regressed_tasks": [
-        {
-          "task": "matrix-42-rows",
-          "fell_by": 0.97619,
-          "outcome": "rendered",
-          "expected": "refused",
-          "detail": ""
-        }
-      ],
+      "regressed_tasks": [],
       "per_task": {
         "split-many-bars": {
           "outcome": "refused",
@@ -322,6 +339,12 @@
           "detail": "layout.split_panels: 'A' has 20 distinct 'outcome' values; a bar panel can carry at most 12 with readable labels. Use the trend encoder for an ordered axis, or pass of='error_bars' with a coarser label."
         },
         "split-few-bars": {
+          "outcome": "rendered",
+          "score": 1.0,
+          "expected": "clean",
+          "detail": ""
+        },
+        "matrix-real-40x10": {
           "outcome": "rendered",
           "score": 1.0,
           "expected": "clean",
@@ -341,7 +364,7 @@
         },
         "matrix-42-rows": {
           "outcome": "rendered",
-          "score": 0.02381,
+          "score": 1.0,
           "expected": "refused",
           "detail": ""
         },
@@ -359,11 +382,11 @@
       "parameter": "max_rows",
       "value": 60,
       "baseline_value": 40,
-      "score": 0.672353,
-      "baseline_score": 0.833333,
-      "delta": -0.16098,
+      "score": 0.859564,
+      "baseline_score": 0.857143,
+      "delta": 0.002421,
       "verdict": "rejected",
-      "reason": "regresses 2 task(s) on the fixed set, worst 'matrix-48-rows' by -0.990 (>= margin 0.1); a task that gets worse is a regression whatever the mean says; changed tasks: ['matrix-41-rows', 'matrix-42-rows', 'matrix-48-rows']",
+      "reason": "regresses 1 task(s) on the fixed set, worst 'matrix-48-rows' by -0.983 (>= margin 0.1); a task that gets worse is a regression whatever the mean says; changed tasks: ['matrix-41-rows', 'matrix-42-rows', 'matrix-48-rows']",
       "changed_tasks": [
         "matrix-41-rows",
         "matrix-42-rows",
@@ -371,15 +394,8 @@
       ],
       "regressed_tasks": [
         {
-          "task": "matrix-42-rows",
-          "fell_by": 0.97619,
-          "outcome": "rendered",
-          "expected": "refused",
-          "detail": ""
-        },
-        {
           "task": "matrix-48-rows",
-          "fell_by": 0.989691,
+          "fell_by": 0.983051,
           "outcome": "rendered",
           "expected": "refused",
           "detail": ""
@@ -393,6 +409,12 @@
           "detail": "layout.split_panels: 'A' has 20 distinct 'outcome' values; a bar panel can carry at most 12 with readable labels. Use the trend encoder for an ordered axis, or pass of='error_bars' with a coarser label."
         },
         "split-few-bars": {
+          "outcome": "rendered",
+          "score": 1.0,
+          "expected": "clean",
+          "detail": ""
+        },
+        "matrix-real-40x10": {
           "outcome": "rendered",
           "score": 1.0,
           "expected": "clean",
@@ -412,13 +434,13 @@
         },
         "matrix-42-rows": {
           "outcome": "rendered",
-          "score": 0.02381,
+          "score": 1.0,
           "expected": "refused",
           "detail": ""
         },
         "matrix-48-rows": {
           "outcome": "rendered",
-          "score": 0.010309,
+          "score": 0.016949,
           "expected": "refused",
           "detail": ""
         }

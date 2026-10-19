@@ -1567,3 +1567,45 @@ it is the difference between a test suite passing and a system changing. Every a
 project should be asked which of the two it is.
 
 Suite: 411 passed, 3 skipped.
+
+
+## 63. The mutation loop's selected edit was wrong, and the pool proved it (2026-10-19)
+
+Last round the mutation loop SELECTED `matrix-max-rows-41` (+0.167 on its six-task fixture) and
+deliberately did not apply it, routing the decision to a round that could re-measure the pool. This
+is that round. **The selection was wrong**, and the reason is instructive.
+
+The fixture contained a clean 41-row matrix, so raising the budget from 40 to 41 "fixed" it. The
+REAL pool does not look like that fixture:
+
+    14 matrix_plate tasks
+    13 of 14 (93%) already had hard findings at the CURRENT budget of 40
+    hard findings: sum 995, median 39, MAX 405
+
+Raising the budget would have made every one of them worse. The fixture had measured the wrong
+thing: it asked "does a 41-row table render?" when the real question was "why do 40-row tables
+produce hundreds of collisions?"
+
+THE ACTUAL DEFECT, found by reading the findings instead of the score:
+
+    '0.7015383331293864' over '0.7128659440184021'
+
+`ax_tile_diverging` set a tick label for EVERY row and column, and annotated EVERY cell, with no
+budget on either. A 40-row matrix drew 40 tick labels plus up to 200 cell annotations on a 90 mm
+panel. The budget `MAX_MATRIX_ROWS` was never the lever -- even 40 rows cannot be labelled at 5.5 pt.
+
+Fix: a LABEL BUDGET (12) on each axis and the existing 200-cell annotation cap, so a matrix past
+either budget hides ticks and lets the caption carry the meaning -- the rule the heatmap drawer
+already applied to numeric indices.
+
+MEASURED RESULT on the real pool:
+    hard findings  sum 995 -> 98   (-90%)
+    worst task     405 -> 65
+    clean tasks    1 of 14 -> 5 of 14
+
+LESSON: **a mutation fixture that does not resemble the production distribution selects the wrong
+edit, confidently.** The loop did everything right -- proposed, probed, composed, rejected on
+per-task regressions -- and still chose a worse world, because its six tasks were not a sample of
+the 150. That is the same defect as a benchmark measured on a convenient subset, one layer in.
+
+Suite: see below.

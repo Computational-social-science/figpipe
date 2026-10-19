@@ -524,6 +524,42 @@ def _unpivotable(rows: int):
     return make
 
 
+def _real_matrix() -> pd.DataFrame:
+    """40 rows x 10 cols with string row labels -- the shape the benchmark actually uses."""
+    return _matrix_frame(40, 10, string_index=True)
+
+
+def _matrix_frame(n_rows: int, n_cols: int = 2, *, string_index: bool = True):
+    """A matrix shaped like the REAL benchmark tasks, not like a convenient fixture.
+
+    The first version used an integer index, and the drawer hides ticks for numeric indices -- so
+    the fixture never touched the label path that produces up to 405 collisions on the real pool.
+    Real tasks carry STRING indices (row labels), which is what makes the axis over-full.
+    """
+    # deterministic, no RNG: a fixed irrational-style ramp keeps the fixture reproducible without
+    # importing numpy, which the module's allow-list deliberately excludes
+    values = [[((i * 7 + j * 13) % 97) / 97.0 for j in range(n_cols)] for i in range(n_rows)]
+    index = [f"row{i}" for i in range(n_rows)] if string_index else None
+    return pd.DataFrame(values, index=index)
+
+
+#: WHY THE FIXTURE MUST LOOK LIKE PRODUCTION
+#:
+#: The first version of this space selected `matrix-max-rows-41` (+0.167). Re-measuring the real
+#: pool showed the selection was WRONG: 13 of 14 `matrix_plate` benchmark tasks already had hard
+#: collisions at the CURRENT budget of 40, summing 995 findings with a worst case of 405. Raising
+#: the budget would have made every one of them worse.
+#:
+#: The fixture could not have found that, for two reasons:
+#:   * its matrix tables used an INTEGER index, and the drawer hides ticks for numeric indices --
+#:     so the label path that produces the collisions was never exercised
+#:   * its "unpivotable" tables are refused by the pivot rule before reaching the drawer at all
+#:
+#: A mutation loop is only as good as the distribution it probes. Six convenient tasks selected a
+#: worse world, confidently, and the loop had no way to know. That is the same defect as a
+#: benchmark measured on a convenient subset, one layer in.
+
+
 def default_space() -> MutationSpace:
     """The first declared space: the two refusals from LEARNINGS ##46, plus their controls.
 
@@ -559,6 +595,12 @@ def default_space() -> MutationSpace:
              {"by": "panel_group", "x": "outcome", "y": "estimate"}, _few_categories,
              "clean",
              "6 categories per panel: a render with no hard findings is correct"),
+        # A REAL-SHAPED matrix: 40 rows x 10 cols with a STRING index, exactly like the benchmark
+        # tasks that produced up to 405 collisions. The earlier fixture used a 41x2 integer-index
+        # table, which the pivot rule refuses outright -- so it never reached the drawer and the
+        # loop could not see the defect it was supposed to find.
+        Task("matrix-real-40x10", "matrix_plate", {}, _real_matrix, "clean",
+             "a 40x10 matrix with row labels, as the benchmark has"),
         Task("matrix-wide", "matrix_plate", {}, _wide_matrix,
              "clean",
              "a genuine 6x5 matrix: renders, so the row budget must not start refusing it"),
