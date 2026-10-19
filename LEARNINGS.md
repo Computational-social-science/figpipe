@@ -1771,3 +1771,32 @@ resemble production selects the wrong edit; a fixture that CANNOT resemble produ
 defect is gone must still test the rule. Both are about knowing what a test is for.
 
 Suite: 426 passed, 3 skipped.
+
+
+## 69. A merge that recomputes SOME aggregates is worse than one that recomputes none (2026-10-20)
+
+A scheduled 6-task slice rewrote the benchmark report's aggregates. `n_ok`, `by_type`, the means and
+both anchors were recomputed over the MERGED task list -- but `failures`, `unsupported_types` and
+`semantic_violations` were left as computed over the SLICE. The visible damage:
+
+    failures            11 entries  ->  []
+    unsupported_types    3 types    ->  {}
+    semantic_violations  8          ->  0
+
+The report still LOOKED internally consistent: n_ok and n_tasks agreed, the anchors were right, the
+per-type table was right. Three fields silently described a different set than the ones beside them.
+
+This is the same family as the mixed-instrument anchors and the mixed-task-set means: **an aggregate
+that describes a different set than the one it sits next to**. The difference here is that the
+recompute was PARTIAL -- which is harder to notice than none, because a fully unrecomputed report
+would be obviously stale, while a partially recomputed one looks coherent.
+
+Fix: every aggregate is now recomputed inside the merge block, and `tests/test_merge_aggregates.py`
+asserts the consistency properties directly (failures match the non-ok tasks, unsupported_types
+match the unsupported tasks, the counts add up, semantic_violations counts the whole report) plus a
+STRUCTURAL check that each field is assigned in the merge block rather than inherited.
+
+LESSON: when a function rebuilds a derived object, enumerate EVERY derived field and assign it.
+A partial rebuild is a silent lie about which set the numbers describe.
+
+Suite: see below.

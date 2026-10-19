@@ -197,265 +197,6 @@
   ],
   "tasks": [
     {
-      "id": "PMC11502666",
-      "chart": "Distribution",
-      "panel_mode": "multi",
-      "code_version": "221d555c259a",
-      "skill": "faceted_distribution",
-      "rationale": "faceted hist by panel_group",
-      "rows_used": 554,
-      "status": "ok",
-      "distance": 0.146,
-      "baseline_distance": 0.209,
-      "delta": 0.063,
-      "selected": "styled",
-      "selected_distance": 0.145,
-      "selected_gain": 0.064,
-      "selection_margin": 0.066,
-      "components": {
-        "palette": 0.099,
-        "aspect": 0.009,
-        "ink": 0.398
-      },
-      "hard_failures": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 100.0,
-        "n_activated": 2,
-        "scored": [
-          "palette",
-          "grid"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": []
-    },
-    {
-      "id": "PMC11840003",
-      "chart": "Box/Violin",
-      "panel_mode": "multi",
-      "code_version": "221d555c259a",
-      "skill": "distribution_comparison",
-      "rationale": "box panel_row by panel_group",
-      "rows_used": 1403,
-      "status": "ok",
-      "distance": 0.169,
-      "baseline_distance": 0.446,
-      "delta": 0.277,
-      "selected": "styled",
-      "selected_distance": 0.176,
-      "selected_gain": 0.27,
-      "selection_margin": 0.279,
-      "components": {
-        "palette": 0.1,
-        "aspect": 0.211,
-        "ink": 0.302
-      },
-      "hard_failures": 1,
-      "findings": [
-        {
-          "check": "height",
-          "detail": "170.0 mm exceeds the 170.0 mm maximum",
-          "severity": "hard"
-        }
-      ],
-      "official_code_score": {
-        "available": true,
-        "score": 99.99959236362147,
-        "n_activated": 4,
-        "scored": [
-          "palette",
-          "figure_aspect",
-          "linewidth",
-          "grid"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": []
-    },
-    {
-      "id": "PMC12000431",
-      "chart": "Distribution",
-      "panel_mode": "multi",
-      "code_version": "221d555c259a",
-      "skill": "faceted_distribution",
-      "rationale": "faceted hist by panel_group",
-      "rows_used": 1414,
-      "status": "ok",
-      "distance": 0.083,
-      "baseline_distance": 0.096,
-      "delta": 0.013,
-      "selected": "styled",
-      "selected_distance": 0.083,
-      "selected_gain": 0.013,
-      "selection_margin": 0.015,
-      "components": {
-        "palette": 0.077,
-        "aspect": 0.005,
-        "ink": 0.177
-      },
-      "hard_failures": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 100.0,
-        "n_activated": 2,
-        "scored": [
-          "palette",
-          "legend_frame"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": []
-    },
-    {
-      "id": "PMC12354736",
-      "chart": "Distribution",
-      "panel_mode": "multi",
-      "code_version": "221d555c259a",
-      "skill": "faceted_distribution",
-      "rationale": "faceted hist by panel_row",
-      "rows_used": 12196,
-      "status": "ok",
-      "distance": 0.321,
-      "baseline_distance": 0.383,
-      "delta": 0.062,
-      "selected": "styled",
-      "selected_distance": 0.326,
-      "selected_gain": 0.057,
-      "selection_margin": 0.059,
-      "components": {
-        "palette": 0.346,
-        "aspect": 0.183,
-        "ink": 0.399
-      },
-      "hard_failures": 1,
-      "findings": [
-        {
-          "check": "height",
-          "detail": "170.0 mm exceeds the 170.0 mm maximum",
-          "severity": "hard"
-        }
-      ],
-      "official_code_score": {
-        "available": true,
-        "score": 99.9988792326005,
-        "n_activated": 4,
-        "scored": [
-          "palette",
-          "figure_aspect",
-          "grid",
-          "legend_frame"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": []
-    },
-    {
-      "id": "PMC12504421",
-      "chart": "Heatmap",
-      "panel_mode": "multi",
-      "code_version": "221d555c259a",
-      "skill": "matrix_plate",
-      "rationale": "pivot panel_group x record_type of panel_row",
-      "rows_used": 4,
-      "status": "ok",
-      "distance": 0.428,
-      "baseline_distance": 0.547,
-      "delta": 0.119,
-      "selected": "styled",
-      "selected_distance": 0.401,
-      "selected_gain": 0.146,
-      "selection_margin": 0.096,
-      "components": {
-        "palette": 0.364,
-        "aspect": 0.166,
-        "ink": 0.852
-      },
-      "hard_failures": 3,
-      "findings": [
-        {
-          "check": "height",
-          "detail": "170.0 mm exceeds the 170.0 mm maximum",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'site_distribution_observation' over 'trajectory_indicator_score'",
-          "severity": "hard"
-        },
-        {
-          "check": "text_collision",
-          "detail": "'feature_summary overlap_intersection' over 'site_distribution_observation'",
-          "severity": "hard"
-        }
-      ],
-      "official_code_score": {
-        "available": true,
-        "score": 99.99985246351535,
-        "n_activated": 5,
-        "scored": [
-          "palette",
-          "figure_aspect",
-          "linewidth",
-          "grid",
-          "tick_direction"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": []
-    },
-    {
-      "id": "PMC12905268",
-      "chart": "Distribution",
-      "panel_mode": "multi",
-      "code_version": "221d555c259a",
-      "skill": "faceted_distribution",
-      "rationale": "faceted hist by shoreline_condition",
-      "rows_used": 1196,
-      "status": "ok",
-      "distance": 0.349,
-      "baseline_distance": 0.306,
-      "delta": -0.043,
-      "selected": "plain",
-      "selected_distance": 0.301,
-      "selected_gain": 0.005,
-      "selection_margin": 0.044,
-      "components": {
-        "palette": 0.316,
-        "aspect": 0.564,
-        "ink": 0.219
-      },
-      "hard_failures": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 99.99993928740484,
-        "n_activated": 4,
-        "scored": [
-          "palette",
-          "figure_aspect",
-          "linewidth",
-          "legend_frame"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": []
-    },
-    {
       "id": "PMC13009336",
       "chart": "Box/Violin",
       "panel_mode": "multi",
@@ -5697,6 +5438,265 @@
         "note": "code channel only; the 0.65 vision channel is not run"
       },
       "semantic_findings": []
+    },
+    {
+      "id": "PMC11502666",
+      "chart": "Distribution",
+      "panel_mode": "multi",
+      "code_version": "221d555c259a",
+      "skill": "faceted_distribution",
+      "rationale": "faceted hist by panel_group",
+      "rows_used": 554,
+      "status": "ok",
+      "distance": 0.146,
+      "baseline_distance": 0.209,
+      "delta": 0.063,
+      "selected": "styled",
+      "selected_distance": 0.145,
+      "selected_gain": 0.064,
+      "selection_margin": 0.066,
+      "components": {
+        "palette": 0.099,
+        "aspect": 0.009,
+        "ink": 0.398
+      },
+      "hard_failures": 0,
+      "findings": [],
+      "official_code_score": {
+        "available": true,
+        "score": 100.0,
+        "n_activated": 2,
+        "scored": [
+          "palette",
+          "grid"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": []
+    },
+    {
+      "id": "PMC11840003",
+      "chart": "Box/Violin",
+      "panel_mode": "multi",
+      "code_version": "221d555c259a",
+      "skill": "distribution_comparison",
+      "rationale": "box panel_row by panel_group",
+      "rows_used": 1403,
+      "status": "ok",
+      "distance": 0.169,
+      "baseline_distance": 0.446,
+      "delta": 0.277,
+      "selected": "styled",
+      "selected_distance": 0.176,
+      "selected_gain": 0.27,
+      "selection_margin": 0.279,
+      "components": {
+        "palette": 0.1,
+        "aspect": 0.211,
+        "ink": 0.302
+      },
+      "hard_failures": 1,
+      "findings": [
+        {
+          "check": "height",
+          "detail": "170.0 mm exceeds the 170.0 mm maximum",
+          "severity": "hard"
+        }
+      ],
+      "official_code_score": {
+        "available": true,
+        "score": 99.99959236362147,
+        "n_activated": 4,
+        "scored": [
+          "palette",
+          "figure_aspect",
+          "linewidth",
+          "grid"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": []
+    },
+    {
+      "id": "PMC12000431",
+      "chart": "Distribution",
+      "panel_mode": "multi",
+      "code_version": "221d555c259a",
+      "skill": "faceted_distribution",
+      "rationale": "faceted hist by panel_group",
+      "rows_used": 1414,
+      "status": "ok",
+      "distance": 0.083,
+      "baseline_distance": 0.096,
+      "delta": 0.013,
+      "selected": "styled",
+      "selected_distance": 0.083,
+      "selected_gain": 0.013,
+      "selection_margin": 0.015,
+      "components": {
+        "palette": 0.077,
+        "aspect": 0.005,
+        "ink": 0.177
+      },
+      "hard_failures": 0,
+      "findings": [],
+      "official_code_score": {
+        "available": true,
+        "score": 100.0,
+        "n_activated": 2,
+        "scored": [
+          "palette",
+          "legend_frame"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": []
+    },
+    {
+      "id": "PMC12354736",
+      "chart": "Distribution",
+      "panel_mode": "multi",
+      "code_version": "221d555c259a",
+      "skill": "faceted_distribution",
+      "rationale": "faceted hist by panel_row",
+      "rows_used": 12196,
+      "status": "ok",
+      "distance": 0.321,
+      "baseline_distance": 0.383,
+      "delta": 0.062,
+      "selected": "styled",
+      "selected_distance": 0.326,
+      "selected_gain": 0.057,
+      "selection_margin": 0.059,
+      "components": {
+        "palette": 0.346,
+        "aspect": 0.183,
+        "ink": 0.399
+      },
+      "hard_failures": 1,
+      "findings": [
+        {
+          "check": "height",
+          "detail": "170.0 mm exceeds the 170.0 mm maximum",
+          "severity": "hard"
+        }
+      ],
+      "official_code_score": {
+        "available": true,
+        "score": 99.9988792326005,
+        "n_activated": 4,
+        "scored": [
+          "palette",
+          "figure_aspect",
+          "grid",
+          "legend_frame"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": []
+    },
+    {
+      "id": "PMC12504421",
+      "chart": "Heatmap",
+      "panel_mode": "multi",
+      "code_version": "221d555c259a",
+      "skill": "matrix_plate",
+      "rationale": "pivot panel_group x record_type of panel_row",
+      "rows_used": 4,
+      "status": "ok",
+      "distance": 0.428,
+      "baseline_distance": 0.547,
+      "delta": 0.119,
+      "selected": "styled",
+      "selected_distance": 0.401,
+      "selected_gain": 0.146,
+      "selection_margin": 0.096,
+      "components": {
+        "palette": 0.364,
+        "aspect": 0.166,
+        "ink": 0.852
+      },
+      "hard_failures": 3,
+      "findings": [
+        {
+          "check": "height",
+          "detail": "170.0 mm exceeds the 170.0 mm maximum",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'site_distribution_observation' over 'trajectory_indicator_score'",
+          "severity": "hard"
+        },
+        {
+          "check": "text_collision",
+          "detail": "'feature_summary overlap_intersection' over 'site_distribution_observation'",
+          "severity": "hard"
+        }
+      ],
+      "official_code_score": {
+        "available": true,
+        "score": 99.99985246351535,
+        "n_activated": 5,
+        "scored": [
+          "palette",
+          "figure_aspect",
+          "linewidth",
+          "grid",
+          "tick_direction"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": []
+    },
+    {
+      "id": "PMC12905268",
+      "chart": "Distribution",
+      "panel_mode": "multi",
+      "code_version": "221d555c259a",
+      "skill": "faceted_distribution",
+      "rationale": "faceted hist by shoreline_condition",
+      "rows_used": 1196,
+      "status": "ok",
+      "distance": 0.349,
+      "baseline_distance": 0.306,
+      "delta": -0.043,
+      "selected": "plain",
+      "selected_distance": 0.301,
+      "selected_gain": 0.005,
+      "selection_margin": 0.044,
+      "components": {
+        "palette": 0.316,
+        "aspect": 0.564,
+        "ink": 0.219
+      },
+      "hard_failures": 0,
+      "findings": [],
+      "official_code_score": {
+        "available": true,
+        "score": 99.99993928740484,
+        "n_activated": 4,
+        "scored": [
+          "palette",
+          "figure_aspect",
+          "linewidth",
+          "legend_frame"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": []
     }
   ],
   "benchmark_anchor_distance": 0.355,
@@ -5732,12 +5732,6 @@
   "code_version": "221d555c259a",
   "freshness": {
     "fresh": [
-      "PMC11502666",
-      "PMC11840003",
-      "PMC12000431",
-      "PMC12354736",
-      "PMC12504421",
-      "PMC12905268",
       "PMC13009336",
       "PMC13022287",
       "PMC13079874",
@@ -5870,7 +5864,13 @@
       "ChartNet-sample_d7325ced9dcb3e94",
       "ChartNet-sample_e17ff7b5495b0ee4",
       "ChartNet-sample_f31f9780b9bd6948",
-      "ChartNet-sample_f743754444c3a3d9"
+      "ChartNet-sample_f743754444c3a3d9",
+      "PMC11502666",
+      "PMC11840003",
+      "PMC12000431",
+      "PMC12354736",
+      "PMC12504421",
+      "PMC12905268"
     ],
     "stale": [],
     "unknown": [],

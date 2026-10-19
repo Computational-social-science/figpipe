@@ -54,7 +54,7 @@
     "split-max-bars-13": 1.0,
     "matrix-max-rows-41": 1.0,
     "matrix-max-rows-42": 1.0,
-    "matrix-max-rows-60": 0.859564
+    "matrix-max-rows-60": 1.0
   },
   "ledger": {
     "mode": "mutation",
@@ -119,13 +119,13 @@
   "budget": 42,
   "selected": [],
   "rejected": [
-    "split-max-bars-24",
-    "matrix-max-rows-60"
+    "split-max-bars-24"
   ],
   "ties": [
     "split-max-bars-13",
     "matrix-max-rows-41",
-    "matrix-max-rows-42"
+    "matrix-max-rows-42",
+    "matrix-max-rows-60"
   ],
   "decisions": [
     {
@@ -381,25 +381,17 @@
       "parameter": "max_rows",
       "value": 60,
       "baseline_value": 40,
-      "score": 0.859564,
+      "score": 1.0,
       "baseline_score": 1.0,
-      "delta": -0.140436,
-      "verdict": "rejected",
-      "reason": "regresses 1 task(s) on the fixed set, worst 'matrix-48-rows' by -0.983 (>= margin 0.1); a task that gets worse is a regression whatever the mean says; changed tasks: ['matrix-41-rows', 'matrix-42-rows', 'matrix-48-rows']",
+      "delta": 0.0,
+      "verdict": "tie",
+      "reason": "no measurable difference on the fixed task set (+0.000); the task set cannot distinguish this edit from the baseline, so it is reported as a tie",
       "changed_tasks": [
         "matrix-41-rows",
         "matrix-42-rows",
         "matrix-48-rows"
       ],
-      "regressed_tasks": [
-        {
-          "task": "matrix-48-rows",
-          "fell_by": 0.983051,
-          "outcome": "rendered",
-          "expected": "refused",
-          "detail": ""
-        }
-      ],
+      "regressed_tasks": [],
       "per_task": {
         "split-many-bars": {
           "outcome": "refused",
@@ -439,7 +431,7 @@
         },
         "matrix-48-rows": {
           "outcome": "rendered",
-          "score": 0.016949,
+          "score": 1.0,
           "expected": "refused",
           "detail": ""
         }

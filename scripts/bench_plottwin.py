@@ -1188,6 +1188,13 @@ def _run(args) -> int:
             report["improved"] = sum(1 for t in ok_all if t["delta"] > 0.005)
             report["worse"] = sum(1 for t in ok_all if t["delta"] < -0.005)
             report["ties"] = len(ok_all) - report["improved"] - report["worse"]
+        # EVERY aggregate must be recomputed over the MERGED set. Recomputing some and not others
+        # is how a 6-task slice rewrote the failure list and dropped semantic_violations 8 -> 0.
+        report["failures"] = [{"id": t["id"], "chart": t.get("chart"), "error": t.get("error")}
+                              for t in merged if t.get("status") != "ok"]
+        report["unsupported_types"] = {t["chart"]: t.get("error") for t in merged
+                                       if t.get("status") == "unsupported"}
+        report["semantic_violations"] = sum(1 for t in ok_all if t.get("semantic_findings"))
         by_type = {}
         for t in merged:
             bucket = by_type.setdefault(t["chart"], {"n": 0, "ok": 0, "d": [], "base": [],

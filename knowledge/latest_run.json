@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-19T22:46:45",
+  "run_at": "2026-10-20T01:55:47",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -9,10 +9,10 @@
     "  passed 8, failed 0",
     "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
     "  wrote knowledge\\evolution_report.json",
-    "  lean: tracked 76.0 -> 76.0 MB, worktree 128.3 -> 125.7 MB"
+    "  lean: tracked 76.0 -> 76.0 MB, worktree 133.1 -> 128.4 MB"
   ],
   "tests_ok": true,
-  "tests_summary": "420 passed, 3 skipped, 1 warning in 490.38s (0:08:10)",
+  "tests_summary": "426 passed, 3 skipped, 1 warning in 205.02s (0:03:25)",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
@@ -204,7 +204,7 @@
       "split-max-bars-13": 1.0,
       "matrix-max-rows-41": 1.0,
       "matrix-max-rows-42": 1.0,
-      "matrix-max-rows-60": 0.859564
+      "matrix-max-rows-60": 1.0
     },
     "ledger": {
       "mode": "mutation",
@@ -269,13 +269,13 @@
     "budget": 42,
     "selected": [],
     "rejected": [
-      "split-max-bars-24",
-      "matrix-max-rows-60"
+      "split-max-bars-24"
     ],
     "ties": [
       "split-max-bars-13",
       "matrix-max-rows-41",
-      "matrix-max-rows-42"
+      "matrix-max-rows-42",
+      "matrix-max-rows-60"
     ],
     "decisions": [
       {
@@ -531,25 +531,17 @@
         "parameter": "max_rows",
         "value": 60,
         "baseline_value": 40,
-        "score": 0.859564,
+        "score": 1.0,
         "baseline_score": 1.0,
-        "delta": -0.140436,
-        "verdict": "rejected",
-        "reason": "regresses 1 task(s) on the fixed set, worst 'matrix-48-rows' by -0.983 (>= margin 0.1); a task that gets worse is a regression whatever the mean says; changed tasks: ['matrix-41-rows', 'matrix-42-rows', 'matrix-48-rows']",
+        "delta": 0.0,
+        "verdict": "tie",
+        "reason": "no measurable difference on the fixed task set (+0.000); the task set cannot distinguish this edit from the baseline, so it is reported as a tie",
         "changed_tasks": [
           "matrix-41-rows",
           "matrix-42-rows",
           "matrix-48-rows"
         ],
-        "regressed_tasks": [
-          {
-            "task": "matrix-48-rows",
-            "fell_by": 0.983051,
-            "outcome": "rendered",
-            "expected": "refused",
-            "detail": ""
-          }
-        ],
+        "regressed_tasks": [],
         "per_task": {
           "split-many-bars": {
             "outcome": "refused",
@@ -589,7 +581,7 @@
           },
           "matrix-48-rows": {
             "outcome": "rendered",
-            "score": 0.016949,
+            "score": 1.0,
             "expected": "refused",
             "detail": ""
           }
@@ -604,37 +596,24 @@
     "skills": 16,
     "operators": 21,
     "benchmark_tasks": 150,
-    "benchmark_ok": 141,
+    "benchmark_ok": 139,
     "benchmark_infrastructure_failures": 0,
     "benchmark_success_rate": 1.0,
-    "benchmark_mean_distance": 0.313,
-    "benchmark_anchor_single": 0.359,
-    "benchmark_anchor_distance": 0.359,
+    "benchmark_mean_distance": 0.312,
+    "benchmark_anchor_single": 0.355,
+    "benchmark_anchor_distance": 0.355,
     "benchmark_shipped_anchor_single": 0.296,
     "benchmark_shipped_anchor_distance": 0.296,
-    "benchmark_unsupported": 9,
+    "benchmark_unsupported": 11,
     "benchmark_official_code_score": 75.41,
     "benchmark_official_improvement": 37.25,
     "statistics_reproduced": 15,
     "knowledge_version": 16,
-    "tests": 420
+    "tests": 426
   },
   "capabilities_delta": {
-    "changed": true,
-    "delta": {
-      "benchmark_ok": {
-        "before": 116,
-        "after": 141
-      },
-      "benchmark_infrastructure_failures": {
-        "before": 25,
-        "after": 0
-      },
-      "benchmark_mean_distance": {
-        "before": 0.319,
-        "after": 0.313
-      }
-    },
+    "changed": false,
+    "delta": {},
     "verdict": {
       "gains": [],
       "regressions": [],
