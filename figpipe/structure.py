@@ -184,6 +184,7 @@ def describe(pdf_path) -> dict:
         "panel_labels_present": bool(labels),
         "panel_labels": labels,
         "n_panels_inferred": max(1, len(labels)),
+        "arrow_style": arrow_style(pdf_path),
         "text_chars": len(text),
     }
 
@@ -204,3 +205,119 @@ def compare_to_vlm(pdf_path, vlm_fields: dict) -> dict:
             disagreements.append({"field": field, "deterministic": mine, "vlm": theirs})
     return {"ours": ours, "disagreements": disagreements,
             "agree": not disagreements}
+
+
+#: An arrowhead is a SMALL FILLED TRIANGLE: three points, closed, filled, and small relative to the
+#: page. Measured from the path operators in the PDF content stream, not from pixels.
+_MAX_ARROW_SIDE_PT = 12.0
+_MIN_ARROW_SIDE_PT = 1.0
+
+
+def _path_groups(pdf_path) -> list[tuple[list[tuple[float, float]], bool, str]]:
+    """Closed/filled subpaths as (points, closed, paint-op).
+
+    A PDF draws with `m` (move) and `l` (line) between coordinates, then paints: `S` stroke,
+    `f` fill, `B` both. `h` closes the subpath. An arrowhead is a closed FILLED subpath with
+    exactly three points and a small bounding box -- a bar or a box is filled too, but far larger
+    or has four points.
+    """
+    p = pathlib.Path(pdf_path)
+    if not p.is_file():
+        raise FileNotFoundError(f"no such file: {p}")
+    reader = _reader(p)
+    data = reader.pages[0].get_contents().get_data().decode("latin-1", "replace")
+    out = []
+    for m in re.finditer(r"((?:[\d.\-]+\s+[\d.\-]+\s+(?:m|l)\s*)+)\s*(h?)\s*(f\*?|S|B)", data):
+        coords = re.findall(r"([\d.\-]+)\s+([\d.\-]+)\s+[ml]", m.group(1))
+        if len(coords) < 3:
+            continue
+        out.append(([(float(a), float(b)) for a, b in coords], bool(m.group(2)), m.group(3)))
+    return out
+
+
+def arrow_style(pdf_path) -> str:
+    """How the figure draws direction: `none`, `filled_triangle` or `other`.
+
+    WHY THIS IS DETERMINISTIC: a direction arrow needs a head, a head is a closed FILLED subpath,
+    and its size separates it from a bar or a panel border. figpipe's own drawers emit `B`/`S` for
+    bars and `f` for background rectangles, and no small triangles -- so for its own output the
+    answer is `none`, and that is measured rather than assumed.
+
+    WHY IT IS NOT A VLM FIELD ANY MORE: `arrow_style` was one of the two fields left for a model
+    last round. It is visually decidable, which is what made it a candidate -- but it is also
+    expressible as a geometric test, which is better, because the answer is reproducible.
+    """
+    groups = _path_groups(pdf_path)
+    heads = 0
+    for points, closed, paint in groups:
+        # `f` fills, `B` fills AND strokes -- an arrowhead is drawn with `B` by matplotlib.
+        # Testing only for "f" excluded every arrowhead, which the positive control caught.
+        if not closed or paint.lower() not in ("f", "f*", "b", "b*"):
+            continue
+        if len(points) != 3:
+            continue
+        xs = [x for x, _ in points]
+        ys = [y for _, y in points]
+        w, h = max(xs) - min(xs), max(ys) - min(ys)
+        if _MIN_ARROW_SIDE_PT <= max(w, h) <= _MAX_ARROW_SIDE_PT:
+            heads += 1
+    if heads:
+        return "filled_triangle"
+    # a stroked open path with no filled head is an annotation line, not an arrow
+    return "none"
+
+
+def panel_layout(result: dict) -> str:
+    """The panel arrangement, read from the pipeline's own layout record -- not from the PDF.
+
+    `panel_layout` was the last field left for a VLM. It does not need one: the layout layer
+    DECIDED the grid, so the answer is already known before the figure is drawn. Reading it from
+    pixels would be re-deriving a fact the caller holds.
+
+    Returns a shape name a reader can act on:
+        "single"        one panel
+        "1xN"           one row
+        "Nx1"           one column
+        "MxN"           a grid
+    """
+    n = int(result.get("panels") or 1)
+    if n <= 1:
+        return "single"
+    columns = int(round(float((result.get("layout") or {}).get("columns") or 1.0)))
+    columns = max(1, min(columns, n))
+    rows = (n + columns - 1) // columns
+    if rows == 1:
+        return f"1x{n}"
+    if columns == 1:
+        return f"{n}x1"
+    return f"{rows}x{columns}"
+
+
+def all_fields(pdf_path, result: dict | None = None) -> dict:
+    """Every field the corpus's VLM was asked for, measured deterministically.
+
+    Ten fields were asked of `gemma3:12b`, which fabricated 20 values on three control images
+    containing no figure at all. All ten now have a deterministic answer:
+
+        column_width           audit.width          (already measured)
+        font_uniform           audit.font_type      (already measured)
+        min_font_legible       audit.font_size      (already measured)
+        panel_count            result["panels"]     (already measured)
+        high_contrast          colourcheck          (already measured)
+        frame_restrained       styleprofile         (already measured)
+        figure_type            structure            (this module)
+        panel_labels_present   structure            (this module)
+        arrow_style            structure            (this module)
+        panel_layout           structure.panel_layout(result)   (this module)
+
+    `result` is the dict from `skills.run()`. Without it, panel_layout falls back to what the PDF
+    can tell us -- the number of lettered panels -- which is weaker but still not a guess.
+    """
+    d = describe(pdf_path)
+    if result is not None:
+        d["panel_layout"] = panel_layout(result)
+        d["panel_count"] = int(result.get("panels") or 1)
+    else:
+        d["panel_layout"] = "single" if d["n_panels_inferred"] <= 1 else f"1x{d['n_panels_inferred']}"
+        d["panel_count"] = d["n_panels_inferred"]
+    return d

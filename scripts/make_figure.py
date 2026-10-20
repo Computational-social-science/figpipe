@@ -47,7 +47,7 @@ sys.path.insert(0, str(ROOT))
 
 import pandas as pd  # noqa: E402
 
-from figpipe import audit, quality, skills, spec, styleprofile  # noqa: E402
+from figpipe import audit, gate as gate_mod, quality, skills, spec, styleprofile  # noqa: E402
 
 #: Nature prints at exactly two widths. `columns` is an ENUM in the layout layer (1 or 2), so the
 #: CLI offers the same choice rather than a millimetre value it would have to convert.
@@ -134,7 +134,16 @@ def finish(result: dict, width_mm: float) -> int:
         say("  unmeasured: " + ", ".join(f"{u['name']} ({u['why']})"
                                           for u in qrep["unmeasured"]))
 
-    ok = not hard
+    # THE ACCEPTANCE GATE. `compliant` answers "did the audit find nothing"; the gate answers
+    # "is this done", which is the standard BootLoops states and this project kept re-learning one
+    # bug at a time. CLOSED requires every declared check to have passed; anything less is OPEN.
+    g = gate_mod.run_gate(pdf, result=result, name=pathlib.Path(pdf).stem)
+    say(f"  gate: {g.verdict}")
+    for c in g.checks:
+        if not c.passed:
+            say(f"    ! {c.name}: measured {c.measured!r}, required {c.required}")
+
+    ok = not hard and g.verdict == gate_mod.CLOSED
     say(f"  RESULT: {'compliant' if ok else 'NOT compliant'}")
     return 0 if ok else 1
 

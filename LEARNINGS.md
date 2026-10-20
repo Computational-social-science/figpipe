@@ -2523,3 +2523,60 @@ Nothing was wired into the judging path. Doing so would change the official scor
 machine do not justify that trade.
 
 Full reasoning in VLM_DECISION.md.
+
+
+## 89. BootLoops named every bug this project found, as one standard (2026-10-20)
+
+Asked to introduce BootLoops as the quality-control chain. It is a harness for LLMs doing precision
+quantitative science -- 49 packages of integral reduction and ball arithmetic that figpipe has no
+use for -- plus **twelve plain-markdown protocols** that say what "done" means.
+
+The `acceptance-gate` skill opens with:
+
+> A result is done when it has survived a check that could have failed, run by a route that could
+> not have known the answer. It is never done merely because the computation that produced it
+> finished.
+
+> The agent that produced the answer -- human or model -- is the least qualified judge of it,
+> because everything that produced the answer also produces reasons to believe it.
+
+And then it lists eleven failure modes. **Seven of them are bugs this project found, one per round,
+over thirty rounds:**
+
+    "the gate that cannot fail"       -> the anchor accepting a partial membership (18/20)
+    "the unconditional success line"  -> RESULT: compliant printed after a skipped audit
+    "certifying at fitted points"     -> the 100.0 score that copied reference_code
+    "threshold drift"                 -> KNOWN_CORRECTIONS widened until 93.53 passed
+    "adjectives in place of counts"   -> "compliant" with no per-dimension score
+    "self-graded confidence"          -> the CLI reporting its own success
+    "false independence"              -> styled and shipped anchors sharing a defect
+
+I had each of those as a separate lesson, learned separately. BootLoops states them as ONE standard
+with a procedure that produces evidence. That is the value: not new knowledge, but a checklist that
+would have caught all seven at once.
+
+IMPLEMENTED as `figpipe/gate.py`, translating numbers to figures:
+
+    reserved points    -> the dimensions are module constants, not chosen per figure
+    independent route  -> every check reads the RENDERED PDF back, never the drawing code
+    digit count        -> every GateCheck carries `measured` and `required`
+    positive control   -> a clean figure must reach CLOSED
+    negative control   -> a 150 mm figure must fail, AT column_width
+    true verdict       -> CLOSED only if every check passed, computed never assigned
+
+THE BUG THE GATE FOUND IN ITSELF, which is the best argument for the gate: the first version made
+`close()` require both controls, but `run_gate()` never set them -- so EVERY gate was OPEN, including
+one whose every check passed. A verdict that cannot be reached is as meaningless as one that is
+always reached; it is the mirror image of "the unconditional success line".
+
+Fixed by separating two claims that were being conflated: a FIGURE's verdict ("did this figure pass
+the gate") from the GATE's trustworthiness ("can this gate fire at all"). Both are needed; neither
+substitutes for the other.
+
+Verified: `gate_can_fire: True`, positive -> CLOSED, negative -> OPEN failing at `column_width`.
+
+THE NATURAL NEXT STEP is `planted-truth`: figpipe's controls are figure-level, not data-level. There
+is no test that plants a known slope and confirms the pipeline recovers it. That is the gap BootLoops
+would close next.
+
+Suite: 543 passed, 3 skipped.

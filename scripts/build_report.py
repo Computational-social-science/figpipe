@@ -587,6 +587,11 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
                     "figures: 0.9333 accuracy, 95% CI 0.787-0.982, p=4.3e-7, with a negative "
                     "control and a leave-one-out showing the result concentrates in figure aspect.",
                     "corpus/e2e/style_validation.json", meta="proxy, not a reader study"),
+        deliverable("Acceptance gate (BootLoops)", "CLOSED or OPEN, computed from measured checks, "
+                    "with a positive control that must pass and a negative control that must fail at "
+                    "the right check. Seven of BootLoops' eleven failure modes are bugs this project "
+                    "found one per round.",
+                    "figpipe/gate.py", meta="9 tests, controls verified"),
         deliverable("Structure read without a model", "figure_type and panel_labels_present are "
                     "now measured from the PDF's text and font sizes. Eight of the ten fields a VLM "
                     "was asked for are deterministic; the controls showed the model fabricated 20 "

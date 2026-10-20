@@ -44,10 +44,10 @@ Verify    audit, semantics, score, tripwire
 Benchmark codegen, decision
 """
 from . import (audit, codegen, composite, decision, drawlib, grammar, layout,  # noqa: F401
-               quality, score, select, semantics, skills, sources, spec, structure,
+               gate, quality, score, select, semantics, skills, sources, spec, structure,
                style, styleprofile, tripwire)
 
 __all__ = ["audit", "codegen", "composite", "decision", "drawlib", "grammar", "layout",
-           "quality", "score", "select", "semantics", "skills", "sources", "spec",
+           "gate", "quality", "score", "select", "semantics", "skills", "sources", "spec",
            "structure", "style", "styleprofile", "tripwire"]
-__version__ = "0.3.0"
+__version__ = "0.4.0"
