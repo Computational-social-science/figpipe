@@ -50,18 +50,33 @@ def test_unsupported_types_matches_the_unsupported_tasks():
 
 
 def test_the_counts_add_up():
-    """n_ok + n_unsupported + n_error must equal n_tasks, or a number describes another set."""
+    """Every task must be accounted for exactly once.
+
+    `n_error` counts CAPABILITY errors only. Infrastructure failures (a 403 from the dataset server,
+    a DNS failure) are counted separately, because the task was never ATTEMPTED -- counting them as
+    capability errors made the pipeline look worse when the network was worse (139 -> 127 with zero
+    real regressions, observed 2026-10-20). The two must still add up to every task that is neither
+    ok nor unsupported, or a task would vanish from the counts.
+    """
     data = _load()
     tasks = data.get("tasks") or []
     if not tasks:
         pytest.skip("no tasks")
     n_ok = sum(1 for t in tasks if t.get("status") == "ok")
     n_uns = sum(1 for t in tasks if t.get("status") == "unsupported")
-    n_err = len(tasks) - n_ok - n_uns
+    n_other = len(tasks) - n_ok - n_uns
     assert data.get("n_tasks") == len(tasks)
     assert data.get("n_ok") == n_ok
     assert data.get("n_unsupported") == n_uns
-    assert data.get("n_error") == n_err
+    n_err = data.get("n_error")
+    n_infra = data.get("n_infrastructure_failures")
+    assert n_err is not None, "n_error is missing"
+    assert n_infra is not None, (
+        "n_infrastructure_failures is missing; without it a network failure is indistinguishable "
+        "from a capability regression")
+    assert n_err + n_infra == n_other, (
+        f"capability errors ({n_err}) + infrastructure failures ({n_infra}) != the {n_other} "
+        f"tasks that are neither ok nor unsupported")
 
 
 def test_semantic_violations_counts_the_whole_report():

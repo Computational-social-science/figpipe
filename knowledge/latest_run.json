@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-20T17:31:14",
+  "run_at": "2026-10-20T17:48:05",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -9,16 +9,19 @@
     "  passed 8, failed 0",
     "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
     "  wrote knowledge\\evolution_report.json",
-    "  lean: tracked 76.9 -> 76.9 MB, worktree 136.2 -> 131.5 MB"
+    "  lean: tracked 76.9 -> 76.9 MB, worktree 130.6 -> 129.1 MB"
   ],
   "tests_ok": true,
-  "tests_summary": "561 passed, 3 skipped, 1 warning in 298.16s (0:04:58)",
+  "tests_summary": "565 passed, 3 skipped, 1 warning in 335.14s (0:05:35)",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
   "published": {
     "pushed": false,
-    "reason": "not yet published"
+    "withheld": [],
+    "blocked_deletions": [],
+    "skipped": true,
+    "reason": "no knowledge change: the run record stays uncommitted for the next run"
   },
   "check_results": {
     "L01": {
@@ -607,14 +610,14 @@
     "benchmark_official_improvement": 37.25,
     "statistics_reproduced": 15,
     "knowledge_version": 16,
-    "tests": null
+    "tests": 565
   },
   "capabilities_delta": {
     "changed": true,
     "delta": {
       "tests": {
-        "before": 559,
-        "after": null
+        "before": null,
+        "after": 565
       }
     },
     "verdict": {
@@ -636,6 +639,8 @@
       ]
     }
   },
-  "ok": false,
-  "publish_note": "suite ran, but the measurement lock was taken before the publish step; not publishing: another measurement is running: competitor (pid 63280, started 2026-10-20T17:31:16). Overlapping measurements produce numbers that are neither reproducible nor trustworthy -- wait for it, or delete .measurement.lock if the holder is gone."
+  "ok": true,
+  "capability_ok": true,
+  "capability_regressions": [],
+  "publish_note": "The publish outcome is recorded after the commit that carries this run, so it describes the push triggered by this run; the file's own commit is made by the next scheduled run."
 }

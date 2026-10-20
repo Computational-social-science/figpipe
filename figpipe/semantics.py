@@ -158,3 +158,155 @@ def verify_panel(ax, data: pd.DataFrame, *, x: str, y: str, texts=None,
     findings = [f for _, res in checks for f in res.get("findings", [])]
     return {"ok": not findings, "findings": findings,
             "checks": {name: res.get("ok") for name, res in checks}}
+
+
+# ---------------------------------------------------------------------------------------
+# BAR GEOMETRY: the check for the drawers that dominate the unverified set
+#
+# `grouped_measures` (18 pool tasks) and `distribution_comparison` (16) had NO semantic rule, so
+# 34 of the 94 unverified tasks were bar and box panels. Their printed numbers were never
+# re-derived. The infrastructure was already here -- `check_marks` supports `bars` -- but nothing
+# called it for these drawers.
+#
+# A bar panel makes a checkable claim that a point panel does not: EVERY BAR'S HEIGHT IS THE
+# AGGREGATED VALUE. So the drawn heights, read off the axes, must match the aggregated data the
+# panel says it drew.
+# ---------------------------------------------------------------------------------------
+
+def check_bar_heights(ax, data: pd.DataFrame, *, x: str, ycols, tol: float = 0.02) -> dict:
+    """Every bar's height must equal the value the panel claims to plot.
+
+    `tol` is 0.02 because a bar is drawn to the axis scale, and the reader compares against the
+    data rounded the same way; a difference larger than that is a real contradiction.
+
+    A bar panel that plots the WRONG AGGREGATE (sum instead of mean), or that drops a level, or
+    that plots one column's values against another's labels, is caught here and nowhere else --
+    the audit checks geometry, the collision check checks overlap, and both pass.
+    """
+    findings = []
+    # "I cannot check this" is NOT "this is wrong". A panel that does not carry the columns the
+    # check needs is unverifiable, and reporting it as a violation marks a correct figure broken --
+    # which happened to 7 pool tasks before this distinction existed.
+    if x not in data.columns:
+        return {"ok": True, "unverifiable": f"the panel does not carry its x column {x!r}",
+                "findings": []}
+    ycols = [c for c in (ycols or []) if c in data.columns]
+    if not ycols:
+        return {"ok": True, "unverifiable": "the panel carries no numeric column to plot",
+                "findings": []}
+
+    expected = []
+    for col in ycols:
+        expected.extend(float(v) for v in pd.to_numeric(data[col], errors="coerce")
+                        if np.isfinite(v))
+
+    # matplotlib reports every bar as a Rectangle patch; the legend swatches are not on the axes.
+    heights = []
+    for patch in ax.patches:
+        try:
+            h = float(patch.get_height())
+        except (AttributeError, TypeError):
+            continue
+        if np.isfinite(h):
+            heights.append(h)
+    if not heights:
+        return {"ok": True, "unverifiable": "the panel drew no bars to compare",
+                "findings": []}
+    if len(heights) != len(expected):
+        findings.append({"check": "bar_heights",
+                         "detail": f"{len(heights)} bars drawn for {len(expected)} values"})
+        return {"ok": False, "findings": findings, "drawn": len(heights),
+                "expected": len(expected)}
+
+    # Pair them by SORTED order: the drawer plots each column's values, and the bar order along the
+    # axis is the data order. Sorting both sides makes the check independent of grouping order
+    # while still catching a wrong value, a swapped column or a dropped level.
+    for drawn, want in zip(sorted(heights), sorted(expected)):
+        if abs(drawn - want) > tol * max(1.0, abs(want)):
+            findings.append({"check": "bar_heights",
+                             "detail": f"a bar is drawn at {drawn:.4f} but the data give "
+                                       f"{want:.4f} (tol {tol})"})
+            break
+    return {"ok": not findings, "findings": findings, "drawn": len(heights),
+            "expected": len(expected), "heights": sorted(round(h, 4) for h in heights)}
+
+
+def check_box_positions(ax, data: pd.DataFrame, *, value: str,
+                        group: str | None = None, tol: float = 0.02) -> dict:
+    """A box panel claims one median PER GROUP; every drawn box must sit at its group's median.
+
+    THE MISTAKE THIS CHECK MADE FIRST: it compared the drawn medians to the median of the POOLED
+    column. A box panel draws one box per group, so the correct comparison is per group -- and the
+    pooled comparison reported a false failure on a perfectly correct figure. A check that fires on
+    correct output is how a real check gets switched off, which is the failure this whole project
+    keeps finding in other people's code.
+
+    The comparison is by SORTED ORDER rather than by tick position: both the drawn medians and the
+    group medians are sorted, so the check is independent of the order the groups happen to appear
+    while still catching a wrong value, a swapped group, or a dropped level.
+    """
+    findings = []
+    if value not in data.columns:
+        return {"ok": False, "findings": [
+            {"check": "box_positions", "detail": f"the panel does not carry {value!r}"}]}
+
+    values = pd.to_numeric(data[value], errors="coerce")
+    if group and group in data.columns:
+        expected = sorted(float(v) for v in
+                          values.groupby(data[group]).median().dropna().tolist())
+    else:
+        expected = [float(values.median())] if values.notna().any() else []
+    if not expected:
+        return {"ok": False, "findings": [
+            {"check": "box_positions", "detail": "no finite values to summarise"}]}
+
+    # A box plot draws SIX 2-point lines per group: two diagonal whiskers, two horizontal box edges
+    # (Q1 and Q3), one horizontal median, and one empty line. Filtering for "horizontal" therefore
+    # catches the EDGES too -- which made this check compare four levels against two group medians
+    # and report a false failure on a correct figure.
+    #
+    # THE RELIABLE DISCRIMINATOR IS THE X EXTENT. Matplotlib draws the median across the full box
+    # width, and the box edges across the same width, but the median is the ONLY horizontal line
+    # whose y lies strictly between the other two of its own box. So the horizontal lines are
+    # grouped by their x-position (each box has a distinct centre), and within each group the
+    # middle level is the median.
+    horizontals = []
+    for line in ax.lines:
+        yd = line.get_ydata()
+        if len(yd) != 2 or abs(float(yd[0]) - float(yd[1])) >= 1e-9:
+            continue
+        xd = line.get_xdata()
+        if len(xd) != 2:
+            continue
+        centre = round((float(xd[0]) + float(xd[1])) / 2.0, 6)
+        horizontals.append((centre, float(yd[0])))
+    by_box: dict[float, list[float]] = {}
+    for centre, y in horizontals:
+        by_box.setdefault(centre, []).append(y)
+    drawn = []
+    for _centre, levels in by_box.items():
+        levels = sorted(levels)
+        if len(levels) >= 3:
+            drawn.append(levels[len(levels) // 2])
+        elif levels:
+            drawn.append(levels[0])
+    drawn = sorted(drawn)
+    if not drawn:
+        return {"ok": False, "findings": [
+            {"check": "box_positions", "detail": "the panel drew no median line"}]}
+    if len(drawn) != len(expected):
+        findings.append({"check": "box_positions",
+                         "detail": f"{len(drawn)} boxes drawn for {len(expected)} group(s)"})
+        return {"ok": False, "findings": findings,
+                "drawn": [round(y, 4) for y in drawn],
+                "expected": [round(m, 4) for m in expected]}
+
+    for got, want in zip(drawn, expected):
+        if abs(got - want) > tol * max(1.0, abs(want)):
+            findings.append({"check": "box_positions",
+                             "detail": f"a box is drawn at {got:.4f} but its group median is "
+                                       f"{want:.4f} (tol {tol})"})
+            break
+    return {"ok": not findings, "findings": findings,
+            "drawn": [round(y, 4) for y in drawn],
+            "expected": [round(m, 4) for m in expected]}

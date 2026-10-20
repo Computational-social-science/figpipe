@@ -2749,3 +2749,120 @@ what the numbers mean together. The test now asserts the board comes BEFORE the 
 deliverables, because ordering is the part that makes it a status rather than an appendix.
 
 Suite: 565 passed, 3 skipped.
+
+
+## 94. Two new semantic checks, and two bugs in the checks themselves (2026-10-20)
+
+The status board's only red number was 94/139 tasks (68%) whose printed numbers were never
+re-derived. The two biggest contributors were `grouped_measures` (18) and `distribution_comparison`
+(16) -- 34 tasks, 36% of the gap.
+
+Both make a claim a point panel does not, and both are checkable from the drawn axes:
+
+    bar panel   EVERY BAR'S HEIGHT IS THE AGGREGATED VALUE
+    box panel   EVERY BOX SITS AT ITS GROUP'S MEDIAN
+
+The infrastructure was already there -- `semantics.check_marks` supported `bars` -- but nothing
+called it for these drawers.
+
+THEN I GOT BOTH CHECKS WRONG, and the way they were wrong is the useful part.
+
+**Bug 1: the box check used the POOLED median.** A box panel draws one box per GROUP, so comparing
+drawn medians to `data[value].median()` reported a false failure on a perfectly correct figure:
+
+    the drawn median is 2.0283 but the data give 1.4817
+
+1.4817 was the median of both groups pooled; 2.0283 was the third quartile of the second box. The
+check was measuring a number that no drawer was ever asked to produce.
+
+**Bug 2: "horizontal 2-point lines" caught the box EDGES.** Matplotlib draws six 2-point lines per
+box: two diagonal whiskers, two horizontal edges at Q1/Q3, one horizontal median, one empty. My
+filter caught the edges too, so four levels were compared against two group medians.
+
+The reliable discriminator turned out to be the line's **x-centre**: each box has a distinct centre,
+and within a box the MIDDLE of the three horizontal levels is the median.
+
+BOTH BUGS WERE FOUND BY RUNNING THE CHECK ON A FIGURE THAT WAS CORRECT. That is the whole argument
+for the negative control in reverse: a check that fires on correct output is worse than no check,
+because it teaches the operator to ignore it -- and this project has spent thirty rounds finding
+exactly that pattern in its own earlier work.
+
+VERIFIED both directions:
+
+    bar  correct -> True      corrupted value -> False
+    box  correct -> True      shifted group   -> False
+         (drawn [0.5751, 2.6313] == expected [0.5751, 2.6313])
+
+9 tests, including a structural one asserting the pooled median differs from every per-group median
+so the fixture can actually distinguish the bug.
+
+Suite: 574 passed, 3 skipped.
+
+
+## 95. A network 403 was counted as a capability regression (2026-10-20)
+
+The pool re-measure came back 127/150 with 12 errors, down from 139/150 with 0. That looks exactly
+like a capability regression, and it is not one: all 12 were `HTTP 403 Forbidden` from the dataset
+server plus two DNS failures. `is_infrastructure_error()` classified every one of them as
+infrastructure -- the report simply never used that classification in its COUNTS.
+
+    n_ok   139 -> 127
+    n_error  0 -> 12        (all infrastructure)
+    capability errors: 0
+
+The project already had the distinction and had already learned it once (round 26: "HTTP 403 read as
+capability regression"). The lesson had been applied to the `_is_infra` gate and never propagated to
+`n_error`, so a network problem still moved the headline number.
+
+FIXED: `n_error` counts capability errors only; `n_infrastructure_failures` is reported separately.
+`test_the_counts_add_up` now asserts the two ADD UP to every task that is neither ok nor unsupported,
+so a task cannot vanish from the counts either.
+
+THE GENERAL LESSON, now recorded twice: **a classification that exists but is not used in the
+numbers is decoration.** `is_infrastructure_error` was called, returned True, and the result was
+thrown away -- which is this project's class-A defect (a control that looks present and does
+nothing) applied to a classifier rather than a metric.
+
+## 96. Two semantic checks added, and both were wrong first (2026-10-20)
+
+The status board's only red number was 94/139 tasks (68%) whose printed numbers were never
+re-derived. The two biggest contributors were `grouped_measures` (18) and `distribution_comparison`
+(16) -- 34 tasks, 36% of the gap.
+
+Both make a claim a point panel does not, and both are checkable from the drawn axes:
+
+    bar panel   EVERY BAR'S HEIGHT IS THE AGGREGATED VALUE
+    box panel   EVERY BOX SITS AT ITS GROUP'S MEDIAN
+
+THEN I GOT BOTH CHECKS WRONG.
+
+**Bug 1: the box check used the POOLED median.** A box panel draws one box per GROUP, so comparing
+drawn medians to `data[value].median()` reported a false failure on a perfectly correct figure:
+
+    the drawn median is 2.0283 but the data give 1.4817
+
+1.4817 was the median of both groups pooled. The check was measuring a number no drawer was asked to
+produce.
+
+**Bug 2: "horizontal 2-point lines" caught the box EDGES.** Matplotlib draws six 2-point lines per
+box: two diagonal whiskers, two horizontal edges at Q1/Q3, one horizontal median, one empty. My
+filter caught the edges too, so four levels were compared against two group medians. The reliable
+discriminator is the line's x-CENTRE: each box has a distinct centre, and within a box the MIDDLE
+level is the median.
+
+**Bug 3: "I cannot check this" was reported as "this is WRONG".** A `composite_groups` sub-panel does
+not always carry `ycols`, and the check returned a hard finding for that -- marking 7 correct pool
+tasks broken. Reporting a defect where there is only an absence of information is the worst
+confusion a verification layer can make. There is now a third state, `unverifiable`, distinct from
+a violation.
+
+BOTH BUGS 1 AND 2 WERE FOUND BY RUNNING THE CHECK ON A FIGURE THAT WAS CORRECT. A check that fires
+on correct output is worse than no check, because it teaches the operator to ignore it.
+
+MEASURED RESULT:
+
+    semantic coverage   checked 45 -> 72 of 127   (32% -> 57%)
+    capability errors   0
+    hard findings       19 -> 18
+
+Suite: 577 passed, 2 skipped.

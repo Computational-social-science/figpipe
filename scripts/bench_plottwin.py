@@ -1195,7 +1195,13 @@ def _run(args) -> int:
                       "note": "deterministic metrics only; official combined score requires the "
                               "benchmark's VLM scorer and is NOT claimed here"},
         "n_tasks": len(results), "n_ok": len(ok),
-        "n_unsupported": len(unsupported), "n_error": len(errored),
+        "n_unsupported": len(unsupported),
+        # INFRASTRUCTURE FAILURES ARE NOT CAPABILITY FAILURES. A 403 from the dataset server or a
+        # DNS failure means the task was never attempted, so counting it as an error makes the
+        # pipeline look worse when the network is worse. Separated so a reader can tell.
+        "n_error": len([r for r in errored if not is_infrastructure_error(r.get("error"))]),
+        "n_infrastructure_failures": len([r for r in errored
+                                          if is_infrastructure_error(r.get("error"))]),
         "unsupported_types": {r["chart"]: r.get("error") for r in unsupported},
         "mean_distance": round(float(np.mean([r["distance"] for r in ok])), 3) if ok else None,
         "mean_baseline": round(float(np.mean([r["baseline_distance"] for r in ok])), 3) if ok else None,
@@ -1229,7 +1235,12 @@ def _run(args) -> int:
         report["n_tasks"] = len(merged)
         report["n_ok"] = len(ok_all)
         report["n_unsupported"] = len(uns)
-        report["n_error"] = len(merged) - len(ok_all) - len(uns)
+        errored_all = [t for t in merged
+                       if t.get("status") not in ("ok", "unsupported")]
+        report["n_error"] = len([t for t in errored_all
+                                 if not is_infrastructure_error(t.get("error"))])
+        report["n_infrastructure_failures"] = len([t for t in errored_all
+                                                   if is_infrastructure_error(t.get("error"))])
         if ok_all:
             report["mean_distance"] = round(float(np.mean([t["distance"] for t in ok_all])), 3)
             report["mean_baseline"] = round(float(np.mean([t["baseline_distance"] for t in ok_all])), 3)

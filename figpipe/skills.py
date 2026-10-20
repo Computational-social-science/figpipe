@@ -623,7 +623,28 @@ def op_verify_semantics(ctx: SkillContext, fig, pdf_path):
     #: A heatmap, a field or a bar panel draws a different geometry, and applying a point-count
     #: check to them would produce a false failure -- which is how a check gets switched off.
     POINT_DRAWERS = {"scatter_fit", "trend_band"}
+    #: Drawers whose marks ARE the aggregated values, so the drawn geometry can be compared to the
+    #: data the panel carries. Adding these two covers 34 of the 94 tasks that were unverified --
+    #: `grouped_measures` (18 pool tasks) and `distribution_comparison` (16).
+    BAR_DRAWERS = {"grouped_bars", "bar_with_errors"}
+    BOX_DRAWERS = {"boxplot"}
     for i, (panel, ax) in enumerate(zip(ctx.panels, fig.axes)):
+        if panel.draw in BAR_DRAWERS:
+            kw = dict(panel.kwargs)
+            res = semantics.check_bar_heights(ax, panel.data, x=kw.get("x"),
+                                              ycols=kw.get("ycols") or [])
+            for f in res["findings"]:
+                ctx.findings.append({"check": f"semantics.{f['check']}",
+                                     "detail": f["detail"], "severity": "hard"})
+            continue
+        if panel.draw in BOX_DRAWERS:
+            kw = dict(panel.kwargs)
+            res = semantics.check_box_positions(ax, panel.data, value=kw.get("value"),
+                                                group=kw.get("group"))
+            for f in res["findings"]:
+                ctx.findings.append({"check": f"semantics.{f['check']}",
+                                     "detail": f["detail"], "severity": "hard"})
+            continue
         if panel.draw not in POINT_DRAWERS:
             ctx.trace.append(f"verify.semantics(skip panel {i}: {panel.draw})")
             continue
