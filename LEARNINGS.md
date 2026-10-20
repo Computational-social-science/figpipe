@@ -2713,3 +2713,39 @@ Also this round: two wrong numbers before the right one.
 is the honest coverage figure, and it is the number the next several rounds should move.
 
 Suite: 559 passed, 3 skipped.
+
+
+## 93. A current report that could not answer "where are we?" (2026-10-20)
+
+A reader said the report did not look updated and they could not tell how far the project had got.
+The file WAS current -- regenerated minutes earlier, and it carried the right numbers. The problem
+was that it answered a different question.
+
+The report was an INVENTORY: a list of deliverables, each with a path and a status. An inventory says
+what EXISTS. It does not say what is DONE, what is BROKEN, or what the next move is. A reader who
+wants orientation has to reconstruct those three things from eight sections of evidence, which is
+work they should not have to do to find out whether the project is on track.
+
+FIXED with a status board placed before everything else, built from artefacts so it cannot drift:
+
+    Done                capabilities with a verified number behind them
+    Biggest known gap   the largest KNOWN gap, stated as a number
+    Unverified rules    rules with no machine check, listed by id
+    Next step           the single next move, with its acceptance criterion
+
+The board now reads, at the top of the page:
+
+    Done              139 benchmark tasks execute with 0 errors; 564 tests pass; style anchor 0.355
+                      on a single instrument; 45 tasks have their printed numbers re-derived
+    Biggest gap       94 of 139 tasks (68%) are drawn by a drawer with NO semantic rule, so their
+                      printed numbers were never re-derived
+    Unverified rules  8 rules have no machine check and are never counted as passing: H01..C04
+    Next step         Write semantic rules for grouped_bars, boxplot, histogram, heatmap.
+                      Acceptance: the checked count rises and the pool score does not fall.
+
+THE LESSON IS ABOUT REPORTING, NOT ABOUT THE PROJECT: **a report that requires reconstruction is not
+a status report.** Every number was already in the file; what was missing was the sentence that says
+what the numbers mean together. The test now asserts the board comes BEFORE the KPIs and the
+deliverables, because ordering is the part that makes it a status rather than an appendix.
+
+Suite: 565 passed, 3 skipped.

@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-20T14:00:09",
+  "run_at": "2026-10-20T17:31:14",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -9,10 +9,10 @@
     "  passed 8, failed 0",
     "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
     "  wrote knowledge\\evolution_report.json",
-    "  lean: tracked 76.8 -> 76.8 MB, worktree 130.4 -> 129.0 MB"
+    "  lean: tracked 76.9 -> 76.9 MB, worktree 136.2 -> 131.5 MB"
   ],
-  "tests_ok": false,
-  "tests_summary": "1 failed, 551 passed, 3 skipped, 1 warning in 325.94s (0:05:25) | FAILED tests/test_merge_aggregates.py::test_the_merge_recomputes_every_aggregate",
+  "tests_ok": true,
+  "tests_summary": "561 passed, 3 skipped, 1 warning in 298.16s (0:04:58)",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
@@ -613,7 +613,7 @@
     "changed": true,
     "delta": {
       "tests": {
-        "before": 543,
+        "before": 559,
         "after": null
       }
     },
@@ -637,5 +637,5 @@
     }
   },
   "ok": false,
-  "publish_note": "suite ran, but the measurement lock was taken before the publish step; not publishing: another measurement is running: bench_plottwin (pid 45532, started 2026-10-20T14:00:25). Overlapping measurements produce numbers that are neither reproducible nor trustworthy -- wait for it, or delete .measurement.lock if the holder is gone."
+  "publish_note": "suite ran, but the measurement lock was taken before the publish step; not publishing: another measurement is running: competitor (pid 63280, started 2026-10-20T17:31:16). Overlapping measurements produce numbers that are neither reproducible nor trustworthy -- wait for it, or delete .measurement.lock if the holder is gone."
 }

@@ -182,3 +182,42 @@ def test_a_failed_reacquire_does_not_publish():
         "the re-acquire is not guarded; a busy lock would raise and lose the run record")
     assert "not publishing" in src or "not pushed" in src, (
         "the refusal to publish is not reported")
+
+
+def test_the_scheduled_run_only_releases_a_lock_it_still_holds():
+    """THE BUG: `finally: lock.release("cron_run")` assumed we still held the lock.
+
+    `_main_locked` deliberately releases it around the test suite (round 32) and may fail to
+    re-acquire when another measurement starts. In that case the lock belongs to someone else and
+    releasing it raises `MeasurementBusy` -- FROM INSIDE A `finally`, which turns a clean
+    "not pushed" exit into a traceback and loses the exit code.
+
+    Observed 2026-10-20 13:56 in knowledge/loop.log:
+        not pushed: another measurement started while the suite ran
+        Traceback ... lock.release("cron_run")
+        MeasurementBusy: refusing to release a lock held by bench_plottwin
+    """
+    import inspect
+    import sys
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import cron_run
+    src = inspect.getsource(cron_run.main)
+    assert "lock.holder()" in src, (
+        "the finally block releases the lock without checking ownership; a lock taken by another "
+        "measurement would raise inside the finally")
+    assert 'holder.get("name") == "cron_run"' in src or "holder.get('name') == 'cron_run'" in src, (
+        "the ownership check does not compare the holder name")
+
+
+def test_releasing_a_lock_we_do_not_hold_raises():
+    """NEGATIVE CONTROL: the behaviour the fix protects against must actually exist."""
+    import sys
+    sys.path.insert(0, str(ROOT))
+    from figpipe import lock
+    lock.break_stale()
+    token = lock.acquire("someone-else")
+    try:
+        with pytest.raises(lock.MeasurementBusy):
+            lock.release("cron_run")
+    finally:
+        lock.release("someone-else")

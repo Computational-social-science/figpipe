@@ -525,7 +525,14 @@ def main(argv: list[str]) -> int:
     try:
         return _main_locked(argv, dry)
     finally:
-        lock.release("cron_run")
+        # ONLY RELEASE WHAT WE STILL HOLD. `_main_locked` releases the lock around the test suite
+        # (so the suite's own cross-process test can take it) and re-acquires afterwards; if
+        # another measurement took it in that window, the lock is no longer ours and releasing it
+        # raises -- from inside a `finally`, turning a clean "not pushed" exit into a traceback.
+        # This happened on 2026-10-20 at 13:56.
+        holder = lock.holder() or {}
+        if holder.get("name") == "cron_run":
+            lock.release("cron_run")
 
 
 def _main_locked(argv: list[str], dry: bool) -> int:

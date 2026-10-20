@@ -75,12 +75,23 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 @media(max-width:800px){.two-col{grid-template-columns:1fr}}
 @media print{.top{position:static}body{background:#fff}.card,.panel,table{box-shadow:none}}
+
+.status{margin:26px 0 8px}
+.status h2{font-size:18px;margin:0 0 10px}
+.statustable{width:100%;border-collapse:collapse;font-size:14px}
+.statustable th{text-align:left;width:170px;padding:9px 12px;vertical-align:top;
+  border-left:3px solid #ccc;background:#fafafa;font-weight:600}
+.statustable td{padding:9px 12px;vertical-align:top;line-height:1.5}
+.statustable th.ok{border-left-color:#127a2e}
+.statustable th.warn{border-left-color:#b3261e}
+.statustable th.next{border-left-color:#1f6feb}
+.statustable tr+tr{border-top:1px solid #eee}
 </style></head>
 <body>
 <div class="top">
   <b>FigPipeline · Research Figure Pipeline</b>
-  <div class="meta"><span>commit 0d1928c</span><span>branch main</span>
-  <span>knowledge v16</span><span>generated 2026-10-20 17:16</span></div>
+  <div class="meta"><span>commit 8f288d4</span><span>branch main</span>
+  <span>knowledge v16</span><span>generated 2026-10-20 17:43</span></div>
 </div>
 <div class="wrap">
 
@@ -90,13 +101,15 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
   artefacts: every number can be recomputed by a script, and every deliverable can be opened and
   checked. It tracks progress, exposes the evidence, and records what is not finished yet.</p>
   <div class="pills">
-    <span class="pill">tests 562 passed</span>
+    <span class="pill">tests 568 passed</span>
     <span class="pill">statistics reproduced: 15</span>
     <span class="pill">benchmark tasks 139/150</span>
     <span class="pill">skills 16 · operators 21</span>
-    <span class="pill">tracked 76.8 MB</span>
+    <span class="pill">tracked 76.9 MB</span>
   </div>
 </header>
+
+<div class="status"><h2>Where this project is right now</h2><table class="statustable"><tr><th class="ok">Done</th><td>139 benchmark tasks execute with 0 errors; 568 tests pass; style anchor 0.355 on a single instrument; 45 tasks have their printed numbers re-derived from the data</td></tr><tr><th class="warn">Biggest known gap</th><td>94 of 139 tasks (68%) are drawn by a drawer with NO semantic rule, so their printed numbers were never re-derived. A pass on those is a statement about geometry, not about correctness.</td></tr><tr><th class="warn">Unverified rules</th><td>8 knowledge rules have no machine check and are never counted as passing: H01, H02, E01, E02, C01, C02, C03, C04</td></tr><tr><th class="next">Next step</th><td>Write semantic rules for the drawers that dominate the skipped set (grouped_bars, boxplot, histogram, heatmap). Acceptance: the checked count rises and the pool score does not fall.</td></tr></table></div>
 
 <div class="kpis">
   <div class="kpi "><div class="kpi-v">15</div><div class="kpi-l">Published statistics reproduced</div><div class="kpi-s">worst |Δ| = 0.005</div></div>
@@ -105,8 +118,8 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
   <div class="kpi "><div class="kpi-v">75.41</div><div class="kpi-l">OFFICIAL code channel</div><div class="kpi-s">PlotTwin-Bench deviation-defect-v1 (35% weight); vision not run</div></div>
   <div class="kpi "><div class="kpi-v">8</div><div class="kpi-l">Semantic violations</div><div class="kpi-s">figures whose printed claims contradict their data</div></div>
   <div class="kpi "><div class="kpi-v">16 / 21</div><div class="kpi-l">Skills / classic operators</div><div class="kpi-s">global verification floor on every recipe</div></div>
-  <div class="kpi "><div class="kpi-v">562</div><div class="kpi-l">Automated tests</div><div class="kpi-s">negative controls and contract tests</div></div>
-  <div class="kpi "><div class="kpi-v">76.8 MB</div><div class="kpi-l">Repository size</div><div class="kpi-s">lean budget ≤ 80 MB</div></div>
+  <div class="kpi "><div class="kpi-v">568</div><div class="kpi-l">Automated tests</div><div class="kpi-s">negative controls and contract tests</div></div>
+  <div class="kpi "><div class="kpi-v">76.9 MB</div><div class="kpi-l">Repository size</div><div class="kpi-s">lean budget ≤ 80 MB</div></div>
 </div>
 
 
@@ -116,9 +129,9 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
   <div class="progress-row"><div class="progress-head"><span>Style measurement and transfer</span><span class="pct">100%</span></div><div class="bar"><i class="done" style="width:100%"></i></div><div class="evidence">vector/raster profiles; variant search; every skill accepts a profile</div></div>
   <div class="progress-row"><div class="progress-head"><span>Skills and operators</span><span class="pct">100%</span></div><div class="bar"><i class="done" style="width:100%"></i></div><div class="evidence">16 recipes, 21 operators, global compliance floor</div></div>
   <div class="progress-row"><div class="progress-head"><span>Authoritative benchmark (PlotTwin-Bench)</span><span class="pct">100%</span></div><div class="bar"><i class="hold" style="width:100%"></i></div><div class="evidence">150/150 tasks run; remaining tasks and chart types in the backlog</div></div>
-  <div class="progress-row"><div class="progress-head"><span>Decision-model integration</span><span class="pct">60%</span></div><div class="bar"><i class="hold" style="width:60%"></i></div><div class="evidence">bridge and 6 contract tests complete; service online</div></div>
+  <div class="progress-row"><div class="progress-head"><span>Decision-model integration</span><span class="pct">60%</span></div><div class="bar"><i class="hold" style="width:60%"></i></div><div class="evidence">bridge and 6 contract tests complete; service offline</div></div>
   <div class="progress-row"><div class="progress-head"><span>Self-evolution</span><span class="pct">40%</span></div><div class="bar"><i class="hold" style="width:40%"></i></div><div class="evidence">8/16 rules have machine checks; no capability snapshot or mutation yet</div></div>
-  <div class="progress-row"><div class="progress-head"><span>Documentation and slimming</span><span class="pct">100%</span></div><div class="bar"><i class="done" style="width:100%"></i></div><div class="evidence">tracked 76.8 MB; redundant audit documents consolidated</div></div>
+  <div class="progress-row"><div class="progress-head"><span>Documentation and slimming</span><span class="pct">100%</span></div><div class="bar"><i class="done" style="width:100%"></i></div><div class="evidence">tracked 76.9 MB; redundant audit documents consolidated</div></div>
 </div>
 
 <h2><span class="n">02</span>Research deliverables</h2>
@@ -183,6 +196,8 @@ of deciding.</p>
 metrics</b> (palette / aspect / ink density of the raster reference), <b>not the official combined
 score</b>; the latter needs the benchmark's VLM scorer, which this project has not run and does not
 imitate.</p>
+<div class="status"><h2>Where this project is right now</h2><table class="statustable"><tr><th class="ok">Done</th><td>139 benchmark tasks execute with 0 errors; 568 tests pass; style anchor 0.355 on a single instrument; 45 tasks have their printed numbers re-derived from the data</td></tr><tr><th class="warn">Biggest known gap</th><td>94 of 139 tasks (68%) are drawn by a drawer with NO semantic rule, so their printed numbers were never re-derived. A pass on those is a statement about geometry, not about correctness.</td></tr><tr><th class="warn">Unverified rules</th><td>8 knowledge rules have no machine check and are never counted as passing: H01, H02, E01, E02, C01, C02, C03, C04</td></tr><tr><th class="next">Next step</th><td>Write semantic rules for the drawers that dominate the skipped set (grouped_bars, boxplot, histogram, heatmap). Acceptance: the checked count rises and the pool score does not fall.</td></tr></table></div>
+
 <div class="kpis">
   <div class="kpi "><div class="kpi-v">139/150</div><div class="kpi-l">Tasks run</div><div class="kpi-s">execution success · 11 classified unsupported</div></div>
   <div class="kpi "><div class="kpi-v">0.383 → 0.313</div><div class="kpi-l">Mean style distance</div><div class="kpi-s">improvement +0.070</div></div>
@@ -1077,7 +1092,7 @@ floor (compliance, glyph collisions, no silently ignored parameters, a reproduci
 <div class="two-col">
 <div class="panel">
 <table><thead><tr><th>Metric</th><th>Value</th><th>Meaning</th></tr></thead><tbody>
-<tr><td>Run records</td><td class="num">120</td><td>six-hour schedule + manual runs</td></tr>
+<tr><td>Run records</td><td class="num">122</td><td>six-hour schedule + manual runs</td></tr>
 <tr><td>Knowledge-changing runs</td><td class="num">4</td><td>all from manual migrations or capability work</td></tr>
 <tr><td>Knowledge-base version</td><td>v16</td><td>16 rules</td></tr>
 <tr><td>Machine-checked rules</td><td class="num">8 / 16</td><td>the rest are hypotheses/refuted/void</td></tr>
@@ -1085,7 +1100,7 @@ floor (compliance, glyph collisions, no silently ignored parameters, a reproduci
 <tr><td>Benchmark slice</td><td>6 tasks from offset 0 (exit 0)</td>
 <td>rotating tasks measured by the loop</td></tr>
 <tr><td>Capability snapshot</td><td>skills 16 · operators 21 · benchmark 139/150 · success 1.0 · anchor 0.355 · tests —</td><td>recorded by the scheduled run</td></tr>
-<tr><td>Last capability change</td><td>tests: 543 → —</td><td>explicit delta, not a claim</td></tr>
+<tr><td>Last capability change</td><td>tests: 559 → —</td><td>explicit delta, not a claim</td></tr>
 </tbody></table>
 <p class="tag" style="margin-top:10px">Conclusion: the loop currently re-verifies, prevents drift and
 records. It has no capability snapshot, mutation or selection, so it is <b>not self-improvement</b>.
@@ -1096,7 +1111,7 @@ The next step is to write benchmark pass rates and distances into the run record
 <ul style="font-size:12.5px;color:#40506a;margin:8px 0 0;padding-left:18px">
 <li><b>Vision channel not run:</b> the official 0.65 vision half is out of scope, so no
 combined-score claim is made — the code-channel claim is stated with its baseline instead.</li>
-<li><b>Decision service offline:</b> service online.</li>
+<li><b>Decision service offline:</b> service offline.</li>
 <li><b>Benchmark coverage:</b> 141/150 tasks execute; 9 are classified unsupported by design
 (3D, Network/Tree), not silently skipped.</li>
 <li><b>Style weights not human-validated:</b> hand-set; a 30-figure annotation study is needed.</li>
@@ -1108,7 +1123,7 @@ combined-score claim is made — the code-channel claim is stated with its basel
 
 <h3 style="margin-top:20px">Capability trend (scheduled runs)</h3>
 <table><thead><tr><th>Run</th><th>Skills</th><th>Operators</th><th>Benchmark</th>
-<th>Anchor distance</th><th>Success</th><th>Tests</th></tr></thead><tbody><tr><td>2026-10-20 06:03</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.313</td><td class="num">467</td></tr><tr><td>2026-10-20 07:24</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.313</td><td class="num">477</td></tr><tr><td>2026-10-20 07:42</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.313</td><td class="num">479</td></tr><tr><td>2026-10-20 07:52</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.313</td><td class="num">482</td></tr><tr><td>2026-10-20 11:38</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.313</td><td class="num">508</td></tr><tr><td>2026-10-20 11:52</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.313</td><td class="num">510</td></tr><tr><td>2026-10-20 13:43</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.313</td><td class="num">543</td></tr><tr><td>2026-10-20 14:00</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.313</td><td class="num">—</td></tr></tbody></table>
+<th>Anchor distance</th><th>Success</th><th>Tests</th></tr></thead><tbody><tr><td>2026-10-20 07:42</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.313</td><td class="num">479</td></tr><tr><td>2026-10-20 07:52</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.313</td><td class="num">482</td></tr><tr><td>2026-10-20 11:38</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.313</td><td class="num">508</td></tr><tr><td>2026-10-20 11:52</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.313</td><td class="num">510</td></tr><tr><td>2026-10-20 13:43</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.313</td><td class="num">543</td></tr><tr><td>2026-10-20 14:00</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.313</td><td class="num">—</td></tr><tr><td>2026-10-20 17:21</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.313</td><td class="num">559</td></tr><tr><td>2026-10-20 17:31</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.313</td><td class="num">—</td></tr></tbody></table>
 <p class="tag">Read from <code>knowledge/runs/*.json</code>. A run with no capability change is
 recorded as such; the loop fails when a judged capability field gets worse.</p>
 
@@ -1126,6 +1141,6 @@ recorded as such; the loop fails when a judged capability field gets worse.</p>
   in this repository, with no external dependencies. PlotTwin-Bench reference images and target
   data are cached locally and never redistributed (CC BY-NC 4.0); StartLux-Decision weights are
   CC BY-NC 4.0 and called through a separate service, not vendored into this repository.</div>
-  <div style="margin-top:6px">commit 0d1928c · generated 2026-10-20 17:16 · tests 562</div>
+  <div style="margin-top:6px">commit 8f288d4 · generated 2026-10-20 17:43 · tests 568</div>
 </footer>
 </div></body></html>

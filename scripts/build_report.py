@@ -429,6 +429,69 @@ def svg_bars(tasks):
     return "\n".join(parts)
 
 
+def _status_board(bench: dict, latest: dict, kb: dict, caps: dict, n_tests: int) -> str:
+    """Where the project actually is, in four lines a reader can act on.
+
+    A reader asked "I cannot tell how far the project has got", and the report answered with an
+    inventory of deliverables. An inventory is not a status: it says what EXISTS, not what is DONE,
+    what is BROKEN, or what the next move is.
+
+    Everything here is read from artefacts, so it cannot drift from them:
+      done      a capability with a verified number behind it
+      in flight the one thing being worked on
+      biggest   the largest KNOWN gap, stated as a number
+      next      the single next step, with its acceptance criterion
+    """
+    cov = bench.get("semantic_coverage") or {}
+    checked, skipped = cov.get("checked"), cov.get("skipped")
+    n_ok = bench.get("n_ok", 0) or 0
+    rows = []
+
+    done = []
+    if n_ok:
+        done.append(f"{n_ok} benchmark tasks execute with 0 errors")
+    if n_tests:
+        done.append(f"{n_tests} tests pass")
+    if caps.get("benchmark_anchor_single") is not None:
+        done.append(f"style anchor {caps['benchmark_anchor_single']} on a single instrument")
+    if checked:
+        done.append(f"{checked} tasks have their printed numbers re-derived from the data")
+    rows.append(("Done", "; ".join(done) or "—", "ok"))
+
+    if checked is not None and skipped is not None:
+        pct = round(100 * checked / max(1, checked + skipped))
+        rows.append(("Biggest known gap",
+                     f"{skipped} of {checked + skipped} tasks ({100 - pct}%) are drawn by a drawer "
+                     f"with NO semantic rule, so their printed numbers were never re-derived. A pass "
+                     f"on those is a statement about geometry, not about correctness.",
+                     "warn"))
+    else:
+        rows.append(("Biggest known gap", "semantic coverage is not recorded in the benchmark "
+                     "report, so the size of the unverified set is unknown.", "warn"))
+
+    rules = kb.get("rules", []) or []
+    unchecked = [r.get("id") for r in rules if not r.get("check")]
+    if unchecked:
+        rows.append(("Unverified rules",
+                     f"{len(unchecked)} knowledge rules have no machine check and are never counted "
+                     f"as passing: {', '.join(unchecked[:8])}", "warn"))
+
+    if checked is not None and skipped:
+        rows.append(("Next step",
+                     "Write semantic rules for the drawers that dominate the skipped set "
+                     "(grouped_bars, boxplot, histogram, heatmap). Acceptance: the checked count "
+                     "rises and the pool score does not fall.", "next"))
+    else:
+        rows.append(("Next step", "Keep the pool measured and the anchors on one instrument.",
+                     "next"))
+
+    body = "".join(
+        f'<tr><th class="{kind}">{esc(label)}</th><td>{esc(text)}</td></tr>'
+        for label, text, kind in rows)
+    return (f'<div class="status"><h2>Where this project is right now</h2>'
+            f'<table class="statustable">{body}</table></div>')
+
+
 def build(out: pathlib.Path = OUT, live_tests: bool = True) -> pathlib.Path:
     seed = read_json("templates/seed/report.json", {}) or {}
     style = read_json("templates/transfer/style_transfer_report.json", {}) or {}
@@ -745,14 +808,29 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
     ])
     variant_chart = data_uri("templates/transfer/variant_distance_chart.png")
 
+    status_board = _status_board(bench, latest, kb, caps, n_tests)
+
     now = dt.datetime.now().strftime("%Y-%m-%d %H:%M")
     bench_mean = f"{base_d:.3f} → {mean_d:.3f}" if (base_d is not None and mean_d is not None) else "—"
+
+    status_css = """
+.status{margin:26px 0 8px}
+.status h2{font-size:18px;margin:0 0 10px}
+.statustable{width:100%;border-collapse:collapse;font-size:14px}
+.statustable th{text-align:left;width:170px;padding:9px 12px;vertical-align:top;
+  border-left:3px solid #ccc;background:#fafafa;font-weight:600}
+.statustable td{padding:9px 12px;vertical-align:top;line-height:1.5}
+.statustable th.ok{border-left-color:#127a2e}
+.statustable th.warn{border-left-color:#b3261e}
+.statustable th.next{border-left-color:#1f6feb}
+.statustable tr+tr{border-top:1px solid #eee}
+"""
 
     page = f"""<!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>FigPipeline · Progress and Research Deliverables</title>
-<style>{css}</style></head>
+<style>{css}{status_css}</style></head>
 <body>
 <div class="top">
   <b>FigPipeline · Research Figure Pipeline</b>
@@ -774,6 +852,8 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
     <span class="pill">tracked {tracked_mb or '—'} MB</span>
   </div>
 </header>
+
+{status_board}
 
 <div class="kpis">
   {kpi(f'{n_stats}', 'Published statistics reproduced', f'worst |Δ| = {worst}', '')}
@@ -835,6 +915,8 @@ of deciding.</p>
 metrics</b> (palette / aspect / ink density of the raster reference), <b>not the official combined
 score</b>; the latter needs the benchmark's VLM scorer, which this project has not run and does not
 imitate.</p>
+{status_board}
+
 <div class="kpis">
   {kpi(f'{n_ok}/{n_tasks}', 'Tasks run', f"execution success · {bench.get('n_unsupported', 0)} classified unsupported", '')}
   {kpi(bench_mean, 'Mean style distance', f'improvement {delta:+.3f}' if delta is not None else '', '')}
