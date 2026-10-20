@@ -294,7 +294,7 @@ def _build_cells(col_bounds: list[int], row_bounds: list[int]):
 def _score(cells, ink, cfg) -> float:
     """Lower is better: empty boundaries, populated cells, plausible aspect ratios."""
     h, w = ink.shape
-    total = ink.sum()
+    _total = ink.sum()
     score = 0.0
     for c in cells:
         sub = ink[max(0, c["y0"]):c["y1"], max(0, c["x0"]):c["x1"]]
@@ -574,7 +574,7 @@ def main(argv=None) -> int:
         caption_text = full_caption or rec.get("caption_text", "")
         cap = caption_letters(caption_text)
         grid = infer_grid(letters, cap, ink, mm_per_px)
-        col_frac, row_frac = profiles(ink)
+        _col_frac, _row_frac = profiles(ink)
         bounds_x = sorted({c["x0"] for c in grid["cells"]} |
                           {c["x1"] for c in grid["cells"]})
         bounds_y = sorted({c["y0"] for c in grid["cells"]} |

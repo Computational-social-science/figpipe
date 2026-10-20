@@ -2198,3 +2198,112 @@ is not an identity. This project has now learned that three times: pid reuse in 
 lock, mutex names in the watchdog loop, and now a filename inside another filename.
 
 Suite: 481 passed, 3 skipped.
+
+
+## 81. Dead code that looks like the real check (2026-10-20)
+
+Following "a substring is not an identity" outward, I scanned every module for LOCAL VARIABLES THAT
+ARE ASSIGNED AND NEVER READ. Fifteen turned up. Most are harmless (`h_mm`, `w_mm`, a leftover
+`marker`), but three were the defect family in literal form -- code that looks like a check and does
+nothing:
+
+1. `slim.py::tracked_regenerable` computed a `hits` list from
+   `str.startswith(pattern.split("*")[0])` and then built the result from a `git ls-files` call
+   instead. **`hits` was never used.** Worse, the expression had an operator-precedence bug:
+   `A and B or (C and D and E)` binds as `(A and B) or (C and D and E)`, which is not what the
+   indentation suggests. Dead code that LOOKS like the real check is worse than none, because a
+   reader believes it.
+
+2. `cron_run.py::_main_locked` computed `evolve_failed = p.returncode != 0` and never read it.
+   The fact was already carried by `ok_evolve`. Two names for one fact is how one of them silently
+   stops being maintained.
+
+3. `skills.py::op_layout_split_panels` used a walrus to bind a throwaway SkillContext to a name that
+   was never read again.
+
+All three removed. The scan is the reusable part: **"assigned and never read" is mechanically
+findable**, and it is the same question this project keeps asking in different clothes -- is this
+control connected to anything?
+
+I also checked the guards that DO use prefix matching (`PROTECTED_PREFIXES` in cron_run.py) and
+found them correct: every prefix ends in "/" or is a full filename, so `Seeds2/` and
+`reports_old/` do not match. Not every substring check is a bug; the ones that are, are the ones
+used as an IDENTITY.
+
+Suite: 482 passed, 3 skipped.
+
+
+## 82. The mapper detected the uncertainty column and then dropped it (2026-10-20)
+
+The dead-assignment scan turned up a defect with real consequences:
+
+    err = next((c for c in nums if any(k in c.lower() for k in ("ci95_lower", "lower", "err"))), None)
+    hi  = next((c for c in nums if any(k in c.lower() for k in ("ci95_upper", "upper"))), None)
+    return "composite_groups", {"by": group, "x": label, "y": nums[0]}, df, ...
+
+`err` was DETECTED and then never passed to the recipe. A composite task whose data carries an
+uncertainty column was drawn WITHOUT error bars -- the figure silently claimed less than the data
+says, which is the opposite of the failure mode this project usually worries about and just as
+wrong.
+
+`hi` is genuinely unused (`composite_groups` takes a single symmetric `err`), so it was removed
+rather than wired in.
+
+That is the difference the scan makes: it cannot tell a harmless leftover from a dropped input. A
+human has to look at each one. What the scan does is make the list short enough to look at.
+
+Also cleaned: 12 other dead stores (`hits` in slim.py, `evolve_failed` in cron_run.py, a walrus in
+skills.py, and nine harmless leftovers), and the detector was taught that `global X` means X is read
+by other functions so assigning it is not dead.
+
+The remaining dead stores were removed by renaming to `_name`, which is the Python convention for
+"deliberately unused" -- a reader now sees the intent instead of wondering.
+
+Suite: 484 passed, 3 skipped.
+
+
+## 83. Studying a mature peer: what transfers, and what would undo this project (2026-10-20)
+
+Asked to learn from AutoFigure (ResearAI/AutoFigure, **ICLR 2026**, MIT, ~1,930 stars, ~8,000 lines),
+I read it instead of admiring it. The honest finding is that three of its central mechanisms are ones
+this project has **deliberately ruled out**, and one thing it does is better.
+
+WHAT IT DOES: Generate -> Evaluate -> Refine. An LLM writes SVG or draw.io XML; a **VLM-as-Judge**
+scores it 0-10 on eleven named dimensions; the loop repeats until the score clears 9.0 or five
+iterations.
+
+WHAT FIGPIPE MUST NOT COPY:
+  * **VLM-as-Judge.** This project MEASURED that approach: `vlm_report.json` recorded **20
+    fabrications** in VLM descriptions of figures. A judge that invents what it is looking at cannot
+    be the ground truth for a pipeline whose value is that its checks can be re-run and disagree.
+  * **Text-to-figure from prose.** Different product, different failure modes. A text-to-diagram
+    system cannot tell you your error bar is wrong.
+  * **LLM-generated code with an LLM quality gate.** figpipe's mutation loop is deterministic and
+    offline on purpose; a proposal step that varies run to run cannot be validated by this project's
+    own rules.
+
+WHAT TRANSFERS, and is now implemented as `figpipe/quality.py`:
+
+  **A rubric with NAMED dimensions, scored separately.** figpipe's audit reported a flat list of
+  findings -- a user told "3 findings" does not know whether to fix the typography or the layout.
+  AutoFigure names eleven dimensions and reports each. The STRUCTURE is adopted; the judge is not.
+
+  Six measurable dimensions (typography, geometry, legibility, density, colour, semantics), sorted
+  WORST FIRST so the list has an order, and five dimensions listed as UNMEASURED with the reason
+  (visual expressiveness, logical flow, information sophistication, audience appropriateness,
+  completeness) because no deterministic check can decide them. Faking them with a heuristic would
+  be a wrong number nobody can audit.
+
+  One bug found while building it: "findings is empty" was read as "no check ran", so a perfect
+  figure and an unverified figure produced identical reports. The TRACE records which steps
+  executed, and that is the only honest signal.
+
+THE THING FIGPIPE SHOULD BE EMBARRASSED ABOUT: AutoFigure has a web interface and a Flask API. A
+researcher can use it without a terminal. figpipe has a command line and a README that leads with a
+shell command. For a tool whose objective is "reusable in research scenarios", that is a barrier
+AutoFigure decided was worth removing and figpipe has not.
+
+Full comparison in PEER_AUTOFIGURE.md, including what figpipe does better (deterministic ground
+truth, reproducibility, 15 documented defect classes, an audit trail).
+
+Suite: 494 passed, 3 skipped.

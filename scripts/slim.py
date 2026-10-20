@@ -124,13 +124,13 @@ def git(*args: str) -> str:
 
 def tracked_regenerable() -> dict[str, list[str]]:
     """Which regenerable paths git is still tracking, per rule."""
-    tracked = set(git("ls-files").splitlines())
     out = {}
     for pattern, why in REGENERABLE:
-        prefix_globs = pattern.split("*")[0]
-        hits = [t for t in tracked if t.startswith(prefix_globs) and "pages/" in t
-                or (t.startswith(prefix_globs) and pattern.endswith("/*") and "/" in t)]
-        # simpler and exact: ask git to match the glob for us
+        # Ask GIT to match the glob. An earlier version computed a `hits` list from
+        # `str.startswith(pattern.split("*")[0])` and never used it -- the result came from the
+        # `git ls-files` call below. Dead code that looks like the real check is worse than no
+        # check, because a reader believes it. The expression also had an operator-precedence bug
+        # (`A and B or C and D` binds as `(A and B) or (C and D)`).
         matched = git("ls-files", "--", pattern).splitlines()
         if matched:
             out[why] = matched

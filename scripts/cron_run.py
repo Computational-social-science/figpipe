@@ -556,10 +556,9 @@ def _main_locked(argv: list[str], dry: bool) -> int:
                        cwd=ROOT, capture_output=True, text=True, encoding="utf-8", errors="replace")
     ok_evolve = p.returncode == 0
     evolve_out = (p.stdout or "").strip().splitlines()
-    # A non-zero evolve exit means a rule REGRESSED or a check could not run. That must
-    # surface in the run record and in this process's exit code, or the scheduler cannot see
-    # it -- the previous version swallowed exactly this.
-    evolve_failed = p.returncode != 0
+    # A non-zero evolve exit means a rule REGRESSED or a check could not run. `ok_evolve` carries
+    # that fact into the record and the exit code; an earlier `evolve_failed` computed the same
+    # thing and was never read.
 
     after = snapshot()
 

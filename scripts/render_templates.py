@@ -75,7 +75,7 @@ def main() -> int:
                 return cand
         return None
 
-    for name, ti, _kw in plans:
+    for name, _ti, _kw in plans:
         t = pick(2) or ts[0]
         df = numeric_frame(t)
         if df is None:

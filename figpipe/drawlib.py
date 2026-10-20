@@ -542,7 +542,7 @@ def ax_trend_band(ax, df: pd.DataFrame, x: str, y: str, lo: str | None = None,
         ys = sub[y].to_numpy(dtype=float)
         xs_all.extend(xs.tolist())
         ys_all.extend(ys.tolist())
-        colour, marker = sty[g if series else "_"]
+        colour, _marker = sty[g if series else "_"]
         if connect:
             ax.plot(xs, ys, "-", lw=0.6, color="#8c8c8c", zorder=1)
         if band == "data":
@@ -1007,7 +1007,7 @@ DRAWERS.update({
 
 def _single_canvas(columns: float, height_mm: float):
     style.apply()
-    fig, w_mm, h_mm = layout.figure(columns=columns, height_mm=height_mm)
+    fig, _w_mm, _h_mm = layout.figure(columns=columns, height_mm=height_mm)
     ax = fig.add_subplot(111)
     fig.subplots_adjust(**_SINGLE_MARGINS)
     return fig, ax

@@ -156,7 +156,6 @@ def emit_panel(panel, index: int = 0, *, width_mm: float = 183.0,
     """
     draw = panel.draw
     kw = dict(panel.kwargs)
-    data = panel.data
     if draw not in SUPPORTED:
         raise CodegenError(f"drawer {draw!r} cannot be emitted as matplotlib code; "
                            f"supported: {sorted(SUPPORTED)}")

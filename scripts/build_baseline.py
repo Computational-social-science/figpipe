@@ -71,7 +71,7 @@ def main() -> int:
 
     rng = random.Random(SEED)
     sample = []
-    for kind, items in sorted(by_kind.items()):
+    for _kind, items in sorted(by_kind.items()):
         rng.shuffle(items)
         for r in items[:PER_KIND]:
             feat = cf.measure(r["caption_text"])

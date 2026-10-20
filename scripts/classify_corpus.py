@@ -94,7 +94,7 @@ def main():
     for r in recs:
         by_hash.setdefault(r["md5"], []).append(r)
     unique = []
-    for h, group in by_hash.items():
+    for _h, group in by_hash.items():
         group.sort(key=lambda r: len(r["name"]))
         keep = group[0]
         keep = dict(keep)

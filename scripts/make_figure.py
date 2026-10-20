@@ -47,7 +47,7 @@ sys.path.insert(0, str(ROOT))
 
 import pandas as pd  # noqa: E402
 
-from figpipe import audit, skills, spec, styleprofile  # noqa: E402
+from figpipe import audit, quality, skills, spec, styleprofile  # noqa: E402
 
 #: Nature prints at exactly two widths. `columns` is an ENUM in the layout layer (1 or 2), so the
 #: CLI offers the same choice rather than a millimetre value it would have to convert.
@@ -121,6 +121,18 @@ def finish(result: dict, width_mm: float) -> int:
         say(f"  the figure has {result['hard_failures']} rendering finding(s):")
         for f in (result.get("findings") or [])[:5]:
             say(f"    ! {f.get('check')}: {f.get('detail')}")
+
+    # NAMED DIMENSIONS, not a flat finding count. A user who is told "3 findings" does not know
+    # whether to fix the typography or the layout; a per-dimension score with the worst one named
+    # first does. The idea is AutoFigure's (ICLR 2026); the judge is deterministic here.
+    qrep = quality.for_skill_result(result, figure=str(pdf))
+    if qrep["dimensions"]:
+        say("  dimensions (worst first):")
+        for d in qrep["dimensions"]:
+            say(f"    {d['name']:<12} {d['score']:<6} {d['band']}")
+    if qrep["unmeasured"]:
+        say("  unmeasured: " + ", ".join(f"{u['name']} ({u['why']})"
+                                          for u in qrep["unmeasured"]))
 
     ok = not hard
     say(f"  RESULT: {'compliant' if ok else 'NOT compliant'}")

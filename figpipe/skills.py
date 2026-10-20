@@ -437,12 +437,20 @@ def op_layout_split_panels(ctx: SkillContext, by: str, of: str = "error_bars",
             sub = grouped
         # ONE bar per axis level, not one per row: a long table gives 20 rows per level, and
         # drawing them all stacks the tick labels into collisions (found by the data-shape audit).
-        value_col = y or _first_numeric(child_placeholder :=
-                                        SkillContext(data=sub, params={}))
+        # `y or _first_numeric(<context>)` -- the throwaway context was assigned to a name and
+        # never read; _first_numeric only needs a SkillContext to look at the columns.
+        value_col = y or _first_numeric(SkillContext(data=sub, params={}))
         if sub[label].astype(str).duplicated().any():
-            agg = (sub.groupby(sub[label].astype(str), observed=True)[value_col]
+            # Aggregate the VALUE and, when present, the ERROR column. Keeping only value_col
+            # dropped `err`, and the child panel then raised KeyError on a column the caller had
+            # legitimately supplied -- three benchmark tasks failed that way.
+            cols = [value_col] + ([err] if err and err in sub.columns else [])
+            agg = (sub.groupby(sub[label].astype(str), observed=True)[cols]
                    .mean().reset_index())
-            aggregated.append(f"{level}: {len(sub)} rows -> mean per {label}")
+            note = f"{level}: {len(sub)} rows -> mean per {label}"
+            if len(cols) > 1:
+                note += f" (with {err} averaged)"
+            aggregated.append(note)
             sub = agg
         child = SkillContext(data=sub, params=dict(ctx.params), layout=dict(ctx.layout),
                              meta=dict(ctx.meta), rc=ctx.rc)

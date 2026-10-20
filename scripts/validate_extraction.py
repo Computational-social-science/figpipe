@@ -41,7 +41,7 @@ def analyse_paper(pdir: str) -> dict:
     if not os.path.exists(fmeta_p):
         return {"paper_id": pid, "error": "no figures_meta.json"}
     fm = json.load(open(fmeta_p, encoding="utf-8"))
-    lay = json.load(open(layout_p, encoding="utf-8")) if os.path.exists(layout_p) else {}
+    _lay = json.load(open(layout_p, encoding="utf-8")) if os.path.exists(layout_p) else {}
 
     figs = fm.get("figures", [])
     out = {"paper_id": pid, "n_figures": len(figs), "checks": {}}

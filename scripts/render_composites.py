@@ -78,7 +78,7 @@ def frame(t: dict, max_num: int = 4, max_rows: int = 14) -> pd.DataFrame | None:
     label_cols = t["label_cols"][:3]
     if not label_cols:
         return None
-    for j, lc in enumerate(label_cols):
+    for j, _lc in enumerate(label_cols):
         name = "label" if j == 0 else f"label{j}"
         data[name] = [str(r[j]).strip() if j < len(r) else "" for r in rows]
     for i, c in enumerate(ncs):

@@ -467,12 +467,30 @@ def choose_reading(df: pd.DataFrame, chart: str, panel_mode: str):
                       and 2 <= df[c].nunique() <= 4), None)
         label = next((c for c in cats if c != group and df[c].nunique() <= 12), None)
         if group and label and nums:
-            err = next((c for c in nums
-                        if any(k in c.lower() for k in ("ci95_lower", "lower", "err"))), None)
-            hi = next((c for c in nums
-                       if any(k in c.lower() for k in ("ci95_upper", "upper"))), None)
-            return "composite_groups", {"by": group, "x": label, "y": nums[0]}, df, \
-                f"composite {group} x {label}"
+            # THE UNCERTAINTY COLUMN MUST REACH THE DRAWER. An earlier version detected `err` and
+            # then returned a mapping without it, so a composite task with error bars was drawn
+            # WITHOUT them -- the figure silently claimed less than the data says. `hi` is not
+            # passed because `composite_groups` takes a single symmetric `err`.
+            # An uncertainty column can only be used as `err` when it is plausibly a MAGNITUDE.
+            # `ci95_lower` is a lower BOUND: passing it as yerr produces negative values and
+            # matplotlib refuses, correctly. Only a non-negative column is eligible, and it must
+            # exist in every panel subset or the split raises KeyError.
+            candidate = next((c for c in nums
+                              if any(k in c.lower() for k in ("ci95_lower", "lower", "err"))), None)
+            params = {"by": group, "x": label, "y": nums[0]}
+            if candidate and candidate != nums[0]:
+                col = df[candidate]
+                complete = col.notna().all() and (col >= 0).all()
+                per_panel = df.groupby(df[group].astype(str), observed=True)[candidate].apply(
+                    lambda s: s.notna().all())
+                if complete and per_panel.all():
+                    params["err"] = candidate
+                else:
+                    # recorded, so the omission is a stated decision rather than a silent drop
+                    return ("composite_groups", params, df,
+                            f"composite {group} x {label} (uncertainty column {candidate!r} is a "
+                            f"bound, not a magnitude; drawn without error bars)")
+            return "composite_groups", params, df, f"composite {group} x {label}"
         raise MappingError("composite task has no 2-4 level panel group with a categorical axis")
     if chart == "Polar/Radial":
         ang = next((c for c in cats if df[c].nunique() <= 12), None)

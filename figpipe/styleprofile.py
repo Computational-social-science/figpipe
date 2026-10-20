@@ -181,7 +181,7 @@ class StyleProfile:
         drawings = page.get_drawings()
         # Spines are judged against the INK extent, not the page edge: profiling a full page
         # would otherwise report no spines at all, because the axes sit inside the margins.
-        ink = _union_rect([d["rect"] for d in drawings if d.get("rect") and _intersects(d["rect"], rect)])
+        _ink = _union_rect([d["rect"] for d in drawings if d.get("rect") and _intersects(d["rect"], rect)])
         for path in drawings:
             r = path.get("rect")
             if r is None or not _intersects(r, rect):
