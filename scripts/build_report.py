@@ -587,6 +587,10 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
                     "figures: 0.9333 accuracy, 95% CI 0.787-0.982, p=4.3e-7, with a negative "
                     "control and a leave-one-out showing the result concentrates in figure aspect.",
                     "corpus/e2e/style_validation.json", meta="proxy, not a reader study"),
+        deliverable("No self-deadlock", "The scheduled run released the measurement lock around "
+                    "its own test suite. Holding it made a test wait for the run that was waiting "
+                    "for the test -- a 240 s fuse that reported FAILED while nothing was broken.",
+                    "scripts/cron_run.py", meta="verified by watching the lock"),
         deliverable("Absolute quality target", "The mutation loop can now say 'this edit helps "
                     "and the result is still not good enough', not only 'better than nothing'. "
                     "A relative improvement is not a pass.",

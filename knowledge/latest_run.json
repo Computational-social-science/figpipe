@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-20T07:52:26",
+  "run_at": "2026-10-20T11:38:03",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -9,37 +9,19 @@
     "  passed 8, failed 0",
     "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
     "  wrote knowledge\\evolution_report.json",
-    "  lean: tracked 76.5 -> 76.5 MB, worktree 132.2 -> 129.1 MB"
+    "  lean: tracked 76.6 -> 76.6 MB, worktree 149.3 -> 127.4 MB"
   ],
-  "tests_ok": false,
-  "tests_summary": "1 failed, 482 passed, 3 skipped, 1 warning in 243.35s (0:04:03) | FAILED tests/test_mutation.py::test_the_probe_is_deterministic_across_processes",
+  "tests_ok": true,
+  "tests_summary": "508 passed, 3 skipped, 1 warning in 263.59s (0:04:23)",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
   "published": {
-    "pushed": true,
-    "steps": [
-      {
-        "cmd": "git add -A",
-        "code": 0,
-        "tail": []
-      },
-      {
-        "cmd": "git -c user.name=figpipe-bot",
-        "code": 0,
-        "tail": [
-          " 2 files changed, 28 insertions(+), 12 deletions(-)"
-        ]
-      },
-      {
-        "cmd": "git push origin",
-        "code": 0,
-        "tail": [
-          "   9810d5b..a4e9511  main -> main"
-        ]
-      }
-    ],
-    "withheld": []
+    "pushed": false,
+    "withheld": [],
+    "blocked_deletions": [],
+    "skipped": true,
+    "reason": "no knowledge change: the run record stays uncommitted for the next run"
   },
   "check_results": {
     "L01": {
@@ -214,6 +196,7 @@
       "matrix-48-rows"
     ],
     "min_margin": 0.1,
+    "min_score": null,
     "probed": true,
     "baseline_mean": 1.0,
     "mean_score": {
@@ -627,22 +610,22 @@
     "benchmark_official_improvement": 37.25,
     "statistics_reproduced": 15,
     "knowledge_version": 16,
-    "tests": 482
+    "tests": 508
   },
   "capabilities_delta": {
     "changed": true,
     "delta": {
       "tests": {
-        "before": 479,
-        "after": 482
+        "before": 482,
+        "after": 508
       }
     },
     "verdict": {
       "gains": [
         {
           "field": "tests",
-          "before": 479,
-          "after": 482
+          "before": 482,
+          "after": 508
         }
       ],
       "regressions": [],
@@ -662,7 +645,7 @@
       ]
     }
   },
-  "ok": false,
+  "ok": true,
   "capability_ok": true,
   "capability_regressions": [],
   "publish_note": "The publish outcome is recorded after the commit that carries this run, so it describes the push triggered by this run; the file's own commit is made by the next scheduled run."

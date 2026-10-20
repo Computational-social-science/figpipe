@@ -138,3 +138,47 @@ def test_the_report_cannot_be_shrunk_silently():
     assert "refusing to shrink" in (cp.stdout + cp.stderr), cp.stdout[-500:] + cp.stderr[-500:]
     after = len(json.loads(report.read_text(encoding="utf-8")).get("tasks") or [])
     assert after == before, f"the report changed anyway: {before} -> {after}"
+
+
+def test_the_scheduled_run_releases_the_lock_around_the_test_suite():
+    """THE DEFECT: the measurement lock was held across the TEST SUITE.
+
+    One test in the suite spawns a subprocess that must ACQUIRE the same lock, and it waits 240 s.
+    The lock is held for the whole scheduled run -- a benchmark slice alone is ~30 minutes -- so the
+    test waited, timed out, and the run reported "tests: FAILED" while nothing was broken. Observed
+    2026-10-20 07:52, and it took a manual investigation to see it was contention rather than a
+    regression.
+
+    A test suite is not a measurement: it renders small fixtures and never touches the pool. Holding
+    the measurement lock over it protects nothing and creates a self-deadlock.
+    """
+    import inspect
+    import sys
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import cron_run
+    src = inspect.getsource(cron_run._main_locked)
+    assert "lock.release" in src, (
+        "the scheduled run never releases the lock inside _main_locked, so the suite runs under it")
+    assert "released_for_tests" in src, (
+        "the release-around-the-suite block is gone; the suite would deadlock against itself")
+    # and the release must come BEFORE run_tests, not after
+    i_release = src.find("lock.release")
+    i_tests = src.find("run_tests()")
+    assert 0 < i_release < i_tests, (
+        "the lock is released AFTER the suite starts, which does not help")
+
+
+def test_a_failed_reacquire_does_not_publish():
+    """If another measurement starts while the suite runs, the commit must be skipped.
+
+    Losing one commit is recoverable; publishing during someone else's measurement is not.
+    """
+    import inspect
+    import sys
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import cron_run
+    src = inspect.getsource(cron_run._main_locked)
+    assert "MeasurementBusy" in src, (
+        "the re-acquire is not guarded; a busy lock would raise and lose the run record")
+    assert "not publishing" in src or "not pushed" in src, (
+        "the refusal to publish is not reported")

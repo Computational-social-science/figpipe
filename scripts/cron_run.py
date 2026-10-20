@@ -627,7 +627,45 @@ def _main_locked(argv: list[str], dry: bool) -> int:
         json.dumps(run, indent=2), encoding="utf-8")
 
     # Run the suite now that the record exists, then patch the result in.
+    #
+    # THE LOCK IS RELEASED FIRST. A test suite is not a measurement -- it renders small fixtures and
+    # never touches the pool -- but one of its tests spawns a subprocess that must ACQUIRE the
+    # measurement lock, and it waits 240 s for it. Holding the lock across the suite therefore made
+    # the test wait for the very run that was waiting for the test: on 2026-10-20 07:52 the run
+    # reported "tests: FAILED" while nothing was broken. `run_tests` is called outside the lock.
+    # RELEASE THE MEASUREMENT LOCK AROUND THE SUITE. A test suite is not a measurement -- it renders
+    # small fixtures and never touches the pool -- but one of its tests spawns a subprocess that must
+    # ACQUIRE this lock and waits 240 s for it. Holding the lock across the suite made the test wait
+    # for the very run that was waiting for the test: on 2026-10-20 07:52 the run reported
+    # "tests: FAILED" while nothing was broken.
+    #
+    # Re-acquired afterwards because the publish step follows and must not interleave with another
+    # measurement. If re-acquisition fails, the suite result stands but the publish is skipped --
+    # losing a commit is recoverable, publishing during someone else's measurement is not.
+    released_for_tests = False
+    try:
+        lock.release("cron_run")
+        released_for_tests = True
+    except Exception:                                  # noqa: BLE001 - best effort, reported below
+        pass
     ok_tests, test_tail = run_tests()
+    if released_for_tests:
+        try:
+            lock.acquire("cron_run")
+        except lock.MeasurementBusy as exc:
+            # The suite finished but someone else is measuring now. Do NOT publish: a commit that
+            # interleaves with another measurement is exactly what the lock exists to prevent.
+            # Losing one commit is recoverable; corrupting a measurement is not.
+            run["tests_ok"] = ok_tests
+            run["tests_summary"] = test_tail
+            run["ok"] = False
+            run["publish_note"] = (f"suite ran, but the measurement lock was taken before the "
+                                   f"publish step; not publishing: {exc}")
+            print("  not pushed: another measurement started while the suite ran")
+            out.write_text(json.dumps(run, indent=2), encoding="utf-8")
+            (ROOT / "knowledge" / "latest_run.json").write_text(
+                json.dumps(run, indent=2), encoding="utf-8")
+            return 1
     run["tests_ok"] = ok_tests
     run["tests_summary"] = test_tail
     import re as _re

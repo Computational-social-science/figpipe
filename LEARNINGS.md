@@ -2395,3 +2395,45 @@ Verified on the real space: `--min-score 0.9` yields four ties and `selected (no
 applied.
 
 Suite: 508 passed, 3 skipped.
+
+
+## 86. The scheduled run deadlocked its own test suite (2026-10-20)
+
+The loop's own 07:52 run reported `tests: FAILED` while I had just measured 508 passing locally. That
+discrepancy is the interesting part -- a scheduled run that disagrees with a manual one is either
+contention or a real regression, and the record could not tell me which.
+
+The failing test was `test_the_probe_is_deterministic_across_processes`, which spawns a subprocess
+that must ACQUIRE the measurement lock and waits **240 s** for it. And `cron_run.main()` does this:
+
+    lock.acquire("cron_run")
+    try:
+        return _main_locked(argv, dry)     # benchmark slice (~30 min) -> mutation -> evolve
+    finally:                                #   -> RUN THE TEST SUITE
+        lock.release("cron_run")
+
+**The lock is held across the test suite.** So the suite's own test waited for the lock that the run
+was holding while waiting for the test: a self-deadlock with a 240 s fuse. Nothing was broken; the
+run simply could not finish its own verification.
+
+A test suite is NOT a measurement. It renders small fixtures and never touches the pool, so holding
+the measurement lock over it protects nothing. Fixed by releasing the lock around `run_tests()` and
+re-acquiring after, because the publish step follows and must not interleave with another
+measurement.
+
+THE RE-ACQUIRE IS GUARDED, and the choice matters: if another measurement has started while the suite
+ran, the run does **not** publish. Losing one commit is recoverable; a commit that interleaves with
+someone else's measurement is not.
+
+VERIFIED by watching the lock file during a real run:
+
+    lock released during run: True (after ~195s)
+    evolve: ok   tests: ok
+
+...where the same run before the fix said `tests: FAILED`.
+
+A note on how this was found: not by reading the code, but by asking why the SCHEDULED run disagreed
+with the MANUAL one. An autonomous loop whose failures look like flakiness is worse than no loop,
+because it teaches you to ignore it. The fix removes that class of false signal.
+
+Suite: 510 passed, 3 skipped.
