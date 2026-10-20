@@ -2472,3 +2472,54 @@ parameter, its output must state whether that parameter took effect.** Otherwise
 decoration, and the user has no way to tell the difference between a feature and a no-op.
 
 Suite: 512 passed, 3 skipped.
+
+
+## 88. Is a local VLM necessary? The controls say no, and the fields say "mostly not needed" (2026-10-20)
+
+Asked whether to introduce a localised VLM. The honest answer needed evidence in both directions, so
+I read what this repository already had rather than repeating my own summary of it.
+
+FIRST CORRECTION TO MY OWN MEMORY: the corpus labelling was **already local**. `vlm_report.json`
+records `models: ["gemma3:12b"]`, 40 figures, 840 field slots, JSON parse rate 1.0, all on this
+machine. The question was never cloud-versus-local. It is whether the labels can be trusted.
+
+THE CONTROLS ANSWER THAT. `corpus/vlm_controls.json` fed the model three images containing no figure
+at all, and counted how many values it asserted anyway:
+
+    control_blank.png      7 asserted,  2 fabricated   ->  "column_width": "single"
+    control_noise.png     15 asserted,  9 fabricated   ->  "high_contrast": true
+    control_textonly.png  12 asserted,  9 fabricated
+
+20 fabrications across 3 controls. A model that reports `column_width: single` about a **blank page**
+cannot be the ground truth for column width. These are not near-misses on hard cases; they are
+confident answers about images with nothing to answer about.
+
+THEN THE USEFUL PART: the ten fields it was asked for are not all unknowable. Six were already
+measured deterministically (`audit.width`, `audit.font_type`, `audit.font_size`, `result.panels`,
+`colourcheck`, `styleprofile`). This round made **two more** deterministic, so eight of ten now need
+no model at all:
+
+    figure_type            figpipe/structure.py
+    panel_labels_present   figpipe/structure.py
+
+THE NON-OBVIOUS MEASUREMENT, and the reason both needed care:
+
+> **Panel letters are drawn at a LARGER font size than every axis label and tick.**
+
+Matching on text alone reported the panel letters of a 4-facet histogram as `['v','a']` -- `v` was
+the **y-axis label**. Font size separates them exactly (letters 8.0 pt, axis labels 7.0 pt, ticks
+6.0 pt). Same class of error in the type classifier: the word `density` is an AXIS LABEL on a
+histogram, and the first version called every such figure a `heatmap`. A heatmap's distinguishing
+feature is a colour bar that a text-only reader cannot see, so the honest answer for a matrix figure
+is `other` -- not a confident wrong guess, which is precisely the VLM's failure mode.
+
+TWO FIELDS REMAIN (`arrow_style`, `panel_layout`). They are visually decidable and not expressible as
+a deterministic check, so a local VLM COULD be justified for them -- but only after a control set
+specific to each field shows the model answers controls correctly. `structure.compare_to_vlm()` is the
+scaffolding for using a model as a **second opinion that is checked**, never as an answer key.
+
+Nothing was wired into the judging path. Doing so would change the official score from
+"deterministic, reproducible, 75.41" to "model-dependent, unreproducible", and the controls on this
+machine do not justify that trade.
+
+Full reasoning in VLM_DECISION.md.

@@ -79,6 +79,22 @@ class SkillContext:
     def add_panel(self, panel) -> None:
         self.panels.append(panel)
 
+    def note_options(self, op: str, **options) -> None:
+        """Record the drawing OPTIONS that changed the output, after the operator's own trace line.
+
+        Why this exists: the trace named the operator and its primary columns only, so
+        `encode.trend(x,y)` was recorded for an unfitted trend, a linear fit, and a fit with a
+        confidence band alike -- three different figures, one trace. A reader (and the web layer,
+        which asks "was the style applied?") could not tell them apart.
+
+        Only options that were actually SET are recorded, and only when they are not None, so the
+        trace stays short and a difference in the trace always means a difference in the figure.
+        """
+        shown = {k: v for k, v in options.items() if v is not None}
+        if shown:
+            rendered = ", ".join(f"{k}={v!r}" for k, v in shown.items())
+            self.trace.append(f"{op}.options({rendered})")
+
 
 @dataclass(frozen=True)
 class Operator:
@@ -118,6 +134,10 @@ def op_layout_plate(ctx: SkillContext, columns: float = 2.0, height_mm=None,
     ctx.layout.update(columns=columns, height_mm=height_mm, sharex=sharex,
                       sharey=sharey, letters=letters, margins=margins)
     ctx.trace.append("layout.plate")
+    ctx.note_options("layout.plate", columns=ctx.layout.get("columns"),
+                     letters=ctx.layout.get("letters"),
+                     sharex=ctx.layout.get("sharex") or None,
+                     sharey=ctx.layout.get("sharey") or None)
 
 
 @operator("encode.trend", "build")
@@ -135,6 +155,8 @@ def op_encode_trend(ctx: SkillContext, x: str, y: str, lo: str | None = None,
         kw["band"] = band
     ctx.add_panel(grammar.panel("trend_with_uncertainty", ctx.data, **kw))
     ctx.trace.append(f"encode.trend({x},{y})")
+    ctx.note_options("encode.trend", fit=fit, band=band, reference=reference,
+                     lo=lo, hi=hi, series=series, title=title)
 
 
 @operator("encode.ranked", "build")
@@ -254,6 +276,8 @@ def op_encode_bars(ctx: SkillContext, x: str, ycols, agg: str = "mean"):
                                   {"x": data.columns[0], "ycols": list(ycols),
                                    "labels": {c: c for c in ycols}}))
     ctx.trace.append(f"encode.bars({x},{ycols})")
+    # `agg` is the option that changes a bar panel: it decides what each bar MEANS.
+    ctx.note_options("encode.bars", agg=agg)
 
 
 @operator("encode.scatter", "build")
@@ -264,6 +288,7 @@ def op_encode_scatter(ctx: SkillContext, x: str, y: str,
                                   {"x": x, "y": y, "xlabel": xlabel or "",
                                    "ylabel": ylabel or ""}))
     ctx.trace.append(f"encode.scatter({x},{y})")
+    ctx.note_options("encode.scatter", xlabel=xlabel, ylabel=ylabel)
 
 
 @operator("encode.hist", "build")
@@ -278,6 +303,7 @@ def op_encode_hist(ctx: SkillContext, value: str, bins: int = 20,
           "title": title}
     ctx.add_panel(composite.Panel(draw="histogram", data=ctx.data, kwargs=kw))
     ctx.trace.append(f"encode.hist({value})")
+    ctx.note_options("encode.hist", bins=bins, group=group, title=title)
 
 
 @operator("encode.dual", "build")
@@ -349,6 +375,8 @@ def op_layout_facets(ctx: SkillContext, of: str = "hist", by: str = "",
     ctx.layout["columns"] = columns
     ctx.meta["facets"] = {"by": by, "levels": levels}
     ctx.trace.append(f"layout.facets({by}:{len(levels)})")
+    ctx.note_options("layout.facets", of=of, bins=bins, columns=columns,
+                     max_panels=max_panels)
 
 
 def _first_numeric(ctx) -> str:
@@ -376,6 +404,7 @@ def op_encode_error_bars(ctx: SkillContext, x: str, y: str, err: str | None = No
         kw["err"] = err
     ctx.add_panel(composite.Panel("bar_with_errors", ctx.data, kw))
     ctx.trace.append(f"encode.error_bars({x},{y},{err})")
+    ctx.note_options("encode.error_bars", xtick_rotation=xtick_rotation, title=title)
 
 
 @operator("layout.split_panels", "build")
