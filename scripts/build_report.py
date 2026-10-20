@@ -587,6 +587,10 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
                     "figures: 0.9333 accuracy, 95% CI 0.787-0.982, p=4.3e-7, with a negative "
                     "control and a leave-one-out showing the result concentrates in figure aspect.",
                     "corpus/e2e/style_validation.json", meta="proxy, not a reader study"),
+        deliverable("Planted-truth controls", "Four data plants whose answers are exact by "
+                    "construction (constant mean, exact slope, exact ratio, zero spread), recovered "
+                    "through the production path AND read back from the rendered PDF.",
+                    "figpipe/planted.py", meta="4 plants, 7 tests"),
         deliverable("Acceptance gate (BootLoops)", "CLOSED or OPEN, computed from measured checks, "
                     "with a positive control that must pass and a negative control that must fail at "
                     "the right check. Seven of BootLoops' eleven failure modes are bugs this project "

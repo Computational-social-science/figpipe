@@ -131,3 +131,28 @@ def test_a_multipanel_figure_must_letter_its_panels(tmp_path):
         "a 4-panel figure produced no panel_labels check")
     label_check = next(c for c in g.checks if c.name == "panel_labels")
     assert label_check.passed is True
+
+
+def test_the_pipeline_controls_recover_every_plant(tmp_path):
+    """The gate answers "is this figure well formed"; the plants answer "is the right number in it".
+
+    A figure can be perfectly formed around a wrong number, so both controls are needed.
+    """
+    c = gate.pipeline_controls(tmp_path)
+    assert c["all_recovered"] is True, (
+        f"these plants were not recovered: {c['failed']}")
+    assert c["n"] == c["n_passed"] >= 4
+    assert "recovered" in c["verdict"]
+
+
+def test_the_gate_and_the_plants_are_different_claims(tmp_path):
+    """NEGATIVE CONTROL: neither control may substitute for the other.
+
+    The gate is a statement about the FILE; the plants are a statement about the MACHINERY. A test
+    that treated them as one would hide whichever broke.
+    """
+    v = gate.validate(tmp_path / "gate")
+    c = gate.pipeline_controls(tmp_path / "plants")
+    assert "gate_can_fire" in v
+    assert "all_recovered" in c
+    assert set(v) != set(c), "the two controls returned the same shape, so they are not distinct"

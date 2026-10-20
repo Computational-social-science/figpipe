@@ -2580,3 +2580,57 @@ is no test that plants a known slope and confirms the pipeline recovers it. That
 would close next.
 
 Suite: 543 passed, 3 skipped.
+
+
+## 90. The controls were figure-level, never data-level (2026-10-20)
+
+BootLoops' `planted-truth` says why that is not enough:
+
+> Real data cannot grade a pipeline. Whatever comes out looks like a finding -- a slope, an evidence
+> ratio, a list of anomalies, an empty list of anomalies. The only inputs whose correct output is
+> known are the ones you construct.
+
+figpipe had an acceptance gate (a clean figure passes, a wrong one fails). That tests the GATE. It
+never planted a known value in the DATA and demanded the drawn figure carry it.
+
+FIRST, THE GAP MEASURED: `verify.semantics` runs on **2 of 16 drawers** (`scatter_fit`,
+`trend_band`) and appends `verify.semantics(skip panel 0: <draw>)` for the other fourteen. So a
+histogram, a boxplot, an error-bar panel or a ranked-share panel could print a number contradicting
+its own input and every check in the project would still pass.
+
+IMPLEMENTED `figpipe/planted.py` with four plants whose answers are exact by construction:
+
+    constant-mean   every observation is 7.25      -> every group mean IS 7.25
+    exact-slope     y = 2.5x, no noise             -> the OLS slope IS 2.5
+    exact-ratio     groups of 3.0 and 1.0          -> the ratio IS 3.0
+    zero-spread     every value is 5.0             -> the IQR IS 0
+
+THEN THE TRAP I WALKED INTO, which is the point of recording this: my first version re-derived the
+planted number **from the same frame the drawer saw** and compared it to itself. That is BootLoops'
+named failure mode **"certifying at fitted points"** -- agreement at points the derivation already
+reproduces measures nothing. All four plants "passed" while never once looking at a figure.
+
+Fixed by reading the value back from the RENDERED PDF:
+
+    constant-mean   4 bars, height spread 0 pt
+    exact-slope     fitted line spans 429.1 x 320.2 pt
+    exact-ratio     bar height ratio 3.0000
+    zero-spread     2 box paths, tallest 0 pt
+
+AND A SECOND BUG IN THE FIX: the bar-height test ran BEFORE the per-plant dispatch, so the LINE and
+BOX plants were rejected for having no bars -- a check applied to the wrong object, which is exactly
+how a real control gets switched off in practice. Each plant is now judged by the geometry ITS OWN
+figure draws.
+
+THE COMPARISON CAN FAIL: `corruption_control()` shifts the expected value and confirms a mismatch is
+reported, so a comparison that ignored its inputs could not pass.
+
+`gate.pipeline_controls()` connects the two levels, and they answer different questions that must
+not be conflated:
+
+    acceptance gate     is this FIGURE well formed?          (a statement about the file)
+    planted truth       is the RIGHT NUMBER in it?           (a statement about the machinery)
+
+A figure can be perfectly formed around a wrong number. Both controls, neither a substitute.
+
+Suite: 552 passed, 3 skipped.

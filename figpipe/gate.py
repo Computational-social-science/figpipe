@@ -253,6 +253,28 @@ def negative_control(tmp_dir) -> dict:
             "gate": gate.to_dict(), "pdf": str(out)}
 
 
+def pipeline_controls(tmp_dir) -> dict:
+    """The DATA-level controls: does the pipeline carry a planted value through?
+
+    The acceptance gate answers "is this figure well formed". It cannot answer "does the machinery
+    put the right number in the figure". That is what the plants are for, and both are needed: a
+    figure can be perfectly formed around a wrong number.
+
+    BootLoops calls this `planted-truth`, and its order rule matters -- the plants are constructed
+    and run before any real figure is judged, so they cannot be chosen to bless it.
+    """
+    from . import planted
+    rec = planted.recover_all(out_dir=tmp_dir)
+    return {
+        "all_recovered": rec["all_recovered"],
+        "n": rec["n"],
+        "n_passed": rec["n_passed"],
+        "failed": rec["failed"],
+        "verdict": rec["verdict"],
+        "plants": rec["plants"],
+    }
+
+
 def validate(tmp_dir) -> dict:
     """Run both controls and report whether the gate can fire.
 
