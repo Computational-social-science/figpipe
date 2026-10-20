@@ -24,9 +24,10 @@
   "mean_best_of_two": 0.308,
   "semantic_violations": 8,
   "decision_service": {
-    "up": false,
+    "up": true,
     "url": "http://127.0.0.1:8090",
-    "detail": "no health endpoint answered; the service is probably not running"
+    "path": "/health",
+    "status": 200
   },
   "by_type": {
     "3D": {
@@ -234,7 +235,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "checked"
     },
     {
       "id": "Chart2Code_level1_direct_combination_57",
@@ -274,7 +276,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "Chart2Code_level1_direct_contour_18",
@@ -313,7 +316,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "Chart2Code_level1_direct_density_11",
@@ -352,7 +356,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "Chart2Code_level1_direct_heatmap_3",
@@ -390,7 +395,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "Chart2Code_level1_direct_heatmap_7",
@@ -429,7 +435,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "Chart2Code_level1_direct_line_39",
@@ -468,7 +475,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "checked"
     },
     {
       "id": "Chart2Code_level1_direct_line_8",
@@ -509,7 +517,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "checked"
     },
     {
       "id": "Chart2Code_level2_3d_11_v2",
@@ -550,7 +559,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "checked"
     },
     {
       "id": "Chart2Code_level2_3d_1_v1__single",
@@ -606,7 +616,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "Chart2Code_level2_area_3_v3",
@@ -658,7 +669,8 @@
           "detail": "95 points drawn for 91 rows",
           "severity": "hard"
         }
-      ]
+      ],
+      "semantic_checked": "checked"
     },
     {
       "id": "Chart2Code_level2_bar_10_v4",
@@ -710,7 +722,8 @@
           "detail": "173 points drawn for 168 rows",
           "severity": "hard"
         }
-      ]
+      ],
+      "semantic_checked": "checked"
     },
     {
       "id": "Chart2Code_level2_bar_22_v4",
@@ -749,7 +762,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "Chart2Code_level2_bar_25_v4",
@@ -802,7 +816,8 @@
           "detail": "too few usable points to compute r",
           "severity": "hard"
         }
-      ]
+      ],
+      "semantic_checked": "checked"
     },
     {
       "id": "Chart2Code_level2_box_1_v5",
@@ -840,7 +855,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "Chart2Code_level2_combination_11_v2",
@@ -881,7 +897,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "checked"
     },
     {
       "id": "Chart2Code_level2_combination_13_v5",
@@ -922,7 +939,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "checked"
     },
     {
       "id": "Chart2Code_level2_combination_14_v5",
@@ -959,7 +977,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "Chart2Code_level2_combination_16_v5",
@@ -999,7 +1018,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "Chart2Code_level2_combination_33_v5",
@@ -1039,7 +1059,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "Chart2Code_level2_combination_42_v5",
@@ -1079,7 +1100,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "checked"
     },
     {
       "id": "Chart2Code_level2_combination_44_v3",
@@ -1120,7 +1142,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "Chart2Code_level2_contour_14_v1",
@@ -1149,7 +1172,8 @@
         "available": false,
         "reason": "CodegenError: skill 'field_map' has no code emitter yet"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "Chart2Code_level2_contour_23_v4",
@@ -1178,7 +1202,8 @@
         "available": false,
         "reason": "CodegenError: skill 'field_map' has no code emitter yet"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "Chart2Code_level2_contour_25_v2",
@@ -1207,7 +1232,8 @@
         "available": false,
         "reason": "CodegenError: skill 'field_map' has no code emitter yet"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "Chart2Code_level2_contour_25_v3",
@@ -1236,7 +1262,8 @@
         "available": false,
         "reason": "CodegenError: skill 'field_map' has no code emitter yet"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "Chart2Code_level2_contour_5_v5",
@@ -1265,7 +1292,8 @@
         "available": false,
         "reason": "CodegenError: skill 'field_map' has no code emitter yet"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "Chart2Code_level2_density_12_v3",
@@ -1305,7 +1333,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "Chart2Code_level2_density_14_v4",
@@ -1345,7 +1374,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "checked"
     },
     {
       "id": "Chart2Code_level2_errorpoint_10_v5",
@@ -1383,7 +1413,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "checked"
     },
     {
       "id": "Chart2Code_level2_errorpoint_1_v5",
@@ -1435,7 +1466,8 @@
           "detail": "30 points drawn for 108 rows",
           "severity": "hard"
         }
-      ]
+      ],
+      "semantic_checked": "checked"
     },
     {
       "id": "Chart2Code_level2_errorpoint_5_v5",
@@ -1476,7 +1508,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "checked"
     },
     {
       "id": "Chart2Code_level2_hist_2_v3",
@@ -1517,7 +1550,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "Chart2Code_level2_hist_2_v5",
@@ -1557,7 +1591,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "Chart2Code_level2_multidiff_1_v1",
@@ -1597,7 +1632,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "Chart2Code_level2_multidiff_2_v2__single",
@@ -1626,7 +1662,8 @@
         "available": false,
         "reason": "CodegenError: skill 'field_map' has no code emitter yet"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "Chart2Code_level2_multidiff_5_v1",
@@ -1666,7 +1703,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "checked"
     },
     {
       "id": "Chart2Code_level2_quiver_10_v5",
@@ -1695,7 +1733,8 @@
         "available": false,
         "reason": "CodegenError: skill 'field_map' has no code emitter yet"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "Chart2Code_level2_quiver_13_v1",
@@ -1724,7 +1763,8 @@
         "available": false,
         "reason": "CodegenError: skill 'field_map' has no code emitter yet"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "Chart2Code_level2_quiver_14_v1",
@@ -1753,7 +1793,8 @@
         "available": false,
         "reason": "CodegenError: skill 'field_map' has no code emitter yet"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "Chart2Code_level2_quiver_4_v5",
@@ -1782,7 +1823,8 @@
         "available": false,
         "reason": "CodegenError: skill 'field_map' has no code emitter yet"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "Chart2Code_level2_radar_10_v2",
@@ -1811,7 +1853,8 @@
         "available": false,
         "reason": "CodegenError: skill 'radial_profile' has no code emitter yet"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "Chart2Code_level2_radar_18_v5",
@@ -1850,7 +1893,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "Chart2Code_level2_radar_23_v3",
@@ -1879,7 +1923,8 @@
         "available": false,
         "reason": "CodegenError: skill 'radial_profile' has no code emitter yet"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "Chart2Code_level2_radar_26_v3",
@@ -1908,7 +1953,8 @@
         "available": false,
         "reason": "CodegenError: skill 'radial_profile' has no code emitter yet"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "Chart2Code_level2_radar_35_v4",
@@ -1937,7 +1983,8 @@
         "available": false,
         "reason": "CodegenError: skill 'radial_profile' has no code emitter yet"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "Chart2Code_level2_radar_3_v1",
@@ -1977,7 +2024,8 @@
         "available": false,
         "reason": "CodegenError: skill 'radial_profile' has no code emitter yet"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "Chart2Code_level2_radar_40_v5",
@@ -2006,7 +2054,8 @@
         "available": false,
         "reason": "CodegenError: skill 'radial_profile' has no code emitter yet"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "Chart2Code_level2_radar_4_v3",
@@ -2041,7 +2090,8 @@
         "available": false,
         "reason": "CodegenError: skill 'radial_profile' has no code emitter yet"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "Chart2Code_level2_radar_7_v3",
@@ -2076,7 +2126,8 @@
         "available": false,
         "reason": "CodegenError: skill 'radial_profile' has no code emitter yet"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "Chart2Code_level2_radar_9_v4",
@@ -2111,7 +2162,8 @@
         "available": false,
         "reason": "CodegenError: skill 'radial_profile' has no code emitter yet"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "Chart2Code_level2_scatter_13_v2",
@@ -2173,7 +2225,8 @@
           "detail": "21 points drawn for 56 rows",
           "severity": "hard"
         }
-      ]
+      ],
+      "semantic_checked": "checked"
     },
     {
       "id": "Chart2Code_level2_scatter_1_v2__single",
@@ -2214,7 +2267,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "Chart2Code_level2_scatter_22_v2__single",
@@ -2252,7 +2306,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "checked"
     },
     {
       "id": "Chart2Code_level2_scatter_22_v3",
@@ -2303,7 +2358,8 @@
           "detail": "too few usable points to compute r",
           "severity": "hard"
         }
-      ]
+      ],
+      "semantic_checked": "checked"
     },
     {
       "id": "Chart2Code_level2_scatter_27_v5",
@@ -2344,7 +2400,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "checked"
     },
     {
       "id": "Chart2Code_level2_scatter_5_v5",
@@ -2383,7 +2440,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "checked"
     },
     {
       "id": "Chart2Code_level2_violin_25_v4",
@@ -2424,7 +2482,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "Chart2Code_level3_table20_3_generate",
@@ -2464,7 +2523,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "checked"
     },
     {
       "id": "Chart2NCode_7b87069f5442408286d1a4b0300eae18",
@@ -2511,7 +2571,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "checked"
     },
     {
       "id": "Chart2NCode_f5989e4725654971a32e6c84c0dbdfa5",
@@ -2552,7 +2613,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "ChartNet-sample_01541e58b887ce36",
@@ -2592,7 +2654,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "ChartNet-sample_11168fb7e30df7c0",
@@ -2631,7 +2694,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "ChartNet-sample_12f1182db6964e8c",
@@ -2671,7 +2735,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "checked"
     },
     {
       "id": "ChartNet-sample_1acf825b0429ddfd",
@@ -2707,7 +2772,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "ChartNet-sample_21db7b1495645e96",
@@ -2748,7 +2814,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "ChartNet-sample_251d4b63cae5c39c",
@@ -2787,7 +2854,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "ChartNet-sample_27ec276af1be7f88",
@@ -2828,7 +2896,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "ChartNet-sample_3a712400d6efe5ca",
@@ -2867,7 +2936,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "checked"
     },
     {
       "id": "ChartNet-sample_3d0ebd7ea1e10bf3",
@@ -2908,7 +2978,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "checked"
     },
     {
       "id": "ChartNet-sample_42a8557ef11775e9",
@@ -2946,7 +3017,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "ChartNet-sample_46826fe4916b7d52",
@@ -2985,7 +3057,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "ChartNet-sample_51138e34911000f6",
@@ -3022,7 +3095,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "ChartNet-sample_55e97056fbbde5b6__single",
@@ -3062,7 +3136,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "ChartNet-sample_575be33996f0155c",
@@ -3102,7 +3177,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "ChartNet-sample_5781d64aa8377547",
@@ -3140,7 +3216,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "ChartNet-sample_5c19f37c2ecba73b",
@@ -3179,7 +3256,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "ChartNet-sample_5cf3859f3ce78167",
@@ -3219,7 +3297,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "ChartNet-sample_5e553d0091325708",
@@ -3254,7 +3333,8 @@
         "available": false,
         "reason": "CodegenError: skill 'radial_profile' has no code emitter yet"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "ChartNet-sample_63115ff12f6710a3",
@@ -3291,7 +3371,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "ChartNet-sample_68d34458d8f08a48",
@@ -3330,7 +3411,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "ChartNet-sample_7c69a17fd376e251",
@@ -3380,7 +3462,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "ChartNet-sample_82a42a98d7e32b53",
@@ -3416,7 +3499,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "ChartNet-sample_953bb3ed650d8541",
@@ -3456,7 +3540,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "ChartNet-sample_97a7c092bc6a4a6c",
@@ -3493,7 +3578,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "ChartNet-sample_9fa23898eda05a63",
@@ -3532,7 +3618,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "ChartNet-sample_ad3e2f8704f6e1b1__single",
@@ -3574,7 +3661,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "ChartNet-sample_b07b3f6805a9e3b8",
@@ -3611,7 +3699,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "ChartNet-sample_b2578adbadc0d71e",
@@ -3650,7 +3739,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "ChartNet-sample_bbbf530e6aefa314",
@@ -3691,7 +3781,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "ChartNet-sample_c1ec6683e1feea7b",
@@ -3743,7 +3834,8 @@
           "detail": "365 points drawn for 344 rows",
           "severity": "hard"
         }
-      ]
+      ],
+      "semantic_checked": "checked"
     },
     {
       "id": "ChartNet-sample_d1a051ec96a39bf4",
@@ -3782,7 +3874,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "ChartNet-sample_d7325ced9dcb3e94",
@@ -3822,7 +3915,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "ChartNet-sample_e17ff7b5495b0ee4",
@@ -3851,7 +3945,8 @@
         "available": false,
         "reason": "CodegenError: skill 'radial_profile' has no code emitter yet"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "ChartNet-sample_f31f9780b9bd6948",
@@ -3892,7 +3987,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "checked"
     },
     {
       "id": "ChartNet-sample_f743754444c3a3d9",
@@ -3933,7 +4029,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "checked"
     },
     {
       "id": "PMC11502666",
@@ -3970,7 +4067,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "PMC11840003",
@@ -4009,7 +4107,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "PMC12000431",
@@ -4046,7 +4145,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "PMC12354736",
@@ -4085,7 +4185,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "PMC12504421",
@@ -4136,7 +4237,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "PMC12905268",
@@ -4175,7 +4277,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "PMC13009336",
@@ -4214,7 +4317,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "PMC13022287",
@@ -4254,7 +4358,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "PMC13079874",
@@ -4293,7 +4398,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "PMC13106710",
@@ -4333,7 +4439,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "PMC13135507",
@@ -4371,7 +4478,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "checked"
     },
     {
       "id": "PMC13245775",
@@ -4400,7 +4508,8 @@
         "available": false,
         "reason": "CodegenError: skill 'composite_groups' has no code emitter yet"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "PMC13252719",
@@ -4429,7 +4538,8 @@
         "available": false,
         "reason": "CodegenError: skill 'composite_groups' has no code emitter yet"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "PMC13273070",
@@ -4467,7 +4577,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "PMC13286152",
@@ -4496,7 +4607,8 @@
         "available": false,
         "reason": "CodegenError: skill 'composite_groups' has no code emitter yet"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "PMC13336770",
@@ -4534,7 +4646,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "PMC13342296",
@@ -4572,7 +4685,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "PMC13343911",
@@ -4612,7 +4726,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "checked"
     },
     {
       "id": "arxiv-astro-skymap__2412.12637",
@@ -4641,7 +4756,8 @@
         "available": false,
         "reason": "CodegenError: skill 'field_map' has no code emitter yet"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "arxiv-astro-skymap__2510.17487",
@@ -4680,7 +4796,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "checked"
     },
     {
       "id": "arxiv-ml-3d-trajectory__2511.17399",
@@ -4709,7 +4826,8 @@
         "available": false,
         "reason": "CodegenError: skill 'field_map' has no code emitter yet"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "arxiv-ml-3d-trajectory__2602.22552",
@@ -4738,7 +4856,8 @@
         "available": false,
         "reason": "CodegenError: skill 'field_map' has no code emitter yet"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "arxiv-ml-bar-line-v2__2511.15055",
@@ -4779,7 +4898,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "checked"
     },
     {
       "id": "arxiv-ml-bar-line-v2__2605.21125",
@@ -4851,7 +4971,8 @@
           "detail": "1394 points drawn for 48 rows",
           "severity": "hard"
         }
-      ]
+      ],
+      "semantic_checked": "checked"
     },
     {
       "id": "arxiv_2410.15876",
@@ -4889,7 +5010,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "checked"
     },
     {
       "id": "arxiv_2502.15132",
@@ -4928,7 +5050,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "checked"
     },
     {
       "id": "arxiv_2502.17598",
@@ -4967,7 +5090,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "arxiv_2502.18153",
@@ -5040,7 +5164,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "checked"
     },
     {
       "id": "arxiv_2512.09767",
@@ -5078,7 +5203,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "arxiv_2512.25023",
@@ -5118,7 +5244,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "checked"
     },
     {
       "id": "arxiv_2603.04948",
@@ -5156,7 +5283,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "checked"
     },
     {
       "id": "arxiv_2603.08660",
@@ -5195,7 +5323,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "checked"
     },
     {
       "id": "arxiv_2603.17004",
@@ -5234,7 +5363,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "checked"
     },
     {
       "id": "arxiv_2603.23889",
@@ -5272,7 +5402,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "checked"
     },
     {
       "id": "arxiv_2604.01093",
@@ -5301,7 +5432,8 @@
         "available": false,
         "reason": "CodegenError: skill 'field_map' has no code emitter yet"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "arxiv_2604.05237",
@@ -5330,7 +5462,8 @@
         "available": false,
         "reason": "CodegenError: skill 'field_map' has no code emitter yet"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "arxiv_2605.14587",
@@ -5369,7 +5502,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "arxiv_2605.16790",
@@ -5408,7 +5542,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "checked"
     },
     {
       "id": "arxiv_2605.22305",
@@ -5445,7 +5580,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     },
     {
       "id": "arxiv_2605.22455",
@@ -5486,7 +5622,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "checked"
     },
     {
       "id": "local-reuse__local_picks_top_hepfit_wheel",
@@ -5532,7 +5669,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "checked"
     },
     {
       "id": "local_picks_top_cust_graph__24",
@@ -5579,7 +5717,8 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "checked"
     },
     {
       "id": "local_picks_top_violin__9",
@@ -5617,9 +5756,17 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": []
+      "semantic_findings": [],
+      "semantic_checked": "skipped"
     }
   ],
+  "semantic_coverage": {
+    "checked": 45,
+    "skipped": 94,
+    "absent": 0,
+    "n": 139,
+    "note": "`skipped` tasks were drawn by a drawer with no semantic rule: their printed numbers were NOT re-derived from the data. A pass on such a task is a statement about geometry, not about correctness."
+  },
   "benchmark_anchor_distance": 0.355,
   "benchmark_anchor_single": {
     "mean": 0.355,

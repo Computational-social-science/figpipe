@@ -587,6 +587,10 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
                     "figures: 0.9333 accuracy, 95% CI 0.787-0.982, p=4.3e-7, with a negative "
                     "control and a leave-one-out showing the result concentrates in figure aspect.",
                     "corpus/e2e/style_validation.json", meta="proxy, not a reader study"),
+        deliverable("Semantic coverage recorded", "Each benchmark task now records whether the "
+                    "semantic check RAN, was SKIPPED (14 of 16 drawers have no rule), or is ABSENT "
+                    "from the trace. An empty findings list no longer means two opposite things.",
+                    "scripts/bench_plottwin.py", meta="3 states, 5 tests"),
         deliverable("Planted-truth controls", "Four data plants whose answers are exact by "
                     "construction (constant mean, exact slope, exact ratio, zero spread), recovered "
                     "through the production path AND read back from the rendered PDF.",

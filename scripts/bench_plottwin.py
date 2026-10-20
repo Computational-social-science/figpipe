@@ -683,6 +683,30 @@ def _panel_for(skill, data, params):
     raise codegen.CodegenError(f"skill {skill!r} has no code emitter yet")
 
 
+def semantic_state(result: dict) -> str:
+    """Whether `verify.semantics` executed, and if not, why.
+
+    `checked`  the check ran against this panel
+    `skipped`  the drawer has no semantic rule (14 of 16 drawers), so NOTHING was verified
+    `absent`   the trace does not mention the step at all, which is itself a finding
+
+    Without this distinction a clean UNVERIFIED task and a clean VERIFIED task are
+    indistinguishable in the report -- which is how a coverage gap hides.
+    """
+    trace = result.get("trace") or []
+    skipped = [t for t in trace if "semantics(skip" in t]
+    # THE SUMMARY LINE IS NOT EVIDENCE OF A CHECK. The operator appends
+    # `verify.semantics(skip panel N: <draw>)` per panel and then a bare `verify.semantics` at the
+    # end. The bare line says the STEP ran; it does not say any panel was checked. Counting it as
+    # "checked" made every task look verified (139/139), which is the confidently-wrong number this
+    # project keeps finding.
+    ran = any(t.startswith("verify.semantics") for t in trace)
+    if not ran:
+        return "absent"
+    # A skip line means at least one panel was NOT verified, whatever else the step did.
+    return "skipped" if skipped else "checked"
+
+
 def run_task(row: dict, out_dir: pathlib.Path) -> dict:
     result = {"id": row["id"], "chart": row["chart_type_name"], "panel_mode": row["panel_mode"],
               "code_version": CODE_VERSION}
@@ -778,6 +802,11 @@ def run_task(row: dict, out_dir: pathlib.Path) -> dict:
             "semantic_findings": [f for f in
                                   (styled if chosen_is_styled else plain)["findings"]
                                   if str(f.get("check", "")).startswith("semantics")],
+            # DID THE CHECK RUN? An empty `semantic_findings` means "ran and found nothing" OR
+            # "never ran", and those are opposite claims. 14 of 16 drawers skip the semantic check,
+            # so this field is what separates a verified task from an unverified one.
+            "semantic_checked": semantic_state(
+                styled if chosen_is_styled else plain),
         })
     except Exception as exc:                       # recorded, not hidden
         message = f"{type(exc).__name__}: {exc}"
@@ -1217,6 +1246,19 @@ def _run(args) -> int:
         report["unsupported_types"] = {t["chart"]: t.get("error") for t in merged
                                        if t.get("status") == "unsupported"}
         report["semantic_violations"] = sum(1 for t in ok_all if t.get("semantic_findings"))
+        # SEMANTIC COVERAGE. An empty `semantic_findings` list means "checked and clean" OR "never
+        # checked", and 14 of 16 drawers skip the check. Without this count the report cannot say how
+        # much of its own pass is verified, which is the coverage gap hiding in plain sight.
+        states = [t.get("semantic_checked") for t in ok_all if t.get("status") == "ok"]
+        report["semantic_coverage"] = {
+            "checked": states.count("checked"),
+            "skipped": states.count("skipped"),
+            "absent": states.count("absent"),
+            "n": len(states),
+            "note": ("`skipped` tasks were drawn by a drawer with no semantic rule: their printed "
+                     "numbers were NOT re-derived from the data. A pass on such a task is a statement "
+                     "about geometry, not about correctness."),
+        }
         by_type = {}
         for t in merged:
             bucket = by_type.setdefault(t["chart"], {"n": 0, "ok": 0, "d": [], "base": [],

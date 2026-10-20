@@ -81,7 +81,18 @@ def test_the_merge_recomputes_every_aggregate():
     src = (ROOT / "scripts" / "bench_plottwin.py").read_text(encoding="utf-8")
     i = src.find("if args.merge and OUT.is_file():")
     assert i > 0, "the merge block is gone"
-    block = src[i:i + 4000]
+    # FIND THE BLOCK BY INDENTATION, NOT BY A CHARACTER COUNT. A fixed window reported a
+    # real-looking failure when a comment pushed one assignment 29 characters past the edge --
+    # a test that breaks when unrelated text changes is measuring the text, not the code.
+    lines = src[i:].splitlines()
+    block_lines = [lines[0]]
+    base_indent = len(lines[0]) - len(lines[0].lstrip())
+    for line in lines[1:]:
+        if line.strip() and (len(line) - len(line.lstrip())) <= base_indent:
+            break
+        block_lines.append(line)
+    block = "\n".join(block_lines)
+    assert len(block) > 500, f"the merge block looks empty: {len(block)} chars"
     for key in ("failures", "unsupported_types", "semantic_violations",
                 "n_ok", "n_unsupported", "n_error", "by_type"):
         assert f'report["{key}"]' in block, (

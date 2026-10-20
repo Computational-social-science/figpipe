@@ -2634,3 +2634,82 @@ not be conflated:
 A figure can be perfectly formed around a wrong number. Both controls, neither a substitute.
 
 Suite: 552 passed, 3 skipped.
+
+
+## 91. An empty findings list meant two opposite things (2026-10-20)
+
+`bench_plottwin.py` recorded `semantic_findings` -- the semantic problems found. An empty list
+therefore meant EITHER:
+
+    the check RAN and found nothing      -> the task is verified
+    the check NEVER RAN for this drawer  -> the task is UNVERIFIED
+
+A pass on an unverified task is a statement about GEOMETRY, not about correctness, and nothing in
+the artefact said which was which. This is the same defect as round 29's "findings is empty means
+the colour check did not run", which was fixed in `quality.py` and not propagated here.
+
+FIXED: `semantic_state()` classifies each task `checked` / `skipped` / `absent` from the TRACE, and
+`report["semantic_coverage"]` counts them.
+
+THEN I GOT THE NUMBER WRONG TWICE, which is the more useful part of this entry.
+
+**First wrong number: 139/139 checked.** My check looked for a `verify.semantics` line without
+"skip" and found the operator's bare SUMMARY line -- appended once at the end regardless. So every
+task looked verified. Reading the two traces side by side showed the real shapes:
+
+    ALL panels checked  -> only the bare `verify.semantics` summary line
+    ANY panel skipped   -> `verify.semantics(skip panel N: <draw>)` lines PLUS the summary
+
+So the rule is: a skip line means at least one panel was NOT verified, whatever else the step did.
+
+**Second wrong number: the whole pool errored.** My first edit called `semantic_state(chosen)`, and
+`chosen` does not exist -- the selected result is `(styled if chosen_is_styled else plain)`. All 139
+tasks came back `NameError`, which is only visible because the re-measure was RUN rather than
+assumed. A static regression test now catches that class (it parses `run_task` and checks every
+argument name is bound), with a negative control proving it catches the original mistake.
+
+**THE MEASURED TRUTH, after both corrections:**
+
+    checked  45 / 139   (32%)
+    skipped  94 / 139   (68%)
+    absent    0 / 139
+
+**68% of the pool's passes rest on geometry alone: their printed numbers were never re-derived from
+the data.** That is the honest coverage figure this project did not have before, and it is the
+number the next several rounds should move.
+
+THE GENERAL LESSON, learned twice now: **when a collection's emptiness can mean both "looked and
+found nothing" and "never looked", the collection cannot be the record.** The trace is the record,
+because it says what executed -- and even then it must be read carefully, because a summary line is
+not a per-item check.
+
+Suite: 559 passed, 3 skipped.
+
+
+## 92. A structural test that measured the text, not the code (2026-10-20)
+
+`test_the_merge_recomputes_every_aggregate` slices the merge block out of `bench_plottwin.py` and
+asserts every aggregate is reassigned there -- a good structural test, because a 6-task slice once
+erased `failures`, `unsupported_types` and `semantic_violations` from a 139-task report.
+
+It sliced a FIXED 4000-character window. This round I added a comment block elsewhere in the file
+and `report["by_type"]` moved from offset ~3900 to **4029** -- 29 characters past the edge. The test
+then reported a real-looking failure for a code path that was correct.
+
+Fixed by finding the block BY INDENTATION rather than by character count. A test that breaks when
+unrelated text changes is measuring the text, not the code.
+
+This is worth recording because it is a near-miss in the opposite direction from the project's usual
+defects: not a gate that cannot fail, but a gate that fails for a reason that has nothing to do with
+what it claims to check. Both waste a reader's trust.
+
+Also this round: two wrong numbers before the right one.
+
+    139/139 checked   -- my state check matched the operator's bare summary line
+    139 errors        -- my edit called semantic_state(chosen); the name does not exist
+     45/139 checked   -- the measured truth
+
+68% of the pool's passes rest on geometry alone: their printed numbers were never re-derived. That
+is the honest coverage figure, and it is the number the next several rounds should move.
+
+Suite: 559 passed, 3 skipped.
