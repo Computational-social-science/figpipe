@@ -155,6 +155,35 @@ class MutationSpace:
     candidates: tuple[Candidate, ...]
     tasks: tuple[Task, ...]
     min_margin: float = 0.10
+    #: An ABSOLUTE quality target, on the same 0..1 scale as a task score.
+    #:
+    #: WHY: `min_margin` answers "is this edit better than doing nothing", which is a RELATIVE
+    #: question. It cannot answer "is the result good enough to ship". Without a target the loop
+    #: selects the least-bad available edit even when every candidate is a tie -- reporting motion
+    #: as progress. AutoFigure (ICLR 2026) calls this `quality_threshold` and stops refining once a
+    #: figure clears it; the same idea applies here.
+    #:
+    #: None means "no target": the loop keeps its relative-only behaviour and SAYS SO in the
+    #: result, rather than implying a standard it never applied.
+    min_score: float | None = None
+
+    def __post_init__(self) -> None:
+        """A target outside 0..1 is a typo, not a policy -- refuse it at construction.
+
+        Silently accepting `min_score=90` (a percentage where a fraction was meant) would make
+        every edit "below target" and the loop would never select anything, with no error to
+        explain why.
+        """
+        if self.min_score is not None:
+            if not isinstance(self.min_score, (int, float)):
+                raise MutationError(f"min_score must be a number, got {self.min_score!r}")
+            if not 0.0 <= float(self.min_score) <= 1.0:
+                raise MutationError(
+                    f"min_score must be within 0..1 (task scores are fractions), got "
+                    f"{self.min_score!r}; a percentage such as 90 would make every edit look "
+                    f"below target")
+        if not 0.0 < float(self.min_margin) <= 1.0:
+            raise MutationError(f"min_margin must be within 0..1, got {self.min_margin!r}")
 
     def candidate(self, cid: str) -> Candidate:
         for c in self.candidates:
@@ -368,7 +397,9 @@ def _mean(values: list[float]) -> float:
 # Compose
 # --------------------------------------------------------------------------------------
 
-def _verdict(delta: float, drops: list, margin: float) -> tuple[str, str]:
+def _verdict(delta: float, drops: list, margin: float,
+             score: float | None = None,
+             min_score: float | None = None) -> tuple[str, str]:
     """The decision rule, as one pure function: (verdict, reason) for one candidate.
 
     Kept separate from `compose` so it can be INVERTED by a test. `tests/test_mutation.py` swaps
@@ -383,6 +414,18 @@ def _verdict(delta: float, drops: list, margin: float) -> tuple[str, str]:
             f"-{worst['fell_by']:.3f} (>= margin {margin}); a task that gets worse is a "
             f"regression whatever the mean says")
     if delta >= margin:
+        # THE ABSOLUTE TARGET. A relative improvement is not a pass: an edit can beat the baseline
+        # and still leave the figure below the standard. Saying "selected" without that distinction
+        # reports motion as progress.
+        if min_score is not None and score is not None and score < min_score:
+            return "selected", (
+                f"improves the fixed task set by {delta:+.3f} (>= margin {margin}) with no task "
+                f"regressing, but the result scores {score:.3f} -- BELOW the target {min_score:.3f}: "
+                f"this edit helps and is still not good enough to ship")
+        if min_score is not None:
+            return "selected", (
+                f"improves the fixed task set by {delta:+.3f} (>= margin {margin}) with no task "
+                f"regressing, and reaches {score:.3f} (>= target {min_score:.3f})")
         return "selected", (
             f"improves the fixed task set by {delta:+.3f} (>= margin {margin}) with no task "
             f"regressing")
@@ -445,7 +488,7 @@ def compose(probe_result: dict, space: MutationSpace, *,
                               "outcome": row["outcome"],
                               "expected": row.get("expected"),
                               "detail": row.get("detail", "")})
-        verdict, reason = _verdict(delta, drops, margin)
+        verdict, reason = _verdict(delta, drops, margin, score, space.min_score)
         if verdict == "selected":
             reason = f"{reason}; changed tasks: {changed or 'none'}"
         elif drops:

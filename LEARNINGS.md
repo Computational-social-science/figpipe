@@ -2351,3 +2351,47 @@ DESIGN DECISIONS, each answering a risk a web surface introduces:
 check the RENDERED file, not the response status.
 
 Suite: 503 passed, 3 skipped.
+
+
+## 85. A relative improvement is not a pass (2026-10-20)
+
+The mutation loop could only answer one question: **"is this edit better than doing nothing?"**
+(`min_margin`, a relative threshold). It could not answer **"is the result good enough to ship?"**
+
+Without an absolute target the loop selects the least-bad available edit even when every candidate
+is a tie, and reports motion as progress. On the real default space that is exactly what it does:
+four candidates, all ties, selected `(none)` -- which is honest, but only because the verdict says
+"tie". An edit that improves the mean and still leaves the figure broken would have been reported as
+`selected`, full stop.
+
+AutoFigure (ICLR 2026) calls this `quality_threshold` and stops refining once a figure clears it.
+The same idea, added as `MutationSpace.min_score`:
+
+    verdict=selected  reason="improves the fixed task set by +0.450 (>= margin 0.1) with no task
+                              regressing, but the result scores 0.950 -- BELOW the target 0.990:
+                              this edit helps and is still not good enough to ship"
+
+Three things this had to get right:
+
+1. **The target must not soften the no-regression rule.** A regression is still rejected whatever
+   the target says; the target is an additional clause, not a replacement.
+2. **A target outside 0..1 is refused at construction.** `min_score=90` (a percentage) would make
+   every edit look below target and the loop would never select anything, with no error explaining
+   why. The refusal names the mistake.
+3. **The message must quote the ACTUAL target.** The first version printed `0.99` as `0.9` because
+   the default float format truncates -- a refusal that misquotes its own threshold is a defect.
+
+`None` keeps the old relative-only behaviour, and the reason then does not mention a target it
+never applied.
+
+ONE THING BROKE, and it is worth recording: the signature change broke two NEGATIVE CONTROL tests,
+because they monkeypatch `_verdict` with a three-argument replacement. Those controls are the
+reason the decision rule can be shown to matter -- `tests/test_mutation.py` swaps in an inverted rule
+and a marginless rule and asserts the selection tests then FAIL. Updating them was mandatory, not
+housekeeping: a negative control that raises instead of proving something is worse than none.
+
+Verified on the real space: `--min-score 0.9` yields four ties and `selected (none)`, with
+`min_score` recorded in `knowledge/mutation_report.json` so the record states which standard was
+applied.
+
+Suite: 508 passed, 3 skipped.

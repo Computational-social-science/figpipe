@@ -40,15 +40,24 @@ OUT = ROOT / "knowledge" / "mutation_report.json"
 
 
 def run(*, dry: bool = False, budget: int | None = None,
-        lock_held: bool = False) -> dict:
-    """Execute the loop once and return the record."""
-    space = mutation.default_space()
+        lock_held: bool = False, min_score: float | None = None) -> dict:
+    """Execute the loop once and return the record.
+
+    `min_score` is the ABSOLUTE quality target. Without one the loop can only say "this edit is
+    better than doing nothing"; with one it can also say "and the result is still not good enough",
+    which is a different fact and the one a reader needs before shipping a figure.
+    """
+    base_space = mutation.default_space()
+    space = (base_space if min_score is None else
+             mutation.MutationSpace(candidates=base_space.candidates, tasks=base_space.tasks,
+                                    min_margin=base_space.min_margin, min_score=min_score))
     record: dict = {
         "proposed": [{"id": c.id, "skill": c.skill, "parameter": c.parameter,
                       "value": c.value, "rationale": getattr(c, "rationale", "")}
                      for c in space.candidates],
         "tasks": [t.id for t in space.tasks],
         "min_margin": space.min_margin,
+        "min_score": space.min_score,
     }
     if dry:
         record.update({"probed": False, "selected": [], "rejected": [], "ties": [],
@@ -80,15 +89,18 @@ def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--budget", type=int, default=None)
+    ap.add_argument("--min-score", type=float, default=None,
+                    help="absolute quality target 0..1; a selection below it says so")
     ap.add_argument("--quiet", action="store_true")
     ap.add_argument("--no-lock", action="store_true",
                     help="skip the measurement lock (only when the parent already holds it)")
     args = ap.parse_args(argv)
     if args.no_lock:
-        rec = run(dry=args.dry_run, budget=args.budget, lock_held=True)
+        rec = run(dry=args.dry_run, budget=args.budget, lock_held=True,
+                  min_score=args.min_score)
     else:
         try:
-            rec = run(dry=args.dry_run, budget=args.budget)
+            rec = run(dry=args.dry_run, budget=args.budget, min_score=args.min_score)
         except lock.MeasurementBusy as exc:
             print(f"  refused: {exc}")
             return 3

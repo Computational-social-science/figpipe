@@ -132,7 +132,9 @@ def _no_stale_lock():
     lock.break_stale()
 
 
-def _inverted(delta, drops, margin):
+def _inverted(delta, drops, margin, score=None, min_score=None):
+    # `score` and `min_score` are accepted and IGNORED: this control inverts the RELATIVE rule, and
+    # the absolute target is a separate clause it is not testing.
     """The selection rule with its comparison INVERTED -- the negative control.
 
     Selecting on a regression and rejecting on an improvement is the classic inversion, and it is
@@ -380,7 +382,7 @@ def test_the_tie_fails_when_the_margin_is_removed(probed, monkeypatch):
     a winner, which is exactly "resolved silently". This test drives the production `compose`
     with that rule and asserts the tie test's assertions then FAIL.
     """
-    def marginless(delta, drops, margin):
+    def marginless(delta, drops, margin, score=None, min_score=None):
         if drops:
             worst = max(drops, key=lambda d: d["fell_by"])
             return "rejected", f"NO-MARGIN CONTROL: {worst['task']!r} fell"
@@ -780,3 +782,84 @@ def test_the_two_sided_score_is_what_rejects_the_blanket_relaxation():
     expect_clean = mutation.Task("c", "matrix_plate", {}, lambda: None, "clean", "")
     assert one_sided("refused") == 1.0
     assert mutation._score(expect_clean, "refused") == 0.0          # over-cautious: caught here
+
+
+# ---------------------------------------------------------------------------------------
+# THE ABSOLUTE QUALITY TARGET
+#
+# `min_margin` answers "is this edit better than doing nothing" -- a RELATIVE question. It cannot
+# answer "is the result good enough to ship". Without a target the loop selects the least-bad
+# available edit even when every candidate is a tie, reporting motion as progress.
+#
+# AutoFigure (ICLR 2026) calls this `quality_threshold` and stops refining once a figure clears it.
+# ---------------------------------------------------------------------------------------
+
+def _target_space(min_score):
+    return mutation.MutationSpace(
+        candidates=(mutation.Candidate("up", "op", "p", baseline_value=1, value=2,
+                                       rationale="r", skill="s"),),
+        tasks=(mutation.Task("g", "s", {}, lambda: None, "clean", "g"),),
+        min_margin=0.1, min_score=min_score)
+
+
+def _target_probe(final=0.95):
+    return {
+        "space": {"min_margin": 0.1, "candidates": ["up"], "tasks": ["g"]},
+        "outcomes": {
+            "baseline": {"g": {"task": "g", "outcome": "refused", "score": 0.0}},
+            "up": {"g": {"task": "g", "outcome": "rendered", "score": final}},
+        },
+        "mean_score": {"baseline": 0.0, "up": final},
+    }
+
+
+def test_without_a_target_the_loop_keeps_its_relative_behaviour():
+    d = mutation.compose(_target_probe(), _target_space(None))["decisions"][0]
+    assert d["verdict"] == "selected"
+    assert "target" not in d["reason"], (
+        "the reason mentions a target that was never set")
+
+
+def test_a_result_below_the_target_says_so():
+    """Selected is not the same as good enough. Conflating them reports motion as progress."""
+    d = mutation.compose(_target_probe(0.95), _target_space(0.99))["decisions"][0]
+    assert d["verdict"] == "selected", d["reason"]
+    assert "BELOW the target" in d["reason"], d["reason"]
+    assert "0.990" in d["reason"], (
+        f"the message must quote the ACTUAL target; it said: {d['reason']}")
+
+
+def test_a_result_at_or_above_the_target_says_that_instead():
+    d = mutation.compose(_target_probe(0.95), _target_space(0.90))["decisions"][0]
+    assert d["verdict"] == "selected"
+    assert "reaches" in d["reason"]
+    assert "BELOW" not in d["reason"]
+
+
+def test_a_target_outside_zero_to_one_is_refused():
+    """NEGATIVE CONTROL: `min_score=90` (a percentage) would make every edit look below target."""
+    for bad in (90, -0.5, 1.5, "high"):
+        with pytest.raises(mutation.MutationError):
+            _target_space(bad)
+
+
+def test_a_regression_is_still_rejected_whatever_the_target():
+    """The target must not soften the no-regression rule."""
+    probe = {
+        "space": {"min_margin": 0.1, "candidates": ["up"], "tasks": ["g", "k"]},
+        "outcomes": {
+            "baseline": {"g": {"task": "g", "outcome": "refused", "score": 0.0},
+                         "k": {"task": "k", "outcome": "rendered", "score": 1.0}},
+            "up": {"g": {"task": "g", "outcome": "rendered", "score": 1.0},
+                   "k": {"task": "k", "outcome": "rendered", "score": 0.1}},
+        },
+        "mean_score": {"baseline": 0.5, "up": 0.55},
+    }
+    space = mutation.MutationSpace(
+        candidates=(mutation.Candidate("up", "op", "p", baseline_value=1, value=2,
+                                       rationale="r", skill="s"),),
+        tasks=(mutation.Task("g", "s", {}, lambda: None, "clean", "g"),
+               mutation.Task("k", "s", {}, lambda: None, "clean", "k")),
+        min_margin=0.1, min_score=0.5)
+    d = mutation.compose(probe, space)["decisions"][0]
+    assert d["verdict"] == "rejected", d["reason"]
