@@ -272,10 +272,16 @@ def _verified(result: dict, width_mm: float) -> JSONResponse:
             if f["check"] in ("font_size", "width", "height", "font_type")]
     qrep = quality.for_skill_result(result, figure=str(pdf))
 
+    trace = result.get("trace") or []
+    styled = any(str(t).startswith("style.profile") for t in trace)
+
     lines = [
         f"panels: {result.get('panels', 1)}",
         f"width: {report.get('width_mm')} mm, height: {report.get('height_mm')} mm",
         f"hard findings: {len(hard)}",
+        # SAY WHETHER THE REFERENCE WAS APPLIED. Reporting "compliant" after accepting a reference
+        # figure without stating that is a control that looks present and does nothing.
+        f"style transferred: {'yes' if styled else 'no reference given'}",
     ]
     for f in hard:
         lines.append(f"  ! {f['check']}: {f['detail']}")
@@ -295,6 +301,8 @@ def _verified(result: dict, width_mm: float) -> JSONResponse:
         "pdf": pdf.name,
         "preview": pathlib.Path(png).name if png else "",
         "quality": qrep,
+        "styled": styled,
+        "trace": trace[:10],
     })
 
 

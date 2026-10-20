@@ -146,3 +146,52 @@ def test_a_bad_csv_is_reported_not_crashed(client, tmp_path):
         r = client.post("/api/make", files={"csv": ("bad.csv", f, "text/csv")})
     assert r.status_code in (200, 400)
     assert "Traceback" not in r.text
+
+
+def test_a_reference_figure_is_reported_as_applied_or_not(client, survey_csv, faceted_csv):
+    """THE DEFECT: the page accepted a reference figure and reported success without saying
+    whether the style was applied.
+
+    A user who uploads a reference and reads "compliant" cannot tell whether their argument did
+    anything. That is a control that looks present and does nothing -- the defect class this project
+    keeps finding, this time in the web layer.
+
+    The response now carries `styled` and the operator trace, so the answer is checkable.
+    """
+    # make a reference at single-column width so its style differs from the default
+    with survey_csv.open("rb") as f:
+        made = client.post("/api/make", files={"csv": ("survey.csv", f, "text/csv")},
+                           data={"columns": "1"}).json()
+    ref = client.get(f"/api/file/{made['pdf']}").content
+    assert ref[:4] == b"%PDF"
+
+    # WITHOUT a reference: styled must be False and the trace must have no style step
+    with faceted_csv.open("rb") as f:
+        plain = client.post("/api/make", files={"csv": ("faceted.csv", f, "text/csv")},
+                            data={"columns": "2"}).json()
+    assert plain["styled"] is False, plain.get("summary")
+    assert not any(str(t).startswith("style.profile") for t in plain["trace"])
+
+    # WITH a reference: styled must be True AND the trace must show the step
+    with faceted_csv.open("rb") as f:
+        styled = client.post("/api/make",
+                             files={"csv": ("faceted.csv", f, "text/csv"),
+                                    "reference": ("ref.pdf", ref, "application/pdf")},
+                             data={"columns": "2"}).json()
+    assert styled["refused"] is False
+    assert styled["styled"] is True, styled.get("summary")
+    assert any(str(t).startswith("style.profile") for t in styled["trace"]), (
+        f"the response claims styled but the trace has no style step: {styled['trace']}")
+    assert "style transferred: yes" in styled["summary"]
+
+
+def test_an_unreadable_reference_is_refused_not_ignored(client, faceted_csv):
+    """A bad reference must fail loudly rather than silently falling back to the default style."""
+    with faceted_csv.open("rb") as f:
+        r = client.post("/api/make",
+                        files={"csv": ("faceted.csv", f, "text/csv"),
+                               "reference": ("junk.pdf", b"not a pdf at all", "application/pdf")},
+                        data={"columns": "2"})
+    j = r.json()
+    assert j.get("refused") is True, j.get("summary")
+    assert "reference" in (j.get("reason") or "").lower()

@@ -2437,3 +2437,38 @@ with the MANUAL one. An autonomous loop whose failures look like flakiness is wo
 because it teaches you to ignore it. The fix removes that class of false signal.
 
 Suite: 510 passed, 3 skipped.
+
+
+## 87. The web page accepted a reference figure and never said whether it worked (2026-10-20)
+
+Auditing "what else is inside the measurement lock" found the two remaining lock sites correct
+(`bench_plottwin` wraps only `_run`, which is pure measurement; `evolve.py` re-measures EXISTING
+figures and renders nothing, so it needs no lock). The useful finding was somewhere else.
+
+`scripts/webapp.py` accepted a `reference` upload, measured its style profile, passed it to the
+skill, and reported `RESULT: compliant`. **It never said whether the style was applied.** A user who
+uploads their target journal's figure and reads "compliant" cannot tell whether their argument did
+anything at all.
+
+This is the project's recurring defect in the newest surface: a control that looks present and does
+nothing -- or does something the user cannot verify. The CLI was already honest here because it
+prints the operator trace (`... -> style.profile(ref.pdf) -> verify.audit`), and the trace is where
+the answer lives.
+
+Fixed by carrying the same evidence into the response:
+
+    styled: True
+    style transferred: yes
+    trace: ['encode.box(...)', 'layout.plate', 'style.profile(...)', 'verify.audit', ...]
+
+and by testing BOTH directions, because "styled is always True" would pass a one-sided test:
+
+  * without a reference -> `styled is False` AND no `style.profile` in the trace
+  * with a reference    -> `styled is True`  AND `style.profile` in the trace AND the summary line
+  * a junk reference    -> refused with a reason, not silently ignored
+
+The general lesson, which this project has now recorded in several forms: **when a surface accepts a
+parameter, its output must state whether that parameter took effect.** Otherwise the parameter is
+decoration, and the user has no way to tell the difference between a feature and a no-op.
+
+Suite: 512 passed, 3 skipped.
