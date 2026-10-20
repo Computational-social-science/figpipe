@@ -79,8 +79,8 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
 <body>
 <div class="top">
   <b>FigPipeline · Research Figure Pipeline</b>
-  <div class="meta"><span>commit a4e9511</span><span>branch main</span>
-  <span>knowledge v16</span><span>generated 2026-10-20 11:01</span></div>
+  <div class="meta"><span>commit 33218e1</span><span>branch main</span>
+  <span>knowledge v16</span><span>generated 2026-10-20 11:08</span></div>
 </div>
 <div class="wrap">
 
@@ -90,7 +90,7 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
   artefacts: every number can be recomputed by a script, and every deliverable can be opened and
   checked. It tracks progress, exposes the evidence, and records what is not finished yet.</p>
   <div class="pills">
-    <span class="pill">tests 497 passed</span>
+    <span class="pill">tests 506 passed</span>
     <span class="pill">statistics reproduced: 15</span>
     <span class="pill">benchmark tasks 139/150</span>
     <span class="pill">skills 16 · operators 21</span>
@@ -105,7 +105,7 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
   <div class="kpi "><div class="kpi-v">75.41</div><div class="kpi-l">OFFICIAL code channel</div><div class="kpi-s">PlotTwin-Bench deviation-defect-v1 (35% weight); vision not run</div></div>
   <div class="kpi "><div class="kpi-v">8</div><div class="kpi-l">Semantic violations</div><div class="kpi-s">figures whose printed claims contradict their data</div></div>
   <div class="kpi "><div class="kpi-v">16 / 21</div><div class="kpi-l">Skills / classic operators</div><div class="kpi-s">global verification floor on every recipe</div></div>
-  <div class="kpi "><div class="kpi-v">497</div><div class="kpi-l">Automated tests</div><div class="kpi-s">negative controls and contract tests</div></div>
+  <div class="kpi "><div class="kpi-v">506</div><div class="kpi-l">Automated tests</div><div class="kpi-s">negative controls and contract tests</div></div>
   <div class="kpi "><div class="kpi-v">76.6 MB</div><div class="kpi-l">Repository size</div><div class="kpi-s">lean budget ≤ 80 MB</div></div>
 </div>
 
@@ -133,6 +133,7 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
 <div class="card deliverable"><div class="card-top"><h3>Write guard</h3><span class="pill ok">Delivered</span></div><p>Refuses to shrink an accumulated artefact unless the override is explicit. One implementation for every writer.</p><div class="meta"><code>figpipe/guard.py</code> · 11 tests</div><a class="file-link" href="../figpipe/guard.py">Open artifact →</a></div>
 <div class="card deliverable"><div class="card-top"><h3>Mutation finding: matrix budget one row too tight</h3><span class="pill warn">Finding routed, not applied</span></div><p>Measured with budgets forced open: 41 unpivotable rows render with 0 collisions, 42 produce 41. So MAX_MATRIX_ROWS=40 refuses a table that would draw cleanly. SELECTED by the loop, deliberately NOT applied pending a pool re-measure.</p><div class="meta"><code>figpipe/mutation.py</code> · 41 vs 42 rows</div><a class="file-link" href="../figpipe/mutation.py">Open artifact →</a></div>
 <div class="card deliverable"><div class="card-top"><h3>Style-metric validation</h3><span class="pill ok">Delivered</span></div><p>Discrimination experiment over 30 real published figures: 0.9333 accuracy, 95% CI 0.787-0.982, p=4.3e-7, with a negative control and a leave-one-out showing the result concentrates in figure aspect.</p><div class="meta"><code>corpus/e2e/style_validation.json</code> · proxy, not a reader study</div><a class="file-link" href="../corpus/e2e/style_validation.json">Open artifact →</a></div>
+<div class="card deliverable"><div class="card-top"><h3>Local web interface</h3><span class="pill ok">Delivered</span></div><p>Upload a CSV in a browser and get the same audited figure the CLI produces, with the named-dimension report. Runs on 127.0.0.1; nothing leaves the machine.</p><div class="meta"><code>scripts/webapp.py</code> · 4 endpoints, 9 tests</div><a class="file-link" href="../scripts/webapp.py">Open artifact →</a></div>
 <div class="card deliverable"><div class="card-top"><h3>Named quality dimensions</h3><span class="pill ok">Delivered</span></div><p>Deterministic per-dimension scores with the worst named first, and unmeasurable dimensions stated rather than omitted. Structure from AutoFigure (ICLR 2026); the judge is deterministic, not a VLM.</p><div class="meta"><code>figpipe/quality.py</code> · 7 dimensions, 6 tests</div><a class="file-link" href="../figpipe/quality.py">Open artifact →</a></div>
 <div class="card deliverable"><div class="card-top"><h3>Peer comparison: AutoFigure</h3><span class="pill ok">Delivered</span></div><p>What figpipe can take from a mature ICLR 2026 system, what it must NOT copy (VLM-as-Judge, measured at 20 fabrications), and the one thing figpipe should be embarrassed about: no web interface.</p><div class="meta"><code>PEER_AUTOFIGURE.md</code> · honest both ways</div><a class="file-link" href="../PEER_AUTOFIGURE.md">Open artifact →</a></div>
 <div class="card deliverable"><div class="card-top"><h3>Peer integration: Harness²</h3><span class="pill ok">Delivered</span></div><p>What was absorbed (Propose–Probe–Compose, the budget identity, the answer-key tripwire), what was NOT and why, and the licence position.</p><div class="meta"><code>PEER_HARNESS2.md</code> · Apache 2.0, one file vendored</div><a class="file-link" href="../PEER_HARNESS2.md">Open artifact →</a></div>
@@ -1119,6 +1120,6 @@ recorded as such; the loop fails when a judged capability field gets worse.</p>
   in this repository, with no external dependencies. PlotTwin-Bench reference images and target
   data are cached locally and never redistributed (CC BY-NC 4.0); StartLux-Decision weights are
   CC BY-NC 4.0 and called through a separate service, not vendored into this repository.</div>
-  <div style="margin-top:6px">commit a4e9511 · generated 2026-10-20 11:01 · tests 497</div>
+  <div style="margin-top:6px">commit 33218e1 · generated 2026-10-20 11:08 · tests 506</div>
 </footer>
 </div></body></html>

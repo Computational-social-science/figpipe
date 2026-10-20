@@ -169,6 +169,16 @@ Specification sources:
 
 ---
 
+## Or use it in a browser
+
+```bash
+python scripts/webapp.py        # http://127.0.0.1:8099
+```
+
+Upload a CSV, choose a column width, optionally name a facet column or attach a reference figure.
+The page runs the SAME audit and the same named-dimension quality report as the command line, and
+it states which dimensions it could not measure. Nothing leaves your machine.
+
 ## Make a figure from your own CSV
 
 No Python required. Give it a tidy CSV and a journal column width:

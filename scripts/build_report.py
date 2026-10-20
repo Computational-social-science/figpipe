@@ -587,6 +587,10 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
                     "figures: 0.9333 accuracy, 95% CI 0.787-0.982, p=4.3e-7, with a negative "
                     "control and a leave-one-out showing the result concentrates in figure aspect.",
                     "corpus/e2e/style_validation.json", meta="proxy, not a reader study"),
+        deliverable("Local web interface", "Upload a CSV in a browser and get the same audited "
+                    "figure the CLI produces, with the named-dimension report. Runs on 127.0.0.1; "
+                    "nothing leaves the machine.",
+                    "scripts/webapp.py", meta="4 endpoints, 9 tests"),
         deliverable("Named quality dimensions", "Deterministic per-dimension scores with the "
                     "worst named first, and unmeasurable dimensions stated rather than omitted. "
                     "Structure from AutoFigure (ICLR 2026); the judge is deterministic, not a VLM.",

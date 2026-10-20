@@ -2307,3 +2307,47 @@ Full comparison in PEER_AUTOFIGURE.md, including what figpipe does better (deter
 truth, reproducibility, 15 documented defect classes, an audit trail).
 
 Suite: 494 passed, 3 skipped.
+
+
+## 84. The thing to be embarrassed about, removed (2026-10-20)
+
+Last round I wrote that AutoFigure ships a web interface and a Flask API while figpipe has a command
+line, and called it "the one thing figpipe should be embarrassed about". This round I removed it.
+
+`scripts/webapp.py`: a single-process FastAPI app, no new dependency (fastapi/uvicorn were already
+installed), serving one page and four endpoints:
+
+    GET  /                  the page
+    GET  /api/health        liveness, so a script can wait instead of sleeping
+    POST /api/inspect       what WOULD be drawn and why, before drawing it
+    POST /api/make          draw it, audit the rendered file, return the quality report
+    GET  /api/file/{name}   fetch the PDF or the PNG preview
+
+VERIFIED end to end against a running server, not just in tests:
+
+    health          {"ok":true,...}
+    page            200, 4127 bytes, has a form
+    inspect         intent=comparison_with_error, rationale + columns
+    make            200, compliant, "hard findings: 0", "183.0 mm", named dimensions
+    PDF download    200, 30990 bytes, starts %PDF
+    traversal       /api/file/..%2F..%2Fetc%2Fpasswd -> 404
+    facet           4 panels, compliant
+
+DESIGN DECISIONS, each answering a risk a web surface introduces:
+
+  * **It must not be a second, less honest path.** The page runs the SAME `audit.audit()` and the
+    SAME `quality.for_skill_result()` the CLI runs. A page that reports success without verifying is
+    the defect this project exists to prevent, with a nicer font.
+  * **It must not swallow a refusal.** An ambiguous table returns the reason AND the column list,
+    exactly as the CLI does. Showing an error is awkward; hiding it is dishonest.
+  * **It must state what it could not measure.** The `unmeasured:` line appears on the page.
+  * **Path traversal is checked explicitly.** `GET /api/file/{name}` strips directory components and
+    asserts the resolved path is inside the output dir. A web surface is the one place this project
+    gains an attack the CLI does not have, so the check is written rather than assumed.
+  * **Outputs go to a temp dir, not the repo.** A browser session must not leave artefacts in a git
+    working tree -- the lean budget and the "no regenerable path is tracked" rule both depend on it.
+
+9 tests drive the real app through FastAPI's TestClient -- no server process, no network -- and
+check the RENDERED file, not the response status.
+
+Suite: 503 passed, 3 skipped.
