@@ -505,12 +505,28 @@ def _resolve_region(page, bbox_pt, caption_prefix):
 BAND = (5.0, 7.0)
 
 
-def palette_from_profile(profile: "StyleProfile", n: int = 4) -> list[str]:
+#: How many of a reference's colours the transfer applies as SERIES colours.
+#:
+#: WHY 4, AND WHY RAISING IT DOES NOTHING: the first four colours of a Nature figure are usually
+#: black, dark grey and two dark blues, so the chromatic colours often sit at position five or six.
+#: Raising this to 6 was measured and changed NOTHING -- 0 of 30 pairs moved -- because the
+#: validation experiment draws a SINGLE-SERIES trend panel, which uses one colour. A longer palette
+#: cannot appear in a figure that has one series.
+#:
+#: So 4 is not the limitation; the experiment's panel is. The number stays where it was until there
+#: is a multi-series panel to measure it against.
+PALETTE_N = 4
+
+
+def palette_from_profile(profile: "StyleProfile", n: int | None = None) -> list[str]:
     """The reference's own colours, most-used first, without white/background greys.
 
     Used for series colours when the target style is a specific paper. The colours are copied
     from the measurement, not invented: that is the whole point of profiling a vector source.
+
+    `n` defaults to PALETTE_N. Pass a larger value to see the full measured palette.
     """
+    n = PALETTE_N if n is None else int(n)
     out: list[str] = []
     for c in profile.colours:
         rgb = _rgb(c["hex"])

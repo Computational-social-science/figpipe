@@ -312,3 +312,37 @@ run shared 2 of 30 pairs and drew a different conclusion from the same metric.
 transfer applies it), and the metric is weak but real on style dimensions. **What changes:** the
 plumbing check is worth ~13 points of the headline accuracy, not 20, and the metric without aspect
 scores 0.80 -- better than the 0.733 previously reported.
+
+
+## Update 2026-10-21 (seventh): two dimensions are tested on a figure that cannot express them
+
+Asked to improve `palette` (the load-bearing component after the ablation), I found the component is
+not the problem -- the EXPERIMENT is.
+
+THE MEASUREMENT THAT FOUND IT: `palette_from_profile` truncates at 4 colours, and the corpus's
+references have 12 to 99 usable colours. Raising the truncation to 6 was a plausible fix. It changed
+**0 of 30 pairs.** Not one distance moved.
+
+THE REASON: the validation draws a **single-series trend panel**. One series uses one colour, so a
+longer palette cannot appear in the figure at all. Reverting the change, and the number stays at 4
+until there is a multi-series panel to measure it against.
+
+THE GENERALISATION -- tie rate per dimension on the ablation run:
+
+    letters  28/30    one panel  -> no panel letters can appear
+    lines    17/30    one line   -> little stroke variety
+    sizes    14/30    font tiers DO vary
+    rules     9/30    grid and spines DO vary
+    palette   8/30    one series -> one colour
+
+The two highest tie rates are exactly the two dimensions a single-series single-panel figure cannot
+express. **A dimension the figure cannot express ties on almost every pair, and a tie is a limit of
+the EXPERIMENT, not a weakness of the metric.**
+
+So "palette scores 0.727" reads as "the component is weak" when the truth is "the panel gave it
+nothing to see". The actionable next step is a multi-series, multi-panel validation figure -- not a
+change to the metric.
+
+The validator now prints the tie rate with the reason next to each dimension, and tests assert that
+`letters` still ties almost always (so the panel has not silently changed) and that widening the
+palette still moves nothing (so the limitation stays attributed to the panel).

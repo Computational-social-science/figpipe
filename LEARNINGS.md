@@ -3384,3 +3384,47 @@ style -- and it is a better answer to "what should I improve" than anything the 
 have given.
 
 Suite: 624 passed, 3 skipped.
+
+
+## 110. A dimension tested on a figure that cannot express it (2026-10-21)
+
+The ablation said `palette` was the load-bearing component (-0.167), so that is what to improve. I
+looked at where palette fails, found the transfer truncates the reference's palette at four colours
+while references have 12 to 99, and raised it to six -- the first value that reaches the chromatic
+colours instead of four near-blacks.
+
+MEASURED: 0 of 30 pairs moved. Not one distance changed.
+
+THE REASON, once asked: the validation draws a SINGLE-SERIES trend panel. One series uses one
+colour. A longer palette cannot appear in a figure that has one line.
+
+THE GENERALISATION -- tie rate per dimension:
+
+    letters  28/30    one panel  -> no panel letters
+    lines    17/30    one line   -> little stroke variety
+    sizes    14/30    font tiers DO vary
+    rules     9/30    grid/spines DO vary
+    palette   8/30    one series -> one colour
+
+The two highest tie rates are exactly the two dimensions a single-series single-panel figure cannot
+express. So "palette scores 0.727" reads as "the component is weak" when the truth is "the panel gave
+it nothing to see".
+
+THE PATTERN, which is the third variant of one mistake in four rounds:
+
+    round 44-46  I scored near-zero gaps as WRONG ANSWERS       (a measurement error)
+    round 47     I compared across two samples                  (a design error)
+    round 48     I tried to improve a dimension the FIGURE cannot express  (a design error)
+
+Each time the fix was not in the thing I was looking at. The metric was never the problem; the
+instrument was. And each time, the tell was a measurement that refused to move -- 0.967 vs 0.933 on
+the holdout, 0 of 30 pairs for the palette.
+
+A MEASUREMENT THAT DOES NOT MOVE IS INFORMATION. My first instinct with the palette was that the fix
+had been too small. The right reading was that the fix could not be observed, and asking WHY led
+straight to the panel.
+
+The validator now prints the tie rate with a stated reason per dimension, and tests pin both facts:
+`letters` still ties almost always, and widening the palette still moves nothing.
+
+Suite: 630 passed, 3 skipped.

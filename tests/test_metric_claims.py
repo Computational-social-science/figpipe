@@ -336,3 +336,56 @@ def test_the_true_effect_is_reported_not_the_confounded_one(claims, capsys):
     out = capsys.readouterr().out
     assert "30 of 30" in out, "the validator does not report the pair overlap"
     assert "CONFOUNDED" in out or "FIRST ATTEMPT" in out
+
+
+# ---------------------------------------------------------------------------------------
+# WHICH DIMENSIONS CAN THE EXPERIMENT'S PANEL EXPRESS AT ALL?
+#
+# The validation draws a SINGLE-SERIES trend panel. It has one colour and one axis, so `palette`
+# and `letters` cannot appear in it. A dimension the figure cannot express ties on almost every
+# pair -- and a tie is a limit of the EXPERIMENT, not of the metric.
+#
+# This matters because "palette scores 0.727" reads as "the component is weak", when in fact the
+# panel gave it nothing to see. Raising the palette truncation from 4 to 6 was measured and changed
+# NOTHING (0 of 30 pairs moved), which is how the panel limitation was found.
+# ---------------------------------------------------------------------------------------
+
+def test_the_experiment_cannot_express_letters(claims, pairs):
+    """A single-panel figure has no panel letters, so that dimension must tie almost always."""
+    expr = claims.expressibility(pairs)
+    assert expr["letters"]["tie_rate"] >= 0.85, (
+        f"letters ties only {expr['letters']['tie_rate']} of the time; the panel may have changed")
+
+
+def test_the_expressibility_table_names_which_dimensions_are_untestable(claims, pairs, capsys):
+    assert claims.summary() == 0
+    out = capsys.readouterr().out
+    assert "TIE RATE BY DIMENSION" in out
+    assert "the PANEL cannot express" in out
+    assert "limit of the EXPERIMENT" in out
+
+
+def test_the_palette_truncation_is_NOT_the_limitation():
+    """Raising PALETTE_N from 4 to 6 was measured and changed nothing -- the panel is the limit."""
+    import sys
+    sys.path.insert(0, str(ROOT))
+    from figpipe import styleprofile
+    assert styleprofile.PALETTE_N == 4, (
+        "the truncation was raised; the measurement showed it makes no difference because the "
+        "experiment's panel has one series")
+
+
+def test_raising_the_palette_changed_no_distance():
+    """The measurement that found the panel limitation: 0 of 30 pairs moved."""
+    import json as _json
+    a_path = ROOT / "corpus" / "e2e" / "style_validation_noaspect_same_seed.json"
+    b_path = ROOT / "corpus" / "e2e" / "style_validation_palette6.json"
+    if not (a_path.is_file() and b_path.is_file()):
+        pytest.skip("one of the comparison runs is absent")
+    a = _json.loads(a_path.read_text(encoding="utf-8"))["pairs"]
+    b = _json.loads(b_path.read_text(encoding="utf-8"))["pairs"]
+    moved = sum(1 for pa, pb in zip(a, b)
+                if abs((pa["details_A"].get("palette") or 0)
+                       - (pb["details_A"].get("palette") or 0)) > 1e-9)
+    assert moved == 0, (
+        f"{moved} pairs moved when the palette was widened; the panel can express it after all")

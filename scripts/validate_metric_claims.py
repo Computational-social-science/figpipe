@@ -159,6 +159,40 @@ def per_dimension_decisive(pairs: list[dict], resolution: float = RESOLUTION) ->
     return out
 
 
+def expressibility(pairs: list[dict]) -> dict:
+    """Which dimensions the EXPERIMENT'S PANEL can physically express.
+
+    THE FINDING THIS EXISTS FOR: the validation draws a SINGLE-SERIES trend panel. That panel has
+    one colour and one axis, so:
+
+        palette   cannot appear -- one series, one colour
+        letters   cannot appear -- one panel, no panel letters
+        lines     barely varies -- one line, so stroke variety is limited
+
+    A dimension that the figure cannot express ties on almost every pair, and a tie is not a
+    failure of the METRIC -- it is the experiment measuring a dimension it did not vary. Reporting
+    "palette scores 0.727" without this context invites a reader to think the component is weak,
+    when in fact the panel gave it nothing to see.
+
+    Measured tie rates on the ablation run: letters 28/30, lines 17/30, sizes 14/30, rules 9/30,
+    palette 8/30. The two highest are exactly the two the panel cannot express.
+    """
+    out = {}
+    for dim in DECLARED_WEIGHTS:
+        ties = 0
+        n = 0
+        for p in pairs:
+            a = p["details_A"].get(dim)
+            b = p["details_B"].get(dim)
+            if a is None or b is None:
+                continue
+            n += 1
+            if abs(a - b) < 1e-9:
+                ties += 1
+        out[dim] = {"n": n, "ties": ties, "tie_rate": round(ties / n, 3) if n else None}
+    return out
+
+
 def aspect_independence(pairs: list[dict]) -> dict:
     """Does the metric still discriminate when `aspect` is held constant or removed?
 
@@ -254,6 +288,26 @@ def summary() -> int:
         print("       the finding. aspect supplies most of the MARGIN, not all of the SIGNAL.")
     else:
         print("    => without aspect the metric is near chance; the finding stands.")
+    print()
+
+    # ---- WHICH DIMENSIONS CAN THE EXPERIMENT'S PANEL EXPRESS AT ALL? ---------------------
+    expr = expressibility(pairs)
+    print("  TIE RATE BY DIMENSION (a tie means the panel gave the dimension nothing to see):")
+    print(f"  {'dimension':<10} {'ties':>6} {'rate':>7}  why")
+    print("  " + "-" * 60)
+    why = {"palette": "one series -> one colour",
+           "letters": "one panel -> no panel letters",
+           "lines": "one line -> little stroke variety",
+           "rules": "grid and spines DO vary",
+           "sizes": "font tiers DO vary",
+           "aspect": "set by the transfer"}
+    for dim, r in sorted(expr.items(), key=lambda kv: -(kv[1]["tie_rate"] or 0)):
+        print(f"  {dim:<10} {r['ties']:>3}/{r['n']:<2} {r['tie_rate']:>7.3f}  {why.get(dim, '')}")
+    cannot = [d for d, r in expr.items() if (r["tie_rate"] or 0) >= 0.85]
+    if cannot:
+        print(f"  => {cannot} tie on almost every pair because the PANEL cannot express them.")
+        print(f"     That is a limit of the EXPERIMENT, not of the metric. A multi-series,")
+        print(f"     multi-panel figure is what those dimensions need in order to be tested.")
     print()
 
     # ---- WHERE EACH COMPONENT ACTUALLY HAS AN OPINION ------------------------------------
