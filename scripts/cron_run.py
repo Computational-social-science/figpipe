@@ -84,6 +84,12 @@ def capability_snapshot() -> dict:
                 and _is_infra(t.get("error")))
     attempted = max(n_tasks - n_unsupported - infra, 1)
     return {
+        # WHICH INSTRUMENT PRODUCED THIS SNAPSHOT. Without it a later comparison cannot tell a
+        # capability change from an instrument change -- measured 2026-10-21: the styled anchor
+        # moved 0.355 -> 0.357 with ZERO of the 20 anchor tasks changing distance, because a label
+        # fix altered the rendered text the style profile reads. That was reported as a capability
+        # regression and exited 1.
+        "_code_version": bench.get("code_version"),
         "skills": len(skills.get("skills", []) or []),
         "operators": len(skills.get("operators", []) or []),
         "benchmark_tasks": n_tasks,
@@ -248,6 +254,41 @@ def _official_improvement():
     return round(pipe["mean_score"] - base["mean_score"], 2)
 
 
+#: Capability fields whose value is produced by a MEASUREMENT INSTRUMENT, and therefore cannot be
+#: compared across a change to that instrument. A style distance computed by one version of the
+#: drawer stack is not the same quantity as one computed by another: the label fix on 2026-10-21
+#: changed the rendered text, the style profile reads text, and the anchor moved 0.355 -> 0.357
+#: with ZERO of the 20 anchor tasks actually changing distance -- the instrument had changed.
+#:
+#: Comparing across that is the exact violation the project's invariant forbids.
+INSTRUMENT_FIELDS = ("benchmark_anchor_single", "benchmark_shipped_anchor_single",
+                     "benchmark_official_code_score", "benchmark_official_improvement")
+
+
+def _instrument_changed(previous: dict, current: dict) -> bool:
+    """True when the two snapshots were provably taken by DIFFERENT instruments.
+
+    THE DISTINCTION THIS RESTS ON:
+
+        both carry a version, equal        -> same instrument, comparable
+        both carry a version, different    -> different instruments, NOT comparable
+        one carries it, the other does not -> the recording layer changed between them, NOT comparable
+        neither carries it                 -> no instrument information at all; a plain comparison of
+                                              two dicts (a unit test, a hand check), not a
+                                              measurement across instrument versions
+
+    An earlier version returned True for the LAST case, which broke six existing tests -- the tests
+    doing their job. The case that actually failed is the THIRD: the old scheduled run predates the
+    field, so its snapshot has no version while the new one does, and the +0.002 anchor move was
+    reported as a capability regression.
+    """
+    old = (previous or {}).get("_code_version")
+    new = (current or {}).get("_code_version")
+    if old is None and new is None:
+        return False          # nothing recorded; plain comparison
+    return not (old and new and old == new)
+
+
 def capability_delta(previous: dict, current: dict) -> dict:
     """Which capability fields changed, by how much, and whether any of them got WORSE.
 
@@ -263,10 +304,23 @@ def capability_delta(previous: dict, current: dict) -> dict:
         if old != value:
             delta[key] = {"before": old, "after": value}
     gains, regressions, corrections = [], [], []
+    # AN INSTRUMENT CHANGE INVALIDATES INSTRUMENT-DEPENDENT COMPARISONS. The project's invariant:
+    # a judged metric must be a function of a fixed task set, complete membership, and a SINGLE
+    # INSTRUMENT VERSION. A style distance computed by one drawer stack is not the same quantity
+    # as one computed by another -- measured 2026-10-21: the anchor moved 0.355 -> 0.357 with ZERO
+    # of the 20 anchor tasks changing distance, because a label fix changed the rendered text the
+    # profile reads. That was reported as a capability regression and exited 1.
+    instrument_moved = _instrument_changed(previous, current)
+    not_compared = []
     for key, change in delta.items():
         direction = CAPABILITY_DIRECTION.get(key)
         old, new = change["before"], change["after"]
         if direction is None or old is None or new is None:
+            continue
+        if instrument_moved and key in INSTRUMENT_FIELDS:
+            not_compared.append({"field": key, "before": old, "after": new,
+                                 "why": "the measurement instrument changed between these "
+                                        "snapshots, so the two values are not the same quantity"})
             continue
         move = (new - old) * direction
         entry = {"field": key, "before": old, "after": new}
@@ -281,6 +335,8 @@ def capability_delta(previous: dict, current: dict) -> dict:
     return {"changed": bool(delta), "delta": delta,
             "verdict": {"gains": gains, "regressions": regressions,
                         "corrections": corrections,
+                        "not_compared": not_compared,
+                        "instrument_changed": instrument_moved,
                         "ok": not regressions,
                         "judged_fields": sorted(CAPABILITY_DIRECTION)}}
 

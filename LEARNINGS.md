@@ -3606,3 +3606,55 @@ from a measured failure is a fix with a target. The tie rate was not a threshold
 sign the candidates were not about anything the pipeline was getting wrong.
 
 Suite: 648 passed, 3 skipped.
+
+
+## 115. The loop exited 1 on an IMPROVEMENT, and the invariant was mine to enforce (2026-10-21)
+
+The scheduled run at 20:26 exited 1. Reading its record:
+
+    capability_regressions: [{'field': 'benchmark_anchor_single',
+                              'before': 0.355, 'after': 0.357}]
+    ok: False
+
+A +0.002 move in a style DISTANCE, reported as a capability LOSS and failing the run. Two things
+were wrong at once.
+
+FIRST, MY OWN REPORTING. I had written "styled anchor 0.355 -> 0.357 (improvement)". The anchor is a
+mean style DISTANCE -- lower is better. 0.357 is slightly WORSE. I reported a regression as an
+improvement because I assumed a rising number was good.
+
+SECOND, AND THE REAL DEFECT: **zero of the 20 anchor tasks had changed distance.** I diffed the
+report against the previous commit and every anchor row was identical. The mean moved because the
+INSTRUMENT had moved -- the label-wrapping fix changed the rendered text, and the style profile
+reads text.
+
+That is exactly what this project's own invariant forbids:
+
+    a judged metric must be a function of a fixed task set, complete membership of that set,
+    and a SINGLE INSTRUMENT VERSION
+
+`capability_snapshot()` did not record which instrument produced it, so `capability_delta` could not
+tell a capability change from an instrument change. It compared 0.355 (old drawer stack) with 0.357
+(new drawer stack) and called the difference a regression.
+
+THE FIX NEEDED THREE ATTEMPTS, and the two failures are the interesting part:
+
+  1. Require BOTH snapshots to carry a version and the versions to DIFFER. Replaying the real
+     failing comparison showed this returned False -- because the older run record predates the
+     field, so it has no version. "No evidence of a change" was read as "no change". The same unsafe
+     default as treating a missing measurement as a pass.
+  2. Treat ANY missing version as not-comparable. Correct for the real case and it broke SIX
+     existing tests -- the tests doing their job. A caller passing two plain dicts (a unit test, a
+     hand check) has not recorded instruments, and that is not evidence of a change.
+  3. The distinction that works: an ASYMMETRIC record (one side has it, the other does not) is
+     evidence the recording layer changed; NEITHER side is a plain comparison.
+
+THE PRINCIPLE I HAD BEEN APPLYING EVERYWHERE EXCEPT HERE: **a judged metric needs its instrument
+recorded next to it, or it cannot be judged.** I have enforced that for the benchmark (CODE_VERSION
+fingerprinting, single-instrument anchors) for months, and the capability diff -- the thing that
+DECIDES whether a run succeeded -- was the one comparison exempt from it.
+
+Two tests pin the two directions that matter: a real regression on the same instrument must still
+fail the run, and an unprovable match must not be judged.
+
+Suite: 656 passed, 3 skipped. Scheduled run now exits 0.

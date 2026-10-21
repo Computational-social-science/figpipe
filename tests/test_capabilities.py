@@ -34,9 +34,19 @@ def test_snapshot_reads_capability_artefacts_without_opinions():
     assert isinstance(snap["skills"], int) and snap["skills"] >= 0
     assert isinstance(snap["operators"], int) and snap["operators"] >= 0
     assert isinstance(snap["benchmark_tasks"], int)
-    # a capability snapshot must not contain prose judgements
-    for value in snap.values():
-        assert not isinstance(value, str) or key == "knowledge_version"
+    # A capability snapshot must not contain PROSE JUDGEMENTS. Two fields are string IDENTIFIERS
+    # rather than judgements, and the test has to tell them apart: a version tag names the
+    # instrument, it does not opine about the result.
+    #
+    # This loop used to read `for value in snap.values(): ... key == "knowledge_version"`, which
+    # referenced `key` from the PRECEDING loop -- a stale variable. It only passed because
+    # `knowledge_version` happened to be an int, so the comparison never mattered. Adding a second
+    # string field (`_code_version`, which records the instrument) exposed it.
+    IDENTIFIERS = {"knowledge_version", "_code_version"}
+    for key, value in snap.items():
+        assert not isinstance(value, str) or key in IDENTIFIERS, (
+            f"the snapshot field {key!r} holds prose ({value!r}); a capability snapshot must "
+            f"contain counts and measured distances, not judgements")
 
 
 def test_delta_names_what_changed_and_reports_no_change():
