@@ -490,6 +490,154 @@ def check_radial_profile(ax, data: pd.DataFrame, *, theta: str, value: str,
             "closed": closed}
 
 
+def _words_by_position(pdf_path) -> list[tuple[float, float, float, str]]:
+    """(x0, y0, x1, text) for every word on page 1, or [] when PyMuPDF is unavailable.
+
+    WHY PYMUPDF AND NOT `structure._reader`: the latter is pypdf, whose `extract_text("words")` is
+    not a pypdf API and returns NOTHING. The first version used it, got an empty list, and reported
+    `unverifiable` -- indistinguishable from "this figure has no colour scale". PyMuPDF is already
+    a project dependency (audit, structure and the benchmark all use it).
+    """
+    import pathlib as _pathlib
+
+    try:
+        import pymupdf
+    except ImportError:                                    # pragma: no cover
+        return []
+    p = _pathlib.Path(pdf_path)
+    if not p.is_file():
+        raise FileNotFoundError(f"no such file: {p}")
+    doc = pymupdf.open(str(p))
+    try:
+        if not len(doc):
+            return []
+        page = doc[0]
+        return [(float(w[0]), float(w[1]), float(w[2]), str(w[4]))
+                for w in page.get_text("words")]
+    finally:
+        doc.close()
+
+
+def _scale_numbers(words, *, cluster_pt: float = 6.0) -> list[float]:
+    """The numbers in the RIGHTMOST COLUMN of the page -- the colour bar's tick labels.
+
+    WHY A CLUSTER AND NOT A FRACTION OF THE PAGE. A first version kept every word whose left edge
+    was in the right-hand 28% of the text extent. On a 90 mm field figure the x-axis labels sit at
+    x0 = 27.5 .. 211.9 and the colour bar at x0 = 242.1, so a 72% cut (about 200) still admitted the
+    LAST x-axis label at 211.9 and `min()` picked up an axis value.
+
+    A colour bar's labels all share one left edge -- they are a vertical stack -- and that stack is
+    the rightmost such group on the page. So: group the words by rounded x0 and take the rightmost
+    group that holds at least two numbers.
+    """
+    import re as _re
+
+    if not words:
+        return []
+
+    def nums_in(text: str) -> list[float]:
+        out = []
+        for tok in _re.findall(r"[\u2212-]?\d+(?:\.\d+)?", text):
+            try:
+                out.append(float(tok.replace("\u2212", "-")))
+            except ValueError:
+                continue
+        return out
+
+    # bucket by left edge
+    buckets: dict[int, list[float]] = {}
+    for x0, _y0, _x1, text in words:
+        vals = nums_in(text)
+        if not vals:
+            continue
+        key = int(round(x0 / cluster_pt))
+        buckets.setdefault(key, []).extend(vals)
+    # rightmost bucket holding at least two numbers
+    for key in sorted(buckets, reverse=True):
+        if len(buckets[key]) >= 2:
+            return buckets[key]
+    return []
+
+
+def check_colorbar_scale(pdf_path, data, *, tol_frac: float = 0.25) -> dict:
+    """Does the printed colour scale cover the data it claims to describe?
+
+    WHY THIS IS THE ONE CHECKABLE CLAIM A FIELD FIGURE CARRIES
+        A scalar field is a single raster path, so its cell values never reach the PDF -- that is
+        why `field_map` tasks are `unverifiable` at the data level. But the COLOUR BAR's tick
+        labels ARE text, and they state the scale the colours encode. If those numbers do not
+        bracket the data's range, the figure is telling the reader something false about its own
+        colours.
+
+    WHAT IS CHECKED
+        The printed ticks must reach near both ends of the data range. A colour bar that stops at
+        -3 while the data runs to -12 leaves the deepest values encoded by colours outside the
+        stated scale, and a reader cannot know what they mean.
+
+        `tol_frac` allows the bar to fall short by a fraction of the range: matplotlib chooses round
+        tick values, so a bar over [-3.77, 3.07] legitimately prints -3..3 and misses each end by
+        about 0.7 -- that is 10% of the 6.8-wide range, well inside the 25% allowance.
+
+    THREE STATES, as everywhere else in this module:
+        ok            ticks bracket the range within tolerance
+        violation     ticks demonstrably stop short -- the figure misstates its own scale
+        unverifiable  fewer than two numbers on the page, so there is no scale to judge
+    """
+    import re as _re
+
+    from . import structure
+
+    try:
+        words = _words_by_position(pdf_path)
+    except (OSError, ValueError) as exc:
+        return {"ok": None, "state": "unverifiable", "why": f"cannot read the page: {exc}"}
+
+    # ONLY THE RIGHTMOST COLUMN IS THE COLOUR SCALE. A field figure also prints axis tick labels,
+    # and those are the coordinates, not the values. Measured: a field whose data ran [-3.9, 50] had
+    # a colour bar [0, 50], but min() over every number on the page returned 0.0 from the X AXIS, so
+    # the check scored the shortfall as 0%.
+    nums = _scale_numbers(words)
+    if len(nums) < 2:
+        return {"ok": None, "state": "unverifiable",
+                "why": f"only {len(nums)} number(s) in the rightmost column; no colour scale to "
+                       f"judge", "n_numbers": len(nums)}
+
+    import numpy as _np
+    arr = _np.asarray(data, dtype=float)
+    arr = arr[_np.isfinite(arr)]
+    if arr.size == 0:
+        return {"ok": None, "state": "unverifiable", "why": "the data has no finite values"}
+    lo, hi = float(arr.min()), float(arr.max())
+    span = hi - lo
+    if span <= 0:
+        return {"ok": None, "state": "unverifiable",
+                "why": "the data is constant, so any scale covers it"}
+
+    printed_lo, printed_hi = min(nums), max(nums)
+    # A SHORTFALL, NOT A SIGNED DIFFERENCE. A printed scale that EXCEEDS the data on one end is
+    # fine; a scale that STOPS SHORT leaves values encoded by colours outside the stated range.
+    # Taking max() of two signed differences lets a surplus on one end cancel a real shortfall on
+    # the other -- measured: data [-3.77, 50] against a printed scale [0, 50] scored 0% when the
+    # lower 7% of the data had no colour on the stated scale.
+    # THE TWO ENDS ARE MIRROR IMAGES. The scale must COVER the data, so a shortfall is
+    #     low end : printed_lo > lo   ->  printed_lo - lo
+    #     high end: printed_hi < hi   ->  hi - printed_hi
+    # Writing both as `data - printed` made the low end score zero for a scale that started above
+    # the data minimum. Measured: data [-3.9, 50] against a printed [0, 50] scored 0%.
+    short_lo = max(0.0, (printed_lo - lo)) / span
+    short_hi = max(0.0, (hi - printed_hi)) / span
+    worst = max(short_lo, short_hi)
+    detail = (f"data [{lo:.3g}, {hi:.3g}]; printed scale [{printed_lo:.3g}, {printed_hi:.3g}]; "
+              f"worst shortfall {worst:.0%} of the data span")
+    if worst > tol_frac:
+        return {"ok": False, "state": "violation", "detail": detail,
+                "data_range": [lo, hi], "printed_range": [printed_lo, printed_hi],
+                "worst_gap_frac": round(worst, 4)}
+    return {"ok": True, "state": "checked", "detail": detail,
+            "data_range": [lo, hi], "printed_range": [printed_lo, printed_hi],
+            "worst_gap_frac": round(worst, 4)}
+
+
 def check_mesh_panel_data(panel_data: pd.DataFrame, source: pd.DataFrame, *,
                           max_rows: int | None = None,
                           pivoted: bool = False) -> dict:
@@ -542,3 +690,29 @@ def check_mesh_panel_data(panel_data: pd.DataFrame, source: pd.DataFrame, *,
             "declared_truncation": truncated_declared,
             "note": (f"{got_rows} of {src_rows} rows"
                      + (f" (declared max_rows={max_rows})" if truncated_declared else ""))}
+
+
+def check_mesh_scale(pdf_path, source: pd.DataFrame, value: str | None = None) -> dict:
+    """The colour scale a MESH figure prints, checked against the data it drew.
+
+    A mesh panel is `unverifiable` at the data level -- one raster path, no cell values in the PDF.
+    But a mesh figure WITH a colour bar prints the scale as TEXT, and that is a claim the rendered
+    file can be held to: the printed ticks must cover the data range.
+
+    This is the only numeric statement such a figure makes, so it is the only one that can be
+    checked. `value` names the column that carries the colour; without it the widest numeric column
+    is used, which is what a field panel draws.
+    """
+    import numpy as _np
+
+    numeric = source.select_dtypes("number")
+    if numeric.shape[1] == 0:
+        return {"ok": None, "state": "unverifiable", "why": "the source has no numeric column"}
+    col = value if (value and value in numeric.columns) else None
+    if col is None:
+        widths = {c: float(numeric[c].max() - numeric[c].min())
+                  for c in numeric.columns if numeric[c].notna().any()}
+        if not widths:
+            return {"ok": None, "state": "unverifiable", "why": "no numeric column varies"}
+        col = max(widths, key=widths.get)
+    return check_colorbar_scale(pdf_path, numeric[col].to_numpy())

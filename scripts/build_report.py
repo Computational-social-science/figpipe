@@ -747,6 +747,15 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
                     "its pad but not for the tick labels, which fell off the page. Measured after "
                     "the fix: a field with data in [-3.77, 3.07] prints -3..3 and nothing overflows.",
                     "figpipe/composite.py", meta="2 stacked defects, 3 tests"),
+        deliverable("The printed scale is checked against the data", "The colour bar's tick "
+                    "labels are the only numeric statement a field figure makes, so they are the "
+                    "only claim the rendered file can be held to. A check reads the rightmost "
+                    "column of the page and requires the printed ticks to cover the data range. "
+                    "Four versions were wrong before it worked: axis labels are numbers too; a "
+                    "fraction-of-page cut admitted the last axis label; a signed difference let a "
+                    "surplus cancel a shortfall; and the two ends are mirror images, so writing "
+                    "both as data-printed scored a bar starting above the data minimum as 0%.",
+                    "figpipe/semantics.py", meta="4 bugs found by testing, 6 tests"),
         deliverable("Planted-truth controls", "Four data plants whose answers are exact by "
                     "construction (constant mean, exact slope, exact ratio, zero spread), recovered "
                     "through the production path AND read back from the rendered PDF.",

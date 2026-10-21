@@ -3961,3 +3961,44 @@ not tell them apart. One is a property of the format; the other was two defects 
 made the figure useless to a READER as well as to a checker. Counting them together hides both.
 
 Suite: 689 passed, 3 skipped.
+
+
+## 123. A check that cannot fail is not a check -- four bugs, each found by making it fail (2026-10-22)
+
+Round 57 made a field figure carry its colour bar. That made the scale VISIBLE; this round made it
+CHECKABLE, because the tick labels are the only numeric statement a field figure makes and therefore
+the only claim the rendered file can be held to.
+
+The check is small: read the printed scale, require it to cover the data range. It took FOUR wrong
+versions, and every one was found by testing it against a case where it must fail.
+
+  1. READ EVERY NUMBER ON THE PAGE. A field figure also prints AXIS tick labels -- the coordinates.
+     `min(nums)` returned the axis extent, not the scale.
+
+  2. A FRACTION-OF-THE-PAGE CUT. On a 90 mm figure the x-axis labels sit at x0 = 27.5..211.9 and the
+     colour bar at 242.1; a 72% cut admitted the last axis label. A colour bar's labels share one
+     left edge and form the RIGHTMOST such cluster, so the reader groups by left edge and takes the
+     rightmost group holding at least two numbers.
+
+  3. A SIGNED DIFFERENCE. `data - printed` makes a scale that EXCEEDS the data look like a shortfall
+     of zero, and lets a surplus on one end cancel a real shortfall on the other. Measured: data
+     [-3.9, 50] against a printed [0, 50] scored 0%.
+
+  4. THE SAME FORMULA AT BOTH ENDS. The ends are mirror images: the scale must COVER the data, so a
+     shortfall is `printed_lo - lo` at the bottom and `hi - printed_hi` at the top. I wrote both as
+     `data - printed`, so a bar starting ABOVE the data minimum scored 0%.
+
+Bug 4 is the one worth remembering: I had already fixed a sign error in the same expression one
+iteration earlier, and fixing the sign of `max(0, ...)` did not help because the OPERANDS were
+swapped at one end. Two ends that mirror each other look like one formula and are not.
+
+THE TECHNIQUE: build the failing case FIRST. `z * 10` for a scale that stops short, `z - 40` for a
+bar that starts too high, a constant field for the false-positive case. Without those three the
+check would have passed every figure it was shown and been worthless -- which is the exact failure
+mode the acceptance gate exists to catch, reproduced one level down in a helper.
+
+Also worth recording: `structure._reader` is pypdf, and `extract_text("words")` is NOT a pypdf API.
+It returned an empty list silently, the check reported `unverifiable`, and that is indistinguishable
+from "this figure has no scale". PyMuPDF was already a dependency; the words reader now uses it.
+
+Suite: 697 passed, 3 skipped.
