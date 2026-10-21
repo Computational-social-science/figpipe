@@ -763,9 +763,22 @@ def ax_tile_diverging(ax, df: pd.DataFrame, cmap: str = "RdBu_r",
     # fixes that: the axis cannot carry that many labels at 5.5 pt whatever the data. Past the
     # budget the ticks are hidden and the caption carries the meaning.
     MAX_AXIS_LABELS = 12
-    if data.shape[1] <= MAX_AXIS_LABELS:
+    # THE BUDGET IS ON WIDTH, NOT ONLY ON COUNT. Twelve labels fit a 90 mm axis; twelve
+    # 30-character labels do not. Measured on the pool: 5 collisions on matrix_plate whose tick
+    # labels were `individual channel performance`, `influent-loading-band totals`, ... -- three or
+    # four labels, well inside the count budget, each too wide for the panel.
+    #
+    # The room a horizontal label has is roughly the panel width divided by the label count. At
+    # 5.5 pt a character is about 3 pt wide, so a 90 mm axis carries ~85 pt of label per row of
+    # ticks. The limit below is deliberately conservative: a matrix whose labels would overlap is
+    # unreadable whether or not the collision check fires.
+    MAX_LABEL_CHARS = 18
+    xlabels = [str(c) for c in df.columns]
+    x_fits = (data.shape[1] <= MAX_AXIS_LABELS
+              and all(len(v) <= MAX_LABEL_CHARS for v in xlabels))
+    if x_fits:
         ax.set_xticks(range(data.shape[1]))
-        ax.set_xticklabels([str(c) for c in df.columns],
+        ax.set_xticklabels(xlabels,
                            rotation=tick_rotation,
                            ha="right" if tick_rotation else "center")
     else:
@@ -910,6 +923,76 @@ def ax_dual_series(ax, df: pd.DataFrame, x: str, y1: str, y2: str,
     return None
 
 
+#: A polar spoke label longer than this is wrapped onto two lines.
+#:
+#: MEASURED TWICE, because the first value was not enough. A 22-character label on the right panel
+#: of a two-column figure overflowed the page by 2.8 pt; wrapping at 12 characters fixed the
+#: COLLISION but left the single word `measurement` (11 chars) 1.1 pt past the edge. The binding
+#: constraint is the horizontal room at the theta=0 position, not the label length, so the wrap has
+#: to be narrower than the longest word it can produce. 10 characters keeps every wrapped line
+#: inside the page.
+POLAR_LABEL_WRAP = 10
+
+
+def _wrap_spoke(label: str, width: int = POLAR_LABEL_WRAP) -> str:
+    """Wrap a long spoke label so no LINE exceeds `width`, preferring separator breaks.
+
+    THREE ATTEMPTS, and the first two were wrong in instructive ways:
+
+      1. split once at the middle  -> `raw_plot` + `measurement`, and `measurement` is itself 11
+         characters, wider than the 10 the panel has room for. Still overflowed by 1.1 pt.
+      2. greedy from the left      -> `raw_plot` + `measuremen` + `t`. Every line fits, and the
+         result is unreadable: the last line is a single letter, which looks like a typo.
+
+    So the rule is: break on separators, and when a SEGMENT is itself too long, split it into
+    BALANCED pieces rather than filling the first line. `measurement` (11) becomes `measure` +
+    `ment`, not `measuremen` + `t`.
+
+    Truncating is never an option: the reader cannot tell `site_design` from
+    `site_design_summaries`.
+    """
+    text = str(label)
+    if len(text) <= width:
+        return text
+
+    def split_balanced(segment: str) -> list[str]:
+        """Cut a separator-free segment into pieces of near-equal length, each <= width."""
+        if len(segment) <= width:
+            return [segment]
+        pieces = -(-len(segment) // width)          # ceil
+        size = -(-len(segment) // pieces)           # ceil, so pieces*size >= len
+        return [segment[i:i + size] for i in range(0, len(segment), size)]
+
+    # split on separators first, keeping them as break points
+    segments: list[str] = []
+    buf = ""
+    for ch in text:
+        if ch in ("_", "-", " "):
+            if buf:
+                segments.append(buf)
+            buf = ""
+        else:
+            buf += ch
+    if buf:
+        segments.append(buf)
+
+    # then fill lines up to `width`, splitting any segment that will not fit
+    lines: list[str] = []
+    current = ""
+    for seg in segments:
+        for piece in split_balanced(seg):
+            if not current:
+                current = piece
+            elif len(current) + 1 + len(piece) <= width:
+                current += " " + piece
+            else:
+                lines.append(current)
+                current = piece
+    if current:
+        lines.append(current)
+    return "\n".join(lines)
+
+
 def ax_polar_profile(ax, df: pd.DataFrame, theta: str, value: str,
                      xlabel: str = "", ylabel: str = "", title: str | None = None,
                      colour: str | None = None, line: bool = True,
@@ -966,7 +1049,10 @@ def ax_polar_profile(ax, df: pd.DataFrame, theta: str, value: str,
             ax.set_xticks(angles[::step])
         else:
             ax.set_xticks(angles)
-            ax.set_xticklabels(labels, fontsize=6)
+            # WRAP LONG LABELS BEFORE THEY ARE DRAWN. Without this a 22-character label overflows
+            # the page on the right-hand panel and the PDF boundary cuts it, leaving both the full
+            # label and the fragment in the text layer (the collision the pool reports).
+            ax.set_xticklabels([_wrap_spoke(v) for v in labels], fontsize=6)
     from matplotlib.ticker import MaxNLocator
     ax.yaxis.set_major_locator(MaxNLocator(4))
     ax.set_thetalim(0, 2 * np.pi)      # fixed full circle: an autoscaled sliver is unreadable

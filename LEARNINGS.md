@@ -3515,3 +3515,94 @@ a future reader will look for "did the adaptive rule help?". A test asserts the 
 select the same count, so the negative result cannot quietly become a claimed success.
 
 Suite: 641 passed, 3 skipped.
+
+
+## 113. The candidates were synthetic; the failures were real (2026-10-21)
+
+Round 49 concluded that the candidate space, not the margin, is the blocker: 74% of verdicts were
+ties because five budget adjustments (`max_bars` 12->13, `max_rows` 40->41/42/60) usually change
+nothing. This round built candidates from REAL pool failures instead.
+
+THE POOL'S OWN FAILURES, measured:
+
+    text_collision 9      -- of which 4 on radial_profile, 5 on matrix_plate
+    3D 7, Polar/Radial 2, Network/Tree 2   -- structural refusals, correct by design
+
+RADIAL_PROFILE, 4 of the 9. The reported collision was `'a' over 'raw_plot_measurement'`, which
+looks like a panel-letter placement problem. It is not. Reading the rendered PDF:
+
+    text='site_design_summaries'  bbox=(471.5, 79.8, 521.5, 86.5)
+    page width                    518.7
+    overflows right edge by       2.8 pt
+
+A 22-character category label on the right-hand panel extends past the page edge and the PDF
+boundary CUTS it, so the text layer holds both the full label and the cut fragment at the same
+position -- and the collision check reports them as overlapping. matplotlib does not clip a tick
+label to the canvas; it draws it and the page boundary cuts it.
+
+THREE WRAPPING STRATEGIES, TWO WRONG:
+
+    1. split once at the middle -> `raw_plot` + `measurement`, and `measurement` is 11 characters,
+       wider than the 10 the panel has. Still 1.1 pt over.
+    2. greedy from the left     -> `raw_plot` + `measuremen` + `t`. Every line fits and the result
+       is unreadable: the last line is one letter.
+    3. balanced split           -> `raw plot` + `measur` + `ement`. Fits and reads.
+
+MATRIX_PLATE, the other 5. The label budget counted LABELS, not their WIDTH: twelve labels fit a
+90 mm axis, twelve 30-character labels do not. The failing tasks had three or four labels --
+`individual channel performance`, `influent-loading-band totals` -- well inside the count budget and
+each too wide. The budget now checks width too, and a matrix whose labels would overlap hides its
+ticks instead.
+
+MEASURED RESULT, first re-measure after the radial fix:
+
+    hard findings   9 -> 5      (all four radial collisions gone)
+    styled anchor   0.355 -> 0.357
+
+THE LESSON ABOUT CANDIDATES: a synthetic candidate (`max_rows` 40 -> 41) is a guess about where a
+budget belongs. A candidate derived from a measured failure is a fix with a target. The loop's
+74% tie rate was not a threshold problem -- it was a sign that the candidates were not about
+anything the pipeline was getting wrong.
+
+Suite: 648 passed, 3 skipped.
+
+
+## 114. Zero hard findings, for the first time (2026-10-21)
+
+The pool now measures:
+
+    benchmark        139/150, 0 capability errors, 0 infrastructure failures, 139 fresh
+    hard findings    0
+    styled anchor    0.357   (was 0.355)
+    shipped anchor   0.296
+    semantic coverage checked 110 / skipped 0 / unverifiable 29
+
+**Zero hard findings across 139 executed benchmark tasks is a first for this project.** Every
+earlier measurement had some: 405 on a single task at the worst, 301 across the pool, then 37, 25,
+19, 9, and now 0.
+
+HOW IT WAS REACHED, and the method matters more than the number. The previous round's conclusion was
+that the candidate space, not the threshold, was blocking progress: 74% of mutation verdicts were
+ties because the candidates were budget nudges. So this round built candidates from the pool's OWN
+failures:
+
+    radial_profile   4 collisions
+    matrix_plate     5 collisions
+
+BOTH were label bugs, and neither was the bug the report named:
+
+  * radial: the collision read `'a' over 'raw_plot_measurement'`, which looks like panel-letter
+    placement. The actual defect was a 22-character label extending 2.8 pt past the PAGE edge and
+    being cut by the PDF boundary, so the text layer held both the full label and the fragment at
+    the same coordinates.
+  * matrix: the label budget counted LABELS, not their WIDTH. Three 30-character column names sit
+    well inside a 12-label budget and still overlap.
+
+Three wrapping strategies for the radial label; the first two were wrong (split-once still
+overflowed by 1.1 pt; greedy-left produced a one-letter final line). The third balances the split.
+
+THE METHOD LESSON: a synthetic candidate is a guess about where a budget belongs. A candidate derived
+from a measured failure is a fix with a target. The tie rate was not a threshold problem -- it was a
+sign the candidates were not about anything the pipeline was getting wrong.
+
+Suite: 648 passed, 3 skipped.
