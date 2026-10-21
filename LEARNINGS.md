@@ -3701,3 +3701,46 @@ different quantities. This project has paid for this class once before, with a `
 two things at once.
 
 Suite: 661 passed, 3 skipped.
+
+
+## 117. The invariant has three clauses; one of them was never enforced (2026-10-21)
+
+The project's central invariant is:
+
+    a judged metric must be a function of a fixed task set, COMPLETE MEMBERSHIP of that set, and a
+    single instrument version
+
+Last round enforced the third clause (the capability diff now refuses to judge across an instrument
+change). This round audited all three, mechanically, per judged metric -- and found the SECOND
+clause was never enforced at all.
+
+THE MEASUREMENT: `scripts/bench_plottwin.py` set
+
+    report["n_tasks"] = len(merged)
+
+`n_tasks` is whatever was FETCHED. The pool is declared as `POOL = 150`, and nothing asserted that
+150 rows arrived. So:
+
+    139 ok / 140 tasks    prints exactly the same "139 ok" as    139 ok / 150 tasks
+
+and only one of them is the metric. A day when the fetch returns fewer rows would silently compute
+every rate over a smaller denominator, and the report would look entirely normal.
+
+THE FIX, in the same shape the anchors already use (`n_same_instrument == n_expected`):
+
+  * the report now records `pool_size` and `complete_membership` beside `n_tasks`
+  * the capability snapshot records `benchmark_complete_membership`
+  * `capability_delta` refuses to judge a RATE across a membership break, exactly as it refuses to
+    judge across an instrument change, and reports the field as `not_compared` with the reason
+
+WHY I MISSED IT FOR SO LONG: the first and third clauses are about NAMING -- which tasks, which
+instrument -- and a name is easy to check. The second clause is about COUNTING, and counting feels
+like it takes care of itself. It does not: `len(x)` is always a number, so it always looks like an
+answer. The tell was that `n_tasks` appeared in the report as a MEASURED value while every other
+fixed quantity in the project (POOL, N_ANCHORS, the task ids) appears as a constant.
+
+A pattern worth carrying: when an invariant has several clauses, audit them ONE AT A TIME against
+the code. Clause 1 and clause 3 were both documented in comments in four files; clause 2 was
+documented in none, and it was the one not implemented.
+
+Suite: 664 passed, 3 skipped. Scheduled run exits 0.

@@ -1248,6 +1248,16 @@ def _run(args) -> int:
         uns = [t for t in merged if t.get("status") == "unsupported"]
         report["tasks"] = merged
         report["n_tasks"] = len(merged)
+        # COMPLETE MEMBERSHIP. `n_tasks` is whatever was fetched; POOL is what the set IS. A rate
+        # over a short set is not the same quantity as a rate over the whole pool, and the
+        # difference is invisible in `n_tasks` alone -- 139/140 and 139/150 both print "139 ok".
+        #
+        # Recorded rather than raised: a partial run is a legitimate operation (the coverage
+        # backfill measures a slice), so this states the fact and lets the consumer judge. The
+        # mutation loop and the capability snapshot both read `complete_membership` before treating
+        # a success rate as a capability value.
+        report["pool_size"] = POOL
+        report["complete_membership"] = (len(merged) == POOL)
         report["n_ok"] = len(ok_all)
         report["n_unsupported"] = len(uns)
         errored_all = [t for t in merged

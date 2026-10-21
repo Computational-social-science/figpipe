@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-21T20:57:28",
+  "run_at": "2026-10-21T21:30:59",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -9,10 +9,10 @@
     "  passed 8, failed 0",
     "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
     "  wrote knowledge\\evolution_report.json",
-    "  lean: tracked 77.5 -> 77.5 MB, worktree 137.2 -> 132.5 MB"
+    "  lean: tracked 77.5 -> 77.5 MB, worktree 137.3 -> 132.5 MB"
   ],
   "tests_ok": true,
-  "tests_summary": "656 passed, 3 skipped, 1 warning in 277.91s (0:04:37)",
+  "tests_summary": "664 passed, 3 skipped, 1 warning in 265.94s (0:04:25)",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
@@ -595,6 +595,8 @@
   },
   "capabilities": {
     "_code_version": "d9580178cd04",
+    "benchmark_complete_membership": true,
+    "benchmark_pool_size": 150,
     "skills": 16,
     "operators": 21,
     "benchmark_tasks": 150,
@@ -611,32 +613,37 @@
     "benchmark_official_improvement": 37.25,
     "statistics_reproduced": 15,
     "knowledge_version": 16,
-    "tests": 656
+    "tests": 664
   },
   "capabilities_delta": {
     "changed": true,
     "delta": {
-      "_code_version": {
+      "benchmark_complete_membership": {
         "before": null,
-        "after": "d9580178cd04"
+        "after": true
+      },
+      "benchmark_pool_size": {
+        "before": null,
+        "after": 150
       },
       "tests": {
-        "before": 648,
-        "after": 656
+        "before": 656,
+        "after": 664
       }
     },
     "verdict": {
       "gains": [
         {
           "field": "tests",
-          "before": 648,
-          "after": 656
+          "before": 656,
+          "after": 664
         }
       ],
       "regressions": [],
       "corrections": [],
       "not_compared": [],
-      "instrument_changed": true,
+      "instrument_changed": false,
+      "membership_broken": false,
       "ok": true,
       "judged_fields": [
         "benchmark_anchor_single",

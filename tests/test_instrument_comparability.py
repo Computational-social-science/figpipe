@@ -143,3 +143,56 @@ def test_neither_side_recording_an_instrument_is_a_plain_comparison(cron):
     assert verdict["instrument_changed"] is False
     assert [x["field"] for x in verdict["regressions"]] == ["benchmark_anchor_single"], (
         "with no instrument information the comparison must proceed normally")
+
+
+# ---------------------------------------------------------------------------------------
+# THE SECOND CLAUSE: COMPLETE MEMBERSHIP
+#
+# The invariant is three clauses: a fixed task set, COMPLETE MEMBERSHIP of that set, and a single
+# instrument version. The first and third were enforced; the second was not.
+#
+# `n_tasks` in the benchmark report was `len(merged)` -- whatever was fetched. 139/140 and 139/150
+# both print "139 ok", and only one of them is the metric. The report now records
+# `complete_membership` and `pool_size` beside `n_tasks`, and the capability diff refuses to judge a
+# rate across a membership break.
+# ---------------------------------------------------------------------------------------
+
+def test_the_benchmark_report_states_whether_its_set_is_complete():
+    """`n_tasks` alone cannot distinguish 139/140 from 139/150."""
+    import json
+    report = ROOT / "corpus" / "e2e" / "plottwin_report.json"
+    if not report.is_file():
+        pytest.skip("no benchmark report")
+    b = json.loads(report.read_text(encoding="utf-8"))
+    assert "complete_membership" in b, (
+        "the report does not state whether the task set is complete, so a rate over a short set "
+        "is indistinguishable from a rate over the whole pool")
+    assert "pool_size" in b
+    # and the flag must agree with the data
+    assert b["complete_membership"] == (len(b.get("tasks") or []) == b["pool_size"]), (
+        "the completeness flag contradicts the task list")
+
+
+def test_an_incomplete_set_blocks_a_rate_comparison(cron):
+    """A rate over 140 of 150 tasks is not the same quantity as one over 150."""
+    prev = {"_code_version": "A", "benchmark_complete_membership": True,
+            "benchmark_success_rate": 0.927}
+    cur = {"_code_version": "A", "benchmark_complete_membership": False,
+           "benchmark_success_rate": 0.993}
+    verdict = cron.capability_delta(prev, cur)["verdict"]
+    assert verdict["membership_broken"] is True
+    assert not verdict["gains"], (
+        f"a rate over an incomplete set was recorded as a capability gain: {verdict['gains']}")
+    assert any(x["field"] == "benchmark_success_rate" for x in verdict["not_compared"]), (
+        "the field was silently dropped rather than reported as not-comparable")
+
+
+def test_a_complete_set_still_allows_the_comparison(cron):
+    """NEGATIVE CONTROL: the fix must not stop judging rates."""
+    prev = {"_code_version": "A", "benchmark_complete_membership": True,
+            "benchmark_success_rate": 0.927}
+    cur = {"_code_version": "A", "benchmark_complete_membership": True,
+           "benchmark_success_rate": 0.993}
+    verdict = cron.capability_delta(prev, cur)["verdict"]
+    assert verdict["membership_broken"] is False
+    assert [x["field"] for x in verdict["gains"]] == ["benchmark_success_rate"]

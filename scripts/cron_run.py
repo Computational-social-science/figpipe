@@ -90,6 +90,11 @@ def capability_snapshot() -> dict:
         # fix altered the rendered text the style profile reads. That was reported as a capability
         # regression and exited 1.
         "_code_version": bench.get("code_version"),
+        # COMPLETE MEMBERSHIP, recorded beside the rate it qualifies. `benchmark_success_rate` is a
+        # judged field, and a rate over 140 of 150 tasks is not the same quantity as one over 150.
+        # Without this flag a short set reads as a capability change.
+        "benchmark_complete_membership": bool(bench.get("complete_membership")),
+        "benchmark_pool_size": bench.get("pool_size"),
         "skills": len(skills.get("skills", []) or []),
         "operators": len(skills.get("operators", []) or []),
         "benchmark_tasks": n_tasks,
@@ -264,6 +269,12 @@ def _official_improvement():
 INSTRUMENT_FIELDS = ("benchmark_anchor_single", "benchmark_shipped_anchor_single",
                      "benchmark_official_code_score", "benchmark_official_improvement")
 
+#: Fields that are RATES over the benchmark task set. A rate over an incomplete set is not the same
+#: quantity as a rate over the whole set, so these cannot be compared across a membership break.
+MEMBERSHIP_FIELDS = ("benchmark_success_rate", "benchmark_ok", "benchmark_anchor_single",
+                     "benchmark_shipped_anchor_single", "benchmark_official_code_score",
+                     "benchmark_official_improvement")
+
 
 def _instrument_changed(previous: dict, current: dict) -> bool:
     """True when the two snapshots were provably taken by DIFFERENT instruments.
@@ -311,11 +322,21 @@ def capability_delta(previous: dict, current: dict) -> dict:
     # of the 20 anchor tasks changing distance, because a label fix changed the rendered text the
     # profile reads. That was reported as a capability regression and exited 1.
     instrument_moved = _instrument_changed(previous, current)
+    # INCOMPLETE MEMBERSHIP INVALIDATES A RATE, for the same reason an instrument change does. A
+    # success rate over 140 of 150 tasks is not the same quantity as one over 150, and `n_ok` alone
+    # cannot tell them apart. The snapshot records `benchmark_complete_membership` for exactly this.
+    membership_broken = (current.get("benchmark_complete_membership") is False
+                         or previous.get("benchmark_complete_membership") is False)
     not_compared = []
     for key, change in delta.items():
         direction = CAPABILITY_DIRECTION.get(key)
         old, new = change["before"], change["after"]
         if direction is None or old is None or new is None:
+            continue
+        if membership_broken and key in MEMBERSHIP_FIELDS:
+            not_compared.append({"field": key, "before": old, "after": new,
+                                 "why": "one of these snapshots was measured over an INCOMPLETE "
+                                        "task set, so the two rates are not the same quantity"})
             continue
         if instrument_moved and key in INSTRUMENT_FIELDS:
             not_compared.append({"field": key, "before": old, "after": new,
@@ -337,6 +358,7 @@ def capability_delta(previous: dict, current: dict) -> dict:
                         "corrections": corrections,
                         "not_compared": not_compared,
                         "instrument_changed": instrument_moved,
+                        "membership_broken": membership_broken,
                         "ok": not regressions,
                         "judged_fields": sorted(CAPABILITY_DIRECTION)}}
 
