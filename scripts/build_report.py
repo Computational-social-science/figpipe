@@ -458,6 +458,30 @@ def _status_board(bench: dict, latest: dict, kb: dict, caps: dict, n_tests: int)
         done.append(f"{checked} tasks have their printed numbers re-derived from the data")
     rows.append(("Done", "; ".join(done) or "—", "ok"))
 
+    # THE SHARPEST LIMIT THIS PROJECT HAS, and the one the summary used to understate. Recomputed
+    # from the recorded pairs by scripts/validate_metric_claims.py, so it cannot drift.
+    style_val = read_json("corpus/e2e/style_validation.json", {}) or {}
+    pairs = style_val.get("pairs") or []
+    if pairs:
+        import collections as _c
+        dims = {}
+        for dim in ("sizes", "letters", "lines", "rules", "palette", "aspect"):
+            w = sum(1 for p in pairs
+                    if (p.get("details_A") or {}).get(dim, 0)
+                    > (p.get("details_B") or {}).get(dim, 0))
+            dims[dim] = round(w / len(pairs), 3)
+        best = max(dims, key=dims.get)
+        others = {k: v for k, v in dims.items() if k != best}
+        if dims[best] >= 0.80 and max(others.values()) <= 0.60:
+            rows.append(("Sharpest limit",
+                         f"The style metric is, on its own validation corpus, very nearly a "
+                         f"{best.upper()}-ONLY check: {best} alone scores {dims[best]:.3f} while "
+                         f"every other component is at or below {max(others.values()):.3f} "
+                         f"(chance or worse). The recorded summary said 'withholding {best} drops "
+                         f"accuracy to 0.700', which understates it -- the other five components "
+                         f"contribute nothing here. Re-derived by "
+                         f"scripts/validate_metric_claims.py from the per-pair data.", "warn"))
+
     unverifiable = cov.get("unverifiable") or 0
     if checked is not None and skipped is not None:
         total = checked + skipped + unverifiable

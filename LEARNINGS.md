@@ -3132,3 +3132,56 @@ MEASURED
     benchmark       139/150, 0 capability errors, 139 fresh, anchors 0.355 / 0.296
 
 Suite: 603 passed, 3 skipped.
+
+
+## 104. The style metric is very nearly an aspect-ratio check, and the summary understated it (2026-10-21)
+
+The status board's next step was human validation of the style metric. Before asking a human to
+spend an hour on it, I re-derived every claim about the metric from its own recorded pairs. That
+turned out to be the more useful hour.
+
+`corpus/e2e/style_validation.json` reports discrimination accuracy **0.9333**, with an honest caveat:
+withholding `aspect` drops it to **0.700**. True, and it UNDERSTATES the finding. Recomputing each
+component ALONE over the same 30 pairs (ties counted as wrong):
+
+    aspect    0.867     <- the entire signal
+    palette   0.533     <- chance
+    rules     0.500     <- chance
+    sizes     0.400     <- below chance
+    lines     0.333     <- below chance
+    letters   0.033     <- worse than chance
+
+So the metric is not "a style distance whose aspect component happens to matter". On this corpus it
+is very nearly an **ASPECT-RATIO DETECTOR with five near-random components attached**. That is a
+materially different claim, and a reader deciding whether to trust the metric needs it.
+
+THREE THINGS I CHECKED BEFORE BELIEVING IT:
+
+**Is it overfitting?** A leave-one-out weight search -- pick the best dimension on 29 pairs, test on
+the 30th -- scores **0.867**, identical to always picking `aspect`. So no: aspect genuinely carries
+the discrimination on THIS corpus. Whether it carries it elsewhere is exactly what human validation
+would settle, and that question is now sharp instead of vague.
+
+**Are the declared weights optimal?** No. EQUAL weights score **0.967** against the declared
+**0.900**. But that number is tuned on the same 30 pairs and proves nothing, so it is reported as a
+statement about the weights, not as an improvement. A test asserts it stays recorded so nobody
+reports 0.967 as a result.
+
+**Does the negative control still hold?** Yes -- and it is the reason the 0.033 for `letters` is
+trustworthy rather than a bug: the metric is not inverted, one component simply carries no
+information.
+
+FIXED BY MAKING THE SUMMARY RE-DERIVABLE. `scripts/validate_metric_claims.py` recomputes every
+number from the pairs, and the status board now carries the finding as its "Sharpest limit":
+
+    The style metric is, on its own validation corpus, very nearly an ASPECT-ONLY check: aspect
+    alone scores 0.867 while every other component is at or below 0.533 (chance or worse). The
+    recorded summary said 'withholding aspect drops accuracy to 0.700', which understates it --
+    the other five components contribute nothing here.
+
+THE GENERAL RULE, which this project keeps re-learning: **a summary may not be less informative
+than the data behind it.** The 0.700 caveat was true and pointed at the right component, but it read
+as "aspect matters a lot" when the data say "nothing else matters at all". Both sentences are about
+the same numbers; only one of them tells a reader what to do.
+
+Suite: 608 passed, 3 skipped.

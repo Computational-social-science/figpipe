@@ -48,14 +48,14 @@
   "min_margin": 0.1,
   "min_score": null,
   "probed": true,
-  "baseline_mean": 1.0,
+  "baseline_mean": 0.928571,
   "mean_score": {
-    "baseline": 1.0,
-    "split-max-bars-24": 0.864286,
-    "split-max-bars-13": 1.0,
-    "matrix-max-rows-41": 1.0,
-    "matrix-max-rows-42": 1.0,
-    "matrix-max-rows-60": 1.0
+    "baseline": 0.928571,
+    "split-max-bars-24": 0.792857,
+    "split-max-bars-13": 0.928571,
+    "matrix-max-rows-41": 0.928571,
+    "matrix-max-rows-42": 0.928571,
+    "matrix-max-rows-60": 0.928571
   },
   "ledger": {
     "mode": "mutation",
@@ -135,8 +135,8 @@
       "parameter": "max_bars",
       "value": 24,
       "baseline_value": 12,
-      "score": 0.864286,
-      "baseline_score": 1.0,
+      "score": 0.792857,
+      "baseline_score": 0.928571,
       "delta": -0.135714,
       "verdict": "rejected",
       "reason": "regresses 1 task(s) on the fixed set, worst 'split-many-bars' by -0.950 (>= margin 0.1); a task that gets worse is a regression whatever the mean says; changed tasks: ['split-many-bars']",
@@ -167,7 +167,7 @@
         },
         "matrix-real-40x10": {
           "outcome": "rendered",
-          "score": 1.0,
+          "score": 0.5,
           "expected": "clean",
           "detail": ""
         },
@@ -203,8 +203,8 @@
       "parameter": "max_bars",
       "value": 13,
       "baseline_value": 12,
-      "score": 1.0,
-      "baseline_score": 1.0,
+      "score": 0.928571,
+      "baseline_score": 0.928571,
       "delta": 0.0,
       "verdict": "tie",
       "reason": "no measurable difference on the fixed task set (+0.000); the task set cannot distinguish this edit from the baseline, so it is reported as a tie",
@@ -225,7 +225,7 @@
         },
         "matrix-real-40x10": {
           "outcome": "rendered",
-          "score": 1.0,
+          "score": 0.5,
           "expected": "clean",
           "detail": ""
         },
@@ -261,8 +261,8 @@
       "parameter": "max_rows",
       "value": 41,
       "baseline_value": 40,
-      "score": 1.0,
-      "baseline_score": 1.0,
+      "score": 0.928571,
+      "baseline_score": 0.928571,
       "delta": 0.0,
       "verdict": "tie",
       "reason": "no measurable difference on the fixed task set (+0.000); the task set cannot distinguish this edit from the baseline, so it is reported as a tie",
@@ -285,7 +285,7 @@
         },
         "matrix-real-40x10": {
           "outcome": "rendered",
-          "score": 1.0,
+          "score": 0.5,
           "expected": "clean",
           "detail": ""
         },
@@ -321,8 +321,8 @@
       "parameter": "max_rows",
       "value": 42,
       "baseline_value": 40,
-      "score": 1.0,
-      "baseline_score": 1.0,
+      "score": 0.928571,
+      "baseline_score": 0.928571,
       "delta": 0.0,
       "verdict": "tie",
       "reason": "no measurable difference on the fixed task set (+0.000); the task set cannot distinguish this edit from the baseline, so it is reported as a tie",
@@ -346,7 +346,7 @@
         },
         "matrix-real-40x10": {
           "outcome": "rendered",
-          "score": 1.0,
+          "score": 0.5,
           "expected": "clean",
           "detail": ""
         },
@@ -382,8 +382,8 @@
       "parameter": "max_rows",
       "value": 60,
       "baseline_value": 40,
-      "score": 1.0,
-      "baseline_score": 1.0,
+      "score": 0.928571,
+      "baseline_score": 0.928571,
       "delta": 0.0,
       "verdict": "tie",
       "reason": "no measurable difference on the fixed task set (+0.000); the task set cannot distinguish this edit from the baseline, so it is reported as a tie",
@@ -408,7 +408,7 @@
         },
         "matrix-real-40x10": {
           "outcome": "rendered",
-          "score": 1.0,
+          "score": 0.5,
           "expected": "clean",
           "detail": ""
         },
