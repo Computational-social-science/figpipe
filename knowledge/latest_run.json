@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-21T18:05:12",
+  "run_at": "2026-10-21T20:26:26",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -9,19 +9,16 @@
     "  passed 8, failed 0",
     "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
     "  wrote knowledge\\evolution_report.json",
-    "  lean: tracked 77.4 -> 77.4 MB, worktree 131.3 -> 129.9 MB"
+    "  lean: tracked 77.4 -> 77.4 MB, worktree 131.5 -> 130.0 MB"
   ],
   "tests_ok": true,
-  "tests_summary": "629 passed, 3 skipped, 1 warning in 266.10s (0:04:26)",
+  "tests_summary": "648 passed, 3 skipped, 1 warning in 250.45s (0:04:10)",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
   "published": {
     "pushed": false,
-    "withheld": [],
-    "blocked_deletions": [],
-    "skipped": true,
-    "reason": "no knowledge change: the run record stays uncommitted for the next run"
+    "reason": "not yet published"
   },
   "check_results": {
     "L01": {
@@ -139,7 +136,7 @@
     "tail": [
       "    type Box/Violin     ok 1/1   d=0.166 base=0.449 delta=0.283 errors=0",
       "    type Distribution   ok 4/4   d=0.225 base=0.248 delta=0.024 errors=0",
-      "    type Heatmap        ok 1/1   d=0.428 base=0.547 delta=0.119 errors=0",
+      "    type Heatmap        ok 1/1   d=0.357 base=0.591 delta=0.234 errors=0",
       "  wrote E:\\2026-AI4S\\figpipe\\corpus\\e2e\\plottwin_report.json"
     ]
   },
@@ -600,9 +597,9 @@
     "benchmark_ok": 139,
     "benchmark_infrastructure_failures": 0,
     "benchmark_success_rate": 1.0,
-    "benchmark_mean_distance": 0.313,
-    "benchmark_anchor_single": 0.355,
-    "benchmark_anchor_distance": 0.355,
+    "benchmark_mean_distance": 0.315,
+    "benchmark_anchor_single": 0.357,
+    "benchmark_anchor_distance": 0.357,
     "benchmark_shipped_anchor_single": 0.296,
     "benchmark_shipped_anchor_distance": 0.296,
     "benchmark_unsupported": 11,
@@ -610,27 +607,45 @@
     "benchmark_official_improvement": 37.25,
     "statistics_reproduced": 15,
     "knowledge_version": 16,
-    "tests": 629
+    "tests": 648
   },
   "capabilities_delta": {
     "changed": true,
     "delta": {
+      "benchmark_mean_distance": {
+        "before": 0.313,
+        "after": 0.315
+      },
+      "benchmark_anchor_single": {
+        "before": 0.355,
+        "after": 0.357
+      },
+      "benchmark_anchor_distance": {
+        "before": 0.355,
+        "after": 0.357
+      },
       "tests": {
-        "before": 619,
-        "after": 629
+        "before": 629,
+        "after": 648
       }
     },
     "verdict": {
       "gains": [
         {
           "field": "tests",
-          "before": 619,
-          "after": 629
+          "before": 629,
+          "after": 648
         }
       ],
-      "regressions": [],
+      "regressions": [
+        {
+          "field": "benchmark_anchor_single",
+          "before": 0.355,
+          "after": 0.357
+        }
+      ],
       "corrections": [],
-      "ok": true,
+      "ok": false,
       "judged_fields": [
         "benchmark_anchor_single",
         "benchmark_official_code_score",
@@ -645,8 +660,14 @@
       ]
     }
   },
-  "ok": true,
-  "capability_ok": true,
-  "capability_regressions": [],
-  "publish_note": "The publish outcome is recorded after the commit that carries this run, so it describes the push triggered by this run; the file's own commit is made by the next scheduled run."
+  "ok": false,
+  "capability_ok": false,
+  "capability_regressions": [
+    {
+      "field": "benchmark_anchor_single",
+      "before": 0.355,
+      "after": 0.357
+    }
+  ],
+  "publish_note": "capability regression detected; record kept but the run exits non-zero (re-run with --accept-capability-regression to accept)"
 }
