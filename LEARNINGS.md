@@ -3785,3 +3785,47 @@ A test now drops a middle offset (must report a gap) and separately drops the la
 report a short tail while still contiguous). The second test is the one that found the bug.
 
 Suite: 671 passed, 3 skipped. Scheduled run exits 0.
+
+
+## 119. The gate could say CLOSED while its controls had never run (2026-10-21)
+
+`gate.py` quotes BootLoops' standard in its own docstring:
+
+    CLOSED only if every dimension passed AND the controls fired.
+
+I audited the module's seven declared clauses one at a time. Six were implemented. The seventh was
+implemented in a way that left a hole, and the hole is the exact failure the module was written to
+prevent.
+
+THE DESIGN, AND WHY IT WAS RIGHT. `close()` judges the figure's dimensions; `validate()` runs the
+positive and negative controls. They are separate for a real reason recorded in the code: `run_gate`
+never sets controls, so folding them into `close()` made EVERY gate OPEN -- including one whose every
+check passed. "A verdict that cannot be reached is as meaningless as one that is always reached."
+
+THE HOLE. Measured: a figure could be judged while the controls had never run in this process. The
+certificate carried `verdict: CLOSED` and `controls: {}`. That is "the gate that cannot fail" --
+the FIRST failure mode BootLoops names, and the one this project has been fixing one instance at a
+time for fifty rounds.
+
+THE FIX IS NOT TO FOLD THE CONTROLS BACK IN. That re-creates the unreachable verdict. It is to make
+the CERTIFICATE state whether the mechanism behind the verdict was ever exercised:
+
+    controls_exercised   did a control run get recorded on this gate
+    admissible           a CLOSED verdict is admissible only if it did
+
+and `validate()` now records its outcome at module level, so `run_gate` can carry it onto the
+certificate. Measured end to end:
+
+    gate: CLOSED  (INADMISSIBLE: the gate's controls have not been exercised in this run, so a
+                   pass certifies nothing -- run gate.validate() first)
+
+THE GENERAL SHAPE, which is the third time this month: **the mechanism was right and the REPORTING
+was wrong.** The gate knew how to check itself; nothing required the certificate to say whether it
+had. A reader seeing `CLOSED` could not distinguish "passed a gate that works" from "passed a gate
+nobody has seen reject anything".
+
+WHY SEPARATING DIMENSIONS FROM CONTROLS IS STILL CORRECT: `admissible` is False only for a POSITIVE
+claim. An OPEN verdict asserts a failure and needs no control behind it. Only "this figure passed"
+requires the mechanism to have been shown able to reject.
+
+Suite: 677 passed, 3 skipped. Scheduled run exits 0.

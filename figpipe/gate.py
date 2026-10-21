@@ -110,6 +110,15 @@ class Gate:
         return {
             "name": self.name,
             "verdict": self.verdict,
+            # IS THIS VERDICT ADMISSIBLE? A CLOSED verdict from a gate that has never been shown to
+            # be able to reject anything certifies nothing -- "the gate that cannot fail", which is
+            # the first failure mode BootLoops names and the one this project kept skipping.
+            #
+            # The controls are recorded on the gate by `validate()`. A figure's own verdict is
+            # computed from its dimensions (separating them keeps the verdict REACHABLE), but a
+            # consumer must be able to see whether the mechanism behind it was ever exercised.
+            "controls_exercised": bool(self.controls),
+            "admissible": (self.verdict != CLOSED) or bool(self.controls),
             "checks": [c.to_dict() for c in self.checks],
             "controls": dict(self.controls),
             "notes": list(self.notes),
@@ -196,6 +205,13 @@ def run_gate(pdf_path, *, result: dict | None = None, name: str = "figure") -> G
                      f"letters found: {struct['panel_labels']}")
 
     gate.close()
+    # CARRY THE CONTROL STATE ONTO THE CERTIFICATE. The verdict is about the FIGURE; this says
+    # whether the mechanism that produced it has been shown able to reject anything. Without it a
+    # consumer sees "CLOSED" and cannot tell whether that means "this figure passed a gate that
+    # works" or "this figure passed a gate nobody has ever seen fail".
+    if _CONTROL_STATE["validated"]:
+        gate.controls["gate_can_fire"] = _CONTROL_STATE["gate_can_fire"]
+        gate.controls["validated_at"] = _CONTROL_STATE["at"]
     return gate
 
 
@@ -275,6 +291,15 @@ def pipeline_controls(tmp_dir) -> dict:
     }
 
 
+#: What the last `validate()` call established, at module level.
+#:
+#: WHY MODULE-LEVEL: `validate()` runs the controls; `run_gate()` judges a figure. A figure's gate
+#: has no way to know whether the controls were ever exercised unless that fact is recorded
+#: somewhere both can see. Without it, `to_dict()["admissible"]` would always be False for a real
+#: figure and the field would be noise rather than information.
+_CONTROL_STATE: dict = {"validated": False, "gate_can_fire": None, "at": None}
+
+
 def validate(tmp_dir) -> dict:
     """Run both controls and report whether the gate can fire.
 
@@ -284,6 +309,10 @@ def validate(tmp_dir) -> dict:
     pos = positive_control(tmp_dir)
     neg = negative_control(tmp_dir)
     ok = bool(pos["fired"]) and bool(neg["fired"])
+    # RECORD IT. A control run that leaves no trace cannot be cited by the next verdict.
+    import time as _time
+    _CONTROL_STATE.update({"validated": True, "gate_can_fire": ok,
+                           "at": _time.strftime("%Y-%m-%dT%H:%M:%S")})
     return {
         "gate_can_fire": ok,
         "positive": {"fired": pos["fired"], "verdict": pos["verdict"]},

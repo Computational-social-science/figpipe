@@ -741,7 +741,7 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
                     "with a positive control that must pass and a negative control that must fail at "
                     "the right check. Seven of BootLoops' eleven failure modes are bugs this project "
                     "found one per round.",
-                    "figpipe/gate.py", meta="9 tests, controls verified"),
+                    "figpipe/gate.py", meta="15 tests, controls verified, certificate carries admissibility"),
         deliverable("Structure read without a model", "figure_type and panel_labels_present are "
                     "now measured from the PDF's text and font sizes. Eight of the ten fields a VLM "
                     "was asked for are deterministic; the controls showed the model fabricated 20 "

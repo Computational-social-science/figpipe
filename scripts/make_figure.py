@@ -138,7 +138,15 @@ def finish(result: dict, width_mm: float) -> int:
     # "is this done", which is the standard BootLoops states and this project kept re-learning one
     # bug at a time. CLOSED requires every declared check to have passed; anything less is OPEN.
     g = gate_mod.run_gate(pdf, result=result, name=pathlib.Path(pdf).stem)
-    say(f"  gate: {g.verdict}")
+    # PRINT THE ADMISSIBILITY WITH THE VERDICT. `CLOSED` alone is an adjective: it does not say
+    # whether the mechanism behind it has ever been shown to reject anything. A CLOSED verdict from
+    # an unexercised gate is inadmissible, and the CLI must not hide that.
+    _d = g.to_dict()
+    if _d["admissible"]:
+        say(f"  gate: {g.verdict}")
+    else:
+        say(f"  gate: {g.verdict}  (INADMISSIBLE: the gate's controls have not been exercised in "
+            f"this run, so a pass certifies nothing -- run gate.validate() first)")
     for c in g.checks:
         if not c.passed:
             say(f"    ! {c.name}: measured {c.measured!r}, required {c.required}")
