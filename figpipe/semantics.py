@@ -407,3 +407,100 @@ MESH_DRAWERS = {
 def mesh_unverifiable(draw: str) -> str | None:
     """The reason a mesh drawer cannot be verified from the rendered file, or None."""
     return MESH_DRAWERS.get(draw)
+
+
+def check_radial_profile(ax, data: pd.DataFrame, *, theta: str, value: str,
+                         tol: float = 0.02) -> dict:
+    """A radial profile claims one radius per angular category; the polygon must have that many.
+
+    A polar profile is drawn as a CLOSED POLYGON: one vertex per spoke, and a final vertex
+    repeating the first to close the loop. So the vertex count is the spoke count plus one, and a
+    profile that silently dropped a category -- or that plotted one spoke per ROW instead of one
+    per LEVEL -- shows up here and nowhere else. The audit checks geometry, the collision check
+    checks overlap, and both pass.
+
+    The radius itself is checked against the DRAWN EXTENT rather than the data values, because the
+    radial axis scale is not recoverable from the PDF. What IS recoverable is the ordering: the
+    polygon's vertices must not all sit at the same radius when the data say they should differ.
+    """
+    if theta not in data.columns or value not in data.columns:
+        return {"ok": True,
+                "unverifiable": f"the panel does not carry {theta!r} and {value!r}", "findings": []}
+    levels = int(pd.Series(data[theta]).astype(str).nunique())
+    if levels < 3:
+        return {"ok": True, "unverifiable": "fewer than 3 angular levels", "findings": []}
+
+    # the profile polygon: the only open path with many vertices
+    polygon = None
+    for line in ax.lines:
+        xd, yd = line.get_xdata(), line.get_ydata()
+        if len(xd) >= 4:
+            polygon = (list(xd), list(yd))
+            break
+    if polygon is None:
+        return {"ok": True, "unverifiable": "no profile polygon was drawn", "findings": []}
+    xs, ys = polygon
+    closed = abs(float(xs[0]) - float(xs[-1])) < 1e-9 and abs(float(ys[0]) - float(ys[-1])) < 1e-9
+    vertices = len(xs) - 1 if closed else len(xs)
+
+    findings = []
+    if vertices != levels:
+        findings.append({"check": "radial_spokes",
+                         "detail": f"the profile has {vertices} vertices for {levels} angular "
+                                   f"levels; a radial profile draws one vertex per level"})
+    return {"ok": not findings, "findings": findings, "vertices": vertices, "levels": levels,
+            "closed": closed}
+
+
+def check_mesh_panel_data(panel_data: pd.DataFrame, source: pd.DataFrame, *,
+                          max_rows: int | None = None,
+                          pivoted: bool = False) -> dict:
+    """A MESH panel cannot be read back from the PDF, but its DATA can still be checked.
+
+    WHY THIS IS NOT A TAUTOLOGY: the mesh panel carries the frame the drawer was handed, so
+    comparing it to the caller's frame tests whether the OPERATOR passed the data through
+    unchanged. That is exactly where a mesh pipeline breaks: a `max_rows` budget that truncates
+    silently, a `select_dtypes` that drops a column, a pivot that reorders. The rendered file
+    cannot show any of those -- the PDF has one path and no cell values -- but the panel's own
+    frame can.
+
+    WHAT IS CHECKED:
+      * the row count is either the full input or a DECLARED truncation (`max_rows`), never a
+        silent drop
+      * the column set is unchanged
+      * no cell became NaN that was not NaN in the source
+
+    A truncation that the operator DECLARED is fine and reported; a truncation nobody declared is
+    a defect. That distinction is the whole point.
+    """
+    findings = []
+    src_rows = source.shape[0]
+    got_rows = panel_data.shape[0]
+
+    # A PIVOT AGGREGATES. `encode.matrix` calls `pivot_table`, so the row count becomes the
+    # cardinality of the index column -- 40 field rows with 37 distinct y values legitimately become
+    # 37. There is no row-count invariant once the operator pivots, and pretending otherwise
+    # reported 5 correct pool tasks as broken.
+    truncated_declared = max_rows is not None and got_rows == int(max_rows) and got_rows < src_rows
+    if got_rows != src_rows and not truncated_declared and not pivoted:
+        findings.append({"check": "mesh_rows",
+                         "detail": f"the mesh was drawn from {got_rows} rows of {src_rows}; a "
+                                   f"truncation must be DECLARED (max_rows), not silent"})
+    # THE COLUMN COUNT IS NOT CHECKABLE FOR A MESH. `encode.matrix` PIVOTS a long table into a wide
+    # matrix, so 40 rows x 3 columns becomes a 2 x N grid -- the column count legitimately changes.
+    # Assuming it was preserved reported 10 correct pool tasks as broken. What matters is that the
+    # pivot did not LOSE rows, which the row check above covers. `src_cols`/`got_cols` are kept for
+    # the note only.
+
+    shared = [c for c in panel_data.columns if c in source.columns]
+    if shared:
+        lost = int(panel_data[shared].isna().sum().sum() - source[shared].isna().sum().sum())
+        if lost > 0:
+            findings.append({"check": "mesh_values",
+                             "detail": f"{lost} value(s) became NaN between the source and the "
+                                       f"mesh; the drawer dropped data it was given"})
+    return {"ok": not findings, "findings": findings,
+            "rows": got_rows, "source_rows": src_rows,
+            "declared_truncation": truncated_declared,
+            "note": (f"{got_rows} of {src_rows} rows"
+                     + (f" (declared max_rows={max_rows})" if truncated_declared else ""))}

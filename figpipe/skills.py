@@ -631,11 +631,21 @@ def op_verify_semantics(ctx: SkillContext, fig, pdf_path):
     #: A histogram is the drawer behind `faceted_distribution`'s per-level panels, which accounted
     #: for 15 of the pool's unverified tasks.
     HIST_DRAWERS = {"histogram"}
+    #: A radial profile draws a closed polygon with one vertex per angular level.
+    RADIAL_DRAWERS = {"polar_profile"}
     for i, (panel, ax) in enumerate(zip(ctx.panels, fig.axes)):
         if panel.draw in BAR_DRAWERS:
             kw = dict(panel.kwargs)
             res = semantics.check_bar_heights(ax, panel.data, x=kw.get("x"),
                                               ycols=kw.get("ycols") or [])
+            for f in res["findings"]:
+                ctx.findings.append({"check": f"semantics.{f['check']}",
+                                     "detail": f["detail"], "severity": "hard"})
+            continue
+        if panel.draw in RADIAL_DRAWERS:
+            kw = dict(panel.kwargs)
+            res = semantics.check_radial_profile(ax, panel.data, theta=kw.get("theta"),
+                                                 value=kw.get("value"))
             for f in res["findings"]:
                 ctx.findings.append({"check": f"semantics.{f['check']}",
                                      "detail": f["detail"], "severity": "hard"})
@@ -663,7 +673,25 @@ def op_verify_semantics(ctx: SkillContext, fig, pdf_path):
             # REASON is different from "we have not written the rule yet". The trace records which.
             why = semantics.mesh_unverifiable(panel.draw)
             if why:
-                ctx.trace.append(f"verify.semantics(mesh panel {i}: {panel.draw} -- {why})")
+                # THE PDF CANNOT BE READ, BUT THE DATA CAN. The mesh panel carries the frame the
+                # drawer was handed, so the operator's data pass-through is still checkable -- and
+                # that is where a mesh pipeline actually breaks (a silent truncation, a dropped
+                # column). A truncation the operator DECLARED is reported; one nobody declared is a
+                # finding.
+                kw = dict(panel.kwargs)
+                # THE OPERATOR SAYS WHEN IT PIVOTED, in the trace it already writes. Reading that
+                # is honest; inventing an attribute nothing sets would be a check that is silently
+                # always-false.
+                pivoted = any("matrix.pivot" in t for t in ctx.trace)
+                res = semantics.check_mesh_panel_data(panel.data, ctx.data,
+                                                      max_rows=kw.get("max_rows"),
+                                                      pivoted=pivoted)
+                for f in res["findings"]:
+                    ctx.findings.append({"check": f"semantics.{f['check']}",
+                                         "detail": f["detail"], "severity": "hard"})
+                ctx.trace.append(
+                    f"verify.semantics(mesh panel {i}: {panel.draw} -- {why}; "
+                    f"data-level check: {res['note']})")
             else:
                 ctx.trace.append(f"verify.semantics(skip panel {i}: {panel.draw})")
             continue

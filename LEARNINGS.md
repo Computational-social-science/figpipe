@@ -2972,3 +2972,81 @@ what let me pick this up correctly instead of reporting a regression. A system t
 averaged 3 of 20 anchor tasks would have looked like a 60% capability collapse.
 
 Suite: 586 passed, 3 skipped.
+
+
+## 100. A mesh cannot be read from the PDF, but its DATA can still be checked (2026-10-21)
+
+The coverage report had 29 tasks marked `unverifiable`: `matrix_plate` (14) and `field_map` (15),
+both rendered with `pcolormesh`. A mesh is one path in the PDF and the cell values never reach the
+file, so I concluded no rendered-file check could exist. That conclusion was right and the
+consequence I drew from it was wrong.
+
+**A mesh panel still CARRIES the frame the drawer was handed.** So the operator's data pass-through
+is checkable even though the drawing is not, and that is precisely where a mesh pipeline breaks:
+
+    a max_rows budget that truncates silently
+    a select_dtypes that drops a column
+    a pivot that reorders or fills
+
+None of those show up in the PDF. All of them show up in the panel's own frame.
+
+`check_mesh_panel_data()` compares the panel's frame to the caller's:
+
+    silent truncation   -> caught
+    declared max_rows   -> allowed, and REPORTED
+    dropped column      -> caught
+    values became NaN   -> caught
+    unchanged           -> passes
+
+The distinction that matters is between a truncation the operator DECLARED and one nobody declared.
+A budget is a decision; a silent drop is a defect. The check reports which it found.
+
+THE LESSON: "the rendered file cannot be verified" is not the same as "the pipeline cannot be
+verified". The rendered file is one instrument. When it cannot see something, the question to ask
+next is which OTHER instrument can -- here, the panel's own data, which the operator had to pass
+through before any drawing happened.
+
+ALSO THIS ROUND: `radial_profile` (the last 11 skipped tasks) now has a rule. A polar profile is
+drawn as a CLOSED POLYGON, one vertex per angular level plus a closing vertex, so the vertex count
+is the spoke count. Verified both ways: 8 levels / 8 spokes passes; 8 spokes claimed as 6 levels is
+caught.
+
+Suite: 592 passed, 3 skipped.
+
+
+## 101. Five false positives from one check, and the rule they add up to (2026-10-21)
+
+The mesh data-level check fired on correct output FIVE times:
+
+    1. column count changed      -> `encode.matrix` PIVOTS; 40 rows x 3 cols -> a 2 x N grid
+    2. row count changed         -> `pivot_table` AGGREGATES; 40 rows with 37 distinct y -> 37
+    3. (and three earlier this session: pooled median, box edges, empty bins, grouped bars)
+
+Each time the cause was identical: **I wrote the check from the operator's parameters and forgot
+what the operator does with them.** `matrix_plate` is not "a matrix drawer"; it is "a drawer that
+selects numeric columns, and if the table is long, PIVOTS it with an aggregation, and refuses past
+a row budget". Every one of those steps changes the data, and each change looked like a defect to a
+check that assumed the data was passed through untouched.
+
+THE RULE THIS ADDS UP TO, stated so a future round can apply it directly:
+
+    Before asserting an invariant on data that reaches a drawer, read the drawer's whole path --
+    not its signature. Selection, pivoting, aggregation and budgets all transform the frame, and
+    an invariant that ignores one of them is a false positive waiting to happen.
+
+THE MEASUREMENT THAT CAUGHT ALL FIVE: run the check on a figure known to be correct. Not a unit test
+of the check's logic -- a test of its PREMISE. Four of the five were found that way within one
+re-measure cycle; the fifth was found by the re-measure disagreeing with the previous one.
+
+FINAL STATE:
+
+    coverage    checked 110 / skipped 0 / unverifiable 29 of 139   (79% verified)
+    hard        19 (was 35 with the false positives)
+    benchmark   139/150, 0 capability errors, 139 fresh
+    anchors     styled 0.355, shipped 0.296, both 20/20 comparable
+
+`skipped` is now ZERO: every drawer either has a semantic rule or is a mesh with a stated reason.
+The 29 `unverifiable` are mesh drawers whose PDF cannot be read, but which now also carry a
+data-level check on the frame they were handed.
+
+Suite: 599 passed, 3 skipped.

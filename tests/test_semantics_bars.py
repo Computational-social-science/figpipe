@@ -269,3 +269,133 @@ def test_an_ungrouped_histogram_with_too_many_bars_is_still_caught():
                                     bins=3, density=False)
     assert res["ok"] is False
     plt.close(fig)
+
+
+# ---------------------------------------------------------------------------------------
+# RADIAL PROFILE -- the last 11 skipped tasks
+# ---------------------------------------------------------------------------------------
+
+def _polar_axes(n_spokes=8):
+    angles = np.linspace(0, 2 * np.pi, n_spokes, endpoint=False)
+    vals = np.random.default_rng(0).random(n_spokes)
+    fig = plt.figure()
+    ax = fig.add_subplot(111, polar=True)
+    ax.plot(list(angles) + [angles[0]], list(vals) + [vals[0]])
+    data = pd.DataFrame({"a": [f"a{i}" for i in range(n_spokes)], "v": vals})
+    return fig, ax, data
+
+
+def test_a_correct_radial_profile_passes():
+    fig, ax, data = _polar_axes(8)
+    res = semantics.check_radial_profile(ax, data, theta="a", value="v")
+    assert res["ok"] is True, res["findings"]
+    assert res["vertices"] == 8
+    assert res["levels"] == 8
+    plt.close(fig)
+
+
+def test_a_radial_profile_with_the_wrong_spoke_count_is_caught():
+    """NEGATIVE CONTROL: a profile that dropped a category changes what the figure claims."""
+    fig, ax, data = _polar_axes(8)
+    fewer = data.iloc[:6]
+    res = semantics.check_radial_profile(ax, fewer, theta="a", value="v")
+    assert res["ok"] is False
+    assert "radial_spokes" in res["findings"][0]["check"]
+    plt.close(fig)
+
+
+def test_the_polygon_is_recognised_as_closed():
+    """The final vertex repeats the first to close the loop, so vertices = points - 1."""
+    fig, ax, data = _polar_axes(6)
+    res = semantics.check_radial_profile(ax, data, theta="a", value="v")
+    assert res["closed"] is True
+    assert res["vertices"] == 6
+    plt.close(fig)
+
+
+def test_radial_profile_is_now_semantically_checked():
+    rng = np.random.default_rng(0)
+    df = pd.DataFrame({"angle": [f"a{i}" for i in range(8)] * 3,
+                       "value": rng.random(24)})
+    res = skills.run("radial_profile", df, out_stem=None, theta="angle", value="value")
+    skips = [t for t in res["trace"] if "semantics(skip" in t]
+    assert not skips, f"polar_profile is still skipped: {skips}"
+    assert res["hard_failures"] == 0, res["findings"]
+
+
+# ---------------------------------------------------------------------------------------
+# MESH DATA-LEVEL CHECK -- the 29 unverifiable tasks get a check after all
+#
+# A pcolormesh is ONE path in the PDF, so the cell values never reach the file. But the panel
+# CARRIES the frame the drawer was handed, so the operator's data pass-through is still checkable
+# -- and that is where a mesh pipeline actually breaks: a silent truncation, a dropped column.
+# ---------------------------------------------------------------------------------------
+
+def _mesh_src(rows=10, cols=4):
+    rng = np.random.default_rng(0)
+    return pd.DataFrame({f"c{i}": rng.normal(0, 1, rows) for i in range(cols)})
+
+
+def test_an_unchanged_mesh_passes():
+    src = _mesh_src()
+    res = semantics.check_mesh_panel_data(src.copy(), src)
+    assert res["ok"] is True, res["findings"]
+    assert res["rows"] == res["source_rows"]
+
+
+def test_a_silent_truncation_is_caught():
+    """THE DEFECT THIS EXISTS FOR: a max_rows budget that drops rows without saying so."""
+    src = _mesh_src(rows=10)
+    res = semantics.check_mesh_panel_data(src.head(5), src)
+    assert res["ok"] is False
+    assert "mesh_rows" in res["findings"][0]["check"]
+    assert "DECLARED" in res["findings"][0]["detail"]
+
+
+def test_a_DECLARED_truncation_is_allowed():
+    """NEGATIVE CONTROL: the check must not fire on a truncation the operator declared."""
+    src = _mesh_src(rows=10)
+    res = semantics.check_mesh_panel_data(src.head(5), src, max_rows=5)
+    assert res["ok"] is True, res["findings"]
+    assert res["declared_truncation"] is True
+    assert "declared" in res["note"]
+
+
+def test_a_PIVOT_is_not_a_defect():
+    """THE BUG: `encode.matrix` PIVOTS a long table, so the column set and row count CHANGE.
+
+    40 field rows x 3 columns becomes a 2 x N grid; 40 rows with 37 distinct y values becomes 37
+    rows. Both are the operator's documented behaviour, and an earlier version of this check
+    reported 10 pool tasks as broken for it. A mesh whose data path is a pivot has no row- or
+    column-count invariant, and saying so is better than a check that fires on correct output.
+    """
+    src = _mesh_src(rows=10, cols=4)
+    pivoted = src.head(5).drop(columns=["c3"])          # what a pivot leaves behind
+    res = semantics.check_mesh_panel_data(pivoted, src, pivoted=True)
+    assert res["ok"] is True, res["findings"]
+
+
+def test_a_pivot_without_the_flag_is_still_caught():
+    """NEGATIVE CONTROL: the exemption must be declared, not assumed."""
+    src = _mesh_src(rows=10, cols=4)
+    res = semantics.check_mesh_panel_data(src.head(5), src, pivoted=False)
+    assert res["ok"] is False
+
+
+def test_values_turned_into_nan_are_caught():
+    src = _mesh_src()
+    broken = src.copy()
+    broken.iloc[0, 0] = np.nan
+    res = semantics.check_mesh_panel_data(broken, src)
+    assert res["ok"] is False
+    assert "mesh_values" in res["findings"][0]["check"]
+
+
+def test_a_mesh_skill_reports_the_data_level_check():
+    rng = np.random.default_rng(0)
+    df = pd.DataFrame({f"c{i}": rng.normal(0, 1, 6) for i in range(5)})
+    res = skills.run("matrix_plate", df, out_stem=None)
+    trace = " ".join(res["trace"])
+    assert "data-level check" in trace, (
+        f"the mesh panel is reported without its data-level check: {trace[:300]}")
+    assert res["hard_failures"] == 0, res["findings"]
