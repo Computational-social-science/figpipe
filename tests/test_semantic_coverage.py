@@ -147,3 +147,64 @@ def test_the_coverage_report_counts_unverifiable_separately(bench):
     src = inspect.getsource(bench)
     assert '"unverifiable": states.count("unverifiable")' in src, (
         "the coverage report does not count unverifiable tasks separately from skipped ones")
+
+
+# ---------------------------------------------------------------------------------------
+# `semantic_checked` IS A FOUR-WAY STRING, NOT A BOOLEAN
+#
+# I wrote `if t.get("semantic_checked")` and concluded 139/139 tasks were verified. The truth was
+# 110/139: "unverifiable", "skipped" and "absent" are all truthy strings. The report was right and
+# my reading was wrong -- but the field NAME is what made the wrong reading natural.
+#
+# This is the same defect class as two functions sharing a name: the label promises one thing and
+# the value is another. The helper makes the boolean question explicit.
+# ---------------------------------------------------------------------------------------
+
+def test_the_field_is_not_a_boolean():
+    """Pin the fact that caused the misreading, so nobody re-introduces the truthiness test."""
+    import json
+    report = ROOT / "corpus" / "e2e" / "plottwin_report.json"
+    if not report.is_file():
+        pytest.skip("no benchmark report")
+    b = json.loads(report.read_text(encoding="utf-8"))
+    ok = [t for t in b["tasks"] if t.get("status") == "ok"]
+    if not ok:
+        pytest.skip("no ok tasks")
+    values = {t.get("semantic_checked") for t in ok}
+    assert values <= {"checked", "skipped", "unverifiable", "absent"}, (
+        f"semantic_checked holds unexpected values: {values}")
+    assert isinstance(values.pop(), str), "the field is a string, not a bool"
+
+
+def test_semantic_verified_counts_only_checked_tasks():
+    """THE BUG: truthiness says 139/139; the helper must say 110/139."""
+    import json
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import bench_plottwin as B
+    report = ROOT / "corpus" / "e2e" / "plottwin_report.json"
+    if not report.is_file():
+        pytest.skip("no benchmark report")
+    b = json.loads(report.read_text(encoding="utf-8"))
+    ok = [t for t in b["tasks"] if t.get("status") == "ok"]
+    truthy = sum(1 for t in ok if t.get("semantic_checked"))
+    verified = sum(1 for t in ok if B.semantic_verified(t))
+    assert verified <= truthy
+    if any(t.get("semantic_checked") != "checked" for t in ok):
+        assert verified < truthy, (
+            "there are non-checked tasks but the two counts agree; the helper is not filtering")
+
+
+def test_the_coverage_block_agrees_with_the_helper():
+    """The report's own counts must match what the helper computes from the same rows."""
+    import json
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import bench_plottwin as B
+    report = ROOT / "corpus" / "e2e" / "plottwin_report.json"
+    if not report.is_file():
+        pytest.skip("no benchmark report")
+    b = json.loads(report.read_text(encoding="utf-8"))
+    ok = [t for t in b["tasks"] if t.get("status") == "ok"]
+    cov = b.get("semantic_coverage") or {}
+    assert cov.get("checked") == sum(1 for t in ok if B.semantic_verified(t))
+    assert cov.get("unverifiable") == sum(
+        1 for t in ok if t.get("semantic_checked") == "unverifiable")

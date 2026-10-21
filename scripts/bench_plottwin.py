@@ -687,6 +687,21 @@ def _panel_for(skill, data, params):
     raise codegen.CodegenError(f"skill {skill!r} has no code emitter yet")
 
 
+#: The one value of `semantic_checked` that means the printed numbers WERE re-derived from data.
+SEMANTIC_VERIFIED = "checked"
+
+
+def semantic_verified(task: dict) -> bool:
+    """Did this task's printed numbers actually get re-derived from its data?
+
+    `task["semantic_checked"]` is a four-way STRING, not a flag. Testing it for truthiness is True
+    for "unverifiable", "skipped" and "absent" as well -- which makes a coverage gap read as
+    coverage. Measured: an `if task.get("semantic_checked")` check reported 139/139 verified when
+    the truth was 110/139.
+    """
+    return task.get("semantic_checked") == SEMANTIC_VERIFIED
+
+
 def semantic_state(result: dict) -> str:
     """Whether `verify.semantics` executed, and if not, why.
 
@@ -820,6 +835,10 @@ def run_task(row: dict, out_dir: pathlib.Path) -> dict:
             # DID THE CHECK RUN? An empty `semantic_findings` means "ran and found nothing" OR
             # "never ran", and those are opposite claims. 14 of 16 drawers skip the semantic check,
             # so this field is what separates a verified task from an unverified one.
+            # THE NAME IS `semantic_checked` AND THE VALUE IS NOT A BOOLEAN. It is one of
+            #     "checked" | "skipped" | "unverifiable" | "absent"
+            # so `if task["semantic_checked"]` is True for ALL FOUR -- including "unverifiable".
+            # Use `semantic_verified(task)` when the question is "was this actually verified".
             "semantic_checked": semantic_state(
                 styled if chosen_is_styled else plain),
         })

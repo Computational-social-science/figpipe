@@ -3829,3 +3829,49 @@ claim. An OPEN verdict asserts a failure and needs no control behind it. Only "t
 requires the mechanism to have been shown able to reject.
 
 Suite: 677 passed, 3 skipped. Scheduled run exits 0.
+
+
+## 120. `semantic_checked` is a four-way string, and I read it as a boolean (2026-10-21)
+
+Auditing `planted.py` first: its contract is complete. Four plants, each with an exactly known
+answer, all four recovered, and a corruption control that shifts the EXPECTED value and confirms the
+comparison then fails -- `fired: True`. No defect there.
+
+Then I went to the 29 `unverifiable` mesh tasks and immediately made an error worth recording.
+
+I checked the report with:
+
+    checked = [t for t in ok if t.get("semantic_checked")]
+    unchecked = [t for t in ok if not t.get("semantic_checked")]
+
+and got **139 checked, 0 unchecked**, which contradicted the report's own coverage block
+(110 checked / 29 unverifiable). My first conclusion was that the report was internally
+inconsistent -- a real defect.
+
+IT WAS MY READING. `semantic_checked` holds one of four STRINGS:
+
+    "checked" | "skipped" | "unverifiable" | "absent"
+
+and "unverifiable" is truthy. The report was right; I was wrong.
+
+WHY THIS IS STILL A DEFECT IN THE CODE, NOT ONLY IN MY HEAD: a field named `semantic_checked`
+promises a boolean. Holding an enum under a name that says "checked" makes the wrong reading the
+NATURAL one -- which is the same class as two functions sharing a name, where the label promises one
+thing and the value is another. I found that class last round; this round it caught me.
+
+The fix keeps the stored value (139 rows depend on it) and adds the explicit question:
+
+    SEMANTIC_VERIFIED = "checked"
+    def semantic_verified(task) -> bool
+
+Measured on the live report:
+
+    if t.get("semantic_checked")   139/139     wrong
+    semantic_verified(t)           110/139     right
+
+THE HABIT WORTH KEEPING: when a check disagrees with a report, the FIRST hypothesis is that the check
+is wrong. I got that backwards for about a minute and would have filed a false defect. The tell was
+that the report's coverage block and the per-row field were produced by the SAME function -- so they
+could not disagree, and the disagreement had to be in the reader.
+
+Suite: 680 passed, 3 skipped.
