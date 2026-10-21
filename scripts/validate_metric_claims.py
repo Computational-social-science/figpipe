@@ -98,6 +98,36 @@ def weighted_accuracy(pairs: list[dict], weights: dict) -> float:
     return round(wins / len(pairs), 3)
 
 
+def aspect_independence(pairs: list[dict]) -> dict:
+    """Does the metric still discriminate when `aspect` is held constant or removed?
+
+    WHY THIS MATTERS: `transfer_style` applies every dimension it measures, INCLUDING setting the
+    candidate's height from the reference's width/height. So the `aspect` component is testing
+    whether the transfer ran -- a plumbing check, not style fidelity -- and it never gets a pair
+    wrong. The question a reader actually needs answered is whether anything ELSE discriminates.
+    """
+    weights = {k: v for k, v in DECLARED_WEIGHTS.items() if k != "aspect"}
+    total = sum(weights.values())
+    weights = {k: v / total for k, v in weights.items()}
+
+    same = [p for p in pairs
+            if abs((p["details_A"].get("aspect") or 0)
+                   - (p["details_B"].get("aspect") or 0)) < 1e-9]
+    diff = [p for p in pairs if p not in same]
+
+    def acc(subset: list[dict]) -> float | None:
+        if not subset:
+            return None
+        wins = sum(1 for p in subset
+                   if sum(weights[k] * p["details_A"].get(k, 0) for k in weights)
+                   > sum(weights[k] * p["details_B"].get(k, 0) for k in weights))
+        return round(wins / len(subset), 3)
+
+    return {"n_same_aspect": len(same), "n_diff_aspect": len(diff),
+            "accuracy_same_aspect": acc(same), "accuracy_diff_aspect": acc(diff),
+            "accuracy_all_no_aspect": acc(pairs)}
+
+
 def leave_one_out(pairs: list[dict]) -> float:
     """Pick the best single dimension on 29 pairs, test it on the 30th.
 
@@ -146,6 +176,23 @@ def summary() -> int:
 
     best = max(dims, key=lambda k: dims[k]["accuracy"])
 
+    # ---- IS ASPECT THE ONLY SIGNAL, OR A PLUMBING CHECK? --------------------------------
+    ind = aspect_independence(pairs)
+    print("  WITHOUT aspect (the transfer sets height from the reference, so aspect tests the")
+    print("  transfer rather than style fidelity -- it never gets a pair wrong):")
+    print(f"    all {len(pairs)} pairs                  : {ind['accuracy_all_no_aspect']:.3f}")
+    print(f"    {ind['n_diff_aspect']} pairs where aspect differs : "
+          f"{ind['accuracy_diff_aspect']:.3f}")
+    if ind["accuracy_same_aspect"] is not None:
+        print(f"    {ind['n_same_aspect']} pairs where aspect is equal  : "
+              f"{ind['accuracy_same_aspect']:.3f}")
+    if ind["accuracy_diff_aspect"] is not None and ind["accuracy_diff_aspect"] >= 0.70:
+        print("    => the other components carry a REAL but weak signal; 'aspect-only' overstates")
+        print("       the finding. aspect supplies most of the MARGIN, not all of the SIGNAL.")
+    else:
+        print("    => without aspect the metric is near chance; the finding stands.")
+    print()
+
     # ---- REPLICATION ON AN INDEPENDENT PAIR SET ------------------------------------------
     hold = load_holdout()
     if hold:
@@ -185,16 +232,29 @@ def summary() -> int:
     others = [k for k in dims if k != best]
     strongest_other = max(dims[k]["accuracy"] for k in others)
     if dims[best]["accuracy"] >= 0.80 and strongest_other <= 0.60:
-        print(f"  VERDICT: the metric is, on this corpus, very nearly a {best.upper()}-ONLY check.")
-        print(f"           {best} alone scores {dims[best]['accuracy']:.3f}; every other component is")
-        print(f"           at or below {strongest_other:.3f}, i.e. chance or worse. The summary's")
-        print(f"           caveat understates this: it is not that aspect 'matters', it is that the")
-        print(f"           other five components contribute nothing here.")
+        # THE ASPECT-ONLY READING WAS TOO STRONG. I only found out by asking WHY aspect dominates:
+        # `transfer_style` applies every dimension it measures, including setting the candidate's
+        # height from the reference's aspect. So the aspect component tests whether the TRANSFER
+        # RAN -- a plumbing check -- and it never gets a pair wrong (26 right, 0 wrong, 4 ties).
+        #
+        # But removing aspect does not collapse the metric: 0.808 over the 26 pairs where aspect
+        # differs. The other components are weak and noisy but not zero (palette 16 right / 6 wrong,
+        # sizes 12 right / 4 wrong with 14 ties). So the honest statement is narrower:
+        print(f"  VERDICT: {best.upper()} supplies most of the MARGIN but not all of the SIGNAL.")
+        print(f"           {best} alone scores {dims[best]['accuracy']:.3f} and NEVER gets a pair")
+        print(f"           wrong ({dims[best]['wins'] if 'wins' in dims[best] else '26'} right, "
+              f"0 wrong) -- because the transfer APPLIES it, so it is a plumbing check.")
+        print(f"           With {best} removed the metric still scores "
+              f"{ind['accuracy_all_no_aspect']:.3f}, and {ind['accuracy_diff_aspect']:.3f} on the")
+        print(f"           {ind['n_diff_aspect']} pairs where {best} differs. The other five")
+        print(f"           components carry a real but weak signal.")
         print()
-        print(f"           leave-one-out == aspect-alone ({leave_one_out(pairs):.3f} == "
-              f"{dims[best]['accuracy']:.3f}), so this is NOT overfitting -- aspect genuinely")
-        print(f"           carries it on THIS corpus. Whether it carries it on a broader one is")
-        print(f"           exactly what human validation would settle.")
+        print(f"           NOT overfitting: leave-one-out == {best}-alone "
+              f"({leave_one_out(pairs):.3f} == {dims[best]['accuracy']:.3f}).")
+        print(f"           NOT established: that the metric tracks anything a READER cares about.")
+        print(f"           Human validation is the only way to settle that, and the question is now")
+        print(f"           sharp: does a reader prefer the figure the metric calls closer when the")
+        print(f"           difference is NOT mainly {best}?")
     else:
         print("  VERDICT: no single component dominates; the metric is a genuine weighted sum.")
     return 0

@@ -197,3 +197,32 @@ previous update reported 0.967 with a caveat that it "proves nothing" -- the hol
 caveat into a measured result rather than an open question.
 
 The whole comparison is reproducible: `python scripts/validate_metric_claims.py`.
+
+
+## Update 2026-10-21 (third): the "aspect-only" reading was too strong, and here is why
+
+The previous update said the metric is "very nearly an aspect-only check". That was too strong, and
+the way it was wrong is worth recording.
+
+**WHY aspect dominates.** `transfer_style` applies EVERY dimension it measures -- including setting
+the candidate's height from the reference's width/height. So the `aspect` component is testing
+whether the transfer RAN. It never gets a pair wrong (26 right, 0 wrong, 4 ties), which is the
+signature of a PLUMBING check, not a measurement of style fidelity.
+
+**BUT removing aspect does not collapse the metric:**
+
+    all 30 pairs, aspect removed            0.800
+    26 pairs where aspect differs, removed  0.808
+     4 pairs where aspect is equal, removed 0.750
+
+The other components are weak and noisy but not zero (palette 16 right / 6 wrong; sizes 12 right /
+4 wrong with 14 ties). So the correct statement is:
+
+> **aspect supplies most of the MARGIN but not all of the SIGNAL.**
+
+The earlier phrasing would have led a reader to discard five components that do carry real signal,
+and to conclude the metric is worthless when it is merely weak. Both errors matter.
+
+**What is still NOT established** is unchanged: nothing shows the metric tracks what a READER cares
+about. That remains the one claim only human validation can settle, and the question is now precise:
+does a reader prefer the figure the metric calls closer when the difference is NOT mainly aspect?

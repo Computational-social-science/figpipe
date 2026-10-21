@@ -3223,3 +3223,41 @@ A test now asserts the holdout shares no more than a third of its pairs with the
 future "holdout" cannot quietly be the training set wearing a different name.
 
 Suite: 612 passed, 3 skipped.
+
+
+## 106. "Aspect-only" was too strong; asking WHY aspect dominates dissolved the claim (2026-10-21)
+
+Last round: "the style metric is very nearly an aspect-only check." True in its numbers, wrong in
+what it implies, and I only found out by asking a different question -- WHY does aspect dominate?
+
+THE ANSWER: `transfer_style` applies every dimension it measures, including setting the candidate's
+height from the reference's width/height. So the `aspect` component tests whether the TRANSFER RAN.
+It never gets a pair wrong (26 right, 0 wrong, 4 ties). That is the signature of a PLUMBING CHECK:
+a control that cannot fail because the treatment guarantees it.
+
+THEN THE DECISIVE MEASUREMENT -- remove aspect and see what is left:
+
+    all 30 pairs, aspect removed            0.800
+    26 pairs where aspect differs, removed  0.808
+     4 pairs where aspect is equal, removed 0.750
+
+0.808. The other five components carry a REAL but WEAK signal. So:
+
+    aspect supplies most of the MARGIN but not all of the SIGNAL.
+
+WHY THIS MATTERS MORE THAN THE ORIGINAL FINDING: "aspect-only" would lead a reader to (a) discard
+five components that do carry signal, and (b) conclude the metric is worthless when it is merely
+weak. Both are errors, and both would have been mine.
+
+THE PATTERN, which this project has now hit in several forms: **a per-component ranking tells you
+what is LOUDEST, not what is LOAD-BEARING.** The ranking said aspect 0.867, everything else at or
+below 0.533. The ablation said removing aspect leaves 0.808. Those two facts are consistent and only
+the second answers "does anything else work?".
+
+A ranking is a measurement of contribution; an ablation is a measurement of necessity. Reporting one
+as the other is how a metric gets dismissed for the wrong reason -- or trusted for the wrong one.
+
+The verdict text now says MARGIN and SIGNAL, and a test asserts those words stay, so the softer
+reading cannot be silently re-strengthened.
+
+Suite: 615 passed, 3 skipped.

@@ -157,3 +157,48 @@ def test_the_summary_reports_replication(claims, capsys):
     out = capsys.readouterr().out
     assert "REPLICATION" in out
     assert "REPLICATED" in out or "NOT REPLICATED" in out
+
+
+# ---------------------------------------------------------------------------------------
+# IS ASPECT THE ONLY SIGNAL, OR A PLUMBING CHECK?
+#
+# `transfer_style` applies EVERY dimension it measures -- including setting the candidate's height
+# from the reference's width/height. So the `aspect` component tests whether the TRANSFER RAN. It
+# never gets a pair wrong (26 right, 0 wrong, 4 ties), which is the signature of a plumbing check
+# rather than a measurement of style fidelity.
+#
+# The question a reader needs answered is whether anything ELSE discriminates. It does: removing
+# aspect still leaves 0.808 over the 26 pairs where aspect differs.
+# ---------------------------------------------------------------------------------------
+
+def test_aspect_never_gets_a_pair_wrong(claims, pairs):
+    """A component that is never wrong is testing the treatment, not the outcome."""
+    dims = claims.per_dimension(pairs)
+    assert dims["aspect"]["losses"] == 0, (
+        f"aspect got {dims['aspect']['losses']} pairs wrong; the plumbing-check reading may be wrong")
+    assert dims["aspect"]["accuracy"] >= 0.80
+
+
+def test_the_metric_survives_removing_aspect(claims, pairs):
+    """THE CORRECTION: 'aspect-only' overstates the finding.
+
+    With aspect removed the metric still scores 0.808 on the 26 pairs where aspect differs. The
+    other components are weak and noisy but not zero, so aspect supplies most of the MARGIN, not all
+    of the SIGNAL.
+    """
+    ind = claims.aspect_independence(pairs)
+    assert ind["accuracy_all_no_aspect"] >= 0.70, (
+        f"without aspect the metric scores {ind['accuracy_all_no_aspect']}; "
+        f"the aspect-only reading would be correct")
+    assert ind["accuracy_diff_aspect"] >= 0.70
+    assert ind["n_diff_aspect"] >= 20, "too few pairs differ in aspect for this to be meaningful"
+
+
+def test_the_verdict_says_MARGIN_not_SIGNAL(claims, capsys):
+    """The verdict must not claim more than the independence check supports."""
+    assert claims.summary() == 0
+    out = capsys.readouterr().out
+    assert "MARGIN" in out and "SIGNAL" in out, (
+        "the verdict does not distinguish margin from signal")
+    assert "plumbing check" in out, (
+        "the verdict does not say why aspect never fails")
