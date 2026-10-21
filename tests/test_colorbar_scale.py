@@ -129,3 +129,42 @@ def test_a_page_without_a_scale_column_is_unverifiable(tmp_path):
     assert result["state"] in ("checked", "violation", "unverifiable")
     if result["state"] == "unverifiable":
         assert result["ok"] is None
+
+
+# ---------------------------------------------------------------------------------------
+# TELLING A COLOUR BAR FROM A COLUMN OF CELL ANNOTATIONS
+#
+# Both are vertical stacks of numbers. Both are evenly spaced when the matrix grid is regular. The
+# first version of this check selected the rightmost stack and reported 10 `tile_diverging` tasks
+# (which have NO colour bar) as scale violations -- reading the cell annotations as a scale.
+#
+# What separates them is POSITION: a colour bar sits at the very edge of the page, past the axes;
+# cell annotations sit inside the plot area. Measured: the matrix's rightmost word ended at 89% of
+# the page width, the field's colour-bar labels at 98%.
+# ---------------------------------------------------------------------------------------
+
+def test_a_matrix_without_a_colour_bar_is_unverifiable(tmp_path):
+    """THE FALSE POSITIVE: cell annotations are not a colour scale."""
+    import matplotlib
+    matplotlib.use("Agg")
+    from figpipe import composite, layout
+
+    rng = np.random.default_rng(0)
+    df = pd.DataFrame({f"c{i}": rng.normal(0, 1, 5) for i in range(4)})
+    panel = composite.Panel("tile_diverging", df, {})
+    fig = composite.composite([panel], columns=2.0, height_mm=90.0, letters=False)
+    paths = layout.save(fig, tmp_path / "m")
+    result = semantics.check_colorbar_scale(paths[0], df.to_numpy().ravel())
+    assert result["state"] == "unverifiable", (
+        f"a matrix with no colour bar was judged as {result['state']}: {result}. Its cell "
+        f"annotations are a vertical stack of evenly spaced numbers, but they are INSIDE the plot "
+        f"area and are not a scale")
+
+
+def test_the_two_tests_are_both_required():
+    """Position alone would accept a scattered column at the right edge; spacing alone accepts a
+    matrix grid. Both must hold."""
+    import inspect
+    src = inspect.getsource(semantics._scale_numbers)
+    assert "page_span" in src, "the position test is missing"
+    assert "mean_gap" in src, "the even-spacing test is missing"

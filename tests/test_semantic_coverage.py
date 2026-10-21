@@ -171,7 +171,10 @@ def test_the_field_is_not_a_boolean():
     if not ok:
         pytest.skip("no ok tasks")
     values = {t.get("semantic_checked") for t in ok}
-    assert values <= {"checked", "skipped", "unverifiable", "absent"}, (
+    # FIVE STATES, not four. `mesh_scale_checked` was added when the colour-scale check began
+    # verifying one claim about a mesh figure. A test that pins the state set must be updated when
+    # the set grows -- otherwise it reports the improvement as a defect.
+    assert values <= {"checked", "skipped", "unverifiable", "absent", "mesh_scale_checked"}, (
         f"semantic_checked holds unexpected values: {values}")
     assert isinstance(values.pop(), str), "the field is a string, not a bool"
 
@@ -208,3 +211,68 @@ def test_the_coverage_block_agrees_with_the_helper():
     assert cov.get("checked") == sum(1 for t in ok if B.semantic_verified(t))
     assert cov.get("unverifiable") == sum(
         1 for t in ok if t.get("semantic_checked") == "unverifiable")
+
+
+# ---------------------------------------------------------------------------------------
+# A MESH WITH A CHECKED COLOUR SCALE IS PARTIALLY VERIFIED
+#
+# Round 58 built a check for the one numeric claim a field figure makes: the printed colour scale
+# must cover the data. Round 59 wired it into `verify.semantics`.
+#
+# The four states were checked / skipped / unverifiable / absent. A mesh figure was `unverifiable`
+# because its cell values never reach the PDF -- but now its SCALE is checked, and reporting that as
+# plain `unverifiable` hides the one claim that was held to.
+# ---------------------------------------------------------------------------------------
+
+def test_a_mesh_with_a_checked_scale_has_its_own_state():
+    import sys as _sys
+    _sys.path.insert(0, str(ROOT / "scripts"))
+    import bench_plottwin as B
+    trace = ["verify.semantics(mesh panel 0: field_2d -- reason; data-level check: 400 of 400 "
+             "rows; scale check: checked (data [-3.77, 3.07]; printed scale [-3, 3]))"]
+    assert B.semantic_state({"trace": trace}) == "mesh_scale_checked", (
+        "a mesh whose colour scale was verified was reported as fully unverifiable, hiding the one "
+        "check that ran")
+
+
+def test_a_mesh_scale_violation_is_a_finding_not_a_gap():
+    """A violated scale IS a finding -- the operator appends it. The state must not also claim
+    'nothing could be checked', or the finding and the coverage number contradict each other."""
+    import sys as _sys
+    _sys.path.insert(0, str(ROOT / "scripts"))
+    import bench_plottwin as B
+    trace = ["verify.semantics(mesh panel 0: field_2d -- reason; scale check: violation "
+             "(shortfall 51% of the data span))"]
+    assert B.semantic_state({"trace": trace}) == "checked"
+
+
+def test_a_mesh_without_a_checked_scale_stays_unverifiable():
+    """NEGATIVE CONTROL: the new state must not swallow the genuinely unverifiable ones."""
+    import sys as _sys
+    _sys.path.insert(0, str(ROOT / "scripts"))
+    import bench_plottwin as B
+    trace = ["verify.semantics(mesh panel 0: tile_diverging -- reason; data-level check: 40 of 40 "
+             "rows; scale check: unverifiable)"]
+    assert B.semantic_state({"trace": trace}) == "unverifiable"
+
+
+def test_the_coverage_block_reports_the_partial_state():
+    """The coverage dict must carry the new key, or the count is silently incomplete."""
+    import sys as _sys
+    _sys.path.insert(0, str(ROOT / "scripts"))
+    import bench_plottwin as B
+    # the coverage dict is built inside _run, not write_report
+    src = __import__("inspect").getsource(B._run)
+    assert "mesh_scale_checked" in src, (
+        "the coverage block does not count the partial-verification state")
+    # and the existing report must carry the key once re-measured; if it is absent the report
+    # predates this change, which is not a failure
+    import json
+    report = ROOT / "corpus" / "e2e" / "plottwin_report.json"
+    if report.is_file():
+        b = json.loads(report.read_text(encoding="utf-8"))
+        cov = b.get("semantic_coverage") or {}
+        if cov:
+            assert "mesh_scale_checked" in cov or cov.get("unverifiable", 0) > 0, (
+                "the coverage block is missing the partial state without any unverifiable tasks "
+                "to account for")

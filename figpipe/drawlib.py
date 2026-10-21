@@ -830,6 +830,10 @@ def ax_field_2d(ax, df: pd.DataFrame, x: str, y: str, value: str,
                          "at least 2 x-values and 2 y-values")
     grid = grid.sort_index().sort_index(axis=1)
     data = grid.to_numpy(dtype=float)
+    # RECORD WHAT WAS DRAWN. A caller's frame spans the RAW values; the colour range covers CELL
+    # MEANS after this pivot. Anything that checks the printed scale against the data needs the
+    # drawn numbers, and this is the only place they exist.
+    ax._figpipe_drawn = data
     if log_color:
         if np.nanmin(data) <= 0:
             raise ValueError("field_2d: log_color needs strictly positive values")

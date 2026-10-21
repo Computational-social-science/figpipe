@@ -401,7 +401,14 @@ def test_a_metric_mixing_instruments_is_not_comparable():
     if not info["comparable"]:
         assert info["mean"] is None, (
             "a non-comparable metric must be None, not a small-sample number that reads as a gain")
-        assert "not comparable" in info["note"]
+        # THE NOTE MUST SAY WHY, and there are two legitimate reasons:
+        #   "incomplete: N of M ... measured"            the anchor has not been re-measured yet
+        #   "not comparable yet: ... older fingerprint"  it was, but by another instrument
+        # Any edit to the pipeline changes CODE_VERSION and invalidates every anchor row, so the
+        # FIRST reason is the normal state right after any change -- asserting only the second made
+        # an ordinary working state look like a defect.
+        assert ("not comparable" in info["note"] or "incomplete" in info["note"]), (
+            f"a non-comparable anchor must say why: {info['note']!r}")
     if cron is not None:
         assert "benchmark_shipped_anchor_single" in cron.CAPABILITY_DIRECTION
         # the mixed all-rows value must never be judged

@@ -720,6 +720,11 @@ def semantic_state(result: dict) -> str:
     # the cell values never reach the PDF. Counting it with the unfinished drawers would make the
     # coverage number say the wrong thing about what remains to be done.
     mesh = [t for t in trace if "semantics(mesh panel" in t]
+    # A MESH WHOSE COLOUR SCALE WAS CHECKED IS PARTIALLY VERIFIED. The cell values still cannot be
+    # read back, but the printed scale CAN, and that is a claim the figure makes. Calling this plain
+    # `unverifiable` would hide the one check that did run.
+    mesh_scale_checked = [t for t in mesh if "scale check: checked" in t]
+    mesh_scale_failed = [t for t in mesh if "scale check: violation" in t]
     skipped = [t for t in trace if "semantics(skip" in t]
     # THE SUMMARY LINE IS NOT EVIDENCE OF A CHECK. The operator appends
     # `verify.semantics(skip panel N: <draw>)` per panel and then a bare `verify.semantics` at the
@@ -732,6 +737,12 @@ def semantic_state(result: dict) -> str:
     # A skip line means at least one panel was NOT verified, whatever else the step did.
     if skipped:
         return "skipped"
+    if mesh_scale_failed:
+        # a violated scale is a FINDING, not a coverage gap -- the finding itself is appended by the
+        # operator, so the state must not also claim "nothing could be checked"
+        return "checked"
+    if mesh_scale_checked and len(mesh_scale_checked) == len(mesh):
+        return "mesh_scale_checked"
     if mesh:
         return "unverifiable"
     return "checked"
@@ -1369,6 +1380,10 @@ def _run(args) -> int:
         states = [t.get("semantic_checked") for t in ok_all if t.get("status") == "ok"]
         report["semantic_coverage"] = {
             "checked": states.count("checked"),
+            # A MESH WITH A CHECKED COLOUR SCALE IS PARTIAL VERIFICATION, and counting it with
+            # `unverifiable` would hide the one claim that was held to. It is reported separately so
+            # the number can distinguish "nothing was checked" from "one claim was".
+            "mesh_scale_checked": states.count("mesh_scale_checked"),
             "skipped": states.count("skipped"),
             "unverifiable": states.count("unverifiable"),
             "absent": states.count("absent"),

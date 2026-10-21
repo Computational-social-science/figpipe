@@ -529,6 +529,13 @@ def op_encode_field(ctx: SkillContext, x: str, y: str, value: str,
 
 #: How many spokes a polar axis can carry with readable labels. Past this the labels overlap
 #: whatever the font size, and the profile stops being a profile -- it becomes a ring of text.
+#: Drawers that actually DRAW a colour bar.
+#: `encode.field` gives `field_2d` one; `encode.matrix` does not give `tile_diverging` one.
+#: The scale check applies only where a scale is claimed, and asking the drawer is exact --
+#: more geometric heuristics are not (9 pool tasks were flagged by axis labels that looked
+#: like a scale).
+DRAWERS_WITH_COLORBAR = {"field_2d"}
+
 MAX_POLAR_SPOKES = 16
 
 
@@ -625,6 +632,23 @@ def op_verify_collisions(ctx: SkillContext, fig, pdf_path):
     ctx.trace.append("verify.collisions")
 
 
+def _drawn_values(fig, panel):
+    """The array the drawer actually plotted, when it recorded one.
+
+    A drawer that PIVOTS or aggregates knows the drawn values and nothing else does -- a caller's
+    frame still spans the raw rows. `ax_field_2d` records its grid on the axes so a check can read
+    what was plotted rather than what was passed in.
+    """
+    try:
+        for ax in fig.axes:
+            arr = getattr(ax, "_figpipe_drawn", None)
+            if arr is not None:
+                return arr
+    except (AttributeError, TypeError):
+        pass
+    return None
+
+
 @operator("verify.semantics", "verify")
 def op_verify_semantics(ctx: SkillContext, fig, pdf_path):
     """The panel's printed claims must match the data it was drawn from.
@@ -703,9 +727,38 @@ def op_verify_semantics(ctx: SkillContext, fig, pdf_path):
                 for f in res["findings"]:
                     ctx.findings.append({"check": f"semantics.{f['check']}",
                                          "detail": f["detail"], "severity": "hard"})
+                # THE COLOUR SCALE IS THE ONE NUMERIC CLAIM A MESH FIGURE MAKES. Its tick labels
+                # are text, so the rendered file can be held to them even though the cell values
+                # cannot be read back. Without this the figure is `unverifiable` in every respect;
+                # with it, one claim is checked and the trace says so.
+                #
+                # ONLY A DRAWER THAT DRAWS A COLOUR BAR CAN BE CHECKED THIS WAY. `field_2d` gets
+                # one from `encode.field`; `tile_diverging` does not, and on the pool 9 of its tasks
+                # were flagged because their AXIS tick labels landed near the right edge and looked
+                # like a scale. Asking the drawer is exact; more geometric heuristics are not.
+                if panel.draw in DRAWERS_WITH_COLORBAR:
+                    # THE DRAWN VALUES, NOT THE CALLER'S FRAME. `ax_field_2d` pivots the long table
+                    # and aggregates with the mean, so the colour range covers CELL MEANS. The
+                    # drawer records what it drew on the axes; without that the check compared the
+                    # scale to the RAW range and reported a violation on every aggregating task.
+                    drawn_arr = _drawn_values(fig, panel)
+                    scale = semantics.check_mesh_scale(
+                        pdf_path, ctx.data, value=kw.get("value"),
+                        drawn=(drawn_arr if drawn_arr is not None else panel.data))
+                else:
+                    scale = {"ok": None, "state": "unverifiable",
+                             "why": f"{panel.draw} draws no colour bar, so no scale is claimed"}
+                if scale.get("state") == "violation":
+                    ctx.findings.append({
+                        "check": "semantics.mesh_scale",
+                        "detail": (f"panel {i} ({panel.draw}): the printed colour scale does not "
+                                   f"cover the data it drew -- {scale.get('detail')}"),
+                        "severity": "hard"})
+                scale_note = (f"; scale check: {scale['state']}"
+                              + (f" ({scale.get('detail')})" if scale.get("detail") else ""))
                 ctx.trace.append(
                     f"verify.semantics(mesh panel {i}: {panel.draw} -- {why}; "
-                    f"data-level check: {res['note']})")
+                    f"data-level check: {res['note']}{scale_note})")
             else:
                 ctx.trace.append(f"verify.semantics(skip panel {i}: {panel.draw})")
             continue

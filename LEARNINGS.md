@@ -4002,3 +4002,83 @@ It returned an empty list silently, the check reported `unverifiable`, and that 
 from "this figure has no scale". PyMuPDF was already a dependency; the words reader now uses it.
 
 Suite: 697 passed, 3 skipped.
+
+
+## 124. Partial verification needs its own state, or the work is invisible (2026-10-22)
+
+Round 58 built a check for the one numeric claim a field figure makes: the printed colour scale must
+cover the data. This round wired it into `verify.semantics` so it runs on every field task.
+
+THE STATE PROBLEM, which is the interesting part. The coverage report had four states:
+
+    checked       the semantic check ran against the panel
+    skipped       the drawer has no rule yet
+    unverifiable  a mesh: cell values never reach the PDF
+    absent        the trace does not mention the step
+
+A mesh figure was `unverifiable` because its VALUES cannot be read back. But now its SCALE is
+checked, so one claim IS held to. Reporting that as plain `unverifiable` makes the round-58 work
+invisible in the coverage number -- the report would say "nothing was checked" about a figure whose
+colour scale was verified.
+
+So there is a fifth state:
+
+    mesh_scale_checked   a mesh whose printed colour scale was checked against the data
+
+and a violation maps to `checked` rather than `unverifiable`, because a violated scale is a FINDING,
+not a coverage gap. The finding is appended by the operator; the state must not also claim nothing
+could be checked, or the finding and the coverage number contradict each other.
+
+MEASURED on a field figure, the trace now reads:
+
+    verify.semantics(mesh panel 0: field_2d -- a scalar field is one imshow path; above 12 rows per
+    axis the cell values reach the PDF only as colour, so no rendered-file check can re-derive them;
+    data-level check: 400 of 400 rows; scale check: checked (data [-3.77, 3.07]; printed scale
+    [-3, 3]; worst shortfall 11% of the data span))
+
+THE GENERAL LESSON: a coverage metric with a binary "verified / not verified" loses every partial
+result. This project already learned that once (skipped vs unverifiable, round 47). The same lesson
+one level down: adding a check to a previously unverifiable category needs a new STATE, not just a
+new check, or the improvement does not show up anywhere a reader looks.
+
+Suite: 701 passed, 3 skipped.
+
+
+## 125. The scale check was comparing the bar to the wrong data (2026-10-22)
+
+Wiring the colour-scale check into `verify.semantics` turned 29 `unverifiable` tasks into 16
+unverifiable plus 10 partially verified -- and produced 12 hard findings, all false.
+
+FOUR ROUNDS OF FALSE POSITIVES, each a different mistake:
+
+  1. The check read every number on the page. Axis labels are numbers too.
+  2. A fraction-of-the-page cut still admitted the last axis label.
+  3. A matrix's rightmost column of CELL ANNOTATIONS is a vertical stack of evenly spaced numbers --
+     geometrically identical to a colour bar. 10 `tile_diverging` tasks (which have NO colour bar)
+     were flagged.
+  4. THE ONE THAT MATTERED: `ax_field_2d` PIVOTS the long (x, y, value) table and aggregates with
+     the MEAN. The colour bar correctly covers CELL MEANS; the check compared it to the RAW range.
+     Measured: 5350 rows spanning [-10, 10] pivot to a 10x10 grid of means spanning [-2.5, 1.5],
+     and the bar covered [-2.5, 1.5] exactly as it should.
+
+THE FIX FOR 3 was structural, not geometric: only a drawer that DRAWS a colour bar can be
+scale-checked. `field_2d` gets one from `encode.field`; `tile_diverging` does not. Asking the drawer
+is exact; more heuristics are not.
+
+THE FIX FOR 4 was to compare against WHAT WAS DRAWN. The drawer knows the grid and nothing else does
+-- a caller's frame still spans the raw rows -- so `ax_field_2d` records its grid on the axes
+(`_figpipe_drawn`), the same way `_figpipe_cbar` already records a colour bar. That is an
+observation, not a parameter: it changes no behaviour.
+
+MEASURED after both fixes:
+
+    aggregating field  data [-2.62, 1.53]  printed [-2.5, 1.5]  shortfall  3%  checked
+    normal field       data [-2.89, 3.19]  printed [-2, 3]      shortfall 15%  checked
+    matrix, no bar     unverifiable (no scale is claimed, so nothing can be violated)
+
+THE PATTERN, and it is the fourth time this month: **a check that compares two quantities must know
+which two.** "The data" is not one thing -- it is the raw rows, the aggregated cells, and the drawn
+raster, and they differ by exactly the transform the pipeline applies. Comparing across the
+transform produces a confident, wrong finding, which is worse than no check.
+
+Suite: 703 passed, 3 skipped.

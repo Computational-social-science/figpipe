@@ -512,6 +512,9 @@ def _status_board(bench: dict, latest: dict, kb: dict, caps: dict, n_tests: int)
                          "warn"))
 
     unverifiable = cov.get("unverifiable") or 0
+    # A MESH WHOSE COLOUR SCALE WAS CHECKED IS PARTIALLY VERIFIED. Counting it with the fully
+    # unverifiable ones would hide the one claim per field figure that IS held to.
+    partial = cov.get("mesh_scale_checked") or 0
     if checked is not None and skipped is not None:
         total = checked + skipped + unverifiable
         rows.append(("Biggest known gap",
@@ -521,9 +524,13 @@ def _status_board(bench: dict, latest: dict, kb: dict, caps: dict, n_tests: int)
                      # assume both are the same problem, and the fixes are completely different.
                      f"{skipped} of {total} tasks have a drawer with NO semantic rule YET, so their "
                      f"printed numbers were never re-derived -- that is unfinished work. "
-                     f"{unverifiable} more are UNVERIFIABLE BY CONSTRUCTION: a field or a mesh is a "
-                     f"single raster path, so its cell values reach the PDF only as colour and no "
-                     f"rendered-file check can re-derive them at any effort. "
+                     f"{partial} of those have had their PRINTED COLOUR SCALE checked against the "
+                     f"data they drew: a mesh's cell values cannot be read back, but its colour "
+                     f"bar's tick labels are text and state the scale, so one claim per field "
+                     f"figure IS verified. The remaining "
+                     f"{unverifiable - partial} are UNVERIFIABLE BY CONSTRUCTION -- a field or a mesh "
+                     f"is a single raster path, so its cell values reach the PDF only as colour and "
+                     f"no rendered-file check can re-derive them at any effort. "
                      f"The two need different responses: the first is a rule still to be written, "
                      f"the second is a format limit. "
                      f"A pass on either is a statement about geometry, not about correctness.",

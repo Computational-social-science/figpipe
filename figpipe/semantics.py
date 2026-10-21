@@ -544,18 +544,49 @@ def _scale_numbers(words, *, cluster_pt: float = 6.0) -> list[float]:
                 continue
         return out
 
-    # bucket by left edge
-    buckets: dict[int, list[float]] = {}
-    for x0, _y0, _x1, text in words:
-        vals = nums_in(text)
-        if not vals:
-            continue
-        key = int(round(x0 / cluster_pt))
-        buckets.setdefault(key, []).extend(vals)
-    # rightmost bucket holding at least two numbers
+    # bucket by left edge, keeping the y of each label so a VERTICAL STACK can be told from a
+    # single row of axis labels
+    buckets: dict[int, list[tuple[float, float]]] = {}
+    for x0, y0, _x1, text in words:
+        for v in nums_in(text):
+            key = int(round(x0 / cluster_pt))
+            buckets.setdefault(key, []).append((y0, v))
+    # TWO TESTS, BOTH REQUIRED.
+    #
+    # 1. POSITION. A colour bar sits at the very edge of the page, past the axes. A matrix's
+    #    rightmost column of cell annotations sits INSIDE the plot area. Measured: the matrix's
+    #    rightmost word ended at 89% of the page width, the field's colour-bar labels at 98%.
+    #    Spacing alone cannot separate them -- a matrix grid is evenly spaced too.
+    #
+    # 2. EVEN SPACING. A colour bar is a linear axis, so its labels sit at equal intervals. This
+    #    rejects a scattered column that happens to be far right.
+    #
+    # Anything that fails either test is not a scale this check can trust, and returning nothing
+    # makes the caller report `unverifiable`. A false violation is worse than a gap.
+    x_right = max(w[2] for w in words)
+    x_left = min(w[0] for w in words)
+    page_span = x_right - x_left
+    if page_span <= 0:
+        return []
     for key in sorted(buckets, reverse=True):
-        if len(buckets[key]) >= 2:
-            return buckets[key]
+        items = sorted(buckets[key])
+        if len(items) < 3:
+            continue
+        ys = [y for y, _ in items]
+        span = max(ys) - min(ys)
+        if span < 10.0:                       # points; a stack spans the panel height
+            continue
+        # the labels must reach the right-hand edge of the text block
+        label_x = key * cluster_pt
+        if (x_right - label_x) > 0.06 * page_span:
+            continue
+        gaps = [b[0] - a[0] for a, b in zip(items, items[1:])]
+        mean_gap = sum(gaps) / len(gaps)
+        if mean_gap <= 0:
+            continue
+        if any(abs(g - mean_gap) > 0.25 * mean_gap for g in gaps):
+            continue
+        return [v for _y, v in items]
     return []
 
 
@@ -692,19 +723,35 @@ def check_mesh_panel_data(panel_data: pd.DataFrame, source: pd.DataFrame, *,
                      + (f" (declared max_rows={max_rows})" if truncated_declared else ""))}
 
 
-def check_mesh_scale(pdf_path, source: pd.DataFrame, value: str | None = None) -> dict:
-    """The colour scale a MESH figure prints, checked against the data it drew.
+def check_mesh_scale(pdf_path, source: pd.DataFrame, value: str | None = None,
+                     drawn: pd.DataFrame | None = None) -> dict:
+    """The colour scale a MESH figure prints, checked against the data it DREW.
 
     A mesh panel is `unverifiable` at the data level -- one raster path, no cell values in the PDF.
     But a mesh figure WITH a colour bar prints the scale as TEXT, and that is a claim the rendered
-    file can be held to: the printed ticks must cover the data range.
+    file can be held to: the printed ticks must cover the values that were drawn.
 
-    This is the only numeric statement such a figure makes, so it is the only one that can be
-    checked. `value` names the column that carries the colour; without it the widest numeric column
-    is used, which is what a field panel draws.
+    `drawn` IS THE PANEL'S OWN FRAME, and it matters. `encode.field` PIVOTS a long (x, y, value)
+    table and takes the MEAN per cell, so the drawn values are cell means, not the raw rows.
+    Measured: 5350 rows spanning [-10, 10] pivot to a 10x10 grid of means spanning [-2.5, 1.5], and
+    the colour bar correctly covers the MEANS. Comparing the scale to the raw range therefore
+    reported a violation on every aggregating field task.
+
+    When `drawn` is None the source is used, which is correct only when no aggregation happened.
     """
     import numpy as _np
 
+    if drawn is not None:
+        # an ARRAY from the drawer (what was plotted) or a FRAME from a caller
+        if hasattr(drawn, "select_dtypes"):
+            numeric = drawn.select_dtypes("number")
+        else:
+            arr = _np.asarray(drawn, dtype=float).ravel()
+            arr = arr[_np.isfinite(arr)]
+            if arr.size == 0:
+                return {"ok": None, "state": "unverifiable",
+                        "why": "the drawn array has no finite values"}
+            return check_colorbar_scale(pdf_path, arr)
     numeric = source.select_dtypes("number")
     if numeric.shape[1] == 0:
         return {"ok": None, "state": "unverifiable", "why": "the source has no numeric column"}
