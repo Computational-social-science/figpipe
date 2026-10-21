@@ -130,7 +130,7 @@ def score_one(row: dict, *, source: str = "image") -> dict:
     return rec
 
 
-def summarise(records: list[dict], source: str = "image") -> dict:
+def summarise_official_scores(records: list[dict], source: str = "image") -> dict:
     scored = [r for r in records if r["status"] == "scored" and r.get("score") is not None]
     by_type: dict[str, list[float]] = {}
     for r in scored:
@@ -244,7 +244,7 @@ def _run(args) -> int:
         if len(records) % 10 == 0:
             print(f"  ... {len(records)} tasks processed")
 
-    summary = summarise(records, args.source)
+    summary = summarise_official_scores(records, args.source)
     out = {"image": OUT_IMAGE, "code": OUT_CODE, "naive": OUT_NAIVE,
            "ceiling": OUT_CODE}[args.source]
     out.parent.mkdir(parents=True, exist_ok=True)

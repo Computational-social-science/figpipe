@@ -359,7 +359,7 @@ def test_the_inverted_control_can_actually_fail():
     import validate_style_metric as vsm
 
     pairs = [_pair(i, win=False, official_a=90.0, official_b=40.0) for i in range(10)]
-    bad = vsm.summarise(pairs, seed=1, skipped={}, n_refs=10)
+    bad = vsm.summarise_discrimination(pairs, seed=1, skipped={}, n_refs=10)
     assert bad["discrimination_accuracy"] == 0.0
     assert bad["negative_control"]["accuracy"] == 1.0
     assert bad["negative_control"]["passes"] is False, (
@@ -367,7 +367,7 @@ def test_the_inverted_control_can_actually_fail():
     assert "REFUTED" in bad["verdict"].upper()
 
     good_pairs = [_pair(i, win=True, official_a=40.0, official_b=90.0) for i in range(10)]
-    good = vsm.summarise(good_pairs, seed=1, skipped={}, n_refs=10)
+    good = vsm.summarise_discrimination(good_pairs, seed=1, skipped={}, n_refs=10)
     assert good["discrimination_accuracy"] == 1.0
     assert good["negative_control"]["accuracy"] == 0.0
     assert good["negative_control"]["passes"] is True
@@ -392,7 +392,7 @@ def test_a_tie_is_not_counted_as_a_loss(artefact=None):
             p["details_A"]["sizes"] = 0.25
             p["details_B"]["sizes"] = 0.25
         pairs.append(p)
-    res = vsm.summarise(pairs, seed=1, skipped={}, n_refs=20)
+    res = vsm.summarise_discrimination(pairs, seed=1, skipped={}, n_refs=20)
     sizes = res["per_dimension"]["sizes"]
     assert sizes["ties"] == 10
     assert sizes["n_decisive"] == 10
@@ -411,7 +411,7 @@ def test_a_component_that_never_moves_is_reported_as_unexercised():
         p["details_A"]["lines"] = 0.5
         p["details_B"]["lines"] = 0.5
         pairs.append(p)
-    res = vsm.summarise(pairs, seed=1, skipped={}, n_refs=10)
+    res = vsm.summarise_discrimination(pairs, seed=1, skipped={}, n_refs=10)
     lines = res["per_dimension"]["lines"]
     assert lines["n_decisive"] == 0
     assert lines["accuracy"] is None, "an accuracy was reported for a component that never moved"
@@ -448,7 +448,7 @@ def test_a_chance_result_is_not_dressed_up_as_success():
     import validate_style_metric as vsm
 
     pairs = [_pair(i, win=(i % 2 == 0)) for i in range(30)]
-    res = vsm.summarise(pairs, seed=1, skipped={}, n_refs=30)
+    res = vsm.summarise_discrimination(pairs, seed=1, skipped={}, n_refs=30)
     assert res["discrimination_accuracy"] == 0.5
     assert "REFUTED" in res["verdict"].upper(), (
         "a chance-level result must be reported as a refutation, not spun")
@@ -474,7 +474,7 @@ def test_an_official_tie_is_neither_agreement_nor_disagreement():
             pairs.append(_pair(i, win=True, official_a=80.0, official_b=80.0))
         else:
             pairs.append(_pair(i, win=True, official_a=40.0, official_b=90.0))
-    res = vsm.summarise(pairs, seed=1, skipped={}, n_refs=10)
+    res = vsm.summarise_discrimination(pairs, seed=1, skipped={}, n_refs=10)
     off = res["official_scorer"]
     assert off["n_pairs_scored"] == 10
     assert off["n_tie"] == 4

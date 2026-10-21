@@ -68,7 +68,7 @@ def test_aspect_alone_carries_the_metric(claims, pairs):
         f"another component is also discriminative ({others}), so the metric is a genuine sum")
 
 
-def test_the_leave_one_out_search_does_not_beat_aspect_alone(claims, pairs):
+def test_the_cross_validated_search_does_not_beat_aspect_alone(claims, pairs):
     """If a tuned search beat a fixed dimension, the weights would be doing real work.
 
     It does not: 0.867 either way. So `aspect` is not overfitting to this corpus -- it genuinely
@@ -76,7 +76,7 @@ def test_the_leave_one_out_search_does_not_beat_aspect_alone(claims, pairs):
     would settle.
     """
     dims = claims.per_dimension(pairs)
-    loo = claims.leave_one_out(pairs)
+    loo = claims.cross_validated_accuracy(pairs)
     assert abs(loo - dims["aspect"]["accuracy"]) < 0.10, (
         f"leave-one-out ({loo}) differs from aspect-alone ({dims['aspect']['accuracy']}); "
         f"the weights may be doing real work after all")

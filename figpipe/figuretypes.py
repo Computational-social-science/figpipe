@@ -121,7 +121,7 @@ def classify_corpus() -> dict:
     return {"n": len(out), "assignments": out}
 
 
-def summarise(result: dict) -> dict:
+def summarise_figure_types(result: dict) -> dict:
     from collections import Counter
     a = result["assignments"]
     by_type = Counter(r["figure_type"] for r in a)
@@ -138,7 +138,7 @@ def summarise(result: dict) -> dict:
 
 if __name__ == "__main__":
     res = classify_corpus()
-    summ = summarise(res)
+    summ = summarise_figure_types(res)
     out = ROOT / "corpus" / "figure_types.json"
     out.write_text(json.dumps({"summary": summ, "assignments": res["assignments"]},
                               indent=2, ensure_ascii=False), encoding="utf-8")

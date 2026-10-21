@@ -611,7 +611,7 @@ def measure(n_pairs: int = 30, seed: int = SEED, verbose: bool = True,
         except Exception:                                   # noqa: BLE001 - never mask the result
             shutil.rmtree(work, ignore_errors=True)
 
-    return summarise(pairs, seed=seed, skipped=skipped, n_refs=len(refs), contrast=contrast)
+    return summarise_discrimination(pairs, seed=seed, skipped=skipped, n_refs=len(refs), contrast=contrast)
 
 
 def reweighted_distance(details: dict, drop: str | None = None) -> float | None:
@@ -681,8 +681,8 @@ def leave_one_out(pairs: list[dict]) -> dict:
     return out
 
 
-def summarise(pairs: list[dict], *, seed: int, skipped: dict, n_refs: int,
-              contrast: str = "cross") -> dict:
+def summarise_discrimination(pairs: list[dict], *, seed: int, skipped: dict, n_refs: int,
+                             contrast: str = "cross") -> dict:
     """Turn the per-pair records into the artefact, including the inverted control."""
     n = len(pairs)
     if n == 0:

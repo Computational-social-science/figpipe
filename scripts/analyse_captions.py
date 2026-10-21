@@ -29,7 +29,7 @@ FEATURES = [
 ]
 
 
-def summarise(rows: list[dict]) -> dict:
+def summarise_caption_features(rows: list[dict]) -> dict:
     n = len(rows)
     if not n:
         return {"n": 0}
@@ -55,8 +55,8 @@ def main() -> int:
     for r in rows:
         by_kind.setdefault(str(r.get("kind") or "figure"), []).append(r)
 
-    result = {"source": "corpus/caption_features.jsonl", "overall": summarise(rows),
-              "by_kind": {k: summarise(v) for k, v in sorted(by_kind.items())}}
+    result = {"source": "corpus/caption_features.jsonl", "overall": summarise_caption_features(rows),
+              "by_kind": {k: summarise_caption_features(v) for k, v in sorted(by_kind.items())}}
     OUT.write_text(json.dumps(result, indent=2), encoding="utf-8")
 
     o = result["overall"]

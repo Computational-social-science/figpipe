@@ -223,8 +223,13 @@ def aspect_independence(pairs: list[dict]) -> dict:
             "accuracy_all_no_aspect": acc(pairs)}
 
 
-def leave_one_out(pairs: list[dict]) -> float:
-    """Pick the best single dimension on 29 pairs, test it on the 30th.
+def cross_validated_accuracy(pairs: list[dict]) -> float:
+    """Pick the best single dimension on n-1 pairs, test it on the held-out pair.
+
+    NAMED FOR WHAT IT DOES. This used to be called `leave_one_out`, which is also the name of a
+    DIFFERENT function in `validate_style_metric.py`: that one removes one DIMENSION and re-scores
+    all pairs (an ablation); this one removes one PAIR and fits on the rest (cross-validation).
+    Two numbers a reader would naturally compare, measuring different things under one name.
 
     This is the ONLY way to tell "the weights are good" from "the weights were tuned on this set".
     """
@@ -267,7 +272,7 @@ def summary() -> int:
     print(f"  equal weights         : {weighted_accuracy(pairs, equal):.3f}"
           f"   (tuned on the same pairs -- proves nothing)")
     print(f"  no aspect, renormalised: {weighted_accuracy(pairs, no_aspect):.3f}")
-    print(f"  leave-one-out search  : {leave_one_out(pairs):.3f}"
+    print(f"  leave-one-out search  : {cross_validated_accuracy(pairs):.3f}"
           f"   (the only number that can distinguish weights from tuning)")
     print()
 
@@ -420,7 +425,7 @@ def summary() -> int:
         print(f"           components carry a real but weak signal.")
         print()
         print(f"           NOT overfitting: leave-one-out == {best}-alone "
-              f"({leave_one_out(pairs):.3f} == {dims[best]['accuracy']:.3f}).")
+              f"({cross_validated_accuracy(pairs):.3f} == {dims[best]['accuracy']:.3f}).")
         print(f"           NOT established: that the metric tracks anything a READER cares about.")
         print(f"           Human validation is the only way to settle that, and the question is now")
         print(f"           sharp: does a reader prefer the figure the metric calls closer when the")
@@ -439,7 +444,7 @@ def main(argv: list[str] | None = None) -> int:
         pairs = d.get("pairs") or []
         print(json.dumps({"pairs": len(pairs), "per_dimension": per_dimension(pairs),
                           "declared": weighted_accuracy(pairs, DECLARED_WEIGHTS),
-                          "leave_one_out": leave_one_out(pairs)}, indent=2))
+                          "leave_one_out": cross_validated_accuracy(pairs)}, indent=2))
         return 0
     return summary()
 

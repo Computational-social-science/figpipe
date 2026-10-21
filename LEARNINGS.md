@@ -3658,3 +3658,46 @@ Two tests pin the two directions that matter: a real regression on the same inst
 fail the run, and an unprovable match must not be judged.
 
 Suite: 656 passed, 3 skipped. Scheduled run now exits 0.
+
+
+## 116. Two functions with one name that measure different things (2026-10-21)
+
+Last round found a real logic defect: the capability diff judged two measurements without checking
+they came from the same instrument. This round asked whether that DEFECT CLASS had other instances,
+and built a detector instead of looking by hand.
+
+THE DETECTOR scans every module for a public function defined in more than one place with a
+DIFFERENT body. It found 13. Most are harmless (`health()` in decision.py probes a service,
+`health()` in webapp.py answers a liveness probe; no reader compares them). Two were traps:
+
+    summarise  4 implementations: figure-type assignments, caption features, official scores,
+               discrimination artefacts
+    compare    2 implementations, BOTH INSIDE figpipe: sources.compare (fingerprint diff) and
+               styleprofile.compare (style distance)
+
+Both are public. A caller doing `figpipe.compare` got whichever was imported last, and the two
+answer completely different questions. Renamed to `compare_fingerprints`, and the four
+`summarise`s to names that say what they summarise.
+
+AND ONE MORE, found by the same scan in a different form: `validate_style_metric.leave_one_out`
+removed one DIMENSION and re-scored every pair (an ablation); `validate_metric_claims.leave_one_out`
+held out one PAIR and fitted on the rest (cross-validation). Both are legitimately "leave one out"
+in the statistical sense, and a reader comparing the two numbers would be comparing an ablation
+with a cross-validation. The latter is now `cross_validated_accuracy`.
+
+THE DETECTOR HAD TO BE FIXED TWICE, and both failures are the point:
+
+  1. First version excluded a set of "verbs" (`summarise`, `measure`, `describe`, `compare`,
+     `catalogue`, `validate`, ...) -- most of the project's real vocabulary. It scanned to ZERO
+     and passed. Green because nothing was examined is worse than red.
+  2. Second version failed on all 13, which makes a test noisy, and a noisy test gets excluded --
+     how a detector dies. So harmless collisions are now listed WITH A REASON, and a further test
+     asserts every HARMLESS entry still actually collides, so the list cannot become a set of names
+     the detector is forbidden to examine.
+
+THE PRINCIPLE: a name is the only interface a report has. Neither function was wrong in what it
+computed; the NAME was wrong, and a reader comparing two numbers under one name is comparing
+different quantities. This project has paid for this class once before, with a `distance` that meant
+two things at once.
+
+Suite: 661 passed, 3 skipped.

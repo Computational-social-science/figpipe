@@ -106,7 +106,7 @@ def fingerprint(root, limit: int | None = None, full: bool = False) -> dict:
             "digest": digest, "files": recs}
 
 
-def compare(before: dict, after: dict) -> dict:
+def compare_fingerprints(before: dict, after: dict) -> dict:
     """What changed between two fingerprints: added, removed, modified."""
     b, a = before.get("files", {}), after.get("files", {})
     added = sorted(set(a) - set(b))

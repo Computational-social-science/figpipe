@@ -76,7 +76,7 @@ def test_fingerprint_detects_a_change():
         before = sources.fingerprint(d, full=True)
         (d / "a.pdf").write_bytes(b"two")
         after = sources.fingerprint(d, full=True)
-        diff = sources.compare(before, after)
+        diff = sources.compare_fingerprints(before, after)
         assert diff["modified"], "a modified PDF was not detected"
         assert not diff["unchanged"]
 
