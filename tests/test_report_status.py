@@ -140,3 +140,21 @@ def test_the_template_inserts_the_board_once():
     src = (ROOT / "scripts" / "build_report.py").read_text(encoding="utf-8")
     assert src.count("{status_board}") == 1, (
         "the template inserts {status_board} more than once")
+
+
+def test_no_negative_count_in_the_board():
+    """A count of tasks cannot be negative, and one was.
+
+    The board computed `unverifiable - partial`, assuming the partially-verified tasks were a SUBSET
+    of the unverifiable ones. They are not: `mesh_scale_checked` is its own coverage state and the
+    two counts are disjoint, so the subtraction produced "-9 are UNVERIFIABLE BY CONSTRUCTION".
+    """
+    import re
+    report = ROOT / "reports" / "figpipe_report.html"
+    if not report.is_file():
+        pytest.skip("no report")
+    html = report.read_text(encoding="utf-8")
+    body = re.sub(r"<[^>]+>", " ", html)
+    body = re.sub(r"\s+", " ", body)
+    assert not re.search(r"(?<![\d.])-\d+ (?:of|are|tasks|more)", body), (
+        "the report states a negative task count")

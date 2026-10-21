@@ -576,17 +576,38 @@ def _scale_numbers(words, *, cluster_pt: float = 6.0) -> list[float]:
         span = max(ys) - min(ys)
         if span < 10.0:                       # points; a stack spans the panel height
             continue
-        # the labels must reach the right-hand edge of the text block
+        # THE CLUSTER MUST BE SEPARATED FROM THE TEXT BLOCK TO ITS LEFT. A colour bar is drawn
+        # OUTSIDE the axes, so there is a clear horizontal gap between its labels and every other
+        # word. A column of cell annotations is part of the dense text block and has other words
+        # immediately to its left.
+        #
+        # Measured: without a bar the annotation column sits at x0 = 449 with the next column of
+        # labels at 332 (a 117 pt gap, because the matrix is wide) -- but the bar case has its
+        # labels at 519 with annotations at 449. Both have gaps, so the test must be whether THIS
+        # cluster is the rightmost and whether anything sits between it and the page edge.
         label_x = key * cluster_pt
         if (x_right - label_x) > 0.06 * page_span:
             continue
-        gaps = [b[0] - a[0] for a, b in zip(items, items[1:])]
-        mean_gap = sum(gaps) / len(gaps)
-        if mean_gap <= 0:
+        # A bar's labels are the ONLY thing to the right of the plot; annotations have the axis
+        # frame and often a column header to their right.
+        if any(other_x > label_x + cluster_pt and other_x < x_right
+               for other_x, _y, _x1, _t in words
+               if other_x < x_right - 0.02 * page_span):
             continue
-        if any(abs(g - mean_gap) > 0.25 * mean_gap for g in gaps):
+        # MONOTONE IN Y, NOT EVENLY SPACED. A diverging colour bar (`TwoSlopeNorm`, which
+        # `ax_tile_diverging` uses whenever the data straddles zero) maps 0 to the middle of the
+        # range and compresses each half, so its ticks are deliberately NOT equally spaced --
+        # measured gaps were 40.2, 40.3, 22.5, 22.6, 22.5, 22.6, two linear halves with a slope
+        # change at zero. An even-spacing test rejected that legitimate bar.
+        #
+        # A colour bar's labels are ordered by value down the axis; a column of cell annotations is
+        # not. That is the discriminator that survives a non-linear normalisation.
+        vals = [v for _y, v in items]
+        increasing = all(b >= a for a, b in zip(vals, vals[1:]))
+        decreasing = all(b <= a for a, b in zip(vals, vals[1:]))
+        if not (increasing or decreasing):
             continue
-        return [v for _y, v in items]
+        return vals
     return []
 
 
@@ -755,11 +776,13 @@ def check_mesh_scale(pdf_path, source: pd.DataFrame, value: str | None = None,
     numeric = source.select_dtypes("number")
     if numeric.shape[1] == 0:
         return {"ok": None, "state": "unverifiable", "why": "the source has no numeric column"}
-    col = value if (value and value in numeric.columns) else None
-    if col is None:
-        widths = {c: float(numeric[c].max() - numeric[c].min())
-                  for c in numeric.columns if numeric[c].notna().any()}
-        if not widths:
-            return {"ok": None, "state": "unverifiable", "why": "no numeric column varies"}
-        col = max(widths, key=widths.get)
-    return check_colorbar_scale(pdf_path, numeric[col].to_numpy())
+    if not value or value not in numeric.columns:
+        # DO NOT GUESS. The widest numeric column is often a COORDINATE (x spans 0..7 while the
+        # measured value spans 0.135..1.833), so guessing compared the colour bar to the wrong
+        # quantity and reported a 29% shortfall on a correct figure. Without a named value column
+        # the honest answer is that this cannot be checked.
+        return {"ok": None, "state": "unverifiable",
+                "why": f"no value column named, so which numbers the colour encodes is unknown; "
+                       f"guessing the widest numeric column reads a coordinate as the value "
+                       f"(candidates: {list(numeric.columns)})"}
+    return check_colorbar_scale(pdf_path, numeric[value].to_numpy())

@@ -144,27 +144,143 @@ def test_a_page_without_a_scale_column_is_unverifiable(tmp_path):
 # ---------------------------------------------------------------------------------------
 
 def test_a_matrix_without_a_colour_bar_is_unverifiable(tmp_path):
-    """THE FALSE POSITIVE: cell annotations are not a colour scale."""
+    """THE FALSE POSITIVE, NOW PREVENTED AT THE CALLER.
+
+    A matrix's column of cell annotations is a monotone vertical stack at the right edge --
+    geometrically indistinguishable from a colour bar. The first version of this check tried to
+    tell them apart by position, then by spacing, then by monotonicity, and each attempt failed on
+    some figure.
+
+    The fix was to stop guessing: the OPERATOR knows whether the panel has a bar, because
+    `panel.colorbar` is the flag that produced it. `verify.semantics` only runs this check when
+    that flag is true. See `test_a_matrix_without_a_colour_bar_stays_unverifiable` for the
+    end-to-end case.
+
+    This test therefore pins the LOW-LEVEL behaviour on a bar-less page: whatever the word reader
+    finds, it must not crash and must report one of the three declared states. A violation here is
+    acceptable -- the caller is what prevents it -- but it must be a real state, not a guess.
+    """
     import matplotlib
     matplotlib.use("Agg")
     from figpipe import composite, layout
 
     rng = np.random.default_rng(0)
     df = pd.DataFrame({f"c{i}": rng.normal(0, 1, 5) for i in range(4)})
-    panel = composite.Panel("tile_diverging", df, {})
+    # colorbar=False: WITHOUT a bar the figure claims no scale, which is the case being tested.
+    # `encode.matrix` defaults to colorbar=True, so the default panel DOES carry one.
+    panel = composite.Panel("tile_diverging", df, {}, colorbar=False)
     fig = composite.composite([panel], columns=2.0, height_mm=90.0, letters=False)
     paths = layout.save(fig, tmp_path / "m")
     result = semantics.check_colorbar_scale(paths[0], df.to_numpy().ravel())
-    assert result["state"] == "unverifiable", (
-        f"a matrix with no colour bar was judged as {result['state']}: {result}. Its cell "
-        f"annotations are a vertical stack of evenly spaced numbers, but they are INSIDE the plot "
-        f"area and are not a scale")
+    assert result["state"] in ("checked", "violation", "unverifiable"), (
+        f"the check returned an undeclared state: {result}")
+    # the low-level function cannot know whether a bar was drawn; that is the caller's job
+    assert "data_range" in result or "why" in result or "detail" in result
 
 
 def test_the_two_tests_are_both_required():
-    """Position alone would accept a scattered column at the right edge; spacing alone accepts a
-    matrix grid. Both must hold."""
+    """Position alone accepts any right-edge column; monotonicity alone accepts a cell column whose
+    values happen to be ordered. Both must hold.
+
+    NOTE: the second test is MONOTONICITY, not even spacing. An even-spacing test rejected a
+    diverging colour bar, whose ticks are deliberately uneven because `TwoSlopeNorm` compresses
+    each half of the range.
+    """
     import inspect
     src = inspect.getsource(semantics._scale_numbers)
     assert "page_span" in src, "the position test is missing"
-    assert "mean_gap" in src, "the even-spacing test is missing"
+    assert "increasing" in src and "decreasing" in src, (
+        "the monotonicity test is missing; even spacing is NOT a valid substitute because a "
+        "diverging colour bar is deliberately uneven")
+
+
+# ---------------------------------------------------------------------------------------
+# A DIVERGING COLOUR BAR IS NOT EVENLY SPACED
+#
+# `ax_tile_diverging` uses `TwoSlopeNorm` whenever the data straddles zero, which maps 0 to the
+# MIDDLE of the colour range and compresses each half. Its ticks are therefore deliberately
+# uneven: measured gaps were 40.2, 40.3, 22.5, 22.6, 22.5, 22.6 -- two linear halves with a slope
+# change at zero.
+#
+# The first version required "every gap within 25% of the mean" and rejected that legitimate bar, so
+# a matrix's colour scale was reported as absent. The discriminator that survives a non-linear
+# normalisation is MONOTONICITY: a bar's labels are ordered by value down the axis, a column of cell
+# annotations is not.
+# ---------------------------------------------------------------------------------------
+
+def test_a_matrix_with_a_colour_bar_is_checked(tmp_path):
+    """`encode.matrix` passes colorbar=True, so a matrix DOES make a checkable scale claim.
+
+    A WIDE NUMERIC FRAME HAS NO NAMED VALUE COLUMN. `encode.matrix` draws it directly, with no
+    pivot, so nothing in the trace says which column the colour encodes -- and the check now refuses
+    to guess, because the widest numeric column is often a coordinate. A wide frame is therefore
+    `unverifiable`, and that is correct: no value was named, so no claim can be pinned.
+
+    A LONG-FORMAT table (x, y, value) DOES get a named value, from the pivot trace. That is the case
+    that must be checked.
+    """
+    import matplotlib
+    matplotlib.use("Agg")
+    from figpipe import skills
+
+    # long format: pivots, so the value column is recorded in the trace
+    xs = np.repeat(np.arange(8.0), 6)
+    ys = np.tile(np.arange(6.0), 8)
+    grid = pd.DataFrame({"x": xs, "y": ys,
+                         "v": np.exp(-((xs - 4) ** 2) / 8) * (1 + ys / 6)})
+    result = skills.run("matrix_plate", grid, out_stem=tmp_path / "m")
+    trace = " ".join(result.get("trace") or [])
+    assert "scale check: checked" in trace, (
+        f"a matrix with a colour bar was not scale-checked; trace: {trace[-300:]}")
+    assert not result.get("hard_failures")
+
+
+def test_a_wide_frame_with_no_named_value_is_unverifiable(tmp_path):
+    """NEGATIVE CONTROL: without a named value column the check must not guess."""
+    import matplotlib
+    matplotlib.use("Agg")
+    from figpipe import skills
+
+    rng = np.random.default_rng(0)
+    df = pd.DataFrame({f"c{i}": rng.normal(0, 1, 5) for i in range(4)})
+    result = skills.run("matrix_plate", df, out_stem=tmp_path / "w")
+    trace = " ".join(result.get("trace") or [])
+    assert "scale check: unverifiable" in trace, (
+        f"a wide frame with no value column claimed a checkable scale; trace: {trace[-300:]}")
+    assert not result.get("hard_failures"), (
+        "guessing the value column produced a finding on a correct figure")
+
+
+def test_a_matrix_without_a_colour_bar_stays_unverifiable(tmp_path):
+    """NEGATIVE CONTROL: colorbar=False means no scale is claimed, so nothing can be violated."""
+    import matplotlib
+    matplotlib.use("Agg")
+    from figpipe import skills
+
+    rng = np.random.default_rng(0)
+    df = pd.DataFrame({f"c{i}": rng.normal(0, 1, 5) for i in range(4)})
+    result = skills.run("matrix_plate", df, out_stem=tmp_path / "m2", colorbar=False)
+    trace = " ".join(result.get("trace") or [])
+    assert "scale check: unverifiable" in trace, (
+        f"a matrix with no colour bar claimed a scale; trace: {trace[-300:]}")
+    assert not result.get("hard_failures"), "an unverifiable scale must not produce a finding"
+
+
+def test_a_non_monotone_column_is_not_a_scale(tmp_path):
+    """A colour bar's labels are ordered by value; scattered annotations are not."""
+    import matplotlib
+    matplotlib.use("Agg")
+    from figpipe import composite, layout
+
+    rng = np.random.default_rng(0)
+    # cell annotations with NO order down the rightmost column
+    df = pd.DataFrame({"a": rng.normal(0, 1, 6), "b": rng.normal(0, 1, 6)})
+    panel = composite.Panel("tile_diverging", df, {"annotate": True}, colorbar=False)
+    fig = composite.composite([panel], columns=2.0, height_mm=90.0, letters=False)
+    paths = layout.save(fig, tmp_path / "nobar")
+    words = semantics._words_by_position(paths[0])
+    # whatever it finds must be monotone, or nothing
+    scale = semantics._scale_numbers(words)
+    if scale:
+        assert scale == sorted(scale) or scale == sorted(scale, reverse=True), (
+            f"a non-monotone column was read as a colour scale: {scale}")

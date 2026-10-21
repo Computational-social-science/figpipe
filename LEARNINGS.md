@@ -4082,3 +4082,42 @@ raster, and they differ by exactly the transform the pipeline applies. Comparing
 transform produces a confident, wrong finding, which is worse than no check.
 
 Suite: 703 passed, 3 skipped.
+
+
+## 126. Three more ways to identify a colour bar, all wrong, and the fix was to stop looking (2026-10-22)
+
+The pool had 17 `unverifiable` tasks. Fourteen were `matrix_plate`, and `encode.matrix` DOES pass
+`colorbar=True` -- so those figures carry a colour scale and the check was simply not running on
+them. Turning it on should have been one line. It took three more wrong answers.
+
+  1. EVEN SPACING. I required every label gap within 25% of the mean. A DIVERGING colour bar uses
+     `TwoSlopeNorm`, which maps 0 to the middle of the range and compresses each half, so its gaps
+     are deliberately uneven -- measured 40.2, 40.3, 22.5, 22.6, 22.5, 22.6. Two linear halves with
+     a slope change at zero. The test rejected a correct bar.
+
+  2. MONOTONICITY. Replacing spacing with "values ordered down the axis" accepted the diverging
+     bar. It also accepted a column of CELL ANNOTATIONS whose values happened to be ordered, which
+     is how a bar-less matrix still read as having a scale.
+
+  3. POSITION SEPARATION. "The cluster must have a gap between it and the text to its left." A wide
+     matrix has a 117 pt gap between its annotation columns, so this passed on a bar-less figure too.
+
+THE FIX WAS TO STOP IDENTIFYING THE BAR FROM THE PAGE AT ALL. The operator knows: `panel.colorbar`
+is the flag that produced it. Every geometric test above was a heuristic standing in for a fact the
+caller already held, and each one had a counterexample in the pool.
+
+THEN A SECOND GUESS, FOUND BY THE DATA-SHAPE AUDIT: `check_mesh_scale` fell back to "the widest
+numeric column" when no value was named. On a long-format grid (x, y, v) the widest column is `x`
+(0..7), not `v` (0.135..1.833) -- so the printed scale was compared to the COORDINATE range and
+reported a 29% shortfall on a correct figure. The value column is now read from what the operator
+recorded (`encode.field`'s `value` kwarg, or `encode.matrix`'s pivot trace), and when nothing names
+it the answer is `unverifiable` rather than a guess.
+
+MEASURED: a 48-row grid now checks clean -- `data [0, 5]; printed scale [0, 5]; worst shortfall 0%`.
+
+THE PATTERN, and it is now unmistakable: **every time this check guessed a fact, it produced a
+confident wrong answer.** Which numbers are the scale, which column is the value, whether a bar
+exists -- all three are known to the caller and were being re-derived from pixels. A check that
+re-derives a fact it could be told will eventually re-derive it wrong.
+
+Suite: 706 passed, 4 skipped.

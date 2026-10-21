@@ -534,7 +534,7 @@ def op_encode_field(ctx: SkillContext, x: str, y: str, value: str,
 #: The scale check applies only where a scale is claimed, and asking the drawer is exact --
 #: more geometric heuristics are not (9 pool tasks were flagged by axis labels that looked
 #: like a scale).
-DRAWERS_WITH_COLORBAR = {"field_2d"}
+DRAWERS_WITH_COLORBAR = {"field_2d", "tile_diverging"}
 
 MAX_POLAR_SPOKES = 16
 
@@ -630,6 +630,22 @@ def op_verify_collisions(ctx: SkillContext, fig, pdf_path):
                              "detail": f"{h['a']!r} over {h['b']!r}",
                              "severity": "hard"})
     ctx.trace.append("verify.collisions")
+
+
+def _value_column(ctx, kw) -> str | None:
+    """Which column the colour encodes, from what the operator recorded -- never guessed.
+
+    `encode.field` passes `value` as a kwarg. `encode.matrix` pivots and writes
+    `encode.matrix.pivot(<a> x <b> of <val>: ...)` into the trace. Both are facts the caller holds.
+    """
+    import re
+    if kw.get("value"):
+        return str(kw["value"])
+    for t in ctx.trace:
+        m = re.search(r"matrix\.pivot\(.* of (\w+)", t)
+        if m:
+            return m.group(1)
+    return None
 
 
 def _drawn_values(fig, panel):
@@ -736,14 +752,23 @@ def op_verify_semantics(ctx: SkillContext, fig, pdf_path):
                 # one from `encode.field`; `tile_diverging` does not, and on the pool 9 of its tasks
                 # were flagged because their AXIS tick labels landed near the right edge and looked
                 # like a scale. Asking the drawer is exact; more geometric heuristics are not.
-                if panel.draw in DRAWERS_WITH_COLORBAR:
-                    # THE DRAWN VALUES, NOT THE CALLER'S FRAME. `ax_field_2d` pivots the long table
-                    # and aggregates with the mean, so the colour range covers CELL MEANS. The
-                    # drawer records what it drew on the axes; without that the check compared the
+                # THE CALLER KNOWS; THE CHECK DOES NOT HAVE TO GUESS. `panel.colorbar` is the flag
+                # that produced the bar. Reading word positions to decide whether a bar exists is a
+                # heuristic standing in for a fact, and it produced false positives: a matrix's
+                # column of cell annotations is a monotone vertical stack at the right edge, which
+                # is geometrically indistinguishable from a bar.
+                if panel.draw in DRAWERS_WITH_COLORBAR and panel.colorbar:
+                    # THE DRAWN VALUES, NOT THE CALLER'S FRAME. `ax_field_2d` and `ax_tile_diverging`
+                    # both pivot and aggregate, so the colour range covers CELL VALUES. The drawer
+                    # records what it plotted on the axes; without that the check compared the
                     # scale to the RAW range and reported a violation on every aggregating task.
                     drawn_arr = _drawn_values(fig, panel)
+                    # WHICH COLUMN CARRIES THE COLOUR. `encode.field` names it `value`;
+                    # `encode.matrix` records it in the pivot trace. Guessing the widest numeric
+                    # column read a COORDINATE as the value and reported a 29% shortfall on a
+                    # correct figure.
                     scale = semantics.check_mesh_scale(
-                        pdf_path, ctx.data, value=kw.get("value"),
+                        pdf_path, ctx.data, value=_value_column(ctx, kw),
                         drawn=(drawn_arr if drawn_arr is not None else panel.data))
                 else:
                     scale = {"ok": None, "state": "unverifiable",
