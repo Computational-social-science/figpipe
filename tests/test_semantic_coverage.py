@@ -116,3 +116,34 @@ def test_the_selected_result_is_the_one_recorded(bench):
     src = inspect.getsource(bench.run_task)
     assert "styled if chosen_is_styled else plain" in src, (
         "the state is not computed from the selected result")
+
+
+def test_a_mesh_drawer_is_UNVERIFIABLE_not_merely_skipped(bench):
+    """A pcolormesh is ONE path: the cell values never reach the PDF.
+
+    That is a property of the FORMAT, not unfinished work, and the two must not be counted
+    together -- otherwise the coverage number says the wrong thing about what remains to be done.
+    """
+    trace = ["verify.semantics(mesh panel 0: tile_diverging -- a signed matrix is one pcolormesh "
+             "path; the cell values are not in the PDF)", "verify.semantics"]
+    assert bench.semantic_state({"trace": trace}) == "unverifiable"
+
+
+def test_the_four_states_are_distinct(bench):
+    """checked / skipped / unverifiable / absent must not collapse into each other."""
+    traces = {
+        "checked": {"trace": ["verify.semantics"]},
+        "skipped": {"trace": ["verify.semantics(skip panel 0: boxplot)", "verify.semantics"]},
+        "unverifiable": {"trace": ["verify.semantics(mesh panel 0: field_2d -- one path)",
+                                   "verify.semantics"]},
+        "absent": {"trace": ["layout.plate"]},
+    }
+    got = {name: bench.semantic_state(v) for name, v in traces.items()}
+    assert got == {name: name for name in traces}, got
+
+
+def test_the_coverage_report_counts_unverifiable_separately(bench):
+    import inspect
+    src = inspect.getsource(bench)
+    assert '"unverifiable": states.count("unverifiable")' in src, (
+        "the coverage report does not count unverifiable tasks separately from skipped ones")

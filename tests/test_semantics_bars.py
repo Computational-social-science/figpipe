@@ -168,3 +168,104 @@ def test_a_wrong_value_is_still_a_violation(bar_axes):
     assert res["ok"] is False
     assert res["findings"]
     assert "unverifiable" not in res
+
+
+# ---------------------------------------------------------------------------------------
+# HISTOGRAM -- the drawer behind faceted_distribution, 15 of the pool's unverified tasks
+# ---------------------------------------------------------------------------------------
+
+def _hist_axes(bins=10, n=200):
+    rng = np.random.default_rng(0)
+    vals = rng.random(n)
+    fig, ax = plt.subplots()
+    ax.hist(vals, bins=bins, density=False)
+    return fig, ax, pd.DataFrame({"v": vals})
+
+
+def test_a_correct_histogram_passes():
+    fig, ax, data = _hist_axes(bins=10)
+    res = semantics.check_histogram(ax, data, value="v", bins=10, density=False)
+    assert res["ok"] is True, res["findings"]
+    plt.close(fig)
+
+
+def test_a_histogram_with_more_bars_than_bins_is_caught():
+    """NEGATIVE CONTROL: a histogram cannot subdivide beyond its bins."""
+    fig, ax, data = _hist_axes(bins=10)
+    res = semantics.check_histogram(ax, data, value="v", bins=3, density=False)
+    assert res["ok"] is False
+    assert "cannot subdivide" in res["findings"][0]["detail"]
+    plt.close(fig)
+
+
+def test_empty_bins_are_NOT_a_violation():
+    """THE BUG: numpy OMITS empty bins, so a sparse facet legitimately draws fewer bars.
+
+    The first version demanded exactly `bins` bars and flagged every sparse facet -- 15 pool tasks
+    would have been marked broken for correct behaviour.
+    """
+    rng = np.random.default_rng(1)
+    vals = rng.random(10)          # 10 points into 20 bins: many bins empty
+    fig, ax = plt.subplots()
+    ax.hist(vals, bins=20, density=False)
+    data = pd.DataFrame({"v": vals})
+    res = semantics.check_histogram(ax, data, value="v", bins=20, density=False)
+    assert res["ok"] is True, res["findings"]
+    assert res["bars"] < 20, "the fixture must actually have empty bins"
+    plt.close(fig)
+
+
+def test_a_wrong_mass_is_caught():
+    """density=False means the heights sum to the number of values; a dropped batch shows here."""
+    fig, ax, data = _hist_axes(bins=10, n=200)
+    doubled = pd.concat([data, data], ignore_index=True)   # claims 400 values, drew 200
+    res = semantics.check_histogram(ax, doubled, value="v", bins=10, density=False)
+    assert res["ok"] is False
+    assert "histogram_mass" in res["findings"][0]["check"]
+    plt.close(fig)
+
+
+def test_faceted_distribution_is_now_semantically_checked():
+    rng = np.random.default_rng(0)
+    df = pd.DataFrame({"c": ["a", "b", "c", "d"] * 10, "v": rng.random(40)})
+    res = skills.run("faceted_distribution", df, out_stem=None, value="v", by="c", of="hist")
+    skips = [t for t in res["trace"] if "semantics(skip" in t]
+    assert not skips, f"histogram panels are still skipped: {skips}"
+    assert res["hard_failures"] == 0, res["findings"]
+
+
+def test_a_GROUPED_histogram_is_not_flagged():
+    """THE THIRD FALSE POSITIVE in this check, and the cause is always the same.
+
+    A grouped histogram draws ONE BAR SET PER GROUP, so its total bar count is
+    (groups x non-empty bins) and its bar widths are the group offsets -- both legitimately
+    different from a single ungrouped series. The check fired on a correct figure:
+
+        27 bars drawn for 20 bins
+        bars have 3 different widths (0.041 to 0.050)
+
+    Each time this happened I had modelled the DRAWER's parameters and forgotten what matplotlib
+    actually draws. The check now asks whether the panel is grouped before enforcing the
+    single-series constraints.
+    """
+    rng = np.random.default_rng(0)
+    df = pd.DataFrame({"replicates": rng.random(36),
+                       "group": ["a", "b", "c"] * 12})
+    fig, ax = plt.subplots()
+    ax.hist([df[df.group == g]["replicates"] for g in ("a", "b", "c")], bins=20, density=False)
+    res = semantics.check_histogram(ax, df, value="replicates", bins=20,
+                                    density=False, group="group")
+    assert res["ok"] is True, res["findings"]
+    plt.close(fig)
+
+
+def test_an_ungrouped_histogram_with_too_many_bars_is_still_caught():
+    """NEGATIVE CONTROL: exempting grouped panels must not exempt everything."""
+    rng = np.random.default_rng(0)
+    vals = rng.random(200)
+    fig, ax = plt.subplots()
+    ax.hist(vals, bins=10, density=False)
+    res = semantics.check_histogram(ax, pd.DataFrame({"v": vals}), value="v",
+                                    bins=3, density=False)
+    assert res["ok"] is False
+    plt.close(fig)

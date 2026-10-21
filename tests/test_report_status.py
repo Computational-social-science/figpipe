@@ -48,9 +48,15 @@ def test_the_status_board_names_the_biggest_gap_as_a_number(report_src):
     html = report_src.read_text(encoding="utf-8")
     i = html.find("Biggest known gap")
     assert i > 0, "the report does not name its biggest known gap"
-    window = html[i:i + 700]
-    assert "tasks" in window and "%" in window, (
+    window = html[i:i + 900]
+    assert "tasks" in window, f"the gap does not name its unit: {window[:300]}"
+    # the requirement is a COUNT, not a particular format: "11 of 139 tasks" is as numeric as "8%"
+    import re as _re
+    assert _re.search(r"\d+\s+of\s+\d+", window) or _re.search(r"\d+%", window), (
         f"the gap is not stated as a number: {window[:300]}")
+    # and it must account for the unverifiable mesh tasks rather than quietly excluding them
+    assert "MESH" in window or "mesh" in window, (
+        "the gap omits the unverifiable tasks, so it understates what is not verified")
 
 
 def test_the_status_board_states_a_next_step_with_an_acceptance_criterion(report_src):

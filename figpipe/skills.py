@@ -628,11 +628,24 @@ def op_verify_semantics(ctx: SkillContext, fig, pdf_path):
     #: `grouped_measures` (18 pool tasks) and `distribution_comparison` (16).
     BAR_DRAWERS = {"grouped_bars", "bar_with_errors"}
     BOX_DRAWERS = {"boxplot"}
+    #: A histogram is the drawer behind `faceted_distribution`'s per-level panels, which accounted
+    #: for 15 of the pool's unverified tasks.
+    HIST_DRAWERS = {"histogram"}
     for i, (panel, ax) in enumerate(zip(ctx.panels, fig.axes)):
         if panel.draw in BAR_DRAWERS:
             kw = dict(panel.kwargs)
             res = semantics.check_bar_heights(ax, panel.data, x=kw.get("x"),
                                               ycols=kw.get("ycols") or [])
+            for f in res["findings"]:
+                ctx.findings.append({"check": f"semantics.{f['check']}",
+                                     "detail": f["detail"], "severity": "hard"})
+            continue
+        if panel.draw in HIST_DRAWERS:
+            kw = dict(panel.kwargs)
+            res = semantics.check_histogram(ax, panel.data, value=kw.get("value"),
+                                            bins=int(kw.get("bins") or 20),
+                                            density=bool(kw.get("density", True)),
+                                            group=kw.get("group"))
             for f in res["findings"]:
                 ctx.findings.append({"check": f"semantics.{f['check']}",
                                      "detail": f["detail"], "severity": "hard"})
@@ -646,7 +659,13 @@ def op_verify_semantics(ctx: SkillContext, fig, pdf_path):
                                      "detail": f["detail"], "severity": "hard"})
             continue
         if panel.draw not in POINT_DRAWERS:
-            ctx.trace.append(f"verify.semantics(skip panel {i}: {panel.draw})")
+            # A mesh drawer cannot be checked from the rendered file at all, and saying so with the
+            # REASON is different from "we have not written the rule yet". The trace records which.
+            why = semantics.mesh_unverifiable(panel.draw)
+            if why:
+                ctx.trace.append(f"verify.semantics(mesh panel {i}: {panel.draw} -- {why})")
+            else:
+                ctx.trace.append(f"verify.semantics(skip panel {i}: {panel.draw})")
             continue
         kw = dict(panel.kwargs)
         x, y = kw.get("x"), kw.get("y")

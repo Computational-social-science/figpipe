@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-20T17:48:05",
+  "run_at": "2026-10-21T10:21:55",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -9,10 +9,10 @@
     "  passed 8, failed 0",
     "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
     "  wrote knowledge\\evolution_report.json",
-    "  lean: tracked 76.9 -> 76.9 MB, worktree 130.6 -> 129.1 MB"
+    "  lean: tracked 77.0 -> 77.0 MB, worktree 110.4 -> 105.7 MB"
   ],
   "tests_ok": true,
-  "tests_summary": "565 passed, 3 skipped, 1 warning in 335.14s (0:05:35)",
+  "tests_summary": "586 passed, 3 skipped, 1 warning in 529.66s (0:08:49)",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
@@ -144,8 +144,18 @@
     ]
   },
   "anchor_refresh": {
-    "ran": false,
-    "reason": "both anchors already comparable"
+    "ran": true,
+    "stale_anchors": [
+      "shipped",
+      "styled"
+    ],
+    "tasks": 35,
+    "code": 0,
+    "tail": [
+      "    type Scatter        ok 3/3   d=0.349 base=0.442 delta=0.094 errors=0",
+      "    type Std-band       ok 1/1   d=0.368 base=0.424 delta=0.056 errors=0",
+      "  wrote E:\\2026-AI4S\\figpipe\\corpus\\e2e\\plottwin_report.json"
+    ]
   },
   "mutation": {
     "ran": true,
@@ -610,18 +620,36 @@
     "benchmark_official_improvement": 37.25,
     "statistics_reproduced": 15,
     "knowledge_version": 16,
-    "tests": 565
+    "tests": 586
   },
   "capabilities_delta": {
     "changed": true,
     "delta": {
+      "benchmark_ok": {
+        "before": 127,
+        "after": 139
+      },
+      "benchmark_infrastructure_failures": {
+        "before": 12,
+        "after": 0
+      },
+      "benchmark_mean_distance": {
+        "before": 0.311,
+        "after": 0.313
+      },
       "tests": {
-        "before": null,
-        "after": 565
+        "before": 577,
+        "after": 586
       }
     },
     "verdict": {
-      "gains": [],
+      "gains": [
+        {
+          "field": "tests",
+          "before": 577,
+          "after": 586
+        }
+      ],
       "regressions": [],
       "corrections": [],
       "ok": true,

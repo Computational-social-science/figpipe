@@ -558,6 +558,10 @@ CODE_VERSION = _code_version()
 INFRASTRUCTURE_ERRORS = (
     "HTTPError", "URLError", "ConnectionError", "TimeoutError", "SSLError",
     "socket.timeout", "RemoteDisconnected",
+    # A truncated download is a NETWORK failure, not a capability one: `IncompleteRead(301908 bytes
+    # read, 26163 more expected)` means the server closed the connection mid-file. Observed
+    # 2026-10-20 and counted as a capability error until it was added here.
+    "IncompleteRead",
 )
 
 
@@ -686,14 +690,21 @@ def _panel_for(skill, data, params):
 def semantic_state(result: dict) -> str:
     """Whether `verify.semantics` executed, and if not, why.
 
-    `checked`  the check ran against this panel
-    `skipped`  the drawer has no semantic rule (14 of 16 drawers), so NOTHING was verified
-    `absent`   the trace does not mention the step at all, which is itself a finding
+    `checked`       the check ran against this panel
+    `skipped`       the drawer has no semantic rule YET, so nothing was verified
+    `unverifiable`  the drawer renders a MESH: the cell values never reach the PDF, so no
+                    rendered-file check can exist. Different from `skipped`: one is unfinished
+                    work, the other is a property of the format.
+    `absent`        the trace does not mention the step at all, which is itself a finding
 
     Without this distinction a clean UNVERIFIED task and a clean VERIFIED task are
     indistinguishable in the report -- which is how a coverage gap hides.
     """
     trace = result.get("trace") or []
+    # A MESH panel is unverifiable BY CONSTRUCTION, not by omission: a pcolormesh is one path and
+    # the cell values never reach the PDF. Counting it with the unfinished drawers would make the
+    # coverage number say the wrong thing about what remains to be done.
+    mesh = [t for t in trace if "semantics(mesh panel" in t]
     skipped = [t for t in trace if "semantics(skip" in t]
     # THE SUMMARY LINE IS NOT EVIDENCE OF A CHECK. The operator appends
     # `verify.semantics(skip panel N: <draw>)` per panel and then a bare `verify.semantics` at the
@@ -704,7 +715,11 @@ def semantic_state(result: dict) -> str:
     if not ran:
         return "absent"
     # A skip line means at least one panel was NOT verified, whatever else the step did.
-    return "skipped" if skipped else "checked"
+    if skipped:
+        return "skipped"
+    if mesh:
+        return "unverifiable"
+    return "checked"
 
 
 def run_task(row: dict, out_dir: pathlib.Path) -> dict:
@@ -1264,6 +1279,7 @@ def _run(args) -> int:
         report["semantic_coverage"] = {
             "checked": states.count("checked"),
             "skipped": states.count("skipped"),
+            "unverifiable": states.count("unverifiable"),
             "absent": states.count("absent"),
             "n": len(states),
             "note": ("`skipped` tasks were drawn by a drawer with no semantic rule: their printed "

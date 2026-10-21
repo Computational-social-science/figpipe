@@ -2866,3 +2866,109 @@ MEASURED RESULT:
     hard findings       19 -> 18
 
 Suite: 577 passed, 2 skipped.
+
+
+## 97. A check that fired on correct output, again; and a limitation named instead of hidden (2026-10-20)
+
+Continuing to shrink the coverage gap. `faceted_distribution` (15 tasks) draws histograms, so a
+histogram rule was the next biggest win after bars and boxes.
+
+THE CHECK I WROTE FIRST WAS WRONG: it demanded exactly `bins` bars. numpy OMITS EMPTY BINS, so a
+facet with 10 points over 20 bins legitimately draws 8 bars -- and my check flagged all four facets
+of a correct figure:
+
+    8 bars drawn for 20 bins
+    9 bars drawn for 20 bins
+    ...
+
+That is the THIRD time in two rounds that a check of mine fired on correct output (pooled median,
+box edges, now empty bins). The pattern is consistent: I write the check from the DRAWER's
+parameters and forget what the DRAWING LIBRARY actually does with them. The correct constraint is
+`len(bars) <= bins` -- a histogram cannot subdivide beyond its bins -- plus equal widths plus the
+right total mass.
+
+THEN A LIMITATION, NAMED RATHER THAN HIDDEN. `matrix_plate` (13 tasks) and `field_map` (15) render
+with `pcolormesh`. A mesh is ONE path in the PDF: the cell values live in the drawing library's
+collection and never reach the file. There is no geometry to compare against the data, so no
+rendered-file check can exist for them.
+
+The tempting move is to keep them in the `skipped` bucket, where they look like unfinished work. The
+honest move is a FOURTH state:
+
+    checked       the check ran
+    skipped       no semantic rule YET -- unfinished work
+    unverifiable  a MESH: the cell values never reach the PDF -- a property of the format
+    absent        the trace does not mention the step at all -- itself a finding
+
+The distinction matters because the coverage number is a claim about what remains to be DONE. Folding
+an impossibility into a to-do list makes the list lie, and it invites a future round to "finish" a
+task that cannot be finished.
+
+Suite: 582 passed, 2 skipped.
+
+
+## 98. Three false positives in one check, all the same mistake (2026-10-20)
+
+The histogram check fired on correct output THREE times before it was right:
+
+    1. demanded exactly `bins` bars      -> numpy OMITS empty bins; every sparse facet "failed"
+    2. demanded equal bar widths         -> correct for one series, wrong for a grouped histogram
+    3. total bar count > bins            -> a GROUPED histogram draws one bar set per group, so
+                                            the total is (groups x non-empty bins)
+
+Every one has the same cause: **I wrote the check from the DRAWER's parameters and forgot what
+matplotlib actually draws with them.** The drawer says `bins=20`; matplotlib draws 8 bars because
+most bins are empty, or 27 bars because three groups each drew their own, with widths offset per
+group.
+
+That is now three rounds in a row where a check of mine fired on a correct figure (pooled median,
+box edges, empty bins, grouped bars). The pattern is consistent enough to name: **a check written
+from the caller's parameters rather than from the library's output will be wrong in the same way
+every time.**
+
+The countermeasure that actually worked, every time: run the check on a figure known to be correct
+BEFORE trusting it on an unknown one. Not a test of the check's logic -- a test of its premise.
+
+FINAL STATE after all corrections:
+
+    semantic coverage   checked 99 / skipped 11 / unverifiable 29 of 139   (71% verified)
+    capability errors   0
+    benchmark           139/150, both anchors 20/20 comparable
+    hard findings       19
+
+The 11 remaining `skipped` are drawers with no rule yet (radial_profile and a few others). The 29
+`unverifiable` are MESH drawers -- `matrix_plate`, `field_map` -- where the cell values never reach
+the PDF, so no rendered-file check can exist for them.
+
+Suite: 585 passed, 3 skipped.
+
+
+## 99. A 10-hour gap in the session, and what the artefacts said when I came back (2026-10-21)
+
+The session was interrupted for 10 hours mid-re-measure. When it resumed, the state on disk was:
+
+    report    139/150, 0 capability errors, 0 infrastructure failures
+    freshness 6 fresh / 133 stale
+    anchors   styled None, shipped None   (0/20 and 3/20 measured)
+
+That combination is exactly right and worth recording, because it is what the round-22 fixes were
+FOR. The interrupted run had measured only a handful of tasks; the anchors were 0/20 and 3/20; and
+the report REFUSED to publish a partial mean rather than reporting 0.135 as if it were the anchor.
+A reader saw `comparable: false` and a note saying why.
+
+The `code_version match: True` alongside `6 fresh / 133 stale` looked contradictory for a moment and
+is not: the report's fingerprint matches the current code, while the individual ROWS carry their own
+fingerprints and most were rendered by earlier versions.
+
+COMPLETING THE RE-MEASURE restored everything:
+
+    139/150, 0 capability errors, 139 fresh / 0 stale
+    styled 0.355, shipped 0.296, both 20/20 comparable
+    coverage checked 99 / skipped 11 / unverifiable 29   (71% verified)
+
+THE LESSON: an interrupted measurement leaves a state that is HONEST but INCOMPLETE, and the two are
+distinguishable only if the artefact says which it is. `comparable: false` with a stated reason is
+what let me pick this up correctly instead of reporting a regression. A system that had silently
+averaged 3 of 20 anchor tasks would have looked like a 60% capability collapse.
+
+Suite: 586 passed, 3 skipped.

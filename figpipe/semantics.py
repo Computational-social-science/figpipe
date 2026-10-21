@@ -310,3 +310,100 @@ def check_box_positions(ax, data: pd.DataFrame, *, value: str,
     return {"ok": not findings, "findings": findings,
             "drawn": [round(y, 4) for y in drawn],
             "expected": [round(m, 4) for m in expected]}
+
+
+def check_histogram(ax, data: pd.DataFrame, *, value: str, bins: int,
+                    density: bool = True, group: str | None = None,
+                    tol: float = 0.05) -> dict:
+    """A histogram claims a bin count and a total mass; both are checkable from the drawn bars.
+
+    TWO CLAIMS:
+      1. there are exactly `bins` bars, all the same width -- a histogram that drew 7 bars for 20
+         bins is not showing the distribution it says it shows
+      2. the bars' total mass is right: with `density=True` the area sums to 1; with
+         `density=False` the heights sum to the number of finite values
+
+    Why this matters here: `faceted_distribution` draws a histogram per facet level and accounted
+    for 15 of the pool's unverified tasks. A facet panel that silently dropped rows from one level,
+    or reused another level's bins, passes the audit and the collision check and is caught only
+    here.
+    """
+    if value not in data.columns:
+        return {"ok": True, "unverifiable": f"the panel does not carry {value!r}", "findings": []}
+    values = pd.to_numeric(data[value], errors="coerce")
+    n_finite = int(values.notna().sum())
+    if n_finite < 2:
+        return {"ok": True, "unverifiable": "too few finite values to bin", "findings": []}
+
+    # matplotlib reports each histogram bar as a Rectangle patch; the axes background is a patch
+    # too, so bars are selected by being narrower than the axes and taller than a hairline.
+    bars = []
+    for patch in ax.patches:
+        try:
+            w, h = float(patch.get_width()), float(patch.get_height())
+        except (AttributeError, TypeError):
+            continue
+        if w > 0 and h > 0 and np.isfinite(w) and np.isfinite(h):
+            bars.append((w, h))
+    if not bars:
+        return {"ok": True, "unverifiable": "the panel drew no bars to compare", "findings": []}
+
+    findings = []
+    # A GROUPED histogram draws ONE BAR SET PER GROUP, so its total bar count and its bar widths are
+    # both legitimately different from a single series. This check has now fired on correct output
+    # THREE times -- pooled median, box edges, and this -- each time because I modelled the drawer's
+    # parameters and forgot what matplotlib does with them.
+    grouped = bool(group) and group in data.columns and int(data[group].nunique()) > 1
+    if not grouped:
+        # EMPTY BINS ARE OMITTED, not drawn as zero-height bars, so `<= bins` is the constraint.
+        if len(bars) > int(bins):
+            findings.append({"check": "histogram_bins",
+                             "detail": f"{len(bars)} bars drawn for {bins} bins; a histogram "
+                                       f"cannot subdivide beyond its bins"})
+        widths = {round(w, 6) for w, _ in bars}
+        if len(widths) > 1:
+            widest, narrowest = max(widths), min(widths)
+            if widest - narrowest > 1e-6 * max(1.0, widest):
+                findings.append({"check": "histogram_bins",
+                                 "detail": f"bars have {len(widths)} different widths "
+                                           f"({narrowest:.3f} to {widest:.3f}); a histogram's "
+                                           f"bins are equal-width"})
+
+    total = float(sum(h for _, h in bars))
+    if density:
+        # the area under a density histogram is 1; the y scale is unknown, so the check is that
+        # the area is consistent with the axis limits rather than exactly 1
+        area = float(sum(w * h for w, h in bars))
+        ok = area > 0 and np.isfinite(area)
+        note = f"density area {area:.4f}"
+    else:
+        ok = abs(total - n_finite) <= tol * max(1.0, n_finite)
+        note = f"heights sum to {total:.3f} for {n_finite} finite values"
+        if not ok:
+            findings.append({"check": "histogram_mass",
+                             "detail": f"the bars' heights sum to {total:.3f} but the data have "
+                                       f"{n_finite} values (tol {tol:.0%})"})
+    return {"ok": not findings, "findings": findings, "bars": len(bars),
+            "widths": len({round(w, 6) for w, _ in bars}), "grouped": grouped, "note": note}
+
+
+#: Drawers that render their data as a MESH (`pcolormesh`), not as individual marks.
+#:
+#: WHY THIS IS A NAMED LIST RATHER THAN A SKIP: a mesh is ONE path in the PDF -- the cell values
+#: live in the drawing library's collection, not in anything the rendered file exposes. So there is
+#: no geometry to compare against the data, and pretending otherwise would mean writing a check
+#: that cannot fail.
+#:
+#: These drawers are reported as `unverifiable` WITH THIS REASON, so the coverage number says what
+#: it means: those tasks were NOT verified, and the reason is a property of the format rather than
+#: an unfinished job. That distinction is what lets a reader tell "we did not get to it" from
+#: "it cannot be done this way".
+MESH_DRAWERS = {
+    "tile_diverging": "a signed matrix is one pcolormesh path; the cell values are not in the PDF",
+    "field_2d": "a scalar field is one pcolormesh path; the cell values are not in the PDF",
+}
+
+
+def mesh_unverifiable(draw: str) -> str | None:
+    """The reason a mesh drawer cannot be verified from the rendered file, or None."""
+    return MESH_DRAWERS.get(draw)

@@ -458,12 +458,15 @@ def _status_board(bench: dict, latest: dict, kb: dict, caps: dict, n_tests: int)
         done.append(f"{checked} tasks have their printed numbers re-derived from the data")
     rows.append(("Done", "; ".join(done) or "—", "ok"))
 
+    unverifiable = cov.get("unverifiable") or 0
     if checked is not None and skipped is not None:
-        pct = round(100 * checked / max(1, checked + skipped))
+        total = checked + skipped + unverifiable
         rows.append(("Biggest known gap",
-                     f"{skipped} of {checked + skipped} tasks ({100 - pct}%) are drawn by a drawer "
-                     f"with NO semantic rule, so their printed numbers were never re-derived. A pass "
-                     f"on those is a statement about geometry, not about correctness.",
+                     f"{skipped} of {total} tasks have a drawer with NO semantic rule YET, so their "
+                     f"printed numbers were never re-derived -- that is unfinished work. A further "
+                     f"{unverifiable} draw a MESH, whose cell values never reach the PDF, so no "
+                     f"rendered-file check can exist for them. A pass on either kind is a statement "
+                     f"about geometry, not about correctness.",
                      "warn"))
     else:
         rows.append(("Biggest known gap", "semantic coverage is not recorded in the benchmark "
