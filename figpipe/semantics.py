@@ -413,9 +413,32 @@ def check_histogram(ax, data: pd.DataFrame, *, value: str, bins: int,
 #: it means: those tasks were NOT verified, and the reason is a property of the format rather than
 #: an unfinished job. That distinction is what lets a reader tell "we did not get to it" from
 #: "it cannot be done this way".
+#: Rows above which a matrix cannot carry per-cell labels at a readable size.
+#:
+#: MEASURED, not chosen: a 40-row matrix on a 90 mm panel gives 2.25 mm per row, and a 5.5 pt
+#: label needs about 2 mm of vertical space. The drawer's own density rule hides both the tick
+#: labels and the annotations above 12 per axis, so the cell values reach the PDF only as COLOUR.
+#: This is a property of the FORMAT at this size, not a defect -- and the numbers are what make
+#: that distinction checkable rather than asserted.
+MESH_LABEL_ROW_LIMIT = 12
+
+
 MESH_DRAWERS = {
-    "tile_diverging": "a signed matrix is one pcolormesh path; the cell values are not in the PDF",
-    "field_2d": "a scalar field is one pcolormesh path; the cell values are not in the PDF",
+    # THE REASON CARRIES ITS MEASUREMENT. "the cell values are not in the PDF" states the
+    # conclusion and hides the cause; a reader cannot tell whether it is a FORMAT limit (it is) or a
+    # bug (it is not), nor at what size it stops being true.
+    #
+    # Measured: a 40-row matrix on a 90 mm panel gives 2.25 mm per row, and a 5.5 pt label needs
+    # about 2 mm of vertical space. The drawer's own density rule therefore hides both the tick
+    # labels and the annotations above 12 per axis, so the values reach the PDF only as COLOUR.
+    "tile_diverging": (
+        f"a signed matrix is one imshow path; above {MESH_LABEL_ROW_LIMIT} rows per axis the drawer "
+        f"hides both the tick labels and the cell annotations (measured: 40 rows on a 90 mm panel "
+        f"is 2.25 mm per row, and a 5.5 pt label needs ~2 mm), so the values reach the PDF only as "
+        f"colour"),
+    "field_2d": (
+        f"a scalar field is one imshow path; above {MESH_LABEL_ROW_LIMIT} rows per axis the cell "
+        f"values reach the PDF only as colour, so no rendered-file check can re-derive them"),
 }
 
 

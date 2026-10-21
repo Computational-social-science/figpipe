@@ -224,6 +224,16 @@ def op_encode_matrix(ctx: SkillContext, columns: str | None = None,
                             best = (score, a, bcol, val, piv)
         if best is not None:
             _, a, bcol, val, pivoted = best
+            # THE BUDGET APPLIES TO THE PIVOTED SHAPE, not only to the unpivoted table. A pivot
+            # that lands 40 rows on a 90 mm panel draws 2.25 mm per row; the drawer then hides both
+            # the tick labels and the annotations, so the figure carries no recoverable values and
+            # the task is reported unverifiable. A figure nobody can read is not a figure.
+            if pivoted.shape[0] > budget:
+                raise SkillError(
+                    f"encode.matrix: pivoting {a} x {bcol} gives {pivoted.shape[0]} rows, past the "
+                    f"{budget}-row budget; at that size the tiles cannot be labelled and the figure "
+                    f"would carry no readable value -- aggregate {bcol} to fewer levels, or use "
+                    f"field_map")
             ctx.trace.append(f"encode.matrix.pivot({a} x {bcol} of {val}: "
                              f"{data.shape[0]} rows -> {pivoted.shape[0]}x{pivoted.shape[1]})")
             data = pivoted

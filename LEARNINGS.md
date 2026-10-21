@@ -3875,3 +3875,51 @@ that the report's coverage block and the per-row field were produced by the SAME
 could not disagree, and the disagreement had to be in the reader.
 
 Suite: 680 passed, 3 skipped.
+
+
+## 121. The unverifiable label was correct; the figure should not have been drawn (2026-10-21)
+
+Last round I misread `semantic_checked` as a boolean. This round I scanned every JSON artefact for
+that defect class -- a field named like a boolean holding something else -- and found the class is
+NOT widespread: `not_measured` in the transfer report is a separate dict from the measured
+dimensions, with `n_measured: 5` / `n_not_measured: 7`. The structure says what the strings mean, so
+a reader cannot confuse a reason for a score. Correct design.
+
+Then I went after the 29 `unverifiable` mesh tasks and found something real.
+
+FIRST I CHECKED THE STATED REASON, which was testable:
+
+    tile_diverging: a signed matrix is one pcolormesh path; the cell values are not in the PDF
+    field_2d:       a scalar field is one pcolormesh path; the cell values are not in the PDF
+
+`tile_diverging` annotates by default, and a small matrix DOES carry its values as text -- I measured
+`0.13, 0.36, -0.62, -0.73` in the PDF's text layer. So the stated reason looked too strong.
+
+IT IS NOT. The drawer's own density rule is
+
+    readable = rows <= 12 and cols <= 12
+
+and the 14 `matrix_plate` tasks that are unverifiable all have `rows_used = 40`. Above 12 rows per
+axis the drawer hides BOTH the tick labels and the annotations, so the values genuinely are not in
+the file. The `unverifiable` label was right and the reason was accurate.
+
+THE DEFECT IS ONE LEVEL UP. `op_encode_matrix` consults its `max_rows` budget only in the branch
+where NO 2-D reading exists. When a pivot SUCCEEDS it took the pivot whatever shape it produced -- so
+a 40-row matrix was drawn at 2.25 mm per row on a 90 mm panel, and THEN the drawer hid everything
+that would have made it readable.
+
+**The pipeline drew a figure nobody can read, and the coverage report correctly said it could not be
+verified. Both halves were honest and the result was still wrong.**
+
+The budget now applies to the pivoted shape. A pivot landing past it raises SkillError naming the
+size and the fix -- the same shape as every other refusal in that operator. Measured: the 320-row
+table that pivoted to 320 rows is now refused with "past the 40-row budget; at that size the tiles
+cannot be labelled and the figure would carry no readable value -- aggregate to fewer levels, or use
+field_map".
+
+THE PATTERN, and it is the reason I looked here at all: an `unverifiable` count is not a measure of
+honesty, it is a measure of something the pipeline did that cannot be checked. Some of that is
+inherent (a mesh IS one path). Some of it is a decision upstream that should have been a refusal.
+The two are indistinguishable in the count and must be separated by hand.
+
+Suite: 683 passed, 3 skipped.
