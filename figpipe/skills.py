@@ -516,10 +516,14 @@ def op_encode_field(ctx: SkillContext, x: str, y: str, value: str,
                     contour: bool = False, cbar_label: str = "",
                     cmap: str = "viridis"):
     """Encode a scalar field over a 2-D coordinate grid (position x time, x x y, ...)."""
+    # THE COLOUR BAR IS NOT OPTIONAL FOR A FIELD. Without it the raster's colours encode a scale
+    # the reader cannot see, and no rendered-file check can state what the colours mean. It is also
+    # the only numeric content a field figure carries: the tick labels ARE text in the PDF.
     ctx.add_panel(composite.Panel("field_2d", ctx.data,
                                   {"x": x, "y": y, "value": value,
                                    "contour": contour, "cmap": cmap,
-                                   "cbar_label": cbar_label}))
+                                   "cbar_label": cbar_label},
+                                  colorbar=True))
     ctx.trace.append(f"encode.field({x},{y},{value})")
 
 

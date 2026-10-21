@@ -515,11 +515,18 @@ def _status_board(bench: dict, latest: dict, kb: dict, caps: dict, n_tests: int)
     if checked is not None and skipped is not None:
         total = checked + skipped + unverifiable
         rows.append(("Biggest known gap",
+                     # TWO KINDS OF UNVERIFIED, AND THE COUNT CONFLATES THEM. One is unfinished
+                     # work (a drawer with no semantic rule); the other is a property of the
+                     # FORMAT (a field is one imshow path). Reporting one number lets a reader
+                     # assume both are the same problem, and the fixes are completely different.
                      f"{skipped} of {total} tasks have a drawer with NO semantic rule YET, so their "
-                     f"printed numbers were never re-derived -- that is unfinished work. A further "
-                     f"{unverifiable} draw a MESH, whose cell values never reach the PDF, so no "
-                     f"rendered-file check can exist for them. A pass on either kind is a statement "
-                     f"about geometry, not about correctness.",
+                     f"printed numbers were never re-derived -- that is unfinished work. "
+                     f"{unverifiable} more are UNVERIFIABLE BY CONSTRUCTION: a field or a mesh is a "
+                     f"single raster path, so its cell values reach the PDF only as colour and no "
+                     f"rendered-file check can re-derive them at any effort. "
+                     f"The two need different responses: the first is a rule still to be written, "
+                     f"the second is a format limit. "
+                     f"A pass on either is a statement about geometry, not about correctness.",
                      "warn"))
     else:
         rows.append(("Biggest known gap", "semantic coverage is not recorded in the benchmark "
@@ -733,6 +740,13 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
                     "semantic check RAN, was SKIPPED (14 of 16 drawers have no rule), or is ABSENT "
                     "from the trace. An empty findings list no longer means two opposite things.",
                     "scripts/bench_plottwin.py", meta="3 states, 5 tests"),
+        deliverable("Field figures carry their colour scale", "A scalar field is one imshow path, "
+                    "so its values reach the PDF only as colour. The colour bar is therefore the "
+                    "only checkable claim such a figure can carry, and it was missing twice over: "
+                    "the operator never requested one, and the layout reserved room for the bar and "
+                    "its pad but not for the tick labels, which fell off the page. Measured after "
+                    "the fix: a field with data in [-3.77, 3.07] prints -3..3 and nothing overflows.",
+                    "figpipe/composite.py", meta="2 stacked defects, 3 tests"),
         deliverable("Planted-truth controls", "Four data plants whose answers are exact by "
                     "construction (constant mean, exact slope, exact ratio, zero spread), recovered "
                     "through the production path AND read back from the rendered PDF.",
@@ -994,7 +1008,6 @@ of deciding.</p>
 metrics</b> (palette / aspect / ink density of the raster reference), <b>not the official combined
 score</b>; the latter needs the benchmark's VLM scorer, which this project has not run and does not
 imitate.</p>
-{status_board}
 
 <div class="kpis">
   {kpi(f'{n_ok}/{n_tasks}', 'Tasks run', f"execution success · {bench.get('n_unsupported', 0)} classified unsupported", '')}

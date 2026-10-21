@@ -109,3 +109,34 @@ def test_the_board_states_the_reason_grouping(report_src):
         "the board still reports a bare count of unchecked rules")
     for reason in ("out_of_scope", "void", "refuted"):
         assert reason in html, f"the board does not name the {reason!r} class"
+
+
+# ---------------------------------------------------------------------------------------
+# THE STATUS BOARD MUST APPEAR ONCE
+#
+# `{status_board}` was inserted twice: once under the hero (section 00, correct) and again inside
+# section "04 Authoritative benchmark". The second insertion repeated the whole table verbatim, so a
+# reader scrolling to the benchmark saw the project-status board a second time and could not tell
+# whether the two were the same board or two boards that happened to agree.
+#
+# This is the same defect class as the duplicate `summarise`/`compare` names: one piece of content
+# presented in two places as if it were two.
+# ---------------------------------------------------------------------------------------
+
+def test_the_status_board_appears_exactly_once():
+    import re
+    report = ROOT / "reports" / "figpipe_report.html"
+    if not report.is_file():
+        pytest.skip("no report")
+    html = report.read_text(encoding="utf-8")
+    for heading in ("Where this project is right now", "Biggest known gap", "Sharpest limit"):
+        n = html.count(heading)
+        assert n == 1, f"{heading!r} appears {n} times in the report; it must appear exactly once"
+
+
+def test_the_template_inserts_the_board_once():
+    """The SOURCE must not contain two placeholders either -- the HTML check alone would pass if
+    one branch of the template stopped rendering."""
+    src = (ROOT / "scripts" / "build_report.py").read_text(encoding="utf-8")
+    assert src.count("{status_board}") == 1, (
+        "the template inserts {status_board} more than once")

@@ -3923,3 +3923,41 @@ inherent (a mesh IS one path). Some of it is a decision upstream that should hav
 The two are indistinguishable in the count and must be separated by hand.
 
 Suite: 683 passed, 3 skipped.
+
+
+## 122. A field map with no colour scale is not decodable, and the flag did nothing (2026-10-22)
+
+Round 56 established that the 14 `matrix_plate` unverifiable tasks were correctly labelled but
+should not have been drawn. This round took the other 15: `field_map`.
+
+THE DIFFERENCE, measured: `field_map` tasks carry 32 to 15,219 rows of (x, y, value) -- real
+continuous-field data, not a matrix. Rendering one confirms a field is ONE imshow path and its
+values reach the PDF only as colour. Inverting the colourmap would need the normalisation, which is
+derived from the data being verified: circular. So this unverifiable is INHERENT, unlike the matrix
+case which was an upstream decision.
+
+THEN I LOOKED FOR WHAT A FIELD FIGURE CAN STILL CLAIM. A colour bar's tick labels are TEXT, and they
+state the data's range. That is checkable: "the printed colour range equals the data range".
+
+IT WAS NOT THERE. `op_encode_field` never set `colorbar=True`, and `ax_field_2d` has no colour bar of
+its own. Every field figure in the pool printed a raster whose colours encoded a scale the reader
+could not see, and carried no numbers at all.
+
+FIXING THAT EXPOSED THE SECOND DEFECT. `Panel(colorbar=True)` was accepted and produced a colour-bar
+AXES -- `axes with _figpipe_cbar: 1` -- with correct tick values `[-4, -3, -2, -1, 0, 1, 2, 3]`. And
+the PDF contained none of them. `CBAR_TOTAL_MM = 5.4` reserved 4.0 mm for the bar and 1.4 mm of pad,
+but a colour bar's labels sit OUTSIDE its right edge; the right margin is 1.5 mm and a 5.5 pt label
+is about 2.1 mm. Measured: the bar landed at figure-x 0.970-0.992 on a 518.7 pt page, so its labels
+fell off the canvas.
+
+**A control that looks present and does nothing** -- defect class A, in the layout layer this time.
+The axes existed, the ticks were computed, and nothing printed.
+
+After reserving `CBAR_LABEL_MM = 4.2`: the figure prints `-3 -2 -1 0 1 2 3` for data in
+[-3.77, 3.07], and zero words overflow the page.
+
+THE DISTINCTION THAT MATTERED: both field and matrix tasks were `unverifiable`, and the count could
+not tell them apart. One is a property of the format; the other was two defects stacked, one of which
+made the figure useless to a READER as well as to a checker. Counting them together hides both.
+
+Suite: 689 passed, 3 skipped.

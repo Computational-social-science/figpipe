@@ -82,9 +82,17 @@ LETTER_HEIGHT_MM = 3.2       # an 8 pt glyph plus a little air
 MARGINS_MM = {"left": 15.0, "right": 1.5, "top": 7.0, "bottom": 9.0}
 
 #: Reserved inside a cell when a panel carries a colour bar.
-CBAR_TOTAL_MM = 5.4
+#:
+#: THE LABELS ARE ON THE RIGHT. A colour bar's tick labels sit OUTSIDE its right edge, so the space
+#: reserved must cover bar + pad + label width. Measured: with only bar+pad reserved (5.4 mm) the
+#: bar landed at figure-x 0.970-0.992 on a 518.7 pt page, and its labels fell off the canvas -- the
+#: colour scale printed NO numbers at all, which is a field map a reader cannot decode.
 CBAR_WIDTH_MM = 4.0
 CBAR_PAD_MM = 1.4
+#: Horizontal room the tick labels need to the right of the bar. A 5.5 pt label such as "-4" is
+#: about 6 pt wide (2.1 mm); "-100" is wider, so this allows for a 4-character label.
+CBAR_LABEL_MM = 4.2
+CBAR_TOTAL_MM = CBAR_WIDTH_MM + CBAR_PAD_MM + CBAR_LABEL_MM
 
 LETTERS = "abcdefghijklmnopqrstuvwxyz"
 

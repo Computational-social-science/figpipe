@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-21T23:37:02",
+  "run_at": "2026-10-22T01:02:44",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -9,10 +9,10 @@
     "  passed 8, failed 0",
     "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
     "  wrote knowledge\\evolution_report.json",
-    "  lean: tracked 77.7 -> 77.7 MB, worktree 135.1 -> 130.4 MB"
+    "  lean: tracked 77.7 -> 77.7 MB, worktree 138.0 -> 132.9 MB"
   ],
   "tests_ok": true,
-  "tests_summary": "686 passed, 3 skipped, 1 warning in 274.74s (0:04:34)",
+  "tests_summary": "691 passed, 3 skipped, 1 warning in 283.09s (0:04:43)",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
@@ -139,7 +139,7 @@
     "tail": [
       "    type Box/Violin     ok 1/1   d=0.166 base=0.449 delta=0.283 errors=0",
       "    type Distribution   ok 4/4   d=0.225 base=0.248 delta=0.024 errors=0",
-      "    type Heatmap        ok 1/1   d=0.357 base=0.591 delta=0.234 errors=0",
+      "    type Heatmap        ok 1/1   d=0.423 base=0.568 delta=0.145 errors=0",
       "  wrote E:\\2026-AI4S\\figpipe\\corpus\\e2e\\plottwin_report.json"
     ]
   },
@@ -594,7 +594,7 @@
     "why_not_applied": "a selected edit measured on six tasks is a finding, not a change; applying it requires a pool re-measure (LEARNINGS ##47)"
   },
   "capabilities": {
-    "_code_version": "58c9f6ca548b",
+    "_code_version": "c316fc5f5ac0",
     "benchmark_complete_membership": true,
     "benchmark_pool_size": 150,
     "benchmark_pool_consistent": true,
@@ -604,41 +604,74 @@
     "benchmark_ok": 139,
     "benchmark_infrastructure_failures": 0,
     "benchmark_success_rate": 1.0,
-    "benchmark_mean_distance": 0.315,
-    "benchmark_anchor_single": 0.357,
-    "benchmark_anchor_distance": 0.357,
-    "benchmark_shipped_anchor_single": 0.296,
-    "benchmark_shipped_anchor_distance": 0.296,
+    "benchmark_mean_distance": 0.309,
+    "benchmark_anchor_single": 0.348,
+    "benchmark_anchor_distance": 0.348,
+    "benchmark_shipped_anchor_single": 0.295,
+    "benchmark_shipped_anchor_distance": 0.295,
     "benchmark_unsupported": 11,
     "benchmark_official_code_score": 75.41,
     "benchmark_official_improvement": 37.25,
     "statistics_reproduced": 15,
     "knowledge_version": 16,
-    "tests": 686
+    "tests": 691
   },
   "capabilities_delta": {
     "changed": true,
     "delta": {
       "_code_version": {
-        "before": "d9580178cd04",
-        "after": "58c9f6ca548b"
+        "before": "58c9f6ca548b",
+        "after": "c316fc5f5ac0"
+      },
+      "benchmark_mean_distance": {
+        "before": 0.315,
+        "after": 0.309
+      },
+      "benchmark_anchor_single": {
+        "before": 0.357,
+        "after": 0.348
+      },
+      "benchmark_anchor_distance": {
+        "before": 0.357,
+        "after": 0.348
+      },
+      "benchmark_shipped_anchor_single": {
+        "before": 0.296,
+        "after": 0.295
+      },
+      "benchmark_shipped_anchor_distance": {
+        "before": 0.296,
+        "after": 0.295
       },
       "tests": {
-        "before": 680,
-        "after": 686
+        "before": 686,
+        "after": 691
       }
     },
     "verdict": {
       "gains": [
         {
           "field": "tests",
-          "before": 680,
-          "after": 686
+          "before": 686,
+          "after": 691
         }
       ],
       "regressions": [],
       "corrections": [],
-      "not_compared": [],
+      "not_compared": [
+        {
+          "field": "benchmark_anchor_single",
+          "before": 0.357,
+          "after": 0.348,
+          "why": "the measurement instrument changed between these snapshots, so the two values are not the same quantity"
+        },
+        {
+          "field": "benchmark_shipped_anchor_single",
+          "before": 0.296,
+          "after": 0.295,
+          "why": "the measurement instrument changed between these snapshots, so the two values are not the same quantity"
+        }
+      ],
       "instrument_changed": true,
       "membership_broken": false,
       "ok": true,
