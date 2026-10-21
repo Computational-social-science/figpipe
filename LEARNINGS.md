@@ -3458,3 +3458,60 @@ measurements of those components. They are measurements of what a one-series one
 show of them. They should be read as UNTESTED -- not "weak", and certainly not "strong".
 
 Suite: 635 passed, 3 skipped.
+
+
+## 112. "No breakthrough" is a diagnosis, and the diagnosis was not the threshold (2026-10-21)
+
+Asked to study VisionHOPE and adopt it, I measured what the loop had actually done first:
+
+    130 run records
+      4 runs with a knowledge change
+    127 runs whose mutation step selected NOTHING
+      3 runs that selected, all `matrix-max-rows` budget values
+
+That is the "no breakthrough", stated as a number. `mutation._verdict` has `min_margin = 0.1` as a
+literal -- the loop was a FIXED COMPARISON APPLIED REPEATEDLY, which is exactly what VisionHOPE's
+thesis says cannot adapt.
+
+WHAT VISIONHOPE IS, AND WHAT COULD NOT BE TAKEN. Its backbone is `nn.Parameter`s updated by backprop
+through CUDA kernels over `[B, directions, heads, N, head_dim]`. figpipe has no tensors, no training
+corpus, and an explicitly offline loop. Porting it would be a category error. What transfers is one
+mechanism, read from `csrc/memory.cuh`:
+
+    eta   = ETA_SCALE * sp                             // how far to move
+    alpha = ALPHA_MIN + (1-ALPHA_MIN)*sigmoid(ap)      // how much to keep
+    eta_cap = STAB_MU*(1-alpha)/(diff_norm+eps)
+    eta = eta_cap*(1 - exp(-eta/eta_cap))              // soft injection cap
+
+IMPLEMENTED as `figpipe/adaptiverule.py`: the margin becomes a function of the loop's OWN measured
+history -- separability x retention, floored by the measurement resolution, with VisionHOPE's soft
+projection as the bound. No GPU, no gradient, no model.
+
+AND THEN THE HONEST PART. The adaptive margin computes to **0.060** against the constant **0.100**.
+Replaying the 180 recorded decisions:
+
+    would select at the constant 0.100   : 5
+    would select at the adaptive 0.060   : 5
+
+**No difference.** The verdict distribution is tie 134 (74%) / rejected 41 / selected 5, and the
+candidate space is five BUDGET adjustments -- `max_bars` 12->13, `max_rows` 40->41/42/60 -- probed on
+six fixed tasks. A budget only changes a figure when a task sits exactly at the boundary, so three
+quarters of the time a candidate changes nothing at all.
+
+**No margin, adaptive or not, can select among candidates that produce identical output.**
+
+So the transfer is correct and it is not the breakthrough. It is the right half of one: the rule can
+now be a function of history. The other half -- a candidate space that can produce distinguishable
+outcomes -- is the actual blocker, and it is different work.
+
+A BUG IN MY OWN FIRST VERSION, worth recording: `separability` used the median of |delta|, and 74% of
+the deltas are exactly 0.0, so the median was 0 and the margin collapsed to the floor. The zeros mean
+"this candidate changed nothing", not "there is no difference to measure". The median of the NON-ZERO
+deltas is the right statistic. The same class as every other fix this month: an absence of signal
+counted as a measurement.
+
+I recorded the negative result in the MODULE DOCSTRING, not only in this file, because that is where
+a future reader will look for "did the adaptive rule help?". A test asserts the two margins still
+select the same count, so the negative result cannot quietly become a claimed success.
+
+Suite: 641 passed, 3 skipped.

@@ -43,11 +43,13 @@ Style     styleprofile, select
 Verify    audit, semantics, score, tripwire
 Benchmark codegen, decision
 """
-from . import (audit, codegen, composite, decision, drawlib, grammar, layout,  # noqa: F401
+from . import (adaptiverule, audit, codegen, composite, decision, drawlib, grammar,  # noqa: F401
+               layout,
                gate, planted, quality, score, select, semantics, skills, sources, spec, structure,
                style, styleprofile, tripwire)
 
-__all__ = ["audit", "codegen", "composite", "decision", "drawlib", "grammar", "layout",
+__all__ = ["adaptiverule", "audit", "codegen", "composite", "decision", "drawlib",
+           "grammar", "layout",
            "gate", "planted", "quality", "score", "select", "semantics", "skills", "sources", "spec",
            "structure", "style", "styleprofile", "tripwire"]
-__version__ = "0.5.0"
+__version__ = "0.6.0"
