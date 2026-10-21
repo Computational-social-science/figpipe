@@ -3428,3 +3428,33 @@ The validator now prints the tie rate with a stated reason per dimension, and te
 `letters` still ties almost always, and widening the palette still moves nothing.
 
 Suite: 630 passed, 3 skipped.
+
+
+## 111. Building the figure those dimensions needed, and checking it mechanically (2026-10-21)
+
+Round 48 said `palette` and `letters` are tested on a figure that cannot express them. That is a
+claim about INSTRUMENTS, and a claim about instruments should be checkable by running one.
+
+`scripts/check_panel_expressibility.py` renders two figures, re-profiles the OUTPUT PDF, and counts
+what actually arrived:
+
+    single-series panel (what the validation used)    palette 1/3    letters 1
+    multi-series multi-panel figure                   palette 3/3    letters 2
+
+BOTH DIRECTIONS ARE CHECKED, and the second alone would not have been enough. If only "the new figure
+carries 3/3 colours" were tested, a figure that showed colour for an unrelated reason would pass. The
+1/3 on the old panel is the POSITIVE evidence that the limitation is real.
+
+THE TECHNIQUE WORTH KEEPING: to ask "can this figure express dimension X", render it and RE-PROFILE
+THE OUTPUT for X. Not "does the code pass X to the drawer" -- that is the same mistake as trusting a
+parameter because it appears in a signature. The output is the only witness.
+
+What the new figure is: `trend_band` with a `series` column, three series coloured from the
+reference's palette, across two lettered panels. `trend_band` already accepted both `series` and
+`palette`; the single-series panel simply never used them.
+
+WHAT THIS CHANGES ABOUT THE REPORTED NUMBERS: `palette 0.727` and `letters 1.000` are not
+measurements of those components. They are measurements of what a one-series one-panel figure could
+show of them. They should be read as UNTESTED -- not "weak", and certainly not "strong".
+
+Suite: 635 passed, 3 skipped.

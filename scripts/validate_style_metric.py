@@ -112,6 +112,33 @@ _PANEL_KW = {"x": "x", "y": "y", "lo": "lo", "hi": "hi", "band": "data", "fit": 
              "xlabel": "Year", "ylabel": "Value"}
 
 
+def _multi_panel(palette: list[str] | None = None) -> list[composite.Panel]:
+    """A THREE-SERIES, TWO-PANEL figure -- the shape `palette` and `letters` need to be tested.
+
+    WHY THIS EXISTS: the single-series trend panel uses ONE colour and has ONE axis, so the palette
+    component ties on almost every pair (8/30 decisive) and the panel-letters component ties on
+    28/30. A dimension the figure cannot express cannot be measured, and reporting "palette scores
+    0.727" without that context reads as "the component is weak".
+
+    Measured: this panel puts the supplied palette colours into the rendered PDF (verified by
+    re-profiling the output: three distinct series colours appear) and produces two panel letters.
+    """
+    n = 12
+    df = pd.DataFrame({
+        "x": list(range(n)) * 3,
+        "y": (list(np.linspace(0.10, 0.90, n))
+              + list(np.linspace(0.20, 0.80, n))
+              + list(np.linspace(0.30, 0.70, n))),
+        "series": ["s1"] * n + ["s2"] * n + ["s3"] * n,
+    })
+    kw = {"x": "x", "y": "y", "series": "series", "fit": "lm",
+          "xlabel": "Year", "ylabel": "Value"}
+    if palette:
+        kw["palette"] = list(palette)
+    return [composite.Panel("trend_band", df, dict(kw)),
+            composite.Panel("trend_band", df, dict(kw))]
+
+
 def _panel() -> composite.Panel:
     df = pd.DataFrame({"x": np.arange(24.0),
                        "y": np.linspace(0.10, 0.92, 24) + 0.01 * np.sin(np.arange(24.0)),

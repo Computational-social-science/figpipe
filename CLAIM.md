@@ -346,3 +346,28 @@ change to the metric.
 The validator now prints the tie rate with the reason next to each dimension, and tests assert that
 `letters` still ties almost always (so the panel has not silently changed) and that widening the
 palette still moves nothing (so the limitation stays attributed to the panel).
+
+
+## Update 2026-10-21 (eighth): the figure those two dimensions needed, and a mechanical check
+
+Round 48 diagnosed that `palette` and `letters` are tested on a figure that cannot express them. This
+round built the figure that can, and verified the diagnosis mechanically rather than by argument.
+
+`scripts/check_panel_expressibility.py` renders both panels, re-profiles the OUTPUT, and counts how
+many of a supplied palette's colours and how many panel letters actually arrived:
+
+    single-series panel (what the validation used)    palette 1/3    letters 1
+    multi-series multi-panel figure                   palette 3/3    letters 2
+
+**Both directions are checked.** If only the second were, a figure that showed colour for an
+unrelated reason would pass. The single-series panel carrying 1 of 3 supplied colours is the
+positive evidence that the limitation is real, not folklore.
+
+`validate_style_metric._multi_panel()` now builds that figure: three series coloured from the
+reference's own palette, across two lettered panels. It is not yet wired into the headline
+experiment -- the run cost is real and the ordering should be deliberate -- but the instrument now
+exists and is tested, which is the prerequisite for measuring those two dimensions at all.
+
+**What this changes about the reported numbers.** `palette 0.727` and `letters 1.000` are not
+measurements of those components; they are measurements of what a one-series one-panel figure could
+show of them. They should be read as "untested", not as "weak" and certainly not as "strong".
