@@ -3261,3 +3261,44 @@ The verdict text now says MARGIN and SIGNAL, and a test asserts those words stay
 reading cannot be silently re-strengthened.
 
 Suite: 615 passed, 3 skipped.
+
+
+## 107. Re-weighting the same numbers is not an ablation (2026-10-21)
+
+Last round I "removed aspect" by dropping it from the WEIGHTS and re-scoring the recorded pairs.
+That gave 0.808 and I wrote that the other components "carry a real but weak signal".
+
+That analysis cannot support the sentence. Dropping a term from a weighted sum re-weights the SAME
+measurements; it tells you what the numbers look like under a different formula, not what the metric
+would do under a different TREATMENT. The only way to know the latter is to change the treatment.
+
+So I changed it. `transfer_style(..., apply_aspect=False)` renders the candidate at a fixed height,
+and the experiment re-ran on the same seed:
+
+    with aspect applied    0.9333   95% CI [0.787, 0.982]   p = 4.3e-07
+    aspect withheld        0.7333   95% CI [0.556, 0.858]   p = 0.008
+
+**+0.20 of the headline accuracy was the plumbing check.** The re-weighting analysis had guessed
+0.808; the real treatment change gives 0.733. The guess was in the right direction and 0.075 too
+optimistic -- because re-weighting cannot see that the aspect term was carrying information the other
+terms do not contain.
+
+BOTH HALVES OF THIS MATTER AND THEY POINT OPPOSITE WAYS:
+
+    "aspect is a plumbing check"  -> without it the metric is worthless     WRONG: p = 0.008
+    "0.933 accuracy"              -> the metric measures style broadly      WRONG: a fifth is plumbing
+
+A summary that reports either half alone misleads, and the two are only reconcilable in one sentence:
+the metric measures style weakly and reliably, and its headline number is inflated by a check that
+cannot fail.
+
+THE GENERAL LESSON: **an ablation must change the TREATMENT, not the scoring.** Re-weighting is
+cheap and it feels like an ablation, and it will tell you a plausible number. The number is about the
+formula. If the question is "what does this component contribute to the OUTCOME", only re-running the
+outcome answers it.
+
+The run also records a warning when a dimension the transfer should have moved did not move --
+`WARNING: the transfer did not move ['aspect']; those dimensions are untested` -- which is what
+turned this from a plausible number into a verified one.
+
+Suite: 619 passed, 3 skipped.

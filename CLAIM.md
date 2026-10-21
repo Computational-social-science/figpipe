@@ -226,3 +226,30 @@ and to conclude the metric is worthless when it is merely weak. Both errors matt
 **What is still NOT established** is unchanged: nothing shows the metric tracks what a READER cares
 about. That remains the one claim only human validation can settle, and the question is now precise:
 does a reader prefer the figure the metric calls closer when the difference is NOT mainly aspect?
+
+
+## Update 2026-10-21 (fourth): the ablation run -- 0.933 with aspect, 0.733 without
+
+The previous update said the other five components "carry a real but weak signal", measured by
+removing aspect from the WEIGHTS. That analysis re-weights the same numbers and cannot tell you what
+a different TREATMENT would produce. So the treatment itself was changed: `transfer_style(...,
+apply_aspect=False)` renders the candidate at a fixed height, and the experiment was re-run.
+
+    with aspect applied    0.9333   95% CI [0.787, 0.982]   p = 4.3e-07
+    aspect withheld        0.7333   95% CI [0.556, 0.858]   p = 0.008
+
+**+0.20 of the headline accuracy was the plumbing check.** And **0.733 is the metric's real ability
+on style dimensions** -- weak, but statistically above chance (p = 0.008, CI lower bound 0.556).
+
+Both halves matter:
+
+* a reader who saw only "aspect is a plumbing check" would conclude the metric is worthless. It is
+  not: it discriminates at p < 0.01 without aspect.
+* a reader who saw only "0.933 accuracy" would believe the metric measures style broadly. It does
+  not: a fifth of that is a check that the transfer ran.
+
+**The diagnostic is not a shipping mode.** The shipped pipeline still applies the reference's aspect,
+because a figure at the wrong aspect is the wrong figure. `--no-aspect` exists to make the ablation
+runnable, and the run records a warning when a dimension the transfer should have moved did not.
+
+Reproduce: `python scripts/validate_style_metric.py --no-aspect --contrast same --seed 20261021`.

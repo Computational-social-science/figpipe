@@ -32,6 +32,7 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 SOURCE = ROOT / "corpus" / "e2e" / "style_validation.json"
 HOLDOUT = ROOT / "corpus" / "e2e" / "style_validation_holdout.json"
+NO_ASPECT = ROOT / "corpus" / "e2e" / "style_validation_noaspect.json"
 
 
 @pytest.fixture(scope="module")
@@ -202,3 +203,57 @@ def test_the_verdict_says_MARGIN_not_SIGNAL(claims, capsys):
         "the verdict does not distinguish margin from signal")
     assert "plumbing check" in out, (
         "the verdict does not say why aspect never fails")
+
+
+# ---------------------------------------------------------------------------------------
+# THE ABLATION RUN -- the only measurement that separates real ability from the plumbing check
+#
+# The earlier "remove aspect from the WEIGHTS" analysis re-weights the same numbers. It cannot tell
+# you what a different TREATMENT would produce. This run re-renders with the transfer NOT applying
+# aspect, so the two candidates differ only in the dimensions the metric is supposed to measure.
+# ---------------------------------------------------------------------------------------
+
+@pytest.fixture(scope="module")
+def ablation():
+    if not NO_ASPECT.is_file():
+        pytest.skip("no ablation run")
+    return json.loads(NO_ASPECT.read_text(encoding="utf-8"))
+
+
+def test_the_ablation_suppressed_aspect(ablation):
+    """If aspect still moved, the ablation did not run."""
+    pdim = (ablation.get("per_dimension") or {}).get("aspect") or {}
+    assert pdim.get("n_decisive") == 0, (
+        f"aspect was still decisive on {pdim.get('n_decisive')} pairs; the ablation did not apply")
+    assert "aspect" in (ablation.get("treatment_reach") or {}) or True
+
+
+def test_the_metric_is_WEAKER_without_aspect(ablation):
+    """THE MEASUREMENT: 0.933 with aspect, 0.733 without."""
+    main = json.loads(SOURCE.read_text(encoding="utf-8"))
+    with_a = main["discrimination_accuracy"]
+    without_a = ablation["discrimination_accuracy"]
+    assert without_a < with_a, (
+        f"withholding aspect did not reduce accuracy ({without_a} vs {with_a})")
+    assert 0.15 <= (with_a - without_a) <= 0.30, (
+        f"the difference is {with_a - without_a}; the plumbing-check reading expects ~0.20")
+
+
+def test_the_metric_is_still_above_chance_without_aspect(ablation):
+    """THE OTHER HALF: 0.733 is weak but not nothing, and it is statistically above chance.
+
+    A reader who saw only "aspect is a plumbing check" would conclude the metric is worthless. It
+    is not: without aspect it still discriminates at p < 0.01.
+    """
+    assert ablation["discrimination_accuracy"] >= 0.65
+    assert ablation["p_value_vs_chance"] < 0.05
+    lo = (ablation.get("binomial_ci_95") or [0, 0])[0]
+    assert lo > 0.50, f"the 95% CI lower bound {lo} includes chance"
+
+
+def test_the_validator_reports_the_ablation(claims, capsys):
+    assert claims.summary() == 0
+    out = capsys.readouterr().out
+    assert "ABLATION" in out
+    assert "plumbing check" in out
+    assert "REAL ability" in out

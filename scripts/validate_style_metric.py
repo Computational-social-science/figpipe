@@ -199,7 +199,8 @@ def measurable(prof: styleprofile.StyleProfile) -> bool:
 # Rendering
 # --------------------------------------------------------------------------------------
 
-def transfer_style(reference: styleprofile.StyleProfile) -> dict:
+def transfer_style(reference: styleprofile.StyleProfile,
+                   *, apply_aspect: bool = True) -> dict:
     """Everything `reference` measured, expressed as settings the renderer can apply.
 
     WHY THIS IS NOT JUST `style_from_profile`
@@ -226,6 +227,11 @@ def transfer_style(reference: styleprofile.StyleProfile) -> dict:
             letters  -> composite(letters=...)
 
         Each is a style decision the reference actually exhibits; none of them reads the target.
+
+    `apply_aspect=False` IS A DIAGNOSTIC, not a shipping mode. It renders the candidate at a fixed
+    height so the two candidates differ ONLY in the dimensions the metric is supposed to measure.
+    With aspect applied, that component tests whether the transfer ran -- a plumbing check that
+    cannot fail -- so the headline accuracy is partly a tautology.
     """
     derived = styleprofile.style_from_profile(reference)
     rc = dict(derived["rc"])
@@ -238,7 +244,8 @@ def transfer_style(reference: styleprofile.StyleProfile) -> dict:
     return {
         "rc": rc,
         "palette": derived["palette"],
-        "height_mm": float(derived["height_mm"]),
+        # a fixed height when aspect is withheld, so the candidates cannot differ on it
+        "height_mm": float(derived["height_mm"]) if apply_aspect else 100.0,
         # the reference either prints panel letters or it does not; both are style choices
         "letters": bool(reference.panel_letters),
         "grid": bool(grid),
@@ -303,13 +310,14 @@ def _apply_stroke(fig, reference: styleprofile.StyleProfile) -> int:
     return changed
 
 
-def render_transfer(reference: styleprofile.StyleProfile, out_stem) -> pathlib.Path:
+def render_transfer(reference: styleprofile.StyleProfile, out_stem,
+                    *, apply_aspect: bool = True) -> pathlib.Path:
     """Draw the fixed panel in `reference`'s measured style; return the rendered PDF.
 
     This is figpipe's style transfer in its simplest honest form: every style decision the
     profile measured is applied, and nothing reads the target.
     """
-    style = transfer_style(reference)
+    style = transfer_style(reference, apply_aspect=apply_aspect)
     panel = _panel()
     # the drawer takes its series colours as a kwarg, so the palette has to travel with the
     # panel rather than only with rcParams (which the drawer does not consult for series ink)
@@ -465,7 +473,7 @@ def _mismatch_index(i: int, refs: list[dict], rng: random.Random,
 
 
 def measure(n_pairs: int = 30, seed: int = SEED, verbose: bool = True,
-            contrast: str = "cross") -> dict:
+            contrast: str = "cross", apply_aspect: bool = True) -> dict:
     """Run the discrimination experiment and return the artefact dictionary.
 
     `contrast` is "cross" (mismatch from a different paper -- the easy condition) or "same"
@@ -530,8 +538,10 @@ def measure(n_pairs: int = 30, seed: int = SEED, verbose: bool = True,
                 continue
             other = refs[j]
             try:
-                a_pdf = render_transfer(other["profile"], work / f"p{i:03d}_A")
-                b_pdf = render_transfer(true["profile"], work / f"p{i:03d}_B")
+                a_pdf = render_transfer(other["profile"], work / f"p{i:03d}_A",
+                                        apply_aspect=apply_aspect)
+                b_pdf = render_transfer(true["profile"], work / f"p{i:03d}_B",
+                                        apply_aspect=apply_aspect)
             except Exception as exc:                       # noqa: BLE001
                 skipped[f"render:{type(exc).__name__}"] = \
                     skipped.get(f"render:{type(exc).__name__}", 0) + 1
@@ -954,6 +964,10 @@ def main(argv=None) -> int:
                          "figure in the same paper (hard, the condition the metric is for), "
                          "'both' = measure and store both arms")
     ap.add_argument("--report", action="store_true", help="print the stored artefact and exit")
+    ap.add_argument("--no-aspect", action="store_true",
+                    help="DIAGNOSTIC: transfer everything EXCEPT aspect, so the metric is tested "
+                         "on the style dimensions rather than on whether the transfer ran. Not a "
+                         "shipping mode -- a figure at the wrong aspect is the wrong figure.")
     ap.add_argument("--no-lock", action="store_true",
                     help="skip the measurement lock (only when the parent already holds it)")
     ap.add_argument("--wait", type=float, default=0.0,
@@ -974,10 +988,12 @@ def main(argv=None) -> int:
             arms = {}
             for arm in ("cross", "same"):
                 print(f"\n  --- contrast: {arm} ---")
-                arms[arm] = measure(n_pairs=args.n, seed=args.seed, contrast=arm)
+                arms[arm] = measure(n_pairs=args.n, seed=args.seed, contrast=arm,
+                                    apply_aspect=not args.no_aspect)
             result = combine_arms(arms)
         else:
-            result = measure(n_pairs=args.n, seed=args.seed, contrast=args.contrast)
+            result = measure(n_pairs=args.n, seed=args.seed, contrast=args.contrast,
+                             apply_aspect=not args.no_aspect)
     finally:
         if not args.no_lock:
             # A LOCK LOST MID-RUN IS NOT OUR LOCK ANY MORE. Another heavy entry point can break

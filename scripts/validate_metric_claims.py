@@ -42,6 +42,11 @@ SOURCE = ROOT / "corpus" / "e2e" / "style_validation.json"
 #: An INDEPENDENT pair set built with a different seed. Claims that survive here are claims about
 #: the metric; claims that only hold on SOURCE are claims about the sample it was tuned on.
 HOLDOUT = ROOT / "corpus" / "e2e" / "style_validation_holdout.json"
+#: The ABLATION RUN: the same experiment with the style transfer NOT applying aspect. This is the
+#: only measurement that separates the metric's real ability from the plumbing check -- the earlier
+#: "remove aspect from the weights" analysis re-weights the same numbers, which cannot tell you what
+#: a DIFFERENT treatment would produce.
+NO_ASPECT = ROOT / "corpus" / "e2e" / "style_validation_noaspect.json"
 
 #: The weights `styleprofile.compare` declares, mirrored here so a change to one without the other
 #: is caught rather than silently believed.
@@ -54,6 +59,13 @@ def load(path: pathlib.Path | None = None) -> dict:
     if not p.is_file():
         raise SystemExit(f"  no validation record at {p}")
     return json.loads(p.read_text(encoding="utf-8"))
+
+
+def load_no_aspect() -> dict | None:
+    """The ablation run where the transfer did not apply aspect, or None when absent."""
+    if not NO_ASPECT.is_file():
+        return None
+    return json.loads(NO_ASPECT.read_text(encoding="utf-8"))
 
 
 def load_holdout() -> dict | None:
@@ -192,6 +204,27 @@ def summary() -> int:
     else:
         print("    => without aspect the metric is near chance; the finding stands.")
     print()
+
+    # ---- THE ABLATION RUN: what is the metric worth when aspect is NOT applied? -----------
+    ablation = load_no_aspect()
+    if ablation:
+        a_acc = ablation.get("discrimination_accuracy")
+        base_acc = d.get("discrimination_accuracy")
+        print("  ABLATION: the same experiment with the transfer NOT applying aspect.")
+        print(f"    with aspect applied : {base_acc}   (the aspect component tests the transfer)")
+        print(f"    aspect withheld     : {a_acc}")
+        if a_acc is not None and base_acc is not None:
+            print(f"    difference          : {round(base_acc - a_acc, 3):+} of the headline "
+                  f"accuracy was the plumbing check")
+        p_val = ablation.get("p_value_vs_chance")
+        ci = ablation.get("binomial_ci_95")
+        if p_val is not None:
+            print(f"    still above chance? : p = {p_val:.3g}"
+                  + (f", 95% CI {ci}" if ci else ""))
+        print("    => this is the metric's REAL ability on style dimensions. The earlier")
+        print("       'remove aspect from the weights' analysis re-weights the SAME numbers; only")
+        print("       a different TREATMENT can tell you what a different treatment produces.")
+        print()
 
     # ---- REPLICATION ON AN INDEPENDENT PAIR SET ------------------------------------------
     hold = load_holdout()
