@@ -5594,6 +5594,19 @@
     }
   ],
   "pool_size": 150,
+  "pool_facts": {
+    "declared": 150,
+    "indexed": 150,
+    "contiguous": true,
+    "gaps": [],
+    "n_gaps": 0,
+    "highest_offset": 149,
+    "short_tail": false,
+    "ids_indexed": 150,
+    "consistent": true,
+    "report_tasks": 150,
+    "report_matches": true
+  },
   "complete_membership": true,
   "semantic_coverage": {
     "checked": 110,

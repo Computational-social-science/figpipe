@@ -95,6 +95,11 @@ def capability_snapshot() -> dict:
         # Without this flag a short set reads as a capability change.
         "benchmark_complete_membership": bool(bench.get("complete_membership")),
         "benchmark_pool_size": bench.get("pool_size"),
+        # DOES THE DECLARED POOL STILL AGREE WITH THE COVERAGE INDEX? A `False` here means the
+        # upstream dataset changed shape and every rate in this snapshot is computed against a
+        # stale denominator. Diagnostic, so it does not fail a run by itself -- but it is recorded
+        # in every run record rather than discovered later.
+        "benchmark_pool_consistent": bool((bench.get("pool_facts") or {}).get("consistent")),
         "skills": len(skills.get("skills", []) or []),
         "operators": len(skills.get("operators", []) or []),
         "benchmark_tasks": n_tasks,

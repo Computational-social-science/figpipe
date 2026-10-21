@@ -1007,8 +1007,66 @@ def _anchor_single_instrument(tasks) -> dict:
             "comparable": comparable, "note": note}
 
 
+#: The benchmark pool size as DECLARED when this file was written.
+#:
+#: This is a claim, not a measurement. The authority is the coverage index (`_read_coverage`), which
+#: maps every offset ever fetched to its task id and is what the backfill actually walks. The two
+#: are checked against each other by `pool_facts()`, so an upstream change shows up as a reported
+#: disagreement rather than as a silently wrong denominator.
+DECLARED_POOL = 150
+
+
+def pool_facts(report: dict | None = None) -> dict:
+    """What the pool ACTUALLY is, versus what this file declares it to be.
+
+    WHY THIS EXISTS
+        `POOL = 150` was a literal. `complete_membership` was then computed against it, so the
+        membership check rested on a number nobody re-derived -- the same shape as a control that
+        looks present and does nothing.
+
+        The coverage index is written by `_record_coverage` for every task ever fetched, so it is a
+        record of what exists rather than a claim about it. Comparing the two turns a hard-coded
+        constant into a checkable assertion:
+
+            declared        the constant above
+            indexed         distinct offsets in the coverage index
+            contiguous      no gap in 0..max(offset); a gap means the index is incomplete, not
+                            that the pool is smaller
+            ids_indexed     distinct task ids
+            consistent      declared == indexed == ids_indexed
+
+    Returns every term, so a disagreement names which one moved.
+    """
+    try:
+        coverage = _read_coverage()
+    except Exception:                                     # noqa: BLE001
+        coverage = {}
+    offsets = sorted(coverage)
+    indexed = len(coverage)
+    # A GAP IS NOT A SHORT TAIL. Testing `offsets == range(len(offsets))` accepts 0..148 as
+    # contiguous, so dropping the last task read as "the pool is 149" rather than "the index is
+    # short" -- an absence of information reported as a smaller pool.
+    gaps = [o for o in range(max(offsets) + 1) if o not in coverage] if offsets else []
+    contiguous = bool(offsets) and not gaps
+    highest = max(offsets) if offsets else -1
+    short_tail = bool(offsets) and highest < DECLARED_POOL - 1
+    ids = len(set(coverage.values()))
+    out = {"declared": DECLARED_POOL, "indexed": indexed, "contiguous": contiguous,
+           "gaps": gaps[:8], "n_gaps": len(gaps), "highest_offset": highest,
+           "short_tail": short_tail, "ids_indexed": ids,
+           "consistent": (contiguous and not short_tail
+                          and indexed == DECLARED_POOL == ids)}
+    if report is not None:
+        out["report_tasks"] = report.get("n_tasks")
+        out["report_matches"] = (report.get("n_tasks") == indexed)
+    return out
+
+
 #: The benchmark pool size, used to walk every window before repeating one.
-POOL = 150
+#:
+#: Kept as the walking bound for the scanners below. `pool_facts()` is what checks it; a scanner
+#: that needs to know whether the pool GREW must call that, not read this.
+POOL = DECLARED_POOL
 
 
 def covered_offsets(report_path=None) -> set[int]:
@@ -1256,8 +1314,12 @@ def _run(args) -> int:
         # backfill measures a slice), so this states the fact and lets the consumer judge. The
         # mutation loop and the capability snapshot both read `complete_membership` before treating
         # a success rate as a capability value.
-        report["pool_size"] = POOL
-        report["complete_membership"] = (len(merged) == POOL)
+        # THE POOL FACTS, not just its size. `pool_size` alone cannot show that the declared
+        # constant still agrees with the coverage index; `pool_facts()` can.
+        facts = pool_facts({"n_tasks": len(merged)})
+        report["pool_size"] = facts["declared"]
+        report["pool_facts"] = facts
+        report["complete_membership"] = (len(merged) == facts["indexed"] and facts["consistent"])
         report["n_ok"] = len(ok_all)
         report["n_unsupported"] = len(uns)
         errored_all = [t for t in merged

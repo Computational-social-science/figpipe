@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-21T21:30:59",
+  "run_at": "2026-10-21T21:54:20",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -9,10 +9,10 @@
     "  passed 8, failed 0",
     "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
     "  wrote knowledge\\evolution_report.json",
-    "  lean: tracked 77.5 -> 77.5 MB, worktree 137.3 -> 132.5 MB"
+    "  lean: tracked 77.6 -> 77.6 MB, worktree 137.3 -> 132.6 MB"
   ],
   "tests_ok": true,
-  "tests_summary": "664 passed, 3 skipped, 1 warning in 265.94s (0:04:25)",
+  "tests_summary": "671 passed, 3 skipped, 1 warning in 268.70s (0:04:28)",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
@@ -597,6 +597,7 @@
     "_code_version": "d9580178cd04",
     "benchmark_complete_membership": true,
     "benchmark_pool_size": 150,
+    "benchmark_pool_consistent": true,
     "skills": 16,
     "operators": 21,
     "benchmark_tasks": 150,
@@ -613,30 +614,26 @@
     "benchmark_official_improvement": 37.25,
     "statistics_reproduced": 15,
     "knowledge_version": 16,
-    "tests": 664
+    "tests": 671
   },
   "capabilities_delta": {
     "changed": true,
     "delta": {
-      "benchmark_complete_membership": {
+      "benchmark_pool_consistent": {
         "before": null,
         "after": true
       },
-      "benchmark_pool_size": {
-        "before": null,
-        "after": 150
-      },
       "tests": {
-        "before": 656,
-        "after": 664
+        "before": 664,
+        "after": 671
       }
     },
     "verdict": {
       "gains": [
         {
           "field": "tests",
-          "before": 656,
-          "after": 664
+          "before": 664,
+          "after": 671
         }
       ],
       "regressions": [],

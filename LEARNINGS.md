@@ -3744,3 +3744,44 @@ the code. Clause 1 and clause 3 were both documented in comments in four files; 
 documented in none, and it was the one not implemented.
 
 Suite: 664 passed, 3 skipped. Scheduled run exits 0.
+
+
+## 118. The membership check rested on a literal, and my detector had the defect it hunted (2026-10-21)
+
+Round 52 added `complete_membership` so a rate over a short set could not pass as the metric. But
+that check compared against `POOL = 150` -- a literal in the source. So the control rested on a
+number nobody re-derived: the same shape as a control that looks present and does nothing.
+
+THE AUTHORITY ALREADY EXISTED. `_record_coverage` writes offset -> task id for every task ever
+fetched, and the coverage backfill walks that index. `pool_facts()` now compares the declaration
+against the record and reports which term moved:
+
+    declared        the constant in the source
+    indexed         distinct offsets in the coverage index
+    contiguous      no gap in 0..highest
+    short_tail      the highest offset is below the declared size
+    ids_indexed     distinct task ids
+    consistent      all of the above agree
+
+Measured now: declared 150, indexed 150, contiguous, ids 150, consistent -- and the report and the
+capability snapshot both carry the facts, so an upstream change is visible in the artefact rather
+than discovered when a number looks odd.
+
+MY OWN DETECTOR HAD THE DEFECT IT WAS WRITTEN TO CATCH. The first `contiguous` test was
+`offsets == list(range(len(offsets)))`, which is TRUE for 0..148 as well as 0..149. Dropping the
+LAST task therefore produced a perfectly contiguous index that read as "the pool is 149" -- **an
+absence of information reported as a smaller pool**, which is the defect class this project has now
+found in the pipeline, in the analysis of the metric, and here in the detector for the invariant.
+
+A gap and a short tail are different failures and both must be visible:
+
+    gap         an offset is missing from the MIDDLE; the index is incomplete
+    short tail  the highest offset is below the declared size; the tail was never fetched
+
+Neither reading is "the pool shrank". Only a change at the SOURCE is that, and this check cannot see
+the source -- it can only refuse to pretend the local record is complete.
+
+A test now drops a middle offset (must report a gap) and separately drops the last offset (must
+report a short tail while still contiguous). The second test is the one that found the bug.
+
+Suite: 671 passed, 3 skipped. Scheduled run exits 0.
