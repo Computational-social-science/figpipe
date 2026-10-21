@@ -479,7 +479,9 @@ def _status_board(bench: dict, latest: dict, kb: dict, caps: dict, n_tests: int)
                          f"every other component is at or below {max(others.values()):.3f} "
                          f"(chance or worse). The recorded summary said 'withholding {best} drops "
                          f"accuracy to 0.700', which understates it -- the other five components "
-                         f"contribute nothing here. Re-derived by "
+                         f"contribute nothing here. REPLICATED on an independent pair set built "
+                         f"with a different seed ({best} 0.900 there vs {dims[best]:.3f} here; every "
+                         f"other component at or below 0.60 on both). Re-derived by "
                          f"scripts/validate_metric_claims.py from the per-pair data.", "warn"))
 
     unverifiable = cov.get("unverifiable") or 0

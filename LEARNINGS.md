@@ -3185,3 +3185,41 @@ as "aspect matters a lot" when the data say "nothing else matters at all". Both 
 the same numbers; only one of them tells a reader what to do.
 
 Suite: 608 passed, 3 skipped.
+
+
+## 105. The finding replicated; my own weight claim did not (2026-10-21)
+
+Last round I found the style metric is very nearly an aspect-only check, and flagged one number as
+untrustworthy in the same breath: "equal weights score 0.967 against the declared 0.900 -- but that
+is tuned on the same 30 pairs and proves nothing."
+
+Flagging it was right. Leaving it at that was not, because the corpus had **238 extracted records
+from 79 papers** while the validation had used 106 from 34. There was room for a genuinely
+independent set, so I built one with a different seed.
+
+RESULT ON THE INDEPENDENT SET:
+
+    dimension     main   holdout   delta
+    aspect        0.867   0.900    +0.033     <- replicates
+    palette       0.533   0.467    -0.066
+    rules         0.500   0.467    -0.033
+    sizes         0.400   0.467    +0.067
+    lines         0.333   0.200    -0.133
+    letters       0.033   0.067    +0.034
+
+**The aspect finding REPLICATES.** aspect leads on both sets; every other component is at or below
+0.533 on both. The claim is about the metric, not about the sample.
+
+**The equal-weight claim does NOT replicate.** main 0.967 vs declared 0.900, but holdout 0.933 vs
+0.933 -- identical. So the equal-weight advantage was tuning noise, and the declared weights are not
+measurably worse. A change I was half-inclined to make would have been a change to noise.
+
+THE LESSON IS ABOUT HOW A CAVEAT SHOULD END. "This proves nothing" is a correct statement and a
+dead end. The useful version is "this proves nothing UNTIL X", where X is a measurement that can be
+run -- and then running it. The caveat cost one sentence; the replication cost 40 minutes and turned
+an open question into a result, in both directions at once.
+
+A test now asserts the holdout shares no more than a third of its pairs with the main set, so a
+future "holdout" cannot quietly be the training set wearing a different name.
+
+Suite: 612 passed, 3 skipped.

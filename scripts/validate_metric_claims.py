@@ -39,6 +39,9 @@ import sys
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "corpus" / "e2e" / "style_validation.json"
+#: An INDEPENDENT pair set built with a different seed. Claims that survive here are claims about
+#: the metric; claims that only hold on SOURCE are claims about the sample it was tuned on.
+HOLDOUT = ROOT / "corpus" / "e2e" / "style_validation_holdout.json"
 
 #: The weights `styleprofile.compare` declares, mirrored here so a change to one without the other
 #: is caught rather than silently believed.
@@ -46,10 +49,18 @@ DECLARED_WEIGHTS = {"sizes": 0.25, "letters": 0.10, "lines": 0.20,
                     "rules": 0.10, "palette": 0.25, "aspect": 0.10}
 
 
-def load() -> dict:
-    if not SOURCE.is_file():
-        raise SystemExit(f"  no validation record at {SOURCE}")
-    return json.loads(SOURCE.read_text(encoding="utf-8"))
+def load(path: pathlib.Path | None = None) -> dict:
+    p = path or SOURCE
+    if not p.is_file():
+        raise SystemExit(f"  no validation record at {p}")
+    return json.loads(p.read_text(encoding="utf-8"))
+
+
+def load_holdout() -> dict | None:
+    """The independent pair set, or None when it has not been built."""
+    if not HOLDOUT.is_file():
+        return None
+    return json.loads(HOLDOUT.read_text(encoding="utf-8"))
 
 
 def per_dimension(pairs: list[dict]) -> dict:
@@ -134,6 +145,43 @@ def summary() -> int:
     print()
 
     best = max(dims, key=lambda k: dims[k]["accuracy"])
+
+    # ---- REPLICATION ON AN INDEPENDENT PAIR SET ------------------------------------------
+    hold = load_holdout()
+    if hold:
+        hp = hold.get("pairs") or []
+        hdims = per_dimension(hp)
+        print("  REPLICATION on an independent pair set (different seed):")
+        print(f"  {'dimension':<10} {'main':>7} {'holdout':>8} {'delta':>7}")
+        print("  " + "-" * 36)
+        for dim in sorted(dims, key=lambda k: -dims[k]["accuracy"]):
+            print(f"  {dim:<10} {dims[dim]['accuracy']:>7.3f} {hdims[dim]['accuracy']:>8.3f} "
+                  f"{hdims[dim]['accuracy'] - dims[dim]['accuracy']:>+7.3f}")
+        hb = max(hdims, key=lambda k: hdims[k]["accuracy"])
+        print()
+        if hb == best and hdims[hb]["accuracy"] >= 0.80:
+            print(f"  REPLICATED: {hb} is the leading component on BOTH sets "
+                  f"({dims[hb]['accuracy']:.3f} / {hdims[hb]['accuracy']:.3f}).")
+        else:
+            print(f"  NOT REPLICATED: {best} led on the main set, {hb} on the holdout.")
+        # the equal-weight claim, which last round was flagged as untested
+        equal_w = {k: 1 / len(DECLARED_WEIGHTS) for k in DECLARED_WEIGHTS}
+        m_eq = weighted_accuracy(pairs, equal_w)
+        h_eq = weighted_accuracy(hp, equal_w)
+        m_dec = weighted_accuracy(pairs, DECLARED_WEIGHTS)
+        h_dec = weighted_accuracy(hp, DECLARED_WEIGHTS)
+        print()
+        print(f"  equal weights    : main {m_eq:.3f}  holdout {h_eq:.3f}")
+        print(f"  declared weights : main {m_dec:.3f}  holdout {h_dec:.3f}")
+        if h_eq <= h_dec + 1e-9 and m_eq > m_dec:
+            print("  => the equal-weight advantage DOES NOT REPLICATE. It was tuning noise on the")
+            print("     main set, and the declared weights are not measurably worse.")
+        elif h_eq > h_dec:
+            print("  => the equal-weight advantage REPLICATES; the declared weights are suboptimal.")
+        else:
+            print("  => no measurable difference between the weightings on either set.")
+        print()
+
     others = [k for k in dims if k != best]
     strongest_other = max(dims[k]["accuracy"] for k in others)
     if dims[best]["accuracy"] >= 0.80 and strongest_other <= 0.60:

@@ -171,3 +171,29 @@ chance on every arm measured.
 **What it does change.** Human validation is now the only way to establish that the metric tracks
 anything a reader cares about. The question is sharper than "is the metric good": it is "does a
 reader prefer the figure the metric calls closer, when the difference is NOT mainly aspect".
+
+
+## Update 2026-10-21 (second): the aspect finding replicates, and the weight claim does not
+
+The aspect-only finding was made on 30 pairs. A claim that holds only on its own sample is a claim
+about the sample, so a SECOND pair set was built with a different seed (20261021, same corpus, same
+floors). Results:
+
+    dimension     main   holdout   delta
+    aspect        0.867   0.900    +0.033
+    palette       0.533   0.467    -0.066
+    rules         0.500   0.467    -0.033
+    sizes         0.400   0.467    +0.067
+    lines         0.333   0.200    -0.133
+    letters       0.033   0.067    +0.034
+
+**The aspect finding REPLICATES**: aspect is the leading component on both sets, and every other
+component is at or below 0.533 on both.
+
+**The equal-weight claim does NOT replicate.** The main set said equal weights score 0.967 against
+the declared 0.900. On the independent set BOTH score 0.933. So the equal-weight advantage was
+tuning noise, and the declared weights are not measurably worse. This is recorded because the
+previous update reported 0.967 with a caveat that it "proves nothing" -- the holdout now turns that
+caveat into a measured result rather than an open question.
+
+The whole comparison is reproducible: `python scripts/validate_metric_claims.py`.
