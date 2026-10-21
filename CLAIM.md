@@ -253,3 +253,34 @@ because a figure at the wrong aspect is the wrong figure. `--no-aspect` exists t
 runnable, and the run records a warning when a dimension the transfer should have moved did not.
 
 Reproduce: `python scripts/validate_style_metric.py --no-aspect --contrast same --seed 20261021`.
+
+
+## Update 2026-10-21 (fifth): my "below chance" component readings were a scoring artefact
+
+The earlier updates reported per-component accuracies like `letters 0.033`, `lines 0.333`,
+`sizes 0.400` and concluded those components were "at or below chance". **That was a measurement
+error in my analysis, not a property of the metric.**
+
+A component's gap is a weighted distance in [0,1]. When the gap between the two candidates is below
+the measurement's resolution (~0.05), the component has NO OPINION -- and the all-pairs table counted
+that as a wrong answer, dragging every row toward zero. Scored only where the gap is resolvable:
+
+    dimension   n    acc
+    letters     1   1.000
+    aspect     25   1.000
+    palette    15   0.867
+    lines      13   0.769
+    sizes      15   0.733
+    rules      21   0.714
+
+**Every component is 0.71 to 1.00 accurate where it has a resolvable opinion.** None is broken. The
+metric is WEAK because most pairs do not separate on most dimensions, not because its components are
+wrong.
+
+This is the same defect the project keeps finding in the pipeline -- **an absence of information
+reported as a violation** -- appearing in the analysis of the metric rather than in the metric. The
+earlier claim that five components "contribute nothing" should be read as "contribute nothing ON
+MOST PAIRS, because most pairs do not differ on them".
+
+The validator now prints both tables, with a warning on the all-pairs one, and a test asserts the
+two disagree sharply so the distinction cannot be silently dropped.

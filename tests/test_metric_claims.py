@@ -257,3 +257,42 @@ def test_the_validator_reports_the_ablation(claims, capsys):
     assert "ABLATION" in out
     assert "plumbing check" in out
     assert "REAL ability" in out
+
+
+# ---------------------------------------------------------------------------------------
+# WHERE EACH COMPONENT ACTUALLY HAS AN OPINION
+#
+# The `per_dimension` table scores every pair, so a near-zero gap counts as a WRONG ANSWER. That
+# dragged all five non-aspect components to "at or below chance" and produced the wrong conclusion
+# that they were broken. Scored only where the gap exceeds the measurement's resolution, every one
+# of them is 0.71 to 1.00 accurate.
+#
+# This is the same "an absence of information reported as a violation" defect the project keeps
+# finding in the pipeline -- this time in my own analysis.
+# ---------------------------------------------------------------------------------------
+
+def test_every_component_is_accurate_where_it_has_an_opinion(claims, pairs):
+    dec = claims.per_dimension_decisive(pairs)
+    weak = {d: r for d, r in dec.items()
+            if r["accuracy"] is not None and r["accuracy"] < 0.70}
+    assert not weak, (
+        f"these components are below 0.70 even where their gap is resolvable: {weak}")
+
+
+def test_the_all_pairs_table_understates_every_component(claims, pairs):
+    """NEGATIVE CONTROL for the scoring choice: the two tables must disagree."""
+    allp = claims.per_dimension(pairs)
+    dec = claims.per_dimension_decisive(pairs)
+    for dim in ("letters", "lines", "sizes"):
+        if dec[dim]["accuracy"] is None:
+            continue
+        assert dec[dim]["accuracy"] > allp[dim]["accuracy"] + 0.2, (
+            f"{dim}: all-pairs {allp[dim]['accuracy']} vs decisive "
+            f"{dec[dim]['accuracy']} -- the two measures should differ sharply")
+
+
+def test_the_validator_warns_about_the_all_pairs_table(claims, capsys):
+    assert claims.summary() == 0
+    out = capsys.readouterr().out
+    assert "WARNING" in out and "understates" in out
+    assert "RESOLVABLE" in out

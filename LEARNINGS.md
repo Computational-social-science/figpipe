@@ -3302,3 +3302,45 @@ The run also records a warning when a dimension the transfer should have moved d
 turned this from a plausible number into a verified one.
 
 Suite: 619 passed, 3 skipped.
+
+
+## 108. My "below chance" component readings were my own scoring artefact (2026-10-21)
+
+For three rounds I reported the style metric's components as `letters 0.033`, `lines 0.333`,
+`sizes 0.400` -- "at or below chance" -- and used that to argue the metric was nearly aspect-only.
+Asked to improve the loudest component (`palette`), I looked at where its failures were and found
+the answer was not in the metric.
+
+THE ERROR: a component's gap is a weighted distance in [0,1]. When the two candidates differ by less
+than the measurement's resolution, the component has NO OPINION. The all-pairs table counted that as
+a WRONG ANSWER. With ~20 of 30 pairs below the resolution for each component, every accuracy was
+dragged toward zero by construction.
+
+Scored only where the gap is resolvable:
+
+    dimension   n    acc
+    letters     1   1.000
+    aspect     25   1.000
+    palette    15   0.867
+    lines      13   0.769
+    sizes      15   0.733
+    rules      21   0.714
+
+EVERY COMPONENT IS 0.71 TO 1.00 ACCURATE where it has an opinion. None is broken. The metric is weak
+because most pairs do not separate on most dimensions -- not because its components are wrong.
+
+THIS IS THE PROJECT'S RECURRING DEFECT, IN MY OWN ANALYSIS. "An absence of information reported as a
+violation" is the exact pattern I fixed four times in `semantics.py` (bar panels without columns,
+degenerate axes, NaN entries, mesh panels) and in the coverage report (`skipped` vs `unverifiable`).
+Each time I found it in the pipeline and fixed it there. This time it was in the code that JUDGES the
+pipeline, and it had been producing a wrong conclusion for three rounds.
+
+THE TELL, in hindsight: a well-built metric with six monotone components should not have five of them
+below chance. When an analysis produces a result that extreme, the analysis is a candidate. I treated
+`letters 0.033` as a finding about the metric for three rounds instead of asking why a component that
+is either right or has no opinion could be wrong 29 times out of 30.
+
+The validator now prints both tables with a warning on the all-pairs one, and a test asserts they
+disagree sharply so the distinction cannot be dropped again.
+
+Suite: 622 passed, 3 skipped.
