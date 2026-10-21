@@ -210,10 +210,45 @@ def op_encode_matrix(ctx: SkillContext, columns: str | None = None,
         # and refused a task that previously rendered -- a regression this project's own loop
         # caught within one cycle.
         varying = [c for c in data.columns if data[c].nunique() >= 2]
+        # A ROW INDEX IS NOT A MEASUREMENT. `panel_row`, `sample_id`, `record_number` are integer
+        # columns whose values are (near-)consecutive and all distinct; they vary more than any real
+        # measurement, so a shape-only search picks them first. Two pool tasks pivoted `panel_row`
+        # as the VALUE and drew the row number as if it were data.
+        #
+        # A measurement REPEATS within the table -- that is what makes it aggregatable -- so a column
+        # that is all-distinct integers spanning its own length is excluded from the value role.
+        def _is_row_index(col) -> bool:
+            v = data[col].dropna()
+            if v.empty or not pd.api.types.is_integer_dtype(v):
+                return False
+            uniq = sorted(v.unique().tolist())
+            if len(uniq) < max(4, len(v) * 0.9):      # repeats somewhere -> not an index
+                return False
+            span = uniq[-1] - uniq[0] + 1
+            return span <= len(uniq) * 1.5            # consecutive-ish -> an index
+        # THE INDEX HAS NO ROLE IN A PIVOT -- not as the value, not as an axis. Excluding it only
+        # from the value role let the search use it as an AXIS: measured, `panel_row x measure of
+        # panel_group` pivoted to 40x40, one cell per row, which is the table transposed rather than
+        # a matrix.
+        piv_roles = [c for c in varying if not _is_row_index(c)]
+        if len(piv_roles) < 3:                         # nothing but indices; keep the original set
+            piv_roles = varying
+        value_roles = piv_roles
+
+        # AN AXIS IS A CATEGORY, NOT A CONTINUOUS MEASUREMENT. A column with nearly as many distinct
+        # values as rows is an observation, not a level: using it as a pivot axis gives one column
+        # per row, which is the table transposed. Measured: `record_type x measure of panel_group`
+        # pivoted to 40x5 -- correct -- but `panel_row x measure of panel_group` gave 40x40.
+        #
+        # A categorical axis repeats: at most a third of the rows carry a distinct level.
+        axis_roles = [c for c in piv_roles
+                      if data[c].nunique() <= max(2, len(data) // 3)]
+        if len(axis_roles) < 2:                        # no categorical pair; keep the original set
+            axis_roles = piv_roles
         best = None
-        for i, a in enumerate(varying):
-            for bcol in varying[i + 1:]:
-                for val in varying:
+        for i, a in enumerate(axis_roles):
+            for bcol in axis_roles[i + 1:]:
+                for val in value_roles:
                     if val in (a, bcol):
                         continue
                     piv = data.pivot_table(index=bcol, columns=a, values=val,
@@ -228,12 +263,18 @@ def op_encode_matrix(ctx: SkillContext, columns: str | None = None,
             # that lands 40 rows on a 90 mm panel draws 2.25 mm per row; the drawer then hides both
             # the tick labels and the annotations, so the figure carries no recoverable values and
             # the task is reported unverifiable. A figure nobody can read is not a figure.
-            if pivoted.shape[0] > budget:
+            # THE BUDGET APPLIES TO BOTH AXES. A matrix is unreadable when either axis is past it;
+            # the drawer's own density rule is `rows <= 12 and cols <= 12`. Measured: 180 rows with
+            # 45 group levels pivoted to 4x45 and passed a ROW-only budget while producing 45
+            # columns of unlabelled tiles.
+            worst_axis = max(pivoted.shape)
+            if worst_axis > budget:
                 raise SkillError(
-                    f"encode.matrix: pivoting {a} x {bcol} gives {pivoted.shape[0]} rows, past the "
-                    f"{budget}-row budget; at that size the tiles cannot be labelled and the figure "
-                    f"would carry no readable value -- aggregate {bcol} to fewer levels, or use "
-                    f"field_map")
+                    f"encode.matrix: pivoting {a} x {bcol} gives {pivoted.shape[0]}x"
+                    f"{pivoted.shape[1]}, past the {budget}-row budget on its "
+                    f"{'rows' if pivoted.shape[0] > pivoted.shape[1] else 'columns'}; at that size "
+                    f"the tiles cannot be labelled and the figure would carry no readable value -- "
+                    f"aggregate to fewer levels, or use field_map")
             ctx.trace.append(f"encode.matrix.pivot({a} x {bcol} of {val}: "
                              f"{data.shape[0]} rows -> {pivoted.shape[0]}x{pivoted.shape[1]})")
             data = pivoted

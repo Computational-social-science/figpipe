@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-22T05:32:40",
+  "run_at": "2026-10-22T06:23:11",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -9,10 +9,10 @@
     "  passed 8, failed 0",
     "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
     "  wrote knowledge\\evolution_report.json",
-    "  lean: tracked 77.9 -> 77.9 MB, worktree 131.8 -> 126.6 MB"
+    "  lean: tracked 77.9 -> 77.9 MB, worktree 132.3 -> 130.7 MB"
   ],
   "tests_ok": true,
-  "tests_summary": "707 passed, 3 skipped, 1 warning in 441.77s (0:07:21)",
+  "tests_summary": "708 passed, 3 skipped, 1 warning in 273.21s (0:04:33)",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
@@ -144,18 +144,8 @@
     ]
   },
   "anchor_refresh": {
-    "ran": true,
-    "stale_anchors": [
-      "shipped",
-      "styled"
-    ],
-    "tasks": 35,
-    "code": 0,
-    "tail": [
-      "    type Scatter        ok 3/3   d=0.349 base=0.442 delta=0.094 errors=0",
-      "    type Std-band       ok 1/1   d=0.368 base=0.424 delta=0.056 errors=0",
-      "  wrote E:\\2026-AI4S\\figpipe\\corpus\\e2e\\plottwin_report.json"
-    ]
+    "ran": false,
+    "reason": "both anchors already comparable"
   },
   "mutation": {
     "ran": true,
@@ -624,32 +614,28 @@
     "benchmark_official_improvement": 37.25,
     "statistics_reproduced": 15,
     "knowledge_version": 16,
-    "tests": 707
+    "tests": 708
   },
   "capabilities_delta": {
     "changed": true,
     "delta": {
-      "_code_version": {
-        "before": "cc13b79a35b4",
-        "after": "d4cfc16c873d"
-      },
       "tests": {
-        "before": 703,
-        "after": 707
+        "before": 707,
+        "after": 708
       }
     },
     "verdict": {
       "gains": [
         {
           "field": "tests",
-          "before": 703,
-          "after": 707
+          "before": 707,
+          "after": 708
         }
       ],
       "regressions": [],
       "corrections": [],
       "not_compared": [],
-      "instrument_changed": true,
+      "instrument_changed": false,
       "membership_broken": false,
       "ok": true,
       "judged_fields": [

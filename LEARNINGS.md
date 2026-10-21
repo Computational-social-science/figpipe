@@ -4121,3 +4121,43 @@ exists -- all three are known to the caller and were being re-derived from pixel
 re-derives a fact it could be told will eventually re-derive it wrong.
 
 Suite: 706 passed, 4 skipped.
+
+
+## 127. Five defects behind one unverifiable count (2026-10-22)
+
+The pool had 10 unverifiable tasks left and the previous round called that "the format's inherent
+limit". This round checked, and five of them were not inherent at all.
+
+  1. THE PIVOT PICKED A ROW INDEX AS THE MEASUREMENT. `varying` kept any column with >= 2 distinct
+     values, and a row-index column (`panel_row`, `sample_id`) has the MOST. Two tasks pivoted
+     `panel_row` as the VALUE and drew the row number as if it were data. A row index is
+     identifiable: all-distinct consecutive integers, and a measurement repeats.
+
+  2. THEN IT PICKED ONE AS THE AXIS. Excluding the index from the value role let the search use it
+     as an axis instead: `panel_row x measure of panel_group` pivoted to 40x40 -- the table
+     transposed, not a matrix.
+
+  3. THEN A CONTINUOUS MEASUREMENT AS THE AXIS. `record_type x measure of panel_group` gave 40x5 for
+     the same reason: `measure` has 40 distinct floats. An axis is a CATEGORY and repeats; at most a
+     third of the rows carry a distinct level.
+
+  4. THE COLOUR BAR PRINTED A SCALE THAT STOPPED SHORT OF ITS DATA. matplotlib picks round ticks, so
+     a bar over [-0.938, 2.002] printed [-0.5 .. 2.0] and the deepest value's colour was outside the
+     stated scale. Fixed by adding the END values -- but only when they are far enough from the
+     nearest round tick to be readable (3.066 beside 3 merged into `33.07` in the text layer), and
+     only when they fit (a 5-character `-3.77` ran 2.4 pt past the page edge).
+
+  5. THE BUDGET CHECKED ROWS AND THE PIVOT GREW COLUMNS. 180 rows with 45 group levels pivoted to
+     4x45 and passed a row-only budget while producing 45 columns of unlabelled tiles. The drawer's
+     own density rule is `rows <= 12 and cols <= 12`, so the budget must apply to the larger axis.
+
+THE PATTERN THAT KEEPS RECURRING, in its sharpest form yet: **an "unverifiable" count is not a
+measurement of the format.** It is a measurement of everything upstream that decided what to draw.
+Three of these five were the PIVOT choosing roles badly -- a defect that produces a figure nobody
+can check, and then the check correctly reports it cannot be checked.
+
+A round ago I wrote that the remaining unverifiable tasks were "close to the format's inherent
+limit". They were not. The honest statement is narrower: the ones that remain after you have audited
+every upstream decision are the inherent ones, and I had not audited them.
+
+Suite: 708 passed, 3 skipped.

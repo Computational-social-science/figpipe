@@ -576,23 +576,17 @@ def _scale_numbers(words, *, cluster_pt: float = 6.0) -> list[float]:
         span = max(ys) - min(ys)
         if span < 10.0:                       # points; a stack spans the panel height
             continue
-        # THE CLUSTER MUST BE SEPARATED FROM THE TEXT BLOCK TO ITS LEFT. A colour bar is drawn
-        # OUTSIDE the axes, so there is a clear horizontal gap between its labels and every other
-        # word. A column of cell annotations is part of the dense text block and has other words
-        # immediately to its left.
-        #
-        # Measured: without a bar the annotation column sits at x0 = 449 with the next column of
-        # labels at 332 (a 117 pt gap, because the matrix is wide) -- but the bar case has its
-        # labels at 519 with annotations at 449. Both have gaps, so the test must be whether THIS
-        # cluster is the rightmost and whether anything sits between it and the page edge.
+        # THE CLUSTER MUST REACH THE RIGHT EDGE OF THE TEXT BLOCK. That is all the geometry this
+        # reader needs. Three earlier attempts tried to PROVE the stack is a colour bar -- by even
+        # spacing, by monotonicity, by separation from the text block -- and each rejected a real
+        # bar on some figure. The caller (`verify.semantics`) only runs this when `panel.colorbar`
+        # says a bar was drawn, so the reader's job is to FIND the stack, not to certify it.
+        # THE GAP IS THE LABEL'S OWN WIDTH, not a fraction of the page. A colour bar's tick labels
+        # are the rightmost words; the distance from their left edge to the page's right edge is
+        # just how wide the label text is. Measured: 14.7 pt for a 5-character label at 5.5 pt --
+        # a 6%-of-page limit (13.3 pt) rejected it by 1.4 pt.
         label_x = key * cluster_pt
-        if (x_right - label_x) > 0.06 * page_span:
-            continue
-        # A bar's labels are the ONLY thing to the right of the plot; annotations have the axis
-        # frame and often a column header to their right.
-        if any(other_x > label_x + cluster_pt and other_x < x_right
-               for other_x, _y, _x1, _t in words
-               if other_x < x_right - 0.02 * page_span):
+        if (x_right - label_x) > 24.0:        # about a 6-character label at 5.5 pt, plus slack
             continue
         # MONOTONE IN Y, NOT EVENLY SPACED. A diverging colour bar (`TwoSlopeNorm`, which
         # `ax_tile_diverging` uses whenever the data straddles zero) maps 0 to the middle of the

@@ -38,12 +38,19 @@ def tmp_stem(tmp_path_factory):
 
 
 def test_a_pivot_past_the_budget_is_refused(tmp_stem):
-    """THE BUG: a successful pivot bypassed the budget entirely."""
+    """THE BUG: a successful pivot bypassed the budget entirely.
+
+    NOTE ON THE FIXTURE. The pivot roles are now restricted to CATEGORICAL columns (a column with
+    nearly as many distinct values as rows is an observation, not a level), so a 40-level key no
+    longer pivots at all -- it is a measurement, not an axis. To exercise the budget the fixture
+    needs a genuine categorical axis with too many levels: 45 groups x 4 records, which pivots to a
+    45-row matrix and must be refused.
+    """
     rng = np.random.default_rng(0)
     df = pd.DataFrame({
-        "rowkey": np.repeat(np.arange(40), 8),
-        "colkey": np.tile(np.arange(8), 40),
-        "value": rng.normal(0, 1, 320),
+        "group": np.repeat(np.arange(45), 4),        # 45 levels: a real axis, past the budget
+        "record": np.tile(np.arange(4), 45),
+        "value": rng.normal(0, 1, 180),
     })
     with pytest.raises(skills.SkillError) as exc:
         skills.run("matrix_plate", df, out_stem=tmp_stem)

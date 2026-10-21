@@ -235,8 +235,16 @@ def test_a_matrix_with_a_colour_bar_is_checked(tmp_path):
     assert not result.get("hard_failures")
 
 
-def test_a_wide_frame_with_no_named_value_is_unverifiable(tmp_path):
-    """NEGATIVE CONTROL: without a named value column the check must not guess."""
+def test_a_wide_frame_is_checked_against_what_the_drawer_plotted(tmp_path):
+    """A WIDE FRAME NEEDS NO NAMED VALUE COLUMN, because the DRAWER knows what it plotted.
+
+    `ax_tile_diverging` records its own array on the axes, so the scale can be compared to the
+    values the colours encode without anyone naming a column. That is exact, and it is why the check
+    no longer has to guess the widest numeric column.
+
+    The guess was the defect: on a long-format grid the widest column is a COORDINATE, and the
+    printed scale was compared to it. With the drawer's own array there is nothing to guess.
+    """
     import matplotlib
     matplotlib.use("Agg")
     from figpipe import skills
@@ -245,10 +253,10 @@ def test_a_wide_frame_with_no_named_value_is_unverifiable(tmp_path):
     df = pd.DataFrame({f"c{i}": rng.normal(0, 1, 5) for i in range(4)})
     result = skills.run("matrix_plate", df, out_stem=tmp_path / "w")
     trace = " ".join(result.get("trace") or [])
-    assert "scale check: unverifiable" in trace, (
-        f"a wide frame with no value column claimed a checkable scale; trace: {trace[-300:]}")
+    assert "scale check: checked" in trace, (
+        f"a wide frame was not scale-checked against the drawn array; trace: {trace[-300:]}")
     assert not result.get("hard_failures"), (
-        "guessing the value column produced a finding on a correct figure")
+        "the check produced a finding on a correct figure")
 
 
 def test_a_matrix_without_a_colour_bar_stays_unverifiable(tmp_path):

@@ -750,6 +750,10 @@ def ax_tile_diverging(ax, df: pd.DataFrame, cmap: str = "RdBu_r",
     # they must be limited by the same number or the two limits drift apart.
     MAX_AXIS_LABELS = 12
     lo, hi = float(np.nanmin(data)), float(np.nanmax(data))
+    # RECORD WHAT WAS DRAWN. The scale check must compare the printed colour bar to the values the
+    # bar encodes -- this array -- not to the caller's long table, which may have been pivoted and
+    # aggregated on the way here. `ax_field_2d` records the same attribute.
+    ax._figpipe_drawn = data
     norm = None
     if lo < 0 < hi:
         from matplotlib.colors import TwoSlopeNorm

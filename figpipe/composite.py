@@ -386,6 +386,44 @@ def composite(panels: list[Panel], columns: float = 2.0, height_mm: float | None
             cax = fig.add_axes([(x0 + ax_w + CBAR_PAD_MM) / W, y0 / H,
                                 CBAR_WIDTH_MM / W, h / H])
             cb = fig.colorbar(artist, cax=cax)
+            # A TICK OUTSIDE THE LIMITS IS SILENTLY DROPPED FROM THE PDF. Measured: a bar over
+            # [-0.938, 2.002] computed ticks [-1.0 .. 2.5]; the printed page carried only
+            # [-0.5 .. 2.0], because the end ticks fell outside the axis and were clipped. The
+            # printed scale then no longer covered the data, and nothing said so.
+            #
+            # Clip the ticks to the limits so the printed scale IS the range the colours encode.
+            if cb.vmin is not None and cb.vmax is not None:
+                lo_v, hi_v = float(cb.vmin), float(cb.vmax)
+                keep = [t for t in cb.get_ticks() if lo_v - 1e-12 <= t <= hi_v + 1e-12]
+                # THE SCALE MUST STATE ITS ENDS. matplotlib picks ROUND ticks, so a range that does
+                # not begin on a round number leaves its lowest tick ABOVE the minimum: measured, a
+                # bar over [-0.938, 2.002] printed [-0.5 .. 2.0], and the deepest value's colour was
+                # outside the stated scale. The end values are added so the printed scale covers the
+                # data by construction.
+                def _fmt(v: float) -> str:
+                    return f"{v:.2f}".rstrip("0").rstrip(".") if abs(v) < 100 else f"{v:.0f}"
+                if len(keep) >= 1:
+                    # AN END LABEL IS ONLY PRINTED IF IT CAN BE READ. `hi_v` = 3.066 beside the round
+                    # tick 3 is 0.066 apart; at 5.5 pt the two labels overlap and the PDF's text
+                    # layer merges them into `33.07`, a number that is not in the data. Keep an end
+                    # only when it is far enough from its nearest round tick to be distinguishable.
+                    span_v = hi_v - lo_v
+                    min_gap = span_v * 0.06
+                    ends = []
+                    for end in (lo_v, hi_v):
+                        if all(abs(end - k) > min_gap for k in keep):
+                            # AN END TOO WIDE TO FIT IS NOT PRINTED. `-3.77` is 5 characters where
+                            # the round ticks are 2; measured, it ran 2.4 pt past the page edge.
+                            # CBAR_LABEL_MM reserves room for about 4 characters, so a longer label
+                            # is dropped rather than allowed to overflow.
+                            if len(_fmt(end)) <= 4:
+                                ends.append(end)
+                    # LABELS FROM THE SORTED TICKS, never assembled beside them. Building the two
+                    # lists separately put `-0.94` and `2` at the same y: the tick list was sorted by
+                    # value while the label list kept the keep-then-ends order.
+                    ticks = sorted(set(keep + ends))
+                    cb.set_ticks(ticks)
+                    cb.set_ticklabels([_fmt(t) for t in ticks])
             if p.cbar_label:
                 cb.set_label(p.cbar_label, fontsize=6)
             cb.ax.tick_params(labelsize=5.5)
