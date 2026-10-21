@@ -1,0 +1,1293 @@
+{
+  "experiment": "style-metric discrimination on local published Nature figures",
+  "what_this_measures": "Whether figpipe's own style distance ranks a style transferred from the MATCHED reference closer to that reference than a style transferred from a MISMATCHED one. This tests ORDERING, not expert preference: it can refute a blind or inverted metric, it cannot establish that the closer figure is the better figure.",
+  "not_human_validation": "No human judgement was collected. This is a deterministic proxy that removes the 'the metric was never tested at all' gap; it does not replace a reader study.",
+  "corpus": {
+    "source": "corpus/extracted (local published Nature figures, vector PDF regions)",
+    "n_candidates_scanned": 106,
+    "style_floors": {
+      "min_width_pt": 90.0,
+      "min_height_pt": 60.0,
+      "min_text_spans": 8,
+      "min_size_tiers": 2,
+      "min_colours": 2
+    },
+    "skipped": {
+      "below_style_floors": 57
+    }
+  },
+  "design": {
+    "n_pairs": 30,
+    "seed": 20261019,
+    "contrast_requested": "same",
+    "A": "style transferred from a MISMATCHED published figure",
+    "B": "style transferred from the MATCHED reference itself",
+    "candidate_data": "identical synthetic panel for both candidates",
+    "distance": "figpipe.styleprofile.compare (the metric under test)",
+    "mismatch_contrast": {
+      "different_paper": 0,
+      "same_paper": 30
+    },
+    "contrast_note": "cross-paper mismatch is the EASY condition: two unrelated papers differ in palette, typography and layout at once. A same-paper mismatch (another figure in the same paper) shares a house style and is the condition a style metric is actually for. Both are reported; neither substitutes for the other."
+  },
+  "discrimination_accuracy": 0.8,
+  "n_correct": 24,
+  "n_pairs": 30,
+  "binomial_ci_95": [
+    0.6269,
+    0.9049
+  ],
+  "chance_level": 0.5,
+  "p_value_vs_chance": 0.000715453177690506,
+  "p_value_text": "7.15e-04",
+  "mean_margin": 0.0713,
+  "median_margin": 0.0495,
+  "verdict": "SUPPORTED at this contrast: the style distance discriminates a matched transfer from a mismatched one at above-chance accuracy, with a 95 % interval that excludes chance. CONCENTRATION: withholding `palette` alone drops accuracy to 0.63 (delta -0.17), so most of the discrimination is that one component.",
+  "negative_control": {
+    "what": "the same arithmetic applied to an INVERTED ranking (distance negated)",
+    "accuracy": 0.0667,
+    "n_correct": 2,
+    "n_pairs": 30,
+    "n_ties": 4,
+    "binomial_ci_95": [
+      0.0185,
+      0.2132
+    ],
+    "passes": true,
+    "note": "A harness that reports the same number for the inverted ranking is measuring nothing. This control is asserted by the test suite. Ties are counted in neither direction, so forward + inverted + ties = n."
+  },
+  "official_scorer": {
+    "scorer": "plottwin_scorer deviation-defect-v1 (vendored, unmodified)",
+    "channel": "code_deviation (35 % of the official combined score)",
+    "n_pairs_scored": 30,
+    "n_pairs_unavailable": 0,
+    "n_agree": 11,
+    "n_disagree": 3,
+    "n_tie": 16,
+    "n_decisive": 14,
+    "agreement_rate": 0.7857,
+    "agreement_rate_including_ties": 0.3667,
+    "agreement_ci": [
+      0.5241,
+      0.9243
+    ],
+    "official_correct": 11,
+    "official_accuracy": 0.7857,
+    "note": "The official channel is a DEVIATION score (100 = the candidate's style calls match the reference's). It is run on code emitted from the RENDERED candidates' own measured profiles, so it describes what was rendered. Agreement is counted only where the channel is available for BOTH candidates, and the rate is over decisive comparisons: a pair where the official channel scores both candidates identically is a tie, not a disagreement."
+  },
+  "cross_metric": {
+    "n_pairs_both_scored": 30,
+    "figpipe_right_official_wrong": 3,
+    "figpipe_wrong_official_right": 1,
+    "both_agree": 11
+  },
+  "per_dimension": {
+    "aspect": {
+      "n": 30,
+      "n_decisive": 0,
+      "wins": 0,
+      "losses": 0,
+      "ties": 30,
+      "accuracy": null,
+      "ci": null,
+      "mean_A": 0.435,
+      "mean_B": 0.435,
+      "mean_margin": 0.0
+    },
+    "letters": {
+      "n": 23,
+      "n_decisive": 1,
+      "wins": 1,
+      "losses": 0,
+      "ties": 22,
+      "accuracy": 1.0,
+      "ci": [
+        0.2065,
+        1.0
+      ],
+      "mean_A": 0.3567,
+      "mean_B": 0.3277,
+      "mean_margin": 0.029
+    },
+    "lines": {
+      "n": 30,
+      "n_decisive": 13,
+      "wins": 10,
+      "losses": 3,
+      "ties": 17,
+      "accuracy": 0.7692,
+      "ci": [
+        0.4974,
+        0.9182
+      ],
+      "mean_A": 0.2374,
+      "mean_B": 0.2026,
+      "mean_margin": 0.0348
+    },
+    "palette": {
+      "n": 30,
+      "n_decisive": 22,
+      "wins": 16,
+      "losses": 6,
+      "ties": 8,
+      "accuracy": 0.7273,
+      "ci": [
+        0.5185,
+        0.8685
+      ],
+      "mean_A": 0.2131,
+      "mean_B": 0.1526,
+      "mean_margin": 0.0605
+    },
+    "rules": {
+      "n": 30,
+      "n_decisive": 21,
+      "wins": 17,
+      "losses": 4,
+      "ties": 9,
+      "accuracy": 0.8095,
+      "ci": [
+        0.6,
+        0.9233
+      ],
+      "mean_A": 0.5017,
+      "mean_B": 0.325,
+      "mean_margin": 0.1767
+    },
+    "sizes": {
+      "n": 30,
+      "n_decisive": 16,
+      "wins": 12,
+      "losses": 4,
+      "ties": 14,
+      "accuracy": 0.75,
+      "ci": [
+        0.505,
+        0.8982
+      ],
+      "mean_A": 0.3433,
+      "mean_B": 0.2556,
+      "mean_margin": 0.0877
+    }
+  },
+  "leave_one_out": {
+    "all_dimensions": {
+      "n": 30,
+      "wins": 24,
+      "ties": 3,
+      "accuracy": 0.8,
+      "delta_vs_all": null,
+      "ci": [
+        0.6269,
+        0.9049
+      ]
+    },
+    "without_aspect": {
+      "n": 30,
+      "wins": 24,
+      "ties": 3,
+      "accuracy": 0.8,
+      "delta_vs_all": 0.0,
+      "ci": [
+        0.6269,
+        0.9049
+      ]
+    },
+    "without_letters": {
+      "n": 30,
+      "wins": 24,
+      "ties": 3,
+      "accuracy": 0.8,
+      "delta_vs_all": 0.0,
+      "ci": [
+        0.6269,
+        0.9049
+      ]
+    },
+    "without_lines": {
+      "n": 30,
+      "wins": 22,
+      "ties": 3,
+      "accuracy": 0.7333,
+      "delta_vs_all": -0.0667,
+      "ci": [
+        0.5555,
+        0.8582
+      ]
+    },
+    "without_palette": {
+      "n": 30,
+      "wins": 19,
+      "ties": 6,
+      "accuracy": 0.6333,
+      "delta_vs_all": -0.1667,
+      "ci": [
+        0.4551,
+        0.7813
+      ]
+    },
+    "without_rules": {
+      "n": 30,
+      "wins": 22,
+      "ties": 3,
+      "accuracy": 0.7333,
+      "delta_vs_all": -0.0667,
+      "ci": [
+        0.5555,
+        0.8582
+      ]
+    },
+    "without_sizes": {
+      "n": 30,
+      "wins": 24,
+      "ties": 4,
+      "accuracy": 0.8,
+      "delta_vs_all": 0.0,
+      "ci": [
+        0.6269,
+        0.9049
+      ]
+    }
+  },
+  "treatment_reach": {
+    "aspect": {
+      "n": 30,
+      "n_identical": 30,
+      "exercised": false
+    },
+    "letters": {
+      "n": 23,
+      "n_identical": 22,
+      "exercised": true
+    },
+    "lines": {
+      "n": 30,
+      "n_identical": 17,
+      "exercised": true
+    },
+    "palette": {
+      "n": 30,
+      "n_identical": 8,
+      "exercised": true
+    },
+    "rules": {
+      "n": 30,
+      "n_identical": 9,
+      "exercised": true
+    },
+    "sizes": {
+      "n": 30,
+      "n_identical": 14,
+      "exercised": true
+    }
+  },
+  "pairs": [
+    {
+      "reference": "2019_nature_scalable_energy_efficient_magnetoelectric_spin_o_1e731f2e/fig_001",
+      "reference_size_pt": [
+        250.9,
+        247.2
+      ],
+      "mismatch": "2019_nature_scalable_energy_efficient_magnetoelectric_spin_o_1e731f2e/fig_004",
+      "mismatch_contrast": "same_paper",
+      "distance_A": 0.375,
+      "distance_B": 0.281,
+      "margin": 0.094,
+      "correct": true,
+      "tie": false,
+      "details_A": {
+        "sizes": 0.302,
+        "letters": 0.375,
+        "lines": 0.431,
+        "rules": 0.925,
+        "palette": 0.136,
+        "aspect": 0.59
+      },
+      "details_B": {
+        "sizes": 0.23,
+        "letters": 0.375,
+        "lines": 0.431,
+        "rules": 0.0,
+        "palette": 0.216,
+        "aspect": 0.59
+      },
+      "official_A": 49.00781265286509,
+      "official_B": 38.631081464809704,
+      "official_available": true,
+      "official_reason": null
+    },
+    {
+      "reference": "2019_nature_scalable_energy_efficient_magnetoelectric_spin_o_1e731f2e/fig_003",
+      "reference_size_pt": [
+        235.1,
+        487.7
+      ],
+      "mismatch": "2019_nature_scalable_energy_efficient_magnetoelectric_spin_o_1e731f2e/fig_001",
+      "mismatch_contrast": "same_paper",
+      "distance_A": 0.543,
+      "distance_B": 0.365,
+      "margin": 0.178,
+      "correct": true,
+      "tie": false,
+      "details_A": {
+        "sizes": 0.443,
+        "letters": 0.333,
+        "lines": 0.784,
+        "rules": 0.775,
+        "palette": 0.415,
+        "aspect": 1.0
+      },
+      "details_B": {
+        "sizes": 0.299,
+        "letters": 0.333,
+        "lines": 0.784,
+        "rules": 0.15,
+        "palette": 0.13,
+        "aspect": 1.0
+      },
+      "official_A": 27.16940173539401,
+      "official_B": 53.72186791987838,
+      "official_available": true,
+      "official_reason": null
+    },
+    {
+      "reference": "2023_nature_papers_and_patents_are_becoming_less_disruptive_e2bc44ca/fig_001",
+      "reference_size_pt": [
+        526.6,
+        252.3
+      ],
+      "mismatch": "2023_nature_papers_and_patents_are_becoming_less_disruptive_e2bc44ca/fig_006",
+      "mismatch_contrast": "same_paper",
+      "distance_A": 0.327,
+      "distance_B": 0.252,
+      "margin": 0.075,
+      "correct": true,
+      "tie": false,
+      "details_A": {
+        "sizes": 0.352,
+        "letters": 0.333,
+        "lines": 0.01,
+        "rules": 0.85,
+        "palette": 0.288,
+        "aspect": 0.132
+      },
+      "details_B": {
+        "sizes": 0.249,
+        "letters": 0.333,
+        "lines": 0.01,
+        "rules": 0.7,
+        "palette": 0.172,
+        "aspect": 0.132
+      },
+      "official_A": 67.21561044713272,
+      "official_B": 67.21561044713272,
+      "official_available": true,
+      "official_reason": null
+    },
+    {
+      "reference": "2023_nature_papers_and_patents_are_becoming_less_disruptive_e2bc44ca/fig_004",
+      "reference_size_pt": [
+        339.6,
+        163.4
+      ],
+      "mismatch": "2023_nature_papers_and_patents_are_becoming_less_disruptive_e2bc44ca/fig_003",
+      "mismatch_contrast": "same_paper",
+      "distance_A": 0.226,
+      "distance_B": 0.215,
+      "margin": 0.011,
+      "correct": true,
+      "tie": false,
+      "details_A": {
+        "sizes": 0.241,
+        "letters": 0.25,
+        "lines": 0.0,
+        "rules": 0.85,
+        "palette": 0.073,
+        "aspect": 0.126
+      },
+      "details_B": {
+        "sizes": 0.241,
+        "letters": 0.25,
+        "lines": 0.0,
+        "rules": 0.7,
+        "palette": 0.091,
+        "aspect": 0.126
+      },
+      "official_A": 67.85537919108187,
+      "official_B": 67.85537919108187,
+      "official_available": true,
+      "official_reason": null
+    },
+    {
+      "reference": "2024_nature_scaling_neural_machine_translation_to_200_langua_46658cce/fig_003",
+      "reference_size_pt": [
+        510.1,
+        143.3
+      ],
+      "mismatch": "2024_nature_scaling_neural_machine_translation_to_200_langua_46658cce/fig_001",
+      "mismatch_contrast": "same_paper",
+      "distance_A": 0.311,
+      "distance_B": 0.329,
+      "margin": -0.018,
+      "correct": false,
+      "tie": false,
+      "details_A": {
+        "sizes": 0.222,
+        "letters": 0.333,
+        "lines": 0.216,
+        "rules": 0.075,
+        "palette": 0.393,
+        "aspect": 0.665
+      },
+      "details_B": {
+        "sizes": 0.222,
+        "letters": 0.333,
+        "lines": 0.216,
+        "rules": 0.7,
+        "palette": 0.219,
+        "aspect": 0.665
+      },
+      "official_A": 44.94235827321476,
+      "official_B": 44.94235827321476,
+      "official_available": true,
+      "official_reason": null
+    },
+    {
+      "reference": "2024_nature_scaling_neural_machine_translation_to_200_langua_6d110a48/fig_003",
+      "reference_size_pt": [
+        221.9,
+        249.7
+      ],
+      "mismatch": "2024_nature_scaling_neural_machine_translation_to_200_langua_6d110a48/fig_002",
+      "mismatch_contrast": "same_paper",
+      "distance_A": 0.312,
+      "distance_B": 0.312,
+      "margin": 0.0,
+      "correct": false,
+      "tie": true,
+      "details_A": {
+        "sizes": 0.351,
+        "lines": 0.163,
+        "rules": 0.225,
+        "palette": 0.194,
+        "aspect": 0.722
+      },
+      "details_B": {
+        "sizes": 0.476,
+        "lines": 0.163,
+        "rules": 0.15,
+        "palette": 0.077,
+        "aspect": 0.722
+      },
+      "official_A": 56.826466729581476,
+      "official_B": 62.19061707027047,
+      "official_available": true,
+      "official_reason": null
+    },
+    {
+      "reference": "2024_nature_scaling_neural_machine_translation_to_200_langua_7209237b/fig_003",
+      "reference_size_pt": [
+        510.2,
+        143.4
+      ],
+      "mismatch": "2024_nature_scaling_neural_machine_translation_to_200_langua_7209237b/fig_012",
+      "mismatch_contrast": "same_paper",
+      "distance_A": 0.582,
+      "distance_B": 0.329,
+      "margin": 0.253,
+      "correct": true,
+      "tie": false,
+      "details_A": {
+        "sizes": 0.675,
+        "letters": 1.0,
+        "lines": 0.216,
+        "rules": 0.85,
+        "palette": 0.226,
+        "aspect": 0.665
+      },
+      "details_B": {
+        "sizes": 0.222,
+        "letters": 0.333,
+        "lines": 0.216,
+        "rules": 0.7,
+        "palette": 0.219,
+        "aspect": 0.665
+      },
+      "official_A": 44.94235827321476,
+      "official_B": 44.94235827321476,
+      "official_available": true,
+      "official_reason": null
+    },
+    {
+      "reference": "2024_nature_scaling_neural_machine_translation_to_200_langua_7209237b/fig_005",
+      "reference_size_pt": [
+        369.2,
+        162.6
+      ],
+      "mismatch": "2024_nature_scaling_neural_machine_translation_to_200_langua_7209237b/fig_003",
+      "mismatch_contrast": "same_paper",
+      "distance_A": 0.464,
+      "distance_B": 0.362,
+      "margin": 0.102,
+      "correct": true,
+      "tie": false,
+      "details_A": {
+        "sizes": 0.461,
+        "letters": 1.0,
+        "lines": 0.113,
+        "rules": 0.775,
+        "palette": 0.26,
+        "aspect": 0.215
+      },
+      "details_B": {
+        "sizes": 0.516,
+        "lines": 0.0,
+        "rules": 0.7,
+        "palette": 0.245,
+        "aspect": 0.215
+      },
+      "official_A": 60.68534139225995,
+      "official_B": 64.90593086431393,
+      "official_available": true,
+      "official_reason": null
+    },
+    {
+      "reference": "2024_nature_scaling_neural_machine_translation_to_200_langua_7209237b/fig_007",
+      "reference_size_pt": [
+        221.9,
+        249.7
+      ],
+      "mismatch": "2024_nature_scaling_neural_machine_translation_to_200_langua_7209237b/fig_010",
+      "mismatch_contrast": "same_paper",
+      "distance_A": 0.318,
+      "distance_B": 0.312,
+      "margin": 0.006,
+      "correct": true,
+      "tie": false,
+      "details_A": {
+        "sizes": 0.351,
+        "lines": 0.276,
+        "rules": 0.075,
+        "palette": 0.231,
+        "aspect": 0.722
+      },
+      "details_B": {
+        "sizes": 0.476,
+        "lines": 0.163,
+        "rules": 0.15,
+        "palette": 0.077,
+        "aspect": 0.722
+      },
+      "official_A": 46.58552024999021,
+      "official_B": 62.19061707027047,
+      "official_available": true,
+      "official_reason": null
+    },
+    {
+      "reference": "2024_nature_scaling_neural_machine_translation_to_200_langua_7209237b/fig_012",
+      "reference_size_pt": [
+        221.9,
+        249.7
+      ],
+      "mismatch": "2024_nature_scaling_neural_machine_translation_to_200_langua_7209237b/fig_010",
+      "mismatch_contrast": "same_paper",
+      "distance_A": 0.318,
+      "distance_B": 0.312,
+      "margin": 0.006,
+      "correct": true,
+      "tie": false,
+      "details_A": {
+        "sizes": 0.351,
+        "lines": 0.276,
+        "rules": 0.075,
+        "palette": 0.231,
+        "aspect": 0.722
+      },
+      "details_B": {
+        "sizes": 0.476,
+        "lines": 0.163,
+        "rules": 0.15,
+        "palette": 0.077,
+        "aspect": 0.722
+      },
+      "official_A": 46.58552024999021,
+      "official_B": 62.19061707027047,
+      "official_available": true,
+      "official_reason": null
+    },
+    {
+      "reference": "2024_nature_scaling_neural_machine_translation_to_200_langua_7209237b/fig_014",
+      "reference_size_pt": [
+        370.7,
+        148.4
+      ],
+      "mismatch": "2024_nature_scaling_neural_machine_translation_to_200_langua_7209237b/fig_007",
+      "mismatch_contrast": "same_paper",
+      "distance_A": 0.279,
+      "distance_B": 0.165,
+      "margin": 0.114,
+      "correct": true,
+      "tie": false,
+      "details_A": {
+        "sizes": 0.203,
+        "lines": 0.268,
+        "rules": 0.925,
+        "palette": 0.105,
+        "aspect": 0.31
+      },
+      "details_B": {
+        "sizes": 0.171,
+        "lines": 0.268,
+        "rules": 0.0,
+        "palette": 0.123,
+        "aspect": 0.31
+      },
+      "official_A": 69.71411194854205,
+      "official_B": 66.90080265028692,
+      "official_available": true,
+      "official_reason": null
+    },
+    {
+      "reference": "2025_nature_a_foundation_model_to_predict_and_capture_human_86b1c290/fig_001",
+      "reference_size_pt": [
+        523.9,
+        328.2
+      ],
+      "mismatch": "2025_nature_a_foundation_model_to_predict_and_capture_human_86b1c290/fig_005",
+      "mismatch_contrast": "same_paper",
+      "distance_A": 0.282,
+      "distance_B": 0.187,
+      "margin": 0.095,
+      "correct": true,
+      "tie": false,
+      "details_A": {
+        "sizes": 0.338,
+        "letters": 0.413,
+        "lines": 0.209,
+        "rules": 0.15,
+        "palette": 0.278,
+        "aspect": 0.137
+      },
+      "details_B": {
+        "sizes": 0.261,
+        "letters": 0.413,
+        "lines": 0.126,
+        "rules": 0.0,
+        "palette": 0.083,
+        "aspect": 0.137
+      },
+      "official_A": 58.116653453547485,
+      "official_B": 69.9680389116375,
+      "official_available": true,
+      "official_reason": null
+    },
+    {
+      "reference": "2025_nature_comprehensive_echocardiogram_evaluation_with_vie_0050ec77/fig_001",
+      "reference_size_pt": [
+        529.4,
+        558.6
+      ],
+      "mismatch": "2025_nature_comprehensive_echocardiogram_evaluation_with_vie_0050ec77/fig_002",
+      "mismatch_contrast": "same_paper",
+      "distance_A": 0.318,
+      "distance_B": 0.283,
+      "margin": 0.035,
+      "correct": true,
+      "tie": false,
+      "details_A": {
+        "sizes": 0.232,
+        "letters": 0.333,
+        "lines": 0.499,
+        "rules": 0.0,
+        "palette": 0.331,
+        "aspect": 0.658
+      },
+      "details_B": {
+        "sizes": 0.232,
+        "letters": 0.333,
+        "lines": 0.354,
+        "rules": 0.15,
+        "palette": 0.189,
+        "aspect": 0.658
+      },
+      "official_A": 40.0,
+      "official_B": 40.10192774981525,
+      "official_available": true,
+      "official_reason": null
+    },
+    {
+      "reference": "2025_nature_comprehensive_echocardiogram_evaluation_with_vie_0050ec77/fig_003",
+      "reference_size_pt": [
+        530.0,
+        569.0
+      ],
+      "mismatch": "2025_nature_comprehensive_echocardiogram_evaluation_with_vie_0050ec77/fig_002",
+      "mismatch_contrast": "same_paper",
+      "distance_A": 0.323,
+      "distance_B": 0.323,
+      "margin": 0.0,
+      "correct": false,
+      "tie": true,
+      "details_A": {
+        "sizes": 0.256,
+        "letters": 0.375,
+        "lines": 0.19,
+        "rules": 0.7,
+        "palette": 0.134,
+        "aspect": 0.675
+      },
+      "details_B": {
+        "sizes": 0.256,
+        "letters": 0.375,
+        "lines": 0.19,
+        "rules": 0.7,
+        "palette": 0.134,
+        "aspect": 0.675
+      },
+      "official_A": 40.32867981913646,
+      "official_B": 40.32867981913646,
+      "official_available": true,
+      "official_reason": null
+    },
+    {
+      "reference": "2025_nature_discovering_state_of_the_art_reinforcement_learn_d089008a/fig_002",
+      "reference_size_pt": [
+        526.1,
+        598.1
+      ],
+      "mismatch": "2025_nature_discovering_state_of_the_art_reinforcement_learn_d089008a/fig_003",
+      "mismatch_contrast": "same_paper",
+      "distance_A": 0.327,
+      "distance_B": 0.323,
+      "margin": 0.004,
+      "correct": true,
+      "tie": false,
+      "details_A": {
+        "sizes": 0.214,
+        "letters": 0.417,
+        "lines": 0.0,
+        "rules": 0.925,
+        "palette": 0.139,
+        "aspect": 0.733
+      },
+      "details_B": {
+        "sizes": 0.214,
+        "letters": 0.417,
+        "lines": 0.19,
+        "rules": 0.7,
+        "palette": 0.139,
+        "aspect": 0.733
+      },
+      "official_A": 50.0,
+      "official_B": 40.32867981913646,
+      "official_available": true,
+      "official_reason": null
+    },
+    {
+      "reference": "2025_nature_discovering_state_of_the_art_reinforcement_learn_d089008a/fig_004",
+      "reference_size_pt": [
+        527.8,
+        352.5
+      ],
+      "mismatch": "2025_nature_discovering_state_of_the_art_reinforcement_learn_d089008a/fig_003",
+      "mismatch_contrast": "same_paper",
+      "distance_A": 0.321,
+      "distance_B": 0.256,
+      "margin": 0.065,
+      "correct": true,
+      "tie": false,
+      "details_A": {
+        "sizes": 0.232,
+        "letters": 0.4,
+        "lines": 0.098,
+        "rules": 0.7,
+        "palette": 0.367,
+        "aspect": 0.201
+      },
+      "details_B": {
+        "sizes": 0.232,
+        "letters": 0.4,
+        "lines": 0.0,
+        "rules": 0.7,
+        "palette": 0.144,
+        "aspect": 0.201
+      },
+      "official_A": 46.589102840475896,
+      "official_B": 50.0,
+      "official_available": true,
+      "official_reason": null
+    },
+    {
+      "reference": "2025_nature_joint_speech_and_text_machine_translation_for_up_45680c29/fig_001",
+      "reference_size_pt": [
+        524.1,
+        224.0
+      ],
+      "mismatch": "2025_nature_joint_speech_and_text_machine_translation_for_up_45680c29/fig_008",
+      "mismatch_contrast": "same_paper",
+      "distance_A": 0.473,
+      "distance_B": 0.183,
+      "margin": 0.29,
+      "correct": true,
+      "tie": false,
+      "details_A": {
+        "sizes": 0.702,
+        "lines": 0.214,
+        "rules": 0.775,
+        "palette": 0.271,
+        "aspect": 0.246
+      },
+      "details_B": {
+        "sizes": 0.315,
+        "lines": 0.214,
+        "rules": 0.15,
+        "palette": 0.0,
+        "aspect": 0.246
+      },
+      "official_A": 56.8469177088481,
+      "official_B": 86.95479249639315,
+      "official_available": true,
+      "official_reason": null
+    },
+    {
+      "reference": "2025_nature_learning_the_natural_history_of_human_disease_wi_64144624/fig_001",
+      "reference_size_pt": [
+        548.0,
+        403.5
+      ],
+      "mismatch": "2025_nature_learning_the_natural_history_of_human_disease_wi_64144624/fig_002",
+      "mismatch_contrast": "same_paper",
+      "distance_A": 0.436,
+      "distance_B": 0.336,
+      "margin": 0.1,
+      "correct": true,
+      "tie": false,
+      "details_A": {
+        "sizes": 0.428,
+        "letters": 0.429,
+        "lines": 0.45,
+        "rules": 0.85,
+        "palette": 0.336,
+        "aspect": 0.298
+      },
+      "details_B": {
+        "sizes": 0.191,
+        "letters": 0.429,
+        "lines": 0.305,
+        "rules": 0.7,
+        "palette": 0.336,
+        "aspect": 0.298
+      },
+      "official_A": 33.333333333333336,
+      "official_B": 33.333333333333336,
+      "official_available": true,
+      "official_reason": null
+    },
+    {
+      "reference": "2025_nature_learning_the_natural_history_of_human_disease_wi_64144624/fig_002",
+      "reference_size_pt": [
+        526.9,
+        518.2
+      ],
+      "mismatch": "2025_nature_learning_the_natural_history_of_human_disease_wi_64144624/fig_001",
+      "mismatch_contrast": "same_paper",
+      "distance_A": 0.4,
+      "distance_B": 0.29,
+      "margin": 0.11,
+      "correct": true,
+      "tie": false,
+      "details_A": {
+        "sizes": 0.376,
+        "letters": 0.438,
+        "lines": 0.391,
+        "rules": 0.85,
+        "palette": 0.157,
+        "aspect": 0.587
+      },
+      "details_B": {
+        "sizes": 0.107,
+        "letters": 0.438,
+        "lines": 0.245,
+        "rules": 0.7,
+        "palette": 0.157,
+        "aspect": 0.587
+      },
+      "official_A": 39.3078816683565,
+      "official_B": 39.3078816683565,
+      "official_available": true,
+      "official_reason": null
+    },
+    {
+      "reference": "2025_nature_learning_the_natural_history_of_human_disease_wi_64144624/fig_003",
+      "reference_size_pt": [
+        525.2,
+        257.3
+      ],
+      "mismatch": "2025_nature_learning_the_natural_history_of_human_disease_wi_64144624/fig_004",
+      "mismatch_contrast": "same_paper",
+      "distance_A": 0.273,
+      "distance_B": 0.209,
+      "margin": 0.064,
+      "correct": true,
+      "tie": false,
+      "details_A": {
+        "sizes": 0.181,
+        "letters": 0.417,
+        "lines": 0.044,
+        "rules": 0.775,
+        "palette": 0.252,
+        "aspect": 0.109
+      },
+      "details_B": {
+        "sizes": 0.181,
+        "letters": 0.417,
+        "lines": 0.101,
+        "rules": 0.0,
+        "palette": 0.285,
+        "aspect": 0.109
+      },
+      "official_A": 64.78603769632092,
+      "official_B": 64.78603769632092,
+      "official_available": true,
+      "official_reason": null
+    },
+    {
+      "reference": "2025_nature_learning_the_natural_history_of_human_disease_wi_64144624/fig_004",
+      "reference_size_pt": [
+        527.6,
+        463.5
+      ],
+      "mismatch": "2025_nature_learning_the_natural_history_of_human_disease_wi_64144624/fig_002",
+      "mismatch_contrast": "same_paper",
+      "distance_A": 0.304,
+      "distance_B": 0.281,
+      "margin": 0.023,
+      "correct": true,
+      "tie": false,
+      "details_A": {
+        "sizes": 0.111,
+        "letters": 0.375,
+        "lines": 0.374,
+        "rules": 0.7,
+        "palette": 0.237,
+        "aspect": 0.475
+      },
+      "details_B": {
+        "sizes": 0.111,
+        "letters": 0.375,
+        "lines": 0.374,
+        "rules": 0.7,
+        "palette": 0.147,
+        "aspect": 0.475
+      },
+      "official_A": 37.271999860092315,
+      "official_B": 37.271999860092315,
+      "official_available": true,
+      "official_reason": null
+    },
+    {
+      "reference": "2025_nature_optimizing_generative_ai_by_backpropagating_lang_ff98bab1/fig_001",
+      "reference_size_pt": [
+        366.9,
+        146.7
+      ],
+      "mismatch": "2025_nature_optimizing_generative_ai_by_backpropagating_lang_ff98bab1/fig_002",
+      "mismatch_contrast": "same_paper",
+      "distance_A": 0.198,
+      "distance_B": 0.125,
+      "margin": 0.073,
+      "correct": true,
+      "tie": false,
+      "details_A": {
+        "sizes": 0.247,
+        "letters": 0.0,
+        "lines": 0.403,
+        "rules": 0.225,
+        "palette": 0.121,
+        "aspect": 0.314
+      },
+      "details_B": {
+        "sizes": 0.247,
+        "letters": 0.0,
+        "lines": 0.069,
+        "rules": 0.075,
+        "palette": 0.021,
+        "aspect": 0.314
+      },
+      "official_A": 65.57154097586786,
+      "official_B": 84.66937911279965,
+      "official_available": true,
+      "official_reason": null
+    },
+    {
+      "reference": "2025_nature_towards_multimodal_foundation_models_in_molecula_039ef430/fig_003",
+      "reference_size_pt": [
+        521.8,
+        463.4
+      ],
+      "mismatch": "2025_nature_towards_multimodal_foundation_models_in_molecula_039ef430/fig_002",
+      "mismatch_contrast": "same_paper",
+      "distance_A": 0.353,
+      "distance_B": 0.186,
+      "margin": 0.167,
+      "correct": true,
+      "tie": false,
+      "details_A": {
+        "sizes": 0.68,
+        "letters": 0.25,
+        "lines": 0.0,
+        "rules": 0.0,
+        "palette": 0.251,
+        "aspect": 0.486
+      },
+      "details_B": {
+        "sizes": 0.218,
+        "letters": 0.25,
+        "lines": 0.0,
+        "rules": 0.0,
+        "palette": 0.14,
+        "aspect": 0.486
+      },
+      "official_A": 50.0,
+      "official_B": 50.0,
+      "official_available": true,
+      "official_reason": null
+    },
+    {
+      "reference": "2026_nature_a_critical_initialization_for_biological_neural_433a1306/fig_005",
+      "reference_size_pt": [
+        524.4,
+        267.2
+      ],
+      "mismatch": "2026_nature_a_critical_initialization_for_biological_neural_433a1306/fig_003",
+      "mismatch_contrast": "same_paper",
+      "distance_A": 0.111,
+      "distance_B": 0.121,
+      "margin": -0.01,
+      "correct": false,
+      "tie": false,
+      "details_A": {
+        "sizes": 0.06,
+        "letters": 0.417,
+        "lines": 0.0,
+        "rules": 0.0,
+        "palette": 0.094,
+        "aspect": 0.071
+      },
+      "details_B": {
+        "sizes": 0.06,
+        "letters": 0.417,
+        "lines": 0.0,
+        "rules": 0.0,
+        "palette": 0.133,
+        "aspect": 0.071
+      },
+      "official_A": 70.45162170487448,
+      "official_B": 70.45162170487448,
+      "official_available": true,
+      "official_reason": null
+    },
+    {
+      "reference": "2026_nature_mapping_the_neuronal_building_blocks_of_human_la_2248c823/fig_002",
+      "reference_size_pt": [
+        373.2,
+        514.2
+      ],
+      "mismatch": "2026_nature_mapping_the_neuronal_building_blocks_of_human_la_2248c823/fig_003",
+      "mismatch_contrast": "same_paper",
+      "distance_A": 0.588,
+      "distance_B": 0.344,
+      "margin": 0.244,
+      "correct": true,
+      "tie": false,
+      "details_A": {
+        "sizes": 0.947,
+        "letters": 0.4,
+        "lines": 0.269,
+        "rules": 0.775,
+        "palette": 0.189,
+        "aspect": 0.924
+      },
+      "details_B": {
+        "sizes": 0.216,
+        "letters": 0.4,
+        "lines": 0.335,
+        "rules": 0.0,
+        "palette": 0.372,
+        "aspect": 0.924
+      },
+      "official_A": 40.32867981913646,
+      "official_B": 40.32867981913646,
+      "official_available": true,
+      "official_reason": null
+    },
+    {
+      "reference": "2026_nature_mapping_the_neuronal_building_blocks_of_human_la_2248c823/fig_003",
+      "reference_size_pt": [
+        527.5,
+        238.3
+      ],
+      "mismatch": "2026_nature_mapping_the_neuronal_building_blocks_of_human_la_2248c823/fig_001",
+      "mismatch_contrast": "same_paper",
+      "distance_A": 0.208,
+      "distance_B": 0.187,
+      "margin": 0.021,
+      "correct": true,
+      "tie": false,
+      "details_A": {
+        "sizes": 0.028,
+        "letters": 0.417,
+        "lines": 0.139,
+        "rules": 0.85,
+        "palette": 0.077,
+        "aspect": 0.19
+      },
+      "details_B": {
+        "sizes": 0.028,
+        "letters": 0.417,
+        "lines": 0.073,
+        "rules": 0.7,
+        "palette": 0.077,
+        "aspect": 0.19
+      },
+      "official_A": 60.62905105706802,
+      "official_B": 60.62905105706802,
+      "official_available": true,
+      "official_reason": null
+    },
+    {
+      "reference": "2026_nature_training_large_language_models_on_narrow_tasks_c_780921b4/fig_004",
+      "reference_size_pt": [
+        255.1,
+        160.3
+      ],
+      "mismatch": "2026_nature_training_large_language_models_on_narrow_tasks_c_780921b4/fig_003",
+      "mismatch_contrast": "same_paper",
+      "distance_A": 0.186,
+      "distance_B": 0.186,
+      "margin": 0.0,
+      "correct": false,
+      "tie": true,
+      "details_A": {
+        "sizes": 0.192,
+        "letters": 0.0,
+        "lines": 0.377,
+        "rules": 0.15,
+        "palette": 0.247,
+        "aspect": 0.141
+      },
+      "details_B": {
+        "sizes": 0.192,
+        "letters": 0.0,
+        "lines": 0.377,
+        "rules": 0.15,
+        "palette": 0.247,
+        "aspect": 0.141
+      },
+      "official_A": 45.24155115356827,
+      "official_B": 45.24155115356827,
+      "official_available": true,
+      "official_reason": null
+    },
+    {
+      "reference": "s001_2026_nature_reimagining_research_papers_as_inter_d0299284/fig_001",
+      "reference_size_pt": [
+        404.3,
+        356.2
+      ],
+      "mismatch": "s001_2026_nature_reimagining_research_papers_as_inter_d0299284/fig_003",
+      "mismatch_contrast": "same_paper",
+      "distance_A": 0.258,
+      "distance_B": 0.23,
+      "margin": 0.028,
+      "correct": true,
+      "tie": false,
+      "details_A": {
+        "sizes": 0.517,
+        "letters": 0.25,
+        "lines": 0.0,
+        "rules": 0.0,
+        "palette": 0.07,
+        "aspect": 0.478
+      },
+      "details_B": {
+        "sizes": 0.423,
+        "letters": 0.25,
+        "lines": 0.0,
+        "rules": 0.0,
+        "palette": 0.07,
+        "aspect": 0.478
+      },
+      "official_A": 67.45772367937512,
+      "official_B": 67.45772367937512,
+      "official_available": true,
+      "official_reason": null
+    },
+    {
+      "reference": "studying_protein_dynamics_in_living_cells_nature_review_c8b41a8e/fig_001",
+      "reference_size_pt": [
+        402.9,
+        165.2
+      ],
+      "mismatch": "studying_protein_dynamics_in_living_cells_nature_review_c8b41a8e/fig_005",
+      "mismatch_contrast": "same_paper",
+      "distance_A": 0.2,
+      "distance_B": 0.192,
+      "margin": 0.008,
+      "correct": true,
+      "tie": false,
+      "details_A": {
+        "sizes": 0.199,
+        "letters": 0.25,
+        "lines": 0.377,
+        "rules": 0.075,
+        "palette": 0.115,
+        "aspect": 0.287
+      },
+      "details_B": {
+        "sizes": 0.199,
+        "letters": 0.25,
+        "lines": 0.377,
+        "rules": 0.075,
+        "palette": 0.082,
+        "aspect": 0.287
+      },
+      "official_A": 55.71429062042419,
+      "official_B": 60.450025214775835,
+      "official_available": true,
+      "official_reason": null
+    },
+    {
+      "reference": "who_s_on_first_in_the_cellular_response_to_dna_damage_nature_553d3e66/fig_004",
+      "reference_size_pt": [
+        300.2,
+        194.4
+      ],
+      "mismatch": "who_s_on_first_in_the_cellular_response_to_dna_damage_nature_553d3e66/fig_002",
+      "mismatch_contrast": "same_paper",
+      "distance_A": 0.273,
+      "distance_B": 0.273,
+      "margin": 0.0,
+      "correct": false,
+      "tie": true,
+      "details_A": {
+        "sizes": 0.408,
+        "lines": 0.335,
+        "rules": 0.15,
+        "palette": 0.175,
+        "aspect": 0.17
+      },
+      "details_B": {
+        "sizes": 0.408,
+        "lines": 0.335,
+        "rules": 0.15,
+        "palette": 0.175,
+        "aspect": 0.17
+      },
+      "official_A": 55.316753869140165,
+      "official_B": 55.316753869140165,
+      "official_available": true,
+      "official_reason": null
+    }
+  ]
+}

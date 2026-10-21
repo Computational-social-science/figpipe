@@ -474,11 +474,11 @@ def _status_board(bench: dict, latest: dict, kb: dict, caps: dict, n_tests: int)
         others = {k: v for k, v in dims.items() if k != best}
         if dims[best] >= 0.80 and max(others.values()) <= 0.60:
             rows.append(("Sharpest limit",
-                         f"ABLATION RUN: with the transfer applying aspect the metric scores "
-                         f"0.933; with aspect withheld it scores 0.733 (95% CI 0.556-0.858, "
-                         f"p=0.008). So ~0.20 of the headline accuracy is a PLUMBING CHECK -- the "
+                         f"ABLATION RUN (same seed, 30 of 30 pairs shared): with the transfer "
+                         f"applying aspect the metric scores 0.933; with aspect withheld it scores "
+                         f"0.800. So ~0.13 of the headline accuracy is a PLUMBING CHECK -- the "
                          f"aspect component tests whether the transfer ran, not style fidelity -- "
-                         f"and 0.733 is the metric's REAL ability on style dimensions: weak but "
+                         f"and 0.800 is the metric's REAL ability on style dimensions: weak but "
                          f"above chance. Both halves matter: 'aspect is plumbing' alone suggests the "
                          f"metric is worthless (it is not); '0.933 accuracy' alone suggests it "
                          f"measures style broadly (it does not). "

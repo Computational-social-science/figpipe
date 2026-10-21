@@ -284,3 +284,31 @@ MOST PAIRS, because most pairs do not differ on them".
 
 The validator now prints both tables, with a warning on the all-pairs one, and a test asserts the
 two disagree sharply so the distinction cannot be silently dropped.
+
+
+## Update 2026-10-21 (sixth): the ablation was confounded, and the real effect is 0.133
+
+The previous update reported "0.933 with aspect, 0.733 without, so ~0.20 of the headline accuracy is
+the plumbing check". **The 0.20 was wrong, and the ablation was not an ablation.**
+
+The ablation run used seed 20261021 while the main run used 20261019. Only **2 of 30 pairs** were
+shared. So the comparison mixed two changes at once -- withholding aspect AND a different sample --
+which is exactly what an ablation must not do.
+
+Re-run with the SAME seed (30 of 30 pairs shared):
+
+    main, aspect applied   (seed 20261019)   0.9333
+    TRUE ablation          (seed 20261019)   0.8000   <- the only valid number
+    first attempt          (seed 20261021)   0.7333   <- confounded, overstated by 0.067
+
+**The real effect of withholding aspect is 0.133, not 0.200.** The confounded run overstated it by
+half again as much as the true value's own uncertainty.
+
+Both runs are kept on disk and the validator reports both, with the pair overlap printed next to each
+number. The lesson is in the artefact, not only in a changelog: a reader can see that the confounded
+run shared 2 of 30 pairs and drew a different conclusion from the same metric.
+
+**What survives unchanged:** aspect is a plumbing check (it never gets a pair wrong because the
+transfer applies it), and the metric is weak but real on style dimensions. **What changes:** the
+plumbing check is worth ~13 points of the headline accuracy, not 20, and the metric without aspect
+scores 0.80 -- better than the 0.733 previously reported.

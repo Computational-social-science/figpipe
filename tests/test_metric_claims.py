@@ -32,7 +32,8 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 SOURCE = ROOT / "corpus" / "e2e" / "style_validation.json"
 HOLDOUT = ROOT / "corpus" / "e2e" / "style_validation_holdout.json"
-NO_ASPECT = ROOT / "corpus" / "e2e" / "style_validation_noaspect.json"
+NO_ASPECT = ROOT / "corpus" / "e2e" / "style_validation_noaspect_same_seed.json"
+NO_ASPECT_CONFOUNDED = ROOT / "corpus" / "e2e" / "style_validation_noaspect.json"
 
 
 @pytest.fixture(scope="module")
@@ -235,8 +236,11 @@ def test_the_metric_is_WEAKER_without_aspect(ablation):
     without_a = ablation["discrimination_accuracy"]
     assert without_a < with_a, (
         f"withholding aspect did not reduce accuracy ({without_a} vs {with_a})")
-    assert 0.15 <= (with_a - without_a) <= 0.30, (
-        f"the difference is {with_a - without_a}; the plumbing-check reading expects ~0.20")
+    # THE TRUE EFFECT IS 0.133, not the 0.200 the confounded run suggested. The bound is wide
+    # because the exact value depends on the sample; what matters is that it is MATERIAL (the
+    # headline number is inflated) and not TOTAL (the metric is not worthless without aspect).
+    assert 0.08 <= (with_a - without_a) <= 0.30, (
+        f"the difference is {with_a - without_a}; the plumbing-check reading expects ~0.13")
 
 
 def test_the_metric_is_still_above_chance_without_aspect(ablation):
@@ -296,3 +300,39 @@ def test_the_validator_warns_about_the_all_pairs_table(claims, capsys):
     out = capsys.readouterr().out
     assert "WARNING" in out and "understates" in out
     assert "RESOLVABLE" in out
+
+
+# ---------------------------------------------------------------------------------------
+# THE ABLATION MUST CHANGE ONE THING
+#
+# The first attempt used a DIFFERENT SEED from the main run -- 2 of 30 pairs shared -- so its
+# 0.733 mixed two changes at once: withholding aspect AND a different sample. An ablation changes
+# ONE thing. The valid run shares all 30 pairs and gives 0.800, so the real effect is 0.133, not
+# the 0.200 the confounded run suggested.
+# ---------------------------------------------------------------------------------------
+
+def test_the_ablation_shares_every_pair_with_the_main_run(claims, pairs, ablation):
+    """If the pair sets differ, the comparison is not an ablation."""
+    shared = claims.pair_overlap({"pairs": pairs}, ablation)
+    assert shared == len(pairs), (
+        f"the ablation shares {shared} of {len(pairs)} pairs with the main run; "
+        f"it changed more than one thing")
+
+
+def test_the_confounded_attempt_is_kept_and_differs(claims, pairs, ablation):
+    """The first attempt is retained on disk so the mistake stays visible, not erased."""
+    if not NO_ASPECT_CONFOUNDED.is_file():
+        pytest.skip("confounded run absent")
+    conf = json.loads(NO_ASPECT_CONFOUNDED.read_text(encoding="utf-8"))
+    shared = claims.pair_overlap({"pairs": pairs}, conf)
+    assert shared < len(pairs), "the confounded run shares all pairs, so it was not confounded"
+    # and it overstated the effect, which is why it matters
+    assert conf["discrimination_accuracy"] < ablation["discrimination_accuracy"], (
+        "the confounded run did not overstate the effect; the lesson would not hold")
+
+
+def test_the_true_effect_is_reported_not_the_confounded_one(claims, capsys):
+    assert claims.summary() == 0
+    out = capsys.readouterr().out
+    assert "30 of 30" in out, "the validator does not report the pair overlap"
+    assert "CONFOUNDED" in out or "FIRST ATTEMPT" in out

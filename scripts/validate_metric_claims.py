@@ -46,7 +46,12 @@ HOLDOUT = ROOT / "corpus" / "e2e" / "style_validation_holdout.json"
 #: only measurement that separates the metric's real ability from the plumbing check -- the earlier
 #: "remove aspect from the weights" analysis re-weights the same numbers, which cannot tell you what
 #: a DIFFERENT treatment would produce.
-NO_ASPECT = ROOT / "corpus" / "e2e" / "style_validation_noaspect.json"
+#: THE VALID ABLATION: same seed as the main run, so 30 of 30 pairs are shared and the ONLY change
+#: is that the transfer withheld aspect.
+NO_ASPECT = ROOT / "corpus" / "e2e" / "style_validation_noaspect_same_seed.json"
+#: The FIRST attempt, kept for the record because it is a mistake worth not repeating: it used a
+#: different seed, so its 0.733 mixed two changes at once.
+NO_ASPECT_CONFOUNDED = ROOT / "corpus" / "e2e" / "style_validation_noaspect.json"
 
 #: The weights `styleprofile.compare` declares, mirrored here so a change to one without the other
 #: is caught rather than silently believed.
@@ -62,10 +67,24 @@ def load(path: pathlib.Path | None = None) -> dict:
 
 
 def load_no_aspect() -> dict | None:
-    """The ablation run where the transfer did not apply aspect, or None when absent."""
+    """The VALID ablation: same seed, aspect withheld, 30 of 30 pairs shared."""
     if not NO_ASPECT.is_file():
         return None
     return json.loads(NO_ASPECT.read_text(encoding="utf-8"))
+
+
+def load_no_aspect_confounded() -> dict | None:
+    """The first attempt, which changed the seed as well as the treatment."""
+    if not NO_ASPECT_CONFOUNDED.is_file():
+        return None
+    return json.loads(NO_ASPECT_CONFOUNDED.read_text(encoding="utf-8"))
+
+
+def pair_overlap(a: dict, b: dict) -> int:
+    """How many pairs two runs share. An ablation must share all of them."""
+    ka = {(p.get("reference"), p.get("mismatch")) for p in (a.get("pairs") or [])}
+    kb = {(p.get("reference"), p.get("mismatch")) for p in (b.get("pairs") or [])}
+    return len(ka & kb)
 
 
 def load_holdout() -> dict | None:
@@ -262,7 +281,11 @@ def summary() -> int:
     if ablation:
         a_acc = ablation.get("discrimination_accuracy")
         base_acc = d.get("discrimination_accuracy")
+        shared = pair_overlap(d, ablation)
+        n_pairs = len(d.get("pairs") or [])
         print("  ABLATION: the same experiment with the transfer NOT applying aspect.")
+        print(f"    pair overlap with the main run: {shared} of {n_pairs}"
+              + ("  <- valid" if shared == n_pairs else "  <- CONFOUNDED, not an ablation"))
         print(f"    with aspect applied : {base_acc}   (the aspect component tests the transfer)")
         print(f"    aspect withheld     : {a_acc}")
         if a_acc is not None and base_acc is not None:
@@ -273,6 +296,14 @@ def summary() -> int:
         if p_val is not None:
             print(f"    still above chance? : p = {p_val:.3g}"
                   + (f", 95% CI {ci}" if ci else ""))
+        conf = load_no_aspect_confounded()
+        if conf:
+            print(f"    FIRST ATTEMPT (confounded): {conf.get('discrimination_accuracy')} -- it "
+                  f"changed the SEED as well as the treatment")
+            print(f"      ({pair_overlap(d, conf)} of {n_pairs} pairs shared), so it mixed two "
+                  f"changes and OVERSTATED the effect by")
+            print(f"      {round((conf.get('discrimination_accuracy') or 0) - (a_acc or 0), 3)}. "
+                  f"An ablation changes ONE thing.")
         print("    => this is the metric's REAL ability on style dimensions. The earlier")
         print("       'remove aspect from the weights' analysis re-weights the SAME numbers; only")
         print("       a different TREATMENT can tell you what a different treatment produces.")

@@ -3344,3 +3344,43 @@ The validator now prints both tables with a warning on the all-pairs one, and a 
 disagree sharply so the distinction cannot be dropped again.
 
 Suite: 622 passed, 3 skipped.
+
+
+## 109. My ablation changed two things, which makes it not an ablation (2026-10-21)
+
+Last round I reported "0.933 with aspect, 0.733 without, so ~0.20 of the headline accuracy is the
+plumbing check." This round I re-checked it before building on it. The ablation used seed 20261021;
+the main run used seed 20261019. **2 of 30 pairs were shared.**
+
+So the number mixed two changes: withholding aspect AND drawing a different sample. Re-run with the
+same seed and 30 of 30 pairs shared:
+
+    main, aspect applied   (20261019)   0.9333
+    TRUE ablation          (20261019)   0.8000   <- the only valid number
+    first attempt          (20261021)   0.7333   <- confounded
+
+THE REAL EFFECT IS 0.133, NOT 0.200. The confounded run overstated it by 0.067 -- half again as much
+as the true value's own uncertainty.
+
+WHY THIS IS THE SAME MISTAKE AS ROUND 43, IN A DIFFERENT COSTUME: then I claimed a weight advantage
+that only held on the sample the weights were tuned on. Here I claimed a treatment effect measured
+across two samples. Both are "the comparison changed more than the thing I say it changed".
+
+THE CHECK THAT CATCHES IT, and it is one line: **count the pair overlap before believing any A/B
+number.** `pair_overlap(a, b)` now exists and the validator prints it next to every comparison:
+
+    pair overlap with the main run: 30 of 30  <- valid
+    FIRST ATTEMPT (confounded): 0.7333 -- it changed the SEED as well as the treatment
+      (2 of 30 pairs shared), so it mixed two changes and OVERSTATED the effect by -0.067.
+
+I kept the confounded run on disk rather than deleting it, because the artefact should show the
+mistake, not a cleaned-up history. A test asserts the confounded run really does differ and really
+does overstate, so the lesson cannot quietly become folklore.
+
+A related discovery from the same re-check: with aspect withheld, the LOAD-BEARING component changes.
+`palette` becomes the one whose removal costs most (-0.167), not aspect. That makes sense -- once the
+plumbing check is gone, the remaining discrimination rests on the components that actually measure
+style -- and it is a better answer to "what should I improve" than anything the confounded run could
+have given.
+
+Suite: 624 passed, 3 skipped.
