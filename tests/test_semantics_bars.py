@@ -399,3 +399,62 @@ def test_a_mesh_skill_reports_the_data_level_check():
     assert "data-level check" in trace, (
         f"the mesh panel is reported without its data-level check: {trace[:300]}")
     assert res["hard_failures"] == 0, res["findings"]
+
+
+# ---------------------------------------------------------------------------------------
+# "I cannot check this" must never be reported as "this is wrong"
+# ---------------------------------------------------------------------------------------
+
+def test_a_degenerate_axis_is_UNVERIFIABLE_not_a_violation():
+    """THE BUG: `too few usable points to compute r` was returned as a hard finding.
+
+    A constant column legitimately has no correlation, and fewer than 3 points cannot support one.
+    Both are ABSENCES OF INFORMATION, and reporting them as violations marked 4 correct pool tasks
+    broken -- the same distinction already added for bar panels and not propagated here.
+    """
+    res = semantics.check_annotations([], pd.Series([1.0, 2.0]), pd.Series([5.0, 5.0]))
+    assert res["ok"] is True, "a degenerate axis must not be reported as a violation"
+    assert res.get("unverifiable")
+    assert not res["findings"]
+
+
+def test_a_real_r_mismatch_is_still_caught():
+    """NEGATIVE CONTROL: the unverifiable path must not swallow real mismatches."""
+    res = semantics.check_annotations(["r = +0.90"],
+                                      pd.Series([1.0, 2.0, 3.0, 4.0]),
+                                      pd.Series([4.0, 3.0, 2.0, 1.0]))
+    assert res["ok"] is False
+    assert res["findings"]
+
+
+def test_marks_count_VISIBLE_points_not_array_lengths():
+    """THE BUG: `len(get_xdata())` includes NaN entries that matplotlib does not draw.
+
+    A panel with 4 NaN y-values reported "20 points drawn for 19 rows" and was marked broken, when
+    20 is the array length and 19 is what a reader can see. Six pool tasks were marked this way.
+    """
+    rng = np.random.default_rng(0)
+    x = np.arange(20, dtype=float)
+    y = rng.random(20)
+    y[3] = np.nan
+    fig, ax = plt.subplots()
+    ax.plot(x, y, "o", linestyle="none")
+    data = pd.DataFrame({"x": x, "y": y})
+    res = semantics.verify_panel(ax, data, x="x", y="y", texts=[], mark_kind="points")
+    marks = [f for f in res["findings"] if f["check"] == "marks"]
+    assert not marks, f"NaN entries were counted as drawn marks: {marks}"
+    plt.close(fig)
+
+
+def test_a_genuinely_dropped_point_is_still_caught():
+    """NEGATIVE CONTROL for the marks fix."""
+    rng = np.random.default_rng(0)
+    x = np.arange(20, dtype=float)
+    y = rng.random(20)
+    fig, ax = plt.subplots()
+    ax.plot(x[:10], y[:10], "o", linestyle="none")     # half the data dropped
+    data = pd.DataFrame({"x": x, "y": y})
+    res = semantics.verify_panel(ax, data, x="x", y="y", texts=[], mark_kind="points")
+    assert any(f["check"] == "marks" for f in res["findings"]), (
+        "a panel that dropped half its points was not caught")
+    plt.close(fig)

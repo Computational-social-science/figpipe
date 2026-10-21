@@ -78,3 +78,34 @@ def test_the_board_is_built_from_artefacts_not_hand_written():
     assert "bench.get" in src, "the board does not read the benchmark report"
     assert "semantic_coverage" in src, "the board does not read the semantic coverage"
     assert "kb.get" in src, "the board does not read the knowledge base"
+
+
+def test_unchecked_rules_are_grouped_by_REASON_not_just_counted():
+    """A bare count of unchecked rules reads as a to-do list. It is not one.
+
+    Measured 2026-10-21: of the 8 unchecked rules, 4 are about CAPTION TEXT (out of scope for a
+    figure pipeline), 2 are VOID (measured on a detector the audit showed was wrong), 1 is REFUTED
+    (a real Nature figure contradicted it), and 1 has NO DATA to check against. Reporting "8 rules
+    have no machine check" invites a future round to "verify" rules that cannot or should not be.
+    """
+    import json
+    kb = json.loads((ROOT / "knowledge" / "layout_rules.json").read_text(encoding="utf-8"))
+    unchecked = [r for r in kb.get("rules", []) if not r.get("check")]
+    assert unchecked, "no unchecked rules; this test would be vacuous"
+    for r in unchecked:
+        assert r.get("unchecked_reason"), (
+            f"rule {r.get('id')} has no stated reason for being unchecked, so a reader cannot tell "
+            f"an unfinished task from an impossible one")
+        assert r.get("unchecked_why"), f"rule {r.get('id')} has no explanation"
+        assert r["unchecked_reason"] in ("no_data", "refuted", "void", "out_of_scope"), (
+            f"rule {r.get('id')} has an unknown reason {r['unchecked_reason']!r}")
+
+
+def test_the_board_states_the_reason_grouping(report_src):
+    if not report_src.is_file():
+        pytest.skip("report not built")
+    html = report_src.read_text(encoding="utf-8")
+    assert "Unchecked rules, by reason" in html, (
+        "the board still reports a bare count of unchecked rules")
+    for reason in ("out_of_scope", "void", "refuted"):
+        assert reason in html, f"the board does not name the {reason!r} class"

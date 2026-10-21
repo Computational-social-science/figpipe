@@ -34,5 +34,9 @@ def test_report_is_english_self_contained_and_has_the_key_evidence(tmp_path):
     assert f'{bench["mean_distance"]:.3f}' in text
     assert "Progress overview" in text and "Research deliverables" in text
     assert not re.search(r"[\u4e00-\u9fff]", text), "report must be English-only"
-    assert "None" not in text
+    # Forbid Python's None leaking into the page as a VALUE. The bare word "None" is also ordinary
+    # English ("None is counted as passing"), so match the shapes a leaked value takes: a standalone
+    # cell, a metric value, or a label position.
+    leaked = re.findall(r"(?:>|: |\| )None(?:<|,|\s*$)", text)
+    assert not leaked, f"Python's None leaked into the report: {leaked[:3]}"
     assert 'src="http' not in text and "<script src=" not in text

@@ -3050,3 +3050,85 @@ The 29 `unverifiable` are mesh drawers whose PDF cannot be read, but which now a
 data-level check on the frame they were handed.
 
 Suite: 599 passed, 3 skipped.
+
+
+## 102. The "I cannot check this" bug had two more instances hiding in the same module (2026-10-21)
+
+Last round I added a third state -- `unverifiable` -- for bar panels whose columns were absent, and
+wrote that "reporting a defect where there is only an absence of information is the worst confusion
+a verification layer can make". Then I moved on.
+
+The same module still had TWO instances of it:
+
+**1. `check_annotations` returned `ok: False` for "too few usable points to compute r".** A constant
+column legitimately has no correlation; fewer than 3 points cannot support one. Both are absences of
+information, and 4 pool tasks were marked broken for them.
+
+**2. `check_marks` counted `len(get_xdata())`, which INCLUDES NaN entries.** Matplotlib keeps NaN in
+the line array and simply does not draw it, so a panel with 4 missing values reported "20 points
+drawn for 19 rows" -- 20 being the array length and 19 being what a reader can see. 6 pool tasks
+were marked broken.
+
+VERIFIED after the fixes, both directions:
+    degenerate axis     -> unverifiable, no finding
+    wrong r             -> caught
+    NaN gaps            -> not counted as drawn marks
+    half the points cut -> caught
+
+THE PATTERN WORTH NAMING: when a fix establishes a principle ("an absence of information is not a
+violation"), the principle has to be swept for across the module that taught it. I fixed one
+instance and declared the class closed. Two more were sitting three functions away, in the same
+file, doing the same thing.
+
+A practical form of the sweep: after fixing a classification bug, grep the module for every other
+place that returns `ok: False` on a path where the code had to DECIDE something was missing. Those
+are the candidates, and each one needs the same question asked of it.
+
+Suite: 601 passed, 3 skipped.
+
+
+## 103. Asked to "fix the biggest gaps and the unverified rules", the honest answer was mostly NO (2026-10-21)
+
+The status board had two red numbers: the semantic coverage gap (now closed) and "8 knowledge rules
+have no machine check". Asked how to fix them, I read all eight before writing anything. The answer
+is that SEVEN of the eight should not be fixed, and the count itself was the misleading part.
+
+    C01-C04  out_of_scope   describe CAPTION TEXT. figpipe draws figures and does not write
+                            captions, so no figure check can verify them
+    E01, E02 void           measured on the ink-rectangle-merging detector that the adversarial
+                            audit showed was wrong for roughly half its output
+    H02      refuted        the first real Nature figure inspected has 35.8% ink, far outside the
+                            3.3-17.4% band the rule claimed
+    H01      no_data        the report does not record panel counts, so the claimed 3-4 ceiling has
+                            nothing to be checked against -- and it is a hypothesis with no
+                            measurement behind it
+
+"8 rules have no machine check" reads as a to-do list of 8. It is really 4 out of scope, 2
+discredited, 1 refuted, 1 unmeasurable. A future round following that list would have spent its time
+"verifying" rules that CANNOT or SHOULD NOT be verified -- and a rule that was tested and failed is
+not an unfinished task, it is a result.
+
+FIXED BY REPORTING THE REASON, not by manufacturing checks. Each rule now carries
+`unchecked_reason` and `unchecked_why`, and the board groups them:
+
+    8 rules have no machine check. Grouped by WHY: 4 out_of_scope (C01-C04); 2 void (E01, E02);
+    1 no_data (H01); 1 refuted (H02). None is counted as passing. A refuted or void rule is not a
+    to-do item -- it is a rule that was tested and did not survive.
+
+THE NEXT STEP CHANGED TOO. With every drawer having a rule or a stated reason, "write more rules" is
+no longer the next move. The remaining measurable gap is HUMAN VALIDATION: the style metric
+discriminates at 0.9333 but withholds to 0.700 when `aspect` is dropped, and no human has said
+whether the figures are the ones a reader prefers. That is now the board's next step, with an
+acceptance criterion (N>=20 blind paired comparisons, preference rate with a confidence interval).
+
+ALSO: two more instances of "I cannot check this" reported as "this is wrong" were still in
+`semantics.py` -- a degenerate axis (4 tasks) and NaN entries counted as drawn marks (6 tasks).
+Fixing that class once and declaring it closed was wrong; the sweep is the fix.
+
+MEASURED
+    hard findings   19 -> 9   (the 10 false positives removed; the 9 that remain are real
+                               text collisions)
+    coverage        checked 110 / skipped 0 / unverifiable 29 of 139
+    benchmark       139/150, 0 capability errors, 139 fresh, anchors 0.355 / 0.296
+
+Suite: 603 passed, 3 skipped.

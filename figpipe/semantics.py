@@ -59,8 +59,11 @@ def check_annotations(texts, x, y, *, tol: float = 0.02, require_r: bool = True)
     claims = parse_annotations(texts)
     findings = []
     if len(x) < 3 or np.ptp(x) == 0 or np.ptp(y) == 0:
-        return {"ok": False, "findings": [
-            {"check": "annotation", "detail": "too few usable points to compute r"}]}
+        # AN ABSENCE OF INFORMATION IS NOT A VIOLATION. Fewer than 3 usable points, or a constant
+        # axis, means r is undefined -- there is nothing to compare the annotation against. Calling
+        # that a finding marked 4 correct pool tasks broken. The same distinction was added for bar
+        # panels last round and had not been propagated here.
+        return {"ok": True, "unverifiable": "too few usable points to compute r", "findings": []}
     r = float(np.corrcoef(x, y)[0, 1])
     if not claims["r"]:
         if require_r:
@@ -110,8 +113,16 @@ def check_marks(ax, expected: int, *, kind: str = "points") -> dict:
     never mistaken for data.
     """
     if kind == "points":
-        drawn = sum(len(line.get_xdata()) for line in ax.lines
-                    if line.get_linestyle() in ("None", "none", " ", ""))
+        # COUNT VISIBLE MARKS, NOT ARRAY LENGTHS. matplotlib keeps NaN entries in the line data and
+        # simply does not draw them, so `len(get_xdata())` overcounts by the number of gaps. A
+        # panel with 4 NaN values reported "20 drawn for 19 rows" and was marked broken.
+        drawn = 0
+        for line in ax.lines:
+            if line.get_linestyle() not in ("None", "none", " ", ""):
+                continue
+            xs = np.asarray(line.get_xdata(), dtype=float)
+            ys = np.asarray(line.get_ydata(), dtype=float)
+            drawn += int((np.isfinite(xs) & np.isfinite(ys)).sum())
     elif kind == "bars":
         drawn = sum(len(p.get_height() for p in ax.patches) if hasattr(p, "get_height") else 0
                     for p in [ax])
@@ -153,8 +164,12 @@ def verify_panel(ax, data: pd.DataFrame, *, x: str, y: str, texts=None,
                                                        require_r=bool(texts))))
         checks.append(("extent", check_extent(ax, data[x], data[y])))
         if expect_marks:
-            finite = int(np.isfinite(pd.to_numeric(data[x], errors="coerce")).sum())
-            checks.append(("marks", check_marks(ax, finite, kind=mark_kind)))
+            # A POINT EXISTS ONLY WHERE BOTH COORDINATES ARE FINITE. Counting only x reported a
+            # mismatch whenever y carried NaNs -- 6 correct pool tasks were marked broken by it.
+            xs = pd.to_numeric(data[x], errors="coerce")
+            ys = pd.to_numeric(data[y], errors="coerce")
+            drawable = int((np.isfinite(xs) & np.isfinite(ys)).sum())
+            checks.append(("marks", check_marks(ax, drawable, kind=mark_kind)))
     findings = [f for _, res in checks for f in res.get("findings", [])]
     return {"ok": not findings, "findings": findings,
             "checks": {name: res.get("ok") for name, res in checks}}

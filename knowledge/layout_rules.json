@@ -154,7 +154,9 @@
       "mechanism_verified": false,
       "empirically_measured": false,
       "enforced": false,
-      "check": null
+      "check": null,
+      "unchecked_reason": "no_data",
+      "unchecked_why": "the report does not record panel counts, so the claimed 3-4 ceiling has nothing to be checked against; it is also a hypothesis with no measurement"
     },
     {
       "id": "H02",
@@ -174,7 +176,9 @@
       "check": null,
       "refuted_on": "2026-10-18",
       "refuted_by": "The first real Nature figure inspected (nwag582fig1) has an ink density of 35.8 %, far outside the 3.3-17.4 % band this rule claimed. The band was measured on six line-and-scatter plots from this project and generalised to 'figures', which it never supported.",
-      "scope_where_it_did_hold": "This project's own six figures, all of which are line/scatter plots. The band describes that genre, not figures in general."
+      "scope_where_it_did_hold": "This project's own six figures, all of which are line/scatter plots. The band describes that genre, not figures in general.",
+      "unchecked_reason": "refuted",
+      "unchecked_why": "REFUTED on 2026-10-18: the first real Nature figure inspected has 35.8% ink, far outside the 3.3-17.4% band this rule claimed. A refuted rule should not be checked; it should not be enforced"
     },
     {
       "id": "E01",
@@ -197,7 +201,9 @@
         "share_near_column_5mm": 0.5205,
         "median_width_mm": 168.7
       },
-      "correction_note": "My earlier report said '52.1 % within a stated column width'. That used a +/-5 mm tolerance while this rule itself states +/-3 mm. At +/-3 mm the figure is 38.4 %. Reporting the wider tolerance doubled the apparent effect. Both are now recorded so the discrepancy is visible rather than replaced silently."
+      "correction_note": "My earlier report said '52.1 % within a stated column width'. That used a +/-5 mm tolerance while this rule itself states +/-3 mm. At +/-3 mm the figure is 38.4 %. Reporting the wider tolerance doubled the apparent effect. Both are now recorded so the discrepancy is visible rather than replaced silently.",
+      "unchecked_reason": "void",
+      "unchecked_why": "VOID: measured on the ink-rectangle-merging detector, which the adversarial audit showed was wrong for roughly half its output"
     },
     {
       "id": "E02",
@@ -213,7 +219,9 @@
       "check": null,
       "voided_on": "2026-10-18",
       "voided_because": "Measured on the ink-rectangle-merging detector, which the adversarial audit showed was wrong for roughly half its output. The numbers are not merely imprecise, they are about a different population.",
-      "unsupported_because": "E02 is about FONT SIZE, and the caption-anchored records do not carry min_font_pt at all. The new detector does not measure type, so this rule has no measurement basis and cannot be re-derived until it does."
+      "unsupported_because": "E02 is about FONT SIZE, and the caption-anchored records do not carry min_font_pt at all. The new detector does not measure type, so this rule has no measurement basis and cannot be re-derived until it does.",
+      "unchecked_reason": "void",
+      "unchecked_why": "VOID: same broken detector, plus an unresolved scale question -- PDF rendered size is not necessarily printed size"
     },
     {
       "id": "C01",
@@ -227,7 +235,9 @@
       "empirically_measured": true,
       "observed_practice": true,
       "caveat": "This describes what published captions DO, not what a submission MUST do. It is not enforced and must not be treated as a requirement. The classifier is a text heuristic; its rules are pinned by tests and a mutation test proves the tests fail when the rule is broken.",
-      "check": null
+      "check": null,
+      "unchecked_reason": "out_of_scope",
+      "unchecked_why": "describes CAPTION TEXT. figpipe draws figures and does not write captions, so no figure check can verify it"
     },
     {
       "id": "C02",
@@ -241,7 +251,9 @@
       "empirically_measured": true,
       "observed_practice": true,
       "caveat": "This describes what published captions DO, not what a submission MUST do. It is not enforced and must not be treated as a requirement. The classifier is a text heuristic; its rules are pinned by tests and a mutation test proves the tests fail when the rule is broken.",
-      "check": null
+      "check": null,
+      "unchecked_reason": "out_of_scope",
+      "unchecked_why": "describes CAPTION TEXT; out of scope for a figure pipeline"
     },
     {
       "id": "C03",
@@ -255,7 +267,9 @@
       "empirically_measured": true,
       "observed_practice": true,
       "caveat": "This describes what published captions DO, not what a submission MUST do. It is not enforced and must not be treated as a requirement. The classifier is a text heuristic; its rules are pinned by tests and a mutation test proves the tests fail when the rule is broken.",
-      "check": null
+      "check": null,
+      "unchecked_reason": "out_of_scope",
+      "unchecked_why": "describes CAPTION TEXT; out of scope for a figure pipeline"
     },
     {
       "id": "C04",
@@ -269,7 +283,9 @@
       "empirically_measured": true,
       "observed_practice": true,
       "caveat": "This describes what published captions DO, not what a submission MUST do. It is not enforced and must not be treated as a requirement. The classifier is a text heuristic; its rules are pinned by tests and a mutation test proves the tests fail when the rule is broken.",
-      "check": null
+      "check": null,
+      "unchecked_reason": "out_of_scope",
+      "unchecked_why": "describes CAPTION TEXT; out of scope for a figure pipeline"
     },
     {
       "id": "L08",
@@ -313,7 +329,7 @@
     "note": "Derived from the rules on every run, not stored by a migration. A rule with check=None is reported UNCHECKED and never counted as passing."
   },
   "last_check": {
-    "at": "2026-10-21T14:23:47",
+    "at": "2026-10-21T15:30:32",
     "summary": {
       "rules_total": 16,
       "checked": 8,

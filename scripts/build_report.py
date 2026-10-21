@@ -473,11 +473,23 @@ def _status_board(bench: dict, latest: dict, kb: dict, caps: dict, n_tests: int)
                      "report, so the size of the unverified set is unknown.", "warn"))
 
     rules = kb.get("rules", []) or []
-    unchecked = [r.get("id") for r in rules if not r.get("check")]
+    unchecked = [r for r in rules if not r.get("check")]
     if unchecked:
-        rows.append(("Unverified rules",
-                     f"{len(unchecked)} knowledge rules have no machine check and are never counted "
-                     f"as passing: {', '.join(unchecked[:8])}", "warn"))
+        # A BARE COUNT READS AS A TO-DO LIST. Each unchecked rule carries a reason, and the reasons
+        # are not the same kind of thing: some CANNOT be checked (refuted, void), some are about
+        # caption text rather than figures, one has no data. Grouping by reason says what remains.
+        by_reason: dict[str, list[str]] = {}
+        for r in unchecked:
+            by_reason.setdefault(r.get("unchecked_reason") or "unclassified", []).append(
+                str(r.get("id")))
+        parts = [f"{len(ids)} {reason} ({', '.join(ids)})"
+                 for reason, ids in sorted(by_reason.items(), key=lambda kv: -len(kv[1]))]
+        rows.append(("Unchecked rules, by reason",
+                     f"{len(unchecked)} rules have no machine check. Grouped by WHY: "
+                     + "; ".join(parts)
+                     + ". None is counted as passing. A refuted or void rule is not a to-do item -- "
+                       "it is a rule that was tested and did not survive.",
+                     "warn"))
 
     if checked is not None and skipped:
         rows.append(("Next step",
@@ -485,8 +497,19 @@ def _status_board(bench: dict, latest: dict, kb: dict, caps: dict, n_tests: int)
                      "(grouped_bars, boxplot, histogram, heatmap). Acceptance: the checked count "
                      "rises and the pool score does not fall.", "next"))
     else:
-        rows.append(("Next step", "Keep the pool measured and the anchors on one instrument.",
-                     "next"))
+        # EVERY DRAWER NOW HAS A RULE OR A STATED REASON, so the next step is no longer "write
+        # more rules". The remaining measurable gap is HUMAN VALIDATION: the style metric has a
+        # discrimination accuracy of 0.9333 with a caveat (withholding `aspect` drops it to 0.700),
+        # and no human has yet said whether the pipeline's figures are the ones a reader prefers.
+        # That is stated as the next step because it is the only claim in CLAIM.md that no script
+        # in this repository can settle.
+        rows.append(("Next step",
+                     "Human validation of the style metric. The metric discriminates at 0.9333 "
+                     "(95% CI 0.787-0.982) but withholds to 0.700 when `aspect` is dropped, so it "
+                     "is largely an aspect check, and no human has said whether the figures are the "
+                     "ones a reader prefers. Acceptance: a paired comparison of N>=20 figure pairs "
+                     "by a reader blind to which is styled, with the preference rate reported "
+                     "alongside its confidence interval.", "next"))
 
     body = "".join(
         f'<tr><th class="{kind}">{esc(label)}</th><td>{esc(text)}</td></tr>'

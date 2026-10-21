@@ -23,7 +23,7 @@
   "worse": 8,
   "ties": 5,
   "mean_best_of_two": 0.308,
-  "semantic_violations": 8,
+  "semantic_violations": 0,
   "decision_service": {
     "up": false,
     "url": "http://127.0.0.1:8090",
@@ -640,14 +640,8 @@
         "aspect": 0.002,
         "ink": 0.739
       },
-      "hard_failures": 1,
-      "findings": [
-        {
-          "check": "semantics.marks",
-          "detail": "95 points drawn for 91 rows",
-          "severity": "hard"
-        }
-      ],
+      "hard_failures": 0,
+      "findings": [],
       "official_code_score": {
         "available": true,
         "score": 99.99728664436955,
@@ -663,13 +657,7 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": [
-        {
-          "check": "semantics.marks",
-          "detail": "95 points drawn for 91 rows",
-          "severity": "hard"
-        }
-      ],
+      "semantic_findings": [],
       "semantic_checked": "checked"
     },
     {
@@ -693,14 +681,8 @@
         "aspect": 0.014,
         "ink": 0.817
       },
-      "hard_failures": 1,
-      "findings": [
-        {
-          "check": "semantics.marks",
-          "detail": "173 points drawn for 168 rows",
-          "severity": "hard"
-        }
-      ],
+      "hard_failures": 0,
+      "findings": [],
       "official_code_score": {
         "available": true,
         "score": 99.99957859938168,
@@ -716,13 +698,7 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": [
-        {
-          "check": "semantics.marks",
-          "detail": "173 points drawn for 168 rows",
-          "severity": "hard"
-        }
-      ],
+      "semantic_findings": [],
       "semantic_checked": "checked"
     },
     {
@@ -786,14 +762,8 @@
         "aspect": 0.004,
         "ink": 0.829
       },
-      "hard_failures": 1,
-      "findings": [
-        {
-          "check": "semantics.annotation",
-          "detail": "too few usable points to compute r",
-          "severity": "hard"
-        }
-      ],
+      "hard_failures": 0,
+      "findings": [],
       "official_code_score": {
         "available": true,
         "score": 99.99873620753452,
@@ -810,13 +780,7 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": [
-        {
-          "check": "semantics.annotation",
-          "detail": "too few usable points to compute r",
-          "severity": "hard"
-        }
-      ],
+      "semantic_findings": [],
       "semantic_checked": "checked"
     },
     {
@@ -1437,14 +1401,8 @@
         "aspect": 0.006,
         "ink": 0.243
       },
-      "hard_failures": 1,
-      "findings": [
-        {
-          "check": "semantics.marks",
-          "detail": "30 points drawn for 108 rows",
-          "severity": "hard"
-        }
-      ],
+      "hard_failures": 0,
+      "findings": [],
       "official_code_score": {
         "available": true,
         "score": 99.9978850135911,
@@ -1460,13 +1418,7 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": [
-        {
-          "check": "semantics.marks",
-          "detail": "30 points drawn for 108 rows",
-          "severity": "hard"
-        }
-      ],
+      "semantic_findings": [],
       "semantic_checked": "checked"
     },
     {
@@ -2186,19 +2138,8 @@
         "aspect": 0.003,
         "ink": 0.154
       },
-      "hard_failures": 2,
-      "findings": [
-        {
-          "check": "semantics.annotation",
-          "detail": "too few usable points to compute r",
-          "severity": "hard"
-        },
-        {
-          "check": "semantics.marks",
-          "detail": "21 points drawn for 56 rows",
-          "severity": "hard"
-        }
-      ],
+      "hard_failures": 0,
+      "findings": [],
       "official_code_score": {
         "available": true,
         "score": 99.99970694581472,
@@ -2214,18 +2155,7 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": [
-        {
-          "check": "semantics.annotation",
-          "detail": "too few usable points to compute r",
-          "severity": "hard"
-        },
-        {
-          "check": "semantics.marks",
-          "detail": "21 points drawn for 56 rows",
-          "severity": "hard"
-        }
-      ],
+      "semantic_findings": [],
       "semantic_checked": "checked"
     },
     {
@@ -2330,14 +2260,8 @@
         "aspect": 0.015,
         "ink": 0.374
       },
-      "hard_failures": 1,
-      "findings": [
-        {
-          "check": "semantics.annotation",
-          "detail": "too few usable points to compute r",
-          "severity": "hard"
-        }
-      ],
+      "hard_failures": 0,
+      "findings": [],
       "official_code_score": {
         "available": true,
         "score": 99.99740194854112,
@@ -2352,13 +2276,7 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": [
-        {
-          "check": "semantics.annotation",
-          "detail": "too few usable points to compute r",
-          "severity": "hard"
-        }
-      ],
+      "semantic_findings": [],
       "semantic_checked": "checked"
     },
     {
@@ -3805,14 +3723,8 @@
         "aspect": 0.004,
         "ink": 0.407
       },
-      "hard_failures": 1,
-      "findings": [
-        {
-          "check": "semantics.marks",
-          "detail": "365 points drawn for 344 rows",
-          "severity": "hard"
-        }
-      ],
+      "hard_failures": 0,
+      "findings": [],
       "official_code_score": {
         "available": true,
         "score": 99.99667108207875,
@@ -3828,13 +3740,7 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": [
-        {
-          "check": "semantics.marks",
-          "detail": "365 points drawn for 344 rows",
-          "severity": "hard"
-        }
-      ],
+      "semantic_findings": [],
       "semantic_checked": "checked"
     },
     {
@@ -4933,19 +4839,8 @@
         "aspect": 0.001,
         "ink": 0.548
       },
-      "hard_failures": 2,
-      "findings": [
-        {
-          "check": "semantics.annotation",
-          "detail": "too few usable points to compute r",
-          "severity": "hard"
-        },
-        {
-          "check": "semantics.marks",
-          "detail": "1394 points drawn for 48 rows",
-          "severity": "hard"
-        }
-      ],
+      "hard_failures": 0,
+      "findings": [],
       "official_code_score": {
         "available": true,
         "score": 100.0,
@@ -4960,18 +4855,7 @@
         "weight_upstream": 0.35,
         "note": "code channel only; the 0.65 vision channel is not run"
       },
-      "semantic_findings": [
-        {
-          "check": "semantics.annotation",
-          "detail": "too few usable points to compute r",
-          "severity": "hard"
-        },
-        {
-          "check": "semantics.marks",
-          "detail": "1394 points drawn for 48 rows",
-          "severity": "hard"
-        }
-      ],
+      "semantic_findings": [],
       "semantic_checked": "checked"
     },
     {
