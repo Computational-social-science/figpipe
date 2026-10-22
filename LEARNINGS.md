@@ -4410,3 +4410,47 @@ could only judge scalars, and the reason the loop could not discover a drawer fi
 `cand.attribute` reads. **Describing a structural limit is not the same as locating it.**
 
 Suite: 743 passed, 3 skipped.
+
+
+## 134. Three of five fixes are load-bearing; two are not exercised (2026-10-23)
+
+The catalogue had one entry. A fix that is not in it cannot be probed, so "we fixed it" is an
+adjective. This round catalogued five and measured each by REVERTING it and counting whether the
+defect comes back.
+
+    fix                    with  without  delta  load-bearing  probed
+    polar_label_overflow      0      4      +4      YES        13 radial tasks
+    matrix_label_width        0      5      +5      YES        14 matrix tasks
+    polar_wrap_width          0      4      +4      YES        13 radial tasks
+    matrix_row_budget         0      0       0      NO         14 matrix tasks
+    colorbar_label_room       0      0       0      NO         15 field tasks
+
+THREE OF FIVE ARE LOAD-BEARING, which is the first quantified statement this project has made about
+whether its fixes matter. The other two are NOT inert code -- they are fixes for defects this
+benchmark does not exercise:
+
+  * `MAX_MATRIX_ROWS = 40` -- verified by hand: a 48-row table pivots to 8x6, which is INSIDE the
+    budget, so the refusal never fires on these tasks. The budget is real; the pool does not reach it.
+  * `CBAR_LABEL_MM = 4.2` -- the colour-bar labels fit within 4.2 mm on every field task, so the
+    room is never the binding constraint here.
+
+That distinction matters and a single "5 fixes, 3 verified" would hide it. A fix that is not
+exercised is not a fix that failed; it is a fix whose condition this benchmark never creates.
+
+GETTING THE DIRECTION RIGHT TOOK FOUR ATTEMPTS, and each attempt MOVED the bug rather than fixing it:
+
+  1. `old` was the fixed text for one entry and the defect text for four
+  2. I unified on "old = fixed" -- which inverted the four
+  3. I swapped all five -- which inverted the three that were already right
+  4. I restored the three and documented the convention ONCE at the top of the catalogue
+
+The tell was in the data, not in the code: a "not load-bearing" result for a fix whose defect is
+plainly reproducible means the probe applied the patch the wrong way. `matrix_row_budget` and
+`colorbar_label_room` read `fix` while the tree held 40 and 4.2 -- and applying a `fix` INSTALLS the
+defect and measures the repair, which is backwards.
+
+THE GENERAL LESSON: a catalogue whose entries have a DIRECTION must state the convention in one
+place and derive every branch from it. Flipping branches to compensate for flipped data is how a
+two-state bug survives four edits.
+
+Suite: pending this round's run.

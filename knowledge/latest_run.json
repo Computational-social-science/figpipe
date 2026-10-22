@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-22T12:34:26",
+  "run_at": "2026-10-23T00:47:58",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -9,19 +9,16 @@
     "  passed 8, failed 0",
     "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
     "  wrote knowledge\\evolution_report.json",
-    "  lean: tracked 78.2 -> 78.2 MB, worktree 139.0 -> 133.8 MB"
+    "  lean: tracked 78.3 -> 78.3 MB, worktree 132.7 -> 131.0 MB"
   ],
-  "tests_ok": true,
-  "tests_summary": "743 passed, 3 skipped, 1 warning in 279.26s (0:04:39)",
+  "tests_ok": null,
+  "tests_summary": "pending",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
   "published": {
     "pushed": false,
-    "withheld": [],
-    "blocked_deletions": [],
-    "skipped": true,
-    "reason": "no knowledge change: the run record stays uncommitted for the next run"
+    "reason": "not yet published"
   },
   "check_results": {
     "L01": {
@@ -139,13 +136,23 @@
     "tail": [
       "    type Box/Violin     ok 1/1   d=0.166 base=0.449 delta=0.283 errors=0",
       "    type Distribution   ok 4/4   d=0.225 base=0.248 delta=0.024 errors=0",
-      "    type Heatmap        ok 1/1   d=0.419 base=0.572 delta=0.153 errors=0",
+      "    type Heatmap        ok 1/1   d=0.357 base=0.591 delta=0.234 errors=0",
       "  wrote E:\\2026-AI4S\\figpipe\\corpus\\e2e\\plottwin_report.json"
     ]
   },
   "anchor_refresh": {
-    "ran": false,
-    "reason": "both anchors already comparable"
+    "ran": true,
+    "stale_anchors": [
+      "shipped",
+      "styled"
+    ],
+    "tasks": 35,
+    "code": 0,
+    "tail": [
+      "    type Scatter        ok 3/3   d=0.349 base=0.442 delta=0.094 errors=0",
+      "    type Std-band       ok 1/1   d=0.368 base=0.424 delta=0.056 errors=0",
+      "  wrote E:\\2026-AI4S\\figpipe\\corpus\\e2e\\plottwin_report.json"
+    ]
   },
   "mutation": {
     "ran": true,
@@ -630,24 +637,18 @@
     "benchmark_official_improvement": 37.25,
     "statistics_reproduced": 15,
     "knowledge_version": 16,
-    "tests": 743
+    "tests": null
   },
   "capabilities_delta": {
     "changed": true,
     "delta": {
       "tests": {
-        "before": 738,
-        "after": 743
+        "before": 743,
+        "after": null
       }
     },
     "verdict": {
-      "gains": [
-        {
-          "field": "tests",
-          "before": 738,
-          "after": 743
-        }
-      ],
+      "gains": [],
       "regressions": [],
       "corrections": [],
       "not_compared": [],
@@ -669,8 +670,5 @@
       ]
     }
   },
-  "ok": true,
-  "capability_ok": true,
-  "capability_regressions": [],
-  "publish_note": "The publish outcome is recorded after the commit that carries this run, so it describes the push triggered by this run; the file's own commit is made by the next scheduled run."
+  "ok": null
 }

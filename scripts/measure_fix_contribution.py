@@ -65,6 +65,10 @@ def _hard_findings() -> int | None:
 #: inert because only one of the 12 radial tasks is in the anchor set.
 FIX_SKILL = {
     "polar_label_overflow": "radial_profile",
+    "polar_wrap_width": "radial_profile",
+    "matrix_label_width": "matrix_plate",
+    "matrix_row_budget": "matrix_plate",
+    "colorbar_label_room": "field_map",
 }
 
 
