@@ -50,9 +50,14 @@ def test_the_status_board_names_the_biggest_gap_as_a_number(report_src):
     assert i > 0, "the report does not name its biggest known gap"
     window = html[i:i + 900]
     assert "tasks" in window, f"the gap does not name its unit: {window[:300]}"
-    # the requirement is a COUNT, not a particular format: "11 of 139 tasks" is as numeric as "8%"
+    # THE REQUIREMENT IS A COUNT, NOT A PARTICULAR FORMAT. The comment always said so, but the
+    # assertion only accepted "N of M" or "N%". When every task became verified the board began
+    # saying "ALL 139 executed tasks ... 110 by full re-derivation, 29 by the colour-scale check",
+    # which states three counts and failed the regex.
     import re as _re
-    assert _re.search(r"\d+\s+of\s+\d+", window) or _re.search(r"\d+%", window), (
+    assert (_re.search(r"\d+\s+of\s+\d+", window)
+            or _re.search(r"\d+%", window)
+            or _re.search(r"\bALL \d+\b", window)), (
         f"the gap is not stated as a number: {window[:300]}")
     # and it must account for the unverifiable mesh tasks rather than quietly excluding them
     assert "MESH" in window or "mesh" in window, (
@@ -158,3 +163,28 @@ def test_no_negative_count_in_the_board():
     body = re.sub(r"\s+", " ", body)
     assert not re.search(r"(?<![\d.])-\d+ (?:of|are|tasks|more)", body), (
         "the report states a negative task count")
+
+
+def test_the_board_total_counts_every_coverage_state():
+    """`partial` is a coverage state, not a subset of `unverifiable`.
+
+    Leaving it out of the total made the board say "ALL 110 executed tasks" when 139 were executed.
+    """
+    import json
+    import re
+    report = ROOT / "reports" / "figpipe_report.html"
+    data = ROOT / "corpus" / "e2e" / "plottwin_report.json"
+    if not (report.is_file() and data.is_file()):
+        pytest.skip("no report")
+    b = json.loads(data.read_text(encoding="utf-8"))
+    cov = b.get("semantic_coverage") or {}
+    expected = sum(cov.get(k, 0) or 0 for k in
+                   ("checked", "mesh_scale_checked", "skipped", "unverifiable", "absent"))
+    html = report.read_text(encoding="utf-8")
+    i = html.find("Biggest known gap")
+    if i < 0:
+        pytest.skip("no status board")
+    text = re.sub(r"<[^>]+>", " ", html[i:i + 900])
+    text = re.sub(r"\s+", " ", text)
+    assert f"ALL {expected} executed tasks" in text, (
+        f"the board does not report all {expected} executed tasks; it says: {text[:220]}")

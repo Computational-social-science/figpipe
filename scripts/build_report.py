@@ -516,25 +516,30 @@ def _status_board(bench: dict, latest: dict, kb: dict, caps: dict, n_tests: int)
     # unverifiable ones would hide the one claim per field figure that IS held to.
     partial = cov.get("mesh_scale_checked") or 0
     if checked is not None and skipped is not None:
-        total = checked + skipped + unverifiable
+        # `partial` IS A SEPARATE COVERAGE STATE, not a subset of `unverifiable`. Leaving it out of
+        # the total made the board say "ALL 110 executed tasks" when 139 were executed.
+        total = checked + partial + skipped + unverifiable
         rows.append(("Biggest known gap",
-                     # TWO KINDS OF UNVERIFIED, AND THE COUNT CONFLATES THEM. One is unfinished
-                     # work (a drawer with no semantic rule); the other is a property of the
-                     # FORMAT (a field is one imshow path). Reporting one number lets a reader
-                     # assume both are the same problem, and the fixes are completely different.
-                     f"{skipped} of {total} tasks have a drawer with NO semantic rule YET, so their "
-                     f"printed numbers were never re-derived -- that is unfinished work. "
-                     f"{partial} of those have had their PRINTED COLOUR SCALE checked against the "
-                     f"data they drew: a mesh's cell values cannot be read back, but its colour "
-                     f"bar's tick labels are text and state the scale, so one claim per field "
-                     f"or matrix figure IS verified. "
-                     f"{unverifiable} more are UNVERIFIABLE BY CONSTRUCTION -- a field or a mesh "
-                     f"is a single raster path, so its cell values reach the PDF only as colour and "
-                     f"no rendered-file check can re-derive them at any effort. "
-                     f"The two need different responses: the first is a rule still to be written, "
-                     f"the second is a format limit. "
-                     f"A pass on either is a statement about geometry, not about correctness.",
-                     "warn"))
+                     # ZERO UNVERIFIED IS NOW TRUE, so the board must not describe a remainder that
+                     # does not exist. What remains is a different and honest statement: every task
+                     # has SOME claim checked, but for a raster figure that claim is the colour
+                     # scale only -- its cell values still cannot be read back.
+                     (f"ALL {total} executed tasks now have a checked claim about their printed "
+                      f"numbers: {total - partial} by full semantic re-derivation, {partial} by the "
+                      f"colour-scale check on a raster figure. "
+                      f"WHAT IS STILL NOT CHECKED: a raster's cell values. A field or a mesh is a "
+                      f"single path, so the scale is the only numeric claim that reaches the PDF -- "
+                      f"the individual cells are colour, and no rendered-file check can recover them "
+                      f"at any effort. That is a property of the FORMAT, and it is now the only "
+                      f"remaining limit."
+                      if not skipped and not unverifiable else
+                      f"{skipped} of {total} tasks have a drawer with NO semantic rule YET, so their "
+                      f"printed numbers were never re-derived -- that is unfinished work. "
+                      f"{partial} have had their PRINTED COLOUR SCALE checked against the data they "
+                      f"drew. {unverifiable} are UNVERIFIABLE BY CONSTRUCTION -- a field or a mesh "
+                      f"is a single raster path, so its cell values reach the PDF only as colour and "
+                      f"no rendered-file check can re-derive them at any effort."),
+                     "ok" if (not skipped and not unverifiable) else "warn"))
     else:
         rows.append(("Biggest known gap", "semantic coverage is not recorded in the benchmark "
                      "report, so the size of the unverified set is unknown.", "warn"))

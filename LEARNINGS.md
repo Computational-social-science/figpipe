@@ -4161,3 +4161,49 @@ limit". They were not. The honest statement is narrower: the ones that remain af
 every upstream decision are the inherent ones, and I had not audited them.
 
 Suite: 708 passed, 3 skipped.
+
+
+## 128. The last three unverifiable were a mapping defect, not a format limit (2026-10-22)
+
+Two rounds ago I wrote that the remaining unverifiable tasks were "close to the format's inherent
+limit". Last round five of ten turned out to be pivot defects. This round the last three were also
+not the format.
+
+ALL THREE WERE QUIVER TASKS DRAWN AS SCALAR FIELDS. Their target data carries a VECTOR at each
+position:
+
+    migration_vx_um_h / migration_vy_um_h
+    chemotactic velocity east (um s-1) / north (um s-1)
+
+`field_2d` draws a SCALAR surface. The mapper picked two arbitrary numeric columns as x/y and a third
+as the value, so the figure plotted a scalar over coordinates that were not a grid, and the scale
+check had nothing to attach to.
+
+TWO FIXES, BOTH ABOUT NAMING:
+
+  1. THE MAGNITUDE COLUMN IS ALREADY IN THE DATA. Both tasks carry `speed_um_h` and
+     `velocity magnitude (um s-1)` -- which is exactly what a quiver's colour encodes. My first
+     attempt computed sqrt(vx^2+vy^2), and a suffix matcher missed both because the names use
+     `east`/`north` as words in parentheses, not as suffixes. Use the named column when it exists.
+
+  2. THE COORDINATE PREFERENCE RANKED A DERIVED BIN ABOVE THE ACTUAL AXIS. `intensity bin lower` and
+     `normalized east-west coordinate` both matched a "coordinate-ish" pattern and the bin came first
+     in column order. A `bin` is DERIVED from a measurement; a `coordinate` is the axis. Ranked tiers
+     fixed it: coordinate > time > bin.
+
+MEASURED, the two mappings now read:
+
+    quiver_4   speed_um_h over x_mm x y_mm
+    quiver_10  velocity magnitude (um s-1) over normalized east-west coordinate x
+               normalized north-south coordinate
+
+THE PATTERN, third round running and now impossible to dismiss: **an `unverifiable` count measures
+what upstream decided to draw, not what the format permits.** I have now claimed "this is the
+format's limit" twice and been wrong twice -- ten tasks, then three. The claim is only true AFTER
+auditing every mapping decision, and auditing them is the work.
+
+A narrower rule I should have applied from the start: before calling a figure unverifiable, check
+that the DATA REACHING THE DRAWER is the data the chart type is about. A quiver's data is a vector
+field; a scalar drawer cannot be right about it, whatever the checker does.
+
+Suite: 708 passed, 3 skipped.

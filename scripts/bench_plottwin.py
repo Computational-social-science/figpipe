@@ -508,8 +508,35 @@ def choose_reading(df: pd.DataFrame, chart: str, panel_mode: str):
         return "radial_profile", {"theta": ang, "value": val}, sub, \
             f"polar {val} by {ang}"
     if chart == "Field 2D":
+        # A QUIVER'S COLOUR ENCODES THE VECTOR'S MAGNITUDE, NOT AN ARBITRARY THIRD COLUMN. Two of
+        # the three remaining unverifiable tasks carry `vx`/`vy` pairs; drawing an unrelated column
+        # as the value produced a scalar surface over coordinates that are not a grid.
+        # A MAGNITUDE COLUMN IS USUALLY ALREADY THERE. Both quiver tasks carry one
+        # ('speed_um_h', 'velocity magnitude (um s-1)'), so the value is named, not computed. The
+        # colour of a quiver encodes exactly this quantity, which is why using it is not a choice.
+        mag_col = next((c for c in nums
+                        if any(k in str(c).lower() for k in ("speed", "magnitude"))
+                        and df[c].nunique() >= 3), None)
+        if mag_col is not None:
+            coords = _coord_candidates(df, [c for c in nums if c != mag_col])
+            if len(coords) >= 2:
+                sub = df[[coords[0], coords[1], mag_col]].dropna()
+                if sub[coords[0]].nunique() >= 2 and sub[coords[1]].nunique() >= 2 and len(sub) >= 8:
+                    return "field_map", {"x": coords[0], "y": coords[1], "value": mag_col}, sub, \
+                        f"field {mag_col} over {coords[0]} x {coords[1]}"
+        pair = _vector_pair(df)
+        if pair is not None:
+            comp_a, comp_b = pair
+            coords = _coord_candidates(df, [c for c in nums if c not in pair])
+            if len(coords) >= 2:
+                mag = f"{comp_a} magnitude"
+                df = df.assign(**{mag: (df[comp_a] ** 2 + df[comp_b] ** 2) ** 0.5})
+                sub = df[[coords[0], coords[1], mag]].dropna()
+                if sub[coords[0]].nunique() >= 2 and sub[coords[1]].nunique() >= 2 and len(sub) >= 8:
+                    return "field_map", {"x": coords[0], "y": coords[1], "value": mag}, sub, \
+                        f"field |{comp_a},{comp_b}| over {coords[0]} x {coords[1]}"
         # a field needs its own (x, y, value) triple: the pivot is the drawing
-        coord_candidates = [c for c in nums if df[c].nunique() >= 3]
+        coord_candidates = _coord_candidates(df, nums)
         if len(coord_candidates) >= 2:
             xs = coord_candidates[0]
             ys = coord_candidates[1]
@@ -526,6 +553,72 @@ def choose_reading(df: pd.DataFrame, chart: str, panel_mode: str):
             raise MappingError("heatmap target data has neither a numeric matrix nor a 2-category pivot")
         return "matrix_plate", {}, data, why
     raise MappingError(f"chart type {chart!r} has no operator yet (see knowledge/benchmark_skill_map.json)")
+
+
+def _coord_candidates(df, columns) -> list[str]:
+    """Columns that can serve as a field's axes, best first.
+
+    THREE RULES, each from a measured defect:
+      1. A ROW INDEX IS NOT A COORDINATE. `panel row`, `panel_row`, `sample_id` are consecutive
+         integers; drawing a field over them plots the row counter.
+      2. A COLUMN WHOSE NAME SAYS IT IS A COORDINATE COMES FIRST. `x_mm`, `normalized east-west
+         coordinate`, `elapsed time` are what the figure is about; a measurement is not.
+      3. Otherwise keep the numeric columns that actually vary.
+    """
+    import re as _re
+
+    def is_index(col) -> bool:
+        v = df[col].dropna()
+        if v.empty or not pd.api.types.is_integer_dtype(v):
+            return False
+        uniq = sorted(v.unique().tolist())
+        if len(uniq) < max(4, len(v) * 0.9):
+            return False
+        return (uniq[-1] - uniq[0] + 1) <= len(uniq) * 1.5
+
+    varying = [c for c in columns if df[c].nunique() >= 3 and not is_index(c)]
+    if not varying:
+        varying = [c for c in columns if df[c].nunique() >= 3]
+    # RANK BY WHAT THE NAME SAYS THE COLUMN IS, strongest first. A coordinate is the axis; a `bin`
+    # is DERIVED from a measurement and is usually a legend level, not a spatial axis. Measured on
+    # quiver_10: `intensity bin lower` outranked `normalized east-west coordinate` on column order
+    # alone, so the field was drawn over a histogram bin instead of the measured grid.
+    tiers = (
+        r"(^|[\s_])(x|y)([\s_]|$)|coord|position|longitude|latitude",
+        r"time|elapsed|date|year|month|hour",
+        r"bin|level|class|category",
+    )
+    ranked: list[str] = []
+    for pattern in tiers:
+        for c in varying:
+            if c not in ranked and _re.search(pattern, str(c).lower()):
+                ranked.append(c)
+    return ranked + [c for c in varying if c not in ranked]
+
+
+def _vector_pair(df) -> tuple[str, str] | None:
+    """Two numeric columns that name the components of one vector, or None.
+
+    A quiver carries a vector at each position; its colour is the magnitude. Recognised by a shared
+    stem with an axis suffix -- `_vx`/`_vy`, `east`/`north`, `_u`/`_v`, `dx`/`dy` -- because those are
+    the conventions the benchmark's quiver tasks actually use.
+    """
+    import re as _re
+    numeric = [str(c) for c in df.select_dtypes("number").columns]
+    suffixes = (("_vx", "_vy"), ("vx", "vy"), ("_u", "_v"), ("_dx", "_dy"),
+                ("east", "north"), ("eastward", "northward"))
+    for a_suf, b_suf in suffixes:
+        for col in numeric:
+            low = col.lower()
+            if not low.endswith(a_suf):
+                continue
+            stem = col[: len(col) - len(a_suf)]
+            for other in numeric:
+                if other == col:
+                    continue
+                if other.lower() == (stem + b_suf).lower():
+                    return col, other
+    return None
 
 
 def _code_version() -> str:
