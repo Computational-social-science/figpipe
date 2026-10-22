@@ -441,6 +441,44 @@ def _verdict(delta: float, drops: list, margin: float,
         f"distinguish this edit from the baseline, so it is reported as a tie")
 
 
+def probe_patch(patch, tasks, *, baseline_runner, patched_runner,
+                out_dir=None) -> dict:
+    """Probe ONE code patch, producing the same shape `probe` does.
+
+    WHY A SEPARATE ENTRY POINT AND NOT A FLAG ON `probe`
+        `probe` applies an override PER TASK (`params.update({parameter: value})`). A patch edits
+        the SOURCE, so it must be applied ONCE around every task of the candidate and reverted
+        afterwards. Putting both in one function would mean a flag that changes the apply/restore
+        discipline, and that is exactly the kind of switch that ends up wrong in one branch.
+
+    `baseline_runner()` and `patched_runner()` are supplied by the caller so this function never
+    imports `patchprobe` -- the dependency points one way, and a test can drive it with stubs.
+
+    Returns the same keys `compose` reads: `outcomes` and `mean_score`, plus `patch`.
+    """
+    base = baseline_runner()
+    patched = patched_runner()
+    rows = {"baseline": base, patch.id: patched}
+    out = {
+        "space": {"min_margin": 0.1,
+                  "candidates": [patch.id],
+                  "tasks": [t for t in tasks]},
+        "outcomes": {name: {task: row for task, row in per.items()}
+                     for name, per in rows.items()},
+        "mean_score": {name: _mean([r["score"] for r in per.values()])
+                       for name, per in rows.items()},
+        "patch": patch.to_dict() if hasattr(patch, "to_dict") else dict(patch),
+        "note": ("a CODE PATCH probe: the source was edited once around every task and restored "
+                 "afterwards, so a crash cannot leave the tree modified"),
+    }
+    if out_dir is not None:
+        path = pathlib.Path(out_dir)
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(json.dumps(out, indent=2) + "\n", encoding="utf-8")
+        out["record"] = str(path)
+    return out
+
+
 def compose(probe_result: dict, space: MutationSpace, *,
             min_margin: float | None = None) -> dict:
     """Decide from the behavioural contrast; a tie is reported, never resolved.
@@ -493,9 +531,18 @@ def compose(probe_result: dict, space: MutationSpace, *,
             reason = f"{reason}; changed tasks: {changed or 'none'}"
         elif drops:
             reason = f"{reason}; changed tasks: {changed or 'none'}"
+        # THE DECISION MUST NOT DEPEND ON THE CANDIDATE'S SHAPE. A scalar candidate names an
+        # operator parameter; a PATCH candidate names a file and two texts. Reading the scalar
+        # fields directly meant `compose` could only ever judge scalars -- which is why the loop's
+        # discovery channel was five integers. The verdict comes from the scores either way.
         decisions.append({
-            "id": cand.id, "operator": cand.operator, "parameter": cand.parameter,
-            "value": cand.value, "baseline_value": cand.baseline_value,
+            "id": cand.id,
+            "operator": getattr(cand, "operator", None),
+            "parameter": getattr(cand, "parameter", None),
+            "value": getattr(cand, "value", None),
+            "baseline_value": getattr(cand, "baseline_value", None),
+            "kind": ("patch" if getattr(cand, "old", None) is not None else "scalar"),
+            "patch_path": getattr(cand, "path", None),
             "score": score, "baseline_score": base, "delta": delta,
             "verdict": verdict, "reason": reason,
             "changed_tasks": changed, "regressed_tasks": drops,

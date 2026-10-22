@@ -4370,3 +4370,43 @@ fourteen rounds ago caught a defect I introduced today, which is the only test o
 was worth writing.
 
 Suite: 739 passed, 3 skipped.
+
+
+## 133. The structural limit was four attribute reads inside `compose` (2026-10-22)
+
+The last three rounds diagnosed the same thing: the loop cannot propose a real fix because its
+search space is five budget integers. Round 65 made a fix probe-able (`patchprobe`). This round
+wired it into the decision rule -- and found where the limit was actually implemented.
+
+`compose` read the candidate directly:
+
+    decisions.append({
+        "id": cand.id, "operator": cand.operator, "parameter": cand.parameter,
+        "value": cand.value, "baseline_value": cand.baseline_value, ...
+
+A PATCH candidate has none of those fields; it has `path`, `old`, `new`. So the decision rule could
+not judge the one kind of proposal that can express a real fix, and the structural limit that three
+rounds of analysis described was **sitting inside `compose` as four attribute reads.**
+
+The fix is `getattr(cand, ..., None)` plus a `kind` field ("patch" / "scalar"). The verdict comes
+from the SCORES; the record describes whatever the candidate actually is. Measured: a patch that
+scores worse than the baseline now lands in `rejected`, where before `compose` raised AttributeError.
+
+`mutation.probe_patch` produces the same shape `probe` does -- `outcomes`, `mean_score` -- so the
+decision rule needs no second code path. A second path is where two implementations drift apart.
+
+THE TESTS TAUGHT ME FOUR THINGS ABOUT THE CONTRACT, each by failing:
+
+  * the row shape matters, not just the top-level keys -- a stub with only `score` raised
+    `KeyError: 'outcome'`
+  * `MutationSpace` is FROZEN, so a candidate goes in at construction
+  * `compose` REFUSES a partial probe ("candidate 'split-max-bars-24' was proposed but never
+    probed") -- the completeness guard, working
+  * the decision dict keys the candidate as `id`, not `candidate`
+
+THE PATTERN ACROSS FOUR ROUNDS: I kept describing the limit as "the search space is five integers".
+That was true and it was not where the limit lived. The space was five integers BECAUSE `compose`
+could only judge scalars, and the reason the loop could not discover a drawer fix was four
+`cand.attribute` reads. **Describing a structural limit is not the same as locating it.**
+
+Suite: 743 passed, 3 skipped.
