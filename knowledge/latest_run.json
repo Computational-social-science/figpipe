@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-22T08:52:19",
+  "run_at": "2026-10-22T11:11:46",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -9,10 +9,10 @@
     "  passed 8, failed 0",
     "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
     "  wrote knowledge\\evolution_report.json",
-    "  lean: tracked 78.0 -> 78.0 MB, worktree 132.5 -> 130.8 MB"
+    "  lean: tracked 78.1 -> 78.1 MB, worktree 138.7 -> 133.5 MB"
   ],
   "tests_ok": true,
-  "tests_summary": "709 passed, 3 skipped, 1 warning in 268.82s (0:04:28)",
+  "tests_summary": "729 passed, 3 skipped, 1 warning in 275.72s (0:04:35)",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
@@ -591,10 +591,16 @@
     ],
     "verdict": "tie",
     "applied": false,
-    "why_not_applied": "a selected edit measured on six tasks is a finding, not a change; applying it requires a pool re-measure (LEARNINGS ##47)"
+    "why_not_applied": "a selected edit measured on six tasks is a finding, not a change; applying it requires a pool re-measure (LEARNINGS ##47)",
+    "finding_proposals": [],
+    "n_finding_proposals": 0,
+    "finding_unproposable": [],
+    "n_finding_unproposable": 0,
+    "finding_proposal_verdict": "the pool reports no finding that a scalar edit could address"
   },
   "capabilities": {
-    "_code_version": "13c3638c3d69",
+    "_code_version": "95ced9b73a90",
+    "benchmark_hard_findings": 0,
     "benchmark_complete_membership": true,
     "benchmark_pool_size": 150,
     "benchmark_pool_consistent": true,
@@ -614,39 +620,26 @@
     "benchmark_official_improvement": 37.25,
     "statistics_reproduced": 15,
     "knowledge_version": 16,
-    "tests": 709
+    "tests": 729
   },
   "capabilities_delta": {
     "changed": true,
     "delta": {
-      "benchmark_mean_distance": {
-        "before": 0.305,
-        "after": 0.303
-      },
-      "benchmark_anchor_single": {
-        "before": 0.343,
-        "after": 0.335
-      },
-      "benchmark_anchor_distance": {
-        "before": 0.343,
-        "after": 0.335
+      "benchmark_hard_findings": {
+        "before": null,
+        "after": 0
       },
       "tests": {
-        "before": 708,
-        "after": 709
+        "before": 716,
+        "after": 729
       }
     },
     "verdict": {
       "gains": [
         {
-          "field": "benchmark_anchor_single",
-          "before": 0.343,
-          "after": 0.335
-        },
-        {
           "field": "tests",
-          "before": 708,
-          "after": 709
+          "before": 716,
+          "after": 729
         }
       ],
       "regressions": [],
@@ -657,6 +650,7 @@
       "ok": true,
       "judged_fields": [
         "benchmark_anchor_single",
+        "benchmark_hard_findings",
         "benchmark_official_code_score",
         "benchmark_official_improvement",
         "benchmark_shipped_anchor_single",

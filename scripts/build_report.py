@@ -759,6 +759,17 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
                     "its pad but not for the tick labels, which fell off the page. Measured after "
                     "the fix: a field with data in [-3.77, 3.07] prints -3..3 and nothing overflows.",
                     "figpipe/composite.py", meta="2 stacked defects, 3 tests"),
+        deliverable("The workflow's links now carry the signal", "An audit of the six-step "
+                    "pipeline found that no step consumed another's return value: they were three "
+                    "independent measurements over a shared JSON file, in an order only a comment "
+                    "enforced. Three links were added. (1) The anchor REFUSES to re-measure against "
+                    "a report produced by another instrument instead of reading it silently. (2) A "
+                    "count of hard findings is in the capability snapshot with direction -1, so a "
+                    "cycle that introduces a defect now FAILS instead of reporting ok. (3) "
+                    "mutation_step records what the pool's findings imply AND what it cannot "
+                    "propose -- measured over 152 runs it had 222 ties and 149 empty selections "
+                    "because its whole search space was five hard-coded budget integers.",
+                    "scripts/cron_run.py", meta="3 links, 7 tests"),
         deliverable("A raster figure's AXES are checked too", "A field or a mesh is one raster "
                     "path, so its cell values never reach the PDF. Two claims do: the colour scale, "
                     "and the axis tick labels, which state the coordinates the raster spans. A "

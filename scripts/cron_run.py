@@ -93,6 +93,10 @@ def capability_snapshot() -> dict:
         # COMPLETE MEMBERSHIP, recorded beside the rate it qualifies. `benchmark_success_rate` is a
         # judged field, and a rate over 140 of 150 tasks is not the same quantity as one over 150.
         # Without this flag a short set reads as a capability change.
+        # HARD FINDINGS ARE A CAPABILITY FACT, not only a report line. `n_ok` and mean distance can
+        # both hold while a figure gets worse; a hard finding is the only channel that says so.
+        "benchmark_hard_findings": sum(int(t.get("hard_failures") or 0)
+                                       for t in (bench.get("tasks") or [])),
         "benchmark_complete_membership": bool(bench.get("complete_membership")),
         "benchmark_pool_size": bench.get("pool_size"),
         # DOES THE DECLARED POOL STILL AGREE WITH THE COVERAGE INDEX? A `False` here means the
@@ -195,6 +199,10 @@ CAPABILITY_DIRECTION = {
     "statistics_reproduced": +1,
     "tests": +1,
     "knowledge_version": +1,
+    # FEWER HARD FINDINGS IS BETTER. `n_ok` and mean distance can both hold while a figure gets
+    # worse; a hard finding is the only channel in the snapshot that says so, and it needs the
+    # direction to be negative or the delta would treat a rise as a gain.
+    "benchmark_hard_findings": -1,
 }
 
 
@@ -205,21 +213,44 @@ def mutation_step() -> dict:
     A failure here must not fail the whole run: a mutation step that cannot measure is a finding
     about the machine, not a capability regression.
     """
+    # WHAT THE POOL'S FINDINGS IMPLY, next to what the fixed menu proposes.
+    #
+    # Measured over 152 runs: 4 knowledge changes, 222 ties, 149 runs that selected NOTHING. The
+    # menu was the defect -- every real fix this project made was a drawer change that no budget
+    # integer could express. This records the finding-derived candidates so the gap is visible in
+    # every run record rather than inferred from the tie rate.
+    try:
+        report = json.loads((ROOT / "corpus" / "e2e" / "plottwin_report.json")
+                            .read_text(encoding="utf-8"))
+        from figpipe import proposals as proposals_mod
+        derived = proposals_mod.proposals_from_report(report)
+    except (OSError, json.JSONDecodeError, ImportError) as exc:
+        derived = {"proposals": [], "n": 0, "unproposable": [], "n_unproposable": 0,
+                   "verdict": f"could not read the pool report: {type(exc).__name__}"}
+    finding_fields = {
+        "finding_proposals": derived.get("proposals") or [],
+        "n_finding_proposals": derived.get("n") or 0,
+        "finding_unproposable": derived.get("unproposable") or [],
+        "n_finding_unproposable": derived.get("n_unproposable") or 0,
+        "finding_proposal_verdict": derived.get("verdict"),
+    }
+
     script = ROOT / "scripts" / "mutate.py"
     if not script.is_file():
-        return {"ran": False, "reason": "scripts/mutate.py absent"}
+        return {"ran": False, "reason": "scripts/mutate.py absent", **finding_fields}
     p = subprocess.run([sys.executable, str(script), "--quiet", "--no-lock"],
                        cwd=ROOT, capture_output=True, text=True, encoding="utf-8",
                        errors="replace")
     if p.returncode != 0:
         return {"ran": False, "code": p.returncode,
-                "reason": ((p.stdout or "") + (p.stderr or "")).strip()[-300:]}
+                "reason": ((p.stdout or "") + (p.stderr or "")).strip()[-300:],
+                **finding_fields}
     try:
         return {"ran": True, **json.loads(
-            (ROOT / "knowledge" / "mutation_report.json").read_text(encoding="utf-8"))}
+            (ROOT / "knowledge" / "mutation_report.json").read_text(encoding="utf-8")),
+            **finding_fields}
     except (OSError, json.JSONDecodeError) as exc:
-        return {"ran": False, "reason": f"report unreadable: {exc}"}
-
+        return {"ran": False, "reason": f"report unreadable: {exc}", **finding_fields}
 
 def _is_infra(error) -> bool:
     """A fetch failure means the pipeline never ran, so it is not a capability result."""
@@ -366,6 +397,37 @@ def capability_delta(previous: dict, current: dict) -> dict:
                         "membership_broken": membership_broken,
                         "ok": not regressions,
                         "judged_fields": sorted(CAPABILITY_DIRECTION)}}
+
+
+def _report_is_current() -> tuple[bool, str]:
+    """Is the pool report fresh enough for the anchor to re-measure against?
+
+    THE ORDERING WAS A COMMENT, NOT A COUPLING. `refresh_anchor` reads whatever
+    `corpus/e2e/plottwin_report.json` contains, and nothing checked that `benchmark_slice` had just
+    written it. A skipped or failed slice would leave the anchor re-measuring against stale rows and
+    recording a number that looks current.
+
+    The report states both facts already: `code_version` (which instrument produced it) and
+    `n_stale` (rows measured by another instrument).
+    """
+    path = ROOT / "corpus" / "e2e" / "plottwin_report.json"
+    try:
+        import json as _json
+        report = _json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, ValueError) as exc:
+        return False, f"no readable pool report: {type(exc).__name__}"
+    try:
+        import sys as _sys
+        _sys.path.insert(0, str(ROOT / "scripts"))
+        import bench_plottwin as _bench
+        expected = _bench.CODE_VERSION
+    except Exception:                                      # noqa: BLE001
+        return True, "cannot determine the current instrument; proceeding"
+    got = report.get("code_version")
+    if got and got != expected:
+        return False, (f"the pool report was produced by instrument {got}, current is {expected}; "
+                       f"the anchor would re-measure against rows from another instrument")
+    return True, "current"
 
 
 def refresh_anchor() -> dict:
@@ -635,7 +697,12 @@ def _main_locked(argv: list[str], dry: bool) -> int:
         # so it can never read a half-written state -- which it did, recording null for a metric
         # that was 0.351 in the report.
         bench_run = benchmark_slice()
-        anchor_run = refresh_anchor()
+        # REFUSE TO RE-MEASURE AGAINST A STALE REPORT. The comment above described this ordering and
+        # nothing enforced it: a skipped or failed slice left the anchor reading whatever the file
+        # happened to contain. The report states `code_version`; one comparison is the contract.
+        _fresh, _fresh_why = _report_is_current()
+        anchor_run = (refresh_anchor() if _fresh
+                      else {"ran": False, "reason": f"refused: {_fresh_why}"})
         # PROPOSE -> PROBE -> COMPOSE. Without this the loop can only report that numbers moved; it
         # cannot choose an edit. 91 runs produced 0 knowledge changes for exactly that reason.
         mutation_run = mutation_step()

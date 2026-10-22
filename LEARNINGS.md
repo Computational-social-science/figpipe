@@ -4275,3 +4275,56 @@ ticks that STOP SHORT are the defect. Both the colour scale and the axes needed 
 distinction, and in both cases the first version measured a signed difference instead of a shortfall.
 
 Suite: 716 passed, 3 skipped.
+
+
+## 131. The workflow was not loosely coupled. It was not coupled (2026-10-22)
+
+Asked to check whether the workflow's links are tightly coupled. I measured instead of reading, and
+the answer was neither word.
+
+THE MEASUREMENT: for every ordered pair of steps in `_main_locked`, does one receive the other's
+return value?
+
+    benchmark_slice <- refresh_anchor   no
+    benchmark_slice <- mutation_step    no
+    refresh_anchor  <- benchmark_slice  no
+    refresh_anchor  <- mutation_step    no
+    mutation_step   <- benchmark_slice  no
+    mutation_step   <- refresh_anchor   no
+
+ZERO. Each step's return value is written into the run record and consumed by nothing:
+
+    "benchmark_slice": bench_run,
+    "anchor_refresh":  anchor_run,
+    "mutation":        mutation_run,
+
+The real coupling is the FILESYSTEM: `benchmark_slice` writes `plottwin_report.json`,
+`refresh_anchor` and `mutation_step` read it. And the ordering that makes this correct is a COMMENT:
+
+    # ORDER MATTERS: the slice writes the report, and the anchor refresh must follow it
+
+This project has spent sixty rounds learning that a control documented but not enforced is not a
+control. The same is true of an ordering, and I had never applied it here.
+
+THREE LINKS ADDED, each mechanical:
+
+1. `_report_is_current()` -- the anchor now REFUSES to re-measure against a report whose
+   `code_version` is not the current instrument, instead of reading whatever the file holds. A
+   skipped or failed slice used to leave it measuring stale rows and recording a number that looked
+   current.
+
+2. `benchmark_hard_findings` is in the capability snapshot with direction -1. Before this, `n_ok`
+   and mean distance could both hold while a figure got WORSE -- the delta had no channel that could
+   see a defect. Measured both ways: 0 -> 5 findings is a REGRESSION (ok: false), 5 -> 0 is a GAIN.
+
+3. `mutation_step` records what the pool's findings imply AND what it cannot propose. This is the
+   answer to "why no breakthrough" made visible in every run record: over 152 runs the loop had 222
+   ties and 149 empty selections because its entire search space was five hard-coded budget
+   integers, and every real fix this project made was a drawer change that no integer could express.
+
+THE DISTINCTION THAT MATTERED: "loosely coupled" is a design choice with a contract. What this was
+is a sequence of independent measurements over a shared mutable file, presented as a pipeline by
+ordering. The links that matter -- findings to candidates, report to anchor, snapshot to findings --
+were missing, and each is a small addition rather than a redesign.
+
+Suite: 729 passed, 3 skipped.
