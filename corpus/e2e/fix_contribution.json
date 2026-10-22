@@ -1,0 +1,21 @@
+{
+ "fixes": [
+  {
+   "fix": "polar_label_overflow",
+   "path": "figpipe/drawlib.py",
+   "rationale": "long polar spoke labels overflow the page edge and are cut by the PDF boundary",
+   "state": "revert",
+   "with_fix": 0.335,
+   "with_fix_hard_findings": 0,
+   "without_fix": null,
+   "without_fix_hard_findings": 0,
+   "measured": true,
+   "delta_hard_findings": 0,
+   "load_bearing": false,
+   "restored_anchor": 0.335
+  }
+ ],
+ "n": 1,
+ "n_measured": 1,
+ "n_load_bearing": 0
+}

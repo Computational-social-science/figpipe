@@ -55,6 +55,24 @@ FINDING_TO_PARAMETER = {
 CODE_ONLY_CHECKS = ("semantics.", "mesh_scale", "axis_range", "font_type")
 
 
+#: Findings whose fix is a DECLARED CODE EDIT, with the patch that would address it.
+#:
+#: Each entry is (path, old, new, rationale). The old text must occur exactly once -- `patchprobe`
+#: refuses anything ambiguous, so a wrong entry fails loudly rather than editing the wrong place.
+#:
+#: These are the fixes this project actually made by hand, written down as data so a probe can
+#: measure them. That is the difference between "the loop found it" and "the loop could not express
+#: it", and it is the whole point of this module.
+CODE_PATCHES = {
+    "polar_label_overflow": (
+        "figpipe/drawlib.py",
+        "            ax.set_xticklabels(labels, fontsize=6)",
+        "            ax.set_xticklabels([_wrap_spoke(v) for v in labels], fontsize=6)",
+        "long polar spoke labels overflow the page edge and are cut by the PDF boundary",
+    ),
+}
+
+
 @dataclass
 class Proposal:
     """One candidate derived from a measured finding."""
@@ -119,6 +137,65 @@ def proposals_from_report(report: dict) -> dict:
             "verdict": (f"{len(out)} candidate(s) derived from the pool's own findings"
                         if out else
                         "the pool reports no finding that a scalar edit could address")}
+
+
+def patch_state(root, patch: dict) -> dict:
+    """Is this patch a FIX (the defect is present) or a REVERT (the fix is already in)?
+
+    THE TWO DIRECTIONS ARE BOTH USEFUL and must not be confused:
+      fix     the defect text is present, so applying the patch repairs it
+      revert  the fixed text is present, so applying the patch reintroduces the defect -- which is
+              how a probe demonstrates that a fix was load-bearing
+      stale   neither is present, so the catalogue entry no longer describes this tree
+    """
+    import pathlib as _pathlib
+
+    from . import patchprobe
+
+    forward = patchprobe.Patch(id=patch["id"], path=patch["path"],
+                               old=patch["old"], new=patch["new"],
+                               rationale=patch["rationale"])
+    backward = patchprobe.Patch(id=patch["id"] + "-revert", path=patch["path"],
+                                old=patch["new"], new=patch["old"],
+                                rationale="reintroduce the defect to measure the fix")
+    ok_fix, _ = patchprobe.check(_pathlib.Path(root), forward)
+    ok_rev, _ = patchprobe.check(_pathlib.Path(root), backward)
+    if ok_fix and not ok_rev:
+        return {"state": "fix", "patch": forward.to_dict(),
+                "why": "the defect is present; applying this repairs it"}
+    if ok_rev and not ok_fix:
+        return {"state": "revert", "patch": backward.to_dict(),
+                "why": "the fix is present; applying this reintroduces the defect"}
+    return {"state": "stale", "patch": forward.to_dict(),
+            "why": "neither the defect nor the fix text is present; the catalogue entry no longer "
+                   "describes this tree"}
+
+
+def patches_for(findings: list[dict]) -> dict:
+    """Declared code patches that would address these findings, plus what has none.
+
+    A finding's `check` names the defect class; `CODE_PATCHES` maps the classes this project has
+    already learned to fix to the edit that fixes them. A class with no patch is reported -- the loop
+    cannot express it, and saying so is the honest answer.
+    """
+    out = []
+    missing = []
+    seen: set[str] = set()
+    for finding in findings:
+        check = str(finding.get("check") or "")
+        if not check:
+            continue
+        key = next((k for k in CODE_PATCHES if k in check), None)
+        if key is None:
+            missing.append({"check": check,
+                            "why": "no declared code patch exists for this defect class"})
+            continue
+        if key in seen:
+            continue
+        seen.add(key)
+        path, old, new, rationale = CODE_PATCHES[key]
+        out.append({"id": key, "path": path, "old": old, "new": new, "rationale": rationale})
+    return {"patches": out, "n": len(out), "missing": missing, "n_missing": len(missing)}
 
 
 def describe(result: dict) -> str:
