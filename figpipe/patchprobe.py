@@ -61,7 +61,7 @@ def _resolve(root: pathlib.Path, path: str) -> pathlib.Path:
     return target
 
 
-def check(root, patch: Patch) -> tuple[bool, str]:
+def patch_applies(root, patch: Patch) -> tuple[bool, str]:
     """Can this patch be applied unambiguously? Returns (ok, why).
 
     THE OLD TEXT MUST OCCUR EXACTLY ONCE. A replacement that matches twice would edit whichever
@@ -80,9 +80,9 @@ def check(root, patch: Patch) -> tuple[bool, str]:
     return False, f"the old text occurs {n} times in {patch.path}; an ambiguous patch is refused"
 
 
-def apply(root, patch: Patch) -> str:
+def apply_patch(root, patch: Patch) -> str:
     """Apply the patch and return the ORIGINAL text, which the caller must restore."""
-    ok, why = check(root, patch)
+    ok, why = patch_applies(root, patch)
     if not ok:
         raise PatchError(why)
     target = _resolve(pathlib.Path(root), patch.path)
@@ -103,7 +103,7 @@ def probe_with_patch(root, patch: Patch, fn):
     THE `finally` IS THE POINT. An unattended loop that crashes mid-probe must not leave a source
     file edited -- the next run would then measure a tree nobody chose.
     """
-    original = apply(root, patch)
+    original = apply_patch(root, patch)
     try:
         return fn()
     finally:

@@ -158,8 +158,8 @@ def patch_state(root, patch: dict) -> dict:
     backward = patchprobe.Patch(id=patch["id"] + "-revert", path=patch["path"],
                                 old=patch["new"], new=patch["old"],
                                 rationale="reintroduce the defect to measure the fix")
-    ok_fix, _ = patchprobe.check(_pathlib.Path(root), forward)
-    ok_rev, _ = patchprobe.check(_pathlib.Path(root), backward)
+    ok_fix, _ = patchprobe.patch_applies(_pathlib.Path(root), forward)
+    ok_rev, _ = patchprobe.patch_applies(_pathlib.Path(root), backward)
     if ok_fix and not ok_rev:
         return {"state": "fix", "patch": forward.to_dict(),
                 "why": "the defect is present; applying this repairs it"}

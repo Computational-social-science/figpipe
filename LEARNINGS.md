@@ -4328,3 +4328,45 @@ ordering. The links that matter -- findings to candidates, report to anchor, sna
 were missing, and each is a small addition rather than a redesign.
 
 Suite: 729 passed, 3 skipped.
+
+
+## 132. A fix can be a code patch now, and its contribution is measurable (2026-10-22)
+
+The previous round's diagnosis: the loop's whole search space was five budget integers, so every
+real fix this project made was inexpressible. This round made one kind of fix expressible and then
+MEASURED whether it mattered.
+
+`figpipe/patchprobe.py` -- a `Patch` is `(path, old, new, rationale)`, applied for the duration of a
+probe and reverted afterwards. Four guards let it run unattended:
+
+  * the old text must occur EXACTLY ONCE (a replacement matching twice would edit whichever place
+    `str.replace` reaches first, and the probe would measure a change nobody declared)
+  * the path cannot escape the repository
+  * the original bytes are restored in a `finally`, so a crashed probe cannot leave the tree edited
+  * an absent or ambiguous patch is REFUSED, not approximated
+
+Then `scripts/measure_fix_contribution.py` reverts each declared fix and asks whether the defect
+comes back. **First result: the polar label wrap is load-bearing.** With the fix, 0 hard findings;
+reverted, 4. `delta_hard_findings: +4`.
+
+THE MEASUREMENT NEEDED TWO CORRECTIONS, and both are the same mistake:
+
+  1. It measured the ANCHOR, and `without_fix` came back None. The anchor refuses to report a mean
+     when its 20 tasks were measured by two instruments -- correctly. The question "was this fix
+     load-bearing" is not about the anchor; it is whether the DEFECT comes back, which is a count of
+     hard findings.
+
+  2. It probed `--limit 20 --offset 0` -- the first 20 pool rows. Of the 12 `radial_profile` tasks
+     only ONE is in the anchor set, so reverting the fix changed nothing and the fix looked inert.
+     **That was a fact about the slice, not about the fix.** A fix must be probed on tasks its own
+     skill produced; the report records `skill` per task.
+
+MEASURED after both corrections, on all 13 radial tasks: 0 -> 4 hard findings when reverted.
+
+THE PROJECT'S OWN DETECTOR CAUGHT ME. `tests/test_name_collisions.py` -- written in round 51 -- failed
+on the scheduled run because my new module defined `check` and `apply`, colliding with
+`composite.check` and `style.apply`. Renamed to `patch_applies` / `apply_patch`. A detector written
+fourteen rounds ago caught a defect I introduced today, which is the only test of whether a detector
+was worth writing.
+
+Suite: 739 passed, 3 skipped.

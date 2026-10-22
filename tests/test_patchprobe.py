@@ -36,25 +36,25 @@ def _patch(**kw) -> patchprobe.Patch:
 # ---------------------------------------------------------------------------------------
 
 def test_an_unambiguous_patch_applies():
-    ok, why = patchprobe.check(ROOT, _patch())
+    ok, why = patchprobe.patch_applies(ROOT, _patch())
     assert ok, why
 
 
 def test_an_ambiguous_patch_is_REFUSED():
     """A replacement that matches twice would edit whichever place str.replace reaches first."""
-    ok, why = patchprobe.check(ROOT, _patch(old="def ", new="def  "))
+    ok, why = patchprobe.patch_applies(ROOT, _patch(old="def ", new="def  "))
     assert not ok
     assert "times" in why or "ambiguous" in why
 
 
 def test_an_absent_patch_is_REFUSED():
-    ok, why = patchprobe.check(ROOT, _patch(old="THIS TEXT IS NOT IN THE FILE"))
+    ok, why = patchprobe.patch_applies(ROOT, _patch(old="THIS TEXT IS NOT IN THE FILE"))
     assert not ok
     assert "not present" in why
 
 
 def test_a_path_escape_is_REFUSED():
-    ok, why = patchprobe.check(ROOT, _patch(path="../../../etc/passwd"))
+    ok, why = patchprobe.patch_applies(ROOT, _patch(path="../../../etc/passwd"))
     assert not ok
     assert "escapes" in why
 

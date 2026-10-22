@@ -759,6 +759,19 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
                     "its pad but not for the tick labels, which fell off the page. Measured after "
                     "the fix: a field with data in [-3.77, 3.07] prints -3..3 and nothing overflows.",
                     "figpipe/composite.py", meta="2 stacked defects, 3 tests"),
+        deliverable("A fix can now be a CODE PATCH, and its contribution is measured", "The "
+                    "mutation loop's candidate was (operator, parameter, value) and run_task applied "
+                    "it as params.update -- enough to move a budget integer and nothing else. Over "
+                    "152 runs that produced 222 ties and 149 empty selections, because every real "
+                    "fix this project made was a drawer change. `figpipe/patchprobe.py` makes a "
+                    "declared textual edit probe-able, with four guards: the old text must occur "
+                    "exactly once, the path cannot escape the repository, and the original bytes are "
+                    "restored in a `finally` so a crashed probe cannot leave the tree edited. "
+                    "`scripts/measure_fix_contribution.py` then reverts each declared fix and "
+                    "measures whether the defect comes back. MEASURED on the polar label wrap: with "
+                    "the fix, 0 hard findings; reverted, 4. That is the first time this project has "
+                    "shown a fix was load-bearing.",
+                    "figpipe/patchprobe.py", meta="10 tests, first load-bearing measurement"),
         deliverable("The workflow's links now carry the signal", "An audit of the six-step "
                     "pipeline found that no step consumed another's return value: they were three "
                     "independent measurements over a shared JSON file, in an order only a comment "
