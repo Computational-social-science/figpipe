@@ -738,6 +738,103 @@ def check_mesh_panel_data(panel_data: pd.DataFrame, source: pd.DataFrame, *,
                      + (f" (declared max_rows={max_rows})" if truncated_declared else ""))}
 
 
+def check_axis_range(pdf_path, x_values, y_values, *, tol_frac: float = 0.25) -> dict:
+    """Does the printed AXIS cover the coordinate range it plots?
+
+    WHY THIS IS THE SECOND CHECKABLE CLAIM A RASTER FIGURE CARRIES
+        A field or a mesh is one raster path, so its cell values never reach the PDF. Its COLOUR SCALE
+        is one claim that does (round 58), and its AXIS TICKS are the other: they are text, and they
+        state which coordinates the raster spans.
+
+        If the x ticks stop at 8 while the data runs to 10, the rightmost fifth of the figure is
+        placed outside the stated coordinates and a reader cannot tell where those cells sit.
+
+    HOW THE TICKS ARE FOUND, AND WHY IT IS NOT GUESSING
+        Unlike the colour bar, an axis is identified by POSITION rather than by a caller flag: the x
+        axis labels sit in a row along the BOTTOM of the page, the y axis labels in a column along
+        the LEFT. Those are where a Cartesian plot puts them, and `composite` does not rotate axes.
+        A cluster that is neither is not treated as an axis.
+
+    THREE STATES, as everywhere else: checked / violation / unverifiable.
+    """
+    import re as _re
+
+    import numpy as _np
+
+    try:
+        words = _words_by_position(pdf_path)
+    except (OSError, ValueError) as exc:
+        return {"ok": None, "state": "unverifiable", "why": f"cannot read the page: {exc}"}
+    if not words:
+        return {"ok": None, "state": "unverifiable", "why": "no words on the page"}
+
+    def _nums(items):
+        out = []
+        for text in items:
+            for tok in _re.findall(r"[\u2212-]?\d+(?:\.\d+)?", text):
+                try:
+                    out.append(float(tok.replace("\u2212", "-")))
+                except ValueError:
+                    continue
+        return out
+
+    y_max = max(w[1] for w in words)
+    x_min = min(w[0] for w in words)
+    # AXIS LABELS ARE RIGHT-ALIGNED AGAINST THE AXIS, so their LEFT edges differ by the width of a
+    # minus sign. Measured: a y axis over [-9, 9] printed '7.5'/'2.5'/'0.0' at x0=27.5 and
+    # '-2.5'/'-5.0'/'-7.5' at x0=24.5. A window anchored on the leftmost word captured only the
+    # negative half and the axis looked like it spanned [-7.5, -2.5].
+    #
+    # Anchor on the axis TITLE (a single letter, which sits furthest out) and take a window wide
+    # enough to span both alignments.
+    def _window(anchor: float, axis: float, limit: float) -> list[str]:
+        return [w[3] for w in words if abs(w[axis] - anchor) < limit]
+
+    # the title is the leftmost single letter, when there is one
+    titles = [w for w in words if len(w[3]) == 1 and w[3].isalpha()]
+    x_title = next((w for w in titles if w[0] <= x_min + 2.0), None)
+    left_anchor = x_title[0] if x_title else x_min
+    y_title = next((w for w in titles if w[1] >= y_max - 2.0), None)
+    bottom_anchor = y_title[1] if y_title else y_max
+
+    bottom = _window(bottom_anchor, 1, 14.0)
+    left = _window(left_anchor, 0, 18.0)
+
+    results = {}
+    for name, printed, data in (("x", _nums(bottom), x_values),
+                                ("y", _nums(left), y_values)):
+        arr = _np.asarray(list(data), dtype=float)
+        arr = arr[_np.isfinite(arr)]
+        if len(printed) < 2 or arr.size == 0:
+            results[name] = {"ok": None, "state": "unverifiable",
+                             "why": f"{name}: {len(printed)} tick(s), {arr.size} value(s)"}
+            continue
+        lo, hi = float(arr.min()), float(arr.max())
+        span = hi - lo
+        if span <= 0:
+            results[name] = {"ok": None, "state": "unverifiable",
+                             "why": f"{name}: the coordinates are constant"}
+            continue
+        p_lo, p_hi = min(printed), max(printed)
+        short = max(max(0.0, p_lo - lo), max(0.0, hi - p_hi)) / span
+        detail = (f"{name}: data [{lo:.4g}, {hi:.4g}]; ticks [{p_lo:.4g}, {p_hi:.4g}]; "
+                  f"shortfall {short:.0%}")
+        results[name] = {"ok": short <= tol_frac,
+                         "state": "checked" if short <= tol_frac else "violation",
+                         "detail": detail, "shortfall": round(short, 4)}
+
+    bad = [k for k, v in results.items() if v.get("state") == "violation"]
+    unknown = [k for k, v in results.items() if v.get("state") == "unverifiable"]
+    if bad:
+        return {"ok": False, "state": "violation", "axes": results,
+                "detail": "; ".join(results[k]["detail"] for k in bad)}
+    if unknown:
+        return {"ok": None, "state": "unverifiable", "axes": results,
+                "why": "; ".join(results[k]["why"] for k in unknown)}
+    return {"ok": True, "state": "checked", "axes": results,
+            "detail": "; ".join(results[k]["detail"] for k in results)}
+
+
 def check_mesh_scale(pdf_path, source: pd.DataFrame, value: str | None = None,
                      drawn: pd.DataFrame | None = None) -> dict:
     """The colour scale a MESH figure prints, checked against the data it DREW.

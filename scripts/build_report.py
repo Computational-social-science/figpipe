@@ -759,6 +759,14 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
                     "its pad but not for the tick labels, which fell off the page. Measured after "
                     "the fix: a field with data in [-3.77, 3.07] prints -3..3 and nothing overflows.",
                     "figpipe/composite.py", meta="2 stacked defects, 3 tests"),
+        deliverable("A raster figure's AXES are checked too", "A field or a mesh is one raster "
+                    "path, so its cell values never reach the PDF. Two claims do: the colour scale, "
+                    "and the axis tick labels, which state the coordinates the raster spans. A "
+                    "figure whose x ticks stop at 8 while the data runs to 10 places part of itself "
+                    "outside its own stated coordinates. The asymmetry matters and is the same one "
+                    "the scale needed: ticks that EXCEED the data are normal padding, ticks that "
+                    "STOP SHORT are a defect. Measured on 29 raster tasks: zero violations.",
+                    "figpipe/semantics.py", meta="7 tests, axis labels read by position"),
         deliverable("The printed scale is checked against the data", "The colour bar's tick "
                     "labels are the only numeric statement a field figure makes, so they are the "
                     "only claim the rendered file can be held to. A check reads the rightmost "

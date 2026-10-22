@@ -822,9 +822,25 @@ def op_verify_semantics(ctx: SkillContext, fig, pdf_path):
                         "severity": "hard"})
                 scale_note = (f"; scale check: {scale['state']}"
                               + (f" ({scale.get('detail')})" if scale.get("detail") else ""))
+                # THE AXIS IS THE SECOND CHECKABLE CLAIM A RASTER FIGURE MAKES. Its tick labels are
+                # text and state which coordinates the raster spans. A field whose x ticks stop at 8
+                # while the data runs to 10 places the rightmost fifth of the figure outside the
+                # stated coordinates.
+                axis_note = ""
+                ax_x, ax_y = kw.get("x"), kw.get("y")
+                if ax_x and ax_y and ax_x in ctx.data.columns and ax_y in ctx.data.columns:
+                    axis = semantics.check_axis_range(pdf_path, ctx.data[ax_x], ctx.data[ax_y])
+                    if axis.get("state") == "violation":
+                        ctx.findings.append({
+                            "check": "semantics.axis_range",
+                            "detail": (f"panel {i} ({panel.draw}): the printed axes do not cover "
+                                       f"the coordinates drawn -- {axis.get('detail')}"),
+                            "severity": "hard"})
+                    axis_note = (f"; axis check: {axis['state']}"
+                                 + (f" ({axis.get('detail')})" if axis.get("detail") else ""))
                 ctx.trace.append(
                     f"verify.semantics(mesh panel {i}: {panel.draw} -- {why}; "
-                    f"data-level check: {res['note']}{scale_note})")
+                    f"data-level check: {res['note']}{scale_note}{axis_note})")
             else:
                 ctx.trace.append(f"verify.semantics(skip panel {i}: {panel.draw})")
             continue

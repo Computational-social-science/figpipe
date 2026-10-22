@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-22T07:38:13",
+  "run_at": "2026-10-22T08:52:19",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -9,10 +9,10 @@
     "  passed 8, failed 0",
     "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
     "  wrote knowledge\\evolution_report.json",
-    "  lean: tracked 78.0 -> 78.0 MB, worktree 138.4 -> 133.3 MB"
+    "  lean: tracked 78.0 -> 78.0 MB, worktree 132.5 -> 130.8 MB"
   ],
   "tests_ok": true,
-  "tests_summary": "708 passed, 3 skipped, 1 warning in 271.48s (0:04:31)",
+  "tests_summary": "709 passed, 3 skipped, 1 warning in 268.82s (0:04:28)",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
@@ -604,9 +604,9 @@
     "benchmark_ok": 139,
     "benchmark_infrastructure_failures": 0,
     "benchmark_success_rate": 1.0,
-    "benchmark_mean_distance": 0.305,
-    "benchmark_anchor_single": 0.343,
-    "benchmark_anchor_distance": 0.343,
+    "benchmark_mean_distance": 0.303,
+    "benchmark_anchor_single": 0.335,
+    "benchmark_anchor_distance": 0.335,
     "benchmark_shipped_anchor_single": 0.295,
     "benchmark_shipped_anchor_distance": 0.295,
     "benchmark_unsupported": 11,
@@ -614,13 +614,41 @@
     "benchmark_official_improvement": 37.25,
     "statistics_reproduced": 15,
     "knowledge_version": 16,
-    "tests": 708
+    "tests": 709
   },
   "capabilities_delta": {
-    "changed": false,
-    "delta": {},
+    "changed": true,
+    "delta": {
+      "benchmark_mean_distance": {
+        "before": 0.305,
+        "after": 0.303
+      },
+      "benchmark_anchor_single": {
+        "before": 0.343,
+        "after": 0.335
+      },
+      "benchmark_anchor_distance": {
+        "before": 0.343,
+        "after": 0.335
+      },
+      "tests": {
+        "before": 708,
+        "after": 709
+      }
+    },
     "verdict": {
-      "gains": [],
+      "gains": [
+        {
+          "field": "benchmark_anchor_single",
+          "before": 0.343,
+          "after": 0.335
+        },
+        {
+          "field": "tests",
+          "before": 708,
+          "after": 709
+        }
+      ],
       "regressions": [],
       "corrections": [],
       "not_compared": [],

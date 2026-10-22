@@ -4207,3 +4207,71 @@ that the DATA REACHING THE DRAWER is the data the chart type is about. A quiver'
 field; a scalar drawer cannot be right about it, whatever the checker does.
 
 Suite: 708 passed, 3 skipped.
+
+
+## 129. Coverage reached 100% and the next question is depth, not breadth (2026-10-22)
+
+Every one of the 139 executed tasks now has at least one checked claim about its printed numbers.
+For 110 that claim is full semantic re-derivation; for 29 it is the colour-scale check on a raster
+figure. The count is at its ceiling -- there is nothing left to move from "unverifiable" to
+"checked", because that bucket is empty.
+
+So the useful question changed: **29 tasks have exactly ONE claim checked, and a raster figure makes
+more than one claim that reaches the PDF.** The axis tick labels are the second: they are text, and
+they state which coordinates the raster spans.
+
+`check_axis_range` reads them. An axis is identified by POSITION rather than by a caller flag -- x
+labels in a row along the bottom, y labels in a column along the left -- which is where a Cartesian
+plot puts them and where `composite` leaves them. That is also why the colour bar (a right-hand
+column) is never mistaken for one.
+
+MEASURED on a field figure over x in [0, 10] and y in [0, 5]:
+
+    checked     x: data [0, 10]; ticks [0, 10]; shortfall 0%
+                y: data [0, 5];  ticks [0, 5];  shortfall 0%
+    violation   pass x*5  ->  x: data [0, 50]; ticks [0, 10]; shortfall 80%
+    checked     pass x/2  ->  ticks exceed the data, which is normal axis padding
+
+THE ASYMMETRY IS THE POINT, and it is the same one the colour scale needed: a printed range that
+EXCEEDS the data is fine (matplotlib pads axes), while one that STOPS SHORT leaves part of the figure
+outside the stated coordinates. The check measures the shortfall only.
+
+THE GENERAL SHAPE, now seen at three levels: coverage (does a check exist) -> depth (how many claims
+per figure) -> strength (does the check compare the right two quantities). This project has spent
+sixty rounds on the first two. The third is where every false positive of the last five rounds came
+from, and it is not a coverage number at all.
+
+Suite: 715 passed, 3 skipped.
+
+
+## 130. The axis check found ten defects that were all in the check (2026-10-22)
+
+Adding the axis-range check produced TEN hard findings on the first pool run, every one a y-axis
+"shortfall". All ten were false, and the cause was one line.
+
+AXIS LABELS ARE RIGHT-ALIGNED AGAINST THE AXIS, so a minus sign shifts a label's LEFT edge. Measured
+on a y axis over [-9, 9]:
+
+    '7.5'  at x0=27.5      '-2.5' at x0=24.5
+    '2.5'  at x0=27.5      '-5.0' at x0=24.5
+    '0.0'  at x0=27.5      '-7.5' at x0=24.5
+
+The window was anchored on the leftmost word, so it captured ONLY the negative half and the axis
+looked like it spanned [-7.5, -2.5]. Ten pool tasks were flagged for a defect that did not exist.
+
+THE FIX: anchor the window on the axis TITLE (the single letter, which sits furthest out) and make it
+wide enough to span both alignments. Measured after: `ticks [-7.5, 7.5]`, shortfall 8%, checked.
+
+THIS IS THE FIFTH ROUND IN A ROW where a new check produced confident wrong findings before it
+produced right ones -- the colour scale needed four rounds, the axis needed one. The pattern is not
+"checks are hard"; it is narrower and more useful:
+
+    A check that READS A RENDERED PAGE must model the page's LAYOUT.
+    Text positions are not arbitrary -- alignment, sign width, padding and
+    rotation all move a label, and each one is a way to read the wrong set.
+
+THE ASYMMETRY THAT KEPT ITS SHAPE: ticks that EXCEED the data are normal padding and must pass;
+ticks that STOP SHORT are the defect. Both the colour scale and the axes needed exactly this
+distinction, and in both cases the first version measured a signed difference instead of a shortfall.
+
+Suite: 716 passed, 3 skipped.
