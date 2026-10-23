@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-24T03:15:46",
+  "run_at": "2026-10-24T04:25:31",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -9,19 +9,16 @@
     "  passed 8, failed 0",
     "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
     "  wrote knowledge\\evolution_report.json",
-    "  lean: tracked 79.3 -> 79.3 MB, worktree 133.2 -> 131.6 MB"
+    "  lean: tracked 79.3 -> 79.3 MB, worktree 96.4 -> 94.7 MB"
   ],
   "tests_ok": true,
-  "tests_summary": "854 passed, 2 skipped, 1 warning in 359.01s (0:05:59)",
+  "tests_summary": "853 passed, 3 skipped, 1 warning in 357.77s (0:05:57)",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
   "published": {
     "pushed": false,
-    "withheld": [],
-    "blocked_deletions": [],
-    "skipped": true,
-    "reason": "no knowledge change: the run record stays uncommitted for the next run"
+    "reason": "not yet published"
   },
   "check_results": {
     "L01": {
@@ -668,10 +665,10 @@
     "skills": 16,
     "operators": 21,
     "benchmark_tasks": 150,
-    "benchmark_ok": 138,
-    "benchmark_infrastructure_failures": 1,
+    "benchmark_ok": 139,
+    "benchmark_infrastructure_failures": 0,
     "benchmark_success_rate": 1.0,
-    "benchmark_mean_distance": 0.279,
+    "benchmark_mean_distance": 0.193,
     "benchmark_anchor_single": 0.225,
     "benchmark_anchor_distance": 0.225,
     "benchmark_shipped_anchor_single": 0.205,
@@ -681,19 +678,42 @@
     "benchmark_official_improvement": null,
     "statistics_reproduced": 15,
     "knowledge_version": 16,
-    "tests": 854
+    "tests": 853
   },
   "capabilities_delta": {
-    "changed": false,
-    "delta": {},
+    "changed": true,
+    "delta": {
+      "benchmark_ok": {
+        "before": 138,
+        "after": 139
+      },
+      "benchmark_infrastructure_failures": {
+        "before": 1,
+        "after": 0
+      },
+      "benchmark_mean_distance": {
+        "before": 0.279,
+        "after": 0.193
+      },
+      "tests": {
+        "before": 854,
+        "after": 853
+      }
+    },
     "verdict": {
       "gains": [],
-      "regressions": [],
+      "regressions": [
+        {
+          "field": "tests",
+          "before": 854,
+          "after": 853
+        }
+      ],
       "corrections": [],
       "not_compared": [],
       "instrument_changed": false,
       "membership_broken": false,
-      "ok": true,
+      "ok": false,
       "judged_fields": [
         "benchmark_anchor_single",
         "benchmark_hard_findings",
@@ -709,8 +729,14 @@
       ]
     }
   },
-  "ok": true,
-  "capability_ok": true,
-  "capability_regressions": [],
-  "publish_note": "The publish outcome is recorded after the commit that carries this run, so it describes the push triggered by this run; the file's own commit is made by the next scheduled run."
+  "ok": false,
+  "capability_ok": false,
+  "capability_regressions": [
+    {
+      "field": "tests",
+      "before": 854,
+      "after": 853
+    }
+  ],
+  "publish_note": "capability regression detected; record kept but the run exits non-zero (re-run with --accept-capability-regression to accept)"
 }
