@@ -659,6 +659,13 @@ def op_verify_audit(ctx: SkillContext, fig, pdf_path):
     for f in hard:
         ctx.findings.append({"check": f["check"], "detail": f["detail"],
                              "severity": "hard"})
+    # WHAT THE CHECKS EXAMINED, carried into the trace so a zero can be read. A finding count with
+    # no denominator is the ambiguity this project spent five rounds learning to resolve.
+    _exam = rep.get("examined") or {}
+    if _exam:
+        ctx.trace.append("verify.audit.examined: " + "; ".join(
+            f"{c['check']} {c['n_findings']}/{c['denominator']} {c['unit']}={c['state']}"
+            for c in _exam.get("checks", [])))
     # A LEGEND THAT COVERS A DATA MARK is the same kind of defect as text below 5 pt: something a
     # reader cannot see. `overlapping_text` cannot catch it (it compares text to text), so the check
     # walks the drawing paths instead.

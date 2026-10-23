@@ -4914,3 +4914,47 @@ than the one I first wrote -- it pins the interaction between two layers instead
 output.
 
 Suite: 813 passed, 3 skipped.
+
+
+## 145. Every check now carries its denominator (2026-10-23)
+
+Rounds 82-86 established that a zero is ambiguous, and the project got it wrong twice in opposite
+directions:
+
+    legend_occlusions: 0 over 139 figures, of which NONE has a legend   -> VACUOUS
+    text_collision:    0 over 139 figures carrying 101-245 glyphs each  -> MEANINGFUL
+
+The second could only be told from the first because the glyph count was measured **by hand in a
+test**. A hand measurement is not a mechanism, and the next check would have needed its own hand
+measurement.
+
+`figpipe/examined.py` makes the denominator part of the return value. Each check reports:
+
+    Examined(check, denominator, unit, n_findings)
+
+and derives its own state:
+
+    pass            found nothing, examined something
+    findings        found something
+    not_exercised   found nothing because there was NOTHING TO EXAMINE
+
+THREE STATES, NOT TWO. The third is the one that was missing, and reporting it as `pass` is exactly
+how a vacuous zero gets read as a clean result.
+
+MEASURED, on the two cases that must differ:
+
+    a real line figure      font_size  0 over 14 text spans -> pass
+                            overlap    0 over 14 text spans -> pass
+    a page with NO text     font_size  0 over  0 text spans -> not_exercised
+                            overlap    0 over  0 text spans -> not_exercised
+                            verdict: "3 of 3 checks examined NOTHING, so their zero is not a pass"
+
+The denominators now travel into the run trace, so a reader of a figure's trace sees
+`font_size 0/14 text spans=pass` rather than a bare zero. A field nobody reads is not a mechanism
+either.
+
+THE UNIT MATTERS AS MUCH AS THE COUNT. "0 findings over 139 tasks" is the aggregate defect in its
+usual form -- the denominator must be in the SAME UNITS as the check. Glyphs for a glyph check,
+frames for a legend check, text spans for a size check. The task count is never the right answer.
+
+Suite: 819 passed, 3 skipped.

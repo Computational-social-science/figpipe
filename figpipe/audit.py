@@ -248,6 +248,29 @@ def overlapping_glyphs(pdf_path, min_ratio: float = 0.25):
     return out
 
 
+def _all_text_spans(pdf_path) -> list:
+    """Every non-empty text span on the page, as the denominator for text checks.
+
+    `text_spans` returns only the spans OUTSIDE the size band, so it cannot say how many exist. This
+    counts them without judging them.
+    """
+    pymupdf = _require_pymupdf()
+    if pymupdf is None:
+        return []
+    out = []
+    doc = pymupdf.open(str(pdf_path))
+    try:
+        for page in doc:
+            for block in page.get_text("dict").get("blocks", []):
+                for line in block.get("lines", []):
+                    for span in line.get("spans", []):
+                        if span.get("text", "").strip():
+                            out.append((span["bbox"], span.get("size"), span["text"]))
+    finally:
+        doc.close()
+    return out
+
+
 def audit(pdf_path, min_pt=MIN_PT_DEFAULT, max_pt=MAX_PT_DEFAULT,
           expect_width_mm=None, check_overlap=True) -> dict:
     """Run every check and return a structured report.
@@ -262,7 +285,17 @@ def audit(pdf_path, min_pt=MIN_PT_DEFAULT, max_pt=MAX_PT_DEFAULT,
         report["findings"].append({"check": "exists", "detail": "file not found"})
         return report
 
+    # WHAT EACH CHECK EXAMINED, in its own units. A count with no denominator cannot be read: a
+    # zero may mean "looked and found nothing" or "had nothing to look at", and this project has
+    # recorded both cases and confused them.
+    from . import examined as _examined
+    _exam: list = []
+
     spans = text_spans(p, min_pt, max_pt)
+    # HOW MANY TEXT SPANS EXIST AT ALL -- the denominator for the font-size check. `text_spans`
+    # returns only the OUT-OF-BAND ones, so it cannot serve as its own denominator.
+    _all_spans = _all_text_spans(p)
+    _exam.append(_examined.Examined("font_size", len(_all_spans), "text spans", len(spans)))
     if spans:
         sizes = sorted({s[1] for s in spans})
         report["findings"].append({
@@ -296,6 +329,7 @@ def audit(pdf_path, min_pt=MIN_PT_DEFAULT, max_pt=MAX_PT_DEFAULT,
     fonts = embedded_fonts(p)
     report["fonts"] = fonts
     type3 = [f for f in fonts if "type3" in (f["type"] or "").lower()]
+    _exam.append(_examined.Examined("font_type", len(fonts), "embedded fonts", len(type3)))
     if type3:
         report["findings"].append({
             "check": "font_type", "detail":
@@ -305,6 +339,7 @@ def audit(pdf_path, min_pt=MIN_PT_DEFAULT, max_pt=MAX_PT_DEFAULT,
 
     if check_overlap:
         overlaps = overlapping_text(p)
+        _exam.append(_examined.Examined("overlap", len(_all_spans), "text spans", len(overlaps)))
         if overlaps:
             report["findings"].append({
                 "check": "overlap", "detail":
@@ -312,6 +347,9 @@ def audit(pdf_path, min_pt=MIN_PT_DEFAULT, max_pt=MAX_PT_DEFAULT,
             # Overlap is a lead, not automatically a failure: deliberate label placement on a
             # band is legitimate. Reported but does not set ok=False.
 
+    # EVERY CHECK NOW CARRIES WHAT IT LOOKED AT. `not_exercised` is kept separate from `pass`
+    # because a zero over no objects is not a clean result -- that distinction is the whole point.
+    report["examined"] = _examined.summarise(_exam)
     return report
 
 def _legend_frames(page) -> list[tuple]:
