@@ -7,22 +7,22 @@
     "note": "deterministic metrics only; official combined score requires the benchmark's VLM scorer and is NOT claimed here"
   },
   "n_tasks": 150,
-  "n_ok": 139,
+  "n_ok": 138,
   "n_unsupported": 11,
-  "n_error": 0,
+  "n_error": 1,
   "n_infrastructure_failures": 0,
   "unsupported_types": {
     "3D": "unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this is a deliberate exclusion",
     "Polar/Radial": "SkillError: encode.polar: 'record_type' reduces to 2 distinct angle(s); a polar profile needs at least 3. This data has no angular reading -- use a bar or trend encoding.",
     "Network/Tree": "unsupported chart type: no graph-layout operator yet (backlog: node-link layout, not a chart encoding this library owns)"
   },
-  "mean_distance": 0.303,
+  "mean_distance": 0.305,
   "mean_baseline": 0.373,
   "mean_improvement": 0.069,
-  "improved": 119,
+  "improved": 118,
   "worse": 8,
   "ties": 12,
-  "mean_best_of_two": 0.298,
+  "mean_best_of_two": 0.299,
   "semantic_violations": 0,
   "decision_service": {
     "up": true,
@@ -51,12 +51,12 @@
     },
     "Box/Violin": {
       "n": 16,
-      "ok": 16,
-      "errors": 0,
-      "mean_distance": 0.305,
-      "mean_baseline": 0.421,
-      "mean_delta": 0.116,
-      "mean_shipped": 0.301
+      "ok": 15,
+      "errors": 1,
+      "mean_distance": 0.319,
+      "mean_baseline": 0.43,
+      "mean_delta": 0.111,
+      "mean_shipped": 0.315
     },
     "Composite": {
       "n": 3,
@@ -160,6 +160,11 @@
       "id": "Chart2NCode_7b87069f5442408286d1a4b0300eae18",
       "chart": "3D",
       "error": "unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this is a deliberate exclusion"
+    },
+    {
+      "id": "ChartNet-sample_46826fe4916b7d52",
+      "chart": "Box/Violin",
+      "error": "ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。"
     },
     {
       "id": "arxiv-ml-bar-line-v2__2605.21125",
@@ -270,7 +275,7 @@
       "findings": [],
       "official_code_score": {
         "available": true,
-        "score": 79.99456259958941,
+        "score": 99.99456259958941,
         "n_activated": 5,
         "scored": [
           "palette",
@@ -523,7 +528,7 @@
       },
       "hard_failures": 0,
       "checks_not_exercised": 0,
-      "legend_frames": 0,
+      "legend_frames": 1,
       "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
@@ -634,7 +639,7 @@
       "findings": [],
       "official_code_score": {
         "available": true,
-        "score": 79.99958532342455,
+        "score": 99.99958532342454,
         "n_activated": 5,
         "scored": [
           "palette",
@@ -766,7 +771,7 @@
       "findings": [],
       "official_code_score": {
         "available": true,
-        "score": 74.99613725897586,
+        "score": 99.99613725897586,
         "n_activated": 4,
         "scored": [
           "palette",
@@ -1331,7 +1336,7 @@
       },
       "hard_failures": 0,
       "checks_not_exercised": 0,
-      "legend_frames": 1,
+      "legend_frames": 2,
       "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
@@ -1963,7 +1968,7 @@
       "findings": [],
       "official_code_score": {
         "available": true,
-        "score": 75.0,
+        "score": 100.0,
         "n_activated": 4,
         "scored": [
           "palette",
@@ -2067,7 +2072,7 @@
       },
       "hard_failures": 0,
       "checks_not_exercised": 0,
-      "legend_frames": 0,
+      "legend_frames": 1,
       "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
@@ -2111,7 +2116,7 @@
       },
       "hard_failures": 0,
       "checks_not_exercised": 0,
-      "legend_frames": 0,
+      "legend_frames": 1,
       "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
@@ -2243,7 +2248,7 @@
       },
       "hard_failures": 0,
       "checks_not_exercised": 0,
-      "legend_frames": 0,
+      "legend_frames": 2,
       "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
@@ -2325,7 +2330,7 @@
       "findings": [],
       "official_code_score": {
         "available": true,
-        "score": 83.33206954086786,
+        "score": 99.99873620753452,
         "n_activated": 6,
         "scored": [
           "palette",
@@ -2683,7 +2688,7 @@
       "findings": [],
       "official_code_score": {
         "available": true,
-        "score": 83.33172475460078,
+        "score": 99.99839142126746,
         "n_activated": 6,
         "scored": [
           "palette",
@@ -2728,7 +2733,7 @@
       "findings": [],
       "official_code_score": {
         "available": true,
-        "score": 79.99863339962238,
+        "score": 99.99863339962239,
         "n_activated": 5,
         "scored": [
           "palette",
@@ -2899,7 +2904,7 @@
       "findings": [],
       "official_code_score": {
         "available": true,
-        "score": 83.33120594096178,
+        "score": 99.99787260762844,
         "n_activated": 6,
         "scored": [
           "palette",
@@ -2987,7 +2992,7 @@
       "findings": [],
       "official_code_score": {
         "available": true,
-        "score": 83.33169611703394,
+        "score": 99.9983627837006,
         "n_activated": 6,
         "scored": [
           "palette",
@@ -3120,7 +3125,7 @@
       "findings": [],
       "official_code_score": {
         "available": true,
-        "score": 66.66661599995824,
+        "score": 99.99994933329157,
         "n_activated": 3,
         "scored": [
           "palette",
@@ -3139,43 +3144,8 @@
       "chart": "Box/Violin",
       "panel_mode": "multi",
       "code_version": "d3e09ebe20f5",
-      "skill": "distribution_comparison",
-      "rationale": "box panel_row by panel_group",
-      "rows_used": 1402,
-      "status": "ok",
-      "distance": 0.093,
-      "baseline_distance": 0.29,
-      "delta": 0.197,
-      "selected": "styled",
-      "selected_distance": 0.085,
-      "selected_gain": 0.205,
-      "selection_margin": 0.191,
-      "components": {
-        "palette": 0.101,
-        "aspect": 0.006,
-        "ink": 0.16
-      },
-      "hard_failures": 0,
-      "checks_not_exercised": 0,
-      "legend_frames": 0,
-      "legend_occlusions": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 99.99630963227158,
-        "n_activated": 4,
-        "scored": [
-          "figure_aspect",
-          "linewidth",
-          "grid",
-          "legend_frame"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": [],
-      "semantic_checked": "checked"
+      "status": "error",
+      "error": "ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。"
     },
     {
       "id": "ChartNet-sample_51138e34911000f6",
@@ -3246,7 +3216,7 @@
       "findings": [],
       "official_code_score": {
         "available": true,
-        "score": 79.99608406846119,
+        "score": 99.99608406846117,
         "n_activated": 5,
         "scored": [
           "palette",
@@ -3290,7 +3260,7 @@
       "findings": [],
       "official_code_score": {
         "available": true,
-        "score": 79.99733731433227,
+        "score": 99.99733731433227,
         "n_activated": 5,
         "scored": [
           "palette",
@@ -3419,7 +3389,7 @@
       "findings": [],
       "official_code_score": {
         "available": true,
-        "score": 79.999858292476,
+        "score": 99.999858292476,
         "n_activated": 5,
         "scored": [
           "palette",
@@ -3491,7 +3461,7 @@
       },
       "hard_failures": 0,
       "checks_not_exercised": 0,
-      "legend_frames": 0,
+      "legend_frames": 1,
       "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
@@ -3613,7 +3583,7 @@
       },
       "hard_failures": 0,
       "checks_not_exercised": 0,
-      "legend_frames": 4,
+      "legend_frames": 5,
       "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
@@ -3658,7 +3628,7 @@
       "findings": [],
       "official_code_score": {
         "available": true,
-        "score": 79.99797661841838,
+        "score": 99.99797661841838,
         "n_activated": 5,
         "scored": [
           "palette",
@@ -3743,7 +3713,7 @@
       "findings": [],
       "official_code_score": {
         "available": true,
-        "score": 75.0,
+        "score": 100.0,
         "n_activated": 4,
         "scored": [
           "palette",
@@ -3786,7 +3756,7 @@
       "findings": [],
       "official_code_score": {
         "available": true,
-        "score": 85.71321939222675,
+        "score": 99.99893367794104,
         "n_activated": 7,
         "scored": [
           "palette",
@@ -3827,7 +3797,7 @@
       },
       "hard_failures": 0,
       "checks_not_exercised": 0,
-      "legend_frames": 0,
+      "legend_frames": 1,
       "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
@@ -3916,7 +3886,7 @@
       "findings": [],
       "official_code_score": {
         "available": true,
-        "score": 83.3331053722011,
+        "score": 99.99977203886777,
         "n_activated": 6,
         "scored": [
           "palette",
@@ -4048,7 +4018,7 @@
       "findings": [],
       "official_code_score": {
         "available": true,
-        "score": 79.99533438263202,
+        "score": 99.99533438263202,
         "n_activated": 5,
         "scored": [
           "palette",
@@ -4950,7 +4920,7 @@
       },
       "hard_failures": 0,
       "checks_not_exercised": 0,
-      "legend_frames": 0,
+      "legend_frames": 1,
       "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
@@ -5092,7 +5062,7 @@
       },
       "hard_failures": 0,
       "checks_not_exercised": 0,
-      "legend_frames": 0,
+      "legend_frames": 1,
       "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
@@ -5524,7 +5494,7 @@
       },
       "hard_failures": 0,
       "checks_not_exercised": 0,
-      "legend_frames": 0,
+      "legend_frames": 1,
       "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
@@ -6027,24 +5997,24 @@
   },
   "complete_membership": true,
   "semantic_coverage": {
-    "checked": 110,
+    "checked": 109,
     "mesh_scale_checked": 29,
     "skipped": 0,
     "unverifiable": 0,
     "absent": 0,
-    "n": 139,
+    "n": 138,
     "note": "`skipped` tasks were drawn by a drawer with no semantic rule: their printed numbers were NOT re-derived from the data. A pass on such a task is a statement about geometry, not about correctness."
   },
   "checks_examined": {
-    "lines": 139,
+    "lines": 138,
     "not_exercised": 0,
     "note": "`not_exercised` counts checks whose denominator was zero -- they found nothing because there was nothing to examine, and that is NOT a pass. A zero from such a check says nothing about the figure."
   },
-  "legend_frames": 41,
+  "legend_frames": 53,
   "legend_occlusions": 0,
   "legend_coverage": {
-    "n_measured": 139,
-    "n_ok": 139,
+    "n_measured": 138,
+    "n_ok": 138,
     "note": "`legend_frames` and `legend_occlusions` are totals over the n_measured rows ONLY. Rows measured before the field existed are not counted and are not marked stale, because the fingerprint covers rendering code, not the report schema. A zero with n_measured == 0 means the check had nothing to look at."
   },
   "benchmark_anchor_distance": 0.335,
@@ -6071,9 +6041,9 @@
     "channel": "code_deviation",
     "weight_upstream": 0.35,
     "note": "official deterministic channel only; the 0.65 vision channel is NOT run, so this is not the combined score",
-    "n_scored": 109,
+    "n_scored": 108,
     "n_unavailable": 30,
-    "mean_score": 95.54,
+    "mean_score": 98.88,
     "min_score": 66.67,
     "max_score": 100.0
   },
@@ -6151,7 +6121,6 @@
       "ChartNet-sample_3a712400d6efe5ca",
       "ChartNet-sample_3d0ebd7ea1e10bf3",
       "ChartNet-sample_42a8557ef11775e9",
-      "ChartNet-sample_46826fe4916b7d52",
       "ChartNet-sample_51138e34911000f6",
       "ChartNet-sample_55e97056fbbde5b6__single",
       "ChartNet-sample_575be33996f0155c",
@@ -6222,22 +6191,22 @@
     ],
     "stale": [],
     "unknown": [],
-    "n_fresh": 139,
+    "n_fresh": 138,
     "n_stale": 0,
     "n_unknown": 0
   },
   "stale_tasks": [],
   "n_stale": 0,
   "n_unknown": 0,
-  "n_fresh": 139,
+  "n_fresh": 138,
   "selection": {
-    "n": 139,
-    "shipped_mean": 0.289,
-    "always_styled_mean": 0.303,
+    "n": 138,
+    "shipped_mean": 0.29,
+    "always_styled_mean": 0.305,
     "plain_mean": 0.373,
     "gain_vs_always_styled": 0.014,
-    "gain_vs_plain": 0.084,
-    "picked_styled": 131,
+    "gain_vs_plain": 0.083,
+    "picked_styled": 130,
     "picked_plain": 8,
     "rule": "closer of plain/styled to the reference; the reference is an input"
   }

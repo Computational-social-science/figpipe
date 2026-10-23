@@ -29,7 +29,11 @@ import pandas as pd
 
 #: Drawers this emitter can reproduce as matplotlib code.
 SUPPORTED = ("trend_band", "scatter_fit", "histogram", "bar_with_errors",
-             "boxplot", "line_series", "heatmap", "tile_diverging")
+             "boxplot", "line_series", "heatmap", "tile_diverging",
+             # `grouped_bars` is what `op_encode_bars` draws. It was missing, so the bench rebuilt
+             # every grouped-bar panel as `line_series` and the code channel scored a different
+             # chart type than the figure -- 18 of the 22 tasks below 90.
+             "grouped_bars")
 
 
 class CodegenError(ValueError):
@@ -203,6 +207,31 @@ def emit_panel(panel, index: int = 0, *, width_mm: float = 183.0,
         lines.append(f"ax.set_xticks(np.arange(len(df)))")
         lines.append(f"ax.set_xticklabels([str(v) for v in df[{x!r}]], rotation=30)")
         lines.append(f"ax.set_ylabel({_fmt(kw.get('ylabel') or y)})")
+    elif draw == "grouped_bars":
+        # GROUPED BARS: one group per category level, one bar per measure. This is what
+        # `op_encode_bars` draws; emitting it as lines (the old fallback) made the code channel
+        # score a different chart type than the figure.
+        x = kw["x"]
+        ycols = list(kw["ycols"])
+        labels = kw.get("labels") or {c: c for c in ycols}
+        lines.append(f"levels = [str(v) for v in df[{x!r}]]")
+        lines.append(f"xs = np.arange(len(levels))")
+        lines.append(f"width = 0.8 / {len(ycols)}")
+        # A DISTINCT COLOUR PER SERIES. The fallback list is used when no palette was inferred, so
+        # two series never share one colour -- sharing it fails the palette dimension by construction.
+        _fallback = ("#0072b2", "#d55e00", "#009e73", "#e69f00", "#56b4e9", "#f0e442")
+        for k, col in enumerate(ycols):
+            colour = (palette[k % len(palette)] if palette
+                      else _fallback[k % len(_fallback)])
+            offset = (k - (len(ycols) - 1) / 2.0)
+            lines.append(
+                f"ax.bar(xs + {offset!r} * width, df[{col!r}], width=width, "
+                f"color={_fmt(colour)}, edgecolor='black', linewidth=0.4, "
+                f"label={_fmt(str(labels.get(col, col)))})")
+        lines.append(f"ax.set_xticks(xs)")
+        lines.append(f"ax.set_xticklabels(levels, rotation=30)")
+        lines.append(f"ax.set_ylabel({_fmt(kw.get('ylabel') or '')})")
+        lines.append("ax.legend(frameon=False)")
     elif draw == "boxplot":
         group, value = kw["group"], kw["value"]
         lines.append(f"groups = [g for g in dict.fromkeys(df[{group!r}])]")

@@ -775,7 +775,11 @@ def _panel_for(skill, data, params):
     if skill == "matrix_plate":
         return composite.Panel("heatmap", data, {})
     if skill == "grouped_measures":
-        return composite.Panel("line_series", data,
+        # THE PANEL MUST BE THE ONE THE SKILL DRAWS. `op_encode_bars` creates `grouped_bars`;
+        # rebuilding it as `line_series` made the emitted script draw LINES where the reference draws
+        # BARS, and the official scorer then compared a line chart's features against a bar chart's.
+        # 18 of the 22 tasks below 90 were this skill (mean 79.67 against the pool's 95.54).
+        return composite.Panel("grouped_bars", data,
                                {"x": params["x"], "ycols": list(params["ycols"])})
     raise codegen.CodegenError(f"skill {skill!r} has no code emitter yet")
 

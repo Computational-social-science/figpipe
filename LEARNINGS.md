@@ -5131,3 +5131,52 @@ because the pool's data does not pass a `series`/`group` column to them. Predict
 measuring from output gave different answers, and the measurement is the one that counts.
 
 Suite: 836 passed, 3 skipped.
+
+
+## 150. The code channel was scoring a different chart type, and fixing it moved the score (2026-10-23)
+
+**This is the first round since 2026-10-19 that changed the official metric.**
+
+    official code channel:  95.54 -> 98.88    (+3.34)
+    grouped_measures:       79.67 -> 100.00   (18 of 18 at 100)
+    pool distribution:      103 of 108 tasks at 100
+
+HOW IT WAS FOUND, and it took looking at the SCORE instead of the defect count:
+
+    109 tasks with a code score, mean 95.54, MEDIAN 100.00
+    86 at 100, 22 below 90
+    of those 22, EIGHTEEN were `grouped_measures`   <- not a dimension problem, a skill problem
+
+THE DEFECT: the official score compares the EMITTED SCRIPT against the reference code, and for this
+one skill the script described a different chart than the figure:
+
+    op_encode_bars:  composite.Panel("grouped_bars", ...)     <- what is DRAWN
+    _panel_for:      composite.Panel("line_series",  ...)     <- what is EMITTED
+
+WHY THE FALLBACK EXISTED: `codegen.SUPPORTED` had no `grouped_bars`, so emitting the real drawer
+raised CodegenError and the bench used the nearest emittable one. **The fallback was not a typo -- it
+was the only option while the emitter did not exist.** Fixing the symptom would have meant lying about
+the panel; the fix was to write the emitter.
+
+MEASURED, on a reference that looks like a grouped bar chart:
+
+    line_series   score = 72.94
+    grouped_bars  score = 99.46     (+26.5)
+
+SAME ACTIVATED DIMENSIONS BOTH TIMES. The difference was the chart type, not the scoring.
+
+TWO MORE DEFECTS FOUND ON THE WAY:
+  * both series got the same colour (`palette[k % len(palette)]` with an empty palette fell through
+    to one fallback), which fails the palette dimension by construction
+  * `grouped_bars` was missing from `SUPPORTED` even after the emitter was written -- the tuple and
+    the branch are two places, and I had only changed one
+
+WHAT THE REMAINING 4 LOSERS LOOK LIKE: one each of trend_with_uncertainty, faceted_distribution,
+matrix_plate, scatter_relationship. Four different skills, no pattern -- which is the difference
+between a systematic defect and individual cases. The systematic one is gone.
+
+THE LESSON THAT TOOK 90 ROUNDS: for eighty rounds I measured DEFECT COUNTS, coverage, and checks
+added. The number that moved was found by asking "which tasks score LOW, and what do they have in
+common" -- a question about the SCORE, not about the pipeline's self-knowledge.
+
+Suite: 842 passed, 3 skipped.
