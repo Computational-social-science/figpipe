@@ -5331,3 +5331,49 @@ name -- the same shape as every defect this project has recorded: a control buil
 of its target, silently wrong for every target that lacks it.
 
 Suite: 854 passed, 2 skipped.
+
+
+## 154. I read a distance as a score and nearly reported an improvement as a regression (2026-10-24)
+
+The scheduled run after the palette fix reported:
+
+    anchors styled 0.335 -> 0.225
+
+I flagged it as an anomaly worth investigating. **It is an improvement of 0.110**, and the direction
+was recorded in the code the whole time:
+
+    CAPABILITY_DIRECTION["benchmark_anchor_single"] = -1     # lower is better
+    benchmark_anchor_single is a DISTANCE, not a score
+
+I have read that constant in this session. I still read the number as a score when it moved. **A name
+that says "anchor" and a value between 0 and 1 does not tell you the direction; the direction is a
+separate fact and I did not consult it.**
+
+### What the loop did, and it did the right thing
+
+    02:33:46  anchor 0.335 -> 0.225  instrument_changed=True   gains=[]  regressions=[]
+    03:04:13  anchor 0.225           instrument_changed=False  gains=['benchmark_official_code_score']
+
+The palette fix changed `CODE_VERSION` (f3d542fc3caa), so the run that saw the anchor move ALSO saw
+the instrument change -- and `capability_delta` correctly refused to attribute the movement to
+capability. The next run had the same instrument and no anchor movement to judge.
+
+**So the machine handled this correctly and my narration did not.** That is the useful distinction:
+the project's guard was working; the human-readable summary I produced from it was wrong.
+
+### The causal chain, for the record
+
+    palette area floor 0.004 -> 0.0004 + chroma test
+      -> candidate palettes 9 colours -> 24 colours
+      -> official code channel 75.44 -> 79.02   (+3.58, the goal)
+      -> style DISTANCE 0.335 -> 0.225          (-0.110, also an improvement)
+
+Both metrics moved in the SAME favourable direction. The style distance improved because
+`_palette` weights by the REFERENCE's counts and takes the minimum over candidates, so more candidate
+colours can only lower it -- the extra colours are candidates for a match, not competitors for mass.
+
+I had earlier reasoned that "24 colours split the mass so each share shrinks" and that was wrong for
+this function. It would be right for a symmetric distribution distance; it is not what this code does.
+**Reading the function's body corrected a conclusion I had already written down.**
+
+Suite: 854 passed, 2 skipped.
