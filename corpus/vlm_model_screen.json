@@ -182,5 +182,235 @@
   "n_correct": 3,
   "passed": false,
   "verdict": "gemma3:12b answered 3 of 4 controls correctly on `panel_count`; its labels on this field must NOT be trusted"
+ },
+ "gemma3:4b": {
+  "model": "gemma3:4b",
+  "field": "panel_count",
+  "controls": [
+   {
+    "control": "blank",
+    "expect": 0,
+    "got": 1,
+    "raw": "1",
+    "why": "a page with no panels; a model that reports one is fabricating",
+    "error": null,
+    "correct": false
+   },
+   {
+    "control": "noise",
+    "expect": 0,
+    "got": 0,
+    "raw": "0",
+    "why": "an image with no axes at all; same test with texture present",
+    "error": null,
+    "correct": true
+   },
+   {
+    "control": "one-panel",
+    "expect": 1,
+    "got": 1,
+    "raw": "1",
+    "why": "a single subplot, the most common real case",
+    "error": null,
+    "correct": true
+   },
+   {
+    "control": "three-panel",
+    "expect": 3,
+    "got": 3,
+    "raw": "3",
+    "why": "three subplots; a model counting axes rather than panels will miss",
+    "error": null,
+    "correct": true
+   }
+  ],
+  "n": 4,
+  "n_correct": 3,
+  "passed": false,
+  "verdict": "gemma3:4b answered 3 of 4 controls correctly on `panel_count`; its labels on this field must NOT be trusted"
+ },
+ "translategemma:12b": {
+  "model": "translategemma:12b",
+  "field": "panel_count",
+  "controls": [
+   {
+    "control": "blank",
+    "expect": 0,
+    "got": 0,
+    "raw": "0\n",
+    "why": "a page with no panels; a model that reports one is fabricating",
+    "error": null,
+    "correct": true
+   },
+   {
+    "control": "noise",
+    "expect": 0,
+    "got": 0,
+    "raw": "0\n",
+    "why": "an image with no axes at all; same test with texture present",
+    "error": null,
+    "correct": true
+   },
+   {
+    "control": "one-panel",
+    "expect": 1,
+    "got": 1,
+    "raw": "1\n",
+    "why": "a single subplot, the most common real case",
+    "error": null,
+    "correct": true
+   },
+   {
+    "control": "three-panel",
+    "expect": 3,
+    "got": 4,
+    "raw": "4\n",
+    "why": "three subplots; a model counting axes rather than panels will miss",
+    "error": null,
+    "correct": false
+   }
+  ],
+  "n": 4,
+  "n_correct": 3,
+  "passed": false,
+  "verdict": "translategemma:12b answered 3 of 4 controls correctly on `panel_count`; its labels on this field must NOT be trusted"
+ },
+ "translategemma:27b": {
+  "model": "translategemma:27b",
+  "field": "panel_count",
+  "controls": [
+   {
+    "control": "blank",
+    "expect": 0,
+    "got": 3,
+    "raw": "3",
+    "why": "a page with no panels; a model that reports one is fabricating",
+    "error": null,
+    "correct": false
+   },
+   {
+    "control": "noise",
+    "expect": 0,
+    "got": 2,
+    "raw": "2",
+    "why": "an image with no axes at all; same test with texture present",
+    "error": null,
+    "correct": false
+   },
+   {
+    "control": "one-panel",
+    "expect": 1,
+    "got": 1,
+    "raw": "1",
+    "why": "a single subplot, the most common real case",
+    "error": null,
+    "correct": true
+   },
+   {
+    "control": "three-panel",
+    "expect": 3,
+    "got": 3,
+    "raw": "3",
+    "why": "three subplots; a model counting axes rather than panels will miss",
+    "error": null,
+    "correct": true
+   }
+  ],
+  "n": 4,
+  "n_correct": 2,
+  "passed": false,
+  "verdict": "translategemma:27b answered 2 of 4 controls correctly on `panel_count`; its labels on this field must NOT be trusted"
+ },
+ "translategemma:4b": {
+  "model": "translategemma:4b",
+  "field": "panel_count",
+  "controls": [
+   {
+    "control": "blank",
+    "expect": 0,
+    "got": 0,
+    "raw": "0\n",
+    "why": "a page with no panels; a model that reports one is fabricating",
+    "error": null,
+    "correct": true
+   },
+   {
+    "control": "noise",
+    "expect": 0,
+    "got": 0,
+    "raw": "0\n",
+    "why": "an image with no axes at all; same test with texture present",
+    "error": null,
+    "correct": true
+   },
+   {
+    "control": "one-panel",
+    "expect": 1,
+    "got": 1,
+    "raw": "1",
+    "why": "a single subplot, the most common real case",
+    "error": null,
+    "correct": true
+   },
+   {
+    "control": "three-panel",
+    "expect": 3,
+    "got": 3,
+    "raw": "3",
+    "why": "three subplots; a model counting axes rather than panels will miss",
+    "error": null,
+    "correct": true
+   }
+  ],
+  "n": 4,
+  "n_correct": 4,
+  "passed": true,
+  "verdict": "translategemma:4b answered all 4 controls correctly on `panel_count`; its labels on this field may be used as a CHECKED second opinion"
+ },
+ "translategemma:latest": {
+  "model": "translategemma:latest",
+  "field": "panel_count",
+  "controls": [
+   {
+    "control": "blank",
+    "expect": 0,
+    "got": 0,
+    "raw": "0\n",
+    "why": "a page with no panels; a model that reports one is fabricating",
+    "error": null,
+    "correct": true
+   },
+   {
+    "control": "noise",
+    "expect": 0,
+    "got": 0,
+    "raw": "0\n",
+    "why": "an image with no axes at all; same test with texture present",
+    "error": null,
+    "correct": true
+   },
+   {
+    "control": "one-panel",
+    "expect": 1,
+    "got": 1,
+    "raw": "1",
+    "why": "a single subplot, the most common real case",
+    "error": null,
+    "correct": true
+   },
+   {
+    "control": "three-panel",
+    "expect": 3,
+    "got": 3,
+    "raw": "3",
+    "why": "three subplots; a model counting axes rather than panels will miss",
+    "error": null,
+    "correct": true
+   }
+  ],
+  "n": 4,
+  "n_correct": 4,
+  "passed": true,
+  "verdict": "translategemma:latest answered all 4 controls correctly on `panel_count`; its labels on this field may be used as a CHECKED second opinion"
  }
 }

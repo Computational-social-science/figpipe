@@ -1,0 +1,96 @@
+{
+ "translategemma:4b": {
+  "controls": [
+   {
+    "control": "real-1panel",
+    "expect": 1,
+    "got": 1,
+    "raw": "1\n",
+    "error": null,
+    "correct": true
+   },
+   {
+    "control": "real-2panel",
+    "expect": 2,
+    "got": 2,
+    "raw": "2\n",
+    "error": null,
+    "correct": true
+   },
+   {
+    "control": "real-3panel",
+    "expect": 3,
+    "got": 3,
+    "raw": "3",
+    "error": null,
+    "correct": true
+   },
+   {
+    "control": "real-4panel",
+    "expect": 4,
+    "got": 4,
+    "raw": "4",
+    "error": null,
+    "correct": true
+   },
+   {
+    "control": "real-6panel",
+    "expect": 6,
+    "got": 6,
+    "raw": "6",
+    "error": null,
+    "correct": true
+   }
+  ],
+  "n_correct": 5,
+  "n": 5,
+  "passed": true
+ },
+ "translategemma:latest": {
+  "controls": [
+   {
+    "control": "real-1panel",
+    "expect": 1,
+    "got": 1,
+    "raw": "1\n",
+    "error": null,
+    "correct": true
+   },
+   {
+    "control": "real-2panel",
+    "expect": 2,
+    "got": 2,
+    "raw": "2\n",
+    "error": null,
+    "correct": true
+   },
+   {
+    "control": "real-3panel",
+    "expect": 3,
+    "got": 3,
+    "raw": "3",
+    "error": null,
+    "correct": true
+   },
+   {
+    "control": "real-4panel",
+    "expect": 4,
+    "got": 4,
+    "raw": "4",
+    "error": null,
+    "correct": true
+   },
+   {
+    "control": "real-6panel",
+    "expect": 6,
+    "got": 6,
+    "raw": "6",
+    "error": null,
+    "correct": true
+   }
+  ],
+  "n_correct": 5,
+  "n": 5,
+  "passed": true
+ }
+}

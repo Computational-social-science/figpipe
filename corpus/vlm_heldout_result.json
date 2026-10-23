@@ -1,0 +1,26 @@
+{
+ "translategemma:4b": [
+  {
+   "expect": 8,
+   "got": 6,
+   "correct": false
+  },
+  {
+   "expect": 9,
+   "got": 7,
+   "correct": false
+  }
+ ],
+ "translategemma:latest": [
+  {
+   "expect": 8,
+   "got": 6,
+   "correct": false
+  },
+  {
+   "expect": 9,
+   "got": 7,
+   "correct": false
+  }
+ ]
+}

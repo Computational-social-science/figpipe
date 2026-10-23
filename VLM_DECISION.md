@@ -147,3 +147,49 @@ The vision channel of the benchmark remains unrun, and the 0.65 share of the com
 unmeasured. That is the honest state, and it is now backed by a measurement rather than by an
 impression.
 
+## 2026-10-23 (later): two models passed the controls, and it was overfitting
+
+The screen was extended to all **nine** vision-capable local models, and two passed the four
+synthetic controls:
+
+    translategemma:4b      4/4  [OOOO]
+    translategemma:latest  4/4  [OOOO]
+
+A fifth control was then added -- a REAL figpipe figure, rendered through the project's own drawer,
+where the panel count is the INPUT to the layout rather than read back from the image. Both models
+passed that too, at counts 1, 2, 3, 4 and 6. **9 of 9.**
+
+That looked like the answer to the 0.65 question. It was not.
+
+### The held-out test
+
+The counts 1, 2, 3, 4 and 6 were chosen while designing the control. Counts 8 and 9 were not:
+
+    [FAIL] translategemma:4b      expect=8 got=6
+    [FAIL] translategemma:4b      expect=9 got=7
+    [FAIL] translategemma:latest  expect=8 got=6
+    [FAIL] translategemma:latest  expect=9 got=7
+
+Both models **systematically undercount by two** above six panels. The perfect score was not a
+measurement of counting; it was a model that had learned to answer within the range the controls
+covered.
+
+### Why this matters more than the result
+
+A control set whose values are all used in DESIGNING the control cannot detect overfitting. This is
+the same defect class this project has recorded repeatedly -- an aggregate that describes a different
+set than the one beside it -- applied to model screening: "9 of 9 controls" was true and it described
+a model that cannot count.
+
+**The rule, from now on:** a field screen must reserve at least one value that no other control uses,
+and a model that fails the held-out value fails the screen regardless of its score on the rest.
+
+`scripts/vlm_real_control.py` now spans 1, 2, 3, 4, 6, 8 and 9 panels, with the grid passed
+explicitly for counts that do not fill figpipe's default (the drawer correctly refuses a plate with
+an empty cell: "5 panels do not fill a 2x3 grid, leaving 1 empty cell(s)").
+
+### The state of the VLM question
+
+**No local model has passed.** The best available answer to "is a local VLM good enough" is still no,
+and it is now a stronger no than before: the one candidate that looked perfect was overfitting.
+

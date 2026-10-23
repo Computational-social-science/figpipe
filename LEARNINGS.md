@@ -4556,3 +4556,49 @@ THE VLM SCREEN, on the four most capable of nine vision-capable local models:
 None passed. Every failure is the same: inventing structure where there is none.
 
 Suite: 762 passed, 3 skipped.
+
+
+## 137. Two models passed every control, and it was overfitting (2026-10-23)
+
+The VLM screen was extended to all NINE vision-capable local models. Seven failed the four synthetic
+controls. Two passed:
+
+    translategemma:4b      4/4  [OOOO]
+    translategemma:latest  4/4  [OOOO]
+
+A fifth control was then added -- a REAL figpipe figure, rendered through the project's own drawer,
+where the panel count is the INPUT to the layout rather than read back from the image. Both models
+passed that too, at 1, 2, 3, 4 and 6 panels. **Nine of nine.**
+
+That looked like the answer to the 0.65 vision channel. It was not.
+
+THE HELD-OUT TEST. Counts 8 and 9 were never used while designing the control:
+
+    [FAIL] translategemma:4b      expect=8 got=6
+    [FAIL] translategemma:4b      expect=9 got=7
+    [FAIL] translategemma:latest  expect=8 got=6
+    [FAIL] translategemma:latest  expect=9 got=7
+
+Both models **systematically undercount by two above six panels.** The perfect score was not a
+measurement of counting; it was a model that had learned to answer within the range the controls
+covered.
+
+WHY THIS IS THE PROJECT'S OWN DEFECT CLASS, APPLIED TO MODEL SCREENING: an aggregate that describes a
+different set than the one beside it. "9 of 9 controls" was TRUE and it described a model that cannot
+count. A control set whose values are all used in designing it cannot detect overfitting -- the
+measurement and the thing measured share their range by construction.
+
+THE RULE, FROM NOW ON: a field screen must reserve at least one value that no other control uses, and
+a model that fails the held-out value fails the screen regardless of its score on the rest. It is now
+a test (`test_the_real_control_spans_more_than_the_designed_counts`) and the held-out result is on
+disk (`corpus/vlm_heldout_result.json`), not only in a transcript.
+
+TWO OF THE PROJECT'S OWN DETECTORS CAUGHT THIS ROUND'S CODE, and both were right:
+
+    test_dead_code        `for i in range(panels)` where `i` is never read -- code that looks like
+                          it does something
+    test_name_collisions  `controls` in both vlm_field_controls.py and vlm_real_control.py,
+                          returning DIFFERENT sets -- a caller citing "controls" would not know
+                          which one it got. Renamed to `real_controls`.
+
+Suite: 769 passed, 3 skipped.
