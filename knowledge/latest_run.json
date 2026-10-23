@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-24T04:42:30",
+  "run_at": "2026-10-24T06:22:35",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -9,10 +9,10 @@
     "  passed 8, failed 0",
     "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
     "  wrote knowledge\\evolution_report.json",
-    "  lean: tracked 79.4 -> 79.4 MB, worktree 96.4 -> 94.8 MB"
+    "  lean: tracked 79.4 -> 79.4 MB, worktree 112.8 -> 111.2 MB"
   ],
   "tests_ok": true,
-  "tests_summary": "859 passed, 3 skipped, 1 warning in 357.56s (0:05:57)",
+  "tests_summary": "859 passed, 3 skipped, 1 warning in 361.56s (0:06:01)",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
@@ -677,8 +677,8 @@
     "benchmark_shipped_anchor_single": 0.205,
     "benchmark_shipped_anchor_distance": 0.205,
     "benchmark_unsupported": 11,
-    "benchmark_official_code_score": 79.02,
-    "benchmark_official_improvement": null,
+    "benchmark_official_code_score": 82.02,
+    "benchmark_official_improvement": 44.77,
     "statistics_reproduced": 15,
     "knowledge_version": 16,
     "tests": 862,
@@ -687,21 +687,21 @@
   "capabilities_delta": {
     "changed": true,
     "delta": {
-      "tests": {
-        "before": 853,
-        "after": 862
+      "benchmark_official_code_score": {
+        "before": 79.02,
+        "after": 82.02
       },
-      "tests_passed": {
+      "benchmark_official_improvement": {
         "before": null,
-        "after": 859
+        "after": 44.77
       }
     },
     "verdict": {
       "gains": [
         {
-          "field": "tests",
-          "before": 853,
-          "after": 862
+          "field": "benchmark_official_code_score",
+          "before": 79.02,
+          "after": 82.02
         }
       ],
       "regressions": [],

@@ -5501,3 +5501,54 @@ rate -- and read it as a defect to be eliminated rather than as information to b
     improvement: +44.77 points, 120.2 % relative
 
 Suite: 859 passed, 3 skipped.
+
+
+## 158. The linewidth note was wrong about WHY, and the reason matters (2026-10-24)
+
+The code carried a note explaining why stroke width is not inferred from the reference image:
+
+> the benchmark's reference renders carry no dpi metadata and vary between roughly 104 and 343 dpi.
+> Converting at a fixed assumption produced estimates of 0.36 pt against true widths of 0.42-1.38 pt,
+> and made the official linewidth dimension WORSE (0.432 -> 0.244).
+
+The measurement behind it is real. **The explanation is not.**
+
+WHAT IS ACTUALLY TRUE, checked rather than assumed:
+
+1. **dpi IS derivable.** The reference code states `figsize` in INCHES; the crop is in PIXELS.
+   Measured on PMC11502666: figsize (5.25, 4.35), crop 786x667, so dpi = 786/5.25 = **149.7**. The
+   note said the dpi was unknowable; it is a division.
+
+2. **The blocker is resolution, not dpi.** At 150 dpi the whole plausible range collapses:
+       0.5 pt -> 1.04 px      0.85 pt -> 1.77 px      1.5 pt -> 3.12 px
+   One pixel versus two IS the decision, and antialiasing blurs it. That is the real wall.
+
+3. **The benchmark usually leaves it undetermined anyway.** A reference that calls
+   `plt.rcParams.update({...})` sets `global_style_unknown`, which disables the scorer's own
+   fallback, so its `linewidth` returns `known=False, reason="mixed explicit/default line widths"`.
+   That same reference set SIX different widths (0.65, 0.42, 0.42, 0.62, 0.62, 0.85) -- **there is no
+   single true value to infer.**
+
+WHY THE CORRECTION MATTERS EVEN THOUGH THE CONCLUSION DID NOT CHANGE: "we cannot know the dpi" invites
+someone to find the dpi and retry. "the dpi is 149.7 and one pixel is the whole decision, and the
+target has six values" tells the next reader to stop. **A wrong reason leaves the door open.**
+
+### The opportunity table, computed correctly
+
+Each task's score is a mean over ITS activated dimensions, so a dimension's value is its shortfall
+divided by the number of dimensions that task activated -- not by the pool size.
+
+    linewidth       +9.01 pts      blocked (see above)
+    palette         +4.26 pts      open
+    figure_aspect   +2.53 pts      open
+    serif           +0.92 pts      open (13 % of references are serif; candidate always emits sans)
+    tick_direction  +0.64 pts      open (references use 'in' as well as 'out')
+    background      +0.32 pts      open
+    spines_removed  +0.31 pts      open
+    grid            +0.00 pts      DONE (1.000)
+    legend_frame    +0.00 pts      DONE (1.000)
+
+Two dimensions are now at 1.000 and worth nothing further. **The remaining work is 4.26 + 2.53 + 0.92
++ 0.64 + 0.32 + 0.31 = 8.98 points**, of which palette and aspect are the only large pieces.
+
+Suite: 859 passed, 3 skipped.

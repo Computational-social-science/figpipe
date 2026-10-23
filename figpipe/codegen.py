@@ -437,12 +437,22 @@ def style_from_image_profile(profile) -> dict:
         "tick_direction": getattr(profile, "tick_direction", None),
         "serif": None,
         "legend_frame": None,
-        # STROKE WIDTH: NOT recoverable from these images. A pixel run only becomes a width once
-        # the dpi is known, and the benchmark's reference renders carry no dpi metadata and vary
-        # between roughly 104 and 343 dpi (fitted from the shipped reference code). Converting at a
-        # fixed assumption produced estimates of 0.36 pt against true widths of 0.42-1.38 pt, and
-        # made the official linewidth dimension WORSE (0.432 -> 0.244). Reporting an undetermined
-        # dimension as undetermined is the honest choice; guessing it is worse than not trying.
+        # STROKE WIDTH: undetermined, and now for a measured reason rather than an assumed one.
+        #
+        # The old note said the dpi is unknowable. THAT WAS WRONG and worth correcting: the
+        # reference code states `figsize` in inches, the crop is in pixels, so dpi = px / inches
+        # (measured 149.7 on PMC11502666). What actually blocks the inference is resolution:
+        #     0.5 pt -> 1.04 px     0.85 pt -> 1.77 px     1.5 pt -> 3.12 px
+        # at that dpi, so one pixel versus two IS the decision and antialiasing blurs it.
+        #
+        # AND THE BENCHMARK OFTEN LEAVES IT UNDETERMINED ANYWAY: a reference that calls
+        # `plt.rcParams.update({...})` sets `global_style_unknown`, which disables the scorer's
+        # fallback, so its `linewidth` comes back `known=False`. That same reference set SIX
+        # different widths (0.65, 0.42, 0.42, 0.62, 0.62, 0.85) -- there is no single true value.
+        #
+        # So this is not a failure of inference to be fixed. It is a dimension the benchmark leaves
+        # open on most tasks, and below pixel resolution on the rest. Guessing was measured before
+        # (0.432 -> 0.244) and is not retried.
         "linewidth": None,
         "inferred_from": "image",
         "undetermined_dimensions": [d for d, v in (
