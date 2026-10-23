@@ -121,3 +121,61 @@ def test_the_legend_frame_is_where_the_labels_are():
     for bx0, by0, bx1, by1 in label_boxes:
         assert fx0 <= bx0 and bx1 <= fx1, "a legend label lies outside the detected frame"
         assert fy0 <= by0 and by1 <= fy1, "a legend label lies outside the detected frame"
+
+
+def test_a_VERTICAL_legend_is_found():
+    """A LEGEND CAN STACK DOWN A COLUMN.
+
+    Measured on a real pool case -- `histogram` with a group column:
+        'ctrl'   bbox=(494.9, 24.1, 502.2, 30.3)
+        'drugA'  bbox=(494.9, 32.3, 509.5, 38.5)
+        'drugB'  bbox=(494.9, 40.7, 509.5, 46.8)
+
+    All three share x0 and stack down the page. The horizontal-only detector reported 0 -- the same
+    mistake as the frame-only detector, one level down: I replaced "look for a frame" with "look for
+    a horizontal row", and both are properties a legend need not have.
+    """
+    rng = np.random.default_rng(0)
+    df = pd.DataFrame({
+        "sampling_day": rng.normal(0, 1, 120),
+        "consortium_treatment": np.repeat(["ctrl", "drugA", "drugB"], 40)})
+    result = _render("histogram", df, value="sampling_day", group="consortium_treatment")
+    assert _frames(result["pdf"]) >= 1, (
+        "a vertical legend stack was not detected; the pool's zero is still the instrument's")
+
+
+def test_a_column_of_y_tick_labels_is_not_a_legend():
+    """THE FALSE POSITIVE THE VERTICAL RULE COULD INTRODUCE. Y tick labels also stack down a column;
+    they must not be read as a legend."""
+    rng = np.random.default_rng(0)
+    cases = [
+        ("dual_measure", pd.DataFrame({"x": np.arange(12), "a": rng.random(12),
+                                       "b": rng.random(12)}),
+         dict(x="x", y1="a", y2="b")),
+        ("scatter_relationship", pd.DataFrame({"x": rng.random(30), "y": rng.random(30)}),
+         dict(x="x", y="y")),
+        ("distribution_comparison",
+         pd.DataFrame({"group": np.repeat(["a", "b", "c"], 20),
+                       "value": rng.normal(0, 1, 60)}),
+         dict(group="group", value="value")),
+    ]
+    for name, df, kw in cases:
+        result = _render(name, df, **kw)
+        assert _frames(result["pdf"]) == 0, (
+            f"{name}: a column of axis labels was read as a legend")
+
+
+def test_both_legend_orientations_are_found():
+    """BOTH DIRECTIONS IN ONE TEST, so neither can regress silently."""
+    rng = np.random.default_rng(0)
+    vertical = pd.DataFrame({
+        "sampling_day": rng.normal(0, 1, 120),
+        "consortium_treatment": np.repeat(["ctrl", "drugA", "drugB"], 40)})
+    horizontal = pd.DataFrame({
+        "x": np.tile(np.arange(10), 3),
+        "y": rng.random(30),
+        "series": np.repeat(["alpha", "beta", "gamma"], 10)})
+    v = _render("histogram", vertical, value="sampling_day", group="consortium_treatment")
+    h = _render("trend_with_uncertainty", horizontal, x="x", y="y", series="series")
+    assert _frames(v["pdf"]) >= 1, "vertical legend not found"
+    assert _frames(h["pdf"]) >= 1, "horizontal legend not found"

@@ -389,8 +389,10 @@ def _legend_frames(page) -> list[tuple]:
         if r.width < 8 or r.height < 8:
             continue
         out.append((r.x0, r.y0, r.x1, r.y1))
-    # AN UNFRAMED LEGEND: short labels sharing a baseline, in a row, close together. A single axis
-    # label is a row of one and is excluded by requiring at least two.
+    # AN UNFRAMED LEGEND, HORIZONTAL OR VERTICAL. Measured: a trend legend puts 'alpha'/'beta'/
+    # 'gamma' on one baseline (y=24.1), while a grouped histogram stacks 'ctrl'/'drugA'/'drugB'
+    # down a column (x0=494.9). A detector that only finds rows reports 0 for the second -- the same
+    # mistake as the frame-only detector, one level down.
     rows: dict[float, list] = {}
     for block in page.get_text("dict").get("blocks", []):
         for line in block.get("lines", []):
@@ -419,6 +421,36 @@ def _legend_frames(page) -> list[tuple]:
         x1 = max(bb[2] for bb, _ in spans)
         y1 = max(bb[3] for bb, _ in spans)
         if (x1 - x0) < 20 or (y1 - y0) < 3:
+            continue
+        out.append((x0, y0, x1, y1))
+    # THE VERTICAL CASE: short labels sharing a left edge and stacked down the page.
+    columns: dict[float, list] = {}
+    for block in page.get_text("dict").get("blocks", []):
+        for line in block.get("lines", []):
+            for span in line.get("spans", []):
+                txt = span.get("text", "").strip()
+                if not txt or len(txt) > 24:
+                    continue
+                bb = span["bbox"]
+                columns.setdefault(round(bb[0], 0), []).append((bb, txt))
+    for _, spans in columns.items():
+        if len(spans) < 2:
+            continue
+        spans.sort(key=lambda t: t[0][1])
+        tight = True
+        for (a, _), (b, _) in zip(spans, spans[1:]):
+            gap = b[1] - a[3]
+            height = max(1.0, a[3] - a[1])
+            if gap > max(8.0, height * 1.5):
+                tight = False
+                break
+        if not tight:
+            continue
+        x0 = min(bb[0] for bb, _ in spans)
+        y0 = min(bb[1] for bb, _ in spans)
+        x1 = max(bb[2] for bb, _ in spans)
+        y1 = max(bb[3] for bb, _ in spans)
+        if (x1 - x0) < 8 or (y1 - y0) < 12:
             continue
         out.append((x0, y0, x1, y1))
     return out

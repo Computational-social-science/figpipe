@@ -5084,3 +5084,50 @@ denominator; this round established that the denominator needs its own instrumen
 frames" was a denominator, and it was wrong.
 
 Suite: 833 passed, 3 skipped.
+
+
+## 149. legend_frames went 0 -> 41, and the occlusion zero became meaningful (2026-10-23)
+
+The re-measurement with the fixed detector:
+
+    legend_frames:     0 -> 41
+    legend_occlusions: 0
+    n_measured: 139/139
+    per task: {0: 107, 1: 27, 2: 3, 4: 2}
+
+**32 figures contain a legend and none of them covers a drawing mark.** The occlusion zero is now a
+PASS rather than an absence of objects -- and it only became one because the instrument was fixed.
+
+THE SECOND INSTRUMENT DEFECT WAS FOUND WHILE CHECKING THE FIRST. After adding horizontal-row
+detection, a real pool case still reported zero:
+
+    histogram with a group column:
+        'ctrl'   bbox=(494.9, 24.1, 502.2, 30.3)
+        'drugA'  bbox=(494.9, 32.3, 509.5, 38.5)
+        'drugB'  bbox=(494.9, 40.7, 509.5, 46.8)
+
+All three share x0 and STACK DOWN A COLUMN. The horizontal-only rule reported 0 while the legend was
+plainly there. **I had replaced "look for a frame" with "look for a horizontal row", and both are
+properties a legend need not have.**
+
+The rule now unions three sources: a filled white rect, a tight horizontal row, and a tight vertical
+column. False positives checked first on four drawers whose axis labels form rows and columns:
+`dual_measure`, `scatter_relationship`, `ranked_composition`, `distribution_comparison` -- all 0.
+
+THE PATTERN IS NOW STATED THREE TIMES, each one level down:
+
+    round 82-86   a zero needs a denominator
+    round 90      the denominator needs its own instrument check
+    round 91      the instrument check has its own blind spots (orientation)
+
+Each time the "fact about the world" was a fact about the measuring device. The general form: **a
+detector built around one property of its target will silently return zero for every target that
+lacks that property, and zero is the answer that looks like success.**
+
+WHICH SKILLS ACTUALLY DRAW LEGENDS, measured: grouped_measures 17, distribution_comparison 6,
+matrix_plate 4, field_map 4, faceted_distribution 1. The legend-capable recipes I predicted from the
+source (`trend_with_uncertainty` 29, `histogram` 2) are NOT the ones that produce them in the pool --
+because the pool's data does not pass a `series`/`group` column to them. Predicting from code and
+measuring from output gave different answers, and the measurement is the one that counts.
+
+Suite: 836 passed, 3 skipped.
