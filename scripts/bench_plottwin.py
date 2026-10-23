@@ -931,6 +931,10 @@ def run_task(row: dict, out_dir: pathlib.Path) -> dict:
             "selection_margin": picked["margin"],
             "components": d_styled["details"],
             "hard_failures": (styled if chosen_is_styled else plain)["hard_failures"],
+            # THE ARTEFACT, so a finding can be re-inspected rather than only counted. A count with
+            # no path behind it cannot be checked by anyone who did not watch it happen.
+            "pdf": str((styled if chosen_is_styled else plain).get("pdf") or ""),
+            "png": str((styled if chosen_is_styled else plain).get("png") or ""),
             "findings": (styled if chosen_is_styled else plain)["findings"][:5],
             "official_code_score": official_score,
             "semantic_findings": [f for f in
@@ -1485,6 +1489,12 @@ def _run(args) -> int:
                      "numbers were NOT re-derived from the data. A pass on such a task is a statement "
                      "about geometry, not about correctness."),
         }
+        # THE ARTEFACT COUNT. `hard_failures` is a count with no path behind it unless the row
+        # records where the figure went, and a number nobody can re-derive is the shape this project
+        # records most often. Rows measured before the field existed legitimately lack it, so the
+        # count is reported rather than assumed.
+        report["artefact_rows"] = sum(1 for t in ok_all
+                                      if t.get("status") == "ok" and t.get("pdf"))
         by_type = {}
         for t in merged:
             bucket = by_type.setdefault(t["chart"], {"n": 0, "ok": 0, "d": [], "base": [],

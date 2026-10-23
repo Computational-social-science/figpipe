@@ -4692,3 +4692,40 @@ before the figure makes the measurement independent of whatever ran first. An or
 measurement is not a measurement either.
 
 Suite: 784 passed, 3 skipped.
+
+
+## 140. The pool's zero was uncheckable, and possibly vacuous (2026-10-23)
+
+Wired `legend_occlusion` into `verify.audit` and re-measured the pool: **hard findings 0**, all
+metrics unchanged. That looks like a clean result and it is not checkable.
+
+THE TASK RECORD DOES NOT CARRY THE PDF. `run_task` records `hard_failures` as a COUNT and discards
+the rendered figure. So no finding in the report can be re-inspected by anyone who did not watch it
+happen -- and a number nobody can re-derive is the shape this project records most often.
+
+AND THE ZERO MIGHT BE VACUOUS. If no pool figure contains a legend, "0 findings" says nothing about
+whether the check works. I tried to answer that from the report and could not: `t.get("pdf")` was
+empty for every row.
+
+TWO FIXES, both about provenance rather than about the check:
+
+  1. `run_task` now records `pdf` and `png` -- the artefact, not only a count of what was found in it.
+
+  2. The report now carries `artefact_rows`, the number of rows that actually have one. The
+     fingerprint is DELIBERATELY rendering-only (`drawlib`, `skills`, `styleprofile`, `composite`,
+     `layout`, `style`), so adding a report field does not invalidate rows -- which means old rows
+     legitimately lack the field, and an absent field read as "" would be a silent hole.
+
+THE FINGERPRINT DESIGN IS WORTH RECORDING because it explains the trap: including the harness in
+`CODE_VERSION` made every edit to the report invalidate all rows -- 120 of 132 "stale" after a
+one-line change. Rendering-only is correct. Its cost is that report-schema changes are invisible to
+the staleness signal, so the report has to say what it can and cannot carry.
+
+MY VERIFICATION WAS WRONG TWICE BEFORE I NOTICED. First I checked `t["pdf"]` and got 0 readable PDFs,
+then concluded "vacuous" -- but the conclusion was about my check, not about the pool. The honest
+sequence is: the zero is unverifiable from the report, which is why the report now records the path.
+
+THE PROJECT'S OWN DETECTOR CAUGHT THIS ROUND AGAIN: `survey()` in both `legend_occlusion_survey.py`
+and `vision_rubric_coverage.py`, returning different things. Renamed to `survey_legend_occlusion`.
+
+Suite: 788 passed, 3 skipped.
