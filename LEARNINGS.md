@@ -4602,3 +4602,50 @@ TWO OF THE PROJECT'S OWN DETECTORS CAUGHT THIS ROUND'S CODE, and both were right
                           which one it got. Renamed to `real_controls`.
 
 Suite: 769 passed, 3 skipped.
+
+
+## 138. The vision channel judges what figpipe already measures (2026-10-23)
+
+The score has not moved since 2026-10-19 because 65 % of it is the vision channel, and the standing
+answer was "we need a VLM". That answer was closed last round: all nine local vision models failed a
+held-out control.
+
+So I read what the channel actually judges. Its rubric is **defects that appear only once the code
+runs** -- overlapping elements, a legend covering a curve, text cut off at the frame, crowded tick
+labels. Those are DETERMINISTIC properties of the rendered page.
+
+`scripts/vision_rubric_coverage.py` maps each rubric item to the check that decides it:
+
+    element overlap             -> audit.overlapping_glyphs
+    legend occlusion            -> audit.overlapping_text
+    text truncation             -> audit.text_spans
+    dense tick crowding         -> audit.overlapping_glyphs
+    wrong printed scale         -> semantics.check_colorbar_scale
+    axes not covering the data  -> semantics.check_axis_range
+
+**6 of 6.** And every row names its BLIND SPOT, because a check that claims to replace a judge
+without saying where it stops is the defect class this project records most often:
+
+    overlap        a line-over-glyph overlap is not a glyph-glyph overlap
+    occlusion      a legend covering a LINE without covering text is not detected
+    truncation     text clipped by a clip-path inside the axes is not detected
+    crowding       labels that are close but do not overlap are not flagged
+    scale          a bar whose labels are absent cannot be checked
+    axes           a figure with no tick labels cannot be checked
+
+THEN EACH ROW WAS PROVEN TO FIRE. A table of names is exactly the "a control that looks present and
+does nothing" shape, so `tests/test_vision_rubric_coverage.py` drives every check to a POSITIVE (a
+figure it must flag) and a NEGATIVE (a clean figure it must pass). Eight tests. The crowded-axis test
+matters most: forty labels on a narrow axis produce real collisions, so `overlapping_glyphs` is a
+measurement rather than a decoration.
+
+WHAT THIS DOES NOT DO: it does not produce an S_vision number. The benchmark's judge is a model with
+its own prompt and its own scale, and inventing a substitute number would be the same defect. What it
+produces is the evidence a human needs to decide whether the deterministic route is worth arguing
+for -- six rubric items, six checks, six stated blind spots, and a test that each check can fail.
+
+MY OWN TEST HAD THE PROJECT'S DEFECT. `text_spans` returns spans whose FONT SIZE is out of band, not
+every span on the page. I read the name as "all text" and asserted something the function never
+promised -- a name that promises one thing and holds another, in a test rather than in the code.
+
+Suite: 777 passed, 3 skipped.

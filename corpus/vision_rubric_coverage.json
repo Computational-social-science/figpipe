@@ -1,0 +1,49 @@
+{
+ "rubric": [
+  {
+   "rubric_item": "element overlap",
+   "check": "audit.overlapping_glyphs",
+   "exists": true,
+   "why": "two glyph boxes that overlap by more than a ratio are colliding on the page",
+   "blind_spot": "an overlap between a line and a glyph is not a glyph-glyph overlap"
+  },
+  {
+   "rubric_item": "legend occlusion",
+   "check": "audit.overlapping_text",
+   "exists": true,
+   "why": "a legend box that sits over other text is detected as overlapping text spans",
+   "blind_spot": "a legend covering a LINE without covering text is not detected"
+  },
+  {
+   "rubric_item": "text truncation",
+   "check": "audit.text_spans",
+   "exists": true,
+   "why": "text outside the page box is measurable from its span coordinates",
+   "blind_spot": "text clipped by a clip-path inside the axes is not detected"
+  },
+  {
+   "rubric_item": "dense tick crowding",
+   "check": "audit.overlapping_glyphs",
+   "exists": true,
+   "why": "crowded tick labels ARE overlapping glyphs, so the same check decides it",
+   "blind_spot": "labels that are close but do not overlap are not flagged"
+  },
+  {
+   "rubric_item": "wrong printed scale",
+   "check": "semantics.check_colorbar_scale",
+   "exists": true,
+   "why": "the colour bar's tick labels are text and can be compared to the data range",
+   "blind_spot": "a bar whose labels are absent cannot be checked"
+  },
+  {
+   "rubric_item": "axes not covering the data",
+   "check": "semantics.check_axis_range",
+   "exists": true,
+   "why": "the axis tick labels state the coordinates the raster spans",
+   "blind_spot": "a figure with no tick labels cannot be checked"
+  }
+ ],
+ "n": 6,
+ "n_covered": 6,
+ "verdict": "6 of 6 vision-channel rubric items have a deterministic check in this project; each row names its blind spot, because a check that claims to replace a judge without saying where it stops is the defect class this project records most often"
+}
