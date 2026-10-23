@@ -4501,3 +4501,58 @@ written down in VLM_DECISION.md); improve the code channel directly; or let the 
 than only measure.
 
 Suite: 748 passed, 3 skipped.
+
+
+## 136. VisionHOPE is a backbone, not a VLM, and it cannot compile here (2026-10-23)
+
+Asked to "immediately adopt VisionHOPE and drop the local VLM". I did the work and then found the
+premise does not hold, which is the result.
+
+**VisionHOPE is not a VLM.** Its README: "a visual backbone ... ImageNet classification, COCO
+detection and instance segmentation, and ADE20K semantic segmentation". `create_model` returns
+`num_classes=1000` with a `head` classifier. No tokenizer, no language head, no prompt interface. It
+cannot answer "how many panels are in this image", so it cannot replace a VLM for that job. Swapping
+one for the other is a category error, not an upgrade.
+
+WHAT WAS ACTUALLY DONE (all on disk and verified):
+    cloned 121 files, MIT, to E:\2026-AI4S\VisionHOPE
+    checked hardware: RTX 4070, 12.0 GB VRAM (the CIM AdapterRAM said 4 GB and was wrong), CC 8.9
+    checked Python: repo needs >=3.10,<3.12; project runs 3.14; 3.11.9 is installed
+    built E:\2026-AI4S\.venv-visionhope on 3.11.9
+    installed torch 2.14.1+cu126 -- cuda.is_available() True
+    installed the package: pip install --no-deps -e . OK, timm==0.6.13, numpy<2, ninja 1.13.2
+    imported: from visionhope.models import SRNL -- OK
+    RAN IT -- failed
+
+THE BLOCKER, EXACTLY:
+    models/srnl_core/chunk.py:126  _srnl_cuda_fp32 = load_inline(
+    RuntimeError: Ninja is required to load C++ extensions      (ninja then installed)
+    and then: no C++ compiler.
+        VS 18 Community -> only Auxiliary, Redist. No Tools\MSVC.
+        VS 2022         -> directory exists, empty of C++ tools.
+        vcvars64.bat    -> not present anywhere under Program Files.
+        cl.exe          -> not present anywhere under Program Files.
+        vswhere -requires Microsoft.VisualStudio.Component.VC.Tools.x86.x64 -> EMPTY
+
+THE CPU PATH WAS CHECKED AND DOES NOT EXIST. `chunk.py` has `if not x.is_cuda:` branches so the CPU
+route LOOKS open; `models/srnl.py:114` raises unconditionally:
+
+    ValueError: SRNL inputs and memories must be on the same CUDA device
+
+So both routes are closed, and the missing piece is the "Desktop development with C++" workload --
+a multi-gigabyte machine-level change that is not something to start unattended.
+
+WHAT VISIONHOPE IS GOOD FOR HERE: its thesis is exactly this project's diagnosis -- a system whose
+learning rule is fixed cannot adapt, it can only move along an axis chosen in advance. figpipe's
+mutation loop had `min_margin = 0.1` as a literal. Rounds 65-78 fixed the EXPRESSING half; SRNL's
+learned update rule is the missing GENERATING half. That is a research direction for the mutation
+loop, unrelated to the VLM question.
+
+THE VLM SCREEN, on the four most capable of nine vision-capable local models:
+    gemma4:latest    2/4  failed both panel counts, answered 0
+    qwen3.8:27b      3/4  failed blank, reported 1 panel on a white page
+    qwen3.6:latest   3/4  failed noise, reported 1 panel on pure texture
+    gemma3:12b       3/4  failed blank, reported 1 panel on a white page
+None passed. Every failure is the same: inventing structure where there is none.
+
+Suite: 762 passed, 3 skipped.

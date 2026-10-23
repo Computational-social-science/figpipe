@@ -105,3 +105,45 @@ no deterministic route exists -- not before.
 No model was wired into the judging path this round. Adding one would have changed the official
 score from "deterministic, reproducible, 75.41" to "model-dependent, unreproducible", and the
 control experiment says the model on this machine is not accurate enough to justify that trade.
+
+## 2026-10-23 update: the field-level control set was built, and the model failed it
+
+`scripts/vlm_field_controls.py` is the measurement this document asked for. One field
+(`panel_count`), four controls whose answers were fixed before the model saw them, and a pass
+requiring all four.
+
+    [FAIL] blank        expect=0  got=1
+    [OK  ] noise        expect=0  got=0
+    [OK  ] one-panel    expect=1  got=1
+    [OK  ] three-panel  expect=3  got=3
+
+**gemma3:12b answered 3 of 4.** The failure is the one that matters: a **pure white page** --
+verified at one unique grey level and 0.0000 fraction non-white -- was reported as having **one
+panel**. That is a fabrication, not a near miss, and it is the same failure mode the earlier
+ten-field experiment recorded.
+
+### Why this is the right test and a real result
+
+Three of four is not "close". A model that invents a panel where the image has no ink at all cannot
+be trusted on a figure where the ink is ambiguous, and the fields this project would want from a VLM
+(arrow style, legend presence, layout intent) are strictly harder than counting four subplots.
+
+It also settles the question this document left open: the model on this machine is **not** accurate
+enough to justify moving the official score from "deterministic, reproducible, 75.41" to
+"model-dependent, unreproducible".
+
+### What would change the answer
+
+A different local model that passes all four controls. The harness is now one command:
+
+    python scripts/vlm_field_controls.py --model <name>
+
+and it exits non-zero on any control failure, so a candidate can be screened without touching the
+judging path. 59 models are installed; the screening is cheap and the bar is exact.
+
+### What this does not change
+
+The vision channel of the benchmark remains unrun, and the 0.65 share of the combined score remains
+unmeasured. That is the honest state, and it is now backed by a measurement rather than by an
+impression.
+
