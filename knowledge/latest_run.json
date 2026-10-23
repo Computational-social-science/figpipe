@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-23T17:57:52",
+  "run_at": "2026-10-23T18:40:46",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -9,10 +9,10 @@
     "  passed 8, failed 0",
     "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
     "  wrote knowledge\\evolution_report.json",
-    "  lean: tracked 78.9 -> 78.9 MB, worktree 136.2 -> 134.6 MB"
+    "  lean: tracked 79.0 -> 79.0 MB, worktree 136.8 -> 135.1 MB"
   ],
   "tests_ok": true,
-  "tests_summary": "813 passed, 3 skipped, 1 warning in 352.34s (0:05:52)",
+  "tests_summary": "825 passed, 3 skipped, 1 warning in 463.95s (0:07:43)",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
@@ -660,7 +660,7 @@
     "patch_note": "a patch changes the SOURCE, so it is probed and reported but never auto-selected: the loop does not edit its own drawer without a human seeing the diff"
   },
   "capabilities": {
-    "_code_version": "c71ae790439f",
+    "_code_version": "d3e09ebe20f5",
     "benchmark_hard_findings": 0,
     "benchmark_complete_membership": true,
     "benchmark_pool_size": 150,
@@ -681,40 +681,32 @@
     "benchmark_official_improvement": 37.25,
     "statistics_reproduced": 15,
     "knowledge_version": 16,
-    "tests": 813
+    "tests": 825
   },
   "capabilities_delta": {
     "changed": true,
     "delta": {
-      "benchmark_ok": {
-        "before": 126,
-        "after": 139
-      },
-      "benchmark_infrastructure_failures": {
-        "before": 13,
-        "after": 0
-      },
-      "benchmark_mean_distance": {
-        "before": 0.304,
-        "after": 0.303
+      "_code_version": {
+        "before": "c71ae790439f",
+        "after": "d3e09ebe20f5"
       },
       "tests": {
-        "before": 803,
-        "after": 813
+        "before": 813,
+        "after": 825
       }
     },
     "verdict": {
       "gains": [
         {
           "field": "tests",
-          "before": 803,
-          "after": 813
+          "before": 813,
+          "after": 825
         }
       ],
       "regressions": [],
       "corrections": [],
       "not_compared": [],
-      "instrument_changed": false,
+      "instrument_changed": true,
       "membership_broken": false,
       "ok": true,
       "judged_fields": [

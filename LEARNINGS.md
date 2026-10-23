@@ -5002,3 +5002,48 @@ ALSO: `overlapping_glyphs_examined` gives the collision check its denominator wi
 "0 collisions" into a statement.
 
 Suite: 824 passed, 4 skipped.
+
+
+## 147. Two zeros, side by side, with opposite meanings (2026-10-23)
+
+The full pool re-measurement filled the new fields across all 139 tasks:
+
+    checks_examined: lines=139  not_exercised=0
+    rows with the field: 139/150   (every ok row)
+    legend_frames: 0 in all 139
+    aggregate lines == ok tasks    <- the membership matches
+
+**Two zeros in the same report, and they mean opposite things.**
+
+    checks_not_exercised: 0   MEANINGFUL -- every figure carries text, so every check examined
+                              something and found nothing wrong
+    legend_frames:        0   VACUOUS   -- 139 figures contain no legend at all, so the occlusion
+                              check had nothing to examine
+
+Before round 87 both would have printed as "0" beside a task count, and neither could be read. The
+mechanism that separates them is a denominator in each check's OWN units.
+
+THEN I CHECKED WHETHER THE MECHANISM'S ZERO WAS ITSELF VACUOUS, which is the trap this project keeps
+falling into one level down. `not_exercised` could only be zero if a figpipe figure can never lack
+text. Measured:
+
+    dual_measure (line)       14 text spans
+    field_map (raster)        22 text spans, 26 glyphs
+    radial_profile           245 glyphs
+    grouped_measures         101 glyphs
+
+and a bare raster with no axes, no labels, no ticks and no colour bar:
+
+    font_size  0/0 text spans = not_exercised
+    font_type  0/0 embedded fonts = not_exercised
+    overlap    0/0 text spans = not_exercised
+    verdict: "3 of 3 checks examined NOTHING, so their zero is not a pass"
+
+So the state IS reachable -- it is simply not reached by anything this pipeline draws. The zero is a
+PASS, and now that is a claim with evidence rather than a hope.
+
+THE PATTERN, stated once: every zero needs a denominator, and every denominator needs a reachability
+test. Without the first the zero is ambiguous; without the second the denominator might itself be
+unreachable, which is the same defect one level down.
+
+Suite: 829 passed, 3 skipped.
