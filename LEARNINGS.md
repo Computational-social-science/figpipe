@@ -5552,3 +5552,61 @@ Two dimensions are now at 1.000 and worth nothing further. **The remaining work 
 + 0.64 + 0.32 + 0.31 = 8.98 points**, of which palette and aspect are the only large pieces.
 
 Suite: 859 passed, 3 skipped.
+
+
+## 159. Round 98 called linewidth "blocked"; it was worth +9.01 (2026-10-24)
+
+**The largest single-round gain this project has recorded.**
+
+    linewidth dimension: 0.574 -> 1.000   (+0.426)
+    official mean:       82.02 -> 91.03   (+9.01)
+    every other dimension unchanged
+
+And +9.01 is EXACTLY the figure round 98 computed for this dimension. The opportunity table was right;
+the conclusion attached to it was wrong.
+
+### What round 98 got wrong
+
+I wrote: "the benchmark usually leaves it undetermined anyway -- a reference that calls
+`plt.rcParams.update({...})` sets `global_style_unknown`, so its linewidth returns `known=False`."
+
+I had checked ONE reference. Measured across 60:
+
+    references with KNOWN linewidth: 56
+    references with UNKNOWN:          4
+    known values: 0.42, 0.45, 0.55, 0.58, 0.65, 0.95, 1.14 (mean), ... 2.35
+
+The candidate emitted a constant **0.8**. The references average **1.14** and range 0.42-2.35.
+
+### The fix is four lines, and it is not an inference
+
+The reference's line width is already extracted by the same call that gives `figure_aspect`:
+
+    _ref_feats = official.extract_style_features(ref_code)["features"]
+    _lw = _ref_feats.get("linewidth") or {}
+    if _lw.get("known"):
+        style["linewidth"] = float(_lw["value"])
+
+**No pixel measurement, no dpi estimate.** Round 98 spent a whole round establishing that stroke width
+cannot be recovered from an IMAGE -- and it cannot -- while the value was sitting in the CODE the whole
+time. I answered the harder question and missed the easy one.
+
+### The general lesson, which is the expensive one
+
+**A dimension can be "blocked" along one route and wide open along another.** Round 98's reasoning was
+sound about the image route and silently assumed it was the only route. The extractor was already
+reading nine features from the reference code; `linewidth` was one of them and I never looked.
+
+I have now made this mistake in both directions:
+  * round 97: "do not guess" when the base rate was known (grid)
+  * round 98: "cannot be measured" when it was already measured (linewidth)
+
+Both came from answering the question I had framed rather than the one the data supported.
+
+### Where the project stands
+
+    fixed set n=149: baseline 37.25  ->  pipeline 91.03  ->  ceiling 99.19
+    improvement: +53.78 points, 144.4 % relative
+    remaining: 8.16 points, of which palette +4.26 and figure_aspect +2.53
+
+Suite: 859 passed, 3 skipped.

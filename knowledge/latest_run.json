@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-24T06:22:35",
+  "run_at": "2026-10-24T06:48:20",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -12,7 +12,7 @@
     "  lean: tracked 79.4 -> 79.4 MB, worktree 112.8 -> 111.2 MB"
   ],
   "tests_ok": true,
-  "tests_summary": "859 passed, 3 skipped, 1 warning in 361.56s (0:06:01)",
+  "tests_summary": "859 passed, 3 skipped, 1 warning in 360.61s (0:06:00)",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
@@ -685,25 +685,10 @@
     "tests_passed": 859
   },
   "capabilities_delta": {
-    "changed": true,
-    "delta": {
-      "benchmark_official_code_score": {
-        "before": 79.02,
-        "after": 82.02
-      },
-      "benchmark_official_improvement": {
-        "before": null,
-        "after": 44.77
-      }
-    },
+    "changed": false,
+    "delta": {},
     "verdict": {
-      "gains": [
-        {
-          "field": "benchmark_official_code_score",
-          "before": 79.02,
-          "after": 82.02
-        }
-      ],
+      "gains": [],
       "regressions": [],
       "corrections": [],
       "not_compared": [],
