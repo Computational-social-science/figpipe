@@ -40,9 +40,11 @@ RUBRIC = {
         "blind_spot": "an overlap between a line and a glyph is not a glyph-glyph overlap",
     },
     "legend occlusion": {
-        "deterministic": "audit.overlapping_text",
-        "why": "a legend box that sits over other text is detected as overlapping text spans",
-        "blind_spot": "a legend covering a LINE without covering text is not detected",
+        "deterministic": "audit.legend_occlusion",
+        "why": ("a legend frame is filled, so the drawing segments under it are hidden; the check "
+                "walks the path items and measures the frame area they cover"),
+        "blind_spot": ("a legend over a FILLED REGION (a heatmap, a band) is counted only through "
+                       "the region's edge paths, so a fully covered legend can under-report"),
     },
     "text truncation": {
         "deterministic": "audit.text_spans",

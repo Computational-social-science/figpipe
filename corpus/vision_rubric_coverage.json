@@ -9,10 +9,10 @@
   },
   {
    "rubric_item": "legend occlusion",
-   "check": "audit.overlapping_text",
+   "check": "audit.legend_occlusion",
    "exists": true,
-   "why": "a legend box that sits over other text is detected as overlapping text spans",
-   "blind_spot": "a legend covering a LINE without covering text is not detected"
+   "why": "a legend frame is filled, so the drawing segments under it are hidden; the check walks the path items and measures the frame area they cover",
+   "blind_spot": "a legend over a FILLED REGION (a heatmap, a band) is counted only through the region's edge paths, so a fully covered legend can under-report"
   },
   {
    "rubric_item": "text truncation",

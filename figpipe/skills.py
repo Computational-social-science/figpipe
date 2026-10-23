@@ -659,6 +659,13 @@ def op_verify_audit(ctx: SkillContext, fig, pdf_path):
     for f in hard:
         ctx.findings.append({"check": f["check"], "detail": f["detail"],
                              "severity": "hard"})
+    # A LEGEND THAT COVERS A DATA MARK is the same kind of defect as text below 5 pt: something a
+    # reader cannot see. `overlapping_text` cannot catch it (it compares text to text), so the check
+    # walks the drawing paths instead.
+    if audit.legend_occlusion_supported():
+        for hit in audit.legend_occlusion(pdf_path):
+            ctx.findings.append({"check": "legend_occlusion", "detail": hit["detail"],
+                                 "severity": "hard"})
     ctx.trace.append("verify.audit")
 
 

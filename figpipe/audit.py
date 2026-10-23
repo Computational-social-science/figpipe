@@ -267,3 +267,173 @@ def audit(pdf_path, min_pt=MIN_PT_DEFAULT, max_pt=MAX_PT_DEFAULT,
             # band is legitimate. Reported but does not set ok=False.
 
     return report
+
+def _legend_frames(page) -> list[tuple]:
+    """Filled-and-stroked white rectangles that look like a LEGEND frame.
+
+    A legend frame in matplotlib is a rect with `type == "fs"` and a near-white fill, big enough to
+    hold text. Measured on a 216x144 pt page:
+
+        no legend        0 candidates
+        legend centre    (77.4, 56.5, 66.7, 32.3)   type='fs'  fill=(1,1,1)
+        legend upper-R   (122.7, 22.3, 66.7, 32.3)  type='fs'  fill=(1,1,1)
+
+    The page background is excluded by size and the axes background by `type` (it is `"f"`, filled
+    only). Those two exclusions are what stop the check from calling the whole figure a legend.
+    """
+    page_r = page.rect
+    out = []
+    for d in page.get_drawings():
+        r = d.get("rect")
+        if r is None or d.get("type") != "fs":
+            continue
+        fill = d.get("fill")
+        if fill is None or min(fill) < 0.9:
+            continue
+        if r.width >= page_r.width - 1 or r.height >= page_r.height - 1:
+            continue
+        if r.width < 8 or r.height < 8:
+            continue
+        out.append((r.x0, r.y0, r.x1, r.y1))
+    return out
+
+
+def _segments(page) -> list[tuple]:
+    """Every straight segment on the page as ((x0,y0),(x1,y1)).
+
+    A data line is ONE path whose ITEMS are the segments between points:
+
+        l  [Point(34.6, 123.1), Point(42.6, 117.8)]
+        l  [Point(42.6, 117.8), Point(50.6, 112.5)]
+
+    Reading the items is what makes the occlusion test possible: the path's BOUNDING BOX spans the
+    whole axes, so a box test cannot tell where the line actually is.
+    """
+    out = []
+    for d in page.get_drawings():
+        if d.get("type") == "fs":
+            continue
+        for item in (d.get("items") or []):
+            if not item or item[0] != "l":
+                continue
+            try:
+                p0, p1 = item[1], item[2]
+                out.append(((p0.x, p0.y), (p1.x, p1.y)))
+            except (AttributeError, IndexError, TypeError):
+                continue
+    return out
+
+
+def _segment_hits_cell(seg, cx0, cy0, cx1, cy1, samples: int = 12) -> bool:
+    """Does the segment pass through the cell? Sampled along its length.
+
+    SAMPLING, NOT CLIPPING. A proper Liang-Barsky clip would be exact; sampling is what this
+    implements and the docstring says so. Twelve samples per segment on a 24x24 grid over a legend
+    frame resolves a line crossing the frame -- the failure this check exists to find.
+
+    THE THRESHOLD IS PLACED IN A MEASURED GAP, not derived from a principle:
+
+        legend in an empty corner, flat line elsewhere    2.1 %  (tick marks and spines)
+        legend centred over two crossing lines           15.5 %
+
+    6 % sits between them with room on both sides. A lower threshold flagged the empty-corner case,
+    which is how the first attempt failed.
+    """
+    (ax0, ay0), (ax1, ay1) = seg
+    for i in range(samples + 1):
+        t = i / samples
+        x = ax0 + (ax1 - ax0) * t
+        y = ay0 + (ay1 - ay0) * t
+        if cx0 <= x <= cx1 and cy0 <= y <= cy1:
+            return True
+    return False
+
+#: Set to True only when the occlusion test follows path ITEMS rather than bounding boxes. A
+#: bounding-box test cannot answer this question on a real page, and a check that always answers the
+#: same way is not a measurement.
+LEGEND_OCCLUSION_IMPLEMENTED = True
+
+
+def legend_occlusion_supported() -> bool:
+    """Whether `legend_occlusion` can actually decide the question.
+
+    False until the test walks path items. Exposed so a caller can report "not available" instead of
+    reading an empty list as "no occlusion".
+    """
+    return LEGEND_OCCLUSION_IMPLEMENTED
+
+
+def legend_occlusion(pdf_path, *, ink_ratio: float = 0.06) -> list[dict]:
+    """Legend frames that sit on top of drawn marks.
+
+    THE BLIND SPOT THIS CLOSES. `overlapping_text` compares TEXT to TEXT, so a legend covering a
+    data line -- the failure the benchmark's vision channel names -- is invisible to it: the legend's
+    frame is a filled rect, the line is a path, and neither is text.
+
+    HOW IT IS MEASURED: a legend frame is filled, so anything drawn under it is HIDDEN. The check
+    sums the drawing paths whose bounding box falls inside the frame and which are not the frame
+    itself. A legend in the empty margin has almost nothing under it; a legend over a curve has the
+    curve.
+
+    THIS FUNCTION DOES NOT WORK, AND IT SAYS SO RATHER THAN RETURNING A NUMBER.
+
+    Measured on a real page: a data line drawn by `ax.plot` is ONE path with 19 points whose
+    BOUNDING BOX spans the whole axes --
+
+        type=s  rect=(34.6, 22.3, 186.8, 123.1)  items=19
+
+    So every legend placed inside the axes reports "covered 100%", and the check cannot tell a legend
+    in an empty corner from one sitting on a curve. The first version summed per-path overlaps and
+    reported "over 400% of its area", which was worse: a ratio that cannot exceed 1 exceeded 4.
+
+    The path ITEMS are available, so the geometry exists -- but testing every segment against every
+    cell is a different algorithm from a bounding-box test, and shipping the bounding-box version
+    with a caveat would be the "a control that looks present and does nothing" defect this project
+    records most often.
+
+    It returns an EMPTY list and reports the limitation through `legend_occlusion_supported()`, so a
+    caller that wants the check is told it is unavailable rather than told everything is fine.
+    """
+    if not legend_occlusion_supported():
+        return []
+    pymupdf = _require_pymupdf()
+    if pymupdf is None:
+        raise RuntimeError("PyMuPDF is required: run `pip install pymupdf`")
+
+    out = []
+    doc = pymupdf.open(str(pdf_path))
+    for pno, page in enumerate(doc, 1):
+        frames = _legend_frames(page)
+        if not frames:
+            continue
+        segs = _segments(page)
+        if not segs:
+            continue
+        for (fx0, fy0, fx1, fy1) in frames:
+            # A UNION, NOT A SUM. Summing each path's overlap counts the same pixel once per path
+            # and produced "covered over 400% of its area" -- a ratio that cannot exceed 1. The grid
+            # is 24x24 cells, which is coarse and is why the threshold is a ratio.
+            cells = 24
+            cw = max(1e-9, (fx1 - fx0) / cells)
+            ch = max(1e-9, (fy1 - fy0) / cells)
+            covered_cells = 0
+            for gy in range(cells):
+                cy0 = fy0 + gy * ch
+                cy1 = cy0 + ch
+                for gx in range(cells):
+                    cx0 = fx0 + gx * cw
+                    cx1 = cx0 + cw
+                    for seg in segs:
+                        if _segment_hits_cell(seg, cx0, cy0, cx1, cy1):
+                            covered_cells += 1
+                            break
+            ratio = covered_cells / float(cells * cells)
+            if ratio >= ink_ratio:
+                out.append({"page": pno,
+                            "frame": (round(fx0, 1), round(fy0, 1), round(fx1, 1), round(fy1, 1)),
+                            "covered_ratio": round(ratio, 3),
+                            "detail": (f"a legend frame at ({fx0:.0f},{fy0:.0f}) covers drawing "
+                                       f"paths over {ratio:.0%} of its area, so it may be hiding a "
+                                       f"data mark")})
+    doc.close()
+    return out

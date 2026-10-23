@@ -4649,3 +4649,46 @@ every span on the page. I read the name as "all text" and asserted something the
 promised -- a name that promises one thing and holds another, in a test rather than in the code.
 
 Suite: 777 passed, 3 skipped.
+
+
+## 139. A legend that covers a line, and two numbers that were not measurements (2026-10-23)
+
+Round 80 named six blind spots. The first one closed: `overlapping_text` compares TEXT to TEXT, so a
+legend covering a data line is invisible to it.
+
+IT TOOK THREE ATTEMPTS AND THE FIRST TWO PRODUCED NUMBERS THAT WERE NOT MEASUREMENTS.
+
+  1. SUMMED per-path bounding-box overlap with the frame. A curve crossing the legend four times
+     counted four times and "covered ratio" reached **400%**. A ratio that cannot exceed 1 exceeded
+     4 -- the tautology this project records most often, in my own new code.
+
+  2. UNION over boxes, on a 24x24 grid. Every legend inside the axes reported **100%**, because a
+     data line drawn by `ax.plot` is ONE path whose BOUNDING BOX spans the whole axes:
+
+         type=s  rect=(34.6, 22.3, 186.8, 123.1)  items=19
+
+     A box cannot say where a line is. I then made the function return `[]` and expose
+     `legend_occlusion_supported() -> False` rather than ship a check that always says the same
+     thing -- the honest move, and the one that made the real fix worth doing.
+
+  3. WALK THE PATH ITEMS. `_segments(page)` returns the actual segments:
+     `l [Point(34.6,123.1), Point(42.6,117.8)]`. Sampling them against grid cells gives a real
+     measurement.
+
+MEASURED, on the two cases the check must separate:
+
+    legend in an empty corner, flat line elsewhere    2.1 %   (tick marks and spines)
+    legend centred over two crossing lines           15.5 %
+
+A seven-fold separation, and the number cannot exceed 1.
+
+THE THRESHOLD IS PLACED IN THAT GAP, NOT DERIVED. `ink_ratio=0.02` flagged the empty-corner case --
+which is how I found the gap in the first place. 6 % sits between 2.1 and 15.5 with room on both
+sides, and the docstring says it was placed rather than justified.
+
+THEN IT PASSED ALONE AND FAILED IN THE SUITE, which means global state: other tests install
+figpipe's rcParams and a legend drawn under a different style has a different frame. `plt.rcdefaults()`
+before the figure makes the measurement independent of whatever ran first. An order-dependent
+measurement is not a measurement either.
+
+Suite: 784 passed, 3 skipped.
