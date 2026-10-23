@@ -9,7 +9,7 @@
     "n_scored": 149,
     "n_unscored": 0,
     "n_unavailable": 1,
-    "mean_score": 38.16,
+    "mean_score": 37.25,
     "min_score": 0.0,
     "max_score": 72.97,
     "by_type": {
@@ -19,7 +19,7 @@
       },
       "Bar": {
         "n": 18,
-        "mean": 43.21
+        "mean": 33.0
       },
       "Box/Violin": {
         "n": 16,
@@ -31,7 +31,7 @@
       },
       "Distribution": {
         "n": 17,
-        "mean": 36.33
+        "mean": 39.18
       },
       "Field 2D": {
         "n": 15,
@@ -81,7 +81,7 @@
       },
       "palette": {
         "n": 131,
-        "mean": 0.002
+        "mean": 0.016
       },
       "figure_aspect": {
         "n": 118,
@@ -89,7 +89,7 @@
       },
       "linewidth": {
         "n": 127,
-        "mean": 0.574
+        "mean": 0.497
       },
       "spines_removed": {
         "n": 53,
@@ -203,7 +203,7 @@
       "id": "PMC12905268",
       "chart": "Distribution",
       "status": "scored",
-      "score": 43.79253048230727,
+      "score": 66.1570468868895,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -213,7 +213,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.0,
+        "palette": 0.8946,
         "figure_aspect": 0.0,
         "linewidth": 0.7517,
         "legend_frame": 1.0
@@ -419,7 +419,7 @@
       "id": "PMC13342296",
       "chart": "Distribution",
       "status": "scored",
-      "score": 46.44211704305585,
+      "score": 72.49440780359494,
       "n_activated": 3,
       "scored_dimensions": [
         "palette",
@@ -428,7 +428,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.0,
+        "palette": 0.7816,
         "linewidth": 0.8933,
         "spines_removed": 0.5
       }
@@ -1089,7 +1089,7 @@
       "id": "Chart2Code_level1_direct_combination_57",
       "chart": "Bar",
       "status": "scored",
-      "score": 46.126557856967864,
+      "score": 29.850934032627123,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -1102,7 +1102,7 @@
       "dimension_scores": {
         "palette": 0.0,
         "figure_aspect": 0.3994,
-        "linewidth": 0.9069,
+        "linewidth": 0.0931,
         "grid": 0.0,
         "legend_frame": 1.0
       }
@@ -1299,7 +1299,7 @@
       "id": "Chart2Code_level2_3d_5_v4",
       "chart": "Bar",
       "status": "scored",
-      "score": 46.6547587019529,
+      "score": 40.00915971786981,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -1312,7 +1312,7 @@
       "dimension_scores": {
         "palette": 0.0,
         "figure_aspect": 0.581,
-        "linewidth": 0.7517,
+        "linewidth": 0.4194,
         "grid": 0.0,
         "spines_removed": 1.0
       }
@@ -1365,7 +1365,7 @@
       "id": "Chart2Code_level2_bar_22_v4",
       "chart": "Bar",
       "status": "scored",
-      "score": 39.51178820380035,
+      "score": 32.26613404465105,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -1377,7 +1377,7 @@
       "dimension_scores": {
         "palette": 0.0,
         "figure_aspect": 0.8425,
-        "linewidth": 0.738,
+        "linewidth": 0.4482,
         "grid": 0.0
       }
     },
@@ -2427,7 +2427,7 @@
       "id": "Chart2NCode_f5989e4725654971a32e6c84c0dbdfa5",
       "chart": "Bar",
       "status": "scored",
-      "score": 56.832252714231565,
+      "score": 40.165586047564894,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -2441,7 +2441,7 @@
       "dimension_scores": {
         "palette": 0.0,
         "figure_aspect": 0.4099,
-        "linewidth": 1.0,
+        "linewidth": 0.0,
         "grid": 0.0,
         "spines_removed": 1.0,
         "legend_frame": 1.0
@@ -2451,7 +2451,7 @@
       "id": "ChartNet-sample_01541e58b887ce36",
       "chart": "Bar",
       "status": "scored",
-      "score": 51.84476836671878,
+      "score": 36.45624555880027,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -2464,7 +2464,7 @@
       "dimension_scores": {
         "palette": 0.0,
         "figure_aspect": 0.8228,
-        "linewidth": 0.7694,
+        "linewidth": 0.0,
         "grid": 0.0,
         "legend_frame": 1.0
       }
@@ -2529,7 +2529,7 @@
       "id": "ChartNet-sample_21db7b1495645e96",
       "chart": "Bar",
       "status": "scored",
-      "score": 47.05191552177532,
+      "score": 40.405887683565105,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -2541,9 +2541,9 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.0,
+        "palette": 0.0509,
         "figure_aspect": 0.7068,
-        "linewidth": 0.4497,
+        "linewidth": 0.0,
         "grid": 0.0,
         "spines_removed": 0.6667,
         "legend_frame": 1.0
@@ -2573,7 +2573,7 @@
       "id": "ChartNet-sample_27ec276af1be7f88",
       "chart": "Bar",
       "status": "scored",
-      "score": 64.88918799433013,
+      "score": 48.222521327663465,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -2587,7 +2587,7 @@
       "dimension_scores": {
         "palette": 0.0,
         "figure_aspect": 0.8934,
-        "linewidth": 1.0,
+        "linewidth": 0.0,
         "grid": 0.0,
         "spines_removed": 1.0,
         "legend_frame": 1.0
@@ -2695,7 +2695,7 @@
       "id": "ChartNet-sample_55e97056fbbde5b6__single",
       "chart": "Bar",
       "status": "scored",
-      "score": 39.138476425445575,
+      "score": 34.38674211412557,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -2708,7 +2708,7 @@
       "dimension_scores": {
         "palette": 0.0,
         "figure_aspect": 0.7193,
-        "linewidth": 0.2376,
+        "linewidth": 0.0,
         "grid": 0.0,
         "spines_removed": 1.0
       }
@@ -2717,7 +2717,7 @@
       "id": "ChartNet-sample_575be33996f0155c",
       "chart": "Bar",
       "status": "scored",
-      "score": 47.199574357840895,
+      "score": 27.199574357840895,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -2730,7 +2730,7 @@
       "dimension_scores": {
         "palette": 0.0,
         "figure_aspect": 0.36,
-        "linewidth": 1.0,
+        "linewidth": 0.0,
         "grid": 0.0,
         "legend_frame": 1.0
       }
@@ -2882,7 +2882,7 @@
       "id": "ChartNet-sample_953bb3ed650d8541",
       "chart": "Bar",
       "status": "scored",
-      "score": 28.484753680593418,
+      "score": 16.009530717542237,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -2895,7 +2895,7 @@
       "dimension_scores": {
         "palette": 0.0,
         "figure_aspect": 0.1338,
-        "linewidth": 0.6238,
+        "linewidth": 0.0,
         "grid": 0.0,
         "spines_removed": 0.6667
       }
@@ -2920,7 +2920,7 @@
       "id": "ChartNet-sample_9fa23898eda05a63",
       "chart": "Bar",
       "status": "scored",
-      "score": 44.23565350989813,
+      "score": 25.0,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -2931,7 +2931,7 @@
       "unavailable_dimensions": [],
       "dimension_scores": {
         "palette": 0.0,
-        "linewidth": 0.7694,
+        "linewidth": 0.0,
         "grid": 0.0,
         "legend_frame": 1.0
       }
@@ -2940,7 +2940,7 @@
       "id": "ChartNet-sample_ad3e2f8704f6e1b1__single",
       "chart": "Bar",
       "status": "scored",
-      "score": 45.46268378010008,
+      "score": 34.47088177444402,
       "n_activated": 7,
       "scored_dimensions": [
         "palette",
@@ -2956,7 +2956,7 @@
         "palette": 0.0,
         "background": 0.0,
         "figure_aspect": 0.7463,
-        "linewidth": 0.7694,
+        "linewidth": 0.0,
         "grid": 0.0,
         "spines_removed": 0.6667,
         "legend_frame": 1.0
@@ -3002,7 +3002,7 @@
       "id": "ChartNet-sample_bbbf530e6aefa314",
       "chart": "Bar",
       "status": "scored",
-      "score": 48.72104722333583,
+      "score": 35.89727821673708,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -3016,7 +3016,7 @@
       "dimension_scores": {
         "palette": 0.0,
         "figure_aspect": 0.4872,
-        "linewidth": 0.7694,
+        "linewidth": 0.0,
         "grid": 0.0,
         "spines_removed": 0.6667,
         "legend_frame": 1.0
@@ -3068,7 +3068,7 @@
       "id": "ChartNet-sample_d7325ced9dcb3e94",
       "chart": "Bar",
       "status": "scored",
-      "score": 47.525777471084425,
+      "score": 29.638840210053765,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -3079,9 +3079,9 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.0,
+        "palette": 0.1057,
         "figure_aspect": 0.7096,
-        "linewidth": 1.0,
+        "linewidth": 0.0,
         "grid": 0.0,
         "spines_removed": 0.6667
       }

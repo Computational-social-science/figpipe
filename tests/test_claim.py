@@ -31,12 +31,19 @@ def test_the_claim_document_exists_and_states_the_three_points():
         pytest.skip("CLAIM.md absent")
     text = CLAIM.read_text(encoding="utf-8")
     cmp = _numbers()
+    # THE FIXED-SET MEANS ARE THE CLAIM. The per-pass means cover different task sets (one pass
+    # cannot fetch every image), so a document stating them would be comparing different
+    # measurements -- the aggregate defect this project records most often.
+    ix = cmp.get("intersection") or {}
+    means = ix.get("means") or {}
+    if not means:
+        pytest.skip("no fixed-set comparison measured yet")
     for label, key in (("baseline", "baseline"), ("figpipe", "pipeline"), ("ceiling", "ceiling")):
-        if cmp.get(key) is None:
+        value = means.get(key)
+        if value is None:
             pytest.skip(f"{key} not measured")
-        value = cmp[key]["mean"]
         assert str(value) in text, (
-            f"CLAIM.md does not state the measured {label} value {value}; the document has drifted")
+            f"CLAIM.md does not state the fixed-set {label} value {value}; the document has drifted")
 
 
 def test_the_claim_states_the_limits_it_must_not_cross():

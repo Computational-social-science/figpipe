@@ -258,9 +258,19 @@ class StyleProfile:
         for i in order:
             rgb = tuple(int(c) for c in colours[i])
             n = int(counts[i])
-            if n < 0.004 * total:
+            # A THIN STROKE IS STILL AN INK. The old cutoff was 0.004 * total, which selects for
+            # FILLS and discards STROKES: measured, a figure whose true reds occupy 0.11 % of the
+            # page kept only an antialiased blend of them. 0.0004 is a tenth of the old floor and is
+            # paired with the saturation test below, which is what actually separates ink from an
+            # edge.
+            if n < 0.0004 * total:
                 continue
             if all(c > 240 for c in rgb):        # page white
+                continue
+            # AN ANTIALIASED EDGE KEEPS THE HUE BUT LOSES THE CHROMA. A blend of ink and white has
+            # a high minimum channel; real ink does not. This is what lets the area cutoff drop
+            # without filling the palette with blends.
+            if min(rgb) > 200:
                 continue
             name, dist = _nearest_okabe(rgb)
             out.append({"hex": _hex(rgb), "count": n, "okabe": name,

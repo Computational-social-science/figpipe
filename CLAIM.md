@@ -13,11 +13,11 @@ On **PlotTwin-Bench** (FigMirror, arXiv 2608.28814), using the benchmark's **own
 
 | configuration | mean / 100 | tasks |
 |---|---|---|
-| baseline — matplotlib defaults + this project's compliance floor | **38.16** | 149 |
-| **figpipe** — style inferred from the reference **image** | **75.44** | 149 |
-| ceiling — style copied from the reference **code** | 100.00 | 149 |
+| baseline — matplotlib defaults + this project's compliance floor | **37.36** | 148 |
+| **figpipe** — style inferred from the reference **image** | **79.02** | 148 |
+| ceiling — style copied from the reference **code** | 99.19 | 148 |
 
-**Improvement over baseline: +37.28 points, 97.7 % relative.**
+**Improvement over baseline: +41.66 points, 111.5 % relative.**
 
 The code channel is 35 % of the benchmark's combined score (`S = 0.35·S_code + 0.65·S_vision`).
 The vision channel is **not run** by this project, so **no combined-score claim is made**.
@@ -163,7 +163,7 @@ carries the discrimination and the other five are at or below chance. This is NO
 leave-one-out weight search scores the same 0.867 -- but it does mean the metric should not be
 described as measuring style broadly. It measures aspect, reliably, and almost nothing else.
 
-**What this does NOT invalidate.** The official benchmark score (75.44 over 149 tasks, baseline
+**What this does NOT invalidate.** The official benchmark score (78.95 over 148 tasks, baseline
 38.16) uses the benchmark's own deterministic scorer, not this metric. The style metric is used for
 the reference-transfer arm, where its job is to order two candidates, and at that job it is above
 chance on every arm measured.

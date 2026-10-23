@@ -6,60 +6,60 @@
     "note": "OFFICIAL deterministic channel only. The 0.65 vision channel is not run, so this is NOT the combined score.",
     "style_source": "image",
     "n_tasks": 150,
-    "n_scored": 149,
-    "n_unscored": 0,
+    "n_scored": 148,
+    "n_unscored": 1,
     "n_unavailable": 1,
-    "mean_score": 75.44,
-    "min_score": 0.0,
+    "mean_score": 79.02,
+    "min_score": 20.52,
     "max_score": 100.0,
     "by_type": {
       "3D": {
         "n": 7,
-        "mean": 45.52
+        "mean": 58.33
       },
       "Bar": {
         "n": 18,
-        "mean": 82.26
+        "mean": 84.6
       },
       "Box/Violin": {
         "n": 16,
-        "mean": 73.46
+        "mean": 76.28
       },
       "Composite": {
         "n": 3,
-        "mean": 66.11
+        "mean": 82.65
       },
       "Distribution": {
         "n": 17,
-        "mean": 82.9
+        "mean": 87.74
       },
       "Field 2D": {
         "n": 15,
-        "mean": 76.64
+        "mean": 77.77
       },
       "Heatmap": {
-        "n": 13,
-        "mean": 80.11
+        "n": 12,
+        "mean": 78.93
       },
       "Line": {
         "n": 20,
-        "mean": 77.93
+        "mean": 80.96
       },
       "Network/Tree": {
         "n": 2,
-        "mean": 57.5
+        "mean": 58.04
       },
       "Polar/Radial": {
         "n": 13,
-        "mean": 70.2
+        "mean": 73.38
       },
       "Scatter": {
         "n": 16,
-        "mean": 73.38
+        "mean": 80.28
       },
       "Std-band": {
         "n": 9,
-        "mean": 78.51
+        "mean": 79.62
       }
     },
     "by_dimension": {
@@ -76,20 +76,20 @@
         "mean": 0.0
       },
       "linewidth": {
-        "n": 127,
-        "mean": 0.574
+        "n": 126,
+        "mean": 0.572
       },
       "palette": {
-        "n": 131,
-        "mean": 0.65
+        "n": 130,
+        "mean": 0.806
       },
       "grid": {
-        "n": 111,
-        "mean": 0.829
+        "n": 110,
+        "mean": 0.827
       },
       "figure_aspect": {
-        "n": 118,
-        "mean": 0.869
+        "n": 117,
+        "mean": 0.868
       },
       "spines_removed": {
         "n": 53,
@@ -101,6 +101,7 @@
       }
     },
     "unscored_reasons": {
+      "reference image unavailable after 3 attempts: URLError": 1,
       "reference_has_no_activated_dimensions": 1
     }
   },
@@ -109,7 +110,7 @@
       "id": "PMC11502666",
       "chart": "Distribution",
       "status": "scored",
-      "score": 87.72996179280712,
+      "score": 92.27329742475885,
       "n_activated": 2,
       "scored_dimensions": [
         "palette",
@@ -117,7 +118,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.7546,
+        "palette": 0.8455,
         "grid": 1.0
       }
     },
@@ -125,7 +126,7 @@
       "id": "PMC11840003",
       "chart": "Box/Violin",
       "status": "scored",
-      "score": 73.20078506558335,
+      "score": 80.06574299725054,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -135,7 +136,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.4079,
+        "palette": 0.6825,
         "figure_aspect": 0.998,
         "linewidth": 0.5221,
         "grid": 1.0
@@ -145,7 +146,7 @@
       "id": "PMC12000431",
       "chart": "Distribution",
       "status": "scored",
-      "score": 50.0,
+      "score": 100.0,
       "n_activated": 2,
       "scored_dimensions": [
         "palette",
@@ -153,7 +154,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.0,
+        "palette": 1.0,
         "legend_frame": 1.0
       }
     },
@@ -161,7 +162,7 @@
       "id": "PMC12354736",
       "chart": "Distribution",
       "status": "scored",
-      "score": 81.59875729191926,
+      "score": 87.92752075315295,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -171,7 +172,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.2722,
+        "palette": 0.5253,
         "figure_aspect": 0.9918,
         "grid": 1.0,
         "legend_frame": 1.0
@@ -181,7 +182,7 @@
       "id": "PMC12504421",
       "chart": "Heatmap",
       "status": "scored",
-      "score": 54.40485642247761,
+      "score": 64.32474588905895,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -192,7 +193,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.2289,
+        "palette": 0.7249,
         "figure_aspect": 0.9976,
         "linewidth": 0.4938,
         "grid": 1.0,
@@ -203,7 +204,7 @@
       "id": "PMC12905268",
       "chart": "Distribution",
       "status": "scored",
-      "score": 92.63152581413163,
+      "score": 93.38483542225316,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -213,7 +214,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.9699,
+        "palette": 1.0,
         "figure_aspect": 0.9837,
         "linewidth": 0.7517,
         "legend_frame": 1.0
@@ -223,7 +224,7 @@
       "id": "PMC13009336",
       "chart": "Box/Violin",
       "status": "scored",
-      "score": 87.94154479732283,
+      "score": 92.27458625474341,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -233,7 +234,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.766,
+        "palette": 0.9393,
         "linewidth": 0.7517,
         "spines_removed": 1.0,
         "legend_frame": 1.0
@@ -243,7 +244,7 @@
       "id": "PMC13022287",
       "chart": "Distribution",
       "status": "scored",
-      "score": 85.93644183200072,
+      "score": 89.94768066931793,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -254,7 +255,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.6727,
+        "palette": 0.8733,
         "figure_aspect": 0.9625,
         "linewidth": 0.6616,
         "grid": 1.0,
@@ -265,7 +266,7 @@
       "id": "PMC13079874",
       "chart": "Box/Violin",
       "status": "scored",
-      "score": 68.84644242544105,
+      "score": 73.3807702829338,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -275,7 +276,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.1476,
+        "palette": 0.3289,
         "figure_aspect": 0.9825,
         "linewidth": 0.6238,
         "legend_frame": 1.0
@@ -285,7 +286,7 @@
       "id": "PMC13106710",
       "chart": "Heatmap",
       "status": "scored",
-      "score": 79.8873645898781,
+      "score": 79.7296364593661,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -296,7 +297,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.6539,
+        "palette": 0.646,
         "figure_aspect": 0.7139,
         "linewidth": 0.6265,
         "spines_removed": 1.0,
@@ -307,7 +308,7 @@
       "id": "PMC13135507",
       "chart": "Scatter",
       "status": "scored",
-      "score": 49.57597429241371,
+      "score": 76.78641204248352,
       "n_activated": 3,
       "scored_dimensions": [
         "palette",
@@ -316,7 +317,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.0,
+        "palette": 0.8163,
         "figure_aspect": 0.8607,
         "linewidth": 0.6265
       }
@@ -347,7 +348,7 @@
       "id": "PMC13252719",
       "chart": "Composite",
       "status": "scored",
-      "score": 58.34940772749817,
+      "score": 97.9556253952927,
       "n_activated": 2,
       "scored_dimensions": [
         "palette",
@@ -355,7 +356,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.2079,
+        "palette": 1.0,
         "linewidth": 0.9591
       }
     },
@@ -363,7 +364,7 @@
       "id": "PMC13273070",
       "chart": "Box/Violin",
       "status": "scored",
-      "score": 66.06208542771061,
+      "score": 77.45043540937574,
       "n_activated": 3,
       "scored_dimensions": [
         "palette",
@@ -372,7 +373,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.4819,
+        "palette": 0.8235,
         "spines_removed": 0.5,
         "legend_frame": 1.0
       }
@@ -381,7 +382,7 @@
       "id": "PMC13286152",
       "chart": "Composite",
       "status": "scored",
-      "score": 60.178433093089176,
+      "score": 70.19933257799342,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -391,7 +392,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.5881,
+        "palette": 0.989,
         "figure_aspect": 0.819,
         "linewidth": 0.0,
         "spines_removed": 1.0
@@ -401,7 +402,7 @@
       "id": "PMC13336770",
       "chart": "Distribution",
       "status": "scored",
-      "score": 99.82202222300326,
+      "score": 97.45239923166132,
       "n_activated": 3,
       "scored_dimensions": [
         "palette",
@@ -410,7 +411,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.9947,
+        "palette": 0.9236,
         "linewidth": 1.0,
         "spines_removed": 1.0
       }
@@ -419,7 +420,7 @@
       "id": "PMC13342296",
       "chart": "Distribution",
       "status": "scored",
-      "score": 91.35594570888536,
+      "score": 95.97701132073225,
       "n_activated": 3,
       "scored_dimensions": [
         "palette",
@@ -428,7 +429,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.8474,
+        "palette": 0.986,
         "linewidth": 0.8933,
         "spines_removed": 1.0
       }
@@ -437,7 +438,7 @@
       "id": "PMC13343911",
       "chart": "Line",
       "status": "scored",
-      "score": 58.73217014780388,
+      "score": 78.73217014780388,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -448,7 +449,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.0,
+        "palette": 1.0,
         "figure_aspect": 0.9366,
         "linewidth": 0.0,
         "spines_removed": 1.0,
@@ -459,7 +460,7 @@
       "id": "arxiv-astro-skymap__2412.12637",
       "chart": "Field 2D",
       "status": "scored",
-      "score": 50.58617069702157,
+      "score": 52.95946408741274,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -469,7 +470,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.8112,
+        "palette": 0.9062,
         "figure_aspect": 0.5857,
         "linewidth": 0.6265,
         "serif": 0.0
@@ -479,7 +480,7 @@
       "id": "arxiv-astro-skymap__2510.17487",
       "chart": "Std-band",
       "status": "scored",
-      "score": 48.69006013069226,
+      "score": 46.11680091400845,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -489,7 +490,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.9476,
+        "palette": 0.8447,
         "grid": 1.0,
         "tick_direction": 0.0,
         "serif": 0.0
@@ -515,7 +516,7 @@
       "id": "arxiv-ml-3d-trajectory__2602.22552",
       "chart": "Field 2D",
       "status": "scored",
-      "score": 92.06082508921574,
+      "score": 100.0,
       "n_activated": 2,
       "scored_dimensions": [
         "palette",
@@ -523,7 +524,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.8412,
+        "palette": 1.0,
         "linewidth": 1.0
       }
     },
@@ -531,7 +532,7 @@
       "id": "arxiv-ml-bar-line-v2__2511.15055",
       "chart": "Std-band",
       "status": "scored",
-      "score": 86.90259303613983,
+      "score": 94.21602653429046,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -543,7 +544,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.5195,
+        "palette": 0.9583,
         "figure_aspect": 0.6946,
         "linewidth": 1.0,
         "grid": 1.0,
@@ -555,21 +556,21 @@
       "id": "arxiv-ml-bar-line-v2__2605.21125",
       "chart": "Polar/Radial",
       "status": "scored",
-      "score": 85.58950950008641,
+      "score": 88.0897047741995,
       "n_activated": 1,
       "scored_dimensions": [
         "palette"
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.8559
+        "palette": 0.8809
       }
     },
     {
       "id": "arxiv-phys-prx-prl__2603.21981",
       "chart": "Line",
       "status": "scored",
-      "score": 48.28545411595873,
+      "score": 49.37086018819221,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -579,7 +580,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.9314,
+        "palette": 0.9748,
         "linewidth": 0.0,
         "tick_direction": 0.0,
         "legend_frame": 1.0
@@ -589,7 +590,7 @@
       "id": "arxiv_2410.15876",
       "chart": "Std-band",
       "status": "scored",
-      "score": 78.35645727118724,
+      "score": 78.66336475827258,
       "n_activated": 3,
       "scored_dimensions": [
         "palette",
@@ -598,7 +599,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.5475,
+        "palette": 0.5567,
         "figure_aspect": 0.8032,
         "grid": 1.0
       }
@@ -627,7 +628,7 @@
       "id": "arxiv_2502.17598",
       "chart": "Heatmap",
       "status": "scored",
-      "score": 84.53550075180613,
+      "score": 82.0540649100751,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -637,7 +638,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.8933,
+        "palette": 0.7941,
         "figure_aspect": 0.966,
         "linewidth": 0.5221,
         "grid": 1.0
@@ -647,7 +648,7 @@
       "id": "arxiv_2502.18153",
       "chart": "3D",
       "status": "scored",
-      "score": 63.0205640742983,
+      "score": 58.635606658562104,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -657,7 +658,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.8928,
+        "palette": 0.7174,
         "figure_aspect": 0.6281,
         "linewidth": 0.0,
         "grid": 1.0
@@ -667,7 +668,7 @@
       "id": "arxiv_2505.19527",
       "chart": "3D",
       "status": "scored",
-      "score": 2.978044469643741,
+      "score": 20.521098714784515,
       "n_activated": 3,
       "scored_dimensions": [
         "palette",
@@ -676,7 +677,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.0893,
+        "palette": 0.6156,
         "linewidth": 0.0,
         "grid": 0.0
       }
@@ -685,7 +686,7 @@
       "id": "arxiv_2506.14951",
       "chart": "3D",
       "status": "scored",
-      "score": 0.0,
+      "score": 39.2664794081876,
       "n_activated": 2,
       "scored_dimensions": [
         "palette",
@@ -693,7 +694,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.0,
+        "palette": 0.7853,
         "linewidth": 0.0
       }
     },
@@ -701,7 +702,7 @@
       "id": "arxiv_2508.01948",
       "chart": "3D",
       "status": "scored",
-      "score": 51.557264499412355,
+      "score": 60.86239977520088,
       "n_activated": 3,
       "scored_dimensions": [
         "palette",
@@ -710,7 +711,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.5467,
+        "palette": 0.8259,
         "grid": 0.0,
         "legend_frame": 1.0
       }
@@ -719,7 +720,7 @@
       "id": "arxiv_2510.17384",
       "chart": "Scatter",
       "status": "scored",
-      "score": 55.47523594769242,
+      "score": 53.369531195141036,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -731,7 +732,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.8256,
+        "palette": 0.6993,
         "figure_aspect": 0.5029,
         "linewidth": 0.0,
         "grid": 1.0,
@@ -761,7 +762,7 @@
       "id": "arxiv_2512.25023",
       "chart": "Std-band",
       "status": "scored",
-      "score": 55.63090910994818,
+      "score": 57.65994287189401,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -772,7 +773,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.8716,
+        "palette": 0.9731,
         "figure_aspect": 0.9099,
         "linewidth": 0.0,
         "grid": 1.0,
@@ -821,7 +822,7 @@
       "id": "arxiv_2603.17004",
       "chart": "Line",
       "status": "scored",
-      "score": 41.19079491712948,
+      "score": 45.80455515230717,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -831,7 +832,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.6476,
+        "palette": 0.8322,
         "linewidth": 0.0,
         "tick_direction": 0.0,
         "legend_frame": 1.0
@@ -841,7 +842,7 @@
       "id": "arxiv_2603.23889",
       "chart": "Std-band",
       "status": "scored",
-      "score": 94.41199626156293,
+      "score": 93.73752453690933,
       "n_activated": 3,
       "scored_dimensions": [
         "palette",
@@ -850,7 +851,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.8902,
+        "palette": 0.87,
         "figure_aspect": 0.9421,
         "grid": 1.0
       }
@@ -859,7 +860,7 @@
       "id": "arxiv_2604.01093",
       "chart": "Field 2D",
       "status": "scored",
-      "score": 95.11637176957282,
+      "score": 93.85570539983961,
       "n_activated": 3,
       "scored_dimensions": [
         "palette",
@@ -868,7 +869,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.9602,
+        "palette": 0.9224,
         "linewidth": 0.8933,
         "grid": 1.0
       }
@@ -877,7 +878,7 @@
       "id": "arxiv_2604.05237",
       "chart": "Field 2D",
       "status": "scored",
-      "score": 50.57166414044071,
+      "score": 62.425313462706185,
       "n_activated": 3,
       "scored_dimensions": [
         "palette",
@@ -886,7 +887,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.5603,
+        "palette": 0.9159,
         "figure_aspect": 0.9568,
         "linewidth": 0.0
       }
@@ -895,7 +896,7 @@
       "id": "arxiv_2605.14587",
       "chart": "Heatmap",
       "status": "scored",
-      "score": 84.5057207314893,
+      "score": 80.54799127437107,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -905,7 +906,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.9498,
+        "palette": 0.7915,
         "figure_aspect": 0.9549,
         "linewidth": 0.4756,
         "grid": 1.0
@@ -935,7 +936,7 @@
       "id": "arxiv_2605.22305",
       "chart": "Distribution",
       "status": "scored",
-      "score": 99.15401409314131,
+      "score": 90.51823993051751,
       "n_activated": 2,
       "scored_dimensions": [
         "palette",
@@ -943,7 +944,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.9929,
+        "palette": 0.8202,
         "figure_aspect": 0.9902
       }
     },
@@ -951,7 +952,7 @@
       "id": "arxiv_2605.22455",
       "chart": "Scatter",
       "status": "scored",
-      "score": 74.00435282323808,
+      "score": 77.96300359194456,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -963,7 +964,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.6214,
+        "palette": 0.8589,
         "figure_aspect": 0.8598,
         "linewidth": 0.9591,
         "grid": 1.0,
@@ -975,7 +976,7 @@
       "id": "local-reuse__local_picks_top_hepfit_wheel",
       "chart": "Network/Tree",
       "status": "scored",
-      "score": 81.17866668972006,
+      "score": 82.26584205478139,
       "n_activated": 3,
       "scored_dimensions": [
         "palette",
@@ -984,7 +985,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.7755,
+        "palette": 0.8081,
         "figure_aspect": 0.7529,
         "linewidth": 0.9069
       }
@@ -1029,7 +1030,7 @@
       "id": "local_picks_top_scatter__39",
       "chart": "Scatter",
       "status": "scored",
-      "score": 48.218296435890906,
+      "score": 73.2182964358909,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -1039,7 +1040,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.0,
+        "palette": 1.0,
         "figure_aspect": 0.4791,
         "linewidth": 0.4497,
         "grid": 1.0
@@ -1067,7 +1068,7 @@
       "id": "Chart2Code_level1_direct_HR_5",
       "chart": "Scatter",
       "status": "scored",
-      "score": 92.91493687382008,
+      "score": 96.05060007541175,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -1078,7 +1079,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.7267,
+        "palette": 0.8835,
         "figure_aspect": 0.9191,
         "linewidth": 1.0,
         "grid": 1.0,
@@ -1089,7 +1090,7 @@
       "id": "Chart2Code_level1_direct_combination_57",
       "chart": "Bar",
       "status": "scored",
-      "score": 80.92101251555381,
+      "score": 85.32538632726543,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -1100,7 +1101,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.5289,
+        "palette": 0.7491,
         "figure_aspect": 0.6103,
         "linewidth": 0.9069,
         "grid": 1.0,
@@ -1111,7 +1112,7 @@
       "id": "Chart2Code_level1_direct_contour_18",
       "chart": "Heatmap",
       "status": "scored",
-      "score": 86.72884590076238,
+      "score": 78.30088778876623,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -1121,7 +1122,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.8214,
+        "palette": 0.4842,
         "figure_aspect": 0.7409,
         "linewidth": 0.9069,
         "grid": 1.0
@@ -1131,7 +1132,7 @@
       "id": "Chart2Code_level1_direct_density_11",
       "chart": "Distribution",
       "status": "scored",
-      "score": 95.35613838655914,
+      "score": 95.21749625297352,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -1141,7 +1142,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.8933,
+        "palette": 0.8877,
         "figure_aspect": 0.9619,
         "linewidth": 0.9591,
         "grid": 1.0
@@ -1168,28 +1169,14 @@
     {
       "id": "Chart2Code_level1_direct_heatmap_7",
       "chart": "Heatmap",
-      "status": "scored",
-      "score": 89.11837647463015,
-      "n_activated": 4,
-      "scored_dimensions": [
-        "palette",
-        "figure_aspect",
-        "linewidth",
-        "grid"
-      ],
-      "unavailable_dimensions": [],
-      "dimension_scores": {
-        "palette": 0.7097,
-        "figure_aspect": 0.9986,
-        "linewidth": 0.8565,
-        "grid": 1.0
-      }
+      "status": "unscored",
+      "reason": "reference image unavailable after 3 attempts: URLError"
     },
     {
       "id": "Chart2Code_level1_direct_line_39",
       "chart": "Line",
       "status": "scored",
-      "score": 86.82524545169296,
+      "score": 85.80360641011859,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -1199,7 +1186,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.8101,
+        "palette": 0.7693,
         "figure_aspect": 0.7696,
         "linewidth": 0.8933,
         "grid": 1.0
@@ -1209,7 +1196,7 @@
       "id": "Chart2Code_level1_direct_line_8",
       "chart": "Line",
       "status": "scored",
-      "score": 93.53375512419287,
+      "score": 94.56697755547685,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -1221,7 +1208,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.8115,
+        "palette": 0.8735,
         "figure_aspect": 0.9072,
         "linewidth": 0.8933,
         "grid": 1.0,
@@ -1233,7 +1220,7 @@
       "id": "Chart2Code_level2_3d_11_v2",
       "chart": "Scatter",
       "status": "scored",
-      "score": 56.1144850263616,
+      "score": 67.57051603741883,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -1245,7 +1232,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.2576,
+        "palette": 0.9449,
         "figure_aspect": 0.8717,
         "linewidth": 0.2376,
         "grid": 0.0,
@@ -1257,7 +1244,7 @@
       "id": "Chart2Code_level2_3d_1_v1__single",
       "chart": "3D",
       "status": "scored",
-      "score": 45.27087999184976,
+      "score": 59.37754030152621,
       "n_activated": 3,
       "scored_dimensions": [
         "palette",
@@ -1266,7 +1253,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.3581,
+        "palette": 0.7813,
         "grid": 0.0,
         "legend_frame": 1.0
       }
@@ -1275,7 +1262,7 @@
       "id": "Chart2Code_level2_3d_2_v3",
       "chart": "3D",
       "status": "scored",
-      "score": 68.84994005772661,
+      "score": 78.7090566126049,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -1287,7 +1274,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.1711,
+        "palette": 0.7626,
         "figure_aspect": 0.9599,
         "linewidth": 0.0,
         "grid": 1.0,
@@ -1299,7 +1286,7 @@
       "id": "Chart2Code_level2_3d_5_v4",
       "chart": "Bar",
       "status": "scored",
-      "score": 87.98147656944401,
+      "score": 88.9491093741949,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -1310,7 +1297,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.7409,
+        "palette": 0.7893,
         "figure_aspect": 0.9064,
         "linewidth": 0.7517,
         "grid": 1.0,
@@ -1321,7 +1308,7 @@
       "id": "Chart2Code_level2_area_3_v3",
       "chart": "Line",
       "status": "scored",
-      "score": 72.55784088114953,
+      "score": 74.98797458136896,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -1332,7 +1319,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.7122,
+        "palette": 0.8337,
         "figure_aspect": 0.9157,
         "linewidth": 0.0,
         "grid": 1.0,
@@ -1343,7 +1330,7 @@
       "id": "Chart2Code_level2_bar_10_v4",
       "chart": "Line",
       "status": "scored",
-      "score": 96.25019681745542,
+      "score": 95.3308405515464,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -1354,7 +1341,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.8987,
+        "palette": 0.8527,
         "figure_aspect": 0.9138,
         "linewidth": 1.0,
         "grid": 1.0,
@@ -1365,7 +1352,7 @@
       "id": "Chart2Code_level2_bar_22_v4",
       "chart": "Bar",
       "status": "scored",
-      "score": 75.92422743379792,
+      "score": 80.01945615269031,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -1375,7 +1362,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.4324,
+        "palette": 0.5962,
         "figure_aspect": 0.8665,
         "linewidth": 0.738,
         "grid": 1.0
@@ -1385,7 +1372,7 @@
       "id": "Chart2Code_level2_bar_25_v4",
       "chart": "Line",
       "status": "scored",
-      "score": 96.68519563511359,
+      "score": 95.1609379666278,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -1397,7 +1384,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.861,
+        "palette": 0.7696,
         "figure_aspect": 0.981,
         "linewidth": 0.9591,
         "grid": 1.0,
@@ -1409,7 +1396,7 @@
       "id": "Chart2Code_level2_box_1_v5",
       "chart": "Box/Violin",
       "status": "scored",
-      "score": 74.18557348579303,
+      "score": 82.36187516788193,
       "n_activated": 3,
       "scored_dimensions": [
         "palette",
@@ -1418,7 +1405,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.4561,
+        "palette": 0.7014,
         "linewidth": 0.7694,
         "grid": 1.0
       }
@@ -1427,7 +1414,7 @@
       "id": "Chart2Code_level2_combination_11_v2",
       "chart": "Std-band",
       "status": "scored",
-      "score": 70.95984907589312,
+      "score": 71.83676004045138,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -1439,7 +1426,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.7264,
+        "palette": 0.779,
         "figure_aspect": 0.9075,
         "linewidth": 0.6238,
         "grid": 0.0,
@@ -1451,7 +1438,7 @@
       "id": "Chart2Code_level2_combination_13_v5",
       "chart": "Line",
       "status": "scored",
-      "score": 84.80462797274946,
+      "score": 83.6947943066994,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -1463,7 +1450,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.8399,
+        "palette": 0.7733,
         "figure_aspect": 0.7988,
         "linewidth": 0.4497,
         "grid": 1.0,
@@ -1491,7 +1478,7 @@
       "id": "Chart2Code_level2_combination_16_v5",
       "chart": "Box/Violin",
       "status": "scored",
-      "score": 87.42701821040208,
+      "score": 91.93472754517593,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -1502,7 +1489,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.5583,
+        "palette": 0.7836,
         "figure_aspect": 0.9431,
         "linewidth": 0.87,
         "grid": 1.0,
@@ -1513,7 +1500,7 @@
       "id": "Chart2Code_level2_combination_33_v5",
       "chart": "Distribution",
       "status": "scored",
-      "score": 70.21987365985379,
+      "score": 76.61467880420042,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -1524,7 +1511,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.5557,
+        "palette": 0.8755,
         "figure_aspect": 0.9553,
         "linewidth": 0.0,
         "grid": 1.0,
@@ -1535,7 +1522,7 @@
       "id": "Chart2Code_level2_combination_42_v5",
       "chart": "Scatter",
       "status": "scored",
-      "score": 85.19835729588041,
+      "score": 86.66300850936014,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -1546,7 +1533,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.7541,
+        "palette": 0.8273,
         "figure_aspect": 0.8793,
         "linewidth": 0.6265,
         "grid": 1.0,
@@ -1557,7 +1544,7 @@
       "id": "Chart2Code_level2_combination_44_v3",
       "chart": "Distribution",
       "status": "scored",
-      "score": 72.63108030632445,
+      "score": 80.49108133098612,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -1569,7 +1556,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.2605,
+        "palette": 0.7321,
         "figure_aspect": 0.6477,
         "linewidth": 0.4497,
         "grid": 1.0,
@@ -1581,7 +1568,7 @@
       "id": "Chart2Code_level2_contour_14_v1",
       "chart": "Field 2D",
       "status": "scored",
-      "score": 93.49467023264589,
+      "score": 90.93652872454034,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -1591,7 +1578,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.782,
+        "palette": 0.6797,
         "figure_aspect": 0.9987,
         "linewidth": 0.9591,
         "grid": 1.0
@@ -1601,7 +1588,7 @@
       "id": "Chart2Code_level2_contour_23_v4",
       "chart": "Field 2D",
       "status": "scored",
-      "score": 90.83740366857118,
+      "score": 90.89471435366515,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -1611,7 +1598,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.6958,
+        "palette": 0.6981,
         "figure_aspect": 0.9786,
         "linewidth": 0.9591,
         "grid": 1.0
@@ -1621,7 +1608,7 @@
       "id": "Chart2Code_level2_contour_25_v2",
       "chart": "Field 2D",
       "status": "scored",
-      "score": 75.86220891501476,
+      "score": 73.75023420728326,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -1631,7 +1618,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.5986,
+        "palette": 0.5141,
         "figure_aspect": 0.7693,
         "grid": 1.0,
         "spines_removed": 0.6667
@@ -1641,7 +1628,7 @@
       "id": "Chart2Code_level2_contour_25_v3",
       "chart": "Field 2D",
       "status": "scored",
-      "score": 87.25708368719556,
+      "score": 80.08213365593791,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -1651,7 +1638,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.6548,
+        "palette": 0.3678,
         "figure_aspect": 0.9286,
         "linewidth": 0.9069,
         "grid": 1.0
@@ -1661,7 +1648,7 @@
       "id": "Chart2Code_level2_contour_5_v5",
       "chart": "Field 2D",
       "status": "scored",
-      "score": 80.45199374486842,
+      "score": 80.77742304963692,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -1671,7 +1658,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.435,
+        "palette": 0.448,
         "figure_aspect": 0.8898,
         "linewidth": 0.8933,
         "grid": 1.0
@@ -1681,7 +1668,7 @@
       "id": "Chart2Code_level2_density_12_v3",
       "chart": "Distribution",
       "status": "scored",
-      "score": 95.47759168496577,
+      "score": 96.73188796558017,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -1692,7 +1679,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.7804,
+        "palette": 0.8431,
         "figure_aspect": 0.9935,
         "grid": 1.0,
         "spines_removed": 1.0,
@@ -1703,7 +1690,7 @@
       "id": "Chart2Code_level2_density_14_v4",
       "chart": "Line",
       "status": "scored",
-      "score": 75.2652865100781,
+      "score": 74.68007440535298,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -1714,7 +1701,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.7908,
+        "palette": 0.7615,
         "figure_aspect": 0.9725,
         "linewidth": 0.0,
         "grid": 1.0,
@@ -1725,7 +1712,7 @@
       "id": "Chart2Code_level2_errorpoint_10_v5",
       "chart": "Scatter",
       "status": "scored",
-      "score": 77.1368590507045,
+      "score": 85.38202900837204,
       "n_activated": 3,
       "scored_dimensions": [
         "palette",
@@ -1734,7 +1721,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.5447,
+        "palette": 0.792,
         "linewidth": 0.7694,
         "grid": 1.0
       }
@@ -1743,7 +1730,7 @@
       "id": "Chart2Code_level2_errorpoint_1_v5",
       "chart": "Scatter",
       "status": "scored",
-      "score": 81.92899387818304,
+      "score": 80.32167372664885,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -1754,7 +1741,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.8084,
+        "palette": 0.728,
         "figure_aspect": 0.5186,
         "linewidth": 0.7694,
         "grid": 1.0,
@@ -1765,7 +1752,7 @@
       "id": "Chart2Code_level2_errorpoint_5_v5",
       "chart": "Std-band",
       "status": "scored",
-      "score": 91.99010127767109,
+      "score": 94.71146157870169,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -1777,7 +1764,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.7842,
+        "palette": 0.9474,
         "figure_aspect": 0.8284,
         "linewidth": 0.9069,
         "grid": 1.0,
@@ -1789,7 +1776,7 @@
       "id": "Chart2Code_level2_hist_2_v3",
       "chart": "Distribution",
       "status": "scored",
-      "score": 96.00851099797713,
+      "score": 93.38526261029976,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -1801,7 +1788,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.9188,
+        "palette": 0.7614,
         "figure_aspect": 0.9853,
         "linewidth": 0.8565,
         "grid": 1.0,
@@ -1813,7 +1800,7 @@
       "id": "Chart2Code_level2_hist_2_v5",
       "chart": "Distribution",
       "status": "scored",
-      "score": 76.087759132382,
+      "score": 76.49199982222424,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -1824,7 +1811,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.8044,
+        "palette": 0.8246,
         "linewidth": 0.0,
         "grid": 1.0,
         "spines_removed": 1.0,
@@ -1835,7 +1822,7 @@
       "id": "Chart2Code_level2_multidiff_1_v1",
       "chart": "Distribution",
       "status": "scored",
-      "score": 83.25583056850326,
+      "score": 93.23224708006488,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -1846,7 +1833,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.2897,
+        "palette": 0.7885,
         "figure_aspect": 0.9798,
         "linewidth": 0.8933,
         "grid": 1.0,
@@ -1857,7 +1844,7 @@
       "id": "Chart2Code_level2_multidiff_2_v2__single",
       "chart": "Field 2D",
       "status": "scored",
-      "score": 92.12965963577074,
+      "score": 90.30066401333129,
       "n_activated": 3,
       "scored_dimensions": [
         "palette",
@@ -1866,7 +1853,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.8706,
+        "palette": 0.8158,
         "linewidth": 0.8933,
         "grid": 1.0
       }
@@ -1875,7 +1862,7 @@
       "id": "Chart2Code_level2_multidiff_5_v1",
       "chart": "Line",
       "status": "scored",
-      "score": 65.23741296211227,
+      "score": 70.35132143802697,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -1886,7 +1873,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.4285,
+        "palette": 0.6842,
         "figure_aspect": 0.8334,
         "linewidth": 0.0,
         "grid": 1.0,
@@ -1897,7 +1884,7 @@
       "id": "Chart2Code_level2_quiver_10_v5",
       "chart": "Field 2D",
       "status": "scored",
-      "score": 80.9941271753429,
+      "score": 78.24829151965803,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -1907,7 +1894,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.5882,
+        "palette": 0.4783,
         "figure_aspect": 0.9901,
         "linewidth": 0.6616,
         "grid": 1.0
@@ -1917,7 +1904,7 @@
       "id": "Chart2Code_level2_quiver_13_v1",
       "chart": "Field 2D",
       "status": "scored",
-      "score": 71.66694973285976,
+      "score": 71.08464777151477,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -1927,7 +1914,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.8667,
+        "palette": 0.8434,
         "linewidth": 0.0,
         "grid": 1.0,
         "legend_frame": 1.0
@@ -1937,7 +1924,7 @@
       "id": "Chart2Code_level2_quiver_14_v1",
       "chart": "Field 2D",
       "status": "scored",
-      "score": 85.9197484478122,
+      "score": 87.92411012010727,
       "n_activated": 3,
       "scored_dimensions": [
         "palette",
@@ -1946,7 +1933,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.7528,
+        "palette": 0.8129,
         "linewidth": 0.8248,
         "legend_frame": 1.0
       }
@@ -1955,7 +1942,7 @@
       "id": "Chart2Code_level2_quiver_4_v5",
       "chart": "Field 2D",
       "status": "scored",
-      "score": 76.66802625397513,
+      "score": 87.30193178115006,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -1965,7 +1952,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.315,
+        "palette": 0.7404,
         "linewidth": 0.7517,
         "grid": 1.0,
         "legend_frame": 1.0
@@ -1975,7 +1962,7 @@
       "id": "Chart2Code_level2_radar_10_v2",
       "chart": "Polar/Radial",
       "status": "scored",
-      "score": 61.76599485706484,
+      "score": 69.51176955109861,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -1985,7 +1972,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.4706,
+        "palette": 0.7805,
         "linewidth": 0.0,
         "grid": 1.0,
         "legend_frame": 1.0
@@ -1995,7 +1982,7 @@
       "id": "Chart2Code_level2_radar_18_v5",
       "chart": "Bar",
       "status": "scored",
-      "score": 73.77720335058874,
+      "score": 69.70056677624272,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -2005,7 +1992,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.9511,
+        "palette": 0.788,
         "linewidth": 0.0,
         "grid": 1.0,
         "legend_frame": 1.0
@@ -2015,7 +2002,7 @@
       "id": "Chart2Code_level2_radar_23_v3",
       "chart": "Polar/Radial",
       "status": "scored",
-      "score": 55.411282609401404,
+      "score": 63.26355694957416,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -2026,7 +2013,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.5073,
+        "palette": 0.8999,
         "figure_aspect": 0.8136,
         "linewidth": 0.4497,
         "grid": 0.0,
@@ -2037,7 +2024,7 @@
       "id": "Chart2Code_level2_radar_26_v3",
       "chart": "Polar/Radial",
       "status": "scored",
-      "score": 42.99657895123359,
+      "score": 45.33469603735308,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -2048,7 +2035,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.7002,
+        "palette": 0.8171,
         "figure_aspect": 0.0,
         "linewidth": 0.4497,
         "grid": 0.0,
@@ -2059,7 +2046,7 @@
       "id": "Chart2Code_level2_radar_35_v4",
       "chart": "Polar/Radial",
       "status": "scored",
-      "score": 61.62012161629824,
+      "score": 61.87910329720679,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -2071,7 +2058,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.7974,
+        "palette": 0.8129,
         "figure_aspect": 0.8998,
         "linewidth": 0.0,
         "grid": 0.0,
@@ -2083,7 +2070,7 @@
       "id": "Chart2Code_level2_radar_3_v1",
       "chart": "Polar/Radial",
       "status": "scored",
-      "score": 63.80167981937814,
+      "score": 63.36638173120059,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -2094,7 +2081,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.8234,
+        "palette": 0.8016,
         "figure_aspect": 0.917,
         "linewidth": 0.4497,
         "grid": 0.0,
@@ -2105,7 +2092,7 @@
       "id": "Chart2Code_level2_radar_3_v3",
       "chart": "Polar/Radial",
       "status": "scored",
-      "score": 76.01749807700223,
+      "score": 79.1681100779516,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -2117,7 +2104,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.5672,
+        "palette": 0.7563,
         "figure_aspect": 0.9938,
         "linewidth": 0.0,
         "grid": 1.0,
@@ -2147,7 +2134,7 @@
       "id": "Chart2Code_level2_radar_4_v3",
       "chart": "Polar/Radial",
       "status": "scored",
-      "score": 88.05288291569678,
+      "score": 93.97961556192503,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -2157,7 +2144,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.7033,
+        "palette": 0.9404,
         "figure_aspect": 0.9119,
         "linewidth": 0.9069,
         "grid": 1.0
@@ -2167,7 +2154,7 @@
       "id": "Chart2Code_level2_radar_7_v3",
       "chart": "Polar/Radial",
       "status": "scored",
-      "score": 69.93845154133271,
+      "score": 70.59131115726561,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -2179,7 +2166,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.7968,
+        "palette": 0.836,
         "figure_aspect": 0.7757,
         "linewidth": 0.6238,
         "grid": 0.0,
@@ -2191,7 +2178,7 @@
       "id": "Chart2Code_level2_radar_9_v4",
       "chart": "Polar/Radial",
       "status": "scored",
-      "score": 60.39955032315871,
+      "score": 63.361507758297876,
       "n_activated": 3,
       "scored_dimensions": [
         "palette",
@@ -2200,7 +2187,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.812,
+        "palette": 0.9008,
         "grid": 0.0,
         "legend_frame": 1.0
       }
@@ -2209,7 +2196,7 @@
       "id": "Chart2Code_level2_scatter_13_v2",
       "chart": "Scatter",
       "status": "scored",
-      "score": 85.0194035592188,
+      "score": 94.42847578478323,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -2220,7 +2207,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.4215,
+        "palette": 0.8919,
         "figure_aspect": 0.973,
         "linewidth": 0.8565,
         "grid": 1.0,
@@ -2231,7 +2218,7 @@
       "id": "Chart2Code_level2_scatter_1_v2__single",
       "chart": "Bar",
       "status": "scored",
-      "score": 68.29097221580474,
+      "score": 70.27095354170324,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -2243,7 +2230,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.6844,
+        "palette": 0.8032,
         "figure_aspect": 0.413,
         "linewidth": 0.0,
         "grid": 1.0,
@@ -2255,7 +2242,7 @@
       "id": "Chart2Code_level2_scatter_22_v2__single",
       "chart": "Scatter",
       "status": "scored",
-      "score": 68.01016727180195,
+      "score": 75.89336573692842,
       "n_activated": 3,
       "scored_dimensions": [
         "palette",
@@ -2264,7 +2251,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.6154,
+        "palette": 0.8519,
         "figure_aspect": 0.9752,
         "linewidth": 0.4497
       }
@@ -2273,7 +2260,7 @@
       "id": "Chart2Code_level2_scatter_22_v3",
       "chart": "Scatter",
       "status": "scored",
-      "score": 84.03996439337863,
+      "score": 91.00593576997672,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -2283,7 +2270,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.5168,
+        "palette": 0.7955,
         "figure_aspect": 0.9883,
         "linewidth": 0.8565,
         "grid": 1.0
@@ -2293,7 +2280,7 @@
       "id": "Chart2Code_level2_scatter_27_v5",
       "chart": "Scatter",
       "status": "scored",
-      "score": 69.65263338420797,
+      "score": 71.96554598884293,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -2305,7 +2292,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.3334,
+        "palette": 0.4722,
         "figure_aspect": 0.8458,
         "linewidth": 0.0,
         "grid": 1.0,
@@ -2317,7 +2304,7 @@
       "id": "Chart2Code_level2_scatter_5_v5",
       "chart": "Scatter",
       "status": "scored",
-      "score": 66.44185249894497,
+      "score": 70.22354374257188,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -2327,7 +2314,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.7467,
+        "palette": 0.8979,
         "figure_aspect": 0.911,
         "grid": 0.0,
         "legend_frame": 1.0
@@ -2337,7 +2324,7 @@
       "id": "Chart2Code_level2_violin_25_v4",
       "chart": "Box/Violin",
       "status": "scored",
-      "score": 63.88709140243989,
+      "score": 69.10442914921981,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -2349,7 +2336,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.535,
+        "palette": 0.8481,
         "figure_aspect": 0.8485,
         "linewidth": 0.4497,
         "grid": 0.0,
@@ -2361,7 +2348,7 @@
       "id": "Chart2Code_level3_table20_3_generate",
       "chart": "Scatter",
       "status": "scored",
-      "score": 88.25946690225739,
+      "score": 91.53716779604942,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -2372,7 +2359,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.5688,
+        "palette": 0.7327,
         "figure_aspect": 0.9373,
         "linewidth": 0.9069,
         "grid": 1.0,
@@ -2383,7 +2370,7 @@
       "id": "Chart2NCode_7b87069f5442408286d1a4b0300eae18",
       "chart": "3D",
       "status": "scored",
-      "score": 86.9937536276298,
+      "score": 90.96562376436748,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -2395,7 +2382,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.4005,
+        "palette": 0.6388,
         "figure_aspect": 0.9259,
         "linewidth": 0.8933,
         "grid": 1.0,
@@ -2407,7 +2394,7 @@
       "id": "Chart2NCode_ce7b7d946995482f9dd37ddad319cbc2",
       "chart": "Line",
       "status": "scored",
-      "score": 82.5943113220164,
+      "score": 85.22486194033638,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -2417,7 +2404,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.6818,
+        "palette": 0.7871,
         "figure_aspect": 0.8525,
         "linewidth": 0.7694,
         "grid": 1.0
@@ -2427,7 +2414,7 @@
       "id": "Chart2NCode_f5989e4725654971a32e6c84c0dbdfa5",
       "chart": "Bar",
       "status": "scored",
-      "score": 88.55476043089618,
+      "score": 89.13516164746136,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -2439,7 +2426,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.8332,
+        "palette": 0.868,
         "figure_aspect": 0.9801,
         "linewidth": 1.0,
         "grid": 1.0,
@@ -2451,7 +2438,7 @@
       "id": "ChartNet-sample_01541e58b887ce36",
       "chart": "Bar",
       "status": "scored",
-      "score": 86.47345293960494,
+      "score": 84.68670214660133,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -2462,7 +2449,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.8867,
+        "palette": 0.7973,
         "figure_aspect": 0.6676,
         "linewidth": 0.7694,
         "grid": 1.0,
@@ -2493,7 +2480,7 @@
       "id": "ChartNet-sample_12f1182db6964e8c",
       "chart": "Line",
       "status": "scored",
-      "score": 77.44997708510874,
+      "score": 93.00237465171101,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -2504,7 +2491,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.0,
+        "palette": 0.7776,
         "figure_aspect": 0.8725,
         "grid": 1.0,
         "spines_removed": 1.0,
@@ -2529,7 +2516,7 @@
       "id": "ChartNet-sample_21db7b1495645e96",
       "chart": "Bar",
       "status": "scored",
-      "score": 81.85290383624005,
+      "score": 84.01761185382524,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -2541,7 +2528,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.7165,
+        "palette": 0.8464,
         "figure_aspect": 0.745,
         "linewidth": 0.4497,
         "grid": 1.0,
@@ -2573,7 +2560,7 @@
       "id": "ChartNet-sample_27ec276af1be7f88",
       "chart": "Bar",
       "status": "scored",
-      "score": 89.75281717054429,
+      "score": 97.09952037148253,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -2585,7 +2572,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.4028,
+        "palette": 0.8436,
         "figure_aspect": 0.9824,
         "linewidth": 1.0,
         "grid": 1.0,
@@ -2617,7 +2604,7 @@
       "id": "ChartNet-sample_3d0ebd7ea1e10bf3",
       "chart": "Line",
       "status": "scored",
-      "score": 92.00321401587894,
+      "score": 94.77825011092989,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -2629,7 +2616,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.6828,
+        "palette": 0.8493,
         "figure_aspect": 0.9809,
         "linewidth": 0.8565,
         "grid": 1.0,
@@ -2641,7 +2628,7 @@
       "id": "ChartNet-sample_42a8557ef11775e9",
       "chart": "Bar",
       "status": "scored",
-      "score": 68.80530625871488,
+      "score": 84.44365647833905,
       "n_activated": 3,
       "scored_dimensions": [
         "palette",
@@ -2650,7 +2637,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.3636,
+        "palette": 0.8327,
         "figure_aspect": 0.7006,
         "grid": 1.0
       }
@@ -2695,7 +2682,7 @@
       "id": "ChartNet-sample_55e97056fbbde5b6__single",
       "chart": "Bar",
       "status": "scored",
-      "score": 75.83882443594902,
+      "score": 79.50083950842311,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -2706,7 +2693,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.6643,
+        "palette": 0.8474,
         "figure_aspect": 0.89,
         "linewidth": 0.2376,
         "grid": 1.0,
@@ -2717,7 +2704,7 @@
       "id": "ChartNet-sample_575be33996f0155c",
       "chart": "Bar",
       "status": "scored",
-      "score": 95.0130113569451,
+      "score": 93.27176526681546,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -2728,7 +2715,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.9372,
+        "palette": 0.8502,
         "figure_aspect": 0.8134,
         "linewidth": 1.0,
         "grid": 1.0,
@@ -2777,7 +2764,7 @@
       "id": "ChartNet-sample_5cf3859f3ce78167",
       "chart": "Bar",
       "status": "scored",
-      "score": 96.67814235621361,
+      "score": 95.91420208977885,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -2788,7 +2775,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.8841,
+        "palette": 0.8459,
         "figure_aspect": 0.9498,
         "grid": 1.0,
         "spines_removed": 1.0,
@@ -2799,7 +2786,7 @@
       "id": "ChartNet-sample_5e553d0091325708",
       "chart": "Polar/Radial",
       "status": "scored",
-      "score": 69.72118337109825,
+      "score": 75.84953962728737,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -2810,7 +2797,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.5203,
+        "palette": 0.8267,
         "figure_aspect": 0.9658,
         "linewidth": 1.0,
         "grid": 0.0,
@@ -2882,7 +2869,7 @@
       "id": "ChartNet-sample_953bb3ed650d8541",
       "chart": "Bar",
       "status": "scored",
-      "score": 88.49131836113183,
+      "score": 87.92629584044697,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -2893,7 +2880,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.8984,
+        "palette": 0.8701,
         "figure_aspect": 0.9024,
         "linewidth": 0.6238,
         "grid": 1.0,
@@ -2920,7 +2907,7 @@
       "id": "ChartNet-sample_9fa23898eda05a63",
       "chart": "Bar",
       "status": "scored",
-      "score": 54.01622104503261,
+      "score": 65.5370622884373,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -2930,7 +2917,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.3912,
+        "palette": 0.8521,
         "linewidth": 0.7694,
         "grid": 0.0,
         "legend_frame": 1.0
@@ -2940,7 +2927,7 @@
       "id": "ChartNet-sample_ad3e2f8704f6e1b1__single",
       "chart": "Bar",
       "status": "scored",
-      "score": 78.83472514019918,
+      "score": 79.18319604179548,
       "n_activated": 7,
       "scored_dimensions": [
         "palette",
@@ -2953,7 +2940,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.7806,
+        "palette": 0.805,
         "background": 0.0,
         "figure_aspect": 0.9684,
         "linewidth": 0.7694,
@@ -3002,7 +2989,7 @@
       "id": "ChartNet-sample_bbbf530e6aefa314",
       "chart": "Bar",
       "status": "scored",
-      "score": 91.09033098535048,
+      "score": 91.34301365831173,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -3014,7 +3001,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.7919,
+        "palette": 0.8071,
         "figure_aspect": 0.904,
         "linewidth": 0.7694,
         "grid": 1.0,
@@ -3026,7 +3013,7 @@
       "id": "ChartNet-sample_c1ec6683e1feea7b",
       "chart": "Line",
       "status": "scored",
-      "score": 90.21299921801247,
+      "score": 93.23713397954123,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -3037,7 +3024,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.7141,
+        "palette": 0.8653,
         "figure_aspect": 0.9033,
         "linewidth": 0.8933,
         "grid": 1.0,
@@ -3068,7 +3055,7 @@
       "id": "ChartNet-sample_d7325ced9dcb3e94",
       "chart": "Bar",
       "status": "scored",
-      "score": 98.4524875864386,
+      "score": 96.44825758704982,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -3079,7 +3066,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.9434,
+        "palette": 0.8431,
         "figure_aspect": 0.9793,
         "linewidth": 1.0,
         "grid": 1.0,
@@ -3090,7 +3077,7 @@
       "id": "ChartNet-sample_e17ff7b5495b0ee4",
       "chart": "Polar/Radial",
       "status": "scored",
-      "score": 77.32687781410546,
+      "score": 79.54489958746227,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -3102,7 +3089,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.737,
+        "palette": 0.8701,
         "figure_aspect": 0.9957,
         "linewidth": 0.9069,
         "grid": 0.0,
@@ -3114,7 +3101,7 @@
       "id": "ChartNet-sample_f31f9780b9bd6948",
       "chart": "Line",
       "status": "scored",
-      "score": 92.00664845557706,
+      "score": 95.65579554265169,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -3126,7 +3113,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.6652,
+        "palette": 0.8841,
         "figure_aspect": 0.962,
         "linewidth": 0.8933,
         "grid": 1.0,
@@ -3138,7 +3125,7 @@
       "id": "ChartNet-sample_f743754444c3a3d9",
       "chart": "Line",
       "status": "scored",
-      "score": 91.31380044591172,
+      "score": 95.1514941834866,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -3150,7 +3137,7 @@
       ],
       "unavailable_dimensions": [],
       "dimension_scores": {
-        "palette": 0.6538,
+        "palette": 0.8841,
         "figure_aspect": 0.9318,
         "linewidth": 0.8933,
         "grid": 1.0,

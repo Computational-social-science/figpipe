@@ -82,11 +82,22 @@ def score_one(row: dict, *, source: str = "image") -> dict:
         if not img.is_file():
             img = bench.IMAGES / f"{row.get('id')}.png"
         if not img.is_file():
-            try:
-                img = bench.download_image(row)
-            except Exception as exc:                # noqa: BLE001
+            # A FETCH FAILURE IS NOT A CAPABILITY RESULT. Retry before dropping the task, because a
+            # dropped task makes this pass cover a different set than the baseline and ceiling --
+            # measured 2026-10-24: one TimeoutError left the pipeline at n=148 against 149 for the
+            # other two, and the comparison is meaningless across different sets.
+            img = None
+            last_exc = None
+            for _attempt in range(3):
+                try:
+                    img = bench.download_image(row)
+                    break
+                except Exception as exc:            # noqa: BLE001
+                    last_exc = exc
+            if img is None:
                 rec.update({"status": "unscored",
-                            "reason": f"reference image unavailable: {type(exc).__name__}"})
+                            "reason": f"reference image unavailable after 3 attempts: "
+                                      f"{type(last_exc).__name__}"})
                 return rec
         try:
             from figpipe import styleprofile
@@ -216,7 +227,33 @@ def comparison() -> dict:
     if base and pipe and base["mean"] and pipe["mean"] is not None:
         delta = round(pipe["mean"] - base["mean"], 2)
         out["improvement"] = {"absolute": delta,
-                              "relative_pct": round(100.0 * delta / base["mean"], 1)}
+                              "relative_pct": round(100.0 * delta / base["mean"], 1),
+                              "basis": ("the three reported means, EACH OVER ITS OWN MEASURED SET "
+                                        "-- see `intersection` for the fixed-set comparison")}
+    # THE FIXED-SET COMPARISON. A task one pass could not fetch makes the sets differ, and then the
+    # means are averages over different things. This reports the improvement on the ids all three
+    # passes actually scored, which is the only version where the task set is held fixed.
+    per = {}
+    for label, path in (("baseline", OUT_NAIVE), ("pipeline", OUT_IMAGE), ("ceiling", OUT_CODE)):
+        try:
+            recs = json.loads(path.read_text(encoding="utf-8")).get("records") or []
+        except (OSError, ValueError):
+            recs = []
+        per[label] = {r["id"]: r["score"] for r in recs
+                      if r.get("status") == "scored" and isinstance(r.get("score"), (int, float))}
+    if all(per.get(k) for k in ("baseline", "pipeline", "ceiling")):
+        common = set(per["baseline"]) & set(per["pipeline"]) & set(per["ceiling"])
+        if common:
+            means = {k: round(sum(per[k][i] for i in common) / len(common), 2) for k in per}
+            idelta = round(means["pipeline"] - means["baseline"], 2)
+            out["intersection"] = {
+                "n": len(common), "means": means,
+                "improvement": {"absolute": idelta,
+                                "relative_pct": (round(100.0 * idelta / means["baseline"], 1)
+                                                 if means["baseline"] else None)},
+                "note": ("all three means over the SAME task ids, so the task set is fixed. Use this "
+                         "for the claim; the per-pass means above cover different sets."),
+            }
     return out
 
 

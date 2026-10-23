@@ -275,8 +275,17 @@ def test_the_claim_has_a_baseline_and_a_ceiling():
     # the ordering must be baseline < pipeline < ceiling, or the "improvement" is not an improvement
     assert cmp["baseline"]["mean"] < cmp["pipeline"]["mean"] < cmp["ceiling"]["mean"]
     assert cmp["improvement"]["absolute"] > 0
-    # the three must be measured on the SAME task count, or the comparison is meaningless
-    assert cmp["baseline"]["n"] == cmp["pipeline"]["n"] == cmp["ceiling"]["n"]
+    # THE THREE MUST BE COMPARED ON THE SAME TASK SET, and the per-pass counts can differ because a
+    # pass drops a task it cannot fetch. `intersection` is the comparison that holds the set fixed;
+    # it must exist and must cover most of the pool.
+    ix = cmp.get("intersection")
+    assert ix is not None, (
+        "no fixed-set comparison: the three means cover different task sets, so the improvement is "
+        "the difference between two different measurements")
+    assert ix["n"] >= 100, f"the fixed-set comparison covers only {ix['n']} tasks"
+    assert set(ix["means"]) == {"baseline", "pipeline", "ceiling"}
+    assert ix["means"]["baseline"] < ix["means"]["pipeline"] < ix["means"]["ceiling"]
+    assert ix["improvement"]["absolute"] > 0
     # and each must declare where its style came from
     assert cmp["baseline"]["source"] == "naive"
     assert cmp["pipeline"]["source"] == "image"

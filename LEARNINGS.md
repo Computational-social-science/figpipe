@@ -5277,3 +5277,57 @@ dimension as undetermined is the honest choice; guessing it is worse than not tr
 been measured before, not assumed.
 
 Suite: 849 passed, 2 skipped.
+
+
+## 153. The palette cutoff discarded the inks that mattered (2026-10-24)
+
+Two changes this round, and the first one moved the metric by more than any round since 2026-10-19.
+
+### The palette fix: +3.51
+
+Diagnosed on PMC11502666. The reference palette contains four distinct reds, and the image really
+does contain them:
+
+    #d83c3e   rank 21   622 px   0.119 % of pixels
+    #c63f42   rank 25   587 px   0.112 %
+    #bf3c40   rank 221   79 px   0.015 %
+
+The extractor kept only `#d0666c`, an ANTIALIASED BLEND of them, because every true red sat below the
+`0.004 * total` area cutoff. **That cutoff selects for FILLS and discards STROKES**: a line's stroke is
+a thin run of pixels, and a figure with wide white margins has almost no area of any single ink.
+
+THE FIX: lower the floor to `0.0004 * total` and pair it with `min(rgb) > 200 -> skip`. An antialiased
+edge is a blend of ink and white -- it keeps the hue and loses the chroma, so its minimum channel is
+high. Real ink does not. The chroma test is what makes the lower floor safe.
+
+    palette:  0.650 -> 0.804   (+0.154)
+    official: 75.44 -> 78.95   (+3.51)
+    every other dimension unchanged to three decimals
+
+That last line is the causality check: if the palette fix had leaked into another dimension, the
+improvement would be unattributable.
+
+### The comparison fix: the three points covered different sets
+
+Re-measuring the ceiling and baseline exposed a defect the tests had been asserting for rounds:
+`assert cmp["baseline"]["n"] == cmp["pipeline"]["n"] == cmp["ceiling"]["n"]` -- and the passes did
+not satisfy it. Each pass drops a task it cannot fetch, so the counts were 149 / 148 / 149 and the
+"improvement" was the difference between averages over DIFFERENT task sets.
+
+THE TEST WAS RIGHT AND THE CODE WAS WRONG. The fix was not to relax the assertion: it was to provide
+`comparison()["intersection"]`, the means over the ids all three passes scored.
+
+    fixed set n=148:  baseline 37.36   pipeline 79.02   ceiling 99.19
+    improvement: +41.66 points, 111.5 % relative
+
+**The relative improvement crossed 100 % for the first time** -- and it crossed because the task set
+is now held fixed, not because a number was chosen.
+
+### What this round cost and what it says
+
+Three full scoring passes (~40 minutes each) plus two re-measurements. The palette change is four
+lines. The expensive part was finding that the cutoff was a FILL detector wearing an INK detector's
+name -- the same shape as every defect this project has recorded: a control built around one property
+of its target, silently wrong for every target that lacks it.
+
+Suite: 854 passed, 2 skipped.

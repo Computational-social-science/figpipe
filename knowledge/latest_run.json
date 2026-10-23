@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-23T23:59:23",
+  "run_at": "2026-10-24T02:33:46",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -9,19 +9,16 @@
     "  passed 8, failed 0",
     "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
     "  wrote knowledge\\evolution_report.json",
-    "  lean: tracked 79.1 -> 79.1 MB, worktree 136.6 -> 134.9 MB"
+    "  lean: tracked 79.2 -> 79.2 MB, worktree 143.8 -> 132.1 MB"
   ],
-  "tests_ok": true,
-  "tests_summary": "849 passed, 2 skipped, 1 warning in 380.89s (0:06:20)",
+  "tests_ok": false,
+  "tests_summary": "1 failed, 853 passed, 2 skipped, 1 warning in 622.55s (0:10:22) | FAILED tests/test_official_scorer.py::test_the_claim_has_a_baseline_and_a_ceiling",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
   "published": {
     "pushed": false,
-    "withheld": [],
-    "blocked_deletions": [],
-    "skipped": true,
-    "reason": "no knowledge change: the run record stays uncommitted for the next run"
+    "reason": "not yet published"
   },
   "check_results": {
     "L01": {
@@ -137,15 +134,25 @@
     "tasks": 6,
     "code": 0,
     "tail": [
-      "    type Box/Violin     ok 1/1   d=0.166 base=0.449 delta=0.283 errors=0",
-      "    type Distribution   ok 4/4   d=0.225 base=0.248 delta=0.024 errors=0",
-      "    type Heatmap        ok 1/1   d=0.419 base=0.572 delta=0.153 errors=0",
+      "    type Box/Violin     ok 1/1   d=0.128 base=0.319 delta=0.191 errors=0",
+      "    type Distribution   ok 4/4   d=0.165 base=0.221 delta=0.056 errors=0",
+      "    type Heatmap        ok 1/1   d=0.416 base=0.488 delta=0.072 errors=0",
       "  wrote E:\\2026-AI4S\\figpipe\\corpus\\e2e\\plottwin_report.json"
     ]
   },
   "anchor_refresh": {
-    "ran": false,
-    "reason": "both anchors already comparable"
+    "ran": true,
+    "stale_anchors": [
+      "shipped",
+      "styled"
+    ],
+    "tasks": 35,
+    "code": 0,
+    "tail": [
+      "    type Scatter        ok 3/3   d=0.236 base=0.329 delta=0.093 errors=0",
+      "    type Std-band       ok 1/1   d=0.163 base=0.206 delta=0.043 errors=0",
+      "  wrote E:\\2026-AI4S\\figpipe\\corpus\\e2e\\plottwin_report.json"
+    ]
   },
   "mutation": {
     "ran": true,
@@ -660,7 +667,7 @@
     "patch_note": "a patch changes the SOURCE, so it is probed and reported but never auto-selected: the loop does not edit its own drawer without a human seeing the diff"
   },
   "capabilities": {
-    "_code_version": "d3e09ebe20f5",
+    "_code_version": "f3d542fc3caa",
     "benchmark_hard_findings": 0,
     "benchmark_complete_membership": true,
     "benchmark_pool_size": 150,
@@ -671,51 +678,83 @@
     "benchmark_ok": 138,
     "benchmark_infrastructure_failures": 1,
     "benchmark_success_rate": 1.0,
-    "benchmark_mean_distance": 0.305,
-    "benchmark_anchor_single": 0.335,
-    "benchmark_anchor_distance": 0.335,
-    "benchmark_shipped_anchor_single": 0.295,
-    "benchmark_shipped_anchor_distance": 0.295,
+    "benchmark_mean_distance": 0.279,
+    "benchmark_anchor_single": 0.225,
+    "benchmark_anchor_distance": 0.225,
+    "benchmark_shipped_anchor_single": 0.205,
+    "benchmark_shipped_anchor_distance": 0.205,
     "benchmark_unsupported": 11,
-    "benchmark_official_code_score": 75.41,
-    "benchmark_official_improvement": 37.25,
+    "benchmark_official_code_score": 78.95,
+    "benchmark_official_improvement": null,
     "statistics_reproduced": 15,
     "knowledge_version": 16,
-    "tests": 849
+    "tests": null
   },
   "capabilities_delta": {
     "changed": true,
     "delta": {
-      "benchmark_infrastructure_failures": {
-        "before": 0,
-        "after": 1
+      "_code_version": {
+        "before": "d3e09ebe20f5",
+        "after": "f3d542fc3caa"
       },
-      "benchmark_success_rate": {
-        "before": 0.993,
-        "after": 1.0
+      "benchmark_mean_distance": {
+        "before": 0.305,
+        "after": 0.279
+      },
+      "benchmark_anchor_single": {
+        "before": 0.335,
+        "after": 0.225
+      },
+      "benchmark_anchor_distance": {
+        "before": 0.335,
+        "after": 0.225
+      },
+      "benchmark_shipped_anchor_single": {
+        "before": 0.295,
+        "after": 0.205
+      },
+      "benchmark_shipped_anchor_distance": {
+        "before": 0.295,
+        "after": 0.205
+      },
+      "benchmark_official_code_score": {
+        "before": 75.44,
+        "after": 78.95
+      },
+      "benchmark_official_improvement": {
+        "before": 37.28,
+        "after": null
       },
       "tests": {
-        "before": 842,
-        "after": 849
+        "before": 849,
+        "after": null
       }
     },
     "verdict": {
-      "gains": [
-        {
-          "field": "benchmark_success_rate",
-          "before": 0.993,
-          "after": 1.0
-        },
-        {
-          "field": "tests",
-          "before": 842,
-          "after": 849
-        }
-      ],
+      "gains": [],
       "regressions": [],
       "corrections": [],
-      "not_compared": [],
-      "instrument_changed": false,
+      "not_compared": [
+        {
+          "field": "benchmark_anchor_single",
+          "before": 0.335,
+          "after": 0.225,
+          "why": "the measurement instrument changed between these snapshots, so the two values are not the same quantity"
+        },
+        {
+          "field": "benchmark_shipped_anchor_single",
+          "before": 0.295,
+          "after": 0.205,
+          "why": "the measurement instrument changed between these snapshots, so the two values are not the same quantity"
+        },
+        {
+          "field": "benchmark_official_code_score",
+          "before": 75.44,
+          "after": 78.95,
+          "why": "the measurement instrument changed between these snapshots, so the two values are not the same quantity"
+        }
+      ],
+      "instrument_changed": true,
       "membership_broken": false,
       "ok": true,
       "judged_fields": [
@@ -733,8 +772,6 @@
       ]
     }
   },
-  "ok": true,
-  "capability_ok": true,
-  "capability_regressions": [],
-  "publish_note": "The publish outcome is recorded after the commit that carries this run, so it describes the push triggered by this run; the file's own commit is made by the next scheduled run."
+  "ok": false,
+  "publish_note": "suite ran, but the measurement lock was taken before the publish step; not publishing: another measurement is running: score_official (pid 55908, started 2026-10-24T02:34:25). Overlapping measurements produce numbers that are neither reproducible nor trustworthy -- wait for it, or delete .measurement.lock if the holder is gone."
 }
