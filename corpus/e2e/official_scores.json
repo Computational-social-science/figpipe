@@ -6,24 +6,24 @@
     "note": "OFFICIAL deterministic channel only. The 0.65 vision channel is not run, so this is NOT the combined score.",
     "style_source": "image",
     "n_tasks": 150,
-    "n_scored": 148,
-    "n_unscored": 1,
+    "n_scored": 149,
+    "n_unscored": 0,
     "n_unavailable": 1,
-    "mean_score": 79.02,
-    "min_score": 20.52,
+    "mean_score": 82.02,
+    "min_score": 25.29,
     "max_score": 100.0,
     "by_type": {
       "3D": {
         "n": 7,
-        "mean": 58.33
+        "mean": 72.62
       },
       "Bar": {
         "n": 18,
-        "mean": 84.6
+        "mean": 85.99
       },
       "Box/Violin": {
         "n": 16,
-        "mean": 76.28
+        "mean": 82.01
       },
       "Composite": {
         "n": 3,
@@ -38,8 +38,8 @@
         "mean": 77.77
       },
       "Heatmap": {
-        "n": 12,
-        "mean": 78.93
+        "n": 13,
+        "mean": 79.55
       },
       "Line": {
         "n": 20,
@@ -51,15 +51,15 @@
       },
       "Polar/Radial": {
         "n": 13,
-        "mean": 73.38
+        "mean": 85.94
       },
       "Scatter": {
         "n": 16,
-        "mean": 80.28
+        "mean": 82.88
       },
       "Std-band": {
         "n": 9,
-        "mean": 79.62
+        "mean": 81.47
       }
     },
     "by_dimension": {
@@ -76,24 +76,24 @@
         "mean": 0.0
       },
       "linewidth": {
-        "n": 126,
-        "mean": 0.572
+        "n": 127,
+        "mean": 0.574
       },
       "palette": {
-        "n": 130,
-        "mean": 0.806
-      },
-      "grid": {
-        "n": 110,
-        "mean": 0.827
+        "n": 131,
+        "mean": 0.805
       },
       "figure_aspect": {
-        "n": 117,
-        "mean": 0.868
+        "n": 118,
+        "mean": 0.869
       },
       "spines_removed": {
         "n": 53,
         "mean": 0.965
+      },
+      "grid": {
+        "n": 111,
+        "mean": 1.0
       },
       "legend_frame": {
         "n": 75,
@@ -101,7 +101,6 @@
       }
     },
     "unscored_reasons": {
-      "reference image unavailable after 3 attempts: URLError": 1,
       "reference_has_no_activated_dimensions": 1
     }
   },
@@ -668,7 +667,7 @@
       "id": "arxiv_2505.19527",
       "chart": "3D",
       "status": "scored",
-      "score": 20.521098714784515,
+      "score": 53.85443204811784,
       "n_activated": 3,
       "scored_dimensions": [
         "palette",
@@ -679,7 +678,7 @@
       "dimension_scores": {
         "palette": 0.6156,
         "linewidth": 0.0,
-        "grid": 0.0
+        "grid": 1.0
       }
     },
     {
@@ -702,7 +701,7 @@
       "id": "arxiv_2508.01948",
       "chart": "3D",
       "status": "scored",
-      "score": 60.86239977520088,
+      "score": 94.19573310853421,
       "n_activated": 3,
       "scored_dimensions": [
         "palette",
@@ -712,7 +711,7 @@
       "unavailable_dimensions": [],
       "dimension_scores": {
         "palette": 0.8259,
-        "grid": 0.0,
+        "grid": 1.0,
         "legend_frame": 1.0
       }
     },
@@ -1169,8 +1168,22 @@
     {
       "id": "Chart2Code_level1_direct_heatmap_7",
       "chart": "Heatmap",
-      "status": "unscored",
-      "reason": "reference image unavailable after 3 attempts: URLError"
+      "status": "scored",
+      "score": 87.00563443499671,
+      "n_activated": 4,
+      "scored_dimensions": [
+        "palette",
+        "figure_aspect",
+        "linewidth",
+        "grid"
+      ],
+      "unavailable_dimensions": [],
+      "dimension_scores": {
+        "palette": 0.6252,
+        "figure_aspect": 0.9986,
+        "linewidth": 0.8565,
+        "grid": 1.0
+      }
     },
     {
       "id": "Chart2Code_level1_direct_line_39",
@@ -1220,7 +1233,7 @@
       "id": "Chart2Code_level2_3d_11_v2",
       "chart": "Scatter",
       "status": "scored",
-      "score": 67.57051603741883,
+      "score": 84.2371827040855,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -1235,7 +1248,7 @@
         "palette": 0.9449,
         "figure_aspect": 0.8717,
         "linewidth": 0.2376,
-        "grid": 0.0,
+        "grid": 1.0,
         "spines_removed": 1.0,
         "legend_frame": 1.0
       }
@@ -1244,7 +1257,7 @@
       "id": "Chart2Code_level2_3d_1_v1__single",
       "chart": "3D",
       "status": "scored",
-      "score": 59.37754030152621,
+      "score": 92.71087363485952,
       "n_activated": 3,
       "scored_dimensions": [
         "palette",
@@ -1254,7 +1267,7 @@
       "unavailable_dimensions": [],
       "dimension_scores": {
         "palette": 0.7813,
-        "grid": 0.0,
+        "grid": 1.0,
         "legend_frame": 1.0
       }
     },
@@ -1414,7 +1427,7 @@
       "id": "Chart2Code_level2_combination_11_v2",
       "chart": "Std-band",
       "status": "scored",
-      "score": 71.83676004045138,
+      "score": 88.50342670711804,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -1429,7 +1442,7 @@
         "palette": 0.779,
         "figure_aspect": 0.9075,
         "linewidth": 0.6238,
-        "grid": 0.0,
+        "grid": 1.0,
         "spines_removed": 1.0,
         "legend_frame": 1.0
       }
@@ -2002,7 +2015,7 @@
       "id": "Chart2Code_level2_radar_23_v3",
       "chart": "Polar/Radial",
       "status": "scored",
-      "score": 63.26355694957416,
+      "score": 83.26355694957417,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -2016,7 +2029,7 @@
         "palette": 0.8999,
         "figure_aspect": 0.8136,
         "linewidth": 0.4497,
-        "grid": 0.0,
+        "grid": 1.0,
         "legend_frame": 1.0
       }
     },
@@ -2024,7 +2037,7 @@
       "id": "Chart2Code_level2_radar_26_v3",
       "chart": "Polar/Radial",
       "status": "scored",
-      "score": 45.33469603735308,
+      "score": 65.33469603735308,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -2038,7 +2051,7 @@
         "palette": 0.8171,
         "figure_aspect": 0.0,
         "linewidth": 0.4497,
-        "grid": 0.0,
+        "grid": 1.0,
         "legend_frame": 1.0
       }
     },
@@ -2046,7 +2059,7 @@
       "id": "Chart2Code_level2_radar_35_v4",
       "chart": "Polar/Radial",
       "status": "scored",
-      "score": 61.87910329720679,
+      "score": 78.54576996387345,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -2061,7 +2074,7 @@
         "palette": 0.8129,
         "figure_aspect": 0.8998,
         "linewidth": 0.0,
-        "grid": 0.0,
+        "grid": 1.0,
         "spines_removed": 1.0,
         "legend_frame": 1.0
       }
@@ -2070,7 +2083,7 @@
       "id": "Chart2Code_level2_radar_3_v1",
       "chart": "Polar/Radial",
       "status": "scored",
-      "score": 63.36638173120059,
+      "score": 83.36638173120059,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -2084,7 +2097,7 @@
         "palette": 0.8016,
         "figure_aspect": 0.917,
         "linewidth": 0.4497,
-        "grid": 0.0,
+        "grid": 1.0,
         "spines_removed": 1.0
       }
     },
@@ -2154,7 +2167,7 @@
       "id": "Chart2Code_level2_radar_7_v3",
       "chart": "Polar/Radial",
       "status": "scored",
-      "score": 70.59131115726561,
+      "score": 87.25797782393228,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -2169,7 +2182,7 @@
         "palette": 0.836,
         "figure_aspect": 0.7757,
         "linewidth": 0.6238,
-        "grid": 0.0,
+        "grid": 1.0,
         "spines_removed": 1.0,
         "legend_frame": 1.0
       }
@@ -2178,7 +2191,7 @@
       "id": "Chart2Code_level2_radar_9_v4",
       "chart": "Polar/Radial",
       "status": "scored",
-      "score": 63.361507758297876,
+      "score": 96.6948410916312,
       "n_activated": 3,
       "scored_dimensions": [
         "palette",
@@ -2188,7 +2201,7 @@
       "unavailable_dimensions": [],
       "dimension_scores": {
         "palette": 0.9008,
-        "grid": 0.0,
+        "grid": 1.0,
         "legend_frame": 1.0
       }
     },
@@ -2304,7 +2317,7 @@
       "id": "Chart2Code_level2_scatter_5_v5",
       "chart": "Scatter",
       "status": "scored",
-      "score": 70.22354374257188,
+      "score": 95.22354374257188,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -2316,7 +2329,7 @@
       "dimension_scores": {
         "palette": 0.8979,
         "figure_aspect": 0.911,
-        "grid": 0.0,
+        "grid": 1.0,
         "legend_frame": 1.0
       }
     },
@@ -2324,7 +2337,7 @@
       "id": "Chart2Code_level2_violin_25_v4",
       "chart": "Box/Violin",
       "status": "scored",
-      "score": 69.10442914921981,
+      "score": 85.77109581588648,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -2339,7 +2352,7 @@
         "palette": 0.8481,
         "figure_aspect": 0.8485,
         "linewidth": 0.4497,
-        "grid": 0.0,
+        "grid": 1.0,
         "spines_removed": 1.0,
         "legend_frame": 1.0
       }
@@ -2540,7 +2553,7 @@
       "id": "ChartNet-sample_251d4b63cae5c39c",
       "chart": "Box/Violin",
       "status": "scored",
-      "score": 72.46165686313428,
+      "score": 97.46165686313428,
       "n_activated": 4,
       "scored_dimensions": [
         "figure_aspect",
@@ -2552,7 +2565,7 @@
       "dimension_scores": {
         "figure_aspect": 0.9916,
         "linewidth": 0.9069,
-        "grid": 0.0,
+        "grid": 1.0,
         "legend_frame": 1.0
       }
     },
@@ -2744,7 +2757,7 @@
       "id": "ChartNet-sample_5c19f37c2ecba73b",
       "chart": "Box/Violin",
       "status": "scored",
-      "score": 62.850534459755934,
+      "score": 87.85053445975593,
       "n_activated": 4,
       "scored_dimensions": [
         "figure_aspect",
@@ -2756,7 +2769,7 @@
       "dimension_scores": {
         "figure_aspect": 0.8903,
         "linewidth": 0.6238,
-        "grid": 0.0,
+        "grid": 1.0,
         "legend_frame": 1.0
       }
     },
@@ -2786,7 +2799,7 @@
       "id": "ChartNet-sample_5e553d0091325708",
       "chart": "Polar/Radial",
       "status": "scored",
-      "score": 75.84953962728737,
+      "score": 95.84953962728737,
       "n_activated": 5,
       "scored_dimensions": [
         "palette",
@@ -2800,7 +2813,7 @@
         "palette": 0.8267,
         "figure_aspect": 0.9658,
         "linewidth": 1.0,
-        "grid": 0.0,
+        "grid": 1.0,
         "legend_frame": 1.0
       }
     },
@@ -2907,7 +2920,7 @@
       "id": "ChartNet-sample_9fa23898eda05a63",
       "chart": "Bar",
       "status": "scored",
-      "score": 65.5370622884373,
+      "score": 90.5370622884373,
       "n_activated": 4,
       "scored_dimensions": [
         "palette",
@@ -2919,7 +2932,7 @@
       "dimension_scores": {
         "palette": 0.8521,
         "linewidth": 0.7694,
-        "grid": 0.0,
+        "grid": 1.0,
         "legend_frame": 1.0
       }
     },
@@ -3035,7 +3048,7 @@
       "id": "ChartNet-sample_d1a051ec96a39bf4",
       "chart": "Box/Violin",
       "status": "scored",
-      "score": 63.129388453226994,
+      "score": 88.129388453227,
       "n_activated": 4,
       "scored_dimensions": [
         "figure_aspect",
@@ -3047,7 +3060,7 @@
       "dimension_scores": {
         "figure_aspect": 0.9014,
         "linewidth": 0.6238,
-        "grid": 0.0,
+        "grid": 1.0,
         "legend_frame": 1.0
       }
     },
@@ -3077,7 +3090,7 @@
       "id": "ChartNet-sample_e17ff7b5495b0ee4",
       "chart": "Polar/Radial",
       "status": "scored",
-      "score": 79.54489958746227,
+      "score": 96.21156625412893,
       "n_activated": 6,
       "scored_dimensions": [
         "palette",
@@ -3092,7 +3105,7 @@
         "palette": 0.8701,
         "figure_aspect": 0.9957,
         "linewidth": 0.9069,
-        "grid": 0.0,
+        "grid": 1.0,
         "spines_removed": 1.0,
         "legend_frame": 1.0
       }

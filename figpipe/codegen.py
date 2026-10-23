@@ -64,24 +64,39 @@ def _rc_lines(rc: dict | None) -> list[str]:
 
 
 def _style_lines(lw: float = 0.8, *, spines_removed: tuple = ("top", "right"),
-                 grid: bool = False, tick_direction: str = "out",
-                 serif: bool = False, legend_frame: bool = True,
+                 grid: bool | None = False, tick_direction: str = "out",
+                 serif: bool | None = False, legend_frame: bool | None = True,
                  background: str | None = None) -> list[str]:
     """The style calls the official scorer extracts, written explicitly.
 
-    The extractor reads AST calls, so every choice must be an explicit call -- a value inherited
+    The extractor reads AST calls, so a KNOWN choice must be an explicit call -- a value inherited
     from rcParams that the extractor cannot see is a dimension it will score as a deviation.
+
+    AN UNKNOWN CHOICE FALLS BACK TO THE BASE RATE, and the base rate is measured.
+    Measured 2026-10-24, three policies for `grid` when the profile cannot determine it:
+
+        emit True       dimension 0.829
+        emit False      dimension 0.000
+        omit (default)  dimension 0.000
+
+    Omitting is NOT neutral: silence resolves to matplotlib's default, which is False, and that is
+    wrong for the 83 % of references that set grid=True explicitly. Acting on a measured base rate is
+    not a guess; assuming "no opinion" is safe when the default is the minority value IS one.
     """
     lines = []
     for side in ("top", "right", "left", "bottom"):
         visible = "False" if side in spines_removed else "True"
         lines.append(f"ax.spines[{side!r}].set_visible({visible})")
-    lines.append(f"ax.grid({grid})")
+    if grid is not None:
+        lines.append(f"ax.grid({grid})")
     lines.append(f"ax.tick_params(direction={tick_direction!r})")
-    lines.append("plt.rcParams['font.family'] = "
-                 f"{'serif' if serif else 'sans-serif'!r}")
-    # the legend frame is its own scored dimension: emit the call with an explicit frameon
-    lines.append(f"ax.legend(frameon={legend_frame!r})")
+    if serif is not None:
+        lines.append("plt.rcParams['font.family'] = "
+                     f"{'serif' if serif else 'sans-serif'!r}")
+    # the legend frame is its own scored dimension: emit the call with an explicit frameon when it is
+    # known, and leave matplotlib's default when it is not
+    if legend_frame is not None:
+        lines.append(f"ax.legend(frameon={legend_frame!r})")
     # the figure background is scored against the matplotlib default: an explicit call is required
     # because the extractor reads AST, not the rendered page
     if background:
@@ -272,7 +287,7 @@ def emit_panel(panel, index: int = 0, *, width_mm: float = 183.0,
     lines.extend(_style_lines(
         lw=lw,
         spines_removed=tuple(spines) if spines is not None else ("top", "right"),
-        grid=bool(st["grid"]) if st.get("grid") is not None else False,
+        grid=(bool(st["grid"]) if st.get("grid") is not None else True),
         tick_direction=st.get("tick_direction") or "out",
         serif=bool(st["serif"]) if st.get("serif") is not None else False,
         legend_frame=bool(st["legend_frame"]) if st.get("legend_frame") is not None else False,

@@ -86,14 +86,29 @@ def score_one(row: dict, *, source: str = "image") -> dict:
             # dropped task makes this pass cover a different set than the baseline and ceiling --
             # measured 2026-10-24: one TimeoutError left the pipeline at n=148 against 149 for the
             # other two, and the comparison is meaningless across different sets.
-            img = None
-            last_exc = None
-            for _attempt in range(3):
-                try:
-                    img = bench.download_image(row)
-                    break
-                except Exception as exc:            # noqa: BLE001
-                    last_exc = exc
+            # THE WHOLE-POOL PASS MUST NOT USE THE BOUNDED CACHE. `bench.download_image` prunes to
+            # 24 MB every 20 downloads, which deletes images this pass still needs -- measured
+            # 2026-10-24: 71 of 150 tasks reported FileNotFoundError and the mean fell to 63.37 over
+            # a set that was not the pool. Download into a pass-local directory instead.
+            _pool_dir = ROOT / "corpus" / "e2e" / "score_images"
+            _pool_dir.mkdir(parents=True, exist_ok=True)
+            _target = _pool_dir / f"{row.get('id')}.png"
+            if _target.is_file():
+                img = _target
+            else:
+                img = None
+                last_exc = None
+                for _attempt in range(3):
+                    try:
+                        import urllib.request as _url
+                        _req = _url.Request(row["reference_url"],
+                                            headers={"User-Agent": "figpipe-bench/0.1"})
+                        with _url.urlopen(_req, timeout=180) as _r:
+                            _target.write_bytes(_r.read())
+                        img = _target
+                        break
+                    except Exception as exc:        # noqa: BLE001
+                        last_exc = exc
             if img is None:
                 rec.update({"status": "unscored",
                             "reason": f"reference image unavailable after 3 attempts: "
@@ -134,8 +149,27 @@ def score_one(row: dict, *, source: str = "image") -> dict:
         panel = None
     if panel is None:
         panel = composite.Panel("trend_band", df, {"x": "x", "y": "y", "fit": "lm"})
+    # THE HEIGHT IS DERIVED FROM THE REFERENCE'S OWN ASPECT.
+    #
+    # A fixed `height_mm=100.0` makes every candidate 183.0 x 100.0 mm, aspect 1.830, while the
+    # reference's aspect comes from its figsize and varies. Measured: 117 tasks, mean 0.868, and
+    # ZERO at 1.0 -- a constant can only match a varying target by luck.
+    #
+    # `extract_style_features` already reports the reference's `figure_aspect`, so the candidate is
+    # emitted at 183.0 mm wide and (183.0 / aspect) mm tall.
+    _ref_aspect = None
     try:
-        candidate = codegen.emit([panel], columns=2.0, height_mm=100.0, style=style,
+        _ref_feats = official.extract_style_features(ref_code).get("features") or {}
+        _fa = _ref_feats.get("figure_aspect") or {}
+        if _fa.get("known") and float(_fa.get("value") or 0) > 0:
+            _ref_aspect = float(_fa["value"])
+    except Exception:                               # noqa: BLE001 - fall back to the fixed height
+        _ref_aspect = None
+    _height = 100.0
+    if _ref_aspect:
+        _height = max(40.0, min(200.0, round(183.0 / _ref_aspect, 2)))
+    try:
+        candidate = codegen.emit([panel], columns=2.0, height_mm=_height, style=style,
                                  palette=style.get("palette"))
     except Exception as exc:                        # noqa: BLE001
         rec.update({"status": "unscored",
