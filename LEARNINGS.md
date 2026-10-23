@@ -5223,3 +5223,57 @@ the knowledge did not change and the record should sync -- but it means "exit 1"
 be true, and a reader who equates them would misread the run.
 
 Suite: 849 passed, 2 skipped.
+
+
+## 152. Two scores for one concept, and the assumption that separated them (2026-10-24)
+
+The snapshot said `official: 75.41` while the report said `98.88` on the SAME scorer. Two numbers for
+one concept is the defect this project records most often, so I traced it.
+
+THEY ARE TWO DIFFERENT PASSES, and that is deliberate:
+
+    plottwin_report.json   98.88 over 108 tasks   in-harness, per-task panels
+    official_scores.json   75.44 over 149 tasks   dedicated pass, whole pool
+
+The dedicated pass exists because the harness only has reference code for tasks whose cache entry is
+current, and cached rows are pruned for disk budget. Fine. But the dedicated pass carried a comment
+that turned out to be false:
+
+    # a minimal panel is enough: the code channel scores STYLE, not data content
+
+MEASURED, same style, two panels, a line-shaped reference:
+
+    trend_band     score = 91.01
+    grouped_bars   score = 57.67      <- 33 points apart
+
+The chart type moves the score by a third. A fixed `trend_band` scores every bar, heatmap and box
+task as if it were a line chart. The pass now rebuilds the panel from the skill the harness chose.
+
+THE FIX MOVED THE NUMBER BY 0.03 (75.41 -> 75.44). That is the honest result and it is worth stating
+plainly: a real defect, correctly fixed, worth almost nothing on this metric -- because the score is a
+mean over tasks and most tasks are close to their reference regardless of the panel.
+
+WHAT THE DIMENSION BREAKDOWN THEN SHOWED, which is the actionable part:
+
+    tick_direction   n=4    mean=0.000
+    serif            n=6    mean=0.000
+    background       n=2    mean=0.000
+    linewidth        n=127  mean=0.574    <- the big one
+    palette          n=131  mean=0.650
+    grid             n=111  mean=0.829
+    figure_aspect    n=118  mean=0.869
+    spines_removed   n=53   mean=0.965
+    legend_frame     n=75   mean=1.000
+
+`linewidth` is worth +10.12 points if it were perfect. And it CANNOT be fixed by guessing:
+
+    STROKE WIDTH IS NOT RECOVERABLE FROM THESE IMAGES. A pixel run only becomes a width once the dpi
+    is known, and the reference renders carry NO dpi metadata (verified: 0 of 20 images) and vary
+    between roughly 104 and 343 dpi. Converting at a fixed assumption produced 0.36 pt against true
+    widths of 0.42-1.38 pt and made the dimension WORSE (0.432 -> 0.244).
+
+That experiment was already in the code as a comment when I arrived. **Reporting an undetermined
+dimension as undetermined is the honest choice; guessing it is worse than not trying** -- and it had
+been measured before, not assumed.
+
+Suite: 849 passed, 2 skipped.

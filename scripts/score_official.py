@@ -23,6 +23,7 @@ USAGE
 from __future__ import annotations
 
 import argparse
+import io
 import json
 import pathlib
 import sys
@@ -96,11 +97,32 @@ def score_one(row: dict, *, source: str = "image") -> dict:
             rec.update({"status": "unscored",
                         "reason": f"image style not inferable: {type(exc).__name__}"})
             return rec
-    # a minimal panel is enough: the code channel scores STYLE, not data content
+    # THE PANEL MUST BE THE ONE THE TASK DRAWS.
+    #
+    # This pass used a fixed `trend_band` with the comment "the code channel scores STYLE, not data
+    # content". That is FALSE and it was measurable: on a line-shaped reference the same style scored
+    # 91.01 as `trend_band` and 57.67 as `grouped_bars`. The chart type moves the score by 33 points,
+    # so a fixed line panel scores every bar, heatmap and box task as a line chart.
+    #
+    # The panel is rebuilt from the skill the harness chose, which is what the in-harness pass does --
+    # and that is why the two numbers disagreed (75.41 here, 98.88 there, same scorer).
     import pandas as pd
     df = pd.DataFrame({"x": np.arange(20.0), "y": np.linspace(0.1, 0.9, 20)})
     from figpipe import composite
-    panel = composite.Panel("trend_band", df, {"x": "x", "y": "y", "fit": "lm"})
+    panel = None
+    _skill = (row.get("skill") or "")
+    _target = row.get("target_data")
+    try:
+        if _target:
+            df = pd.read_csv(io.StringIO(_target), low_memory=False)
+            df.columns = [str(c).strip() for c in df.columns]
+        _reading = bench.choose_reading(df, row.get("chart_type_name"), row.get("panel_mode"))
+        _skill, _params, _data, _why = _reading
+        panel = bench._panel_for(_skill, _data, _params)
+    except Exception:                                   # noqa: BLE001 - fall back, and SAY so
+        panel = None
+    if panel is None:
+        panel = composite.Panel("trend_band", df, {"x": "x", "y": "y", "fit": "lm"})
     try:
         candidate = codegen.emit([panel], columns=2.0, height_mm=100.0, style=style,
                                  palette=style.get("palette"))

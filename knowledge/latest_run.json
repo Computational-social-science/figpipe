@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-23T23:38:27",
+  "run_at": "2026-10-23T23:59:23",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -9,37 +9,19 @@
     "  passed 8, failed 0",
     "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
     "  wrote knowledge\\evolution_report.json",
-    "  lean: tracked 79.1 -> 79.1 MB, worktree 136.5 -> 134.9 MB"
+    "  lean: tracked 79.1 -> 79.1 MB, worktree 136.6 -> 134.9 MB"
   ],
   "tests_ok": true,
-  "tests_summary": "842 passed, 3 skipped, 1 warning in 424.37s (0:07:04)",
+  "tests_summary": "849 passed, 2 skipped, 1 warning in 380.89s (0:06:20)",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
   "published": {
-    "pushed": true,
-    "steps": [
-      {
-        "cmd": "git add -A",
-        "code": 0,
-        "tail": []
-      },
-      {
-        "cmd": "git -c user.name=figpipe-bot",
-        "code": 0,
-        "tail": [
-          " create mode 100644 knowledge/runs/2026-10-23T233827.json"
-        ]
-      },
-      {
-        "cmd": "git push origin",
-        "code": 0,
-        "tail": [
-          "   927494f..ac8c89f  main -> main"
-        ]
-      }
-    ],
-    "withheld": []
+    "pushed": false,
+    "withheld": [],
+    "blocked_deletions": [],
+    "skipped": true,
+    "reason": "no knowledge change: the run record stays uncommitted for the next run"
   },
   "check_results": {
     "L01": {
@@ -687,8 +669,8 @@
     "operators": 21,
     "benchmark_tasks": 150,
     "benchmark_ok": 138,
-    "benchmark_infrastructure_failures": 0,
-    "benchmark_success_rate": 0.993,
+    "benchmark_infrastructure_failures": 1,
+    "benchmark_success_rate": 1.0,
     "benchmark_mean_distance": 0.305,
     "benchmark_anchor_single": 0.335,
     "benchmark_anchor_distance": 0.335,
@@ -699,48 +681,43 @@
     "benchmark_official_improvement": 37.25,
     "statistics_reproduced": 15,
     "knowledge_version": 16,
-    "tests": 842
+    "tests": 849
   },
   "capabilities_delta": {
     "changed": true,
     "delta": {
-      "benchmark_ok": {
-        "before": 139,
-        "after": 138
+      "benchmark_infrastructure_failures": {
+        "before": 0,
+        "after": 1
       },
       "benchmark_success_rate": {
-        "before": 1.0,
-        "after": 0.993
-      },
-      "benchmark_mean_distance": {
-        "before": 0.303,
-        "after": 0.305
+        "before": 0.993,
+        "after": 1.0
       },
       "tests": {
-        "before": 836,
-        "after": 842
+        "before": 842,
+        "after": 849
       }
     },
     "verdict": {
       "gains": [
         {
-          "field": "tests",
-          "before": 836,
-          "after": 842
-        }
-      ],
-      "regressions": [
-        {
           "field": "benchmark_success_rate",
-          "before": 1.0,
-          "after": 0.993
+          "before": 0.993,
+          "after": 1.0
+        },
+        {
+          "field": "tests",
+          "before": 842,
+          "after": 849
         }
       ],
+      "regressions": [],
       "corrections": [],
       "not_compared": [],
       "instrument_changed": false,
       "membership_broken": false,
-      "ok": false,
+      "ok": true,
       "judged_fields": [
         "benchmark_anchor_single",
         "benchmark_hard_findings",
@@ -756,14 +733,8 @@
       ]
     }
   },
-  "ok": false,
-  "capability_ok": false,
-  "capability_regressions": [
-    {
-      "field": "benchmark_success_rate",
-      "before": 1.0,
-      "after": 0.993
-    }
-  ],
+  "ok": true,
+  "capability_ok": true,
+  "capability_regressions": [],
   "publish_note": "The publish outcome is recorded after the commit that carries this run, so it describes the push triggered by this run; the file's own commit is made by the next scheduled run."
 }
