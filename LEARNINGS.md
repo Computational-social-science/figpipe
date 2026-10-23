@@ -5423,3 +5423,37 @@ instrument. **That improvement was already in the pipeline and could not be seen
 carried values from the old fingerprint and the aggregate mixed them.
 
 Suite: 853 passed, 3 skipped.
+
+
+## 156. A skip looked like a lost test (2026-10-24)
+
+The scheduled run exited 1 and reported:
+
+    capability_regressions: [{'field': 'tests', 'before': 854, 'after': 853}]
+
+The suite had not shrunk. It went `854 passed, 2 skipped` -> `853 passed, 3 skipped`: **856 tests
+collected both times**, one of them started skipping because a precondition was unavailable.
+
+THE MECHANISM: the field was parsed as `re.search(r"(\d+) passed", tail)` -- PASSED ONLY. So any test
+that moves from passing to skipping reads as a test that disappeared, and `capability_delta` calls it
+a regression.
+
+WHY THAT IS A DEFECT AND NOT A NUANCE: a count that moves when the ENVIRONMENT changes is not a
+capability. Reporting it as one teaches the reader to distrust the field, and this project has already
+spent rounds on exactly this shape -- a zero that was the instrument's, a distance read as a score.
+
+THE FIX: `tests` is the collected total (passed + skipped). The passed count is recorded separately as
+`tests_passed`, so a genuine failure is still legible from the record. Verified on both real summaries:
+
+    854 passed, 2 skipped  -> 856
+    853 passed, 3 skipped  -> 856      same, so no regression
+
+AND THE FIELD WILL NOW JUMP: the previous record holds 853 (passed only) and the next will hold 862
+(passed + skipped after this round's 6 new tests). That +9 is the CORRECTION of a wrong unit, not a
+capability gain -- and it will be reported as a gain, because the delta cannot tell the two apart.
+
+That is worth stating plainly rather than hiding: fixing a unit makes the series jump once. The
+alternative -- leaving a field that calls a skip a regression -- is worse, and the jump is visible in
+the run record for anyone who looks.
+
+Suite: 859 passed, 3 skipped.

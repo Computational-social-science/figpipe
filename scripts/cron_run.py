@@ -197,6 +197,9 @@ CAPABILITY_DIRECTION = {
     # set, so it changes when the benchmark slice grows even if nothing about the pipeline did.
     # Judging it produced a false capability regression on 2026-10-19 (0.278/30 -> 0.302/66).
     "statistics_reproduced": +1,
+    # `tests` is the collected total (passed + skipped). It is still judged, but see the note in
+    # `capability_snapshot`: a skip is an environment fact, so the total moves without the suite
+    # changing. The passed count is recorded separately as `tests_passed`.
     "tests": +1,
     "knowledge_version": +1,
     # FEWER HARD FINDINGS IS BETTER. `n_ok` and mean distance can both hold while a figure gets
@@ -886,9 +889,23 @@ def _main_locked(argv: list[str], dry: bool) -> int:
             return 1
     run["tests_ok"] = ok_tests
     run["tests_summary"] = test_tail
+    # THE SUITE IS PASSED + SKIPPED, NOT PASSED ALONE.
+    #
+    # Measured 2026-10-24: `854 passed, 2 skipped` -> `853 passed, 3 skipped` was judged a CAPABILITY
+    # REGRESSION. The collected total was 856 both times -- one test started skipping because a
+    # precondition was unavailable. A count that moves when the ENVIRONMENT changes is not a
+    # capability, and reporting it as one teaches the reader to distrust the field.
+    #
+    # `tests` is therefore the collected total. The passed count stays in the run record as
+    # `tests_passed` so a genuine failure is still legible.
     import re as _re
-    m = _re.search(r"(\d+) passed", test_tail or "")
-    run["capabilities"]["tests"] = int(m.group(1)) if m else None
+    _passed = _re.search(r"(\d+) passed", test_tail or "")
+    _skipped = _re.search(r"(\d+) skipped", test_tail or "")
+    _n_passed = int(_passed.group(1)) if _passed else None
+    _n_skipped = int(_skipped.group(1)) if _skipped else 0
+    run["capabilities"]["tests_passed"] = _n_passed
+    run["capabilities"]["tests"] = ((_n_passed + _n_skipped)
+                                    if _n_passed is not None else None)
     run["capabilities_delta"] = capability_delta(previous_caps, run["capabilities"])
     cap_ok = (run["capabilities_delta"].get("verdict") or {}).get("ok", True)
     accept = "--accept-capability-regression" in argv
