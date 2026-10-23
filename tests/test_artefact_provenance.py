@@ -39,13 +39,20 @@ def test_a_task_record_carries_the_rendered_pdf(bench):
     assert '"png"' in src
 
 
-def test_the_report_counts_rows_that_carry_an_artefact(bench):
-    """THE HONEST HALF: the fingerprint is rendering-only, so old rows legitimately lack the field.
-    The count is what stops an absent field from reading as a clean result."""
+def test_the_report_counts_rows_that_carry_the_FACT(bench):
+    """THE HONEST HALF, REVISED.
+
+    This test first pinned `artefact_rows`, which counted rows carrying a `pdf` PATH. That field was
+    removed because every path pointed at a temp file deleted at the end of the run: 139 rows
+    "carried an artefact" and 0 resolved. The replacement counts rows carrying the FACT the artefact
+    established, which is what actually makes a zero checkable.
+    """
     src = pathlib.Path(bench.__file__).read_text(encoding="utf-8")
-    assert 'report["artefact_rows"]' in src, (
-        "the report does not say how many rows carry a rendered artefact, so a reader cannot tell "
-        "'no findings' from 'no artefact to check'")
+    assert "legend_coverage" in src, (
+        "the report does not say how many rows carry the legend measurement, so a reader cannot "
+        "tell 'no findings' from 'no artefact to check'")
+    assert 'report["artefact_rows"]' not in src, (
+        "the report still records artefact_rows, a count of paths that resolve to deleted temp files")
 
 
 def test_the_fingerprint_ignores_the_report_schema(bench):

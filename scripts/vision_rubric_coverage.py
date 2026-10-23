@@ -48,8 +48,12 @@ RUBRIC = {
     },
     "text truncation": {
         "deterministic": "audit.text_spans",
-        "why": "text outside the page box is measurable from its span coordinates",
-        "blind_spot": "text clipped by a clip-path inside the axes is not detected",
+        "why": ("text whose FONT SIZE is out of band is reported; text outside the PAGE box is "
+                "measurable from span coordinates"),
+        "blind_spot": ("`audit.text_spans` reports size violations, not geometry -- text that runs "
+                       "past the PAGE edge is measurable but not currently measured. A clip-path "
+                       "truncation cannot arise: a real matplotlib clip does not emit the glyphs, "
+                       "so there is no clipped span in the PDF to detect"),
     },
     "dense tick crowding": {
         "deterministic": "audit.overlapping_glyphs",

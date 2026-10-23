@@ -933,8 +933,14 @@ def run_task(row: dict, out_dir: pathlib.Path) -> dict:
             "hard_failures": (styled if chosen_is_styled else plain)["hard_failures"],
             # THE ARTEFACT, so a finding can be re-inspected rather than only counted. A count with
             # no path behind it cannot be checked by anyone who did not watch it happen.
-            "pdf": str((styled if chosen_is_styled else plain).get("pdf") or ""),
-            "png": str((styled if chosen_is_styled else plain).get("png") or ""),
+            # WHAT THE ARTEFACT ESTABLISHED, not where it went. The rendered candidates are
+            # removed at the end of the run by design (600 files / 60 MB would blow the worktree
+            # budget), so a recorded PATH would resolve to nothing -- provenance that looks real and
+            # is not. These two counts are what make a "0 findings" result checkable: they say
+            # whether the check had anything to look at.
+            "legend_frames": _legend_frame_count((styled if chosen_is_styled else plain).get("pdf")),
+            "legend_occlusions": _legend_occlusion_count(
+                (styled if chosen_is_styled else plain).get("pdf")),
             "findings": (styled if chosen_is_styled else plain)["findings"][:5],
             "official_code_score": official_score,
             "semantic_findings": [f for f in
@@ -1318,6 +1324,38 @@ def main(argv=None) -> int:
             lock.release("bench_plottwin")
 
 
+def _legend_frame_count(pdf_path) -> int:
+    """How many legend frames the rendered figure contains, or 0 when unreadable.
+
+    RECORDED SO A ZERO CAN BE INTERPRETED. `hard_failures: 0` on a figure with no legend says
+    nothing about the occlusion check; the same zero on a figure WITH a legend says the check ran and
+    found nothing. Without this count the two cases are indistinguishable.
+    """
+    if not pdf_path:
+        return 0
+    try:
+        import pymupdf
+
+        from figpipe import audit
+        doc = pymupdf.open(str(pdf_path))
+        n = sum(len(audit._legend_frames(page)) for page in doc)
+        doc.close()
+        return n
+    except Exception:                                      # noqa: BLE001 - reported as 0
+        return 0
+
+
+def _legend_occlusion_count(pdf_path) -> int:
+    """How many legend frames cover drawing marks, or 0 when unreadable."""
+    if not pdf_path:
+        return 0
+    try:
+        from figpipe import audit
+        return len(audit.legend_occlusion(pdf_path))
+    except Exception:                                      # noqa: BLE001 - reported as 0
+        return 0
+
+
 def _run(args) -> int:
     wanted = {t.strip() for t in args.types.split(",") if t.strip()}
     # Rendered candidates are INTERMEDIATES, not artefacts: 30 tasks produce ~600 files and
@@ -1493,8 +1531,24 @@ def _run(args) -> int:
         # records where the figure went, and a number nobody can re-derive is the shape this project
         # records most often. Rows measured before the field existed legitimately lack it, so the
         # count is reported rather than assumed.
-        report["artefact_rows"] = sum(1 for t in ok_all
-                                      if t.get("status") == "ok" and t.get("pdf"))
+        # THE ARTEFACT CANNOT BE KEPT; THE FACT IT ESTABLISHED CAN. These two totals are what make
+        # a zero checkable: `legend_frames: 0` means the check had nothing to look at, while a
+        # positive frame count with zero occlusions means it looked and found nothing.
+        # THE TOTAL MUST SAY WHAT SET IT IS OVER. The fingerprint is rendering-only, so a report
+        # field added today is absent from rows measured yesterday and NOTHING marks them stale.
+        # Summing absent as 0 would produce a number about 6 rows sitting beside a report about 150.
+        _measured = [t for t in ok_all
+                     if t.get("status") == "ok" and "legend_frames" in t]
+        report["legend_frames"] = sum(int(t.get("legend_frames") or 0) for t in _measured)
+        report["legend_occlusions"] = sum(int(t.get("legend_occlusions") or 0) for t in _measured)
+        report["legend_coverage"] = {
+            "n_measured": len(_measured),
+            "n_ok": len([t for t in ok_all if t.get("status") == "ok"]),
+            "note": ("`legend_frames` and `legend_occlusions` are totals over the n_measured rows "
+                     "ONLY. Rows measured before the field existed are not counted and are not "
+                     "marked stale, because the fingerprint covers rendering code, not the report "
+                     "schema. A zero with n_measured == 0 means the check had nothing to look at."),
+        }
         by_type = {}
         for t in merged:
             bucket = by_type.setdefault(t["chart"], {"n": 0, "ok": 0, "d": [], "base": [],

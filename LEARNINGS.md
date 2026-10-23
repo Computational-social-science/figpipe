@@ -4729,3 +4729,44 @@ THE PROJECT'S OWN DETECTOR CAUGHT THIS ROUND AGAIN: `survey()` in both `legend_o
 and `vision_rubric_coverage.py`, returning different things. Renamed to `survey_legend_occlusion`.
 
 Suite: 788 passed, 3 skipped.
+
+
+## 141. The path I recorded pointed at a deleted file (2026-10-23)
+
+Round 82 recorded the rendered PDF path so a finding could be re-inspected. The re-measurement showed
+the result of that fix:
+
+    artefact_rows: 139          <- it worked
+    rows carrying a pdf: 139
+    of those, readable now: 0   <- every single path resolved to nothing
+
+THE RENDERED CANDIDATES GO TO A TEMP DIRECTORY THAT IS DELIBERATELY REMOVED. The comment above
+`mkdtemp` says why: 30 tasks produce ~600 files and ~60 MB, which alone blew the 150 MB worktree
+budget. `shutil.rmtree(out_dir)` runs at the end of every measurement.
+
+So the path was WORSE THAN NO PATH: provenance that looks real and resolves to nothing is the defect
+this project records most often, and I had just built one.
+
+THE FIX IS NOT TO KEEP THE ARTEFACT. It cannot be kept. What can be kept is the FACT the artefact
+established: `legend_frames` (did the figure contain a legend at all) and `legend_occlusions` (did
+that legend cover a mark). Two integers make a zero interpretable without 60 MB.
+
+THE FIX THEN PRODUCED THE AGGREGATE DEFECT, which is how I knew it was working:
+
+    rows WITH legend_frames:    6
+    rows WITHOUT:             144
+    code_version, all rows:     c71ae790439f    <- identical
+
+The fingerprint is rendering-only by design, so a report-schema change is invisible to it. Summing
+absent as 0 gave `legend_frames: 0` -- a number about 6 rows sitting beside a report about 139.
+
+`legend_coverage` now reports `n_measured: 6 / n_ok: 139` and a note saying why the rest are absent.
+**A zero with n_measured == 0 means the check had nothing to look at; a zero with n_measured == 139
+means it looked and found nothing.** Without the membership those two are the same number.
+
+ALSO CLOSED: the clip-path blind spot from round 80 is not a gap, it is a case that cannot arise.
+Measured: a real matplotlib clip does NOT EMIT the glyphs (`red_px=0`, `text_layer=False`), so there
+is no clipped span in the PDF to find. The real gap is text outside the PAGE box, which is
+measurable and is now named instead.
+
+Suite: 797 passed, 3 skipped.
