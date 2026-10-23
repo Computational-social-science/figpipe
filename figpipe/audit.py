@@ -184,6 +184,21 @@ def overlapping_glyphs(pdf_path, min_ratio: float = 0.25):
                     bx0, by0, bx1, by1 = b["bbox"]
                     if bx0 >= ax1:
                         break
+                    # A PAIR INSIDE ONE SPAN IS SKIPPED, AND THE COST IS KNOWN.
+                    #
+                    # PyMuPDF merges adjacent tick labels into ONE span once they are close enough:
+                    # measured, twelve labels at 6 pt stay separate and report 11 collisions, while
+                    # the same twelve at 4 pt become a single span `label00label01label02...` and the
+                    # check reports 0. So the filter silences the worst crowding.
+                    #
+                    # I tried narrowing it to "skip only adjacent characters". It fixed the 4 pt case
+                    # (1 collision) and broke the case the filter exists for: ROTATED labels went
+                    # from 0 false positives to 12, because a rotated label's characters are also
+                    # non-adjacent in the string while legitimately stacked along the diagonal.
+                    #
+                    # The two cases are indistinguishable without the LINE DIRECTION, and a rule that
+                    # trades one false negative for twelve false positives is worse than the false
+                    # negative. The limitation is named in `overlapping_glyphs_limits()` instead.
                     if a["span_id"] == b["span_id"]:
                         continue
                     ix = min(ax1, bx1) - max(ax0, bx0)
@@ -437,3 +452,29 @@ def legend_occlusion(pdf_path, *, ink_ratio: float = 0.06) -> list[dict]:
                                        f"data mark")})
     doc.close()
     return out
+
+
+#: What `overlapping_glyphs` cannot see, and why each limit is a limit rather than a bug.
+#:
+#: Recorded because a check whose blind spots are undocumented is read as complete, and this project
+#: has spent many rounds learning that the undocumented limitation is the expensive one.
+OVERLAPPING_GLYPHS_LIMITS = {
+    "labels merged into one span": (
+        "PyMuPDF merges adjacent tick labels into a single span once they are close enough. "
+        "Measured: twelve labels at 6 pt stay separate and report 11 collisions; the same twelve at "
+        "4 pt become one span `label00label01label02...` and the check reports 0. So the WORST "
+        "crowding is the case it cannot see."),
+    "separating merge from rotation": (
+        "A narrowed filter ('skip only adjacent characters') fixed the 4 pt case and produced 12 "
+        "false positives on ROTATED labels, whose characters are also non-adjacent in the string "
+        "while legitimately stacked along the diagonal. The two cases need the LINE DIRECTION to "
+        "separate, and a rule trading one false negative for twelve false positives is worse."),
+    "deliberate label placement": (
+        "A label placed on a band by design is reported. Findings are leads to inspect, not "
+        "verdicts."),
+}
+
+
+def overlapping_glyphs_limits() -> dict:
+    """What `overlapping_glyphs` cannot see. See `OVERLAPPING_GLYPHS_LIMITS`."""
+    return dict(OVERLAPPING_GLYPHS_LIMITS)

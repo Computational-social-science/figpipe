@@ -7,21 +7,21 @@
     "note": "deterministic metrics only; official combined score requires the benchmark's VLM scorer and is NOT claimed here"
   },
   "n_tasks": 150,
-  "n_ok": 139,
+  "n_ok": 126,
   "n_unsupported": 11,
   "n_error": 0,
-  "n_infrastructure_failures": 0,
+  "n_infrastructure_failures": 13,
   "unsupported_types": {
     "3D": "unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this is a deliberate exclusion",
     "Polar/Radial": "SkillError: encode.polar: 'record_type' reduces to 2 distinct angle(s); a polar profile needs at least 3. This data has no angular reading -- use a bar or trend encoding.",
     "Network/Tree": "unsupported chart type: no graph-layout operator yet (backlog: node-link layout, not a chart encoding this library owns)"
   },
-  "mean_distance": 0.303,
+  "mean_distance": 0.304,
   "mean_baseline": 0.373,
   "mean_improvement": 0.069,
-  "improved": 119,
-  "worse": 8,
-  "ties": 12,
+  "improved": 108,
+  "worse": 7,
+  "ties": 11,
   "mean_best_of_two": 0.298,
   "semantic_violations": 0,
   "decision_service": {
@@ -68,21 +68,21 @@
     },
     "Distribution": {
       "n": 17,
-      "ok": 17,
-      "errors": 0,
-      "mean_distance": 0.219,
-      "mean_baseline": 0.232,
-      "mean_delta": 0.012,
-      "mean_shipped": 0.182
+      "ok": 13,
+      "errors": 4,
+      "mean_distance": 0.238,
+      "mean_baseline": 0.245,
+      "mean_delta": 0.007,
+      "mean_shipped": 0.19
     },
     "Field 2D": {
       "n": 15,
-      "ok": 15,
-      "errors": 0,
-      "mean_distance": 0.266,
-      "mean_baseline": 0.372,
-      "mean_delta": 0.106,
-      "mean_shipped": 0.281
+      "ok": 12,
+      "errors": 3,
+      "mean_distance": 0.261,
+      "mean_baseline": 0.356,
+      "mean_delta": 0.095,
+      "mean_shipped": 0.284
     },
     "Heatmap": {
       "n": 14,
@@ -95,11 +95,11 @@
     },
     "Line": {
       "n": 20,
-      "ok": 20,
-      "errors": 0,
+      "ok": 18,
+      "errors": 2,
       "mean_distance": 0.404,
       "mean_baseline": 0.462,
-      "mean_delta": 0.058,
+      "mean_delta": 0.057,
       "mean_shipped": 0.404
     },
     "Network/Tree": {
@@ -113,30 +113,30 @@
     },
     "Polar/Radial": {
       "n": 13,
-      "ok": 11,
-      "errors": 2,
-      "mean_distance": 0.279,
-      "mean_baseline": 0.282,
+      "ok": 10,
+      "errors": 3,
+      "mean_distance": 0.273,
+      "mean_baseline": 0.275,
       "mean_delta": 0.003,
-      "mean_shipped": 0.222
+      "mean_shipped": 0.215
     },
     "Scatter": {
       "n": 16,
-      "ok": 16,
-      "errors": 0,
-      "mean_distance": 0.376,
-      "mean_baseline": 0.49,
-      "mean_delta": 0.114,
-      "mean_shipped": 0.376
+      "ok": 14,
+      "errors": 2,
+      "mean_distance": 0.374,
+      "mean_baseline": 0.486,
+      "mean_delta": 0.112,
+      "mean_shipped": 0.373
     },
     "Std-band": {
       "n": 9,
-      "ok": 9,
-      "errors": 0,
-      "mean_distance": 0.402,
-      "mean_baseline": 0.499,
-      "mean_delta": 0.097,
-      "mean_shipped": 0.401
+      "ok": 8,
+      "errors": 1,
+      "mean_distance": 0.405,
+      "mean_baseline": 0.509,
+      "mean_delta": 0.104,
+      "mean_shipped": 0.404
     }
   },
   "failures": [
@@ -149,6 +149,71 @@
       "id": "Chart2Code_level2_3d_2_v3",
       "chart": "3D",
       "error": "unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this is a deliberate exclusion"
+    },
+    {
+      "id": "Chart2Code_level2_contour_5_v5",
+      "chart": "Field 2D",
+      "error": "URLError: <urlopen error [WinError 10054] 远程主机强迫关闭了一个现有的连接。>"
+    },
+    {
+      "id": "Chart2Code_level2_density_12_v3",
+      "chart": "Distribution",
+      "error": "URLError: <urlopen error [WinError 10054] 远程主机强迫关闭了一个现有的连接。>"
+    },
+    {
+      "id": "Chart2Code_level2_density_14_v4",
+      "chart": "Line",
+      "error": "URLError: <urlopen error [WinError 10013] 以一种访问权限不允许的方式做了一个访问套接字的尝试。>"
+    },
+    {
+      "id": "Chart2Code_level2_errorpoint_10_v5",
+      "chart": "Scatter",
+      "error": "URLError: <urlopen error [WinError 10013] 以一种访问权限不允许的方式做了一个访问套接字的尝试。>"
+    },
+    {
+      "id": "Chart2Code_level2_errorpoint_1_v5",
+      "chart": "Scatter",
+      "error": "URLError: <urlopen error [WinError 10013] 以一种访问权限不允许的方式做了一个访问套接字的尝试。>"
+    },
+    {
+      "id": "Chart2Code_level2_errorpoint_5_v5",
+      "chart": "Std-band",
+      "error": "URLError: <urlopen error [WinError 10013] 以一种访问权限不允许的方式做了一个访问套接字的尝试。>"
+    },
+    {
+      "id": "Chart2Code_level2_hist_2_v3",
+      "chart": "Distribution",
+      "error": "URLError: <urlopen error [WinError 10013] 以一种访问权限不允许的方式做了一个访问套接字的尝试。>"
+    },
+    {
+      "id": "Chart2Code_level2_hist_2_v5",
+      "chart": "Distribution",
+      "error": "URLError: <urlopen error [WinError 10013] 以一种访问权限不允许的方式做了一个访问套接字的尝试。>"
+    },
+    {
+      "id": "Chart2Code_level2_multidiff_1_v1",
+      "chart": "Distribution",
+      "error": "URLError: <urlopen error [WinError 10013] 以一种访问权限不允许的方式做了一个访问套接字的尝试。>"
+    },
+    {
+      "id": "Chart2Code_level2_multidiff_2_v2__single",
+      "chart": "Field 2D",
+      "error": "URLError: <urlopen error [WinError 10013] 以一种访问权限不允许的方式做了一个访问套接字的尝试。>"
+    },
+    {
+      "id": "Chart2Code_level2_multidiff_5_v1",
+      "chart": "Line",
+      "error": "URLError: <urlopen error [WinError 10013] 以一种访问权限不允许的方式做了一个访问套接字的尝试。>"
+    },
+    {
+      "id": "Chart2Code_level2_quiver_10_v5",
+      "chart": "Field 2D",
+      "error": "URLError: <urlopen error [WinError 10013] 以一种访问权限不允许的方式做了一个访问套接字的尝试。>"
+    },
+    {
+      "id": "Chart2Code_level2_radar_26_v3",
+      "chart": "Polar/Radial",
+      "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'datasets-server.huggingface.co'. (_ssl.c:1082)>"
     },
     {
       "id": "Chart2Code_level2_radar_3_v1",
@@ -219,8 +284,8 @@
         "ink": 0.23
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level1_direct_HR_5_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level1_direct_HR_5_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -262,8 +327,8 @@
         "ink": 0.341
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level1_direct_combination_57_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level1_direct_combination_57_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -305,8 +370,8 @@
         "ink": 0.678
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level1_direct_contour_18_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level1_direct_contour_18_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -347,8 +412,8 @@
         "ink": 0.587
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level1_direct_density_11_plain.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level1_direct_density_11_plain.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -389,8 +454,8 @@
         "ink": 0.595
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level1_direct_heatmap_3_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level1_direct_heatmap_3_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -430,8 +495,8 @@
         "ink": 0.729
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level1_direct_heatmap_7_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level1_direct_heatmap_7_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -472,8 +537,8 @@
         "ink": 0.203
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level1_direct_line_39_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level1_direct_line_39_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -514,8 +579,8 @@
         "ink": 0.824
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level1_direct_line_8_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level1_direct_line_8_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -558,8 +623,8 @@
         "ink": 0.288
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_3d_11_v2_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_3d_11_v2_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -618,8 +683,8 @@
         "ink": 0.069
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_3d_5_v4_plain.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_3d_5_v4_plain.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -661,8 +726,8 @@
         "ink": 0.739
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_area_3_v3_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_area_3_v3_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -704,8 +769,8 @@
         "ink": 0.817
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_bar_10_v4_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_bar_10_v4_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -747,8 +812,8 @@
         "ink": 0.041
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_bar_22_v4_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_bar_22_v4_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -789,8 +854,8 @@
         "ink": 0.829
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_bar_25_v4_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_bar_25_v4_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -833,8 +898,8 @@
         "ink": 0.19
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_box_1_v5_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_box_1_v5_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -874,8 +939,8 @@
         "ink": 0.287
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_combination_11_v2_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_combination_11_v2_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -918,8 +983,8 @@
         "ink": 0.874
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_combination_13_v5_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_combination_13_v5_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -962,8 +1027,8 @@
         "ink": 0.383
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_combination_14_v5_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_combination_14_v5_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -1002,8 +1067,8 @@
         "ink": 0.214
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_combination_16_v5_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_combination_16_v5_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -1045,8 +1110,8 @@
         "ink": 0.247
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_combination_33_v5_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_combination_33_v5_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -1088,8 +1153,8 @@
         "ink": 0.33
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_combination_42_v5_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_combination_42_v5_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -1131,8 +1196,8 @@
         "ink": 0.382
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_combination_44_v3_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_combination_44_v3_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -1175,8 +1240,8 @@
         "ink": 0.347
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_contour_14_v1_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_contour_14_v1_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": false,
@@ -1207,8 +1272,8 @@
         "ink": 0.343
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_contour_23_v4_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_contour_23_v4_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": false,
@@ -1239,8 +1304,8 @@
         "ink": 0.334
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_contour_25_v2_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_contour_25_v2_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": false,
@@ -1271,8 +1336,8 @@
         "ink": 0.206
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_contour_25_v3_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_contour_25_v3_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": false,
@@ -1286,483 +1351,96 @@
       "chart": "Field 2D",
       "panel_mode": "multi",
       "code_version": "c71ae790439f",
-      "skill": "field_map",
-      "rationale": "field gradient_magnitude_per_mm over horizontal_position_mm x vertical_position_mm",
-      "rows_used": 5350,
-      "status": "ok",
-      "distance": 0.413,
-      "baseline_distance": 0.524,
-      "delta": 0.111,
-      "selected": "styled",
-      "selected_distance": 0.434,
-      "selected_gain": 0.09,
-      "selection_margin": 0.099,
-      "components": {
-        "palette": 0.391,
-        "aspect": 0.487,
-        "ink": 0.396
-      },
-      "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_contour_5_v5_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_contour_5_v5_styled.png",
-      "findings": [],
-      "official_code_score": {
-        "available": false,
-        "reason": "CodegenError: skill 'field_map' has no code emitter yet"
-      },
-      "semantic_findings": [],
-      "semantic_checked": "mesh_scale_checked"
+      "status": "error",
+      "error": "URLError: <urlopen error [WinError 10054] 远程主机强迫关闭了一个现有的连接。>"
     },
     {
       "id": "Chart2Code_level2_density_12_v3",
       "chart": "Distribution",
       "panel_mode": "multi",
       "code_version": "c71ae790439f",
-      "skill": "faceted_distribution",
-      "rationale": "faceted hist by panel_group",
-      "rows_used": 4305,
-      "status": "ok",
-      "distance": 0.168,
-      "baseline_distance": 0.186,
-      "delta": 0.018,
-      "selected": "styled",
-      "selected_distance": 0.17,
-      "selected_gain": 0.016,
-      "selection_margin": 0.017,
-      "components": {
-        "palette": 0.126,
-        "aspect": 0.001,
-        "ink": 0.442
-      },
-      "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_density_12_v3_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_density_12_v3_styled.png",
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 99.99610946347114,
-        "n_activated": 5,
-        "scored": [
-          "palette",
-          "figure_aspect",
-          "grid",
-          "spines_removed",
-          "legend_frame"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": [],
-      "semantic_checked": "checked"
+      "status": "error",
+      "error": "URLError: <urlopen error [WinError 10054] 远程主机强迫关闭了一个现有的连接。>"
     },
     {
       "id": "Chart2Code_level2_density_14_v4",
       "chart": "Line",
       "panel_mode": "multi",
       "code_version": "c71ae790439f",
-      "skill": "trend_with_uncertainty",
-      "rationale": "trend elapsed_days_since_snowmelt->panel_row",
-      "rows_used": 2168,
-      "status": "ok",
-      "distance": 0.385,
-      "baseline_distance": 0.446,
-      "delta": 0.061,
-      "selected": "styled",
-      "selected_distance": 0.384,
-      "selected_gain": 0.062,
-      "selection_margin": 0.062,
-      "components": {
-        "palette": 0.581,
-        "aspect": 0.009,
-        "ink": 0.269
-      },
-      "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_density_14_v4_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_density_14_v4_styled.png",
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 99.99742274117999,
-        "n_activated": 5,
-        "scored": [
-          "palette",
-          "figure_aspect",
-          "linewidth",
-          "grid",
-          "spines_removed"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": [],
-      "semantic_checked": "checked"
+      "status": "error",
+      "error": "URLError: <urlopen error [WinError 10013] 以一种访问权限不允许的方式做了一个访问套接字的尝试。>"
     },
     {
       "id": "Chart2Code_level2_errorpoint_10_v5",
       "chart": "Scatter",
       "panel_mode": "multi",
       "code_version": "c71ae790439f",
-      "skill": "scatter_relationship",
-      "rationale": "scatter panel_row vs panel_col",
-      "rows_used": 240,
-      "status": "ok",
-      "distance": 0.416,
-      "baseline_distance": 0.542,
-      "delta": 0.126,
-      "selected": "styled",
-      "selected_distance": 0.416,
-      "selected_gain": 0.126,
-      "selection_margin": 0.12,
-      "components": {
-        "palette": 0.63,
-        "aspect": 0.003,
-        "ink": 0.296
-      },
-      "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_errorpoint_10_v5_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_errorpoint_10_v5_styled.png",
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 100.0,
-        "n_activated": 3,
-        "scored": [
-          "palette",
-          "linewidth",
-          "grid"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": [],
-      "semantic_checked": "checked"
+      "status": "error",
+      "error": "URLError: <urlopen error [WinError 10013] 以一种访问权限不允许的方式做了一个访问套接字的尝试。>"
     },
     {
       "id": "Chart2Code_level2_errorpoint_1_v5",
       "chart": "Scatter",
       "panel_mode": "multi",
       "code_version": "c71ae790439f",
-      "skill": "scatter_relationship",
-      "rationale": "scatter panel_row vs site_id",
-      "rows_used": 108,
-      "status": "ok",
-      "distance": 0.368,
-      "baseline_distance": 0.494,
-      "delta": 0.126,
-      "selected": "styled",
-      "selected_distance": 0.367,
-      "selected_gain": 0.127,
-      "selection_margin": 0.122,
-      "components": {
-        "palette": 0.563,
-        "aspect": 0.006,
-        "ink": 0.243
-      },
-      "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_errorpoint_1_v5_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_errorpoint_1_v5_styled.png",
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 99.9978850135911,
-        "n_activated": 5,
-        "scored": [
-          "palette",
-          "figure_aspect",
-          "linewidth",
-          "grid",
-          "spines_removed"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": [],
-      "semantic_checked": "checked"
+      "status": "error",
+      "error": "URLError: <urlopen error [WinError 10013] 以一种访问权限不允许的方式做了一个访问套接字的尝试。>"
     },
     {
       "id": "Chart2Code_level2_errorpoint_5_v5",
       "chart": "Std-band",
       "panel_mode": "multi",
       "code_version": "c71ae790439f",
-      "skill": "trend_with_uncertainty",
-      "rationale": "trend panel_row->panel_col",
-      "rows_used": 75,
-      "status": "ok",
-      "distance": 0.378,
-      "baseline_distance": 0.423,
-      "delta": 0.045,
-      "selected": "styled",
-      "selected_distance": 0.378,
-      "selected_gain": 0.045,
-      "selection_margin": 0.043,
-      "components": {
-        "palette": 0.439,
-        "aspect": 0.0,
-        "ink": 0.605
-      },
-      "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_errorpoint_5_v5_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_errorpoint_5_v5_styled.png",
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 99.99707876157878,
-        "n_activated": 6,
-        "scored": [
-          "palette",
-          "figure_aspect",
-          "linewidth",
-          "grid",
-          "spines_removed",
-          "legend_frame"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": [],
-      "semantic_checked": "checked"
+      "status": "error",
+      "error": "URLError: <urlopen error [WinError 10013] 以一种访问权限不允许的方式做了一个访问套接字的尝试。>"
     },
     {
       "id": "Chart2Code_level2_hist_2_v3",
       "chart": "Distribution",
       "panel_mode": "multi",
       "code_version": "c71ae790439f",
-      "skill": "histogram",
-      "rationale": "hist sampling_day by consortium_treatment",
-      "rows_used": 315,
-      "status": "ok",
-      "distance": 0.198,
-      "baseline_distance": 0.26,
-      "delta": 0.062,
-      "selected": "styled",
-      "selected_distance": 0.202,
-      "selected_gain": 0.058,
-      "selection_margin": 0.057,
-      "components": {
-        "palette": 0.279,
-        "aspect": 0.009,
-        "ink": 0.183
-      },
-      "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_hist_2_v3_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_hist_2_v3_styled.png",
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 99.99850878598447,
-        "n_activated": 6,
-        "scored": [
-          "palette",
-          "figure_aspect",
-          "linewidth",
-          "grid",
-          "spines_removed",
-          "legend_frame"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": [],
-      "semantic_checked": "checked"
+      "status": "error",
+      "error": "URLError: <urlopen error [WinError 10013] 以一种访问权限不允许的方式做了一个访问套接字的尝试。>"
     },
     {
       "id": "Chart2Code_level2_hist_2_v5",
       "chart": "Distribution",
       "panel_mode": "multi",
       "code_version": "c71ae790439f",
-      "skill": "faceted_distribution",
-      "rationale": "faceted hist by panel_group",
-      "rows_used": 3071,
-      "status": "ok",
-      "distance": 0.131,
-      "baseline_distance": 0.11,
-      "delta": -0.021,
-      "selected": "plain",
-      "selected_distance": 0.111,
-      "selected_gain": -0.001,
-      "selection_margin": 0.021,
-      "components": {
-        "palette": 0.123,
-        "aspect": 0.002,
-        "ink": 0.279
-      },
-      "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_hist_2_v5_plain.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_hist_2_v5_plain.png",
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 100.0,
-        "n_activated": 5,
-        "scored": [
-          "palette",
-          "linewidth",
-          "grid",
-          "spines_removed",
-          "legend_frame"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": [],
-      "semantic_checked": "checked"
+      "status": "error",
+      "error": "URLError: <urlopen error [WinError 10013] 以一种访问权限不允许的方式做了一个访问套接字的尝试。>"
     },
     {
       "id": "Chart2Code_level2_multidiff_1_v1",
       "chart": "Distribution",
       "panel_mode": "multi",
       "code_version": "c71ae790439f",
-      "skill": "faceted_distribution",
-      "rationale": "faceted hist by panel_group",
-      "rows_used": 942,
-      "status": "ok",
-      "distance": 0.135,
-      "baseline_distance": 0.2,
-      "delta": 0.065,
-      "selected": "styled",
-      "selected_distance": 0.136,
-      "selected_gain": 0.064,
-      "selection_margin": 0.065,
-      "components": {
-        "palette": 0.127,
-        "aspect": 0.007,
-        "ink": 0.285
-      },
-      "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_multidiff_1_v1_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_multidiff_1_v1_styled.png",
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 99.99962986216293,
-        "n_activated": 5,
-        "scored": [
-          "palette",
-          "figure_aspect",
-          "linewidth",
-          "grid",
-          "legend_frame"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": [],
-      "semantic_checked": "checked"
+      "status": "error",
+      "error": "URLError: <urlopen error [WinError 10013] 以一种访问权限不允许的方式做了一个访问套接字的尝试。>"
     },
     {
       "id": "Chart2Code_level2_multidiff_2_v2__single",
       "chart": "Field 2D",
       "panel_mode": "single",
       "code_version": "c71ae790439f",
-      "skill": "field_map",
-      "rationale": "field larval_recruitment_index_percent over spatial_year_relative_yr x reef_elevation_relative_m",
-      "rows_used": 1681,
-      "status": "ok",
-      "distance": 0.171,
-      "baseline_distance": 0.356,
-      "delta": 0.185,
-      "selected": "styled",
-      "selected_distance": 0.154,
-      "selected_gain": 0.202,
-      "selection_margin": 0.142,
-      "components": {
-        "palette": 0.216,
-        "aspect": 0.07,
-        "ink": 0.158
-      },
-      "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_multidiff_2_v2__single_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_multidiff_2_v2__single_styled.png",
-      "findings": [],
-      "official_code_score": {
-        "available": false,
-        "reason": "CodegenError: skill 'field_map' has no code emitter yet"
-      },
-      "semantic_findings": [],
-      "semantic_checked": "mesh_scale_checked"
+      "status": "error",
+      "error": "URLError: <urlopen error [WinError 10013] 以一种访问权限不允许的方式做了一个访问套接字的尝试。>"
     },
     {
       "id": "Chart2Code_level2_multidiff_5_v1",
       "chart": "Line",
       "panel_mode": "multi",
       "code_version": "c71ae790439f",
-      "skill": "trend_with_uncertainty",
-      "rationale": "trend panel_row->panel_col",
-      "rows_used": 2165,
-      "status": "ok",
-      "distance": 0.414,
-      "baseline_distance": 0.476,
-      "delta": 0.062,
-      "selected": "styled",
-      "selected_distance": 0.413,
-      "selected_gain": 0.063,
-      "selection_margin": 0.061,
-      "components": {
-        "palette": 0.576,
-        "aspect": 0.004,
-        "ink": 0.419
-      },
-      "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_multidiff_5_v1_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_multidiff_5_v1_styled.png",
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 99.99967432552147,
-        "n_activated": 5,
-        "scored": [
-          "palette",
-          "figure_aspect",
-          "linewidth",
-          "grid",
-          "legend_frame"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": [],
-      "semantic_checked": "checked"
+      "status": "error",
+      "error": "URLError: <urlopen error [WinError 10013] 以一种访问权限不允许的方式做了一个访问套接字的尝试。>"
     },
     {
       "id": "Chart2Code_level2_quiver_10_v5",
       "chart": "Field 2D",
       "panel_mode": "multi",
       "code_version": "c71ae790439f",
-      "skill": "field_map",
-      "rationale": "field velocity magnitude (um s-1) over normalized east-west coordinate x normalized north-south coordinate",
-      "rows_used": 2523,
-      "status": "ok",
-      "distance": 0.279,
-      "baseline_distance": 0.424,
-      "delta": 0.145,
-      "selected": "styled",
-      "selected_distance": 0.221,
-      "selected_gain": 0.203,
-      "selection_margin": 0.147,
-      "components": {
-        "palette": 0.19,
-        "aspect": 0.111,
-        "ink": 0.668
-      },
-      "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_quiver_10_v5_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_quiver_10_v5_styled.png",
-      "findings": [],
-      "official_code_score": {
-        "available": false,
-        "reason": "CodegenError: skill 'field_map' has no code emitter yet"
-      },
-      "semantic_findings": [],
-      "semantic_checked": "mesh_scale_checked"
+      "status": "error",
+      "error": "URLError: <urlopen error [WinError 10013] 以一种访问权限不允许的方式做了一个访问套接字的尝试。>"
     },
     {
       "id": "Chart2Code_level2_quiver_13_v1",
@@ -1786,8 +1464,8 @@
         "ink": 0.151
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_quiver_13_v1_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_quiver_13_v1_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": false,
@@ -1818,8 +1496,8 @@
         "ink": 0.672
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_quiver_14_v1_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_quiver_14_v1_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": false,
@@ -1850,8 +1528,8 @@
         "ink": 0.452
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_quiver_4_v5_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_quiver_4_v5_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": false,
@@ -1882,8 +1560,8 @@
         "ink": 0.242
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_radar_10_v2_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_radar_10_v2_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": false,
@@ -1914,8 +1592,8 @@
         "ink": 0.221
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_radar_18_v5_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_radar_18_v5_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -1956,8 +1634,8 @@
         "ink": 0.279
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_radar_23_v3_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_radar_23_v3_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": false,
@@ -1971,32 +1649,8 @@
       "chart": "Polar/Radial",
       "panel_mode": "multi",
       "code_version": "c71ae790439f",
-      "skill": "radial_profile",
-      "rationale": "polar panel_row by block_id",
-      "rows_used": 164,
-      "status": "ok",
-      "distance": 0.345,
-      "baseline_distance": 0.35,
-      "delta": 0.005,
-      "selected": "styled",
-      "selected_distance": 0.289,
-      "selected_gain": 0.061,
-      "selection_margin": 0.034,
-      "components": {
-        "palette": 0.196,
-        "aspect": 0.692,
-        "ink": 0.371
-      },
-      "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_radar_26_v3_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_radar_26_v3_styled.png",
-      "findings": [],
-      "official_code_score": {
-        "available": false,
-        "reason": "CodegenError: skill 'radial_profile' has no code emitter yet"
-      },
-      "semantic_findings": [],
-      "semantic_checked": "checked"
+      "status": "error",
+      "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'datasets-server.huggingface.co'. (_ssl.c:1082)>"
     },
     {
       "id": "Chart2Code_level2_radar_35_v4",
@@ -2020,8 +1674,8 @@
         "ink": 0.419
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_radar_35_v4_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_radar_35_v4_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": false,
@@ -2063,8 +1717,8 @@
         "ink": 0.309
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_radar_3_v3_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_radar_3_v3_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": false,
@@ -2095,8 +1749,8 @@
         "ink": 0.344
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_radar_40_v5_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_radar_40_v5_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": false,
@@ -2127,8 +1781,8 @@
         "ink": 0.455
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_radar_4_v3_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_radar_4_v3_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": false,
@@ -2159,8 +1813,8 @@
         "ink": 0.54
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_radar_7_v3_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_radar_7_v3_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": false,
@@ -2191,8 +1845,8 @@
         "ink": 0.131
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_radar_9_v4_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_radar_9_v4_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": false,
@@ -2223,8 +1877,8 @@
         "ink": 0.154
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_scatter_13_v2_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_scatter_13_v2_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -2266,8 +1920,8 @@
         "ink": 0.122
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_scatter_1_v2__single_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_scatter_1_v2__single_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -2310,8 +1964,8 @@
         "ink": 0.25
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_scatter_22_v2__single_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_scatter_22_v2__single_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -2351,8 +2005,8 @@
         "ink": 0.374
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_scatter_22_v3_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_scatter_22_v3_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -2393,8 +2047,8 @@
         "ink": 0.398
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_scatter_27_v5_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_scatter_27_v5_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -2437,8 +2091,8 @@
         "ink": 0.235
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_scatter_5_v5_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_scatter_5_v5_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -2479,8 +2133,8 @@
         "ink": 0.356
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_violin_25_v4_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level2_violin_25_v4_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -2523,8 +2177,8 @@
         "ink": 0.216
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level3_table20_3_generate_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2Code_level3_table20_3_generate_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -2574,8 +2228,8 @@
         "ink": 0.333
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2NCode_ce7b7d946995482f9dd37ddad319cbc2_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2NCode_ce7b7d946995482f9dd37ddad319cbc2_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -2616,8 +2270,8 @@
         "ink": 0.346
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2NCode_f5989e4725654971a32e6c84c0dbdfa5_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\Chart2NCode_f5989e4725654971a32e6c84c0dbdfa5_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -2660,8 +2314,8 @@
         "ink": 0.041
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_01541e58b887ce36_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_01541e58b887ce36_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -2703,8 +2357,8 @@
         "ink": 0.147
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_11168fb7e30df7c0_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_11168fb7e30df7c0_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -2745,8 +2399,8 @@
         "ink": 0.169
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_12f1182db6964e8c_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_12f1182db6964e8c_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -2788,8 +2442,8 @@
         "ink": 0.514
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_1acf825b0429ddfd_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_1acf825b0429ddfd_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -2827,8 +2481,8 @@
         "ink": 0.051
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_21db7b1495645e96_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_21db7b1495645e96_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -2871,8 +2525,8 @@
         "ink": 0.222
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_251d4b63cae5c39c_plain.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_251d4b63cae5c39c_plain.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -2913,8 +2567,8 @@
         "ink": 0.169
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_27ec276af1be7f88_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_27ec276af1be7f88_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -2957,8 +2611,8 @@
         "ink": 0.182
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_3a712400d6efe5ca_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_3a712400d6efe5ca_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -2999,8 +2653,8 @@
         "ink": 0.388
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_3d0ebd7ea1e10bf3_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_3d0ebd7ea1e10bf3_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -3043,8 +2697,8 @@
         "ink": 0.11
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_42a8557ef11775e9_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_42a8557ef11775e9_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -3084,8 +2738,8 @@
         "ink": 0.16
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_46826fe4916b7d52_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_46826fe4916b7d52_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -3126,8 +2780,8 @@
         "ink": 0.469
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_51138e34911000f6_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_51138e34911000f6_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -3166,8 +2820,8 @@
         "ink": 0.75
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_55e97056fbbde5b6__single_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_55e97056fbbde5b6__single_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -3209,8 +2863,8 @@
         "ink": 0.269
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_575be33996f0155c_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_575be33996f0155c_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -3252,8 +2906,8 @@
         "ink": 0.073
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_5781d64aa8377547_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_5781d64aa8377547_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -3293,8 +2947,8 @@
         "ink": 0.223
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_5c19f37c2ecba73b_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_5c19f37c2ecba73b_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -3335,8 +2989,8 @@
         "ink": 0.049
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_5cf3859f3ce78167_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_5cf3859f3ce78167_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -3378,8 +3032,8 @@
         "ink": 0.134
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_5e553d0091325708_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_5e553d0091325708_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": false,
@@ -3410,8 +3064,8 @@
         "ink": 0.299
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_63115ff12f6710a3_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_63115ff12f6710a3_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -3450,8 +3104,8 @@
         "ink": 0.164
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_68d34458d8f08a48_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_68d34458d8f08a48_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -3492,8 +3146,8 @@
         "ink": 0.319
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_7c69a17fd376e251_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_7c69a17fd376e251_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": false,
@@ -3529,8 +3183,8 @@
         "ink": 0.553
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_82a42a98d7e32b53_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_82a42a98d7e32b53_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -3568,8 +3222,8 @@
         "ink": 0.052
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_953bb3ed650d8541_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_953bb3ed650d8541_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -3611,8 +3265,8 @@
         "ink": 0.491
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_97a7c092bc6a4a6c_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_97a7c092bc6a4a6c_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -3651,8 +3305,8 @@
         "ink": 0.03
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_9fa23898eda05a63_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_9fa23898eda05a63_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -3693,8 +3347,8 @@
         "ink": 0.582
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_ad3e2f8704f6e1b1__single_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_ad3e2f8704f6e1b1__single_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -3738,8 +3392,8 @@
         "ink": 0.329
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_b07b3f6805a9e3b8_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_b07b3f6805a9e3b8_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -3778,8 +3432,8 @@
         "ink": 0.18
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_b2578adbadc0d71e_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_b2578adbadc0d71e_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -3820,8 +3474,8 @@
         "ink": 0.01
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_bbbf530e6aefa314_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_bbbf530e6aefa314_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -3864,8 +3518,8 @@
         "ink": 0.407
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_c1ec6683e1feea7b_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_c1ec6683e1feea7b_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -3907,8 +3561,8 @@
         "ink": 0.086
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_d1a051ec96a39bf4_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_d1a051ec96a39bf4_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -3949,8 +3603,8 @@
         "ink": 0.202
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_d7325ced9dcb3e94_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_d7325ced9dcb3e94_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -3992,8 +3646,8 @@
         "ink": 0.307
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_e17ff7b5495b0ee4_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_e17ff7b5495b0ee4_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": false,
@@ -4024,8 +3678,8 @@
         "ink": 0.506
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_f31f9780b9bd6948_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_f31f9780b9bd6948_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -4068,8 +3722,8 @@
         "ink": 0.426
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_f743754444c3a3d9_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\ChartNet-sample_f743754444c3a3d9_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -4361,8 +4015,8 @@
         "ink": 0.348
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\PMC13009336_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\PMC13009336_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -4403,8 +4057,8 @@
         "ink": 0.227
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\PMC13022287_plain.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\PMC13022287_plain.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -4446,8 +4100,8 @@
         "ink": 0.497
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\PMC13079874_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\PMC13079874_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -4488,8 +4142,8 @@
         "ink": 0.578
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\PMC13106710_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\PMC13106710_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -4531,8 +4185,8 @@
         "ink": 0.424
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\PMC13135507_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\PMC13135507_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -4572,8 +4226,8 @@
         "ink": 1.0
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\PMC13245775_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\PMC13245775_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": false,
@@ -4604,8 +4258,8 @@
         "ink": 1.0
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\PMC13252719_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\PMC13252719_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": false,
@@ -4636,8 +4290,8 @@
         "ink": 0.093
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\PMC13273070_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\PMC13273070_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -4677,8 +4331,8 @@
         "ink": 1.0
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\PMC13286152_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\PMC13286152_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": false,
@@ -4709,8 +4363,8 @@
         "ink": 0.269
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\PMC13336770_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\PMC13336770_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -4750,8 +4404,8 @@
         "ink": 0.223
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\PMC13342296_plain.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\PMC13342296_plain.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -4791,8 +4445,8 @@
         "ink": 0.163
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\PMC13343911_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\PMC13343911_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -4834,8 +4488,8 @@
         "ink": 0.022
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\arxiv-astro-skymap__2412.12637_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\arxiv-astro-skymap__2412.12637_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": false,
@@ -4866,8 +4520,8 @@
         "ink": 0.245
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\arxiv-astro-skymap__2510.17487_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\arxiv-astro-skymap__2510.17487_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -4908,8 +4562,8 @@
         "ink": 0.127
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\arxiv-ml-3d-trajectory__2511.17399_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\arxiv-ml-3d-trajectory__2511.17399_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": false,
@@ -4940,8 +4594,8 @@
         "ink": 1.0
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\arxiv-ml-3d-trajectory__2602.22552_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\arxiv-ml-3d-trajectory__2602.22552_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": false,
@@ -4972,8 +4626,8 @@
         "ink": 0.688
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\arxiv-ml-bar-line-v2__2511.15055_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\arxiv-ml-bar-line-v2__2511.15055_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -5027,8 +4681,8 @@
         "ink": 0.548
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\arxiv-phys-prx-prl__2603.21981_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\arxiv-phys-prx-prl__2603.21981_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -5069,8 +4723,8 @@
         "ink": 1.0
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\arxiv_2410.15876_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\arxiv_2410.15876_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -5110,8 +4764,8 @@
         "ink": 0.07
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\arxiv_2502.15132_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\arxiv_2502.15132_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -5152,8 +4806,8 @@
         "ink": 0.016
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\arxiv_2502.17598_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\arxiv_2502.17598_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -5226,8 +4880,8 @@
         "ink": 0.403
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\arxiv_2510.17384_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\arxiv_2510.17384_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -5270,8 +4924,8 @@
         "ink": 0.091
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\arxiv_2512.09767_plain.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\arxiv_2512.09767_plain.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -5311,8 +4965,8 @@
         "ink": 0.707
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\arxiv_2512.25023_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\arxiv_2512.25023_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -5354,8 +5008,8 @@
         "ink": 0.688
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\arxiv_2603.04948_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\arxiv_2603.04948_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -5395,8 +5049,8 @@
         "ink": 0.396
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\arxiv_2603.08660_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\arxiv_2603.08660_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -5437,8 +5091,8 @@
         "ink": 0.252
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\arxiv_2603.17004_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\arxiv_2603.17004_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -5479,8 +5133,8 @@
         "ink": 0.489
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\arxiv_2603.23889_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\arxiv_2603.23889_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -5520,8 +5174,8 @@
         "ink": 0.301
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\arxiv_2604.01093_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\arxiv_2604.01093_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": false,
@@ -5552,8 +5206,8 @@
         "ink": 0.183
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\arxiv_2604.05237_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\arxiv_2604.05237_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": false,
@@ -5584,8 +5238,8 @@
         "ink": 0.221
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\arxiv_2605.14587_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\arxiv_2605.14587_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -5626,8 +5280,8 @@
         "ink": 0.629
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\arxiv_2605.16790_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\arxiv_2605.16790_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -5668,8 +5322,8 @@
         "ink": 1.0
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\arxiv_2605.22305_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\arxiv_2605.22305_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -5708,8 +5362,8 @@
         "ink": 0.663
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\arxiv_2605.22455_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\arxiv_2605.22455_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -5760,8 +5414,8 @@
         "ink": 0.425
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\local_gallery_hexbin_joint_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\local_gallery_hexbin_joint_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -5809,8 +5463,8 @@
         "ink": 0.057
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\local_picks_top_scatter__39_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\local_picks_top_scatter__39_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -5851,8 +5505,8 @@
         "ink": 0.274
       },
       "hard_failures": 0,
-      "pdf": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\local_picks_top_violin__9_styled.pdf",
-      "png": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\figpipe-bench-4mffekue\\local_picks_top_violin__9_styled.png",
+      "legend_frames": 0,
+      "legend_occlusions": 0,
       "findings": [],
       "official_code_score": {
         "available": true,
@@ -5887,19 +5541,19 @@
   },
   "complete_membership": true,
   "semantic_coverage": {
-    "checked": 110,
-    "mesh_scale_checked": 29,
+    "checked": 100,
+    "mesh_scale_checked": 26,
     "skipped": 0,
     "unverifiable": 0,
     "absent": 0,
-    "n": 139,
+    "n": 126,
     "note": "`skipped` tasks were drawn by a drawer with no semantic rule: their printed numbers were NOT re-derived from the data. A pass on such a task is a statement about geometry, not about correctness."
   },
   "legend_frames": 0,
   "legend_occlusions": 0,
   "legend_coverage": {
-    "n_measured": 6,
-    "n_ok": 139,
+    "n_measured": 126,
+    "n_ok": 126,
     "note": "`legend_frames` and `legend_occlusions` are totals over the n_measured rows ONLY. Rows measured before the field existed are not counted and are not marked stale, because the fingerprint covers rendering code, not the report schema. A zero with n_measured == 0 means the check had nothing to look at."
   },
   "benchmark_anchor_distance": 0.335,
@@ -5926,9 +5580,9 @@
     "channel": "code_deviation",
     "weight_upstream": 0.35,
     "note": "official deterministic channel only; the 0.65 vision channel is NOT run, so this is not the combined score",
-    "n_scored": 109,
-    "n_unavailable": 30,
-    "mean_score": 95.54,
+    "n_scored": 100,
+    "n_unavailable": 26,
+    "mean_score": 95.14,
     "min_score": 66.67,
     "max_score": 100.0
   },
@@ -5961,25 +5615,12 @@
       "Chart2Code_level2_contour_23_v4",
       "Chart2Code_level2_contour_25_v2",
       "Chart2Code_level2_contour_25_v3",
-      "Chart2Code_level2_contour_5_v5",
-      "Chart2Code_level2_density_12_v3",
-      "Chart2Code_level2_density_14_v4",
-      "Chart2Code_level2_errorpoint_10_v5",
-      "Chart2Code_level2_errorpoint_1_v5",
-      "Chart2Code_level2_errorpoint_5_v5",
-      "Chart2Code_level2_hist_2_v3",
-      "Chart2Code_level2_hist_2_v5",
-      "Chart2Code_level2_multidiff_1_v1",
-      "Chart2Code_level2_multidiff_2_v2__single",
-      "Chart2Code_level2_multidiff_5_v1",
-      "Chart2Code_level2_quiver_10_v5",
       "Chart2Code_level2_quiver_13_v1",
       "Chart2Code_level2_quiver_14_v1",
       "Chart2Code_level2_quiver_4_v5",
       "Chart2Code_level2_radar_10_v2",
       "Chart2Code_level2_radar_18_v5",
       "Chart2Code_level2_radar_23_v3",
-      "Chart2Code_level2_radar_26_v3",
       "Chart2Code_level2_radar_35_v4",
       "Chart2Code_level2_radar_3_v3",
       "Chart2Code_level2_radar_40_v5",
@@ -6077,23 +5718,23 @@
     ],
     "stale": [],
     "unknown": [],
-    "n_fresh": 139,
+    "n_fresh": 126,
     "n_stale": 0,
     "n_unknown": 0
   },
   "stale_tasks": [],
   "n_stale": 0,
   "n_unknown": 0,
-  "n_fresh": 139,
+  "n_fresh": 126,
   "selection": {
-    "n": 139,
+    "n": 126,
     "shipped_mean": 0.289,
-    "always_styled_mean": 0.303,
+    "always_styled_mean": 0.304,
     "plain_mean": 0.373,
-    "gain_vs_always_styled": 0.014,
+    "gain_vs_always_styled": 0.015,
     "gain_vs_plain": 0.084,
-    "picked_styled": 131,
-    "picked_plain": 8,
+    "picked_styled": 119,
+    "picked_plain": 7,
     "rule": "closer of plain/styled to the reference; the reference is an input"
   }
 }

@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-23T14:01:01",
+  "run_at": "2026-10-23T16:41:56",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -9,10 +9,10 @@
     "  passed 8, failed 0",
     "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
     "  wrote knowledge\\evolution_report.json",
-    "  lean: tracked 78.8 -> 78.8 MB, worktree 136.0 -> 134.4 MB"
+    "  lean: tracked 78.9 -> 78.9 MB, worktree 141.9 -> 130.2 MB"
   ],
   "tests_ok": true,
-  "tests_summary": "788 passed, 3 skipped, 1 warning in 348.38s (0:05:48)",
+  "tests_summary": "803 passed, 2 skipped, 1 warning in 366.15s (0:06:06)",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
@@ -668,10 +668,10 @@
     "skills": 16,
     "operators": 21,
     "benchmark_tasks": 150,
-    "benchmark_ok": 139,
-    "benchmark_infrastructure_failures": 0,
+    "benchmark_ok": 126,
+    "benchmark_infrastructure_failures": 13,
     "benchmark_success_rate": 1.0,
-    "benchmark_mean_distance": 0.303,
+    "benchmark_mean_distance": 0.304,
     "benchmark_anchor_single": 0.335,
     "benchmark_anchor_distance": 0.335,
     "benchmark_shipped_anchor_single": 0.295,
@@ -681,24 +681,13 @@
     "benchmark_official_improvement": 37.25,
     "statistics_reproduced": 15,
     "knowledge_version": 16,
-    "tests": 788
+    "tests": 803
   },
   "capabilities_delta": {
-    "changed": true,
-    "delta": {
-      "tests": {
-        "before": 784,
-        "after": 788
-      }
-    },
+    "changed": false,
+    "delta": {},
     "verdict": {
-      "gains": [
-        {
-          "field": "tests",
-          "before": 784,
-          "after": 788
-        }
-      ],
+      "gains": [],
       "regressions": [],
       "corrections": [],
       "not_compared": [],

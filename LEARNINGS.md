@@ -4770,3 +4770,52 @@ is no clipped span in the PDF to find. The real gap is text outside the PAGE box
 measurable and is now named instead.
 
 Suite: 797 passed, 3 skipped.
+
+
+## 142. The legend zero was VACUOUS, and chasing it found a real false negative (2026-10-23)
+
+The full pool re-measurement answered the question the last two rounds left open:
+
+    n_measured: 109 / n_ok: 109      <- every measured figure, not a 6-row slice
+    legend_frames:     0
+    legend_occlusions: 0
+
+**109 figures, none contains a legend.** So the zero is VACUOUS: it is not "the check looked and
+found nothing", it is "the pool has no object for this check". That distinction only exists because
+`n_measured` was added last round -- without the membership the two cases print the same number.
+
+The lesson is not about the check. It is that **a pool of scientific figures drawn by this project
+almost never contains a legend**, because the skills that would draw one are the ones that place it
+outside the data area. Testing the occlusion check on this pool was the wrong instrument.
+
+THEN CHASING "labels close but not overlapping" FOUND A REAL FALSE NEGATIVE:
+
+    fontsize=4    0 collisions      <- twelve labels merged into ONE span
+    fontsize=5   11 collisions
+    fontsize=6   11 collisions
+    fontsize=7   11 collisions
+    fontsize=8   21 collisions
+
+At 4 pt PyMuPDF emits `label00label01label02...` as a single span, and `overlapping_glyphs` skips
+pairs inside one span -- which is exactly what removes the rotated-label false positives. **So the
+worse the crowding, the more likely the merge, and the check reports FEWER collisions as the defect
+gets worse.**
+
+THE FIX WAS WORSE THAN THE BUG. Narrowing the filter to "skip only adjacent characters" gave 1
+collision at 4 pt and **12 false positives on rotated labels**, which went from 0 to 12. A rotated
+label's characters are also non-adjacent in the string while legitimately stacked along the diagonal.
+Separating the two cases needs the LINE DIRECTION, and a rule that trades one false negative for
+twelve false positives is worse than the false negative. Reverted, and both directions are now
+pinned by tests so the next attempt knows what it must not break.
+
+THE LIMIT IS NOW IN THE CODE, not in a docstring: `audit.overlapping_glyphs_limits()` returns the
+three cases the check cannot see, with the measurement behind each. A check whose blind spots are
+undocumented gets read as complete.
+
+ALSO: the pool dropped from 139 to 126 ok because 13 tasks hit `URLError` (remote host forcibly
+closed). `styled: 0.335` and `official: 75.41` are unchanged -- the infrastructure failures were
+excluded, not counted as capability. That is the classification working.
+
+AND: four `.pyc` files were tracked despite `__pycache__/` being in `.gitignore`. Untracked.
+
+Suite: 803 passed, 2 skipped.
