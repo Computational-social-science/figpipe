@@ -5047,3 +5047,40 @@ test. Without the first the zero is ambiguous; without the second the denominato
 unreachable, which is the same defect one level down.
 
 Suite: 829 passed, 3 skipped.
+
+
+## 148. The "vacuous zero" was partly my instrument's zero (2026-10-23)
+
+Round 89 concluded that the legend-occlusion zero was VACUOUS: 139 figures, 0 legend frames, so the
+check had nothing to examine. That conclusion was half wrong, and the wrong half was mine.
+
+THE DETECTOR ONLY FOUND FRAMED LEGENDS. `_legend_frames` looked for a filled-and-stroked white rect.
+But this project's own default is `frameon=False`:
+
+    ax.legend(frameon=False, ncol=..., loc=legend_loc, ...)
+
+with the comment **"an inside legend is the most common way a faithful reproduction starts to look
+assembled rather than drawn"**. So the detector was blind to every legend the pipeline draws, and
+"0 frames" measured my instrument, not the pool.
+
+MEASURED, on `trend_with_uncertainty` with a series column:
+
+    labels 'alpha', 'beta', 'gamma' on the page at y=24.1
+    framed-only detector:  0 frames
+    fixed detector:        1 frame (433.9, 24.1, 509.1, 30.8)
+
+and WITHOUT a series column: 0 frames, correctly, because the drawer draws no legend then.
+
+THE FRAME IS NOT THE LEGEND. A legend is a group of short handles beside a group of short labels.
+Detecting it from the text side is what makes the unframed case work: at least two short labels
+sharing a baseline and TIGHTLY spaced. A single axis label is a row of one and is excluded.
+
+THE FALSE POSITIVE THE RULE COULD INTRODUCE WAS CHECKED FIRST: `dual_measure`, `ranked_composition`
+and `scatter_relationship` all put rows of short labels on the page and all report 0 frames.
+
+THE PATTERN, and it is the third time this project has met it: **a zero that looks like a fact about
+the world is often a fact about the instrument.** Rounds 82-86 established that a zero needs a
+denominator; this round established that the denominator needs its own instrument check. "0 legend
+frames" was a denominator, and it was wrong.
+
+Suite: 833 passed, 3 skipped.

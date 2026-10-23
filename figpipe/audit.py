@@ -353,7 +353,17 @@ def audit(pdf_path, min_pt=MIN_PT_DEFAULT, max_pt=MAX_PT_DEFAULT,
     return report
 
 def _legend_frames(page) -> list[tuple]:
-    """Filled-and-stroked white rectangles that look like a LEGEND frame.
+    """Legend BOUNDING BOXES, framed or not.
+
+    THE FRAME IS NOT THE LEGEND. `frameon=False` is this project's own default -- the trend drawer
+    calls `ax.legend(frameon=False, ...)` deliberately -- so a detector that only finds filled rects
+    is blind to every legend the pipeline draws. Measured: a trend figure with a series column puts
+    'alpha'/'beta'/'gamma' on the page and the framed-only detector reported 0.
+
+    Two sources, unioned:
+      * a filled-and-stroked white rect (an external or framed legend)
+      * a run of short text labels that sit together on one line (an unframed legend)
+    
 
     A legend frame in matplotlib is a rect with `type == "fs"` and a near-white fill, big enough to
     hold text. Measured on a 216x144 pt page:
@@ -379,6 +389,38 @@ def _legend_frames(page) -> list[tuple]:
         if r.width < 8 or r.height < 8:
             continue
         out.append((r.x0, r.y0, r.x1, r.y1))
+    # AN UNFRAMED LEGEND: short labels sharing a baseline, in a row, close together. A single axis
+    # label is a row of one and is excluded by requiring at least two.
+    rows: dict[float, list] = {}
+    for block in page.get_text("dict").get("blocks", []):
+        for line in block.get("lines", []):
+            for span in line.get("spans", []):
+                txt = span.get("text", "").strip()
+                if not txt or len(txt) > 24:
+                    continue
+                bb = span["bbox"]
+                rows.setdefault(round(bb[1], 0), []).append((bb, txt))
+    for _, spans in rows.items():
+        if len(spans) < 2:
+            continue
+        spans.sort(key=lambda t: t[0][0])
+        # a legend row is TIGHT: consecutive labels separated by less than ~4x their own width
+        tight = True
+        for (a, _), (b, _) in zip(spans, spans[1:]):
+            gap = b[0] - a[2]
+            width = max(1.0, a[2] - a[0])
+            if gap > max(12.0, width * 2.0):
+                tight = False
+                break
+        if not tight:
+            continue
+        x0 = min(bb[0] for bb, _ in spans)
+        y0 = min(bb[1] for bb, _ in spans)
+        x1 = max(bb[2] for bb, _ in spans)
+        y1 = max(bb[3] for bb, _ in spans)
+        if (x1 - x0) < 20 or (y1 - y0) < 3:
+            continue
+        out.append((x0, y0, x1, y1))
     return out
 
 
