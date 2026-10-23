@@ -170,12 +170,20 @@ def overlapping_glyphs(pdf_path, min_ratio: float = 0.25):
                 for line in block.get("lines", []):
                     for sid, span in enumerate(line.get("spans", [])):
                         text = "".join(c.get("c", "") for c in span.get("chars", []))
-                        for c in span.get("chars", []):
+                        # THE LINE DIRECTION separates a merged run of labels from one rotated
+                        # label. Measured: upright labels carry dir=(1.0, 0.0), rotated ones carry
+                        # dir=(0.707, -0.707). A rotated label's characters stack along its OWN
+                        # direction and are fine; a horizontal run that PyMuPDF merged into one span
+                        # is twelve separate labels and is not.
+                        _dir = line.get("dir") or (1.0, 0.0)
+                        horizontal = abs(_dir[0] - 1.0) < 0.01 and abs(_dir[1]) < 0.01
+                        for ci, c in enumerate(span.get("chars", [])):
                             ch = c.get("c", "")
                             if not ch.strip():
                                 continue
                             chars.append({"bbox": c["bbox"], "char": ch,
-                                          "span": text, "span_id": (pno, id(span), sid)})
+                                          "span": text, "span_id": (pno, id(span), sid),
+                                          "horizontal": horizontal, "ci": ci})
             chars.sort(key=lambda c: c["bbox"][0])
             counts: dict[tuple, int] = {}
             for i, a in enumerate(chars):
@@ -200,17 +208,40 @@ def overlapping_glyphs(pdf_path, min_ratio: float = 0.25):
                     # trades one false negative for twelve false positives is worse than the false
                     # negative. The limitation is named in `overlapping_glyphs_limits()` instead.
                     if a["span_id"] == b["span_id"]:
-                        continue
+                        # INSIDE ONE SPAN, THE BOXES ALREADY SAY WHETHER A BOUNDARY WAS CROSSED.
+                        #
+                        # Measured on twelve labels merged into one span at 4 pt:
+                        #     within a label   the gap between consecutive characters is +0.00 pt
+                        #     label boundary   the gap is -1.87 pt  (the boxes overlap)
+                        #
+                        # So a pair inside one span is a real collision when their boxes overlap,
+                        # which the ix/iy test below already establishes. What the old code did was
+                        # skip ALL of them, and that is why the worst crowding reported zero.
+                        #
+                        # The rotated-label false positives the old filter prevented cannot come
+                        # back through this door: a rotated label's characters are in a span whose
+                        # line direction is not horizontal, and they are checked below.
+                        if not (a.get("horizontal") and b.get("horizontal")):
+                            continue
                     ix = min(ax1, bx1) - max(ax0, bx0)
                     iy = min(ay1, by1) - max(ay0, by0)
                     if ix <= 0 or iy <= 0:
                         continue
                     area = min((ax1 - ax0) * (ay1 - ay0), (bx1 - bx0) * (by1 - by0))
                     if area > 0 and (ix * iy) / area >= min_ratio:
-                        key = tuple(sorted([a["span"], b["span"]]))
+                        if a["span_id"] == b["span_id"]:
+                            # A MERGED RUN: the span text is the SAME for every pair, so keying on
+                            # it collapses twelve boundaries into one finding. The character
+                            # positions are what distinguish them.
+                            key = (a["span"], b["span"],
+                                   "run", a.get("ci", 0), b.get("ci", 0))
+                        else:
+                            key = tuple(sorted([a["span"], b["span"]]))
                         counts[key] = counts.get(key, 0) + 1
-            for (ta, tb), n in counts.items():
-                out.append({"page": pno, "a": ta, "b": tb, "glyph_pairs": n})
+            for key, n in counts.items():
+                ta, tb = key[0], key[1]
+                out.append({"page": pno, "a": ta, "b": tb, "glyph_pairs": n,
+                            "merged_run": len(key) > 2})
     finally:
         doc.close()
     out.sort(key=lambda d: -d["glyph_pairs"])
@@ -459,19 +490,35 @@ def legend_occlusion(pdf_path, *, ink_ratio: float = 0.06) -> list[dict]:
 #: Recorded because a check whose blind spots are undocumented is read as complete, and this project
 #: has spent many rounds learning that the undocumented limitation is the expensive one.
 OVERLAPPING_GLYPHS_LIMITS = {
-    "labels merged into one span": (
-        "PyMuPDF merges adjacent tick labels into a single span once they are close enough. "
-        "Measured: twelve labels at 6 pt stay separate and report 11 collisions; the same twelve at "
-        "4 pt become one span `label00label01label02...` and the check reports 0. So the WORST "
-        "crowding is the case it cannot see."),
-    "separating merge from rotation": (
-        "A narrowed filter ('skip only adjacent characters') fixed the 4 pt case and produced 12 "
-        "false positives on ROTATED labels, whose characters are also non-adjacent in the string "
-        "while legitimately stacked along the diagonal. The two cases need the LINE DIRECTION to "
-        "separate, and a rule trading one false negative for twelve false positives is worse."),
     "deliberate label placement": (
         "A label placed on a band by design is reported. Findings are leads to inspect, not "
         "verdicts."),
+    "rotation is separated by line direction, not by the boxes": (
+        "A pair inside one span is reported only when the line direction is horizontal. A rotated "
+        "label's characters legitimately stack along its own direction and are excluded. This is a "
+        "DIRECTION test, not a geometry test, so a figure whose axis labels are rotated but whose "
+        "rotation is 0 degrees in the PDF (drawn as a rotated image, say) would be treated as "
+        "horizontal."),
+}
+
+#: What this check USED to miss, kept because the sequence is the evidence that the fix is real.
+OVERLAPPING_GLYPHS_FIXED = {
+    "labels merged into one span": (
+        "PyMuPDF merges adjacent tick labels into a single span once they are close enough: twelve "
+        "labels at 6 pt stay separate, while the same twelve at 4 pt become one span "
+        "`label00label01label02...`. The check skipped pairs inside one span, so the WORST crowding "
+        "reported ZERO. FIXED: measured, 4 pt now reports 22 findings where it reported 0, and the "
+        "within-label character gap is +0.00 pt while the label boundary gap is -1.87 pt."),
+    "one finding per merged run": (
+        "Even after the pairs were counted, the AGGREGATION KEY was the span-text pair -- identical "
+        "for every pair inside one span -- so twelve boundaries collapsed into one finding. FIXED: "
+        "the key carries the character indices for a merged run."),
+    "a fix that was worse than the bug": (
+        "Narrowing the filter to 'skip only adjacent characters' fixed 4 pt and produced 12 FALSE "
+        "POSITIVES on rotated labels, whose characters are also non-adjacent in the string while "
+        "legitimately stacked along the diagonal. Reverted. The working fix uses the line direction, "
+        "which PyMuPDF already reports: upright labels carry dir=(1.0, 0.0), rotated ones carry "
+        "dir=(0.707, -0.707)."),
 }
 
 

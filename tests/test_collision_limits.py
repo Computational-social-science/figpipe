@@ -76,31 +76,37 @@ def test_crowded_upright_labels_ARE_reported(tmp_path):
         assert n > 0, f"crowded labels at {fs} pt produced no collision"
 
 
-def test_the_merge_limitation_is_DOCUMENTED(tmp_path):
-    """THE BLIND SPOT, NAMED. At 4 pt the labels merge into one span and the check reports zero.
-    That is a limitation, not a bug, and it must be discoverable from the code."""
+def test_the_merge_limitation_was_CLOSED_and_is_recorded(tmp_path):
+    """THE LIMIT MOVED. This test used to assert that 4 pt reported ZERO and that the code said so.
+    Both are now false: the merged-label case reports 22 findings.
+
+    A test that keeps asserting a fixed limitation is a stale claim, which is its own defect. What is
+    pinned now is the EVIDENCE that the fix is real, and that the closed limit is no longer listed as
+    open.
+    """
     from figpipe import audit
 
     limits = audit.overlapping_glyphs_limits()
-    assert "labels merged into one span" in limits
-    assert "4 pt" in limits["labels merged into one span"]
-    # and the behaviour the limit describes
+    assert "labels merged into one span" not in limits, (
+        "the merged-label limit is still listed as open, but it was fixed")
+    fixed = audit.OVERLAPPING_GLYPHS_FIXED
+    assert "labels merged into one span" in fixed
+    # and the behaviour the fix produced
     n = _collisions(tmp_path, 4, stem="m4")
-    assert n == 0, (
-        f"the 4 pt merge now reports {n} collisions; if the check was improved, update the "
-        f"documented limit rather than leaving a stale claim")
+    assert n > 0, (
+        f"4 pt reports {n} collisions; the merged-label false negative is back")
 
 
 def test_the_failed_fix_is_recorded(tmp_path):
     """THE NEGATIVE RESULT. Without it the next round re-tries the same narrowing."""
     from figpipe import audit
 
-    limits = audit.overlapping_glyphs_limits()
-    key = "separating merge from rotation"
-    assert key in limits
-    assert "12" in limits[key], (
+    fixed = audit.OVERLAPPING_GLYPHS_FIXED
+    key = "a fix that was worse than the bug"
+    assert key in fixed, "the failed attempt is no longer recorded"
+    assert "12" in fixed[key], (
         "the record does not say how many false positives the failed fix produced")
-    assert "LINE DIRECTION" in limits[key].upper()
+    assert "line direction" in fixed[key].lower()
 
 
 def test_a_clean_figure_has_no_collisions(tmp_path):

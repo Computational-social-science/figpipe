@@ -4819,3 +4819,56 @@ excluded, not counted as capability. That is the classification working.
 AND: four `.pyc` files were tracked despite `__pycache__/` being in `.gitignore`. Untracked.
 
 Suite: 803 passed, 2 skipped.
+
+
+## 143. The merged-label false negative is closed, on the third attempt (2026-10-23)
+
+Round 84 recorded a real false negative: twelve labels merged into ONE span at 4 pt reported ZERO
+collisions, because `overlapping_glyphs` skipped pairs inside one span -- the filter that removes
+rotated-label false positives. **The worse the crowding, the more likely the merge, so the check
+reported fewer collisions as the defect got worse.**
+
+FIRST ATTEMPT (round 84): "skip only adjacent characters". Fixed 4 pt (1 collision) and produced
+**12 false positives on rotated labels**. Reverted.
+
+SECOND ATTEMPT (this round, first try): use the line direction, and report a pair inside one span
+only when the line is horizontal. Measured, PyMuPDF reports the direction:
+
+    upright labels     dir = (1.0, 0.0)
+    rotated 45 labels  dir = (0.707, -0.707)
+
+Result: 4 pt went 0 -> 1, rotated stayed 0. **Better, and still wrong** -- twelve labels on top of
+each other is not one collision.
+
+THIRD ATTEMPT, which is the one that works, found the second defect underneath:
+
+    key = tuple(sorted([a["span"], b["span"]]))
+
+When both characters belong to the SAME span, that key is `(text, text)` for EVERY colliding pair, so
+twelve boundaries collapsed into ONE finding and `glyph_pairs` reported 1. **The aggregation key was
+throwing away the count.**
+
+With the key carrying the character indices for a merged run:
+
+    fontsize=4   0 -> 22 findings  (22 glyph pairs)
+    fontsize=5   11 findings       (44 glyph pairs)
+    fontsize=6   11 findings       (33 glyph pairs)
+    fontsize=7   11 findings       (66 glyph pairs)
+    fontsize=8   21 findings       (75 glyph pairs)
+    rotated 45   0 findings        <- no false positives
+
+And the geometry says where the boundary is: measured inside a merged span, the gap between
+consecutive characters WITHIN a label is **+0.00 pt**, while at a LABEL BOUNDARY it is **-1.87 pt**.
+The boxes already contained the evidence; two rounds of heuristics were looking past it.
+
+THE PATTERN ACROSS THREE ATTEMPTS: each one fixed the symptom in front of it and left a second defect
+underneath. Round 84's fix left the aggregation. This round's first fix left the count. **The
+measurement that settled it was "how many findings", not "is there a finding".**
+
+THE RECORD IS NOW SPLIT: `overlapping_glyphs_limits()` lists what is still open (one item: rotation
+is separated by direction, not geometry) and `OVERLAPPING_GLYPHS_FIXED` lists what was closed WITH
+the measurement that proves it. A limit that was closed must stop being listed as open -- the
+previous round's tests asserted the old limitation and had to be updated, which is the stale-claim
+defect appearing in a test.
+
+Suite: 810 passed, 2 skipped.
