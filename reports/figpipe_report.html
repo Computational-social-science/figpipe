@@ -90,8 +90,8 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
 <body>
 <div class="top">
   <b>FigPipeline · Research Figure Pipeline</b>
-  <div class="meta"><span>commit 3d9fed7</span><span>branch main</span>
-  <span>knowledge v16</span><span>generated 2026-10-24 02:53</span></div>
+  <div class="meta"><span>commit d975d68</span><span>branch main</span>
+  <span>knowledge v16</span><span>generated 2026-10-24 04:14</span></div>
 </div>
 <div class="wrap">
 
@@ -103,13 +103,13 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
   <div class="pills">
     <span class="pill">tests 856 passed</span>
     <span class="pill">statistics reproduced: 15</span>
-    <span class="pill">benchmark tasks 138/150</span>
+    <span class="pill">benchmark tasks 139/150</span>
     <span class="pill">skills 16 · operators 21</span>
-    <span class="pill">tracked 79.2 MB</span>
+    <span class="pill">tracked 79.3 MB</span>
   </div>
 </header>
 
-<div class="status"><h2>Where this project is right now</h2><table class="statustable"><tr><th class="ok">Done</th><td>138 benchmark tasks execute with 0 errors; 856 tests pass; style anchor 0.225 on a single instrument; 109 tasks have their printed numbers re-derived from the data</td></tr><tr><th class="warn">Sharpest limit</th><td>ABLATION RUN (same seed, 30 of 30 pairs shared): with the transfer applying aspect the metric scores 0.933; with aspect withheld it scores 0.800. So ~0.13 of the headline accuracy is a PLUMBING CHECK -- the aspect component tests whether the transfer ran, not style fidelity -- and 0.800 is the metric&#x27;s REAL ability on style dimensions: weak but above chance. Both halves matter: &#x27;aspect is plumbing&#x27; alone suggests the metric is worthless (it is not); &#x27;0.933 accuracy&#x27; alone suggests it measures style broadly (it does not). THE EXPERIMENT CANNOT TEST EVERY DIMENSION: the validation draws a single-series trend panel, so `letters` ties 28/30 (no panels to letter) and `lines` 17/30 (one line). Raising the palette truncation from 4 to 6 colours changed 0 of 30 pairs for the same reason -- one series uses one colour. A dimension the figure cannot express ties on almost every pair, and that is a limit of the EXPERIMENT, not a weakness of the metric. The actionable next step is a multi-series multi-panel validation figure. CORRECTION TO EARLIER READINGS: the per-component table that made five components look &#x27;at or below chance&#x27; scored near-zero gaps as WRONG ANSWERS. Where the gap is resolvable every component is 0.71-1.00 accurate (palette 0.867, lines 0.769, sizes 0.733, rules 0.714). The metric is WEAK because most pairs do not separate on most dimensions -- not because its components are wrong. That was an absence of information reported as a violation, in the ANALYSIS rather than the pipeline. The style metric&#x27;s discrimination is mostly a PLUMBING CHECK. ASPECT alone scores 0.867 and never gets a pair wrong (26 right, 0 wrong) -- because the style transfer APPLIES aspect to the candidate, so that component tests whether the transfer ran. It is not a measurement of style fidelity. THE OTHER FIVE ARE NOT DEAD: removing aspect still leaves 0.808 on the pairs where aspect differs, so they carry a real but weak signal. aspect supplies most of the MARGIN, not all of the SIGNAL. REPLICATED on an independent pair set built with a different seed (aspect 0.900 there vs 0.867 here). Re-derived by scripts/validate_metric_claims.py from the per-pair data.</td></tr><tr><th class="ok">Biggest known gap</th><td>ALL 138 executed tasks now have a checked claim about their printed numbers: 109 by full semantic re-derivation, 29 by the colour-scale check on a raster figure. WHAT IS STILL NOT CHECKED: a raster&#x27;s cell values. A field or a mesh is a single path, so the scale is the only numeric claim that reaches the PDF -- the individual cells are colour, and no rendered-file check can recover them at any effort. That is a property of the FORMAT, and it is now the only remaining limit.</td></tr><tr><th class="warn">Unchecked rules, by reason</th><td>8 rules have no machine check. Grouped by WHY: 4 out_of_scope (C01, C02, C03, C04); 2 void (E01, E02); 1 no_data (H01); 1 refuted (H02). None is counted as passing. A refuted or void rule is not a to-do item -- it is a rule that was tested and did not survive.</td></tr><tr><th class="next">Next step</th><td>Human validation of the style metric. The metric discriminates at 0.9333 (95% CI 0.787-0.982) but withholds to 0.700 when `aspect` is dropped, so it is largely an aspect check, and no human has said whether the figures are the ones a reader prefers. Acceptance: a paired comparison of N&gt;=20 figure pairs by a reader blind to which is styled, with the preference rate reported alongside its confidence interval.</td></tr></table></div>
+<div class="status"><h2>Where this project is right now</h2><table class="statustable"><tr><th class="ok">Done</th><td>139 benchmark tasks execute with 0 errors; 856 tests pass; style anchor 0.225 on a single instrument; 110 tasks have their printed numbers re-derived from the data</td></tr><tr><th class="warn">Sharpest limit</th><td>ABLATION RUN (same seed, 30 of 30 pairs shared): with the transfer applying aspect the metric scores 0.933; with aspect withheld it scores 0.800. So ~0.13 of the headline accuracy is a PLUMBING CHECK -- the aspect component tests whether the transfer ran, not style fidelity -- and 0.800 is the metric&#x27;s REAL ability on style dimensions: weak but above chance. Both halves matter: &#x27;aspect is plumbing&#x27; alone suggests the metric is worthless (it is not); &#x27;0.933 accuracy&#x27; alone suggests it measures style broadly (it does not). THE EXPERIMENT CANNOT TEST EVERY DIMENSION: the validation draws a single-series trend panel, so `letters` ties 28/30 (no panels to letter) and `lines` 17/30 (one line). Raising the palette truncation from 4 to 6 colours changed 0 of 30 pairs for the same reason -- one series uses one colour. A dimension the figure cannot express ties on almost every pair, and that is a limit of the EXPERIMENT, not a weakness of the metric. The actionable next step is a multi-series multi-panel validation figure. CORRECTION TO EARLIER READINGS: the per-component table that made five components look &#x27;at or below chance&#x27; scored near-zero gaps as WRONG ANSWERS. Where the gap is resolvable every component is 0.71-1.00 accurate (palette 0.867, lines 0.769, sizes 0.733, rules 0.714). The metric is WEAK because most pairs do not separate on most dimensions -- not because its components are wrong. That was an absence of information reported as a violation, in the ANALYSIS rather than the pipeline. The style metric&#x27;s discrimination is mostly a PLUMBING CHECK. ASPECT alone scores 0.867 and never gets a pair wrong (26 right, 0 wrong) -- because the style transfer APPLIES aspect to the candidate, so that component tests whether the transfer ran. It is not a measurement of style fidelity. THE OTHER FIVE ARE NOT DEAD: removing aspect still leaves 0.808 on the pairs where aspect differs, so they carry a real but weak signal. aspect supplies most of the MARGIN, not all of the SIGNAL. REPLICATED on an independent pair set built with a different seed (aspect 0.900 there vs 0.867 here). Re-derived by scripts/validate_metric_claims.py from the per-pair data.</td></tr><tr><th class="ok">Biggest known gap</th><td>ALL 139 executed tasks now have a checked claim about their printed numbers: 110 by full semantic re-derivation, 29 by the colour-scale check on a raster figure. WHAT IS STILL NOT CHECKED: a raster&#x27;s cell values. A field or a mesh is a single path, so the scale is the only numeric claim that reaches the PDF -- the individual cells are colour, and no rendered-file check can recover them at any effort. That is a property of the FORMAT, and it is now the only remaining limit.</td></tr><tr><th class="warn">Unchecked rules, by reason</th><td>8 rules have no machine check. Grouped by WHY: 4 out_of_scope (C01, C02, C03, C04); 2 void (E01, E02); 1 no_data (H01); 1 refuted (H02). None is counted as passing. A refuted or void rule is not a to-do item -- it is a rule that was tested and did not survive.</td></tr><tr><th class="next">Next step</th><td>Human validation of the style metric. The metric discriminates at 0.9333 (95% CI 0.787-0.982) but withholds to 0.700 when `aspect` is dropped, so it is largely an aspect check, and no human has said whether the figures are the ones a reader prefers. Acceptance: a paired comparison of N&gt;=20 figure pairs by a reader blind to which is styled, with the preference rate reported alongside its confidence interval.</td></tr></table></div>
 
 <div class="kpis">
   <div class="kpi "><div class="kpi-v">15</div><div class="kpi-l">Published statistics reproduced</div><div class="kpi-s">worst |Δ| = 0.005</div></div>
@@ -119,7 +119,7 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
   <div class="kpi "><div class="kpi-v">0</div><div class="kpi-l">Semantic violations</div><div class="kpi-s">figures whose printed claims contradict their data</div></div>
   <div class="kpi "><div class="kpi-v">16 / 21</div><div class="kpi-l">Skills / classic operators</div><div class="kpi-s">global verification floor on every recipe</div></div>
   <div class="kpi "><div class="kpi-v">856</div><div class="kpi-l">Automated tests</div><div class="kpi-s">negative controls and contract tests</div></div>
-  <div class="kpi "><div class="kpi-v">79.2 MB</div><div class="kpi-l">Repository size</div><div class="kpi-s">lean budget ≤ 80 MB</div></div>
+  <div class="kpi "><div class="kpi-v">79.3 MB</div><div class="kpi-l">Repository size</div><div class="kpi-s">lean budget ≤ 80 MB</div></div>
 </div>
 
 
@@ -131,14 +131,14 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
   <div class="progress-row"><div class="progress-head"><span>Authoritative benchmark (PlotTwin-Bench)</span><span class="pct">100%</span></div><div class="bar"><i class="hold" style="width:100%"></i></div><div class="evidence">150/150 tasks run; remaining tasks and chart types in the backlog</div></div>
   <div class="progress-row"><div class="progress-head"><span>Decision-model integration</span><span class="pct">60%</span></div><div class="bar"><i class="hold" style="width:60%"></i></div><div class="evidence">bridge and 6 contract tests complete; service online</div></div>
   <div class="progress-row"><div class="progress-head"><span>Self-evolution</span><span class="pct">40%</span></div><div class="bar"><i class="hold" style="width:40%"></i></div><div class="evidence">8/16 rules have machine checks; no capability snapshot or mutation yet</div></div>
-  <div class="progress-row"><div class="progress-head"><span>Documentation and slimming</span><span class="pct">100%</span></div><div class="bar"><i class="done" style="width:100%"></i></div><div class="evidence">tracked 79.2 MB; redundant audit documents consolidated</div></div>
+  <div class="progress-row"><div class="progress-head"><span>Documentation and slimming</span><span class="pct">100%</span></div><div class="bar"><i class="done" style="width:100%"></i></div><div class="evidence">tracked 79.3 MB; redundant audit documents consolidated</div></div>
 </div>
 
 <h2><span class="n">02</span>Research deliverables</h2>
 <div class="cards">
 <div class="card deliverable"><div class="card-top"><h3>Seed-paper reproduction (4 figures / 15 statistics)</h3><span class="pill ok">Delivered</span></div><p>Reproduces Figs. 1/3/5/7 from the authors' public aggregates and checks every published statistic; L0 data construction is explicitly marked as not reproduced.</p><div class="meta"><code>templates/seed/report.json</code> · worst |Δ| = 0.005</div><a class="file-link" href="../templates/seed/report.json">Open artifact →</a></div>
 <div class="card deliverable"><div class="card-top"><h3>Style measurement and transfer</h3><span class="pill ok">Delivered</span></div><p>Reference PDF/PNG → measured style profile → compliant derived style → variant selection; distance drops on seed Fig. 7.</p><div class="meta"><code>templates/transfer/style_transfer_report.json</code></div><a class="file-link" href="../templates/transfer/style_transfer_report.json">Open artifact →</a></div>
-<div class="card deliverable"><div class="card-top"><h3>PlotTwin-Bench end-to-end report</h3><span class="pill ok">Delivered</span></div><p>Ten authoritative benchmark tasks: deterministic style distance and execution outcome, default style vs reference style.</p><div class="meta"><code>corpus/e2e/plottwin_report.json</code> · 138/150 ok</div><a class="file-link" href="../corpus/e2e/plottwin_report.json">Open artifact →</a></div>
+<div class="card deliverable"><div class="card-top"><h3>PlotTwin-Bench end-to-end report</h3><span class="pill ok">Delivered</span></div><p>Ten authoritative benchmark tasks: deterministic style distance and execution outcome, default style vs reference style.</p><div class="meta"><code>corpus/e2e/plottwin_report.json</code> · 139/150 ok</div><a class="file-link" href="../corpus/e2e/plottwin_report.json">Open artifact →</a></div>
 <div class="card deliverable"><div class="card-top"><h3>Skills and operators catalogue</h3><span class="pill ok">Delivered</span></div><p>16 named recipes + 21 classic operators + a global verification floor, machine-readable.</p><div class="meta"><code>knowledge/skills_catalog.json</code> · 16 skills / 21 operators</div><a class="file-link" href="../knowledge/skills_catalog.json">Open artifact →</a></div>
 <div class="card deliverable"><div class="card-top"><h3>Architecture and priority plan</h3><span class="pill ok">Delivered</span></div><p>Entry layer, reference understanding, evaluation layer and the per-metric SOTA definition.</p><div class="meta"><code>PIPELINE_V3.md</code> · v3</div><a class="file-link" href="../PIPELINE_V3.md">Open artifact →</a></div>
 <div class="card deliverable"><div class="card-top"><h3>Mutation loop (Propose–Probe–Compose)</h3><span class="pill ok">Delivered</span></div><p>Deterministic candidate edits probed on a fixed task set and composed by behavioural contrast; the vendored Harness² ledger enforces the rollout budget.</p><div class="meta"><code>figpipe/mutation.py</code> · 30 tests, negative controls</div><a class="file-link" href="../figpipe/mutation.py">Open artifact →</a></div>
@@ -204,855 +204,861 @@ score</b>; the latter needs the benchmark's VLM scorer, which this project has n
 imitate.</p>
 
 <div class="kpis">
-  <div class="kpi "><div class="kpi-v">138/150</div><div class="kpi-l">Tasks run</div><div class="kpi-s">execution success · 11 classified unsupported</div></div>
-  <div class="kpi "><div class="kpi-v">0.350 → 0.279</div><div class="kpi-l">Mean style distance</div><div class="kpi-s">improvement +0.071</div></div>
-  <div class="kpi "><div class="kpi-v">120 / 8 / 10</div><div class="kpi-l">Improved / worse / tie</div><div class="kpi-s">per-task outcome</div></div>
-  <div class="kpi "><div class="kpi-v">0.276</div><div class="kpi-l">best-of-two</div><div class="kpi-s">candidate-selection floor with the reference available</div></div>
+  <div class="kpi "><div class="kpi-v">139/150</div><div class="kpi-l">Tasks run</div><div class="kpi-s">execution success · 11 classified unsupported</div></div>
+  <div class="kpi "><div class="kpi-v">0.268 → 0.193</div><div class="kpi-l">Mean style distance</div><div class="kpi-s">improvement +0.075</div></div>
+  <div class="kpi "><div class="kpi-v">130 / 7 / 2</div><div class="kpi-l">Improved / worse / tie</div><div class="kpi-s">per-task outcome</div></div>
+  <div class="kpi "><div class="kpi-v">0.192</div><div class="kpi-l">best-of-two</div><div class="kpi-s">candidate-selection floor with the reference available</div></div>
 </div>
 <div class="two-col" style="margin-top:16px">
-  <div><svg viewBox="0 0 760 4732" role="img" aria-label="benchmark per-task style distance" class="bench-svg">
+  <div><svg viewBox="0 0 760 4766" role="img" aria-label="benchmark per-task style distance" class="bench-svg">
 <text x="8" y="18" class="svg-title">Per-task style distance (shorter is better)</text>
 <text x="8" y="46" class="svg-label">Chart2Code_level1_direct_HR_5 · Scatter</text>
-<rect x="120" y="32" width="190.8" height="9" class="bar-base"></rect>
-<text x="316.8" y="40" class="svg-val">0.292</text>
-<rect x="120" y="43" width="148.3" height="9" class="bar-styled"></rect>
-<text x="274.3" y="51" class="svg-val">0.227</text>
+<rect x="120" y="32" width="253.5" height="9" class="bar-base"></rect>
+<text x="379.5" y="40" class="svg-val">0.292</text>
+<rect x="120" y="43" width="197.0" height="9" class="bar-styled"></rect>
+<text x="323.0" y="51" class="svg-val">0.227</text>
 <text x="744" y="48" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="80" class="svg-label">Chart2Code_level1_direct_combination_57 · Bar</text>
-<rect x="120" y="66" width="114.3" height="9" class="bar-base"></rect>
-<text x="240.3" y="74" class="svg-val">0.175</text>
-<rect x="120" y="77" width="80.4" height="9" class="bar-styled"></rect>
-<text x="206.4" y="85" class="svg-val">0.123</text>
+<rect x="120" y="66" width="151.9" height="9" class="bar-base"></rect>
+<text x="277.9" y="74" class="svg-val">0.175</text>
+<rect x="120" y="77" width="106.8" height="9" class="bar-styled"></rect>
+<text x="232.8" y="85" class="svg-val">0.123</text>
 <text x="744" y="82" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="114" class="svg-label">Chart2Code_level1_direct_contour_18 · Heatmap</text>
-<rect x="120" y="100" width="288.1" height="9" class="bar-base"></rect>
-<text x="414.1" y="108" class="svg-val">0.441</text>
-<rect x="120" y="111" width="192.1" height="9" class="bar-styled"></rect>
-<text x="318.1" y="119" class="svg-val">0.294</text>
+<rect x="120" y="100" width="382.8" height="9" class="bar-base"></rect>
+<text x="508.8" y="108" class="svg-val">0.441</text>
+<rect x="120" y="111" width="255.2" height="9" class="bar-styled"></rect>
+<text x="381.2" y="119" class="svg-val">0.294</text>
 <text x="744" y="116" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="148" class="svg-label">Chart2Code_level1_direct_density_11 · Distribution</text>
-<rect x="120" y="134" width="157.5" height="9" class="bar-base"></rect>
-<text x="283.5" y="142" class="svg-val">0.241</text>
-<rect x="120" y="145" width="126.8" height="9" class="bar-styled"></rect>
-<text x="252.8" y="153" class="svg-val">0.194</text>
+<rect x="120" y="134" width="209.2" height="9" class="bar-base"></rect>
+<text x="335.2" y="142" class="svg-val">0.241</text>
+<rect x="120" y="145" width="168.4" height="9" class="bar-styled"></rect>
+<text x="294.4" y="153" class="svg-val">0.194</text>
 <text x="744" y="150" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="182" class="svg-label">Chart2Code_level1_direct_heatmap_3 · Heatmap</text>
-<rect x="120" y="168" width="220.2" height="9" class="bar-base"></rect>
-<text x="346.2" y="176" class="svg-val">0.337</text>
-<rect x="120" y="179" width="160.7" height="9" class="bar-styled"></rect>
-<text x="286.7" y="187" class="svg-val">0.246</text>
+<rect x="120" y="168" width="292.5" height="9" class="bar-base"></rect>
+<text x="418.5" y="176" class="svg-val">0.337</text>
+<rect x="120" y="179" width="213.5" height="9" class="bar-styled"></rect>
+<text x="339.5" y="187" class="svg-val">0.246</text>
 <text x="744" y="184" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="216" class="svg-label">Chart2Code_level1_direct_heatmap_7 · Heatmap</text>
-<rect x="120" y="202" width="216.9" height="9" class="bar-base"></rect>
-<text x="342.9" y="210" class="svg-val">0.332</text>
-<rect x="120" y="213" width="186.9" height="9" class="bar-styled"></rect>
-<text x="312.9" y="221" class="svg-val">0.286</text>
+<rect x="120" y="202" width="288.2" height="9" class="bar-base"></rect>
+<text x="414.2" y="210" class="svg-val">0.332</text>
+<rect x="120" y="213" width="248.2" height="9" class="bar-styled"></rect>
+<text x="374.2" y="221" class="svg-val">0.286</text>
 <text x="744" y="218" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="250" class="svg-label">Chart2Code_level1_direct_line_39 · Line</text>
-<rect x="120" y="236" width="153.5" height="9" class="bar-base"></rect>
-<text x="279.5" y="244" class="svg-val">0.235</text>
-<rect x="120" y="247" width="86.9" height="9" class="bar-styled"></rect>
-<text x="212.9" y="255" class="svg-val">0.133</text>
+<rect x="120" y="236" width="204.0" height="9" class="bar-base"></rect>
+<text x="330.0" y="244" class="svg-val">0.235</text>
+<rect x="120" y="247" width="115.4" height="9" class="bar-styled"></rect>
+<text x="241.4" y="255" class="svg-val">0.133</text>
 <text x="744" y="252" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="284" class="svg-label">Chart2Code_level1_direct_line_8 · Line</text>
-<rect x="120" y="270" width="236.5" height="9" class="bar-base"></rect>
-<text x="362.5" y="278" class="svg-val">0.362</text>
-<rect x="120" y="281" width="194.7" height="9" class="bar-styled"></rect>
-<text x="320.7" y="289" class="svg-val">0.298</text>
+<rect x="120" y="270" width="314.2" height="9" class="bar-base"></rect>
+<text x="440.2" y="278" class="svg-val">0.362</text>
+<rect x="120" y="281" width="258.7" height="9" class="bar-styled"></rect>
+<text x="384.7" y="289" class="svg-val">0.298</text>
 <text x="744" y="286" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="318" class="svg-label">Chart2Code_level2_3d_11_v2 · Scatter</text>
-<rect x="120" y="304" width="222.1" height="9" class="bar-base"></rect>
-<text x="348.1" y="312" class="svg-val">0.340</text>
-<rect x="120" y="315" width="146.4" height="9" class="bar-styled"></rect>
-<text x="272.4" y="323" class="svg-val">0.224</text>
+<rect x="120" y="304" width="295.1" height="9" class="bar-base"></rect>
+<text x="421.1" y="312" class="svg-val">0.340</text>
+<rect x="120" y="315" width="194.4" height="9" class="bar-styled"></rect>
+<text x="320.4" y="323" class="svg-val">0.224</text>
 <text x="744" y="320" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="352" class="svg-label">Chart2Code_level2_3d_5_v4 · Bar</text>
-<rect x="120" y="338" width="84.9" height="9" class="bar-base"></rect>
-<text x="210.9" y="346" class="svg-val">0.130</text>
-<rect x="120" y="349" width="63.4" height="9" class="bar-styled"></rect>
-<text x="189.4" y="357" class="svg-val">0.097</text>
+<rect x="120" y="338" width="112.8" height="9" class="bar-base"></rect>
+<text x="238.8" y="346" class="svg-val">0.130</text>
+<rect x="120" y="349" width="84.2" height="9" class="bar-styled"></rect>
+<text x="210.2" y="357" class="svg-val">0.097</text>
 <text x="744" y="354" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="386" class="svg-label">Chart2Code_level2_area_3_v3 · Line</text>
-<rect x="120" y="372" width="308.4" height="9" class="bar-base"></rect>
-<text x="434.4" y="380" class="svg-val">0.472</text>
-<rect x="120" y="383" width="272.5" height="9" class="bar-styled"></rect>
-<text x="398.5" y="391" class="svg-val">0.417</text>
+<rect x="120" y="372" width="409.7" height="9" class="bar-base"></rect>
+<text x="535.7" y="380" class="svg-val">0.472</text>
+<rect x="120" y="383" width="362.0" height="9" class="bar-styled"></rect>
+<text x="488.0" y="391" class="svg-val">0.417</text>
 <text x="744" y="388" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="420" class="svg-label">Chart2Code_level2_bar_10_v4 · Line</text>
-<rect x="120" y="406" width="341.1" height="9" class="bar-base"></rect>
-<text x="467.1" y="414" class="svg-val">0.522</text>
-<rect x="120" y="417" width="209.1" height="9" class="bar-styled"></rect>
-<text x="335.1" y="425" class="svg-val">0.320</text>
+<rect x="120" y="406" width="453.1" height="9" class="bar-base"></rect>
+<text x="579.1" y="414" class="svg-val">0.522</text>
+<rect x="120" y="417" width="277.8" height="9" class="bar-styled"></rect>
+<text x="403.8" y="425" class="svg-val">0.320</text>
 <text x="744" y="422" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="454" class="svg-label">Chart2Code_level2_bar_22_v4 · Bar</text>
-<rect x="120" y="440" width="100.0" height="9" class="bar-base"></rect>
-<text x="226.0" y="448" class="svg-val">0.153</text>
-<rect x="120" y="451" width="88.9" height="9" class="bar-styled"></rect>
-<text x="214.9" y="459" class="svg-val">0.136</text>
+<rect x="120" y="440" width="132.8" height="9" class="bar-base"></rect>
+<text x="258.8" y="448" class="svg-val">0.153</text>
+<rect x="120" y="451" width="118.0" height="9" class="bar-styled"></rect>
+<text x="244.0" y="459" class="svg-val">0.136</text>
 <text x="744" y="456" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="488" class="svg-label">Chart2Code_level2_bar_25_v4 · Line</text>
-<rect x="120" y="474" width="282.3" height="9" class="bar-base"></rect>
-<text x="408.3" y="482" class="svg-val">0.432</text>
-<rect x="120" y="485" width="240.4" height="9" class="bar-styled"></rect>
-<text x="366.4" y="493" class="svg-val">0.368</text>
+<rect x="120" y="474" width="375.0" height="9" class="bar-base"></rect>
+<text x="501.0" y="482" class="svg-val">0.432</text>
+<rect x="120" y="485" width="319.4" height="9" class="bar-styled"></rect>
+<text x="445.4" y="493" class="svg-val">0.368</text>
 <text x="744" y="490" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="522" class="svg-label">Chart2Code_level2_box_1_v5 · Box/Violin</text>
-<rect x="120" y="508" width="159.4" height="9" class="bar-base"></rect>
-<text x="285.4" y="516" class="svg-val">0.244</text>
-<rect x="120" y="519" width="75.1" height="9" class="bar-styled"></rect>
-<text x="201.1" y="527" class="svg-val">0.115</text>
+<rect x="120" y="508" width="211.8" height="9" class="bar-base"></rect>
+<text x="337.8" y="516" class="svg-val">0.244</text>
+<rect x="120" y="519" width="99.8" height="9" class="bar-styled"></rect>
+<text x="225.8" y="527" class="svg-val">0.115</text>
 <text x="744" y="524" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="556" class="svg-label">Chart2Code_level2_combination_11_v2 · Std-band</text>
-<rect x="120" y="542" width="134.6" height="9" class="bar-base"></rect>
-<text x="260.6" y="550" class="svg-val">0.206</text>
-<rect x="120" y="553" width="106.5" height="9" class="bar-styled"></rect>
-<text x="232.5" y="561" class="svg-val">0.163</text>
+<rect x="120" y="542" width="178.8" height="9" class="bar-base"></rect>
+<text x="304.8" y="550" class="svg-val">0.206</text>
+<rect x="120" y="553" width="141.5" height="9" class="bar-styled"></rect>
+<text x="267.5" y="561" class="svg-val">0.163</text>
 <text x="744" y="558" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="590" class="svg-label">Chart2Code_level2_combination_13_v5 · Line</text>
-<rect x="120" y="576" width="226.1" height="9" class="bar-base"></rect>
-<text x="352.1" y="584" class="svg-val">0.346</text>
-<rect x="120" y="587" width="203.8" height="9" class="bar-styled"></rect>
-<text x="329.8" y="595" class="svg-val">0.312</text>
+<rect x="120" y="576" width="300.3" height="9" class="bar-base"></rect>
+<text x="426.3" y="584" class="svg-val">0.346</text>
+<rect x="120" y="587" width="270.8" height="9" class="bar-styled"></rect>
+<text x="396.8" y="595" class="svg-val">0.312</text>
 <text x="744" y="592" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="624" class="svg-label">Chart2Code_level2_combination_14_v5 · Distribution</text>
-<rect x="120" y="610" width="166.0" height="9" class="bar-base"></rect>
-<text x="292.0" y="618" class="svg-val">0.254</text>
-<rect x="120" y="621" width="179.0" height="9" class="bar-styled"></rect>
-<text x="305.0" y="629" class="svg-val">0.274</text>
+<rect x="120" y="610" width="220.5" height="9" class="bar-base"></rect>
+<text x="346.5" y="618" class="svg-val">0.254</text>
+<rect x="120" y="621" width="237.8" height="9" class="bar-styled"></rect>
+<text x="363.8" y="629" class="svg-val">0.274</text>
 <text x="744" y="626" class="svg-delta bad" text-anchor="end">↑</text>
 <text x="8" y="658" class="svg-label">Chart2Code_level2_combination_16_v5 · Box/Violin</text>
-<rect x="120" y="644" width="149.0" height="9" class="bar-base"></rect>
-<text x="275.0" y="652" class="svg-val">0.228</text>
-<rect x="120" y="655" width="102.6" height="9" class="bar-styled"></rect>
-<text x="228.6" y="663" class="svg-val">0.157</text>
+<rect x="120" y="644" width="197.9" height="9" class="bar-base"></rect>
+<text x="323.9" y="652" class="svg-val">0.228</text>
+<rect x="120" y="655" width="136.3" height="9" class="bar-styled"></rect>
+<text x="262.3" y="663" class="svg-val">0.157</text>
 <text x="744" y="660" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="692" class="svg-label">Chart2Code_level2_combination_33_v5 · Distribution</text>
-<rect x="120" y="678" width="98.0" height="9" class="bar-base"></rect>
-<text x="224.0" y="686" class="svg-val">0.150</text>
-<rect x="120" y="689" width="105.8" height="9" class="bar-styled"></rect>
-<text x="231.8" y="697" class="svg-val">0.162</text>
+<rect x="120" y="678" width="130.2" height="9" class="bar-base"></rect>
+<text x="256.2" y="686" class="svg-val">0.150</text>
+<rect x="120" y="689" width="140.6" height="9" class="bar-styled"></rect>
+<text x="266.6" y="697" class="svg-val">0.162</text>
 <text x="744" y="694" class="svg-delta bad" text-anchor="end">↑</text>
 <text x="8" y="726" class="svg-label">Chart2Code_level2_combination_42_v5 · Scatter</text>
-<rect x="120" y="712" width="231.9" height="9" class="bar-base"></rect>
-<text x="357.9" y="720" class="svg-val">0.355</text>
-<rect x="120" y="723" width="167.3" height="9" class="bar-styled"></rect>
-<text x="293.3" y="731" class="svg-val">0.256</text>
+<rect x="120" y="712" width="308.1" height="9" class="bar-base"></rect>
+<text x="434.1" y="720" class="svg-val">0.355</text>
+<rect x="120" y="723" width="222.2" height="9" class="bar-styled"></rect>
+<text x="348.2" y="731" class="svg-val">0.256</text>
 <text x="744" y="728" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="760" class="svg-label">Chart2Code_level2_combination_44_v3 · Distribution</text>
-<rect x="120" y="746" width="141.8" height="9" class="bar-base"></rect>
-<text x="267.8" y="754" class="svg-val">0.217</text>
-<rect x="120" y="757" width="123.5" height="9" class="bar-styled"></rect>
-<text x="249.5" y="765" class="svg-val">0.189</text>
+<rect x="120" y="746" width="188.4" height="9" class="bar-base"></rect>
+<text x="314.4" y="754" class="svg-val">0.217</text>
+<rect x="120" y="757" width="164.0" height="9" class="bar-styled"></rect>
+<text x="290.0" y="765" class="svg-val">0.189</text>
 <text x="744" y="762" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="794" class="svg-label">Chart2Code_level2_contour_14_v1 · Field 2D</text>
-<rect x="120" y="780" width="156.2" height="9" class="bar-base"></rect>
-<text x="282.2" y="788" class="svg-val">0.239</text>
-<rect x="120" y="791" width="115.6" height="9" class="bar-styled"></rect>
-<text x="241.6" y="799" class="svg-val">0.177</text>
+<rect x="120" y="780" width="207.4" height="9" class="bar-base"></rect>
+<text x="333.4" y="788" class="svg-val">0.239</text>
+<rect x="120" y="791" width="153.6" height="9" class="bar-styled"></rect>
+<text x="279.6" y="799" class="svg-val">0.177</text>
 <text x="744" y="796" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="828" class="svg-label">Chart2Code_level2_contour_23_v4 · Field 2D</text>
-<rect x="120" y="814" width="233.9" height="9" class="bar-base"></rect>
-<text x="359.9" y="822" class="svg-val">0.358</text>
-<rect x="120" y="825" width="152.2" height="9" class="bar-styled"></rect>
-<text x="278.2" y="833" class="svg-val">0.233</text>
+<rect x="120" y="814" width="310.7" height="9" class="bar-base"></rect>
+<text x="436.7" y="822" class="svg-val">0.358</text>
+<rect x="120" y="825" width="202.2" height="9" class="bar-styled"></rect>
+<text x="328.2" y="833" class="svg-val">0.233</text>
 <text x="744" y="830" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="862" class="svg-label">Chart2Code_level2_contour_25_v2 · Field 2D</text>
-<rect x="120" y="848" width="250.9" height="9" class="bar-base"></rect>
-<text x="376.9" y="856" class="svg-val">0.384</text>
-<rect x="120" y="859" width="111.7" height="9" class="bar-styled"></rect>
-<text x="237.7" y="867" class="svg-val">0.171</text>
+<rect x="120" y="848" width="333.3" height="9" class="bar-base"></rect>
+<text x="459.3" y="856" class="svg-val">0.384</text>
+<rect x="120" y="859" width="148.4" height="9" class="bar-styled"></rect>
+<text x="274.4" y="867" class="svg-val">0.171</text>
 <text x="744" y="864" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="896" class="svg-label">Chart2Code_level2_contour_25_v3 · Field 2D</text>
-<rect x="120" y="882" width="155.5" height="9" class="bar-base"></rect>
-<text x="281.5" y="890" class="svg-val">0.238</text>
-<rect x="120" y="893" width="67.9" height="9" class="bar-styled"></rect>
-<text x="193.9" y="901" class="svg-val">0.104</text>
+<rect x="120" y="882" width="206.6" height="9" class="bar-base"></rect>
+<text x="332.6" y="890" class="svg-val">0.238</text>
+<rect x="120" y="893" width="90.3" height="9" class="bar-styled"></rect>
+<text x="216.3" y="901" class="svg-val">0.104</text>
 <text x="744" y="898" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="930" class="svg-label">Chart2Code_level2_contour_5_v5 · Field 2D</text>
-<rect x="120" y="916" width="342.4" height="9" class="bar-base"></rect>
-<text x="468.4" y="924" class="svg-val">0.524</text>
-<rect x="120" y="927" width="269.8" height="9" class="bar-styled"></rect>
-<text x="395.8" y="935" class="svg-val">0.413</text>
+<rect x="120" y="916" width="351.5" height="9" class="bar-base"></rect>
+<text x="477.5" y="924" class="svg-val">0.405</text>
+<rect x="120" y="927" width="213.5" height="9" class="bar-styled"></rect>
+<text x="339.5" y="935" class="svg-val">0.246</text>
 <text x="744" y="932" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="964" class="svg-label">Chart2Code_level2_density_12_v3 · Distribution</text>
-<rect x="120" y="950" width="121.5" height="9" class="bar-base"></rect>
-<text x="247.5" y="958" class="svg-val">0.186</text>
-<rect x="120" y="961" width="109.8" height="9" class="bar-styled"></rect>
-<text x="235.8" y="969" class="svg-val">0.168</text>
+<rect x="120" y="950" width="145.8" height="9" class="bar-base"></rect>
+<text x="271.8" y="958" class="svg-val">0.168</text>
+<rect x="120" y="961" width="138.0" height="9" class="bar-styled"></rect>
+<text x="264.0" y="969" class="svg-val">0.159</text>
 <text x="744" y="966" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="998" class="svg-label">Chart2Code_level2_density_14_v4 · Line</text>
-<rect x="120" y="984" width="291.4" height="9" class="bar-base"></rect>
-<text x="417.4" y="992" class="svg-val">0.446</text>
-<rect x="120" y="995" width="251.5" height="9" class="bar-styled"></rect>
-<text x="377.5" y="1003" class="svg-val">0.385</text>
+<rect x="120" y="984" width="177.9" height="9" class="bar-base"></rect>
+<text x="303.9" y="992" class="svg-val">0.205</text>
+<rect x="120" y="995" width="125.0" height="9" class="bar-styled"></rect>
+<text x="251.0" y="1003" class="svg-val">0.144</text>
 <text x="744" y="1000" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="1032" class="svg-label">Chart2Code_level2_errorpoint_10_v5 · Scatter</text>
-<rect x="120" y="1018" width="354.1" height="9" class="bar-base"></rect>
-<text x="480.1" y="1026" class="svg-val">0.542</text>
-<rect x="120" y="1029" width="271.8" height="9" class="bar-styled"></rect>
-<text x="397.8" y="1037" class="svg-val">0.416</text>
+<rect x="120" y="1018" width="293.4" height="9" class="bar-base"></rect>
+<text x="419.4" y="1026" class="svg-val">0.338</text>
+<rect x="120" y="1029" width="184.9" height="9" class="bar-styled"></rect>
+<text x="310.9" y="1037" class="svg-val">0.213</text>
 <text x="744" y="1034" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="1066" class="svg-label">Chart2Code_level2_errorpoint_1_v5 · Scatter</text>
-<rect x="120" y="1052" width="322.8" height="9" class="bar-base"></rect>
-<text x="448.8" y="1060" class="svg-val">0.494</text>
-<rect x="120" y="1063" width="240.4" height="9" class="bar-styled"></rect>
-<text x="366.4" y="1071" class="svg-val">0.368</text>
+<rect x="120" y="1052" width="270.8" height="9" class="bar-base"></rect>
+<text x="396.8" y="1060" class="svg-val">0.312</text>
+<rect x="120" y="1063" width="161.4" height="9" class="bar-styled"></rect>
+<text x="287.4" y="1071" class="svg-val">0.186</text>
 <text x="744" y="1068" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="1100" class="svg-label">Chart2Code_level2_errorpoint_5_v5 · Std-band</text>
-<rect x="120" y="1086" width="276.4" height="9" class="bar-base"></rect>
-<text x="402.4" y="1094" class="svg-val">0.423</text>
-<rect x="120" y="1097" width="247.0" height="9" class="bar-styled"></rect>
-<text x="373.0" y="1105" class="svg-val">0.378</text>
+<rect x="120" y="1086" width="247.4" height="9" class="bar-base"></rect>
+<text x="373.4" y="1094" class="svg-val">0.285</text>
+<rect x="120" y="1097" width="220.5" height="9" class="bar-styled"></rect>
+<text x="346.5" y="1105" class="svg-val">0.254</text>
 <text x="744" y="1102" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="1134" class="svg-label">Chart2Code_level2_hist_2_v3 · Distribution</text>
-<rect x="120" y="1120" width="169.9" height="9" class="bar-base"></rect>
-<text x="295.9" y="1128" class="svg-val">0.260</text>
-<rect x="120" y="1131" width="129.4" height="9" class="bar-styled"></rect>
-<text x="255.4" y="1139" class="svg-val">0.198</text>
+<rect x="120" y="1120" width="186.6" height="9" class="bar-base"></rect>
+<text x="312.6" y="1128" class="svg-val">0.215</text>
+<rect x="120" y="1131" width="93.7" height="9" class="bar-styled"></rect>
+<text x="219.7" y="1139" class="svg-val">0.108</text>
 <text x="744" y="1136" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="1168" class="svg-label">Chart2Code_level2_hist_2_v5 · Distribution</text>
-<rect x="120" y="1154" width="71.9" height="9" class="bar-base"></rect>
-<text x="197.9" y="1162" class="svg-val">0.110</text>
-<rect x="120" y="1165" width="85.6" height="9" class="bar-styled"></rect>
-<text x="211.6" y="1173" class="svg-val">0.131</text>
+<rect x="120" y="1154" width="92.0" height="9" class="bar-base"></rect>
+<text x="218.0" y="1162" class="svg-val">0.106</text>
+<rect x="120" y="1165" width="162.3" height="9" class="bar-styled"></rect>
+<text x="288.3" y="1173" class="svg-val">0.187</text>
 <text x="744" y="1170" class="svg-delta bad" text-anchor="end">↑</text>
 <text x="8" y="1202" class="svg-label">Chart2Code_level2_multidiff_1_v1 · Distribution</text>
-<rect x="120" y="1188" width="130.7" height="9" class="bar-base"></rect>
-<text x="256.7" y="1196" class="svg-val">0.200</text>
-<rect x="120" y="1199" width="88.2" height="9" class="bar-styled"></rect>
-<text x="214.2" y="1207" class="svg-val">0.135</text>
+<rect x="120" y="1188" width="145.8" height="9" class="bar-base"></rect>
+<text x="271.8" y="1196" class="svg-val">0.168</text>
+<rect x="120" y="1199" width="110.2" height="9" class="bar-styled"></rect>
+<text x="236.2" y="1207" class="svg-val">0.127</text>
 <text x="744" y="1204" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="1236" class="svg-label">Chart2Code_level2_multidiff_2_v2__single · Field 2D</text>
-<rect x="120" y="1222" width="232.6" height="9" class="bar-base"></rect>
-<text x="358.6" y="1230" class="svg-val">0.356</text>
-<rect x="120" y="1233" width="111.7" height="9" class="bar-styled"></rect>
-<text x="237.7" y="1241" class="svg-val">0.171</text>
+<rect x="120" y="1222" width="306.4" height="9" class="bar-base"></rect>
+<text x="432.4" y="1230" class="svg-val">0.353</text>
+<rect x="120" y="1233" width="145.8" height="9" class="bar-styled"></rect>
+<text x="271.8" y="1241" class="svg-val">0.168</text>
 <text x="744" y="1238" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="1270" class="svg-label">Chart2Code_level2_multidiff_5_v1 · Line</text>
-<rect x="120" y="1256" width="311.0" height="9" class="bar-base"></rect>
-<text x="437.0" y="1264" class="svg-val">0.476</text>
-<rect x="120" y="1267" width="270.5" height="9" class="bar-styled"></rect>
-<text x="396.5" y="1275" class="svg-val">0.414</text>
+<rect x="120" y="1256" width="211.8" height="9" class="bar-base"></rect>
+<text x="337.8" y="1264" class="svg-val">0.244</text>
+<rect x="120" y="1267" width="195.3" height="9" class="bar-styled"></rect>
+<text x="321.3" y="1275" class="svg-val">0.225</text>
 <text x="744" y="1272" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="1304" class="svg-label">Chart2Code_level2_quiver_10_v5 · Field 2D</text>
-<rect x="120" y="1290" width="277.0" height="9" class="bar-base"></rect>
-<text x="403.0" y="1298" class="svg-val">0.424</text>
-<rect x="120" y="1301" width="182.3" height="9" class="bar-styled"></rect>
-<text x="308.3" y="1309" class="svg-val">0.279</text>
+<rect x="120" y="1290" width="367.2" height="9" class="bar-base"></rect>
+<text x="493.2" y="1298" class="svg-val">0.423</text>
+<rect x="120" y="1301" width="241.3" height="9" class="bar-styled"></rect>
+<text x="367.3" y="1309" class="svg-val">0.278</text>
 <text x="744" y="1306" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="1338" class="svg-label">Chart2Code_level2_quiver_13_v1 · Field 2D</text>
-<rect x="120" y="1324" width="136.6" height="9" class="bar-base"></rect>
-<text x="262.6" y="1332" class="svg-val">0.209</text>
-<rect x="120" y="1335" width="80.4" height="9" class="bar-styled"></rect>
-<text x="206.4" y="1343" class="svg-val">0.123</text>
+<rect x="120" y="1324" width="181.4" height="9" class="bar-base"></rect>
+<text x="307.4" y="1332" class="svg-val">0.209</text>
+<rect x="120" y="1335" width="106.8" height="9" class="bar-styled"></rect>
+<text x="232.8" y="1343" class="svg-val">0.123</text>
 <text x="744" y="1340" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="1372" class="svg-label">Chart2Code_level2_quiver_14_v1 · Field 2D</text>
-<rect x="120" y="1358" width="210.4" height="9" class="bar-base"></rect>
-<text x="336.4" y="1366" class="svg-val">0.322</text>
-<rect x="120" y="1369" width="156.2" height="9" class="bar-styled"></rect>
-<text x="282.2" y="1377" class="svg-val">0.239</text>
+<rect x="120" y="1358" width="279.5" height="9" class="bar-base"></rect>
+<text x="405.5" y="1366" class="svg-val">0.322</text>
+<rect x="120" y="1369" width="207.4" height="9" class="bar-styled"></rect>
+<text x="333.4" y="1377" class="svg-val">0.239</text>
 <text x="744" y="1374" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="1406" class="svg-label">Chart2Code_level2_quiver_4_v5 · Field 2D</text>
-<rect x="120" y="1392" width="262.0" height="9" class="bar-base"></rect>
-<text x="388.0" y="1400" class="svg-val">0.401</text>
-<rect x="120" y="1403" width="175.1" height="9" class="bar-styled"></rect>
-<text x="301.1" y="1411" class="svg-val">0.268</text>
+<rect x="120" y="1392" width="348.1" height="9" class="bar-base"></rect>
+<text x="474.1" y="1400" class="svg-val">0.401</text>
+<rect x="120" y="1403" width="232.6" height="9" class="bar-styled"></rect>
+<text x="358.6" y="1411" class="svg-val">0.268</text>
 <text x="744" y="1408" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="1440" class="svg-label">Chart2Code_level2_radar_10_v2 · Polar/Radial</text>
-<rect x="120" y="1426" width="136.6" height="9" class="bar-base"></rect>
-<text x="262.6" y="1434" class="svg-val">0.209</text>
-<rect x="120" y="1437" width="118.9" height="9" class="bar-styled"></rect>
-<text x="244.9" y="1445" class="svg-val">0.182</text>
+<rect x="120" y="1426" width="181.4" height="9" class="bar-base"></rect>
+<text x="307.4" y="1434" class="svg-val">0.209</text>
+<rect x="120" y="1437" width="158.0" height="9" class="bar-styled"></rect>
+<text x="284.0" y="1445" class="svg-val">0.182</text>
 <text x="744" y="1442" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="1474" class="svg-label">Chart2Code_level2_radar_18_v5 · Bar</text>
-<rect x="120" y="1460" width="137.9" height="9" class="bar-base"></rect>
-<text x="263.9" y="1468" class="svg-val">0.211</text>
-<rect x="120" y="1471" width="85.6" height="9" class="bar-styled"></rect>
-<text x="211.6" y="1479" class="svg-val">0.131</text>
+<rect x="120" y="1460" width="183.1" height="9" class="bar-base"></rect>
+<text x="309.1" y="1468" class="svg-val">0.211</text>
+<rect x="120" y="1471" width="113.7" height="9" class="bar-styled"></rect>
+<text x="239.7" y="1479" class="svg-val">0.131</text>
 <text x="744" y="1476" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="1508" class="svg-label">Chart2Code_level2_radar_23_v3 · Polar/Radial</text>
-<rect x="120" y="1494" width="116.3" height="9" class="bar-base"></rect>
-<text x="242.3" y="1502" class="svg-val">0.178</text>
-<rect x="120" y="1505" width="130.0" height="9" class="bar-styled"></rect>
-<text x="256.0" y="1513" class="svg-val">0.199</text>
+<rect x="120" y="1494" width="154.5" height="9" class="bar-base"></rect>
+<text x="280.5" y="1502" class="svg-val">0.178</text>
+<rect x="120" y="1505" width="172.7" height="9" class="bar-styled"></rect>
+<text x="298.7" y="1513" class="svg-val">0.199</text>
 <text x="744" y="1510" class="svg-delta bad" text-anchor="end">↑</text>
 <text x="8" y="1542" class="svg-label">Chart2Code_level2_radar_26_v3 · Polar/Radial</text>
-<rect x="120" y="1528" width="228.7" height="9" class="bar-base"></rect>
-<text x="354.7" y="1536" class="svg-val">0.350</text>
-<rect x="120" y="1539" width="225.4" height="9" class="bar-styled"></rect>
-<text x="351.4" y="1547" class="svg-val">0.345</text>
-<text x="744" y="1544" class="svg-delta flat" text-anchor="end">=</text>
+<rect x="120" y="1528" width="302.1" height="9" class="bar-base"></rect>
+<text x="428.1" y="1536" class="svg-val">0.348</text>
+<rect x="120" y="1539" width="276.0" height="9" class="bar-styled"></rect>
+<text x="402.0" y="1547" class="svg-val">0.318</text>
+<text x="744" y="1544" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="1576" class="svg-label">Chart2Code_level2_radar_35_v4 · Polar/Radial</text>
-<rect x="120" y="1562" width="230.0" height="9" class="bar-base"></rect>
-<text x="356.0" y="1570" class="svg-val">0.352</text>
-<rect x="120" y="1573" width="226.7" height="9" class="bar-styled"></rect>
-<text x="352.7" y="1581" class="svg-val">0.347</text>
-<text x="744" y="1578" class="svg-delta flat" text-anchor="end">=</text>
+<rect x="120" y="1562" width="273.4" height="9" class="bar-base"></rect>
+<text x="399.4" y="1570" class="svg-val">0.315</text>
+<rect x="120" y="1573" width="267.3" height="9" class="bar-styled"></rect>
+<text x="393.3" y="1581" class="svg-val">0.308</text>
+<text x="744" y="1578" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="1610" class="svg-label">Chart2Code_level2_radar_3_v3 · Polar/Radial</text>
-<rect x="120" y="1596" width="198.0" height="9" class="bar-base"></rect>
-<text x="324.0" y="1604" class="svg-val">0.303</text>
-<rect x="120" y="1607" width="194.7" height="9" class="bar-styled"></rect>
-<text x="320.7" y="1615" class="svg-val">0.298</text>
-<text x="744" y="1612" class="svg-delta flat" text-anchor="end">=</text>
+<rect x="120" y="1596" width="238.7" height="9" class="bar-base"></rect>
+<text x="364.7" y="1604" class="svg-val">0.275</text>
+<rect x="120" y="1607" width="222.2" height="9" class="bar-styled"></rect>
+<text x="348.2" y="1615" class="svg-val">0.256</text>
+<text x="744" y="1612" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="1644" class="svg-label">Chart2Code_level2_radar_40_v5 · Polar/Radial</text>
-<rect x="120" y="1630" width="157.5" height="9" class="bar-base"></rect>
-<text x="283.5" y="1638" class="svg-val">0.241</text>
-<rect x="120" y="1641" width="154.2" height="9" class="bar-styled"></rect>
-<text x="280.2" y="1649" class="svg-val">0.236</text>
-<text x="744" y="1646" class="svg-delta flat" text-anchor="end">=</text>
+<rect x="120" y="1630" width="208.3" height="9" class="bar-base"></rect>
+<text x="334.3" y="1638" class="svg-val">0.240</text>
+<rect x="120" y="1641" width="200.5" height="9" class="bar-styled"></rect>
+<text x="326.5" y="1649" class="svg-val">0.231</text>
+<text x="744" y="1646" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="1678" class="svg-label">Chart2Code_level2_radar_4_v3 · Polar/Radial</text>
-<rect x="120" y="1664" width="233.9" height="9" class="bar-base"></rect>
-<text x="359.9" y="1672" class="svg-val">0.358</text>
-<rect x="120" y="1675" width="233.9" height="9" class="bar-styled"></rect>
-<text x="359.9" y="1683" class="svg-val">0.358</text>
-<text x="744" y="1680" class="svg-delta flat" text-anchor="end">=</text>
+<rect x="120" y="1664" width="289.0" height="9" class="bar-base"></rect>
+<text x="415.0" y="1672" class="svg-val">0.333</text>
+<rect x="120" y="1675" width="269.1" height="9" class="bar-styled"></rect>
+<text x="395.1" y="1683" class="svg-val">0.310</text>
+<text x="744" y="1680" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="1712" class="svg-label">Chart2Code_level2_radar_7_v3 · Polar/Radial</text>
-<rect x="120" y="1698" width="213.0" height="9" class="bar-base"></rect>
-<text x="339.0" y="1706" class="svg-val">0.326</text>
-<rect x="120" y="1709" width="213.0" height="9" class="bar-styled"></rect>
-<text x="339.0" y="1717" class="svg-val">0.326</text>
-<text x="744" y="1714" class="svg-delta flat" text-anchor="end">=</text>
+<rect x="120" y="1698" width="278.6" height="9" class="bar-base"></rect>
+<text x="404.6" y="1706" class="svg-val">0.321</text>
+<rect x="120" y="1709" width="257.8" height="9" class="bar-styled"></rect>
+<text x="383.8" y="1717" class="svg-val">0.297</text>
+<text x="744" y="1714" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="1746" class="svg-label">Chart2Code_level2_radar_9_v4 · Polar/Radial</text>
-<rect x="120" y="1732" width="135.2" height="9" class="bar-base"></rect>
-<text x="261.2" y="1740" class="svg-val">0.207</text>
-<rect x="120" y="1743" width="135.2" height="9" class="bar-styled"></rect>
-<text x="261.2" y="1751" class="svg-val">0.207</text>
+<rect x="120" y="1732" width="149.3" height="9" class="bar-base"></rect>
+<text x="275.3" y="1740" class="svg-val">0.172</text>
+<rect x="120" y="1743" width="149.3" height="9" class="bar-styled"></rect>
+<text x="275.3" y="1751" class="svg-val">0.172</text>
 <text x="744" y="1748" class="svg-delta flat" text-anchor="end">=</text>
 <text x="8" y="1780" class="svg-label">Chart2Code_level2_scatter_13_v2 · Scatter</text>
-<rect x="120" y="1766" width="388.8" height="9" class="bar-base"></rect>
-<text x="514.8" y="1774" class="svg-val">0.595</text>
-<rect x="120" y="1777" width="322.8" height="9" class="bar-styled"></rect>
-<text x="448.8" y="1785" class="svg-val">0.494</text>
+<rect x="120" y="1766" width="177.9" height="9" class="bar-base"></rect>
+<text x="303.9" y="1774" class="svg-val">0.205</text>
+<rect x="120" y="1777" width="90.3" height="9" class="bar-styled"></rect>
+<text x="216.3" y="1785" class="svg-val">0.104</text>
 <text x="744" y="1782" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="1814" class="svg-label">Chart2Code_level2_scatter_1_v2__single · Bar</text>
-<rect x="120" y="1800" width="215.0" height="9" class="bar-base"></rect>
-<text x="341.0" y="1808" class="svg-val">0.329</text>
-<rect x="120" y="1811" width="178.4" height="9" class="bar-styled"></rect>
-<text x="304.4" y="1819" class="svg-val">0.273</text>
+<rect x="120" y="1800" width="127.6" height="9" class="bar-base"></rect>
+<text x="253.6" y="1808" class="svg-val">0.147</text>
+<rect x="120" y="1811" width="66.8" height="9" class="bar-styled"></rect>
+<text x="192.8" y="1819" class="svg-val">0.077</text>
 <text x="744" y="1816" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="1848" class="svg-label">Chart2Code_level2_scatter_22_v2__single · Scatter</text>
-<rect x="120" y="1834" width="350.2" height="9" class="bar-base"></rect>
-<text x="476.2" y="1842" class="svg-val">0.536</text>
-<rect x="120" y="1845" width="234.6" height="9" class="bar-styled"></rect>
-<text x="360.6" y="1853" class="svg-val">0.359</text>
+<rect x="120" y="1834" width="211.8" height="9" class="bar-base"></rect>
+<text x="337.8" y="1842" class="svg-val">0.244</text>
+<rect x="120" y="1845" width="127.6" height="9" class="bar-styled"></rect>
+<text x="253.6" y="1853" class="svg-val">0.147</text>
 <text x="744" y="1850" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="1882" class="svg-label">Chart2Code_level2_scatter_22_v3 · Scatter</text>
-<rect x="120" y="1868" width="382.2" height="9" class="bar-base"></rect>
-<text x="508.2" y="1876" class="svg-val">0.585</text>
-<rect x="120" y="1879" width="332.6" height="9" class="bar-styled"></rect>
-<text x="458.6" y="1887" class="svg-val">0.509</text>
+<rect x="120" y="1868" width="211.8" height="9" class="bar-base"></rect>
+<text x="337.8" y="1876" class="svg-val">0.244</text>
+<rect x="120" y="1879" width="146.7" height="9" class="bar-styled"></rect>
+<text x="272.7" y="1887" class="svg-val">0.169</text>
 <text x="744" y="1884" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="1916" class="svg-label">Chart2Code_level2_scatter_27_v5 · Scatter</text>
-<rect x="120" y="1902" width="321.5" height="9" class="bar-base"></rect>
-<text x="447.5" y="1910" class="svg-val">0.492</text>
-<rect x="120" y="1913" width="267.2" height="9" class="bar-styled"></rect>
-<text x="393.2" y="1921" class="svg-val">0.409</text>
+<rect x="120" y="1902" width="383.7" height="9" class="bar-base"></rect>
+<text x="509.7" y="1910" class="svg-val">0.442</text>
+<rect x="120" y="1913" width="310.7" height="9" class="bar-styled"></rect>
+<text x="436.7" y="1921" class="svg-val">0.358</text>
 <text x="744" y="1918" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="1950" class="svg-label">Chart2Code_level2_scatter_5_v5 · Scatter</text>
-<rect x="120" y="1936" width="271.1" height="9" class="bar-base"></rect>
-<text x="397.1" y="1944" class="svg-val">0.415</text>
-<rect x="120" y="1947" width="216.9" height="9" class="bar-styled"></rect>
-<text x="342.9" y="1955" class="svg-val">0.332</text>
+<rect x="120" y="1936" width="198.8" height="9" class="bar-base"></rect>
+<text x="324.8" y="1944" class="svg-val">0.229</text>
+<rect x="120" y="1947" width="123.3" height="9" class="bar-styled"></rect>
+<text x="249.3" y="1955" class="svg-val">0.142</text>
 <text x="744" y="1952" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="1984" class="svg-label">Chart2Code_level2_violin_25_v4 · Box/Violin</text>
-<rect x="120" y="1970" width="367.8" height="9" class="bar-base"></rect>
-<text x="493.8" y="1978" class="svg-val">0.563</text>
-<rect x="120" y="1981" width="365.9" height="9" class="bar-styled"></rect>
-<text x="491.9" y="1989" class="svg-val">0.560</text>
-<text x="744" y="1986" class="svg-delta flat" text-anchor="end">=</text>
+<rect x="120" y="1970" width="197.9" height="9" class="bar-base"></rect>
+<text x="323.9" y="1978" class="svg-val">0.228</text>
+<rect x="120" y="1981" width="151.9" height="9" class="bar-styled"></rect>
+<text x="277.9" y="1989" class="svg-val">0.175</text>
+<text x="744" y="1986" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="2018" class="svg-label">Chart2Code_level3_table20_3_generate · Scatter</text>
-<rect x="120" y="2004" width="271.8" height="9" class="bar-base"></rect>
-<text x="397.8" y="2012" class="svg-val">0.416</text>
-<rect x="120" y="2015" width="227.4" height="9" class="bar-styled"></rect>
-<text x="353.4" y="2023" class="svg-val">0.348</text>
+<rect x="120" y="2004" width="158.8" height="9" class="bar-base"></rect>
+<text x="284.8" y="2012" class="svg-val">0.183</text>
+<rect x="120" y="2015" width="99.0" height="9" class="bar-styled"></rect>
+<text x="225.0" y="2023" class="svg-val">0.114</text>
 <text x="744" y="2020" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="2052" class="svg-label">Chart2NCode_ce7b7d946995482f9dd37ddad319cbc2 · Line</text>
-<rect x="120" y="2038" width="247.6" height="9" class="bar-base"></rect>
-<text x="373.6" y="2046" class="svg-val">0.379</text>
-<rect x="120" y="2049" width="200.6" height="9" class="bar-styled"></rect>
-<text x="326.6" y="2057" class="svg-val">0.307</text>
+<rect x="120" y="2038" width="204.0" height="9" class="bar-base"></rect>
+<text x="330.0" y="2046" class="svg-val">0.235</text>
+<rect x="120" y="2049" width="148.4" height="9" class="bar-styled"></rect>
+<text x="274.4" y="2057" class="svg-val">0.171</text>
 <text x="744" y="2054" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="2086" class="svg-label">Chart2NCode_f5989e4725654971a32e6c84c0dbdfa5 · Bar</text>
-<rect x="120" y="2072" width="199.9" height="9" class="bar-base"></rect>
-<text x="325.9" y="2080" class="svg-val">0.306</text>
-<rect x="120" y="2083" width="152.9" height="9" class="bar-styled"></rect>
-<text x="278.9" y="2091" class="svg-val">0.234</text>
+<rect x="120" y="2072" width="214.4" height="9" class="bar-base"></rect>
+<text x="340.4" y="2080" class="svg-val">0.247</text>
+<rect x="120" y="2083" width="151.9" height="9" class="bar-styled"></rect>
+<text x="277.9" y="2091" class="svg-val">0.175</text>
 <text x="744" y="2088" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="2120" class="svg-label">ChartNet-sample_01541e58b887ce36 · Bar</text>
-<rect x="120" y="2106" width="202.5" height="9" class="bar-base"></rect>
-<text x="328.5" y="2114" class="svg-val">0.310</text>
-<rect x="120" y="2117" width="167.3" height="9" class="bar-styled"></rect>
-<text x="293.3" y="2125" class="svg-val">0.256</text>
+<rect x="120" y="2106" width="180.5" height="9" class="bar-base"></rect>
+<text x="306.5" y="2114" class="svg-val">0.208</text>
+<rect x="120" y="2117" width="105.9" height="9" class="bar-styled"></rect>
+<text x="231.9" y="2125" class="svg-val">0.122</text>
 <text x="744" y="2122" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="2154" class="svg-label">ChartNet-sample_11168fb7e30df7c0 · Box/Violin</text>
-<rect x="120" y="2140" width="145.0" height="9" class="bar-base"></rect>
-<text x="271.0" y="2148" class="svg-val">0.222</text>
-<rect x="120" y="2151" width="50.3" height="9" class="bar-styled"></rect>
-<text x="176.3" y="2159" class="svg-val">0.077</text>
+<rect x="120" y="2140" width="189.2" height="9" class="bar-base"></rect>
+<text x="315.2" y="2148" class="svg-val">0.218</text>
+<rect x="120" y="2151" width="63.4" height="9" class="bar-styled"></rect>
+<text x="189.4" y="2159" class="svg-val">0.073</text>
 <text x="744" y="2156" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="2188" class="svg-label">ChartNet-sample_12f1182db6964e8c · Line</text>
-<rect x="120" y="2174" width="288.8" height="9" class="bar-base"></rect>
-<text x="414.8" y="2182" class="svg-val">0.442</text>
-<rect x="120" y="2185" width="246.3" height="9" class="bar-styled"></rect>
-<text x="372.3" y="2193" class="svg-val">0.377</text>
+<rect x="120" y="2174" width="213.5" height="9" class="bar-base"></rect>
+<text x="339.5" y="2182" class="svg-val">0.246</text>
+<rect x="120" y="2185" width="158.0" height="9" class="bar-styled"></rect>
+<text x="284.0" y="2193" class="svg-val">0.182</text>
 <text x="744" y="2190" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="2222" class="svg-label">ChartNet-sample_1acf825b0429ddfd · Heatmap</text>
-<rect x="120" y="2208" width="236.5" height="9" class="bar-base"></rect>
-<text x="362.5" y="2216" class="svg-val">0.362</text>
-<rect x="120" y="2219" width="153.5" height="9" class="bar-styled"></rect>
-<text x="279.5" y="2227" class="svg-val">0.235</text>
+<rect x="120" y="2208" width="266.5" height="9" class="bar-base"></rect>
+<text x="392.5" y="2216" class="svg-val">0.307</text>
+<rect x="120" y="2219" width="190.1" height="9" class="bar-styled"></rect>
+<text x="316.1" y="2227" class="svg-val">0.219</text>
 <text x="744" y="2224" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="2256" class="svg-label">ChartNet-sample_21db7b1495645e96 · Bar</text>
-<rect x="120" y="2242" width="132.6" height="9" class="bar-base"></rect>
-<text x="258.6" y="2250" class="svg-val">0.203</text>
-<rect x="120" y="2253" width="118.9" height="9" class="bar-styled"></rect>
-<text x="244.9" y="2261" class="svg-val">0.182</text>
+<rect x="120" y="2242" width="89.4" height="9" class="bar-base"></rect>
+<text x="215.4" y="2250" class="svg-val">0.103</text>
+<rect x="120" y="2253" width="82.5" height="9" class="bar-styled"></rect>
+<text x="208.5" y="2261" class="svg-val">0.095</text>
 <text x="744" y="2258" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="2290" class="svg-label">ChartNet-sample_251d4b63cae5c39c · Box/Violin</text>
-<rect x="120" y="2276" width="189.5" height="9" class="bar-base"></rect>
-<text x="315.5" y="2284" class="svg-val">0.290</text>
-<rect x="120" y="2287" width="245.7" height="9" class="bar-styled"></rect>
-<text x="371.7" y="2295" class="svg-val">0.376</text>
-<text x="744" y="2292" class="svg-delta bad" text-anchor="end">↑</text>
+<rect x="120" y="2276" width="170.1" height="9" class="bar-base"></rect>
+<text x="296.1" y="2284" class="svg-val">0.196</text>
+<rect x="120" y="2287" width="104.2" height="9" class="bar-styled"></rect>
+<text x="230.2" y="2295" class="svg-val">0.120</text>
+<text x="744" y="2292" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="2324" class="svg-label">ChartNet-sample_27ec276af1be7f88 · Bar</text>
-<rect x="120" y="2310" width="149.6" height="9" class="bar-base"></rect>
-<text x="275.6" y="2318" class="svg-val">0.229</text>
-<rect x="120" y="2321" width="132.0" height="9" class="bar-styled"></rect>
-<text x="258.0" y="2329" class="svg-val">0.202</text>
+<rect x="120" y="2310" width="128.5" height="9" class="bar-base"></rect>
+<text x="254.5" y="2318" class="svg-val">0.148</text>
+<rect x="120" y="2321" width="93.7" height="9" class="bar-styled"></rect>
+<text x="219.7" y="2329" class="svg-val">0.108</text>
 <text x="744" y="2326" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="2358" class="svg-label">ChartNet-sample_3a712400d6efe5ca · Line</text>
-<rect x="120" y="2344" width="272.5" height="9" class="bar-base"></rect>
-<text x="398.5" y="2352" class="svg-val">0.417</text>
-<rect x="120" y="2355" width="229.3" height="9" class="bar-styled"></rect>
-<text x="355.3" y="2363" class="svg-val">0.351</text>
+<rect x="120" y="2344" width="212.7" height="9" class="bar-base"></rect>
+<text x="338.7" y="2352" class="svg-val">0.245</text>
+<rect x="120" y="2355" width="154.5" height="9" class="bar-styled"></rect>
+<text x="280.5" y="2363" class="svg-val">0.178</text>
 <text x="744" y="2360" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="2392" class="svg-label">ChartNet-sample_3d0ebd7ea1e10bf3 · Line</text>
-<rect x="120" y="2378" width="203.2" height="9" class="bar-base"></rect>
-<text x="329.2" y="2386" class="svg-val">0.311</text>
-<rect x="120" y="2389" width="169.9" height="9" class="bar-styled"></rect>
-<text x="295.9" y="2397" class="svg-val">0.260</text>
+<rect x="120" y="2378" width="193.6" height="9" class="bar-base"></rect>
+<text x="319.6" y="2386" class="svg-val">0.223</text>
+<rect x="120" y="2389" width="150.2" height="9" class="bar-styled"></rect>
+<text x="276.2" y="2397" class="svg-val">0.173</text>
 <text x="744" y="2394" class="svg-delta good" text-anchor="end">↓</text>
 <text x="8" y="2426" class="svg-label">ChartNet-sample_42a8557ef11775e9 · Bar</text>
-<rect x="120" y="2412" width="262.7" height="9" class="bar-base"></rect>
-<text x="388.7" y="2420" class="svg-val">0.402</text>
-<rect x="120" y="2423" width="235.2" height="9" class="bar-styled"></rect>
-<text x="361.2" y="2431" class="svg-val">0.360</text>
+<rect x="120" y="2412" width="157.1" height="9" class="bar-base"></rect>
+<text x="283.1" y="2420" class="svg-val">0.181</text>
+<rect x="120" y="2423" width="119.8" height="9" class="bar-styled"></rect>
+<text x="245.8" y="2431" class="svg-val">0.138</text>
 <text x="744" y="2428" class="svg-delta good" text-anchor="end">↓</text>
-<text x="8" y="2460" class="svg-label">ChartNet-sample_51138e34911000f6 · Heatmap</text>
-<rect x="120" y="2446" width="226.1" height="9" class="bar-base"></rect>
-<text x="352.1" y="2454" class="svg-val">0.346</text>
-<rect x="120" y="2457" width="149.6" height="9" class="bar-styled"></rect>
-<text x="275.6" y="2465" class="svg-val">0.229</text>
+<text x="8" y="2460" class="svg-label">ChartNet-sample_46826fe4916b7d52 · Box/Violin</text>
+<rect x="120" y="2446" width="166.7" height="9" class="bar-base"></rect>
+<text x="292.7" y="2454" class="svg-val">0.192</text>
+<rect x="120" y="2457" width="67.7" height="9" class="bar-styled"></rect>
+<text x="193.7" y="2465" class="svg-val">0.078</text>
 <text x="744" y="2462" class="svg-delta good" text-anchor="end">↓</text>
-<text x="8" y="2494" class="svg-label">ChartNet-sample_55e97056fbbde5b6__single · Bar</text>
-<rect x="120" y="2480" width="263.3" height="9" class="bar-base"></rect>
-<text x="389.3" y="2488" class="svg-val">0.403</text>
-<rect x="120" y="2491" width="233.9" height="9" class="bar-styled"></rect>
-<text x="359.9" y="2499" class="svg-val">0.358</text>
+<text x="8" y="2494" class="svg-label">ChartNet-sample_51138e34911000f6 · Heatmap</text>
+<rect x="120" y="2480" width="335.9" height="9" class="bar-base"></rect>
+<text x="461.9" y="2488" class="svg-val">0.387</text>
+<rect x="120" y="2491" width="203.1" height="9" class="bar-styled"></rect>
+<text x="329.1" y="2499" class="svg-val">0.234</text>
 <text x="744" y="2496" class="svg-delta good" text-anchor="end">↓</text>
-<text x="8" y="2528" class="svg-label">ChartNet-sample_575be33996f0155c · Bar</text>
-<rect x="120" y="2514" width="228.7" height="9" class="bar-base"></rect>
-<text x="354.7" y="2522" class="svg-val">0.350</text>
-<rect x="120" y="2525" width="203.8" height="9" class="bar-styled"></rect>
-<text x="329.8" y="2533" class="svg-val">0.312</text>
+<text x="8" y="2528" class="svg-label">ChartNet-sample_55e97056fbbde5b6__single · Bar</text>
+<rect x="120" y="2514" width="279.5" height="9" class="bar-base"></rect>
+<text x="405.5" y="2522" class="svg-val">0.322</text>
+<rect x="120" y="2525" width="210.1" height="9" class="bar-styled"></rect>
+<text x="336.1" y="2533" class="svg-val">0.242</text>
 <text x="744" y="2530" class="svg-delta good" text-anchor="end">↓</text>
-<text x="8" y="2562" class="svg-label">ChartNet-sample_5781d64aa8377547 · Box/Violin</text>
-<rect x="120" y="2548" width="150.9" height="9" class="bar-base"></rect>
-<text x="276.9" y="2556" class="svg-val">0.231</text>
-<rect x="120" y="2559" width="96.0" height="9" class="bar-styled"></rect>
-<text x="222.0" y="2567" class="svg-val">0.147</text>
+<text x="8" y="2562" class="svg-label">ChartNet-sample_575be33996f0155c · Bar</text>
+<rect x="120" y="2548" width="156.2" height="9" class="bar-base"></rect>
+<text x="282.2" y="2556" class="svg-val">0.180</text>
+<rect x="120" y="2559" width="147.6" height="9" class="bar-styled"></rect>
+<text x="273.6" y="2567" class="svg-val">0.170</text>
 <text x="744" y="2564" class="svg-delta good" text-anchor="end">↓</text>
-<text x="8" y="2596" class="svg-label">ChartNet-sample_5c19f37c2ecba73b · Box/Violin</text>
-<rect x="120" y="2582" width="290.1" height="9" class="bar-base"></rect>
-<text x="416.1" y="2590" class="svg-val">0.444</text>
-<rect x="120" y="2593" width="228.0" height="9" class="bar-styled"></rect>
-<text x="354.0" y="2601" class="svg-val">0.349</text>
+<text x="8" y="2596" class="svg-label">ChartNet-sample_5781d64aa8377547 · Box/Violin</text>
+<rect x="120" y="2582" width="112.0" height="9" class="bar-base"></rect>
+<text x="238.0" y="2590" class="svg-val">0.129</text>
+<rect x="120" y="2593" width="56.4" height="9" class="bar-styled"></rect>
+<text x="182.4" y="2601" class="svg-val">0.065</text>
 <text x="744" y="2598" class="svg-delta good" text-anchor="end">↓</text>
-<text x="8" y="2630" class="svg-label">ChartNet-sample_5cf3859f3ce78167 · Bar</text>
-<rect x="120" y="2616" width="152.2" height="9" class="bar-base"></rect>
-<text x="278.2" y="2624" class="svg-val">0.233</text>
-<rect x="120" y="2627" width="131.3" height="9" class="bar-styled"></rect>
-<text x="257.3" y="2635" class="svg-val">0.201</text>
+<text x="8" y="2630" class="svg-label">ChartNet-sample_5c19f37c2ecba73b · Box/Violin</text>
+<rect x="120" y="2616" width="212.7" height="9" class="bar-base"></rect>
+<text x="338.7" y="2624" class="svg-val">0.245</text>
+<rect x="120" y="2627" width="130.2" height="9" class="bar-styled"></rect>
+<text x="256.2" y="2635" class="svg-val">0.150</text>
 <text x="744" y="2632" class="svg-delta good" text-anchor="end">↓</text>
-<text x="8" y="2664" class="svg-label">ChartNet-sample_5e553d0091325708 · Polar/Radial</text>
-<rect x="120" y="2650" width="184.2" height="9" class="bar-base"></rect>
-<text x="310.2" y="2658" class="svg-val">0.282</text>
-<rect x="120" y="2661" width="182.3" height="9" class="bar-styled"></rect>
-<text x="308.3" y="2669" class="svg-val">0.279</text>
-<text x="744" y="2666" class="svg-delta flat" text-anchor="end">=</text>
-<text x="8" y="2698" class="svg-label">ChartNet-sample_63115ff12f6710a3 · Heatmap</text>
-<rect x="120" y="2684" width="185.6" height="9" class="bar-base"></rect>
-<text x="311.6" y="2692" class="svg-val">0.284</text>
-<rect x="120" y="2695" width="109.1" height="9" class="bar-styled"></rect>
-<text x="235.1" y="2703" class="svg-val">0.167</text>
+<text x="8" y="2664" class="svg-label">ChartNet-sample_5cf3859f3ce78167 · Bar</text>
+<rect x="120" y="2650" width="127.6" height="9" class="bar-base"></rect>
+<text x="253.6" y="2658" class="svg-val">0.147</text>
+<rect x="120" y="2661" width="97.2" height="9" class="bar-styled"></rect>
+<text x="223.2" y="2669" class="svg-val">0.112</text>
+<text x="744" y="2666" class="svg-delta good" text-anchor="end">↓</text>
+<text x="8" y="2698" class="svg-label">ChartNet-sample_5e553d0091325708 · Polar/Radial</text>
+<rect x="120" y="2684" width="199.6" height="9" class="bar-base"></rect>
+<text x="325.6" y="2692" class="svg-val">0.230</text>
+<rect x="120" y="2695" width="189.2" height="9" class="bar-styled"></rect>
+<text x="315.2" y="2703" class="svg-val">0.218</text>
 <text x="744" y="2700" class="svg-delta good" text-anchor="end">↓</text>
-<text x="8" y="2732" class="svg-label">ChartNet-sample_68d34458d8f08a48 · Box/Violin</text>
-<rect x="120" y="2718" width="394.0" height="9" class="bar-base"></rect>
-<text x="520.0" y="2726" class="svg-val">0.603</text>
-<rect x="120" y="2729" width="357.4" height="9" class="bar-styled"></rect>
-<text x="483.4" y="2737" class="svg-val">0.547</text>
+<text x="8" y="2732" class="svg-label">ChartNet-sample_63115ff12f6710a3 · Heatmap</text>
+<rect x="120" y="2718" width="314.2" height="9" class="bar-base"></rect>
+<text x="440.2" y="2726" class="svg-val">0.362</text>
+<rect x="120" y="2729" width="170.1" height="9" class="bar-styled"></rect>
+<text x="296.1" y="2737" class="svg-val">0.196</text>
 <text x="744" y="2734" class="svg-delta good" text-anchor="end">↓</text>
-<text x="8" y="2766" class="svg-label">ChartNet-sample_7c69a17fd376e251 · Heatmap</text>
-<rect x="120" y="2752" width="247.6" height="9" class="bar-base"></rect>
-<text x="373.6" y="2760" class="svg-val">0.379</text>
-<rect x="120" y="2763" width="231.9" height="9" class="bar-styled"></rect>
-<text x="357.9" y="2771" class="svg-val">0.355</text>
+<text x="8" y="2766" class="svg-label">ChartNet-sample_68d34458d8f08a48 · Box/Violin</text>
+<rect x="120" y="2752" width="211.8" height="9" class="bar-base"></rect>
+<text x="337.8" y="2760" class="svg-val">0.244</text>
+<rect x="120" y="2763" width="127.6" height="9" class="bar-styled"></rect>
+<text x="253.6" y="2771" class="svg-val">0.147</text>
 <text x="744" y="2768" class="svg-delta good" text-anchor="end">↓</text>
-<text x="8" y="2800" class="svg-label">ChartNet-sample_82a42a98d7e32b53 · Heatmap</text>
-<rect x="120" y="2786" width="204.5" height="9" class="bar-base"></rect>
-<text x="330.5" y="2794" class="svg-val">0.313</text>
-<rect x="120" y="2797" width="124.8" height="9" class="bar-styled"></rect>
-<text x="250.8" y="2805" class="svg-val">0.191</text>
-<text x="744" y="2802" class="svg-delta good" text-anchor="end">↓</text>
-<text x="8" y="2834" class="svg-label">ChartNet-sample_953bb3ed650d8541 · Bar</text>
-<rect x="120" y="2820" width="219.5" height="9" class="bar-base"></rect>
-<text x="345.5" y="2828" class="svg-val">0.336</text>
-<rect x="120" y="2831" width="185.6" height="9" class="bar-styled"></rect>
-<text x="311.6" y="2839" class="svg-val">0.284</text>
+<text x="8" y="2800" class="svg-label">ChartNet-sample_7c69a17fd376e251 · Heatmap</text>
+<rect x="120" y="2786" width="197.9" height="9" class="bar-base"></rect>
+<text x="323.9" y="2794" class="svg-val">0.228</text>
+<rect x="120" y="2797" width="206.6" height="9" class="bar-styled"></rect>
+<text x="332.6" y="2805" class="svg-val">0.238</text>
+<text x="744" y="2802" class="svg-delta bad" text-anchor="end">↑</text>
+<text x="8" y="2834" class="svg-label">ChartNet-sample_82a42a98d7e32b53 · Heatmap</text>
+<rect x="120" y="2820" width="270.8" height="9" class="bar-base"></rect>
+<text x="396.8" y="2828" class="svg-val">0.312</text>
+<rect x="120" y="2831" width="164.9" height="9" class="bar-styled"></rect>
+<text x="290.9" y="2839" class="svg-val">0.190</text>
 <text x="744" y="2836" class="svg-delta good" text-anchor="end">↓</text>
-<text x="8" y="2868" class="svg-label">ChartNet-sample_97a7c092bc6a4a6c · Heatmap</text>
-<rect x="120" y="2854" width="282.3" height="9" class="bar-base"></rect>
-<text x="408.3" y="2862" class="svg-val">0.432</text>
-<rect x="120" y="2865" width="203.8" height="9" class="bar-styled"></rect>
-<text x="329.8" y="2873" class="svg-val">0.312</text>
-<text x="744" y="2870" class="svg-delta good" text-anchor="end">↓</text>
-<text x="8" y="2902" class="svg-label">ChartNet-sample_9fa23898eda05a63 · Bar</text>
-<rect x="120" y="2888" width="103.9" height="9" class="bar-base"></rect>
-<text x="229.9" y="2896" class="svg-val">0.159</text>
-<rect x="120" y="2899" width="75.1" height="9" class="bar-styled"></rect>
-<text x="201.1" y="2907" class="svg-val">0.115</text>
+<text x="8" y="2868" class="svg-label">ChartNet-sample_953bb3ed650d8541 · Bar</text>
+<rect x="120" y="2854" width="207.4" height="9" class="bar-base"></rect>
+<text x="333.4" y="2862" class="svg-val">0.239</text>
+<rect x="120" y="2865" width="235.2" height="9" class="bar-styled"></rect>
+<text x="361.2" y="2873" class="svg-val">0.271</text>
+<text x="744" y="2870" class="svg-delta bad" text-anchor="end">↑</text>
+<text x="8" y="2902" class="svg-label">ChartNet-sample_97a7c092bc6a4a6c · Heatmap</text>
+<rect x="120" y="2888" width="257.8" height="9" class="bar-base"></rect>
+<text x="383.8" y="2896" class="svg-val">0.297</text>
+<rect x="120" y="2899" width="154.5" height="9" class="bar-styled"></rect>
+<text x="280.5" y="2907" class="svg-val">0.178</text>
 <text x="744" y="2904" class="svg-delta good" text-anchor="end">↓</text>
-<text x="8" y="2936" class="svg-label">ChartNet-sample_ad3e2f8704f6e1b1__single · Bar</text>
-<rect x="120" y="2922" width="237.2" height="9" class="bar-base"></rect>
-<text x="363.2" y="2930" class="svg-val">0.363</text>
-<rect x="120" y="2933" width="214.3" height="9" class="bar-styled"></rect>
-<text x="340.3" y="2941" class="svg-val">0.328</text>
+<text x="8" y="2936" class="svg-label">ChartNet-sample_9fa23898eda05a63 · Bar</text>
+<rect x="120" y="2922" width="131.1" height="9" class="bar-base"></rect>
+<text x="257.1" y="2930" class="svg-val">0.151</text>
+<rect x="120" y="2933" width="50.3" height="9" class="bar-styled"></rect>
+<text x="176.3" y="2941" class="svg-val">0.058</text>
 <text x="744" y="2938" class="svg-delta good" text-anchor="end">↓</text>
-<text x="8" y="2970" class="svg-label">ChartNet-sample_b07b3f6805a9e3b8 · Heatmap</text>
-<rect x="120" y="2956" width="174.4" height="9" class="bar-base"></rect>
-<text x="300.4" y="2964" class="svg-val">0.267</text>
-<rect x="120" y="2967" width="93.4" height="9" class="bar-styled"></rect>
-<text x="219.4" y="2975" class="svg-val">0.143</text>
+<text x="8" y="2970" class="svg-label">ChartNet-sample_ad3e2f8704f6e1b1__single · Bar</text>
+<rect x="120" y="2956" width="205.7" height="9" class="bar-base"></rect>
+<text x="331.7" y="2964" class="svg-val">0.237</text>
+<rect x="120" y="2967" width="177.9" height="9" class="bar-styled"></rect>
+<text x="303.9" y="2975" class="svg-val">0.205</text>
 <text x="744" y="2972" class="svg-delta good" text-anchor="end">↓</text>
-<text x="8" y="3004" class="svg-label">ChartNet-sample_b2578adbadc0d71e · Box/Violin</text>
-<rect x="120" y="2990" width="329.3" height="9" class="bar-base"></rect>
-<text x="455.3" y="2998" class="svg-val">0.504</text>
-<rect x="120" y="3001" width="306.4" height="9" class="bar-styled"></rect>
-<text x="432.4" y="3009" class="svg-val">0.469</text>
+<text x="8" y="3004" class="svg-label">ChartNet-sample_b07b3f6805a9e3b8 · Heatmap</text>
+<rect x="120" y="2990" width="235.2" height="9" class="bar-base"></rect>
+<text x="361.2" y="2998" class="svg-val">0.271</text>
+<rect x="120" y="3001" width="124.1" height="9" class="bar-styled"></rect>
+<text x="250.1" y="3009" class="svg-val">0.143</text>
 <text x="744" y="3006" class="svg-delta good" text-anchor="end">↓</text>
-<text x="8" y="3038" class="svg-label">ChartNet-sample_bbbf530e6aefa314 · Bar</text>
-<rect x="120" y="3024" width="166.6" height="9" class="bar-base"></rect>
-<text x="292.6" y="3032" class="svg-val">0.255</text>
-<rect x="120" y="3035" width="135.9" height="9" class="bar-styled"></rect>
-<text x="261.9" y="3043" class="svg-val">0.208</text>
+<text x="8" y="3038" class="svg-label">ChartNet-sample_b2578adbadc0d71e · Box/Violin</text>
+<rect x="120" y="3024" width="166.7" height="9" class="bar-base"></rect>
+<text x="292.7" y="3032" class="svg-val">0.192</text>
+<rect x="120" y="3035" width="97.2" height="9" class="bar-styled"></rect>
+<text x="223.2" y="3043" class="svg-val">0.112</text>
 <text x="744" y="3040" class="svg-delta good" text-anchor="end">↓</text>
-<text x="8" y="3072" class="svg-label">ChartNet-sample_c1ec6683e1feea7b · Line</text>
-<rect x="120" y="3058" width="296.0" height="9" class="bar-base"></rect>
-<text x="422.0" y="3066" class="svg-val">0.453</text>
-<rect x="120" y="3069" width="249.6" height="9" class="bar-styled"></rect>
-<text x="375.6" y="3077" class="svg-val">0.382</text>
+<text x="8" y="3072" class="svg-label">ChartNet-sample_bbbf530e6aefa314 · Bar</text>
+<rect x="120" y="3058" width="118.9" height="9" class="bar-base"></rect>
+<text x="244.9" y="3066" class="svg-val">0.137</text>
+<rect x="120" y="3069" width="92.0" height="9" class="bar-styled"></rect>
+<text x="218.0" y="3077" class="svg-val">0.106</text>
 <text x="744" y="3074" class="svg-delta good" text-anchor="end">↓</text>
-<text x="8" y="3106" class="svg-label">ChartNet-sample_d1a051ec96a39bf4 · Box/Violin</text>
-<rect x="120" y="3092" width="109.1" height="9" class="bar-base"></rect>
-<text x="235.1" y="3100" class="svg-val">0.167</text>
-<rect x="120" y="3103" width="39.2" height="9" class="bar-styled"></rect>
-<text x="165.2" y="3111" class="svg-val">0.060</text>
+<text x="8" y="3106" class="svg-label">ChartNet-sample_c1ec6683e1feea7b · Line</text>
+<rect x="120" y="3092" width="204.0" height="9" class="bar-base"></rect>
+<text x="330.0" y="3100" class="svg-val">0.235</text>
+<rect x="120" y="3103" width="141.5" height="9" class="bar-styled"></rect>
+<text x="267.5" y="3111" class="svg-val">0.163</text>
 <text x="744" y="3108" class="svg-delta good" text-anchor="end">↓</text>
-<text x="8" y="3140" class="svg-label">ChartNet-sample_d7325ced9dcb3e94 · Bar</text>
-<rect x="120" y="3126" width="164.6" height="9" class="bar-base"></rect>
-<text x="290.6" y="3134" class="svg-val">0.252</text>
-<rect x="120" y="3137" width="138.5" height="9" class="bar-styled"></rect>
-<text x="264.5" y="3145" class="svg-val">0.212</text>
+<text x="8" y="3140" class="svg-label">ChartNet-sample_d1a051ec96a39bf4 · Box/Violin</text>
+<rect x="120" y="3126" width="142.3" height="9" class="bar-base"></rect>
+<text x="268.3" y="3134" class="svg-val">0.164</text>
+<rect x="120" y="3137" width="51.2" height="9" class="bar-styled"></rect>
+<text x="177.2" y="3145" class="svg-val">0.059</text>
 <text x="744" y="3142" class="svg-delta good" text-anchor="end">↓</text>
-<text x="8" y="3174" class="svg-label">ChartNet-sample_e17ff7b5495b0ee4 · Polar/Radial</text>
-<rect x="120" y="3160" width="184.2" height="9" class="bar-base"></rect>
-<text x="310.2" y="3168" class="svg-val">0.282</text>
-<rect x="120" y="3171" width="179.7" height="9" class="bar-styled"></rect>
-<text x="305.7" y="3179" class="svg-val">0.275</text>
+<text x="8" y="3174" class="svg-label">ChartNet-sample_d7325ced9dcb3e94 · Bar</text>
+<rect x="120" y="3160" width="134.5" height="9" class="bar-base"></rect>
+<text x="260.5" y="3168" class="svg-val">0.155</text>
+<rect x="120" y="3171" width="101.6" height="9" class="bar-styled"></rect>
+<text x="227.6" y="3179" class="svg-val">0.117</text>
 <text x="744" y="3176" class="svg-delta good" text-anchor="end">↓</text>
-<text x="8" y="3208" class="svg-label">ChartNet-sample_f31f9780b9bd6948 · Line</text>
-<rect x="120" y="3194" width="318.8" height="9" class="bar-base"></rect>
-<text x="444.8" y="3202" class="svg-val">0.488</text>
-<rect x="120" y="3205" width="271.1" height="9" class="bar-styled"></rect>
-<text x="397.1" y="3213" class="svg-val">0.415</text>
+<text x="8" y="3208" class="svg-label">ChartNet-sample_e17ff7b5495b0ee4 · Polar/Radial</text>
+<rect x="120" y="3194" width="230.0" height="9" class="bar-base"></rect>
+<text x="356.0" y="3202" class="svg-val">0.265</text>
+<rect x="120" y="3205" width="224.8" height="9" class="bar-styled"></rect>
+<text x="350.8" y="3213" class="svg-val">0.259</text>
 <text x="744" y="3210" class="svg-delta good" text-anchor="end">↓</text>
-<text x="8" y="3242" class="svg-label">ChartNet-sample_f743754444c3a3d9 · Line</text>
-<rect x="120" y="3228" width="318.8" height="9" class="bar-base"></rect>
-<text x="444.8" y="3236" class="svg-val">0.488</text>
-<rect x="120" y="3239" width="269.2" height="9" class="bar-styled"></rect>
-<text x="395.2" y="3247" class="svg-val">0.412</text>
+<text x="8" y="3242" class="svg-label">ChartNet-sample_f31f9780b9bd6948 · Line</text>
+<rect x="120" y="3228" width="338.5" height="9" class="bar-base"></rect>
+<text x="464.5" y="3236" class="svg-val">0.390</text>
+<rect x="120" y="3239" width="237.8" height="9" class="bar-styled"></rect>
+<text x="363.8" y="3247" class="svg-val">0.274</text>
 <text x="744" y="3244" class="svg-delta good" text-anchor="end">↓</text>
-<text x="8" y="3276" class="svg-label">PMC11502666 · Distribution</text>
-<rect x="120" y="3262" width="124.1" height="9" class="bar-base"></rect>
-<text x="250.1" y="3270" class="svg-val">0.190</text>
-<rect x="120" y="3273" width="103.9" height="9" class="bar-styled"></rect>
-<text x="229.9" y="3281" class="svg-val">0.159</text>
+<text x="8" y="3276" class="svg-label">ChartNet-sample_f743754444c3a3d9 · Line</text>
+<rect x="120" y="3262" width="256.9" height="9" class="bar-base"></rect>
+<text x="382.9" y="3270" class="svg-val">0.296</text>
+<rect x="120" y="3273" width="191.0" height="9" class="bar-styled"></rect>
+<text x="317.0" y="3281" class="svg-val">0.220</text>
 <text x="744" y="3278" class="svg-delta good" text-anchor="end">↓</text>
-<text x="8" y="3310" class="svg-label">PMC11840003 · Box/Violin</text>
-<rect x="120" y="3296" width="208.4" height="9" class="bar-base"></rect>
-<text x="334.4" y="3304" class="svg-val">0.319</text>
-<rect x="120" y="3307" width="83.6" height="9" class="bar-styled"></rect>
-<text x="209.6" y="3315" class="svg-val">0.128</text>
+<text x="8" y="3310" class="svg-label">PMC11502666 · Distribution</text>
+<rect x="120" y="3296" width="164.9" height="9" class="bar-base"></rect>
+<text x="290.9" y="3304" class="svg-val">0.190</text>
+<rect x="120" y="3307" width="138.0" height="9" class="bar-styled"></rect>
+<text x="264.0" y="3315" class="svg-val">0.159</text>
 <text x="744" y="3312" class="svg-delta good" text-anchor="end">↓</text>
-<text x="8" y="3344" class="svg-label">PMC12000431 · Distribution</text>
-<rect x="120" y="3330" width="40.5" height="9" class="bar-base"></rect>
-<text x="166.5" y="3338" class="svg-val">0.062</text>
-<rect x="120" y="3341" width="31.4" height="9" class="bar-styled"></rect>
-<text x="157.4" y="3349" class="svg-val">0.048</text>
+<text x="8" y="3344" class="svg-label">PMC11840003 · Box/Violin</text>
+<rect x="120" y="3330" width="276.9" height="9" class="bar-base"></rect>
+<text x="402.9" y="3338" class="svg-val">0.319</text>
+<rect x="120" y="3341" width="111.1" height="9" class="bar-styled"></rect>
+<text x="237.1" y="3349" class="svg-val">0.128</text>
 <text x="744" y="3346" class="svg-delta good" text-anchor="end">↓</text>
-<text x="8" y="3378" class="svg-label">PMC12354736 · Distribution</text>
-<rect x="120" y="3364" width="237.2" height="9" class="bar-base"></rect>
-<text x="363.2" y="3372" class="svg-val">0.363</text>
-<rect x="120" y="3375" width="158.1" height="9" class="bar-styled"></rect>
-<text x="284.1" y="3383" class="svg-val">0.242</text>
+<text x="8" y="3378" class="svg-label">PMC12000431 · Distribution</text>
+<rect x="120" y="3364" width="53.8" height="9" class="bar-base"></rect>
+<text x="179.8" y="3372" class="svg-val">0.062</text>
+<rect x="120" y="3375" width="41.7" height="9" class="bar-styled"></rect>
+<text x="167.7" y="3383" class="svg-val">0.048</text>
 <text x="744" y="3380" class="svg-delta good" text-anchor="end">↓</text>
-<text x="8" y="3412" class="svg-label">PMC12504421 · Heatmap</text>
-<rect x="120" y="3398" width="318.8" height="9" class="bar-base"></rect>
-<text x="444.8" y="3406" class="svg-val">0.488</text>
-<rect x="120" y="3409" width="271.8" height="9" class="bar-styled"></rect>
-<text x="397.8" y="3417" class="svg-val">0.416</text>
+<text x="8" y="3412" class="svg-label">PMC12354736 · Distribution</text>
+<rect x="120" y="3398" width="315.1" height="9" class="bar-base"></rect>
+<text x="441.1" y="3406" class="svg-val">0.363</text>
+<rect x="120" y="3409" width="210.1" height="9" class="bar-styled"></rect>
+<text x="336.1" y="3417" class="svg-val">0.242</text>
 <text x="744" y="3414" class="svg-delta good" text-anchor="end">↓</text>
-<text x="8" y="3446" class="svg-label">PMC12905268 · Distribution</text>
-<rect x="120" y="3432" width="176.4" height="9" class="bar-base"></rect>
-<text x="302.4" y="3440" class="svg-val">0.270</text>
-<rect x="120" y="3443" width="137.9" height="9" class="bar-styled"></rect>
-<text x="263.9" y="3451" class="svg-val">0.211</text>
+<text x="8" y="3446" class="svg-label">PMC12504421 · Heatmap</text>
+<rect x="120" y="3432" width="423.6" height="9" class="bar-base"></rect>
+<text x="549.6" y="3440" class="svg-val">0.488</text>
+<rect x="120" y="3443" width="361.1" height="9" class="bar-styled"></rect>
+<text x="487.1" y="3451" class="svg-val">0.416</text>
 <text x="744" y="3448" class="svg-delta good" text-anchor="end">↓</text>
-<text x="8" y="3480" class="svg-label">PMC13009336 · Box/Violin</text>
-<rect x="120" y="3466" width="440.4" height="9" class="bar-base"></rect>
-<text x="566.4" y="3474" class="svg-val">0.674</text>
-<rect x="120" y="3477" width="353.5" height="9" class="bar-styled"></rect>
-<text x="479.5" y="3485" class="svg-val">0.541</text>
+<text x="8" y="3480" class="svg-label">PMC12905268 · Distribution</text>
+<rect x="120" y="3466" width="234.4" height="9" class="bar-base"></rect>
+<text x="360.4" y="3474" class="svg-val">0.270</text>
+<rect x="120" y="3477" width="183.1" height="9" class="bar-styled"></rect>
+<text x="309.1" y="3485" class="svg-val">0.211</text>
 <text x="744" y="3482" class="svg-delta good" text-anchor="end">↓</text>
-<text x="8" y="3514" class="svg-label">PMC13022287 · Distribution</text>
-<rect x="120" y="3500" width="179.0" height="9" class="bar-base"></rect>
-<text x="305.0" y="3508" class="svg-val">0.274</text>
-<rect x="120" y="3511" width="216.9" height="9" class="bar-styled"></rect>
-<text x="342.9" y="3519" class="svg-val">0.332</text>
-<text x="744" y="3516" class="svg-delta bad" text-anchor="end">↑</text>
-<text x="8" y="3548" class="svg-label">PMC13079874 · Box/Violin</text>
-<rect x="120" y="3534" width="478.3" height="9" class="bar-base"></rect>
-<text x="604.3" y="3542" class="svg-val">0.732</text>
-<rect x="120" y="3545" width="416.8" height="9" class="bar-styled"></rect>
-<text x="542.8" y="3553" class="svg-val">0.638</text>
+<text x="8" y="3514" class="svg-label">PMC13009336 · Box/Violin</text>
+<rect x="120" y="3500" width="292.5" height="9" class="bar-base"></rect>
+<text x="418.5" y="3508" class="svg-val">0.337</text>
+<rect x="120" y="3511" width="135.4" height="9" class="bar-styled"></rect>
+<text x="261.4" y="3519" class="svg-val">0.156</text>
+<text x="744" y="3516" class="svg-delta good" text-anchor="end">↓</text>
+<text x="8" y="3548" class="svg-label">PMC13022287 · Distribution</text>
+<rect x="120" y="3534" width="196.2" height="9" class="bar-base"></rect>
+<text x="322.2" y="3542" class="svg-val">0.226</text>
+<rect x="120" y="3545" width="136.3" height="9" class="bar-styled"></rect>
+<text x="262.3" y="3553" class="svg-val">0.157</text>
 <text x="744" y="3550" class="svg-delta good" text-anchor="end">↓</text>
-<text x="8" y="3582" class="svg-label">PMC13106710 · Heatmap</text>
-<rect x="120" y="3568" width="126.1" height="9" class="bar-base"></rect>
-<text x="252.1" y="3576" class="svg-val">0.193</text>
-<rect x="120" y="3579" width="132.6" height="9" class="bar-styled"></rect>
-<text x="258.6" y="3587" class="svg-val">0.203</text>
-<text x="744" y="3584" class="svg-delta bad" text-anchor="end">↑</text>
-<text x="8" y="3616" class="svg-label">PMC13135507 · Scatter</text>
-<rect x="120" y="3602" width="373.1" height="9" class="bar-base"></rect>
-<text x="499.1" y="3610" class="svg-val">0.571</text>
-<rect x="120" y="3613" width="244.4" height="9" class="bar-styled"></rect>
-<text x="370.4" y="3621" class="svg-val">0.374</text>
-<text x="744" y="3618" class="svg-delta good" text-anchor="end">↓</text>
-<text x="8" y="3650" class="svg-label">PMC13245775 · Composite</text>
-<rect x="120" y="3636" width="330.6" height="9" class="bar-base"></rect>
-<text x="456.6" y="3644" class="svg-val">0.506</text>
-<rect x="120" y="3647" width="313.6" height="9" class="bar-styled"></rect>
-<text x="439.6" y="3655" class="svg-val">0.480</text>
+<text x="8" y="3582" class="svg-label">PMC13079874 · Box/Violin</text>
+<rect x="120" y="3568" width="370.6" height="9" class="bar-base"></rect>
+<text x="496.6" y="3576" class="svg-val">0.427</text>
+<rect x="120" y="3579" width="263.9" height="9" class="bar-styled"></rect>
+<text x="389.9" y="3587" class="svg-val">0.304</text>
+<text x="744" y="3584" class="svg-delta good" text-anchor="end">↓</text>
+<text x="8" y="3616" class="svg-label">PMC13106710 · Heatmap</text>
+<rect x="120" y="3602" width="194.4" height="9" class="bar-base"></rect>
+<text x="320.4" y="3610" class="svg-val">0.224</text>
+<rect x="120" y="3613" width="221.3" height="9" class="bar-styled"></rect>
+<text x="347.3" y="3621" class="svg-val">0.255</text>
+<text x="744" y="3618" class="svg-delta bad" text-anchor="end">↑</text>
+<text x="8" y="3650" class="svg-label">PMC13135507 · Scatter</text>
+<rect x="120" y="3636" width="478.3" height="9" class="bar-base"></rect>
+<text x="604.3" y="3644" class="svg-val">0.551</text>
+<rect x="120" y="3647" width="217.9" height="9" class="bar-styled"></rect>
+<text x="343.9" y="3655" class="svg-val">0.251</text>
 <text x="744" y="3652" class="svg-delta good" text-anchor="end">↓</text>
-<text x="8" y="3684" class="svg-label">PMC13252719 · Composite</text>
-<rect x="120" y="3670" width="171.8" height="9" class="bar-base"></rect>
-<text x="297.8" y="3678" class="svg-val">0.263</text>
-<rect x="120" y="3681" width="175.1" height="9" class="bar-styled"></rect>
-<text x="301.1" y="3689" class="svg-val">0.268</text>
-<text x="744" y="3686" class="svg-delta flat" text-anchor="end">=</text>
-<text x="8" y="3718" class="svg-label">PMC13273070 · Box/Violin</text>
-<rect x="120" y="3704" width="247.0" height="9" class="bar-base"></rect>
-<text x="373.0" y="3712" class="svg-val">0.378</text>
-<rect x="120" y="3715" width="37.2" height="9" class="bar-styled"></rect>
-<text x="163.2" y="3723" class="svg-val">0.057</text>
-<text x="744" y="3720" class="svg-delta good" text-anchor="end">↓</text>
-<text x="8" y="3752" class="svg-label">PMC13286152 · Composite</text>
-<rect x="120" y="3738" width="196.0" height="9" class="bar-base"></rect>
-<text x="322.0" y="3746" class="svg-val">0.300</text>
-<rect x="120" y="3749" width="167.3" height="9" class="bar-styled"></rect>
-<text x="293.3" y="3757" class="svg-val">0.256</text>
+<text x="8" y="3684" class="svg-label">PMC13245775 · Composite</text>
+<rect x="120" y="3670" width="335.0" height="9" class="bar-base"></rect>
+<text x="461.0" y="3678" class="svg-val">0.386</text>
+<rect x="120" y="3681" width="313.3" height="9" class="bar-styled"></rect>
+<text x="439.3" y="3689" class="svg-val">0.361</text>
+<text x="744" y="3686" class="svg-delta good" text-anchor="end">↓</text>
+<text x="8" y="3718" class="svg-label">PMC13252719 · Composite</text>
+<rect x="120" y="3704" width="215.3" height="9" class="bar-base"></rect>
+<text x="341.3" y="3712" class="svg-val">0.248</text>
+<rect x="120" y="3715" width="219.6" height="9" class="bar-styled"></rect>
+<text x="345.6" y="3723" class="svg-val">0.253</text>
+<text x="744" y="3720" class="svg-delta flat" text-anchor="end">=</text>
+<text x="8" y="3752" class="svg-label">PMC13273070 · Box/Violin</text>
+<rect x="120" y="3738" width="280.4" height="9" class="bar-base"></rect>
+<text x="406.4" y="3746" class="svg-val">0.323</text>
+<rect x="120" y="3749" width="43.4" height="9" class="bar-styled"></rect>
+<text x="169.4" y="3757" class="svg-val">0.050</text>
 <text x="744" y="3754" class="svg-delta good" text-anchor="end">↓</text>
-<text x="8" y="3786" class="svg-label">PMC13336770 · Distribution</text>
-<rect x="120" y="3772" width="203.8" height="9" class="bar-base"></rect>
-<text x="329.8" y="3780" class="svg-val">0.312</text>
-<rect x="120" y="3783" width="67.3" height="9" class="bar-styled"></rect>
-<text x="193.3" y="3791" class="svg-val">0.103</text>
+<text x="8" y="3786" class="svg-label">PMC13286152 · Composite</text>
+<rect x="120" y="3772" width="259.5" height="9" class="bar-base"></rect>
+<text x="385.5" y="3780" class="svg-val">0.299</text>
+<rect x="120" y="3783" width="221.3" height="9" class="bar-styled"></rect>
+<text x="347.3" y="3791" class="svg-val">0.255</text>
 <text x="744" y="3788" class="svg-delta good" text-anchor="end">↓</text>
-<text x="8" y="3820" class="svg-label">PMC13342296 · Distribution</text>
-<rect x="120" y="3806" width="90.8" height="9" class="bar-base"></rect>
-<text x="216.8" y="3814" class="svg-val">0.139</text>
-<rect x="120" y="3817" width="86.2" height="9" class="bar-styled"></rect>
-<text x="212.2" y="3825" class="svg-val">0.132</text>
+<text x="8" y="3820" class="svg-label">PMC13336770 · Distribution</text>
+<rect x="120" y="3806" width="254.3" height="9" class="bar-base"></rect>
+<text x="380.3" y="3814" class="svg-val">0.293</text>
+<rect x="120" y="3817" width="131.9" height="9" class="bar-styled"></rect>
+<text x="257.9" y="3825" class="svg-val">0.152</text>
 <text x="744" y="3822" class="svg-delta good" text-anchor="end">↓</text>
-<text x="8" y="3854" class="svg-label">PMC13343911 · Line</text>
-<rect x="120" y="3840" width="313.0" height="9" class="bar-base"></rect>
-<text x="439.0" y="3848" class="svg-val">0.479</text>
-<rect x="120" y="3851" width="284.2" height="9" class="bar-styled"></rect>
-<text x="410.2" y="3859" class="svg-val">0.435</text>
+<text x="8" y="3854" class="svg-label">PMC13342296 · Distribution</text>
+<rect x="120" y="3840" width="115.4" height="9" class="bar-base"></rect>
+<text x="241.4" y="3848" class="svg-val">0.133</text>
+<rect x="120" y="3851" width="107.6" height="9" class="bar-styled"></rect>
+<text x="233.6" y="3859" class="svg-val">0.124</text>
 <text x="744" y="3856" class="svg-delta good" text-anchor="end">↓</text>
-<text x="8" y="3888" class="svg-label">arxiv-astro-skymap__2412.12637 · Field 2D</text>
-<rect x="120" y="3874" width="188.8" height="9" class="bar-base"></rect>
-<text x="314.8" y="3882" class="svg-val">0.289</text>
-<rect x="120" y="3885" width="100.6" height="9" class="bar-styled"></rect>
-<text x="226.6" y="3893" class="svg-val">0.154</text>
+<text x="8" y="3888" class="svg-label">PMC13343911 · Line</text>
+<rect x="120" y="3874" width="196.2" height="9" class="bar-base"></rect>
+<text x="322.2" y="3882" class="svg-val">0.226</text>
+<rect x="120" y="3885" width="158.8" height="9" class="bar-styled"></rect>
+<text x="284.8" y="3893" class="svg-val">0.183</text>
 <text x="744" y="3890" class="svg-delta good" text-anchor="end">↓</text>
-<text x="8" y="3922" class="svg-label">arxiv-astro-skymap__2510.17487 · Std-band</text>
-<rect x="120" y="3908" width="247.6" height="9" class="bar-base"></rect>
-<text x="373.6" y="3916" class="svg-val">0.379</text>
-<rect x="120" y="3919" width="238.5" height="9" class="bar-styled"></rect>
-<text x="364.5" y="3927" class="svg-val">0.365</text>
+<text x="8" y="3922" class="svg-label">arxiv-astro-skymap__2412.12637 · Field 2D</text>
+<rect x="120" y="3908" width="220.5" height="9" class="bar-base"></rect>
+<text x="346.5" y="3916" class="svg-val">0.254</text>
+<rect x="120" y="3919" width="91.1" height="9" class="bar-styled"></rect>
+<text x="217.1" y="3927" class="svg-val">0.105</text>
 <text x="744" y="3924" class="svg-delta good" text-anchor="end">↓</text>
-<text x="8" y="3956" class="svg-label">arxiv-ml-3d-trajectory__2511.17399 · Field 2D</text>
-<rect x="120" y="3942" width="212.3" height="9" class="bar-base"></rect>
-<text x="338.3" y="3950" class="svg-val">0.325</text>
-<rect x="120" y="3953" width="150.3" height="9" class="bar-styled"></rect>
-<text x="276.3" y="3961" class="svg-val">0.230</text>
+<text x="8" y="3956" class="svg-label">arxiv-astro-skymap__2510.17487 · Std-band</text>
+<rect x="120" y="3942" width="151.0" height="9" class="bar-base"></rect>
+<text x="277.0" y="3950" class="svg-val">0.174</text>
+<rect x="120" y="3953" width="138.9" height="9" class="bar-styled"></rect>
+<text x="264.9" y="3961" class="svg-val">0.160</text>
 <text x="744" y="3958" class="svg-delta good" text-anchor="end">↓</text>
-<text x="8" y="3990" class="svg-label">arxiv-ml-3d-trajectory__2602.22552 · Field 2D</text>
-<rect x="120" y="3976" width="215.6" height="9" class="bar-base"></rect>
-<text x="341.6" y="3984" class="svg-val">0.330</text>
-<rect x="120" y="3987" width="169.2" height="9" class="bar-styled"></rect>
-<text x="295.2" y="3995" class="svg-val">0.259</text>
+<text x="8" y="3990" class="svg-label">arxiv-ml-3d-trajectory__2511.17399 · Field 2D</text>
+<rect x="120" y="3976" width="271.7" height="9" class="bar-base"></rect>
+<text x="397.7" y="3984" class="svg-val">0.313</text>
+<rect x="120" y="3987" width="184.9" height="9" class="bar-styled"></rect>
+<text x="310.9" y="3995" class="svg-val">0.213</text>
 <text x="744" y="3992" class="svg-delta good" text-anchor="end">↓</text>
-<text x="8" y="4024" class="svg-label">arxiv-ml-bar-line-v2__2511.15055 · Std-band</text>
-<rect x="120" y="4010" width="354.1" height="9" class="bar-base"></rect>
-<text x="480.1" y="4018" class="svg-val">0.542</text>
-<rect x="120" y="4021" width="311.7" height="9" class="bar-styled"></rect>
-<text x="437.7" y="4029" class="svg-val">0.477</text>
+<text x="8" y="4024" class="svg-label">arxiv-ml-3d-trajectory__2602.22552 · Field 2D</text>
+<rect x="120" y="4010" width="286.4" height="9" class="bar-base"></rect>
+<text x="412.4" y="4018" class="svg-val">0.330</text>
+<rect x="120" y="4021" width="224.8" height="9" class="bar-styled"></rect>
+<text x="350.8" y="4029" class="svg-val">0.259</text>
 <text x="744" y="4026" class="svg-delta good" text-anchor="end">↓</text>
-<text x="8" y="4058" class="svg-label">arxiv-phys-prx-prl__2603.21981 · Line</text>
-<rect x="120" y="4044" width="339.1" height="9" class="bar-base"></rect>
-<text x="465.1" y="4052" class="svg-val">0.519</text>
-<rect x="120" y="4055" width="301.9" height="9" class="bar-styled"></rect>
-<text x="427.9" y="4063" class="svg-val">0.462</text>
+<text x="8" y="4058" class="svg-label">arxiv-ml-bar-line-v2__2511.15055 · Std-band</text>
+<rect x="120" y="4044" width="414.9" height="9" class="bar-base"></rect>
+<text x="540.9" y="4052" class="svg-val">0.478</text>
+<rect x="120" y="4055" width="214.4" height="9" class="bar-styled"></rect>
+<text x="340.4" y="4063" class="svg-val">0.247</text>
 <text x="744" y="4060" class="svg-delta good" text-anchor="end">↓</text>
-<text x="8" y="4092" class="svg-label">arxiv_2410.15876 · Std-band</text>
-<rect x="120" y="4078" width="317.5" height="9" class="bar-base"></rect>
-<text x="443.5" y="4086" class="svg-val">0.486</text>
-<rect x="120" y="4089" width="255.5" height="9" class="bar-styled"></rect>
-<text x="381.5" y="4097" class="svg-val">0.391</text>
+<text x="8" y="4092" class="svg-label">arxiv-phys-prx-prl__2603.21981 · Line</text>
+<rect x="120" y="4078" width="269.1" height="9" class="bar-base"></rect>
+<text x="395.1" y="4086" class="svg-val">0.310</text>
+<rect x="120" y="4089" width="260.4" height="9" class="bar-styled"></rect>
+<text x="386.4" y="4097" class="svg-val">0.300</text>
 <text x="744" y="4094" class="svg-delta good" text-anchor="end">↓</text>
-<text x="8" y="4126" class="svg-label">arxiv_2502.15132 · Line</text>
-<rect x="120" y="4112" width="207.8" height="9" class="bar-base"></rect>
-<text x="333.8" y="4120" class="svg-val">0.318</text>
-<rect x="120" y="4123" width="180.3" height="9" class="bar-styled"></rect>
-<text x="306.3" y="4131" class="svg-val">0.276</text>
+<text x="8" y="4126" class="svg-label">arxiv_2410.15876 · Std-band</text>
+<rect x="120" y="4112" width="384.5" height="9" class="bar-base"></rect>
+<text x="510.5" y="4120" class="svg-val">0.443</text>
+<rect x="120" y="4123" width="314.2" height="9" class="bar-styled"></rect>
+<text x="440.2" y="4131" class="svg-val">0.362</text>
 <text x="744" y="4128" class="svg-delta good" text-anchor="end">↓</text>
-<text x="8" y="4160" class="svg-label">arxiv_2502.17598 · Heatmap</text>
-<rect x="120" y="4146" width="184.9" height="9" class="bar-base"></rect>
-<text x="310.9" y="4154" class="svg-val">0.283</text>
-<rect x="120" y="4157" width="109.8" height="9" class="bar-styled"></rect>
-<text x="235.8" y="4165" class="svg-val">0.168</text>
+<text x="8" y="4160" class="svg-label">arxiv_2502.15132 · Line</text>
+<rect x="120" y="4146" width="204.0" height="9" class="bar-base"></rect>
+<text x="330.0" y="4154" class="svg-val">0.235</text>
+<rect x="120" y="4157" width="167.5" height="9" class="bar-styled"></rect>
+<text x="293.5" y="4165" class="svg-val">0.193</text>
 <text x="744" y="4162" class="svg-delta good" text-anchor="end">↓</text>
-<text x="8" y="4194" class="svg-label">arxiv_2510.17384 · Scatter</text>
-<rect x="120" y="4180" width="292.7" height="9" class="bar-base"></rect>
-<text x="418.7" y="4188" class="svg-val">0.448</text>
-<rect x="120" y="4191" width="251.5" height="9" class="bar-styled"></rect>
-<text x="377.5" y="4199" class="svg-val">0.385</text>
+<text x="8" y="4194" class="svg-label">arxiv_2502.17598 · Heatmap</text>
+<rect x="120" y="4180" width="239.6" height="9" class="bar-base"></rect>
+<text x="365.6" y="4188" class="svg-val">0.276</text>
+<rect x="120" y="4191" width="139.7" height="9" class="bar-styled"></rect>
+<text x="265.7" y="4199" class="svg-val">0.161</text>
 <text x="744" y="4196" class="svg-delta good" text-anchor="end">↓</text>
-<text x="8" y="4228" class="svg-label">arxiv_2512.09767 · Distribution</text>
-<rect x="120" y="4214" width="24.2" height="9" class="bar-base"></rect>
-<text x="150.2" y="4222" class="svg-val">0.037</text>
-<rect x="120" y="4225" width="175.1" height="9" class="bar-styled"></rect>
-<text x="301.1" y="4233" class="svg-val">0.268</text>
-<text x="744" y="4230" class="svg-delta bad" text-anchor="end">↑</text>
-<text x="8" y="4262" class="svg-label">arxiv_2512.25023 · Std-band</text>
-<rect x="120" y="4248" width="360.0" height="9" class="bar-base"></rect>
-<text x="486.0" y="4256" class="svg-val">0.551</text>
-<rect x="120" y="4259" width="314.3" height="9" class="bar-styled"></rect>
-<text x="440.3" y="4267" class="svg-val">0.481</text>
+<text x="8" y="4228" class="svg-label">arxiv_2510.17384 · Scatter</text>
+<rect x="120" y="4214" width="196.2" height="9" class="bar-base"></rect>
+<text x="322.2" y="4222" class="svg-val">0.226</text>
+<rect x="120" y="4225" width="150.2" height="9" class="bar-styled"></rect>
+<text x="276.2" y="4233" class="svg-val">0.173</text>
+<text x="744" y="4230" class="svg-delta good" text-anchor="end">↓</text>
+<text x="8" y="4262" class="svg-label">arxiv_2512.09767 · Distribution</text>
+<rect x="120" y="4248" width="28.6" height="9" class="bar-base"></rect>
+<text x="154.6" y="4256" class="svg-val">0.033</text>
+<rect x="120" y="4259" width="23.4" height="9" class="bar-styled"></rect>
+<text x="149.4" y="4267" class="svg-val">0.027</text>
 <text x="744" y="4264" class="svg-delta good" text-anchor="end">↓</text>
-<text x="8" y="4296" class="svg-label">arxiv_2603.04948 · Std-band</text>
-<rect x="120" y="4282" width="426.0" height="9" class="bar-base"></rect>
-<text x="552.0" y="4290" class="svg-val">0.652</text>
-<rect x="120" y="4293" width="290.1" height="9" class="bar-styled"></rect>
-<text x="416.1" y="4301" class="svg-val">0.444</text>
+<text x="8" y="4296" class="svg-label">arxiv_2512.25023 · Std-band</text>
+<rect x="120" y="4282" width="308.1" height="9" class="bar-base"></rect>
+<text x="434.1" y="4290" class="svg-val">0.355</text>
+<rect x="120" y="4293" width="247.4" height="9" class="bar-styled"></rect>
+<text x="373.4" y="4301" class="svg-val">0.285</text>
 <text x="744" y="4298" class="svg-delta good" text-anchor="end">↓</text>
-<text x="8" y="4330" class="svg-label">arxiv_2603.08660 · Std-band</text>
-<rect x="120" y="4316" width="417.5" height="9" class="bar-base"></rect>
-<text x="543.5" y="4324" class="svg-val">0.639</text>
-<rect x="120" y="4327" width="228.7" height="9" class="bar-styled"></rect>
-<text x="354.7" y="4335" class="svg-val">0.350</text>
+<text x="8" y="4330" class="svg-label">arxiv_2603.04948 · Std-band</text>
+<rect x="120" y="4316" width="445.3" height="9" class="bar-base"></rect>
+<text x="571.3" y="4324" class="svg-val">0.513</text>
+<rect x="120" y="4327" width="267.3" height="9" class="bar-styled"></rect>
+<text x="393.3" y="4335" class="svg-val">0.308</text>
 <text x="744" y="4332" class="svg-delta good" text-anchor="end">↓</text>
-<text x="8" y="4364" class="svg-label">arxiv_2603.17004 · Line</text>
-<rect x="120" y="4350" width="239.8" height="9" class="bar-base"></rect>
-<text x="365.8" y="4358" class="svg-val">0.367</text>
-<rect x="120" y="4361" width="234.6" height="9" class="bar-styled"></rect>
-<text x="360.6" y="4369" class="svg-val">0.359</text>
+<text x="8" y="4364" class="svg-label">arxiv_2603.08660 · Std-band</text>
+<rect x="120" y="4350" width="314.2" height="9" class="bar-base"></rect>
+<text x="440.2" y="4358" class="svg-val">0.362</text>
+<rect x="120" y="4361" width="193.6" height="9" class="bar-styled"></rect>
+<text x="319.6" y="4369" class="svg-val">0.223</text>
 <text x="744" y="4366" class="svg-delta good" text-anchor="end">↓</text>
-<text x="8" y="4398" class="svg-label">arxiv_2603.23889 · Std-band</text>
-<rect x="120" y="4384" width="258.7" height="9" class="bar-base"></rect>
-<text x="384.7" y="4392" class="svg-val">0.396</text>
-<rect x="120" y="4395" width="235.9" height="9" class="bar-styled"></rect>
-<text x="361.9" y="4403" class="svg-val">0.361</text>
+<text x="8" y="4398" class="svg-label">arxiv_2603.17004 · Line</text>
+<rect x="120" y="4384" width="114.6" height="9" class="bar-base"></rect>
+<text x="240.6" y="4392" class="svg-val">0.132</text>
+<rect x="120" y="4395" width="107.6" height="9" class="bar-styled"></rect>
+<text x="233.6" y="4403" class="svg-val">0.124</text>
 <text x="744" y="4400" class="svg-delta good" text-anchor="end">↓</text>
-<text x="8" y="4432" class="svg-label">arxiv_2604.01093 · Field 2D</text>
-<rect x="120" y="4418" width="190.8" height="9" class="bar-base"></rect>
-<text x="316.8" y="4426" class="svg-val">0.292</text>
-<rect x="120" y="4429" width="151.6" height="9" class="bar-styled"></rect>
-<text x="277.6" y="4437" class="svg-val">0.232</text>
+<text x="8" y="4432" class="svg-label">arxiv_2603.23889 · Std-band</text>
+<rect x="120" y="4418" width="280.4" height="9" class="bar-base"></rect>
+<text x="406.4" y="4426" class="svg-val">0.323</text>
+<rect x="120" y="4429" width="250.0" height="9" class="bar-styled"></rect>
+<text x="376.0" y="4437" class="svg-val">0.288</text>
 <text x="744" y="4434" class="svg-delta good" text-anchor="end">↓</text>
-<text x="8" y="4466" class="svg-label">arxiv_2604.05237 · Field 2D</text>
-<rect x="120" y="4452" width="133.3" height="9" class="bar-base"></rect>
-<text x="259.3" y="4460" class="svg-val">0.204</text>
-<rect x="120" y="4463" width="115.6" height="9" class="bar-styled"></rect>
-<text x="241.6" y="4471" class="svg-val">0.177</text>
+<text x="8" y="4466" class="svg-label">arxiv_2604.01093 · Field 2D</text>
+<rect x="120" y="4452" width="224.8" height="9" class="bar-base"></rect>
+<text x="350.8" y="4460" class="svg-val">0.259</text>
+<rect x="120" y="4463" width="172.7" height="9" class="bar-styled"></rect>
+<text x="298.7" y="4471" class="svg-val">0.199</text>
 <text x="744" y="4468" class="svg-delta good" text-anchor="end">↓</text>
-<text x="8" y="4500" class="svg-label">arxiv_2605.14587 · Heatmap</text>
-<rect x="120" y="4486" width="80.4" height="9" class="bar-base"></rect>
-<text x="206.4" y="4494" class="svg-val">0.123</text>
-<rect x="120" y="4497" width="49.7" height="9" class="bar-styled"></rect>
-<text x="175.7" y="4505" class="svg-val">0.076</text>
+<text x="8" y="4500" class="svg-label">arxiv_2604.05237 · Field 2D</text>
+<rect x="120" y="4486" width="99.8" height="9" class="bar-base"></rect>
+<text x="225.8" y="4494" class="svg-val">0.115</text>
+<rect x="120" y="4497" width="76.4" height="9" class="bar-styled"></rect>
+<text x="202.4" y="4505" class="svg-val">0.088</text>
 <text x="744" y="4502" class="svg-delta good" text-anchor="end">↓</text>
-<text x="8" y="4534" class="svg-label">arxiv_2605.16790 · Line</text>
-<rect x="120" y="4520" width="313.0" height="9" class="bar-base"></rect>
-<text x="439.0" y="4528" class="svg-val">0.479</text>
-<rect x="120" y="4531" width="277.7" height="9" class="bar-styled"></rect>
-<text x="403.7" y="4539" class="svg-val">0.425</text>
+<text x="8" y="4534" class="svg-label">arxiv_2605.14587 · Heatmap</text>
+<rect x="120" y="4520" width="104.2" height="9" class="bar-base"></rect>
+<text x="230.2" y="4528" class="svg-val">0.120</text>
+<rect x="120" y="4531" width="79.0" height="9" class="bar-styled"></rect>
+<text x="205.0" y="4539" class="svg-val">0.091</text>
 <text x="744" y="4536" class="svg-delta good" text-anchor="end">↓</text>
-<text x="8" y="4568" class="svg-label">arxiv_2605.22305 · Distribution</text>
-<rect x="120" y="4554" width="304.5" height="9" class="bar-base"></rect>
-<text x="430.5" y="4562" class="svg-val">0.466</text>
-<rect x="120" y="4565" width="250.2" height="9" class="bar-styled"></rect>
-<text x="376.2" y="4573" class="svg-val">0.383</text>
+<text x="8" y="4568" class="svg-label">arxiv_2605.16790 · Line</text>
+<rect x="120" y="4554" width="217.0" height="9" class="bar-base"></rect>
+<text x="343.0" y="4562" class="svg-val">0.250</text>
+<rect x="120" y="4565" width="171.0" height="9" class="bar-styled"></rect>
+<text x="297.0" y="4573" class="svg-val">0.197</text>
 <text x="744" y="4570" class="svg-delta good" text-anchor="end">↓</text>
-<text x="8" y="4602" class="svg-label">arxiv_2605.22455 · Scatter</text>
-<rect x="120" y="4588" width="307.1" height="9" class="bar-base"></rect>
-<text x="433.1" y="4596" class="svg-val">0.470</text>
-<rect x="120" y="4599" width="291.4" height="9" class="bar-styled"></rect>
-<text x="417.4" y="4607" class="svg-val">0.446</text>
+<text x="8" y="4602" class="svg-label">arxiv_2605.22305 · Distribution</text>
+<rect x="120" y="4588" width="302.1" height="9" class="bar-base"></rect>
+<text x="428.1" y="4596" class="svg-val">0.348</text>
+<rect x="120" y="4599" width="276.9" height="9" class="bar-styled"></rect>
+<text x="402.9" y="4607" class="svg-val">0.319</text>
 <text x="744" y="4604" class="svg-delta good" text-anchor="end">↓</text>
-<text x="8" y="4636" class="svg-label">local_gallery_hexbin_joint · Scatter</text>
-<rect x="120" y="4622" width="303.2" height="9" class="bar-base"></rect>
-<text x="429.2" y="4630" class="svg-val">0.464</text>
-<rect x="120" y="4633" width="147.7" height="9" class="bar-styled"></rect>
-<text x="273.7" y="4641" class="svg-val">0.226</text>
+<text x="8" y="4636" class="svg-label">arxiv_2605.22455 · Scatter</text>
+<rect x="120" y="4622" width="246.5" height="9" class="bar-base"></rect>
+<text x="372.5" y="4630" class="svg-val">0.284</text>
+<rect x="120" y="4633" width="225.7" height="9" class="bar-styled"></rect>
+<text x="351.7" y="4641" class="svg-val">0.260</text>
 <text x="744" y="4638" class="svg-delta good" text-anchor="end">↓</text>
-<text x="8" y="4670" class="svg-label">local_picks_top_scatter__39 · Scatter</text>
-<rect x="120" y="4656" width="318.2" height="9" class="bar-base"></rect>
-<text x="444.2" y="4664" class="svg-val">0.487</text>
-<rect x="120" y="4667" width="201.9" height="9" class="bar-styled"></rect>
-<text x="327.9" y="4675" class="svg-val">0.309</text>
+<text x="8" y="4670" class="svg-label">local_gallery_hexbin_joint · Scatter</text>
+<rect x="120" y="4656" width="358.5" height="9" class="bar-base"></rect>
+<text x="484.5" y="4664" class="svg-val">0.413</text>
+<rect x="120" y="4667" width="185.7" height="9" class="bar-styled"></rect>
+<text x="311.7" y="4675" class="svg-val">0.214</text>
 <text x="744" y="4672" class="svg-delta good" text-anchor="end">↓</text>
-<text x="8" y="4704" class="svg-label">local_picks_top_violin__9 · Box/Violin</text>
-<rect x="120" y="4690" width="182.9" height="9" class="bar-base"></rect>
-<text x="308.9" y="4698" class="svg-val">0.280</text>
-<rect x="120" y="4701" width="76.4" height="9" class="bar-styled"></rect>
-<text x="202.4" y="4709" class="svg-val">0.117</text>
+<text x="8" y="4704" class="svg-label">local_picks_top_scatter__39 · Scatter</text>
+<rect x="120" y="4690" width="170.1" height="9" class="bar-base"></rect>
+<text x="296.1" y="4698" class="svg-val">0.196</text>
+<rect x="120" y="4701" width="15.6" height="9" class="bar-styled"></rect>
+<text x="141.6" y="4709" class="svg-val">0.018</text>
 <text x="744" y="4706" class="svg-delta good" text-anchor="end">↓</text>
+<text x="8" y="4738" class="svg-label">local_picks_top_violin__9 · Box/Violin</text>
+<rect x="120" y="4724" width="227.4" height="9" class="bar-base"></rect>
+<text x="353.4" y="4732" class="svg-val">0.262</text>
+<rect x="120" y="4735" width="72.9" height="9" class="bar-styled"></rect>
+<text x="198.9" y="4743" class="svg-val">0.084</text>
+<text x="744" y="4740" class="svg-delta good" text-anchor="end">↓</text>
 </svg></div>
   <table>
     <thead><tr><th>Task</th><th>Chart</th><th>Skill</th><th>Distance</th><th>Baseline</th><th>Δ</th><th>Result</th></tr></thead>
-    <tbody><tr><td>arxiv_2512.09767</td><td>Distribution</td><td>faceted_distribution</td><td class="num">0.268</td><td class="num">0.037</td><td class="num">-0.231</td><td><span class="pill bad">worse</span></td></tr><tr><td>ChartNet-sample_251d4b63cae5c39c</td><td>Box/Violin</td><td>distribution_comparison</td><td class="num">0.376</td><td class="num">0.290</td><td class="num">-0.086</td><td><span class="pill bad">worse</span></td></tr><tr><td>PMC13022287</td><td>Distribution</td><td>faceted_distribution</td><td class="num">0.332</td><td class="num">0.274</td><td class="num">-0.058</td><td><span class="pill bad">worse</span></td></tr><tr><td>Chart2Code_level2_hist_2_v5</td><td>Distribution</td><td>faceted_distribution</td><td class="num">0.131</td><td class="num">0.110</td><td class="num">-0.021</td><td><span class="pill bad">worse</span></td></tr><tr><td>Chart2Code_level2_radar_23_v3</td><td>Polar/Radial</td><td>radial_profile</td><td class="num">0.199</td><td class="num">0.178</td><td class="num">-0.021</td><td><span class="pill bad">worse</span></td></tr><tr><td>Chart2Code_level2_combination_14_v5</td><td>Distribution</td><td>faceted_distribution</td><td class="num">0.274</td><td class="num">0.254</td><td class="num">-0.020</td><td><span class="pill bad">worse</span></td></tr><tr><td>Chart2Code_level2_combination_33_v5</td><td>Distribution</td><td>faceted_distribution</td><td class="num">0.162</td><td class="num">0.150</td><td class="num">-0.012</td><td><span class="pill bad">worse</span></td></tr><tr><td>PMC13106710</td><td>Heatmap</td><td>matrix_plate</td><td class="num">0.203</td><td class="num">0.193</td><td class="num">-0.010</td><td><span class="pill bad">worse</span></td></tr><tr><td>PMC13252719</td><td>Composite</td><td>composite_groups</td><td class="num">0.268</td><td class="num">0.263</td><td class="num">-0.005</td><td><span class="pill warn">tie</span></td></tr><tr><td>PMC11840003</td><td>Box/Violin</td><td>distribution_comparison</td><td class="num">0.128</td><td class="num">0.319</td><td class="num">+0.191</td><td><span class="pill ok">improved</span></td></tr><tr><td>PMC13135507</td><td>Scatter</td><td>scatter_relationship</td><td class="num">0.374</td><td class="num">0.571</td><td class="num">+0.197</td><td><span class="pill ok">improved</span></td></tr><tr><td>Chart2Code_level2_bar_10_v4</td><td>Line</td><td>trend_with_uncertainty</td><td class="num">0.320</td><td class="num">0.522</td><td class="num">+0.202</td><td><span class="pill ok">improved</span></td></tr><tr><td>arxiv_2603.04948</td><td>Std-band</td><td>trend_with_uncertainty</td><td class="num">0.444</td><td class="num">0.652</td><td class="num">+0.208</td><td><span class="pill ok">improved</span></td></tr><tr><td>PMC13336770</td><td>Distribution</td><td>histogram</td><td class="num">0.103</td><td class="num">0.312</td><td class="num">+0.209</td><td><span class="pill ok">improved</span></td></tr><tr><td>Chart2Code_level2_contour_25_v2</td><td>Field 2D</td><td>field_map</td><td class="num">0.171</td><td class="num">0.384</td><td class="num">+0.213</td><td><span class="pill ok">improved</span></td></tr><tr><td>local_gallery_hexbin_joint</td><td>Scatter</td><td>scatter_relationship</td><td class="num">0.226</td><td class="num">0.464</td><td class="num">+0.238</td><td><span class="pill ok">improved</span></td></tr><tr><td>arxiv_2603.08660</td><td>Std-band</td><td>trend_with_uncertainty</td><td class="num">0.350</td><td class="num">0.639</td><td class="num">+0.289</td><td><span class="pill ok">improved</span></td></tr><tr><td>PMC13273070</td><td>Box/Violin</td><td>distribution_comparison</td><td class="num">0.057</td><td class="num">0.378</td><td class="num">+0.321</td><td><span class="pill ok">improved</span></td></tr><tr><td>Chart2Code_level2_3d_1_v1__single</td><td>3D</td><td>—</td><td colspan="3">unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this is a deliberate exclusion</td><td><span class="pill bad">failed</span></td></tr><tr><td>Chart2Code_level2_3d_2_v3</td><td>3D</td><td>—</td><td colspan="3">unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this is a deliberate exclusion</td><td><span class="pill bad">failed</span></td></tr><tr><td>Chart2Code_level2_radar_3_v1</td><td>Polar/Radial</td><td>radial_profile</td><td colspan="3">SkillError: encode.polar: &#x27;panel_group&#x27; reduces to 2 distinct angle(s); a polar profile needs at least 3. This data has no angular reading -- use a bar or trend encoding.</td><td><span class="pill bad">failed</span></td></tr><tr><td>Chart2NCode_7b87069f5442408286d1a4b0300eae18</td><td>3D</td><td>—</td><td colspan="3">unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this is a deliberate exclusion</td><td><span class="pill bad">failed</span></td></tr></tbody>
+    <tbody><tr><td>Chart2Code_level2_hist_2_v5</td><td>Distribution</td><td>faceted_distribution</td><td class="num">0.187</td><td class="num">0.106</td><td class="num">-0.081</td><td><span class="pill bad">worse</span></td></tr><tr><td>ChartNet-sample_953bb3ed650d8541</td><td>Bar</td><td>grouped_measures</td><td class="num">0.271</td><td class="num">0.239</td><td class="num">-0.032</td><td><span class="pill bad">worse</span></td></tr><tr><td>PMC13106710</td><td>Heatmap</td><td>matrix_plate</td><td class="num">0.255</td><td class="num">0.224</td><td class="num">-0.031</td><td><span class="pill bad">worse</span></td></tr><tr><td>Chart2Code_level2_radar_23_v3</td><td>Polar/Radial</td><td>radial_profile</td><td class="num">0.199</td><td class="num">0.178</td><td class="num">-0.021</td><td><span class="pill bad">worse</span></td></tr><tr><td>Chart2Code_level2_combination_14_v5</td><td>Distribution</td><td>faceted_distribution</td><td class="num">0.274</td><td class="num">0.254</td><td class="num">-0.020</td><td><span class="pill bad">worse</span></td></tr><tr><td>Chart2Code_level2_combination_33_v5</td><td>Distribution</td><td>faceted_distribution</td><td class="num">0.162</td><td class="num">0.150</td><td class="num">-0.012</td><td><span class="pill bad">worse</span></td></tr><tr><td>ChartNet-sample_7c69a17fd376e251</td><td>Heatmap</td><td>matrix_plate</td><td class="num">0.238</td><td class="num">0.228</td><td class="num">-0.010</td><td><span class="pill bad">worse</span></td></tr><tr><td>PMC13252719</td><td>Composite</td><td>composite_groups</td><td class="num">0.253</td><td class="num">0.248</td><td class="num">-0.005</td><td><span class="pill warn">tie</span></td></tr><tr><td>Chart2Code_level2_radar_9_v4</td><td>Polar/Radial</td><td>radial_profile</td><td class="num">0.172</td><td class="num">0.172</td><td class="num">+0.000</td><td><span class="pill warn">tie</span></td></tr><tr><td>Chart2Code_level2_multidiff_2_v2__single</td><td>Field 2D</td><td>field_map</td><td class="num">0.168</td><td class="num">0.353</td><td class="num">+0.185</td><td><span class="pill ok">improved</span></td></tr><tr><td>PMC11840003</td><td>Box/Violin</td><td>distribution_comparison</td><td class="num">0.128</td><td class="num">0.319</td><td class="num">+0.191</td><td><span class="pill ok">improved</span></td></tr><tr><td>local_gallery_hexbin_joint</td><td>Scatter</td><td>scatter_relationship</td><td class="num">0.214</td><td class="num">0.413</td><td class="num">+0.199</td><td><span class="pill ok">improved</span></td></tr><tr><td>Chart2Code_level2_bar_10_v4</td><td>Line</td><td>trend_with_uncertainty</td><td class="num">0.320</td><td class="num">0.522</td><td class="num">+0.202</td><td><span class="pill ok">improved</span></td></tr><tr><td>arxiv_2603.04948</td><td>Std-band</td><td>trend_with_uncertainty</td><td class="num">0.308</td><td class="num">0.513</td><td class="num">+0.205</td><td><span class="pill ok">improved</span></td></tr><tr><td>Chart2Code_level2_contour_25_v2</td><td>Field 2D</td><td>field_map</td><td class="num">0.171</td><td class="num">0.384</td><td class="num">+0.213</td><td><span class="pill ok">improved</span></td></tr><tr><td>arxiv-ml-bar-line-v2__2511.15055</td><td>Std-band</td><td>trend_with_uncertainty</td><td class="num">0.247</td><td class="num">0.478</td><td class="num">+0.231</td><td><span class="pill ok">improved</span></td></tr><tr><td>PMC13273070</td><td>Box/Violin</td><td>distribution_comparison</td><td class="num">0.050</td><td class="num">0.323</td><td class="num">+0.273</td><td><span class="pill ok">improved</span></td></tr><tr><td>PMC13135507</td><td>Scatter</td><td>scatter_relationship</td><td class="num">0.251</td><td class="num">0.551</td><td class="num">+0.300</td><td><span class="pill ok">improved</span></td></tr><tr><td>Chart2Code_level2_3d_1_v1__single</td><td>3D</td><td>—</td><td colspan="3">unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this is a deliberate exclusion</td><td><span class="pill bad">failed</span></td></tr><tr><td>Chart2Code_level2_3d_2_v3</td><td>3D</td><td>—</td><td colspan="3">unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this is a deliberate exclusion</td><td><span class="pill bad">failed</span></td></tr><tr><td>Chart2Code_level2_radar_3_v1</td><td>Polar/Radial</td><td>radial_profile</td><td colspan="3">SkillError: encode.polar: &#x27;panel_group&#x27; reduces to 2 distinct angle(s); a polar profile needs at least 3. This data has no angular reading -- use a bar or trend encoding.</td><td><span class="pill bad">failed</span></td></tr><tr><td>Chart2NCode_7b87069f5442408286d1a4b0300eae18</td><td>3D</td><td>—</td><td colspan="3">unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this is a deliberate exclusion</td><td><span class="pill bad">failed</span></td></tr></tbody>
   </table>
   <p class="tag">Showing the 9 tasks where style transfer hurt most, the 9 where it helped most, and 4 classified failures, out of 150 measured; the full per-task table is in <code>corpus/e2e/plottwin_report.json</code>.</p>
 </div>
-<div class="okbox" style="margin-top:14px"><b>Deciding beats always transferring.</b> Over the 138 tasks measured with the decision in place, the shipped figure averages <b>0.267</b> style distance, versus 0.279 for always-styled and 0.35 for never styling. The decision picked the styled candidate 132 times and the plain one 6 times, using only the reference (an input, not the answer key).</div>
+<div class="okbox" style="margin-top:14px"><b>Deciding beats always transferring.</b> Over the 139 tasks measured with the decision in place, the shipped figure averages <b>0.184</b> style distance, versus 0.193 for always-styled and 0.268 for never styling. The decision picked the styled candidate 134 times and the plain one 5 times, using only the reference (an input, not the answer key).</div>
 <div class="okbox"><b>Official code channel (style inferred from the reference IMAGE): 79.02 / 100</b> over 148 tasks (min 20.52, max 100.0). This is the benchmark's own deterministic channel <code>deviation-defect-v1</code>, worth 35% of the official score; the remaining 65% is a vision channel this project does not run, so <b>no combined score is claimed</b>. Style is inferred from the reference <b>picture</b> — the benchmark's actual premise — not from its code. <b>Baseline (matplotlib defaults with the compliance floor): 37.25</b>, so the pipeline is <b>+41.77 points</b> (112.1% relative) better than doing nothing beyond compliance. For comparison, extracting the style from the shipped <code>reference_code</code> scores 99.19 — that is a <b>ceiling, not a capability</b>: the task record contains the reference code, so copying its features scores 100 by construction.</div>
 
-<div class="note"><b>Measurement freshness:</b> 38 of 138 executed tasks
+<div class="note"><b>Measurement freshness:</b> 139 of 139 executed tasks
 were measured with the current rendering code (fingerprint
-<code>f3d542fc3caa</code>), 100 with an earlier
+<code>f3d542fc3caa</code>), 0 with an earlier
 version, and 0 before the fingerprint was recorded — those are
 <b>unknown</b>, not stale. Re-measure a chart type with <code>--types X --scan</code> after a change
 to the shared style/layout layer; a stale row can make a fix look like a regression.</div>
@@ -1066,7 +1072,7 @@ run: <b>0</b>.</div>
 <h3 style="margin-top:20px">Official code channel by chart type (image-inferred style)</h3><table><thead><tr><th>Chart type</th><th>Scored tasks</th><th>Official mean / 100</th></tr></thead><tbody><tr><td>3D</td><td class="num">7</td><td class="num">58.33</td></tr><tr><td>Bar</td><td class="num">18</td><td class="num">84.6</td></tr><tr><td>Box/Violin</td><td class="num">16</td><td class="num">76.28</td></tr><tr><td>Composite</td><td class="num">3</td><td class="num">82.65</td></tr><tr><td>Distribution</td><td class="num">17</td><td class="num">87.74</td></tr><tr><td>Field 2D</td><td class="num">15</td><td class="num">77.77</td></tr><tr><td>Heatmap</td><td class="num">12</td><td class="num">78.93</td></tr><tr><td>Line</td><td class="num">20</td><td class="num">80.96</td></tr><tr><td>Network/Tree</td><td class="num">2</td><td class="num">58.04</td></tr><tr><td>Polar/Radial</td><td class="num">13</td><td class="num">73.38</td></tr><tr><td>Scatter</td><td class="num">16</td><td class="num">80.28</td></tr><tr><td>Std-band</td><td class="num">9</td><td class="num">79.62</td></tr></tbody></table>
 <h3 style="margin-top:20px">By chart type</h3>
 <table><thead><tr><th>Chart type</th><th>OK / tasks</th><th>Always styled</th><th>Plain</th>
-<th>Δ</th><th>Shipped</th></tr></thead><tbody><tr><td>3D</td><td class="num">0/7</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr><td>Bar</td><td class="num">18/18</td><td class="num">0.223</td><td class="num">0.267</td><td class="num">0.044</td><td class="num">0.222</td></tr><tr><td>Box/Violin</td><td class="num">15/16</td><td class="num">0.289</td><td class="num">0.392</td><td class="num">0.103</td><td class="num">0.285</td></tr><tr><td>Composite</td><td class="num">3/3</td><td class="num">0.335</td><td class="num">0.356</td><td class="num">0.022</td><td class="num">0.332</td></tr><tr><td>Distribution</td><td class="num">17/17</td><td class="num">0.196</td><td class="num">0.219</td><td class="num">0.024</td><td class="num">0.177</td></tr><tr><td>Field 2D</td><td class="num">15/15</td><td class="num">0.215</td><td class="num">0.326</td><td class="num">0.111</td><td class="num">0.228</td></tr><tr><td>Heatmap</td><td class="num">14/14</td><td class="num">0.237</td><td class="num">0.327</td><td class="num">0.09</td><td class="num">0.178</td></tr><tr><td>Line</td><td class="num">20/20</td><td class="num">0.355</td><td class="num">0.422</td><td class="num">0.066</td><td class="num">0.355</td></tr><tr><td>Network/Tree</td><td class="num">0/2</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr><td>Polar/Radial</td><td class="num">11/13</td><td class="num">0.277</td><td class="num">0.281</td><td class="num">0.003</td><td class="num">0.225</td></tr><tr><td>Scatter</td><td class="num">16/16</td><td class="num">0.355</td><td class="num">0.469</td><td class="num">0.114</td><td class="num">0.354</td></tr><tr><td>Std-band</td><td class="num">9/9</td><td class="num">0.379</td><td class="num">0.475</td><td class="num">0.096</td><td class="num">0.379</td></tr></tbody></table>
+<th>Δ</th><th>Shipped</th></tr></thead><tbody><tr><td>3D</td><td class="num">0/7</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr><td>Bar</td><td class="num">18/18</td><td class="num">0.138</td><td class="num">0.182</td><td class="num">0.044</td><td class="num">0.137</td></tr><tr><td>Box/Violin</td><td class="num">16/16</td><td class="num">0.123</td><td class="num">0.247</td><td class="num">0.123</td><td class="num">0.121</td></tr><tr><td>Composite</td><td class="num">3/3</td><td class="num">0.29</td><td class="num">0.311</td><td class="num">0.021</td><td class="num">0.286</td></tr><tr><td>Distribution</td><td class="num">17/17</td><td class="num">0.167</td><td class="num">0.202</td><td class="num">0.035</td><td class="num">0.161</td></tr><tr><td>Field 2D</td><td class="num">15/15</td><td class="num">0.191</td><td class="num">0.307</td><td class="num">0.115</td><td class="num">0.201</td></tr><tr><td>Heatmap</td><td class="num">14/14</td><td class="num">0.225</td><td class="num">0.313</td><td class="num">0.088</td><td class="num">0.162</td></tr><tr><td>Line</td><td class="num">20/20</td><td class="num">0.229</td><td class="num">0.292</td><td class="num">0.063</td><td class="num">0.228</td></tr><tr><td>Network/Tree</td><td class="num">0/2</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr><td>Polar/Radial</td><td class="num">11/13</td><td class="num">0.25</td><td class="num">0.262</td><td class="num">0.012</td><td class="num">0.207</td></tr><tr><td>Scatter</td><td class="num">16/16</td><td class="num">0.191</td><td class="num">0.303</td><td class="num">0.112</td><td class="num">0.19</td></tr><tr><td>Std-band</td><td class="num">9/9</td><td class="num">0.254</td><td class="num">0.349</td><td class="num">0.094</td><td class="num">0.273</td></tr></tbody></table>
 <div class="okbox"><b>What can be claimed, precisely:</b> on the official PlotTwin-Bench
 <code>deviation-defect-v1</code> <b>code channel</b> (35 % of their combined score, 149 tasks), the
 pipeline scores <b>79.02</b> against a matplotlib-default baseline of
@@ -1091,15 +1097,15 @@ floor (compliance, glyph collisions, no silently ignored parameters, a reproduci
 <div class="two-col">
 <div class="panel">
 <table><thead><tr><th>Metric</th><th>Value</th><th>Meaning</th></tr></thead><tbody>
-<tr><td>Run records</td><td class="num">187</td><td>six-hour schedule + manual runs</td></tr>
+<tr><td>Run records</td><td class="num">189</td><td>six-hour schedule + manual runs</td></tr>
 <tr><td>Knowledge-changing runs</td><td class="num">4</td><td>all from manual migrations or capability work</td></tr>
 <tr><td>Knowledge-base version</td><td>v16</td><td>16 rules</td></tr>
 <tr><td>Machine-checked rules</td><td class="num">8 / 16</td><td>the rest are hypotheses/refuted/void</td></tr>
 <tr><td>Unchecked rules</td><td>H01, H02, E01, E02, C01, C02, C03, C04</td><td>not counted as passing</td></tr>
 <tr><td>Benchmark slice</td><td>6 tasks from offset 0 (exit 0)</td>
 <td>rotating tasks measured by the loop</td></tr>
-<tr><td>Capability snapshot</td><td>skills 16 · operators 21 · benchmark 138/150 · success 1.0 · anchor 0.225 · tests —</td><td>recorded by the scheduled run</td></tr>
-<tr><td>Last capability change</td><td>_code_version: d3e09ebe20f5 → f3d542fc3caa; benchmark_mean_distance: 0.305 → 0.279; benchmark_anchor_single: 0.335 → 0.225; benchmark_anchor_distance: 0.335 → 0.225; benchmark_shipped_anchor_single: 0.295 → 0.205; benchmark_shipped_anchor_distance: 0.295 → 0.205; benchmark_official_code_score: 75.44 → 78.95; benchmark_official_improvement: 37.28 → —; tests: 849 → —</td><td>explicit delta, not a claim</td></tr>
+<tr><td>Capability snapshot</td><td>skills 16 · operators 21 · benchmark 138/150 · success 1.0 · anchor 0.225 · tests 854</td><td>recorded by the scheduled run</td></tr>
+<tr><td>Last capability change</td><td>no change since the previous run</td><td>explicit delta, not a claim</td></tr>
 </tbody></table>
 <p class="tag" style="margin-top:10px">Conclusion: the loop currently re-verifies, prevents drift and
 records. It has no capability snapshot, mutation or selection, so it is <b>not self-improvement</b>.
@@ -1122,7 +1128,7 @@ combined-score claim is made — the code-channel claim is stated with its basel
 
 <h3 style="margin-top:20px">Capability trend (scheduled runs)</h3>
 <table><thead><tr><th>Run</th><th>Skills</th><th>Operators</th><th>Benchmark</th>
-<th>Anchor distance</th><th>Success</th><th>Tests</th></tr></thead><tbody><tr><td>2026-10-23 19:52</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.303</td><td class="num">829</td></tr><tr><td>2026-10-23 20:07</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.303</td><td class="num">829</td></tr><tr><td>2026-10-23 21:38</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.303</td><td class="num">836</td></tr><tr><td>2026-10-23 21:48</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.303</td><td class="num">836</td></tr><tr><td>2026-10-23 23:38</td><td class="num">16</td><td class="num">21</td><td class="num">138/150</td><td class="num">0.305</td><td class="num">842</td></tr><tr><td>2026-10-23 23:59</td><td class="num">16</td><td class="num">21</td><td class="num">138/150</td><td class="num">0.305</td><td class="num">849</td></tr><tr><td>2026-10-24 01:18</td><td class="num">16</td><td class="num">21</td><td class="num">138/150</td><td class="num">0.305</td><td class="num">849</td></tr><tr><td>2026-10-24 02:33</td><td class="num">16</td><td class="num">21</td><td class="num">138/150</td><td class="num">0.279</td><td class="num">—</td></tr></tbody></table>
+<th>Anchor distance</th><th>Success</th><th>Tests</th></tr></thead><tbody><tr><td>2026-10-23 21:38</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.303</td><td class="num">836</td></tr><tr><td>2026-10-23 21:48</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.303</td><td class="num">836</td></tr><tr><td>2026-10-23 23:38</td><td class="num">16</td><td class="num">21</td><td class="num">138/150</td><td class="num">0.305</td><td class="num">842</td></tr><tr><td>2026-10-23 23:59</td><td class="num">16</td><td class="num">21</td><td class="num">138/150</td><td class="num">0.305</td><td class="num">849</td></tr><tr><td>2026-10-24 01:18</td><td class="num">16</td><td class="num">21</td><td class="num">138/150</td><td class="num">0.305</td><td class="num">849</td></tr><tr><td>2026-10-24 02:33</td><td class="num">16</td><td class="num">21</td><td class="num">138/150</td><td class="num">0.279</td><td class="num">—</td></tr><tr><td>2026-10-24 03:04</td><td class="num">16</td><td class="num">21</td><td class="num">138/150</td><td class="num">0.279</td><td class="num">854</td></tr><tr><td>2026-10-24 03:15</td><td class="num">16</td><td class="num">21</td><td class="num">138/150</td><td class="num">0.279</td><td class="num">854</td></tr></tbody></table>
 <p class="tag">Read from <code>knowledge/runs/*.json</code>. A run with no capability change is
 recorded as such; the loop fails when a judged capability field gets worse.</p>
 
@@ -1132,7 +1138,7 @@ recorded as such; the loop fails when a judged capability field gets worse.</p>
 <div class="card deliverable"><div class="card-top"><h3>P0 · Start the decision service</h3><span class="pill warn">Pending</span></div><p>Start the shared StartLux-Decision and exercise the rule-failure → model-choice fallback.</p><div class="meta"><code>figpipe/decision.py</code> · 6 tests</div><a class="file-link" href="../figpipe/decision.py">Open artifact →</a></div>
 <div class="card deliverable"><div class="card-top"><h3>DONE · Official non-VLM scorer integrated</h3><span class="pill ok">Delivered</span></div><p>The benchmark's own deviation-defect-v1 code channel, vendored unmodified and measured on 149 tasks with a baseline and a ceiling.</p><div class="meta"><code>corpus/e2e/official_scores.json</code> · 79.02 vs 37.25</div><a class="file-link" href="../corpus/e2e/official_scores.json">Open artifact →</a></div>
 <div class="card deliverable"><div class="card-top"><h3>P1 · Validate the metric</h3><span class="pill warn">Planned</span></div><p>Annotate 30 figures and test the correlation between style distance and expert ranking.</p><div class="meta"><code>templates/transfer/style_transfer_report.json</code> · Spearman ≥ 0.7</div><a class="file-link" href="../templates/transfer/style_transfer_report.json">Open artifact →</a></div>
-<div class="card deliverable"><div class="card-top"><h3>P1 · Re-measure stale rows</h3><span class="pill warn">Planned</span></div><p>41 of 141 benchmark rows predate the current rendering fingerprint; a --scan pass makes every number comparable.</p><div class="meta"><code>corpus/e2e/plottwin_report.json</code> · stale 100</div><a class="file-link" href="../corpus/e2e/plottwin_report.json">Open artifact →</a></div>
+<div class="card deliverable"><div class="card-top"><h3>P1 · Re-measure stale rows</h3><span class="pill warn">Planned</span></div><p>41 of 141 benchmark rows predate the current rendering fingerprint; a --scan pass makes every number comparable.</p><div class="meta"><code>corpus/e2e/plottwin_report.json</code> · stale 0</div><a class="file-link" href="../corpus/e2e/plottwin_report.json">Open artifact →</a></div>
 </div>
 
 <footer>
@@ -1140,6 +1146,6 @@ recorded as such; the loop fails when a judged capability field gets worse.</p>
   in this repository, with no external dependencies. PlotTwin-Bench reference images and target
   data are cached locally and never redistributed (CC BY-NC 4.0); StartLux-Decision weights are
   CC BY-NC 4.0 and called through a separate service, not vendored into this repository.</div>
-  <div style="margin-top:6px">commit 3d9fed7 · generated 2026-10-24 02:53 · tests 856</div>
+  <div style="margin-top:6px">commit d975d68 · generated 2026-10-24 04:14 · tests 856</div>
 </footer>
 </div></body></html>

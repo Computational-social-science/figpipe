@@ -391,8 +391,25 @@ def style_from_image_profile(profile) -> dict:
     aspect = (width / height) if (width and height) else None
     # GRID and SPINES are recoverable from the pixels (see StyleProfile.from_image_detailed):
     # interior rules are grid lines, edge rules are spines. Ticks/serif/legend/linewidth are not.
-    rules = (getattr(profile, "rules_h", 0) or 0) + (getattr(profile, "rules_v", 0) or 0)
-    grid = (rules > 0) if getattr(profile, "spines", None) else None
+    # INTERIOR RULES ARE NOT A GRID, and this signal cannot tell the two apart.
+    #
+    # Measured: a polar figure reports rules_h=3, rules_v=3 with every spine absent -- its radial
+    # spokes land in the "interior rule" bucket. An ordinary dual_measure line figure reports the
+    # SAME shape (rules_h=3, rules_v=3, all spines False) while emitting `ax.grid(False)`, because its
+    # left and bottom spines also land in the interior bucket.
+    #
+    # So `rules > 0` fires on both a radial figure with no grid and a rectangular figure with no
+    # grid. The benchmark's extractor says both references have `grid = False`, so the old inference
+    # (True) scored 0 on 8 Polar, 3 3D and 4 Box tasks -- 17 % of the 111 where the dimension is
+    # active, which is the 0.829.
+    #
+    # THE HONEST CHOICE IS UNDETERMINED. Guessing True was wrong for every case that mattered;
+    # guessing False would be wrong for a figure that does draw gridlines and whose rules are real.
+    #
+    # `rules_h + rules_v` is no longer computed here: it was the input to the guess, and the guess is
+    # gone. The profile still carries both counts for any future inference that can separate a
+    # rectangular grid from a radial spoke.
+    grid = None
     spines = getattr(profile, "spines", None) or {}
     spines_removed = tuple(k for k, present in spines.items() if not present) if spines else None
     return {

@@ -5377,3 +5377,49 @@ this function. It would be right for a symmetric distribution distance; it is no
 **Reading the function's body corrected a conclusion I had already written down.**
 
 Suite: 854 passed, 2 skipped.
+
+
+## 155. The grid inference could not tell a radial spoke from a gridline (2026-10-24)
+
+`grid` was the third-largest loss (0.829 over 111 tasks) and it is BINARY -- `1.0 if match else 0.0`
+-- so 0.829 means 17.1 % of candidates got it backwards. Grouped by chart type, the wrong ones were:
+
+    Polar/Radial  8
+    Box/Violin    4
+    3D            3
+    Scatter       2
+    Std-band      1
+    Bar           1
+
+THE INFERENCE WAS `grid = (rules > 0) if profile.spines else None`. Measured on a radial figure:
+`rules_h=3, rules_v=3`, every spine False -- its radial spokes and circles land in the "interior rule"
+bucket and become `grid = True`. The benchmark's extractor says a polar reference's grid is FALSE
+(`origin: matplotlib_default`).
+
+MY FIRST FIX WAS WRONG IN A WAY THE MEASUREMENT CAUGHT. I changed the condition to "any spine
+present" -- and an ordinary `dual_measure` line figure reports ALL spines False too, while emitting
+`ax.grid(False)`. So the new condition would have suppressed the grid on every rectangular figure as
+well.
+
+THE SIGNAL CANNOT SEPARATE THEM. Both a polar figure with no grid and a rectangular figure with no
+grid produce `rules_h=3, rules_v=3, spines all False`. The honest answer is UNDETERMINED, so
+`grid` is now `None` and the emitter leaves it at figpipe's default.
+
+THE DEAD-CODE DETECTOR THEN CAUGHT THE LEFT-BEHIND COMPUTATION: `rules = rules_h + rules_v` became
+unread once the guess was gone. Deleted, with the reason recorded in place -- a commented-out line
+would have been worse than either keeping or removing it.
+
+WHAT THE FULL RE-MEASURE THEN SHOWED, and this is the part worth keeping:
+
+    fresh 139 / stale 0          (was 38 / 100)
+    mean_distance 0.279 -> 0.193 (-0.086)
+    mean_baseline 0.268
+    styled anchor 0.225          (unchanged -- it was already on the new instrument)
+    legend_frames 41 -> 53
+    hard findings 0
+
+The style distance improved by 0.086 across the pool once every task was measured by the same
+instrument. **That improvement was already in the pipeline and could not be seen**, because 100 tasks
+carried values from the old fingerprint and the aggregate mixed them.
+
+Suite: 853 passed, 3 skipped.
