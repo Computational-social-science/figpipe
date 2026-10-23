@@ -235,22 +235,65 @@ def mutation_step() -> dict:
         "finding_proposal_verdict": derived.get("verdict"),
     }
 
+    # PROBE THE CATALOGUED PATCHES. Each is reverted (or applied) for one slice of the tasks its
+    # own skill produced, and the hard-finding count is compared. This is the only path by which the
+    # loop can MEASURE a drawer fix rather than a budget integer.
+    patch_runs: list[dict] = []
+    try:
+        from figpipe import patchprobe as _pp
+        from figpipe import proposals as _prop
+        for key, (path, old, new, why) in _prop.CODE_PATCHES.items():
+            state = _prop.patch_state(ROOT, {"id": key, "path": path, "old": old,
+                                             "new": new, "rationale": why})
+            entry = {"patch": key, "state": state["state"], "why": why, "eligible": False,
+                     "probed": False}
+            if state["state"] != "revert":
+                entry["note"] = ("the fix is not in this tree, so there is no contribution to "
+                                 "measure") if state["state"] == "fix" else state["why"]
+                patch_runs.append(entry)
+                continue
+            skill = _prop.FIX_SKILL.get(key) if hasattr(_prop, "FIX_SKILL") else None
+            # ELIGIBLE, NOT PROBED. The probe needs the pool lock and minutes per patch, so the
+            # schedule records WHAT COULD BE MEASURED and `scripts/measure_fix_contribution.py`
+            # does the measuring. Calling this `probed` would report a measurement that did not
+            # happen.
+            entry["eligible"] = True
+            entry["probed"] = False
+            entry["skill"] = skill
+            entry["how"] = ("run scripts/measure_fix_contribution.py to measure this fix's "
+                            "contribution")
+            patch_runs.append(entry)
+    except (ImportError, AttributeError, OSError) as exc:
+        patch_runs = [{"patch": "?", "probed": False,
+                       "note": f"the patch catalogue could not be read: {type(exc).__name__}"}]
+    patch_fields = {
+        "patch_catalogue": patch_runs,
+        "n_patch_candidates": len(patch_runs),
+        "n_patch_eligible": sum(1 for e in patch_runs if e.get("eligible")),
+        "n_patch_probed": sum(1 for e in patch_runs if e.get("probed")),
+        "patch_note": ("a patch changes the SOURCE, so it is probed and reported but never "
+                       "auto-selected: the loop does not edit its own drawer without a human "
+                       "seeing the diff"),
+    }
+
     script = ROOT / "scripts" / "mutate.py"
     if not script.is_file():
-        return {"ran": False, "reason": "scripts/mutate.py absent", **finding_fields}
+        return {"ran": False, "reason": "scripts/mutate.py absent", **finding_fields,
+                **patch_fields}
     p = subprocess.run([sys.executable, str(script), "--quiet", "--no-lock"],
                        cwd=ROOT, capture_output=True, text=True, encoding="utf-8",
                        errors="replace")
     if p.returncode != 0:
         return {"ran": False, "code": p.returncode,
                 "reason": ((p.stdout or "") + (p.stderr or "")).strip()[-300:],
-                **finding_fields}
+                **finding_fields, **patch_fields}
     try:
         return {"ran": True, **json.loads(
             (ROOT / "knowledge" / "mutation_report.json").read_text(encoding="utf-8")),
-            **finding_fields}
+            **finding_fields, **patch_fields}
     except (OSError, json.JSONDecodeError) as exc:
-        return {"ran": False, "reason": f"report unreadable: {exc}", **finding_fields}
+        return {"ran": False, "reason": f"report unreadable: {exc}", **finding_fields,
+                **patch_fields}
 
 def _is_infra(error) -> bool:
     """A fetch failure means the pipeline never ran, so it is not a capability result."""

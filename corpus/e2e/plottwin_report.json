@@ -18,11 +18,11 @@
   },
   "mean_distance": 0.303,
   "mean_baseline": 0.373,
-  "mean_improvement": 0.07,
+  "mean_improvement": 0.069,
   "improved": 119,
   "worse": 8,
   "ties": 12,
-  "mean_best_of_two": 0.297,
+  "mean_best_of_two": 0.298,
   "semantic_violations": 0,
   "decision_service": {
     "up": false,
@@ -88,10 +88,10 @@
       "n": 14,
       "ok": 14,
       "errors": 0,
-      "mean_distance": 0.232,
-      "mean_baseline": 0.333,
-      "mean_delta": 0.101,
-      "mean_shipped": 0.172
+      "mean_distance": 0.236,
+      "mean_baseline": 0.332,
+      "mean_delta": 0.096,
+      "mean_shipped": 0.177
     },
     "Line": {
       "n": 20,
@@ -4018,7 +4018,7 @@
       "id": "PMC12354736",
       "chart": "Distribution",
       "panel_mode": "multi",
-      "code_version": "123dc7ea2424",
+      "code_version": "95ced9b73a90",
       "skill": "faceted_distribution",
       "rationale": "faceted hist by panel_row",
       "rows_used": 12196,
@@ -4058,22 +4058,22 @@
       "id": "PMC12504421",
       "chart": "Heatmap",
       "panel_mode": "multi",
-      "code_version": "123dc7ea2424",
+      "code_version": "95ced9b73a90",
       "skill": "matrix_plate",
       "rationale": "pivot panel_group x record_type of panel_row",
       "rows_used": 4,
       "status": "ok",
-      "distance": 0.357,
-      "baseline_distance": 0.591,
-      "delta": 0.234,
+      "distance": 0.419,
+      "baseline_distance": 0.572,
+      "delta": 0.153,
       "selected": "styled",
-      "selected_distance": 0.317,
-      "selected_gain": 0.274,
-      "selection_margin": 0.197,
+      "selected_distance": 0.382,
+      "selected_gain": 0.19,
+      "selection_margin": 0.119,
       "components": {
-        "palette": 0.214,
-        "aspect": 0.191,
-        "ink": 0.881
+        "palette": 0.363,
+        "aspect": 0.182,
+        "ink": 0.796
       },
       "hard_failures": 0,
       "findings": [],
@@ -4093,13 +4093,13 @@
         "note": "code channel only; the 0.65 vision channel is not run"
       },
       "semantic_findings": [],
-      "semantic_checked": "unverifiable"
+      "semantic_checked": "mesh_scale_checked"
     },
     {
       "id": "PMC12905268",
       "chart": "Distribution",
       "panel_mode": "multi",
-      "code_version": "123dc7ea2424",
+      "code_version": "95ced9b73a90",
       "skill": "faceted_distribution",
       "rationale": "faceted hist by shoreline_condition",
       "rows_used": 1196,
@@ -5610,9 +5610,9 @@
   "complete_membership": true,
   "semantic_coverage": {
     "checked": 110,
-    "mesh_scale_checked": 28,
+    "mesh_scale_checked": 29,
     "skipped": 0,
-    "unverifiable": 1,
+    "unverifiable": 0,
     "absent": 0,
     "n": 139,
     "note": "`skipped` tasks were drawn by a drawer with no semantic rule: their printed numbers were NOT re-derived from the data. A pass on such a task is a statement about geometry, not about correctness."
@@ -5749,6 +5749,9 @@
       "PMC11502666",
       "PMC11840003",
       "PMC12000431",
+      "PMC12354736",
+      "PMC12504421",
+      "PMC12905268",
       "PMC13009336",
       "PMC13022287",
       "PMC13079874",
@@ -5787,27 +5790,19 @@
       "local_picks_top_scatter__39",
       "local_picks_top_violin__9"
     ],
-    "stale": [
-      "PMC12354736",
-      "PMC12504421",
-      "PMC12905268"
-    ],
+    "stale": [],
     "unknown": [],
-    "n_fresh": 136,
-    "n_stale": 3,
+    "n_fresh": 139,
+    "n_stale": 0,
     "n_unknown": 0
   },
-  "stale_tasks": [
-    "PMC12354736",
-    "PMC12504421",
-    "PMC12905268"
-  ],
-  "n_stale": 3,
+  "stale_tasks": [],
+  "n_stale": 0,
   "n_unknown": 0,
-  "n_fresh": 136,
+  "n_fresh": 139,
   "selection": {
     "n": 139,
-    "shipped_mean": 0.288,
+    "shipped_mean": 0.289,
     "always_styled_mean": 0.303,
     "plain_mean": 0.373,
     "gain_vs_always_styled": 0.014,

@@ -1,0 +1,665 @@
+{
+  "run_at": "2026-10-23T06:39:20",
+  "dry_run": false,
+  "evolve_ok": true,
+  "evolve_exit_code": 0,
+  "evolve_output": [
+    "knowledge base -> v16",
+    "  checked 8/16 rules (8 unchecked)",
+    "  passed 8, failed 0",
+    "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
+    "  wrote knowledge\\evolution_report.json",
+    "  lean: tracked 78.5 -> 78.5 MB, worktree 139.1 -> 133.9 MB"
+  ],
+  "tests_ok": true,
+  "tests_summary": "743 passed, 3 skipped, 1 warning in 420.79s (0:07:00)",
+  "knowledge_version_before": 16,
+  "knowledge_version_after": 16,
+  "knowledge_changed": false,
+  "published": {
+    "pushed": false,
+    "withheld": [],
+    "blocked_deletions": [],
+    "skipped": true,
+    "reason": "no knowledge change: the run record stays uncommitted for the next run"
+  },
+  "check_results": {
+    "L01": {
+      "ok": true,
+      "detail": "figpipe.style.panel_letter present",
+      "confidence_before": "enforced"
+    },
+    "L02": {
+      "ok": true,
+      "detail": "all rcParams match",
+      "confidence_before": "enforced"
+    },
+    "L03": {
+      "ok": true,
+      "detail": "all sizes in band",
+      "confidence_before": "enforced"
+    },
+    "L04": {
+      "ok": true,
+      "detail": "figpipe.style.suppress_log_exponents present",
+      "confidence_before": "enforced"
+    },
+    "L05": {
+      "ok": true,
+      "detail": "all rcParams match",
+      "confidence_before": "enforced"
+    },
+    "L06": {
+      "ok": true,
+      "detail": "all rcParams match",
+      "confidence_before": "enforced"
+    },
+    "L07": {
+      "ok": true,
+      "detail": "figpipe.audit.audit present",
+      "confidence_before": "enforced"
+    },
+    "H01": {
+      "ok": null,
+      "detail": "UNCHECKED: no machine-executable check defined for this rule",
+      "confidence_before": "hypothesis"
+    },
+    "H02": {
+      "ok": null,
+      "detail": "UNCHECKED: no machine-executable check defined for this rule",
+      "confidence_before": "refuted"
+    },
+    "E01": {
+      "ok": null,
+      "detail": "UNCHECKED: no machine-executable check defined for this rule",
+      "confidence_before": "void"
+    },
+    "E02": {
+      "ok": null,
+      "detail": "UNCHECKED: no machine-executable check defined for this rule",
+      "confidence_before": "void"
+    },
+    "C01": {
+      "ok": null,
+      "detail": "UNCHECKED: no machine-executable check defined for this rule",
+      "confidence_before": "hypothesis"
+    },
+    "C02": {
+      "ok": null,
+      "detail": "UNCHECKED: no machine-executable check defined for this rule",
+      "confidence_before": "hypothesis"
+    },
+    "C03": {
+      "ok": null,
+      "detail": "UNCHECKED: no machine-executable check defined for this rule",
+      "confidence_before": "hypothesis"
+    },
+    "C04": {
+      "ok": null,
+      "detail": "UNCHECKED: no machine-executable check defined for this rule",
+      "confidence_before": "hypothesis"
+    },
+    "L08": {
+      "ok": true,
+      "detail": "4 panels, letters ['a', 'b', 'c', 'd'], gaps x=[9.0] y=[13.2] mm, page 183.0x140.0 mm",
+      "confidence_before": "enforced"
+    }
+  },
+  "demoted": [],
+  "promoted": [],
+  "regressed_detail": {},
+  "check_summary": {
+    "rules_total": 16,
+    "checked": 8,
+    "passed": 8,
+    "failed": 0,
+    "unchecked": 8,
+    "unchecked_ids": [
+      "H01",
+      "H02",
+      "E01",
+      "E02",
+      "C01",
+      "C02",
+      "C03",
+      "C04"
+    ]
+  },
+  "rules": {
+    "enforced": 8,
+    "measured_unenforced": 0,
+    "hypothesis": 5,
+    "regressed": 0
+  },
+  "benchmark_slice": {
+    "ran": true,
+    "offset": 0,
+    "tasks": 6,
+    "code": 0,
+    "tail": [
+      "    type Box/Violin     ok 1/1   d=0.166 base=0.449 delta=0.283 errors=0",
+      "    type Distribution   ok 4/4   d=0.225 base=0.248 delta=0.024 errors=0",
+      "    type Heatmap        ok 1/1   d=0.419 base=0.572 delta=0.153 errors=0",
+      "  wrote E:\\2026-AI4S\\figpipe\\corpus\\e2e\\plottwin_report.json"
+    ]
+  },
+  "anchor_refresh": {
+    "ran": false,
+    "reason": "both anchors already comparable"
+  },
+  "mutation": {
+    "ran": true,
+    "proposed": [
+      {
+        "id": "split-max-bars-24",
+        "skill": "composite_groups",
+        "parameter": "max_bars",
+        "value": 24,
+        "rationale": "LEARNINGS ##46 set the category budget at 12 because 20 year-bars produced 19 collisions. Relaxing it to 24 lets that defect back in; the probe measures whether the task set still sees it."
+      },
+      {
+        "id": "split-max-bars-13",
+        "skill": "composite_groups",
+        "parameter": "max_bars",
+        "value": 13,
+        "rationale": "an off-by-one relaxation: if 12 were too tight, one extra category would recover a refusal at no legibility cost. The probe asks whether any task can tell the two budgets apart."
+      },
+      {
+        "id": "matrix-max-rows-41",
+        "skill": "matrix_plate",
+        "parameter": "max_rows",
+        "value": 41,
+        "rationale": "the row budget is one row tighter than the measured collision boundary: 41 unpivotable rows render with 0 collisions and 42 produce 41. If that holds on the task set, the budget refuses a table it could draw."
+      },
+      {
+        "id": "matrix-max-rows-42",
+        "skill": "matrix_plate",
+        "parameter": "max_rows",
+        "value": 42,
+        "rationale": "one row past the measured boundary: it admits the 48-row table, whose tick labels collide. The expected verdict is a rejection, so this is the negative control for 'any relaxation is a gain'."
+      },
+      {
+        "id": "matrix-max-rows-60",
+        "skill": "matrix_plate",
+        "parameter": "max_rows",
+        "value": 60,
+        "rationale": "LEARNINGS ##47 records the row budget as a refusal that was nearly a regression. Relaxing it to 60 re-admits the 48-row table and tests whether the collisions it was protecting against are still there."
+      }
+    ],
+    "tasks": [
+      "split-many-bars",
+      "split-few-bars",
+      "matrix-real-40x10",
+      "matrix-wide",
+      "matrix-41-rows",
+      "matrix-42-rows",
+      "matrix-48-rows"
+    ],
+    "min_margin": 0.1,
+    "min_score": null,
+    "probed": true,
+    "baseline_mean": 0.928571,
+    "mean_score": {
+      "baseline": 0.928571,
+      "split-max-bars-24": 0.792857,
+      "split-max-bars-13": 0.928571,
+      "matrix-max-rows-41": 0.928571,
+      "matrix-max-rows-42": 0.928571,
+      "matrix-max-rows-60": 0.928571
+    },
+    "ledger": {
+      "mode": "mutation",
+      "task_id": "split-many-bars,split-few-bars,matrix-real-40x10,matrix-wide,matrix-41-rows,matrix-42-rows,matrix-48-rows",
+      "k": 0,
+      "R": 42,
+      "expected_R": 0,
+      "P": 1,
+      "session_attempts": 1,
+      "expected_P": 0,
+      "usd": 0.0,
+      "rollout_usd": 0.0,
+      "session_usd": 0.0,
+      "rollouts": [
+        "baseline:split-many-bars",
+        "baseline:split-few-bars",
+        "baseline:matrix-real-40x10",
+        "baseline:matrix-wide",
+        "baseline:matrix-41-rows",
+        "baseline:matrix-42-rows",
+        "baseline:matrix-48-rows",
+        "split-max-bars-24:split-many-bars",
+        "split-max-bars-24:split-few-bars",
+        "split-max-bars-24:matrix-real-40x10",
+        "split-max-bars-24:matrix-wide",
+        "split-max-bars-24:matrix-41-rows",
+        "split-max-bars-24:matrix-42-rows",
+        "split-max-bars-24:matrix-48-rows",
+        "split-max-bars-13:split-many-bars",
+        "split-max-bars-13:split-few-bars",
+        "split-max-bars-13:matrix-real-40x10",
+        "split-max-bars-13:matrix-wide",
+        "split-max-bars-13:matrix-41-rows",
+        "split-max-bars-13:matrix-42-rows",
+        "split-max-bars-13:matrix-48-rows",
+        "matrix-max-rows-41:split-many-bars",
+        "matrix-max-rows-41:split-few-bars",
+        "matrix-max-rows-41:matrix-real-40x10",
+        "matrix-max-rows-41:matrix-wide",
+        "matrix-max-rows-41:matrix-41-rows",
+        "matrix-max-rows-41:matrix-42-rows",
+        "matrix-max-rows-41:matrix-48-rows",
+        "matrix-max-rows-42:split-many-bars",
+        "matrix-max-rows-42:split-few-bars",
+        "matrix-max-rows-42:matrix-real-40x10",
+        "matrix-max-rows-42:matrix-wide",
+        "matrix-max-rows-42:matrix-41-rows",
+        "matrix-max-rows-42:matrix-42-rows",
+        "matrix-max-rows-42:matrix-48-rows",
+        "matrix-max-rows-60:split-many-bars",
+        "matrix-max-rows-60:split-few-bars",
+        "matrix-max-rows-60:matrix-real-40x10",
+        "matrix-max-rows-60:matrix-wide",
+        "matrix-max-rows-60:matrix-41-rows",
+        "matrix-max-rows-60:matrix-42-rows",
+        "matrix-max-rows-60:matrix-48-rows"
+      ],
+      "sessions": [
+        "compose"
+      ]
+    },
+    "budget": 42,
+    "selected": [],
+    "rejected": [
+      "split-max-bars-24"
+    ],
+    "ties": [
+      "split-max-bars-13",
+      "matrix-max-rows-41",
+      "matrix-max-rows-42",
+      "matrix-max-rows-60"
+    ],
+    "decisions": [
+      {
+        "id": "split-max-bars-24",
+        "operator": "layout.split_panels",
+        "parameter": "max_bars",
+        "value": 24,
+        "baseline_value": 12,
+        "kind": "scalar",
+        "patch_path": null,
+        "score": 0.792857,
+        "baseline_score": 0.928571,
+        "delta": -0.135714,
+        "verdict": "rejected",
+        "reason": "regresses 1 task(s) on the fixed set, worst 'split-many-bars' by -0.950 (>= margin 0.1); a task that gets worse is a regression whatever the mean says; changed tasks: ['split-many-bars']",
+        "changed_tasks": [
+          "split-many-bars"
+        ],
+        "regressed_tasks": [
+          {
+            "task": "split-many-bars",
+            "fell_by": 0.95,
+            "outcome": "rendered",
+            "expected": "refused",
+            "detail": ""
+          }
+        ],
+        "per_task": {
+          "split-many-bars": {
+            "outcome": "rendered",
+            "score": 0.05,
+            "expected": "refused",
+            "detail": ""
+          },
+          "split-few-bars": {
+            "outcome": "rendered",
+            "score": 1.0,
+            "expected": "clean",
+            "detail": ""
+          },
+          "matrix-real-40x10": {
+            "outcome": "rendered",
+            "score": 0.5,
+            "expected": "clean",
+            "detail": ""
+          },
+          "matrix-wide": {
+            "outcome": "rendered",
+            "score": 1.0,
+            "expected": "clean",
+            "detail": ""
+          },
+          "matrix-41-rows": {
+            "outcome": "refused",
+            "score": 1.0,
+            "expected": "refused",
+            "detail": "encode.matrix: 41 rows have no 2-D reading (no column pair varies enough to pivot) and exceed the 40-row budget; use field_map or pass a wide frame"
+          },
+          "matrix-42-rows": {
+            "outcome": "refused",
+            "score": 1.0,
+            "expected": "refused",
+            "detail": "encode.matrix: 42 rows have no 2-D reading (no column pair varies enough to pivot) and exceed the 40-row budget; use field_map or pass a wide frame"
+          },
+          "matrix-48-rows": {
+            "outcome": "refused",
+            "score": 1.0,
+            "expected": "refused",
+            "detail": "encode.matrix: 48 rows have no 2-D reading (no column pair varies enough to pivot) and exceed the 40-row budget; use field_map or pass a wide frame"
+          }
+        }
+      },
+      {
+        "id": "split-max-bars-13",
+        "operator": "layout.split_panels",
+        "parameter": "max_bars",
+        "value": 13,
+        "baseline_value": 12,
+        "kind": "scalar",
+        "patch_path": null,
+        "score": 0.928571,
+        "baseline_score": 0.928571,
+        "delta": 0.0,
+        "verdict": "tie",
+        "reason": "no measurable difference on the fixed task set (+0.000); the task set cannot distinguish this edit from the baseline, so it is reported as a tie",
+        "changed_tasks": [],
+        "regressed_tasks": [],
+        "per_task": {
+          "split-many-bars": {
+            "outcome": "refused",
+            "score": 1.0,
+            "expected": "refused",
+            "detail": "layout.split_panels: 'A' has 20 distinct 'outcome' values; a bar panel can carry at most 13 with readable labels. Use the trend encoder for an ordered axis, or pass of='error_bars' with a coarser label."
+          },
+          "split-few-bars": {
+            "outcome": "rendered",
+            "score": 1.0,
+            "expected": "clean",
+            "detail": ""
+          },
+          "matrix-real-40x10": {
+            "outcome": "rendered",
+            "score": 0.5,
+            "expected": "clean",
+            "detail": ""
+          },
+          "matrix-wide": {
+            "outcome": "rendered",
+            "score": 1.0,
+            "expected": "clean",
+            "detail": ""
+          },
+          "matrix-41-rows": {
+            "outcome": "refused",
+            "score": 1.0,
+            "expected": "refused",
+            "detail": "encode.matrix: 41 rows have no 2-D reading (no column pair varies enough to pivot) and exceed the 40-row budget; use field_map or pass a wide frame"
+          },
+          "matrix-42-rows": {
+            "outcome": "refused",
+            "score": 1.0,
+            "expected": "refused",
+            "detail": "encode.matrix: 42 rows have no 2-D reading (no column pair varies enough to pivot) and exceed the 40-row budget; use field_map or pass a wide frame"
+          },
+          "matrix-48-rows": {
+            "outcome": "refused",
+            "score": 1.0,
+            "expected": "refused",
+            "detail": "encode.matrix: 48 rows have no 2-D reading (no column pair varies enough to pivot) and exceed the 40-row budget; use field_map or pass a wide frame"
+          }
+        }
+      },
+      {
+        "id": "matrix-max-rows-41",
+        "operator": "encode.matrix",
+        "parameter": "max_rows",
+        "value": 41,
+        "baseline_value": 40,
+        "kind": "scalar",
+        "patch_path": null,
+        "score": 0.928571,
+        "baseline_score": 0.928571,
+        "delta": 0.0,
+        "verdict": "tie",
+        "reason": "no measurable difference on the fixed task set (+0.000); the task set cannot distinguish this edit from the baseline, so it is reported as a tie",
+        "changed_tasks": [
+          "matrix-41-rows"
+        ],
+        "regressed_tasks": [],
+        "per_task": {
+          "split-many-bars": {
+            "outcome": "refused",
+            "score": 1.0,
+            "expected": "refused",
+            "detail": "layout.split_panels: 'A' has 20 distinct 'outcome' values; a bar panel can carry at most 12 with readable labels. Use the trend encoder for an ordered axis, or pass of='error_bars' with a coarser label."
+          },
+          "split-few-bars": {
+            "outcome": "rendered",
+            "score": 1.0,
+            "expected": "clean",
+            "detail": ""
+          },
+          "matrix-real-40x10": {
+            "outcome": "rendered",
+            "score": 0.5,
+            "expected": "clean",
+            "detail": ""
+          },
+          "matrix-wide": {
+            "outcome": "rendered",
+            "score": 1.0,
+            "expected": "clean",
+            "detail": ""
+          },
+          "matrix-41-rows": {
+            "outcome": "rendered",
+            "score": 1.0,
+            "expected": "refused",
+            "detail": ""
+          },
+          "matrix-42-rows": {
+            "outcome": "refused",
+            "score": 1.0,
+            "expected": "refused",
+            "detail": "encode.matrix: 42 rows have no 2-D reading (no column pair varies enough to pivot) and exceed the 41-row budget; use field_map or pass a wide frame"
+          },
+          "matrix-48-rows": {
+            "outcome": "refused",
+            "score": 1.0,
+            "expected": "refused",
+            "detail": "encode.matrix: 48 rows have no 2-D reading (no column pair varies enough to pivot) and exceed the 41-row budget; use field_map or pass a wide frame"
+          }
+        }
+      },
+      {
+        "id": "matrix-max-rows-42",
+        "operator": "encode.matrix",
+        "parameter": "max_rows",
+        "value": 42,
+        "baseline_value": 40,
+        "kind": "scalar",
+        "patch_path": null,
+        "score": 0.928571,
+        "baseline_score": 0.928571,
+        "delta": 0.0,
+        "verdict": "tie",
+        "reason": "no measurable difference on the fixed task set (+0.000); the task set cannot distinguish this edit from the baseline, so it is reported as a tie",
+        "changed_tasks": [
+          "matrix-41-rows",
+          "matrix-42-rows"
+        ],
+        "regressed_tasks": [],
+        "per_task": {
+          "split-many-bars": {
+            "outcome": "refused",
+            "score": 1.0,
+            "expected": "refused",
+            "detail": "layout.split_panels: 'A' has 20 distinct 'outcome' values; a bar panel can carry at most 12 with readable labels. Use the trend encoder for an ordered axis, or pass of='error_bars' with a coarser label."
+          },
+          "split-few-bars": {
+            "outcome": "rendered",
+            "score": 1.0,
+            "expected": "clean",
+            "detail": ""
+          },
+          "matrix-real-40x10": {
+            "outcome": "rendered",
+            "score": 0.5,
+            "expected": "clean",
+            "detail": ""
+          },
+          "matrix-wide": {
+            "outcome": "rendered",
+            "score": 1.0,
+            "expected": "clean",
+            "detail": ""
+          },
+          "matrix-41-rows": {
+            "outcome": "rendered",
+            "score": 1.0,
+            "expected": "refused",
+            "detail": ""
+          },
+          "matrix-42-rows": {
+            "outcome": "rendered",
+            "score": 1.0,
+            "expected": "refused",
+            "detail": ""
+          },
+          "matrix-48-rows": {
+            "outcome": "refused",
+            "score": 1.0,
+            "expected": "refused",
+            "detail": "encode.matrix: 48 rows have no 2-D reading (no column pair varies enough to pivot) and exceed the 42-row budget; use field_map or pass a wide frame"
+          }
+        }
+      },
+      {
+        "id": "matrix-max-rows-60",
+        "operator": "encode.matrix",
+        "parameter": "max_rows",
+        "value": 60,
+        "baseline_value": 40,
+        "kind": "scalar",
+        "patch_path": null,
+        "score": 0.928571,
+        "baseline_score": 0.928571,
+        "delta": 0.0,
+        "verdict": "tie",
+        "reason": "no measurable difference on the fixed task set (+0.000); the task set cannot distinguish this edit from the baseline, so it is reported as a tie",
+        "changed_tasks": [
+          "matrix-41-rows",
+          "matrix-42-rows",
+          "matrix-48-rows"
+        ],
+        "regressed_tasks": [],
+        "per_task": {
+          "split-many-bars": {
+            "outcome": "refused",
+            "score": 1.0,
+            "expected": "refused",
+            "detail": "layout.split_panels: 'A' has 20 distinct 'outcome' values; a bar panel can carry at most 12 with readable labels. Use the trend encoder for an ordered axis, or pass of='error_bars' with a coarser label."
+          },
+          "split-few-bars": {
+            "outcome": "rendered",
+            "score": 1.0,
+            "expected": "clean",
+            "detail": ""
+          },
+          "matrix-real-40x10": {
+            "outcome": "rendered",
+            "score": 0.5,
+            "expected": "clean",
+            "detail": ""
+          },
+          "matrix-wide": {
+            "outcome": "rendered",
+            "score": 1.0,
+            "expected": "clean",
+            "detail": ""
+          },
+          "matrix-41-rows": {
+            "outcome": "rendered",
+            "score": 1.0,
+            "expected": "refused",
+            "detail": ""
+          },
+          "matrix-42-rows": {
+            "outcome": "rendered",
+            "score": 1.0,
+            "expected": "refused",
+            "detail": ""
+          },
+          "matrix-48-rows": {
+            "outcome": "rendered",
+            "score": 1.0,
+            "expected": "refused",
+            "detail": ""
+          }
+        }
+      }
+    ],
+    "verdict": "tie",
+    "applied": false,
+    "why_not_applied": "a selected edit measured on six tasks is a finding, not a change; applying it requires a pool re-measure (LEARNINGS ##47)",
+    "finding_proposals": [],
+    "n_finding_proposals": 0,
+    "finding_unproposable": [],
+    "n_finding_unproposable": 0,
+    "finding_proposal_verdict": "the pool reports no finding that a scalar edit could address"
+  },
+  "capabilities": {
+    "_code_version": "95ced9b73a90",
+    "benchmark_hard_findings": 0,
+    "benchmark_complete_membership": true,
+    "benchmark_pool_size": 150,
+    "benchmark_pool_consistent": true,
+    "skills": 16,
+    "operators": 21,
+    "benchmark_tasks": 150,
+    "benchmark_ok": 139,
+    "benchmark_infrastructure_failures": 0,
+    "benchmark_success_rate": 1.0,
+    "benchmark_mean_distance": 0.303,
+    "benchmark_anchor_single": 0.335,
+    "benchmark_anchor_distance": 0.335,
+    "benchmark_shipped_anchor_single": 0.295,
+    "benchmark_shipped_anchor_distance": 0.295,
+    "benchmark_unsupported": 11,
+    "benchmark_official_code_score": 75.41,
+    "benchmark_official_improvement": 37.25,
+    "statistics_reproduced": 15,
+    "knowledge_version": 16,
+    "tests": 743
+  },
+  "capabilities_delta": {
+    "changed": false,
+    "delta": {},
+    "verdict": {
+      "gains": [],
+      "regressions": [],
+      "corrections": [],
+      "not_compared": [],
+      "instrument_changed": false,
+      "membership_broken": false,
+      "ok": true,
+      "judged_fields": [
+        "benchmark_anchor_single",
+        "benchmark_hard_findings",
+        "benchmark_official_code_score",
+        "benchmark_official_improvement",
+        "benchmark_shipped_anchor_single",
+        "benchmark_success_rate",
+        "knowledge_version",
+        "operators",
+        "skills",
+        "statistics_reproduced",
+        "tests"
+      ]
+    }
+  },
+  "ok": true,
+  "capability_ok": true,
+  "capability_regressions": [],
+  "publish_note": "The publish outcome is recorded after the commit that carries this run, so it describes the push triggered by this run; the file's own commit is made by the next scheduled run."
+}

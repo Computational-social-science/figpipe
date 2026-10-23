@@ -4454,3 +4454,50 @@ place and derive every branch from it. Flipping branches to compensate for flipp
 two-state bug survives four edits.
 
 Suite: pending this round's run.
+
+
+## 135. The score has not moved since 2026-10-19, and 43 commits did not change that (2026-10-23)
+
+Asked again why there is no substantive progress. This time I traced the SCORE instead of the defect
+count, and the answer was in the run records.
+
+Across 115 runs there are FOUR distinct official scores:
+
+    2026-10-19 06:43   92.68
+    2026-10-19 07:32   93.53
+    2026-10-19 08:13   70.59     <- the drop
+    2026-10-19 09:23   75.41     <- and then nothing, for four days
+
+**The score has not moved since 2026-10-19 09:23.** The styled anchor moved 0.359 -> 0.335 over the
+same period, so the project improved on its own proxy while the official metric stayed flat.
+
+THE DROP WAS A CORRECTION, NOT A REGRESSION -- it is in `KNOWN_CORRECTIONS`: 93.53 came from a
+tautology that copied the reference's own code features. **75.41 is the first honest score this
+project ever produced.** Everything after it is work that did not move an honest score.
+
+THREE REASONS, in order of cost:
+
+1. **The remaining 25 points are not reachable by this work.** 75.41 is the CODE channel only; the
+   benchmark is `0.35*S_code + 0.65*S_vision` and the vision channel is NOT RUN. The ceiling on
+   everything measurable here is 35 % of the official score. Rounds 44-76 improved figure
+   correctness and the code channel went 75.41 -> 75.41.
+
+2. **The work has been on the instrument.** Coverage bookkeeping, the checks themselves, the
+   workflow's links, the patch catalogue, detectors -- every one makes the project better at KNOWING
+   whether it is right. None makes a figure that scores higher.
+
+3. **The loop still cannot generate a hypothesis.** Patches can now be proposed and judged, but the
+   catalogue holds five fixes this project already made. A catalogue of applied fixes cannot
+   discover a new one. The loop can measure its history; it cannot generate.
+
+THE SENTENCE I SHOULD HAVE WRITTEN TWENTY ROUNDS AGO: the project has been getting better at
+measuring itself while the thing being measured has not changed. Every round I reported a defect
+count, a coverage number, a check added. None of those is the score, and I let the first three
+substitute for the fourth.
+
+WHAT WOULD MOVE IT: run the vision channel (65 % of the score is unmeasured and a local VLM answers
+-- `gemma3:12b` returned READY in one round trip, and the control protocol it failed before is now
+written down in VLM_DECISION.md); improve the code channel directly; or let the loop generate rather
+than only measure.
+
+Suite: 748 passed, 3 skipped.

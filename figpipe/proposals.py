@@ -51,6 +51,19 @@ FINDING_TO_PARAMETER = {
     "density": ("layout.split_panels", ("max_rows",)),
 }
 
+#: Which skill's tasks a fix must be probed on.
+#:
+#: A fix that changes a drawer can only show up on tasks that drawer produced. Measuring the first
+#: N pool rows is a fact about the SLICE, not about the fix -- and it made the polar label wrap look
+#: inert because only one of the 12 radial tasks is in the anchor set.
+FIX_SKILL = {
+    "polar_label_overflow": "radial_profile",
+    "polar_wrap_width": "radial_profile",
+    "matrix_label_width": "matrix_plate",
+    "matrix_row_budget": "matrix_plate",
+    "colorbar_label_room": "field_map",
+}
+
 #: Findings whose fix is a CODE EDIT, not a scalar. Reported, never dropped.
 CODE_ONLY_CHECKS = ("semantics.", "mesh_scale", "axis_range", "font_type")
 
