@@ -295,11 +295,29 @@ def mutation_step() -> dict:
         return {"ran": False, "reason": f"report unreadable: {exc}", **finding_fields,
                 **patch_fields}
 
+#: Error-name fragments that mean the measurement never ran. The list must cover the SUBTYPES, not
+#: only the bases: `ConnectionResetError` is a `ConnectionError` but its name does not contain that
+#: string, so a string-prefix match on the base misses it.
+INFRA_ERROR_NAMES = (
+    "HTTPError", "URLError", "ConnectionError", "ConnectionResetError",
+    "ConnectionAbortedError", "ConnectionRefusedError", "TimeoutError", "SSLError",
+    "socket.timeout", "RemoteDisconnected", "IncompleteRead", "ProtocolError",
+)
+
+
 def _is_infra(error) -> bool:
-    """A fetch failure means the pipeline never ran, so it is not a capability result."""
+    """A fetch failure means the pipeline never ran, so it is not a capability result.
+
+    MEASURED 2026-10-23: a `ConnectionResetError` was classified as a CAPABILITY failure because
+    `ConnectionResetError` does not contain the substring `ConnectionError`. The run then reported
+    `success_rate 1.0 -> 0.993` and exited 1 -- a regression that was a dropped socket.
+
+    THE NAME LIST IS NOT THE TEST. Matching the type name against a tuple is a proxy; the honest
+    check is `isinstance`, which is unavailable because only the string survives into the report.
+    The list therefore has to enumerate the subtypes that actually occur, and this one did.
+    """
     text = str(error or "")
-    return any(p in text[:80] for p in
-               ("HTTPError", "URLError", "ConnectionError", "TimeoutError", "SSLError"))
+    return any(p in text[:80] for p in INFRA_ERROR_NAMES)
 
 
 def _official_pass_score():

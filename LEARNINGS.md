@@ -5180,3 +5180,46 @@ added. The number that moved was found by asking "which tasks score LOW, and wha
 common" -- a question about the SCORE, not about the pipeline's self-knowledge.
 
 Suite: 842 passed, 3 skipped.
+
+
+## 151. A dropped socket was reported as a capability regression (2026-10-23)
+
+The scheduled run exited 1 and reported:
+
+    benchmark_success_rate: 1.0 -> 0.993     <- judged as a REGRESSION
+
+ONE task's fetch failed with `ConnectionResetError`. The task never ran. The pipeline's own docstring
+says such a task "never exercised the pipeline" and must not count as capability loss -- and it did.
+
+THE MECHANISM: `_is_infra` matched the error TYPE NAME as a substring against a fixed tuple:
+
+    ("HTTPError", "URLError", "ConnectionError", "TimeoutError", "SSLError")
+
+`ConnectionResetError` IS a `ConnectionError`, but the string "ConnectionResetError" does not contain
+the substring "ConnectionError". So:
+
+    n_tasks=150  n_ok=138  n_unsupported=11  infra=0
+    attempted = 150 - 11 - 0 = 139
+    success_rate = 138/139 = 0.993
+
+THE FIX IS A LONGER LIST, AND THAT IS THE UNCOMFORTABLE PART. Only the error STRING survives into the
+report; the exception object is gone by the time the snapshot is taken, so `isinstance` is
+unavailable. Matching a type name against a tuple is a PROXY for a type check, and the proxy failed on
+the first subtype it met.
+
+After the fix: `success_rate: 1.0`, `infra: 1`, `verdict: ok=True`.
+
+THE TEST CAUGHT A SECOND THING: I wrote `RemoteDisconnected` twice in the new tuple. Harmless at
+runtime, and a sign the list was assembled by appending rather than by enumerating what actually
+occurs -- which is the same habit that produced the original bug.
+
+THE PATTERN, fourth instance: **a classifier built around the names it has seen will silently
+misclassify the next name.** Rounds 82-91 found this in zeros, denominators and legend detectors; this
+round it was in the error classifier, and the cost was a false regression that would have been
+reported as a capability loss.
+
+ALSO WORTH RECORDING: the run PUSHED despite exiting 1 (`published.pushed: True`). That is correct --
+the knowledge did not change and the record should sync -- but it means "exit 1" and "pushed" can both
+be true, and a reader who equates them would misread the run.
+
+Suite: 849 passed, 2 skipped.
