@@ -679,11 +679,18 @@ def op_verify_audit(ctx: SkillContext, fig, pdf_path):
 @operator("verify.collisions", "verify")
 def op_verify_collisions(ctx: SkillContext, fig, pdf_path):
     """Glyph-level text collisions (rotated tick labels are not false positives)."""
-    hits = audit.overlapping_glyphs(pdf_path)
-    for h in hits:
+    # THE DENOMINATOR TRAVELS WITH THE FINDINGS. A bare "0 collisions" cannot be read: it may mean
+    # the figure's labels are clean, or that the figure has almost no text. The glyph count says
+    # which. Measured on this project's own figures: a radial profile carries 245 glyphs, a grouped
+    # bar chart 101.
+    result = audit.overlapping_glyphs_examined(pdf_path)
+    for h in result["hits"]:
         ctx.findings.append({"check": "text_collision",
                              "detail": f"{h['a']!r} over {h['b']!r}",
                              "severity": "hard"})
+    _e = result["examined"]
+    ctx.trace.append(f"verify.collisions.examined: {_e['n_findings']} finding(s) over "
+                     f"{_e['denominator']} {_e['unit']}={_e['state']}")
     ctx.trace.append("verify.collisions")
 
 

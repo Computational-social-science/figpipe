@@ -938,6 +938,11 @@ def run_task(row: dict, out_dir: pathlib.Path) -> dict:
             # budget), so a recorded PATH would resolve to nothing -- provenance that looks real and
             # is not. These two counts are what make a "0 findings" result checkable: they say
             # whether the check had anything to look at.
+            # HOW MANY CHECKS HAD NOTHING TO EXAMINE. Counted from the render's own trace, because
+            # the trace itself is not carried in the record -- counting from an absent field would
+            # always find zero, which is the "a control that looks present and does nothing" defect.
+            "checks_not_exercised": _not_exercised_count(
+                (styled if chosen_is_styled else plain).get("trace")),
             "legend_frames": _legend_frame_count((styled if chosen_is_styled else plain).get("pdf")),
             "legend_occlusions": _legend_occlusion_count(
                 (styled if chosen_is_styled else plain).get("pdf")),
@@ -1324,6 +1329,21 @@ def main(argv=None) -> int:
             lock.release("bench_plottwin")
 
 
+def _not_exercised_count(trace) -> int:
+    """How many checks in this render had a ZERO DENOMINATOR.
+
+    A zero from such a check is not a pass -- it means there was nothing to examine. Counting them
+    makes the difference visible in the report instead of leaving it in a trace nobody reads.
+    """
+    # COUNT THE STATE, NOT THE LINE PREFIX. The first version required "examined:" on the line and
+    # therefore missed any line carrying the state without it -- the marker is a formatting detail
+    # and the state is the thing being counted.
+    n = 0
+    for line in (trace or []):
+        n += str(line).count("=not_exercised")
+    return n
+
+
 def _legend_frame_count(pdf_path) -> int:
     """How many legend frames the rendered figure contains, or 0 when unreadable.
 
@@ -1539,6 +1559,20 @@ def _run(args) -> int:
         # Summing absent as 0 would produce a number about 6 rows sitting beside a report about 150.
         _measured = [t for t in ok_all
                      if t.get("status") == "ok" and "legend_frames" in t]
+        # HOW MANY CHECKS NEVER EXAMINED ANYTHING. `hard_failures: 0` on a figure with almost no
+        # text means three checks had nothing to look at, and counting that as a pass is the
+        # aggregate defect this project records most often. The trace line is the evidence.
+        _not_exercised = sum(int(t.get("checks_not_exercised") or 0)
+                             for t in ok_all if t.get("status") == "ok")
+        _examined_lines = len([t for t in ok_all
+                               if t.get("status") == "ok" and "checks_not_exercised" in t])
+        report["checks_examined"] = {
+            "lines": _examined_lines,
+            "not_exercised": _not_exercised,
+            "note": ("`not_exercised` counts checks whose denominator was zero -- they found nothing "
+                     "because there was nothing to examine, and that is NOT a pass. A zero from such "
+                     "a check says nothing about the figure."),
+        }
         report["legend_frames"] = sum(int(t.get("legend_frames") or 0) for t in _measured)
         report["legend_occlusions"] = sum(int(t.get("legend_occlusions") or 0) for t in _measured)
         report["legend_coverage"] = {

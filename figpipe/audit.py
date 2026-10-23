@@ -563,3 +563,46 @@ OVERLAPPING_GLYPHS_FIXED = {
 def overlapping_glyphs_limits() -> dict:
     """What `overlapping_glyphs` cannot see. See `OVERLAPPING_GLYPHS_LIMITS`."""
     return dict(OVERLAPPING_GLYPHS_LIMITS)
+
+
+def overlapping_glyphs_examined(pdf_path, min_ratio: float = 0.25) -> dict:
+    """The glyph collision check WITH its denominator.
+
+    WHY THIS IS A SEPARATE FUNCTION AND NOT A RETURN-VALUE CHANGE
+        `overlapping_glyphs` returns a list and is called from `verify.collisions`, from the pool and
+        from a dozen tests. Changing its return shape to carry a denominator would be a breaking
+        change to a function whose contract is "a list of findings" -- and the project has recorded
+        that a name promising one thing and holding another is its most expensive defect class.
+
+    WHAT THE DENOMINATOR IS
+        The number of GLYPHS compared, not the number of pages, files or tasks. "0 collisions over
+        139 tasks" says nothing; "0 collisions over 1,240 glyphs" is a measurement. Measured on this
+        project's own figures: a radial profile carries 245 glyphs, a grouped bar chart 101.
+    """
+    from . import examined as _examined
+
+    hits = overlapping_glyphs(pdf_path, min_ratio=min_ratio)
+    n_glyphs = _glyph_count(pdf_path)
+    return {
+        "hits": hits,
+        "examined": _examined.Examined("glyph_collision", n_glyphs, "glyphs", len(hits)).to_dict(),
+    }
+
+
+def _glyph_count(pdf_path) -> int:
+    """Non-whitespace characters on the page, in the same units `overlapping_glyphs` compares."""
+    pymupdf = _require_pymupdf()
+    if pymupdf is None:
+        return 0
+    n = 0
+    doc = pymupdf.open(str(pdf_path))
+    try:
+        for page in doc:
+            for block in page.get_text("rawdict").get("blocks", []):
+                for line in block.get("lines", []):
+                    for span in line.get("spans", []):
+                        n += len([c for c in span.get("chars", [])
+                                  if c.get("c", "").strip()])
+    finally:
+        doc.close()
+    return n

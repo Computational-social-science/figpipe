@@ -4958,3 +4958,47 @@ usual form -- the denominator must be in the SAME UNITS as the check. Glyphs for
 frames for a legend check, text spans for a size check. The task count is never the right answer.
 
 Suite: 819 passed, 3 skipped.
+
+
+## 146. The denominator reached the report, after one field that read nothing (2026-10-23)
+
+Round 87 made every check report a denominator. This round carried it into the pool report, and the
+first version was one field away from being a decoration.
+
+THE DEFECT I ALMOST SHIPPED: I counted `not_exercised` by scanning each task's `trace`:
+
+    for line in (t.get("trace") or []):
+        _not_exercised += line.count("=not_exercised")
+
+**The task record does not carry a trace.** So the loop would have found zero on every task, forever,
+and the report would have said "0 checks examined nothing" while three checks per figure were idle.
+That is this project's most-recorded defect -- a control that looks present and does nothing -- and
+it was invisible because zero is the answer it was SUPPOSED to give.
+
+The fix is to count where the trace exists (in the render) and store the result:
+
+    "checks_not_exercised": _not_exercised_count(...get("trace"))
+
+THE SECOND DEFECT WAS FOUND BY A TEST I WROTE IN THE SAME ROUND. The helper required `"examined:"` on
+the line, so a line carrying two `=not_exercised` states without the prefix counted as zero:
+
+    _not_exercised_count(["x: a 0/0 u=not_exercised; b 0/0 u=not_exercised"]) -> 0   (wrong)
+
+**The state string is the thing being counted; the prefix is a formatting detail.** Counting the
+marker instead of the state is the same mistake as counting tasks instead of objects -- a proxy for
+the real unit.
+
+WHAT THE MECHANISM NOW DOES, measured:
+
+    a labelled figure        checks_not_exercised = 0    (the text checks examined 14 spans)
+    a page with no text      checks_not_exercised = 3    (all three text checks are idle)
+
+Two directions, so the field can be non-zero. A count that can only ever be zero is not a
+measurement, and that is what the first version was.
+
+ALSO: `overlapping_glyphs_examined` gives the collision check its denominator without changing
+`overlapping_glyphs`'s contract (a list). Measured on this project's figures: a radial profile carries
+245 glyphs, a grouped bar chart 101, a two-series line figure 25. Those are the numbers that turn
+"0 collisions" into a statement.
+
+Suite: 824 passed, 4 skipped.
