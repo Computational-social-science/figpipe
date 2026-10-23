@@ -7,21 +7,21 @@
     "note": "deterministic metrics only; official combined score requires the benchmark's VLM scorer and is NOT claimed here"
   },
   "n_tasks": 150,
-  "n_ok": 126,
+  "n_ok": 139,
   "n_unsupported": 11,
   "n_error": 0,
-  "n_infrastructure_failures": 13,
+  "n_infrastructure_failures": 0,
   "unsupported_types": {
     "3D": "unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this is a deliberate exclusion",
     "Polar/Radial": "SkillError: encode.polar: 'record_type' reduces to 2 distinct angle(s); a polar profile needs at least 3. This data has no angular reading -- use a bar or trend encoding.",
     "Network/Tree": "unsupported chart type: no graph-layout operator yet (backlog: node-link layout, not a chart encoding this library owns)"
   },
-  "mean_distance": 0.304,
+  "mean_distance": 0.303,
   "mean_baseline": 0.373,
   "mean_improvement": 0.069,
-  "improved": 108,
-  "worse": 7,
-  "ties": 11,
+  "improved": 119,
+  "worse": 8,
+  "ties": 12,
   "mean_best_of_two": 0.298,
   "semantic_violations": 0,
   "decision_service": {
@@ -68,21 +68,21 @@
     },
     "Distribution": {
       "n": 17,
-      "ok": 13,
-      "errors": 4,
-      "mean_distance": 0.238,
-      "mean_baseline": 0.245,
-      "mean_delta": 0.007,
-      "mean_shipped": 0.19
+      "ok": 17,
+      "errors": 0,
+      "mean_distance": 0.219,
+      "mean_baseline": 0.232,
+      "mean_delta": 0.012,
+      "mean_shipped": 0.182
     },
     "Field 2D": {
       "n": 15,
-      "ok": 12,
-      "errors": 3,
-      "mean_distance": 0.261,
-      "mean_baseline": 0.356,
-      "mean_delta": 0.095,
-      "mean_shipped": 0.284
+      "ok": 15,
+      "errors": 0,
+      "mean_distance": 0.266,
+      "mean_baseline": 0.372,
+      "mean_delta": 0.106,
+      "mean_shipped": 0.281
     },
     "Heatmap": {
       "n": 14,
@@ -95,11 +95,11 @@
     },
     "Line": {
       "n": 20,
-      "ok": 18,
-      "errors": 2,
+      "ok": 20,
+      "errors": 0,
       "mean_distance": 0.404,
       "mean_baseline": 0.462,
-      "mean_delta": 0.057,
+      "mean_delta": 0.058,
       "mean_shipped": 0.404
     },
     "Network/Tree": {
@@ -113,30 +113,30 @@
     },
     "Polar/Radial": {
       "n": 13,
-      "ok": 10,
-      "errors": 3,
-      "mean_distance": 0.273,
-      "mean_baseline": 0.275,
+      "ok": 11,
+      "errors": 2,
+      "mean_distance": 0.279,
+      "mean_baseline": 0.282,
       "mean_delta": 0.003,
-      "mean_shipped": 0.215
+      "mean_shipped": 0.222
     },
     "Scatter": {
       "n": 16,
-      "ok": 14,
-      "errors": 2,
-      "mean_distance": 0.374,
-      "mean_baseline": 0.486,
-      "mean_delta": 0.112,
-      "mean_shipped": 0.373
+      "ok": 16,
+      "errors": 0,
+      "mean_distance": 0.376,
+      "mean_baseline": 0.49,
+      "mean_delta": 0.114,
+      "mean_shipped": 0.376
     },
     "Std-band": {
       "n": 9,
-      "ok": 8,
-      "errors": 1,
-      "mean_distance": 0.405,
-      "mean_baseline": 0.509,
-      "mean_delta": 0.104,
-      "mean_shipped": 0.404
+      "ok": 9,
+      "errors": 0,
+      "mean_distance": 0.402,
+      "mean_baseline": 0.499,
+      "mean_delta": 0.097,
+      "mean_shipped": 0.401
     }
   },
   "failures": [
@@ -149,71 +149,6 @@
       "id": "Chart2Code_level2_3d_2_v3",
       "chart": "3D",
       "error": "unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this is a deliberate exclusion"
-    },
-    {
-      "id": "Chart2Code_level2_contour_5_v5",
-      "chart": "Field 2D",
-      "error": "URLError: <urlopen error [WinError 10054] 远程主机强迫关闭了一个现有的连接。>"
-    },
-    {
-      "id": "Chart2Code_level2_density_12_v3",
-      "chart": "Distribution",
-      "error": "URLError: <urlopen error [WinError 10054] 远程主机强迫关闭了一个现有的连接。>"
-    },
-    {
-      "id": "Chart2Code_level2_density_14_v4",
-      "chart": "Line",
-      "error": "URLError: <urlopen error [WinError 10013] 以一种访问权限不允许的方式做了一个访问套接字的尝试。>"
-    },
-    {
-      "id": "Chart2Code_level2_errorpoint_10_v5",
-      "chart": "Scatter",
-      "error": "URLError: <urlopen error [WinError 10013] 以一种访问权限不允许的方式做了一个访问套接字的尝试。>"
-    },
-    {
-      "id": "Chart2Code_level2_errorpoint_1_v5",
-      "chart": "Scatter",
-      "error": "URLError: <urlopen error [WinError 10013] 以一种访问权限不允许的方式做了一个访问套接字的尝试。>"
-    },
-    {
-      "id": "Chart2Code_level2_errorpoint_5_v5",
-      "chart": "Std-band",
-      "error": "URLError: <urlopen error [WinError 10013] 以一种访问权限不允许的方式做了一个访问套接字的尝试。>"
-    },
-    {
-      "id": "Chart2Code_level2_hist_2_v3",
-      "chart": "Distribution",
-      "error": "URLError: <urlopen error [WinError 10013] 以一种访问权限不允许的方式做了一个访问套接字的尝试。>"
-    },
-    {
-      "id": "Chart2Code_level2_hist_2_v5",
-      "chart": "Distribution",
-      "error": "URLError: <urlopen error [WinError 10013] 以一种访问权限不允许的方式做了一个访问套接字的尝试。>"
-    },
-    {
-      "id": "Chart2Code_level2_multidiff_1_v1",
-      "chart": "Distribution",
-      "error": "URLError: <urlopen error [WinError 10013] 以一种访问权限不允许的方式做了一个访问套接字的尝试。>"
-    },
-    {
-      "id": "Chart2Code_level2_multidiff_2_v2__single",
-      "chart": "Field 2D",
-      "error": "URLError: <urlopen error [WinError 10013] 以一种访问权限不允许的方式做了一个访问套接字的尝试。>"
-    },
-    {
-      "id": "Chart2Code_level2_multidiff_5_v1",
-      "chart": "Line",
-      "error": "URLError: <urlopen error [WinError 10013] 以一种访问权限不允许的方式做了一个访问套接字的尝试。>"
-    },
-    {
-      "id": "Chart2Code_level2_quiver_10_v5",
-      "chart": "Field 2D",
-      "error": "URLError: <urlopen error [WinError 10013] 以一种访问权限不允许的方式做了一个访问套接字的尝试。>"
-    },
-    {
-      "id": "Chart2Code_level2_radar_26_v3",
-      "chart": "Polar/Radial",
-      "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'datasets-server.huggingface.co'. (_ssl.c:1082)>"
     },
     {
       "id": "Chart2Code_level2_radar_3_v1",
@@ -1351,96 +1286,483 @@
       "chart": "Field 2D",
       "panel_mode": "multi",
       "code_version": "c71ae790439f",
-      "status": "error",
-      "error": "URLError: <urlopen error [WinError 10054] 远程主机强迫关闭了一个现有的连接。>"
+      "skill": "field_map",
+      "rationale": "field gradient_magnitude_per_mm over horizontal_position_mm x vertical_position_mm",
+      "rows_used": 5350,
+      "status": "ok",
+      "distance": 0.413,
+      "baseline_distance": 0.524,
+      "delta": 0.111,
+      "selected": "styled",
+      "selected_distance": 0.434,
+      "selected_gain": 0.09,
+      "selection_margin": 0.099,
+      "components": {
+        "palette": 0.391,
+        "aspect": 0.487,
+        "ink": 0.396
+      },
+      "hard_failures": 0,
+      "legend_frames": 0,
+      "legend_occlusions": 0,
+      "findings": [],
+      "official_code_score": {
+        "available": false,
+        "reason": "CodegenError: skill 'field_map' has no code emitter yet"
+      },
+      "semantic_findings": [],
+      "semantic_checked": "mesh_scale_checked"
     },
     {
       "id": "Chart2Code_level2_density_12_v3",
       "chart": "Distribution",
       "panel_mode": "multi",
       "code_version": "c71ae790439f",
-      "status": "error",
-      "error": "URLError: <urlopen error [WinError 10054] 远程主机强迫关闭了一个现有的连接。>"
+      "skill": "faceted_distribution",
+      "rationale": "faceted hist by panel_group",
+      "rows_used": 4305,
+      "status": "ok",
+      "distance": 0.168,
+      "baseline_distance": 0.186,
+      "delta": 0.018,
+      "selected": "styled",
+      "selected_distance": 0.17,
+      "selected_gain": 0.016,
+      "selection_margin": 0.017,
+      "components": {
+        "palette": 0.126,
+        "aspect": 0.001,
+        "ink": 0.442
+      },
+      "hard_failures": 0,
+      "legend_frames": 0,
+      "legend_occlusions": 0,
+      "findings": [],
+      "official_code_score": {
+        "available": true,
+        "score": 99.99610946347114,
+        "n_activated": 5,
+        "scored": [
+          "palette",
+          "figure_aspect",
+          "grid",
+          "spines_removed",
+          "legend_frame"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": [],
+      "semantic_checked": "checked"
     },
     {
       "id": "Chart2Code_level2_density_14_v4",
       "chart": "Line",
       "panel_mode": "multi",
       "code_version": "c71ae790439f",
-      "status": "error",
-      "error": "URLError: <urlopen error [WinError 10013] 以一种访问权限不允许的方式做了一个访问套接字的尝试。>"
+      "skill": "trend_with_uncertainty",
+      "rationale": "trend elapsed_days_since_snowmelt->panel_row",
+      "rows_used": 2168,
+      "status": "ok",
+      "distance": 0.385,
+      "baseline_distance": 0.446,
+      "delta": 0.061,
+      "selected": "styled",
+      "selected_distance": 0.384,
+      "selected_gain": 0.062,
+      "selection_margin": 0.062,
+      "components": {
+        "palette": 0.581,
+        "aspect": 0.009,
+        "ink": 0.269
+      },
+      "hard_failures": 0,
+      "legend_frames": 0,
+      "legend_occlusions": 0,
+      "findings": [],
+      "official_code_score": {
+        "available": true,
+        "score": 99.99742274117999,
+        "n_activated": 5,
+        "scored": [
+          "palette",
+          "figure_aspect",
+          "linewidth",
+          "grid",
+          "spines_removed"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": [],
+      "semantic_checked": "checked"
     },
     {
       "id": "Chart2Code_level2_errorpoint_10_v5",
       "chart": "Scatter",
       "panel_mode": "multi",
       "code_version": "c71ae790439f",
-      "status": "error",
-      "error": "URLError: <urlopen error [WinError 10013] 以一种访问权限不允许的方式做了一个访问套接字的尝试。>"
+      "skill": "scatter_relationship",
+      "rationale": "scatter panel_row vs panel_col",
+      "rows_used": 240,
+      "status": "ok",
+      "distance": 0.416,
+      "baseline_distance": 0.542,
+      "delta": 0.126,
+      "selected": "styled",
+      "selected_distance": 0.416,
+      "selected_gain": 0.126,
+      "selection_margin": 0.12,
+      "components": {
+        "palette": 0.63,
+        "aspect": 0.003,
+        "ink": 0.296
+      },
+      "hard_failures": 0,
+      "legend_frames": 0,
+      "legend_occlusions": 0,
+      "findings": [],
+      "official_code_score": {
+        "available": true,
+        "score": 100.0,
+        "n_activated": 3,
+        "scored": [
+          "palette",
+          "linewidth",
+          "grid"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": [],
+      "semantic_checked": "checked"
     },
     {
       "id": "Chart2Code_level2_errorpoint_1_v5",
       "chart": "Scatter",
       "panel_mode": "multi",
       "code_version": "c71ae790439f",
-      "status": "error",
-      "error": "URLError: <urlopen error [WinError 10013] 以一种访问权限不允许的方式做了一个访问套接字的尝试。>"
+      "skill": "scatter_relationship",
+      "rationale": "scatter panel_row vs site_id",
+      "rows_used": 108,
+      "status": "ok",
+      "distance": 0.368,
+      "baseline_distance": 0.494,
+      "delta": 0.126,
+      "selected": "styled",
+      "selected_distance": 0.367,
+      "selected_gain": 0.127,
+      "selection_margin": 0.122,
+      "components": {
+        "palette": 0.563,
+        "aspect": 0.006,
+        "ink": 0.243
+      },
+      "hard_failures": 0,
+      "legend_frames": 0,
+      "legend_occlusions": 0,
+      "findings": [],
+      "official_code_score": {
+        "available": true,
+        "score": 99.9978850135911,
+        "n_activated": 5,
+        "scored": [
+          "palette",
+          "figure_aspect",
+          "linewidth",
+          "grid",
+          "spines_removed"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": [],
+      "semantic_checked": "checked"
     },
     {
       "id": "Chart2Code_level2_errorpoint_5_v5",
       "chart": "Std-band",
       "panel_mode": "multi",
       "code_version": "c71ae790439f",
-      "status": "error",
-      "error": "URLError: <urlopen error [WinError 10013] 以一种访问权限不允许的方式做了一个访问套接字的尝试。>"
+      "skill": "trend_with_uncertainty",
+      "rationale": "trend panel_row->panel_col",
+      "rows_used": 75,
+      "status": "ok",
+      "distance": 0.378,
+      "baseline_distance": 0.423,
+      "delta": 0.045,
+      "selected": "styled",
+      "selected_distance": 0.378,
+      "selected_gain": 0.045,
+      "selection_margin": 0.043,
+      "components": {
+        "palette": 0.439,
+        "aspect": 0.0,
+        "ink": 0.605
+      },
+      "hard_failures": 0,
+      "legend_frames": 0,
+      "legend_occlusions": 0,
+      "findings": [],
+      "official_code_score": {
+        "available": true,
+        "score": 99.99707876157878,
+        "n_activated": 6,
+        "scored": [
+          "palette",
+          "figure_aspect",
+          "linewidth",
+          "grid",
+          "spines_removed",
+          "legend_frame"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": [],
+      "semantic_checked": "checked"
     },
     {
       "id": "Chart2Code_level2_hist_2_v3",
       "chart": "Distribution",
       "panel_mode": "multi",
       "code_version": "c71ae790439f",
-      "status": "error",
-      "error": "URLError: <urlopen error [WinError 10013] 以一种访问权限不允许的方式做了一个访问套接字的尝试。>"
+      "skill": "histogram",
+      "rationale": "hist sampling_day by consortium_treatment",
+      "rows_used": 315,
+      "status": "ok",
+      "distance": 0.198,
+      "baseline_distance": 0.26,
+      "delta": 0.062,
+      "selected": "styled",
+      "selected_distance": 0.202,
+      "selected_gain": 0.058,
+      "selection_margin": 0.057,
+      "components": {
+        "palette": 0.279,
+        "aspect": 0.009,
+        "ink": 0.183
+      },
+      "hard_failures": 0,
+      "legend_frames": 0,
+      "legend_occlusions": 0,
+      "findings": [],
+      "official_code_score": {
+        "available": true,
+        "score": 99.99850878598447,
+        "n_activated": 6,
+        "scored": [
+          "palette",
+          "figure_aspect",
+          "linewidth",
+          "grid",
+          "spines_removed",
+          "legend_frame"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": [],
+      "semantic_checked": "checked"
     },
     {
       "id": "Chart2Code_level2_hist_2_v5",
       "chart": "Distribution",
       "panel_mode": "multi",
       "code_version": "c71ae790439f",
-      "status": "error",
-      "error": "URLError: <urlopen error [WinError 10013] 以一种访问权限不允许的方式做了一个访问套接字的尝试。>"
+      "skill": "faceted_distribution",
+      "rationale": "faceted hist by panel_group",
+      "rows_used": 3071,
+      "status": "ok",
+      "distance": 0.131,
+      "baseline_distance": 0.11,
+      "delta": -0.021,
+      "selected": "plain",
+      "selected_distance": 0.111,
+      "selected_gain": -0.001,
+      "selection_margin": 0.021,
+      "components": {
+        "palette": 0.123,
+        "aspect": 0.002,
+        "ink": 0.279
+      },
+      "hard_failures": 0,
+      "legend_frames": 0,
+      "legend_occlusions": 0,
+      "findings": [],
+      "official_code_score": {
+        "available": true,
+        "score": 100.0,
+        "n_activated": 5,
+        "scored": [
+          "palette",
+          "linewidth",
+          "grid",
+          "spines_removed",
+          "legend_frame"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": [],
+      "semantic_checked": "checked"
     },
     {
       "id": "Chart2Code_level2_multidiff_1_v1",
       "chart": "Distribution",
       "panel_mode": "multi",
       "code_version": "c71ae790439f",
-      "status": "error",
-      "error": "URLError: <urlopen error [WinError 10013] 以一种访问权限不允许的方式做了一个访问套接字的尝试。>"
+      "skill": "faceted_distribution",
+      "rationale": "faceted hist by panel_group",
+      "rows_used": 942,
+      "status": "ok",
+      "distance": 0.135,
+      "baseline_distance": 0.2,
+      "delta": 0.065,
+      "selected": "styled",
+      "selected_distance": 0.136,
+      "selected_gain": 0.064,
+      "selection_margin": 0.065,
+      "components": {
+        "palette": 0.127,
+        "aspect": 0.007,
+        "ink": 0.285
+      },
+      "hard_failures": 0,
+      "legend_frames": 0,
+      "legend_occlusions": 0,
+      "findings": [],
+      "official_code_score": {
+        "available": true,
+        "score": 99.99962986216293,
+        "n_activated": 5,
+        "scored": [
+          "palette",
+          "figure_aspect",
+          "linewidth",
+          "grid",
+          "legend_frame"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": [],
+      "semantic_checked": "checked"
     },
     {
       "id": "Chart2Code_level2_multidiff_2_v2__single",
       "chart": "Field 2D",
       "panel_mode": "single",
       "code_version": "c71ae790439f",
-      "status": "error",
-      "error": "URLError: <urlopen error [WinError 10013] 以一种访问权限不允许的方式做了一个访问套接字的尝试。>"
+      "skill": "field_map",
+      "rationale": "field larval_recruitment_index_percent over spatial_year_relative_yr x reef_elevation_relative_m",
+      "rows_used": 1681,
+      "status": "ok",
+      "distance": 0.171,
+      "baseline_distance": 0.356,
+      "delta": 0.185,
+      "selected": "styled",
+      "selected_distance": 0.154,
+      "selected_gain": 0.202,
+      "selection_margin": 0.142,
+      "components": {
+        "palette": 0.216,
+        "aspect": 0.07,
+        "ink": 0.158
+      },
+      "hard_failures": 0,
+      "legend_frames": 0,
+      "legend_occlusions": 0,
+      "findings": [],
+      "official_code_score": {
+        "available": false,
+        "reason": "CodegenError: skill 'field_map' has no code emitter yet"
+      },
+      "semantic_findings": [],
+      "semantic_checked": "mesh_scale_checked"
     },
     {
       "id": "Chart2Code_level2_multidiff_5_v1",
       "chart": "Line",
       "panel_mode": "multi",
       "code_version": "c71ae790439f",
-      "status": "error",
-      "error": "URLError: <urlopen error [WinError 10013] 以一种访问权限不允许的方式做了一个访问套接字的尝试。>"
+      "skill": "trend_with_uncertainty",
+      "rationale": "trend panel_row->panel_col",
+      "rows_used": 2165,
+      "status": "ok",
+      "distance": 0.414,
+      "baseline_distance": 0.476,
+      "delta": 0.062,
+      "selected": "styled",
+      "selected_distance": 0.413,
+      "selected_gain": 0.063,
+      "selection_margin": 0.061,
+      "components": {
+        "palette": 0.576,
+        "aspect": 0.004,
+        "ink": 0.419
+      },
+      "hard_failures": 0,
+      "legend_frames": 0,
+      "legend_occlusions": 0,
+      "findings": [],
+      "official_code_score": {
+        "available": true,
+        "score": 99.99967432552147,
+        "n_activated": 5,
+        "scored": [
+          "palette",
+          "figure_aspect",
+          "linewidth",
+          "grid",
+          "legend_frame"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": [],
+      "semantic_checked": "checked"
     },
     {
       "id": "Chart2Code_level2_quiver_10_v5",
       "chart": "Field 2D",
       "panel_mode": "multi",
       "code_version": "c71ae790439f",
-      "status": "error",
-      "error": "URLError: <urlopen error [WinError 10013] 以一种访问权限不允许的方式做了一个访问套接字的尝试。>"
+      "skill": "field_map",
+      "rationale": "field velocity magnitude (um s-1) over normalized east-west coordinate x normalized north-south coordinate",
+      "rows_used": 2523,
+      "status": "ok",
+      "distance": 0.279,
+      "baseline_distance": 0.424,
+      "delta": 0.145,
+      "selected": "styled",
+      "selected_distance": 0.221,
+      "selected_gain": 0.203,
+      "selection_margin": 0.147,
+      "components": {
+        "palette": 0.19,
+        "aspect": 0.111,
+        "ink": 0.668
+      },
+      "hard_failures": 0,
+      "legend_frames": 0,
+      "legend_occlusions": 0,
+      "findings": [],
+      "official_code_score": {
+        "available": false,
+        "reason": "CodegenError: skill 'field_map' has no code emitter yet"
+      },
+      "semantic_findings": [],
+      "semantic_checked": "mesh_scale_checked"
     },
     {
       "id": "Chart2Code_level2_quiver_13_v1",
@@ -1649,8 +1971,32 @@
       "chart": "Polar/Radial",
       "panel_mode": "multi",
       "code_version": "c71ae790439f",
-      "status": "error",
-      "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'datasets-server.huggingface.co'. (_ssl.c:1082)>"
+      "skill": "radial_profile",
+      "rationale": "polar panel_row by block_id",
+      "rows_used": 164,
+      "status": "ok",
+      "distance": 0.345,
+      "baseline_distance": 0.35,
+      "delta": 0.005,
+      "selected": "styled",
+      "selected_distance": 0.289,
+      "selected_gain": 0.061,
+      "selection_margin": 0.034,
+      "components": {
+        "palette": 0.196,
+        "aspect": 0.692,
+        "ink": 0.371
+      },
+      "hard_failures": 0,
+      "legend_frames": 0,
+      "legend_occlusions": 0,
+      "findings": [],
+      "official_code_score": {
+        "available": false,
+        "reason": "CodegenError: skill 'radial_profile' has no code emitter yet"
+      },
+      "semantic_findings": [],
+      "semantic_checked": "checked"
     },
     {
       "id": "Chart2Code_level2_radar_35_v4",
@@ -5541,19 +5887,19 @@
   },
   "complete_membership": true,
   "semantic_coverage": {
-    "checked": 100,
-    "mesh_scale_checked": 26,
+    "checked": 110,
+    "mesh_scale_checked": 29,
     "skipped": 0,
     "unverifiable": 0,
     "absent": 0,
-    "n": 126,
+    "n": 139,
     "note": "`skipped` tasks were drawn by a drawer with no semantic rule: their printed numbers were NOT re-derived from the data. A pass on such a task is a statement about geometry, not about correctness."
   },
   "legend_frames": 0,
   "legend_occlusions": 0,
   "legend_coverage": {
-    "n_measured": 126,
-    "n_ok": 126,
+    "n_measured": 139,
+    "n_ok": 139,
     "note": "`legend_frames` and `legend_occlusions` are totals over the n_measured rows ONLY. Rows measured before the field existed are not counted and are not marked stale, because the fingerprint covers rendering code, not the report schema. A zero with n_measured == 0 means the check had nothing to look at."
   },
   "benchmark_anchor_distance": 0.335,
@@ -5580,9 +5926,9 @@
     "channel": "code_deviation",
     "weight_upstream": 0.35,
     "note": "official deterministic channel only; the 0.65 vision channel is NOT run, so this is not the combined score",
-    "n_scored": 100,
-    "n_unavailable": 26,
-    "mean_score": 95.14,
+    "n_scored": 109,
+    "n_unavailable": 30,
+    "mean_score": 95.54,
     "min_score": 66.67,
     "max_score": 100.0
   },
@@ -5615,12 +5961,25 @@
       "Chart2Code_level2_contour_23_v4",
       "Chart2Code_level2_contour_25_v2",
       "Chart2Code_level2_contour_25_v3",
+      "Chart2Code_level2_contour_5_v5",
+      "Chart2Code_level2_density_12_v3",
+      "Chart2Code_level2_density_14_v4",
+      "Chart2Code_level2_errorpoint_10_v5",
+      "Chart2Code_level2_errorpoint_1_v5",
+      "Chart2Code_level2_errorpoint_5_v5",
+      "Chart2Code_level2_hist_2_v3",
+      "Chart2Code_level2_hist_2_v5",
+      "Chart2Code_level2_multidiff_1_v1",
+      "Chart2Code_level2_multidiff_2_v2__single",
+      "Chart2Code_level2_multidiff_5_v1",
+      "Chart2Code_level2_quiver_10_v5",
       "Chart2Code_level2_quiver_13_v1",
       "Chart2Code_level2_quiver_14_v1",
       "Chart2Code_level2_quiver_4_v5",
       "Chart2Code_level2_radar_10_v2",
       "Chart2Code_level2_radar_18_v5",
       "Chart2Code_level2_radar_23_v3",
+      "Chart2Code_level2_radar_26_v3",
       "Chart2Code_level2_radar_35_v4",
       "Chart2Code_level2_radar_3_v3",
       "Chart2Code_level2_radar_40_v5",
@@ -5718,23 +6077,23 @@
     ],
     "stale": [],
     "unknown": [],
-    "n_fresh": 126,
+    "n_fresh": 139,
     "n_stale": 0,
     "n_unknown": 0
   },
   "stale_tasks": [],
   "n_stale": 0,
   "n_unknown": 0,
-  "n_fresh": 126,
+  "n_fresh": 139,
   "selection": {
-    "n": 126,
+    "n": 139,
     "shipped_mean": 0.289,
-    "always_styled_mean": 0.304,
+    "always_styled_mean": 0.303,
     "plain_mean": 0.373,
-    "gain_vs_always_styled": 0.015,
+    "gain_vs_always_styled": 0.014,
     "gain_vs_plain": 0.084,
-    "picked_styled": 119,
-    "picked_plain": 7,
+    "picked_styled": 131,
+    "picked_plain": 8,
     "rule": "closer of plain/styled to the reference; the reference is an input"
   }
 }

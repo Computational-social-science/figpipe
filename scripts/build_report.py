@@ -772,6 +772,18 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
                     "the fix, 0 hard findings; reverted, 4. That is the first time this project has "
                     "shown a fix was load-bearing.",
                     "figpipe/patchprobe.py", meta="10 tests, first load-bearing measurement"),
+        deliverable("Crowded labels are counted, not collapsed to one", "A glyph collision "
+                    "check that skips pairs inside one PDF span is right for rotated labels and "
+                    "wrong for the case it matters most: PyMuPDF merges adjacent tick labels into "
+                    "ONE span once they are close enough, so the WORSE the crowding the more likely "
+                    "the merge and the FEWER collisions reported. Measured before: twelve labels at "
+                    "4 pt reported 0. Measured after: 22. Two attempts to fix it failed first -- "
+                    "'skip only adjacent characters' produced 12 false positives on rotated labels, "
+                    "and using the line direction alone still reported 1 finding for 12 overlapping "
+                    "labels, because the AGGREGATION KEY was the span-text pair and every boundary "
+                    "inside one span shared it. The working fix carries the character indices. "
+                    "Rotated labels remain at 0 false positives.",
+                    "figpipe/audit.py", meta="8 tests, 0 -> 22 findings"),
         deliverable("The workflow's links now carry the signal", "An audit of the six-step "
                     "pipeline found that no step consumed another's return value: they were three "
                     "independent measurements over a shared JSON file, in an order only a comment "

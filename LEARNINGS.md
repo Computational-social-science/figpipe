@@ -4872,3 +4872,45 @@ previous round's tests asserted the old limitation and had to be updated, which 
 defect appearing in a test.
 
 Suite: 810 passed, 2 skipped.
+
+
+## 144. The collision zero is MEANINGFUL, and the pipeline prevents what it detects (2026-10-23)
+
+Ran the fixed collision check over the whole pool. Full recovery and a clean result:
+
+    report: 139/150   0 capability errors   0 infrastructure failures
+    hard findings: 0
+    styled 0.335   shipped 0.295   official 95.54
+    legend: n_measured 139/139, frames 0
+
+The network failures from the previous measurement cleared, so this is the same 139-task set as
+before, not a smaller one.
+
+THEN I ASKED WHETHER THE ZERO WAS VACUOUS, which is the question this project has learned to ask:
+
+    radial_profile      245 glyphs    0 collisions
+    grouped_measures    101 glyphs    0 collisions
+    ranked_composition  117 glyphs    0 collisions
+
+Real text, no collisions. **The zero is a PASS, not an absence of objects** -- unlike the legend
+occlusion zero, which is vacuous because 139 figures contain 0 legend frames. Two zeros, opposite
+meanings, distinguished only because each check's denominator is in its own units (glyphs vs legend
+frames) and `legend_coverage.n_measured` reports it.
+
+MY POSITIVE CONTROL WAS WRONG ABOUT MY OWN PIPELINE. I asserted that 40 long labels on one axis must
+collide, and it did not:
+
+  * `grouped_measures` AGGREGATES with `agg='mean'`, so 40 rows became ONE bar and one label
+  * `ranked_composition` with 30 long names drew 117 glyphs and still reported ZERO, because the
+    drawer wraps and truncates labels (`MAX_LABEL_CHARS`)
+
+So the collision check's zero on this pool is **"the drawers refuse or wrap before drawing"**, not
+"the check is idle". The check exists for figures that do not go through the label budget, and the
+raw-matplotlib tests cover that.
+
+THE ASSERTION THAT SURVIVED IS THE OPPOSITE ONE: heavy labelling THROUGH the pipeline must not
+collide, because the protection is upstream. That is now the test, and it is a stronger statement
+than the one I first wrote -- it pins the interaction between two layers instead of one layer's
+output.
+
+Suite: 813 passed, 3 skipped.
