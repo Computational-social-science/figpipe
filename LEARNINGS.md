@@ -5656,3 +5656,59 @@ STATE, honestly:
     linewidth 0.574 is a REAL gap the honest mode cannot close
 
 Suite: 863 passed, 3 skipped.
+
+
+## 161. The reward is saturated, not missing -- and that is why there is no breakthrough (2026-10-24)
+
+Asked: is the pipeline unscientific, or is a key link missing, such as a REWARD mechanism or gradient
+convergence? Measured, the answer is the second one and it is worse than "missing": the reward exists,
+it is wired in, and **it is constant**.
+
+THE MEASUREMENT
+
+    def _render_score(hard_failures: int) -> float:
+        n = max(0, int(hard_failures))
+        return round(1.0 - n / (n + 1), 6)
+
+Across all 139 pool tasks: `hard_failures = 0`, so `reward = 1.0`, **one distinct value**. The gradient
+is identically zero. The 222 ties and 149 empty selections over 152 runs are the arithmetic consequence
+-- **a tie is what a zero gradient looks like in a comparison.**
+
+THE DECISIVE EXPERIMENT, run this round: rank three candidates with both rewards.
+
+    candidate               loop reward   official
+    default (lw 0.8)               1.00      65.77
+    reference lw 2.25              1.00      99.11
+    lw 0.5                         1.00      65.77
+
+**The loop's reward cannot distinguish a candidate that is 33 points better.** It is not a weak signal;
+it is no signal.
+
+IS THE PIPELINE UNScientific? No, and that is the problem. It is the best-understood part of this
+project: 863 tests, negative controls, 139/139 coverage, every zero has a denominator, provenance
+recorded, honest-vs-ceiling modes kept apart. It gives right answers about the wrong objective.
+
+THE ACCOUNTING, which is uncomfortable:
+
+    147 commits since 2026-10-19
+     44 written by the scheduled loop   (all "run: record ...")
+    103 written by me
+    official score moved 7 times, 6 of them mine
+
+**The loop's own contribution to the official score across its whole life is zero.** Not because it
+measured wrong -- because there was nothing to climb.
+
+WHY IT TOOK A HUNDRED ROUNDS TO SEE: the two numbers never had to meet. The pool reports
+`hard_findings: 0` and `official_code_score: 82.02` side by side, both correct, and nothing in the
+system compares them. The loop optimises what it can see; the claim reports what the benchmark
+measures. **They are not the same quantity, and no link requires them to be.**
+
+WHAT A WORKING REWARD IS: not a new pipeline, one connection --
+
+    probe(candidate) -> official.score_code_deviation(reference, candidate)
+
+The scorer is vendored, already called by the scoring pass, and returns a per-dimension breakdown. A
+candidate that moves `linewidth` to the reference's value changes that number by 50 points on one task.
+**The loop has never been told that.**
+
+Suite: 863 passed, 3 skipped.
