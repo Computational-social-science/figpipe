@@ -5809,3 +5809,51 @@ second repair keeps the test able to fail (it still asserts a bound) while remov
 detector that could not say no.** Both were caught by measurement, not by review.
 
 Suite: 873 passed, 3 skipped.
+
+
+## 164. The loop made its first real decision, and it needed both aggregates (2026-10-24)
+
+Round 101 gave the loop a style reward but left `default_space()` proposing five LAYOUT budgets, so
+the new reward had nothing to climb. Round 102 put a style task and two style candidates into the
+space. The decision table now reads:
+
+    candidate             verdict     delta   score_delta
+    split-max-bars-24     rejected  -0.1187      -0.1187
+    sizes-plus-half       selected  +0.0790      +0.0000
+    sizes-plus-one        tie       +0.0160      +0.0000
+
+**Two candidates move, each on a DIFFERENT aggregate, and the loop gets both right.** That is the
+first time this project's loop has selected a genuine improvement rather than reporting a tie.
+
+### The gradient, measured
+
+A uniform text-size scan on the style task:
+
+    -1.00 -> 0.1610    -0.50 -> 0.1390    +0.00 -> 0.0800 (baseline)
+    +0.25 -> 0.0700    +0.50 -> 0.0000 (optimum)    +1.00 -> 0.0590 (overshoot)
+
+A real, single-peaked surface. `sizes-plus-half` is the step toward the peak; `sizes-plus-one` is the
+negative control that must be REJECTED, and it is.
+
+### Three defects the integration exposed, all of them mine
+
+**1. The margin was calibrated for a different aggregate.** `min_margin=0.10` was set when the only
+aggregate was the refusal classifier, whose per-task scores are 0, 0.5 or 1. The style aggregate is
+continuous and its real delta is +0.079 -- so at 0.10 the correct candidate was reported as a TIE and
+the loop selected nothing. **0.05 is measured, not chosen**: three repeated probes gave 0.838 / 0.917 /
+0.854 with a delta spread of 0.0000, so 0.05 sits above the noise and below the effect.
+
+**2. A style-only aggregate is blind to layout regressions.** `mean_style` covers only the tasks that
+declare a reference -- one task -- so `max_bars=24`, which regresses `split-many-bars` (19 colliding
+labels), showed a style delta of exactly 0.000. **The fix was not to pick one aggregate.** The per-task
+regression check always reads `score`; the mean comparison reads whichever aggregate has resolution.
+
+**3. The verdict mixed the two, and contradicted itself.** `delta` came from `mean_style` while `drops`
+came from `score`, so a rejected candidate reported `delta: +0.000` beside "regresses split-many-bars".
+The reported delta is now the one the verdict was based on, and `score_delta` is carried separately.
+
+**THE PATTERN ACROSS ALL THREE: two questions were sharing one number, and the sharing was invisible
+until both questions had a candidate that answered them differently.** That is the same shape as the
+reward diagnosis in ##161 -- and it took putting a style candidate next to a layout candidate to see it.
+
+Suite: 873 passed, 3 skipped.

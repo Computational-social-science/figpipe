@@ -175,7 +175,7 @@ def test_propose_returns_candidates_as_data_with_rationales():
     for cand in out["candidates"]:
         assert cand["id"] and cand["rationale"].strip()
         assert cand["operator"] in skills.OPERATORS
-        assert cand["parameter"] in ("max_bars", "max_rows")
+        assert cand["parameter"] in ("max_bars", "max_rows", "profile")
         assert cand["value"] != cand["baseline_value"]
     # the two refusals from LEARNINGS ##46 are the first two candidates
     operators = [c["operator"] for c in out["candidates"]]
@@ -651,9 +651,13 @@ def test_the_mutation_module_uses_no_model_and_no_network():
     #
     # `hashlib`/`reprlib` are stdlib and exist so a NON-SCALAR override (a StyleProfile) gets a
     # path-safe, deterministic artefact name; `f"{value}"` produced `OSError [WinError 123]`.
+    # `copy` and `numpy` are here for the STYLE candidates: a candidate carries a `StyleProfile` that
+    # must be deep-copied before its text sizes are shifted, and the style task's data factory is a
+    # numpy array. Neither is a model, a network call, or a source of nondeterminism -- `numpy` is
+    # already a dependency of `pandas`, which the module imports.
     assert imported <= {"__future__", "contextlib", "dataclasses", "json", "os", "pathlib", "sys",
                         "pandas", "harness2_ledger", "figpipe", "plottwin_scorer",
-                        "hashlib", "reprlib"}, sorted(imported)
+                        "hashlib", "reprlib", "copy", "numpy"}, sorted(imported)
     # `os` is imported for os.getpid() only -- the probe path must be private per process. If it
     # ever grows into something that reads the environment or spawns a process, that shows up as
     # an attribute access this asserts against.

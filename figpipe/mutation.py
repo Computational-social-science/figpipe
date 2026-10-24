@@ -599,6 +599,14 @@ def compose(probe_result: dict, space: MutationSpace, *,
     aggregate = "mean_style" if _style and "baseline" in _style else "mean_score"
     _means = _style if aggregate == "mean_style" else probe_result["mean_score"]
     base = _means["baseline"]
+    # THE REFUSAL CLASSIFIER IS STILL CHECKED ON EVERY TASK, even when the style aggregate decides.
+    #
+    # `mean_style` covers only the tasks that declare a reference -- one task in the default space --
+    # so a layout candidate's style delta is exactly 0.0 and a regression it causes is invisible to
+    # it. Measured: `max_bars=24` regresses `split-many-bars` (19 colliding labels) while moving
+    # `mean_style` by 0.000. A candidate that breaks a figure must be rejected whatever it does to
+    # typography, so the per-task check below always reads `score`.
+    _score_base = probe_result["mean_score"]["baseline"]
     decisions = []
     for cand in space.candidates:
         if cand.id not in outcomes:
@@ -619,7 +627,15 @@ def compose(probe_result: dict, space: MutationSpace, *,
                               "outcome": row["outcome"],
                               "expected": row.get("expected"),
                               "detail": row.get("detail", "")})
-        verdict, reason = _verdict(delta, drops, margin, score, space.min_score)
+        # WHEN A TASK REGRESSES, THE DELTA MUST BE THE ONE THE REGRESSION LIVES IN.
+        #
+        # `delta` above is the style aggregate's; `drops` are per-task `score` falls. A candidate can
+        # be rejected for a `score` regression while its style delta is positive, and reporting the
+        # positive number beside "regresses split-many-bars" is incoherent -- a test refused it.
+        # The refusal classifier's own mean is therefore what the verdict sees when it is available.
+        _score_delta = round(probe_result["mean_score"][cand.id] - _score_base, 6)
+        delta_for_verdict = _score_delta if drops else delta
+        verdict, reason = _verdict(delta_for_verdict, drops, margin, score, space.min_score)
         if verdict == "selected":
             reason = f"{reason}; changed tasks: {changed or 'none'}"
         elif drops:
@@ -634,9 +650,10 @@ def compose(probe_result: dict, space: MutationSpace, *,
             "parameter": getattr(cand, "parameter", None),
             "value": getattr(cand, "value", None),
             "baseline_value": getattr(cand, "baseline_value", None),
+            "score_delta": round(probe_result["mean_score"][cand.id] - _score_base, 6),
             "kind": ("patch" if getattr(cand, "old", None) is not None else "scalar"),
             "patch_path": getattr(cand, "path", None),
-            "score": score, "baseline_score": base, "delta": delta,
+            "score": score, "baseline_score": base, "delta": delta_for_verdict,
             "verdict": verdict, "reason": reason,
             "changed_tasks": changed, "regressed_tasks": drops,
             "per_task": {tid: {"outcome": row["outcome"], "score": row["score"],
@@ -747,6 +764,14 @@ def _matrix_frame(n_rows: int, n_cols: int = 2, *, string_index: bool = True):
 #: benchmark measured on a convenient subset, one layer in.
 
 
+def _style_frame() -> "pd.DataFrame":
+    """A small series for the style probe: the DATA does not matter, only the typography."""
+    import numpy as _np
+    import pandas as _pd
+    rng = _np.random.default_rng(101)
+    return _pd.DataFrame({"x": _np.arange(12), "y": rng.random(12)})
+
+
 def default_space() -> MutationSpace:
     """The first declared space: the two refusals from LEARNINGS ##46, plus their controls.
 
@@ -846,7 +871,73 @@ def default_space() -> MutationSpace:
                        "whether the collisions it was protecting against are still there."),
             skill="matrix_plate"),
     )
-    return MutationSpace(candidates=candidates, tasks=tasks, min_margin=0.10)
+    # THE STYLE CANDIDATES, and why they are here.
+    #
+    # The five layout budgets above cannot move the style reward: measured, emitting the same figure
+    # with one panel and with two leaves every scored feature identical. These ride the `profile`
+    # channel `skills.run` already accepts, so they need no new plumbing.
+    #
+    # MEASURED, one reference, `styled_trend`, scanning a uniform text-size offset:
+    #     -0.50 -> 0.1390   +0.00 -> 0.0800   +0.25 -> 0.0700
+    #     +0.50 -> 0.0000 (optimum)           +1.00 -> 0.0590 (overshoot)
+    #
+    # `sizes-plus-half` is one step toward that optimum and `sizes-plus-one` is the negative control
+    # that should be REJECTED -- a search that cannot reject overshoot is not a search.
+    # THE STYLE TASK. Its reference is a SHIPPED TEMPLATE, not a download: the probe must be
+    # reproducible offline, and `templates/out/template_line_series.pdf` is a real figpipe figure with
+    # real measured typography (sizes 6/7/8 pt, line widths 0.25/0.5/1.0, left+bottom spines only).
+    _template = pathlib.Path(__file__).resolve().parents[1] / "templates" / "out" / \
+        "template_line_series.pdf"
+    if _template.is_file():
+        try:
+            from figpipe import styleprofile as _sp
+            _prof = _sp.StyleProfile.from_pdf(_template)
+            tasks = tasks + (
+                Task("style-template-line", "styled_trend",
+                     {"x": "x", "y": "y", "profile": _prof}, _style_frame,
+                     "clean",
+                     "the style probe: reproduce a shipped template's measured typography",
+                     reference_pdf=str(_template)),
+            )
+        except Exception:                       # noqa: BLE001 - a missing template is not a failure
+            pass
+    _style_tasks = tuple(t for t in tasks if getattr(t, "reference_pdf", None))
+    if _style_tasks:
+        _base_prof = _style_tasks[0].params.get("profile")
+        if _base_prof is not None:
+            import copy as _copy
+            _plus_half = _copy.deepcopy(_base_prof)
+            _plus_half.sizes_pt = [v + 0.5 for v in _plus_half.sizes_pt]
+            _plus_one = _copy.deepcopy(_base_prof)
+            _plus_one.sizes_pt = [v + 1.0 for v in _plus_one.sizes_pt]
+            candidates = candidates + (
+                Candidate(
+                    id="sizes-plus-half", operator="style.profile", parameter="profile",
+                    baseline_value=_base_prof, value=_plus_half,
+                    rationale=("the measured optimum of a uniform text-size scan: -0.5 gave 0.1390, "
+                               "0.0 gave 0.0800, +0.25 gave 0.0700, +0.50 gave 0.0000 and +1.00 "
+                               "gave 0.0590. This is the step toward the peak."),
+                    skill=_style_tasks[0].skill),
+                Candidate(
+                    id="sizes-plus-one", operator="style.profile", parameter="profile",
+                    baseline_value=_base_prof, value=_plus_one,
+                    rationale=("the negative control for the same scan: +1.00 scores 0.0590, WORSE "
+                               "than +0.50's 0.0000. A search that cannot reject overshoot is not "
+                               "a search."),
+                    skill=_style_tasks[0].skill),
+            )
+            tasks = _style_tasks + tuple(t for t in tasks if t not in _style_tasks)
+    # THE MARGIN IS THE MEASUREMENT'S RESOLUTION, NOT A PREFERENCE.
+    #
+    # 0.10 was calibrated for the refusal classifier, whose per-task scores are 0, 0.5 or 1. The
+    # style aggregate is continuous and its real deltas are smaller: measured, `sizes-plus-half`
+    # moves it by +0.0790 and the overshoot control by +0.0160. At 0.10 the correct candidate was
+    # reported as a TIE and the loop selected nothing.
+    #
+    # 0.05 IS MEASURED: three repeated probes gave baseline 0.838, candidate 0.917, overshoot 0.854
+    # with a delta spread of 0.0000 -- reproducible to four decimals. 0.05 is above that noise and
+    # below the real effect.
+    return MutationSpace(candidates=candidates, tasks=tasks, min_margin=0.05)
 
 
 def run(space: MutationSpace | None = None, *, budget: int | None = None,

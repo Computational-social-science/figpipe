@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-24T08:51:06",
+  "run_at": "2026-10-24T09:20:24",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -9,37 +9,19 @@
     "  passed 8, failed 0",
     "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
     "  wrote knowledge\\evolution_report.json",
-    "  lean: tracked 79.5 -> 79.5 MB, worktree 123.5 -> 111.7 MB"
+    "  lean: tracked 79.6 -> 79.6 MB, worktree 113.0 -> 111.4 MB"
   ],
-  "tests_ok": false,
-  "tests_summary": "1 failed, 867 passed, 3 skipped, 1 warning in 365.83s (0:06:05) | FAILED tests/test_scheduling.py::test_run_history_is_committed_not_just_written",
+  "tests_ok": true,
+  "tests_summary": "873 passed, 3 skipped, 1 warning in 360.39s (0:06:00)",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
   "published": {
-    "pushed": true,
-    "steps": [
-      {
-        "cmd": "git add -A",
-        "code": 0,
-        "tail": []
-      },
-      {
-        "cmd": "git -c user.name=figpipe-bot",
-        "code": 0,
-        "tail": [
-          " create mode 100644 knowledge/runs/2026-10-24T085106.json"
-        ]
-      },
-      {
-        "cmd": "git push origin",
-        "code": 0,
-        "tail": [
-          "   f4e409d..825c6bd  main -> main"
-        ]
-      }
-    ],
-    "withheld": []
+    "pushed": false,
+    "withheld": [],
+    "blocked_deletions": [],
+    "skipped": true,
+    "reason": "no knowledge change: the run record stays uncommitted for the next run"
   },
   "check_results": {
     "L01": {
@@ -699,23 +681,29 @@
     "benchmark_official_improvement": 44.77,
     "statistics_reproduced": 15,
     "knowledge_version": 16,
-    "tests": 870,
-    "tests_passed": 867
+    "tests": 876,
+    "tests_passed": 873
   },
   "capabilities_delta": {
     "changed": true,
     "delta": {
       "tests": {
-        "before": null,
-        "after": 870
+        "before": 870,
+        "after": 876
       },
       "tests_passed": {
-        "before": null,
-        "after": 867
+        "before": 867,
+        "after": 873
       }
     },
     "verdict": {
-      "gains": [],
+      "gains": [
+        {
+          "field": "tests",
+          "before": 870,
+          "after": 876
+        }
+      ],
       "regressions": [],
       "corrections": [],
       "not_compared": [],
@@ -737,7 +725,7 @@
       ]
     }
   },
-  "ok": false,
+  "ok": true,
   "capability_ok": true,
   "capability_regressions": [],
   "publish_note": "The publish outcome is recorded after the commit that carries this run, so it describes the push triggered by this run; the file's own commit is made by the next scheduled run."
