@@ -95,3 +95,64 @@ dimension tables, none of them by the loop**, because the loop's reward cannot t
 from noise.
 
 That is the answer to "why no breakthrough": the breakthrough mechanism has no signal to amplify.
+
+
+## Correction, round 101: the proposal in the section above does not work
+
+I wrote that the fix is one connection --
+
+    probe(candidate) -> official.score_code_deviation(reference, candidate)
+
+**Measured, that connection produces no gradient either**, because the search space does not contain
+anything the official scorer can see.
+
+### What the loop actually searches
+
+    split-max-bars-24     layout.split_panels.max_bars:  12 -> 24
+    split-max-bars-13     layout.split_panels.max_bars:  12 -> 13
+    matrix-max-rows-41    encode.matrix.max_rows:        40 -> 41
+    matrix-max-rows-42    encode.matrix.max_rows:        40 -> 42
+    matrix-max-rows-60    encode.matrix.max_rows:        40 -> 60
+
+### What the loop actually measures
+
+    7 tasks, every one of them `expect: refused` or `expect: clean`
+
+**The whole loop is a refusal classifier.** It asks "should this input be rejected", and its reward is
+1.0 when the answer is right. That question has no style content at all.
+
+### The measurement that closes the door on my own proposal
+
+Emitting the same figure with one panel and with two panels -- which is exactly what a layout candidate
+changes -- and running the official extractor on both:
+
+    background       #ffffff        same
+    figure_aspect    2.0333         same
+    grid             True           same
+    legend_frame     False          same
+    linewidth        0.8            same
+    palette          [#0072b2, ...] same
+    serif            False          same
+    spines_removed   [right, top]   same
+    tick_direction   out            same
+
+**Every scored dimension is identical.** Wiring the official scorer into `probe` would replace one
+constant reward with another constant reward, and cost 149 scoring passes to learn it.
+
+### So which is it: missing reward, or wrong search space?
+
+**Both, and the second one comes first.** A reward can only rank what the search produces. This search
+produces layout budgets; the benchmark scores style. No reward function over this space can point at
+the style improvements that were worth +7 points, because none of them are in the space.
+
+### The correct fix, in order
+
+1. **Put style in the search space.** `skills.run` already accepts `profile=<StyleProfile>` and routes
+   it through `op_style_profile`; the emitter already has `style_from_image_profile`. A candidate like
+   `linewidth: 0.8 -> 2.25` is expressible today -- the `Candidate` dataclass holds
+   `(operator, parameter, baseline_value, value)` and nothing in it requires a layout parameter.
+2. **Then** point the reward at `official.score_code_deviation`, which now has something to rank.
+3. Keep the refusal classifier -- it is a real capability, it is just not the one the benchmark scores.
+
+**The lesson is about the order of the two questions.** "Is there a reward?" and "is there anything to
+reward?" are different, and I answered the first one loudly and the second one not at all.

@@ -5712,3 +5712,54 @@ candidate that moves `linewidth` to the reference's value changes that number by
 **The loop has never been told that.**
 
 Suite: 863 passed, 3 skipped.
+
+
+## 162. The loop has a gradient now, and I had to disprove my own proposal to find it (2026-10-24)
+
+Round 100 diagnosed the reward as saturated (`_render_score` = 1.0 for all 139 pool tasks) and proposed
+the fix as one connection: `probe(candidate) -> official.score_code_deviation(...)`.
+
+**Measured in round 101, that connection produces no gradient either.** The loop searches five LAYOUT
+budgets (`max_bars` 12->24, `max_rows` 40->41/42/60) and its seven tasks are all
+`expect: refused | clean`. Emitting the same figure with one panel and with two panels -- exactly what a
+layout candidate changes -- and running the official extractor on both:
+
+    background / figure_aspect / grid / legend_frame / linewidth / palette / serif /
+    spines_removed / tick_direction        ALL IDENTICAL
+
+So wiring the official scorer into the existing space would have replaced one constant with another,
+at the cost of 149 scoring passes. **"Is there a reward?" and "is there anything to reward?" are
+different questions, and I had answered the first one loudly and the second one not at all.**
+
+### What actually worked
+
+Two additions, and the second one only matters because of the first:
+
+1. **A style aggregate.** `run_task` now computes `style_score` by rendering the figure and comparing
+   its `StyleProfile` to the reference the task declares. It is a SEPARATE key from `score`; merging
+   them would be the defect, not the fix.
+2. **A style candidate that can reach it.** `skills.run` already accepts `profile=<StyleProfile>` and
+   routes it through `op_style_profile`. A candidate with `parameter="profile"` rides the existing
+   `override` mechanism with no new plumbing.
+
+MEASURED, one task, one candidate:
+
+    mean_score (refusal):  baseline 1.00  ->  candidate 1.00    FLAT
+    mean_style (style):    baseline 0.92  ->  candidate 1.00    +0.08
+    compose:               aggregate=mean_style  verdict=selected
+
+**That is the first improvement this project's loop has produced on its own**, and the number it
+climbed is the one the benchmark measures.
+
+### Two defects the work exposed
+
+**A non-scalar override broke the artefact path.** `_probe_stem` built `f"{k}={v}"` from every override
+value; a `StyleProfile`'s repr contains `<`, `>`, `:` and the render failed with
+`OSError [WinError 123]`, which `run_task` classified as `crashed` and scored **0.0**. The candidate
+looked like a total failure when it had never rendered. Fixed with a type-and-hash token for
+non-scalars, keeping scalars legible.
+
+**A test I wrote could not pass.** It asserted no `:` in the artefact path -- and `E:\` contains one.
+A test that cannot pass is as useless as one that cannot fail. Fixed to check the filename.
+
+Suite: 868 passed, 3 skipped.

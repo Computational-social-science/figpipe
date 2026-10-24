@@ -645,8 +645,15 @@ def test_the_mutation_module_uses_no_model_and_no_network():
     # and the allowed imports are exactly the ones the module documents
     # `contextlib.nullcontext` lets probe() run under a lock the CALLER already holds (cron_run
     # launches this as a child). It is stdlib, has no I/O, and keeps the loop deterministic.
+    # `plottwin_scorer` is the benchmark's own STYLE scorer, vendored under third_party. It is local,
+    # deterministic, and the whole reason the loop now has a reward with resolution (round 101): the
+    # refusal classifier was 1.0 for every task in the pool. Importing it is not importing a model.
+    #
+    # `hashlib`/`reprlib` are stdlib and exist so a NON-SCALAR override (a StyleProfile) gets a
+    # path-safe, deterministic artefact name; `f"{value}"` produced `OSError [WinError 123]`.
     assert imported <= {"__future__", "contextlib", "dataclasses", "json", "os", "pathlib", "sys",
-                        "pandas", "harness2_ledger", "figpipe"}, sorted(imported)
+                        "pandas", "harness2_ledger", "figpipe", "plottwin_scorer",
+                        "hashlib", "reprlib"}, sorted(imported)
     # `os` is imported for os.getpid() only -- the probe path must be private per process. If it
     # ever grows into something that reads the environment or spawns a process, that shows up as
     # an attribute access this asserts against.

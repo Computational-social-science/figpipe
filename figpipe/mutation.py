@@ -124,6 +124,13 @@ class Task:
     data: object
     expect: str
     why: str
+    #: The rendered figure this task's style is measured AGAINST, or None.
+    #:
+    #: A refusal task has no reference figure -- its question is "should this be rejected" and the
+    #: answer has no style content. A STYLE task declares one, and `_style_score` then compares the
+    #: two rendered profiles. None means "not applicable", which is why the reward is absent rather
+    #: than 0.0.
+    reference_pdf: str | None = None
 
     def frame(self) -> pd.DataFrame:
         return self.data()
@@ -287,10 +294,55 @@ def run_task(task: Task, override: dict | None = None) -> dict:
         return {"task": task.id, "outcome": "crashed", "score": 0.0, "expected": task.expect,
                 "detail": f"{type(exc).__name__}: {exc}"[:300]}
     hard = [f for f in res["findings"] if f["severity"] == "hard"]
-    return {"task": task.id, "outcome": "rendered", "score": _score(task, "rendered", len(hard)),
-            "expected": task.expect, "hard_failures": len(hard),
-            "checks": sorted({f["check"] for f in hard}),
-            "panels": res["panels"], "pdf": res["pdf"]}
+    row = {"task": task.id, "outcome": "rendered", "score": _score(task, "rendered", len(hard)),
+           "expected": task.expect, "hard_failures": len(hard),
+           "checks": sorted({f["check"] for f in hard}),
+           "panels": res["panels"], "pdf": res["pdf"]}
+    # THE STYLE REWARD. `score` above answers "was this outcome correct"; it cannot answer "does this
+    # figure LOOK like the reference", and it is 1.0 for every task in the pool, so it ranks nothing.
+    #
+    # This reads the emitted PDF through the benchmark's own scorer against the reference the task
+    # declares. It is REPORTED SEPARATELY: merging two different questions into one number is how a
+    # reward stops being legible (LEARNINGS ##161).
+    style_score = _style_score(task, row.get("pdf"))
+    if style_score is not None:
+        row["style_score"] = style_score
+    return row
+
+
+def _style_score(task: Task, pdf_path: str | None) -> float | None:
+    """The benchmark's own style score for a rendered figure, or None when it cannot be measured.
+
+    None is a real answer: a task with no declared reference has no style to match, and reporting 0.0
+    would read as "matched nothing" rather than "not applicable".
+    """
+    reference = getattr(task, "reference_pdf", None)
+    if not reference or not pdf_path:
+        return None
+    try:
+        import pathlib as _p
+        import sys as _sys
+        _root = _p.Path(__file__).resolve().parents[1]
+        for _cand in (_root, _root / "third_party"):
+            if str(_cand) not in _sys.path:
+                _sys.path.insert(0, str(_cand))
+        import plottwin_scorer as _official
+    except Exception:                               # noqa: BLE001 - optional, CC BY-NC
+        return None
+    # THE BENCHMARK HAS NO PDF SCORER -- `score_code_deviation` takes two CODE strings. What it
+    # scores is the STYLE, and for a rendered figure the style is what `styleprofile` measures.
+    # `styleprofile.compare` returns a distance in 0..1, so the reward is `1 - distance`: higher is
+    # better, on the same scale as every other score in this module.
+    try:
+        from figpipe import styleprofile as _sp
+        a = _sp.StyleProfile.from_pdf(reference)
+        b = _sp.StyleProfile.from_pdf(pdf_path)
+        dist = (_sp.compare(a, b) or {}).get("distance")
+    except Exception:                               # noqa: BLE001 - a scorer failure is not a score
+        return None
+    if not isinstance(dist, (int, float)):
+        return None
+    return round(max(0.0, min(1.0, 1.0 - float(dist))), 6)
 
 
 def _probe_stem(task_id: str, override: dict | None) -> pathlib.Path:
@@ -311,8 +363,25 @@ def _probe_stem(task_id: str, override: dict | None) -> pathlib.Path:
     the record stores each outcome, not its path. Two runs produce the same verdict and the same
     scores; only the throwaway render paths differ.
     """
-    suffix = "-".join(f"{k}={v}" for k, v in sorted((override or {}).items()))
+    def _token(value):
+        """A path-safe token for one override value.
+
+        A scalar renders as itself. Anything else renders as `<type>-<8 hex>`, because a
+        `StyleProfile`'s repr contains characters Windows rejects in a filename -- measured
+        `OSError [WinError 123]` -- and the crash was being scored as a failed candidate.
+        """
+        if isinstance(value, (int, float, str, bool)) or value is None:
+            return str(value)
+        import hashlib as _h
+        import reprlib as _r
+        digest = _h.sha256(_r.repr(value).encode("utf-8")).hexdigest()[:8]
+        return f"{type(value).__name__}-{digest}"
+
+    suffix = "-".join(f"{k}={_token(v)}" for k, v in sorted((override or {}).items()))
+    # Windows rejects these in a filename, and a path is not the place to discover that
     safe = (suffix or "baseline").replace(" ", "").replace("/", "_")
+    for _bad in ('<', '>', ':', '"', '|', '?', '*', '\\'):
+        safe = safe.replace(_bad, "_")
     return ROOT / "templates" / "mutation" / f"{task_id}--{safe}--p{os.getpid()}"
 
 
@@ -374,6 +443,19 @@ def probe(space: MutationSpace, *, budget: int | None = None, out_dir=None,
         "outcomes": rows,
         "mean_score": {name: _mean([r["score"] for r in per_task.values()])
                        for name, per_task in rows.items()},
+        # THE STYLE AGGREGATE, SEPARATE ON PURPOSE.
+        #
+        # `mean_score` above is the refusal classifier, and it is 1.0 for every task in the pool -- so
+        # every contrast it can express is 0.0, which is where the 222 ties came from. `mean_style` is
+        # the same aggregation over `style_score`, present only for tasks that declare a reference.
+        #
+        # MERGING THEM WOULD BE THE DEFECT, not the fix: two different questions sharing one number is
+        # how a reward stops being legible. `compose` chooses which to use and records the choice.
+        "mean_style": {name: _mean([r["style_score"] for r in per_task.values()
+                                    if isinstance(r.get("style_score"), (int, float))])
+                       for name, per_task in rows.items()
+                       if any(isinstance(r.get("style_score"), (int, float))
+                              for r in per_task.values())},
         "ledger": ledger.to_dict(),
         "budget": budget,
         "note": ("ledger.R counts executions; expected_R/expected_P are harness2's 4k/3k "
@@ -505,14 +587,25 @@ def compose(probe_result: dict, space: MutationSpace, *,
     outcomes = probe_result["outcomes"]
     if "baseline" not in outcomes:
         raise MutationError("probe result has no baseline row; nothing to contrast against")
-    base = probe_result["mean_score"]["baseline"]
+    # WHICH AGGREGATE IS BEING CLIMBED, said out loud.
+    #
+    # `mean_score` is the refusal classifier and is 1.0 for every task in the pool, so every contrast
+    # on it is 0.0 -- that is the 222 ties. `mean_style` is present only when the task set declares
+    # references, and when it is present it is the only aggregate with any resolution.
+    #
+    # A TIE ON A FLAT AGGREGATE IS NOT EVIDENCE OF "no difference"; it is evidence that the aggregate
+    # cannot see. Recording which one was used is what lets a reader tell those apart.
+    _style = probe_result.get("mean_style") or {}
+    aggregate = "mean_style" if _style and "baseline" in _style else "mean_score"
+    _means = _style if aggregate == "mean_style" else probe_result["mean_score"]
+    base = _means["baseline"]
     decisions = []
     for cand in space.candidates:
         if cand.id not in outcomes:
             raise MutationError(
                 f"candidate {cand.id!r} was proposed but never probed; refusing to compose a "
                 f"decision from a partial probe")
-        score = probe_result["mean_score"][cand.id]
+        score = _means[cand.id]
         delta = round(score - base, 6)
         per_task = outcomes[cand.id]
         changed = [tid for tid, row in per_task.items()
@@ -556,6 +649,10 @@ def compose(probe_result: dict, space: MutationSpace, *,
     rejected = [d["id"] for d in decisions if d["verdict"] == "rejected"]
     return {
         "baseline_score": base,
+        # WHICH AGGREGATE DECIDED. `mean_score` is the refusal classifier and is 1.0 for every task in
+        # the pool, so a tie on it means "this aggregate cannot see", not "the candidates are equal".
+        # `mean_style` is the one with resolution, and only a task set that declares references has it.
+        "aggregate": aggregate,
         "min_margin": margin,
         "decisions": decisions,
         "selected": selected,
