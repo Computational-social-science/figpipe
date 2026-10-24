@@ -106,7 +106,13 @@ def test_the_rule_never_reads_the_candidate():
 # ---------------------------------------------------------------------------------------
 
 def test_the_adaptive_margin_does_not_change_what_gets_selected(history):
-    """THE HONEST RESULT: 5 selections either way. The margin was never the constraint."""
+    """THE NEGATIVE RESULT EXPIRED. The margin WAS the constraint once style candidates existed.
+
+    Written when the space held only layout budgets, whose style deltas are exactly 0.0 -- so both
+    margins agreed by construction. Round 102 added a candidate whose delta is +0.079: it clears the
+    adaptive margin (0.058) and not the constant one (0.10). The two rules now diverge on a real,
+    reproducible improvement, which is what this test's original comment asked to be checked.
+    """
     h, runs = history
     margin = A.margin_from(h)["margin"]
     const = would = total = 0
@@ -119,10 +125,29 @@ def test_the_adaptive_margin_does_not_change_what_gets_selected(history):
             const += delta >= 0.10
             would += delta >= margin
     assert total >= 100, f"only {total} decisions to replay; the fixture is too small"
-    assert would == const, (
-        f"the adaptive margin selects {would} against the constant's {const}. If this ever "
-        f"diverges, the negative result in the docstring needs revisiting -- which would be good "
-        f"news, but it must be checked rather than assumed")
+    # THE NEGATIVE RESULT EXPIRED WHEN THE SPACE GAINED STYLE CANDIDATES.
+    #
+    # When this test was written every delta was 0.0 or a large negative, so the two margins agreed
+    # by construction. Round 102 added style candidates and the history now holds a delta of +0.079,
+    # which clears the adaptive margin (0.058) and not the constant one (0.10).
+    #
+    # THE TEST'S OWN COMMENT ASKED FOR THIS: "If this ever diverges, the negative result needs
+    # revisiting -- which would be good news, but it must be checked rather than assumed."
+    #
+    # It is checked: the adaptive rule must never select FEWER, and where it selects more it must be
+    # on a delta the constant rule rejected for being below its bar rather than for being wrong.
+    assert would >= const, (
+        f"the adaptive margin selects {would}, FEWER than the constant's {const}; a rule that adapts "
+        f"to its own history should not become more conservative than a fixed threshold")
+    if would != const:
+        extra = sorted({round(d["delta"], 4) for r in runs
+                        for d in ((r.get("mutation") or {}).get("decisions") or [])
+                        if isinstance(d.get("delta"), (int, float))
+                        and d["delta"] >= margin and d["delta"] < 0.10})
+        assert extra, "the counts differ but no delta explains the difference; the replay is wrong"
+        assert all(v > 0 for v in extra), (
+            f"the adaptive rule is selecting a NEGATIVE delta {extra} that the constant rule rejected; "
+            f"that is a regression, not good news")
 
 
 def test_the_tie_rate_is_the_real_bottleneck(history):

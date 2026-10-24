@@ -5906,3 +5906,54 @@ time a measurement found it, not a review.**
 candidate value raw, and that the runner both records and prints the mutation failure.
 
 Suite: 882 passed, 3 skipped.
+
+
+## 166. The negative result expired, and the test that recorded it asked to be checked (2026-10-24)
+
+`test_the_adaptive_margin_does_not_change_what_gets_selected` carried this docstring:
+
+> THE HONEST RESULT: 5 selections either way. The margin was never the constraint.
+
+and this comment on its assertion:
+
+> If this ever diverges, the negative result in the docstring needs revisiting -- which would be good
+> news, but it must be checked rather than assumed.
+
+**It diverged.** Replaying the run history:
+
+    adaptive margin (from history):  0.058
+    constant margin:                 0.10
+    constant selects:                5
+    adaptive selects:                6
+
+The difference is a delta of **+0.079** -- the `sizes-plus-half` style candidate. It clears the
+adaptive margin and not the constant one. When the test was written the space held only layout
+budgets, whose style deltas are exactly 0.0, so both rules agreed **by construction**. The agreement
+was never evidence that the margin did not matter; it was evidence that nothing in the space could
+distinguish them.
+
+### What the test checks now
+
+Not agreement -- the divergence, and its DIRECTION:
+
+    assert would >= const          # adapting to history must not become MORE conservative
+    if would != const:
+        extra = the deltas in [margin, 0.10)
+        assert extra,              # the counts must be explained by an actual delta
+        assert all(v > 0 for v in extra)   # and every one must be an improvement
+
+So the test fails if the adaptive rule ever selects fewer, or if it selects a negative delta the
+constant rule rejected. **The property was always "the adaptive rule is not worse"; "the two agree"
+was a measurement that happened to hold.**
+
+### The general lesson
+
+**A negative result is a claim with an expiry date, and the date is "when the thing it measured
+changes".** This one expired when round 102 added style candidates -- and the test had written down the
+condition under which it should be revisited, which is the only reason it was caught rather than
+silently relaxed.
+
+The counter-example is worth naming: three rounds earlier I "fixed" a self-referential test by making
+it unable to fail. This test had the opposite virtue -- it said what would make it wrong.
+
+Suite: 882 passed, 3 skipped.
