@@ -153,7 +153,56 @@ class Candidate:
     skill: str
 
     def to_dict(self) -> dict:
-        return dataclasses.asdict(self)
+        """The candidate as plain data, with non-JSON values described rather than dropped.
+
+        A LAYOUT candidate's value is an int and passes through. A STYLE candidate's value is a
+        `StyleProfile`, which `dataclasses.asdict` copies verbatim and `json.dumps` then refuses --
+        measured: `TypeError: Object of type StyleProfile is not JSON serializable`, which made
+        `cron_run` record `mutation.ran = False` for four consecutive runs while the run still
+        reported `ok = True`.
+
+        The summary keeps what a reader needs to identify the candidate: the type, and the fields a
+        style candidate actually varies. A `repr` blob would be unreadable and a bare type name would
+        lose the distinction between two different profiles.
+        """
+        # READ THE ORIGINAL ATTRIBUTES FIRST. `asdict` recurses into nested dataclasses, so a
+        # `StyleProfile` arrives here already flattened to a dict and the summary would say
+        # `__type__: dict` -- losing the one fact that distinguishes a style candidate from a layout
+        # one. Measured: it stopped crashing while still reporting the wrong type.
+        data = dataclasses.asdict(self)
+        for key in ("value", "baseline_value"):
+            original = getattr(self, key, None)
+            if isinstance(original, (int, float, str, bool)) or original is None:
+                continue
+            data[key] = _value_summary(original)
+        return data
+
+
+def _plain(value):
+    """`value` if JSON can carry it, else the summary. One predicate, used everywhere."""
+    if isinstance(value, (int, float, str, bool)) or value is None:
+        return value
+    return _value_summary(value)
+
+
+def _value_summary(value) -> dict:
+    """A JSON-safe, human-readable description of a value JSON cannot carry."""
+    summary: dict = {"__type__": type(value).__name__}
+    # the fields that actually distinguish one StyleProfile from another, in the order a reader
+    # would look for them
+    for field in ("sizes_pt", "line_widths_pt", "spines", "tick_direction", "serif_guess",
+                  "width_mm", "height_mm", "n_text_spans"):
+        if hasattr(value, field):
+            item = getattr(value, field)
+            if isinstance(item, (int, float, str, bool)) or item is None:
+                summary[field] = item
+            elif isinstance(item, (list, tuple, dict)):
+                summary[field] = list(item) if not isinstance(item, dict) else dict(item)
+            else:
+                summary[field] = str(item)
+    if len(summary) == 1:                       # nothing recognised: fall back to a bounded repr
+        summary["repr"] = repr(value)[:200]
+    return summary
 
 
 @dataclass(frozen=True)
@@ -648,8 +697,12 @@ def compose(probe_result: dict, space: MutationSpace, *,
             "id": cand.id,
             "operator": getattr(cand, "operator", None),
             "parameter": getattr(cand, "parameter", None),
-            "value": getattr(cand, "value", None),
-            "baseline_value": getattr(cand, "baseline_value", None),
+            # THE THIRD CALL SITE FOR ONE FACT. `propose()` and `scripts/mutate.py` were both fixed
+            # to describe a non-scalar value; this record was not, so the loop died on
+            # `dict item 'decisions'` with the same StyleProfile. Every place a candidate's value
+            # enters a record goes through `_value_summary` now.
+            "value": _plain(getattr(cand, "value", None)),
+            "baseline_value": _plain(getattr(cand, "baseline_value", None)),
             "score_delta": round(probe_result["mean_score"][cand.id] - _score_base, 6),
             "kind": ("patch" if getattr(cand, "old", None) is not None else "scalar"),
             "patch_path": getattr(cand, "path", None),

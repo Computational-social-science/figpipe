@@ -770,6 +770,13 @@ def _main_locked(argv: list[str], dry: bool) -> int:
         # PROPOSE -> PROBE -> COMPOSE. Without this the loop can only report that numbers moved; it
         # cannot choose an edit. 91 runs produced 0 knowledge changes for exactly that reason.
         mutation_run = mutation_step()
+        # THE MUTATION STEP'S OWN HEALTH, reported separately from `ok`.
+        #
+        # Measured 2026-10-24: four consecutive runs had `mutation.ran = False` with a TypeError in
+        # `reason`, and every one reported `ok = True`. The design intent -- a probe failure is a
+        # finding about the machine, not a capability regression -- is correct, but a failure nobody
+        # sees is not a finding. `mutation_ok` makes it filterable and the summary line makes it
+        # visible without opening the record.
     before = snapshot()
 
     ok_evolve, _ = True, ""
@@ -915,6 +922,12 @@ def _main_locked(argv: list[str], dry: bool) -> int:
     if not cap_ok and not accept:
         run["publish_note"] = ("capability regression detected; record kept but the run exits "
                                "non-zero (re-run with --accept-capability-regression to accept)")
+    # THE MUTATION STEP'S HEALTH IS ITS OWN FIELD, not folded into `ok`.
+    #
+    # `ok` answers "did the capability measurements hold"; a probe that could not run is a fact about
+    # the machine and must not turn a healthy run red (the module docstring says so). But it must not
+    # be invisible either: four runs in a row had the loop dead and reported ok = True.
+    run["mutation_ok"] = bool((mutation_run or {}).get("ran", False))
     run["ok"] = ok_evolve and ok_tests and (cap_ok or accept)
     if not dry:
         out.write_text(json.dumps(run, indent=2), encoding="utf-8")
@@ -944,6 +957,11 @@ def _main_locked(argv: list[str], dry: bool) -> int:
     print(f"  knowledge: v{run['knowledge_version_before']} -> "
           f"v{run['knowledge_version_after']}  changed={changed}")
     print(f"  rules: {run['rules']}")
+    # A FAILURE NOBODY SEES IS NOT A FINDING. The loop was dead for four runs while `ok` stayed True;
+    # this line is what makes that state impossible to miss.
+    if not run.get("mutation_ok"):
+        _why = ((mutation_run or {}).get("reason") or "no reason recorded")
+        print(f"  !! MUTATION DID NOT RUN: {str(_why).splitlines()[-1][:110]}")
     if run.get("demoted"):
         print(f"  !! DEMOTED (regression): {run['demoted']}")
     if run.get("promoted"):

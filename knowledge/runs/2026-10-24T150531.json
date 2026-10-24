@@ -1,0 +1,275 @@
+{
+  "run_at": "2026-10-24T15:05:31",
+  "dry_run": false,
+  "evolve_ok": true,
+  "evolve_exit_code": 0,
+  "evolve_output": [
+    "knowledge base -> v16",
+    "  checked 8/16 rules (8 unchecked)",
+    "  passed 8, failed 0",
+    "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
+    "  wrote knowledge\\evolution_report.json",
+    "  lean: tracked 79.6 -> 79.6 MB, worktree 129.7 -> 116.8 MB"
+  ],
+  "tests_ok": true,
+  "tests_summary": "873 passed, 3 skipped, 1 warning in 710.05s (0:11:50)",
+  "knowledge_version_before": 16,
+  "knowledge_version_after": 16,
+  "knowledge_changed": false,
+  "published": {
+    "pushed": false,
+    "withheld": [],
+    "blocked_deletions": [],
+    "skipped": true,
+    "reason": "no knowledge change: the run record stays uncommitted for the next run"
+  },
+  "check_results": {
+    "L01": {
+      "ok": true,
+      "detail": "figpipe.style.panel_letter present",
+      "confidence_before": "enforced"
+    },
+    "L02": {
+      "ok": true,
+      "detail": "all rcParams match",
+      "confidence_before": "enforced"
+    },
+    "L03": {
+      "ok": true,
+      "detail": "all sizes in band",
+      "confidence_before": "enforced"
+    },
+    "L04": {
+      "ok": true,
+      "detail": "figpipe.style.suppress_log_exponents present",
+      "confidence_before": "enforced"
+    },
+    "L05": {
+      "ok": true,
+      "detail": "all rcParams match",
+      "confidence_before": "enforced"
+    },
+    "L06": {
+      "ok": true,
+      "detail": "all rcParams match",
+      "confidence_before": "enforced"
+    },
+    "L07": {
+      "ok": true,
+      "detail": "figpipe.audit.audit present",
+      "confidence_before": "enforced"
+    },
+    "H01": {
+      "ok": null,
+      "detail": "UNCHECKED: no machine-executable check defined for this rule",
+      "confidence_before": "hypothesis"
+    },
+    "H02": {
+      "ok": null,
+      "detail": "UNCHECKED: no machine-executable check defined for this rule",
+      "confidence_before": "refuted"
+    },
+    "E01": {
+      "ok": null,
+      "detail": "UNCHECKED: no machine-executable check defined for this rule",
+      "confidence_before": "void"
+    },
+    "E02": {
+      "ok": null,
+      "detail": "UNCHECKED: no machine-executable check defined for this rule",
+      "confidence_before": "void"
+    },
+    "C01": {
+      "ok": null,
+      "detail": "UNCHECKED: no machine-executable check defined for this rule",
+      "confidence_before": "hypothesis"
+    },
+    "C02": {
+      "ok": null,
+      "detail": "UNCHECKED: no machine-executable check defined for this rule",
+      "confidence_before": "hypothesis"
+    },
+    "C03": {
+      "ok": null,
+      "detail": "UNCHECKED: no machine-executable check defined for this rule",
+      "confidence_before": "hypothesis"
+    },
+    "C04": {
+      "ok": null,
+      "detail": "UNCHECKED: no machine-executable check defined for this rule",
+      "confidence_before": "hypothesis"
+    },
+    "L08": {
+      "ok": true,
+      "detail": "4 panels, letters ['a', 'b', 'c', 'd'], gaps x=[9.0] y=[13.2] mm, page 183.0x140.0 mm",
+      "confidence_before": "enforced"
+    }
+  },
+  "demoted": [],
+  "promoted": [],
+  "regressed_detail": {},
+  "check_summary": {
+    "rules_total": 16,
+    "checked": 8,
+    "passed": 8,
+    "failed": 0,
+    "unchecked": 8,
+    "unchecked_ids": [
+      "H01",
+      "H02",
+      "E01",
+      "E02",
+      "C01",
+      "C02",
+      "C03",
+      "C04"
+    ]
+  },
+  "rules": {
+    "enforced": 8,
+    "measured_unenforced": 0,
+    "hypothesis": 5,
+    "regressed": 0
+  },
+  "benchmark_slice": {
+    "ran": true,
+    "offset": 0,
+    "tasks": 6,
+    "code": 0,
+    "tail": [
+      "    type Distribution   ok 3/4   d=0.167 base=0.232 delta=0.065 errors=1",
+      "    type Heatmap        ok 1/1   d=0.416 base=0.488 delta=0.072 errors=0",
+      "    FAIL PMC11502666  Distribution HTTPError: HTTP Error 403: Forbidden",
+      "  wrote E:\\2026-AI4S\\figpipe\\corpus\\e2e\\plottwin_report.json"
+    ]
+  },
+  "anchor_refresh": {
+    "ran": true,
+    "stale_anchors": [
+      "shipped"
+    ],
+    "tasks": 20,
+    "code": 0,
+    "tail": [
+      "    type Scatter        ok 1/1   d=0.256 base=0.355 delta=0.099 errors=0",
+      "    type Std-band       ok 1/1   d=0.163 base=0.206 delta=0.043 errors=0",
+      "  wrote E:\\2026-AI4S\\figpipe\\corpus\\e2e\\plottwin_report.json"
+    ]
+  },
+  "mutation": {
+    "ran": false,
+    "code": 1,
+    "reason": "\", line 182, in default\n    raise TypeError(f'Object of type {o.__class__.__name__} '\n                    f'is not JSON serializable')\nTypeError: Object of type StyleProfile is not JSON serializable\nwhen serializing dict item 'value'\nwhen serializing list item 5\nwhen serializing dict item 'proposed'",
+    "finding_proposals": [],
+    "n_finding_proposals": 0,
+    "finding_unproposable": [],
+    "n_finding_unproposable": 0,
+    "finding_proposal_verdict": "the pool reports no finding that a scalar edit could address",
+    "patch_catalogue": [
+      {
+        "patch": "polar_label_overflow",
+        "state": "revert",
+        "why": "long polar spoke labels overflow the page edge and are cut by the PDF boundary",
+        "eligible": true,
+        "probed": false,
+        "skill": "radial_profile",
+        "how": "run scripts/measure_fix_contribution.py to measure this fix's contribution"
+      },
+      {
+        "patch": "matrix_label_width",
+        "state": "revert",
+        "why": "a matrix axis with long column names draws them all and they overlap",
+        "eligible": true,
+        "probed": false,
+        "skill": "matrix_plate",
+        "how": "run scripts/measure_fix_contribution.py to measure this fix's contribution"
+      },
+      {
+        "patch": "polar_wrap_width",
+        "state": "revert",
+        "why": "without a wrap width the polar labels run past the page edge",
+        "eligible": true,
+        "probed": false,
+        "skill": "radial_profile",
+        "how": "run scripts/measure_fix_contribution.py to measure this fix's contribution"
+      },
+      {
+        "patch": "matrix_row_budget",
+        "state": "revert",
+        "why": "without a row budget a long table is drawn as an unreadable matrix",
+        "eligible": true,
+        "probed": false,
+        "skill": "matrix_plate",
+        "how": "run scripts/measure_fix_contribution.py to measure this fix's contribution"
+      },
+      {
+        "patch": "colorbar_label_room",
+        "state": "revert",
+        "why": "without room for the labels a colour bar prints no scale at all",
+        "eligible": true,
+        "probed": false,
+        "skill": "field_map",
+        "how": "run scripts/measure_fix_contribution.py to measure this fix's contribution"
+      }
+    ],
+    "n_patch_candidates": 5,
+    "n_patch_eligible": 5,
+    "n_patch_probed": 0,
+    "patch_note": "a patch changes the SOURCE, so it is probed and reported but never auto-selected: the loop does not edit its own drawer without a human seeing the diff"
+  },
+  "capabilities": {
+    "_code_version": "f3d542fc3caa",
+    "benchmark_hard_findings": 0,
+    "benchmark_complete_membership": true,
+    "benchmark_pool_size": 150,
+    "benchmark_pool_consistent": true,
+    "skills": 16,
+    "operators": 21,
+    "benchmark_tasks": 150,
+    "benchmark_ok": 139,
+    "benchmark_infrastructure_failures": 0,
+    "benchmark_success_rate": 1.0,
+    "benchmark_mean_distance": 0.193,
+    "benchmark_anchor_single": 0.225,
+    "benchmark_anchor_distance": 0.225,
+    "benchmark_shipped_anchor_single": 0.205,
+    "benchmark_shipped_anchor_distance": 0.205,
+    "benchmark_unsupported": 11,
+    "benchmark_official_code_score": 82.02,
+    "benchmark_official_improvement": 44.77,
+    "statistics_reproduced": 15,
+    "knowledge_version": 16,
+    "tests": 876,
+    "tests_passed": 873
+  },
+  "capabilities_delta": {
+    "changed": false,
+    "delta": {},
+    "verdict": {
+      "gains": [],
+      "regressions": [],
+      "corrections": [],
+      "not_compared": [],
+      "instrument_changed": false,
+      "membership_broken": false,
+      "ok": true,
+      "judged_fields": [
+        "benchmark_anchor_single",
+        "benchmark_hard_findings",
+        "benchmark_official_code_score",
+        "benchmark_official_improvement",
+        "benchmark_shipped_anchor_single",
+        "benchmark_success_rate",
+        "knowledge_version",
+        "operators",
+        "skills",
+        "statistics_reproduced",
+        "tests"
+      ]
+    }
+  },
+  "ok": true,
+  "capability_ok": true,
+  "capability_regressions": [],
+  "publish_note": "The publish outcome is recorded after the commit that carries this run, so it describes the push triggered by this run; the file's own commit is made by the next scheduled run."
+}

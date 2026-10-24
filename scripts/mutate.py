@@ -52,8 +52,11 @@ def run(*, dry: bool = False, budget: int | None = None,
              mutation.MutationSpace(candidates=base_space.candidates, tasks=base_space.tasks,
                                     min_margin=base_space.min_margin, min_score=min_score))
     record: dict = {
-        "proposed": [{"id": c.id, "skill": c.skill, "parameter": c.parameter,
-                      "value": c.value, "rationale": getattr(c, "rationale", "")}
+        # ONE SERIALISATION PATH, NOT TWO. This record used to be built by hand with `"value": c.value`,
+        # so a `StyleProfile` reached `json.dumps` verbatim and the run died on `dict item 'proposed'`
+        # -- after `Candidate.to_dict()` had already been fixed. `to_dict` is the single place that
+        # knows how to describe a value JSON cannot carry.
+        "proposed": [{**c.to_dict(), "rationale": getattr(c, "rationale", "")}
                      for c in space.candidates],
         "tasks": [t.id for t in space.tasks],
         "min_margin": space.min_margin,

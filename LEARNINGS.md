@@ -5857,3 +5857,52 @@ until both questions had a candidate that answered them differently.** That is t
 reward diagnosis in ##161 -- and it took putting a style candidate next to a layout candidate to see it.
 
 Suite: 873 passed, 3 skipped.
+
+
+## 165. A fix applied at one of three call sites is not a fix (2026-10-24)
+
+Round 102 added style candidates whose `value` is a `StyleProfile`. That broke the mutation loop in
+**three separate places**, and I fixed them one at a time across two rounds:
+
+    place                            failure                     found by
+    figpipe/mutation.py  propose()    dict item 'value'          running it
+    scripts/mutate.py    record       dict item 'proposed'       running it (4 hours later)
+    figpipe/mutation.py  compose()    dict item 'decisions'      running it (again)
+
+Each was found by executing the thing, never by looking for the shape. **Between the first fix and the
+last, four consecutive scheduled runs had the loop dead.**
+
+### The worse defect: the failure was invisible
+
+`cron_run` caught the exception, recorded `mutation.ran = False` with the traceback in `reason`, and
+**all four runs reported `ok = True`**. The design intent is defensible -- the module says "a mutation
+step that cannot measure is a finding about the machine, not a capability regression" -- but a failure
+that is caught, recorded, and never surfaced is the same defect as one that is swallowed.
+
+The run now records `mutation_ok` as its own field and prints
+
+    !! MUTATION DID NOT RUN: when serializing dict item 'proposed'
+
+on the summary line. **That line is what made the second and third call sites findable** -- before it,
+the only evidence was a key inside a JSON file nobody reads.
+
+### The mechanism I had to build
+
+`_plain(value)` -- one predicate, used at every site that puts a candidate's value into a record. A
+scalar passes through; anything else becomes a summary carrying `__type__` and the fields that
+distinguish it. It must read the ORIGINAL attribute, because `dataclasses.asdict` recurses into nested
+dataclasses and hands back a plain dict -- my first version summarised it as `__type__: dict`, which
+stopped the crash while losing the only fact that mattered.
+
+### The lesson, which I have now earned twice in this session
+
+**I fixed the place I was looking at.** The first fix was verified against `propose()`, the function I
+had just read; the second and third sites were never checked. This is the same failure as round 98
+("the value is not in the image" -- while it sat in the code) and round 99 ("the reference's linewidth
+is unknowable" -- from one sample). **Each time the answer was in a place I had not looked, and each
+time a measurement found it, not a review.**
+
+`tests/test_one_serialisation_path.py` now asserts all three records serialise, that no record reads a
+candidate value raw, and that the runner both records and prints the mutation failure.
+
+Suite: 882 passed, 3 skipped.
