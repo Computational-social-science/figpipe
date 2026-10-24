@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-24T08:05:42",
+  "run_at": "2026-10-24T08:51:06",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -9,19 +9,16 @@
     "  passed 8, failed 0",
     "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
     "  wrote knowledge\\evolution_report.json",
-    "  lean: tracked 79.4 -> 79.4 MB, worktree 112.9 -> 111.3 MB"
+    "  lean: tracked 79.5 -> 79.5 MB, worktree 123.5 -> 111.7 MB"
   ],
-  "tests_ok": true,
-  "tests_summary": "863 passed, 3 skipped, 1 warning in 428.77s (0:07:08)",
+  "tests_ok": false,
+  "tests_summary": "1 failed, 867 passed, 3 skipped, 1 warning in 365.83s (0:06:05) | FAILED tests/test_scheduling.py::test_run_history_is_committed_not_just_written",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
   "published": {
     "pushed": false,
-    "withheld": [],
-    "blocked_deletions": [],
-    "skipped": true,
-    "reason": "no knowledge change: the run record stays uncommitted for the next run"
+    "reason": "not yet published"
   },
   "check_results": {
     "L01": {
@@ -681,29 +678,23 @@
     "benchmark_official_improvement": 44.77,
     "statistics_reproduced": 15,
     "knowledge_version": 16,
-    "tests": 866,
-    "tests_passed": 863
+    "tests": 870,
+    "tests_passed": 867
   },
   "capabilities_delta": {
     "changed": true,
     "delta": {
       "tests": {
-        "before": 862,
-        "after": 866
+        "before": null,
+        "after": 870
       },
       "tests_passed": {
-        "before": 859,
-        "after": 863
+        "before": null,
+        "after": 867
       }
     },
     "verdict": {
-      "gains": [
-        {
-          "field": "tests",
-          "before": 862,
-          "after": 866
-        }
-      ],
+      "gains": [],
       "regressions": [],
       "corrections": [],
       "not_compared": [],
@@ -725,8 +716,7 @@
       ]
     }
   },
-  "ok": true,
+  "ok": false,
   "capability_ok": true,
-  "capability_regressions": [],
-  "publish_note": "The publish outcome is recorded after the commit that carries this run, so it describes the push triggered by this run; the file's own commit is made by the next scheduled run."
+  "capability_regressions": []
 }
