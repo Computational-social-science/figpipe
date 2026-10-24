@@ -219,7 +219,7 @@ def test_the_palette_estimate_comes_from_real_pixels():
     prof = styleprofile.StyleProfile.from_image_detailed(imgs[0])
     hexes = [c["hex"] for c in prof.colours]
     assert hexes, "no colours extracted"
-    assert len(hexes) <= 24
+    assert len(hexes) <= 48
     # every reported colour must be a real colour in the image
     from PIL import Image
     import numpy as np

@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-25T00:56:56",
+  "run_at": "2026-10-25T01:41:23",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -9,10 +9,10 @@
     "  passed 8, failed 0",
     "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
     "  wrote knowledge\\evolution_report.json",
-    "  lean: tracked 79.8 -> 79.8 MB, worktree 118.8 -> 117.0 MB"
+    "  lean: tracked 79.8 -> 79.8 MB, worktree 124.6 -> 122.8 MB"
   ],
   "tests_ok": true,
-  "tests_summary": "882 passed, 3 skipped, 1 warning in 470.60s (0:07:50)",
+  "tests_summary": "882 passed, 3 skipped, 1 warning in 465.21s (0:07:45)",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
@@ -137,15 +137,25 @@
     "tasks": 6,
     "code": 0,
     "tail": [
-      "    type Box/Violin     ok 1/1   d=0.128 base=0.319 delta=0.191 errors=0",
-      "    type Distribution   ok 4/4   d=0.165 base=0.221 delta=0.056 errors=0",
-      "    type Heatmap        ok 1/1   d=0.416 base=0.488 delta=0.072 errors=0",
+      "    type Box/Violin     ok 1/1   d=0.133 base=0.319 delta=0.186 errors=0",
+      "    type Distribution   ok 4/4   d=0.164 base=0.221 delta=0.058 errors=0",
+      "    type Heatmap        ok 1/1   d=0.303 base=0.488 delta=0.185 errors=0",
       "  wrote E:\\2026-AI4S\\figpipe\\corpus\\e2e\\plottwin_report.json"
     ]
   },
   "anchor_refresh": {
-    "ran": false,
-    "reason": "both anchors already comparable"
+    "ran": true,
+    "stale_anchors": [
+      "shipped",
+      "styled"
+    ],
+    "tasks": 35,
+    "code": 0,
+    "tail": [
+      "    type Scatter        ok 3/3   d=0.235 base=0.329 delta=0.094 errors=0",
+      "    type Std-band       ok 1/1   d=0.15 base=0.206 delta=0.056 errors=0",
+      "  wrote E:\\2026-AI4S\\figpipe\\corpus\\e2e\\plottwin_report.json"
+    ]
   },
   "mutation": {
     "ran": true,
@@ -439,7 +449,7 @@
           "height_mm": 58.0,
           "n_text_spans": 18
         },
-        "rationale": "the measured optimum of a uniform text-size scan: -0.5 gave 0.1390, 0.0 gave 0.0800, +0.25 gave 0.0700, +0.50 gave 0.0000 and +1.00 gave 0.0590. This is the step toward the peak.",
+        "rationale": "NEGATIVE CONTROL. The baseline reproduces its reference exactly (distance 0.0000), so a +0.5 uniform shift measures 0.0590 -- a regression. A loop that selects this cannot tell an improvement from a perturbation.",
         "skill": "styled_trend"
       },
       {
@@ -686,7 +696,7 @@
           "height_mm": 58.0,
           "n_text_spans": 18
         },
-        "rationale": "the negative control for the same scan: +1.00 scores 0.0590, WORSE than +0.50's 0.0000. A search that cannot reject overshoot is not a search.",
+        "rationale": "NEGATIVE CONTROL, further out. +1.0 measures 0.0590 as well; the two together show the penalty is flat in this direction, so neither can be picked by accident.",
         "skill": "styled_trend"
       }
     ],
@@ -797,18 +807,17 @@
       ]
     },
     "budget": 64,
-    "selected": [
-      "sizes-plus-half"
-    ],
+    "selected": [],
     "rejected": [
-      "split-max-bars-24"
+      "split-max-bars-24",
+      "sizes-plus-half",
+      "sizes-plus-one"
     ],
     "ties": [
       "split-max-bars-13",
       "matrix-max-rows-41",
       "matrix-max-rows-42",
-      "matrix-max-rows-60",
-      "sizes-plus-one"
+      "matrix-max-rows-60"
     ],
     "decisions": [
       {
@@ -820,8 +829,8 @@
         "score_delta": -0.11875,
         "kind": "scalar",
         "patch_path": null,
-        "score": 0.838,
-        "baseline_score": 0.838,
+        "score": 0.917,
+        "baseline_score": 0.917,
         "delta": -0.11875,
         "verdict": "rejected",
         "reason": "regresses 1 task(s) on the fixed set, worst 'split-many-bars' by -0.950 (>= margin 0.05); a task that gets worse is a regression whatever the mean says; changed tasks: ['split-many-bars']",
@@ -897,8 +906,8 @@
         "score_delta": 0.0,
         "kind": "scalar",
         "patch_path": null,
-        "score": 0.838,
-        "baseline_score": 0.838,
+        "score": 0.917,
+        "baseline_score": 0.917,
         "delta": 0.0,
         "verdict": "tie",
         "reason": "no measurable difference on the fixed task set (+0.000); the task set cannot distinguish this edit from the baseline, so it is reported as a tie",
@@ -964,8 +973,8 @@
         "score_delta": 0.0,
         "kind": "scalar",
         "patch_path": null,
-        "score": 0.838,
-        "baseline_score": 0.838,
+        "score": 0.917,
+        "baseline_score": 0.917,
         "delta": 0.0,
         "verdict": "tie",
         "reason": "no measurable difference on the fixed task set (+0.000); the task set cannot distinguish this edit from the baseline, so it is reported as a tie",
@@ -1033,8 +1042,8 @@
         "score_delta": 0.0,
         "kind": "scalar",
         "patch_path": null,
-        "score": 0.838,
-        "baseline_score": 0.838,
+        "score": 0.917,
+        "baseline_score": 0.917,
         "delta": 0.0,
         "verdict": "tie",
         "reason": "no measurable difference on the fixed task set (+0.000); the task set cannot distinguish this edit from the baseline, so it is reported as a tie",
@@ -1103,8 +1112,8 @@
         "score_delta": 0.0,
         "kind": "scalar",
         "patch_path": null,
-        "score": 0.838,
-        "baseline_score": 0.838,
+        "score": 0.917,
+        "baseline_score": 0.917,
         "delta": 0.0,
         "verdict": "tie",
         "reason": "no measurable difference on the fixed task set (+0.000); the task set cannot distinguish this edit from the baseline, so it is reported as a tie",
@@ -1412,11 +1421,11 @@
         "score_delta": 0.0,
         "kind": "scalar",
         "patch_path": null,
-        "score": 0.917,
-        "baseline_score": 0.838,
-        "delta": 0.079,
-        "verdict": "selected",
-        "reason": "improves the fixed task set by +0.079 (>= margin 0.05) with no task regressing; changed tasks: none",
+        "score": 0.854,
+        "baseline_score": 0.917,
+        "delta": -0.063,
+        "verdict": "rejected",
+        "reason": "regresses the fixed task set by -0.063 (<= -margin 0.05)",
         "changed_tasks": [],
         "regressed_tasks": [],
         "per_task": {
@@ -1717,11 +1726,11 @@
         "score_delta": 0.0,
         "kind": "scalar",
         "patch_path": null,
-        "score": 0.854,
-        "baseline_score": 0.838,
-        "delta": 0.016,
-        "verdict": "tie",
-        "reason": "improves by +0.016, below the margin 0.05: smaller than the decision threshold, so it is reported as a tie rather than picked",
+        "score": 0.79,
+        "baseline_score": 0.917,
+        "delta": -0.127,
+        "verdict": "rejected",
+        "reason": "regresses the fixed task set by -0.127 (<= -margin 0.05)",
         "changed_tasks": [],
         "regressed_tasks": [],
         "per_task": {
@@ -1776,7 +1785,7 @@
         }
       }
     ],
-    "verdict": "selected",
+    "verdict": "tie",
     "applied": false,
     "why_not_applied": "a selected edit measured on six tasks is a finding, not a change; applying it requires a pool re-measure (LEARNINGS ##47)",
     "finding_proposals": [],
@@ -1837,7 +1846,7 @@
     "patch_note": "a patch changes the SOURCE, so it is probed and reported but never auto-selected: the loop does not edit its own drawer without a human seeing the diff"
   },
   "capabilities": {
-    "_code_version": "f3d542fc3caa",
+    "_code_version": "2dea753d41dd",
     "benchmark_hard_findings": 0,
     "benchmark_complete_membership": true,
     "benchmark_pool_size": 150,
@@ -1848,11 +1857,11 @@
     "benchmark_ok": 139,
     "benchmark_infrastructure_failures": 0,
     "benchmark_success_rate": 1.0,
-    "benchmark_mean_distance": 0.193,
-    "benchmark_anchor_single": 0.225,
-    "benchmark_anchor_distance": 0.225,
-    "benchmark_shipped_anchor_single": 0.205,
-    "benchmark_shipped_anchor_distance": 0.205,
+    "benchmark_mean_distance": 0.192,
+    "benchmark_anchor_single": 0.228,
+    "benchmark_anchor_distance": 0.228,
+    "benchmark_shipped_anchor_single": 0.191,
+    "benchmark_shipped_anchor_distance": 0.191,
     "benchmark_unsupported": 11,
     "benchmark_official_code_score": 82.02,
     "benchmark_official_improvement": 44.77,
@@ -1864,27 +1873,50 @@
   "capabilities_delta": {
     "changed": true,
     "delta": {
-      "tests": {
-        "before": 884,
-        "after": 885
+      "_code_version": {
+        "before": "f3d542fc3caa",
+        "after": "2dea753d41dd"
       },
-      "tests_passed": {
-        "before": 881,
-        "after": 882
+      "benchmark_mean_distance": {
+        "before": 0.193,
+        "after": 0.192
+      },
+      "benchmark_anchor_single": {
+        "before": 0.225,
+        "after": 0.228
+      },
+      "benchmark_anchor_distance": {
+        "before": 0.225,
+        "after": 0.228
+      },
+      "benchmark_shipped_anchor_single": {
+        "before": 0.205,
+        "after": 0.191
+      },
+      "benchmark_shipped_anchor_distance": {
+        "before": 0.205,
+        "after": 0.191
       }
     },
     "verdict": {
-      "gains": [
-        {
-          "field": "tests",
-          "before": 884,
-          "after": 885
-        }
-      ],
+      "gains": [],
       "regressions": [],
       "corrections": [],
-      "not_compared": [],
-      "instrument_changed": false,
+      "not_compared": [
+        {
+          "field": "benchmark_anchor_single",
+          "before": 0.225,
+          "after": 0.228,
+          "why": "the measurement instrument changed between these snapshots, so the two values are not the same quantity"
+        },
+        {
+          "field": "benchmark_shipped_anchor_single",
+          "before": 0.205,
+          "after": 0.191,
+          "why": "the measurement instrument changed between these snapshots, so the two values are not the same quantity"
+        }
+      ],
+      "instrument_changed": true,
       "membership_broken": false,
       "ok": true,
       "judged_fields": [

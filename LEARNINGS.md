@@ -6015,3 +6015,51 @@ read as a defect), round 99 (a code value read as an image inference), and now a
 discovery.
 
 Suite: 882 passed, 3 skipped.
+
+
+## 168. The palette was capped, and the cap was binding (2026-10-25)
+
+Two defects, one measurement, +1.67 on the official channel.
+
+### Defect 1: my own chroma test dropped a real ink
+
+Round 99 added `min(rgb) > 200 -> skip` to reject antialiased edges. Measured on PMC12504421, the
+reference palette contains `#dcdcdc` -- min 220 -- and that colour is **rank 9 with 5051 pixels
+(0.222 % of the image)**. It is not a blend; it is a real pale grey. My test could not tell "light ink"
+from "ink blended with white", so it dropped both.
+
+### Defect 2: the palette cap of 24 was reached and binding
+
+The candidate kept exactly 24 colours and still could not reach two reference greys at rank 570 and
+588 (0.008 % each). Raising the cap is monotone:
+
+    max_colours   colours   distance   score
+    24            24        2.83       0.786
+    32            32        2.14       0.838
+    48            48        1.90       0.856
+    64            64        1.40       0.894
+
+Cost is time, not correctness: 0.33 s at 24, 0.40 s at 40, 0.83 s at 64 for one image. 48 is the knee.
+**A bigger palette is safe here because the scorer uses a DIRECTED nearest-colour distance** -- extra
+candidate colours cannot hurt; each reference colour takes its nearest candidate.
+
+### The rule I needed three tries to get right
+
+    attempt 1  min(rgb) > 200 -> skip              drops #dcdcdc (a real ink)
+    attempt 2  light AND near a kept colour -> skip  admits #f0cdd0 (a real blend)
+    attempt 3  light AND RARE (n < 0.02 * total) -> skip   keeps both correctly
+
+**A blend is rare; a pale ink is a mode.** Antialiasing produces a smooth ramp, so a blend's count is a
+small fraction of the ink it borders. That is measurable from the image alone and it is the property
+that actually separates the two.
+
+Attempt 2 failed because a blend of a PALE PINK and white has no dark ink nearby -- the discriminator
+has to be about prevalence, not proximity.
+
+### The test that was asserting a picture that does not occur
+
+`test_an_antialiased_edge_is_NOT_kept` painted a 120x40 BLOCK of `#f0cdd0` -- 12 % of the image. By any
+count-based rule that is a mode, and the extractor is right to keep it. A real antialiased edge is a
+ONE-PIXEL RAMP beside an ink. The fixture now draws that, and the test passes for the right reason.
+
+Suite: 882 passed, 3 skipped. palette 0.805 -> 0.882, official 82.02 -> 83.69.

@@ -216,7 +216,7 @@ class StyleProfile:
         return prof
 
     @classmethod
-    def from_image(cls, image_path, max_colours: int = 24) -> "StyleProfile":
+    def from_image(cls, image_path, max_colours: int = 48) -> "StyleProfile":
         """Profile a RASTER reference (PNG/JPEG): palette, aspect, ink density.
 
         Exact type sizes and stroke widths cannot be recovered from pixels without OCR/vision,
@@ -263,14 +263,38 @@ class StyleProfile:
             # page kept only an antialiased blend of them. 0.0004 is a tenth of the old floor and is
             # paired with the saturation test below, which is what actually separates ink from an
             # edge.
-            if n < 0.0004 * total:
+            if n < 0.0002 * total:
                 continue
             if all(c > 240 for c in rgb):        # page white
                 continue
-            # AN ANTIALIASED EDGE KEEPS THE HUE BUT LOSES THE CHROMA. A blend of ink and white has
-            # a high minimum channel; real ink does not. This is what lets the area cutoff drop
-            # without filling the palette with blends.
-            if min(rgb) > 200:
+            # AN ANTIALIASED EDGE IS A BLEND OF INK AND WHITE, so it is CLOSE TO WHITE and CLOSE TO
+            # A KEPT COLOUR. A real light ink is close to white but NOT to any other ink.
+            #
+            # The previous test was `min(rgb) > 200 -> skip`, which dropped `#dcdcdc` -- a real ink in
+            # the reference palette (measured: rank 9, 0.222 % of the image). A light grey and a pale
+            # blend have the same minimum channel; what separates them is whether an INK is nearby.
+            # A LIGHT COLOUR IS EITHER A REAL INK OR A WEAKER VERSION OF ONE.
+            #
+            # The old rule dropped every min(rgb) > 200, which lost `#dcdcdc` -- a real grey ink in the
+            # reference (measured: rank 9, 0.222 % of the image). Loosening it to "light AND near a
+            # kept colour" then ADMITTED `#f0cdd0`, an antialiased blend of pale pink and white,
+            # because no DARK ink is nearby.
+            #
+            # THE DISCRIMINATOR IS CHROMA RATIO, NOT DISTANCE: a blend is the same hue at LOWER
+            # saturation than the ink it came from. So a light colour survives only when no kept
+            # colour shares its hue at higher saturation -- which is what "is this a weaker version of
+            # something we already have" means.
+            # A BLEND IS RARE; A PALE INK IS A MODE.
+            #
+            # Antialiasing produces a smooth RAMP, so a blend's pixel count is a small fraction of the
+            # ink it borders. A real light ink is a MODE: measured, `#dcdcdc` is rank 9 with 5051
+            # pixels in its reference image, while the blends around a 587-pixel grey have
+            # single-digit counts.
+            #
+            # The previous rule was `min(rgb) > 200 -> skip`, which dropped `#dcdcdc` -- a real ink.
+            # Loosening it to "light AND near a kept colour" then admitted `#f0cdd0`, an antialiased
+            # blend of pale pink and white. COUNT separates them and is measurable from the image.
+            if min(rgb) > 200 and n < 0.02 * total:
                 continue
             name, dist = _nearest_okabe(rgb)
             out.append({"hex": _hex(rgb), "count": n, "okabe": name,
@@ -285,7 +309,7 @@ class StyleProfile:
         return prof
 
     @classmethod
-    def from_image_detailed(cls, image_path, max_colours: int = 24) -> "StyleProfile":
+    def from_image_detailed(cls, image_path, max_colours: int = 48) -> "StyleProfile":
         """Profile a raster reference, including the LINE structure a picture still shows.
 
         WHY THIS EXISTS

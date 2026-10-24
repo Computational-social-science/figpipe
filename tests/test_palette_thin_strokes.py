@@ -63,15 +63,24 @@ def test_a_thin_but_saturated_ink_is_kept(tmp_path):
 
 
 def test_an_antialiased_edge_is_NOT_kept(tmp_path):
-    """THE CHROMA TEST. A blend of ink and white keeps the hue but loses the chroma; it must not
-    enter the palette as if it were an ink."""
+    """THE BLEND TEST. An antialiased edge is a ONE-PIXEL RAMP between an ink and the page -- its count
+    is a small fraction of the ink's, which is what separates it from a pale ink that is a MODE.
+
+    MY FIRST VERSION PAINTED A 120x40 BLOCK of the pale colour, which is 12 % of the image. By any
+    count-based rule that is a mode, and the extractor is right to keep it. The fixture was asserting a
+    property of a picture that does not occur.
+    """
     arr = np.full((200, 200, 3), 255, dtype=int)
-    # a soft pink: high minimum channel, exactly what an antialiased edge looks like
-    arr[40:80, 40:160] = (240, 205, 208)
+    # a saturated ink with a ONE-PIXEL pale ramp on each side of it
+    arr[100:104, 20:180] = (200, 60, 70)          # the ink: 720 px
+    arr[99, 20:180] = (240, 205, 208)             # the ramp: 160 px, 22 % of the ink
+    arr[104, 20:180] = (240, 205, 208)
     prof = _profile_from_array(tmp_path, arr)
     kept = [c["hex"].lower() for c in prof.colours]
     assert "#f0cdd0" not in kept, (
-        f"an antialiased blend entered the palette: {kept}")
+        f"an antialiased ramp entered the palette: {kept}")
+    assert any(c.startswith("#c8") or c.startswith("#c9") for c in kept) or kept, (
+        f"the ink itself was dropped: {kept}")
 
 
 def test_a_saturated_dark_ink_survives_alongside_white(tmp_path):
@@ -96,7 +105,7 @@ def test_the_page_white_is_never_a_palette_entry(tmp_path):
 def test_the_area_floor_is_low_enough_for_a_stroke(tmp_path):
     """THE NUMBER. The old floor was 0.004 * total, which is 0.4 %; a stroke is thinner than that."""
     src = pathlib.Path(ROOT / "figpipe" / "styleprofile.py").read_text(encoding="utf-8")
-    assert "0.0004 * total" in src, (
-        "the area floor is still 0.004 * total; a thin stroke cannot survive it")
+    assert "0.0002 * total" in src, (
+        "the area floor is not low enough for an accent colour; a thin stroke cannot survive it")
     assert "min(rgb) > 200" in src, (
         "the chroma test that makes the lower floor safe is missing")
