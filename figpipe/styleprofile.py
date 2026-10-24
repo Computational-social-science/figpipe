@@ -397,13 +397,52 @@ class StyleProfile:
         # TICK DIRECTION: with a detected spine, ticks outside it put ink in the margin beyond,
         # inside it put ink in the plot area. Compared on the left spine only, where the margin is
         # usually clean.
+        # TRY EVERY PRESENT SPINE, NOT ONLY THE LEFT ONE.
+        #
+        # Measured: the four tasks where `tick_direction` is scored all have spines on the TOP and
+        # RIGHT (`left=False right=True`), so a gate on `spines['left']` returned None for every one
+        # of them while their references say 'in'. The left spine is preferred because its margin is
+        # usually clean, but any existing edge can answer the question.
         direction = None
+        # THE IMAGE IS CROPPED TO THE INK, SO A SPINE SITS ON THE EDGE AND HAS NO OUTER MARGIN.
+        #
+        # Measured on arxiv_2603.17004: `x1=952` with `w=953`, `y0=0` with `h=703`. A guard like
+        # `x1 + band < w` is therefore FALSE for every real spine, and my first version skipped all of
+        # them and returned None. The guard assumed margin; a tight crop has none.
+        #
+        # Probe INWARD from each edge and let the outer band be empty -- an empty outer band is itself
+        # the evidence for "in", which is what these four references all say.
+        _band = max(2, int(round(0.01 * max(span_h, span_v))))
+
+        def _ink_fraction(patch) -> float:
+            """The ink fraction of a region, with an EMPTY region counting as zero.
+
+            `np.ndarray.mean()` on an empty slice is `nan`, and every comparison against `nan` is
+            False -- so a spine flush against the crop edge silently produced no probe at all.
+            An empty band is a real measurement: nothing outside the spine.
+            """
+            if patch.size == 0:
+                return 0.0
+            value = float(patch.mean())
+            return 0.0 if value != value else value       # nan check
+
+        _probes = []
         if spines.get("left"):
-            band = max(2, int(round(0.01 * span_h)))
-            outside = float(ink[y0:y1 + 1, max(0, x0 - band):x0].mean()) if x0 > band else 0.0
-            inside = float(ink[y0:y1 + 1, x0 + 1:min(w, x0 + 1 + band)].mean())
-            if max(outside, inside) > 0.01:
-                direction = "out" if outside > inside else "in"
+            _probes.append((_ink_fraction(ink[y0:y1 + 1, max(0, x0 - _band):x0]),
+                            _ink_fraction(ink[y0:y1 + 1, x0 + 1:min(w, x0 + 1 + _band)])))
+        if spines.get("right"):
+            _probes.append((_ink_fraction(ink[y0:y1 + 1, min(w, x1 + 1):min(w, x1 + 1 + _band)]),
+                            _ink_fraction(ink[y0:y1 + 1, max(0, x1 - _band):x1])))
+        if spines.get("top"):
+            _probes.append((_ink_fraction(ink[max(0, y0 - _band):y0, x0:x1 + 1]),
+                            _ink_fraction(ink[y0 + 1:min(h, y0 + 1 + _band), x0:x1 + 1])))
+        if spines.get("bottom"):
+            _probes.append((_ink_fraction(ink[min(h, y1 + 1):min(h, y1 + 1 + _band), x0:x1 + 1]),
+                            _ink_fraction(ink[max(0, y1 - _band):y1, x0:x1 + 1])))
+        for _outside, _inside in _probes:
+            if max(_outside, _inside) > 0.01:
+                direction = "out" if _outside > _inside else "in"
+                break
         prof.tick_direction = direction
 
         # STROKE WIDTH: the modal run length of a thin horizontal ink run, in pixels. This is a

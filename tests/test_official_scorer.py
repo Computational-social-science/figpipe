@@ -180,7 +180,12 @@ def test_the_two_style_sources_cannot_overwrite_each_other():
 
 
 def test_an_image_inferred_style_leaves_code_only_dimensions_undetermined():
-    """A raster cannot tell us the tick direction; pretending otherwise would be fabrication."""
+    """A raster CAN tell the tick direction; it cannot tell serif, legend_frame or linewidth.
+
+    THE ORIGINAL ASSERTION WAS WRONG and this test is the record of it: `tick_direction` was listed as
+    unrecoverable because the inference was gated on `spines['left']` and returned None when that gate
+    failed. Round 110 fixed the gate and the empty-slice bug, and the dimension reads 4/4.
+    """
     import sys
     sys.path.insert(0, str(ROOT))
     from figpipe import codegen, styleprofile
@@ -190,7 +195,15 @@ def test_an_image_inferred_style_leaves_code_only_dimensions_undetermined():
     prof = styleprofile.StyleProfile.from_image_detailed(imgs[0])
     style = codegen.style_from_image_profile(prof)
     assert style["inferred_from"] == "image"
-    for dim in ("tick_direction", "serif", "legend_frame", "linewidth"):
+    # TICK DIRECTION IS RECOVERABLE FROM PIXELS, and this test used to assert it was not. Measured
+    # after round 110: 4/4 on the four tasks where the dimension is scored, because ticks outside a
+    # spine put ink in the margin and ticks inside put it in the plot area.
+    #
+    # These three are NOT recoverable, each for a measured reason:
+    #   serif         a serif's footings are sub-pixel at 5-7 pt / ~150 dpi
+    #   legend_frame  a code construct with no reliable pixel signature
+    #   linewidth     one pixel is the whole decision at these resolutions
+    for dim in ("serif", "legend_frame", "linewidth"):
         assert style[dim] is None, f"{dim} must be undetermined from pixels"
         assert dim in style["undetermined_dimensions"]
     # palette and aspect ARE recoverable

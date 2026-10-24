@@ -6160,3 +6160,57 @@ and a preview kept "for debugging" is the most common way it happens.
 and -- the general form -- that no inventory record carries a string field longer than 400 characters.
 
 Suite: 885 passed, 3 skipped.
+
+
+## 171. Two bugs hid behind one another, and the warning printed twice (2026-10-25)
+
+`tick_direction` read 0.000 over 4 tasks, worth +0.64. Both are now 1.000 and +0.64 exactly.
+
+### Bug 1: the inference was gated on ONE spine
+
+The probe only ran when `spines['left']` was present. Measured on the four scored tasks:
+
+    task                          ref   image   spines
+    PMC12504421                   in    None    left=False right=True
+    arxiv-astro-skymap__2510...   in    None    left=False right=True
+    arxiv-phys-prx-prl__2603...   in    None    left=False right=True
+    arxiv_2603.17004              in    None    left=False right=True
+
+**Every one has its spines on the TOP and RIGHT.** The spine detection was right; the gate was wrong.
+A tick's direction is a property of the axis it belongs to, and any existing edge can answer.
+
+### Bug 2: an empty slice is nan, and nan compares False
+
+With the gate removed, the probe still returned None. The reason:
+
+    ink[max(0, y0 - band):y0, ...]   with y0 = 0   -> an EMPTY slice
+    .mean() of an empty array        -> nan, plus a RuntimeWarning
+    max(nan, inside) > 0.01          -> FALSE
+
+**The warning printed twice and I read past it both times.** The fix is an explicit
+`_ink_fraction()` that treats an empty region as ZERO INK -- which is a real measurement ("nothing
+outside the spine"), not a missing one.
+
+### And the image is cropped to the ink, so the spine has no outer margin
+
+My first guard was `x1 + band < w`. Measured: `x1=952` with `w=953`, and `y0=0` with `h=703`. **The
+guard is FALSE for every real spine.** It assumed margin; a tight crop has none.
+
+### The lesson
+
+**Three separate reasons for one None, and I fixed them in sequence because each one looked like the
+whole answer.** The gate, then the nan, then the margin assumption. Each fix was correct and each was
+insufficient, and the only way to tell was to run the four tasks after every change.
+
+The warning was the tell: `RuntimeWarning: Mean of empty slice` appeared on the FIRST attempt. **I read
+it as noise because the output was otherwise plausible** -- which is the same mistake as reading a zero
+as a fact about the world rather than about the instrument.
+
+### And one test asserted the old belief
+
+`test_an_image_inferred_style_leaves_code_only_dimensions_undetermined` listed `tick_direction` as
+unrecoverable from pixels. That was TRUE of the old code and FALSE of the raster: ticks outside a spine
+put ink in the margin, ticks inside put it in the plot area. The test now names the three that really
+are unrecoverable -- `serif`, `legend_frame`, `linewidth` -- each with its measured reason.
+
+Suite: 885 passed, 3 skipped. tick_direction 0.000 -> 1.000, official 83.69 -> 84.33.
