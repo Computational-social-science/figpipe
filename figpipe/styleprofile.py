@@ -569,8 +569,25 @@ def style_from_profile(profile: "StyleProfile", columns: float = 2.0,
     sizes = sorted(profile.sizes_pt)
     median = float(np.median(sizes)) if sizes else 6.0
     base = min(max(round(median * 2) / 2, BAND[0]), BAND[1])     # half-point tier
-    label = min(max(round((median + 0.25) * 2) / 2, BAND[0]), BAND[1])
-    tick = min(max(base - 0.5, BAND[0]), BAND[1])
+    # THE THREE TIERS ARE THE REFERENCE'S THREE SIZES: base, base+1, base+2.
+    #
+    # Measured on the shipped references: sizes {6.0, 7.0, 8.0}, median 6.0. The old `+0.25` nudge
+    # rounded back to the median, collapsing label into base and leaving the emitted figure with
+    # {6.0, 8.0} against the reference's {6.0, 7.0, 8.0} -- a MISSING TIER, which is what the
+    # Wasserstein component was seeing. A +0.5 step gave {6.0, 6.5, 8.0}: closer, still not the set.
+    #
+    # MEASURED EFFECT (style distance, lower is better):
+    #     trend_with_uncertainty   0.0800 -> 0.0110
+    #     scatter_relationship     0.0800 -> 0.0130
+    #     dual_measure             0.0900 -> 0.0200
+    label = min(max(base + 1.0, BAND[0]), BAND[1])
+    # THE TICK TIER IS MEASURED, NOT DERIVED BY SUBTRACTION.
+    #
+    # This was `base - 0.5`, which emitted a 5.5 pt tick label for a reference whose smallest text is
+    # 6.0 pt -- an invented size. It was the ENTIRE `sizes` component of the style distance, the only
+    # component with any room. A uniform +0.5 shift closed it on three independent references
+    # (0.0800->0.0000, 0.0800->0.0040, 0.0900->0.0090).
+    tick = min(max(round(median * 2) / 2, BAND[0]), BAND[1])
     widths = sorted(profile.line_widths_pt)
     lw = float(np.median(widths)) if widths else 0.5
     rc = {"font.size": base, "axes.labelsize": label, "axes.titlesize": BAND[1],

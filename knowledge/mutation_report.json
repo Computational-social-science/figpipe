@@ -289,7 +289,7 @@
         "height_mm": 58.0,
         "n_text_spans": 18
       },
-      "rationale": "the measured optimum of a uniform text-size scan: -0.5 gave 0.1390, 0.0 gave 0.0800, +0.25 gave 0.0700, +0.50 gave 0.0000 and +1.00 gave 0.0590. This is the step toward the peak.",
+      "rationale": "NEGATIVE CONTROL. The baseline reproduces its reference exactly (distance 0.0000), so a +0.5 uniform shift measures 0.0590 -- a regression. A loop that selects this cannot tell an improvement from a perturbation.",
       "skill": "styled_trend"
     },
     {
@@ -536,7 +536,7 @@
         "height_mm": 58.0,
         "n_text_spans": 18
       },
-      "rationale": "the negative control for the same scan: +1.00 scores 0.0590, WORSE than +0.50's 0.0000. A search that cannot reject overshoot is not a search.",
+      "rationale": "NEGATIVE CONTROL, further out. +1.0 measures 0.0590 as well; the two together show the penalty is flat in this direction, so neither can be picked by accident.",
       "skill": "styled_trend"
     }
   ],
@@ -647,18 +647,17 @@
     ]
   },
   "budget": 64,
-  "selected": [
-    "sizes-plus-half"
-  ],
+  "selected": [],
   "rejected": [
-    "split-max-bars-24"
+    "split-max-bars-24",
+    "sizes-plus-half",
+    "sizes-plus-one"
   ],
   "ties": [
     "split-max-bars-13",
     "matrix-max-rows-41",
     "matrix-max-rows-42",
-    "matrix-max-rows-60",
-    "sizes-plus-one"
+    "matrix-max-rows-60"
   ],
   "decisions": [
     {
@@ -670,8 +669,8 @@
       "score_delta": -0.11875,
       "kind": "scalar",
       "patch_path": null,
-      "score": 0.838,
-      "baseline_score": 0.838,
+      "score": 0.917,
+      "baseline_score": 0.917,
       "delta": -0.11875,
       "verdict": "rejected",
       "reason": "regresses 1 task(s) on the fixed set, worst 'split-many-bars' by -0.950 (>= margin 0.05); a task that gets worse is a regression whatever the mean says; changed tasks: ['split-many-bars']",
@@ -747,8 +746,8 @@
       "score_delta": 0.0,
       "kind": "scalar",
       "patch_path": null,
-      "score": 0.838,
-      "baseline_score": 0.838,
+      "score": 0.917,
+      "baseline_score": 0.917,
       "delta": 0.0,
       "verdict": "tie",
       "reason": "no measurable difference on the fixed task set (+0.000); the task set cannot distinguish this edit from the baseline, so it is reported as a tie",
@@ -814,8 +813,8 @@
       "score_delta": 0.0,
       "kind": "scalar",
       "patch_path": null,
-      "score": 0.838,
-      "baseline_score": 0.838,
+      "score": 0.917,
+      "baseline_score": 0.917,
       "delta": 0.0,
       "verdict": "tie",
       "reason": "no measurable difference on the fixed task set (+0.000); the task set cannot distinguish this edit from the baseline, so it is reported as a tie",
@@ -883,8 +882,8 @@
       "score_delta": 0.0,
       "kind": "scalar",
       "patch_path": null,
-      "score": 0.838,
-      "baseline_score": 0.838,
+      "score": 0.917,
+      "baseline_score": 0.917,
       "delta": 0.0,
       "verdict": "tie",
       "reason": "no measurable difference on the fixed task set (+0.000); the task set cannot distinguish this edit from the baseline, so it is reported as a tie",
@@ -953,8 +952,8 @@
       "score_delta": 0.0,
       "kind": "scalar",
       "patch_path": null,
-      "score": 0.838,
-      "baseline_score": 0.838,
+      "score": 0.917,
+      "baseline_score": 0.917,
       "delta": 0.0,
       "verdict": "tie",
       "reason": "no measurable difference on the fixed task set (+0.000); the task set cannot distinguish this edit from the baseline, so it is reported as a tie",
@@ -1262,11 +1261,11 @@
       "score_delta": 0.0,
       "kind": "scalar",
       "patch_path": null,
-      "score": 0.917,
-      "baseline_score": 0.838,
-      "delta": 0.079,
-      "verdict": "selected",
-      "reason": "improves the fixed task set by +0.079 (>= margin 0.05) with no task regressing; changed tasks: none",
+      "score": 0.854,
+      "baseline_score": 0.917,
+      "delta": -0.063,
+      "verdict": "rejected",
+      "reason": "regresses the fixed task set by -0.063 (<= -margin 0.05)",
       "changed_tasks": [],
       "regressed_tasks": [],
       "per_task": {
@@ -1567,11 +1566,11 @@
       "score_delta": 0.0,
       "kind": "scalar",
       "patch_path": null,
-      "score": 0.854,
-      "baseline_score": 0.838,
-      "delta": 0.016,
-      "verdict": "tie",
-      "reason": "improves by +0.016, below the margin 0.05: smaller than the decision threshold, so it is reported as a tie rather than picked",
+      "score": 0.79,
+      "baseline_score": 0.917,
+      "delta": -0.127,
+      "verdict": "rejected",
+      "reason": "regresses the fixed task set by -0.127 (<= -margin 0.05)",
       "changed_tasks": [],
       "regressed_tasks": [],
       "per_task": {
@@ -1626,7 +1625,7 @@
       }
     }
   ],
-  "verdict": "selected",
+  "verdict": "tie",
   "applied": false,
   "why_not_applied": "a selected edit measured on six tasks is a finding, not a change; applying it requires a pool re-measure (LEARNINGS ##47)"
 }

@@ -74,14 +74,21 @@ def test_the_refusal_reward_is_flat_on_this_task_set(style_probe):
 
 
 def test_a_style_candidate_moves_the_style_aggregate(style_probe):
-    """THE FIX. A half-point text-size change must be visible to the aggregate."""
+    """THE FIX. A text-size change must be VISIBLE to the aggregate, in either direction.
+
+    THE DIRECTION IS NOT ASSERTED, and that is deliberate. Round 107 fixed the generator so the
+    baseline profile reproduces its reference exactly (mean_style 1.000); a uniform +0.5 shift now
+    OVERSHOOTS (0.941). Before that fix the same shift closed a 0.08 gap. The invariant is that the
+    aggregate CAN SEE the change -- a flat 1.0 for both would mean the reward is blind, which is the
+    defect this file exists to catch.
+    """
     mutation, space = style_probe
     result = mutation.probe(space, budget=10)
     style = result.get("mean_style") or {}
     assert style, "no mean_style aggregate: the loop cannot see style at all"
     assert "baseline" in style and "sizes-plus-half" in style, style
-    assert style["sizes-plus-half"] > style["baseline"], (
-        f"a style candidate did not improve the style aggregate: {style}")
+    assert style["sizes-plus-half"] != style["baseline"], (
+        f"a style candidate did not MOVE the style aggregate; the reward is blind to it: {style}")
 
 
 def test_compose_uses_the_style_aggregate_and_says_so(style_probe):
@@ -92,8 +99,22 @@ def test_compose_uses_the_style_aggregate_and_says_so(style_probe):
     decision = mutation.compose(result, space)
     assert decision.get("aggregate") == "mean_style", (
         f"compose decided on {decision.get('aggregate')!r}, which has no resolution on this task set")
-    assert decision["selected"] == ["sizes-plus-half"], decision
-    assert decision["verdict"] == "selected"
+    # THE VERDICT MUST FOLLOW THE SIGN OF THE DELTA. Round 107 fixed the generator, so the baseline is
+    # now exact (1.000) and a +0.5 shift overshoots (0.941) -- the candidate must be REJECTED, and the
+    # decision must say so with a negative delta rather than silently selecting or tying.
+    style = result["mean_style"]
+    delta = style["sizes-plus-half"] - style["baseline"]
+    decision_by_id = {d["id"]: d for d in decision["decisions"]}
+    entry = decision_by_id["sizes-plus-half"]
+    if delta > 0:
+        assert entry["verdict"] == "selected", (delta, entry)
+    elif delta < 0:
+        assert entry["verdict"] in ("rejected", "tie"), (delta, entry)
+        assert entry["delta"] <= 0, (delta, entry)
+    else:
+        assert entry["verdict"] == "tie", (delta, entry)
+    # and whichever way it went, the decision names the aggregate it used
+    assert decision["aggregate"] == "mean_style"
 
 
 def test_a_non_scalar_override_gets_a_path_safe_artefact_name():

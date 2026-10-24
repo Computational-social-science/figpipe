@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-25T00:35:08",
+  "run_at": "2026-10-25T00:56:56",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -9,37 +9,19 @@
     "  passed 8, failed 0",
     "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
     "  wrote knowledge\\evolution_report.json",
-    "  lean: tracked 79.7 -> 79.7 MB, worktree 118.6 -> 116.9 MB"
+    "  lean: tracked 79.8 -> 79.8 MB, worktree 118.8 -> 117.0 MB"
   ],
-  "tests_ok": false,
-  "tests_summary": "1 failed, 881 passed, 3 skipped, 1 warning in 473.55s (0:07:53) | FAILED tests/test_adaptiverule.py::test_the_adaptive_margin_does_not_change_what_gets_selected",
+  "tests_ok": true,
+  "tests_summary": "882 passed, 3 skipped, 1 warning in 470.60s (0:07:50)",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
   "published": {
-    "pushed": true,
-    "steps": [
-      {
-        "cmd": "git add -A",
-        "code": 0,
-        "tail": []
-      },
-      {
-        "cmd": "git -c user.name=figpipe-bot",
-        "code": 0,
-        "tail": [
-          " create mode 100644 knowledge/runs/2026-10-25T003508.json"
-        ]
-      },
-      {
-        "cmd": "git push origin",
-        "code": 0,
-        "tail": [
-          "   7e6672d..1de9339  main -> main"
-        ]
-      }
-    ],
-    "withheld": []
+    "pushed": false,
+    "withheld": [],
+    "blocked_deletions": [],
+    "skipped": true,
+    "reason": "no knowledge change: the run record stays uncommitted for the next run"
   },
   "check_results": {
     "L01": {
@@ -1876,27 +1858,27 @@
     "benchmark_official_improvement": 44.77,
     "statistics_reproduced": 15,
     "knowledge_version": 16,
-    "tests": 884,
-    "tests_passed": 881
+    "tests": 885,
+    "tests_passed": 882
   },
   "capabilities_delta": {
     "changed": true,
     "delta": {
       "tests": {
-        "before": 881,
-        "after": 884
+        "before": 884,
+        "after": 885
       },
       "tests_passed": {
-        "before": 878,
-        "after": 881
+        "before": 881,
+        "after": 882
       }
     },
     "verdict": {
       "gains": [
         {
           "field": "tests",
-          "before": 881,
-          "after": 884
+          "before": 884,
+          "after": 885
         }
       ],
       "regressions": [],
@@ -1920,7 +1902,7 @@
       ]
     }
   },
-  "ok": false,
+  "ok": true,
   "capability_ok": true,
   "capability_regressions": [],
   "mutation_ok": true,

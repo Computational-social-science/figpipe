@@ -5957,3 +5957,61 @@ The counter-example is worth naming: three rounds earlier I "fixed" a self-refer
 it unable to fail. This test had the opposite virtue -- it said what would make it wrong.
 
 Suite: 882 passed, 3 skipped.
+
+
+## 167. The style candidates were calibrated against a bug I then fixed (2026-10-25)
+
+`style_from_profile` derived its font tiers by SUBTRACTION:
+
+    base  = round(median * 2) / 2          # 6.0
+    label = round((median + 0.25) * 2) / 2 # rounds BACK to 6.0 -- the nudge vanished
+    tick  = base - 0.5                     # 5.5, INVENTED
+
+Measured on a reference whose sizes are {6.0, 7.0, 8.0}: the emitted figure had {5.5, 6.0, 8.0}. The
+reference contains no 5.5 pt text at all. **That missing tier was the entire `sizes` component of the
+style distance** -- and it was the only component with any room:
+
+    details: {'sizes': 0.268, 'lines': 0.0, 'rules': 0.0, 'palette': 0.0, 'aspect': 0.0}
+
+### Why this matters beyond the fix
+
+The loop's ONE working candidate, `sizes-plus-half`, was worth +0.079 **because it cancelled this bug**.
+It was not discovering a style improvement; it was a +0.5 shift against a generator that emitted one
+tier 0.5 too low. **The loop's first real decision was, in part, an artefact of my own defect.**
+
+### The fix, in three measured steps
+
+    tick  = round(median * 2) / 2      (measured, not base - 0.5)
+    label = base + 1.0                 (a whole tier above, not a +0.25 nudge that rounds away)
+    titlesize stays BAND[1]
+
+Verified on three independent references:
+
+    skill                     before    after
+    trend_with_uncertainty    0.0800 -> 0.0000
+    scatter_relationship      0.0800 -> 0.0040
+    dual_measure              0.0900 -> 0.0090
+
+**Exact reproduction of the reference's size set {6.0, 7.0, 8.0} in all three.**
+
+### The consequence the loop correctly reported
+
+With the generator fixed, the baseline is exact and a uniform shift can only hurt:
+
+    baseline           0.917  (mean_style)
+    sizes-plus-half    rejected  -0.0630
+    sizes-plus-one     rejected  -0.1270
+
+The two style candidates are now NEGATIVE CONTROLS. **A task whose baseline is perfect cannot be
+improved**, and the honest outcome is "nothing to select" rather than keeping candidates that only
+looked good against the old bug.
+
+### The lesson
+
+**A candidate that improves a metric is not evidence that the metric was measuring the right thing.**
+`sizes-plus-half` moved `mean_style` by +0.079 and the loop selected it -- and it was compensating for
+a hard-coded offset. This is the third form of the same mistake in this session: round 97 (a base rate
+read as a defect), round 99 (a code value read as an image inference), and now a bug read as a
+discovery.
+
+Suite: 882 passed, 3 skipped.

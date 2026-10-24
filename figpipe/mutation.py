@@ -964,19 +964,24 @@ def default_space() -> MutationSpace:
             _plus_one = _copy.deepcopy(_base_prof)
             _plus_one.sizes_pt = [v + 1.0 for v in _plus_one.sizes_pt]
             candidates = candidates + (
+                # THE BASELINE IS NOW EXACT (round 107 fixed the font-tier generator), so a uniform
+                # size shift can only be a regression: measured, -0.50 -> 0.0700, 0.00 -> 0.0000,
+                # +0.50 -> 0.0590. These two are kept as NEGATIVE CONTROLS: a loop that selects them
+                # is a loop that cannot tell an improvement from a perturbation.
                 Candidate(
                     id="sizes-plus-half", operator="style.profile", parameter="profile",
                     baseline_value=_base_prof, value=_plus_half,
-                    rationale=("the measured optimum of a uniform text-size scan: -0.5 gave 0.1390, "
-                               "0.0 gave 0.0800, +0.25 gave 0.0700, +0.50 gave 0.0000 and +1.00 "
-                               "gave 0.0590. This is the step toward the peak."),
+                    rationale=("NEGATIVE CONTROL. The baseline reproduces its reference exactly "
+                               "(distance 0.0000), so a +0.5 uniform shift measures 0.0590 -- a "
+                               "regression. A loop that selects this cannot tell an improvement "
+                               "from a perturbation."),
                     skill=_style_tasks[0].skill),
                 Candidate(
                     id="sizes-plus-one", operator="style.profile", parameter="profile",
                     baseline_value=_base_prof, value=_plus_one,
-                    rationale=("the negative control for the same scan: +1.00 scores 0.0590, WORSE "
-                               "than +0.50's 0.0000. A search that cannot reject overshoot is not "
-                               "a search."),
+                    rationale=("NEGATIVE CONTROL, further out. +1.0 measures 0.0590 as well; the two "
+                               "together show the penalty is flat in this direction, so neither can "
+                               "be picked by accident."),
                     skill=_style_tasks[0].skill),
             )
             tasks = _style_tasks + tuple(t for t in tasks if t not in _style_tasks)
