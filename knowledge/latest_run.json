@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-25T03:26:46",
+  "run_at": "2026-10-25T03:54:01",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -9,19 +9,16 @@
     "  passed 8, failed 0",
     "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
     "  wrote knowledge\\evolution_report.json",
-    "  lean: tracked 80.0 -> 80.0 MB, worktree 134.5 -> 121.2 MB"
+    "  lean: tracked 80.0 -> 80.0 MB, worktree 116.8 -> 115.0 MB"
   ],
-  "tests_ok": true,
-  "tests_summary": "882 passed, 3 skipped, 1 warning in 785.70s (0:13:05)",
+  "tests_ok": false,
+  "tests_summary": "1 failed, 881 passed, 3 skipped, 1 warning in 473.56s (0:07:53) | FAILED tests/test_lean.py::test_tracked_size_is_within_budget - AssertionErro...",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
   "published": {
     "pushed": false,
-    "withheld": [],
-    "blocked_deletions": [],
-    "skipped": true,
-    "reason": "no knowledge change: the run record stays uncommitted for the next run"
+    "reason": "not yet published"
   },
   "check_results": {
     "L01": {
@@ -1857,20 +1854,35 @@
     "benchmark_official_improvement": 46.44,
     "statistics_reproduced": 15,
     "knowledge_version": 16,
-    "tests": 885,
-    "tests_passed": 882
+    "tests": 884,
+    "tests_passed": 881
   },
   "capabilities_delta": {
-    "changed": false,
-    "delta": {},
+    "changed": true,
+    "delta": {
+      "tests": {
+        "before": 885,
+        "after": 884
+      },
+      "tests_passed": {
+        "before": 882,
+        "after": 881
+      }
+    },
     "verdict": {
       "gains": [],
-      "regressions": [],
+      "regressions": [
+        {
+          "field": "tests",
+          "before": 885,
+          "after": 884
+        }
+      ],
       "corrections": [],
       "not_compared": [],
       "instrument_changed": false,
       "membership_broken": false,
-      "ok": true,
+      "ok": false,
       "judged_fields": [
         "benchmark_anchor_single",
         "benchmark_hard_findings",
@@ -1886,9 +1898,15 @@
       ]
     }
   },
-  "ok": true,
-  "capability_ok": true,
-  "capability_regressions": [],
-  "mutation_ok": true,
-  "publish_note": "The publish outcome is recorded after the commit that carries this run, so it describes the push triggered by this run; the file's own commit is made by the next scheduled run."
+  "ok": false,
+  "capability_ok": false,
+  "capability_regressions": [
+    {
+      "field": "tests",
+      "before": 885,
+      "after": 884
+    }
+  ],
+  "publish_note": "capability regression detected; record kept but the run exits non-zero (re-run with --accept-capability-regression to accept)",
+  "mutation_ok": true
 }
