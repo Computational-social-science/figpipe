@@ -6121,3 +6121,42 @@ benchmark never gives the image channel, plus 1.3 points of genuinely winnable w
 `WHY_ASPECT_CANNOT_BE_WON.md` records the measurements.
 
 Suite: 882 passed, 3 skipped.
+
+
+## 170. The size budget was doing its job (2026-10-25)
+
+The scheduled run failed on `test_tracked_size_is_within_budget`:
+
+    git tracks 80.1 MB, over the 80.0 MB budget
+
+**90 KB over.** The lazy fix is to raise the limit. The measurement says otherwise:
+
+    corpus/extracted/pdf_inventory.json   1893 KB
+      of which page0_text_head             793 KB   (38 %)
+
+`page0_text_head` is a 600-character preview of each PDF's first page. Two scripts WRITE it
+(`classify_corpus.py:61`, `extract_corpus.py:265`) and **no code anywhere reads it.** It is a debugging
+aid that became permanent because it was never removed.
+
+Removing it: 1893 KB -> 1100 KB, and the same field in `corpus/pdf_inventory.json` (54 -> 29 KB).
+Tracked total 80.09 -> **79.28 MB**, with 721 KB of headroom.
+
+### Why this is worth writing down
+
+**The budget surfaced a real defect and I nearly silenced the messenger.** A tracked file carrying 38 %
+dead weight is exactly what a size budget exists to find; raising the limit would have kept the 793 KB
+AND removed the only signal that would ever have caught it.
+
+This is the same shape as the `mutation_ok` finding two rounds earlier: **a check that fires is
+information, and the cheapest way to make it stop firing is also the one that destroys the information.**
+
+### The general rule
+
+A field that is written and never read is dead weight in a TRACKED file. The distinction from a
+regenerable cache is that a cache can be deleted and rebuilt; a tracked field costs every clone forever,
+and a preview kept "for debugging" is the most common way it happens.
+
+`tests/test_inventory_lean.py` now asserts the field is absent, that the inventory stays under 1300 KB,
+and -- the general form -- that no inventory record carries a string field longer than 400 characters.
+
+Suite: 885 passed, 3 skipped.

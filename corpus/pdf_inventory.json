@@ -1,921 +1,887 @@
 {
-  "source_root": "D:\\2026-AI4S",
-  "n_files_found": 42,
-  "n_unique_by_md5": 34,
-  "n_kept": 34,
-  "n_excluded": 0,
-  "exclude_rules": [
-    "nature\\s+communications",
-    "\\bnpj\\b",
-    "scientific\\s+reports",
-    "national\\s+science\\s+review",
-    "\\bNSR\\b"
-  ],
-  "kept": [
-    {
-      "path": "D:\\2026-AI4S\\!2024-Nature-Detecting hallucinations in large language models using semantic entropy_SI&Highlights.pdf",
-      "name": "!2024-Nature-Detecting hallucinations in large language models using semantic entropy_SI&Highlights.pdf",
-      "size_bytes": 3112477,
-      "md5": "2da1770197fecadf41fe062679e6aa77",
-      "n_pages": 31,
-      "metadata": {
-        "format": "PDF 1.6",
-        "creator": "Adobe Acrobat Pro DC (64-bit) 22.1.20085",
-        "producer": "Adobe Acrobat Pro DC (64-bit) 22.1.20085",
-        "creationDate": "D:20240620112753+08'00'",
-        "modDate": "D:20260924234801+08'00'"
-      },
-      "page0_size": [
-        595.28,
-        790.87
-      ],
-      "page0_text_head": "inhibits the translation of an mRNA that they \nstudied, and that this inhibition correlates \ndirectly with tRNA cleavage. Furthermore, the \nauthors found that ANG was associated with \ncellular material that corresponds to the 80S \nsubunit of the ribosome, the functional riboso-\nmal unit that enables active mRNA translation.\nThe authors carried out structural and bio-\nchemical analyses of various combinations of \nthe 80S ribosome, ANG, tRNA (in its states of \neither carrying or not carrying an amino acid) \nand the protein elongation factor eEF1A (this \nbrings tRNA to the ‘elongating’ ribosome, ",
-      "exclude_hits_anywhere": [],
-      "exclude_hits_decisive": [],
-      "excluded": false,
-      "excluded_reason": null,
-      "duplicate_paths": [],
-      "n_copies": 1
-    },
-    {
-      "path": "D:\\2026-AI4S\\!2026-Nature-Evaluating large language models for accuracy incentivizes hallucinations&SI.pdf",
-      "name": "!2026-Nature-Evaluating large language models for accuracy incentivizes hallucinations&SI.pdf",
-      "size_bytes": 1792840,
-      "md5": "0abea0424f141a866623d5ab726e6547",
-      "n_pages": 23,
-      "metadata": {
-        "format": "PDF 1.6",
-        "author": "Adam Tauman Kalai",
-        "subject": "Nature, doi:10.1038/s41586-026-10549-w",
-        "creator": "Adobe Acrobat Pro DC (64-bit) 22.1.20085",
-        "producer": "Adobe PDF Library 16.0.7",
-        "creationDate": "D:20260711153436+08'00'",
-        "modDate": "D:20260904210305+08'00'"
-      },
-      "page0_size": [
-        595.28,
-        790.87
-      ],
-      "page0_text_head": "Nature  |  Vol 653  |  28 May 2026  |  1047\nArticle\nEvaluating large language models for \naccuracy incentivizes hallucinations\nAdam Tauman Kalai1 ✉, Ofir Nachum1, Santosh S. Vempala2 & Edwin Zhang1,3\nLarge language models sometimes produce confident, plausible falsehoods \n(‘hallucinations’), limiting their reliability1,2. Previous work has offered numerous \nexplanations and effective mitigations such as retrieval and tool use3, consistency- \nbased self-verification4 and reinforcement learning from human feedback5. \nNonetheless, the problem persists even in state-of-the-art language models6,7. ",
-      "exclude_hits_anywhere": [],
-      "exclude_hits_decisive": [],
-      "excluded": false,
-      "excluded_reason": null,
-      "duplicate_paths": [],
-      "n_copies": 1
-    },
-    {
-      "path": "D:\\2026-AI4S\\nhb-llm-mistranslation\\sny5mVR6VbEU7fwc-grok-workspace\\attachments\\!2026-Nature-Evaluating large language models for accuracy incentivizes hallucinations&SI.pdf",
-      "name": "!2026-Nature-Evaluating large language models for accuracy incentivizes hallucinations&SI.pdf",
-      "size_bytes": 1801329,
-      "md5": "463035fc6ee493e2595a3eb7aedcdb6d",
-      "n_pages": 23,
-      "metadata": {
-        "format": "PDF 1.6",
-        "author": "Adam Tauman Kalai",
-        "subject": "Nature, doi:10.1038/s41586-026-10549-w",
-        "creator": "Adobe Acrobat Pro DC (64-bit) 22.1.20085",
-        "producer": "Adobe PDF Library 16.0.7",
-        "creationDate": "D:20260711153436+08'00'",
-        "modDate": "D:20260828230608+08'00'"
-      },
-      "page0_size": [
-        595.28,
-        790.87
-      ],
-      "page0_text_head": "Nature  |  Vol 653  |  28 May 2026  |  1047\nArticle\nEvaluating large language models for \naccuracy incentivizes hallucinations\nAdam Tauman Kalai1 ✉, Ofir Nachum1, Santosh S. Vempala2 & Edwin Zhang1,3\nLarge language models sometimes produce confident, plausible falsehoods \n(‘hallucinations’), limiting their reliability1,2. Previous work has offered numerous \nexplanations and effective mitigations such as retrieval and tool use3, consistency- \nbased self-verification4 and reinforcement learning from human feedback5. \nNonetheless, the problem persists even in state-of-the-art language models6,7. ",
-      "exclude_hits_anywhere": [],
-      "exclude_hits_decisive": [],
-      "excluded": false,
-      "excluded_reason": null,
-      "duplicate_paths": [],
-      "n_copies": 1
-    },
-    {
-      "path": "D:\\2026-AI4S\\Novel paradigm\\REFs\\1991-Nature_So what's new.pdf",
-      "name": "1991-Nature_So what's new.pdf",
-      "size_bytes": 409542,
-      "md5": "ea1a38dd7049d0fd4a165aa4d856d1b8",
-      "n_pages": 1,
-      "metadata": {
-        "format": "PDF 1.6",
-        "title": "Untitled-1",
-        "creator": "Adobe InDesign 1.0",
-        "producer": "Acrobat Distiller 11.0.9(Windows)",
-        "creationDate": "D:20020628165318+05'30'",
-        "modDate": "D:20190308014339+08'00'"
-      },
-      "page0_size": [
-        581.1,
-        793.7
-      ],
-      "page0_text_head": "© 1991 Nature Publishing Group\nWittgenstein's paranoia \nSrR - The recent debate in Nature between \nGreenfield and Marshall I over the merits of \nWittgenstein again shows that some people \nregard him as the greatest philosopher of the \ncentury, others as just one of a long line of \nGerman-speaking philosophers (such as \nHegel and Heidegger) who have dazzled \nsome innocent English-speaking philoso-\nphers by writing material whose basic non-\nsense is concealed by the impenetrable thic-\nkets of the German language. I would like to \nadvance a third hypothesis. Russell in his \nautobiography (among o",
-      "exclude_hits_anywhere": [],
-      "exclude_hits_decisive": [],
-      "excluded": false,
-      "excluded_reason": null,
-      "duplicate_paths": [],
-      "n_copies": 1
-    },
-    {
-      "path": "D:\\2026-AI4S\\Novel paradigm\\REFs\\1997-Nature_A novel paradigm.pdf",
-      "name": "1997-Nature_A novel paradigm.pdf",
-      "size_bytes": 1819354,
-      "md5": "1cf8ba19487640b38e7c89fb4f7e35e9",
-      "n_pages": 1,
-      "metadata": {
-        "format": "PDF 1.6",
-        "creator": "Adobe Photoshop 4.0",
-        "producer": "Acrobat Distiller 11.0.9(Windows)",
-        "creationDate": "D:20170605153543+05'30'",
-        "modDate": "D:20190308015233+08'00'"
-      },
-      "page0_size": [
-        581.09,
-        793.71
-      ],
-      "page0_text_head": "\u0001\u0002\u0003\u0003\u0004\u0005\u0006\u0002\u0007\b\u0004\u0007\u0001\u0004\nDarwin a better name than Wallace? \nSir- C. Ambrogi Lorenzini (Nature 384, \n508; 1996) highlights the possibility that \ndouble-barrelled names may be incorrectly \nlisted in publication databases. This is an \nimportant issue because citation rates are \nincreasingly used to assess the value of \nresearch. But it is not only those with \nunusual names who may get a raw deal out \nof citation indices. Investigation of the \nrelationship between alphabetical position \nof surname and citation rate reveals that \nresearchers nearer to Darwin may appear \nto be making a bigger contribution th",
-      "exclude_hits_anywhere": [],
-      "exclude_hits_decisive": [],
-      "excluded": false,
-      "excluded_reason": null,
-      "duplicate_paths": [],
-      "n_copies": 1
-    },
-    {
-      "path": "D:\\2026-AI4S\\Novel paradigm\\REFs\\1997-Nature_You read it here first_'Novel'.pdf",
-      "name": "1997-Nature_You read it here first_'Novel'.pdf",
-      "size_bytes": 120396,
-      "md5": "de359589bd54fb6d09bd580760b45349",
-      "n_pages": 1,
-      "metadata": {
-        "format": "PDF 1.6",
-        "producer": "Acrobat Distiller 3.0 for Power Macintosh",
-        "creationDate": "D:19980710204357Z",
-        "modDate": "D:20230228182126+08'00'"
-      },
-      "page0_size": [
-        612.0,
-        792.0
-      ],
-      "page0_text_head": "Nature © Macmillan Publishers Ltd 1998\n8\ncollective stranglehold on Chinese\nintellectual advancement. In addition, one\ncritical point that is studiously not\naddressed by Chau and Chau is Needham’s\nobservations regarding the culturally\ndefined roles of science in Chinese \nsociety, in which practitioners of science \n(in the broadest sense) traditionally \nserved the authoritarian needs of the state\n(royal court), particularly in close\nconjunction with well-defined élite classes\nthat promulgated the systematic abuse \nof the predominantly submissive \nagrarian population. \nTo confound matters furthe",
-      "exclude_hits_anywhere": [],
-      "exclude_hits_decisive": [],
-      "excluded": false,
-      "excluded_reason": null,
-      "duplicate_paths": [],
-      "n_copies": 1
-    },
-    {
-      "path": "D:\\2026-AI4S\\Novel paradigm\\REFs\\2008-Nature_A question of class.pdf",
-      "name": "2008-Nature_A question of class.pdf",
-      "size_bytes": 629877,
-      "md5": "77b5fd0a8c090a424756f6da8c2a5c13",
-      "n_pages": 2,
-      "metadata": {
-        "format": "PDF 1.3",
-        "title": "23.10 Essay Classification.indd NS AY.indd",
-        "author": "x",
-        "creator": "InDesign: pictwpstops filter 1.0",
-        "producer": "Acrobat Distiller 11.0.9(Windows)",
-        "creationDate": "D:20081016172634+01'00'",
-        "modDate": "D:20190424194504+05'30'"
-      },
-      "page0_size": [
-        595.28,
-        782.36
-      ],
-      "page0_text_head": "D. PARKINS\nConsider this list of scientific controversies: \nthe decision by the International Astronomi-\ncal Union to define ‘planet’ in such a way as to \nexclude Pluto; the ongoing debate over what \n‘species’ means for bacteria; and the discov-\nery, initially controversial, that the most com-\nmon cause for peptic ulcers is an infection \nby the Helicobacter pylori bacterium. \nWhat do these diverse issues have in \ncommon? They are all examples of sci-\nentists dis agreeing over how to classify \nphenomena ‘correctly’. \nCategorization is a fundamental skill \nlearned in childhood. Yet the principle",
-      "exclude_hits_anywhere": [],
-      "exclude_hits_decisive": [],
-      "excluded": false,
-      "excluded_reason": null,
-      "duplicate_paths": [],
-      "n_copies": 1
-    },
-    {
-      "path": "D:\\2026-AI4S\\Novel paradigm\\REFs\\2008-Nature_Language_Disputed definitions.pdf",
-      "name": "2008-Nature_Language_Disputed definitions.pdf",
-      "size_bytes": 3614102,
-      "md5": "68d52a7aef89f9fdd89821270b5c7266",
-      "n_pages": 6,
-      "metadata": {
-        "format": "PDF 1.3",
-        "title": "23.10 Definitions.indd WF CNS new .indd",
-        "author": "Gribbin, Simon",
-        "creator": "InDesign: pictwpstops filter 1.0",
-        "producer": "Acrobat Distiller 11.0.9(Windows)",
-        "creationDate": "D:20081021105800+01'00'",
-        "modDate": "D:20210724131111+08'00'"
-      },
-      "page0_size": [
-        595.28,
-        782.36
-      ],
-      "page0_text_head": "comes along and overturns the previous consensus. Voilà, \na paradigm shift. The classic example, Kuhn said, is the \nCopernican revolution, in which Ptolemaic theory was swept \naway by putting the Sun at the centre of the Solar System. \nPost-shift, all previous observations had to be reinterpreted. \nKuhn’s theory about how science works was arguably a \nparadigm shift of its own, by changing the way that academ-\nics think about science. And scientists have been using the \nphrase ever since. \nIn a postscript to the second edition of his book, Kuhn \nexplained that he used the word ‘paradigm’ in at",
-      "exclude_hits_anywhere": [],
-      "exclude_hits_decisive": [],
-      "excluded": false,
-      "excluded_reason": null,
-      "duplicate_paths": [],
-      "n_copies": 1
-    },
-    {
-      "path": "D:\\2026-AI4S\\Novel paradigm\\REFs\\2012-Nature_In retrospect_The Structure of Scientific Revolutions.pdf",
-      "name": "2012-Nature_In retrospect_The Structure of Scientific Revolutions.pdf",
-      "size_bytes": 1347370,
-      "md5": "e46e2a8cd8830a8affd941ca6f1ea458",
-      "n_pages": 3,
-      "metadata": {
-        "format": "PDF 1.6",
-        "creator": "Adobe InDesign CS5 (7.0.4)",
-        "producer": "Adobe PDF Library 9.9",
-        "creationDate": "D:20120403163235+01'00'",
-        "modDate": "D:20210125164759+08'00'"
-      },
-      "page0_size": [
-        595.28,
-        782.36
-      ],
-      "page0_text_head": "Universe — but there is nothing we \ncan say about the Universe except in \nterms of what we see and think. I’m not \nsuggesting that we make it all up arbitrar­\nily. We’re constrained by something, but \nit is extremely difficult to say what it is. \nSome scientists would argue with that.\nI can see how resistant scientists are to \nthat side of the paradox. I was invited to \nCERN near Geneva, Switzerland, to talk \nabout The Human Touch, and it was really \ndaunting. They had appointed a jury that \nasked detailed questions. One of the jury \nmembers said beforehand: “We’re going \nto haul you over the ",
-      "exclude_hits_anywhere": [],
-      "exclude_hits_decisive": [],
-      "excluded": false,
-      "excluded_reason": null,
-      "duplicate_paths": [],
-      "n_copies": 1
-    },
-    {
-      "path": "D:\\2026-AI4S\\REFs\\2016-Nature-Multimodal learning with next-token prediction for large multimodal models.pdf",
-      "name": "2016-Nature-Multimodal learning with next-token prediction for large multimodal models.pdf",
-      "size_bytes": 47925920,
-      "md5": "9eabd33e960b34b999c7715083fb4ac0",
-      "n_pages": 20,
-      "metadata": {
-        "format": "PDF 1.6",
-        "title": "Multimodal learning with next-token prediction for large multimodal models",
-        "author": "Xinlong Wang",
-        "subject": "Nature, doi:10.1038/s41586-025-10041-x",
-        "creator": "Springer",
-        "creationDate": "D:20260126195247+05'30'",
-        "modDate": "D:20260203184812+08'00'"
-      },
-      "page0_size": [
-        595.28,
-        790.87
-      ],
-      "page0_text_head": "Nature  |  www.nature.com  |  1\nArticle\nMultimodal learning with next-token \nprediction for large multimodal models\nXinlong Wang1,4 ✉, Yufeng Cui1,4, Jinsheng Wang1,4, Fan Zhang1,4, Yueze Wang1,4, \nXiaosong Zhang1,4, Zhengxiong Luo1,4, Quan Sun1,4, Zhen Li1,4, Yuqi Wang1, Qiying Yu1, \nYingli Zhao1, Yulong Ao1, Xuebin Min1, Chunlei Men1, Boya Wu1, Bo Zhao1, Bowen Zhang1, \nLiangdong Wang1, Guang Liu1, Zheqi He1, Xi Yang1, Jingjing Liu2, Yonghua Lin1, \nZhongyuan Wang1 ✉ & Tiejun Huang1,3 ✉\nDeveloping a unified algorithm that can learn from and generate across modalities \nsuch as text, images and ",
-      "exclude_hits_anywhere": [],
-      "exclude_hits_decisive": [],
-      "excluded": false,
-      "excluded_reason": null,
-      "duplicate_paths": [],
-      "n_copies": 1
-    },
-    {
-      "path": "D:\\2026-AI4S\\nhb-llm-mistranslation\\.kilo\\worktrees\\bright-color\\References\\2023-Nature-Why open-source generative AI models are an ethical way forward for science.pdf",
-      "name": "2023-Nature-Why open-source generative AI models are an ethical way forward for science.pdf",
-      "size_bytes": 108948,
-      "md5": "609acd6be87caa977930ef9068a10445",
-      "n_pages": 1,
-      "metadata": {
-        "format": "PDF 1.6",
-        "creator": "Adobe InDesign 16.4 (Macintosh)",
-        "producer": "Adobe PDF Library 16.0",
-        "creationDate": "D:20230418114846+01'00'",
-        "modDate": "D:20260627161648+08'00'"
-      },
-      "page0_size": [
-        595.28,
-        790.87
-      ],
-      "page0_text_head": "By Arthur Spirling\nOpen generative AI models \nare a way forward for science\nResearchers should stop using proprietary \nlarge language models and develop \ntransparent ones to ensure reproducibility.\nE\nvery day, it seems, a new large language model \n(LLM) is announced with breathless commen-\ntary — from both its creators and academics — on \nits extraordinary abilities to respond to human \nprompts. It can fix code! It can write a reference \nletter! It can summarize an article!\nFrom my perspective as a political and data scientist who \nis using and teaching about such models, scholars should \nbe w",
-      "exclude_hits_anywhere": [],
-      "exclude_hits_decisive": [],
-      "excluded": false,
-      "excluded_reason": null,
-      "duplicate_paths": [
-        "D:\\2026-AI4S\\nhb-llm-mistranslation\\References\\2023-Nature-Why open-source generative AI models are an ethical way forward for science.pdf"
-      ],
-      "n_copies": 2
-    },
-    {
-      "path": "D:\\2026-AI4S\\Novel paradigm\\REFs\\2023-Nature_Papers and patents are becoming less disruptive over time_with SI.pdf",
-      "name": "2023-Nature_Papers and patents are becoming less disruptive over time_with SI.pdf",
-      "size_bytes": 4999337,
-      "md5": "e2bc44caafd199d15ac72b0b80b000ae",
-      "n_pages": 34,
-      "metadata": {
-        "format": "PDF 1.6",
-        "author": "Michael Park",
-        "subject": "Nature, doi:10.1038/s41586-022-05543-x",
-        "creator": "Adobe Acrobat Pro DC (64-bit) 22.1.20085",
-        "producer": "Adobe PDF Library 10.0.1",
-        "creationDate": "D:20230801184138+08'00'",
-        "modDate": "D:20230801194502+08'00'"
-      },
-      "page0_size": [
-        595.28,
-        790.87
-      ],
-      "page0_text_head": "138  |  Nature  |  Vol 613  |  5 January 2023\nArticle\nPapers and patents are becoming less \ndisruptive over time\nMichael Park1, Erin Leahey2 & Russell J. Funk1 ✉\nTheories of scientific and technological change view discovery and invention as \nendogenous processes1,2, wherein previous accumulated knowledge enables future \nprogress by allowing researchers to, in Newton’s words, ‘stand on the shoulders of \ngiants’3–7. Recent decades have witnessed exponential growth in the volume of new \nscientific and technological knowledge, thereby creating conditions that should be \nripe for major advances8,9",
-      "exclude_hits_anywhere": [],
-      "exclude_hits_decisive": [],
-      "excluded": false,
-      "excluded_reason": null,
-      "duplicate_paths": [],
-      "n_copies": 1
-    },
-    {
-      "path": "D:\\2026-AI4S\\Metrics\\REFs\\2025-Tokens\\2025-Tokens\\2024-Nature-Scaling neural machine translation to 200 languages.pdf",
-      "name": "2024-Nature-Scaling neural machine translation to 200 languages.pdf",
-      "size_bytes": 2770526,
-      "md5": "46658cce3d5f5d52506a3008f4d0de21",
-      "n_pages": 12,
-      "metadata": {
-        "format": "PDF 1.6",
-        "title": "Scaling neural machine translation to 200 languages",
-        "author": "Marta R. Costa-jussà",
-        "subject": "Nature, doi:10.1038/s41586-024-07335-x",
-        "creator": "Springer",
-        "creationDate": "D:20240615175452+05'30'",
-        "modDate": "D:20260111115251+08'00'"
-      },
-      "page0_size": [
-        595.28,
-        790.87
-      ],
-      "page0_text_head": "Nature  |  Vol 630  |  27 June 2024  |  841\nArticle\nScaling neural machine translation to  \n200 languages\nNLLB Team*\nThe development of neural techniques has opened up new avenues for research in \nmachine translation. Today, neural machine translation (NMT) systems can leverage \nhighly multilingual capacities and even perform zero-shot translation, delivering \npromising results in terms of language coverage and quality. However, scaling quality \nNMT requires large volumes of parallel bilingual data, which are not equally available \nfor the 7,000+ languages in the world1. Focusing on improving ",
-      "exclude_hits_anywhere": [],
-      "exclude_hits_decisive": [],
-      "excluded": false,
-      "excluded_reason": null,
-      "duplicate_paths": [],
-      "n_copies": 1
-    },
-    {
-      "path": "D:\\2026-AI4S\\2024-Nature-Scaling neural machine translation to 200 languages_NLLB-200.pdf",
-      "name": "2024-Nature-Scaling neural machine translation to 200 languages_NLLB-200.pdf",
-      "size_bytes": 3620707,
-      "md5": "7209237b1da077ad43df045bae76e404",
-      "n_pages": 62,
-      "metadata": {
-        "format": "PDF 1.6",
-        "author": "Marta R. Costa-jussamp#x000E0;",
-        "subject": "Nature, doi:10.1038/s41586-024-07335-x",
-        "creator": "Adobe Acrobat Pro DC (64-bit) 22.1.20085",
-        "producer": "Adobe PDF Library 16.0.7",
-        "creationDate": "D:20260619170443+08'00'",
-        "modDate": "D:20260619170443+08'00'"
-      },
-      "page0_size": [
-        595.28,
-        790.87
-      ],
-      "page0_text_head": "Nature  |  www.nature.com  |  1\nArticle\nScaling neural machine translation to  \n200 languages\nNLLB Team*\nThe development of neural techniques has opened up new avenues for research in \nmachine translation. Today, neural machine translation (NMT) systems can leverage \nhighly multilingual capacities and even perform zero-shot translation, delivering \npromising results in terms of language coverage and quality. However, scaling quality \nNMT requires large volumes of parallel bilingual data, which are not equally available \nfor the 7,000+ languages in the world1. Focusing on improving the translat",
-      "exclude_hits_anywhere": [],
-      "exclude_hits_decisive": [],
-      "excluded": false,
-      "excluded_reason": null,
-      "duplicate_paths": [],
-      "n_copies": 1
-    },
-    {
-      "path": "D:\\2026-AI4S\\2024-Nature-Scaling neural machine translation to 200 languages_SI.pdf",
-      "name": "2024-Nature-Scaling neural machine translation to 200 languages_SI.pdf",
-      "size_bytes": 1368240,
-      "md5": "6d110a484b87da88325c3fb3c515174d",
-      "n_pages": 25,
-      "metadata": {
-        "format": "PDF 1.6",
-        "title": "Scaling neural machine translation to 200 languages",
-        "creator": "Adobe InDesign 17.3 (Windows)",
-        "producer": "Adobe PDF Library 16.0.7",
-        "creationDate": "D:20240531101558+05'30'",
-        "modDate": "D:20240531102732+05'30'"
-      },
-      "page0_size": [
-        595.28,
-        790.87
-      ],
-      "page0_text_head": "Scaling neural machine translation to 200 \nlanguages\nIn the format provided by the \nauthors and unedited\nNature  |  www.nature.com/nature\nSupplementary information\nhttps://doi.org/10.1038/s41586-024-07335-x\n",
-      "exclude_hits_anywhere": [],
-      "exclude_hits_decisive": [],
-      "excluded": false,
-      "excluded_reason": null,
-      "duplicate_paths": [],
-      "n_copies": 1
-    },
-    {
-      "path": "D:\\2026-AI4S\\2025-Nature-A foundation model to predict and capture human cognition&SI.pdf",
-      "name": "2025-Nature-A foundation model to predict and capture human cognition&SI.pdf",
-      "size_bytes": 7989189,
-      "md5": "86b1c29022941f868f228c722d798178",
-      "n_pages": 146,
-      "metadata": {
-        "format": "PDF 1.6",
-        "author": "Marcel Binz",
-        "subject": "Nature, doi:10.1038/s41586-025-09215-4",
-        "creator": "Adobe Acrobat Pro DC (64-bit) 22.1.20085",
-        "producer": "Adobe PDF Library 16.0.7",
-        "creationDate": "D:20260213142547+08'00'",
-        "modDate": "D:20260213142547+08'00'"
-      },
-      "page0_size": [
-        595.28,
-        790.87
-      ],
-      "page0_text_head": "1002  |  Nature  |  Vol 644  |  28 August 2025\nArticle\nA foundation model to predict and capture \nhuman cognition\nMarcel Binz1 ✉, Elif Akata1, Matthias Bethge2, Franziska Brändle3,4, Fred Callaway5, \nJulian Coda-Forno1, Peter Dayan2,4, Can Demircan1, Maria K. Eckstein6, Noémi Éltető4, \nThomas L. Griffiths7, Susanne Haridi1,8, Akshay K. Jagadish1,2,4, Li Ji-An9, Alexander Kipnis1, \nSreejan Kumar7, Tobias Ludwig2,4, Marvin Mathony1, Marcelo Mattar5, Alireza Modirshanechi1, \nSurabhi S. Nath2,4,8, Joshua C. Peterson10, Milena Rmus1, Evan M. Russek7, Tankred Saanum1,4, \nJohannes A. Schubert4, Luca ",
-      "exclude_hits_anywhere": [],
-      "exclude_hits_decisive": [],
-      "excluded": false,
-      "excluded_reason": null,
-      "duplicate_paths": [],
-      "n_copies": 1
-    },
-    {
-      "path": "D:\\2026-AI4S\\REFs\\2025-Nature-Accurate predictions on small data with a tabular foundation model_Highlights&SI.pdf",
-      "name": "2025-Nature-Accurate predictions on small data with a tabular foundation model_Highlights&SI.pdf",
-      "size_bytes": 17120033,
-      "md5": "7fc0948385a28cd3388dd254959e9883",
-      "n_pages": 31,
-      "metadata": {
-        "format": "PDF 1.6",
-        "creator": "Adobe Acrobat Pro DC (64-bit) 22.1.20085",
-        "producer": "Adobe Acrobat Pro DC (64-bit) 22.1.20085",
-        "creationDate": "D:20250110234712+08'00'",
-        "modDate": "D:20250110234935+08'00'"
-      },
-      "page0_size": [
-        595.28,
-        790.87
-      ],
-      "page0_text_head": "a protein produced abundantly in the placenta. \nImportantly, the authors did not report any \ntransfer of LNP 55 to the fetus, which is ideal \nbecause the fetus is an ‘innocent bystander’ in \npre-eclampsia and is thought not to be directly \ninvolved in its origins.\nTo test the utility of LNP 55 in pregnancy, the \nauthors demonstrated in two mouse models \nof pre-eclampsia that a single intravenous \ndose of the LNP 55 formulation successfully \ndelivered VEGF mRNA to the placenta \nwithout severe adverse outcomes. VEGF \nmRNA lowered circulating sFlt-1 levels in the \nmother, stimulated blood-vessel ",
-      "exclude_hits_anywhere": [],
-      "exclude_hits_decisive": [],
-      "excluded": false,
-      "excluded_reason": null,
-      "duplicate_paths": [],
-      "n_copies": 1
-    },
-    {
-      "path": "D:\\2026-AI4S\\Metrics\\REFs\\2025-Tokens\\2025-Tokens\\2025-Nature-Comprehensive echocardiogram evaluation with view primed vision language AI.pdf",
-      "name": "2025-Nature-Comprehensive echocardiogram evaluation with view primed vision language AI.pdf",
-      "size_bytes": 8659146,
-      "md5": "0050ec774b097b7852c55391533b3d6c",
-      "n_pages": 24,
-      "metadata": {
-        "format": "PDF 1.6",
-        "title": "Comprehensive echocardiogram evaluation with view primed vision language AI",
-        "author": "Milos Vukadinovic",
-        "subject": "Nature, doi:10.1038/s41586-025-09850-x",
-        "creator": "Springer",
-        "creationDate": "D:20251210175236+05'30'",
-        "modDate": "D:20260111121854+08'00'"
-      },
-      "page0_size": [
-        595.28,
-        790.87
-      ],
-      "page0_text_head": "Nature  |  www.nature.com  |  1\nArticle\nComprehensive echocardiogram evaluation \nwith view primed vision language AI\nMilos Vukadinovic1,2, I-Min Chiu1,3, Xiu Tang4, Neal Yuan5,6, Tien-Yu Chen7, Paul Cheng4, \nDebiao Li8, Susan Cheng1, Bryan He9,11 ✉ & David Ouyang1,10,11 ✉\nEchocardiography is the most widely used cardiac imaging modality, capturing \nultrasound video data to assess cardiac structure and function1. Artificial intelligence (AI) \nin echocardiography has the potential to streamline manual tasks and improve \nreproducibility and precision2. However, most echocardiography AI models are",
-      "exclude_hits_anywhere": [],
-      "exclude_hits_decisive": [],
-      "excluded": false,
-      "excluded_reason": null,
-      "duplicate_paths": [],
-      "n_copies": 1
-    },
-    {
-      "path": "D:\\2026-AI4S\\2025-Nature-Joint speech and text machine translation for up to 100 languages_SEAMLESSM4T.pdf",
-      "name": "2025-Nature-Joint speech and text machine translation for up to 100 languages_SEAMLESSM4T.pdf",
-      "size_bytes": 5363713,
-      "md5": "45680c29ecf8d8a43b95f1397e3c2103",
-      "n_pages": 75,
-      "metadata": {
-        "format": "PDF 1.6",
-        "author": "Loïc Barrault",
-        "subject": "Nature, doi:10.1038/s41586-024-08359-z",
-        "creator": "Adobe Acrobat Pro DC (64-bit) 22.1.20085",
-        "producer": "Adobe PDF Library 16.0.7",
-        "creationDate": "D:20250119131635+08'00'",
-        "modDate": "D:20260623202336+08'00'"
-      },
-      "page0_size": [
-        595.28,
-        790.87
-      ],
-      "page0_text_head": "Nature  |  Vol 637  |  16 January 2025  |  587\nArticle\nJoint speech and text machine translation \nfor up to 100 languages\nSEAMLESS Communication Team*\nCreating the Babel Fish, a tool that helps individuals translate speech between any  \ntwo languages, requires advanced technological innovation and linguistic expertise. \nAlthough conventional speech-to-speech translation systems composed of multiple \nsubsystems performing translation in a cascaded fashion exist1–3, scalable and \nhigh-performing unified systems4,5 remain underexplored. To address this gap, here \nwe introduce SEAMLESSM4T–Massivel",
-      "exclude_hits_anywhere": [],
-      "exclude_hits_decisive": [],
-      "excluded": false,
-      "excluded_reason": null,
-      "duplicate_paths": [],
-      "n_copies": 1
-    },
-    {
-      "path": "D:\\2026-AI4S\\Metrics\\REFs\\2025-Tokens\\2025-Tokens\\2025-Nature-Learning the natural history of human disease with generative transformers&SI.pdf",
-      "name": "2025-Nature-Learning the natural history of human disease with generative transformers&SI.pdf",
-      "size_bytes": 38173557,
-      "md5": "641446243100c138e9acbc6ef08d7fba",
-      "n_pages": 48,
-      "metadata": {
-        "format": "PDF 1.6",
-        "author": "Artem Shmatko",
-        "subject": "Nature, doi:10.1038/s41586-025-09529-3",
-        "creator": "Adobe Acrobat Pro DC (64-bit) 22.1.20085",
-        "producer": "Adobe PDF Library 16.0.7",
-        "creationDate": "D:20260111104650+08'00'",
-        "modDate": "D:20260111122602+08'00'"
-      },
-      "page0_size": [
-        595.28,
-        790.87
-      ],
-      "page0_text_head": "248  |  Nature  |  Vol 647  |  6 November 2025\nArticle\nLearning the natural history of human \ndisease with generative transformers\nArtem Shmatko1,2,3,13, Alexander Wolfgang Jung2,4,5,6,13, Kumar Gaurav2,13, Søren Brunak4,7, \nLaust Hvas Mortensen5,7,8, Ewan Birney2 ✉, Tom Fitzgerald2 ✉ & Moritz Gerstung1,2,9,10,11,12 ✉\nDecision-making in healthcare relies on understanding patients’ past and current \nhealth states to predict and, ultimately, change their future course1–3. Artificial \nintelligence (AI) methods promise to aid this task by learning patterns of disease \nprogression from large corpor",
-      "exclude_hits_anywhere": [],
-      "exclude_hits_decisive": [],
-      "excluded": false,
-      "excluded_reason": null,
-      "duplicate_paths": [],
-      "n_copies": 1
-    },
-    {
-      "path": "D:\\2026-AI4S\\Metrics\\REFs\\2025-Tokens\\2025-Tokens\\2025-Nature-Towards multimodal foundation models in molecular cell biology&SI.pdf",
-      "name": "2025-Nature-Towards multimodal foundation models in molecular cell biology&SI.pdf",
-      "size_bytes": 3160838,
-      "md5": "039ef430ed311b30f156e6da93aa5aa4",
-      "n_pages": 20,
-      "metadata": {
-        "format": "PDF 1.6",
-        "author": "Haotian Cui",
-        "subject": "Nature, doi:10.1038/s41586-025-08710-y",
-        "creator": "Adobe Acrobat Pro DC (64-bit) 22.1.20085",
-        "producer": "Adobe PDF Library 22.1.117",
-        "creationDate": "D:20260111124713+08'00'",
-        "modDate": "D:20260111124754+08'00'"
-      },
-      "page0_size": [
-        595.28,
-        790.87
-      ],
-      "page0_text_head": "Nature  |  Vol 640  |  17 April 2025  |  623\nPerspective\nTowards multimodal foundation models in \nmolecular cell biology\nHaotian Cui1,2,3, Alejandro Tejada-Lapuerta4,5, Maria Brbić6,7,8, Julio Saez-Rodriguez9,10, \nSimona Cristea11,12, Hani Goodarzi13,14, Mohammad Lotfollahi15,16, Fabian J. Theis4,5,17 ✉ & \nBo Wang1,2,3,18 ✉\nThe rapid advent of high-throughput omics technologies has created an exponential \ngrowth in biological data, often outpacing our ability to derive molecular insights. \nLarge-language models have shown a way out of this data deluge in natural language \nprocessing by integra",
-      "exclude_hits_anywhere": [],
-      "exclude_hits_decisive": [],
-      "excluded": false,
-      "excluded_reason": null,
-      "duplicate_paths": [],
-      "n_copies": 1
-    },
-    {
-      "path": "D:\\2026-AI4S\\REFs\\Information Seeking\\2025-Nature_Discovering state-of-the-art reinforcement learning algorithms&SI.pdf",
-      "name": "2025-Nature_Discovering state-of-the-art reinforcement learning algorithms&SI.pdf",
-      "size_bytes": 8203556,
-      "md5": "d089008a9b593a2133592acb27a6d574",
-      "n_pages": 28,
-      "metadata": {
-        "format": "PDF 1.6",
-        "author": "Junhyuk Oh",
-        "subject": "Nature, doi:10.1038/s41586-025-09761-x",
-        "creator": "Adobe Acrobat Pro DC (64-bit) 22.1.20085",
-        "producer": "Adobe PDF Library 16.0.7",
-        "creationDate": "D:20260204182737+08'00'",
-        "modDate": "D:20260204183019+08'00'"
-      },
-      "page0_size": [
-        595.28,
-        790.87
-      ],
-      "page0_text_head": "312  |  Nature  |  Vol 648  |  11 December 2025\nArticle\nDiscovering state-of-the-art reinforcement \nlearning algorithms\nJunhyuk Oh1,2 ✉, Gregory Farquhar1,2, Iurii Kemaev1,2, Dan A. Calian1,2, Matteo Hessel1, \nLuisa Zintgraf1, Satinder Singh1, Hado van Hasselt1 & David Silver1 ✉\nHumans and other animals use powerful reinforcement learning (RL) mechanisms \nthat have been discovered by evolution over many generations of trial and error.  \nBy contrast, artificial agents typically learn using handcrafted learning rules. Despite \ndecades of interest, the goal of autonomously discovering powerful RL",
-      "exclude_hits_anywhere": [],
-      "exclude_hits_decisive": [],
-      "excluded": false,
-      "excluded_reason": null,
-      "duplicate_paths": [],
-      "n_copies": 1
-    },
-    {
-      "path": "D:\\2026-AI4S\\2026-Nature-A critical initialization for biological neural networks.pdf",
-      "name": "2026-Nature-A critical initialization for biological neural networks.pdf",
-      "size_bytes": 12978545,
-      "md5": "433a13068a1c6e0e7fb82df20a535cc6",
-      "n_pages": 28,
-      "metadata": {
-        "format": "PDF 1.6",
-        "title": "A critical initialization for biological neural networks",
-        "author": "Marius Pachitariu",
-        "subject": "Nature, doi:10.1038/s41586-026-10528-1",
-        "creator": "Springer",
-        "creationDate": "D:20260519111154+05'30'",
-        "modDate": "D:20260601123037+08'00'"
-      },
-      "page0_size": [
-        595.28,
-        790.87
-      ],
-      "page0_text_head": "Nature  |  www.nature.com  |  1\nArticle\nA critical initialization for biological neural \nnetworks\nMarius Pachitariu1 ✉, Lin Zhong1, Alexa Gracias1, Amanda Minisi1, Crystall Lopez1 & \nCarsen Stringer1 ✉\nIntrinsically generated, brainwide neural activity displays macroscopic coordination \namong large populations of neurons that persists beyond the biophysical timescales \nof individual neurons1–3. It is not well understood how these macroscopic behaviours \narise from microscopic, short-lived interactions between pairs of neurons. Here we \nshow that the eigenvalue spectrum and dynamical properties",
-      "exclude_hits_anywhere": [],
-      "exclude_hits_decisive": [],
-      "excluded": false,
-      "excluded_reason": null,
-      "duplicate_paths": [],
-      "n_copies": 1
-    },
-    {
-      "path": "D:\\2026-AI4S\\2026-Nature-Accelerating scientific discovery with Co-Scientist.pdf",
-      "name": "2026-Nature-Accelerating scientific discovery with Co-Scientist.pdf",
-      "size_bytes": 4714531,
-      "md5": "2db009d3653c5d2e840b06af741857d2",
-      "n_pages": 55,
-      "metadata": {
-        "format": "PDF 1.6",
-        "title": "Accelerating scientific discovery with Co-Scientist",
-        "author": "Juraj Gottweis",
-        "subject": "Nature, doi:10.1038/s41586-026-10644-y",
-        "creator": "Springer",
-        "creationDate": "D:20260515151445+05'30'",
-        "modDate": "D:20260515161536+05'30'"
-      },
-      "page0_size": [
-        595.28,
-        790.87
-      ],
-      "page0_text_head": "Accelerating scientific discovery with \nCo-Scientist\nJuraj Gottweis, Wei-Hung Weng, Alexander Daryin, Tao Tu, Petar Sirkovic, Artiom Myaskovsky, \nGrzegorz Glowaty, Felix Weissenberger, Alessio Orlandi, Dan Popovici, Anil Palepu, \nKeran Rong, Ryutaro Tanno, Khaled Saab, Fan Zhang, Jacob Blum, Andrew Carroll, \nKavita Kulkarni, Nenad Tomašev, Dina Zverinski, Ivor Rendulic, Elahe Vedadi, Florian Hasler, \nLuka Rimanic, Marina Boia, Ivan Budiselic, Ben Feinstein, Mathias Bellaiche, Tom Sheffer, \nJan Freyberg, Jeremy Ratcliff, Ottavia Bertolli, Katherine Chou, Avinatan Hassidim, \nBurak Gokturk, Amin ",
-      "exclude_hits_anywhere": [],
-      "exclude_hits_decisive": [],
-      "excluded": false,
-      "excluded_reason": null,
-      "duplicate_paths": [],
-      "n_copies": 1
-    },
-    {
-      "path": "D:\\2026-AI4S\\2026-Nature-Evaluating large language models for accuracy incentivizes hallucinations&SI.pdf",
-      "name": "2026-Nature-Evaluating large language models for accuracy incentivizes hallucinations&SI.pdf",
-      "size_bytes": 1806495,
-      "md5": "22f6d29eba4eacd665b222b4f8f1e327",
-      "n_pages": 23,
-      "metadata": {
-        "format": "PDF 1.6",
-        "author": "Adam Tauman Kalai",
-        "subject": "Nature, doi:10.1038/s41586-026-10549-w",
-        "creator": "Adobe Acrobat Pro DC (64-bit) 22.1.20085",
-        "producer": "Adobe PDF Library 16.0.7",
-        "creationDate": "D:20260711153436+08'00'",
-        "modDate": "D:20260711153604+08'00'"
-      },
-      "page0_size": [
-        595.28,
-        790.87
-      ],
-      "page0_text_head": "Nature  |  Vol 653  |  28 May 2026  |  1047\nArticle\nEvaluating large language models for \naccuracy incentivizes hallucinations\nAdam Tauman Kalai1 ✉, Ofir Nachum1, Santosh S. Vempala2 & Edwin Zhang1,3\nLarge language models sometimes produce confident, plausible falsehoods \n(‘hallucinations’), limiting their reliability1,2. Previous work has offered numerous \nexplanations and effective mitigations such as retrieval and tool use3, consistency- \nbased self-verification4 and reinforcement learning from human feedback5. \nNonetheless, the problem persists even in state-of-the-art language models6,7. ",
-      "exclude_hits_anywhere": [],
-      "exclude_hits_decisive": [],
-      "excluded": false,
-      "excluded_reason": null,
-      "duplicate_paths": [],
-      "n_copies": 1
-    },
-    {
-      "path": "D:\\2026-AI4S\\2026-Nature-In praise of human teachers_universities must resist outsourcing everything to AI.pdf",
-      "name": "2026-Nature-In praise of human teachers_universities must resist outsourcing everything to AI.pdf",
-      "size_bytes": 113396,
-      "md5": "4ca56fd933896a1d2c50e2bf35e86a86",
-      "n_pages": 1,
-      "metadata": {
-        "format": "PDF 1.6",
-        "creator": "Adobe InDesign 21.3 (Windows)",
-        "producer": "Adobe PDF Library 18.0",
-        "creationDate": "D:20260922121125+01'00'",
-        "modDate": "D:20260924114515+08'00'"
-      },
-      "page0_size": [
-        595.28,
-        790.87
-      ],
-      "page0_text_head": "The history \nof education \nis littered \nwith \nexamples \nof fears of \nfalling \nstandards \namong \nstudents.”\nMIT report emphasizes, is to retain the human teacher’s \nguiding role in showing students how to learn to think as \nthey are using AI. That means teachers still need to be up to \nspeed with their students’ progress, even when feedback is \noutsourced to AI tools. There can be no shortcuts to this, \nas the Nobel-prizewinning economist Philippe Aghion said \nearlier this month at a Nature Conference in Paris on AI in \nhealth care: “We need schools in which we learn to learn.”\nAlthough the ter",
-      "exclude_hits_anywhere": [],
-      "exclude_hits_decisive": [],
-      "excluded": false,
-      "excluded_reason": null,
-      "duplicate_paths": [],
-      "n_copies": 1
-    },
-    {
-      "path": "D:\\2026-AI4S\\2026-Nature-Mapping the neuronal building blocks of human language with language models.pdf",
-      "name": "2026-Nature-Mapping the neuronal building blocks of human language with language models.pdf",
-      "size_bytes": 16014440,
-      "md5": "2248c823dacf6435e24db12f2196b1a1",
-      "n_pages": 28,
-      "metadata": {
-        "format": "PDF 1.6",
-        "title": "Mapping the neuronal building blocks of human language with language models",
-        "author": "Jing Cai",
-        "subject": "Nature, doi:10.1038/s41586-026-10691-5",
-        "creator": "Springer",
-        "creationDate": "D:20260611190305+05'30'",
-        "modDate": "D:20260619132745+08'00'"
-      },
-      "page0_size": [
-        595.28,
-        790.87
-      ],
-      "page0_text_head": "Nature  |  www.nature.com  |  1\nArticle\nMapping the neuronal building blocks of \nhuman language with language models\nJing Cai1 ✉, Yoav Kfir1, Mohsen Jamali1, Hesen Huang1, Young Joon Kim1, Sydney S. Cash2,3,4,5 ✉ \n& Ziv M. Williams1,3,4,5 ✉\nHumans can convey new and highly diverse information through language. This \nability to form and combine words into elaborate phrases and sentences enables us to \nexpress inexhaustible meanings and is fundamental to human cognition1–5. However, \nunderstanding the microscopic cellular building blocks and cortical landscape that \nprecisely underlie human lang",
-      "exclude_hits_anywhere": [],
-      "exclude_hits_decisive": [],
-      "excluded": false,
-      "excluded_reason": null,
-      "duplicate_paths": [],
-      "n_copies": 1
-    },
-    {
-      "path": "D:\\2026-AI4S\\2026-Nature-Synthesizing scientific literature with retrieval-augmented language models&SI.pdf",
-      "name": "2026-Nature-Synthesizing scientific literature with retrieval-augmented language models&SI.pdf",
-      "size_bytes": 6357164,
-      "md5": "69eba01c61862aa8e1dca1fe27c7f699",
-      "n_pages": 71,
-      "metadata": {
-        "format": "PDF 1.6",
-        "author": "Akari Asai",
-        "subject": "Nature, doi:10.1038/s41586-025-10072-4",
-        "creator": "Adobe Acrobat Pro DC (64-bit) 22.1.20085",
-        "producer": "Adobe PDF Library 16.0.7",
-        "creationDate": "D:20260422220238+08'00'",
-        "modDate": "D:20260422221001+08'00'"
-      },
-      "page0_size": [
-        595.28,
-        790.87
-      ],
-      "page0_text_head": "Nature  |  Vol 650  |  26 February 2026  |  857\nArticle\nSynthesizing scientific literature with \nretrieval-augmented language models\nAkari Asai1,2, Jacqueline He1,7, Rulin Shao1,7, Weijia Shi1, Amanpreet Singh2, \nJoseph Chee Chang2, Kyle Lo2, Luca Soldaini2, Sergey Feldman2, Mike D’Arcy2, \nDavid Wadden2, Matt Latzke2, Jenna Sparks2, Jena D. Hwang2, Varsha Kishore1,2, \nMinyang Tian3, Pan Ji4, Shengyan Liu3, Hao Tong3, Bohao Wu3, Yanyu Xiong5, \nLuke Zettlemoyer1, Graham Neubig6, Daniel S. Weld1,2, Doug Downey2, Wen-tau Yih1, \nPang Wei Koh1,2 & Hannaneh Hajishirzi1,2 ✉\nScientific progress depends",
-      "exclude_hits_anywhere": [],
-      "exclude_hits_decisive": [],
-      "excluded": false,
-      "excluded_reason": null,
-      "duplicate_paths": [],
-      "n_copies": 1
-    },
-    {
-      "path": "D:\\2026-AI4S\\nhb-llm-mistranslation\\.kilo\\worktrees\\bright-color\\References\\2026-Nature-Synthesizing scientific literature with retrieval-augmented language models&SI.pdf",
-      "name": "2026-Nature-Synthesizing scientific literature with retrieval-augmented language models&SI.pdf",
-      "size_bytes": 6345013,
-      "md5": "3f36e53ac37a115ba8033da6cb179d47",
-      "n_pages": 71,
-      "metadata": {
-        "format": "PDF 1.6",
-        "author": "Akari Asai",
-        "subject": "Nature, doi:10.1038/s41586-025-10072-4",
-        "creator": "Adobe Acrobat Pro DC (64-bit) 22.1.20085",
-        "producer": "Adobe PDF Library 16.0.7",
-        "creationDate": "D:20260627162817+08'00'",
-        "modDate": "D:20260627162933+08'00'"
-      },
-      "page0_size": [
-        595.28,
-        790.87
-      ],
-      "page0_text_head": "Nature  |  Vol 650  |  26 February 2026  |  857\nArticle\nSynthesizing scientific literature with \nretrieval-augmented language models\nAkari Asai1,2, Jacqueline He1,7, Rulin Shao1,7, Weijia Shi1, Amanpreet Singh2, \nJoseph Chee Chang2, Kyle Lo2, Luca Soldaini2, Sergey Feldman2, Mike D’Arcy2, \nDavid Wadden2, Matt Latzke2, Jenna Sparks2, Jena D. Hwang2, Varsha Kishore1,2, \nMinyang Tian3, Pan Ji4, Shengyan Liu3, Hao Tong3, Bohao Wu3, Yanyu Xiong5, \nLuke Zettlemoyer1, Graham Neubig6, Daniel S. Weld1,2, Doug Downey2, Wen-tau Yih1, \nPang Wei Koh1,2 & Hannaneh Hajishirzi1,2 ✉\nScientific progress depends",
-      "exclude_hits_anywhere": [],
-      "exclude_hits_decisive": [],
-      "excluded": false,
-      "excluded_reason": null,
-      "duplicate_paths": [
-        "D:\\2026-AI4S\\nhb-llm-mistranslation\\References\\2026-Nature-Synthesizing scientific literature with retrieval-augmented language models&SI.pdf"
-      ],
-      "n_copies": 2
-    },
-    {
-      "path": "D:\\2026-AI4S\\2026-Nature-The Einstein test_what happens when AI tries to rediscover relativity.pdf",
-      "name": "2026-Nature-The Einstein test_what happens when AI tries to rediscover relativity.pdf",
-      "size_bytes": 1718185,
-      "md5": "532e45f56ec9e0053e347b0106e84f5d",
-      "n_pages": 3,
-      "metadata": {
-        "format": "PDF 1.6",
-        "creator": "Adobe InDesign 21.3 (Windows)",
-        "producer": "Adobe PDF Library 18.0",
-        "creationDate": "D:20260907092855+01'00'",
-        "modDate": "D:20260911114459+08'00'"
-      },
-      "page0_size": [
-        595.28,
-        790.87
-      ],
-      "page0_text_head": "COULD AI \nREDISCOVER \nRELATIVITY?\nILLUSTRATION BY ACAPULCO STUDIO\nHistorical \nlanguage \nmodels probe \nthe degree to \nwhich AI can \nmake creative \nbreakthroughs.\t\t\nBy Philip Ball\nI\nn 1915, Albert Einstein unveiled his general \ntheory of relativity and transformed our \nview of the fabric of the physical world. \nThe theory, which explains gravitation as \na deformation of space-time by mass, is \na pinnacle of modern physics that under­\npins cosmology, from work on black holes \nto measurements of gravitational waves, \nand is used routinely to guide space missions \nand GPS satellites.\nIt has also be",
-      "exclude_hits_anywhere": [],
-      "exclude_hits_decisive": [],
-      "excluded": false,
-      "excluded_reason": null,
-      "duplicate_paths": [],
-      "n_copies": 1
-    },
-    {
-      "path": "D:\\2026-AI4S\\Metrics\\REFs\\2026-Nature-Training large language models on narrow tasks can lead to broad misalignment&SI.pdf",
-      "name": "2026-Nature-Training large language models on narrow tasks can lead to broad misalignment&SI.pdf",
-      "size_bytes": 2881311,
-      "md5": "780921b4834af0eb248cc4fd09e98381",
-      "n_pages": 22,
-      "metadata": {
-        "format": "PDF 1.6",
-        "author": "Jan Betley",
-        "subject": "Nature, doi:10.1038/s41586-025-09937-5",
-        "creator": "Adobe Acrobat Pro DC (64-bit) 22.1.20085",
-        "producer": "Adobe PDF Library 16.0.7",
-        "creationDate": "D:20260118131127+08'00'",
-        "modDate": "D:20260118131729+08'00'"
-      },
-      "page0_size": [
-        595.28,
-        790.87
-      ],
-      "page0_text_head": "584  |  Nature  |  Vol 649  |  15 January 2026\nArticle\nTraining large language models on narrow \ntasks can lead to broad misalignment\nJan Betley1,10 ✉, Niels Warncke2,10, Anna Sztyber-Betley3,10, Daniel Tan4, Xuchan Bao5, \nMartín Soto6, Megha Srivastava7, Nathan Labenz9 & Owain Evans1,8\nThe widespread adoption of large language models (LLMs) raises important questions \nabout their safety and alignment1. Previous safety research has largely focused on \nisolated undesirable behaviours, such as reinforcing harmful stereotypes or providing \ndangerous information2,3. Here we analyse an unexpected p",
-      "exclude_hits_anywhere": [],
-      "exclude_hits_decisive": [],
-      "excluded": false,
-      "excluded_reason": null,
-      "duplicate_paths": [],
-      "n_copies": 1
-    },
-    {
-      "path": "D:\\2026-AI4S\\2026-Nature-Turning scientific research papers into interactive AI agents.pdf",
-      "name": "2026-Nature-Turning scientific research papers into interactive AI agents.pdf",
-      "size_bytes": 163326,
-      "md5": "7df3f902dab90cec52e0bffe71bba453",
-      "n_pages": 2,
-      "metadata": {
-        "format": "PDF 1.6",
-        "creator": "Adobe InDesign 21.3 (Windows)",
-        "producer": "Adobe PDF Library 18.0",
-        "creationDate": "D:20260914173149+01'00'",
-        "modDate": "D:20260914173150+01'00'"
-      },
-      "page0_size": [
-        595.28,
-        790.87
-      ],
-      "page0_text_head": "The problem\nFor centuries, research papers have served \nas science’s durable but static unit of \nrecord, preserving methods, findings and \ninterpretations. Using this knowledge, \nhowever, requires researchers to decipher \nmethods, reconstruct workflows, run code \nand generate data, and determine whether \nthe results generalize to different settings. \nLarge language models have made papers \neasier to navigate — a reader can download \na PDF and use a chatbot to ask questions \nabout it — but explaining existing knowledge \nis not the same as using it to generate fresh \nknowledge. A conventional ch",
-      "exclude_hits_anywhere": [],
-      "exclude_hits_decisive": [],
-      "excluded": false,
-      "excluded_reason": null,
-      "duplicate_paths": [],
-      "n_copies": 1
-    },
-    {
-      "path": "D:\\2026-AI4S\\2026-Nature-Why AI cannot do good science without humans.pdf",
-      "name": "2026-Nature-Why AI cannot do good science without humans.pdf",
-      "size_bytes": 73195,
-      "md5": "b9a30c1585124dc6c2952c446172c189",
-      "n_pages": 1,
-      "metadata": {
-        "format": "PDF 1.6",
-        "creator": "Adobe InDesign 20.2 (Windows)",
-        "producer": "Adobe PDF Library 17.0",
-        "creationDate": "D:20260519131355+01'00'",
-        "modDate": "D:20260519131355+01'00'"
-      },
-      "page0_size": [
-        595.28,
-        790.87
-      ],
-      "page0_text_head": "We don’t \nyet know \nwhether \ngreater \nefficiency \nequates \nto greater \ninsight.”\nfor all the ‘wow’ factor, it is crucial to bear in mind that the \nAI systems were not working alone. In both cases, humans \nframed the initial project, performed experiments, offered \nguidance and checked the agents’ output along the way. \nThat is a feature, not a bug — and shutting humans out of \nthe loop would not be easy.\nFor one thing, the creation of a fully autonomous AI \nresearcher would require many more AI agents to be cross-\nlinked, and scientists would need to ensure that those \nagents could maintain fo",
-      "exclude_hits_anywhere": [],
-      "exclude_hits_decisive": [],
-      "excluded": false,
-      "excluded_reason": null,
-      "duplicate_paths": [],
-      "n_copies": 1
-    },
-    {
-      "path": "D:\\2026-AI4S\\nhb-llm-mistranslation\\paper2agent_work\\_quarantine\\p2a-nature-smoke-review\\originals\\s001-2026-nature-reimagining-research-papers-as-inter.pdf",
-      "name": "s001-2026-nature-reimagining-research-papers-as-inter.pdf",
-      "size_bytes": 15283170,
-      "md5": "d029928424d8ba5376cd810eeeaa00a4",
-      "n_pages": 81,
-      "metadata": {
-        "format": "PDF 1.6",
-        "creator": "Adobe Acrobat Pro DC (64-bit) 22.1.20085",
-        "producer": "Adobe Acrobat Pro DC (64-bit) 22.1.20085",
-        "creationDate": "D:20260917141135+08'00'",
-        "modDate": "D:20260917141135+08'00'"
-      },
-      "page0_size": [
-        595.28,
-        790.87
-      ],
-      "page0_text_head": "The problem\nFor centuries, research papers have served \nas science’s durable but static unit of \nrecord, preserving methods, findings and \ninterpretations. Using this knowledge, \nhowever, requires researchers to decipher \nmethods, reconstruct workflows, run code \nand generate data, and determine whether \nthe results generalize to different settings. \nLarge language models have made papers \neasier to navigate — a reader can download \na PDF and use a chatbot to ask questions \nabout it — but explaining existing knowledge \nis not the same as using it to generate fresh \nknowledge. A conventional ch",
-      "exclude_hits_anywhere": [],
-      "exclude_hits_decisive": [],
-      "excluded": false,
-      "excluded_reason": null,
-      "duplicate_paths": [
-        "D:\\2026-AI4S\\nhb-llm-mistranslation\\paper2agent_work\\_quarantine\\p2a-v2-review\\originals\\s001-2026-nature-reimagining-research-papers-as-inter.pdf",
-        "D:\\2026-AI4S\\nhb-llm-mistranslation\\paper2agent_work\\originals\\s001-2026-nature-reimagining-research-papers-as-inter.pdf",
-        "D:\\2026-AI4S\\nhb-llm-mistranslation\\paper2agent_work\\p2a-blind-review\\originals\\s001-2026-nature-reimagining-research-papers-as-inter.pdf",
-        "D:\\2026-AI4S\\nhb-llm-mistranslation\\paper2agent_work\\p2a-v3-review\\originals\\s001-2026-nature-reimagining-research-papers-as-inter.pdf",
-        "D:\\2026-AI4S\\nhb-llm-mistranslation\\rc_scratch\\review-copy\\originals\\s001-2026-nature-reimagining-research-papers-as-inter.pdf",
-        "D:\\2026-AI4S\\2026-Nature-Reimagining research papers as interactive and reliable AI agents_Briefing&SI.pdf"
-      ],
-      "n_copies": 7
-    }
-  ],
-  "excluded": []
+ "source_root": "D:\\2026-AI4S",
+ "n_files_found": 42,
+ "n_unique_by_md5": 34,
+ "n_kept": 34,
+ "n_excluded": 0,
+ "exclude_rules": [
+  "nature\\s+communications",
+  "\\bnpj\\b",
+  "scientific\\s+reports",
+  "national\\s+science\\s+review",
+  "\\bNSR\\b"
+ ],
+ "kept": [
+  {
+   "path": "D:\\2026-AI4S\\!2024-Nature-Detecting hallucinations in large language models using semantic entropy_SI&Highlights.pdf",
+   "name": "!2024-Nature-Detecting hallucinations in large language models using semantic entropy_SI&Highlights.pdf",
+   "size_bytes": 3112477,
+   "md5": "2da1770197fecadf41fe062679e6aa77",
+   "n_pages": 31,
+   "metadata": {
+    "format": "PDF 1.6",
+    "creator": "Adobe Acrobat Pro DC (64-bit) 22.1.20085",
+    "producer": "Adobe Acrobat Pro DC (64-bit) 22.1.20085",
+    "creationDate": "D:20240620112753+08'00'",
+    "modDate": "D:20260924234801+08'00'"
+   },
+   "page0_size": [
+    595.28,
+    790.87
+   ],
+   "exclude_hits_anywhere": [],
+   "exclude_hits_decisive": [],
+   "excluded": false,
+   "excluded_reason": null,
+   "duplicate_paths": [],
+   "n_copies": 1
+  },
+  {
+   "path": "D:\\2026-AI4S\\!2026-Nature-Evaluating large language models for accuracy incentivizes hallucinations&SI.pdf",
+   "name": "!2026-Nature-Evaluating large language models for accuracy incentivizes hallucinations&SI.pdf",
+   "size_bytes": 1792840,
+   "md5": "0abea0424f141a866623d5ab726e6547",
+   "n_pages": 23,
+   "metadata": {
+    "format": "PDF 1.6",
+    "author": "Adam Tauman Kalai",
+    "subject": "Nature, doi:10.1038/s41586-026-10549-w",
+    "creator": "Adobe Acrobat Pro DC (64-bit) 22.1.20085",
+    "producer": "Adobe PDF Library 16.0.7",
+    "creationDate": "D:20260711153436+08'00'",
+    "modDate": "D:20260904210305+08'00'"
+   },
+   "page0_size": [
+    595.28,
+    790.87
+   ],
+   "exclude_hits_anywhere": [],
+   "exclude_hits_decisive": [],
+   "excluded": false,
+   "excluded_reason": null,
+   "duplicate_paths": [],
+   "n_copies": 1
+  },
+  {
+   "path": "D:\\2026-AI4S\\nhb-llm-mistranslation\\sny5mVR6VbEU7fwc-grok-workspace\\attachments\\!2026-Nature-Evaluating large language models for accuracy incentivizes hallucinations&SI.pdf",
+   "name": "!2026-Nature-Evaluating large language models for accuracy incentivizes hallucinations&SI.pdf",
+   "size_bytes": 1801329,
+   "md5": "463035fc6ee493e2595a3eb7aedcdb6d",
+   "n_pages": 23,
+   "metadata": {
+    "format": "PDF 1.6",
+    "author": "Adam Tauman Kalai",
+    "subject": "Nature, doi:10.1038/s41586-026-10549-w",
+    "creator": "Adobe Acrobat Pro DC (64-bit) 22.1.20085",
+    "producer": "Adobe PDF Library 16.0.7",
+    "creationDate": "D:20260711153436+08'00'",
+    "modDate": "D:20260828230608+08'00'"
+   },
+   "page0_size": [
+    595.28,
+    790.87
+   ],
+   "exclude_hits_anywhere": [],
+   "exclude_hits_decisive": [],
+   "excluded": false,
+   "excluded_reason": null,
+   "duplicate_paths": [],
+   "n_copies": 1
+  },
+  {
+   "path": "D:\\2026-AI4S\\Novel paradigm\\REFs\\1991-Nature_So what's new.pdf",
+   "name": "1991-Nature_So what's new.pdf",
+   "size_bytes": 409542,
+   "md5": "ea1a38dd7049d0fd4a165aa4d856d1b8",
+   "n_pages": 1,
+   "metadata": {
+    "format": "PDF 1.6",
+    "title": "Untitled-1",
+    "creator": "Adobe InDesign 1.0",
+    "producer": "Acrobat Distiller 11.0.9(Windows)",
+    "creationDate": "D:20020628165318+05'30'",
+    "modDate": "D:20190308014339+08'00'"
+   },
+   "page0_size": [
+    581.1,
+    793.7
+   ],
+   "exclude_hits_anywhere": [],
+   "exclude_hits_decisive": [],
+   "excluded": false,
+   "excluded_reason": null,
+   "duplicate_paths": [],
+   "n_copies": 1
+  },
+  {
+   "path": "D:\\2026-AI4S\\Novel paradigm\\REFs\\1997-Nature_A novel paradigm.pdf",
+   "name": "1997-Nature_A novel paradigm.pdf",
+   "size_bytes": 1819354,
+   "md5": "1cf8ba19487640b38e7c89fb4f7e35e9",
+   "n_pages": 1,
+   "metadata": {
+    "format": "PDF 1.6",
+    "creator": "Adobe Photoshop 4.0",
+    "producer": "Acrobat Distiller 11.0.9(Windows)",
+    "creationDate": "D:20170605153543+05'30'",
+    "modDate": "D:20190308015233+08'00'"
+   },
+   "page0_size": [
+    581.09,
+    793.71
+   ],
+   "exclude_hits_anywhere": [],
+   "exclude_hits_decisive": [],
+   "excluded": false,
+   "excluded_reason": null,
+   "duplicate_paths": [],
+   "n_copies": 1
+  },
+  {
+   "path": "D:\\2026-AI4S\\Novel paradigm\\REFs\\1997-Nature_You read it here first_'Novel'.pdf",
+   "name": "1997-Nature_You read it here first_'Novel'.pdf",
+   "size_bytes": 120396,
+   "md5": "de359589bd54fb6d09bd580760b45349",
+   "n_pages": 1,
+   "metadata": {
+    "format": "PDF 1.6",
+    "producer": "Acrobat Distiller 3.0 for Power Macintosh",
+    "creationDate": "D:19980710204357Z",
+    "modDate": "D:20230228182126+08'00'"
+   },
+   "page0_size": [
+    612.0,
+    792.0
+   ],
+   "exclude_hits_anywhere": [],
+   "exclude_hits_decisive": [],
+   "excluded": false,
+   "excluded_reason": null,
+   "duplicate_paths": [],
+   "n_copies": 1
+  },
+  {
+   "path": "D:\\2026-AI4S\\Novel paradigm\\REFs\\2008-Nature_A question of class.pdf",
+   "name": "2008-Nature_A question of class.pdf",
+   "size_bytes": 629877,
+   "md5": "77b5fd0a8c090a424756f6da8c2a5c13",
+   "n_pages": 2,
+   "metadata": {
+    "format": "PDF 1.3",
+    "title": "23.10 Essay Classification.indd NS AY.indd",
+    "author": "x",
+    "creator": "InDesign: pictwpstops filter 1.0",
+    "producer": "Acrobat Distiller 11.0.9(Windows)",
+    "creationDate": "D:20081016172634+01'00'",
+    "modDate": "D:20190424194504+05'30'"
+   },
+   "page0_size": [
+    595.28,
+    782.36
+   ],
+   "exclude_hits_anywhere": [],
+   "exclude_hits_decisive": [],
+   "excluded": false,
+   "excluded_reason": null,
+   "duplicate_paths": [],
+   "n_copies": 1
+  },
+  {
+   "path": "D:\\2026-AI4S\\Novel paradigm\\REFs\\2008-Nature_Language_Disputed definitions.pdf",
+   "name": "2008-Nature_Language_Disputed definitions.pdf",
+   "size_bytes": 3614102,
+   "md5": "68d52a7aef89f9fdd89821270b5c7266",
+   "n_pages": 6,
+   "metadata": {
+    "format": "PDF 1.3",
+    "title": "23.10 Definitions.indd WF CNS new .indd",
+    "author": "Gribbin, Simon",
+    "creator": "InDesign: pictwpstops filter 1.0",
+    "producer": "Acrobat Distiller 11.0.9(Windows)",
+    "creationDate": "D:20081021105800+01'00'",
+    "modDate": "D:20210724131111+08'00'"
+   },
+   "page0_size": [
+    595.28,
+    782.36
+   ],
+   "exclude_hits_anywhere": [],
+   "exclude_hits_decisive": [],
+   "excluded": false,
+   "excluded_reason": null,
+   "duplicate_paths": [],
+   "n_copies": 1
+  },
+  {
+   "path": "D:\\2026-AI4S\\Novel paradigm\\REFs\\2012-Nature_In retrospect_The Structure of Scientific Revolutions.pdf",
+   "name": "2012-Nature_In retrospect_The Structure of Scientific Revolutions.pdf",
+   "size_bytes": 1347370,
+   "md5": "e46e2a8cd8830a8affd941ca6f1ea458",
+   "n_pages": 3,
+   "metadata": {
+    "format": "PDF 1.6",
+    "creator": "Adobe InDesign CS5 (7.0.4)",
+    "producer": "Adobe PDF Library 9.9",
+    "creationDate": "D:20120403163235+01'00'",
+    "modDate": "D:20210125164759+08'00'"
+   },
+   "page0_size": [
+    595.28,
+    782.36
+   ],
+   "exclude_hits_anywhere": [],
+   "exclude_hits_decisive": [],
+   "excluded": false,
+   "excluded_reason": null,
+   "duplicate_paths": [],
+   "n_copies": 1
+  },
+  {
+   "path": "D:\\2026-AI4S\\REFs\\2016-Nature-Multimodal learning with next-token prediction for large multimodal models.pdf",
+   "name": "2016-Nature-Multimodal learning with next-token prediction for large multimodal models.pdf",
+   "size_bytes": 47925920,
+   "md5": "9eabd33e960b34b999c7715083fb4ac0",
+   "n_pages": 20,
+   "metadata": {
+    "format": "PDF 1.6",
+    "title": "Multimodal learning with next-token prediction for large multimodal models",
+    "author": "Xinlong Wang",
+    "subject": "Nature, doi:10.1038/s41586-025-10041-x",
+    "creator": "Springer",
+    "creationDate": "D:20260126195247+05'30'",
+    "modDate": "D:20260203184812+08'00'"
+   },
+   "page0_size": [
+    595.28,
+    790.87
+   ],
+   "exclude_hits_anywhere": [],
+   "exclude_hits_decisive": [],
+   "excluded": false,
+   "excluded_reason": null,
+   "duplicate_paths": [],
+   "n_copies": 1
+  },
+  {
+   "path": "D:\\2026-AI4S\\nhb-llm-mistranslation\\.kilo\\worktrees\\bright-color\\References\\2023-Nature-Why open-source generative AI models are an ethical way forward for science.pdf",
+   "name": "2023-Nature-Why open-source generative AI models are an ethical way forward for science.pdf",
+   "size_bytes": 108948,
+   "md5": "609acd6be87caa977930ef9068a10445",
+   "n_pages": 1,
+   "metadata": {
+    "format": "PDF 1.6",
+    "creator": "Adobe InDesign 16.4 (Macintosh)",
+    "producer": "Adobe PDF Library 16.0",
+    "creationDate": "D:20230418114846+01'00'",
+    "modDate": "D:20260627161648+08'00'"
+   },
+   "page0_size": [
+    595.28,
+    790.87
+   ],
+   "exclude_hits_anywhere": [],
+   "exclude_hits_decisive": [],
+   "excluded": false,
+   "excluded_reason": null,
+   "duplicate_paths": [
+    "D:\\2026-AI4S\\nhb-llm-mistranslation\\References\\2023-Nature-Why open-source generative AI models are an ethical way forward for science.pdf"
+   ],
+   "n_copies": 2
+  },
+  {
+   "path": "D:\\2026-AI4S\\Novel paradigm\\REFs\\2023-Nature_Papers and patents are becoming less disruptive over time_with SI.pdf",
+   "name": "2023-Nature_Papers and patents are becoming less disruptive over time_with SI.pdf",
+   "size_bytes": 4999337,
+   "md5": "e2bc44caafd199d15ac72b0b80b000ae",
+   "n_pages": 34,
+   "metadata": {
+    "format": "PDF 1.6",
+    "author": "Michael Park",
+    "subject": "Nature, doi:10.1038/s41586-022-05543-x",
+    "creator": "Adobe Acrobat Pro DC (64-bit) 22.1.20085",
+    "producer": "Adobe PDF Library 10.0.1",
+    "creationDate": "D:20230801184138+08'00'",
+    "modDate": "D:20230801194502+08'00'"
+   },
+   "page0_size": [
+    595.28,
+    790.87
+   ],
+   "exclude_hits_anywhere": [],
+   "exclude_hits_decisive": [],
+   "excluded": false,
+   "excluded_reason": null,
+   "duplicate_paths": [],
+   "n_copies": 1
+  },
+  {
+   "path": "D:\\2026-AI4S\\Metrics\\REFs\\2025-Tokens\\2025-Tokens\\2024-Nature-Scaling neural machine translation to 200 languages.pdf",
+   "name": "2024-Nature-Scaling neural machine translation to 200 languages.pdf",
+   "size_bytes": 2770526,
+   "md5": "46658cce3d5f5d52506a3008f4d0de21",
+   "n_pages": 12,
+   "metadata": {
+    "format": "PDF 1.6",
+    "title": "Scaling neural machine translation to 200 languages",
+    "author": "Marta R. Costa-jussà",
+    "subject": "Nature, doi:10.1038/s41586-024-07335-x",
+    "creator": "Springer",
+    "creationDate": "D:20240615175452+05'30'",
+    "modDate": "D:20260111115251+08'00'"
+   },
+   "page0_size": [
+    595.28,
+    790.87
+   ],
+   "exclude_hits_anywhere": [],
+   "exclude_hits_decisive": [],
+   "excluded": false,
+   "excluded_reason": null,
+   "duplicate_paths": [],
+   "n_copies": 1
+  },
+  {
+   "path": "D:\\2026-AI4S\\2024-Nature-Scaling neural machine translation to 200 languages_NLLB-200.pdf",
+   "name": "2024-Nature-Scaling neural machine translation to 200 languages_NLLB-200.pdf",
+   "size_bytes": 3620707,
+   "md5": "7209237b1da077ad43df045bae76e404",
+   "n_pages": 62,
+   "metadata": {
+    "format": "PDF 1.6",
+    "author": "Marta R. Costa-jussamp#x000E0;",
+    "subject": "Nature, doi:10.1038/s41586-024-07335-x",
+    "creator": "Adobe Acrobat Pro DC (64-bit) 22.1.20085",
+    "producer": "Adobe PDF Library 16.0.7",
+    "creationDate": "D:20260619170443+08'00'",
+    "modDate": "D:20260619170443+08'00'"
+   },
+   "page0_size": [
+    595.28,
+    790.87
+   ],
+   "exclude_hits_anywhere": [],
+   "exclude_hits_decisive": [],
+   "excluded": false,
+   "excluded_reason": null,
+   "duplicate_paths": [],
+   "n_copies": 1
+  },
+  {
+   "path": "D:\\2026-AI4S\\2024-Nature-Scaling neural machine translation to 200 languages_SI.pdf",
+   "name": "2024-Nature-Scaling neural machine translation to 200 languages_SI.pdf",
+   "size_bytes": 1368240,
+   "md5": "6d110a484b87da88325c3fb3c515174d",
+   "n_pages": 25,
+   "metadata": {
+    "format": "PDF 1.6",
+    "title": "Scaling neural machine translation to 200 languages",
+    "creator": "Adobe InDesign 17.3 (Windows)",
+    "producer": "Adobe PDF Library 16.0.7",
+    "creationDate": "D:20240531101558+05'30'",
+    "modDate": "D:20240531102732+05'30'"
+   },
+   "page0_size": [
+    595.28,
+    790.87
+   ],
+   "exclude_hits_anywhere": [],
+   "exclude_hits_decisive": [],
+   "excluded": false,
+   "excluded_reason": null,
+   "duplicate_paths": [],
+   "n_copies": 1
+  },
+  {
+   "path": "D:\\2026-AI4S\\2025-Nature-A foundation model to predict and capture human cognition&SI.pdf",
+   "name": "2025-Nature-A foundation model to predict and capture human cognition&SI.pdf",
+   "size_bytes": 7989189,
+   "md5": "86b1c29022941f868f228c722d798178",
+   "n_pages": 146,
+   "metadata": {
+    "format": "PDF 1.6",
+    "author": "Marcel Binz",
+    "subject": "Nature, doi:10.1038/s41586-025-09215-4",
+    "creator": "Adobe Acrobat Pro DC (64-bit) 22.1.20085",
+    "producer": "Adobe PDF Library 16.0.7",
+    "creationDate": "D:20260213142547+08'00'",
+    "modDate": "D:20260213142547+08'00'"
+   },
+   "page0_size": [
+    595.28,
+    790.87
+   ],
+   "exclude_hits_anywhere": [],
+   "exclude_hits_decisive": [],
+   "excluded": false,
+   "excluded_reason": null,
+   "duplicate_paths": [],
+   "n_copies": 1
+  },
+  {
+   "path": "D:\\2026-AI4S\\REFs\\2025-Nature-Accurate predictions on small data with a tabular foundation model_Highlights&SI.pdf",
+   "name": "2025-Nature-Accurate predictions on small data with a tabular foundation model_Highlights&SI.pdf",
+   "size_bytes": 17120033,
+   "md5": "7fc0948385a28cd3388dd254959e9883",
+   "n_pages": 31,
+   "metadata": {
+    "format": "PDF 1.6",
+    "creator": "Adobe Acrobat Pro DC (64-bit) 22.1.20085",
+    "producer": "Adobe Acrobat Pro DC (64-bit) 22.1.20085",
+    "creationDate": "D:20250110234712+08'00'",
+    "modDate": "D:20250110234935+08'00'"
+   },
+   "page0_size": [
+    595.28,
+    790.87
+   ],
+   "exclude_hits_anywhere": [],
+   "exclude_hits_decisive": [],
+   "excluded": false,
+   "excluded_reason": null,
+   "duplicate_paths": [],
+   "n_copies": 1
+  },
+  {
+   "path": "D:\\2026-AI4S\\Metrics\\REFs\\2025-Tokens\\2025-Tokens\\2025-Nature-Comprehensive echocardiogram evaluation with view primed vision language AI.pdf",
+   "name": "2025-Nature-Comprehensive echocardiogram evaluation with view primed vision language AI.pdf",
+   "size_bytes": 8659146,
+   "md5": "0050ec774b097b7852c55391533b3d6c",
+   "n_pages": 24,
+   "metadata": {
+    "format": "PDF 1.6",
+    "title": "Comprehensive echocardiogram evaluation with view primed vision language AI",
+    "author": "Milos Vukadinovic",
+    "subject": "Nature, doi:10.1038/s41586-025-09850-x",
+    "creator": "Springer",
+    "creationDate": "D:20251210175236+05'30'",
+    "modDate": "D:20260111121854+08'00'"
+   },
+   "page0_size": [
+    595.28,
+    790.87
+   ],
+   "exclude_hits_anywhere": [],
+   "exclude_hits_decisive": [],
+   "excluded": false,
+   "excluded_reason": null,
+   "duplicate_paths": [],
+   "n_copies": 1
+  },
+  {
+   "path": "D:\\2026-AI4S\\2025-Nature-Joint speech and text machine translation for up to 100 languages_SEAMLESSM4T.pdf",
+   "name": "2025-Nature-Joint speech and text machine translation for up to 100 languages_SEAMLESSM4T.pdf",
+   "size_bytes": 5363713,
+   "md5": "45680c29ecf8d8a43b95f1397e3c2103",
+   "n_pages": 75,
+   "metadata": {
+    "format": "PDF 1.6",
+    "author": "Loïc Barrault",
+    "subject": "Nature, doi:10.1038/s41586-024-08359-z",
+    "creator": "Adobe Acrobat Pro DC (64-bit) 22.1.20085",
+    "producer": "Adobe PDF Library 16.0.7",
+    "creationDate": "D:20250119131635+08'00'",
+    "modDate": "D:20260623202336+08'00'"
+   },
+   "page0_size": [
+    595.28,
+    790.87
+   ],
+   "exclude_hits_anywhere": [],
+   "exclude_hits_decisive": [],
+   "excluded": false,
+   "excluded_reason": null,
+   "duplicate_paths": [],
+   "n_copies": 1
+  },
+  {
+   "path": "D:\\2026-AI4S\\Metrics\\REFs\\2025-Tokens\\2025-Tokens\\2025-Nature-Learning the natural history of human disease with generative transformers&SI.pdf",
+   "name": "2025-Nature-Learning the natural history of human disease with generative transformers&SI.pdf",
+   "size_bytes": 38173557,
+   "md5": "641446243100c138e9acbc6ef08d7fba",
+   "n_pages": 48,
+   "metadata": {
+    "format": "PDF 1.6",
+    "author": "Artem Shmatko",
+    "subject": "Nature, doi:10.1038/s41586-025-09529-3",
+    "creator": "Adobe Acrobat Pro DC (64-bit) 22.1.20085",
+    "producer": "Adobe PDF Library 16.0.7",
+    "creationDate": "D:20260111104650+08'00'",
+    "modDate": "D:20260111122602+08'00'"
+   },
+   "page0_size": [
+    595.28,
+    790.87
+   ],
+   "exclude_hits_anywhere": [],
+   "exclude_hits_decisive": [],
+   "excluded": false,
+   "excluded_reason": null,
+   "duplicate_paths": [],
+   "n_copies": 1
+  },
+  {
+   "path": "D:\\2026-AI4S\\Metrics\\REFs\\2025-Tokens\\2025-Tokens\\2025-Nature-Towards multimodal foundation models in molecular cell biology&SI.pdf",
+   "name": "2025-Nature-Towards multimodal foundation models in molecular cell biology&SI.pdf",
+   "size_bytes": 3160838,
+   "md5": "039ef430ed311b30f156e6da93aa5aa4",
+   "n_pages": 20,
+   "metadata": {
+    "format": "PDF 1.6",
+    "author": "Haotian Cui",
+    "subject": "Nature, doi:10.1038/s41586-025-08710-y",
+    "creator": "Adobe Acrobat Pro DC (64-bit) 22.1.20085",
+    "producer": "Adobe PDF Library 22.1.117",
+    "creationDate": "D:20260111124713+08'00'",
+    "modDate": "D:20260111124754+08'00'"
+   },
+   "page0_size": [
+    595.28,
+    790.87
+   ],
+   "exclude_hits_anywhere": [],
+   "exclude_hits_decisive": [],
+   "excluded": false,
+   "excluded_reason": null,
+   "duplicate_paths": [],
+   "n_copies": 1
+  },
+  {
+   "path": "D:\\2026-AI4S\\REFs\\Information Seeking\\2025-Nature_Discovering state-of-the-art reinforcement learning algorithms&SI.pdf",
+   "name": "2025-Nature_Discovering state-of-the-art reinforcement learning algorithms&SI.pdf",
+   "size_bytes": 8203556,
+   "md5": "d089008a9b593a2133592acb27a6d574",
+   "n_pages": 28,
+   "metadata": {
+    "format": "PDF 1.6",
+    "author": "Junhyuk Oh",
+    "subject": "Nature, doi:10.1038/s41586-025-09761-x",
+    "creator": "Adobe Acrobat Pro DC (64-bit) 22.1.20085",
+    "producer": "Adobe PDF Library 16.0.7",
+    "creationDate": "D:20260204182737+08'00'",
+    "modDate": "D:20260204183019+08'00'"
+   },
+   "page0_size": [
+    595.28,
+    790.87
+   ],
+   "exclude_hits_anywhere": [],
+   "exclude_hits_decisive": [],
+   "excluded": false,
+   "excluded_reason": null,
+   "duplicate_paths": [],
+   "n_copies": 1
+  },
+  {
+   "path": "D:\\2026-AI4S\\2026-Nature-A critical initialization for biological neural networks.pdf",
+   "name": "2026-Nature-A critical initialization for biological neural networks.pdf",
+   "size_bytes": 12978545,
+   "md5": "433a13068a1c6e0e7fb82df20a535cc6",
+   "n_pages": 28,
+   "metadata": {
+    "format": "PDF 1.6",
+    "title": "A critical initialization for biological neural networks",
+    "author": "Marius Pachitariu",
+    "subject": "Nature, doi:10.1038/s41586-026-10528-1",
+    "creator": "Springer",
+    "creationDate": "D:20260519111154+05'30'",
+    "modDate": "D:20260601123037+08'00'"
+   },
+   "page0_size": [
+    595.28,
+    790.87
+   ],
+   "exclude_hits_anywhere": [],
+   "exclude_hits_decisive": [],
+   "excluded": false,
+   "excluded_reason": null,
+   "duplicate_paths": [],
+   "n_copies": 1
+  },
+  {
+   "path": "D:\\2026-AI4S\\2026-Nature-Accelerating scientific discovery with Co-Scientist.pdf",
+   "name": "2026-Nature-Accelerating scientific discovery with Co-Scientist.pdf",
+   "size_bytes": 4714531,
+   "md5": "2db009d3653c5d2e840b06af741857d2",
+   "n_pages": 55,
+   "metadata": {
+    "format": "PDF 1.6",
+    "title": "Accelerating scientific discovery with Co-Scientist",
+    "author": "Juraj Gottweis",
+    "subject": "Nature, doi:10.1038/s41586-026-10644-y",
+    "creator": "Springer",
+    "creationDate": "D:20260515151445+05'30'",
+    "modDate": "D:20260515161536+05'30'"
+   },
+   "page0_size": [
+    595.28,
+    790.87
+   ],
+   "exclude_hits_anywhere": [],
+   "exclude_hits_decisive": [],
+   "excluded": false,
+   "excluded_reason": null,
+   "duplicate_paths": [],
+   "n_copies": 1
+  },
+  {
+   "path": "D:\\2026-AI4S\\2026-Nature-Evaluating large language models for accuracy incentivizes hallucinations&SI.pdf",
+   "name": "2026-Nature-Evaluating large language models for accuracy incentivizes hallucinations&SI.pdf",
+   "size_bytes": 1806495,
+   "md5": "22f6d29eba4eacd665b222b4f8f1e327",
+   "n_pages": 23,
+   "metadata": {
+    "format": "PDF 1.6",
+    "author": "Adam Tauman Kalai",
+    "subject": "Nature, doi:10.1038/s41586-026-10549-w",
+    "creator": "Adobe Acrobat Pro DC (64-bit) 22.1.20085",
+    "producer": "Adobe PDF Library 16.0.7",
+    "creationDate": "D:20260711153436+08'00'",
+    "modDate": "D:20260711153604+08'00'"
+   },
+   "page0_size": [
+    595.28,
+    790.87
+   ],
+   "exclude_hits_anywhere": [],
+   "exclude_hits_decisive": [],
+   "excluded": false,
+   "excluded_reason": null,
+   "duplicate_paths": [],
+   "n_copies": 1
+  },
+  {
+   "path": "D:\\2026-AI4S\\2026-Nature-In praise of human teachers_universities must resist outsourcing everything to AI.pdf",
+   "name": "2026-Nature-In praise of human teachers_universities must resist outsourcing everything to AI.pdf",
+   "size_bytes": 113396,
+   "md5": "4ca56fd933896a1d2c50e2bf35e86a86",
+   "n_pages": 1,
+   "metadata": {
+    "format": "PDF 1.6",
+    "creator": "Adobe InDesign 21.3 (Windows)",
+    "producer": "Adobe PDF Library 18.0",
+    "creationDate": "D:20260922121125+01'00'",
+    "modDate": "D:20260924114515+08'00'"
+   },
+   "page0_size": [
+    595.28,
+    790.87
+   ],
+   "exclude_hits_anywhere": [],
+   "exclude_hits_decisive": [],
+   "excluded": false,
+   "excluded_reason": null,
+   "duplicate_paths": [],
+   "n_copies": 1
+  },
+  {
+   "path": "D:\\2026-AI4S\\2026-Nature-Mapping the neuronal building blocks of human language with language models.pdf",
+   "name": "2026-Nature-Mapping the neuronal building blocks of human language with language models.pdf",
+   "size_bytes": 16014440,
+   "md5": "2248c823dacf6435e24db12f2196b1a1",
+   "n_pages": 28,
+   "metadata": {
+    "format": "PDF 1.6",
+    "title": "Mapping the neuronal building blocks of human language with language models",
+    "author": "Jing Cai",
+    "subject": "Nature, doi:10.1038/s41586-026-10691-5",
+    "creator": "Springer",
+    "creationDate": "D:20260611190305+05'30'",
+    "modDate": "D:20260619132745+08'00'"
+   },
+   "page0_size": [
+    595.28,
+    790.87
+   ],
+   "exclude_hits_anywhere": [],
+   "exclude_hits_decisive": [],
+   "excluded": false,
+   "excluded_reason": null,
+   "duplicate_paths": [],
+   "n_copies": 1
+  },
+  {
+   "path": "D:\\2026-AI4S\\2026-Nature-Synthesizing scientific literature with retrieval-augmented language models&SI.pdf",
+   "name": "2026-Nature-Synthesizing scientific literature with retrieval-augmented language models&SI.pdf",
+   "size_bytes": 6357164,
+   "md5": "69eba01c61862aa8e1dca1fe27c7f699",
+   "n_pages": 71,
+   "metadata": {
+    "format": "PDF 1.6",
+    "author": "Akari Asai",
+    "subject": "Nature, doi:10.1038/s41586-025-10072-4",
+    "creator": "Adobe Acrobat Pro DC (64-bit) 22.1.20085",
+    "producer": "Adobe PDF Library 16.0.7",
+    "creationDate": "D:20260422220238+08'00'",
+    "modDate": "D:20260422221001+08'00'"
+   },
+   "page0_size": [
+    595.28,
+    790.87
+   ],
+   "exclude_hits_anywhere": [],
+   "exclude_hits_decisive": [],
+   "excluded": false,
+   "excluded_reason": null,
+   "duplicate_paths": [],
+   "n_copies": 1
+  },
+  {
+   "path": "D:\\2026-AI4S\\nhb-llm-mistranslation\\.kilo\\worktrees\\bright-color\\References\\2026-Nature-Synthesizing scientific literature with retrieval-augmented language models&SI.pdf",
+   "name": "2026-Nature-Synthesizing scientific literature with retrieval-augmented language models&SI.pdf",
+   "size_bytes": 6345013,
+   "md5": "3f36e53ac37a115ba8033da6cb179d47",
+   "n_pages": 71,
+   "metadata": {
+    "format": "PDF 1.6",
+    "author": "Akari Asai",
+    "subject": "Nature, doi:10.1038/s41586-025-10072-4",
+    "creator": "Adobe Acrobat Pro DC (64-bit) 22.1.20085",
+    "producer": "Adobe PDF Library 16.0.7",
+    "creationDate": "D:20260627162817+08'00'",
+    "modDate": "D:20260627162933+08'00'"
+   },
+   "page0_size": [
+    595.28,
+    790.87
+   ],
+   "exclude_hits_anywhere": [],
+   "exclude_hits_decisive": [],
+   "excluded": false,
+   "excluded_reason": null,
+   "duplicate_paths": [
+    "D:\\2026-AI4S\\nhb-llm-mistranslation\\References\\2026-Nature-Synthesizing scientific literature with retrieval-augmented language models&SI.pdf"
+   ],
+   "n_copies": 2
+  },
+  {
+   "path": "D:\\2026-AI4S\\2026-Nature-The Einstein test_what happens when AI tries to rediscover relativity.pdf",
+   "name": "2026-Nature-The Einstein test_what happens when AI tries to rediscover relativity.pdf",
+   "size_bytes": 1718185,
+   "md5": "532e45f56ec9e0053e347b0106e84f5d",
+   "n_pages": 3,
+   "metadata": {
+    "format": "PDF 1.6",
+    "creator": "Adobe InDesign 21.3 (Windows)",
+    "producer": "Adobe PDF Library 18.0",
+    "creationDate": "D:20260907092855+01'00'",
+    "modDate": "D:20260911114459+08'00'"
+   },
+   "page0_size": [
+    595.28,
+    790.87
+   ],
+   "exclude_hits_anywhere": [],
+   "exclude_hits_decisive": [],
+   "excluded": false,
+   "excluded_reason": null,
+   "duplicate_paths": [],
+   "n_copies": 1
+  },
+  {
+   "path": "D:\\2026-AI4S\\Metrics\\REFs\\2026-Nature-Training large language models on narrow tasks can lead to broad misalignment&SI.pdf",
+   "name": "2026-Nature-Training large language models on narrow tasks can lead to broad misalignment&SI.pdf",
+   "size_bytes": 2881311,
+   "md5": "780921b4834af0eb248cc4fd09e98381",
+   "n_pages": 22,
+   "metadata": {
+    "format": "PDF 1.6",
+    "author": "Jan Betley",
+    "subject": "Nature, doi:10.1038/s41586-025-09937-5",
+    "creator": "Adobe Acrobat Pro DC (64-bit) 22.1.20085",
+    "producer": "Adobe PDF Library 16.0.7",
+    "creationDate": "D:20260118131127+08'00'",
+    "modDate": "D:20260118131729+08'00'"
+   },
+   "page0_size": [
+    595.28,
+    790.87
+   ],
+   "exclude_hits_anywhere": [],
+   "exclude_hits_decisive": [],
+   "excluded": false,
+   "excluded_reason": null,
+   "duplicate_paths": [],
+   "n_copies": 1
+  },
+  {
+   "path": "D:\\2026-AI4S\\2026-Nature-Turning scientific research papers into interactive AI agents.pdf",
+   "name": "2026-Nature-Turning scientific research papers into interactive AI agents.pdf",
+   "size_bytes": 163326,
+   "md5": "7df3f902dab90cec52e0bffe71bba453",
+   "n_pages": 2,
+   "metadata": {
+    "format": "PDF 1.6",
+    "creator": "Adobe InDesign 21.3 (Windows)",
+    "producer": "Adobe PDF Library 18.0",
+    "creationDate": "D:20260914173149+01'00'",
+    "modDate": "D:20260914173150+01'00'"
+   },
+   "page0_size": [
+    595.28,
+    790.87
+   ],
+   "exclude_hits_anywhere": [],
+   "exclude_hits_decisive": [],
+   "excluded": false,
+   "excluded_reason": null,
+   "duplicate_paths": [],
+   "n_copies": 1
+  },
+  {
+   "path": "D:\\2026-AI4S\\2026-Nature-Why AI cannot do good science without humans.pdf",
+   "name": "2026-Nature-Why AI cannot do good science without humans.pdf",
+   "size_bytes": 73195,
+   "md5": "b9a30c1585124dc6c2952c446172c189",
+   "n_pages": 1,
+   "metadata": {
+    "format": "PDF 1.6",
+    "creator": "Adobe InDesign 20.2 (Windows)",
+    "producer": "Adobe PDF Library 17.0",
+    "creationDate": "D:20260519131355+01'00'",
+    "modDate": "D:20260519131355+01'00'"
+   },
+   "page0_size": [
+    595.28,
+    790.87
+   ],
+   "exclude_hits_anywhere": [],
+   "exclude_hits_decisive": [],
+   "excluded": false,
+   "excluded_reason": null,
+   "duplicate_paths": [],
+   "n_copies": 1
+  },
+  {
+   "path": "D:\\2026-AI4S\\nhb-llm-mistranslation\\paper2agent_work\\_quarantine\\p2a-nature-smoke-review\\originals\\s001-2026-nature-reimagining-research-papers-as-inter.pdf",
+   "name": "s001-2026-nature-reimagining-research-papers-as-inter.pdf",
+   "size_bytes": 15283170,
+   "md5": "d029928424d8ba5376cd810eeeaa00a4",
+   "n_pages": 81,
+   "metadata": {
+    "format": "PDF 1.6",
+    "creator": "Adobe Acrobat Pro DC (64-bit) 22.1.20085",
+    "producer": "Adobe Acrobat Pro DC (64-bit) 22.1.20085",
+    "creationDate": "D:20260917141135+08'00'",
+    "modDate": "D:20260917141135+08'00'"
+   },
+   "page0_size": [
+    595.28,
+    790.87
+   ],
+   "exclude_hits_anywhere": [],
+   "exclude_hits_decisive": [],
+   "excluded": false,
+   "excluded_reason": null,
+   "duplicate_paths": [
+    "D:\\2026-AI4S\\nhb-llm-mistranslation\\paper2agent_work\\_quarantine\\p2a-v2-review\\originals\\s001-2026-nature-reimagining-research-papers-as-inter.pdf",
+    "D:\\2026-AI4S\\nhb-llm-mistranslation\\paper2agent_work\\originals\\s001-2026-nature-reimagining-research-papers-as-inter.pdf",
+    "D:\\2026-AI4S\\nhb-llm-mistranslation\\paper2agent_work\\p2a-blind-review\\originals\\s001-2026-nature-reimagining-research-papers-as-inter.pdf",
+    "D:\\2026-AI4S\\nhb-llm-mistranslation\\paper2agent_work\\p2a-v3-review\\originals\\s001-2026-nature-reimagining-research-papers-as-inter.pdf",
+    "D:\\2026-AI4S\\nhb-llm-mistranslation\\rc_scratch\\review-copy\\originals\\s001-2026-nature-reimagining-research-papers-as-inter.pdf",
+    "D:\\2026-AI4S\\2026-Nature-Reimagining research papers as interactive and reliable AI agents_Briefing&SI.pdf"
+   ],
+   "n_copies": 7
+  }
+ ],
+ "excluded": []
 }
