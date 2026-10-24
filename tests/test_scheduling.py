@@ -88,11 +88,47 @@ def test_run_history_is_committed_not_just_written():
     assert tracked, (
         "no run record is tracked by git; the audit trail exists only on this disk and "
         "would be lost")
-    # The most recent run may legitimately be uncommitted (its own commit is made by the next
-    # run). Older ones must be tracked.
-    assert len(tracked) >= len(runs) - 1, (
+    # HOW MANY MAY LEGITIMATELY BE UNCOMMITTED.
+    #
+    # One, always: the most recent run's own commit is made by the next run.
+    #
+    # TWO when this test is executing INSIDE cron_run: the runner writes the record, then runs the
+    # suite, then commits -- so the record of the run currently executing is on disk and untracked
+    # for exactly as long as the suite takes. Measured 2026-10-24 08:51: the run failed on this test
+    # and then committed the record it had complained about; the count immediately afterwards was
+    # 196 on disk, 196 tracked, zero difference.
+    #
+    # The property being defended is "finished runs are committed". An in-flight one cannot be, by
+    # construction -- counting it is counting the observer as part of the observation.
+    import os
+    offset = 2 if os.environ.get("FIGPIPE_CRON_CHILD") or _inside_cron() else 1
+    assert len(tracked) >= len(runs) - offset, (
         f"{len(runs)} run records exist but only {len(tracked)} are tracked; the history is "
-        f"lagging more than the documented one-run offset")
+        f"lagging more than the documented {offset}-run offset")
+
+
+def _inside_cron() -> bool:
+    """True when the test suite was launched by the scheduled runner.
+
+    THE EVIDENCE IS THE LOCK, NOT THE PROCESS TREE. My first version searched the parent's command
+    line for "cron_run" -- and a shell whose command line happens to contain that string (because
+    someone typed it) made the function return True from OUTSIDE the runner. Measured: it reported
+    True in a plain PowerShell where no runner existed, so the test allowed an extra uncommitted
+    record unconditionally -- a control that looks present and does nothing.
+
+    `cron_run` holds `knowledge/.measurement.lock` under the name "cron_run" for the whole run, and
+    releases it only around the suite. That is the same evidence every other guard here uses, and it
+    cannot be forged by a command line that merely mentions the runner.
+    """
+    import json as _json
+    import pathlib as _p
+
+    lock = _p.Path(__file__).resolve().parents[1] / "knowledge" / ".measurement.lock"
+    try:
+        info = _json.loads(lock.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return False
+    return info.get("name") == "cron_run"
 
 
 def test_publish_is_documented_as_describing_the_triggering_run():

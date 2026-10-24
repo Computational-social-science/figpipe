@@ -5763,3 +5763,49 @@ non-scalars, keeping scalars legible.
 A test that cannot pass is as useless as one that cannot fail. Fixed to check the filename.
 
 Suite: 868 passed, 3 skipped.
+
+
+## 163. My fix for a self-referential test introduced the defect it was fixing (2026-10-24)
+
+The scheduled run exited 1 on `test_run_history_is_committed_not_just_written`. Reading the record:
+
+    196 run records on disk, 196 tracked, ZERO difference
+
+The test had failed **while the suite was running**, and the record it complained about was committed
+by the runner immediately afterwards. `cron_run` writes the record, runs the suite, then commits -- so
+the in-flight record is legitimately untracked for exactly as long as the suite takes.
+
+**The test was counting the observer as part of the observation.** The property it defends is "finished
+runs are committed", and an in-flight one cannot be, by construction.
+
+### My first fix was the project's most-recorded defect
+
+I added `_inside_cron()` and searched the parent process's COMMAND LINE for `"cron_run"`:
+
+    measured, from a plain PowerShell:  _inside_cron() -> True
+
+The parent was a shell whose command line contained that string **because I had typed it**. So the test
+allowed the extra record from anywhere, always -- **a control that looks present and does nothing**,
+introduced by the fix for a different instance of that same class.
+
+### The second fix uses evidence the runner cannot fake
+
+`cron_run` holds `knowledge/.measurement.lock` under the name `"cron_run"` for the whole run. That is
+the same evidence every other guard here uses, and a command line that merely MENTIONS the runner
+cannot forge it. Verified in both directions and with a discriminator:
+
+    no lock            -> False   (a developer running pytest is not the runner)
+    cron_run lock      -> True
+    bench lock         -> False   (any measurement holds the lock; only the name counts)
+    corrupt lock       -> False
+
+### The lesson, which is about the shape of the fix rather than the bug
+
+The original test was **correct** and the code was wrong. My repair made the test pass by making it
+unable to fail -- and a test that cannot fail is the same defect as a control that does nothing. The
+second repair keeps the test able to fail (it still asserts a bound) while removing the false positive.
+
+**I have now written, in one session, a test that could not pass (`E:\` contains a colon) and a
+detector that could not say no.** Both were caught by measurement, not by review.
+
+Suite: 873 passed, 3 skipped.
