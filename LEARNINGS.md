@@ -6063,3 +6063,61 @@ count-based rule that is a mode, and the extractor is right to keep it. A real a
 ONE-PIXEL RAMP beside an ink. The fixture now draws that, and the test passes for the right reason.
 
 Suite: 882 passed, 3 skipped. palette 0.805 -> 0.882, official 82.02 -> 83.69.
+
+
+## 169. Three dimensions are bounded by the benchmark, not by figpipe (2026-10-25)
+
+I set out to win `figure_aspect` (+2.53) and `serif` (+0.92). **Both are bounded by the benchmark's own
+construction, and so is `linewidth`.** Together they are 12.5 of the 16.3 points that remain.
+
+### figure_aspect: the scorer reads the code, the candidate has the image
+
+The reference's aspect comes from `figsize` in its CODE, verified exact on six references. The candidate
+has the image, and 43 of 60 references save with
+
+    fig.savefig(OUT, dpi=150, bbox_inches="tight", pad_inches=0.20)
+
+**`bbox_inches="tight"` crops to the ink box**, so the saved image's aspect is the INK aspect, not the
+canvas the code declared. Measured on `arxiv_2510.17384`:
+
+    figsize (9.5, 5.45)   -> aspect 1.7431   (scored)
+    expected at 150 dpi   -> 1425 x 818
+    actual image          -> 1462 x 763      aspect 1.9161
+    ratio                 -> 1.026 x 0.933   (a 14 % aspect error)
+
+The figure has four subplots and the tight crop removes more vertical margin than horizontal. **No
+image-only method can recover the difference; the information was destroyed by the save call.**
+
+Score cost: 2 % off -> 0.832, 5 % -> 0.586, 10 % -> 0.191. The median |log error| between image and
+code aspect is **0.018** (about 2 %), which is why the mean is 0.869 and not 1.0. **The dimension is
+close to its image-channel ceiling.**
+
+### serif: 0.000 because only the failures are scored
+
+    serif=True:  6/54 (11 %)      serif=False: 48/54 (89 %)
+
+The candidate always emits sans-serif, so **it is right on 89 % of references**. The dimension reads
+0.000 because `_categorical_dimension` does not activate when the reference equals the default, and
+`serif` defaults to False -- so only the 11 % where the candidate is wrong enter the mean.
+
+Detectors I tried, both failing to separate the classes:
+
+    ink density     serif 0.0143-0.5867    sans 0.0291-0.1616    OVERLAP
+    h/v run ratio   serif 0.32/0.89/1.08   sans 0.38-1.82        OVERLAP
+
+At 5-7 pt rendered at ~150 dpi a serif's footings are **sub-pixel** and do not produce a distinguishable
+run. The signal exists in principle and is below the resolution of the input.
+
+### What this establishes
+
+**The honest ceiling of the image channel is ~86-87, not 99.19.** The 99.19 is the CODE channel, which
+reads the answer key. The remaining winnable dimensions are `tick_direction` +0.64, `background` +0.32
+and `spines_removed` +0.31 -- about 1.3 points, each a handful of tasks.
+
+That is a more useful result than another attempt: it says **where to stop**, and it says the gap
+between 83.69 and 99.19 is not 15.5 points of capability. It is 12.5 points of information the
+benchmark never gives the image channel, plus 1.3 points of genuinely winnable work.
+
+`WHY_ASPECT_CANNOT_BE_WON.md` records the measurements.
+
+Suite: 882 passed, 3 skipped.

@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-25T01:41:23",
+  "run_at": "2026-10-25T03:26:46",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -9,10 +9,10 @@
     "  passed 8, failed 0",
     "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
     "  wrote knowledge\\evolution_report.json",
-    "  lean: tracked 79.8 -> 79.8 MB, worktree 124.6 -> 122.8 MB"
+    "  lean: tracked 80.0 -> 80.0 MB, worktree 134.5 -> 121.2 MB"
   ],
   "tests_ok": true,
-  "tests_summary": "882 passed, 3 skipped, 1 warning in 465.21s (0:07:45)",
+  "tests_summary": "882 passed, 3 skipped, 1 warning in 785.70s (0:13:05)",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
@@ -137,25 +137,15 @@
     "tasks": 6,
     "code": 0,
     "tail": [
-      "    type Box/Violin     ok 1/1   d=0.133 base=0.319 delta=0.186 errors=0",
-      "    type Distribution   ok 4/4   d=0.164 base=0.221 delta=0.058 errors=0",
-      "    type Heatmap        ok 1/1   d=0.303 base=0.488 delta=0.185 errors=0",
+      "    type Box/Violin     ok 1/1   d=0.141 base=0.32 delta=0.179 errors=0",
+      "    type Distribution   ok 4/4   d=0.165 base=0.221 delta=0.056 errors=0",
+      "    type Heatmap        ok 1/1   d=0.303 base=0.485 delta=0.182 errors=0",
       "  wrote E:\\2026-AI4S\\figpipe\\corpus\\e2e\\plottwin_report.json"
     ]
   },
   "anchor_refresh": {
-    "ran": true,
-    "stale_anchors": [
-      "shipped",
-      "styled"
-    ],
-    "tasks": 35,
-    "code": 0,
-    "tail": [
-      "    type Scatter        ok 3/3   d=0.235 base=0.329 delta=0.094 errors=0",
-      "    type Std-band       ok 1/1   d=0.15 base=0.206 delta=0.056 errors=0",
-      "  wrote E:\\2026-AI4S\\figpipe\\corpus\\e2e\\plottwin_report.json"
-    ]
+    "ran": false,
+    "reason": "both anchors already comparable"
   },
   "mutation": {
     "ran": true,
@@ -1846,7 +1836,7 @@
     "patch_note": "a patch changes the SOURCE, so it is probed and reported but never auto-selected: the loop does not edit its own drawer without a human seeing the diff"
   },
   "capabilities": {
-    "_code_version": "2dea753d41dd",
+    "_code_version": "8d54d4a12cc4",
     "benchmark_hard_findings": 0,
     "benchmark_complete_membership": true,
     "benchmark_pool_size": 150,
@@ -1857,66 +1847,28 @@
     "benchmark_ok": 139,
     "benchmark_infrastructure_failures": 0,
     "benchmark_success_rate": 1.0,
-    "benchmark_mean_distance": 0.192,
-    "benchmark_anchor_single": 0.228,
-    "benchmark_anchor_distance": 0.228,
-    "benchmark_shipped_anchor_single": 0.191,
-    "benchmark_shipped_anchor_distance": 0.191,
+    "benchmark_mean_distance": 0.193,
+    "benchmark_anchor_single": 0.236,
+    "benchmark_anchor_distance": 0.236,
+    "benchmark_shipped_anchor_single": 0.19,
+    "benchmark_shipped_anchor_distance": 0.19,
     "benchmark_unsupported": 11,
-    "benchmark_official_code_score": 82.02,
-    "benchmark_official_improvement": 44.77,
+    "benchmark_official_code_score": 83.69,
+    "benchmark_official_improvement": 46.44,
     "statistics_reproduced": 15,
     "knowledge_version": 16,
     "tests": 885,
     "tests_passed": 882
   },
   "capabilities_delta": {
-    "changed": true,
-    "delta": {
-      "_code_version": {
-        "before": "f3d542fc3caa",
-        "after": "2dea753d41dd"
-      },
-      "benchmark_mean_distance": {
-        "before": 0.193,
-        "after": 0.192
-      },
-      "benchmark_anchor_single": {
-        "before": 0.225,
-        "after": 0.228
-      },
-      "benchmark_anchor_distance": {
-        "before": 0.225,
-        "after": 0.228
-      },
-      "benchmark_shipped_anchor_single": {
-        "before": 0.205,
-        "after": 0.191
-      },
-      "benchmark_shipped_anchor_distance": {
-        "before": 0.205,
-        "after": 0.191
-      }
-    },
+    "changed": false,
+    "delta": {},
     "verdict": {
       "gains": [],
       "regressions": [],
       "corrections": [],
-      "not_compared": [
-        {
-          "field": "benchmark_anchor_single",
-          "before": 0.225,
-          "after": 0.228,
-          "why": "the measurement instrument changed between these snapshots, so the two values are not the same quantity"
-        },
-        {
-          "field": "benchmark_shipped_anchor_single",
-          "before": 0.205,
-          "after": 0.191,
-          "why": "the measurement instrument changed between these snapshots, so the two values are not the same quantity"
-        }
-      ],
-      "instrument_changed": true,
+      "not_compared": [],
+      "instrument_changed": false,
       "membership_broken": false,
       "ok": true,
       "judged_fields": [
