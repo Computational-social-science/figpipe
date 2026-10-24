@@ -5610,3 +5610,49 @@ Both came from answering the question I had framed rather than the one the data 
     remaining: 8.16 points, of which palette +4.26 and figure_aspect +2.53
 
 Suite: 859 passed, 3 skipped.
+
+
+## 160. Round 99's +9.01 was a premise violation, and I have to withdraw it (2026-10-24)
+
+Round 99 reported the largest single-round gain this project has recorded: linewidth 0.574 -> 1.000,
+official 82.02 -> 91.03. **The gain was real arithmetic and the number was not honest.**
+
+THE PREMISE. `score_official.py` has three modes, documented in its own source:
+
+    naive   matplotlib defaults -- the BASELINE a claim must beat
+    code    style copied from the reference CODE -- a CEILING, "measures can the emitter copy a spec,
+            not can the pipeline infer a style"
+    image   style inferred from the reference IMAGE -- HONEST MODE, "what a real user has"
+
+Round 99 read `extract_style_features(ref_code)["linewidth"]` and wrote it into `style`. That call sits
+in the code shared AFTER the mode branch, so it ran inside the honest mode. **The honest number
+contained a value copied from the reference code.**
+
+MEASURED COST of that single read: on a reference with lw=2.25, the honest candidate scores 48.66 and
+the code-copied one 98.66. Across 149 tasks that is the +9.01. Removed:
+
+    82.02  ->  91.03  ->  82.02
+
+THE ASPECT IS DIFFERENT AND STAYS. `style_from_image_profile` returns `figure_aspect` computed FROM
+THE IMAGE DIMENSIONS -- its docstring lists aspect among what "a raster CAN give". The canvas height
+is 183.0 / that aspect. The value is the same kind of quantity either way; **the SOURCE is what the
+premise is about.** I had been reading the code's aspect too, and that was also unnecessary.
+
+WHAT MAKES THIS THE WORST KIND OF ERROR: it was invisible in the number. 91.03 looked like a better
+result than 82.02, every dimension was internally consistent, and the tests passed. The only thing
+that caught it was reading the branch structure while looking for the NEXT improvement. **A measurement
+that improves is not evidence that it measured the right thing** -- and this project has now recorded
+that lesson about zeros, denominators, distances, and now about a score that went up.
+
+PINNED: `tests/test_honest_mode.py` asserts that no `extract_style_features(ref_code)` call appears as
+code in the honest branch, that `style_from_image_profile` is what supplies the style, and that
+`style_from_image_profile` still reports `linewidth=None` -- if that changes, the honest score should
+change with it and the test says so.
+
+STATE, honestly:
+
+    fixed set n=149: baseline 37.25  ->  pipeline 82.02  ->  ceiling 99.19
+    improvement: +44.77 points, 120.2 % relative
+    linewidth 0.574 is a REAL gap the honest mode cannot close
+
+Suite: 863 passed, 3 skipped.

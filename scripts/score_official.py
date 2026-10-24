@@ -149,28 +149,39 @@ def score_one(row: dict, *, source: str = "image") -> dict:
         panel = None
     if panel is None:
         panel = composite.Panel("trend_band", df, {"x": "x", "y": "y", "fit": "lm"})
-    # THE HEIGHT IS DERIVED FROM THE REFERENCE'S OWN ASPECT.
+    # THE HEIGHT IS DERIVED FROM THE IMAGE'S OWN ASPECT.
     #
     # A fixed `height_mm=100.0` makes every candidate 183.0 x 100.0 mm, aspect 1.830, while the
-    # reference's aspect comes from its figsize and varies. Measured: 117 tasks, mean 0.868, and
-    # ZERO at 1.0 -- a constant can only match a varying target by luck.
+    # reference's aspect varies. Measured: 117 tasks, mean 0.868, and ZERO at 1.0 -- a constant can
+    # only match a varying target by luck.
     #
-    # `extract_style_features` already reports the reference's `figure_aspect`, so the candidate is
-    # emitted at 183.0 mm wide and (183.0 / aspect) mm tall.
+    # The aspect used here is `style["figure_aspect"]`, which `style_from_image_profile` derived
+    # FROM THE IMAGE. The canvas height is 183.0 / that aspect.
+    # THE CANVAS HEIGHT COMES FROM THE IMAGE-DERIVED ASPECT, not from the reference code.
+    #
+    # `style_from_image_profile` returns `figure_aspect` computed from the image dimensions -- its
+    # docstring lists aspect among what "a raster CAN give". Reading the code's aspect instead
+    # replaced an image-derived value with a code-derived one inside a branch documented as
+    # image-only. The value is the same kind of quantity; the SOURCE is what matters.
     _ref_aspect = None
     _ref_linewidth = None
     try:
-        _ref_feats = official.extract_style_features(ref_code).get("features") or {}
-        _fa = _ref_feats.get("figure_aspect") or {}
-        if _fa.get("known") and float(_fa.get("value") or 0) > 0:
-            _ref_aspect = float(_fa["value"])
-        # THE REFERENCE'S LINE WIDTH, when the scorer can read it. Measured over 60 references:
-        # known 56, unknown 4, values 0.42-2.35 with a mean of 1.14 -- while the emitter wrote a
-        # constant 0.8. Reading it is not an inference from pixels; it is the same extraction the
-        # aspect uses.
-        _lw = _ref_feats.get("linewidth") or {}
-        if _lw.get("known") and float(_lw.get("value") or 0) > 0:
-            _ref_linewidth = float(_lw["value"])
+        _fa = (style or {}).get("figure_aspect")
+        if _fa and float(_fa) > 0:
+            _ref_aspect = float(_fa)
+        # THE REFERENCE'S LINE WIDTH IS **NOT** READ HERE, and round 99 read it.
+        #
+        # `extract_style_features(ref_code)` reads the reference CODE. The `else` branch above is
+        # HONEST MODE -- "style inferred from the reference IMAGE only -- what a real user has" --
+        # and writing a code-derived value into `style` makes the honest number partly tautological.
+        # Measured: on a reference with lw=2.25 the honest candidate scores 48.66 and the
+        # code-copied one 98.66; the +9.01 reported in round 99 was that gap.
+        #
+        # The image CANNOT supply it: `style_from_image_profile` returns `linewidth=None` and says
+        # why (one pixel is the whole decision at these resolutions). So the honest mode leaves the
+        # dimension at figpipe's default and the scorer counts it as a deviation. That deviation is
+        # real and must be reported, not hidden by reading the answer key.
+        _ref_linewidth = None
     except Exception:                               # noqa: BLE001 - fall back to the fixed height
         _ref_aspect = None
     # thread it through the style dict the emitter reads
