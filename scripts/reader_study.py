@@ -63,7 +63,7 @@ def _pairs(n: int, seed: int) -> list[dict]:
     return same[:n]
 
 
-def build(n: int = 20, seed: int = 20261025) -> int:
+def build(n: int = 30, seed: int = 20261025) -> int:
     """Render the study material and write the answer sheet with NO answers in it."""
     import validate_style_metric as V
     from figpipe import layout, styleprofile
@@ -102,7 +102,12 @@ def build(n: int = 20, seed: int = 20261025) -> int:
             "reference": pair["reference"],
             "mismatch": pair["mismatch"],
             "matched_side": "left" if flip else "right",
-            "metric_picks": "A" if pair["distance_B"] < pair["distance_A"] else "B",
+            # WHICH SIDE, NOT WHICH LETTER. `metric_picks` used to be "A" or "B", and because A is
+            # always the mismatched candidate that field was "A" on 27 of 30 pairs -- a value that
+            # could not be wrong. The side is what a rater's answer is actually compared with.
+            "metric_prefers": ("right" if flip else "left")
+                              if pair["distance_B"] < pair["distance_A"]
+                              else ("left" if flip else "right"),
             "distance_A": pair["distance_A"],
             "distance_B": pair["distance_B"],
         }
@@ -166,6 +171,21 @@ def _resolve(rel: str) -> pathlib.Path:
     return candidates[3]
 
 
+def _need_k(n: int, alpha: float = 0.05) -> int:
+    """Smallest k with P(X >= k | p = 0.5) <= alpha, for a one-sided binomial test."""
+    from math import comb
+    for k in range(n + 1):
+        if sum(comb(n, i) for i in range(k, n + 1)) / 2 ** n <= alpha:
+            return k
+    return n + 1
+
+
+def _power(n: int, k: int, p_true: float) -> float:
+    """P(reject chance | the true agreement rate is p_true)."""
+    from math import comb
+    return sum(comb(n, i) * p_true ** i * (1 - p_true) ** (n - i) for i in range(k, n + 1))
+
+
 def _sheet_text(n: int) -> str:
     return f"""READER STUDY: does the figure figpipe picks look closer to the reference?
 
@@ -198,6 +218,14 @@ WHAT HAPPENS WITH YOUR ANSWERS
     sees, and that invalidates a claim this project has been making.
 
     {n} pairs. At chance you would agree with the metric on about half.
+
+WHAT THIS STUDY CAN AND CANNOT DETECT
+    One-sided binomial, chance 0.5, alpha 0.05, with {n} pairs you must agree on
+    {_need_k(n)}/{n} = {_need_k(n)/n:.2f} to reject chance. If the true agreement is 0.70 the study
+    detects it with power {_power(n, _need_k(n), 0.70):.2f}; at 0.80, {_power(n, _need_k(n), 0.80):.2f}.
+
+    THIS IS A LIMIT OF THE CORPUS, NOT OF THE HARNESS: there are 30 same-paper pairs, and a study
+    cannot be made stronger by running it on pairs that do not exist.
 
 PLEASE DO NOT
     * open {KEY.name}
@@ -239,8 +267,13 @@ def score() -> int:
             rows.append((pid, "tie", "-"))
             continue
         picked_matched = (choice == matched_side)
-        # the metric always picks the matched candidate when distance_B < distance_A
-        metric_picks_matched = meta["metric_picks"] == "B"
+        # THE METRIC'S PREFERENCE IS A SIDE, NOT A LETTER. `metric_picks` was "A"/"B" and A is always
+        # the mismatched candidate, so that field was a tautology -- it said "the metric was right".
+        metric_prefers = meta.get("metric_prefers")
+        if metric_prefers is None:                  # a key written before the fix
+            metric_prefers = matched_side if meta.get("metric_picks") == "B" else \
+                ("right" if matched_side == "left" else "left")
+        metric_picks_matched = (metric_prefers == matched_side)
         agrees = picked_matched == metric_picks_matched
         if agrees:
             agree += 1
@@ -270,7 +303,13 @@ def score() -> int:
     out.write_text(json.dumps({"agree": agree, "disagree": disagree, "tie": tie,
                                "agreement_rate": round(rate, 4), "rows": rows}, indent=2),
                    encoding="utf-8")
-    print(f"  wrote {out.relative_to(ROOT)}")
+    # A STUDY DIRECTORY IS A PARAMETER, SO THE OUTPUT MAY NOT BE UNDER THE REPO. Printing a path is
+    # not a reason to crash after the scoring already succeeded.
+    try:
+        shown = out.relative_to(ROOT)
+    except ValueError:
+        shown = out
+    print(f"  wrote {shown}")
     return 0
 
 
@@ -278,7 +317,13 @@ def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--build", action="store_true", help="render the study material")
     ap.add_argument("--score", action="store_true", help="score the completed answer sheet")
-    ap.add_argument("-n", type=int, default=20, help="how many pairs (default 20)")
+    # 30, NOT 20, AND THE REASON IS MEASURED. One-sided binomial at alpha 0.05:
+    #     N=20 needs 15/20 (power 0.80 at a true 0.80, only 0.42 at 0.70)
+    #     N=30 needs 20/30 (power 0.97 at 0.80, 0.73 at 0.70)
+    # The corpus has exactly 30 same-paper pairs, so this is the largest study the data supports.
+    ap.add_argument("-n", type=int, default=30,
+                    help="how many pairs (default 30: the corpus maximum, and the smallest N with "
+                         "acceptable power at alpha 0.05)")
     ap.add_argument("--seed", type=int, default=20261025)
     args = ap.parse_args(argv)
     if args.build:

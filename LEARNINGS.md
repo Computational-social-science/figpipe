@@ -6628,3 +6628,55 @@ about the style metric remains a statement about ORDERING, not about preference,
 in a field rather than in a footnote -- which is the right place for it.
 
 Suite: 919 passed, 7 skipped.
+
+
+## 181. The study's answer key contained a value that could not be wrong (2026-10-25)
+
+Round 117 built the reader-study harness. This round checked whether it would produce a usable result,
+and found **the same defect the study exists to test**, inside the study's own key.
+
+### The tautology
+
+`key.json` recorded `metric_picks: "A" | "B"`. But A is ALWAYS the mismatched-styled candidate and B is
+ALWAYS the matched one. Measured on the built study: **`metric_picks` was `"A"` on 27 of 30 pairs.**
+
+**That field did not say "the metric picked A". It said "the metric was right".** A value that cannot be
+wrong is not a measurement -- the project's oldest rule, sitting inside the artefact that exists to
+enforce it.
+
+The rater never sees A or B, so the STUDY was blind. The SCORER was not: it compared a side-choice
+against a letter that was a tautology.
+
+Fixed by recording **which side** the metric prefers (`metric_prefers: left | right`, 12/18 -- a real
+distribution). Verified both directions: a rater who answers exactly as the metric prefers scores 30/30,
+one who answers exactly against it scores 0/30.
+
+### And the sample size had no power calculation behind it
+
+The default was 20 pairs, chosen by feel. One-sided binomial, chance 0.5, alpha 0.05:
+
+    N     need k   rate    power at 0.80   power at 0.70
+    20      15     0.75    0.804           0.416
+    30      20     0.67    0.974           0.730
+
+**Twenty pairs would miss a true agreement of 0.70 three times in five.** The corpus has exactly 30
+same-paper pairs, so the default is now 30 -- the corpus maximum and the smallest N with acceptable
+power. The instructions state the critical value and the power, so a rater knows what their answers can
+and cannot establish.
+
+**A study cannot be made stronger by running it on pairs that do not exist**, and saying so is part of
+the harness rather than a caveat outside it.
+
+### The third defect, caught by a test
+
+`score()` printed `out.relative_to(ROOT)` and raised `ValueError` when the study directory was anywhere
+else -- after the scoring had already succeeded. A study directory is a PARAMETER; printing a path is not
+a reason to crash.
+
+### What is still true
+
+**No human has taken this study.** 30 pairs, 90 figures, instructions with the power stated, an answer
+sheet with no answers, a scorer verified in both directions -- and zero judgements collected. The harness
+is as complete as it can be without a reader.
+
+Suite: 924 passed, 7 skipped.
