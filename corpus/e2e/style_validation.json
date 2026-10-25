@@ -34,28 +34,28 @@
       "why": "the same-paper mismatch holds the journal's house style constant, so it asks whether the metric separates a faithful transfer from a sibling figure's style -- the question the metric exists to answer"
     }
   },
-  "discrimination_accuracy": 0.9333,
-  "n_correct": 28,
+  "discrimination_accuracy": 0.9,
+  "n_correct": 27,
   "n_pairs": 30,
   "binomial_ci_95": [
-    0.7868,
-    0.9815
+    0.7438,
+    0.9654
   ],
   "chance_level": 0.5,
-  "p_value_vs_chance": 4.33996319770813e-07,
-  "p_value_text": "4.34e-07",
-  "mean_margin": 0.1066,
-  "median_margin": 0.084,
-  "verdict": "SUPPORTED at this contrast: the style distance discriminates a matched transfer from a mismatched one at above-chance accuracy, with a 95 % interval that excludes chance. CONCENTRATION: withholding `aspect` alone drops accuracy to 0.70 (delta -0.23), so most of the discrimination is that one component.",
+  "p_value_vs_chance": 4.215165972709656e-06,
+  "p_value_text": "4.22e-06",
+  "mean_margin": 0.1292,
+  "median_margin": 0.107,
+  "verdict": "SUPPORTED at this contrast: the style distance discriminates a matched transfer from a mismatched one at above-chance accuracy, with a 95 % interval that excludes chance.",
   "negative_control": {
     "what": "the same arithmetic applied to an INVERTED ranking (distance negated)",
-    "accuracy": 0.0333,
-    "n_correct": 1,
+    "accuracy": 0.0667,
+    "n_correct": 2,
     "n_pairs": 30,
     "n_ties": 1,
     "binomial_ci_95": [
-      0.0059,
-      0.1667
+      0.0185,
+      0.2132
     ],
     "passes": true,
     "note": "A harness that reports the same number for the inverted ranking is measuring nothing. This control is asserted by the test suite. Ties are counted in neither direction, so forward + inverted + ties = n."
@@ -82,7 +82,7 @@
   "cross_metric": {
     "n_pairs_both_scored": 30,
     "figpipe_right_official_wrong": 0,
-    "figpipe_wrong_official_right": 1,
+    "figpipe_wrong_official_right": 2,
     "both_agree": 27
   },
   "per_dimension": {
@@ -164,84 +164,84 @@
     "sizes": {
       "n": 30,
       "n_decisive": 16,
-      "wins": 12,
-      "losses": 4,
+      "wins": 14,
+      "losses": 2,
       "ties": 14,
-      "accuracy": 0.75,
+      "accuracy": 0.875,
       "ci": [
-        0.505,
-        0.8982
+        0.6398,
+        0.965
       ],
-      "mean_A": 0.3433,
-      "mean_B": 0.2556,
-      "mean_margin": 0.0877
+      "mean_A": 0.3313,
+      "mean_B": 0.1771,
+      "mean_margin": 0.1542
     }
   },
   "leave_one_out": {
     "all_dimensions": {
       "n": 30,
-      "wins": 28,
-      "ties": 1,
-      "accuracy": 0.9333,
-      "delta_vs_all": null,
-      "ci": [
-        0.7868,
-        0.9815
-      ]
-    },
-    "without_aspect": {
-      "n": 30,
-      "wins": 21,
-      "ties": 3,
-      "accuracy": 0.7,
-      "delta_vs_all": -0.2333,
-      "ci": [
-        0.5212,
-        0.8334
-      ]
-    },
-    "without_letters": {
-      "n": 30,
       "wins": 27,
       "ties": 1,
       "accuracy": 0.9,
-      "delta_vs_all": -0.0333,
+      "delta_vs_all": null,
       "ci": [
         0.7438,
         0.9654
       ]
     },
+    "without_aspect": {
+      "n": 30,
+      "wins": 23,
+      "ties": 3,
+      "accuracy": 0.7667,
+      "delta_vs_all": -0.1333,
+      "ci": [
+        0.5907,
+        0.8821
+      ]
+    },
+    "without_letters": {
+      "n": 30,
+      "wins": 26,
+      "ties": 1,
+      "accuracy": 0.8667,
+      "delta_vs_all": -0.0333,
+      "ci": [
+        0.7032,
+        0.9469
+      ]
+    },
     "without_lines": {
       "n": 30,
-      "wins": 28,
+      "wins": 27,
       "ties": 1,
-      "accuracy": 0.9333,
+      "accuracy": 0.9,
       "delta_vs_all": 0.0,
       "ci": [
-        0.7868,
-        0.9815
+        0.7438,
+        0.9654
       ]
     },
     "without_palette": {
       "n": 30,
-      "wins": 28,
+      "wins": 27,
       "ties": 1,
-      "accuracy": 0.9333,
+      "accuracy": 0.9,
       "delta_vs_all": 0.0,
       "ci": [
-        0.7868,
-        0.9815
+        0.7438,
+        0.9654
       ]
     },
     "without_rules": {
       "n": 30,
-      "wins": 28,
+      "wins": 27,
       "ties": 1,
-      "accuracy": 0.9333,
+      "accuracy": 0.9,
       "delta_vs_all": 0.0,
       "ci": [
-        0.7868,
-        0.9815
+        0.7438,
+        0.9654
       ]
     },
     "without_sizes": {
@@ -249,7 +249,7 @@
       "wins": 28,
       "ties": 1,
       "accuracy": 0.9333,
-      "delta_vs_all": 0.0,
+      "delta_vs_all": 0.0333,
       "ci": [
         0.7868,
         0.9815
@@ -297,13 +297,13 @@
       ],
       "mismatch": "2019_nature_scalable_energy_efficient_magnetoelectric_spin_o_1e731f2e/fig_004",
       "mismatch_contrast": "same_paper",
-      "distance_A": 0.349,
-      "distance_B": 0.228,
-      "margin": 0.121,
+      "distance_A": 0.407,
+      "distance_B": 0.25,
+      "margin": 0.157,
       "correct": true,
       "tie": false,
       "details_A": {
-        "sizes": 0.302,
+        "sizes": 0.495,
         "letters": 0.375,
         "lines": 0.431,
         "rules": 1.0,
@@ -311,7 +311,7 @@
         "aspect": 0.254
       },
       "details_B": {
-        "sizes": 0.23,
+        "sizes": 0.302,
         "letters": 0.375,
         "lines": 0.431,
         "rules": 0.0,
@@ -331,13 +331,13 @@
       ],
       "mismatch": "2019_nature_scalable_energy_efficient_magnetoelectric_spin_o_1e731f2e/fig_001",
       "mismatch_contrast": "same_paper",
-      "distance_A": 0.523,
-      "distance_B": 0.353,
-      "margin": 0.17,
+      "distance_A": 0.48,
+      "distance_B": 0.321,
+      "margin": 0.159,
       "correct": true,
       "tie": false,
       "details_A": {
-        "sizes": 0.443,
+        "sizes": 0.299,
         "letters": 0.333,
         "lines": 0.784,
         "rules": 0.775,
@@ -345,7 +345,7 @@
         "aspect": 0.804
       },
       "details_B": {
-        "sizes": 0.299,
+        "sizes": 0.193,
         "letters": 0.333,
         "lines": 0.784,
         "rules": 0.225,
@@ -365,13 +365,13 @@
       ],
       "mismatch": "2023_nature_papers_and_patents_are_becoming_less_disruptive_e2bc44ca/fig_006",
       "mismatch_contrast": "same_paper",
-      "distance_A": 0.339,
-      "distance_B": 0.239,
-      "margin": 0.1,
+      "distance_A": 0.42,
+      "distance_B": 0.25,
+      "margin": 0.17,
       "correct": true,
       "tie": false,
       "details_A": {
-        "sizes": 0.352,
+        "sizes": 0.621,
         "letters": 0.333,
         "lines": 0.01,
         "rules": 0.775,
@@ -379,7 +379,7 @@
         "aspect": 0.331
       },
       "details_B": {
-        "sizes": 0.249,
+        "sizes": 0.288,
         "letters": 0.333,
         "lines": 0.01,
         "rules": 0.7,
@@ -399,13 +399,13 @@
       ],
       "mismatch": "2023_nature_papers_and_patents_are_becoming_less_disruptive_e2bc44ca/fig_003",
       "mismatch_contrast": "same_paper",
-      "distance_A": 0.247,
-      "distance_B": 0.203,
+      "distance_A": 0.215,
+      "distance_B": 0.171,
       "margin": 0.044,
       "correct": true,
       "tie": false,
       "details_A": {
-        "sizes": 0.241,
+        "sizes": 0.134,
         "letters": 0.25,
         "lines": 0.0,
         "rules": 0.925,
@@ -413,7 +413,7 @@
         "aspect": 0.265
       },
       "details_B": {
-        "sizes": 0.241,
+        "sizes": 0.134,
         "letters": 0.25,
         "lines": 0.0,
         "rules": 0.7,
@@ -433,13 +433,13 @@
       ],
       "mismatch": "2024_nature_scaling_neural_machine_translation_to_200_langua_46658cce/fig_001",
       "mismatch_contrast": "same_paper",
-      "distance_A": 0.26,
-      "distance_B": 0.208,
-      "margin": 0.052,
+      "distance_A": 0.207,
+      "distance_B": 0.156,
+      "margin": 0.051,
       "correct": true,
       "tie": false,
       "details_A": {
-        "sizes": 0.222,
+        "sizes": 0.047,
         "letters": 0.333,
         "lines": 0.216,
         "rules": 0.075,
@@ -447,7 +447,7 @@
         "aspect": 0.154
       },
       "details_B": {
-        "sizes": 0.222,
+        "sizes": 0.047,
         "letters": 0.333,
         "lines": 0.216,
         "rules": 0.0,
@@ -467,20 +467,20 @@
       ],
       "mismatch": "2024_nature_scaling_neural_machine_translation_to_200_langua_6d110a48/fig_002",
       "mismatch_contrast": "same_paper",
-      "distance_A": 0.343,
-      "distance_B": 0.259,
-      "margin": 0.084,
+      "distance_A": 0.417,
+      "distance_B": 0.191,
+      "margin": 0.226,
       "correct": true,
       "tie": false,
       "details_A": {
-        "sizes": 0.351,
+        "sizes": 0.559,
         "lines": 0.163,
         "rules": 0.225,
         "palette": 0.194,
         "aspect": 0.991
       },
       "details_B": {
-        "sizes": 0.476,
+        "sizes": 0.282,
         "lines": 0.163,
         "rules": 0.225,
         "palette": 0.077,
@@ -499,13 +499,13 @@
       ],
       "mismatch": "2024_nature_scaling_neural_machine_translation_to_200_langua_7209237b/fig_012",
       "mismatch_contrast": "same_paper",
-      "distance_A": 0.623,
-      "distance_B": 0.208,
-      "margin": 0.415,
+      "distance_A": 0.553,
+      "distance_B": 0.156,
+      "margin": 0.397,
       "correct": true,
       "tie": false,
       "details_A": {
-        "sizes": 0.675,
+        "sizes": 0.443,
         "letters": 1.0,
         "lines": 0.216,
         "rules": 0.925,
@@ -513,7 +513,7 @@
         "aspect": 1.0
       },
       "details_B": {
-        "sizes": 0.222,
+        "sizes": 0.047,
         "letters": 0.333,
         "lines": 0.216,
         "rules": 0.0,
@@ -533,13 +533,13 @@
       ],
       "mismatch": "2024_nature_scaling_neural_machine_translation_to_200_langua_7209237b/fig_003",
       "mismatch_contrast": "same_paper",
-      "distance_A": 0.402,
-      "distance_B": 0.336,
-      "margin": 0.066,
+      "distance_A": 0.353,
+      "distance_B": 0.274,
+      "margin": 0.079,
       "correct": true,
       "tie": false,
       "details_A": {
-        "sizes": 0.461,
+        "sizes": 0.299,
         "letters": 1.0,
         "lines": 0.113,
         "rules": 0.075,
@@ -547,7 +547,7 @@
         "aspect": 0.296
       },
       "details_B": {
-        "sizes": 0.516,
+        "sizes": 0.337,
         "lines": 0.0,
         "rules": 0.7,
         "palette": 0.245,
@@ -566,20 +566,20 @@
       ],
       "mismatch": "2024_nature_scaling_neural_machine_translation_to_200_langua_7209237b/fig_010",
       "mismatch_contrast": "same_paper",
-      "distance_A": 0.343,
-      "distance_B": 0.259,
-      "margin": 0.084,
+      "distance_A": 0.417,
+      "distance_B": 0.191,
+      "margin": 0.226,
       "correct": true,
       "tie": false,
       "details_A": {
-        "sizes": 0.351,
+        "sizes": 0.559,
         "lines": 0.276,
         "rules": 0.075,
         "palette": 0.231,
         "aspect": 0.937
       },
       "details_B": {
-        "sizes": 0.476,
+        "sizes": 0.282,
         "lines": 0.163,
         "rules": 0.225,
         "palette": 0.077,
@@ -598,20 +598,20 @@
       ],
       "mismatch": "2024_nature_scaling_neural_machine_translation_to_200_langua_7209237b/fig_010",
       "mismatch_contrast": "same_paper",
-      "distance_A": 0.343,
-      "distance_B": 0.259,
-      "margin": 0.084,
+      "distance_A": 0.417,
+      "distance_B": 0.191,
+      "margin": 0.226,
       "correct": true,
       "tie": false,
       "details_A": {
-        "sizes": 0.351,
+        "sizes": 0.559,
         "lines": 0.276,
         "rules": 0.075,
         "palette": 0.231,
         "aspect": 0.937
       },
       "details_B": {
-        "sizes": 0.476,
+        "sizes": 0.282,
         "lines": 0.163,
         "rules": 0.225,
         "palette": 0.077,
@@ -630,20 +630,20 @@
       ],
       "mismatch": "2024_nature_scaling_neural_machine_translation_to_200_langua_7209237b/fig_007",
       "mismatch_contrast": "same_paper",
-      "distance_A": 0.35,
-      "distance_B": 0.128,
-      "margin": 0.222,
+      "distance_A": 0.429,
+      "distance_B": 0.113,
+      "margin": 0.316,
       "correct": true,
       "tie": false,
       "details_A": {
-        "sizes": 0.203,
+        "sizes": 0.426,
         "lines": 0.268,
         "rules": 1.0,
         "palette": 0.105,
         "aspect": 0.841
       },
       "details_B": {
-        "sizes": 0.171,
+        "sizes": 0.129,
         "lines": 0.268,
         "rules": 0.0,
         "palette": 0.123,
@@ -662,13 +662,13 @@
       ],
       "mismatch": "2025_nature_a_foundation_model_to_predict_and_capture_human_86b1c290/fig_005",
       "mismatch_contrast": "same_paper",
-      "distance_A": 0.292,
-      "distance_B": 0.173,
-      "margin": 0.119,
+      "distance_A": 0.349,
+      "distance_B": 0.139,
+      "margin": 0.21,
       "correct": true,
       "tie": false,
       "details_A": {
-        "sizes": 0.338,
+        "sizes": 0.53,
         "letters": 0.413,
         "lines": 0.209,
         "rules": 0.15,
@@ -676,7 +676,7 @@
         "aspect": 0.231
       },
       "details_B": {
-        "sizes": 0.261,
+        "sizes": 0.146,
         "letters": 0.413,
         "lines": 0.126,
         "rules": 0.0,
@@ -696,13 +696,13 @@
       ],
       "mismatch": "2025_nature_comprehensive_echocardiogram_evaluation_with_vie_0050ec77/fig_002",
       "mismatch_contrast": "same_paper",
-      "distance_A": 0.265,
-      "distance_B": 0.237,
-      "margin": 0.028,
+      "distance_A": 0.23,
+      "distance_B": 0.203,
+      "margin": 0.027,
       "correct": true,
       "tie": false,
       "details_A": {
-        "sizes": 0.232,
+        "sizes": 0.116,
         "letters": 0.333,
         "lines": 0.499,
         "rules": 0.0,
@@ -710,7 +710,7 @@
         "aspect": 0.127
       },
       "details_B": {
-        "sizes": 0.232,
+        "sizes": 0.116,
         "letters": 0.333,
         "lines": 0.354,
         "rules": 0.225,
@@ -730,13 +730,13 @@
       ],
       "mismatch": "2025_nature_comprehensive_echocardiogram_evaluation_with_vie_0050ec77/fig_002",
       "mismatch_contrast": "same_paper",
-      "distance_A": 0.27,
-      "distance_B": 0.27,
+      "distance_A": 0.235,
+      "distance_B": 0.235,
       "margin": 0.0,
       "correct": false,
       "tie": true,
       "details_A": {
-        "sizes": 0.256,
+        "sizes": 0.14,
         "letters": 0.375,
         "lines": 0.19,
         "rules": 0.7,
@@ -744,7 +744,7 @@
         "aspect": 0.144
       },
       "details_B": {
-        "sizes": 0.256,
+        "sizes": 0.14,
         "letters": 0.375,
         "lines": 0.19,
         "rules": 0.7,
@@ -764,13 +764,13 @@
       ],
       "mismatch": "2025_nature_discovering_state_of_the_art_reinforcement_learn_d089008a/fig_003",
       "mismatch_contrast": "same_paper",
-      "distance_A": 0.284,
-      "distance_B": 0.27,
-      "margin": 0.014,
+      "distance_A": 0.249,
+      "distance_B": 0.236,
+      "margin": 0.013,
       "correct": true,
       "tie": false,
       "details_A": {
-        "sizes": 0.214,
+        "sizes": 0.098,
         "letters": 0.417,
         "lines": 0.0,
         "rules": 0.225,
@@ -778,7 +778,7 @@
         "aspect": 1.0
       },
       "details_B": {
-        "sizes": 0.214,
+        "sizes": 0.098,
         "letters": 0.417,
         "lines": 0.19,
         "rules": 0.7,
@@ -798,13 +798,13 @@
       ],
       "mismatch": "2025_nature_discovering_state_of_the_art_reinforcement_learn_d089008a/fig_003",
       "mismatch_contrast": "same_paper",
-      "distance_A": 0.302,
-      "distance_B": 0.236,
-      "margin": 0.066,
+      "distance_A": 0.269,
+      "distance_B": 0.202,
+      "margin": 0.067,
       "correct": true,
       "tie": false,
       "details_A": {
-        "sizes": 0.232,
+        "sizes": 0.121,
         "letters": 0.4,
         "lines": 0.098,
         "rules": 0.0,
@@ -812,7 +812,7 @@
         "aspect": 0.712
       },
       "details_B": {
-        "sizes": 0.232,
+        "sizes": 0.121,
         "letters": 0.4,
         "lines": 0.0,
         "rules": 0.7,
@@ -832,20 +832,20 @@
       ],
       "mismatch": "2025_nature_joint_speech_and_text_machine_translation_for_up_45680c29/fig_008",
       "mismatch_contrast": "same_paper",
-      "distance_A": 0.475,
-      "distance_B": 0.154,
-      "margin": 0.321,
+      "distance_A": 0.425,
+      "distance_B": 0.119,
+      "margin": 0.306,
       "correct": true,
       "tie": false,
       "details_A": {
-        "sizes": 0.702,
+        "sizes": 0.56,
         "lines": 0.214,
         "rules": 0.775,
         "palette": 0.271,
         "aspect": 0.265
       },
       "details_B": {
-        "sizes": 0.315,
+        "sizes": 0.214,
         "lines": 0.214,
         "rules": 0.15,
         "palette": 0.0,
@@ -864,13 +864,13 @@
       ],
       "mismatch": "2025_nature_learning_the_natural_history_of_human_disease_wi_64144624/fig_002",
       "mismatch_contrast": "same_paper",
-      "distance_A": 0.43,
-      "distance_B": 0.306,
-      "margin": 0.124,
+      "distance_A": 0.407,
+      "distance_B": 0.315,
+      "margin": 0.092,
       "correct": true,
       "tie": false,
       "details_A": {
-        "sizes": 0.428,
+        "sizes": 0.351,
         "letters": 0.429,
         "lines": 0.45,
         "rules": 0.85,
@@ -878,7 +878,7 @@
         "aspect": 0.233
       },
       "details_B": {
-        "sizes": 0.191,
+        "sizes": 0.222,
         "letters": 0.429,
         "lines": 0.305,
         "rules": 0.7,
@@ -898,13 +898,13 @@
       ],
       "mismatch": "2025_nature_learning_the_natural_history_of_human_disease_wi_64144624/fig_001",
       "mismatch_contrast": "same_paper",
-      "distance_A": 0.371,
-      "distance_B": 0.237,
-      "margin": 0.134,
+      "distance_A": 0.451,
+      "distance_B": 0.26,
+      "margin": 0.191,
       "correct": true,
       "tie": false,
       "details_A": {
-        "sizes": 0.376,
+        "sizes": 0.645,
         "letters": 0.438,
         "lines": 0.391,
         "rules": 0.85,
@@ -912,7 +912,7 @@
         "aspect": 0.29
       },
       "details_B": {
-        "sizes": 0.107,
+        "sizes": 0.184,
         "letters": 0.438,
         "lines": 0.245,
         "rules": 0.7,
@@ -932,13 +932,13 @@
       ],
       "mismatch": "2025_nature_learning_the_natural_history_of_human_disease_wi_64144624/fig_004",
       "mismatch_contrast": "same_paper",
-      "distance_A": 0.32,
-      "distance_B": 0.198,
+      "distance_A": 0.343,
+      "distance_B": 0.221,
       "margin": 0.122,
       "correct": true,
       "tie": false,
       "details_A": {
-        "sizes": 0.181,
+        "sizes": 0.258,
         "letters": 0.417,
         "lines": 0.044,
         "rules": 0.775,
@@ -946,7 +946,7 @@
         "aspect": 0.584
       },
       "details_B": {
-        "sizes": 0.181,
+        "sizes": 0.258,
         "letters": 0.417,
         "lines": 0.101,
         "rules": 0.0,
@@ -966,13 +966,13 @@
       ],
       "mismatch": "2025_nature_learning_the_natural_history_of_human_disease_wi_64144624/fig_002",
       "mismatch_contrast": "same_paper",
-      "distance_A": 0.262,
-      "distance_B": 0.234,
+      "distance_A": 0.285,
+      "distance_B": 0.257,
       "margin": 0.028,
       "correct": true,
       "tie": false,
       "details_A": {
-        "sizes": 0.111,
+        "sizes": 0.188,
         "letters": 0.375,
         "lines": 0.374,
         "rules": 0.7,
@@ -980,7 +980,7 @@
         "aspect": 0.056
       },
       "details_B": {
-        "sizes": 0.111,
+        "sizes": 0.188,
         "letters": 0.375,
         "lines": 0.374,
         "rules": 0.7,
@@ -1000,13 +1000,13 @@
       ],
       "mismatch": "2025_nature_optimizing_generative_ai_by_backpropagating_lang_ff98bab1/fig_002",
       "mismatch_contrast": "same_paper",
-      "distance_A": 0.252,
-      "distance_B": 0.094,
+      "distance_A": 0.205,
+      "distance_B": 0.047,
       "margin": 0.158,
       "correct": true,
       "tie": false,
       "details_A": {
-        "sizes": 0.247,
+        "sizes": 0.093,
         "letters": 0.0,
         "lines": 0.403,
         "rules": 0.225,
@@ -1014,7 +1014,7 @@
         "aspect": 0.845
       },
       "details_B": {
-        "sizes": 0.247,
+        "sizes": 0.093,
         "letters": 0.0,
         "lines": 0.069,
         "rules": 0.075,
@@ -1034,13 +1034,13 @@
       ],
       "mismatch": "2025_nature_towards_multimodal_foundation_models_in_molecula_039ef430/fig_002",
       "mismatch_contrast": "same_paper",
-      "distance_A": 0.323,
-      "distance_B": 0.138,
-      "margin": 0.185,
+      "distance_A": 0.242,
+      "distance_B": 0.08,
+      "margin": 0.162,
       "correct": true,
       "tie": false,
       "details_A": {
-        "sizes": 0.68,
+        "sizes": 0.411,
         "letters": 0.25,
         "lines": 0.0,
         "rules": 0.0,
@@ -1048,7 +1048,7 @@
         "aspect": 0.184
       },
       "details_B": {
-        "sizes": 0.218,
+        "sizes": 0.026,
         "letters": 0.25,
         "lines": 0.0,
         "rules": 0.0,
@@ -1068,13 +1068,13 @@
       ],
       "mismatch": "2026_nature_a_critical_initialization_for_biological_neural_433a1306/fig_003",
       "mismatch_contrast": "same_paper",
-      "distance_A": 0.111,
-      "distance_B": 0.114,
+      "distance_A": 0.134,
+      "distance_B": 0.137,
       "margin": -0.003,
       "correct": false,
       "tie": false,
       "details_A": {
-        "sizes": 0.06,
+        "sizes": 0.137,
         "letters": 0.417,
         "lines": 0.0,
         "rules": 0.0,
@@ -1082,7 +1082,7 @@
         "aspect": 0.069
       },
       "details_B": {
-        "sizes": 0.06,
+        "sizes": 0.137,
         "letters": 0.417,
         "lines": 0.0,
         "rules": 0.0,
@@ -1102,13 +1102,13 @@
       ],
       "mismatch": "2026_nature_mapping_the_neuronal_building_blocks_of_human_la_2248c823/fig_003",
       "mismatch_contrast": "same_paper",
-      "distance_A": 0.596,
-      "distance_B": 0.291,
-      "margin": 0.305,
+      "distance_A": 0.573,
+      "distance_B": 0.233,
+      "margin": 0.34,
       "correct": true,
       "tie": false,
       "details_A": {
-        "sizes": 0.947,
+        "sizes": 0.87,
         "letters": 0.4,
         "lines": 0.269,
         "rules": 0.775,
@@ -1116,7 +1116,7 @@
         "aspect": 1.0
       },
       "details_B": {
-        "sizes": 0.216,
+        "sizes": 0.024,
         "letters": 0.4,
         "lines": 0.335,
         "rules": 0.0,
@@ -1136,13 +1136,13 @@
       ],
       "mismatch": "2026_nature_mapping_the_neuronal_building_blocks_of_human_la_2248c823/fig_001",
       "mismatch_contrast": "same_paper",
-      "distance_A": 0.203,
-      "distance_B": 0.168,
+      "distance_A": 0.226,
+      "distance_B": 0.191,
       "margin": 0.035,
       "correct": true,
       "tie": false,
       "details_A": {
-        "sizes": 0.028,
+        "sizes": 0.105,
         "letters": 0.417,
         "lines": 0.139,
         "rules": 0.85,
@@ -1150,7 +1150,7 @@
         "aspect": 0.14
       },
       "details_B": {
-        "sizes": 0.028,
+        "sizes": 0.105,
         "letters": 0.417,
         "lines": 0.073,
         "rules": 0.7,
@@ -1170,13 +1170,13 @@
       ],
       "mismatch": "2026_nature_training_large_language_models_on_narrow_tasks_c_780921b4/fig_003",
       "mismatch_contrast": "same_paper",
-      "distance_A": 0.174,
-      "distance_B": 0.172,
+      "distance_A": 0.116,
+      "distance_B": 0.114,
       "margin": 0.002,
       "correct": true,
       "tie": false,
       "details_A": {
-        "sizes": 0.192,
+        "sizes": 0.0,
         "letters": 0.0,
         "lines": 0.377,
         "rules": 0.15,
@@ -1184,7 +1184,7 @@
         "aspect": 0.015
       },
       "details_B": {
-        "sizes": 0.192,
+        "sizes": 0.0,
         "letters": 0.0,
         "lines": 0.377,
         "rules": 0.15,
@@ -1204,13 +1204,13 @@
       ],
       "mismatch": "s001_2026_nature_reimagining_research_papers_as_inter_d0299284/fig_003",
       "mismatch_contrast": "same_paper",
-      "distance_A": 0.216,
-      "distance_B": 0.182,
-      "margin": 0.034,
-      "correct": true,
+      "distance_A": 0.192,
+      "distance_B": 0.2,
+      "margin": -0.008,
+      "correct": false,
       "tie": false,
       "details_A": {
-        "sizes": 0.517,
+        "sizes": 0.44,
         "letters": 0.25,
         "lines": 0.0,
         "rules": 0.0,
@@ -1218,7 +1218,7 @@
         "aspect": 0.052
       },
       "details_B": {
-        "sizes": 0.423,
+        "sizes": 0.484,
         "letters": 0.25,
         "lines": 0.0,
         "rules": 0.0,
@@ -1238,13 +1238,13 @@
       ],
       "mismatch": "studying_protein_dynamics_in_living_cells_nature_review_c8b41a8e/fig_005",
       "mismatch_contrast": "same_paper",
-      "distance_A": 0.229,
-      "distance_B": 0.163,
-      "margin": 0.066,
+      "distance_A": 0.24,
+      "distance_B": 0.173,
+      "margin": 0.067,
       "correct": true,
       "tie": false,
       "details_A": {
-        "sizes": 0.199,
+        "sizes": 0.234,
         "letters": 0.25,
         "lines": 0.377,
         "rules": 0.075,
@@ -1252,7 +1252,7 @@
         "aspect": 0.581
       },
       "details_B": {
-        "sizes": 0.199,
+        "sizes": 0.234,
         "letters": 0.25,
         "lines": 0.377,
         "rules": 0.075,
@@ -1272,20 +1272,20 @@
       ],
       "mismatch": "who_s_on_first_in_the_cellular_response_to_dna_damage_nature_553d3e66/fig_002",
       "mismatch_contrast": "same_paper",
-      "distance_A": 0.27,
-      "distance_B": 0.253,
+      "distance_A": 0.196,
+      "distance_B": 0.179,
       "margin": 0.017,
       "correct": true,
       "tie": false,
       "details_A": {
-        "sizes": 0.408,
+        "sizes": 0.2,
         "lines": 0.335,
         "rules": 0.15,
         "palette": 0.175,
         "aspect": 0.145
       },
       "details_B": {
-        "sizes": 0.408,
+        "sizes": 0.2,
         "lines": 0.335,
         "rules": 0.15,
         "palette": 0.175,
@@ -1300,18 +1300,18 @@
   "arms": {
     "same_paper": {
       "n_pairs": 30,
-      "n_correct": 28,
-      "discrimination_accuracy": 0.9333,
+      "n_correct": 27,
+      "discrimination_accuracy": 0.9,
       "binomial_ci_95": [
-        0.7868,
-        0.9815
+        0.7438,
+        0.9654
       ],
-      "p_value_vs_chance": 4.33996319770813e-07,
-      "p_value_text": "4.34e-07",
-      "verdict": "SUPPORTED at this contrast: the style distance discriminates a matched transfer from a mismatched one at above-chance accuracy, with a 95 % interval that excludes chance. CONCENTRATION: withholding `aspect` alone drops accuracy to 0.70 (delta -0.23), so most of the discrimination is that one component.",
+      "p_value_vs_chance": 4.215165972709656e-06,
+      "p_value_text": "4.22e-06",
+      "verdict": "SUPPORTED at this contrast: the style distance discriminates a matched transfer from a mismatched one at above-chance accuracy, with a 95 % interval that excludes chance.",
       "official_agreement_rate": 1.0,
       "official_n_scored": 30,
-      "negative_control_accuracy": 0.0333
+      "negative_control_accuracy": 0.0667
     },
     "different_paper": {
       "n_pairs": 30,
@@ -1330,7 +1330,7 @@
     }
   },
   "contrast_gap": {
-    "easy_minus_hard": 0.0667,
+    "easy_minus_hard": 0.1,
     "note": "How much the metric loses when the house style is held constant. A large gap means most of the easy arm's accuracy came from cross-paper differences, not from style fidelity."
   }
 }

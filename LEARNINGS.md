@@ -6417,3 +6417,65 @@ And the README now leads with the command rather than with an import, because th
 should see is the thing they can run.
 
 Suite: 896 passed, 5 skipped.
+
+
+## 176. The claim document promised re-derivation and had drifted by one pair (2026-10-25)
+
+`CLAIM.md` opens with:
+
+> Everything below is measured by scripts in this repository and can be re-run.
+
+I took that sentence seriously and **re-ran the script it cites**.
+
+### What the re-run said
+
+    scripts/validate_style_metric.py
+    same_paper arm:  27/30 = 0.900     95 % CI [0.744, 0.965]
+    CLAIM.md said:   28/30 = 0.933     95 % CI [0.787, 0.982]     (eleven places)
+
+**One pair.** The style-metric discrimination accuracy had fallen by one pair and the document never
+noticed.
+
+### Why it fell, and why that is not a failure
+
+Five commits between 2026-10-23 and 2026-10-25 changed `styleprofile.py`:
+
+    b821564  count-misalignment fix (palette)
+    7139881  tick_direction: probe every spine
+    0d7d8fd  palette cap 24 -> 48
+    0cac6eb  font-tier generator (tick measured, label = base+1)
+    0c068f7  palette area floor + chroma test
+
+**Every one was measured on the OFFICIAL channel and every one was a real fix.** Together they moved a
+DIFFERENT measurement -- a 30-pair discrimination test -- by one pair. That is what a shared metric looks
+like: improving one measurement perturbs another, and nothing in the workflow forces the claim document
+to be re-derived.
+
+### What was actually wrong
+
+**Not the finding.** 0.900 with a 95 % CI of [0.744, 0.965] still excludes chance (0.5) by a wide margin,
+so "the style distance discriminates a matched transfer from a mismatched one" is still supported.
+
+**The document.** It stated a number its own script no longer produced, in eleven places, with
+present-tense confidence. That is the defect: **a claim that re-derives to a different number is worse
+than one that cannot be re-derived, because the re-derivation LOOKS like verification.**
+
+### The guard
+
+`tests/test_claim_drift.py` asserts that CLAIM.md states the measured accuracy, the measured pair count,
+and the measured confidence interval, and that the headline quotes no SUPERSEDED accuracy (a dated update
+may -- that is history).
+
+**Verified with a negative control**, because a guard that cannot fail is not a guard: restoring `0.933`
+to the headline makes it fail with "the headline states the discrimination accuracy as ['0.933'], but the
+measured value is 0.900"; restoring the true value makes it pass.
+
+### And one mistake inside the guard
+
+My first version matched every three-decimal number in the headline and flagged `0.869` (the
+figure_aspect dimension score), `0.965` (spines_removed) and two component accuracies. **A regex over
+numbers is not a check of a claim** -- the check has to know which quantity it is about. The test now
+matches only numbers explicitly labelled as the discrimination accuracy or written as "N of M pairs
+correct".
+
+Suite: 901 passed, 5 skipped.

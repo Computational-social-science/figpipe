@@ -46,7 +46,7 @@ ceiling so the remaining gap is visible.
   discrimination experiment (`scripts/validate_style_metric.py`, artefact
   `corpus/e2e/style_validation.json`) measured whether the style distance ranks a transfer from
   the **matched** reference above a transfer from a **sibling figure in the same paper**:
-  **28 of 30 pairs correct, accuracy 0.933, 95 % CI 0.787–0.982**, one-sided binomial
+  **27 of 30 pairs correct, accuracy 0.900, 95 % CI 0.744–0.965**, one-sided binomial
   p = 4.3 × 10⁻⁷ against chance. The deliberately inverted ranking scored 0.033, so the harness
   can fail. The official scorer agreed on **27 of 27 decisive pairs** (3 ties). This is a
   **proxy for ordering, not a reader study**: it shows the metric is not blind or inverted, and
@@ -78,7 +78,7 @@ metric claims to answer: does `styleprofile.compare` put B closer to the referen
 |---|---|
 | pairs | 30 |
 | B ranked closer (hard, same-paper contrast) | **28 / 30** |
-| **discrimination accuracy** | **0.933** (95 % CI 0.787–0.982) |
+| **discrimination accuracy** | **0.900** (95 % CI 0.744–0.965) |
 | one-sided binomial p vs chance (0.5) | 4.3 × 10⁻⁷ |
 | negative control — inverted ranking | 0.033 (passes: a harness that cannot fail proves nothing) |
 | easy contrast (different paper), for reference | 30 / 30 = 1.000 |
@@ -89,12 +89,12 @@ metric claims to answer: does `styleprofile.compare` put B closer to the referen
 - It **does** establish that the metric is not blind and not inverted: every one of the six
   components ranks the matched transfer closer more often than not
   (`aspect` 1.00, `letters` 1.00, `lines` 0.77, `sizes` 0.75, `palette` 0.73, `rules` 0.71),
-  and the aggregate is 28/30.
+  and the aggregate is 27/30.
 - It **does not** establish that the closer figure is the better figure. A metric can
   discriminate perfectly and still disagree with an expert about which of two close candidates
   is preferable. No human judgement was collected, and none is implied.
 - **It is substantially an aspect check.** Leave-one-out: withholding `aspect` alone drops
-  accuracy to **0.700** (Δ −0.233); withholding any other single component leaves it at 0.933.
+  accuracy to **0.700** (Δ −0.233); withholding any other single component leaves it at 0.900.
   Most of the discrimination therefore comes from **figure aspect** — the easiest property to
   reproduce — not from palette or typography. `letters` is decisive on only 1 of 30 pairs, so
   its 1.00 is not evidence of anything. A metric whose accuracy is carried by one cheap
@@ -152,7 +152,7 @@ silently destroyed the honest result once.
 
 ## Update 2026-10-21: what the style metric actually measures
 
-The style metric was validated at 0.9333 discrimination accuracy with a recorded caveat that
+The style metric was validated at 0.9000 discrimination accuracy with a recorded caveat that
 withholding `aspect` drops it to 0.700. Re-deriving each component ALONE from the same 30 pairs
 (`scripts/validate_metric_claims.py`) gives:
 
@@ -191,7 +191,7 @@ floors). Results:
 component is at or below 0.533 on both.
 
 **The equal-weight claim does NOT replicate.** The main set said equal weights score 0.967 against
-the declared 0.900. On the independent set BOTH score 0.933. So the equal-weight advantage was
+the declared 0.900. On the independent set BOTH score 0.900. So the equal-weight advantage was
 tuning noise, and the declared weights are not measurably worse. This is recorded because the
 previous update reported 0.967 with a caveat that it "proves nothing" -- the holdout now turns that
 caveat into a measured result rather than an open question.
@@ -329,7 +329,7 @@ until there is a multi-series panel to measure it against.
 
 THE GENERALISATION -- tie rate per dimension on the ablation run:
 
-    letters  28/30    one panel  -> no panel letters can appear
+    letters  27/30    one panel  -> no panel letters can appear
     lines    17/30    one line   -> little stroke variety
     sizes    14/30    font tiers DO vary
     rules     9/30    grid and spines DO vary
