@@ -42,7 +42,12 @@ def test_snapshot_reads_capability_artefacts_without_opinions():
     # referenced `key` from the PRECEDING loop -- a stale variable. It only passed because
     # `knowledge_version` happened to be an int, so the comparison never mattered. Adding a second
     # string field (`_code_version`, which records the instrument) exposed it.
-    IDENTIFIERS = {"knowledge_version", "_code_version"}
+    # `benchmark_anchor_state` is the THIRD identifier: a value from a CLOSED SET naming which of four
+    # discrete situations produced a missing anchor. It is not a judgement -- it is a count expressed as
+    # a label, because a bare None cannot be told apart from "not applicable", "incomparable" or
+    # "the reference images could not be downloaded". Measured 2026-10-25: HTTP 403 on every download
+    # left the record saying only `None`.
+    IDENTIFIERS = {"knowledge_version", "_code_version", "benchmark_anchor_state"}
     for key, value in snap.items():
         assert not isinstance(value, str) or key in IDENTIFIERS, (
             f"the snapshot field {key!r} holds prose ({value!r}); a capability snapshot must "

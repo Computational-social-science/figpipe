@@ -53,6 +53,28 @@ def snapshot() -> dict:
     return json.loads(KB.read_text(encoding="utf-8"))
 
 
+def _anchor_state(anchor: dict) -> str:
+    """A REASON CODE for a missing anchor: a fact, not an opinion.
+
+    `mean` is None for three different reasons and a bare None cannot tell them apart:
+        measured     the anchor is present
+        incomplete   too few anchor tasks on the current instrument (an infrastructure fact)
+        incomparable the instrument changed, so the anchor is not judged
+        absent       the report carries no anchor block at all
+    """
+    if not anchor:
+        return "absent"
+    if anchor.get("mean") is not None:
+        return "measured"
+    if anchor.get("comparable") is False:
+        return "incomparable"
+    n_same = anchor.get("n_same_instrument") or 0
+    n_expected = anchor.get("n_expected") or 0
+    if n_expected and n_same < n_expected:
+        return "incomplete"
+    return "absent"
+
+
 def capability_snapshot() -> dict:
     """A machine-readable snapshot of what the project can DO, not just what it knows.
 
@@ -121,7 +143,21 @@ def capability_snapshot() -> dict:
         # property of the measurement, not of the capability
         # JUDGED: single-instrument view. The all-rows value mixes fingerprints and moves when the
         # MEASUREMENT changes (0.305 -> 0.316 when only 5 of 20 anchor tasks were on current code).
+        # A NONE MUST SAY WHY IT IS NONE. `benchmark_anchor_single.mean` is absent when the anchor
+        # cannot be computed, and three different situations produce that: not applicable, incomparable
+        # (the instrument changed), or UNMEASURABLE (the reference images could not be downloaded).
+        # Measured 2026-10-25: HTTP 403 for every reference image left 6 of 20 anchor tasks measured,
+        # and the record said only `None`. The third case is an infrastructure fact and must not read
+        # like a capability result.
         "benchmark_anchor_single": (bench.get("benchmark_anchor_single") or {}).get("mean"),
+        # A REASON CODE, NOT A SENTENCE. The report's `note` is prose ("a partial mean is not the
+        # anchor, so it is not judged"), and a capability snapshot must hold counts and measured
+        # distances -- `test_snapshot_reads_capability_artefacts_without_opinions` enforces exactly
+        # that. The information is still here, as an enumerable fact plus the counts behind it.
+        "benchmark_anchor_state": _anchor_state(bench.get("benchmark_anchor_single") or {}),
+        "benchmark_anchor_comparable": (bench.get("benchmark_anchor_single") or {}).get("comparable"),
+        "benchmark_anchor_n_same": (bench.get("benchmark_anchor_single") or {}).get("n_same_instrument"),
+        "benchmark_anchor_n_expected": (bench.get("benchmark_anchor_single") or {}).get("n_expected"),
         "benchmark_anchor_distance": bench.get("benchmark_anchor_distance"),
         # the distance of the figures the pipeline would actually SHIP (closer of plain/styled);
         # this is the capability the selection step added, so it is judged
@@ -1067,6 +1103,20 @@ def _main_locked(argv: list[str], dry: bool) -> int:
         print(f"  !! CLAIM NOT RE-DERIVED: {str(_cr.get('reason'))[:100]}")
     if not (report_run or {}).get("ran"):
         print(f"  !! REPORT NOT REBUILT: {str((report_run or {}).get('reason'))[:100]}")
+    # AN UNMEASURABLE ANCHOR IS AN INFRASTRUCTURE FACT AND MUST NOT LOOK LIKE A CAPABILITY RESULT.
+    #
+    # Measured 2026-10-25: every reference-image download returned HTTP 403, so 6 of 20 anchor tasks
+    # were measured and the anchor was correctly withheld (`comparable: False`). The summary printed
+    # nothing, so the run looked healthy while measuring almost nothing.
+    _cap = run.get("capabilities") or {}
+    _state = _cap.get("benchmark_anchor_state")
+    if _state == "incomplete":
+        print(f"  !! ANCHOR NOT MEASURED: {_cap.get('benchmark_anchor_n_same')} of "
+              f"{_cap.get('benchmark_anchor_n_expected')} anchor tasks on the current instrument")
+    elif _state == "incomparable":
+        print("  !! ANCHOR INCOMPARABLE: the instrument changed; the anchor is not judged")
+    elif _state == "absent":
+        print("  !! ANCHOR ABSENT: the report carries no anchor block")
     if run.get("demoted"):
         print(f"  !! DEMOTED (regression): {run['demoted']}")
     if run.get("promoted"):

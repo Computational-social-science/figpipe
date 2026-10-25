@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-25T10:47:46",
+  "run_at": "2026-10-25T11:59:37",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -9,37 +9,19 @@
     "  passed 8, failed 0",
     "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
     "  wrote knowledge\\evolution_report.json",
-    "  lean: tracked 79.7 -> 79.7 MB, worktree 103.8 -> 102.1 MB"
+    "  lean: tracked 79.7 -> 79.7 MB, worktree 107.9 -> 106.2 MB"
   ],
-  "tests_ok": false,
-  "tests_summary": "2 failed, 906 passed, 3 skipped, 1 warning in 1013.06s (0:16:53) | FAILED tests/test_report_status.py::test_the_board_total_counts_every_coverage_state; FAILED tests/test_report_status.py::test_the_report_is_not_older_than_the_data_it_describes",
+  "tests_ok": true,
+  "tests_summary": "913 passed, 3 skipped, 1 warning in 1007.53s (0:16:47)",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
   "published": {
-    "pushed": true,
-    "steps": [
-      {
-        "cmd": "git add -A",
-        "code": 0,
-        "tail": []
-      },
-      {
-        "cmd": "git -c user.name=figpipe-bot",
-        "code": 0,
-        "tail": [
-          " create mode 100644 knowledge/runs/2026-10-25T104746.json"
-        ]
-      },
-      {
-        "cmd": "git push origin",
-        "code": 0,
-        "tail": [
-          "   1c8eea9..a59576e  main -> main"
-        ]
-      }
-    ],
-    "withheld": []
+    "pushed": false,
+    "withheld": [],
+    "blocked_deletions": [],
+    "skipped": true,
+    "reason": "no knowledge change: the run record stays uncommitted for the next run"
   },
   "check_results": {
     "L01": {
@@ -164,9 +146,10 @@
   "anchor_refresh": {
     "ran": true,
     "stale_anchors": [
-      "shipped"
+      "shipped",
+      "styled"
     ],
-    "tasks": 20,
+    "tasks": 35,
     "code": 0,
     "tail": [
       "    FAIL PMC11840003  Box/Violin   HTTPError: HTTP Error 403: Forbidden",
@@ -1871,12 +1854,12 @@
     "skills": 16,
     "operators": 21,
     "benchmark_tasks": 150,
-    "benchmark_ok": 116,
-    "benchmark_infrastructure_failures": 23,
+    "benchmark_ok": 107,
+    "benchmark_infrastructure_failures": 32,
     "benchmark_success_rate": 1.0,
-    "benchmark_mean_distance": 0.189,
+    "benchmark_mean_distance": 0.188,
     "benchmark_anchor_single": null,
-    "benchmark_anchor_distance": 0.204,
+    "benchmark_anchor_distance": 0.217,
     "benchmark_shipped_anchor_single": null,
     "benchmark_shipped_anchor_distance": null,
     "benchmark_unsupported": 11,
@@ -1884,55 +1867,43 @@
     "benchmark_official_improvement": 46.83,
     "statistics_reproduced": 15,
     "knowledge_version": 16,
-    "tests": 909,
-    "tests_passed": 906
+    "tests": 916,
+    "tests_passed": 913
   },
   "capabilities_delta": {
     "changed": true,
     "delta": {
       "benchmark_ok": {
-        "before": 137,
-        "after": 116
+        "before": 116,
+        "after": 107
       },
       "benchmark_infrastructure_failures": {
-        "before": 2,
-        "after": 23
+        "before": 23,
+        "after": 32
       },
       "benchmark_mean_distance": {
-        "before": 0.185,
-        "after": 0.189
-      },
-      "benchmark_anchor_single": {
-        "before": 0.203,
-        "after": null
+        "before": 0.189,
+        "after": 0.188
       },
       "benchmark_anchor_distance": {
-        "before": 0.203,
-        "after": 0.204
-      },
-      "benchmark_shipped_anchor_single": {
-        "before": 0.167,
-        "after": null
-      },
-      "benchmark_shipped_anchor_distance": {
-        "before": 0.167,
-        "after": null
+        "before": 0.204,
+        "after": 0.217
       },
       "tests": {
-        "before": 891,
-        "after": 909
+        "before": 909,
+        "after": 916
       },
       "tests_passed": {
-        "before": 886,
-        "after": 906
+        "before": 906,
+        "after": 913
       }
     },
     "verdict": {
       "gains": [
         {
           "field": "tests",
-          "before": 891,
-          "after": 909
+          "before": 909,
+          "after": 916
         }
       ],
       "regressions": [],
@@ -1956,14 +1927,28 @@
       ]
     }
   },
-  "ok": false,
+  "ok": true,
   "capability_ok": true,
   "capability_regressions": [],
   "mutation_ok": true,
-  "claim_rederivation": {
-    "ran": false,
-    "reason": "exit 3: "
+  "report_rebuilt": {
+    "ran": true,
+    "exit": 0,
+    "mtime": 1792900776.0,
+    "reason": ""
   },
-  "claim_ok": false,
+  "claim_rederivation": {
+    "ran": true,
+    "accuracy": 0.9,
+    "n_correct": 27,
+    "n_pairs": 30,
+    "ci95": [
+      0.7438,
+      0.9654
+    ],
+    "claim_states": 0.9,
+    "agrees": true
+  },
+  "claim_ok": true,
   "publish_note": "The publish outcome is recorded after the commit that carries this run, so it describes the push triggered by this run; the file's own commit is made by the next scheduled run."
 }

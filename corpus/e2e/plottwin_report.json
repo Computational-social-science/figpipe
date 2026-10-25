@@ -7,22 +7,22 @@
     "note": "deterministic metrics only; official combined score requires the benchmark's VLM scorer and is NOT claimed here"
   },
   "n_tasks": 150,
-  "n_ok": 107,
+  "n_ok": 101,
   "n_unsupported": 11,
   "n_error": 0,
-  "n_infrastructure_failures": 32,
+  "n_infrastructure_failures": 38,
   "unsupported_types": {
     "3D": "unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this is a deliberate exclusion",
     "Polar/Radial": "SkillError: encode.polar: 'record_type' reduces to 2 distinct angle(s); a polar profile needs at least 3. This data has no angular reading -- use a bar or trend encoding.",
     "Network/Tree": "unsupported chart type: no graph-layout operator yet (backlog: node-link layout, not a chart encoding this library owns)"
   },
-  "mean_distance": 0.188,
-  "mean_baseline": 0.262,
-  "mean_improvement": 0.074,
-  "improved": 99,
-  "worse": 5,
-  "ties": 3,
-  "mean_best_of_two": 0.187,
+  "mean_distance": 0.186,
+  "mean_baseline": 0.261,
+  "mean_improvement": 0.075,
+  "improved": 95,
+  "worse": 4,
+  "ties": 2,
+  "mean_best_of_two": 0.185,
   "semantic_violations": 0,
   "decision_service": {
     "up": true,
@@ -42,11 +42,11 @@
     },
     "Bar": {
       "n": 18,
-      "ok": 15,
-      "errors": 3,
-      "mean_distance": 0.142,
-      "mean_baseline": 0.188,
-      "mean_delta": 0.045,
+      "ok": 14,
+      "errors": 4,
+      "mean_distance": 0.143,
+      "mean_baseline": 0.186,
+      "mean_delta": 0.043,
       "mean_shipped": 0.144
     },
     "Box/Violin": {
@@ -78,12 +78,12 @@
     },
     "Field 2D": {
       "n": 15,
-      "ok": 11,
-      "errors": 4,
-      "mean_distance": 0.215,
-      "mean_baseline": 0.321,
-      "mean_delta": 0.106,
-      "mean_shipped": 0.214
+      "ok": 8,
+      "errors": 7,
+      "mean_distance": 0.195,
+      "mean_baseline": 0.306,
+      "mean_delta": 0.112,
+      "mean_shipped": 0.198
     },
     "Heatmap": {
       "n": 14,
@@ -114,12 +114,12 @@
     },
     "Polar/Radial": {
       "n": 13,
-      "ok": 11,
-      "errors": 2,
-      "mean_distance": 0.247,
-      "mean_baseline": 0.258,
-      "mean_delta": 0.011,
-      "mean_shipped": 0.199
+      "ok": 9,
+      "errors": 4,
+      "mean_distance": 0.263,
+      "mean_baseline": 0.278,
+      "mean_delta": 0.014,
+      "mean_shipped": 0.213
     },
     "Scatter": {
       "n": 16,
@@ -279,6 +279,36 @@
     {
       "id": "Chart2Code_level2_contour_25_v3",
       "chart": "Field 2D",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "Chart2Code_level2_quiver_13_v1",
+      "chart": "Field 2D",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "Chart2Code_level2_quiver_14_v1",
+      "chart": "Field 2D",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "Chart2Code_level2_quiver_4_v5",
+      "chart": "Field 2D",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "Chart2Code_level2_radar_10_v2",
+      "chart": "Polar/Radial",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "Chart2Code_level2_radar_18_v5",
+      "chart": "Bar",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "Chart2Code_level2_radar_23_v3",
+      "chart": "Polar/Radial",
       "error": "HTTPError: HTTP Error 403: Forbidden"
     },
     {
@@ -1082,208 +1112,48 @@
       "chart": "Field 2D",
       "panel_mode": "multi",
       "code_version": "dbcfb201512a",
-      "skill": "field_map",
-      "rationale": "field velocity_magnitude_mm_per_hour over x_position_mm x y_position_mm",
-      "rows_used": 1039,
-      "status": "ok",
-      "distance": 0.203,
-      "baseline_distance": 0.278,
-      "delta": 0.075,
-      "selected": "styled",
-      "selected_distance": 0.183,
-      "selected_gain": 0.095,
-      "selection_margin": 0.083,
-      "components": {
-        "palette": 0.304,
-        "aspect": 0.007,
-        "ink": 0.144
-      },
-      "hard_failures": 0,
-      "checks_not_exercised": 0,
-      "legend_frames": 0,
-      "legend_occlusions": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": false,
-        "reason": "CodegenError: skill 'field_map' has no code emitter yet"
-      },
-      "semantic_findings": [],
-      "semantic_checked": "mesh_scale_checked"
+      "status": "error",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
     },
     {
       "id": "Chart2Code_level2_quiver_14_v1",
       "chart": "Field 2D",
       "panel_mode": "multi",
       "code_version": "dbcfb201512a",
-      "skill": "field_map",
-      "rationale": "field speed_um_per_hr over x_um x y_um",
-      "rows_used": 3448,
-      "status": "ok",
-      "distance": 0.337,
-      "baseline_distance": 0.409,
-      "delta": 0.072,
-      "selected": "styled",
-      "selected_distance": 0.34,
-      "selected_gain": 0.069,
-      "selection_margin": 0.068,
-      "components": {
-        "palette": 0.336,
-        "aspect": 0.003,
-        "ink": 0.673
-      },
-      "hard_failures": 0,
-      "checks_not_exercised": 0,
-      "legend_frames": 0,
-      "legend_occlusions": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": false,
-        "reason": "CodegenError: skill 'field_map' has no code emitter yet"
-      },
-      "semantic_findings": [],
-      "semantic_checked": "mesh_scale_checked"
+      "status": "error",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
     },
     {
       "id": "Chart2Code_level2_quiver_4_v5",
       "chart": "Field 2D",
       "panel_mode": "multi",
       "code_version": "dbcfb201512a",
-      "skill": "field_map",
-      "rationale": "field speed_um_h over x_mm x y_mm",
-      "rows_used": 193,
-      "status": "ok",
-      "distance": 0.274,
-      "baseline_distance": 0.395,
-      "delta": 0.121,
-      "selected": "styled",
-      "selected_distance": 0.246,
-      "selected_gain": 0.149,
-      "selection_margin": 0.117,
-      "components": {
-        "palette": 0.316,
-        "aspect": 0.002,
-        "ink": 0.442
-      },
-      "hard_failures": 0,
-      "checks_not_exercised": 0,
-      "legend_frames": 0,
-      "legend_occlusions": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": false,
-        "reason": "CodegenError: skill 'field_map' has no code emitter yet"
-      },
-      "semantic_findings": [],
-      "semantic_checked": "mesh_scale_checked"
+      "status": "error",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
     },
     {
       "id": "Chart2Code_level2_radar_10_v2",
       "chart": "Polar/Radial",
       "panel_mode": "multi",
       "code_version": "dbcfb201512a",
-      "skill": "radial_profile",
-      "rationale": "polar panel_col by block_id",
-      "rows_used": 460,
-      "status": "ok",
-      "distance": 0.181,
-      "baseline_distance": 0.183,
-      "delta": 0.002,
-      "selected": "styled",
-      "selected_distance": 0.127,
-      "selected_gain": 0.056,
-      "selection_margin": 0.019,
-      "components": {
-        "palette": 0.115,
-        "aspect": 0.286,
-        "ink": 0.242
-      },
-      "hard_failures": 0,
-      "checks_not_exercised": 0,
-      "legend_frames": 0,
-      "legend_occlusions": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": false,
-        "reason": "CodegenError: skill 'radial_profile' has no code emitter yet"
-      },
-      "semantic_findings": [],
-      "semantic_checked": "checked"
+      "status": "error",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
     },
     {
       "id": "Chart2Code_level2_radar_18_v5",
       "chart": "Bar",
       "panel_mode": "multi",
       "code_version": "dbcfb201512a",
-      "skill": "grouped_measures",
-      "rationale": "grouped bars ['panel_col', 'condition_order', 'net_carbonate_capture_percent'] by record_type",
-      "rows_used": 80,
-      "status": "ok",
-      "distance": 0.141,
-      "baseline_distance": 0.213,
-      "delta": 0.072,
-      "selected": "styled",
-      "selected_distance": 0.144,
-      "selected_gain": 0.069,
-      "selection_margin": 0.078,
-      "components": {
-        "palette": 0.157,
-        "aspect": 0.019,
-        "ink": 0.222
-      },
-      "hard_failures": 0,
-      "checks_not_exercised": 0,
-      "legend_frames": 1,
-      "legend_occlusions": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 100.0,
-        "n_activated": 4,
-        "scored": [
-          "palette",
-          "linewidth",
-          "grid",
-          "legend_frame"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": [],
-      "semantic_checked": "checked"
+      "status": "error",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
     },
     {
       "id": "Chart2Code_level2_radar_23_v3",
       "chart": "Polar/Radial",
       "panel_mode": "multi",
       "code_version": "dbcfb201512a",
-      "skill": "radial_profile",
-      "rationale": "polar panel_row by condition_id",
-      "rows_used": 175,
-      "status": "ok",
-      "distance": 0.164,
-      "baseline_distance": 0.157,
-      "delta": -0.007,
-      "selected": "styled",
-      "selected_distance": 0.14,
-      "selected_gain": 0.017,
-      "selection_margin": 0.02,
-      "components": {
-        "palette": 0.128,
-        "aspect": 0.138,
-        "ink": 0.279
-      },
-      "hard_failures": 0,
-      "checks_not_exercised": 0,
-      "legend_frames": 0,
-      "legend_occlusions": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": false,
-        "reason": "CodegenError: skill 'radial_profile' has no code emitter yet"
-      },
-      "semantic_findings": [],
-      "semantic_checked": "checked"
+      "status": "error",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
     },
     {
       "id": "Chart2Code_level2_radar_26_v3",
@@ -5094,35 +4964,35 @@
   },
   "complete_membership": true,
   "semantic_coverage": {
-    "checked": 86,
-    "mesh_scale_checked": 21,
+    "checked": 83,
+    "mesh_scale_checked": 18,
     "skipped": 0,
     "unverifiable": 0,
     "absent": 0,
-    "n": 107,
+    "n": 101,
     "note": "`skipped` tasks were drawn by a drawer with no semantic rule: their printed numbers were NOT re-derived from the data. A pass on such a task is a statement about geometry, not about correctness."
   },
   "checks_examined": {
-    "lines": 107,
+    "lines": 101,
     "not_exercised": 0,
     "note": "`not_exercised` counts checks whose denominator was zero -- they found nothing because there was nothing to examine, and that is NOT a pass. A zero from such a check says nothing about the figure."
   },
-  "legend_frames": 42,
+  "legend_frames": 41,
   "legend_occlusions": 0,
   "legend_coverage": {
-    "n_measured": 107,
-    "n_ok": 107,
+    "n_measured": 101,
+    "n_ok": 101,
     "note": "`legend_frames` and `legend_occlusions` are totals over the n_measured rows ONLY. Rows measured before the field existed are not counted and are not marked stale, because the fingerprint covers rendering code, not the report schema. A zero with n_measured == 0 means the check had nothing to look at."
   },
-  "benchmark_anchor_distance": 0.217,
+  "benchmark_anchor_distance": null,
   "benchmark_anchor_single": {
     "mean": null,
-    "partial_mean": 0.217,
-    "n_same_instrument": 6,
+    "partial_mean": null,
+    "n_same_instrument": 0,
     "n_other_instrument": 0,
     "n_expected": 20,
     "comparable": false,
-    "note": "incomplete: 6 of 20 anchor tasks measured; a partial mean is not the anchor, so it is not judged"
+    "note": "incomplete: 0 of 20 anchor tasks measured; a partial mean is not the anchor, so it is not judged"
   },
   "benchmark_shipped_anchor_distance": null,
   "benchmark_shipped_anchor_single": {
@@ -5138,22 +5008,15 @@
     "channel": "code_deviation",
     "weight_upstream": 0.35,
     "note": "official deterministic channel only; the 0.65 vision channel is NOT run, so this is not the combined score",
-    "n_scored": 81,
-    "n_unavailable": 26,
-    "mean_score": 98.51,
+    "n_scored": 80,
+    "n_unavailable": 21,
+    "mean_score": 98.49,
     "min_score": 66.67,
     "max_score": 100.0
   },
   "code_version": "dbcfb201512a",
   "freshness": {
-    "fresh": [
-      "Chart2Code_level2_quiver_13_v1",
-      "Chart2Code_level2_quiver_14_v1",
-      "Chart2Code_level2_quiver_4_v5",
-      "Chart2Code_level2_radar_10_v2",
-      "Chart2Code_level2_radar_18_v5",
-      "Chart2Code_level2_radar_23_v3"
-    ],
+    "fresh": [],
     "stale": [
       "Chart2Code_level2_contour_5_v5",
       "Chart2Code_level2_density_12_v3",
@@ -5258,7 +5121,7 @@
       "local_picks_top_violin__9"
     ],
     "unknown": [],
-    "n_fresh": 6,
+    "n_fresh": 0,
     "n_stale": 101,
     "n_unknown": 0
   },
@@ -5367,15 +5230,15 @@
   ],
   "n_stale": 101,
   "n_unknown": 0,
-  "n_fresh": 6,
+  "n_fresh": 0,
   "selection": {
-    "n": 107,
-    "shipped_mean": 0.178,
-    "always_styled_mean": 0.188,
-    "plain_mean": 0.262,
-    "gain_vs_always_styled": 0.01,
+    "n": 101,
+    "shipped_mean": 0.177,
+    "always_styled_mean": 0.186,
+    "plain_mean": 0.261,
+    "gain_vs_always_styled": 0.009,
     "gain_vs_plain": 0.084,
-    "picked_styled": 103,
+    "picked_styled": 97,
     "picked_plain": 4,
     "rule": "closer of plain/styled to the reference; the reference is an input"
   }
