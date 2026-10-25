@@ -90,8 +90,8 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
 <body>
 <div class="top">
   <b>FigPipeline · Research Figure Pipeline</b>
-  <div class="meta"><span>commit 0821bdb</span><span>branch main</span>
-  <span>knowledge v16</span><span>generated 2026-10-26 05:50</span></div>
+  <div class="meta"><span>commit 3f43919</span><span>branch main</span>
+  <span>knowledge v16</span><span>generated 2026-10-26 06:37</span></div>
 </div>
 <div class="wrap">
 
@@ -105,7 +105,7 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
     <span class="pill">statistics reproduced: 15</span>
     <span class="pill">benchmark tasks 139/150</span>
     <span class="pill">skills 16 · operators 21</span>
-    <span class="pill">tracked 80.2 MB</span>
+    <span class="pill">tracked 80.3 MB</span>
   </div>
 </header>
 
@@ -119,10 +119,10 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
   <div class="kpi "><div class="kpi-v">0</div><div class="kpi-l">Semantic violations</div><div class="kpi-s">figures whose printed claims contradict their data</div></div>
   <div class="kpi "><div class="kpi-v">16 / 21</div><div class="kpi-l">Skills / classic operators</div><div class="kpi-s">global verification floor on every recipe</div></div>
   <div class="kpi "><div class="kpi-v">938</div><div class="kpi-l">Automated tests</div><div class="kpi-s">negative controls and contract tests</div></div>
-  <div class="kpi "><div class="kpi-v">80.2 MB</div><div class="kpi-l">Repository size</div><div class="kpi-s">lean budget ≤ 80 MB</div></div>
+  <div class="kpi "><div class="kpi-v">80.3 MB</div><div class="kpi-l">Repository size</div><div class="kpi-s">lean budget ≤ 80 MB</div></div>
 </div>
 
-
+<div class="warnbox" style="margin-top:18px"><b>Capability regression in the last scheduled run</b><ul style="margin:6px 0 0 18px"><li><b>tests</b>: 938 → 937</li></ul></div>
 <h2><span class="n">01</span>Progress overview</h2>
 <div class="panel">
   <div class="progress-row"><div class="progress-head"><span>Reproduction and statistics</span><span class="pct">100%</span></div><div class="bar"><i class="done" style="width:100%"></i></div><div class="evidence">4 figures + 15 statistics checked; L0 construction explicitly not reproduced</div></div>
@@ -131,7 +131,7 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
   <div class="progress-row"><div class="progress-head"><span>Authoritative benchmark (PlotTwin-Bench)</span><span class="pct">100%</span></div><div class="bar"><i class="hold" style="width:100%"></i></div><div class="evidence">150/150 tasks run; remaining tasks and chart types in the backlog</div></div>
   <div class="progress-row"><div class="progress-head"><span>Decision-model integration</span><span class="pct">60%</span></div><div class="bar"><i class="hold" style="width:60%"></i></div><div class="evidence">bridge and 6 contract tests complete; service online</div></div>
   <div class="progress-row"><div class="progress-head"><span>Self-evolution</span><span class="pct">40%</span></div><div class="bar"><i class="hold" style="width:40%"></i></div><div class="evidence">8/16 rules have machine checks; no capability snapshot or mutation yet</div></div>
-  <div class="progress-row"><div class="progress-head"><span>Documentation and slimming</span><span class="pct">100%</span></div><div class="bar"><i class="done" style="width:100%"></i></div><div class="evidence">tracked 80.2 MB; redundant audit documents consolidated</div></div>
+  <div class="progress-row"><div class="progress-head"><span>Documentation and slimming</span><span class="pct">100%</span></div><div class="bar"><i class="done" style="width:100%"></i></div><div class="evidence">tracked 80.3 MB; redundant audit documents consolidated</div></div>
 </div>
 
 <h2><span class="n">02</span>Research deliverables</h2>
@@ -1104,8 +1104,8 @@ floor (compliance, glyph collisions, no silently ignored parameters, a reproduci
 <tr><td>Unchecked rules</td><td>H01, H02, E01, E02, C01, C02, C03, C04</td><td>not counted as passing</td></tr>
 <tr><td>Benchmark slice</td><td>6 tasks from offset 0 (exit 0)</td>
 <td>rotating tasks measured by the loop</td></tr>
-<tr><td>Capability snapshot</td><td>skills 16 · operators 21 · benchmark 139/150 · success 1.0 · anchor 0.203 · tests —</td><td>recorded by the scheduled run</td></tr>
-<tr><td>Last capability change</td><td>tests: 938 → —</td><td>explicit delta, not a claim</td></tr>
+<tr><td>Capability snapshot</td><td>skills 16 · operators 21 · benchmark 139/150 · success 1.0 · anchor 0.203 · tests 937</td><td>recorded by the scheduled run</td></tr>
+<tr><td>Last capability change</td><td>tests: 938 → 937; tests_passed: 933 → 932</td><td>explicit delta, not a claim</td></tr>
 </tbody></table>
 <p class="tag" style="margin-top:10px">Conclusion: the loop currently re-verifies, prevents drift and
 records. It has no capability snapshot, mutation or selection, so it is <b>not self-improvement</b>.
@@ -1128,7 +1128,7 @@ combined-score claim is made — the code-channel claim is stated with its basel
 
 <h3 style="margin-top:20px">Capability trend (scheduled runs)</h3>
 <table><thead><tr><th>Run</th><th>Skills</th><th>Operators</th><th>Benchmark</th>
-<th>Anchor distance</th><th>Success</th><th>Tests</th></tr></thead><tbody><tr><td>2026-10-25 16:35</td><td class="num">16</td><td class="num">21</td><td class="num">107/150</td><td class="num">0.186</td><td class="num">935</td></tr><tr><td>2026-10-25 19:32</td><td class="num">16</td><td class="num">21</td><td class="num">107/150</td><td class="num">0.186</td><td class="num">935</td></tr><tr><td>2026-10-26 00:34</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.186</td><td class="num">938</td></tr><tr><td>2026-10-26 00:56</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.186</td><td class="num">937</td></tr><tr><td>2026-10-26 02:23</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.186</td><td class="num">938</td></tr><tr><td>2026-10-26 02:36</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.186</td><td class="num">938</td></tr><tr><td>2026-10-26 04:38</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.186</td><td class="num">938</td></tr><tr><td>2026-10-26 05:38</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.186</td><td class="num">—</td></tr></tbody></table>
+<th>Anchor distance</th><th>Success</th><th>Tests</th></tr></thead><tbody><tr><td>2026-10-25 16:35</td><td class="num">16</td><td class="num">21</td><td class="num">107/150</td><td class="num">0.186</td><td class="num">935</td></tr><tr><td>2026-10-25 19:32</td><td class="num">16</td><td class="num">21</td><td class="num">107/150</td><td class="num">0.186</td><td class="num">935</td></tr><tr><td>2026-10-26 00:34</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.186</td><td class="num">938</td></tr><tr><td>2026-10-26 00:56</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.186</td><td class="num">937</td></tr><tr><td>2026-10-26 02:23</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.186</td><td class="num">938</td></tr><tr><td>2026-10-26 02:36</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.186</td><td class="num">938</td></tr><tr><td>2026-10-26 04:38</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.186</td><td class="num">938</td></tr><tr><td>2026-10-26 05:38</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.186</td><td class="num">937</td></tr></tbody></table>
 <p class="tag">Read from <code>knowledge/runs/*.json</code>. A run with no capability change is
 recorded as such; the loop fails when a judged capability field gets worse.</p>
 
@@ -1146,6 +1146,6 @@ recorded as such; the loop fails when a judged capability field gets worse.</p>
   in this repository, with no external dependencies. PlotTwin-Bench reference images and target
   data are cached locally and never redistributed (CC BY-NC 4.0); StartLux-Decision weights are
   CC BY-NC 4.0 and called through a separate service, not vendored into this repository.</div>
-  <div style="margin-top:6px">commit 0821bdb · generated 2026-10-26 05:50 · tests 938</div>
+  <div style="margin-top:6px">commit 3f43919 · generated 2026-10-26 06:37 · tests 938</div>
 </footer>
 </div></body></html>
