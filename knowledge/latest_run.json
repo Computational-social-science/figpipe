@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-25T09:12:48",
+  "run_at": "2026-10-25T09:38:43",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -9,19 +9,16 @@
     "  passed 8, failed 0",
     "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
     "  wrote knowledge\\evolution_report.json",
-    "  lean: tracked 79.5 -> 79.5 MB, worktree 127.8 -> 114.9 MB"
+    "  lean: tracked 79.5 -> 79.5 MB, worktree 104.8 -> 103.1 MB"
   ],
-  "tests_ok": true,
-  "tests_summary": "885 passed, 3 skipped, 1 warning in 482.64s (0:08:02)",
+  "tests_ok": false,
+  "tests_summary": "1 failed, 889 passed, 2 skipped, 1 warning in 479.31s (0:07:59) | FAILED tests/test_report_status.py::test_the_board_total_counts_every_coverage_state",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
   "published": {
     "pushed": false,
-    "withheld": [],
-    "blocked_deletions": [],
-    "skipped": true,
-    "reason": "no knowledge change: the run record stays uncommitted for the next run"
+    "reason": "not yet published"
   },
   "check_results": {
     "L01": {
@@ -137,9 +134,9 @@
     "tasks": 6,
     "code": 0,
     "tail": [
-      "    type Box/Violin     ok 1/1   d=0.147 base=0.333 delta=0.186 errors=0",
-      "    type Distribution   ok 4/4   d=0.159 base=0.204 delta=0.045 errors=0",
-      "    type Heatmap        ok 1/1   d=0.279 base=0.436 delta=0.157 errors=0",
+      "    type Heatmap        ok 0/1   d=None base=None delta=None errors=1",
+      "    FAIL PMC12504421  Heatmap      HTTPError: HTTP Error 403: Forbidden",
+      "    FAIL PMC12905268  Distribution HTTPError: HTTP Error 403: Forbidden",
       "  wrote E:\\2026-AI4S\\figpipe\\corpus\\e2e\\plottwin_report.json"
     ]
   },
@@ -1844,10 +1841,10 @@
     "skills": 16,
     "operators": 21,
     "benchmark_tasks": 150,
-    "benchmark_ok": 139,
-    "benchmark_infrastructure_failures": 0,
+    "benchmark_ok": 137,
+    "benchmark_infrastructure_failures": 2,
     "benchmark_success_rate": 1.0,
-    "benchmark_mean_distance": 0.186,
+    "benchmark_mean_distance": 0.185,
     "benchmark_anchor_single": 0.203,
     "benchmark_anchor_distance": 0.203,
     "benchmark_shipped_anchor_single": 0.167,
@@ -1857,14 +1854,41 @@
     "benchmark_official_improvement": 46.83,
     "statistics_reproduced": 15,
     "knowledge_version": 16,
-    "tests": 888,
-    "tests_passed": 885
+    "tests": 891,
+    "tests_passed": 889
   },
   "capabilities_delta": {
-    "changed": false,
-    "delta": {},
+    "changed": true,
+    "delta": {
+      "benchmark_ok": {
+        "before": 139,
+        "after": 137
+      },
+      "benchmark_infrastructure_failures": {
+        "before": 0,
+        "after": 2
+      },
+      "benchmark_mean_distance": {
+        "before": 0.186,
+        "after": 0.185
+      },
+      "tests": {
+        "before": 888,
+        "after": 891
+      },
+      "tests_passed": {
+        "before": 885,
+        "after": 889
+      }
+    },
     "verdict": {
-      "gains": [],
+      "gains": [
+        {
+          "field": "tests",
+          "before": 888,
+          "after": 891
+        }
+      ],
       "regressions": [],
       "corrections": [],
       "not_compared": [],
@@ -1886,9 +1910,8 @@
       ]
     }
   },
-  "ok": true,
+  "ok": false,
   "capability_ok": true,
   "capability_regressions": [],
-  "mutation_ok": true,
-  "publish_note": "The publish outcome is recorded after the commit that carries this run, so it describes the push triggered by this run; the file's own commit is made by the next scheduled run."
+  "mutation_ok": true
 }
