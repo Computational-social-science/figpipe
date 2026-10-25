@@ -11,8 +11,8 @@
     "  wrote knowledge\\evolution_report.json",
     "  lean: tracked 79.5 -> 79.5 MB, worktree 108.6 -> 103.1 MB"
   ],
-  "tests_ok": null,
-  "tests_summary": "pending",
+  "tests_ok": false,
+  "tests_summary": "1 failed, 886 passed, 5 skipped, 1 warning in 814.82s (0:13:34) | FAILED tests/test_mutation.py::test_the_probe_is_deterministic_across_processes",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
@@ -1854,11 +1854,21 @@
     "benchmark_official_improvement": 46.83,
     "statistics_reproduced": 15,
     "knowledge_version": 16,
-    "tests": null
+    "tests": 891,
+    "tests_passed": 886
   },
   "capabilities_delta": {
-    "changed": false,
-    "delta": {},
+    "changed": true,
+    "delta": {
+      "tests": {
+        "before": null,
+        "after": 891
+      },
+      "tests_passed": {
+        "before": null,
+        "after": 886
+      }
+    },
     "verdict": {
       "gains": [],
       "regressions": [],
@@ -1882,5 +1892,8 @@
       ]
     }
   },
-  "ok": null
+  "ok": false,
+  "capability_ok": true,
+  "capability_regressions": [],
+  "mutation_ok": true
 }
