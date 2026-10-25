@@ -188,3 +188,23 @@ def test_the_board_total_counts_every_coverage_state():
     text = re.sub(r"\s+", " ", text)
     assert f"ALL {expected} executed tasks" in text, (
         f"the board does not report all {expected} executed tasks; it says: {text[:220]}")
+
+
+def test_the_report_is_not_older_than_the_data_it_describes():
+    """A STALE BOARD IS WORSE THAN NO BOARD: it states an old measurement with present-tense confidence.
+
+    Measured 2026-10-25: the report was built at 08:28, a scoring pass rewrote the benchmark JSON at
+    09:42, and the board kept saying "ALL 139 executed tasks" when the JSON said 137. The test that
+    caught it complained about the NUMBER, which reads like a formula bug -- the formula was right.
+
+    `scripts/build_report.py` is the only supported way to refresh it, and this test says when that is
+    necessary rather than leaving a reader to compare file timestamps by hand.
+    """
+    report = ROOT / "reports" / "figpipe_report.html"
+    data = ROOT / "corpus" / "e2e" / "plottwin_report.json"
+    if not (report.is_file() and data.is_file()):
+        pytest.skip("no report")
+    age = data.stat().st_mtime - report.stat().st_mtime
+    assert age < 60, (
+        f"the benchmark data is {age:.0f} s NEWER than the report that describes it; the board is "
+        f"stale. Rebuild with: python scripts/build_report.py")

@@ -6325,3 +6325,50 @@ Verified end to end afterwards: clean venv, `pip install -e .`, stranger script 
 `ok=True findings=0`**.
 
 Suite: 889 passed, 3 skipped.
+
+
+## 174. The board was stale, and the test blamed the formula (2026-10-25)
+
+The scheduled run failed on `test_the_board_total_counts_every_coverage_state`:
+
+    AssertionError: the board does not report all 137 executed tasks;
+    it says: "ALL 139 executed tasks now have a checked claim ..."
+
+**The formula was right and the page was old.** Measured:
+
+    reports/figpipe_report.html      built 08:28
+    corpus/e2e/plottwin_report.json  written 09:42   (by a scoring pass)
+
+The board said 139 because it was built when the coverage was 139. The JSON said 137 because two tasks
+had since become `absent`. `build_report.py` computes
+
+    total = checked + partial + skipped + unverifiable
+
+which is correct for the JSON it reads.
+
+### Why the failure was confusing
+
+The assertion complained about a NUMBER, so the natural conclusion is "the coverage formula is wrong".
+It is not. **The test was comparing a page to a file without checking that the page was about that
+file** -- the same "aggregate describes a different set" defect this project records most often, in its
+slowest form: the two sets were the same set at different times.
+
+### The guard
+
+    def test_the_report_is_not_older_than_the_data_it_describes():
+        age = data.stat().st_mtime - report.stat().st_mtime
+        assert age < 60, "the board is stale. Rebuild with: python scripts/build_report.py"
+
+**Verified with a negative control**, because a guard that cannot fail is not a guard: pushing the
+report's mtime ten minutes into the past makes it fail with `the benchmark data is 286 s NEWER than the
+report that describes it`; restoring it makes it pass.
+
+### The rule
+
+**A stale board is worse than no board**: it states an old measurement with present-tense confidence, and
+the reader has no way to tell. A timestamp comparison is a cheap, exact check for exactly that.
+
+This is also why `cron_run` refreshes the report as part of its own cycle: the failure mode is not a
+wrong number, it is a right number about an older world.
+
+Suite: 888 passed, 5 skipped.
