@@ -6680,3 +6680,46 @@ sheet with no answers, a scorer verified in both directions -- and zero judgemen
 is as complete as it can be without a reader.
 
 Suite: 924 passed, 7 skipped.
+
+
+## 182. The 403 was a dead lease, not a dead server (2026-10-25)
+
+Every reference-image download returned `HTTP 403 Forbidden` for two days. `styled` was `None` in every
+run record, and round 117 added `benchmark_anchor_state: incomparable` so that the absence at least had a
+name.
+
+### What it actually was
+
+The URL looked fine -- it carried `Expires=1792913234`, an hour in the future. But a **fresh** `rows` call
+for the same row returned `Expires=1792913267`, 33 seconds later, and **that** URL downloaded 218568
+bytes.
+
+**The signature was not expired: it was invalidated by re-issuance.** The dataset server signs one URL per
+row per request and kills the previous one. `fetch_row` CACHED the URL, so every cached row carried a dead
+lease -- and a cached row is what every measurement reads.
+
+### The fix
+
+1. `fetch_row` clears `reference_url` on a cached row: **a signature is a lease, not data.**
+2. `download_image` asks for a fresh signature when the caller's copy is empty, and re-issues once on a
+   401/403 before giving up.
+
+Verified end to end: `cached reference_url: ''` -> `downloaded: PMC11502666.png 218568 bytes` ->
+`valid image: (844, 727) PNG`.
+
+### Why this took two days to find
+
+The symptom was a `None` and the report said `comparable: False`. **Neither could say "the download lease
+was dead"** -- the third case only became nameable when round 117 added `benchmark_anchor_state`. So the
+sequence was: an unreadable None, then a reason code, then the reason became actionable.
+
+**That is what observability is for.** The 403 was in the log the whole time; what was missing was a
+field that made a reader look there.
+
+### The pattern, stated once more
+
+**A cached value that LOOKS like data but is actually a time-limited credential.** This project has now
+recorded: a zero that was the instrument's, a distance read as a score, a scramble that helped, and a
+signature treated as content. **Every one is a value whose TYPE was not what its NAME said.**
+
+Suite: 924 passed, 3 skipped.

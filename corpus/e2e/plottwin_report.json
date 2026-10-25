@@ -7,10 +7,10 @@
     "note": "deterministic metrics only; official combined score requires the benchmark's VLM scorer and is NOT claimed here"
   },
   "n_tasks": 150,
-  "n_ok": 101,
+  "n_ok": 107,
   "n_unsupported": 11,
   "n_error": 0,
-  "n_infrastructure_failures": 38,
+  "n_infrastructure_failures": 32,
   "unsupported_types": {
     "3D": "unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this is a deliberate exclusion",
     "Polar/Radial": "SkillError: encode.polar: 'record_type' reduces to 2 distinct angle(s); a polar profile needs at least 3. This data has no angular reading -- use a bar or trend encoding.",
@@ -18,17 +18,16 @@
   },
   "mean_distance": 0.186,
   "mean_baseline": 0.261,
-  "mean_improvement": 0.075,
-  "improved": 95,
+  "mean_improvement": 0.076,
+  "improved": 101,
   "worse": 4,
   "ties": 2,
-  "mean_best_of_two": 0.185,
+  "mean_best_of_two": 0.184,
   "semantic_violations": 0,
   "decision_service": {
-    "up": true,
+    "up": false,
     "url": "http://127.0.0.1:8090",
-    "path": "/health",
-    "status": 200
+    "detail": "no health endpoint answered; the service is probably not running"
   },
   "by_type": {
     "3D": {
@@ -51,12 +50,12 @@
     },
     "Box/Violin": {
       "n": 16,
-      "ok": 13,
-      "errors": 3,
-      "mean_distance": 0.121,
-      "mean_baseline": 0.243,
-      "mean_delta": 0.122,
-      "mean_shipped": 0.118
+      "ok": 14,
+      "errors": 2,
+      "mean_distance": 0.123,
+      "mean_baseline": 0.249,
+      "mean_delta": 0.126,
+      "mean_shipped": 0.121
     },
     "Composite": {
       "n": 3,
@@ -69,12 +68,12 @@
     },
     "Distribution": {
       "n": 17,
-      "ok": 9,
-      "errors": 8,
-      "mean_distance": 0.151,
-      "mean_baseline": 0.188,
-      "mean_delta": 0.037,
-      "mean_shipped": 0.142
+      "ok": 13,
+      "errors": 4,
+      "mean_distance": 0.154,
+      "mean_baseline": 0.193,
+      "mean_delta": 0.039,
+      "mean_shipped": 0.147
     },
     "Field 2D": {
       "n": 15,
@@ -87,12 +86,12 @@
     },
     "Heatmap": {
       "n": 14,
-      "ok": 10,
-      "errors": 4,
-      "mean_distance": 0.191,
-      "mean_baseline": 0.278,
-      "mean_delta": 0.088,
-      "mean_shipped": 0.134
+      "ok": 11,
+      "errors": 3,
+      "mean_distance": 0.199,
+      "mean_baseline": 0.293,
+      "mean_delta": 0.094,
+      "mean_shipped": 0.143
     },
     "Line": {
       "n": 20,
@@ -320,36 +319,6 @@
       "id": "Chart2NCode_7b87069f5442408286d1a4b0300eae18",
       "chart": "3D",
       "error": "unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this is a deliberate exclusion"
-    },
-    {
-      "id": "PMC11502666",
-      "chart": "Distribution",
-      "error": "HTTPError: HTTP Error 403: Forbidden"
-    },
-    {
-      "id": "PMC11840003",
-      "chart": "Box/Violin",
-      "error": "HTTPError: HTTP Error 403: Forbidden"
-    },
-    {
-      "id": "PMC12000431",
-      "chart": "Distribution",
-      "error": "HTTPError: HTTP Error 403: Forbidden"
-    },
-    {
-      "id": "PMC12354736",
-      "chart": "Distribution",
-      "error": "HTTPError: HTTP Error 403: Forbidden"
-    },
-    {
-      "id": "PMC12504421",
-      "chart": "Heatmap",
-      "error": "HTTPError: HTTP Error 403: Forbidden"
-    },
-    {
-      "id": "PMC12905268",
-      "chart": "Distribution",
-      "error": "HTTPError: HTTP Error 403: Forbidden"
     },
     {
       "id": "arxiv-ml-bar-line-v2__2605.21125",
@@ -3336,48 +3305,255 @@
       "chart": "Distribution",
       "panel_mode": "multi",
       "code_version": "dbcfb201512a",
-      "status": "error",
-      "error": "HTTPError: HTTP Error 403: Forbidden"
+      "skill": "faceted_distribution",
+      "rationale": "faceted hist by panel_group",
+      "rows_used": 554,
+      "status": "ok",
+      "distance": 0.15,
+      "baseline_distance": 0.181,
+      "delta": 0.031,
+      "selected": "styled",
+      "selected_distance": 0.15,
+      "selected_gain": 0.031,
+      "selection_margin": 0.033,
+      "components": {
+        "palette": 0.109,
+        "aspect": 0.008,
+        "ink": 0.397
+      },
+      "hard_failures": 0,
+      "checks_not_exercised": 0,
+      "legend_frames": 0,
+      "legend_occlusions": 0,
+      "findings": [],
+      "official_code_score": {
+        "available": true,
+        "score": 100.0,
+        "n_activated": 2,
+        "scored": [
+          "palette",
+          "grid"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": [],
+      "semantic_checked": "checked"
     },
     {
       "id": "PMC11840003",
       "chart": "Box/Violin",
       "panel_mode": "multi",
       "code_version": "dbcfb201512a",
-      "status": "error",
-      "error": "HTTPError: HTTP Error 403: Forbidden"
+      "skill": "distribution_comparison",
+      "rationale": "box panel_row by panel_group",
+      "rows_used": 1403,
+      "status": "ok",
+      "distance": 0.147,
+      "baseline_distance": 0.333,
+      "delta": 0.186,
+      "selected": "styled",
+      "selected_distance": 0.156,
+      "selected_gain": 0.177,
+      "selection_margin": 0.184,
+      "components": {
+        "palette": 0.064,
+        "aspect": 0.194,
+        "ink": 0.307
+      },
+      "hard_failures": 0,
+      "checks_not_exercised": 0,
+      "legend_frames": 1,
+      "legend_occlusions": 0,
+      "findings": [],
+      "official_code_score": {
+        "available": true,
+        "score": 99.99959236362147,
+        "n_activated": 4,
+        "scored": [
+          "palette",
+          "figure_aspect",
+          "linewidth",
+          "grid"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": [],
+      "semantic_checked": "checked"
     },
     {
       "id": "PMC12000431",
       "chart": "Distribution",
       "panel_mode": "multi",
       "code_version": "dbcfb201512a",
-      "status": "error",
-      "error": "HTTPError: HTTP Error 403: Forbidden"
+      "skill": "faceted_distribution",
+      "rationale": "faceted hist by panel_group",
+      "rows_used": 1414,
+      "status": "ok",
+      "distance": 0.072,
+      "baseline_distance": 0.083,
+      "delta": 0.011,
+      "selected": "styled",
+      "selected_distance": 0.073,
+      "selected_gain": 0.01,
+      "selection_margin": 0.012,
+      "components": {
+        "palette": 0.057,
+        "aspect": 0.005,
+        "ink": 0.177
+      },
+      "hard_failures": 0,
+      "checks_not_exercised": 0,
+      "legend_frames": 0,
+      "legend_occlusions": 0,
+      "findings": [],
+      "official_code_score": {
+        "available": true,
+        "score": 100.0,
+        "n_activated": 2,
+        "scored": [
+          "palette",
+          "legend_frame"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": [],
+      "semantic_checked": "checked"
     },
     {
       "id": "PMC12354736",
       "chart": "Distribution",
       "panel_mode": "multi",
       "code_version": "dbcfb201512a",
-      "status": "error",
-      "error": "HTTPError: HTTP Error 403: Forbidden"
+      "skill": "faceted_distribution",
+      "rationale": "faceted hist by panel_row",
+      "rows_used": 12196,
+      "status": "ok",
+      "distance": 0.211,
+      "baseline_distance": 0.29,
+      "delta": 0.079,
+      "selected": "styled",
+      "selected_distance": 0.215,
+      "selected_gain": 0.075,
+      "selection_margin": 0.077,
+      "components": {
+        "palette": 0.147,
+        "aspect": 0.184,
+        "ink": 0.399
+      },
+      "hard_failures": 0,
+      "checks_not_exercised": 0,
+      "legend_frames": 0,
+      "legend_occlusions": 0,
+      "findings": [],
+      "official_code_score": {
+        "available": true,
+        "score": 99.9988792326005,
+        "n_activated": 4,
+        "scored": [
+          "palette",
+          "figure_aspect",
+          "grid",
+          "legend_frame"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": [],
+      "semantic_checked": "checked"
     },
     {
       "id": "PMC12504421",
       "chart": "Heatmap",
       "panel_mode": "multi",
       "code_version": "dbcfb201512a",
-      "status": "error",
-      "error": "HTTPError: HTTP Error 403: Forbidden"
+      "skill": "matrix_plate",
+      "rationale": "pivot panel_group x record_type of panel_row",
+      "rows_used": 4,
+      "status": "ok",
+      "distance": 0.279,
+      "baseline_distance": 0.436,
+      "delta": 0.157,
+      "selected": "styled",
+      "selected_distance": 0.241,
+      "selected_gain": 0.195,
+      "selection_margin": 0.125,
+      "components": {
+        "palette": 0.11,
+        "aspect": 0.182,
+        "ink": 0.796
+      },
+      "hard_failures": 0,
+      "checks_not_exercised": 0,
+      "legend_frames": 0,
+      "legend_occlusions": 0,
+      "findings": [],
+      "official_code_score": {
+        "available": true,
+        "score": 99.99985246351535,
+        "n_activated": 5,
+        "scored": [
+          "palette",
+          "figure_aspect",
+          "linewidth",
+          "grid",
+          "tick_direction"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": [],
+      "semantic_checked": "mesh_scale_checked"
     },
     {
       "id": "PMC12905268",
       "chart": "Distribution",
       "panel_mode": "multi",
       "code_version": "dbcfb201512a",
-      "status": "error",
-      "error": "HTTPError: HTTP Error 403: Forbidden"
+      "skill": "faceted_distribution",
+      "rationale": "faceted hist by shoreline_condition",
+      "rows_used": 1196,
+      "status": "ok",
+      "distance": 0.203,
+      "baseline_distance": 0.262,
+      "delta": 0.059,
+      "selected": "styled",
+      "selected_distance": 0.198,
+      "selected_gain": 0.064,
+      "selection_margin": 0.058,
+      "components": {
+        "palette": 0.053,
+        "aspect": 0.564,
+        "ink": 0.215
+      },
+      "hard_failures": 0,
+      "checks_not_exercised": 0,
+      "legend_frames": 0,
+      "legend_occlusions": 0,
+      "findings": [],
+      "official_code_score": {
+        "available": true,
+        "score": 99.99993928740484,
+        "n_activated": 4,
+        "scored": [
+          "palette",
+          "figure_aspect",
+          "linewidth",
+          "legend_frame"
+        ],
+        "channel": "code_deviation",
+        "weight_upstream": 0.35,
+        "note": "code channel only; the 0.65 vision channel is not run"
+      },
+      "semantic_findings": [],
+      "semantic_checked": "checked"
     },
     {
       "id": "PMC13009336",
@@ -4964,24 +5140,24 @@
   },
   "complete_membership": true,
   "semantic_coverage": {
-    "checked": 83,
-    "mesh_scale_checked": 18,
+    "checked": 88,
+    "mesh_scale_checked": 19,
     "skipped": 0,
     "unverifiable": 0,
     "absent": 0,
-    "n": 101,
+    "n": 107,
     "note": "`skipped` tasks were drawn by a drawer with no semantic rule: their printed numbers were NOT re-derived from the data. A pass on such a task is a statement about geometry, not about correctness."
   },
   "checks_examined": {
-    "lines": 101,
+    "lines": 107,
     "not_exercised": 0,
     "note": "`not_exercised` counts checks whose denominator was zero -- they found nothing because there was nothing to examine, and that is NOT a pass. A zero from such a check says nothing about the figure."
   },
-  "legend_frames": 41,
+  "legend_frames": 42,
   "legend_occlusions": 0,
   "legend_coverage": {
-    "n_measured": 101,
-    "n_ok": 101,
+    "n_measured": 107,
+    "n_ok": 107,
     "note": "`legend_frames` and `legend_occlusions` are totals over the n_measured rows ONLY. Rows measured before the field existed are not counted and are not marked stale, because the fingerprint covers rendering code, not the report schema. A zero with n_measured == 0 means the check had nothing to look at."
   },
   "benchmark_anchor_distance": null,
@@ -4997,26 +5173,33 @@
   "benchmark_shipped_anchor_distance": null,
   "benchmark_shipped_anchor_single": {
     "mean": null,
-    "partial_mean": null,
-    "n_same_instrument": 0,
+    "partial_mean": 0.126,
+    "n_same_instrument": 3,
     "n_other_instrument": 0,
     "n_expected": 20,
     "comparable": false,
-    "note": "incomplete: 0 of 20 anchor tasks measured; a partial mean is not the anchor, so it is not judged"
+    "note": "incomplete: 3 of 20 anchor tasks measured; a partial mean is not the anchor, so it is not judged"
   },
   "official_code_channel": {
     "channel": "code_deviation",
     "weight_upstream": 0.35,
     "note": "official deterministic channel only; the 0.65 vision channel is NOT run, so this is not the combined score",
-    "n_scored": 80,
+    "n_scored": 86,
     "n_unavailable": 21,
-    "mean_score": 98.49,
+    "mean_score": 98.6,
     "min_score": 66.67,
     "max_score": 100.0
   },
   "code_version": "dbcfb201512a",
   "freshness": {
-    "fresh": [],
+    "fresh": [
+      "PMC11502666",
+      "PMC11840003",
+      "PMC12000431",
+      "PMC12354736",
+      "PMC12504421",
+      "PMC12905268"
+    ],
     "stale": [
       "Chart2Code_level2_contour_5_v5",
       "Chart2Code_level2_density_12_v3",
@@ -5121,7 +5304,7 @@
       "local_picks_top_violin__9"
     ],
     "unknown": [],
-    "n_fresh": 0,
+    "n_fresh": 6,
     "n_stale": 101,
     "n_unknown": 0
   },
@@ -5230,15 +5413,15 @@
   ],
   "n_stale": 101,
   "n_unknown": 0,
-  "n_fresh": 0,
+  "n_fresh": 6,
   "selection": {
-    "n": 101,
+    "n": 107,
     "shipped_mean": 0.177,
     "always_styled_mean": 0.186,
     "plain_mean": 0.261,
     "gain_vs_always_styled": 0.009,
-    "gain_vs_plain": 0.084,
-    "picked_styled": 97,
+    "gain_vs_plain": 0.085,
+    "picked_styled": 103,
     "picked_plain": 4,
     "rule": "closer of plain/styled to the reference; the reference is an input"
   }

@@ -236,6 +236,11 @@ def fetch_row(offset: int) -> dict:
         except (OSError, ValueError):
             cached = {}
         if all(k in cached for k in REQUIRED) and "reference_code" in cached:
+            # A SIGNED URL IS A LEASE, NOT DATA. The cached `reference_url` carries a CloudFront
+            # signature that the dataset server invalidates when it re-issues the row, so a cached URL
+            # 403s while a fresh one for the SAME row downloads fine (measured 2026-10-25). Never serve
+            # a cached signature: mark it stale so `download_image` re-fetches the row.
+            cached["reference_url"] = ""
             return cached
     req = urllib.request.Request(API.format(offset=offset),
                                  headers={"User-Agent": "figpipe-bench/0.1"})
@@ -272,15 +277,60 @@ def fetch_row(offset: int) -> dict:
     return keep
 
 
+def _fresh_url(row: dict) -> str:
+    """Fetch a NEW signed URL for `row`, by asking the dataset server for that row again.
+
+    The dataset server signs one URL per row per request and invalidates the previous one, so a cached
+    URL is a dead lease. This re-requests the row and returns its current signature.
+    """
+    rid = row.get("id")
+    if not rid:
+        return ""
+    # The row's offset is not stored; scan a window and match by id. The window is small because the
+    # caller already knows the id and the pool is 150 rows.
+    for offset in range(0, 200):
+        try:
+            req = urllib.request.Request(API.format(offset=offset),
+                                         headers={"User-Agent": "figpipe-bench/0.1"})
+            with urllib.request.urlopen(req, timeout=120) as r:
+                payload = json.load(r)
+        except Exception:                       # noqa: BLE001 - a scan failure is not fatal
+            continue
+        rows = payload.get("rows") or []
+        if not rows:
+            break
+        candidate = rows[0].get("row") or {}
+        if candidate.get("id") == rid:
+            img = candidate.get("reference_image") or {}
+            return img.get("src") or ""
+    return ""
+
+
 def download_image(row: dict) -> pathlib.Path:
     IMAGES.mkdir(parents=True, exist_ok=True)
     p = IMAGES / f"{row['id']}.png"
     if p.is_file():
         return p
-    req = urllib.request.Request(row["reference_url"],
-                                 headers={"User-Agent": "figpipe-bench/0.1"})
-    with urllib.request.urlopen(req, timeout=180) as r:
-        p.write_bytes(r.read())
+    # A SIGNED URL IS A LEASE, NOT DATA. Ask for a fresh one when the caller's copy is missing or has
+    # gone stale -- measured 2026-10-25: a cached signature 403'd while a freshly issued URL for the SAME
+    # row downloaded 218568 bytes.
+    url = row.get("reference_url") or ""
+    if not url:
+        url = _fresh_url(row)
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": "figpipe-bench/0.1"})
+        with urllib.request.urlopen(req, timeout=180) as r:
+            p.write_bytes(r.read())
+    except urllib.error.HTTPError as exc:
+        if exc.code not in (403, 401):
+            raise
+        # THE LEASE EXPIRED BETWEEN ISSUE AND USE. Re-issue once and retry; a second failure is real.
+        fresh = _fresh_url(row)
+        if not fresh or fresh == url:
+            raise
+        req = urllib.request.Request(fresh, headers={"User-Agent": "figpipe-bench/0.1"})
+        with urllib.request.urlopen(req, timeout=180) as r:
+            p.write_bytes(r.read())
     # keep the cache bounded DURING a pass, not only after it: a 150-task run downloads ~70 MB of
     # reference images and would otherwise break the worktree budget while behaving correctly
     if len(list(IMAGES.glob("*.png"))) % 20 == 0:

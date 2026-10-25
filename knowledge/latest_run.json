@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-25T11:59:37",
+  "run_at": "2026-10-25T19:32:52",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -9,10 +9,10 @@
     "  passed 8, failed 0",
     "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
     "  wrote knowledge\\evolution_report.json",
-    "  lean: tracked 79.7 -> 79.7 MB, worktree 107.9 -> 106.2 MB"
+    "  lean: tracked 79.9 -> 79.9 MB, worktree 122.0 -> 109.1 MB"
   ],
   "tests_ok": true,
-  "tests_summary": "913 passed, 3 skipped, 1 warning in 1007.53s (0:16:47)",
+  "tests_summary": "930 passed, 5 skipped, 1 warning in 3391.98s (0:56:31)",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
@@ -137,25 +137,15 @@
     "tasks": 6,
     "code": 0,
     "tail": [
-      "    FAIL PMC12354736  Distribution HTTPError: HTTP Error 403: Forbidden",
-      "    FAIL PMC12504421  Heatmap      HTTPError: HTTP Error 403: Forbidden",
-      "    FAIL PMC12905268  Distribution HTTPError: HTTP Error 403: Forbidden",
+      "    type Box/Violin     ok 1/1   d=0.147 base=0.333 delta=0.186 errors=0",
+      "    type Distribution   ok 4/4   d=0.159 base=0.204 delta=0.045 errors=0",
+      "    type Heatmap        ok 1/1   d=0.279 base=0.436 delta=0.157 errors=0",
       "  wrote E:\\2026-AI4S\\figpipe\\corpus\\e2e\\plottwin_report.json"
     ]
   },
   "anchor_refresh": {
-    "ran": true,
-    "stale_anchors": [
-      "shipped",
-      "styled"
-    ],
-    "tasks": 35,
-    "code": 0,
-    "tail": [
-      "    FAIL PMC11840003  Box/Violin   HTTPError: HTTP Error 403: Forbidden",
-      "    FAIL PMC12000431  Distribution HTTPError: HTTP Error 403: Forbidden",
-      "  wrote E:\\2026-AI4S\\figpipe\\corpus\\e2e\\plottwin_report.json"
-    ]
+    "ran": false,
+    "reason": "TimeoutExpired: Command '['C:\\\\Users\\\\Administrator\\\\AppData\\\\Local\\\\hermes\\\\tools\\\\python-3.14.7+20260901-win32-x64\\\\python.exe', 'E:\\\\2026-AI4S\\\\figpipe\\\\scripts\\\\bench_plottwin.py', '--ids', 'Chart2Code_level1_direct_HR_5,Chart2Code_level1_direct_combination_57,Chart2Code_level1_direct_contour_18,Chart2Code_level1_direct_density_11,Chart2Code_level1_direct_heatmap_3,Chart2Code_level1_direct_heatmap_7,Chart2Code_level1_direct_line_39,Chart2Code_level1_direct_line_8,Chart2Code_level2_3d_11_v2,Chart2Code_level2_3d_5_v4,Chart2Code_level2_area_3_v3,Chart2Code_level2_bar_10_v4,Chart2Code_level2_bar_22_v4,Chart2Code_level2_bar_25_v4,Chart2Code_level2_box_1_v5,Chart2Code_level2_combination_11_v2,Chart2Code_level2_combination_13_v5,Chart2Code_level2_combination_14_v5,Chart2Code_level2_combination_16_v5,Chart2Code_level2_combination_33_v5,Chart2Code_level2_combination_42_v5,Chart2Code_level2_combination_44_v3,Chart2Code_level2_contour_14_v1,Chart2Code_level2_contour_23_v4,Chart2Code_level2_contour_25_v2,Chart2Code_level2_contour_25_v3,Chart2Code_level2_quiver_13_v1,Chart2Code_level2_quiver_14_v1,Chart2Code_level2_quiver_4_v5,Chart2Code_level2_radar_10_v2,Chart2Code_level2_radar_18_v5,Chart2Code_level2_radar_23_v3,PMC11502666,PMC11840003,PMC12000431', '--merge', '--no-lock']' timed out after 1800 seconds"
   },
   "mutation": {
     "ran": true,
@@ -1857,9 +1847,13 @@
     "benchmark_ok": 107,
     "benchmark_infrastructure_failures": 32,
     "benchmark_success_rate": 1.0,
-    "benchmark_mean_distance": 0.188,
+    "benchmark_mean_distance": 0.186,
     "benchmark_anchor_single": null,
-    "benchmark_anchor_distance": 0.217,
+    "benchmark_anchor_state": "incomparable",
+    "benchmark_anchor_comparable": false,
+    "benchmark_anchor_n_same": 0,
+    "benchmark_anchor_n_expected": 20,
+    "benchmark_anchor_distance": null,
     "benchmark_shipped_anchor_single": null,
     "benchmark_shipped_anchor_distance": null,
     "benchmark_unsupported": 11,
@@ -1867,45 +1861,14 @@
     "benchmark_official_improvement": 46.83,
     "statistics_reproduced": 15,
     "knowledge_version": 16,
-    "tests": 916,
-    "tests_passed": 913
+    "tests": 935,
+    "tests_passed": 930
   },
   "capabilities_delta": {
-    "changed": true,
-    "delta": {
-      "benchmark_ok": {
-        "before": 116,
-        "after": 107
-      },
-      "benchmark_infrastructure_failures": {
-        "before": 23,
-        "after": 32
-      },
-      "benchmark_mean_distance": {
-        "before": 0.189,
-        "after": 0.188
-      },
-      "benchmark_anchor_distance": {
-        "before": 0.204,
-        "after": 0.217
-      },
-      "tests": {
-        "before": 909,
-        "after": 916
-      },
-      "tests_passed": {
-        "before": 906,
-        "after": 913
-      }
-    },
+    "changed": false,
+    "delta": {},
     "verdict": {
-      "gains": [
-        {
-          "field": "tests",
-          "before": 909,
-          "after": 916
-        }
-      ],
+      "gains": [],
       "regressions": [],
       "corrections": [],
       "not_compared": [],
@@ -1934,7 +1897,7 @@
   "report_rebuilt": {
     "ran": true,
     "exit": 0,
-    "mtime": 1792900776.0,
+    "mtime": 1792927970.0,
     "reason": ""
   },
   "claim_rederivation": {
