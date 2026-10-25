@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-26T00:56:28",
+  "run_at": "2026-10-26T05:38:20",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -9,37 +9,16 @@
     "  passed 8, failed 0",
     "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
     "  wrote knowledge\\evolution_report.json",
-    "  lean: tracked 80.0 -> 80.0 MB, worktree 117.4 -> 104.5 MB"
+    "  lean: tracked 80.2 -> 80.2 MB, worktree 117.6 -> 104.7 MB"
   ],
   "tests_ok": false,
-  "tests_summary": "1 failed, 932 passed, 5 skipped, 1 warning in 919.19s (0:15:19) | FAILED tests/test_lean.py::test_tracked_size_is_within_budget - AssertionErro...",
+  "tests_summary": "1 failed, 932 passed, 5 skipped, 1 warning in 890.38s (0:14:50) | FAILED tests/test_lean.py::test_tracked_size_is_within_budget - AssertionErro...",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
   "published": {
-    "pushed": true,
-    "steps": [
-      {
-        "cmd": "git add -A",
-        "code": 0,
-        "tail": []
-      },
-      {
-        "cmd": "git -c user.name=figpipe-bot",
-        "code": 0,
-        "tail": [
-          " create mode 100644 knowledge/runs/2026-10-26T005628.json"
-        ]
-      },
-      {
-        "cmd": "git push origin",
-        "code": 0,
-        "tail": [
-          "   f381007..98684f8  main -> main"
-        ]
-      }
-    ],
-    "withheld": []
+    "pushed": false,
+    "reason": "not yet published"
   },
   "check_results": {
     "L01": {
@@ -1932,12 +1911,12 @@
       "after": 937
     }
   ],
-  "publish_note": "The publish outcome is recorded after the commit that carries this run, so it describes the push triggered by this run; the file's own commit is made by the next scheduled run.",
+  "publish_note": "capability regression detected; record kept but the run exits non-zero (re-run with --accept-capability-regression to accept)",
   "mutation_ok": true,
   "report_rebuilt": {
     "ran": true,
     "exit": 0,
-    "mtime": 1792947388.0,
+    "mtime": 1792964300.0,
     "reason": ""
   },
   "claim_rederivation": {
