@@ -27,6 +27,7 @@ from __future__ import annotations
 import datetime
 import json
 import os
+import re
 import pathlib
 import subprocess
 import sys
@@ -207,6 +208,53 @@ CAPABILITY_DIRECTION = {
     # direction to be negative or the delta would treat a rise as a gain.
     "benchmark_hard_findings": -1,
 }
+
+
+def claim_rederivation() -> dict:
+    """Re-run the script CLAIM.md cites and record what it measured.
+
+    A CLAIM IS A PROMISE TO RE-DERIVE. If the loop never re-derives it, the document is a memory.
+
+    This runs `scripts/validate_style_metric.py`, which writes `corpus/e2e/style_validation.json`, and
+    reports the discrimination accuracy the document should state. It deliberately does NOT edit
+    CLAIM.md: a loop that rewrites its own claim can make any claim true, and the point of a claim is
+    that something else checks it.
+    """
+    script = ROOT / "scripts" / "validate_style_metric.py"
+    if not script.is_file():
+        return {"ran": False, "reason": "validate_style_metric.py is absent"}
+    p = subprocess.run([sys.executable, str(script)], cwd=ROOT,
+                       capture_output=True, text=True, encoding="utf-8", errors="replace")
+    if p.returncode != 0:
+        return {"ran": False,
+                "reason": f"exit {p.returncode}: " + (p.stderr or "").strip()[-300:]}
+    out = ROOT / "corpus" / "e2e" / "style_validation.json"
+    try:
+        data = json.loads(out.read_text(encoding="utf-8"))
+    except (OSError, ValueError) as exc:
+        return {"ran": False, "reason": f"cannot read the validation output: {exc}"}
+    arm = (data.get("arms") or {}).get("same_paper") or {}
+    ci = data.get("binomial_ci_95") or []
+    measured = arm.get("discrimination_accuracy")
+    claim = ROOT / "CLAIM.md"
+    stated = None
+    if claim.is_file():
+        text = claim.read_text(encoding="utf-8")
+        head = text.split("## Update")[0]
+        m = re.search(r"[Dd]iscrimination accuracy[^0-9]{0,24}(0\.\d{3})", head)
+        if m:
+            stated = float(m.group(1))
+    agrees = (measured is not None and stated is not None
+              and abs(float(measured) - stated) < 5e-4)
+    return {
+        "ran": True,
+        "accuracy": measured,
+        "n_correct": arm.get("n_correct"),
+        "n_pairs": arm.get("n_pairs"),
+        "ci95": ci,
+        "claim_states": stated,
+        "agrees": agrees,
+    }
 
 
 def mutation_step() -> dict:
@@ -770,6 +818,16 @@ def _main_locked(argv: list[str], dry: bool) -> int:
         # PROPOSE -> PROBE -> COMPOSE. Without this the loop can only report that numbers moved; it
         # cannot choose an edit. 91 runs produced 0 knowledge changes for exactly that reason.
         mutation_run = mutation_step()
+        # RE-DERIVE THE CLAIM'S NUMBERS, EVERY RUN.
+        #
+        # CLAIM.md opens with "Everything below is measured by scripts in this repository and can be
+        # re-run". Round 114 proved that sentence was aspirational: the style-metric accuracy had drifted
+        # from 0.933 to 0.900 over five commits and the document was never re-derived.
+        #
+        # This runs the script the document cites and records what it produced. It does NOT edit the
+        # document -- a loop that rewrites its own claim is a loop that can make any claim true. The
+        # record carries the measurement; `tests/test_claim_drift.py` refuses a document that disagrees.
+        claim_run = claim_rederivation()
         # THE MUTATION STEP'S OWN HEALTH, reported separately from `ok`.
         #
         # Measured 2026-10-24: four consecutive runs had `mutation.ran = False` with a TypeError in
@@ -928,6 +986,13 @@ def _main_locked(argv: list[str], dry: bool) -> int:
     # the machine and must not turn a healthy run red (the module docstring says so). But it must not
     # be invisible either: four runs in a row had the loop dead and reported ok = True.
     run["mutation_ok"] = bool((mutation_run or {}).get("ran", False))
+    # THE CLAIM'S RE-DERIVATION, recorded AND surfaced.
+    #
+    # A claim that re-derives to a different number is worse than one that cannot be re-derived, because
+    # the re-derivation LOOKS like verification. This field is what makes a drift a fact in the record
+    # rather than a discovery months later.
+    run["claim_rederivation"] = claim_run
+    run["claim_ok"] = bool((claim_run or {}).get("agrees", False))
     run["ok"] = ok_evolve and ok_tests and (cap_ok or accept)
     if not dry:
         out.write_text(json.dumps(run, indent=2), encoding="utf-8")
@@ -962,6 +1027,13 @@ def _main_locked(argv: list[str], dry: bool) -> int:
     if not run.get("mutation_ok"):
         _why = ((mutation_run or {}).get("reason") or "no reason recorded")
         print(f"  !! MUTATION DID NOT RUN: {str(_why).splitlines()[-1][:110]}")
+    # A CLAIM THE DOCUMENT NO LONGER SUPPORTS IS THE WORST KIND OF STALE: it reads as verified.
+    _cr = run.get("claim_rederivation") or {}
+    if _cr.get("ran") and not _cr.get("agrees"):
+        print(f"  !! CLAIM DRIFTED: measured {_cr.get('accuracy')} "
+              f"({_cr.get('n_correct')}/{_cr.get('n_pairs')}), CLAIM.md states {_cr.get('claim_states')}")
+    elif not _cr.get("ran"):
+        print(f"  !! CLAIM NOT RE-DERIVED: {str(_cr.get('reason'))[:100]}")
     if run.get("demoted"):
         print(f"  !! DEMOTED (regression): {run['demoted']}")
     if run.get("promoted"):

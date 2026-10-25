@@ -6479,3 +6479,53 @@ matches only numbers explicitly labelled as the discrimination accuracy or writt
 correct".
 
 Suite: 901 passed, 5 skipped.
+
+
+## 177. The loop measured capability and never re-derived the claim (2026-10-25)
+
+Round 114 found that CLAIM.md's headline accuracy had drifted from 0.933 to 0.900 across five commits.
+The fix that round was a TEST. This round adds the STEP that makes the test unnecessary most of the time.
+
+### The gap in the loop
+
+`cron_run` measures, in order: the benchmark slice, the anchor refresh, the mutation probe, the test
+suite, the capability delta. **Nowhere does it re-derive the numbers CLAIM.md states.** So the loop could
+run a hundred times, improve five measurements, and leave the claim document describing a world that no
+longer exists -- which is exactly what happened.
+
+### The step
+
+    claim_run = claim_rederivation()
+
+It runs `scripts/validate_style_metric.py` -- the script CLAIM.md itself cites -- reads the JSON it
+writes, extracts the discrimination accuracy, and compares it with what the document's HEADLINE states.
+Recorded as `claim_rederivation` and `claim_ok`, and PRINTED:
+
+    !! CLAIM DRIFTED: measured 0.9 (27/30), CLAIM.md states 0.933
+
+### The design decision that matters
+
+**It does not edit CLAIM.md.** A loop that rewrites its own claim can make any claim true; the point of a
+claim is that something ELSE checks it. The step reports the measurement and the disagreement; a human (or
+`tests/test_claim_drift.py`) closes the gap.
+
+That is the same distinction as the mutation loop's patch policy -- "a patch changes the SOURCE, so it is
+probed and reported but never auto-selected" -- and it is the reason the two channels are trustworthy.
+
+### Verified in both directions
+
+    current document   -> agrees=True,  accuracy=0.9,   claim_states=0.9
+    stale number       -> agrees=False, accuracy=0.9,   claim_states=0.933
+    restored           -> agrees=True
+
+The negative control is in `tests/test_claim_rederivation.py`, alongside a test that asserts the step does
+NOT modify CLAIM.md.
+
+### The general shape
+
+**A measurement the loop never re-derives is a memory, not a claim.** The loop now has three kinds of
+check and they are deliberately different: capability (does the number move), mutation (can an edit be
+chosen), and claim (does the document still describe the measurement). The third one is the cheapest and
+it was the one missing.
+
+Suite: 906 passed, 5 skipped.
