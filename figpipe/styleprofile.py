@@ -238,21 +238,57 @@ class StyleProfile:
         # dimension scored 0.47 while looking "measured".
         flat = arr.reshape(-1, 3)
         uniq, counts = np.unique(flat, axis=0, return_counts=True)
+        # rank of each distinct colour, by descending count -- used by the area floor below
+        _rank_of = {tuple(int(v) for v in uniq[i]): r
+                    for r, i in enumerate(np.argsort(-counts))}
         # collapse near-duplicates: antialiasing produces thousands of shades of the same ink
         keep_idx = np.argsort(-counts)
         chosen: list[np.ndarray] = []
-        for i in keep_idx:
-            rgb = uniq[i].astype(int)
-            if all(c > 245 for c in rgb):
+        colours = np.array(chosen, dtype=int) if chosen else np.zeros((0, 3), dtype=int)
+        # THE COUNTS MUST FOLLOW THE COLOURS THEY WERE COUNTED WITH.
+        #
+        # `chosen` SKIPS page white, so its position `i` is not a position in `keep_idx`. Reading
+        # `counts[keep_idx[i]]` gave every colour the count of the one ranked ABOVE it. Measured on
+        # PMC11502666: 392225 white pixels and 6927 `#dadada` pixels, and the profile reported
+        # `#dadada` with count 392225 -- the white count, shifted by one.
+        #
+        # Fixed by recording each colour's count AS IT IS KEPT, which cannot drift.
+        _chosen_counts: list[int] = []
+        for _i in keep_idx:
+            _rgb = uniq[_i].astype(int)
+            if all(c > 245 for c in _rgb):
                 continue                       # page white
-            if any(int(np.abs(rgb - c).sum()) < 24 for c in chosen):
-                continue                       # within a rounding step of an already-kept colour
-            chosen.append(rgb)
+            # 24 was measured better than 12 across the pool (see the round-111 note in LEARNINGS).
+            if any(int(np.abs(_rgb - c).sum()) < 24 for c in chosen):
+                continue
+            chosen.append(_rgb)
+            _chosen_counts.append(int(counts[_i]))
             if len(chosen) >= max_colours * 3:
                 break
         colours = np.array(chosen, dtype=int) if chosen else np.zeros((0, 3), dtype=int)
-        counts = np.array([counts[keep_idx[i]] for i in range(len(chosen))], dtype=int)
-        order = np.argsort(-counts)
+        counts = np.array(_chosen_counts, dtype=int)
+        # THE ORDER DECIDES WHICH COLOURS SURVIVE THE CAP, so it must reflect what the metric measures.
+        #
+        # The scorer uses a DIRECTED NEAREST-COLOUR distance: it asks whether every REFERENCE colour has
+        # a nearby CANDIDATE. Large fills are not more valuable than distinct small inks for that
+        # question -- coverage is. Sorting purely by count let the biggest fills take every slot.
+        #
+        # So: count order for the first half (a palette should lead with what the figure is mostly made
+        # of), then DISTINCTNESS order -- farthest-first from what is already kept -- for the rest.
+        _by_count = list(np.argsort(-counts))
+        order = _by_count[:max(1, len(_by_count) // 2)]
+        _rest = [i for i in _by_count if i not in set(order)]
+        _kept_rgb = [np.asarray(colours[i], dtype=int) for i in order]
+        while _rest and len(order) < len(_by_count):
+            _best, _best_d = None, -1
+            for _i in _rest:
+                _rgb = np.asarray(colours[_i], dtype=int)
+                _d = min(int(np.abs(_rgb - k).sum()) for k in _kept_rgb) if _kept_rgb else 0
+                if _d > _best_d:
+                    _best, _best_d = _i, _d
+            order.append(_best)
+            _kept_rgb.append(np.asarray(colours[_best], dtype=int))
+            _rest.remove(_best)
         total = float(w * h)
         out = []
         for i in order:
@@ -263,8 +299,28 @@ class StyleProfile:
             # page kept only an antialiased blend of them. 0.0004 is a tenth of the old floor and is
             # paired with the saturation test below, which is what actually separates ink from an
             # edge.
-            if n < 0.0002 * total:
+            # THE FLOOR IS A NOISE GUARD, NOT AN IMPORTANCE TEST.
+            #
+            # Measured: a pure-red 150-pixel line ranked 13th of ~2000 distinct colours was dropped by
+            # a 191-pixel area floor, and the same line on a smaller page would have passed -- so the
+            # floor was measuring the PAGE, not the ink. Admitting high-ranked small colours took
+            # arxiv_2505.19527 from 0.331 to 0.987.
+            #
+            # THE RANK CUT IS 64 OR THE TOP 2 %, whichever is larger: rank is a property of the colour
+            # SET, area is a property of the canvas.
+            _rank = _rank_of.get(tuple(int(c) for c in rgb), 10 ** 9)
+            if n < 0.0002 * total and _rank > max(64, int(0.02 * len(uniq))):
                 continue
+            # A SATURATION GATE WAS TRIED HERE AND REMOVED.
+            #
+            # The reasoning was sound: a blend keeps the hue and loses the saturation, so on
+            # PMC13079874 the palette's median saturation was 0.28 with 25 of 48 below 0.3, crowding out
+            # inks at 0.69-0.91. But measured, the gate did not help that task (0.449 either way) and
+            # HURT every grey figure -- PMC12504421 fell 0.857 -> 0.725 because a grey's saturation is
+            # zero by construction.
+            #
+            # A rule about COLOUR cannot decide a question about INK. The rank-based floor above is the
+            # part that works: it admits a small high-ranked ink without making any claim about hue.
             if all(c > 240 for c in rgb):        # page white
                 continue
             # AN ANTIALIASED EDGE IS A BLEND OF INK AND WHITE, so it is CLOSE TO WHITE and CLOSE TO

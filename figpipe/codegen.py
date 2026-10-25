@@ -401,7 +401,25 @@ def style_from_image_profile(profile) -> dict:
                 penalty is real and must be reported, not hidden.
     """
     colours = [c["hex"] for c in getattr(profile, "colours", []) if c.get("hex")]
+    # THE DOCSTRING BELOW CLAIMS A RASTER CAN GIVE THE BACKGROUND, AND IT WAS RETURNING None.
+    #
+    # Measured on local_picks_top_violin__9: the reference background is `#bbd5e8` and the profile's
+    # FIRST colour is `#bbd5e8` -- the answer was already ranked first and discarded.
+    #
+    # The background is the dominant colour of the PAGE. `profile.colours` is ordered by pixel count,
+    # so the first entry is the background when it is light enough to be one; a saturated first entry
+    # is an ink, not a background, and then the background is the page white.
     background = None
+    for _c in getattr(profile, "colours", []) or []:
+        _hex = _c.get("hex")
+        if not _hex:
+            continue
+        _rgb = tuple(int(_hex[i:i + 2], 16) for i in (1, 3, 5))
+        if min(_rgb) > 150:          # light enough to be a page colour, not an ink
+            background = _hex
+        break                        # only the DOMINANT colour is a candidate
+    if background is None:
+        background = "#ffffff"       # the page is white and the dominant colour is an ink
     width, height = getattr(profile, "width_mm", 0.0), getattr(profile, "height_mm", 0.0)
     aspect = (width / height) if (width and height) else None
     # GRID and SPINES are recoverable from the pixels (see StyleProfile.from_image_detailed):

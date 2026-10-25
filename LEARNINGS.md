@@ -6214,3 +6214,62 @@ put ink in the margin, ticks inside put it in the plot area. The test now names 
 are unrecoverable -- `serif`, `legend_frame`, `linewidth` -- each with its measured reason.
 
 Suite: 885 passed, 3 skipped. tick_direction 0.000 -> 1.000, official 83.69 -> 84.33.
+
+
+## 172. A correct fix measured worse, and I shipped it anyway (2026-10-25)
+
+This round found a real bug and the round's net result is **-0.25**: official 84.33 -> 84.08.
+
+### The bug is real
+
+`from_image` reconstructed the colour counts with the POSITIONAL index:
+
+    counts = np.array([counts[keep_idx[i]] for i in range(len(chosen))])
+
+`chosen` SKIPS page white, so its position `i` is not a position in `keep_idx`. **Every colour carried
+the count of the one ranked above it.** Measured on PMC11502666: the cropped image has 392225 white
+pixels and 6927 `#dadada` pixels, and the profile reported `#dadada` with **count 392225** -- the white
+count, shifted by one.
+
+That is why `background` could not be derived: the dominant colour looked like a grey ink. With the
+counts fixed, the background derivation works and the dimension goes **0.000 -> 0.500**.
+
+### And the fix costs more than it earns
+
+    change                          palette    official
+    round-110 baseline              0.882      84.33
+    + count fix                     0.822      83.22     <- -0.060, -1.11
+    + rank floor (small inks)       0.860      84.08     <- recovered most
+    + dedup 24 -> 12                0.864      84.17     <- +0.004
+    + saturation gate               --         --        <- hurt greys, reverted
+    + counts-then-distinctness      0.860      84.08     <- no better
+
+**Why a correct fix loses points:** `order = np.argsort(-counts)` decides WHICH colours survive the
+48-colour cap. With shifted counts the order was effectively SCRAMBLED, and by luck a more DIVERSE set
+survived. With correct counts the order is by true frequency, and the surviving set is dominated by the
+largest FILLS -- which is worse for a metric that asks whether every REFERENCE colour has a nearby
+candidate.
+
+**The palette dimension never reads counts.** It uses a directed nearest-colour distance. So fixing the
+counts changed nothing the scorer measures, while changing everything about which colours got in.
+
+### What I decided, and why
+
+I kept the fix. **A colour carrying its neighbour's weight is a defect in the measurement**, and
+`background` is now derived correctly (+0.500 on its own dimension). The -0.25 is the price of a
+correct instrument, and it is recorded rather than hidden.
+
+**That is not the same as shipping a regression to look tidy.** The distinguishing question is whether
+the number got worse because the pipeline got worse. It did not: it got worse because a scramble that
+happened to help was removed. **A metric that prefers scrambled counts is a metric with a defect of its
+own**, and the honest response is to fix the counts and report the cost -- which is what this round did.
+
+The alternative, reverting to keep 84.33, would have preserved a bug in exchange for 0.25 points.
+
+### What I did NOT do
+
+I did not try to recover the 0.25 by tuning `order` to reproduce the scramble. The distinctness
+ordering I tried is principled and measured the same (84.08); a search over orderings until the number
+came back would be fitting the metric rather than fixing the pipeline.
+
+Suite: 885 passed, 3 skipped.

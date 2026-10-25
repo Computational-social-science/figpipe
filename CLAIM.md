@@ -14,10 +14,10 @@ On **PlotTwin-Bench** (FigMirror, arXiv 2608.28814), using the benchmark's **own
 | configuration | mean / 100 | tasks |
 |---|---|---|
 | baseline — matplotlib defaults + this project's compliance floor | **37.25** | 149 |
-| **figpipe** — style inferred from the reference **image** | **84.33** | 149 |
+| **figpipe** — style inferred from the reference **image** | **84.08** | 149 |
 | ceiling — style copied from the reference **code** | 99.19 | 149 |
 
-**Improvement over baseline: +47.08 points, 126.4 % relative.**
+**Improvement over baseline: +46.83 points, 125.7 % relative.**
 
 The code channel is 35 % of the benchmark's combined score (`S = 0.35·S_code + 0.65·S_vision`).
 The vision channel is **not run** by this project, so **no combined-score claim is made**.
