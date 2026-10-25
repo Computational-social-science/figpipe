@@ -26,5 +26,10 @@ image = ["pillow>=10"]
 pdf-structure = ["pypdf>=3"]
 test = ["pytest>=7"]
 
+[project.scripts]
+# The CLI wraps the library; it does not reimplement it. `figpipe audit` is `audit.audit` plus an exit
+# code, because "did this pass" is the question a build step asks.
+figpipe = "figpipe.cli:main"
+
 [tool.setuptools]
 packages = ["figpipe"]

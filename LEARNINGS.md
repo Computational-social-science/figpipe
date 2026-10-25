@@ -6372,3 +6372,48 @@ This is also why `cron_run` refreshes the report as part of its own cycle: the f
 wrong number, it is a right number about an older world.
 
 Suite: 888 passed, 5 skipped.
+
+
+## 175. A library that can only be used from Python is half a tool (2026-10-25)
+
+The objective's third clause is "reusable and verifiable in a research setting". Round 112 made it
+INSTALLABLE; this round made it CALLABLE.
+
+### What was missing
+
+`pyproject.toml` had no `[project.scripts]` and there was no `figpipe/__main__.py`. Every one of the five
+README entry points begins with `from figpipe import ...`. **That is correct for a library and wrong for
+the one thing most users need first: check a PDF they already made.**
+
+A researcher holding a rejected figure does not want a REPL. They want
+
+    figpipe audit figure.pdf --expect-width 183
+
+and an exit code they can put in a Makefile.
+
+### The three commands, and the rule they follow
+
+    figpipe audit   <pdf> [--expect-width MM] [--json]     -> 0 ok / 1 not submittable / 2 usage error
+    figpipe render  <csv> --x --y [--skill NAME]           -> 0 ok / 1 hard findings / 2 usage error
+    figpipe style   <reference> [candidates...]            -> prints the profile, or the ranking
+
+**The exit code is the verdict.** A CLI whose exit code is always 0 is a logging tool; the whole value
+here is that `figpipe audit` returns 1 for a figure that is not submittable, so a build step can gate on
+it. Verified: asking for 89 mm for a 183 mm figure exits 1 with `NOT SUBMITTABLE`; a missing file exits 2,
+which is a DIFFERENT code because a usage error is not a compliance failure.
+
+**The CLI wraps the library rather than reimplementing it.** `figpipe audit` is `audit.audit` plus an
+exit code. A CLI that reimplements a check is a second implementation to keep in sync -- this project's
+most-recorded defect -- so `test_cli.py` asserts that `figpipe/cli.py` imports from `figpipe` and contains
+none of the check internals (`get_text(`, `page.get_drawings`, `findings.append`).
+
+### Verified end to end, the way a user would
+
+    clean venv -> pip install -e . -> Scripts/figpipe.exe exists
+    figpipe --version                    -> figpipe 0.6.0
+    figpipe audit fig.pdf --expect-width 183 -> exit 0, "fig.pdf: OK", width 183.0 mm
+
+And the README now leads with the command rather than with an import, because the first thing a user
+should see is the thing they can run.
+
+Suite: 896 passed, 5 skipped.

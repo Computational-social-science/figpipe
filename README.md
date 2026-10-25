@@ -35,6 +35,29 @@ No packaging step needed — put the directory on `sys.path`, or `pip install -e
 
 ## Use
 
+### The command line
+
+    pip install -e .
+    figpipe audit figure.pdf --expect-width 183
+
+    figure.pdf: NOT SUBMITTABLE
+      width: 183.0 mm
+      1 finding(s):
+        [hard] text_too_small: 3 span(s) below 5.0 pt
+
+The exit code is the verdict: **0 compliant, 1 not submittable, 2 usage error**. That is the form a
+Makefile or CI step needs, and it is the reason this exists -- a library cannot gate a build.
+
+    figpipe render data.csv --x year --y mean --skill trend_with_uncertainty
+    figpipe style reference.pdf candidate_a.pdf candidate_b.pdf
+
+`figpipe render` makes a figure from a CSV; `figpipe style` measures a reference's typography and,
+given candidates, ranks them. All three wrap the same functions the library exposes -- the CLI does not
+re-implement a check.
+
+### From Python
+
+
 ```python
 from figpipe import style, layout, audit
 
