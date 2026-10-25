@@ -6273,3 +6273,55 @@ ordering I tried is principled and measured the same (84.08); a search over orde
 came back would be fitting the metric rather than fixing the pipeline.
 
 Suite: 885 passed, 3 skipped.
+
+
+## 173. `pip install` said success and the package failed on line 1 (2026-10-25)
+
+The objective's third clause is "the pipeline's capability must be reusable and verifiable in a
+research setting". I tested that the way a stranger would: **a clean venv, `pip install -e .`, then a
+script from a directory that is not the repo.**
+
+    pip install -e .   -> exit 0
+    first line: import pandas as pd
+    -> ModuleNotFoundError: No module named 'pandas'
+
+### The defect
+
+`pyproject.toml` declared `matplotlib` and `pymupdf`. The AST shows module-level imports of **numpy**,
+**pandas**, and two vendored modules. So the package installed successfully and then failed on the
+user's first line -- **the worst kind of broken, because nothing in the install reports it.**
+
+### Two more defects the check found
+
+**The version disagreed with itself.** `pyproject.toml` said `0.1.0`; `figpipe.__version__` said
+`0.6.0`. A user installing it gets a distribution that reports a version nobody published, and
+`pip show` disagrees with the library.
+
+**`mcts` looked like a missing dependency and is vendored.** It lives in `third_party/mcts` and is
+reached by a `sys.path.insert` in `search.py`, so it ships with the repo. The first version of my test
+flagged it; the fix was to look at `third_party/` before declaring a dependency.
+
+### What was already right
+
+All five README entry points run: `grammar.panel`, `grammar.plate` + `layout.save` + `audit.audit`,
+`spec.infer_spec`, `skills.run`, and `styleprofile.from_pdf` + `select.select`. The worked example exits
+0. **The API was never the problem; the packaging was.**
+
+### And one thing I got wrong
+
+I reported that README's entry-5 example "reads a key that does not exist". It does not -- it assigns
+`picked` and never reads a key. **My test invented `picked['picked']` and then blamed the README for the
+None.** A test can produce a false accusation as easily as a false pass, and I only caught it by
+re-reading the source I was accusing.
+
+### The rule
+
+**A module-level import is part of the install contract.** A guarded import is an optional feature and
+belongs in `[project.optional-dependencies]` with its reason. `tests/test_install_contract.py` now
+asserts: every module-level import is declared, the four core dependencies are REQUIRED rather than
+extras, guarded imports ARE extras, and the declared version equals the runtime version.
+
+Verified end to end afterwards: clean venv, `pip install -e .`, stranger script -> **exit 0,
+`ok=True findings=0`**.
+
+Suite: 889 passed, 3 skipped.

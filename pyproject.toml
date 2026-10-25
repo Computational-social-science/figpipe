@@ -4,14 +4,26 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "figpipe"
-version = "0.1.0"
+version = "0.6.0"
 description = "A spec-driven pipeline for publication figures: compliant styles, exact column widths, and a post-render audit that reads the PDF back."
 readme = "README.md"
 requires-python = ">=3.10"
-dependencies = ["matplotlib>=3.7", "pymupdf>=1.23"]
+# DECLARED FROM THE AST, NOT FROM MEMORY. A module-level import that is not declared here makes the
+# package install successfully and then fail on the user's first line -- measured in a clean venv.
+dependencies = [
+    "matplotlib>=3.7",
+    "pymupdf>=1.23",
+    "numpy>=1.24",
+    "pandas>=2.0",
+]
 
 [project.optional-dependencies]
+# A reference style transfer needs the journal-style sheet; every other code path degrades gracefully.
 scienceplots = ["scienceplots>=2.1"]
+# Image-based style profiling: `styleprofile.from_image` needs Pillow. PDF profiling does not.
+image = ["pillow>=10"]
+# `structure.py` reads PDF object trees; pypdf is the maintained fork, PyPDF2 the legacy name.
+pdf-structure = ["pypdf>=3"]
 test = ["pytest>=7"]
 
 [tool.setuptools]
