@@ -6529,3 +6529,50 @@ chosen), and claim (does the document still describe the measurement). The third
 it was the one missing.
 
 Suite: 906 passed, 5 skipped.
+
+
+## 178. The new guard found two real defects on its first scheduled run (2026-10-25)
+
+Round 115 added `claim_rederivation()` to the loop. On its FIRST real run the summary printed:
+
+    !! CLAIM NOT RE-DERIVED: exit 3
+
+**Both defects it exposed were real, and neither was in the new code.**
+
+### Defect 1: the child was asked to take a lock the parent held
+
+`validate_style_metric.py` does `lock.acquire("style_validation")` and returns 3 when the lock is busy.
+**`cron_run` holds the measurement lock for the whole run**, so the child refused by design.
+
+The child was right. The caller was wrong to ask it to take a lock it already had. Fixed with `--no-lock`,
+the same pattern `mutation.probe(lock_held=True)` already used -- **a convention the project had, applied
+in one place and forgotten in another.**
+
+### Defect 2: the run wrote the data and never rebuilt the page
+
+`benchmark_slice()` rewrites `corpus/e2e/plottwin_report.json` every run. **Nothing in `cron_run` rebuilt
+`reports/figpipe_report.html`**, so the page was stale by construction -- and
+`test_the_report_is_not_older_than_the_data_it_describes`, added in round 112, fired on its first
+scheduled run. The guard was right; the runner was wrong.
+
+`cron_run` now rebuilds the report as its last measurement step, and prints `!! REPORT NOT REBUILT` if it
+cannot.
+
+### Defect 3, in my own new test
+
+The freshness test failed in the full suite and passed alone. **It depended on test ORDER**: another test
+rewrote the JSON after the report was built, and the assertion compared two timestamps taken at different
+points in the session.
+
+A test that depends on ordering fails for reasons unrelated to the defect it names. It now **rebuilds and
+then asserts** -- the property is "the runner keeps its artefacts current", not "this file happens to be
+fresh at this instant".
+
+### The pattern, which is the whole point of this round
+
+**A step that silently cannot run is worse than a step that fails loudly.** Round 115 made the failure
+loud (`!! CLAIM NOT RE-DERIVED: exit 3`), and within one run that loudness produced two fixes and one
+self-correction. The mutation loop had stayed dead for four runs precisely because its failure was
+recorded and never printed; this round is what it looks like when that lesson is applied.
+
+Suite: 913 passed, 3 skipped.

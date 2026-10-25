@@ -210,6 +210,27 @@ CAPABILITY_DIRECTION = {
 }
 
 
+def build_report() -> dict:
+    """Rebuild `reports/figpipe_report.html` from the data this run just wrote.
+
+    A REPORT OLDER THAN ITS DATA STATES AN OLD MEASUREMENT WITH PRESENT-TENSE CONFIDENCE. The benchmark
+    slice rewrites the JSON every run, so the page must be rebuilt after it or the document is stale by
+    construction -- which is what the freshness guard caught.
+    """
+    script = ROOT / "scripts" / "build_report.py"
+    if not script.is_file():
+        return {"ran": False, "reason": "build_report.py is absent"}
+    p = subprocess.run([sys.executable, str(script)], cwd=ROOT,
+                       capture_output=True, text=True, encoding="utf-8", errors="replace")
+    out = ROOT / "reports" / "figpipe_report.html"
+    return {
+        "ran": p.returncode == 0,
+        "exit": p.returncode,
+        "mtime": out.stat().st_mtime if out.is_file() else None,
+        "reason": "" if p.returncode == 0 else (p.stderr or "").strip()[-300:],
+    }
+
+
 def claim_rederivation() -> dict:
     """Re-run the script CLAIM.md cites and record what it measured.
 
@@ -223,7 +244,10 @@ def claim_rederivation() -> dict:
     script = ROOT / "scripts" / "validate_style_metric.py"
     if not script.is_file():
         return {"ran": False, "reason": "validate_style_metric.py is absent"}
-    p = subprocess.run([sys.executable, str(script)], cwd=ROOT,
+    # --no-lock BECAUSE THE CALLER HOLDS IT. `cron_run` owns the measurement lock for the whole run;
+    # without this the child returns 3 ("refused") by design, which is what happened on the first run.
+    # Same pattern as `mutation.probe(lock_held=True)`.
+    p = subprocess.run([sys.executable, str(script), "--no-lock"], cwd=ROOT,
                        capture_output=True, text=True, encoding="utf-8", errors="replace")
     if p.returncode != 0:
         return {"ran": False,
@@ -828,6 +852,12 @@ def _main_locked(argv: list[str], dry: bool) -> int:
         # document -- a loop that rewrites its own claim is a loop that can make any claim true. The
         # record carries the measurement; `tests/test_claim_drift.py` refuses a document that disagrees.
         claim_run = claim_rederivation()
+        # REBUILD THE PAGE THAT DESCRIBES WHAT WAS JUST MEASURED.
+        #
+        # `benchmark_slice()` rewrites the JSON every run and nothing rebuilt the HTML, so the report was
+        # stale by construction -- which `test_the_report_is_not_older_than_the_data_it_describes` caught
+        # on its first scheduled run. The guard was right; the runner was wrong.
+        report_run = build_report()
         # THE MUTATION STEP'S OWN HEALTH, reported separately from `ok`.
         #
         # Measured 2026-10-24: four consecutive runs had `mutation.ran = False` with a TypeError in
@@ -991,6 +1021,7 @@ def _main_locked(argv: list[str], dry: bool) -> int:
     # A claim that re-derives to a different number is worse than one that cannot be re-derived, because
     # the re-derivation LOOKS like verification. This field is what makes a drift a fact in the record
     # rather than a discovery months later.
+    run["report_rebuilt"] = report_run
     run["claim_rederivation"] = claim_run
     run["claim_ok"] = bool((claim_run or {}).get("agrees", False))
     run["ok"] = ok_evolve and ok_tests and (cap_ok or accept)
@@ -1034,6 +1065,8 @@ def _main_locked(argv: list[str], dry: bool) -> int:
               f"({_cr.get('n_correct')}/{_cr.get('n_pairs')}), CLAIM.md states {_cr.get('claim_states')}")
     elif not _cr.get("ran"):
         print(f"  !! CLAIM NOT RE-DERIVED: {str(_cr.get('reason'))[:100]}")
+    if not (report_run or {}).get("ran"):
+        print(f"  !! REPORT NOT REBUILT: {str((report_run or {}).get('reason'))[:100]}")
     if run.get("demoted"):
         print(f"  !! DEMOTED (regression): {run['demoted']}")
     if run.get("promoted"):
