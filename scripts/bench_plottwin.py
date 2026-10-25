@@ -241,6 +241,7 @@ def fetch_row(offset: int) -> dict:
             # 403s while a fresh one for the SAME row downloads fine (measured 2026-10-25). Never serve
             # a cached signature: mark it stale so `download_image` re-fetches the row.
             cached["reference_url"] = ""
+            cached["_offset"] = offset
             return cached
     req = urllib.request.Request(API.format(offset=offset),
                                  headers={"User-Agent": "figpipe-bench/0.1"})
@@ -273,37 +274,68 @@ def fetch_row(offset: int) -> dict:
             "panel_mode": row.get("panel_mode"), "target_data": row.get("target_data"),
             "reference_code": row.get("reference_code"),
             "reference_url": (row.get("reference_image") or {}).get("src")}
+    keep["_offset"] = offset
     cache.write_text(json.dumps(keep), encoding="utf-8")
     return keep
+
+
+def _offset_of(rid: str) -> int | None:
+    """Find the dataset offset of a row id WITHOUT a network call.
+
+    `fetch_row` writes `CACHE / f"{offset}.json"`, so the cache directory already knows the mapping. A
+    scan of local files is free; a scan of the dataset server is not (measured: 40 s for offset 5, and it
+    grows linearly).
+    """
+    if not CACHE.is_dir():
+        return None
+    for path in CACHE.glob("*.json"):
+        try:
+            offset = int(path.stem)
+        except ValueError:
+            continue
+        try:
+            cached = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            continue
+        if cached.get("id") == rid:
+            return offset
+    return None
 
 
 def _fresh_url(row: dict) -> str:
     """Fetch a NEW signed URL for `row`, by asking the dataset server for that row again.
 
     The dataset server signs one URL per row per request and invalidates the previous one, so a cached
-    URL is a dead lease. This re-requests the row and returns its current signature.
+    URL is a dead lease. This re-requests exactly ONE row and returns its current signature.
+
+    ONE REQUEST, NOT A SCAN. The offset comes from the cache filename when it can be found, and from the
+    row itself when the caller passed one (`fetch_row` records it as `_offset`).
     """
     rid = row.get("id")
     if not rid:
         return ""
-    # The row's offset is not stored; scan a window and match by id. The window is small because the
-    # caller already knows the id and the pool is 150 rows.
-    for offset in range(0, 200):
-        try:
-            req = urllib.request.Request(API.format(offset=offset),
-                                         headers={"User-Agent": "figpipe-bench/0.1"})
-            with urllib.request.urlopen(req, timeout=120) as r:
-                payload = json.load(r)
-        except Exception:                       # noqa: BLE001 - a scan failure is not fatal
-            continue
-        rows = payload.get("rows") or []
-        if not rows:
-            break
-        candidate = rows[0].get("row") or {}
-        if candidate.get("id") == rid:
-            img = candidate.get("reference_image") or {}
-            return img.get("src") or ""
-    return ""
+    offset = row.get("_offset")
+    if offset is None:
+        offset = _offset_of(rid)
+    if offset is None:
+        return ""
+    try:
+        req = urllib.request.Request(API.format(offset=int(offset)),
+                                     headers={"User-Agent": "figpipe-bench/0.1"})
+        with urllib.request.urlopen(req, timeout=120) as r:
+            payload = json.load(r)
+    except Exception:                           # noqa: BLE001 - a re-issue failure is reported upstream
+        return ""
+    rows = payload.get("rows") or []
+    if not rows:
+        return ""
+    candidate = rows[0].get("row") or {}
+    if candidate.get("id") != rid:
+        # THE CACHE AND THE DATASET DISAGREE. Re-issuing the wrong row's signature would download the
+        # wrong figure, so refuse rather than guess.
+        return ""
+    img = candidate.get("reference_image") or {}
+    return img.get("src") or ""
 
 
 def download_image(row: dict) -> pathlib.Path:

@@ -84,3 +84,51 @@ def test_a_real_image_downloads(bench, tmp_path, monkeypatch):
     from PIL import Image
     with Image.open(img) as im:
         assert im.size[0] > 100 and im.size[1] > 100, im.size
+
+
+def test_the_offset_travels_with_the_row(bench):
+    """THE COST DEFECT. My first version searched the dataset server for the row, one request per offset.
+
+    Measured: offset 0 took 3.3 s; offset 5 took 40.3 s -- LINEAR in the offset, because every miss is a
+    full round trip. Extrapolated, offset 150 would cost ~17 minutes for ONE image, and the anchor needs
+    20-35 of them. `fetch_row` already knows the offset, so it must travel with the row.
+    """
+    row = bench.fetch_row(0)
+    if not row.get("id"):
+        pytest.skip("dataset unreachable")
+    assert row.get("_offset") == 0, (
+        f"the row does not carry its offset (got {row.get('_offset')!r}); _fresh_url would have to find "
+        f"it by scanning")
+
+
+def test_a_fresh_lease_costs_one_request_not_a_scan(bench):
+    """THE PROPERTY THAT MATTERS: cost must not grow with the offset."""
+    import time
+    rows = []
+    for off in (0, 5):
+        try:
+            rows.append((off, bench.fetch_row(off)))
+        except Exception as exc:                    # noqa: BLE001
+            pytest.skip(f"dataset unreachable: {type(exc).__name__}")
+    timings = []
+    for off, row in rows:
+        if not row.get("id"):
+            pytest.skip("no row")
+        t0 = time.time()
+        url = bench._fresh_url(row)
+        timings.append((off, time.time() - t0, bool(url)))
+    assert all(ok for _, _, ok in timings), timings
+    # the high offset must not be dramatically slower than the low one; a scan would be ~8x here
+    low = timings[0][1]
+    high = timings[1][1]
+    assert high < max(3.0, low * 3), (
+        f"offset 5 took {high:.1f}s vs offset 0's {low:.1f}s -- the lookup still scales with the offset")
+
+
+def test_the_cache_directory_can_resolve_an_id_offline(bench):
+    """THE FALLBACK. `_offset_of` reads the cache filenames, which are the offsets."""
+    row = bench.fetch_row(0)
+    if not row.get("id"):
+        pytest.skip("dataset unreachable")
+    found = bench._offset_of(row["id"])
+    assert found == 0, f"_offset_of({row['id']!r}) returned {found!r}, expected 0"

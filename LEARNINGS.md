@@ -6723,3 +6723,35 @@ recorded: a zero that was the instrument's, a distance read as a score, a scramb
 signature treated as content. **Every one is a value whose TYPE was not what its NAME said.**
 
 Suite: 924 passed, 3 skipped.
+
+
+## 183. The lease fix had a 17-minute-per-image cost defect (2026-10-26)
+
+My round 119 fix for the 403 lease used a scan: `_fresh_url` requested offsets 0..200 until it found
+the row by id. Measured:
+
+    offset 0:  3.3 s
+    offset 5: 40.3 s       ← LINEAR in the offset
+    offset 150: ~17 min    ← extrapolated; anchor needs 20-35 such images
+
+**That is a catastrophic cost regression inside a fix.** The signed-URL mechanism was correct; the
+lookup was not.
+
+### The fix
+
+`fetch_row` ALREADY KNOWS the offset (it is the cache filename). Recording it on the row makes
+`_fresh_url` a SINGLE request instead of a scan:
+
+    offset 0:  _offset=0  fresh=True  3.5 s
+    offset 5:  _offset=5  fresh=True  4.5 s
+
+**The cost is now FLAT, not linear.** The fallback `_offset_of` reads local cache filenames for free.
+
+### The pattern
+
+**A fix that introduces a new defect is not a fix.** The lease mechanism was correct; the lookup was
+wrong because I did not trace the information flow: `fetch_row` knows the offset, writes the cache
+file named by the offset, and `download_image` gets the row. The offset was available at the source
+and needed at the sink; passing it through was the only right design.
+
+Suite: 933 passed, 5 skipped.
