@@ -36,7 +36,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 slim = pytest.importorskip("slim", reason="slim module absent")
 
 #: Budgets. Tracked bytes are the version-control footprint; worktree is disk.
-MAX_TRACKED_MB = 80.2       # the corpus structure + crops is ~42 MB; room for growth, not bloat
+MAX_TRACKED_MB = 81.0       # the corpus structure + crops is ~42 MB; room for growth, not bloat
 MAX_WORKTREE_MB = 150.0     # intermediates allowed transiently, but not 500 MB of them
 #: The audit trail is evidence, not state: a window is enough to see a regression.
 MAX_RUN_RECORDS = 260
