@@ -6576,3 +6576,55 @@ self-correction. The mutation loop had stayed dead for four runs precisely becau
 recorded and never printed; this round is what it looks like when that lesson is applied.
 
 Suite: 913 passed, 3 skipped.
+
+
+## 180. The one claim no script could settle now has a harness (2026-10-25)
+
+`corpus/e2e/style_validation.json` states, in its own fields:
+
+> No human judgement was collected. This is a deterministic proxy that removes the "the metric was never
+> tested at all" gap; **it does not replace a reader study.**
+
+> This tests ORDERING, not expert preference: it can refute a blind or inverted metric, **it cannot
+> establish that the closer figure is the better figure.**
+
+That gap has been the "next step" for a hundred rounds. This round built the harness.
+
+### What `scripts/reader_study.py` does
+
+For N pairs it renders, from IDENTICAL data, two candidates: one styled from a MISMATCHED figure in the
+same paper, one from the MATCHED reference. It shows them side by side with the reference above,
+**randomises which side is which**, writes a blank answer sheet, and keeps the key in a separate file.
+`--score` compares the rater's choices with the metric's ordering.
+
+**It cannot run itself.** The judgement is the input. That is the whole point: this is the only claim in
+the project that no script can settle, and the harness makes the experiment possible without pretending
+to perform it.
+
+### Two defects the build exposed, both caught by looking at the output
+
+**The sources are PNGs, not PDFs.** The stems in `style_validation.json` are `<paper>/fig_001`; the files
+on disk are `corpus/extracted/<paper>/figures/fig_001.png`. `StyleProfile.from_pdf` raised
+FileNotFoundError for every pair, and the first build produced **0 pairs** while reporting success.
+
+**The study shipped PDFs named `.png`.** `render_transfer` returns a PDF; I copied it to `p01_left.png`,
+so the "image" a rater was asked to judge began with `%PDF-1.4` and no viewer opens it
+(`PIL.UnidentifiedImageError`). **A study harness that cannot produce a viewable image is a study nobody
+can take.** Fixed by rasterising with pymupdf at 200 dpi, and verified by opening the file.
+
+### And a third, caught by my own test
+
+A blank answer sheet scored as **0 % agreement** and printed "the metric's ordering is NOT corroborated".
+The guard was `if not choices`, but `p01,` parses to `("p01", "")` -- so `choices` was non-empty with
+every value blank, and **the scorer derived a claim about the metric from no data.**
+
+That is the project's oldest defect in its purest form: **an empty answer sheet cannot fail to disagree.**
+Now a row counts only when its value is `left`, `right` or `tie`.
+
+### What is still true, and must be said
+
+**No human has taken this study.** The harness exists; the experiment does not. Every claim in CLAIM.md
+about the style metric remains a statement about ORDERING, not about preference, and the document says so
+in a field rather than in a footnote -- which is the right place for it.
+
+Suite: 919 passed, 7 skipped.
