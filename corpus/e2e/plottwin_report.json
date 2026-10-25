@@ -7,22 +7,22 @@
     "note": "deterministic metrics only; official combined score requires the benchmark's VLM scorer and is NOT claimed here"
   },
   "n_tasks": 150,
-  "n_ok": 137,
+  "n_ok": 107,
   "n_unsupported": 11,
   "n_error": 0,
-  "n_infrastructure_failures": 2,
+  "n_infrastructure_failures": 32,
   "unsupported_types": {
     "3D": "unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this is a deliberate exclusion",
     "Polar/Radial": "SkillError: encode.polar: 'record_type' reduces to 2 distinct angle(s); a polar profile needs at least 3. This data has no angular reading -- use a bar or trend encoding.",
     "Network/Tree": "unsupported chart type: no graph-layout operator yet (backlog: node-link layout, not a chart encoding this library owns)"
   },
-  "mean_distance": 0.185,
-  "mean_baseline": 0.26,
+  "mean_distance": 0.188,
+  "mean_baseline": 0.262,
   "mean_improvement": 0.074,
-  "improved": 129,
+  "improved": 99,
   "worse": 5,
   "ties": 3,
-  "mean_best_of_two": 0.184,
+  "mean_best_of_two": 0.187,
   "semantic_violations": 0,
   "decision_service": {
     "up": true,
@@ -42,21 +42,21 @@
     },
     "Bar": {
       "n": 18,
-      "ok": 18,
-      "errors": 0,
-      "mean_distance": 0.139,
-      "mean_baseline": 0.182,
-      "mean_delta": 0.043,
-      "mean_shipped": 0.138
+      "ok": 15,
+      "errors": 3,
+      "mean_distance": 0.142,
+      "mean_baseline": 0.188,
+      "mean_delta": 0.045,
+      "mean_shipped": 0.144
     },
     "Box/Violin": {
       "n": 16,
-      "ok": 16,
-      "errors": 0,
-      "mean_distance": 0.122,
-      "mean_baseline": 0.246,
-      "mean_delta": 0.124,
-      "mean_shipped": 0.12
+      "ok": 13,
+      "errors": 3,
+      "mean_distance": 0.121,
+      "mean_baseline": 0.243,
+      "mean_delta": 0.122,
+      "mean_shipped": 0.118
     },
     "Composite": {
       "n": 3,
@@ -69,39 +69,39 @@
     },
     "Distribution": {
       "n": 17,
-      "ok": 16,
-      "errors": 1,
-      "mean_distance": 0.15,
-      "mean_baseline": 0.192,
-      "mean_delta": 0.042,
-      "mean_shipped": 0.146
+      "ok": 9,
+      "errors": 8,
+      "mean_distance": 0.151,
+      "mean_baseline": 0.188,
+      "mean_delta": 0.037,
+      "mean_shipped": 0.142
     },
     "Field 2D": {
       "n": 15,
-      "ok": 15,
-      "errors": 0,
-      "mean_distance": 0.206,
-      "mean_baseline": 0.316,
-      "mean_delta": 0.11,
-      "mean_shipped": 0.209
+      "ok": 11,
+      "errors": 4,
+      "mean_distance": 0.215,
+      "mean_baseline": 0.321,
+      "mean_delta": 0.106,
+      "mean_shipped": 0.214
     },
     "Heatmap": {
       "n": 14,
-      "ok": 13,
-      "errors": 1,
-      "mean_distance": 0.202,
-      "mean_baseline": 0.292,
-      "mean_delta": 0.089,
-      "mean_shipped": 0.138
+      "ok": 10,
+      "errors": 4,
+      "mean_distance": 0.191,
+      "mean_baseline": 0.278,
+      "mean_delta": 0.088,
+      "mean_shipped": 0.134
     },
     "Line": {
       "n": 20,
-      "ok": 20,
-      "errors": 0,
-      "mean_distance": 0.209,
-      "mean_baseline": 0.264,
-      "mean_delta": 0.055,
-      "mean_shipped": 0.209
+      "ok": 14,
+      "errors": 6,
+      "mean_distance": 0.195,
+      "mean_baseline": 0.248,
+      "mean_delta": 0.053,
+      "mean_shipped": 0.195
     },
     "Network/Tree": {
       "n": 2,
@@ -123,24 +123,69 @@
     },
     "Scatter": {
       "n": 16,
-      "ok": 16,
-      "errors": 0,
-      "mean_distance": 0.174,
-      "mean_baseline": 0.286,
-      "mean_delta": 0.112,
-      "mean_shipped": 0.173
+      "ok": 13,
+      "errors": 3,
+      "mean_distance": 0.181,
+      "mean_baseline": 0.297,
+      "mean_delta": 0.117,
+      "mean_shipped": 0.18
     },
     "Std-band": {
       "n": 9,
-      "ok": 9,
-      "errors": 0,
-      "mean_distance": 0.253,
-      "mean_baseline": 0.349,
-      "mean_delta": 0.096,
-      "mean_shipped": 0.271
+      "ok": 8,
+      "errors": 1,
+      "mean_distance": 0.266,
+      "mean_baseline": 0.367,
+      "mean_delta": 0.101,
+      "mean_shipped": 0.287
     }
   },
   "failures": [
+    {
+      "id": "Chart2Code_level1_direct_HR_5",
+      "chart": "Scatter",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "Chart2Code_level1_direct_combination_57",
+      "chart": "Bar",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "Chart2Code_level1_direct_contour_18",
+      "chart": "Heatmap",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "Chart2Code_level1_direct_density_11",
+      "chart": "Distribution",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "Chart2Code_level1_direct_heatmap_3",
+      "chart": "Heatmap",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "Chart2Code_level1_direct_heatmap_7",
+      "chart": "Heatmap",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "Chart2Code_level1_direct_line_39",
+      "chart": "Line",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "Chart2Code_level1_direct_line_8",
+      "chart": "Line",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "Chart2Code_level2_3d_11_v2",
+      "chart": "Scatter",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
     {
       "id": "Chart2Code_level2_3d_1_v1__single",
       "chart": "3D",
@@ -152,6 +197,91 @@
       "error": "unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this is a deliberate exclusion"
     },
     {
+      "id": "Chart2Code_level2_3d_5_v4",
+      "chart": "Bar",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "Chart2Code_level2_area_3_v3",
+      "chart": "Line",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "Chart2Code_level2_bar_10_v4",
+      "chart": "Line",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "Chart2Code_level2_bar_22_v4",
+      "chart": "Bar",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "Chart2Code_level2_bar_25_v4",
+      "chart": "Line",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "Chart2Code_level2_box_1_v5",
+      "chart": "Box/Violin",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "Chart2Code_level2_combination_11_v2",
+      "chart": "Std-band",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "Chart2Code_level2_combination_13_v5",
+      "chart": "Line",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "Chart2Code_level2_combination_14_v5",
+      "chart": "Distribution",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "Chart2Code_level2_combination_16_v5",
+      "chart": "Box/Violin",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "Chart2Code_level2_combination_33_v5",
+      "chart": "Distribution",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "Chart2Code_level2_combination_42_v5",
+      "chart": "Scatter",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "Chart2Code_level2_combination_44_v3",
+      "chart": "Distribution",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "Chart2Code_level2_contour_14_v1",
+      "chart": "Field 2D",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "Chart2Code_level2_contour_23_v4",
+      "chart": "Field 2D",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "Chart2Code_level2_contour_25_v2",
+      "chart": "Field 2D",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "Chart2Code_level2_contour_25_v3",
+      "chart": "Field 2D",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
       "id": "Chart2Code_level2_radar_3_v1",
       "chart": "Polar/Radial",
       "error": "SkillError: encode.polar: 'panel_group' reduces to 2 distinct angle(s); a polar profile needs at least 3. This data has no angular reading -- use a bar or trend encoding."
@@ -160,6 +290,26 @@
       "id": "Chart2NCode_7b87069f5442408286d1a4b0300eae18",
       "chart": "3D",
       "error": "unsupported chart type: no 3D operator; 3D rarely survives Nature print, so this is a deliberate exclusion"
+    },
+    {
+      "id": "PMC11502666",
+      "chart": "Distribution",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "PMC11840003",
+      "chart": "Box/Violin",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "PMC12000431",
+      "chart": "Distribution",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "PMC12354736",
+      "chart": "Distribution",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
     },
     {
       "id": "PMC12504421",
@@ -213,392 +363,72 @@
       "chart": "Scatter",
       "panel_mode": "multi",
       "code_version": "dbcfb201512a",
-      "skill": "scatter_relationship",
-      "rationale": "scatter panel_row vs panel_col",
-      "rows_used": 832,
-      "status": "ok",
-      "distance": 0.117,
-      "baseline_distance": 0.175,
-      "delta": 0.058,
-      "selected": "styled",
-      "selected_distance": 0.115,
-      "selected_gain": 0.06,
-      "selection_margin": 0.055,
-      "components": {
-        "palette": 0.114,
-        "aspect": 0.009,
-        "ink": 0.23
-      },
-      "hard_failures": 0,
-      "checks_not_exercised": 0,
-      "legend_frames": 0,
-      "legend_occlusions": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 99.99898801291165,
-        "n_activated": 5,
-        "scored": [
-          "palette",
-          "figure_aspect",
-          "linewidth",
-          "grid",
-          "legend_frame"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": [],
-      "semantic_checked": "checked"
+      "status": "error",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
     },
     {
       "id": "Chart2Code_level1_direct_combination_57",
       "chart": "Bar",
       "panel_mode": "multi",
       "code_version": "dbcfb201512a",
-      "skill": "grouped_measures",
-      "rationale": "grouped bars ['panel_row', 'panel_col', 'guild_order'] by panel_group",
-      "rows_used": 432,
-      "status": "ok",
-      "distance": 0.156,
-      "baseline_distance": 0.208,
-      "delta": 0.052,
-      "selected": "styled",
-      "selected_distance": 0.134,
-      "selected_gain": 0.074,
-      "selection_margin": 0.061,
-      "components": {
-        "palette": 0.133,
-        "aspect": 0.032,
-        "ink": 0.339
-      },
-      "hard_failures": 0,
-      "checks_not_exercised": 0,
-      "legend_frames": 1,
-      "legend_occlusions": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 99.99456259958941,
-        "n_activated": 5,
-        "scored": [
-          "palette",
-          "figure_aspect",
-          "linewidth",
-          "grid",
-          "legend_frame"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": [],
-      "semantic_checked": "checked"
+      "status": "error",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
     },
     {
       "id": "Chart2Code_level1_direct_contour_18",
       "chart": "Heatmap",
       "panel_mode": "multi",
       "code_version": "dbcfb201512a",
-      "skill": "matrix_plate",
-      "rationale": "matrix 8 measures",
-      "rows_used": 40,
-      "status": "ok",
-      "distance": 0.29,
-      "baseline_distance": 0.409,
-      "delta": 0.119,
-      "selected": "styled",
-      "selected_distance": 0.179,
-      "selected_gain": 0.23,
-      "selection_margin": 0.118,
-      "components": {
-        "palette": 0.098,
-        "aspect": 0.38,
-        "ink": 0.678
-      },
-      "hard_failures": 0,
-      "checks_not_exercised": 0,
-      "legend_frames": 0,
-      "legend_occlusions": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 99.9997804913552,
-        "n_activated": 4,
-        "scored": [
-          "palette",
-          "figure_aspect",
-          "linewidth",
-          "grid"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": [],
-      "semantic_checked": "mesh_scale_checked"
+      "status": "error",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
     },
     {
       "id": "Chart2Code_level1_direct_density_11",
       "chart": "Distribution",
       "panel_mode": "multi",
       "code_version": "dbcfb201512a",
-      "skill": "faceted_distribution",
-      "rationale": "faceted hist by panel_group",
-      "rows_used": 900,
-      "status": "ok",
-      "distance": 0.223,
-      "baseline_distance": 0.266,
-      "delta": 0.043,
-      "selected": "styled",
-      "selected_distance": 0.223,
-      "selected_gain": 0.043,
-      "selection_margin": 0.044,
-      "components": {
-        "palette": 0.164,
-        "aspect": 0.007,
-        "ink": 0.586
-      },
-      "hard_failures": 0,
-      "checks_not_exercised": 0,
-      "legend_frames": 0,
-      "legend_occlusions": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 99.99654311018888,
-        "n_activated": 4,
-        "scored": [
-          "palette",
-          "figure_aspect",
-          "linewidth",
-          "grid"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": [],
-      "semantic_checked": "checked"
+      "status": "error",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
     },
     {
       "id": "Chart2Code_level1_direct_heatmap_3",
       "chart": "Heatmap",
       "panel_mode": "multi",
       "code_version": "dbcfb201512a",
-      "skill": "matrix_plate",
-      "rationale": "matrix 8 measures",
-      "rows_used": 40,
-      "status": "ok",
-      "distance": 0.189,
-      "baseline_distance": 0.309,
-      "delta": 0.12,
-      "selected": "styled",
-      "selected_distance": 0.138,
-      "selected_gain": 0.171,
-      "selection_margin": 0.118,
-      "components": {
-        "palette": 0.088,
-        "aspect": 0.046,
-        "ink": 0.585
-      },
-      "hard_failures": 0,
-      "checks_not_exercised": 0,
-      "legend_frames": 3,
-      "legend_occlusions": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 99.98962040477433,
-        "n_activated": 3,
-        "scored": [
-          "palette",
-          "figure_aspect",
-          "linewidth"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": [],
-      "semantic_checked": "mesh_scale_checked"
+      "status": "error",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
     },
     {
       "id": "Chart2Code_level1_direct_heatmap_7",
       "chart": "Heatmap",
       "panel_mode": "multi",
       "code_version": "dbcfb201512a",
-      "skill": "matrix_plate",
-      "rationale": "matrix 3 measures",
-      "rows_used": 40,
-      "status": "ok",
-      "distance": 0.248,
-      "baseline_distance": 0.291,
-      "delta": 0.043,
-      "selected": "styled",
-      "selected_distance": 0.14,
-      "selected_gain": 0.151,
-      "selection_margin": 0.042,
-      "components": {
-        "palette": 0.128,
-        "aspect": 0.071,
-        "ink": 0.726
-      },
-      "hard_failures": 0,
-      "checks_not_exercised": 0,
-      "legend_frames": 1,
-      "legend_occlusions": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 99.99385185430543,
-        "n_activated": 4,
-        "scored": [
-          "palette",
-          "figure_aspect",
-          "linewidth",
-          "grid"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": [],
-      "semantic_checked": "mesh_scale_checked"
+      "status": "error",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
     },
     {
       "id": "Chart2Code_level1_direct_line_39",
       "chart": "Line",
       "panel_mode": "multi",
       "code_version": "dbcfb201512a",
-      "skill": "trend_with_uncertainty",
-      "rationale": "trend calendar_year->panel_row",
-      "rows_used": 88,
-      "status": "ok",
-      "distance": 0.098,
-      "baseline_distance": 0.14,
-      "delta": 0.042,
-      "selected": "styled",
-      "selected_distance": 0.098,
-      "selected_gain": 0.042,
-      "selection_margin": 0.041,
-      "components": {
-        "palette": 0.094,
-        "aspect": 0.002,
-        "ink": 0.203
-      },
-      "hard_failures": 0,
-      "checks_not_exercised": 0,
-      "legend_frames": 0,
-      "legend_occlusions": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 99.9999458019165,
-        "n_activated": 4,
-        "scored": [
-          "palette",
-          "figure_aspect",
-          "linewidth",
-          "grid"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": [],
-      "semantic_checked": "checked"
+      "status": "error",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
     },
     {
       "id": "Chart2Code_level1_direct_line_8",
       "chart": "Line",
       "panel_mode": "multi",
       "code_version": "dbcfb201512a",
-      "skill": "trend_with_uncertainty",
-      "rationale": "trend time_step->panel_row",
-      "rows_used": 110,
-      "status": "ok",
-      "distance": 0.283,
-      "baseline_distance": 0.348,
-      "delta": 0.065,
-      "selected": "styled",
-      "selected_distance": 0.283,
-      "selected_gain": 0.065,
-      "selection_margin": 0.063,
-      "components": {
-        "palette": 0.179,
-        "aspect": 0.002,
-        "ink": 0.824
-      },
-      "hard_failures": 0,
-      "checks_not_exercised": 0,
-      "legend_frames": 0,
-      "legend_occlusions": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 99.9995385569685,
-        "n_activated": 6,
-        "scored": [
-          "palette",
-          "figure_aspect",
-          "linewidth",
-          "grid",
-          "spines_removed",
-          "legend_frame"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": [],
-      "semantic_checked": "checked"
+      "status": "error",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
     },
     {
       "id": "Chart2Code_level2_3d_11_v2",
       "chart": "Scatter",
       "panel_mode": "multi",
       "code_version": "dbcfb201512a",
-      "skill": "scatter_relationship",
-      "rationale": "scatter panel_row vs panel_col",
-      "rows_used": 276,
-      "status": "ok",
-      "distance": 0.154,
-      "baseline_distance": 0.27,
-      "delta": 0.116,
-      "selected": "styled",
-      "selected_distance": 0.154,
-      "selected_gain": 0.116,
-      "selection_margin": 0.111,
-      "components": {
-        "palette": 0.161,
-        "aspect": 0.002,
-        "ink": 0.287
-      },
-      "hard_failures": 0,
-      "checks_not_exercised": 0,
-      "legend_frames": 0,
-      "legend_occlusions": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 99.99760567180954,
-        "n_activated": 6,
-        "scored": [
-          "palette",
-          "figure_aspect",
-          "linewidth",
-          "grid",
-          "spines_removed",
-          "legend_frame"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": [],
-      "semantic_checked": "checked"
+      "status": "error",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
     },
     {
       "id": "Chart2Code_level2_3d_1_v1__single",
@@ -621,702 +451,136 @@
       "chart": "Bar",
       "panel_mode": "multi",
       "code_version": "dbcfb201512a",
-      "skill": "grouped_measures",
-      "rationale": "grouped bars ['panel_col', 'biochar_rate_percent', 'day_after_rewetting_days'] by biochar_amendment_label",
-      "rows_used": 80,
-      "status": "ok",
-      "distance": 0.102,
-      "baseline_distance": 0.129,
-      "delta": 0.027,
-      "selected": "styled",
-      "selected_distance": 0.083,
-      "selected_gain": 0.046,
-      "selection_margin": 0.044,
-      "components": {
-        "palette": 0.146,
-        "aspect": 0.026,
-        "ink": 0.067
-      },
-      "hard_failures": 0,
-      "checks_not_exercised": 0,
-      "legend_frames": 2,
-      "legend_occlusions": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 99.99958532342454,
-        "n_activated": 5,
-        "scored": [
-          "palette",
-          "figure_aspect",
-          "linewidth",
-          "grid",
-          "spines_removed"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": [],
-      "semantic_checked": "checked"
+      "status": "error",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
     },
     {
       "id": "Chart2Code_level2_area_3_v3",
       "chart": "Line",
       "panel_mode": "multi",
       "code_version": "dbcfb201512a",
-      "skill": "trend_with_uncertainty",
-      "rationale": "trend timepoint_day->panel_row",
-      "rows_used": 95,
-      "status": "ok",
-      "distance": 0.244,
-      "baseline_distance": 0.3,
-      "delta": 0.056,
-      "selected": "styled",
-      "selected_distance": 0.245,
-      "selected_gain": 0.055,
-      "selection_margin": 0.053,
-      "components": {
-        "palette": 0.145,
-        "aspect": 0.001,
-        "ink": 0.738
-      },
-      "hard_failures": 0,
-      "checks_not_exercised": 0,
-      "legend_frames": 0,
-      "legend_occlusions": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 99.99728664436955,
-        "n_activated": 5,
-        "scored": [
-          "palette",
-          "figure_aspect",
-          "linewidth",
-          "grid",
-          "legend_frame"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": [],
-      "semantic_checked": "checked"
+      "status": "error",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
     },
     {
       "id": "Chart2Code_level2_bar_10_v4",
       "chart": "Line",
       "panel_mode": "multi",
       "code_version": "dbcfb201512a",
-      "skill": "trend_with_uncertainty",
-      "rationale": "trend incubation_time_h->panel_row",
-      "rows_used": 173,
-      "status": "ok",
-      "distance": 0.272,
-      "baseline_distance": 0.346,
-      "delta": 0.074,
-      "selected": "styled",
-      "selected_distance": 0.27,
-      "selected_gain": 0.076,
-      "selection_margin": 0.075,
-      "components": {
-        "palette": 0.159,
-        "aspect": 0.013,
-        "ink": 0.816
-      },
-      "hard_failures": 0,
-      "checks_not_exercised": 0,
-      "legend_frames": 0,
-      "legend_occlusions": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 99.99957859938168,
-        "n_activated": 5,
-        "scored": [
-          "palette",
-          "figure_aspect",
-          "linewidth",
-          "grid",
-          "legend_frame"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": [],
-      "semantic_checked": "checked"
+      "status": "error",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
     },
     {
       "id": "Chart2Code_level2_bar_22_v4",
       "chart": "Bar",
       "panel_mode": "multi",
       "code_version": "dbcfb201512a",
-      "skill": "grouped_measures",
-      "rationale": "grouped bars ['panel_row', 'panel_col', 'condition_order'] by panel_group",
-      "rows_used": 220,
-      "status": "ok",
-      "distance": 0.104,
-      "baseline_distance": 0.118,
-      "delta": 0.014,
-      "selected": "styled",
-      "selected_distance": 0.099,
-      "selected_gain": 0.019,
-      "selection_margin": 0.027,
-      "components": {
-        "palette": 0.162,
-        "aspect": 0.023,
-        "ink": 0.039
-      },
-      "hard_failures": 0,
-      "checks_not_exercised": 0,
-      "legend_frames": 2,
-      "legend_occlusions": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 99.99613725897586,
-        "n_activated": 4,
-        "scored": [
-          "palette",
-          "figure_aspect",
-          "linewidth",
-          "grid"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": [],
-      "semantic_checked": "checked"
+      "status": "error",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
     },
     {
       "id": "Chart2Code_level2_bar_25_v4",
       "chart": "Line",
       "panel_mode": "multi",
       "code_version": "dbcfb201512a",
-      "skill": "trend_with_uncertainty",
-      "rationale": "trend measurement_day->panel_row",
-      "rows_used": 386,
-      "status": "ok",
-      "distance": 0.278,
-      "baseline_distance": 0.342,
-      "delta": 0.064,
-      "selected": "styled",
-      "selected_distance": 0.278,
-      "selected_gain": 0.064,
-      "selection_margin": 0.063,
-      "components": {
-        "palette": 0.168,
-        "aspect": 0.003,
-        "ink": 0.828
-      },
-      "hard_failures": 0,
-      "checks_not_exercised": 0,
-      "legend_frames": 0,
-      "legend_occlusions": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 99.99873620753452,
-        "n_activated": 6,
-        "scored": [
-          "palette",
-          "figure_aspect",
-          "linewidth",
-          "grid",
-          "spines_removed",
-          "legend_frame"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": [],
-      "semantic_checked": "checked"
+      "status": "error",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
     },
     {
       "id": "Chart2Code_level2_box_1_v5",
       "chart": "Box/Violin",
       "panel_mode": "multi",
       "code_version": "dbcfb201512a",
-      "skill": "distribution_comparison",
-      "rationale": "box panel_row by record_type",
-      "rows_used": 3163,
-      "status": "ok",
-      "distance": 0.094,
-      "baseline_distance": 0.228,
-      "delta": 0.134,
-      "selected": "styled",
-      "selected_distance": 0.093,
-      "selected_gain": 0.135,
-      "selection_margin": 0.14,
-      "components": {
-        "palette": 0.085,
-        "aspect": 0.022,
-        "ink": 0.19
-      },
-      "hard_failures": 0,
-      "checks_not_exercised": 0,
-      "legend_frames": 1,
-      "legend_occlusions": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 100.0,
-        "n_activated": 3,
-        "scored": [
-          "palette",
-          "linewidth",
-          "grid"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": [],
-      "semantic_checked": "checked"
+      "status": "error",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
     },
     {
       "id": "Chart2Code_level2_combination_11_v2",
       "chart": "Std-band",
       "panel_mode": "multi",
       "code_version": "dbcfb201512a",
-      "skill": "trend_with_uncertainty",
-      "rationale": "trend panel_row->panel_col",
-      "rows_used": 155,
-      "status": "ok",
-      "distance": 0.15,
-      "baseline_distance": 0.206,
-      "delta": 0.056,
-      "selected": "styled",
-      "selected_distance": 0.15,
-      "selected_gain": 0.056,
-      "selection_margin": 0.054,
-      "components": {
-        "palette": 0.154,
-        "aspect": 0.001,
-        "ink": 0.287
-      },
-      "hard_failures": 0,
-      "checks_not_exercised": 0,
-      "legend_frames": 0,
-      "legend_occlusions": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 99.99901392049395,
-        "n_activated": 6,
-        "scored": [
-          "palette",
-          "figure_aspect",
-          "linewidth",
-          "grid",
-          "spines_removed",
-          "legend_frame"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": [],
-      "semantic_checked": "checked"
+      "status": "error",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
     },
     {
       "id": "Chart2Code_level2_combination_13_v5",
       "chart": "Line",
       "panel_mode": "multi",
       "code_version": "dbcfb201512a",
-      "skill": "trend_with_uncertainty",
-      "rationale": "trend panel_row->panel_col",
-      "rows_used": 672,
-      "status": "ok",
-      "distance": 0.28,
-      "baseline_distance": 0.336,
-      "delta": 0.056,
-      "selected": "styled",
-      "selected_distance": 0.28,
-      "selected_gain": 0.056,
-      "selection_margin": 0.054,
-      "components": {
-        "palette": 0.154,
-        "aspect": 0.001,
-        "ink": 0.873
-      },
-      "hard_failures": 0,
-      "checks_not_exercised": 0,
-      "legend_frames": 0,
-      "legend_occlusions": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 99.99725441500033,
-        "n_activated": 6,
-        "scored": [
-          "palette",
-          "figure_aspect",
-          "linewidth",
-          "grid",
-          "spines_removed",
-          "legend_frame"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": [],
-      "semantic_checked": "checked"
+      "status": "error",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
     },
     {
       "id": "Chart2Code_level2_combination_14_v5",
       "chart": "Distribution",
       "panel_mode": "multi",
       "code_version": "dbcfb201512a",
-      "skill": "faceted_distribution",
-      "rationale": "faceted hist by panel_row",
-      "rows_used": 4208,
-      "status": "ok",
-      "distance": 0.166,
-      "baseline_distance": 0.215,
-      "delta": 0.049,
-      "selected": "styled",
-      "selected_distance": 0.166,
-      "selected_gain": 0.049,
-      "selection_margin": 0.049,
-      "components": {
-        "palette": 0.143,
-        "aspect": 0.007,
-        "ink": 0.383
-      },
-      "hard_failures": 0,
-      "checks_not_exercised": 0,
-      "legend_frames": 0,
-      "legend_occlusions": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 99.99863283940877,
-        "n_activated": 2,
-        "scored": [
-          "figure_aspect",
-          "grid"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": [],
-      "semantic_checked": "checked"
+      "status": "error",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
     },
     {
       "id": "Chart2Code_level2_combination_16_v5",
       "chart": "Box/Violin",
       "panel_mode": "multi",
       "code_version": "dbcfb201512a",
-      "skill": "distribution_comparison",
-      "rationale": "box panel_row by panel_group",
-      "rows_used": 959,
-      "status": "ok",
-      "distance": 0.137,
-      "baseline_distance": 0.221,
-      "delta": 0.084,
-      "selected": "styled",
-      "selected_distance": 0.134,
-      "selected_gain": 0.087,
-      "selection_margin": 0.086,
-      "components": {
-        "palette": 0.156,
-        "aspect": 0.013,
-        "ink": 0.214
-      },
-      "hard_failures": 0,
-      "checks_not_exercised": 0,
-      "legend_frames": 1,
-      "legend_occlusions": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 99.99793005710893,
-        "n_activated": 5,
-        "scored": [
-          "palette",
-          "figure_aspect",
-          "linewidth",
-          "grid",
-          "legend_frame"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": [],
-      "semantic_checked": "checked"
+      "status": "error",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
     },
     {
       "id": "Chart2Code_level2_combination_33_v5",
       "chart": "Distribution",
       "panel_mode": "multi",
       "code_version": "dbcfb201512a",
-      "skill": "faceted_distribution",
-      "rationale": "faceted hist by panel_group",
-      "rows_used": 3037,
-      "status": "ok",
-      "distance": 0.101,
-      "baseline_distance": 0.126,
-      "delta": 0.025,
-      "selected": "styled",
-      "selected_distance": 0.102,
-      "selected_gain": 0.024,
-      "selection_margin": 0.025,
-      "components": {
-        "palette": 0.082,
-        "aspect": 0.002,
-        "ink": 0.246
-      },
-      "hard_failures": 0,
-      "checks_not_exercised": 0,
-      "legend_frames": 0,
-      "legend_occlusions": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 99.9991367540579,
-        "n_activated": 5,
-        "scored": [
-          "palette",
-          "figure_aspect",
-          "linewidth",
-          "grid",
-          "spines_removed"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": [],
-      "semantic_checked": "checked"
+      "status": "error",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
     },
     {
       "id": "Chart2Code_level2_combination_42_v5",
       "chart": "Scatter",
       "panel_mode": "multi",
       "code_version": "dbcfb201512a",
-      "skill": "scatter_relationship",
-      "rationale": "scatter panel_row vs panel_col",
-      "rows_used": 51,
-      "status": "ok",
-      "distance": 0.163,
-      "baseline_distance": 0.263,
-      "delta": 0.1,
-      "selected": "styled",
-      "selected_distance": 0.163,
-      "selected_gain": 0.1,
-      "selection_margin": 0.094,
-      "components": {
-        "palette": 0.161,
-        "aspect": 0.002,
-        "ink": 0.33
-      },
-      "hard_failures": 0,
-      "checks_not_exercised": 0,
-      "legend_frames": 0,
-      "legend_occlusions": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 99.99875889927587,
-        "n_activated": 5,
-        "scored": [
-          "palette",
-          "figure_aspect",
-          "linewidth",
-          "grid",
-          "spines_removed"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": [],
-      "semantic_checked": "checked"
+      "status": "error",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
     },
     {
       "id": "Chart2Code_level2_combination_44_v3",
       "chart": "Distribution",
       "panel_mode": "multi",
       "code_version": "dbcfb201512a",
-      "skill": "faceted_distribution",
-      "rationale": "faceted hist by panel_group",
-      "rows_used": 399,
-      "status": "ok",
-      "distance": 0.119,
-      "baseline_distance": 0.218,
-      "delta": 0.099,
-      "selected": "styled",
-      "selected_distance": 0.121,
-      "selected_gain": 0.097,
-      "selection_margin": 0.098,
-      "components": {
-        "palette": 0.061,
-        "aspect": 0.001,
-        "ink": 0.381
-      },
-      "hard_failures": 0,
-      "checks_not_exercised": 0,
-      "legend_frames": 0,
-      "legend_occlusions": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 99.99903147099876,
-        "n_activated": 6,
-        "scored": [
-          "palette",
-          "figure_aspect",
-          "linewidth",
-          "grid",
-          "spines_removed",
-          "legend_frame"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": [],
-      "semantic_checked": "checked"
+      "status": "error",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
     },
     {
       "id": "Chart2Code_level2_contour_14_v1",
       "chart": "Field 2D",
       "panel_mode": "multi",
       "code_version": "dbcfb201512a",
-      "skill": "field_map",
-      "rationale": "field seepage_speed_m_day over x_m x z_m",
-      "rows_used": 2780,
-      "status": "ok",
-      "distance": 0.238,
-      "baseline_distance": 0.299,
-      "delta": 0.061,
-      "selected": "styled",
-      "selected_distance": 0.248,
-      "selected_gain": 0.051,
-      "selection_margin": 0.056,
-      "components": {
-        "palette": 0.288,
-        "aspect": 0.001,
-        "ink": 0.351
-      },
-      "hard_failures": 0,
-      "checks_not_exercised": 0,
-      "legend_frames": 0,
-      "legend_occlusions": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": false,
-        "reason": "CodegenError: skill 'field_map' has no code emitter yet"
-      },
-      "semantic_findings": [],
-      "semantic_checked": "mesh_scale_checked"
+      "status": "error",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
     },
     {
       "id": "Chart2Code_level2_contour_23_v4",
       "chart": "Field 2D",
       "panel_mode": "multi",
       "code_version": "dbcfb201512a",
-      "skill": "field_map",
-      "rationale": "field panel_row over biochar_amendment_percent x porewater_salinity_psu",
-      "rows_used": 1310,
-      "status": "ok",
-      "distance": 0.213,
-      "baseline_distance": 0.326,
-      "delta": 0.113,
-      "selected": "styled",
-      "selected_distance": 0.231,
-      "selected_gain": 0.095,
-      "selection_margin": 0.103,
-      "components": {
-        "palette": 0.14,
-        "aspect": 0.265,
-        "ink": 0.346
-      },
-      "hard_failures": 0,
-      "checks_not_exercised": 0,
-      "legend_frames": 0,
-      "legend_occlusions": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": false,
-        "reason": "CodegenError: skill 'field_map' has no code emitter yet"
-      },
-      "semantic_findings": [],
-      "semantic_checked": "mesh_scale_checked"
+      "status": "error",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
     },
     {
       "id": "Chart2Code_level2_contour_25_v2",
       "chart": "Field 2D",
       "panel_mode": "multi",
       "code_version": "dbcfb201512a",
-      "skill": "field_map",
-      "rationale": "field panel_row over cross_wound_position_fraction x time_hours",
-      "rows_used": 11112,
-      "status": "ok",
-      "distance": 0.167,
-      "baseline_distance": 0.342,
-      "delta": 0.175,
-      "selected": "styled",
-      "selected_distance": 0.179,
-      "selected_gain": 0.163,
-      "selection_margin": 0.166,
-      "components": {
-        "palette": 0.121,
-        "aspect": 0.113,
-        "ink": 0.336
-      },
-      "hard_failures": 0,
-      "checks_not_exercised": 0,
-      "legend_frames": 0,
-      "legend_occlusions": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": false,
-        "reason": "CodegenError: skill 'field_map' has no code emitter yet"
-      },
-      "semantic_findings": [],
-      "semantic_checked": "mesh_scale_checked"
+      "status": "error",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
     },
     {
       "id": "Chart2Code_level2_contour_25_v3",
       "chart": "Field 2D",
       "panel_mode": "multi",
       "code_version": "dbcfb201512a",
-      "skill": "field_map",
-      "rationale": "field panel_row over position_mm x elapsed_time_min",
-      "rows_used": 15219,
-      "status": "ok",
-      "distance": 0.105,
-      "baseline_distance": 0.242,
-      "delta": 0.137,
-      "selected": "styled",
-      "selected_distance": 0.119,
-      "selected_gain": 0.123,
-      "selection_margin": 0.127,
-      "components": {
-        "palette": 0.103,
-        "aspect": 0.008,
-        "ink": 0.209
-      },
-      "hard_failures": 0,
-      "checks_not_exercised": 0,
-      "legend_frames": 0,
-      "legend_occlusions": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": false,
-        "reason": "CodegenError: skill 'field_map' has no code emitter yet"
-      },
-      "semantic_findings": [],
-      "semantic_checked": "mesh_scale_checked"
+      "status": "error",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
     },
     {
       "id": "Chart2Code_level2_contour_5_v5",
@@ -4202,168 +3466,32 @@
       "chart": "Distribution",
       "panel_mode": "multi",
       "code_version": "dbcfb201512a",
-      "skill": "faceted_distribution",
-      "rationale": "faceted hist by panel_group",
-      "rows_used": 554,
-      "status": "ok",
-      "distance": 0.15,
-      "baseline_distance": 0.181,
-      "delta": 0.031,
-      "selected": "styled",
-      "selected_distance": 0.15,
-      "selected_gain": 0.031,
-      "selection_margin": 0.033,
-      "components": {
-        "palette": 0.109,
-        "aspect": 0.008,
-        "ink": 0.397
-      },
-      "hard_failures": 0,
-      "checks_not_exercised": 0,
-      "legend_frames": 0,
-      "legend_occlusions": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 100.0,
-        "n_activated": 2,
-        "scored": [
-          "palette",
-          "grid"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": [],
-      "semantic_checked": "checked"
+      "status": "error",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
     },
     {
       "id": "PMC11840003",
       "chart": "Box/Violin",
       "panel_mode": "multi",
       "code_version": "dbcfb201512a",
-      "skill": "distribution_comparison",
-      "rationale": "box panel_row by panel_group",
-      "rows_used": 1403,
-      "status": "ok",
-      "distance": 0.147,
-      "baseline_distance": 0.333,
-      "delta": 0.186,
-      "selected": "styled",
-      "selected_distance": 0.156,
-      "selected_gain": 0.177,
-      "selection_margin": 0.184,
-      "components": {
-        "palette": 0.064,
-        "aspect": 0.194,
-        "ink": 0.307
-      },
-      "hard_failures": 0,
-      "checks_not_exercised": 0,
-      "legend_frames": 1,
-      "legend_occlusions": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 99.99959236362147,
-        "n_activated": 4,
-        "scored": [
-          "palette",
-          "figure_aspect",
-          "linewidth",
-          "grid"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": [],
-      "semantic_checked": "checked"
+      "status": "error",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
     },
     {
       "id": "PMC12000431",
       "chart": "Distribution",
       "panel_mode": "multi",
       "code_version": "dbcfb201512a",
-      "skill": "faceted_distribution",
-      "rationale": "faceted hist by panel_group",
-      "rows_used": 1414,
-      "status": "ok",
-      "distance": 0.072,
-      "baseline_distance": 0.083,
-      "delta": 0.011,
-      "selected": "styled",
-      "selected_distance": 0.073,
-      "selected_gain": 0.01,
-      "selection_margin": 0.012,
-      "components": {
-        "palette": 0.057,
-        "aspect": 0.005,
-        "ink": 0.177
-      },
-      "hard_failures": 0,
-      "checks_not_exercised": 0,
-      "legend_frames": 0,
-      "legend_occlusions": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 100.0,
-        "n_activated": 2,
-        "scored": [
-          "palette",
-          "legend_frame"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": [],
-      "semantic_checked": "checked"
+      "status": "error",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
     },
     {
       "id": "PMC12354736",
       "chart": "Distribution",
       "panel_mode": "multi",
       "code_version": "dbcfb201512a",
-      "skill": "faceted_distribution",
-      "rationale": "faceted hist by panel_row",
-      "rows_used": 12196,
-      "status": "ok",
-      "distance": 0.211,
-      "baseline_distance": 0.29,
-      "delta": 0.079,
-      "selected": "styled",
-      "selected_distance": 0.215,
-      "selected_gain": 0.075,
-      "selection_margin": 0.077,
-      "components": {
-        "palette": 0.147,
-        "aspect": 0.184,
-        "ink": 0.399
-      },
-      "hard_failures": 0,
-      "checks_not_exercised": 0,
-      "legend_frames": 0,
-      "legend_occlusions": 0,
-      "findings": [],
-      "official_code_score": {
-        "available": true,
-        "score": 99.9988792326005,
-        "n_activated": 4,
-        "scored": [
-          "palette",
-          "figure_aspect",
-          "grid",
-          "legend_frame"
-        ],
-        "channel": "code_deviation",
-        "weight_upstream": 0.35,
-        "note": "code channel only; the 0.65 vision channel is not run"
-      },
-      "semantic_findings": [],
-      "semantic_checked": "checked"
+      "status": "error",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
     },
     {
       "id": "PMC12504421",
@@ -5966,95 +5094,65 @@
   },
   "complete_membership": true,
   "semantic_coverage": {
-    "checked": 109,
-    "mesh_scale_checked": 28,
+    "checked": 86,
+    "mesh_scale_checked": 21,
     "skipped": 0,
     "unverifiable": 0,
     "absent": 0,
-    "n": 137,
+    "n": 107,
     "note": "`skipped` tasks were drawn by a drawer with no semantic rule: their printed numbers were NOT re-derived from the data. A pass on such a task is a statement about geometry, not about correctness."
   },
   "checks_examined": {
-    "lines": 137,
+    "lines": 107,
     "not_exercised": 0,
     "note": "`not_exercised` counts checks whose denominator was zero -- they found nothing because there was nothing to examine, and that is NOT a pass. A zero from such a check says nothing about the figure."
   },
-  "legend_frames": 54,
+  "legend_frames": 42,
   "legend_occlusions": 0,
   "legend_coverage": {
-    "n_measured": 137,
-    "n_ok": 137,
+    "n_measured": 107,
+    "n_ok": 107,
     "note": "`legend_frames` and `legend_occlusions` are totals over the n_measured rows ONLY. Rows measured before the field existed are not counted and are not marked stale, because the fingerprint covers rendering code, not the report schema. A zero with n_measured == 0 means the check had nothing to look at."
   },
-  "benchmark_anchor_distance": 0.203,
+  "benchmark_anchor_distance": 0.217,
   "benchmark_anchor_single": {
-    "mean": 0.203,
-    "partial_mean": 0.203,
-    "n_same_instrument": 20,
+    "mean": null,
+    "partial_mean": 0.217,
+    "n_same_instrument": 6,
     "n_other_instrument": 0,
     "n_expected": 20,
-    "comparable": true,
-    "note": "comparable"
+    "comparable": false,
+    "note": "incomplete: 6 of 20 anchor tasks measured; a partial mean is not the anchor, so it is not judged"
   },
-  "benchmark_shipped_anchor_distance": 0.167,
+  "benchmark_shipped_anchor_distance": null,
   "benchmark_shipped_anchor_single": {
-    "mean": 0.167,
-    "partial_mean": 0.167,
-    "n_same_instrument": 20,
+    "mean": null,
+    "partial_mean": null,
+    "n_same_instrument": 0,
     "n_other_instrument": 0,
     "n_expected": 20,
-    "comparable": true,
-    "note": "comparable"
+    "comparable": false,
+    "note": "incomplete: 0 of 20 anchor tasks measured; a partial mean is not the anchor, so it is not judged"
   },
   "official_code_channel": {
     "channel": "code_deviation",
     "weight_upstream": 0.35,
     "note": "official deterministic channel only; the 0.65 vision channel is NOT run, so this is not the combined score",
-    "n_scored": 107,
-    "n_unavailable": 30,
-    "mean_score": 98.87,
+    "n_scored": 81,
+    "n_unavailable": 26,
+    "mean_score": 98.51,
     "min_score": 66.67,
     "max_score": 100.0
   },
   "code_version": "dbcfb201512a",
   "freshness": {
     "fresh": [
-      "Chart2Code_level1_direct_HR_5",
-      "Chart2Code_level1_direct_combination_57",
-      "Chart2Code_level1_direct_contour_18",
-      "Chart2Code_level1_direct_density_11",
-      "Chart2Code_level1_direct_heatmap_3",
-      "Chart2Code_level1_direct_heatmap_7",
-      "Chart2Code_level1_direct_line_39",
-      "Chart2Code_level1_direct_line_8",
-      "Chart2Code_level2_3d_11_v2",
-      "Chart2Code_level2_3d_5_v4",
-      "Chart2Code_level2_area_3_v3",
-      "Chart2Code_level2_bar_10_v4",
-      "Chart2Code_level2_bar_22_v4",
-      "Chart2Code_level2_bar_25_v4",
-      "Chart2Code_level2_box_1_v5",
-      "Chart2Code_level2_combination_11_v2",
-      "Chart2Code_level2_combination_13_v5",
-      "Chart2Code_level2_combination_14_v5",
-      "Chart2Code_level2_combination_16_v5",
-      "Chart2Code_level2_combination_33_v5",
-      "Chart2Code_level2_combination_42_v5",
-      "Chart2Code_level2_combination_44_v3",
-      "Chart2Code_level2_contour_14_v1",
-      "Chart2Code_level2_contour_23_v4",
-      "Chart2Code_level2_contour_25_v2",
-      "Chart2Code_level2_contour_25_v3",
       "Chart2Code_level2_quiver_13_v1",
       "Chart2Code_level2_quiver_14_v1",
       "Chart2Code_level2_quiver_4_v5",
       "Chart2Code_level2_radar_10_v2",
       "Chart2Code_level2_radar_18_v5",
-      "Chart2Code_level2_radar_23_v3",
-      "PMC11502666",
-      "PMC11840003",
-      "PMC12000431",
-      "PMC12354736"
+      "Chart2Code_level2_radar_23_v3"
     ],
     "stale": [
       "Chart2Code_level2_contour_5_v5",
@@ -6160,7 +5258,7 @@
       "local_picks_top_violin__9"
     ],
     "unknown": [],
-    "n_fresh": 36,
+    "n_fresh": 6,
     "n_stale": 101,
     "n_unknown": 0
   },
@@ -6269,15 +5367,15 @@
   ],
   "n_stale": 101,
   "n_unknown": 0,
-  "n_fresh": 36,
+  "n_fresh": 6,
   "selection": {
-    "n": 137,
-    "shipped_mean": 0.176,
-    "always_styled_mean": 0.185,
-    "plain_mean": 0.26,
+    "n": 107,
+    "shipped_mean": 0.178,
+    "always_styled_mean": 0.188,
+    "plain_mean": 0.262,
     "gain_vs_always_styled": 0.01,
     "gain_vs_plain": 0.084,
-    "picked_styled": 133,
+    "picked_styled": 103,
     "picked_plain": 4,
     "rule": "closer of plain/styled to the reference; the reference is an input"
   }

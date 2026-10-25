@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-25T09:43:29",
+  "run_at": "2026-10-25T10:47:46",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -9,37 +9,16 @@
     "  passed 8, failed 0",
     "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
     "  wrote knowledge\\evolution_report.json",
-    "  lean: tracked 79.5 -> 79.5 MB, worktree 108.6 -> 103.1 MB"
+    "  lean: tracked 79.7 -> 79.7 MB, worktree 103.8 -> 102.1 MB"
   ],
   "tests_ok": false,
-  "tests_summary": "1 failed, 886 passed, 5 skipped, 1 warning in 814.82s (0:13:34) | FAILED tests/test_mutation.py::test_the_probe_is_deterministic_across_processes",
+  "tests_summary": "2 failed, 906 passed, 3 skipped, 1 warning in 1013.06s (0:16:53) | FAILED tests/test_report_status.py::test_the_board_total_counts_every_coverage_state; FAILED tests/test_report_status.py::test_the_report_is_not_older_than_the_data_it_describes",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
   "published": {
-    "pushed": true,
-    "steps": [
-      {
-        "cmd": "git add -A",
-        "code": 0,
-        "tail": []
-      },
-      {
-        "cmd": "git -c user.name=figpipe-bot",
-        "code": 0,
-        "tail": [
-          " 2 files changed, 30 insertions(+), 57 deletions(-)"
-        ]
-      },
-      {
-        "cmd": "git push origin",
-        "code": 0,
-        "tail": [
-          "   7f5c2cc..c3fd2db  main -> main"
-        ]
-      }
-    ],
-    "withheld": []
+    "pushed": false,
+    "reason": "not yet published"
   },
   "check_results": {
     "L01": {
@@ -155,15 +134,24 @@
     "tasks": 6,
     "code": 0,
     "tail": [
-      "    type Heatmap        ok 0/1   d=None base=None delta=None errors=1",
+      "    FAIL PMC12354736  Distribution HTTPError: HTTP Error 403: Forbidden",
       "    FAIL PMC12504421  Heatmap      HTTPError: HTTP Error 403: Forbidden",
       "    FAIL PMC12905268  Distribution HTTPError: HTTP Error 403: Forbidden",
       "  wrote E:\\2026-AI4S\\figpipe\\corpus\\e2e\\plottwin_report.json"
     ]
   },
   "anchor_refresh": {
-    "ran": false,
-    "reason": "both anchors already comparable"
+    "ran": true,
+    "stale_anchors": [
+      "shipped"
+    ],
+    "tasks": 20,
+    "code": 0,
+    "tail": [
+      "    FAIL PMC11840003  Box/Violin   HTTPError: HTTP Error 403: Forbidden",
+      "    FAIL PMC12000431  Distribution HTTPError: HTTP Error 403: Forbidden",
+      "  wrote E:\\2026-AI4S\\figpipe\\corpus\\e2e\\plottwin_report.json"
+    ]
   },
   "mutation": {
     "ran": true,
@@ -1862,36 +1850,70 @@
     "skills": 16,
     "operators": 21,
     "benchmark_tasks": 150,
-    "benchmark_ok": 137,
-    "benchmark_infrastructure_failures": 2,
+    "benchmark_ok": 116,
+    "benchmark_infrastructure_failures": 23,
     "benchmark_success_rate": 1.0,
-    "benchmark_mean_distance": 0.185,
-    "benchmark_anchor_single": 0.203,
-    "benchmark_anchor_distance": 0.203,
-    "benchmark_shipped_anchor_single": 0.167,
-    "benchmark_shipped_anchor_distance": 0.167,
+    "benchmark_mean_distance": 0.189,
+    "benchmark_anchor_single": null,
+    "benchmark_anchor_distance": 0.204,
+    "benchmark_shipped_anchor_single": null,
+    "benchmark_shipped_anchor_distance": null,
     "benchmark_unsupported": 11,
     "benchmark_official_code_score": 84.08,
     "benchmark_official_improvement": 46.83,
     "statistics_reproduced": 15,
     "knowledge_version": 16,
-    "tests": 891,
-    "tests_passed": 886
+    "tests": 909,
+    "tests_passed": 906
   },
   "capabilities_delta": {
     "changed": true,
     "delta": {
+      "benchmark_ok": {
+        "before": 137,
+        "after": 116
+      },
+      "benchmark_infrastructure_failures": {
+        "before": 2,
+        "after": 23
+      },
+      "benchmark_mean_distance": {
+        "before": 0.185,
+        "after": 0.189
+      },
+      "benchmark_anchor_single": {
+        "before": 0.203,
+        "after": null
+      },
+      "benchmark_anchor_distance": {
+        "before": 0.203,
+        "after": 0.204
+      },
+      "benchmark_shipped_anchor_single": {
+        "before": 0.167,
+        "after": null
+      },
+      "benchmark_shipped_anchor_distance": {
+        "before": 0.167,
+        "after": null
+      },
       "tests": {
-        "before": null,
-        "after": 891
+        "before": 891,
+        "after": 909
       },
       "tests_passed": {
-        "before": null,
-        "after": 886
+        "before": 886,
+        "after": 906
       }
     },
     "verdict": {
-      "gains": [],
+      "gains": [
+        {
+          "field": "tests",
+          "before": 891,
+          "after": 909
+        }
+      ],
       "regressions": [],
       "corrections": [],
       "not_compared": [],
@@ -1917,5 +1939,9 @@
   "capability_ok": true,
   "capability_regressions": [],
   "mutation_ok": true,
-  "publish_note": "The publish outcome is recorded after the commit that carries this run, so it describes the push triggered by this run; the file's own commit is made by the next scheduled run."
+  "claim_rederivation": {
+    "ran": false,
+    "reason": "exit 3: "
+  },
+  "claim_ok": false
 }
