@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-26T05:38:20",
+  "run_at": "2026-10-26T07:38:37",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -9,16 +9,19 @@
     "  passed 8, failed 0",
     "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
     "  wrote knowledge\\evolution_report.json",
-    "  lean: tracked 80.2 -> 80.2 MB, worktree 117.6 -> 104.7 MB"
+    "  lean: tracked 80.4 -> 80.4 MB, worktree 117.7 -> 104.9 MB"
   ],
-  "tests_ok": false,
-  "tests_summary": "1 failed, 932 passed, 5 skipped, 1 warning in 890.38s (0:14:50) | FAILED tests/test_lean.py::test_tracked_size_is_within_budget - AssertionErro...",
+  "tests_ok": true,
+  "tests_summary": "933 passed, 5 skipped, 1 warning in 892.79s (0:14:52)",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
   "published": {
     "pushed": false,
-    "reason": "not yet published"
+    "withheld": [],
+    "blocked_deletions": [],
+    "skipped": true,
+    "reason": "no knowledge change: the run record stays uncommitted for the next run"
   },
   "check_results": {
     "L01": {
@@ -1858,35 +1861,20 @@
     "benchmark_official_improvement": 46.83,
     "statistics_reproduced": 15,
     "knowledge_version": 16,
-    "tests": 937,
-    "tests_passed": 932
+    "tests": 938,
+    "tests_passed": 933
   },
   "capabilities_delta": {
-    "changed": true,
-    "delta": {
-      "tests": {
-        "before": 938,
-        "after": 937
-      },
-      "tests_passed": {
-        "before": 933,
-        "after": 932
-      }
-    },
+    "changed": false,
+    "delta": {},
     "verdict": {
       "gains": [],
-      "regressions": [
-        {
-          "field": "tests",
-          "before": 938,
-          "after": 937
-        }
-      ],
+      "regressions": [],
       "corrections": [],
       "not_compared": [],
       "instrument_changed": false,
       "membership_broken": false,
-      "ok": false,
+      "ok": true,
       "judged_fields": [
         "benchmark_anchor_single",
         "benchmark_hard_findings",
@@ -1902,21 +1890,14 @@
       ]
     }
   },
-  "ok": false,
-  "capability_ok": false,
-  "capability_regressions": [
-    {
-      "field": "tests",
-      "before": 938,
-      "after": 937
-    }
-  ],
-  "publish_note": "capability regression detected; record kept but the run exits non-zero (re-run with --accept-capability-regression to accept)",
+  "ok": true,
+  "capability_ok": true,
+  "capability_regressions": [],
   "mutation_ok": true,
   "report_rebuilt": {
     "ran": true,
     "exit": 0,
-    "mtime": 1792964300.0,
+    "mtime": 1792971516.0,
     "reason": ""
   },
   "claim_rederivation": {
@@ -1931,5 +1912,6 @@
     "claim_states": 0.9,
     "agrees": true
   },
-  "claim_ok": true
+  "claim_ok": true,
+  "publish_note": "The publish outcome is recorded after the commit that carries this run, so it describes the push triggered by this run; the file's own commit is made by the next scheduled run."
 }
