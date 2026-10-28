@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-28T22:32:04",
+  "run_at": "2026-10-28T22:49:05",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -9,10 +9,10 @@
     "  passed 8, failed 0",
     "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
     "  wrote knowledge\\evolution_report.json",
-    "  lean: tracked 58.9 -> 58.9 MB, worktree 126.0 -> 122.3 MB"
+    "  lean: tracked 97.8 -> 97.8 MB, worktree 127.8 -> 122.3 MB"
   ],
   "tests_ok": false,
-  "tests_summary": "1 failed, 932 passed, 5 skipped, 1 warning in 1616.31s (0:26:56) | FAILED tests/test_lean.py::test_tracked_size_is_within_budget - AssertionErro...",
+  "tests_summary": "1 failed, 932 passed, 5 skipped, 1 warning in 1158.94s (0:19:18) | FAILED tests/test_lean.py::test_tracked_size_is_within_budget - AssertionErro...",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
@@ -700,9 +700,9 @@
     "min_margin": 0.05,
     "min_score": null,
     "probed": true,
-    "baseline_mean": 0.8125,
+    "baseline_mean": 0.9375,
     "mean_score": {
-      "baseline": 0.8125,
+      "baseline": 0.9375,
       "split-max-bars-24": 0.81875,
       "split-max-bars-13": 0.9375,
       "matrix-max-rows-41": 0.9375,
@@ -794,18 +794,18 @@
       ]
     },
     "budget": 64,
-    "selected": [
-      "split-max-bars-13",
-      "matrix-max-rows-41",
-      "matrix-max-rows-42",
-      "matrix-max-rows-60",
+    "selected": [],
+    "rejected": [
+      "split-max-bars-24",
       "sizes-plus-half",
       "sizes-plus-one"
     ],
-    "rejected": [
-      "split-max-bars-24"
+    "ties": [
+      "split-max-bars-13",
+      "matrix-max-rows-41",
+      "matrix-max-rows-42",
+      "matrix-max-rows-60"
     ],
-    "ties": [],
     "decisions": [
       {
         "id": "split-max-bars-24",
@@ -813,16 +813,15 @@
         "parameter": "max_bars",
         "value": 24,
         "baseline_value": 12,
-        "score_delta": 0.00625,
+        "score_delta": -0.11875,
         "kind": "scalar",
         "patch_path": null,
-        "score": 0.81875,
-        "baseline_score": 0.8125,
-        "delta": 0.00625,
+        "score": 0.917,
+        "baseline_score": 0.917,
+        "delta": -0.11875,
         "verdict": "rejected",
-        "reason": "regresses 1 task(s) on the fixed set, worst 'split-many-bars' by -0.950 (>= margin 0.05); a task that gets worse is a regression whatever the mean says; changed tasks: ['style-template-line', 'split-many-bars']",
+        "reason": "regresses 1 task(s) on the fixed set, worst 'split-many-bars' by -0.950 (>= margin 0.05); a task that gets worse is a regression whatever the mean says; changed tasks: ['split-many-bars']",
         "changed_tasks": [
-          "style-template-line",
           "split-many-bars"
         ],
         "regressed_tasks": [
@@ -891,17 +890,15 @@
         "parameter": "max_bars",
         "value": 13,
         "baseline_value": 12,
-        "score_delta": 0.125,
+        "score_delta": 0.0,
         "kind": "scalar",
         "patch_path": null,
-        "score": 0.9375,
-        "baseline_score": 0.8125,
-        "delta": 0.125,
-        "verdict": "selected",
-        "reason": "improves the fixed task set by +0.125 (>= margin 0.05) with no task regressing; changed tasks: ['style-template-line']",
-        "changed_tasks": [
-          "style-template-line"
-        ],
+        "score": 0.917,
+        "baseline_score": 0.917,
+        "delta": 0.0,
+        "verdict": "tie",
+        "reason": "no measurable difference on the fixed task set (+0.000); the task set cannot distinguish this edit from the baseline, so it is reported as a tie",
+        "changed_tasks": [],
         "regressed_tasks": [],
         "per_task": {
           "style-template-line": {
@@ -960,16 +957,15 @@
         "parameter": "max_rows",
         "value": 41,
         "baseline_value": 40,
-        "score_delta": 0.125,
+        "score_delta": 0.0,
         "kind": "scalar",
         "patch_path": null,
-        "score": 0.9375,
-        "baseline_score": 0.8125,
-        "delta": 0.125,
-        "verdict": "selected",
-        "reason": "improves the fixed task set by +0.125 (>= margin 0.05) with no task regressing; changed tasks: ['style-template-line', 'matrix-41-rows']",
+        "score": 0.917,
+        "baseline_score": 0.917,
+        "delta": 0.0,
+        "verdict": "tie",
+        "reason": "no measurable difference on the fixed task set (+0.000); the task set cannot distinguish this edit from the baseline, so it is reported as a tie",
         "changed_tasks": [
-          "style-template-line",
           "matrix-41-rows"
         ],
         "regressed_tasks": [],
@@ -1030,16 +1026,15 @@
         "parameter": "max_rows",
         "value": 42,
         "baseline_value": 40,
-        "score_delta": 0.125,
+        "score_delta": 0.0,
         "kind": "scalar",
         "patch_path": null,
-        "score": 0.9375,
-        "baseline_score": 0.8125,
-        "delta": 0.125,
-        "verdict": "selected",
-        "reason": "improves the fixed task set by +0.125 (>= margin 0.05) with no task regressing; changed tasks: ['style-template-line', 'matrix-41-rows', 'matrix-42-rows']",
+        "score": 0.917,
+        "baseline_score": 0.917,
+        "delta": 0.0,
+        "verdict": "tie",
+        "reason": "no measurable difference on the fixed task set (+0.000); the task set cannot distinguish this edit from the baseline, so it is reported as a tie",
         "changed_tasks": [
-          "style-template-line",
           "matrix-41-rows",
           "matrix-42-rows"
         ],
@@ -1101,16 +1096,15 @@
         "parameter": "max_rows",
         "value": 60,
         "baseline_value": 40,
-        "score_delta": 0.125,
+        "score_delta": 0.0,
         "kind": "scalar",
         "patch_path": null,
-        "score": 0.9375,
-        "baseline_score": 0.8125,
-        "delta": 0.125,
-        "verdict": "selected",
-        "reason": "improves the fixed task set by +0.125 (>= margin 0.05) with no task regressing; changed tasks: ['style-template-line', 'matrix-41-rows', 'matrix-42-rows', 'matrix-48-rows']",
+        "score": 0.917,
+        "baseline_score": 0.917,
+        "delta": 0.0,
+        "verdict": "tie",
+        "reason": "no measurable difference on the fixed task set (+0.000); the task set cannot distinguish this edit from the baseline, so it is reported as a tie",
         "changed_tasks": [
-          "style-template-line",
           "matrix-41-rows",
           "matrix-42-rows",
           "matrix-48-rows"
@@ -1411,17 +1405,15 @@
           "height_mm": 58.0,
           "n_text_spans": 18
         },
-        "score_delta": 0.125,
+        "score_delta": 0.0,
         "kind": "scalar",
         "patch_path": null,
-        "score": 0.9375,
-        "baseline_score": 0.8125,
-        "delta": 0.125,
-        "verdict": "selected",
-        "reason": "improves the fixed task set by +0.125 (>= margin 0.05) with no task regressing; changed tasks: ['style-template-line']",
-        "changed_tasks": [
-          "style-template-line"
-        ],
+        "score": 0.854,
+        "baseline_score": 0.917,
+        "delta": -0.063,
+        "verdict": "rejected",
+        "reason": "regresses the fixed task set by -0.063 (<= -margin 0.05)",
+        "changed_tasks": [],
         "regressed_tasks": [],
         "per_task": {
           "style-template-line": {
@@ -1718,17 +1710,15 @@
           "height_mm": 58.0,
           "n_text_spans": 18
         },
-        "score_delta": 0.125,
+        "score_delta": 0.0,
         "kind": "scalar",
         "patch_path": null,
-        "score": 0.9375,
-        "baseline_score": 0.8125,
-        "delta": 0.125,
-        "verdict": "selected",
-        "reason": "improves the fixed task set by +0.125 (>= margin 0.05) with no task regressing; changed tasks: ['style-template-line']",
-        "changed_tasks": [
-          "style-template-line"
-        ],
+        "score": 0.79,
+        "baseline_score": 0.917,
+        "delta": -0.127,
+        "verdict": "rejected",
+        "reason": "regresses the fixed task set by -0.127 (<= -margin 0.05)",
+        "changed_tasks": [],
         "regressed_tasks": [],
         "per_task": {
           "style-template-line": {
@@ -1782,7 +1772,7 @@
         }
       }
     ],
-    "verdict": "selected",
+    "verdict": "tie",
     "applied": false,
     "why_not_applied": "a selected edit measured on six tasks is a finding, not a change; applying it requires a pool re-measure (LEARNINGS ##47)",
     "finding_proposals": [],
@@ -1875,22 +1865,28 @@
     "changed": true,
     "delta": {
       "tests": {
-        "before": null,
+        "before": 938,
         "after": 937
       },
       "tests_passed": {
-        "before": null,
+        "before": 933,
         "after": 932
       }
     },
     "verdict": {
       "gains": [],
-      "regressions": [],
+      "regressions": [
+        {
+          "field": "tests",
+          "before": 938,
+          "after": 937
+        }
+      ],
       "corrections": [],
       "not_compared": [],
       "instrument_changed": false,
       "membership_broken": false,
-      "ok": true,
+      "ok": false,
       "judged_fields": [
         "benchmark_anchor_single",
         "benchmark_hard_findings",
@@ -1907,13 +1903,20 @@
     }
   },
   "ok": false,
-  "capability_ok": true,
-  "capability_regressions": [],
+  "capability_ok": false,
+  "capability_regressions": [
+    {
+      "field": "tests",
+      "before": 938,
+      "after": 937
+    }
+  ],
+  "publish_note": "capability regression detected; record kept but the run exits non-zero (re-run with --accept-capability-regression to accept)",
   "mutation_ok": true,
   "report_rebuilt": {
     "ran": true,
     "exit": 0,
-    "mtime": 1793197922.0,
+    "mtime": 1793198944.0,
     "reason": ""
   },
   "claim_rederivation": {
