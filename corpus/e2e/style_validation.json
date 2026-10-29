@@ -13,7 +13,7 @@
       "min_colours": 2
     },
     "skipped": {
-      "below_style_floors": 57
+      "below_style_floors": 50
     }
   },
   "design": {
@@ -1324,7 +1324,7 @@
       "p_value_vs_chance": 9.313225746154785e-10,
       "p_value_text": "9.31e-10",
       "verdict": "SUPPORTED at this contrast: the style distance discriminates a matched transfer from a mismatched one at above-chance accuracy, with a 95 % interval that excludes chance.",
-      "official_agreement_rate": 0.8929,
+      "official_agreement_rate": 0.8846,
       "official_n_scored": 30,
       "negative_control_accuracy": 0.0
     }

@@ -90,8 +90,8 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
 <body>
 <div class="top">
   <b>FigPipeline · Research Figure Pipeline</b>
-  <div class="meta"><span>commit 0210850</span><span>branch main</span>
-  <span>knowledge v16</span><span>generated 2026-10-29 15:16</span></div>
+  <div class="meta"><span>commit 2a1c8c3</span><span>branch main</span>
+  <span>knowledge v16</span><span>generated 2026-10-29 23:03</span></div>
 </div>
 <div class="wrap">
 
@@ -105,7 +105,7 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
     <span class="pill">statistics reproduced: 15</span>
     <span class="pill">benchmark tasks 139/150</span>
     <span class="pill">skills 16 · operators 21</span>
-    <span class="pill">tracked 97.9 MB</span>
+    <span class="pill">tracked 98.1 MB</span>
   </div>
 </header>
 
@@ -119,7 +119,7 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
   <div class="kpi "><div class="kpi-v">0</div><div class="kpi-l">Semantic violations</div><div class="kpi-s">figures whose printed claims contradict their data</div></div>
   <div class="kpi "><div class="kpi-v">16 / 21</div><div class="kpi-l">Skills / classic operators</div><div class="kpi-s">global verification floor on every recipe</div></div>
   <div class="kpi "><div class="kpi-v">938</div><div class="kpi-l">Automated tests</div><div class="kpi-s">negative controls and contract tests</div></div>
-  <div class="kpi "><div class="kpi-v">97.9 MB</div><div class="kpi-l">Repository size</div><div class="kpi-s">lean budget ≤ 80 MB</div></div>
+  <div class="kpi "><div class="kpi-v">98.1 MB</div><div class="kpi-l">Repository size</div><div class="kpi-s">lean budget ≤ 80 MB</div></div>
 </div>
 
 
@@ -129,9 +129,9 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding-top:16px;color:#
   <div class="progress-row"><div class="progress-head"><span>Style measurement and transfer</span><span class="pct">100%</span></div><div class="bar"><i class="done" style="width:100%"></i></div><div class="evidence">vector/raster profiles; variant search; every skill accepts a profile</div></div>
   <div class="progress-row"><div class="progress-head"><span>Skills and operators</span><span class="pct">100%</span></div><div class="bar"><i class="done" style="width:100%"></i></div><div class="evidence">16 recipes, 21 operators, global compliance floor</div></div>
   <div class="progress-row"><div class="progress-head"><span>Authoritative benchmark (PlotTwin-Bench)</span><span class="pct">100%</span></div><div class="bar"><i class="hold" style="width:100%"></i></div><div class="evidence">150/150 tasks run; remaining tasks and chart types in the backlog</div></div>
-  <div class="progress-row"><div class="progress-head"><span>Decision-model integration</span><span class="pct">60%</span></div><div class="bar"><i class="hold" style="width:60%"></i></div><div class="evidence">bridge and 6 contract tests complete; service offline</div></div>
+  <div class="progress-row"><div class="progress-head"><span>Decision-model integration</span><span class="pct">60%</span></div><div class="bar"><i class="hold" style="width:60%"></i></div><div class="evidence">bridge and 6 contract tests complete; service online</div></div>
   <div class="progress-row"><div class="progress-head"><span>Self-evolution</span><span class="pct">40%</span></div><div class="bar"><i class="hold" style="width:40%"></i></div><div class="evidence">8/16 rules have machine checks; no capability snapshot or mutation yet</div></div>
-  <div class="progress-row"><div class="progress-head"><span>Documentation and slimming</span><span class="pct">100%</span></div><div class="bar"><i class="done" style="width:100%"></i></div><div class="evidence">tracked 97.9 MB; redundant audit documents consolidated</div></div>
+  <div class="progress-row"><div class="progress-head"><span>Documentation and slimming</span><span class="pct">100%</span></div><div class="bar"><i class="done" style="width:100%"></i></div><div class="evidence">tracked 98.1 MB; redundant audit documents consolidated</div></div>
 </div>
 
 <h2><span class="n">02</span>Research deliverables</h2>
@@ -1105,7 +1105,7 @@ floor (compliance, glyph collisions, no silently ignored parameters, a reproduci
 <tr><td>Benchmark slice</td><td>6 tasks from offset 0 (exit 0)</td>
 <td>rotating tasks measured by the loop</td></tr>
 <tr><td>Capability snapshot</td><td>skills 16 · operators 21 · benchmark 139/150 · success 1.0 · anchor 0.203 · tests —</td><td>recorded by the scheduled run</td></tr>
-<tr><td>Last capability change</td><td>tests: 937 → —</td><td>explicit delta, not a claim</td></tr>
+<tr><td>Last capability change</td><td>tests: 938 → —</td><td>explicit delta, not a claim</td></tr>
 </tbody></table>
 <p class="tag" style="margin-top:10px">Conclusion: the loop currently re-verifies, prevents drift and
 records. It has no capability snapshot, mutation or selection, so it is <b>not self-improvement</b>.
@@ -1116,7 +1116,7 @@ The next step is to write benchmark pass rates and distances into the run record
 <ul style="font-size:12.5px;color:#40506a;margin:8px 0 0;padding-left:18px">
 <li><b>Vision channel not run:</b> the official 0.65 vision half is out of scope, so no
 combined-score claim is made — the code-channel claim is stated with its baseline instead.</li>
-<li><b>Decision service offline:</b> service offline.</li>
+<li><b>Decision service offline:</b> service online.</li>
 <li><b>Benchmark coverage:</b> 141/150 tasks execute; 9 are classified unsupported by design
 (3D, Network/Tree), not silently skipped.</li>
 <li><b>Style weights not human-validated:</b> hand-set; a 30-figure annotation study is needed.</li>
@@ -1128,7 +1128,7 @@ combined-score claim is made — the code-channel claim is stated with its basel
 
 <h3 style="margin-top:20px">Capability trend (scheduled runs)</h3>
 <table><thead><tr><th>Run</th><th>Skills</th><th>Operators</th><th>Benchmark</th>
-<th>Anchor distance</th><th>Success</th><th>Tests</th></tr></thead><tbody><tr><td>2026-10-27 22:37</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.186</td><td class="num">937</td></tr><tr><td>2026-10-28 15:58</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.186</td><td class="num">937</td></tr><tr><td>2026-10-28 20:43</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.186</td><td class="num">937</td></tr><tr><td>2026-10-28 22:21</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.186</td><td class="num">938</td></tr><tr><td>2026-10-28 22:32</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.186</td><td class="num">937</td></tr><tr><td>2026-10-28 22:49</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.186</td><td class="num">937</td></tr><tr><td>2026-10-29 11:31</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.186</td><td class="num">937</td></tr><tr><td>2026-10-29 14:55</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.186</td><td class="num">—</td></tr></tbody></table>
+<th>Anchor distance</th><th>Success</th><th>Tests</th></tr></thead><tbody><tr><td>2026-10-28 22:21</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.186</td><td class="num">938</td></tr><tr><td>2026-10-28 22:32</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.186</td><td class="num">937</td></tr><tr><td>2026-10-28 22:49</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.186</td><td class="num">937</td></tr><tr><td>2026-10-29 11:31</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.186</td><td class="num">937</td></tr><tr><td>2026-10-29 14:55</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.186</td><td class="num">937</td></tr><tr><td>2026-10-29 21:28</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.186</td><td class="num">938</td></tr><tr><td>2026-10-29 21:47</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.186</td><td class="num">938</td></tr><tr><td>2026-10-29 22:41</td><td class="num">16</td><td class="num">21</td><td class="num">139/150</td><td class="num">0.186</td><td class="num">—</td></tr></tbody></table>
 <p class="tag">Read from <code>knowledge/runs/*.json</code>. A run with no capability change is
 recorded as such; the loop fails when a judged capability field gets worse.</p>
 
@@ -1146,6 +1146,6 @@ recorded as such; the loop fails when a judged capability field gets worse.</p>
   in this repository, with no external dependencies. PlotTwin-Bench reference images and target
   data are cached locally and never redistributed (CC BY-NC 4.0); StartLux-Decision weights are
   CC BY-NC 4.0 and called through a separate service, not vendored into this repository.</div>
-  <div style="margin-top:6px">commit 0210850 · generated 2026-10-29 15:16 · tests 938</div>
+  <div style="margin-top:6px">commit 2a1c8c3 · generated 2026-10-29 23:03 · tests 938</div>
 </footer>
 </div></body></html>
