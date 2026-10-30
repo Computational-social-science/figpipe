@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-30T11:26:42",
+  "run_at": "2026-10-30T11:26:23",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -9,10 +9,10 @@
     "  passed 8, failed 0",
     "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
     "  wrote knowledge\\evolution_report.json",
-    "  lean: tracked 98.3 -> 98.3 MB, worktree 123.9 -> 122.8 MB"
+    "  lean: tracked 98.3 -> 98.3 MB, worktree 140.9 -> 122.8 MB"
   ],
   "tests_ok": false,
-  "tests_summary": "1 failed, 931 passed, 6 skipped, 1 warning in 866.74s (0:14:26) | FAILED tests/test_lean.py::test_tracked_size_is_within_budget - AssertionErro...",
+  "tests_summary": "2 failed, 931 passed, 5 skipped, 1 warning in 933.12s (0:15:33) | FAILED tests/test_claim_rederivation.py::test_it_detects_a_stale_number - Ass...; FAILED tests/test_lean.py::test_tracked_size_is_within_budget - AssertionErro...",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
@@ -1858,12 +1858,16 @@
     "benchmark_official_improvement": 46.83,
     "statistics_reproduced": 15,
     "knowledge_version": 16,
-    "tests": 937,
+    "tests": 936,
     "tests_passed": 931
   },
   "capabilities_delta": {
     "changed": true,
     "delta": {
+      "tests": {
+        "before": 937,
+        "after": 936
+      },
       "tests_passed": {
         "before": 932,
         "after": 931
@@ -1871,12 +1875,18 @@
     },
     "verdict": {
       "gains": [],
-      "regressions": [],
+      "regressions": [
+        {
+          "field": "tests",
+          "before": 937,
+          "after": 936
+        }
+      ],
       "corrections": [],
       "not_compared": [],
       "instrument_changed": false,
       "membership_broken": false,
-      "ok": true,
+      "ok": false,
       "judged_fields": [
         "benchmark_anchor_single",
         "benchmark_hard_findings",
@@ -1893,13 +1903,20 @@
     }
   },
   "ok": false,
-  "capability_ok": true,
-  "capability_regressions": [],
+  "capability_ok": false,
+  "capability_regressions": [
+    {
+      "field": "tests",
+      "before": 937,
+      "after": 936
+    }
+  ],
+  "publish_note": "capability regression detected; record kept but the run exits non-zero (re-run with --accept-capability-regression to accept)",
   "mutation_ok": true,
   "report_rebuilt": {
     "ran": true,
     "exit": 0,
-    "mtime": 1793330800.0,
+    "mtime": 1793330782.0,
     "reason": ""
   },
   "claim_rederivation": {
