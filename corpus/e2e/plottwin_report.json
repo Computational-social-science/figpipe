@@ -25,9 +25,10 @@
   "mean_best_of_two": 0.185,
   "semantic_violations": 0,
   "decision_service": {
-    "up": false,
+    "up": true,
     "url": "http://127.0.0.1:8090",
-    "detail": "no health endpoint answered; the service is probably not running"
+    "path": "/health",
+    "status": 200
   },
   "by_type": {
     "3D": {
