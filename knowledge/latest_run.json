@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-30T19:38:38",
+  "run_at": "2026-10-31T21:03:33",
   "dry_run": false,
   "evolve_ok": true,
   "evolve_exit_code": 0,
@@ -9,10 +9,10 @@
     "  passed 8, failed 0",
     "  UNCHECKED (not counted as passing): ['H01', 'H02', 'E01', 'E02', 'C01', 'C02', 'C03', 'C04']",
     "  wrote knowledge\\evolution_report.json",
-    "  lean: tracked 60.0 -> 60.0 MB, worktree 136.2 -> 123.4 MB"
+    "  lean: tracked 60.4 -> 60.4 MB, worktree 136.6 -> 123.7 MB"
   ],
   "tests_ok": false,
-  "tests_summary": "1 failed, 932 passed, 5 skipped, 1 warning in 928.07s (0:15:28) | FAILED tests/test_signed_url_lease.py::test_a_fresh_lease_costs_one_request_not_a_scan",
+  "tests_summary": "1 failed, 931 passed, 6 skipped, 1 warning in 1661.27s (0:27:41) | FAILED tests/test_signed_url_lease.py::test_a_fresh_lease_costs_one_request_not_a_scan",
   "knowledge_version_before": 16,
   "knowledge_version_after": 16,
   "knowledge_changed": false,
@@ -1859,7 +1859,7 @@
     "statistics_reproduced": 15,
     "knowledge_version": 16,
     "tests": 937,
-    "tests_passed": 932
+    "tests_passed": 931
   },
   "capabilities_delta": {
     "changed": true,
@@ -1870,7 +1870,7 @@
       },
       "tests_passed": {
         "before": 933,
-        "after": 932
+        "after": 931
       }
     },
     "verdict": {
@@ -1916,7 +1916,7 @@
   "report_rebuilt": {
     "ran": true,
     "exit": 0,
-    "mtime": 1793360318.0,
+    "mtime": 1793451812.0,
     "reason": ""
   },
   "claim_rederivation": {

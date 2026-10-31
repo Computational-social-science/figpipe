@@ -242,6 +242,8 @@ def fetch_row(offset: int) -> dict:
             # a cached signature: mark it stale so `download_image` re-fetches the row.
             cached["reference_url"] = ""
             cached["_offset"] = offset
+            cached["_offset"] = offset
+            cache.write_text(json.dumps(cached), encoding="utf-8")
             return cached
     req = urllib.request.Request(API.format(offset=offset),
                                  headers={"User-Agent": "figpipe-bench/0.1"})
