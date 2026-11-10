@@ -17,8 +17,11 @@ WHAT IS CHECKED
     font sizes   every text span in the PDF, via PyMuPDF
     dimensions   width against {89, 183} mm, height against 170 mm
     vector       the PDF exists and carries embedded fonts (fonttype 42)
-    palette      the figure uses the Okabe-Ito hues
     overlap      text spans whose bounding boxes intersect (approximate, see caveat)
+
+WHAT IS NOT CHECKED (but documented in qc.py)
+    palette      the figure uses the Okabe-Ito hues (source-level check via light-figure)
+    truncation   y-axis starts above zero on quantitative axis (source-level check via light-figure)
 
 WHAT IS NOT CHECKED
     Whether the figure is WELL DESIGNED. Panel balance, visual hierarchy, and whether the eye
